@@ -290,6 +290,105 @@ accepted baseline + blocked Sprint 01B/01C evidence
               -> separate future actual-SSH-setup go/no-go
 ```
 
+## Sprint 03A Product Data Engine Traceability
+
+| Asset/rule | Origin and authority | Repository effect | Required future evidence | Implementation status |
+| --- | --- | --- | --- | --- |
+| Pipe Product Family | Sprint 03A task, PDM, WCM, ATT, INQ, ADR-0001 | Defines Stainless Steel Pipe family/parent candidate, inquiry/no-price, UX, SEO, WooCommerce, CRM, and TBD boundaries | Founder/domain hierarchy, identity, combination, mapping, and ownership approval | Asset created; no WordPress product |
+| Attribute Dictionary | Sprint 03A attribute list and ATT model | Defines 16 typed attributes and pipe use flags | Founder/domain terminology, value, unit, filter, variation, SEO, CRM, and Woo mapping approval | Asset created; no global attribute configured |
+| Pipe Variation Matrix | Sprint 03A controlled values, WP-FC-004, WCM variation policy | Defines Grade/Finish/Dimension candidate sets and 1,584 theoretical tuples without declaring availability | Valid-combination, commercial availability, SKU, lifecycle, and Admin-manageability approval | Candidate matrix only; no variations created |
+| Pipe Import Template | Sprint 03A column contract and WCM-007/WCM-008 | Provides 23-column UTF-8 staging CSV with one parent and three placeholder variation rows | Exact Woo mapping, final IDs/SKUs, stock, slugs, dry run, backup/restore, rollback, and authorization | Structurally ready; import blocked |
+| Pipe SEO Entity Model | URL-001–URL-008, SEOENT, CP-005/CP-006 | Defines parent canonical, search intent, supporting attributes, FAQ topics, linking, schema, and no-price boundaries | SEO/domain content, canonical slug, indexation, schema, RTL/mobile, and no-price validation | Asset created; no public URL/output |
+| Product Data Validation Rules | PDM/WCM/ATT/INQ validation requirements | Defines deterministic required fields, values, slugs, Persian naming, SKU, duplicate, parent/variation, no-price, and import gates | Approved validator/mapping, staging dry run, error report, recovery, and Founder gates | Contract only; no validator/import execution |
+| Inquiry First | CP-005, ADR-0001, WCM-005, INQ-002 | Requires `inquiry_only=yes` on parent/variation staging rows | Future inquiry-context functional evidence | Preserved |
+| No Public Pricing | CP-006, ADR-0001, WCCFG-003 | Requires empty `public_price` and rejects all substitute/sentinel values | Exhaustive future surface/API/schema/cache/feed validation | Preserved; no price data created |
+
+```text
+approved product-data principles + Sprint 03A controlled inputs
+  -> Pipe Product Family + Attribute Dictionary
+      -> Candidate Variation Matrix + SEO Entity Model
+          -> Staging CSV + deterministic Validation Rules
+              -> Founder/domain review and future dry-run evidence
+                  -> separate import authorization only after blockers close
+```
+
+## Sprint 03B–03C Pipe Mapping and Classification Traceability
+
+| Asset/rule | Origin and authority | Repository effect | Required future evidence | Implementation status |
+| --- | --- | --- | --- | --- |
+| Pipe WooCommerce Mapping | Sprint 03A family/matrix/dictionary plus PDM/WCM/ATT/WCCFG | Maps parent, variation, global attributes, inquiry, no-price, identity, stock boundary, and dependencies | Verified runtime capabilities, IDs, terms, inquiry/no-price behavior, staging, and Founder approval | Logical mapping only; no WordPress configuration |
+| Pipe Import Mapping | 23-column CSV contract plus Pipe WooCommerce Mapping | Assigns all 23 source columns a mapping status, logical destination, deterministic rule, and blocker | Exact importer/version mapping, approved values, preview, exception report, reconciliation, and rollback | Mapping contract only; no import |
+| Pipe Import Precheck | Product Data Validation Rules plus Sprint 03B mappings | Records static passes and unresolved hard gates | Final IDs/SKUs, valid combinations, commercial state, taxonomy/attributes/slugs, runtime, recovery, and approval | `NO-GO FOR IMPORT` |
+| Pipe Taxonomy/Attribute Classification | Sprint 03A/03B field contracts plus TAX/ATT/FIELD/SEOENT/INQ | Assigns each of 29 unique fields exactly one primary classification and explicit public/filter/variation/SEO/CRM/required flags | Founder and specialist approval of marked classifications and ownership | Review asset only; no taxonomy/attribute/field created |
+| Pipe Category Model | Pipe Product Family plus TAX/URL/SEOENT | Defines one candidate family category, no approved subcategories, attribute/category exclusions, and unresolved public slug/parent | Founder/domain/SEO approval of parent, label, slug, intent, canonical, indexation, links, and owner | Logical model only; no category created |
+| Pipe Attribute Model | Attribute Dictionary plus Pipe Variation Matrix and ATT | Defines 14 global attributes; five controlled variation/filter axes; no local attributes | Founder/domain approval, valid combinations, optional registries, runtime IDs/terms, UX/SEO/Admin evidence | Logical model only; no attribute/term/filter created |
+| Pipe Data Governance Checklist | Sprint 03A–03C assets and repository quality gates | Consolidates Founder/specialist, category, attribute, import, price, inquiry, SEO, CRM, WooCommerce, and rejection gates | Checked evidence with reviewer/date/version plus separate implementation/import authorization | Review `GO`; implementation/import `NO-GO` |
+| Inquiry First | CP-005, ADR-0001, INQ, Pipe classification/checklist | Keeps `inquiry_only` required and transaction paths prohibited | Approved capability and mobile Persian RTL runtime evidence | Preserved; no behavior configured |
+| No Public Pricing | CP-006, ADR-0001, WCCFG-003, Pipe classification/checklist | Classifies `public_price` as Excluded and retains empty-only validation | Exhaustive future runtime surface/API/schema/feed/cache validation | Preserved; no price created |
+
+```text
+Sprint 03A controlled Pipe data
+  -> Sprint 03B WooCommerce + 23-column import mapping
+      -> non-mutating import precheck
+          -> Sprint 03C one-class-per-field classification
+              -> minimal category + global attribute models
+                  -> governance checklist + Founder/specialist review
+                      -> separate implementation/import authorization only after blockers close
+```
+
+## Sprint 03D Enterprise Product Engine Traceability
+
+| Asset/rule | Origin and authority | Repository effect | Required future evidence | Implementation status |
+| --- | --- | --- | --- | --- |
+| Enterprise Product Engine | Sprint 03D plus governing PDM/WCM/TAX/ATT/INQ/SEOENT/FIELD/PLUG rules | Defines template-first philosophy, lifecycle, inputs/outputs, validation, approval, and four logical pipelines | Founder/specialist approval and first non-Pipe generation evidence | Review standard; no family/runtime generation authorized |
+| Product Family Template | Engine plus PDM/WCM/INQ | Standardizes identity, scope, parent, inquiry, no-price, UX, WooCommerce, SEO, CRM, unknowns, and gates | Completed source-backed family contract | Template only |
+| Attribute Template | Engine plus TAX/ATT/FIELD | Standardizes field intake, one primary classification, global attributes, values, filters, tables, and gates | Family field inventory and domain-approved values | Template only |
+| Variation Template | Engine plus PDM/WCM/ATT | Standardizes parent, axes, values, valid combinations, identity, display, inquiry, no-price, and validation | Domain-approved axes/values/combinations and stable identities | Template only; no combinations/products generated |
+| Import Template | Engine plus WCM/INQ/validation | Standardizes staging concerns, column mapping, schema, ordering, safety, rejection, and execution blockers | Exact target/schema/mapping, preview, staging, recovery, and authorization | Template only; no CSV/import generated |
+| SEO Template | Engine plus URL/LINK/SEOENT | Standardizes entity, intent, canonical, category/product/attribute, metadata, FAQ, linking, schema, and no-price boundaries | Approved intent/content/slug/canonical/schema/link evidence | Template only; no public output |
+| Validation Template | Engine plus all product pipelines | Standardizes result vocabulary, cross-layer checks, Founder gates, rejection, and scoped decisions | Instantiated family validation and reviewer evidence | Template only |
+| Engine Rules | Repository rules plus Sprint 03D | Governs naming, versions, folders, provenance, review, approval, change, compatibility, and conventions | Founder approval and compatibility evidence on future engine changes | Review standard |
+| Engine Workflow | Engine/Rules plus implementation boundaries | Defines Idea → Family → Attributes → Variations → Validation → Import → WooCommerce → SEO → QA → Release | Stage-specific inputs, handoffs, evidence, and approvals | Workflow only; later stages remain separately authorized |
+| Engine Generation Guide | Engine, Rules, Workflow, and six templates | Defines one repeatable six-asset family generation process and regeneration rules | Authorized family intake and completed validation | Procedure only; no future family generated |
+| Pipe example boundary | Sprint 03A–03C Pipe assets | Preserves Pipe as implementation example without making its values universal templates | Separate compatibility task if Pipe provenance migration is later desired | Pipe files unchanged in Sprint 03D |
+
+```text
+governing product and repository authority
+  -> Enterprise Product Engine + Rules + Workflow
+      -> six canonical templates + Generation Guide
+          -> source-backed family-specific assets
+              -> instantiated validation + Founder/specialist review
+                  -> separate import/WooCommerce/SEO/CRM/QA/release authorization
+```
+
+## Sprint 03E Enterprise Platform Traceability
+
+| Asset/rule | Origin and authority | Repository effect | Required future evidence | Implementation status |
+| --- | --- | --- | --- | --- |
+| Platform Manifest / PM-001–PM-016 | Sprint 03E, accepted CP/ADR/Founder constraints, Project Constitution | Proposes highest Platform architectural authority, layers, scopes, change/version/compatibility/gates/evolution/metrics | Explicit Founder approval and affected authority/register updates | Review/Proposed Governing; no implementation |
+| Platform Principles / PP-001–PP-020 | Manifest plus CP-001–CP-010 | Defines scoped truth, repository/data/knowledge/engine/template/runtime principles and inherited constraints | Founder approval and exception policy evidence | Review/Proposed Governing |
+| Platform Architecture | Manifest/Principles plus Enterprise Architecture | Defines Platform → Repository → Engines → Runtime → Website and portability/replacement/multi-site contracts | Architecture/security/operations review and future adapter evidence | Architecture only; WordPress unchanged |
+| Engine Boundaries / EB-001–EB-010 | Manifest/Architecture plus Product/Content/SEO/Commerce/Integration/Media/Analytics/Knowledge sources | Assigns eight Engine purpose/input/output/dependency/owner/change/approval/expansion boundaries | Founder and each Engine-domain approval; later Engine admission evidence | Product Engine exists Review; seven boundaries conceptual |
+| Platform Lifecycle / PLC-001–PLC-011 | Manifest/Governance plus repository lifecycle | Defines Idea → Founder Decision → Repository → Engine → Validation → Implementation → QA → Release → Maintenance → Evolution → Deprecation | Founder/architecture/operations approval and stage evidence | Lifecycle only; no stage activated |
+| Platform Governance / PG-001–PG-012 | Founder/Constitution/repository governance | Defines Founder/Architecture/Build authority, reviews, changes, risks, freeze, release, rollback, documentation | Founder approval, role assignments, delegation records, future release evidence | Governance proposal only |
+| Platform Directory Standard / PDS-001–PDS-012 | Manifest/Architecture/Repository rules | Maps permanent logical Platform/Repository/Engine/Runtime/WordPress/Knowledge/import/export/backup/validation concerns to current paths | Founder/repository approval before future path changes | Only `repository/platform/` created; no restructure |
+| Platform Versioning / PV-001–PV-012 | Manifest/Governance, FRZ decisions, Product Engine Rules | Separates Platform/Repository/Engine/Template/Data/Release/Migration versions and compatibility | Founder approval and version manifests on future transitions | Review; Repository v1.0.0 unchanged |
+| Platform Evolution / PE-001–PE-012 | Manifest/Architecture/Boundaries/Lifecycle | Defines Engine/runtime/website admission, future examples, runtime replacement, compatibility, major-change gates | Founder/architecture/security/operations approval per extension | Future concepts only; AI remains prohibited Phase 1 |
+| Runtime replacement | PM-004, PP-015, Platform Architecture/Evolution | Requires stable sources/IDs, exports, adapters, migration, QA, release, recovery, deprecation | Candidate-runtime capability/export/migration/recovery evidence | No replacement selected or implemented |
+| Multi-website reuse | PM-005, Platform Architecture/Evolution | Requires each website to consume canonical Engine identities/contracts without forking truth | Site/channel scope, URL/SEO/inquiry/security/operations/release approval | No future website created |
+| Accepted business constraints | CP-001–CP-010, ADR-0001, WP-FC-001–WP-FC-005 | Remain above/inside Platform inheritance; no rule modification | Continued traceability and validation | Preserved |
+
+```text
+accepted Founder/business/Core Principle/ADR authority
+  -> proposed Platform Manifest Constitution
+      -> Principles + Architecture + Governance + Lifecycle + Versioning
+          -> Engine Boundaries + Directory + Evolution
+              -> Product Engine and future approved Engines
+                  -> replaceable Runtime adapters
+                      -> reusable Websites/channels
+                          -> evidence routed back through review, never reverse authority
+```
+
 ## Governance Traceability
 
 | Concern | Governing source | Supporting sources | Evidence or register |
@@ -364,6 +463,43 @@ accepted baseline + blocked Sprint 01B/01C evidence
 - [Sprint 01D Deployment Access Policy](../repository/config/DEPLOYMENT_ACCESS_POLICY.md)
 - [Sprint 01D Iran Execution Risk Register](../repository/config/IRAN_EXECUTION_RISK_REGISTER.md)
 - [Sprint 01D Audit](AUDIT_REPORT_SPRINT01D.md)
+- [Stainless Steel Pipe Product Family](../repository/data/products/pipes/PIPE_PRODUCT_FAMILY.md)
+- [Product Attribute Dictionary](../repository/data/attributes/ATTRIBUTE_DICTIONARY.md)
+- [Stainless Steel Pipe Variation Matrix](../repository/data/products/pipes/PIPE_VARIATION_MATRIX.md)
+- [WooCommerce Pipe Import Template](../repository/data/imports/woocommerce/PIPE_IMPORT_TEMPLATE.csv)
+- [Stainless Steel Pipe SEO Entity Model](../repository/data/seo/PIPE_SEO_ENTITY_MODEL.md)
+- [Product Data Validation Rules](../repository/data/validation/PRODUCT_DATA_VALIDATION_RULES.md)
+- [Sprint 03A Audit](AUDIT_REPORT_SPRINT03A.md)
+- [Stainless Steel Pipe WooCommerce Mapping](../repository/data/products/pipes/PIPE_WOOCOMMERCE_MAPPING.md)
+- [Stainless Steel Pipe Import Mapping](../repository/data/imports/woocommerce/PIPE_IMPORT_MAPPING.md)
+- [Stainless Steel Pipe Import Precheck](../repository/data/validation/PIPE_IMPORT_PRECHECK.md)
+- [Sprint 03B Audit](AUDIT_REPORT_SPRINT03B.md)
+- [Pipe Taxonomy and Attribute Classification](../repository/data/taxonomies/PIPE_TAXONOMY_ATTRIBUTE_CLASSIFICATION.md)
+- [Pipe Category Model](../repository/data/taxonomies/PIPE_CATEGORY_MODEL.md)
+- [Pipe Attribute Model](../repository/data/attributes/PIPE_ATTRIBUTE_MODEL.md)
+- [Pipe Data Governance Checklist](../repository/data/validation/PIPE_DATA_GOVERNANCE_CHECKLIST.md)
+- [Sprint 03C Audit](AUDIT_REPORT_SPRINT03C.md)
+- [Enterprise Product Engine](../repository/engine/product/PRODUCT_ENGINE.md)
+- [Product Engine Rules](../repository/engine/product/ENGINE_RULES.md)
+- [Product Engine Workflow](../repository/engine/product/ENGINE_WORKFLOW.md)
+- [Product Engine Generation Guide](../repository/engine/product/ENGINE_GENERATION_GUIDE.md)
+- [Product Family Template](../repository/engine/product/PRODUCT_FAMILY_TEMPLATE.md)
+- [Product Attribute Template](../repository/engine/product/ATTRIBUTE_TEMPLATE.md)
+- [Product Variation Template](../repository/engine/product/VARIATION_TEMPLATE.md)
+- [Product Import Template](../repository/engine/product/IMPORT_TEMPLATE.md)
+- [Product SEO Template](../repository/engine/product/SEO_TEMPLATE.md)
+- [Product Validation Template](../repository/engine/product/VALIDATION_TEMPLATE.md)
+- [Sprint 03D Audit](AUDIT_REPORT_SPRINT03D.md)
+- [Enterprise Platform Manifest](../repository/platform/PLATFORM_MANIFEST.md)
+- [Enterprise Platform Principles](../repository/platform/PLATFORM_PRINCIPLES.md)
+- [Enterprise Platform Architecture](../repository/platform/PLATFORM_ARCHITECTURE.md)
+- [Enterprise Engine Boundaries](../repository/platform/ENGINE_BOUNDARIES.md)
+- [Enterprise Platform Lifecycle](../repository/platform/PLATFORM_LIFECYCLE.md)
+- [Enterprise Platform Governance](../repository/platform/PLATFORM_GOVERNANCE.md)
+- [Enterprise Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md)
+- [Enterprise Platform Versioning](../repository/platform/PLATFORM_VERSIONING.md)
+- [Enterprise Platform Evolution](../repository/platform/PLATFORM_EVOLUTION.md)
+- [Sprint 03E Audit](AUDIT_REPORT_SPRINT03E.md)
 
 ## Navigation
 

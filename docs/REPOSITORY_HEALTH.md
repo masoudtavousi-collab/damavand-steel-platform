@@ -28,10 +28,10 @@ This record describes files available in the current repository state and local 
 
 | Measure | Current evidence | Status |
 | --- | --- | --- |
-| Documentation inventory | 95 Markdown files under `docs/` and 14 controlled Markdown files under `repository/` | Measured for Sprint 01D after audit creation |
-| Documentation Index coverage | 95 of 95 documentation files plus all 14 controlled repository documents listed | Complete for current inventory |
+| Documentation inventory | 103 Markdown files under `docs/` and 45 controlled Markdown files under `repository/` | Measured for Sprint 03E after audit creation |
+| Documentation Index coverage | 103 of 103 documentation files plus all 45 controlled repository documents and the Product Data CSV listed | Complete for current inventory |
 | Orphan documentation | 0 files without an incoming local documentation link, excluding the index entry point | None detected |
-| Local Markdown links and anchors | 3,039 checked with 0 failures across controlled `docs/` and `repository/` Markdown in the Sprint 01D Audit | Validation required on every change |
+| Local Markdown link destinations | 3,783 checked with 0 failures across controlled `docs/` and `repository/` Markdown in the Sprint 03E Audit | Validation required on every change |
 | Substantive content | Draft placeholders and Founder TODOs remain in foundation, delivery, and assurance documents | Incomplete |
 
 Repository completeness means inventory and discoverability only. It does not imply that Draft requirements, architecture, business content, or implementation prerequisites are complete.
@@ -60,15 +60,15 @@ All requested capabilities have a current canonical location. None becomes appro
 
 ## Authority Coverage
 
-- The Documentation Index classifies the role, status, and owner of all 95 documentation files and the 14 controlled engineering/evidence documents under `repository/`.
-- The canonical metadata `Authority` field is present in 65 of 95 documentation files; all 14 controlled `repository/` documents also use the complete model.
+- The Documentation Index classifies the role, status, and owner of all 103 documentation files and the 45 controlled Markdown assets under `repository/`, plus the Product Data CSV.
+- The canonical metadata `Authority` field is present in 74 of 103 documentation files; all 45 controlled `repository/` Markdown documents use the complete model.
 - CP-001 through CP-010 retain explicit accepted decision status and documented origin in the Project Bible.
 - Review, audit, validation, health, task, architecture-proposal, and conversation outputs are explicitly non-authoritative unless approved through the governing process.
 - Full metadata authority coverage remains incomplete for legacy documents.
 
 ## Metadata Coverage
 
-- Sixty-five documentation files under `docs/` and all 14 controlled documents under `repository/` use the complete 17-field metadata model.
+- Seventy-three documentation files under `docs/` and all 45 controlled Markdown documents under `repository/` use the complete 17-field metadata model.
 - The Repository Metadata Standard is the only document that defines the canonical field list.
 - The Document Template mirrors that model.
 - Legacy documents with partial or section-based metadata remain under the transitional rule; no repository-wide normalization is authorized by this health record.
@@ -77,7 +77,7 @@ All requested capabilities have a current canonical location. None becomes appro
 
 - The Documentation Index lists every current documentation file.
 - Navigation Map, Reading Order, Knowledge Graph, Traceability Matrix, Repository Health, architecture/data models, and batch audits are mutually discoverable through explicit links.
-- Founder, developer, AI, auditor, SEO, WordPress engineer, content-team, product-data, Information Architecture, Content/Entity Architecture, WordPress Solution Blueprint, release-engineering, and remote-access/Iran-execution paths remain defined.
+- Founder, developer, AI, auditor, SEO, WordPress engineer, content-team, product-data, Information Architecture, Content/Entity Architecture, WordPress Solution Blueprint, release-engineering, remote-access/Iran-execution, and Product Data Engine paths remain defined.
 - Current local-link, anchor, orphan, and index validation results are recorded in the latest batch audit.
 
 ## Traceability Coverage
@@ -92,6 +92,7 @@ All requested capabilities have a current canonical location. None becomes appro
 - S01B-001 through S01B-005 map local-environment evidence, the mandatory stop decision, absent installations, template/runtime separation, and unchanged Blocked readiness.
 - S01C-001 through S01C-008 map evidence classification, hosting and clean-install gates, approved-name-only component scope, dependency stops, stage validation, rollback checkpoints, and current `NO-GO` status.
 - RA-001 through RA-012 and IR-001 through IR-012 map the proposed remote route, access/security/recovery boundaries, Founder usability, Iran execution risks, and current actual-SSH-setup `NO-GO` status.
+- Sprint 03A–03C map the Pipe Product Family, dictionary, candidate matrix, staging CSV, SEO, validation, WooCommerce/import mapping, taxonomy/attribute classification, category/attribute models, governance gates, Inquiry First, No Public Pricing, and import blockers to governing product-data sources.
 - Governance concerns map decision classification, lifecycle, dependencies, inheritance, conflicts, validation, open work, and AI collaboration to canonical sources and evidence.
 - Future implementation remains `Not authorized` in the Traceability Matrix.
 - Legacy documents do not all carry full document-level traceability metadata.
@@ -111,7 +112,7 @@ Final read-only Git inspection for Repository Freeze v1.0 reports:
 - The immutable baseline contains 157 tracked files; `main` and both baseline tags still resolve to the original baseline commit.
 - Annotated tags `baseline-v1.0.0` and `repo-v1.0.0` resolve to the same baseline commit.
 - The tagged tree contains the baseline manifest, release notes, readiness assessment, roadmap, engineering guidelines, synchronized repository records, and Freeze Audit.
-- The current working tree contains the explicitly scoped Sprint 01A repository-structure plus Sprint 01B, Sprint 01C, and Sprint 01D evidence/documentation candidate changes; none is represented as part of baseline v1.0.0.
+- Current `main`/`origin/main` contain the committed Sprint 01A–01D foundation successor to baseline v1.0.0. The current working tree contains Sprint 02A–02C audit candidates plus Sprint 03A–03E Product Data/Engine/Platform assets and governance changes; none changes the immutable baseline tags.
 - No primary remote, independent mirror, backup, signing evidence, branch protection, or production release exists.
 - [Git Governance](GIT_GOVERNANCE.md) remains Proposed Governing/Review; the exact Founder-authorized baseline does not approve the entire policy.
 
@@ -218,15 +219,67 @@ Final read-only Git inspection for Repository Freeze v1.0 reports:
 - FD-RA-001 through FD-RA-006 and OQ-RA-001 through OQ-RA-007 remain unresolved.
 - Actual SSH setup remains `NO-GO` pending provider, identity, host-key, path, security, Git, backup/restore, risk, and approval evidence.
 
+## Sprint 02 WordPress Evidence Coverage
+
+- Task-provided Site Health evidence records WordPress `7.0`, `fa_IR`, timezone `+03:30`, Blocksy `2.1.46`, LiteSpeed, PHP `7.4.33`, MariaDB `10.6.19`, and path `/home/centrals/damavandsteel.com` on shared hosting.
+- Server.ir confirms SSH `NO-GO`; shell access is unavailable.
+- The supplied Installed Plugins evidence contains 13 active plugins with exact captured versions, including WooCommerce `10.8.1`, Elementor `4.1.4`, Rank Math SEO, UpdraftPlus, WP Mail SMTP, WPForms Lite, and supporting plugins documented in Sprint 02C.
+- Browser evidence shows `Not Secure` while WordPress reports HTTPS true; Let's Encrypt/SSL resolution remains pending with Server.ir.
+- Site Health reports REST API and WordPress.org access as critical problems plus scheduled event, indexing, persistent object cache, SMTP, and background-update recommendations.
+- Live-host evidence is separate from the local `public/` scaffold; no hosting mutation or authenticated Codex connection occurred.
+
+## Sprint 03A Product Data Engine Coverage
+
+- Ten requested directories under `repository/data/` separate products/pipes, attributes, taxonomies, WooCommerce imports, templates, SEO, and validation.
+- Five controlled Markdown assets and one UTF-8 CSV define the first Stainless Steel Pipe family data contract.
+- The Attribute Dictionary contains all 16 required attributes and use flags.
+- Candidate variation sets contain 4 Grades, 3 Finishes, 11 Diameters, 6 Thicknesses, and 2 Lengths; the 1,584 theoretical Cartesian tuples are explicitly not treated as valid/available products.
+- The CSV has 23 exact headers, one placeholder parent, three placeholder variations, consistent row widths, `inquiry_only=yes`, empty `public_price`, placeholder SKUs, and no real price/stock/supplier data.
+- `taxonomies/` contains Sprint 03C classification/category review assets; `templates/` remains empty except `.gitkeep`. No WordPress taxonomy or reusable implementation template is created.
+- Product Data assets preserve Inquiry First, No Public Pricing, Variable Parent Product, Persian RTL, Mobile First, Plugin First, Configuration First, and the prohibited-technology boundaries.
+- WordPress import remains `NO-GO`; next review/mapping sprint is `GO` only for domain validation, valid combinations, IDs/SKU policy, mappings, and dry-run/recovery design.
+
+## Sprint 03B–03C Pipe Mapping and Classification Coverage
+
+- Sprint 03B adds logical WooCommerce mapping, all-23-column import mapping, and a non-mutating import precheck; import remains `NO-GO`.
+- Sprint 03C classifies all 29 unique Pipe fields exactly once across category, global/variation attribute, custom field, CRM, SEO metadata, import helper, hidden/internal, and excluded responsibilities.
+- The Pipe Category Model defines one Product Family category candidate and no approved subcategories. Higher parent, stable ID, approved public slug, canonical/indexation, and content ownership remain `TBD`.
+- The Pipe Attribute Model defines 14 global attributes, five controlled variation/filter axes, and zero local attributes. Optional values and valid commercial combinations remain `TBD`.
+- The Pipe Data Governance Checklist records static evidence and unchecked Founder/specialist/runtime gates; review is `GO`, implementation/import remains `NO-GO`.
+- No WordPress, hosting, plugin, product, page, import, price, stock value, supplier value, or final SKU is created by these assets.
+
+## Sprint 03D Enterprise Product Engine Coverage
+
+- `repository/engine/product/` contains one engine standard, six canonical templates, Engine Rules, Engine Workflow, and Engine Generation Guide.
+- The engine covers family, attribute/classification, variation, import, SEO, validation, Founder gates, WooCommerce, CRM, QA, release, change control, and compatibility concerns without creating runtime artifacts.
+- Pipe remains an unchanged implementation example; its specific values are not template defaults.
+- Profile, Fittings, Glass Hardware, Pool Equipment, Wood, Fasteners, Tools, Accessories, and future families are registered as not generated with facts remaining `TBD`.
+- Once approved, the engine is canonical for generation structure/provenance only; governing documents and approved family evidence retain business/domain authority.
+- The six-template process can create a baseline family contract without changing template structure. A genuinely new reusable concern requires controlled Engine change rather than local redesign.
+- No WordPress, hosting, plugin, code, CSV row, product, price, stock value, supplier value, final SKU, SEO output, CRM record, import, or release is created.
+
+## Sprint 03E Enterprise Platform Coverage
+
+- `repository/platform/` contains nine Review/Proposed Governing architecture files: Manifest, Principles, Architecture, Engine Boundaries, Lifecycle, Governance, Directory Standard, Versioning, and Evolution.
+- The proposed layer model is Platform → Repository → Engines → Runtime → Website; feedback is evidence only and does not invert authority.
+- WordPress/WooCommerce/Blocksy/Elementor remain current runtime targets/constraints, not immutable Platform identity. Replacement is defined through adapters, stable IDs, exports, migration, QA, release, recovery, and deprecation.
+- Eight Engine boundaries are explicit: Product, Content, SEO, Commerce, Integration, Media, Analytics, and Knowledge. Only Product Engine has current repository files; all remain Review.
+- The Platform Lifecycle covers Idea through Deprecation with scoped gates and upstream correction.
+- Platform Versioning separates Platform, Repository, Engine, Template, Data, Release, and Migration domains while preserving Repository v1.0.0.
+- Platform Evolution defines controlled future Engine/runtime/website admission. AI remains prohibited in Phase 1.
+- Directory Standard maps permanent logical concerns to existing paths and creates no path beyond `repository/platform/` in Sprint 03E.
+- Every future website is required to reuse canonical Engine contracts/stable identities rather than fork authority.
+- No WordPress, hosting, plugin, Product Engine, Product Data, business rule, code, content, product, integration, runtime, or release change is introduced.
+
 ## Known Gaps
 
 - Founder approval is pending for FD-GOV-002, FD-GOV-003, FD-GOV-005 through FD-GOV-019, FD-ARC-001, and FD-ARC-002, except previously resolved entries.
-- Full canonical metadata coverage is 65 of 95 documentation files under `docs/`; 30 legacy documentation files remain incomplete.
+- Full canonical metadata coverage is 73 of 103 documentation files under `docs/`; 30 legacy documentation files remain incomplete.
 - Foundation, business, architecture, technology, WordPress, delivery, security, SEO, UX, testing, and changelog documents contain unresolved Draft sections or placeholders.
 - Documentation numbering, broad versioning policy, steel terminology, and child-theme placeholder decisions remain unresolved; the exact local v1.0.0 baseline decision is resolved.
 - External-link validation is not part of the current evidence set.
-- No implementation authorization exists.
-- A local approved Git baseline and tags exist; no remote, mirror, backup, signing, branch protection, product release, or production release exists.
+- Sprint 03A–03E authorize repository Product Data/Engine/Platform review assets only; WordPress/runtime import, deployment, and production mutation remain unauthorized.
+- A local approved Git baseline and tags plus current `origin/main` exist; independent mirror, approved backup custody, signing, branch protection evidence, product release, and production release remain unresolved.
 - WordPress Enterprise Architecture is not Approved, and its dependent Product Data, SEO, Security, UX, Testing, and operational documents retain Draft gaps.
 - FD-DATA-001 through FD-DATA-006 and OQ-DATA-001 through OQ-DATA-009 remain unresolved; no Batch 05 model is Approved.
 - FD-IA-001 through FD-IA-006 and OQ-IA-001 through OQ-IA-008 remain unresolved; no Batch 06 model is Approved.
@@ -236,7 +289,11 @@ Final read-only Git inspection for Repository Freeze v1.0 reports:
 - S01A-001 through S01A-010 and all Build/Pre-Implementation checklist evidence remain pending Founder/specialist review; no readiness blocker is closed by folder creation.
 - S01B-001 through S01B-005 document the blocked environment. Hosting, runtime, versions, packages/licenses, security/recovery/testing, and approval dependencies remain unresolved.
 - S01C checklists remain entirely unchecked. No real hosting evidence, exact dependency approval, backup/restore test, checkpoint, or installation authorization exists.
-- Sprint 01D establishes no primary remote or remote-access capability. All Server.ir/GitHub/SSH/cPanel/path/connectivity/security/recovery evidence and RA/IR approvals remain open.
+- Sprint 01D itself established no remote access. Later evidence records `origin/main` and a pushed GitHub repository, but Server.ir shell/SSH remain unavailable and remote custody/protection/recovery approvals remain open.
+- Sprint 03A–03C retain `TBD` IDs, final SKUs, valid combinations, stock, suppliers, commercial availability, approved public slugs, SEO content, exact runtime WooCommerce identities/mapping, and backup/restore/import authorization.
+- Sprint 03B–03C retain `TBD` higher category parent, stable category/product/variation IDs, approved public slug, final SKUs, valid combinations, commercial stock state, optional attribute registries, runtime attribute/term IDs, inquiry/no-price enforcement, CRM mapping, staging/recovery, and execution authorization.
+- Sprint 03D Engine/templates remain Review pending Founder/specialist approval; no non-Pipe family intake, facts, generated asset set, first-generation evidence, or implementation authorization exists.
+- Sprint 03E Platform set remains Review/Proposed Governing pending explicit Founder approval; it is not yet the approved Platform Constitution, and Engine-owner assignments/runtime-portability evidence remain unresolved.
 
 ## Future Work
 
@@ -258,6 +315,7 @@ Final read-only Git inspection for Repository Freeze v1.0 reports:
 - Provide and approve the exact environment/version/package/license/security/recovery inputs before retrying Sprint 01B installation.
 - Complete and approve the Sprint 01C hosting, clean-install, dependency, validation, and rollback evidence before any real installation go/no-go reconsideration.
 - Obtain provider evidence and resolve FD-RA/OQ-RA items before reconsidering actual SSH setup; never request credentials through repository or chat.
+- Complete qualified steel-domain review, valid-combination approval, stable ID/SKU policy, commercial-source validation, exact runtime WooCommerce mapping approval, and staging/recovery design before any Product Data import.
 
 ## Navigation
 
@@ -317,3 +375,41 @@ Final read-only Git inspection for Repository Freeze v1.0 reports:
 - [Sprint 01D Deployment Access Policy](../repository/config/DEPLOYMENT_ACCESS_POLICY.md)
 - [Sprint 01D Iran Execution Risk Register](../repository/config/IRAN_EXECUTION_RISK_REGISTER.md)
 - [Sprint 01D Audit](AUDIT_REPORT_SPRINT01D.md)
+- [Sprint 02C Audit](AUDIT_REPORT_SPRINT02C.md)
+- [Stainless Steel Pipe Product Family](../repository/data/products/pipes/PIPE_PRODUCT_FAMILY.md)
+- [Product Attribute Dictionary](../repository/data/attributes/ATTRIBUTE_DICTIONARY.md)
+- [Stainless Steel Pipe Variation Matrix](../repository/data/products/pipes/PIPE_VARIATION_MATRIX.md)
+- [WooCommerce Pipe Import Template](../repository/data/imports/woocommerce/PIPE_IMPORT_TEMPLATE.csv)
+- [Stainless Steel Pipe SEO Entity Model](../repository/data/seo/PIPE_SEO_ENTITY_MODEL.md)
+- [Product Data Validation Rules](../repository/data/validation/PRODUCT_DATA_VALIDATION_RULES.md)
+- [Sprint 03A Audit](AUDIT_REPORT_SPRINT03A.md)
+- [Stainless Steel Pipe WooCommerce Mapping](../repository/data/products/pipes/PIPE_WOOCOMMERCE_MAPPING.md)
+- [Stainless Steel Pipe Import Mapping](../repository/data/imports/woocommerce/PIPE_IMPORT_MAPPING.md)
+- [Stainless Steel Pipe Import Precheck](../repository/data/validation/PIPE_IMPORT_PRECHECK.md)
+- [Sprint 03B Audit](AUDIT_REPORT_SPRINT03B.md)
+- [Pipe Taxonomy and Attribute Classification](../repository/data/taxonomies/PIPE_TAXONOMY_ATTRIBUTE_CLASSIFICATION.md)
+- [Pipe Category Model](../repository/data/taxonomies/PIPE_CATEGORY_MODEL.md)
+- [Pipe Attribute Model](../repository/data/attributes/PIPE_ATTRIBUTE_MODEL.md)
+- [Pipe Data Governance Checklist](../repository/data/validation/PIPE_DATA_GOVERNANCE_CHECKLIST.md)
+- [Sprint 03C Audit](AUDIT_REPORT_SPRINT03C.md)
+- [Enterprise Product Engine](../repository/engine/product/PRODUCT_ENGINE.md)
+- [Product Engine Rules](../repository/engine/product/ENGINE_RULES.md)
+- [Product Engine Workflow](../repository/engine/product/ENGINE_WORKFLOW.md)
+- [Product Engine Generation Guide](../repository/engine/product/ENGINE_GENERATION_GUIDE.md)
+- [Product Family Template](../repository/engine/product/PRODUCT_FAMILY_TEMPLATE.md)
+- [Product Attribute Template](../repository/engine/product/ATTRIBUTE_TEMPLATE.md)
+- [Product Variation Template](../repository/engine/product/VARIATION_TEMPLATE.md)
+- [Product Import Template](../repository/engine/product/IMPORT_TEMPLATE.md)
+- [Product SEO Template](../repository/engine/product/SEO_TEMPLATE.md)
+- [Product Validation Template](../repository/engine/product/VALIDATION_TEMPLATE.md)
+- [Sprint 03D Audit](AUDIT_REPORT_SPRINT03D.md)
+- [Enterprise Platform Manifest](../repository/platform/PLATFORM_MANIFEST.md)
+- [Enterprise Platform Principles](../repository/platform/PLATFORM_PRINCIPLES.md)
+- [Enterprise Platform Architecture](../repository/platform/PLATFORM_ARCHITECTURE.md)
+- [Enterprise Engine Boundaries](../repository/platform/ENGINE_BOUNDARIES.md)
+- [Enterprise Platform Lifecycle](../repository/platform/PLATFORM_LIFECYCLE.md)
+- [Enterprise Platform Governance](../repository/platform/PLATFORM_GOVERNANCE.md)
+- [Enterprise Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md)
+- [Enterprise Platform Versioning](../repository/platform/PLATFORM_VERSIONING.md)
+- [Enterprise Platform Evolution](../repository/platform/PLATFORM_EVOLUTION.md)
+- [Sprint 03E Audit](AUDIT_REPORT_SPRINT03E.md)

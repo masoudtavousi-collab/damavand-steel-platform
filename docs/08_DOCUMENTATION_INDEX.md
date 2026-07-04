@@ -158,6 +158,59 @@ These controlled engineering documents live under `repository/` and are indexed 
 | [Sprint 01D Deployment Access Policy](../repository/config/DEPLOYMENT_ACCESS_POLICY.md) | Proposed roles, access scope, approval, forbidden action, backup, rollback, secret, and emergency controls | Review | Founder |
 | [Sprint 01D Iran Execution Risk Register](../repository/config/IRAN_EXECUTION_RISK_REGISTER.md) | Planning risks, impacts, mitigations, fallbacks, and unverified path-specific evidence status | Review | Founder |
 
+### Repository Enterprise Platform Constitution
+
+The proposed Platform Constitution set lives under `repository/platform/`. After explicit Founder approval, the Platform Manifest becomes the highest Platform architectural authority while remaining subordinate to accepted Founder/business/Core Principle/ADR authority. Until then all nine files remain Review/Proposed Governing.
+
+| Asset | Role | Status | Owner |
+| --- | --- | --- | --- |
+| [Enterprise Platform Manifest](../repository/platform/PLATFORM_MANIFEST.md) | Purpose, vision, mission, principles, layers, scopes, change, version, compatibility, gates, evolution, metrics, objectives, and non-goals | Review | Founder |
+| [Enterprise Platform Principles](../repository/platform/PLATFORM_PRINCIPLES.md) | Single-source, configuration/plugin/template/engine/repository/data/knowledge first, inquiry/no-price, ownership, maintainability, scale, replaceability | Review | Founder |
+| [Enterprise Platform Architecture](../repository/platform/PLATFORM_ARCHITECTURE.md) | Platform → Repository → Engines → Runtime → Website layers, contracts, portability, replacement, and multi-site reuse | Review | Founder |
+| [Enterprise Engine Boundaries](../repository/platform/ENGINE_BOUNDARIES.md) | Product, Content, SEO, Commerce, Integration, Media, Analytics, and Knowledge Engine ownership/contracts | Review | Founder |
+| [Enterprise Platform Lifecycle](../repository/platform/PLATFORM_LIFECYCLE.md) | Idea through Founder Decision, Repository, Engine, Validation, Implementation, QA, Release, Maintenance, Evolution, and Deprecation | Review | Founder |
+| [Enterprise Platform Governance](../repository/platform/PLATFORM_GOVERNANCE.md) | Founder/Architecture/Build authority, review/approval, change/risk, freeze, release, rollback, and documentation controls | Review | Founder |
+| [Enterprise Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md) | Permanent logical/physical paths, ownership, artifact classes, naming, runtime separation, and restricted payloads | Review | Founder |
+| [Enterprise Platform Versioning](../repository/platform/PLATFORM_VERSIONING.md) | Independent Platform, Repository, Engine, Template, Data, Release, Migration versions and compatibility | Review | Founder |
+| [Enterprise Platform Evolution](../repository/platform/PLATFORM_EVOLUTION.md) | New Engine/runtime/website admission, future capability examples, WordPress replacement, compatibility, and major-change gates | Review | Founder |
+
+### Repository Enterprise Product Engine
+
+The canonical template-driven generation contract lives under `repository/engine/product/`. Once approved, it is the single source for Product Family generation structure, workflow, rules, and template provenance; governing documents and approved family evidence remain fact authority.
+
+| Asset | Role | Status | Owner |
+| --- | --- | --- | --- |
+| [Enterprise Product Engine](../repository/engine/product/PRODUCT_ENGINE.md) | Engine philosophy, lifecycle, inputs/outputs, generation/validation, Founder gates, and import/WooCommerce/SEO/CRM pipelines | Review | Founder |
+| [Product Engine Rules](../repository/engine/product/ENGINE_RULES.md) | Naming, versioning, folders, provenance, review, approval, change control, and compatibility | Review | Founder |
+| [Product Engine Workflow](../repository/engine/product/ENGINE_WORKFLOW.md) | Idea-to-release stages, handoffs, responsibilities, gates, and rework | Review | Founder |
+| [Product Engine Generation Guide](../repository/engine/product/ENGINE_GENERATION_GUIDE.md) | Six-template process for generating a complete new family set | Review | Founder |
+| [Product Family Template](../repository/engine/product/PRODUCT_FAMILY_TEMPLATE.md) | Reusable family identity, parent, inquiry, no-price, UX, platform, SEO, CRM, unknown, and approval structure | Review | Founder |
+| [Product Attribute Template](../repository/engine/product/ATTRIBUTE_TEMPLATE.md) | Reusable field intake, one-class-per-field, global attribute, value, filter, and review structure | Review | Founder |
+| [Product Variation Template](../repository/engine/product/VARIATION_TEMPLATE.md) | Reusable parent, axis, value, valid-combination, identity, display, and variation gate structure | Review | Founder |
+| [Product Import Template](../repository/engine/product/IMPORT_TEMPLATE.md) | Reusable staging concern, column mapping, schema, ordering, safety, rejection, and output contract | Review | Founder |
+| [Product SEO Template](../repository/engine/product/SEO_TEMPLATE.md) | Reusable entity, intent, category/product/attribute, metadata, FAQ, linking, schema, and no-price structure | Review | Founder |
+| [Product Validation Template](../repository/engine/product/VALIDATION_TEMPLATE.md) | Reusable result vocabulary, cross-layer checks, Founder checklist, rejection, and decision structure | Review | Founder |
+
+### Repository Product Data Engine Assets
+
+These controlled implementation-ready data assets live under `repository/data/`. They define staging contracts and validation rules; they do not create WordPress products, attributes, taxonomies, prices, stock, or imports.
+
+| Asset | Role | Status | Owner |
+| --- | --- | --- | --- |
+| [Stainless Steel Pipe Product Family](../repository/data/products/pipes/PIPE_PRODUCT_FAMILY.md) | Family/parent, inquiry, no-price, UX, SEO, WooCommerce, CRM, and unknown-value contract | Review | Founder |
+| [Product Attribute Dictionary](../repository/data/attributes/ATTRIBUTE_DICTIONARY.md) | Sixteen-attribute typed dictionary and Stainless Steel Pipe use profile | Review | Founder |
+| [Stainless Steel Pipe Variation Matrix](../repository/data/products/pipes/PIPE_VARIATION_MATRIX.md) | Controlled Grade/Finish/Dimension sets, candidate-space boundary, and valid-combination gates | Review | Founder |
+| [WooCommerce Pipe Import Template](../repository/data/imports/woocommerce/PIPE_IMPORT_TEMPLATE.csv) | UTF-8 23-column parent/variation staging template with placeholder-only rows and empty public prices | Review | Founder |
+| [Stainless Steel Pipe SEO Entity Model](../repository/data/seo/PIPE_SEO_ENTITY_MODEL.md) | Search intent, canonical, attribute, FAQ, internal-link, schema, and no-price contract | Review | Founder |
+| [Product Data Validation Rules](../repository/data/validation/PRODUCT_DATA_VALIDATION_RULES.md) | Deterministic required-field, controlled-value, naming, SKU, duplicate, consistency, price, and import gates | Review | Founder |
+| [Stainless Steel Pipe WooCommerce Mapping](../repository/data/products/pipes/PIPE_WOOCOMMERCE_MAPPING.md) | Logical parent/variation, attribute, identity, inquiry, no-price, stock-boundary, and dependency mapping | Review | Founder |
+| [Stainless Steel Pipe Import Mapping](../repository/data/imports/woocommerce/PIPE_IMPORT_MAPPING.md) | Field-level mapping for all 23 staging columns without execution | Review | Founder |
+| [Stainless Steel Pipe Import Precheck](../repository/data/validation/PIPE_IMPORT_PRECHECK.md) | Non-mutating static checks, blocking gates, required evidence, and no-go import decision | Review | Founder |
+| [Pipe Taxonomy and Attribute Classification](../repository/data/taxonomies/PIPE_TAXONOMY_ATTRIBUTE_CLASSIFICATION.md) | One primary category/attribute/custom/CRM/SEO/import/internal/excluded classification for all 29 Pipe fields | Review | Founder |
+| [Pipe Category Model](../repository/data/taxonomies/PIPE_CATEGORY_MODEL.md) | Minimal Product Family category, no-subcategory decision, slug boundary, SEO/linking role, and overlap controls | Review | Founder |
+| [Pipe Attribute Model](../repository/data/attributes/PIPE_ATTRIBUTE_MODEL.md) | Fourteen global attributes, five variation/filter axes, controlled values, product-table and SEO boundaries | Review | Founder |
+| [Pipe Data Governance Checklist](../repository/data/validation/PIPE_DATA_GOVERNANCE_CHECKLIST.md) | Founder/specialist approval, category, attribute, import, inquiry, no-price, SEO, CRM, WooCommerce, and rejection gates | Review | Founder |
+
 ### Architecture and Decisions
 
 | Document | Role | Status | Owner |
@@ -201,6 +254,14 @@ These controlled engineering documents live under `repository/` and are indexed 
 | [Sprint 01B Audit](AUDIT_REPORT_SPRINT01B.md) | Current-state environment, WordPress, theme, plugin, repository, Blueprint, traceability, and stop-decision evidence | Review | Founder |
 | [Sprint 01C Audit](AUDIT_REPORT_SPRINT01C.md) | Evidence-only environment-validation, checklist, dependency, rollback, repository, and no-installation audit | Review | Founder |
 | [Sprint 01D Audit](AUDIT_REPORT_SPRINT01D.md) | Evidence-only remote-access, Iran-constraint, Founder-usability, security, repository, and no-connection audit | Review | Founder |
+| [Sprint 02A Audit](AUDIT_REPORT_SPRINT02A.md) | Read-only public WordPress discovery evidence, unknown-state classification, and access blocker record | Review | Founder |
+| [Sprint 02B Audit](AUDIT_REPORT_SPRINT02B.md) | Task-evidence WordPress hosting baseline, SSL, hosting limitation, and no-change record | Review | Founder |
+| [Sprint 02C Audit](AUDIT_REPORT_SPRINT02C.md) | Site Health/runtime/theme/plugin evidence reconciliation and no-go record | Review | Founder |
+| [Sprint 03A Audit](AUDIT_REPORT_SPRINT03A.md) | Product Data Engine structure, completeness, import/no-price/inquiry/variation/SEO readiness, and next-sprint gate | Review | Founder |
+| [Sprint 03B Audit](AUDIT_REPORT_SPRINT03B.md) | Pipe WooCommerce/import mapping completeness, static precheck, forbidden-data, and no-import decision | Review | Founder |
+| [Sprint 03C Audit](AUDIT_REPORT_SPRINT03C.md) | Pipe taxonomy/attribute/category/filter/SEO/CRM classification completeness and next-sprint gate | Review | Founder |
+| [Sprint 03D Audit](AUDIT_REPORT_SPRINT03D.md) | Enterprise Product Engine completeness, template coverage, reusability, scalability, duplication, readiness, and scope decision | Review | Founder |
+| [Sprint 03E Audit](AUDIT_REPORT_SPRINT03E.md) | Enterprise Platform completeness, architecture/engine/governance consistency, scalability, portability, and future-readiness decision | Review | Founder |
 
 ### Repository-Wide Quality System
 
@@ -227,6 +288,7 @@ The reusable quality gates are maintained outside `docs/` in [Enterprise Quality
 - Sprint 01B configuration reports record observed absence/readiness blockers; they contain no active or production configuration and do not convert repository templates into runtime evidence.
 - Sprint 01C checklists define future evidence gates and rollback controls; unchecked steps, component names, and planned checkpoints do not prove readiness or authorize installation.
 - Sprint 01D defines a proposed remote-access route, access policy, SSH checklist, and Iran execution risks; it creates no remote, key, credential, connection, hosting change, deployment, or implementation authority.
+- Sprint 03A Product Data Engine assets are controlled staging sources. Their controlled values do not prove commercial availability, final SKU, taxonomy approval, public URL, stock, price, supplier, import authorization, or WordPress runtime state.
 
 ## Reading Order
 
@@ -289,8 +351,40 @@ The reusable quality gates are maintained outside `docs/` in [Enterprise Quality
 57. [Sprint 01D SSH Access Checklist](../repository/config/SSH_ACCESS_CHECKLIST.md)
 58. [Sprint 01D Deployment Access Policy](../repository/config/DEPLOYMENT_ACCESS_POLICY.md)
 59. [Sprint 01D Iran Execution Risk Register](../repository/config/IRAN_EXECUTION_RISK_REGISTER.md)
-60. Relevant delivery and assurance documents
-61. Relevant ADRs, supporting specifications, and audit records
+60. [Enterprise Platform Manifest](../repository/platform/PLATFORM_MANIFEST.md)
+61. [Enterprise Platform Principles](../repository/platform/PLATFORM_PRINCIPLES.md)
+62. [Enterprise Platform Architecture](../repository/platform/PLATFORM_ARCHITECTURE.md)
+63. [Enterprise Engine Boundaries](../repository/platform/ENGINE_BOUNDARIES.md)
+64. [Enterprise Platform Lifecycle](../repository/platform/PLATFORM_LIFECYCLE.md)
+65. [Enterprise Platform Governance](../repository/platform/PLATFORM_GOVERNANCE.md)
+66. [Enterprise Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md)
+67. [Enterprise Platform Versioning](../repository/platform/PLATFORM_VERSIONING.md)
+68. [Enterprise Platform Evolution](../repository/platform/PLATFORM_EVOLUTION.md)
+69. [Enterprise Product Engine](../repository/engine/product/PRODUCT_ENGINE.md)
+70. [Product Engine Rules](../repository/engine/product/ENGINE_RULES.md)
+71. [Product Engine Workflow](../repository/engine/product/ENGINE_WORKFLOW.md)
+72. [Product Engine Generation Guide](../repository/engine/product/ENGINE_GENERATION_GUIDE.md)
+73. [Product Family Template](../repository/engine/product/PRODUCT_FAMILY_TEMPLATE.md)
+74. [Product Attribute Template](../repository/engine/product/ATTRIBUTE_TEMPLATE.md)
+75. [Product Variation Template](../repository/engine/product/VARIATION_TEMPLATE.md)
+76. [Product Import Template](../repository/engine/product/IMPORT_TEMPLATE.md)
+77. [Product SEO Template](../repository/engine/product/SEO_TEMPLATE.md)
+78. [Product Validation Template](../repository/engine/product/VALIDATION_TEMPLATE.md)
+79. [Stainless Steel Pipe Product Family](../repository/data/products/pipes/PIPE_PRODUCT_FAMILY.md)
+80. [Product Attribute Dictionary](../repository/data/attributes/ATTRIBUTE_DICTIONARY.md)
+81. [Stainless Steel Pipe Variation Matrix](../repository/data/products/pipes/PIPE_VARIATION_MATRIX.md)
+82. [WooCommerce Pipe Import Template](../repository/data/imports/woocommerce/PIPE_IMPORT_TEMPLATE.csv)
+83. [Stainless Steel Pipe SEO Entity Model](../repository/data/seo/PIPE_SEO_ENTITY_MODEL.md)
+84. [Product Data Validation Rules](../repository/data/validation/PRODUCT_DATA_VALIDATION_RULES.md)
+85. [Stainless Steel Pipe WooCommerce Mapping](../repository/data/products/pipes/PIPE_WOOCOMMERCE_MAPPING.md)
+86. [Stainless Steel Pipe Import Mapping](../repository/data/imports/woocommerce/PIPE_IMPORT_MAPPING.md)
+87. [Stainless Steel Pipe Import Precheck](../repository/data/validation/PIPE_IMPORT_PRECHECK.md)
+88. [Pipe Taxonomy and Attribute Classification](../repository/data/taxonomies/PIPE_TAXONOMY_ATTRIBUTE_CLASSIFICATION.md)
+89. [Pipe Category Model](../repository/data/taxonomies/PIPE_CATEGORY_MODEL.md)
+90. [Pipe Attribute Model](../repository/data/attributes/PIPE_ATTRIBUTE_MODEL.md)
+91. [Pipe Data Governance Checklist](../repository/data/validation/PIPE_DATA_GOVERNANCE_CHECKLIST.md)
+92. Relevant delivery and assurance documents
+93. Relevant ADRs, supporting specifications, and audit records
 
 ## Dependency Graph
 
@@ -384,6 +478,12 @@ Baseline + Engineering Guidelines + Sprint 01B/01C blocked evidence
   -> Remote Access and Iran Execution Constraints Architecture
       -> SSH Access Checklist + Deployment Access Policy + Iran Execution Risk Register
           -> NO-GO until hosting, remote, SSH, path, backup/restore, security, and Founder evidence passes
+
+Product/WooCommerce/Taxonomy/Attribute/Inquiry models + Sprint 03A task values
+  -> Stainless Steel Pipe Product Family + Attribute Dictionary
+      -> Candidate Variation Matrix + SEO Entity Model
+          -> WooCommerce staging CSV + Product Data Validation Rules
+              -> Founder/domain review before any expansion or import
 ```
 
 ## Navigation
@@ -433,3 +533,39 @@ Baseline + Engineering Guidelines + Sprint 01B/01C blocked evidence
 - [Sprint 01D Deployment Access Policy](../repository/config/DEPLOYMENT_ACCESS_POLICY.md)
 - [Sprint 01D Iran Execution Risk Register](../repository/config/IRAN_EXECUTION_RISK_REGISTER.md)
 - [Sprint 01D Audit](AUDIT_REPORT_SPRINT01D.md)
+- [Stainless Steel Pipe Product Family](../repository/data/products/pipes/PIPE_PRODUCT_FAMILY.md)
+- [Product Attribute Dictionary](../repository/data/attributes/ATTRIBUTE_DICTIONARY.md)
+- [Stainless Steel Pipe Variation Matrix](../repository/data/products/pipes/PIPE_VARIATION_MATRIX.md)
+- [WooCommerce Pipe Import Template](../repository/data/imports/woocommerce/PIPE_IMPORT_TEMPLATE.csv)
+- [Product Data Validation Rules](../repository/data/validation/PRODUCT_DATA_VALIDATION_RULES.md)
+- [Sprint 03A Audit](AUDIT_REPORT_SPRINT03A.md)
+- [Stainless Steel Pipe WooCommerce Mapping](../repository/data/products/pipes/PIPE_WOOCOMMERCE_MAPPING.md)
+- [Stainless Steel Pipe Import Mapping](../repository/data/imports/woocommerce/PIPE_IMPORT_MAPPING.md)
+- [Stainless Steel Pipe Import Precheck](../repository/data/validation/PIPE_IMPORT_PRECHECK.md)
+- [Sprint 03B Audit](AUDIT_REPORT_SPRINT03B.md)
+- [Pipe Taxonomy and Attribute Classification](../repository/data/taxonomies/PIPE_TAXONOMY_ATTRIBUTE_CLASSIFICATION.md)
+- [Pipe Category Model](../repository/data/taxonomies/PIPE_CATEGORY_MODEL.md)
+- [Pipe Attribute Model](../repository/data/attributes/PIPE_ATTRIBUTE_MODEL.md)
+- [Pipe Data Governance Checklist](../repository/data/validation/PIPE_DATA_GOVERNANCE_CHECKLIST.md)
+- [Sprint 03C Audit](AUDIT_REPORT_SPRINT03C.md)
+- [Enterprise Product Engine](../repository/engine/product/PRODUCT_ENGINE.md)
+- [Product Engine Rules](../repository/engine/product/ENGINE_RULES.md)
+- [Product Engine Workflow](../repository/engine/product/ENGINE_WORKFLOW.md)
+- [Product Engine Generation Guide](../repository/engine/product/ENGINE_GENERATION_GUIDE.md)
+- [Product Family Template](../repository/engine/product/PRODUCT_FAMILY_TEMPLATE.md)
+- [Product Attribute Template](../repository/engine/product/ATTRIBUTE_TEMPLATE.md)
+- [Product Variation Template](../repository/engine/product/VARIATION_TEMPLATE.md)
+- [Product Import Template](../repository/engine/product/IMPORT_TEMPLATE.md)
+- [Product SEO Template](../repository/engine/product/SEO_TEMPLATE.md)
+- [Product Validation Template](../repository/engine/product/VALIDATION_TEMPLATE.md)
+- [Sprint 03D Audit](AUDIT_REPORT_SPRINT03D.md)
+- [Enterprise Platform Manifest](../repository/platform/PLATFORM_MANIFEST.md)
+- [Enterprise Platform Principles](../repository/platform/PLATFORM_PRINCIPLES.md)
+- [Enterprise Platform Architecture](../repository/platform/PLATFORM_ARCHITECTURE.md)
+- [Enterprise Engine Boundaries](../repository/platform/ENGINE_BOUNDARIES.md)
+- [Enterprise Platform Lifecycle](../repository/platform/PLATFORM_LIFECYCLE.md)
+- [Enterprise Platform Governance](../repository/platform/PLATFORM_GOVERNANCE.md)
+- [Enterprise Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md)
+- [Enterprise Platform Versioning](../repository/platform/PLATFORM_VERSIONING.md)
+- [Enterprise Platform Evolution](../repository/platform/PLATFORM_EVOLUTION.md)
+- [Sprint 03E Audit](AUDIT_REPORT_SPRINT03E.md)
