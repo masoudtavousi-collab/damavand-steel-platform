@@ -151,7 +151,19 @@ The following older documents contained unresolved `TBD.` placeholders. Batch 02
 | --- | --- | --- | --- |
 | OQ-REL-001 | Which approval sequence, assigned owners, exact version matrix, and minimum security/operations evidence will close the blockers before Sprint 02? | [Implementation Readiness](IMPLEMENTATION_READINESS.md#blocking-items) | Open; Founder and specialist decisions required |
 | OQ-REL-002 | When may the local v1.0 baseline be pushed to an approved primary remote and replicated to an independent mirror/backup? | [Repository Baseline](BASELINE_v1.0.md#baseline-integrity-and-supersession) | Open; OQ-GOV-021 remains canonical for provider/custody parameters |
-| OQ-REL-003 | Which Sprint 02 objectives and deliverables receive separate implementation authorization? | [Sprint 02](SPRINT_ROADMAP.md#sprint-02-wordpress-foundation) | Open; roadmap inclusion is not authorization |
+| OQ-REL-003 | Which Sprint 02 objectives and deliverables receive separate implementation authorization? | [Sprint 02](SPRINT_ROADMAP.md#sprint-02--wordpress-foundation) | Open; roadmap inclusion is not authorization |
+
+## Remote Access Questions
+
+| ID | Question | Related document | Status |
+| --- | --- | --- | --- |
+| OQ-RA-001 | Does the exact Server.ir plan support SSH, a project-limited user, Git, PHP CLI, WP-CLI, host-key evidence, logs, and the required backup/restore controls? | [Remote Access Architecture](45_REMOTE_ACCESS_ARCHITECTURE.md#open-questions) | Open; provider evidence required |
+| OQ-RA-002 | What is the exact Damavand project/document-root path, domain mapping, isolation boundary, and permitted filesystem scope? | [SSH Access Checklist](../repository/config/SSH_ACCESS_CHECKLIST.md#phase-4--identify-hosting-path) | Open; no connection attempted |
+| OQ-RA-003 | Which GitHub private account/organization, owners, MFA, recovery, branch protection, deploy identity, mirror, and independent backup are approved? | [Recommended Architecture](45_REMOTE_ACCESS_ARCHITECTURE.md#recommended-architecture) | Open; FD-REL-004 also applies |
+| OQ-RA-004 | Which named operator, key custodian, reviewers, expiry, rotation, revocation, and emergency delegate are approved? | [Deployment Access Policy](../repository/config/DEPLOYMENT_ACCESS_POLICY.md#who-can-access) | Open; access denied by default |
+| OQ-RA-005 | Which staging or isolated safe-test target and domain/subdomain strategy are approved? | [Required Future Setup Checklist](45_REMOTE_ACCESS_ARCHITECTURE.md#required-future-setup-checklist) | Open |
+| OQ-RA-006 | Which complete backup/restore method has measured integrity, isolation, recovery time, and accountable ownership? | [Rollback Plan](../repository/config/ROLLBACK_PLAN.md) | Open; setup is NO-GO without proof |
+| OQ-RA-007 | Which lawful and secure fallback is approved for GitHub, WordPress.org, vendor licensing, cPanel, SSH, DNS/TLS, or email disruption? | [Iran Execution Risk Register](../repository/config/IRAN_EXECUTION_RISK_REGISTER.md) | Open; all path-specific likelihoods unknown |
 
 ## Resolution Rules
 

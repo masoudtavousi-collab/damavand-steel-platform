@@ -215,6 +215,17 @@ Documents 35 through 44 are Review-state Blueprints. They authorize no code, ins
 
 The baseline is approved only as an exact local repository snapshot. Read each included document's lifecycle before treating its content as authority. The Roadmap and Engineering Guidelines remain Review-state proposals, and no sprint is authorized by this path.
 
+## Remote Access and Iran Execution Reading Path
+
+1. Complete the [Universal Entry Sequence](#universal-entry-sequence).
+2. Read [Repository Baseline v1.0](BASELINE_v1.0.md), [Engineering Guidelines](ENGINEERING_GUIDELINES.md), and [Implementation Readiness](IMPLEMENTATION_READINESS.md).
+3. Read the evidence boundaries in [Sprint 01B Audit](AUDIT_REPORT_SPRINT01B.md) and [Sprint 01C Audit](AUDIT_REPORT_SPRINT01C.md).
+4. Read [Remote Access and Iran Execution Constraints Architecture](45_REMOTE_ACCESS_ARCHITECTURE.md).
+5. Review [SSH Access Checklist](../repository/config/SSH_ACCESS_CHECKLIST.md), [Deployment Access Policy](../repository/config/DEPLOYMENT_ACCESS_POLICY.md), and [Iran Execution Risk Register](../repository/config/IRAN_EXECUTION_RISK_REGISTER.md).
+6. Review [Founder Decision Log](17_FOUNDER_DECISION_LOG.md), [Open Questions](18_OPEN_QUESTIONS.md), and [Sprint 01D Audit](AUDIT_REPORT_SPRINT01D.md).
+
+This path documents a proposed route only. It grants no remote, account, credential, SSH connection, hosting mutation, deployment, WP-CLI action, WordPress installation, or implementation authority.
+
 ## Reading-State Rules
 
 - `Approved` sources may govern within their declared scope.
@@ -236,6 +247,8 @@ The baseline is approved only as an exact local repository snapshot. Read each i
 - [Enterprise WordPress Solution Blueprint](35_WORDPRESS_BLUEPRINT.md)
 - [Repository Baseline v1.0](BASELINE_v1.0.md)
 - [Implementation Readiness Assessment](IMPLEMENTATION_READINESS.md)
+- [Remote Access and Iran Execution Constraints Architecture](45_REMOTE_ACCESS_ARCHITECTURE.md)
+- [Sprint 01D Audit](AUDIT_REPORT_SPRINT01D.md)
 
 ## Navigation
 

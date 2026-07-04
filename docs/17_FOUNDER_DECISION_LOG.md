@@ -113,6 +113,17 @@ Index every repository item explicitly marked as requiring a Founder decision. T
 | FD-REL-003 | Approve, revise, or reject the Engineering Guidelines and future branch/review/rollback/quality controls. | [Engineering Guidelines](ENGINEERING_GUIDELINES.md) | Pending; exact baseline bootstrap does not approve future workflow |
 | FD-REL-004 | Approve remote, independent mirror, backup custody, signing, branch protection, and recovery parameters for distribution of the local v1.0 baseline. | [Baseline Known Limitations](BASELINE_v1.0.md#known-limitations) and [Git Governance](GIT_GOVERNANCE.md) | Pending; local baseline only |
 
+## Remote Access Decisions Required
+
+| ID | Decision required | Source | Status |
+| --- | --- | --- | --- |
+| FD-RA-001 | Approve, revise, defer, or reject RA-001 through RA-012 and the primary/future/emergency access models. | [Remote Access Architecture](45_REMOTE_ACCESS_ARCHITECTURE.md#proposed-architecture-decisions) | Pending; no connection or deployment authorized |
+| FD-RA-002 | Approve the exact Server.ir account/service as a target only after SSH, cPanel, Git, PHP CLI, WP-CLI, path, logging, backup, and support evidence. | [Current Environment](45_REMOTE_ACCESS_ARCHITECTURE.md#current-environment) | Pending; target capabilities unverified |
+| FD-RA-003 | Approve GitHub private-remote ownership, MFA, access, recovery, protection, independent backup, and Iran-connectivity controls. | [Recommended Architecture](45_REMOTE_ACCESS_ARCHITECTURE.md#recommended-architecture) | Pending; no approved primary remote |
+| FD-RA-004 | Approve the SSH operator, key custodian, hosting identity, project-path boundary, access expiry/review, logging, and revocation. | [SSH Access Checklist](../repository/config/SSH_ACCESS_CHECKLIST.md) | Pending; no key or access grant |
+| FD-RA-005 | Approve backup/restore ownership, staging/safe-test target, emergency authority, and manual cPanel fallback rules. | [Deployment Access Policy](../repository/config/DEPLOYMENT_ACCESS_POLICY.md) | Pending; recovery unproven |
+| FD-RA-006 | Decide the actual SSH setup go/no-go only after every mandatory access, security, Git, path, backup/restore, and approval gate passes. | [Go / No-Go Rules](45_REMOTE_ACCESS_ARCHITECTURE.md#go--no-go-decision-rules) | Pending; current decision is NO-GO |
+
 ## Explicit Founder TODO Register
 
 | ID | Document | Section requiring decision | Status |

@@ -28,10 +28,10 @@ This record describes files available in the current repository state and local 
 
 | Measure | Current evidence | Status |
 | --- | --- | --- |
-| Documentation inventory | 90 Markdown files under `docs/` | Measured for Repository Freeze v1.0 |
-| Documentation Index coverage | 90 of 90 documentation files listed | Complete for current inventory |
+| Documentation inventory | 95 Markdown files under `docs/` and 14 controlled Markdown files under `repository/` | Measured for Sprint 01D after audit creation |
+| Documentation Index coverage | 95 of 95 documentation files plus all 14 controlled repository documents listed | Complete for current inventory |
 | Orphan documentation | 0 files without an incoming local documentation link, excluding the index entry point | None detected |
-| Local Markdown links and anchors | 2,520 checked with 0 failures in the Repository Freeze v1.0 Audit | Validation required on every change |
+| Local Markdown links and anchors | 3,039 checked with 0 failures across controlled `docs/` and `repository/` Markdown in the Sprint 01D Audit | Validation required on every change |
 | Substantive content | Draft placeholders and Founder TODOs remain in foundation, delivery, and assurance documents | Incomplete |
 
 Repository completeness means inventory and discoverability only. It does not imply that Draft requirements, architecture, business content, or implementation prerequisites are complete.
@@ -60,15 +60,15 @@ All requested capabilities have a current canonical location. None becomes appro
 
 ## Authority Coverage
 
-- The Documentation Index classifies the role, status, and owner of all 90 documentation files.
-- The canonical metadata `Authority` field is present in 60 of 90 documentation files.
+- The Documentation Index classifies the role, status, and owner of all 95 documentation files and the 14 controlled engineering/evidence documents under `repository/`.
+- The canonical metadata `Authority` field is present in 65 of 95 documentation files; all 14 controlled `repository/` documents also use the complete model.
 - CP-001 through CP-010 retain explicit accepted decision status and documented origin in the Project Bible.
 - Review, audit, validation, health, task, architecture-proposal, and conversation outputs are explicitly non-authoritative unless approved through the governing process.
 - Full metadata authority coverage remains incomplete for legacy documents.
 
 ## Metadata Coverage
 
-- Sixty documentation files use the complete 17-field metadata model.
+- Sixty-five documentation files under `docs/` and all 14 controlled documents under `repository/` use the complete 17-field metadata model.
 - The Repository Metadata Standard is the only document that defines the canonical field list.
 - The Document Template mirrors that model.
 - Legacy documents with partial or section-based metadata remain under the transitional rule; no repository-wide normalization is authorized by this health record.
@@ -77,7 +77,7 @@ All requested capabilities have a current canonical location. None becomes appro
 
 - The Documentation Index lists every current documentation file.
 - Navigation Map, Reading Order, Knowledge Graph, Traceability Matrix, Repository Health, architecture/data models, and batch audits are mutually discoverable through explicit links.
-- Founder, developer, AI, auditor, SEO, WordPress engineer, content-team, product-data, Information Architecture, Content/Entity Architecture, WordPress Solution Blueprint, and release-engineering paths remain defined.
+- Founder, developer, AI, auditor, SEO, WordPress engineer, content-team, product-data, Information Architecture, Content/Entity Architecture, WordPress Solution Blueprint, release-engineering, and remote-access/Iran-execution paths remain defined.
 - Current local-link, anchor, orphan, and index validation results are recorded in the latest batch audit.
 
 ## Traceability Coverage
@@ -88,6 +88,10 @@ All requested capabilities have a current canonical location. None becomes appro
 - CONTENT-001–CONTENT-008, ERM-001–ERM-008, SCHEMA-001–SCHEMA-009, CTYPE-001–CTYPE-007, MEDIA-001–MEDIA-009, and SEOENT-001–SEOENT-009 map to origins, dependent documents, future evidence, and unauthorized implementation status.
 - WPBP, BLOCKSY, ELEMENTOR, WCCFG, CPTBP, TAXBP, FIELD, INQWF, ROLE, and PLUG decision ranges map to origins, dependent documents, future evidence, and unauthorized implementation status.
 - FRZ-001 through FRZ-006 map exact baseline scope, version, tags, authority preservation, release boundary, and deferred external controls.
+- S01A-001 through S01A-010 map the workspace, folder ownership, exclusions, naming/versioning, migration/backup, quality/build, and immutable-baseline boundaries.
+- S01B-001 through S01B-005 map local-environment evidence, the mandatory stop decision, absent installations, template/runtime separation, and unchanged Blocked readiness.
+- S01C-001 through S01C-008 map evidence classification, hosting and clean-install gates, approved-name-only component scope, dependency stops, stage validation, rollback checkpoints, and current `NO-GO` status.
+- RA-001 through RA-012 and IR-001 through IR-012 map the proposed remote route, access/security/recovery boundaries, Founder usability, Iran execution risks, and current actual-SSH-setup `NO-GO` status.
 - Governance concerns map decision classification, lifecycle, dependencies, inheritance, conflicts, validation, open work, and AI collaboration to canonical sources and evidence.
 - Future implementation remains `Not authorized` in the Traceability Matrix.
 - Legacy documents do not all carry full document-level traceability metadata.
@@ -104,9 +108,10 @@ All requested capabilities have a current canonical location. None becomes appro
 Final read-only Git inspection for Repository Freeze v1.0 reports:
 
 - The working directory is a Git repository on `main` with one initial baseline commit.
-- The baseline contains 157 tracked files and the tracked working tree is clean.
+- The immutable baseline contains 157 tracked files; `main` and both baseline tags still resolve to the original baseline commit.
 - Annotated tags `baseline-v1.0.0` and `repo-v1.0.0` resolve to the same baseline commit.
 - The tagged tree contains the baseline manifest, release notes, readiness assessment, roadmap, engineering guidelines, synchronized repository records, and Freeze Audit.
+- The current working tree contains the explicitly scoped Sprint 01A repository-structure plus Sprint 01B, Sprint 01C, and Sprint 01D evidence/documentation candidate changes; none is represented as part of baseline v1.0.0.
 - No primary remote, independent mirror, backup, signing evidence, branch protection, or production release exists.
 - [Git Governance](GIT_GOVERNANCE.md) remains Proposed Governing/Review; the exact Founder-authorized baseline does not approve the entire policy.
 
@@ -168,10 +173,55 @@ Final read-only Git inspection for Repository Freeze v1.0 reports:
 - The local baseline has no approved remote, mirror, backup custody, signing, branch protection, or recovery evidence.
 - Implementation remains blocked pending the approvals and prerequisites recorded in Implementation Readiness.
 
+## Sprint 01A Repository Bootstrap Coverage
+
+- A new top-level `repository/` workspace contains exactly 14 implementation-readiness folders: `wordpress`, `config`, `deployment`, `scripts`, `quality`, `backups`, `migration`, `assets`, `imports`, `exports`, `logs`, `tools`, `docs_generated`, and `templates`.
+- Thirteen folders contain only a `.gitkeep` placeholder. `repository/config/` contains its `.gitkeep` plus 11 Markdown evidence/checklist/policy/register documents and no active configuration.
+- The workspace root contains one repository-only `.gitignore` and three controlled Markdown engineering documents.
+- `backups`, `exports`, `logs`, `docs_generated`, and `imports` ignore future payloads by default while preserving their placeholders.
+- Implementation Rules define S01A-001 through S01A-010, folder ownership, naming/versioning, migration/backup, quality, build, and rollback boundaries.
+- Build and Pre-Implementation checklists contain no checked items and explicitly block build and WordPress installation.
+- No PHP, JavaScript, CSS, WordPress Core, plugin/theme package, production configuration, migration, backup payload, import/export payload, log, generated documentation, or implementation artifact exists under `repository/`.
+- Baseline tags remain unchanged; Sprint 01A is a working-tree review candidate and does not alter the immutable v1.0.0 baseline.
+
+## Sprint 01B Environment Preparation Coverage
+
+- The inspected target is a local macOS 26.5.2 / Darwin 25.5.0 ARM64 workstation; no external hosting target was available.
+- Apache 2.4.66 is present as a binary but is not running; TCP 80, 443, 8080, and 3306 are closed.
+- PHP, MariaDB/MySQL, WP-CLI, Docker/Podman, Composer, Node.js, and npm are absent.
+- WordPress Core is absent; WooCommerce, Blocksy/Blocksy Pro, and Elementor Pro are not installed or activated.
+- No exact approved component versions, commercial package/license paths, active HTTPS, database connection, permalink capability, runtime PHP limits/extensions, or active filesystem method exist.
+- `wp-content` and `uploads` are mode `0755` and writable by the current local owner, but web-service identity suitability is not verified.
+- All Build and Pre-Implementation checklist items remain unchecked. Installation stopped before any download, setup, activation, wizard, page, product, template, or business configuration.
+- Three `repository/config/` Markdown files record evidence only; they are not production configuration.
+
+## Sprint 01C Environment Validation Coverage
+
+- Five Review-state supporting documents define hosting validation, a clean WordPress installation checklist, a conditional approved-component sequence, post-install validation, and rollback controls.
+- All hosting, installation, component, post-install, backup, recovery, and acceptance checks remain unchecked; planned checkpoints `R0` through `R5` are all Missing.
+- The conditional sequence names only WordPress Core, Blocksy, WooCommerce, Blocksy Pro, and Elementor Pro. No version, package, license, compatibility record, or dependency is approved by Sprint 01C.
+- Missing exact Blocksy Pro or Elementor Pro package/dependency evidence stops the affected stage; no base package, replacement, or vendor is inferred.
+- S01C-001 through S01C-008 are registered as evidence and gate boundaries with installation status `Not authorized` or `Blocked`.
+- Current validation covers 104 controlled Markdown files, 2,873 local links/anchors with zero failures, complete index coverage, zero orphans, zero duplicate level-two headings, zero unclosed fences, zero dependency cycles, and zero authority-source cycles.
+- Sprint 01C adds no PHP, JavaScript, CSS, WordPress Core, plugin/theme package, production configuration, page, product, template, database change, import, or runtime mutation.
+- The current real-installation decision is `NO-GO` pending real hosting, exact package/dependency/license, security/operations, backup/restore, and approval evidence.
+
+## Sprint 01D Remote Access and Iran Execution Coverage
+
+- One Review-state architecture proposal and three Review-state supporting repository documents define access models, SSH setup/validation gates, deployment access policy, and IR-001 through IR-012 planning risks.
+- The primary future candidate is a private GitHub history/collaboration remote plus key-based, project-limited SSH from an approved MacBook to a confirmed Damavand path; it is not established or authorized.
+- GitHub-to-host deployment and GitHub Actions remain conditional future options. Manual cPanel upload is emergency fallback only.
+- Server.ir, cPanel, SSH, GitHub connectivity, PHP CLI, Git, WP-CLI, database access, target path, permissions, staging, backup/restore, DNS/TLS, and email capabilities remain unverified.
+- Every SSH checklist item is unchecked. No key, credential, remote, account, connection, workflow, runner, deployment, hosting mutation, WordPress installation, plugin/theme action, or production configuration was created.
+- Access is denied by default; root/shared access, secret exposure, direct Core/vendor edits, unreviewed deployment, and dirty-state deployment are prohibited.
+- Iran constraints are planning risks with `Unknown` likelihood, not measured incidents or universal availability claims.
+- FD-RA-001 through FD-RA-006 and OQ-RA-001 through OQ-RA-007 remain unresolved.
+- Actual SSH setup remains `NO-GO` pending provider, identity, host-key, path, security, Git, backup/restore, risk, and approval evidence.
+
 ## Known Gaps
 
 - Founder approval is pending for FD-GOV-002, FD-GOV-003, FD-GOV-005 through FD-GOV-019, FD-ARC-001, and FD-ARC-002, except previously resolved entries.
-- Full canonical metadata coverage is 60 of 90 documentation files.
+- Full canonical metadata coverage is 65 of 95 documentation files under `docs/`; 30 legacy documentation files remain incomplete.
 - Foundation, business, architecture, technology, WordPress, delivery, security, SEO, UX, testing, and changelog documents contain unresolved Draft sections or placeholders.
 - Documentation numbering, broad versioning policy, steel terminology, and child-theme placeholder decisions remain unresolved; the exact local v1.0.0 baseline decision is resolved.
 - External-link validation is not part of the current evidence set.
@@ -183,6 +233,10 @@ Final read-only Git inspection for Repository Freeze v1.0 reports:
 - FD-CEA-001 through FD-CEA-007 and OQ-CEA-001 through OQ-CEA-010 remain unresolved; no Batch 07 model is Approved.
 - FD-WPB-001 through FD-WPB-010 and OQ-WPB-001 through OQ-WPB-010 remain unresolved; no Batch 08 Blueprint is Approved and implementation remains blocked.
 - FD-REL-001 through FD-REL-004 and OQ-REL-001 through OQ-REL-003 remain unresolved; roadmap/guideline inclusion does not authorize Sprint 02.
+- S01A-001 through S01A-010 and all Build/Pre-Implementation checklist evidence remain pending Founder/specialist review; no readiness blocker is closed by folder creation.
+- S01B-001 through S01B-005 document the blocked environment. Hosting, runtime, versions, packages/licenses, security/recovery/testing, and approval dependencies remain unresolved.
+- S01C checklists remain entirely unchecked. No real hosting evidence, exact dependency approval, backup/restore test, checkpoint, or installation authorization exists.
+- Sprint 01D establishes no primary remote or remote-access capability. All Server.ir/GitHub/SSH/cPanel/path/connectivity/security/recovery evidence and RA/IR approvals remain open.
 
 ## Future Work
 
@@ -200,6 +254,10 @@ Final read-only Git inspection for Repository Freeze v1.0 reports:
 - Obtain Founder and applicable content, domain, SEO, legal, privacy, security, accessibility, technical, and localization review of CONTENT/ERM/SCHEMA/CTYPE/MEDIA/SEOENT decisions before any content/entity/media/semantic configuration.
 - Obtain Founder and applicable technical, design, content, domain, Sales, SEO, security, privacy, accessibility, operations, and release review of all Batch 08 decision ranges before implementation planning or configuration.
 - Resolve the Implementation Readiness blockers and obtain separate exact Sprint 02 authorization before any WordPress foundation work.
+- Review Sprint 01A folder ownership, Implementation Rules, and both checklists; keep every gate blocked until evidence and approval exist.
+- Provide and approve the exact environment/version/package/license/security/recovery inputs before retrying Sprint 01B installation.
+- Complete and approve the Sprint 01C hosting, clean-install, dependency, validation, and rollback evidence before any real installation go/no-go reconsideration.
+- Obtain provider evidence and resolve FD-RA/OQ-RA items before reconsidering actual SSH setup; never request credentials through repository or chat.
 
 ## Navigation
 
@@ -240,3 +298,22 @@ Final read-only Git inspection for Repository Freeze v1.0 reports:
 - [Enterprise Implementation Sprint Roadmap](SPRINT_ROADMAP.md)
 - [Enterprise Engineering Guidelines](ENGINEERING_GUIDELINES.md)
 - [Repository Freeze v1.0 Audit](AUDIT_REPORT_FREEZE_v1.0.md)
+- [Repository Implementation Rules](../repository/IMPLEMENTATION_RULES.md)
+- [Repository Build Checklist](../repository/BUILD_CHECKLIST.md)
+- [Pre-Implementation Checklist](../repository/PRE_IMPLEMENTATION_CHECKLIST.md)
+- [Sprint 01A Audit](AUDIT_REPORT_SPRINT01A.md)
+- [Sprint 01B Environment Report](../repository/config/ENVIRONMENT_REPORT.md)
+- [Sprint 01B Plugin Inventory](../repository/config/PLUGIN_INVENTORY.md)
+- [Sprint 01B WordPress Baseline](../repository/config/WORDPRESS_BASELINE.md)
+- [Sprint 01B Audit](AUDIT_REPORT_SPRINT01B.md)
+- [Sprint 01C Hosting Validation Checklist](../repository/config/HOSTING_VALIDATION_CHECKLIST.md)
+- [Sprint 01C WordPress Installation Checklist](../repository/config/WORDPRESS_INSTALLATION_CHECKLIST.md)
+- [Sprint 01C Plugin Installation Sequence](../repository/config/PLUGIN_INSTALLATION_SEQUENCE.md)
+- [Sprint 01C Post-Install Validation](../repository/config/POST_INSTALL_VALIDATION.md)
+- [Sprint 01C Rollback Plan](../repository/config/ROLLBACK_PLAN.md)
+- [Sprint 01C Audit](AUDIT_REPORT_SPRINT01C.md)
+- [Remote Access and Iran Execution Constraints Architecture](45_REMOTE_ACCESS_ARCHITECTURE.md)
+- [Sprint 01D SSH Access Checklist](../repository/config/SSH_ACCESS_CHECKLIST.md)
+- [Sprint 01D Deployment Access Policy](../repository/config/DEPLOYMENT_ACCESS_POLICY.md)
+- [Sprint 01D Iran Execution Risk Register](../repository/config/IRAN_EXECUTION_RISK_REGISTER.md)
+- [Sprint 01D Audit](AUDIT_REPORT_SPRINT01D.md)

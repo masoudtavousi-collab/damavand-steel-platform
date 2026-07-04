@@ -68,6 +68,19 @@ Sequence future implementation into ten gated sprints without inventing unresolv
 - No implementation or configuration is introduced.
 - Deferred remote, mirror, backup, signing, and approval items are recorded.
 
+## Sprint 01A–01D Foundation Extensions
+
+The following Review-state extensions prepare later implementation without changing the approved v1.0 baseline or authorizing Sprint 02:
+
+| Extension | Scope | Exit boundary |
+| --- | --- | --- |
+| Sprint 01A | Repository workspace skeleton, implementation rules, and pre-installation gates | No implementation artifacts or installation |
+| Sprint 01B | Read-only local environment evidence and mandatory installation stop | No hosting claim, download, setup, or activation |
+| Sprint 01C | Hosting/install/component-validation and rollback checklists | Every real-hosting and installation gate remains evidence-dependent |
+| Sprint 01D | Remote-access architecture, SSH checklist, access policy, and Iran execution risk register | No Git remote, key, credential, SSH connection, hosting change, deployment, or WordPress installation |
+
+Sprint 01D recommends a future private-GitHub plus project-limited SSH path only after provider capability, target path, least privilege, secret handling, backup/restore, Git state, connectivity, and Founder/specialist approvals pass. The current actual-SSH-setup decision remains `NO-GO`.
+
 ## Sprint 02 — WordPress Foundation
 
 ### Objectives
@@ -350,3 +363,4 @@ Roadmap changes require impact review across dependencies, authority, sequence, 
 - [Engineering Guidelines](ENGINEERING_GUIDELINES.md)
 - [Repository Baseline v1.0](BASELINE_v1.0.md)
 - [Founder Decision Log](17_FOUNDER_DECISION_LOG.md)
+- [Remote Access and Iran Execution Constraints Architecture](45_REMOTE_ACCESS_ARCHITECTURE.md)

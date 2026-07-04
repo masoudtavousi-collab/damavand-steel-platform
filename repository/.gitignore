@@ -1,0 +1,16 @@
+# Runtime, generated, exported, and backup artifacts are never repository sources.
+backups/*
+!backups/.gitkeep
+
+exports/*
+!exports/.gitkeep
+
+logs/*
+!logs/.gitkeep
+
+docs_generated/*
+!docs_generated/.gitkeep
+
+# Imports require explicit review before they become controlled repository inputs.
+imports/*
+!imports/.gitkeep

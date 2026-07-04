@@ -159,6 +159,50 @@ These accepted decisions are limited to the exact Founder-authorized local repos
 | FRZ-005 | Treat v1.0 as a repository/knowledge engineering baseline, not a product release, production release, or implementation authorization. | [Release Classification](RELEASE_NOTES_v1.0.md#release-classification) | Accepted by Founder task directive dated 2026-07-04 |
 | FRZ-006 | Defer remote, mirror, backup custody, signing, branch protection, and production release until separately approved and evidenced. | [Known Limitations](BASELINE_v1.0.md#known-limitations) | Accepted for v1.0 scope; operational decisions remain pending |
 
+## Sprint 01A Repository Bootstrap Decisions
+
+All Sprint 01A decisions remain Review-state repository-engineering proposals except boundaries directly required by the current task and accepted baseline. They authorize no implementation.
+
+| IDs | Decision set | Source | Status |
+| --- | --- | --- | --- |
+| S01A-001–S01A-010 | Isolated workspace, folder ownership, excluded runtime/sensitive data, naming, version separation, migration safety, external backups, quality gates, no implementation, and immutable-baseline rollback | [Repository Implementation Rules](../repository/IMPLEMENTATION_RULES.md#repository-bootstrap-decisions) | Proposed/derived; pending Founder review; no build or installation authorized |
+
+## Sprint 01B Environment Preparation Decisions
+
+| ID | Decision/observed boundary | Source | Status |
+| --- | --- | --- | --- |
+| S01B-001 | Treat the inspected target as a local workstation only; no external hosting environment is claimed or configured. | [Environment Report](../repository/config/ENVIRONMENT_REPORT.md#evidence-boundary) | Current-state evidence |
+| S01B-002 | Stop WordPress/component installation because mandatory runtime, exact-version, package/license, security, recovery, testing, and approval prerequisites are missing. | [Blocking Dependencies](../repository/config/ENVIRONMENT_REPORT.md#blocking-dependencies) | Required stop decision under Pre-Implementation Checklist |
+| S01B-003 | Install and activate no WordPress, WooCommerce, Blocksy/Blocksy Pro, Elementor Pro, or additional plugin/theme package. | [Plugin Inventory](../repository/config/PLUGIN_INVENTORY.md) | Current-state evidence |
+| S01B-004 | Keep repository templates and declared constraints separate from observed active runtime values. | [Environment Report](../repository/config/ENVIRONMENT_REPORT.md) | Required evidence boundary |
+| S01B-005 | Keep implementation readiness Blocked; environment reports close no unchecked gate. | [WordPress Baseline](../repository/config/WORDPRESS_BASELINE.md#installation-decision) | Current-state evidence; Founder remediation required |
+
+## Sprint 01C Environment Validation Decisions
+
+These records define evidence and stop boundaries for Sprint 01C. They do not approve versions, packages, dependencies, hosting, installation, activation, configuration, or implementation.
+
+| ID | Decision/observed boundary | Source | Status |
+| --- | --- | --- | --- |
+| S01C-001 | Carry Sprint 01B observations forward only as dated local evidence; keep unknown, runtime-dependent, and hosting-dependent items unresolved. | [Hosting Validation Checklist](../repository/config/HOSTING_VALIDATION_CHECKLIST.md#sprint-01b-review-classification) | Required evidence boundary |
+| S01C-002 | Require every mandatory real-hosting validation item to pass with evidence before installation. | [Hosting Validation Checklist](../repository/config/HOSTING_VALIDATION_CHECKLIST.md#checklist-rules) | Proposed gate; pending approval and evidence |
+| S01C-003 | Permit a clean WordPress installation only after exact target/version/package, authorization, security, and restorable `R0` evidence exists. | [WordPress Installation Checklist](../repository/config/WORDPRESS_INSTALLATION_CHECKLIST.md) | Proposed gate; installation not authorized |
+| S01C-004 | Limit the future component sequence to WordPress Core, Blocksy, WooCommerce, Blocksy Pro, and Elementor Pro as named by repository governance. | [Plugin Installation Sequence](../repository/config/PLUGIN_INSTALLATION_SEQUENCE.md#evidence-boundary) | Scope boundary; no install authorized |
+| S01C-005 | Stop at any package whose exact dependency chain is not explicitly approved; do not infer or select a dependency. | [Plugin Installation Sequence](../repository/config/PLUGIN_INSTALLATION_SEQUENCE.md#dependency-and-activation-order) | Required stop boundary |
+| S01C-006 | Require validation and acceptance after clean WordPress and after every approved component stage. | [Post-Install Validation](../repository/config/POST_INSTALL_VALIDATION.md) | Proposed evidence gate |
+| S01C-007 | Require a complete, externally held, independently restorable checkpoint before every mutation. | [Rollback Plan](../repository/config/ROLLBACK_PLAN.md#rollback-checkpoints) | Proposed recovery gate |
+| S01C-008 | Keep the current real-installation decision `NO-GO` because hosting, runtime, package/dependency, license, recovery, and approval evidence is missing. | [Sprint 01C Audit](AUDIT_REPORT_SPRINT01C.md#go--no-go-decision) | Current-state evidence |
+
+## Sprint 01D Remote Access Architecture Decisions
+
+RA-001 through RA-012 are Review-state proposals and security boundaries. Their registration does not create a GitHub remote, key, credential, SSH account, connection, deployment, hosting change, WordPress installation, or implementation authority.
+
+| IDs | Decision set | Source | Status |
+| --- | --- | --- | --- |
+| RA-001–RA-005 | Documentation-only boundary; future private GitHub history; project-limited SSH primary candidate; conditional GitHub deployment/Actions; cPanel emergency fallback | [Remote Access Architecture](45_REMOTE_ACCESS_ARCHITECTURE.md#proposed-architecture-decisions) | Proposed; pending Founder/security/operations/hosting review |
+| RA-006–RA-007 | No root/shared identity; least privilege, project-path restriction, key-based access, and strict secret/license protection | [Remote Access Architecture](45_REMOTE_ACCESS_ARCHITECTURE.md#security-rules) | Required security boundary; exact implementation pending |
+| RA-008–RA-010 | Pre-change restorable backup, clean reviewed Git state, validation/audit, and tested rollback | [Remote Access Architecture](45_REMOTE_ACCESS_ARCHITECTURE.md#risk-controls) | Proposed gates; evidence missing |
+| RA-011–RA-012 | Founder-manageable operation and connectivity-independent fallback without weakening integrity, licensing, security, or approval | [Remote Access Architecture](45_REMOTE_ACCESS_ARCHITECTURE.md#founder-usability-constraints) | Proposed; pending Founder review |
+
 ## Pending Decisions
 
 - Items explicitly requiring Founder approval are tracked in the [Founder Decision Log](17_FOUNDER_DECISION_LOG.md).
@@ -173,6 +217,10 @@ These accepted decisions are limited to the exact Founder-authorized local repos
 - Batch 07 Content and Entity Architecture decisions remain Review-state proposals. Exact content inventories, entities, owners, lifecycles, fields, schema eligibility, media standards, SEO intents, public projections, AI/LLM compatibility scope, and implementation remain unapproved.
 - Batch 08 WordPress Solution Blueprint decisions remain Review-state proposals. Exact settings, components, versions, roles, fields, CPTs, taxonomies, templates, workflows, providers, deployment, upgrades, and implementation remain unapproved.
 - Implementation Readiness, Sprint Roadmap, and Engineering Guidelines remain Review-state outputs. Their existence and inclusion in v1.0 do not authorize Sprint 02 or later work.
+- Sprint 01A folders, rules, and checklists remain structure/readiness artifacts. Every Build and Pre-Implementation checklist item is unchecked, and WordPress installation remains blocked.
+- Sprint 01B records a stop decision rather than an installation. Exact versions, packages, licenses, hosting, PHP, MariaDB, HTTPS, backup/restore, tests, and approvals remain unresolved.
+- Sprint 01C records unchecked validation, installation, component-sequence, post-install, and rollback controls. It closes no environment or implementation gate and adds no approved dependency.
+- Sprint 01D remote/access proposals remain Review-state. Server.ir, cPanel, GitHub, SSH, Git, PHP CLI, WP-CLI, target path, credentials, connectivity, backup/restore, and staging capabilities are unverified; actual SSH setup remains `NO-GO`.
 
 ## Decision Registration Rules
 

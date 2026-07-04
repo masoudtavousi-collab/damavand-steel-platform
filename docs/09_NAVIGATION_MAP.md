@@ -83,6 +83,30 @@ Define repository navigation and reading paths without changing directory owners
 
 This path records the local baseline and future gates. It does not promote Review-state architecture/Blueprint documents or authorize implementation.
 
+### Sprint 01A Repository Bootstrap Path
+
+[Repository Baseline v1.0](BASELINE_v1.0.md) → [Implementation Readiness](IMPLEMENTATION_READINESS.md) → [Engineering Guidelines](ENGINEERING_GUIDELINES.md) → [Repository Implementation Rules](../repository/IMPLEMENTATION_RULES.md) → [Repository Build Checklist](../repository/BUILD_CHECKLIST.md) → [Pre-Implementation Checklist](../repository/PRE_IMPLEMENTATION_CHECKLIST.md) → [Sprint 01A Audit](AUDIT_REPORT_SPRINT01A.md)
+
+This path describes structure and gates only. No folder or checklist authorizes installation, configuration, code, migration, backup execution, or build activity.
+
+### Sprint 01B Environment Preparation Path
+
+[Repository Baseline v1.0](BASELINE_v1.0.md) → [Implementation Readiness](IMPLEMENTATION_READINESS.md) → [Build Checklist](../repository/BUILD_CHECKLIST.md) + [Pre-Implementation Checklist](../repository/PRE_IMPLEMENTATION_CHECKLIST.md) → [Environment Report](../repository/config/ENVIRONMENT_REPORT.md) → [Plugin Inventory](../repository/config/PLUGIN_INVENTORY.md) → [WordPress Baseline](../repository/config/WORDPRESS_BASELINE.md) → [Sprint 01B Audit](AUDIT_REPORT_SPRINT01B.md)
+
+The observed environment fails mandatory gates, so this path ends at a documented stop decision and contains no installation or configuration.
+
+### Sprint 01C Environment Validation Path
+
+[Sprint 01B Audit](AUDIT_REPORT_SPRINT01B.md) → [Hosting Validation Checklist](../repository/config/HOSTING_VALIDATION_CHECKLIST.md) → [WordPress Installation Checklist](../repository/config/WORDPRESS_INSTALLATION_CHECKLIST.md) → [Plugin Installation Sequence](../repository/config/PLUGIN_INSTALLATION_SEQUENCE.md) → [Post-Install Validation](../repository/config/POST_INSTALL_VALIDATION.md) + [Rollback Plan](../repository/config/ROLLBACK_PLAN.md) → [Sprint 01C Audit](AUDIT_REPORT_SPRINT01C.md)
+
+This path defines evidence gates only. All checks and rollback checkpoints are unresolved, unresolved package dependencies stop the sequence, and the real-installation decision remains `NO-GO`.
+
+### Sprint 01D Remote Access Architecture Path
+
+[Repository Baseline v1.0](BASELINE_v1.0.md) + [Engineering Guidelines](ENGINEERING_GUIDELINES.md) + [Sprint 01C Audit](AUDIT_REPORT_SPRINT01C.md) → [Remote Access Architecture](45_REMOTE_ACCESS_ARCHITECTURE.md) → [SSH Access Checklist](../repository/config/SSH_ACCESS_CHECKLIST.md) + [Deployment Access Policy](../repository/config/DEPLOYMENT_ACCESS_POLICY.md) + [Iran Execution Risk Register](../repository/config/IRAN_EXECUTION_RISK_REGISTER.md) → [Sprint 01D Audit](AUDIT_REPORT_SPRINT01D.md)
+
+This path is documentation-only. GitHub, Server.ir, cPanel, SSH, WP-CLI, target paths, credentials, and network behavior remain unverified; actual SSH setup is `NO-GO`.
+
 ### Technical Path
 
 [Technology Stack](05_TECH_STACK.md) → [WordPress Architecture](06_WORDPRESS_ARCHITECTURE.md) → [Development Workflow](08_DEVELOPMENT_WORKFLOW.md) → [Testing Strategy](13_TESTING_STRATEGY.md) → [Deployment](09_DEPLOYMENT.md)
@@ -119,6 +143,14 @@ Founder, New Developer, AI, Auditor, SEO, WordPress Engineer, and Content Team p
 - Blueprint responsibility boundary: [Enterprise Plugin Responsibility Matrix](44_PLUGIN_RESPONSIBILITY_MATRIX.md)
 - Repository baseline: [Repository Baseline v1.0](BASELINE_v1.0.md)
 - Implementation gate: [Implementation Readiness Assessment](IMPLEMENTATION_READINESS.md)
+- Repository bootstrap rules: [Repository Implementation Rules](../repository/IMPLEMENTATION_RULES.md)
+- Environment evidence: [Sprint 01B Environment Report](../repository/config/ENVIRONMENT_REPORT.md)
+- Environment-validation gate: [Sprint 01C Hosting Validation Checklist](../repository/config/HOSTING_VALIDATION_CHECKLIST.md)
+- Conditional component sequence: [Sprint 01C Plugin Installation Sequence](../repository/config/PLUGIN_INSTALLATION_SEQUENCE.md)
+- Recovery gate: [Sprint 01C Rollback Plan](../repository/config/ROLLBACK_PLAN.md)
+- Remote-access proposal: [Remote Access and Iran Execution Constraints Architecture](45_REMOTE_ACCESS_ARCHITECTURE.md)
+- Access-control gate: [Sprint 01D Deployment Access Policy](../repository/config/DEPLOYMENT_ACCESS_POLICY.md)
+- Iran execution risks: [Sprint 01D Iran Execution Risk Register](../repository/config/IRAN_EXECUTION_RISK_REGISTER.md)
 
 ## Navigation
 
@@ -152,3 +184,20 @@ Founder, New Developer, AI, Auditor, SEO, WordPress Engineer, and Content Team p
 - [Repository Baseline v1.0](BASELINE_v1.0.md)
 - [Implementation Readiness Assessment](IMPLEMENTATION_READINESS.md)
 - [Repository Freeze v1.0 Audit](AUDIT_REPORT_FREEZE_v1.0.md)
+- [Repository Implementation Rules](../repository/IMPLEMENTATION_RULES.md)
+- [Pre-Implementation Checklist](../repository/PRE_IMPLEMENTATION_CHECKLIST.md)
+- [Sprint 01A Audit](AUDIT_REPORT_SPRINT01A.md)
+- [Sprint 01B Environment Report](../repository/config/ENVIRONMENT_REPORT.md)
+- [Sprint 01B WordPress Baseline](../repository/config/WORDPRESS_BASELINE.md)
+- [Sprint 01B Audit](AUDIT_REPORT_SPRINT01B.md)
+- [Sprint 01C Hosting Validation Checklist](../repository/config/HOSTING_VALIDATION_CHECKLIST.md)
+- [Sprint 01C WordPress Installation Checklist](../repository/config/WORDPRESS_INSTALLATION_CHECKLIST.md)
+- [Sprint 01C Plugin Installation Sequence](../repository/config/PLUGIN_INSTALLATION_SEQUENCE.md)
+- [Sprint 01C Post-Install Validation](../repository/config/POST_INSTALL_VALIDATION.md)
+- [Sprint 01C Rollback Plan](../repository/config/ROLLBACK_PLAN.md)
+- [Sprint 01C Audit](AUDIT_REPORT_SPRINT01C.md)
+- [Remote Access and Iran Execution Constraints Architecture](45_REMOTE_ACCESS_ARCHITECTURE.md)
+- [Sprint 01D SSH Access Checklist](../repository/config/SSH_ACCESS_CHECKLIST.md)
+- [Sprint 01D Deployment Access Policy](../repository/config/DEPLOYMENT_ACCESS_POLICY.md)
+- [Sprint 01D Iran Execution Risk Register](../repository/config/IRAN_EXECUTION_RISK_REGISTER.md)
+- [Sprint 01D Audit](AUDIT_REPORT_SPRINT01D.md)

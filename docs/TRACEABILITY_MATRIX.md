@@ -210,6 +210,86 @@ Accepted CP rules + ADR-0001 + exact Founder freeze directive
 
 The baseline closes repository history bootstrap only. It does not close architecture, model, Blueprint, security, operations, or implementation decision paths.
 
+## Sprint 01A Repository Bootstrap Traceability
+
+| Decision range | Origin and authority | Repository effect | Dependent evidence | Implementation status |
+| --- | --- | --- | --- | --- |
+| S01A-001–S01A-002 | Founder Sprint 01A task, baseline v1.0, and Engineering Guidelines | Isolated `repository/` workspace and one documented owner per folder | Folder inventory, Implementation Rules, Sprint 01A Audit | Not authorized |
+| S01A-003 | Baseline exclusions, security boundary, and CP rules | Runtime logs, backup payloads, exports, generated docs, unreviewed imports, secrets, and vendor/runtime files excluded | `repository/.gitignore`, folder validation, audit | Not authorized |
+| S01A-004–S01A-005 | Repository standards and Git/version governance | Stable naming and separate repository/document/migration/configuration/dependency/release versions | Naming inventory and future artifact metadata | Not authorized |
+| S01A-006–S01A-007 | Engineering Guidelines, security, recovery, and readiness constraints | Future migration reversibility and external backup/restore evidence required | Pre-Implementation Checklist and future review evidence | Not authorized |
+| S01A-008 | Implementation Readiness blockers and quality standards | Missing authority/prerequisites/gates/rollback block build activity | Build Checklist; all items currently unchecked | Not authorized |
+| S01A-009 | Current Sprint 01A scope and CP-001/CP-002 | No WordPress/plugin/theme install, production code, or configuration | Folder/audit content scan | Not authorized |
+| S01A-010 | FRZ-001–FRZ-006 and immutable baseline tags | Future recovery uses reviewed commits; baseline tags remain unchanged | Git ref equality and working-tree validation | Not authorized |
+
+```text
+baseline-v1.0.0
+  -> Sprint 01A empty repository workspace
+      -> Implementation Rules + unchecked readiness checklists
+          -> Founder/specialist prerequisite closure
+              -> separate exact Sprint 02 authorization
+```
+
+## Sprint 01B Environment Preparation Traceability
+
+| Decision | Origin and authority | Observed effect | Evidence | Implementation status |
+| --- | --- | --- | --- | --- |
+| S01B-001 | Sprint 01B task and current local inspection | Target classified as local workstation; no hosting claim | Environment Report server/evidence boundary | Not installed |
+| S01B-002 | Pre-Implementation stop conditions, Build Checklist, and Implementation Readiness | Installation halted before download or mutation | Environment Report blockers and WordPress Baseline decision | Blocked |
+| S01B-003 | Plugin First, approved named-component matrix, and missing exact packages/licenses | No WordPress/plugin/theme installation or activation | Plugin Inventory and filesystem scan | Not installed |
+| S01B-004 | Evidence-based audit and repository metadata authority rules | Template values labeled separately from runtime observations | Environment Report PHP/MariaDB/limits/timezone/charset sections | Not configured |
+| S01B-005 | Unchecked Sprint 01A gates and unresolved architecture/operations prerequisites | Readiness remains Blocked; no gate closed | WordPress Baseline, Repository Health, Sprint 01B Audit | Not authorized |
+
+```text
+approved baseline + unchecked pre-installation gates
+  -> read-only Sprint 01B environment inspection
+      -> missing runtime/version/package/license/approval evidence
+          -> mandatory stop before installation
+              -> documented dependency remediation required
+```
+
+## Sprint 01C Environment Validation Traceability
+
+| Decision | Origin and authority | Repository effect | Dependent evidence | Implementation status |
+| --- | --- | --- | --- | --- |
+| S01C-001 | Sprint 01C evidence-only instruction and Sprint 01B Audit | Separates verified local observations from unknown/runtime/hosting-dependent items and Founder actions | Hosting Validation Checklist classification | Not installed |
+| S01C-002 | Pre-Implementation Checklist and hosting/security/recovery constraints | Makes every mandatory hosting check evidence-gated | Hosting Validation Checklist and future target evidence | Blocked |
+| S01C-003 | WordPress Blueprint, Engineering Guidelines, and rollback boundary | Gates clean WordPress on exact approval and restorable `R0` | WordPress Installation Checklist | Not authorized |
+| S01C-004 | Plugin First and approved named-component responsibility matrix | Limits sequence names without approving packages, versions, or dependencies | Plugin Installation Sequence and Plugin Inventory | Not installed |
+| S01C-005 | Configuration First and no-invented-dependency instruction | Missing exact dependency approval stops the affected stage | Plugin Installation Sequence holds for Blocksy Pro/Elementor Pro | Blocked |
+| S01C-006 | Quality, Blueprint, security, and evidence requirements | Requires runtime validation after each accepted stage | Post-Install Validation | Not applicable until installation |
+| S01C-007 | Engineering Guidelines and recovery prerequisites | Requires independently restorable checkpoints `R0`–`R5` before mutation/progression | Rollback Plan and future restore evidence | Missing |
+| S01C-008 | Current repository/runtime evidence | Preserves `NO-GO` for real installation | Sprint 01C Audit and Repository Health | Not authorized |
+
+```text
+Sprint 01B evidence + unchecked prerequisites
+  -> Sprint 01C hosting and clean-install gates
+      -> conditional approved-component sequence
+          -> stage validation + restorable checkpoint
+              -> separate future go/no-go only after all evidence passes
+```
+
+## Sprint 01D Remote Access Architecture Traceability
+
+| Decision range | Origin and authority | Repository effect | Dependent evidence | Implementation status |
+| --- | --- | --- | --- | --- |
+| RA-001 | Sprint 01D documentation-only scope and baseline authority | Limits work to proposed architecture, policy, checklist, risk, and audit records | Sprint 01D file inventory and protected-path comparison | No connection or implementation |
+| RA-002 | FRZ-006, FD-REL-004, and private-remote task context | Defines GitHub private remote as a future candidate without creating it | Future remote ownership, protection, connectivity, mirror, backup, and recovery evidence | Not established |
+| RA-003 | Engineering Guidelines, least privilege, and Founder usability | Prefers future key-based, project-limited SSH from approved MacBook | SSH Access Checklist and provider/path evidence | Blocked |
+| RA-004–RA-005 | Provider/connectivity uncertainty and Iran fallback needs | Makes GitHub deployment/Actions conditional and cPanel emergency-only | Hosting capability, security review, risk register, and separate approval | Not authorized |
+| RA-006–RA-007 | Security boundary and accepted repository exclusions | Prohibits root/shared access and secret/license storage in Git/chat/docs | Deployment Access Policy and future access review | Required boundary; no access grant |
+| RA-008–RA-010 | Engineering rollback/quality gates and Sprint 01C recovery controls | Requires restorable backup, clean reviewed Git state, validation, audit, and rollback | Rollback Plan, access policy, future deployment evidence | Evidence missing |
+| RA-011–RA-012 | Founder non-programmer constraint and Iran planning risks | Requires simple operations and connectivity-independent recovery without weakening controls | SSH checklist, risk register, future runbooks and review | Proposed; no scripts created |
+| IR-001–IR-012 | Sprint 01D planning constraints | Registers GitHub, WordPress.org, licensing, VPN, cPanel, SSH, upload, DNS, TLS, email, payment/license, and usability risks | Future dated path tests/provider/vendor evidence | Likelihood unknown |
+
+```text
+accepted baseline + blocked Sprint 01B/01C evidence
+  -> proposed Remote Access Architecture
+      -> SSH Access Checklist + Deployment Access Policy + Iran Risk Register
+          -> provider/path/security/backup/approval evidence
+              -> separate future actual-SSH-setup go/no-go
+```
+
 ## Governance Traceability
 
 | Concern | Governing source | Supporting sources | Evidence or register |
@@ -265,6 +345,25 @@ The baseline closes repository history bootstrap only. It does not close archite
 - [Repository Baseline v1.0](BASELINE_v1.0.md)
 - [Implementation Readiness Assessment](IMPLEMENTATION_READINESS.md)
 - [Repository Freeze v1.0 Audit](AUDIT_REPORT_FREEZE_v1.0.md)
+- [Repository Implementation Rules](../repository/IMPLEMENTATION_RULES.md)
+- [Repository Build Checklist](../repository/BUILD_CHECKLIST.md)
+- [Pre-Implementation Checklist](../repository/PRE_IMPLEMENTATION_CHECKLIST.md)
+- [Sprint 01A Audit](AUDIT_REPORT_SPRINT01A.md)
+- [Sprint 01B Environment Report](../repository/config/ENVIRONMENT_REPORT.md)
+- [Sprint 01B Plugin Inventory](../repository/config/PLUGIN_INVENTORY.md)
+- [Sprint 01B WordPress Baseline](../repository/config/WORDPRESS_BASELINE.md)
+- [Sprint 01B Audit](AUDIT_REPORT_SPRINT01B.md)
+- [Sprint 01C Hosting Validation Checklist](../repository/config/HOSTING_VALIDATION_CHECKLIST.md)
+- [Sprint 01C WordPress Installation Checklist](../repository/config/WORDPRESS_INSTALLATION_CHECKLIST.md)
+- [Sprint 01C Plugin Installation Sequence](../repository/config/PLUGIN_INSTALLATION_SEQUENCE.md)
+- [Sprint 01C Post-Install Validation](../repository/config/POST_INSTALL_VALIDATION.md)
+- [Sprint 01C Rollback Plan](../repository/config/ROLLBACK_PLAN.md)
+- [Sprint 01C Audit](AUDIT_REPORT_SPRINT01C.md)
+- [Remote Access and Iran Execution Constraints Architecture](45_REMOTE_ACCESS_ARCHITECTURE.md)
+- [Sprint 01D SSH Access Checklist](../repository/config/SSH_ACCESS_CHECKLIST.md)
+- [Sprint 01D Deployment Access Policy](../repository/config/DEPLOYMENT_ACCESS_POLICY.md)
+- [Sprint 01D Iran Execution Risk Register](../repository/config/IRAN_EXECUTION_RISK_REGISTER.md)
+- [Sprint 01D Audit](AUDIT_REPORT_SPRINT01D.md)
 
 ## Navigation
 

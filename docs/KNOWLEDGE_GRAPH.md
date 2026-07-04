@@ -274,6 +274,103 @@ Sprint Roadmap + Engineering Guidelines
 Repository Freeze v1.0 Audit
   VALIDATES -> Baseline scope + navigation + traceability + authority
                + architecture/Blueprint/documentation completeness + release/readiness boundaries
+
+Sprint 01A Repository Workspace
+  DEPENDS_ON -> Repository Baseline + Implementation Readiness + Engineering Guidelines
+  EXTENDS -> Repository engineering structure without WordPress implementation
+  PARENT_OF -> Implementation Rules + Build Checklist + Pre-Implementation Checklist
+
+Repository Implementation Rules
+  CONSTRAINS -> Folder ownership + naming + versioning + migration + backup
+                + build + quality + rollback
+  DEPENDS_ON -> Future Founder approval before implementation use
+
+Build Checklist + Pre-Implementation Checklist
+  TRACKS -> Unmet environment + hosting + DNS + TLS + database + PHP + MariaDB
+            + WordPress + plugin + theme + developer + Founder prerequisites
+  REQUIRED_BY -> Future exact Sprint 02 authorization
+
+Sprint 01A Audit
+  VALIDATES -> Repository/folder/document/Blueprint consistency
+               + implementation-readiness and no-implementation boundaries
+
+Sprint 01B Environment Report
+  DEPENDS_ON -> Implementation Rules + Build Checklist + Pre-Implementation Checklist
+  VALIDATES -> Local server + PHP + MariaDB + HTTPS + filesystem + limits
+               + timezone + charset + tooling observations
+
+Sprint 01B Plugin Inventory
+  DEPENDS_ON -> Plugin Responsibility Matrix + current wp-content filesystem
+  TRACKS -> Approved named components + exact observed absent installation state
+  CONSTRAINS -> No replacement or unapproved package selection
+
+Sprint 01B WordPress Baseline
+  DEPENDS_ON -> Environment Report + Plugin Inventory + WordPress Solution Blueprint
+  VALIDATES -> WordPress absent + database absent + permalink unverified
+               + uploads local-owner writable + no theme/plugins installed
+
+Sprint 01B Audit
+  VALIDATES -> Mandatory installation stop + repository/Blueprint compliance
+               + no pages/products/templates/customization/unauthorized implementation
+
+Sprint 01C Hosting Validation Checklist
+  DEPENDS_ON -> Sprint 01B Environment Report + Build Checklist + Pre-Implementation Checklist
+  CLASSIFIES -> Verified + unknown + runtime-dependent + hosting-dependent + Founder actions
+  GATES -> Future real hosting acceptance
+
+Sprint 01C WordPress Installation Checklist
+  DEPENDS_ON -> Hosting Validation Checklist + Rollback Plan + WordPress Blueprint
+  GATES -> Future clean WordPress installation
+  REQUIRES -> R0 + exact target/version/package + security/operations approval
+
+Sprint 01C Plugin Installation Sequence
+  DEPENDS_ON -> Accepted clean WordPress + Plugin Responsibility Matrix + Plugin Inventory
+  ORDERS -> Blocksy + WooCommerce + Blocksy Pro + Elementor Pro conditionally
+  STOPS_ON -> Missing exact package/dependency/license/compatibility/approval
+
+Sprint 01C Post-Install Validation
+  VALIDATES -> Versions + permalinks + uploads + theme + WooCommerce + Elementor
+               + Blocksy + PHP extensions + security + performance
+  REQUIRES -> Runtime evidence after each separately authorized stage
+
+Sprint 01C Rollback Plan
+  DEFINES -> R0 + R1 + R2 + R3 + R4 + R5 planned checkpoints
+  REQUIRES -> External backup + integrity + isolated restore + independent acceptance
+  DOES_NOT_PROVE -> Any backup, restore, or checkpoint currently exists
+
+Sprint 01C Audit
+  VALIDATES -> Evidence boundary + checklist coverage + dependency/rollback sequence
+               + repository consistency + current NO-GO installation decision
+
+Remote Access and Iran Execution Constraints Architecture
+  DEPENDS_ON -> Repository Baseline + Engineering Guidelines + Implementation Readiness
+                + Sprint 01B/01C evidence
+  PROPOSES -> Private GitHub history + project-limited SSH primary candidate
+              + conditional GitHub deployment/Actions + emergency cPanel fallback
+  CONSTRAINS -> No root/shared access + no secrets + backup first + clean Git
+                + validation + rollback + Founder approval
+  DOES_NOT_PROVE -> GitHub remote + Server.ir capability + cPanel + SSH + path
+                    + PHP CLI + WP-CLI + connectivity + backup/restore
+
+Sprint 01D SSH Access Checklist
+  DEPENDS_ON -> Remote Access Architecture + Hosting Validation + Access Policy + Rollback Plan
+  GATES -> Future key creation + public-key registration + first connection + read-only inspection
+  TRACKS -> Device + identity + host key + project path + PHP CLI + database method
+            + WP-CLI + Git + permissions + redacted findings
+
+Sprint 01D Deployment Access Policy
+  CONSTRAINS -> Roles + access grant + change scope + approvals + forbidden actions
+                + backup + rollback + secrets + emergency access
+  DENIES_BY_DEFAULT -> Hosting + SSH + cPanel + GitHub deploy + WP-CLI + database access
+
+Sprint 01D Iran Execution Risk Register
+  TRACKS -> IR-001 through IR-012 with unknown likelihood
+  REQUIRES -> Future dated path/provider/vendor evidence
+  PRESERVES -> Package provenance + licensing + security + approval + rollback
+
+Sprint 01D Audit
+  VALIDATES -> Remote-access proposal + Iran constraints + Founder usability
+               + security boundaries + repository consistency + no connection/implementation
 ```
 
 ## Dependency Rules
@@ -347,6 +444,25 @@ When an authorized change adds, removes, supersedes, or changes the authority of
 - [Enterprise Sprint Roadmap](SPRINT_ROADMAP.md)
 - [Enterprise Engineering Guidelines](ENGINEERING_GUIDELINES.md)
 - [Repository Freeze v1.0 Audit](AUDIT_REPORT_FREEZE_v1.0.md)
+- [Repository Implementation Rules](../repository/IMPLEMENTATION_RULES.md)
+- [Repository Build Checklist](../repository/BUILD_CHECKLIST.md)
+- [Pre-Implementation Checklist](../repository/PRE_IMPLEMENTATION_CHECKLIST.md)
+- [Sprint 01A Audit](AUDIT_REPORT_SPRINT01A.md)
+- [Sprint 01B Environment Report](../repository/config/ENVIRONMENT_REPORT.md)
+- [Sprint 01B Plugin Inventory](../repository/config/PLUGIN_INVENTORY.md)
+- [Sprint 01B WordPress Baseline](../repository/config/WORDPRESS_BASELINE.md)
+- [Sprint 01B Audit](AUDIT_REPORT_SPRINT01B.md)
+- [Sprint 01C Hosting Validation Checklist](../repository/config/HOSTING_VALIDATION_CHECKLIST.md)
+- [Sprint 01C WordPress Installation Checklist](../repository/config/WORDPRESS_INSTALLATION_CHECKLIST.md)
+- [Sprint 01C Plugin Installation Sequence](../repository/config/PLUGIN_INSTALLATION_SEQUENCE.md)
+- [Sprint 01C Post-Install Validation](../repository/config/POST_INSTALL_VALIDATION.md)
+- [Sprint 01C Rollback Plan](../repository/config/ROLLBACK_PLAN.md)
+- [Sprint 01C Audit](AUDIT_REPORT_SPRINT01C.md)
+- [Remote Access and Iran Execution Constraints Architecture](45_REMOTE_ACCESS_ARCHITECTURE.md)
+- [Sprint 01D SSH Access Checklist](../repository/config/SSH_ACCESS_CHECKLIST.md)
+- [Sprint 01D Deployment Access Policy](../repository/config/DEPLOYMENT_ACCESS_POLICY.md)
+- [Sprint 01D Iran Execution Risk Register](../repository/config/IRAN_EXECUTION_RISK_REGISTER.md)
+- [Sprint 01D Audit](AUDIT_REPORT_SPRINT01D.md)
 
 ## Navigation
 
