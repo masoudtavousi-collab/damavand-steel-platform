@@ -1,0 +1,21 @@
+{
+  "name": "damavand-steel/website",
+  "description": "Damavand Steel enterprise WordPress repository scaffold",
+  "type": "project",
+  "license": "proprietary",
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true
+    },
+    "sort-packages": true
+  },
+  "require": {
+    "php": ">=8.2",
+    "composer/installers": "^2.3",
+    "johnpbloch/wordpress-core-installer": "^2.0",
+    "johnpbloch/wordpress-core": "^6.8"
+  },
+  "extra": {
+    "wordpress-install-dir": "public"
+  }
+}

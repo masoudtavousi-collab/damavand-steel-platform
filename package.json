@@ -1,0 +1,13 @@
+{
+  "name": "damavand-steel-website",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Tooling placeholder for the Damavand Steel WordPress project",
+  "scripts": {
+    "lint": "echo 'No frontend linting configured yet'",
+    "test": "echo 'No automated test runner configured yet'"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

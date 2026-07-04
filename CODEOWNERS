@@ -1,0 +1,5 @@
+* @damavand-steel/web-team
+/config/ @damavand-steel/platform-team
+/infrastructure/ @damavand-steel/platform-team
+/docs/security/ @damavand-steel/security-team
+/docs/adr/ @damavand-steel/architecture-team

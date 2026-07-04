@@ -1,0 +1,53 @@
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+!.env.*.example
+auth.json
+*.local
+
+# Dependencies and WordPress core
+/vendor/
+/node_modules/
+/public/wp-admin/
+/public/wp-includes/
+/public/wp-*.php
+/public/index.php
+/public/xmlrpc.php
+/public/license.txt
+/public/readme.html
+
+# Runtime content
+/public/wp-content/uploads/*
+!/public/wp-content/uploads/.gitkeep
+/public/wp-content/cache/
+/public/wp-content/upgrade/
+/public/wp-content/backup*/
+/public/wp-content/debug.log
+/var/*
+!/var/cache/
+!/var/log/
+!/var/tmp/
+!/var/**/.gitkeep
+
+# Licensed and installed third-party packages
+/public/wp-content/plugins/*
+!/public/wp-content/plugins/README.md
+!/public/wp-content/plugins/.gitkeep
+/public/wp-content/themes/*
+!/public/wp-content/themes/README.md
+!/public/wp-content/themes/blocksy-child/
+!/public/wp-content/themes/blocksy-child/README.md
+!/public/wp-content/themes/blocksy-child/.gitkeep
+
+# Generated assets, logs, reports, and editor files
+/assets/images/optimized/*
+!/assets/images/optimized/.gitkeep
+*.log
+/coverage/
+/test-results/
+/playwright-report/
+.DS_Store
+.idea/
+.vscode/
+*.swp
