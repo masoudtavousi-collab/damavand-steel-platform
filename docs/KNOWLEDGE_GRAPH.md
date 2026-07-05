@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-04
-- **Last Review:** 2026-07-04
+- **Version:** 0.1.2
+- **Last Updated:** 2026-07-05
+- **Last Review:** 2026-07-05
 - **Review Cycle:** On authority, relationship, or dependency change; periodic cadence pending Founder approval
 - **Lifecycle:** Review
 - **Source of Truth:** [Documentation Index](08_DOCUMENTATION_INDEX.md), [Core Project Principles](00_PROJECT_BIBLE.md#core-project-principles), and accepted ADRs; this graph is a supporting model
@@ -528,6 +528,87 @@ Sprint 03E Audit
   VALIDATES -> Platform completeness + architecture/boundary/repository/engine consistency
                + governance + scalability + runtime replacement + future readiness
   DOES_NOT_APPROVE -> Platform Constitution + Engines + Runtime + Website + implementation
+
+Sprint 04A Infrastructure Audit
+  DEPENDS_ON -> Sprint 02C evidence + current task findings + Platform/WordPress/plugin boundaries
+  OBSERVES -> REST cURL 28/10s + WordPress.org failure + SMTP incomplete
+              + Rank Math URL reconnect pending + Coming Soon expected
+  SEPARATES -> Verified + prior verified + inference + possible cause + pending evidence
+  DOES_NOT_CLAIM -> Root cause + current unrefreshed TLS state + production readiness
+
+Sprint 04A REST API Diagnostic
+  MAPS -> Site Health/caller -> WordPress HTTP API -> cURL -> DNS -> IPv4/IPv6
+          -> route/firewall/loopback -> TLS -> LiteSpeed/WAF -> PHP/plugins -> REST response
+  INVESTIGATES -> DNS + firewall + CloudLinux + ModSecurity + LiteSpeed + cache + cron
+                  + plugins + cURL/OpenSSL/CA + internal DNS + HTTP API policy
+  DOES_NOT_EXECUTE -> Request + plugin isolation + setting/server change
+
+Sprint 04A Connectivity Audit
+  MAPS -> api.wordpress.org + outbound HTTP(S) + DNS + TLS/certificates + firewall + ports
+  REQUIRES -> Existing support/Admin evidence due shared hosting + SSH/shell NO-GO
+  CORRELATES -> REST + WordPress.org only as unproven shared-connectivity hypothesis
+
+Sprint 04A Remediation Plan
+  PRIORITIZES -> Critical + High + Medium + Low evidence/remediation gates
+  GATES -> Root cause + backup/restore + staging + one-variable change + validation + approval
+  PRESERVES -> Coming Soon + no LiteSpeed Cache + no production experiment
+  DECIDES -> Read-only evidence GO; remediation/WooCommerce implementation NO-GO
+
+Sprint 04A Audit
+  VALIDATES -> Documentation completeness + evidence completeness + unknowns + risks
+               + read-only scope + repository consistency + go/no-go
+
+Sprint 04B Audit
+  RECORDS -> Evidence-limited WordPress audit + authenticated-access boundary
+  DOES_NOT_AUTHORIZE -> Runtime inspection beyond supplied evidence + remediation
+
+Sprint 04B Authenticated Audit
+  REFINES -> WordPress + plugin + theme + content + commerce + SEO + security + operations evidence
+  DOES_NOT_AUTHORIZE -> Save + install + update + delete + configure + reconnect + optimize
+
+Master Remediation Roadmap
+  DEPENDS_ON -> Sprint 02A-02C + Sprint 03A-03E + Sprint 04A + Sprint 04B + Authenticated Audit
+  REGISTERS -> RM-001-RM-046 with one classification + one primary group + complete planning fields
+  DOES_NOT_AUTHORIZE -> Remediation + WooCommerce production + runtime mutation
+
+Implementation Sequence
+  ORDERS -> Evidence + approvals + recovery + staging + infrastructure + runtime + business rules
+            + platform components + WooCommerce + Product Data + CRM + content/SEO + release
+  REQUIRES -> Applicable Execution Gates passed before each phase
+
+Execution Gates
+  DEFINES -> G00-G14 evidence + approval + pass/fail + stop conditions
+  BLOCKS -> Implementation while any applicable gate is unpassed
+
+Sprint 04C Audit
+  VALIDATES -> Planning completeness + classification + grouping + navigation + traceability + scope
+  DOES_NOT_APPROVE -> Any remediation + configuration + installation + production implementation
+
+Sprint 05A Design Decisions
+  DEPENDS_ON -> CP-001-CP-010 + WordPress/Blocksy/Elementor Blueprints + Founder direction
+  CONTAINS -> DDR-0001 + DDR-0002 + DDR-0003 + DDR-0004
+  PRESERVES -> ReactBits inspiration-only + 85/10/5 + industrial premium + native delivery
+
+Design Manifest + Brand Language
+  DEFINE -> Visual philosophy + trust + B2B + Persian RTL + Mobile First + restraint
+  DO_NOT_DEFINE -> Final tokens + product facts + public content + runtime configuration
+
+Motion System + ReactBits Inspiration Mapping
+  MAP -> 15 named inspiration concepts to allowed/forbidden use + mobile/RTL + accessibility + performance
+  EXCLUDE -> React + ReactBits package/source/runtime + production CSS/JS
+
+Component Pattern Library + Animation Library
+  DEFINE -> 14 component contracts + 12 animation contracts
+  DEPEND_ON -> Canonical content/data + singular Blocksy/Elementor ownership + approval gates
+
+Performance Rules + Accessibility Rules
+  GATE -> Dependencies + Core Web Vitals + assets + reduced motion + contrast + keyboard + RTL + human validation
+  BLOCK -> Unmeasured or inaccessible future implementation
+
+Sprint 05A Audit
+  VALIDATES -> Design/motion completeness + dependency safety + platform compatibility
+               + performance + accessibility + Persian RTL + B2B + repository-only scope
+  DOES_NOT_APPROVE -> WordPress + Elementor + Blocksy + page + template + CSS + JavaScript + runtime dependency
 ```
 
 ## Dependency Rules
@@ -657,6 +738,27 @@ When an authorized change adds, removes, supersedes, or changes the authority of
 - [Enterprise Platform Versioning](../repository/platform/PLATFORM_VERSIONING.md)
 - [Enterprise Platform Evolution](../repository/platform/PLATFORM_EVOLUTION.md)
 - [Sprint 03E Audit](AUDIT_REPORT_SPRINT03E.md)
+- [Infrastructure Audit](INFRASTRUCTURE_AUDIT.md)
+- [REST API Diagnostic](REST_API_DIAGNOSTIC.md)
+- [WordPress Connectivity Audit](WORDPRESS_CONNECTIVITY_AUDIT.md)
+- [Site Health Remediation Plan](SITE_HEALTH_REMEDIATION_PLAN.md)
+- [Sprint 04A Audit](AUDIT_REPORT_SPRINT04A.md)
+- [Sprint 04B Audit](AUDIT_REPORT_SPRINT04B.md)
+- [Sprint 04B Authenticated Audit](AUDIT_REPORT_SPRINT04B_AUTHENTICATED.md)
+- [Master Remediation Roadmap](MASTER_REMEDIATION_ROADMAP.md)
+- [Implementation Sequence](IMPLEMENTATION_SEQUENCE.md)
+- [Execution Gates](EXECUTION_GATES.md)
+- [Sprint 04C Audit](AUDIT_REPORT_SPRINT04C.md)
+- [Design Manifest](../repository/design/DESIGN_MANIFEST.md)
+- [Brand Language](../repository/design/BRAND_LANGUAGE.md)
+- [Motion System](../repository/design/MOTION_SYSTEM.md)
+- [ReactBits Inspiration Mapping](../repository/design/REACTBITS_INSPIRATION_MAPPING.md)
+- [Component Pattern Library](../repository/design/COMPONENT_PATTERN_LIBRARY.md)
+- [Animation Library](../repository/design/ANIMATION_LIBRARY.md)
+- [Design Performance Rules](../repository/design/PERFORMANCE_RULES.md)
+- [Design Accessibility Rules](../repository/design/ACCESSIBILITY_RULES.md)
+- [Design Decision Records](../repository/design/DESIGN_DECISION_RECORDS.md)
+- [Sprint 05A Audit](AUDIT_REPORT_SPRINT05A.md)
 
 ## Navigation
 

@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-04
-- **Last Review:** 2026-07-04
+- **Version:** 0.1.2
+- **Last Updated:** 2026-07-05
+- **Last Review:** 2026-07-05
 - **Review Cycle:** On document creation, removal, rename, lifecycle, authority, or navigation change
 - **Lifecycle:** Draft
 - **Source of Truth:** Current repository documentation paths plus each document's recorded status and authority
@@ -191,6 +191,22 @@ The canonical template-driven generation contract lives under `repository/engine
 | [Product SEO Template](../repository/engine/product/SEO_TEMPLATE.md) | Reusable entity, intent, category/product/attribute, metadata, FAQ, linking, schema, and no-price structure | Review | Founder |
 | [Product Validation Template](../repository/engine/product/VALIDATION_TEMPLATE.md) | Reusable result vocabulary, cross-layer checks, Founder checklist, rejection, and decision structure | Review | Founder |
 
+### Repository Design Intelligence and Motion System
+
+The Design Intelligence set under `repository/design/` defines review-state visual, component, motion, performance, accessibility, and decision guidance. It creates no WordPress/Elementor/Blocksy configuration, page, template, CSS, JavaScript, React, ReactBits dependency, or production asset.
+
+| Asset | Role | Status | Owner |
+| --- | --- | --- | --- |
+| [Design Manifest](../repository/design/DESIGN_MANIFEST.md) | Industrial/premium/B2B design philosophy, trust, Persian RTL, Mobile First, motion restraint, and platform boundaries | Review | Founder |
+| [Brand Language](../repository/design/BRAND_LANGUAGE.md) | Brand personality, tone, mood, steel-inspired language, trust, industrial elegance, and Persian UX | Review | Founder |
+| [Motion System](../repository/design/MOTION_SYSTEM.md) | 85/10/5 philosophy, categories, component contexts, reduced motion, accessibility, and runtime boundary | Review | Founder |
+| [ReactBits Inspiration Mapping](../repository/design/REACTBITS_INSPIRATION_MAPPING.md) | Fifteen inspiration patterns mapped to use, exclusions, native delivery, compatibility, performance, mobile, accessibility, and decisions | Review | Founder |
+| [Component Pattern Library](../repository/design/COMPONENT_PATTERN_LIBRARY.md) | Fourteen conceptual component contracts with ownership, content/data, motion, mobile/RTL, and constraints | Review | Founder |
+| [Animation Library](../repository/design/ANIMATION_LIBRARY.md) | Twelve bounded animation contracts with behavior, duration, intensity, mobile, performance, and reduced-motion fallback | Review | Founder |
+| [Design Performance Rules](../repository/design/PERFORMANCE_RULES.md) | No-heavy-JS/React/dependency policy, CSS/SVG/WebP preference, lazy motion, mobile reduction, and Core Web Vitals contract | Review | Founder |
+| [Design Accessibility Rules](../repository/design/ACCESSIBILITY_RULES.md) | Motion safety, reduced motion, contrast, keyboard, RTL readability, legibility, control clarity, and validation | Review | Founder |
+| [Design Decision Records](../repository/design/DESIGN_DECISION_RECORDS.md) | DDR-0001–DDR-0004 for inspiration-only ReactBits, 85/10/5, industrial premium language, and native delivery | Review | Founder |
+
 ### Repository Product Data Engine Assets
 
 These controlled implementation-ready data assets live under `repository/data/`. They define staging contracts and validation rules; they do not create WordPress products, attributes, taxonomies, prices, stock, or imports.
@@ -210,6 +226,20 @@ These controlled implementation-ready data assets live under `repository/data/`.
 | [Pipe Category Model](../repository/data/taxonomies/PIPE_CATEGORY_MODEL.md) | Minimal Product Family category, no-subcategory decision, slug boundary, SEO/linking role, and overlap controls | Review | Founder |
 | [Pipe Attribute Model](../repository/data/attributes/PIPE_ATTRIBUTE_MODEL.md) | Fourteen global attributes, five variation/filter axes, controlled values, product-table and SEO boundaries | Review | Founder |
 | [Pipe Data Governance Checklist](../repository/data/validation/PIPE_DATA_GOVERNANCE_CHECKLIST.md) | Founder/specialist approval, category, attribute, import, inquiry, no-price, SEO, CRM, WooCommerce, and rejection gates | Review | Founder |
+
+### Infrastructure Diagnostics and Remediation Planning
+
+These current-state documents diagnose supplied Site Health/connectivity evidence only. They make no hosting connection, execute no probe, select no fix, and authorize no WordPress/server/plugin/configuration change.
+
+| Document | Role | Status | Owner |
+| --- | --- | --- | --- |
+| [Infrastructure Audit](INFRASTRUCTURE_AUDIT.md) | Current topology, known issues, possible root causes, evidence gaps, risks, priorities, and investigation order | Review | Founder |
+| [REST API Diagnostic](REST_API_DIAGNOSTIC.md) | REST/loopback/WordPress HTTP API lifecycle, blockers, hosting/plugin/infrastructure hypotheses, and read-only checklist | Review | Founder |
+| [WordPress Connectivity Audit](WORDPRESS_CONNECTIVITY_AUDIT.md) | WordPress.org/outbound HTTP, DNS, TLS/certificates, firewall/ports, and shared-host limitation evidence | Review | Founder |
+| [Site Health Remediation Plan](SITE_HEALTH_REMEDIATION_PLAN.md) | Critical-to-low investigation/remediation gates with impact, difficulty, dependencies, owners, and status | Review | Founder |
+| [Master Remediation Roadmap](MASTER_REMEDIATION_ROADMAP.md) | Deduplicated issue register, risk/impact/priority/dependency/rollback/validation/ownership data, and execution grouping | Review | Founder |
+| [Implementation Sequence](IMPLEMENTATION_SEQUENCE.md) | Safest gated execution order and rollback checkpoints; planning only | Review | Founder |
+| [Execution Gates](EXECUTION_GATES.md) | Evidence, approval, pass/fail, and stop conditions required before any remediation or production work | Review | Founder |
 
 ### Architecture and Decisions
 
@@ -262,6 +292,11 @@ These controlled implementation-ready data assets live under `repository/data/`.
 | [Sprint 03C Audit](AUDIT_REPORT_SPRINT03C.md) | Pipe taxonomy/attribute/category/filter/SEO/CRM classification completeness and next-sprint gate | Review | Founder |
 | [Sprint 03D Audit](AUDIT_REPORT_SPRINT03D.md) | Enterprise Product Engine completeness, template coverage, reusability, scalability, duplication, readiness, and scope decision | Review | Founder |
 | [Sprint 03E Audit](AUDIT_REPORT_SPRINT03E.md) | Enterprise Platform completeness, architecture/engine/governance consistency, scalability, portability, and future-readiness decision | Review | Founder |
+| [Sprint 04A Audit](AUDIT_REPORT_SPRINT04A.md) | Infrastructure diagnostic documentation/evidence completeness, unknowns, risks, strict read-only scope, and go/no-go decision | Review | Founder |
+| [Sprint 04B Audit](AUDIT_REPORT_SPRINT04B.md) | Evidence-limited enterprise WordPress audit and authenticated-access limitation record | Review | Founder |
+| [Sprint 04B Authenticated Audit](AUDIT_REPORT_SPRINT04B_AUTHENTICATED.md) | Authenticated read-only Admin evidence for runtime, plugins, themes, content, commerce, SEO, security, and operational state | Review | Founder |
+| [Sprint 04C Audit](AUDIT_REPORT_SPRINT04C.md) | Remediation-planning completeness, coverage, evidence gaps, unknowns, scope compliance, and execution decision | Review | Founder |
+| [Sprint 05A Audit](AUDIT_REPORT_SPRINT05A.md) | Design/motion completeness, dependency safety, platform compatibility, performance, accessibility, RTL, B2B, and scope evidence | Review | Founder |
 
 ### Repository-Wide Quality System
 
@@ -383,8 +418,28 @@ The reusable quality gates are maintained outside `docs/` in [Enterprise Quality
 89. [Pipe Category Model](../repository/data/taxonomies/PIPE_CATEGORY_MODEL.md)
 90. [Pipe Attribute Model](../repository/data/attributes/PIPE_ATTRIBUTE_MODEL.md)
 91. [Pipe Data Governance Checklist](../repository/data/validation/PIPE_DATA_GOVERNANCE_CHECKLIST.md)
-92. Relevant delivery and assurance documents
-93. Relevant ADRs, supporting specifications, and audit records
+92. [Infrastructure Audit](INFRASTRUCTURE_AUDIT.md)
+93. [REST API Diagnostic](REST_API_DIAGNOSTIC.md)
+94. [WordPress Connectivity Audit](WORDPRESS_CONNECTIVITY_AUDIT.md)
+95. [Site Health Remediation Plan](SITE_HEALTH_REMEDIATION_PLAN.md)
+96. [Sprint 04B Audit](AUDIT_REPORT_SPRINT04B.md)
+97. [Sprint 04B Authenticated Audit](AUDIT_REPORT_SPRINT04B_AUTHENTICATED.md)
+98. [Master Remediation Roadmap](MASTER_REMEDIATION_ROADMAP.md)
+99. [Implementation Sequence](IMPLEMENTATION_SEQUENCE.md)
+100. [Execution Gates](EXECUTION_GATES.md)
+101. [Sprint 04C Audit](AUDIT_REPORT_SPRINT04C.md)
+102. [Design Manifest](../repository/design/DESIGN_MANIFEST.md)
+103. [Brand Language](../repository/design/BRAND_LANGUAGE.md)
+104. [Motion System](../repository/design/MOTION_SYSTEM.md)
+105. [ReactBits Inspiration Mapping](../repository/design/REACTBITS_INSPIRATION_MAPPING.md)
+106. [Component Pattern Library](../repository/design/COMPONENT_PATTERN_LIBRARY.md)
+107. [Animation Library](../repository/design/ANIMATION_LIBRARY.md)
+108. [Design Performance Rules](../repository/design/PERFORMANCE_RULES.md)
+109. [Design Accessibility Rules](../repository/design/ACCESSIBILITY_RULES.md)
+110. [Design Decision Records](../repository/design/DESIGN_DECISION_RECORDS.md)
+111. [Sprint 05A Audit](AUDIT_REPORT_SPRINT05A.md)
+112. Relevant delivery and assurance documents
+113. Relevant ADRs, supporting specifications, and audit records
 
 ## Dependency Graph
 
@@ -484,6 +539,13 @@ Product/WooCommerce/Taxonomy/Attribute/Inquiry models + Sprint 03A task values
       -> Candidate Variation Matrix + SEO Entity Model
           -> WooCommerce staging CSV + Product Data Validation Rules
               -> Founder/domain review before any expansion or import
+
+Core Principles + WordPress/Blocksy/Elementor Blueprints + Sprint 05A Founder direction
+  -> Design Manifest + Brand Language + Design Decision Records
+      -> Motion System + Inspiration Mapping
+          -> Component + Animation Libraries
+              -> Performance + Accessibility gates
+                  -> future separately approved native configuration only
 ```
 
 ## Navigation
@@ -569,3 +631,24 @@ Product/WooCommerce/Taxonomy/Attribute/Inquiry models + Sprint 03A task values
 - [Enterprise Platform Versioning](../repository/platform/PLATFORM_VERSIONING.md)
 - [Enterprise Platform Evolution](../repository/platform/PLATFORM_EVOLUTION.md)
 - [Sprint 03E Audit](AUDIT_REPORT_SPRINT03E.md)
+- [Infrastructure Audit](INFRASTRUCTURE_AUDIT.md)
+- [REST API Diagnostic](REST_API_DIAGNOSTIC.md)
+- [WordPress Connectivity Audit](WORDPRESS_CONNECTIVITY_AUDIT.md)
+- [Site Health Remediation Plan](SITE_HEALTH_REMEDIATION_PLAN.md)
+- [Sprint 04A Audit](AUDIT_REPORT_SPRINT04A.md)
+- [Sprint 04B Audit](AUDIT_REPORT_SPRINT04B.md)
+- [Sprint 04B Authenticated Audit](AUDIT_REPORT_SPRINT04B_AUTHENTICATED.md)
+- [Master Remediation Roadmap](MASTER_REMEDIATION_ROADMAP.md)
+- [Implementation Sequence](IMPLEMENTATION_SEQUENCE.md)
+- [Execution Gates](EXECUTION_GATES.md)
+- [Sprint 04C Audit](AUDIT_REPORT_SPRINT04C.md)
+- [Design Manifest](../repository/design/DESIGN_MANIFEST.md)
+- [Brand Language](../repository/design/BRAND_LANGUAGE.md)
+- [Motion System](../repository/design/MOTION_SYSTEM.md)
+- [ReactBits Inspiration Mapping](../repository/design/REACTBITS_INSPIRATION_MAPPING.md)
+- [Component Pattern Library](../repository/design/COMPONENT_PATTERN_LIBRARY.md)
+- [Animation Library](../repository/design/ANIMATION_LIBRARY.md)
+- [Design Performance Rules](../repository/design/PERFORMANCE_RULES.md)
+- [Design Accessibility Rules](../repository/design/ACCESSIBILITY_RULES.md)
+- [Design Decision Records](../repository/design/DESIGN_DECISION_RECORDS.md)
+- [Sprint 05A Audit](AUDIT_REPORT_SPRINT05A.md)

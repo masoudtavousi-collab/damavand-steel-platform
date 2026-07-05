@@ -8,30 +8,30 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-04
-- **Last Review:** 2026-07-04
+- **Version:** 0.1.3
+- **Last Updated:** 2026-07-05
+- **Last Review:** 2026-07-05
 - **Review Cycle:** On repository-governance, document, authority, metadata, navigation, traceability, or validation change
 - **Lifecycle:** Review
-- **Source of Truth:** Current repository state and local tagged [Repository Baseline v1.0](BASELINE_v1.0.md) observed on 2026-07-04; this health record is evidence, not governing authority
+- **Source of Truth:** Current repository state and local tagged [Repository Baseline v1.0](BASELINE_v1.0.md); this health record is evidence, not governing authority
 - **Dependencies:** [Documentation Index](08_DOCUMENTATION_INDEX.md), [Document Lifecycle](12_DOCUMENT_LIFECYCLE.md), [Traceability Matrix](TRACEABILITY_MATRIX.md), and [Documentation Quality Standard](16_QUALITY_STANDARD.md)
-- **Related Documents:** [Navigation Map](09_NAVIGATION_MAP.md), [Reading Order](READING_ORDER.md), [Knowledge Graph](KNOWLEDGE_GRAPH.md), [Git Governance](GIT_GOVERNANCE.md), [Repository Baseline v1.0](BASELINE_v1.0.md), [Implementation Readiness](IMPLEMENTATION_READINESS.md), [WordPress Enterprise Architecture](06_WORDPRESS_ARCHITECTURE.md), [Enterprise Product Data Model](19_PRODUCT_DATA_MODEL.md), [Enterprise Information Architecture](24_INFORMATION_ARCHITECTURE.md), [Enterprise Content Architecture](29_CONTENT_ARCHITECTURE.md), and [Freeze Audit](AUDIT_REPORT_FREEZE_v1.0.md)
+- **Related Documents:** [Navigation Map](09_NAVIGATION_MAP.md), [Reading Order](READING_ORDER.md), [Knowledge Graph](KNOWLEDGE_GRAPH.md), [Git Governance](GIT_GOVERNANCE.md), [Repository Baseline v1.0](BASELINE_v1.0.md), [Implementation Readiness](IMPLEMENTATION_READINESS.md), [WordPress Enterprise Architecture](06_WORDPRESS_ARCHITECTURE.md), [Enterprise Product Data Model](19_PRODUCT_DATA_MODEL.md), [Enterprise Information Architecture](24_INFORMATION_ARCHITECTURE.md), [Enterprise Content Architecture](29_CONTENT_ARCHITECTURE.md), [Freeze Audit](AUDIT_REPORT_FREEZE_v1.0.md), [Master Remediation Roadmap](MASTER_REMEDIATION_ROADMAP.md), [Design Manifest](../repository/design/DESIGN_MANIFEST.md), and [Sprint 05A Audit](AUDIT_REPORT_SPRINT05A.md)
 - **Traceability:** Current-state coverage measures and known gaps documented below
 - **AI Compatibility:** AI-readable with explicit evidence limitations
 - **Approval:** Pending Founder review; evidence record only
 
 ## Evidence Scope
 
-This record describes files available in the current repository state and local tagged baseline on 2026-07-04. The baseline begins future local history; it does not prove repository evolution before its first commit or any external/remote state. Counts are reproducible from current files, Git objects, and local references.
+This record describes files available in the current repository state and local tagged baseline on 2026-07-05. The baseline begins future local history; it does not prove repository evolution before its first commit or any external/remote state. Counts are reproducible from current files, Git objects, and local references.
 
 ## Repository Completeness
 
 | Measure | Current evidence | Status |
 | --- | --- | --- |
-| Documentation inventory | 103 Markdown files under `docs/` and 45 controlled Markdown files under `repository/` | Measured for Sprint 03E after audit creation |
-| Documentation Index coverage | 103 of 103 documentation files plus all 45 controlled repository documents and the Product Data CSV listed | Complete for current inventory |
+| Documentation inventory | 115 Markdown files under `docs/` and 54 controlled Markdown files under `repository/` | Measured for Sprint 05A after audit creation |
+| Documentation Index coverage | 115 of 115 documentation files plus all 54 controlled repository documents and the Product Data CSV listed | Complete for current inventory |
 | Orphan documentation | 0 files without an incoming local documentation link, excluding the index entry point | None detected |
-| Local Markdown link destinations | 3,783 checked with 0 failures across controlled `docs/` and `repository/` Markdown in the Sprint 03E Audit | Validation required on every change |
+| Local Markdown link destinations | 4,238 relative links across 169 controlled Markdown files; 0 broken destinations | Revalidated after Sprint 05A design/index synchronization |
 | Substantive content | Draft placeholders and Founder TODOs remain in foundation, delivery, and assurance documents | Incomplete |
 
 Repository completeness means inventory and discoverability only. It does not imply that Draft requirements, architecture, business content, or implementation prerequisites are complete.
@@ -60,15 +60,15 @@ All requested capabilities have a current canonical location. None becomes appro
 
 ## Authority Coverage
 
-- The Documentation Index classifies the role, status, and owner of all 103 documentation files and the 45 controlled Markdown assets under `repository/`, plus the Product Data CSV.
-- The canonical metadata `Authority` field is present in 74 of 103 documentation files; all 45 controlled `repository/` Markdown documents use the complete model.
+- The Documentation Index classifies the role, status, and owner of all 115 documentation files and the 54 controlled Markdown assets under `repository/`, plus the Product Data CSV.
+- The canonical metadata `Authority` field is present in 86 of 115 documentation files; all 54 controlled `repository/` Markdown documents use the complete model.
 - CP-001 through CP-010 retain explicit accepted decision status and documented origin in the Project Bible.
 - Review, audit, validation, health, task, architecture-proposal, and conversation outputs are explicitly non-authoritative unless approved through the governing process.
 - Full metadata authority coverage remains incomplete for legacy documents.
 
 ## Metadata Coverage
 
-- Seventy-three documentation files under `docs/` and all 45 controlled Markdown documents under `repository/` use the complete 17-field metadata model.
+- Eighty-five documentation files under `docs/` and all 54 controlled Markdown documents under `repository/` use a complete 17-field Document Control block.
 - The Repository Metadata Standard is the only document that defines the canonical field list.
 - The Document Template mirrors that model.
 - Legacy documents with partial or section-based metadata remain under the transitional rule; no repository-wide normalization is authorized by this health record.
@@ -77,7 +77,7 @@ All requested capabilities have a current canonical location. None becomes appro
 
 - The Documentation Index lists every current documentation file.
 - Navigation Map, Reading Order, Knowledge Graph, Traceability Matrix, Repository Health, architecture/data models, and batch audits are mutually discoverable through explicit links.
-- Founder, developer, AI, auditor, SEO, WordPress engineer, content-team, product-data, Information Architecture, Content/Entity Architecture, WordPress Solution Blueprint, release-engineering, remote-access/Iran-execution, and Product Data Engine paths remain defined.
+- Founder, developer, AI, auditor, SEO, WordPress engineer, content-team, product-data, Information Architecture, Content/Entity Architecture, WordPress Solution Blueprint, release-engineering, remote-access/Iran-execution, Product Data Engine, authenticated audit, remediation-planning, and Design Intelligence paths remain defined.
 - Current local-link, anchor, orphan, and index validation results are recorded in the latest batch audit.
 
 ## Traceability Coverage
@@ -93,6 +93,8 @@ All requested capabilities have a current canonical location. None becomes appro
 - S01C-001 through S01C-008 map evidence classification, hosting and clean-install gates, approved-name-only component scope, dependency stops, stage validation, rollback checkpoints, and current `NO-GO` status.
 - RA-001 through RA-012 and IR-001 through IR-012 map the proposed remote route, access/security/recovery boundaries, Founder usability, Iran execution risks, and current actual-SSH-setup `NO-GO` status.
 - Sprint 03A–03C map the Pipe Product Family, dictionary, candidate matrix, staging CSV, SEO, validation, WooCommerce/import mapping, taxonomy/attribute classification, category/attribute models, governance gates, Inquiry First, No Public Pricing, and import blockers to governing product-data sources.
+- Sprint 04C maps authenticated evidence into `RM-001` through `RM-046`, 13 execution phases, rollback checkpoints `R0` through `R10`, and gates `G00` through `G14`; none grants implementation authority.
+- Sprint 05A maps DDR-0001–DDR-0004, 15 inspiration patterns, 14 component contracts, and 12 animation contracts to Blocksy/Elementor ownership, performance, accessibility, Persian RTL, Mobile First, and future validation evidence.
 - Governance concerns map decision classification, lifecycle, dependencies, inheritance, conflicts, validation, open work, and AI collaboration to canonical sources and evidence.
 - Future implementation remains `Not authorized` in the Traceability Matrix.
 - Legacy documents do not all carry full document-level traceability metadata.
@@ -112,7 +114,7 @@ Final read-only Git inspection for Repository Freeze v1.0 reports:
 - The immutable baseline contains 157 tracked files; `main` and both baseline tags still resolve to the original baseline commit.
 - Annotated tags `baseline-v1.0.0` and `repo-v1.0.0` resolve to the same baseline commit.
 - The tagged tree contains the baseline manifest, release notes, readiness assessment, roadmap, engineering guidelines, synchronized repository records, and Freeze Audit.
-- Current `main`/`origin/main` contain the committed Sprint 01A–01D foundation successor to baseline v1.0.0. The current working tree contains Sprint 02A–02C audit candidates plus Sprint 03A–03E Product Data/Engine/Platform assets and governance changes; none changes the immutable baseline tags.
+- Current `main`/`origin/main` contain the committed Sprint 01A–01D foundation successor to baseline v1.0.0. The current working tree contains Sprint 02A–02C audit candidates, Sprint 03A–03E Product Data/Engine/Platform assets, Sprint 04A–04C audit/planning documentation, and Sprint 05A Design Intelligence guidance; none changes the immutable baseline tags.
 - No primary remote, independent mirror, backup, signing evidence, branch protection, or production release exists.
 - [Git Governance](GIT_GOVERNANCE.md) remains Proposed Governing/Review; the exact Founder-authorized baseline does not approve the entire policy.
 
@@ -271,14 +273,46 @@ Final read-only Git inspection for Repository Freeze v1.0 reports:
 - Every future website is required to reuse canonical Engine contracts/stable identities rather than fork authority.
 - No WordPress, hosting, plugin, Product Engine, Product Data, business rule, code, content, product, integration, runtime, or release change is introduced.
 
+## Sprint 04A Infrastructure Audit Coverage
+
+- Five Review-state documentation assets cover infrastructure topology/root-cause hypotheses, REST request lifecycle, WordPress.org/outbound connectivity, prioritized Site Health planning, and Sprint audit evidence.
+- Verified symptoms are REST cURL error 28 after 10,000 ms at `/wp-json/wp/v2/`, WordPress.org access failure, incomplete SMTP, Rank Math Site URL reconnect pending, and expected Coming Soon state.
+- DNS, IPv4/IPv6, outbound firewall, loopback/hairpin, TLS chain, LiteSpeed, ModSecurity, CloudLinux, cURL/SSL/CA, WordPress HTTP API policy, plugin interaction, object cache, cron, and resource candidates remain hypotheses/Pending Evidence.
+- The coexistence of REST and WordPress.org failures is recorded as a shared-connectivity inference, not a proven root cause.
+- Shared-hosting, no-shell, and SSH `NO-GO` constraints require provider/existing Admin/cPanel evidence; no new access method is introduced.
+- Read-only evidence collection is `GO`; remediation, WooCommerce implementation, production acceptance, and launch remain `NO-GO`.
+- Platform, Product Engine, Product Data, Business Rules, `public/`, WordPress, hosting, plugins, database, PHP, `.htaccess`, `wp-config.php`, and settings remain unchanged.
+
+## Sprint 04B–04C Authenticated Audit and Remediation Planning Coverage
+
+- Sprint 04B authenticated evidence refines the current WordPress Admin, Site Health, plugin, theme, content, WooCommerce, Blocksy, Elementor, SEO, CRM, email, user, performance, and security observations without granting change authority.
+- The Master Remediation Roadmap contains 46 unique issues (`RM-001`–`RM-046`) across 14 permitted classifications; each has one primary execution group and the full required planning fields.
+- Group totals are 1 Quick Win, 3 Safe Changes, 16 High Risk, 17 Founder Approval Required, 5 Hosting Required, and 4 Can Wait.
+- The Implementation Sequence defines 13 phases and rollback checkpoints `R0`–`R10`.
+- Execution Gates `G00`–`G14` define evidence, approval, pass/fail, and stop conditions. No gate is recorded as passed.
+- Planning review is `GO`; remediation, WordPress/hosting/plugin/configuration/database changes, Product Data import, and WooCommerce production work remain `NO-GO`.
+- Sprint 04C changes only its four planning/audit documents and the five permitted navigation, traceability, graph, index, and health records.
+
+## Sprint 05A Design Intelligence and Motion Coverage
+
+- `repository/design/` contains nine controlled Markdown files and no production code, package manifest, dependency, page, template, or runtime asset.
+- The Design Manifest and Brand Language define industrial/premium/B2B trust guidance, Persian RTL, Mobile First, and a no-over-animation boundary without selecting final production tokens.
+- Motion guidance implements the 85% clean / 10% purposeful motion / 5% controlled wow principle with static and reduced-motion fallbacks.
+- All 15 Founder-approved ReactBits-inspired names are mapped; ReactBits remains inspiration only and is not a runtime/package/source dependency.
+- The libraries contain 14 conceptual component contracts and 12 animation contracts.
+- DDR-0001–DDR-0004 record inspiration-only ReactBits, 85/10/5 motion, industrial premium language, and Blocksy/Elementor-native future delivery.
+- Blocksy remains the shell/token coordinator and Elementor remains bounded to delegated body composition; no runtime compatibility is claimed.
+- Performance and accessibility guidance is review-ready; numeric budgets, exact conformance target, representative measurements, and human validation remain pending.
+- Design guidance review is `GO`; WordPress/Blocksy/Elementor configuration, page/template creation, CSS/JavaScript, React/ReactBits, motion implementation, and public release remain `NO-GO`.
+
 ## Known Gaps
 
 - Founder approval is pending for FD-GOV-002, FD-GOV-003, FD-GOV-005 through FD-GOV-019, FD-ARC-001, and FD-ARC-002, except previously resolved entries.
-- Full canonical metadata coverage is 73 of 103 documentation files under `docs/`; 30 legacy documentation files remain incomplete.
+- Full canonical Document Control coverage is 85 of 115 documentation files under `docs/`; 30 legacy documentation files remain incomplete.
 - Foundation, business, architecture, technology, WordPress, delivery, security, SEO, UX, testing, and changelog documents contain unresolved Draft sections or placeholders.
 - Documentation numbering, broad versioning policy, steel terminology, and child-theme placeholder decisions remain unresolved; the exact local v1.0.0 baseline decision is resolved.
 - External-link validation is not part of the current evidence set.
-- Sprint 03A–03E authorize repository Product Data/Engine/Platform review assets only; WordPress/runtime import, deployment, and production mutation remain unauthorized.
+- Sprint 03A–03E and Sprint 04A–04C authorize repository Product Data/Engine/Platform/audit/planning assets only; WordPress/runtime import, deployment, remediation, and production mutation remain unauthorized.
 - A local approved Git baseline and tags plus current `origin/main` exist; independent mirror, approved backup custody, signing, branch protection evidence, product release, and production release remain unresolved.
 - WordPress Enterprise Architecture is not Approved, and its dependent Product Data, SEO, Security, UX, Testing, and operational documents retain Draft gaps.
 - FD-DATA-001 through FD-DATA-006 and OQ-DATA-001 through OQ-DATA-009 remain unresolved; no Batch 05 model is Approved.
@@ -294,9 +328,16 @@ Final read-only Git inspection for Repository Freeze v1.0 reports:
 - Sprint 03B–03C retain `TBD` higher category parent, stable category/product/variation IDs, approved public slug, final SKUs, valid combinations, commercial stock state, optional attribute registries, runtime attribute/term IDs, inquiry/no-price enforcement, CRM mapping, staging/recovery, and execution authorization.
 - Sprint 03D Engine/templates remain Review pending Founder/specialist approval; no non-Pipe family intake, facts, generated asset set, first-generation evidence, or implementation authorization exists.
 - Sprint 03E Platform set remains Review/Proposed Governing pending explicit Founder approval; it is not yet the approved Platform Constitution, and Engine-owner assignments/runtime-portability evidence remain unresolved.
+- Sprint 04B authenticated evidence narrows some Sprint 04A unknowns, but DNS/IPv6/egress/TLS/WAF/LiteSpeed/CloudLinux/request-filter/plugin/resource root causes, provider telemetry, backup/restore, staging, and remediation authorization remain unresolved.
+- All Sprint 04C execution gates remain unpassed. Founder acceptance of the planning baseline does not itself pass an implementation gate.
+- Sprint 05A final tokens, font/license delivery, component placement/ownership, accessibility target, numeric performance budgets, exact Blocksy/Elementor capabilities, and representative runtime validation remain pending.
 
 ## Future Work
 
+- Obtain Founder and applicable specialist review of the Master Remediation Roadmap, Implementation Sequence, and Execution Gates before creating any remediation ticket.
+- Close `G01` through `G05` for the exact intended scope before considering mutable investigation or implementation.
+- Obtain Founder and specialist approval of the Sprint 05A Design Intelligence set before translating any pattern into a future implementation proposal.
+- Approve exact tokens, accessibility target, performance budgets, content/data owners, and Blocksy/Elementor capability mapping before any design configuration.
 - Obtain Founder decisions for the Batch 02C governance frameworks.
 - Obtain Founder decisions for broad Git Governance, version policy, remote and mirror custody, signing, backup location, branch protection, recovery, and retention.
 - Push and replicate the local v1.0.0 baseline only through a separately authorized remote/mirror task after provider, custody, protection, and recovery approval.
@@ -413,3 +454,24 @@ Final read-only Git inspection for Repository Freeze v1.0 reports:
 - [Enterprise Platform Versioning](../repository/platform/PLATFORM_VERSIONING.md)
 - [Enterprise Platform Evolution](../repository/platform/PLATFORM_EVOLUTION.md)
 - [Sprint 03E Audit](AUDIT_REPORT_SPRINT03E.md)
+- [Infrastructure Audit](INFRASTRUCTURE_AUDIT.md)
+- [REST API Diagnostic](REST_API_DIAGNOSTIC.md)
+- [WordPress Connectivity Audit](WORDPRESS_CONNECTIVITY_AUDIT.md)
+- [Site Health Remediation Plan](SITE_HEALTH_REMEDIATION_PLAN.md)
+- [Sprint 04A Audit](AUDIT_REPORT_SPRINT04A.md)
+- [Sprint 04B Audit](AUDIT_REPORT_SPRINT04B.md)
+- [Sprint 04B Authenticated Audit](AUDIT_REPORT_SPRINT04B_AUTHENTICATED.md)
+- [Master Remediation Roadmap](MASTER_REMEDIATION_ROADMAP.md)
+- [Implementation Sequence](IMPLEMENTATION_SEQUENCE.md)
+- [Execution Gates](EXECUTION_GATES.md)
+- [Sprint 04C Audit](AUDIT_REPORT_SPRINT04C.md)
+- [Design Manifest](../repository/design/DESIGN_MANIFEST.md)
+- [Brand Language](../repository/design/BRAND_LANGUAGE.md)
+- [Motion System](../repository/design/MOTION_SYSTEM.md)
+- [ReactBits Inspiration Mapping](../repository/design/REACTBITS_INSPIRATION_MAPPING.md)
+- [Component Pattern Library](../repository/design/COMPONENT_PATTERN_LIBRARY.md)
+- [Animation Library](../repository/design/ANIMATION_LIBRARY.md)
+- [Design Performance Rules](../repository/design/PERFORMANCE_RULES.md)
+- [Design Accessibility Rules](../repository/design/ACCESSIBILITY_RULES.md)
+- [Design Decision Records](../repository/design/DESIGN_DECISION_RECORDS.md)
+- [Sprint 05A Audit](AUDIT_REPORT_SPRINT05A.md)

@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-04
-- **Last Review:** 2026-07-04
+- **Version:** 0.1.2
+- **Last Updated:** 2026-07-05
+- **Last Review:** 2026-07-05
 - **Review Cycle:** On repository path, document index, reading path, or relationship change
 - **Lifecycle:** Draft
 - **Source of Truth:** [Documentation Index](08_DOCUMENTATION_INDEX.md) and current repository paths
@@ -131,6 +131,24 @@ This path creates controlled repository data assets only. Placeholder SKUs, `TBD
 
 The Platform set remains Review/Proposed Governing until explicit Founder approval. It defines architecture only: no Runtime, WordPress, Engine implementation, website, product, content, integration, or release is created.
 
+### Sprint 04A Infrastructure Audit Path
+
+[Sprint 02C Site Health Evidence](AUDIT_REPORT_SPRINT02C.md) + current Sprint 04A findings → [Infrastructure Audit](INFRASTRUCTURE_AUDIT.md) → [REST API Diagnostic](REST_API_DIAGNOSTIC.md) + [WordPress Connectivity Audit](WORDPRESS_CONNECTIVITY_AUDIT.md) → [Site Health Remediation Plan](SITE_HEALTH_REMEDIATION_PLAN.md) → [Sprint 04A Audit](AUDIT_REPORT_SPRINT04A.md)
+
+This path is evidence/read-only. cURL error 28 proves timeout but not root cause. DNS, IPv6, loopback/hairpin, TLS, firewall, ModSecurity, LiteSpeed, CloudLinux, HTTP API, plugin, and resource causes remain hypotheses until evidence resolves them. WooCommerce implementation and all remediation remain `NO-GO`.
+
+### Sprint 04B–04C Authenticated Audit and Remediation Planning Path
+
+[Sprint 04A Audit](AUDIT_REPORT_SPRINT04A.md) → [Sprint 04B Audit](AUDIT_REPORT_SPRINT04B.md) → [Sprint 04B Authenticated Audit](AUDIT_REPORT_SPRINT04B_AUTHENTICATED.md) → [Master Remediation Roadmap](MASTER_REMEDIATION_ROADMAP.md) → [Implementation Sequence](IMPLEMENTATION_SEQUENCE.md) + [Execution Gates](EXECUTION_GATES.md) → [Sprint 04C Audit](AUDIT_REPORT_SPRINT04C.md)
+
+Authenticated evidence refines earlier unknowns but does not authorize a change. The Roadmap is the deduplicated planning register; the Sequence orders future work; the Gates define evidence and approvals. Every execution gate remains closed until separately satisfied and approved.
+
+### Sprint 05A Design Intelligence and Motion Path
+
+[Core Project Principles](00_PROJECT_BIBLE.md#core-project-principles) + [WordPress Blueprint](35_WORDPRESS_BLUEPRINT.md) + [Blocksy Blueprint](36_BLOCKSY_CONFIGURATION.md) + [Elementor Blueprint](37_ELEMENTOR_ARCHITECTURE.md) → [Design Manifest](../repository/design/DESIGN_MANIFEST.md) + [Brand Language](../repository/design/BRAND_LANGUAGE.md) + [Design Decision Records](../repository/design/DESIGN_DECISION_RECORDS.md) → [Motion System](../repository/design/MOTION_SYSTEM.md) + [ReactBits Inspiration Mapping](../repository/design/REACTBITS_INSPIRATION_MAPPING.md) → [Component Pattern Library](../repository/design/COMPONENT_PATTERN_LIBRARY.md) + [Animation Library](../repository/design/ANIMATION_LIBRARY.md) → [Performance Rules](../repository/design/PERFORMANCE_RULES.md) + [Accessibility Rules](../repository/design/ACCESSIBILITY_RULES.md) → [Sprint 05A Audit](AUDIT_REPORT_SPRINT05A.md)
+
+This is a repository-guidance path only. ReactBits is inspiration, not a package or runtime dependency. No WordPress, Blocksy, Elementor, page, template, CSS, JavaScript, React, or production asset is created.
+
 ### Technical Path
 
 [Technology Stack](05_TECH_STACK.md) → [WordPress Architecture](06_WORDPRESS_ARCHITECTURE.md) → [Development Workflow](08_DEVELOPMENT_WORKFLOW.md) → [Testing Strategy](13_TESTING_STRATEGY.md) → [Deployment](09_DEPLOYMENT.md)
@@ -188,6 +206,10 @@ Founder, New Developer, AI, Auditor, SEO, WordPress Engineer, and Content Team p
 - Platform layer/runtime boundary: [Enterprise Platform Architecture](../repository/platform/PLATFORM_ARCHITECTURE.md)
 - Platform engine registry: [Enterprise Engine Boundaries](../repository/platform/ENGINE_BOUNDARIES.md)
 - Platform evolution gate: [Enterprise Platform Evolution](../repository/platform/PLATFORM_EVOLUTION.md)
+- Infrastructure evidence source: [Infrastructure Audit](INFRASTRUCTURE_AUDIT.md)
+- REST diagnostic gate: [REST API Diagnostic](REST_API_DIAGNOSTIC.md)
+- Connectivity evidence gate: [WordPress Connectivity Audit](WORDPRESS_CONNECTIVITY_AUDIT.md)
+- Site Health action gate: [Site Health Remediation Plan](SITE_HEALTH_REMEDIATION_PLAN.md)
 
 ## Navigation
 
@@ -275,3 +297,24 @@ Founder, New Developer, AI, Auditor, SEO, WordPress Engineer, and Content Team p
 - [Enterprise Platform Versioning](../repository/platform/PLATFORM_VERSIONING.md)
 - [Enterprise Platform Evolution](../repository/platform/PLATFORM_EVOLUTION.md)
 - [Sprint 03E Audit](AUDIT_REPORT_SPRINT03E.md)
+- [Infrastructure Audit](INFRASTRUCTURE_AUDIT.md)
+- [REST API Diagnostic](REST_API_DIAGNOSTIC.md)
+- [WordPress Connectivity Audit](WORDPRESS_CONNECTIVITY_AUDIT.md)
+- [Site Health Remediation Plan](SITE_HEALTH_REMEDIATION_PLAN.md)
+- [Sprint 04A Audit](AUDIT_REPORT_SPRINT04A.md)
+- [Sprint 04B Audit](AUDIT_REPORT_SPRINT04B.md)
+- [Sprint 04B Authenticated Audit](AUDIT_REPORT_SPRINT04B_AUTHENTICATED.md)
+- [Master Remediation Roadmap](MASTER_REMEDIATION_ROADMAP.md)
+- [Implementation Sequence](IMPLEMENTATION_SEQUENCE.md)
+- [Execution Gates](EXECUTION_GATES.md)
+- [Sprint 04C Audit](AUDIT_REPORT_SPRINT04C.md)
+- [Design Manifest](../repository/design/DESIGN_MANIFEST.md)
+- [Brand Language](../repository/design/BRAND_LANGUAGE.md)
+- [Motion System](../repository/design/MOTION_SYSTEM.md)
+- [ReactBits Inspiration Mapping](../repository/design/REACTBITS_INSPIRATION_MAPPING.md)
+- [Component Pattern Library](../repository/design/COMPONENT_PATTERN_LIBRARY.md)
+- [Animation Library](../repository/design/ANIMATION_LIBRARY.md)
+- [Design Performance Rules](../repository/design/PERFORMANCE_RULES.md)
+- [Design Accessibility Rules](../repository/design/ACCESSIBILITY_RULES.md)
+- [Design Decision Records](../repository/design/DESIGN_DECISION_RECORDS.md)
+- [Sprint 05A Audit](AUDIT_REPORT_SPRINT05A.md)

@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-04
-- **Last Review:** 2026-07-04
+- **Version:** 0.1.2
+- **Last Updated:** 2026-07-05
+- **Last Review:** 2026-07-05
 - **Review Cycle:** On governing-rule or dependency change; periodic cadence pending Founder approval
 - **Lifecycle:** Review
 - **Source of Truth:** [Core Project Principles](00_PROJECT_BIBLE.md#core-project-principles), approved governing documents, and accepted ADRs; this matrix is a supporting view
@@ -389,6 +389,72 @@ accepted Founder/business/Core Principle/ADR authority
                           -> evidence routed back through review, never reverse authority
 ```
 
+## Sprint 04A Infrastructure Audit Traceability
+
+| Asset/rule | Origin and authority | Repository effect | Required future evidence | Implementation status |
+| --- | --- | --- | --- | --- |
+| Infrastructure Audit | Sprint 04A current findings plus Sprint 02C runtime/plugin evidence and Platform boundaries | Records topology, known issues, hypotheses, evidence gaps, risk/priority, and investigation order | Expanded Site Health, provider DNS/network/TLS/WAF/runtime/log/recovery evidence | Evidence only; no root cause/fix asserted |
+| REST API Diagnostic | REST cURL error 28/10,000 ms at `/wp-json/wp/v2/` plus WordPress architecture | Maps request lifecycle across HTTP API, DNS, route, TLS, LiteSpeed/WAF, PHP/plugins/REST and defines read-only checklist | Exact request context, phase timing, DNS/IP/TLS/log/policy/plugin evidence | Diagnostic model only; no request or change executed |
+| WordPress Connectivity Audit | WordPress.org access failure plus shared-host/no-shell baseline | Separates outbound HTTP, DNS, IPv4/IPv6, TLS/certificates, firewall/ports, provider limits, and WordPress HTTP policy | Provider/read-only transport evidence and current TLS/URL state | Audit only; no probe/network change |
+| Site Health Remediation Plan | Infrastructure/REST/connectivity evidence | Prioritizes Critical/High/Medium/Low work with impact, difficulty, dependencies, owner, status, phases, and stop conditions | Founder-approved root cause, recovery, exact remediation, validation, and closure evidence | Phase 0–2 evidence GO; remediation NO-GO |
+| Shared connectivity hypothesis | REST timeout + WordPress.org failure | Makes DNS/egress/TLS/loopback/provider path high investigation priority | Same-timestamp phase-level evidence | Inference only, not root cause |
+| SMTP/Rank Math/Coming Soon | Sprint 04A task evidence | Separates incomplete mail, URL reconnect, and expected Coming Soon state from unproven shared cause | Sender/provider and delivery evidence; stable URL/TLS/account evidence; Founder launch gate | No configuration/reconnect/change |
+| Strict read-only boundary | Sprint 04A task and Platform Governance | Prohibits hosting/WordPress/plugin/database/.htaccess/wp-config/PHP/settings changes and new access methods | Separate explicit Founder task after backup/staging/root-cause review | Preserved |
+
+```text
+Sprint 02C + Sprint 04A supplied Site Health evidence
+  -> current topology and symptom classification
+      -> REST lifecycle + outbound connectivity evidence models
+          -> provider/application read-only evidence collection
+              -> evidence-supported root-cause decision
+                  -> separate backup/staging/remediation authorization
+                      -> future validation before WooCommerce implementation
+```
+
+## Sprint 04B–04C Authenticated Audit and Remediation Planning Traceability
+
+| Asset/rule | Origin and authority | Repository effect | Required future evidence | Implementation status |
+| --- | --- | --- | --- | --- |
+| Sprint 04B Audit | Sprint 04B task and repository-visible evidence | Records the unauthenticated evidence boundary and items requiring Admin evidence | Authenticated Admin or provider evidence | Evidence only |
+| Sprint 04B Authenticated Audit | Read-only WordPress Admin observations | Refines current runtime, plugin, theme, content, commerce, SEO, security, and operations evidence | Provider telemetry, staging, restore test, and specialist review where identified | Evidence only; no change authority |
+| Master Remediation Roadmap | Sprint 02A–02C, Sprint 03A–03E, Sprint 04A, Sprint 04B, and authenticated Sprint 04B evidence | Registers `RM-001`–`RM-046` once each with one allowed category, primary execution group, risk, impact, priority, dependency, effort, rollback, validation, and owner | Founder acceptance and issue-specific gate evidence | Planning only |
+| Implementation Sequence | Master Remediation Roadmap and Execution Gates | Orders future investigation and remediation into dependency-safe phases and rollback checkpoints | Passed prerequisite gates and separately authorized implementation tickets | Planning only |
+| Execution Gates | Governing rules, evidence gaps, and roadmap dependencies | Defines `G00`–`G14` approval, evidence, pass/fail, and stop conditions | Recorded evidence and named approval for each gate | All gates unpassed; execution blocked |
+| Sprint 04C Audit | Current repository state and reproducible validation | Records planning completeness, coverage, missing evidence, unknowns, and scope compliance | Founder review | Evidence only |
+
+```text
+Sprint 02 + Sprint 03 + Sprint 04A/04B evidence
+  -> authenticated current-state refinement
+      -> RM-001–RM-046 deduplicated remediation register
+          -> dependency-safe implementation sequence
+              -> G00–G14 evidence and approval gates
+                  -> separate authorized implementation ticket only after applicable gates pass
+```
+
+## Sprint 05A Design Intelligence and Motion Traceability
+
+| Asset/decision | Origin and authority | Repository effect | Required future evidence | Implementation status |
+| --- | --- | --- | --- | --- |
+| Design Manifest and Brand Language | CP-003–CP-007, WordPress/Blocksy/Elementor Blueprints, explicit Sprint 05A Founder direction | Defines industrial/premium/B2B, trust, Persian RTL, Mobile First, and no-over-animation guidance without selecting final tokens | Founder/design/content approval; exact token and claim evidence | Guidance only |
+| DDR-0001 | Explicit Sprint 05A decision; CP-001, CP-002, CP-007, CP-010 | ReactBits is inspiration only; no package, copied component, runtime, or build dependency | Future dependency inventory and native ownership evidence | Accepted guidance; no implementation |
+| DDR-0002 | Explicit Sprint 05A motion ratio | Defines 85% clean, 10% purposeful motion, 5% controlled wow as an experience principle | Component/viewport inventory, reduced-motion, performance, and accessibility evidence | Accepted guidance; no implementation |
+| DDR-0003 | Explicit Sprint 05A design direction | Defines industrial premium trust language while keeping product facts in canonical sources | Founder/brand/domain/content review | Accepted guidance; no public design output |
+| DDR-0004 | CP-001, CP-002, CP-007, BLOCKSY and ELEMENTOR ownership | Limits future delivery to approved supported Blocksy/WordPress configuration and delegated Elementor composition | Exact version/license/capability, staging, export, rollback, and regression evidence | Accepted guidance; configuration blocked |
+| ReactBits Inspiration Mapping | Fifteen Founder-approved inspiration names plus DDR-0001 | Maps allowed/forbidden areas, native route, compatibility, performance, mobile, accessibility, and design classification | Pattern-specific review and implementation gate | Mapping only |
+| Component and Animation Libraries | Design Manifest, Motion System, approved content/data ownership | Defines 14 component and 12 animation guidance contracts | Approved content/data, tokens, component ownership, tests, and rollback | Conceptual only |
+| Performance and Accessibility Rules | Core Principles, quality standards, Motion System | Defines dependency, asset, Core Web Vitals, motion-safety, reduced-motion, contrast, keyboard, RTL, and validation gates | Numeric budgets/target approval and representative measured/human evidence | Validation guidance only |
+| Sprint 05A Audit | Current repository state and reproducible validation | Records completeness, scope, compatibility, safety, and readiness evidence | Founder and specialist review | Evidence only |
+
+```text
+CP-001-CP-010 + Blocksy/Elementor ownership + Sprint 05A Founder direction
+  -> DDR-0001-DDR-0004
+      -> Design Manifest + Brand Language
+          -> Motion System + ReactBits Inspiration Mapping
+              -> Component + Animation Libraries
+                  -> Performance + Accessibility gates
+                      -> separate future implementation approval only
+```
+
 ## Governance Traceability
 
 | Concern | Governing source | Supporting sources | Evidence or register |
@@ -500,6 +566,27 @@ accepted Founder/business/Core Principle/ADR authority
 - [Enterprise Platform Versioning](../repository/platform/PLATFORM_VERSIONING.md)
 - [Enterprise Platform Evolution](../repository/platform/PLATFORM_EVOLUTION.md)
 - [Sprint 03E Audit](AUDIT_REPORT_SPRINT03E.md)
+- [Infrastructure Audit](INFRASTRUCTURE_AUDIT.md)
+- [REST API Diagnostic](REST_API_DIAGNOSTIC.md)
+- [WordPress Connectivity Audit](WORDPRESS_CONNECTIVITY_AUDIT.md)
+- [Site Health Remediation Plan](SITE_HEALTH_REMEDIATION_PLAN.md)
+- [Sprint 04A Audit](AUDIT_REPORT_SPRINT04A.md)
+- [Sprint 04B Audit](AUDIT_REPORT_SPRINT04B.md)
+- [Sprint 04B Authenticated Audit](AUDIT_REPORT_SPRINT04B_AUTHENTICATED.md)
+- [Master Remediation Roadmap](MASTER_REMEDIATION_ROADMAP.md)
+- [Implementation Sequence](IMPLEMENTATION_SEQUENCE.md)
+- [Execution Gates](EXECUTION_GATES.md)
+- [Sprint 04C Audit](AUDIT_REPORT_SPRINT04C.md)
+- [Design Manifest](../repository/design/DESIGN_MANIFEST.md)
+- [Brand Language](../repository/design/BRAND_LANGUAGE.md)
+- [Motion System](../repository/design/MOTION_SYSTEM.md)
+- [ReactBits Inspiration Mapping](../repository/design/REACTBITS_INSPIRATION_MAPPING.md)
+- [Component Pattern Library](../repository/design/COMPONENT_PATTERN_LIBRARY.md)
+- [Animation Library](../repository/design/ANIMATION_LIBRARY.md)
+- [Design Performance Rules](../repository/design/PERFORMANCE_RULES.md)
+- [Design Accessibility Rules](../repository/design/ACCESSIBILITY_RULES.md)
+- [Design Decision Records](../repository/design/DESIGN_DECISION_RECORDS.md)
+- [Sprint 05A Audit](AUDIT_REPORT_SPRINT05A.md)
 
 ## Navigation
 
