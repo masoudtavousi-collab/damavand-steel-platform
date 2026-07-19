@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-04
-- **Last Review:** 2026-07-04
+- **Version:** 0.3.0
+- **Last Updated:** 2026-07-19
+- **Last Review:** 2026-07-19
 - **Review Cycle:** On decision classification, status, or authority change
 - **Lifecycle:** Draft
 - **Source of Truth:** Approved governing documents and explicitly accepted decision records; this log is an index only
@@ -81,6 +81,7 @@ Every accepted decision must identify:
 | ID | Decision | Source | Status |
 | --- | --- | --- | --- |
 | ADR-0001 | Inquiry-first commerce; WooCommerce is the product catalog authority; public pricing and direct transactional behavior remain disabled. | [ADR 0001](adr/0001-inquiry-first-commerce.md) | Accepted |
+| FD-PILOT-001 | The Golden Parent is `لوله استیل دکوراتیو`; exactly three Pipe combinations are approved for the limited pilot under reference IDs `GOLD-PIPE-201-51-050-6M`, `GOLD-PIPE-201-38-050-6M`, and `GOLD-PIPE-201-16-035-6M`. These references are not final commercial SKUs. The remaining 879 rows stay `CANDIDATE_UNVERIFIED`; market availability stays `MISSING_DATA_VALUE` for all 882; import, runtime, and publishing remain `NO-GO`. | [Founder Decision Log](17_FOUNDER_DECISION_LOG.md#settled-golden-pipe-pilot-decision) and GIT-02S Founder directive dated 2026-07-14 | Accepted by explicit Founder directive; superseded only by a later explicit Founder decision |
 
 ## Technical Decisions
 
@@ -202,6 +203,12 @@ RA-001 through RA-012 are Review-state proposals and security boundaries. Their 
 | RA-006–RA-007 | No root/shared identity; least privilege, project-path restriction, key-based access, and strict secret/license protection | [Remote Access Architecture](45_REMOTE_ACCESS_ARCHITECTURE.md#security-rules) | Required security boundary; exact implementation pending |
 | RA-008–RA-010 | Pre-change restorable backup, clean reviewed Git state, validation/audit, and tested rollback | [Remote Access Architecture](45_REMOTE_ACCESS_ARCHITECTURE.md#risk-controls) | Proposed gates; evidence missing |
 | RA-011–RA-012 | Founder-manageable operation and connectivity-independent fallback without weakening integrity, licensing, security, or approval | [Remote Access Architecture](45_REMOTE_ACCESS_ARCHITECTURE.md#founder-usability-constraints) | Proposed; pending Founder review |
+
+## Class B Wave 1 Repository-Control Decision
+
+| Decision ID | Decision | Source | Status |
+| --- | --- | --- | --- |
+| `FD-GIT-W1-001` | Integrate exactly the 19 approved Wave 1 governance and repository-control paths through `codex/class-b-wave-01-governance`, one commit, push of only that branch, and one Draft PR. Preserve PR #1 and all other Class B work; do not merge or begin Wave 2. | [Founder Decision Log](17_FOUNDER_DECISION_LOG.md#settled-class-b-wave-1-repository-control-decision) and explicit Founder authorization dated 2026-07-19 | `APPROVED` for exact Git/documentation scope only; no runtime, WordPress, product, content, publication, deployment, production, repository-setting, or default-branch authority |
 
 ## Pending Decisions
 

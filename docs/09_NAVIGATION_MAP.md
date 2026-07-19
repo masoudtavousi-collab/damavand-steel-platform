@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.1.2
-- **Last Updated:** 2026-07-05
-- **Last Review:** 2026-07-05
+- **Version:** 0.4.0
+- **Last Updated:** 2026-07-19
+- **Last Review:** 2026-07-19
 - **Review Cycle:** On repository path, document index, reading path, or relationship change
 - **Lifecycle:** Draft
 - **Source of Truth:** [Documentation Index](08_DOCUMENTATION_INDEX.md) and current repository paths
@@ -25,6 +25,27 @@
 Define repository navigation and reading paths without changing directory ownership or architecture.
 
 ## Repository Navigation
+
+### Codex Governance Entry
+
+1. [Codex Repository Instructions](../AGENTS.md)
+2. [Project Baseline](PROJECT_BASELINE.md)
+3. [Repository Reading Order](READING_ORDER.md)
+4. [Current Project State](CURRENT_PROJECT_STATE.md)
+5. [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md)
+6. [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md)
+7. [Codex Sprint Protocol](CODEX_SPRINT_PROTOCOL.md)
+8. [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md)
+9. [Settled Class B Wave 1 Repository-Control Decision](17_FOUNDER_DECISION_LOG.md#settled-class-b-wave-1-repository-control-decision)
+10. [GIT-02S Audit](AUDIT_REPORT_GIT02S.md) as historical 2026-07-14 evidence
+
+This path is governance and Founder-review only. The current Wave 1 directive permits only its exact 19-path documentation commit, branch push, and Draft PR. It authorizes no merge, Wave 2–10 integration, runtime, import, WordPress, content, product, publishing, deployment, production mutation, or automatic pilot execution.
+
+### Current Git Integration Path
+
+`main` at `96f2ea70f9010fce416a18310e98915e2be537b9` → bootstrap commit `b20e95de8b1b67d2bc610130648700e82a6855b3` → open, Draft, unmerged PR #1 with 24 paths → `codex/class-b-wave-01-governance` with exactly 19 approved governance paths → new Draft PR → Founder review → **STOP before merge**.
+
+Class B Waves 2–10 and the six Sprint 1 reports remain local, unstaged, unapproved, and outside this path.
 
 | Path | Existing responsibility | Primary documentation |
 | --- | --- | --- |
@@ -51,7 +72,19 @@ Define repository navigation and reading paths without changing directory owners
 
 ### Founder and Governance Path
 
-[Project Bible](00_PROJECT_BIBLE.md) → [Project Constitution](01_PROJECT_CONSTITUTION.md) → [Founder Decision Log](17_FOUNDER_DECISION_LOG.md) → [Open Questions](18_OPEN_QUESTIONS.md) → [Decision Log](10_DECISION_LOG.md)
+[Project Baseline](PROJECT_BASELINE.md) → [Project Bible](00_PROJECT_BIBLE.md) → [Project Constitution](01_PROJECT_CONSTITUTION.md) → [Founder Decision Log](17_FOUNDER_DECISION_LOG.md) → [Open Questions](18_OPEN_QUESTIONS.md) → [Decision Log](10_DECISION_LOG.md)
+
+### Historical GIT-02S Reconciliation and Pilot Evidence Path
+
+[Current Project State](CURRENT_PROJECT_STATE.md) → [FD-PILOT-001](17_FOUNDER_DECISION_LOG.md#settled-golden-pipe-pilot-decision) → [Sprint 10R Audit](AUDIT_REPORT_SPRINT10R.md) → [Sprint 11 Audit](AUDIT_REPORT_SPRINT11.md) → [Golden Product Runtime Preflight](GOLDEN_PRODUCT_RUNTIME_PREFLIGHT.md) → [Sprint 12A Audit](AUDIT_REPORT_SPRINT12A.md) → [Repository Freeze Report](REPOSITORY_FREEZE_REPORT.md) → [GIT-02S Audit](AUDIT_REPORT_GIT02S.md)
+
+### Git Reconciliation Evidence Path
+
+[Git Governance](GIT_GOVERNANCE.md) → [Git Baseline Audit](GIT_BASELINE_AUDIT.md) → [Git Baseline Commit Report](GIT_BASELINE_COMMIT_REPORT.md) → [Git EOF Normalization Report](GIT_EOF_NORMALIZATION_REPORT.md) → [Git Baseline Approval Checklist](GIT_BASELINE_APPROVAL_CHECKLIST.md) → [Git File Classification](GIT_FILE_CLASSIFICATION.csv) → [Repository Freeze Report](REPOSITORY_FREEZE_REPORT.md) → [GIT-02S Audit](AUDIT_REPORT_GIT02S.md)
+
+### Cross-Repository Path
+
+[Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md) controls interpretation. Repository B is isolated `QUARANTINED_ARCHITECTURE_RESEARCH`; its Factory and Generator concepts are not project authorities and are not implementation-ready.
 
 ### Architecture Path
 
@@ -149,6 +182,72 @@ Authenticated evidence refines earlier unknowns but does not authorize a change.
 
 This is a repository-guidance path only. ReactBits is inspiration, not a package or runtime dependency. No WordPress, Blocksy, Elementor, page, template, CSS, JavaScript, React, or production asset is created.
 
+### Sprint 06A Knowledge Intelligence Path
+
+[Entity Relationship Model](30_ENTITY_RELATIONSHIP_MODEL.md) + [Product Data Model](19_PRODUCT_DATA_MODEL.md) + [Content Architecture](29_CONTENT_ARCHITECTURE.md) + [Inquiry Data Model](23_INQUIRY_DATA_MODEL.md) + [SEO Entity Model](34_SEO_ENTITY_MODEL.md) + [Knowledge Engine Boundary](../repository/platform/ENGINE_BOUNDARIES.md#knowledge-engine) → [Knowledge Manifest](../repository/knowledge/KNOWLEDGE_MANIFEST.md) → [Entity Model](../repository/knowledge/ENTITY_MODEL.md) + [Ontology Model](../repository/knowledge/ONTOLOGY_MODEL.md) + [Relationship Model](../repository/knowledge/RELATIONSHIP_MODEL.md) → [Product Knowledge Graph](../repository/knowledge/PRODUCT_KNOWLEDGE_GRAPH.md) + [SEO Knowledge Graph](../repository/knowledge/SEO_KNOWLEDGE_GRAPH.md) + [CRM Knowledge Graph](../repository/knowledge/CRM_KNOWLEDGE_GRAPH.md) → [AI Knowledge Readiness](../repository/knowledge/AI_KNOWLEDGE_READINESS.md) + [Knowledge Governance](../repository/knowledge/KNOWLEDGE_GOVERNANCE.md) → [Sprint 06A Audit](AUDIT_REPORT_SPRINT06A.md)
+
+This path defines platform-independent semantic contracts only. Source domains retain authority; no graph runtime, index, database, CRM, recommendation, Product Finder, search, AI feature, WordPress object, or product is created.
+
+### Sprint 07A Enterprise Business Operating System Path
+
+[Core Project Principles](00_PROJECT_BIBLE.md#core-project-principles) + [Business Rules](03_BUSINESS_RULES.md) + [Inquiry Data Model](23_INQUIRY_DATA_MODEL.md) + [Entity Relationship Model](30_ENTITY_RELATIONSHIP_MODEL.md) + [Platform Manifest](../repository/platform/PLATFORM_MANIFEST.md) + [Knowledge Manifest](../repository/knowledge/KNOWLEDGE_MANIFEST.md) → [Business Manifest](../repository/business/BUSINESS_MANIFEST.md) + [Business Entity Model](../repository/business/BUSINESS_ENTITY_MODEL.md) → [Customer Lifecycle](../repository/business/CUSTOMER_LIFECYCLE.md) + [Inquiry Engine](../repository/business/INQUIRY_ENGINE.md) + [Sales Pipeline](../repository/business/SALES_PIPELINE.md) → [Representative Model](../repository/business/REPRESENTATIVE_MODEL.md) + [Commission Engine](../repository/business/COMMISSION_ENGINE.md) + [Project Lifecycle](../repository/business/PROJECT_LIFECYCLE.md) + [Supplier Model](../repository/business/SUPPLIER_MODEL.md) + [Service Model](../repository/business/SERVICE_MODEL.md) → [Business Governance](../repository/business/BUSINESS_GOVERNANCE.md) → [Sprint 07A Audit](AUDIT_REPORT_SPRINT07A.md)
+
+This path is Business First, Platform Second, Runtime Last. All DEBOS models remain Review/TBD; no CRM/WooCommerce/WordPress/database/API/runtime/AI implementation or business record is created.
+
+### Sprint 08A Enterprise Product and Knowledge Platform Blueprint Path
+
+[Core Project Principles](00_PROJECT_BIBLE.md#core-project-principles) + [Product Data Model](19_PRODUCT_DATA_MODEL.md) + [WooCommerce Product Model](20_WOOCOMMERCE_PRODUCT_MODEL.md) + [Platform Manifest](../repository/platform/PLATFORM_MANIFEST.md) + [Product Engine](../repository/engine/product/PRODUCT_ENGINE.md) + [Knowledge Manifest](../repository/knowledge/KNOWLEDGE_MANIFEST.md) + [Business Manifest](../repository/business/BUSINESS_MANIFEST.md) + [WordPress Blueprint](35_WORDPRESS_BLUEPRINT.md) → [Enterprise Product and Knowledge Platform Manifest](../repository/enterprise-platform/01_PLATFORM_MANIFEST.md) → [Product Repository Architecture](../repository/enterprise-platform/02_PRODUCT_REPOSITORY_ARCHITECTURE.md) + [Knowledge Repository Architecture](../repository/enterprise-platform/03_KNOWLEDGE_REPOSITORY_ARCHITECTURE.md) → [Product Configurator Engine](../repository/enterprise-platform/04_PRODUCT_CONFIGURATOR_ENGINE.md) + [Product Experience Engine](../repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md) + [Guided Selection Engine](../repository/enterprise-platform/06_GUIDED_SELECTION_ENGINE.md) + [Assembly Engine](../repository/enterprise-platform/07_ASSEMBLY_ENGINE.md) → [Market Intelligence Repository](../repository/enterprise-platform/08_MARKET_INTELLIGENCE_REPOSITORY.md) + [Customer Knowledge Repository](../repository/enterprise-platform/09_CUSTOMER_KNOWLEDGE_REPOSITORY.md) + [Decision Rules Engine](../repository/enterprise-platform/10_DECISION_RULES_ENGINE.md) + [Single Source of Truth Rules](../repository/enterprise-platform/11_SINGLE_SOURCE_OF_TRUTH_RULES.md) → [WordPress and WooCommerce Mapping](../repository/enterprise-platform/12_WORDPRESS_WOOCOMMERCE_MAPPING.md) + [Sprint 08A Implementation Roadmap](../repository/enterprise-platform/13_IMPLEMENTATION_ROADMAP.md) → [Sprint 08A Audit](AUDIT_REPORT_SPRINT08A.md)
+
+This path is Blueprint only. GO means Founder review only; WordPress, WooCommerce, plugins, products, public pricing, theme changes, AI features, and runtime implementation remain `NO-GO`.
+
+### Sprint 08B Visual Experience System Path
+
+[Design Manifest](../repository/design/DESIGN_MANIFEST.md) + [Brand Language](../repository/design/BRAND_LANGUAGE.md) + [Motion System](../repository/design/MOTION_SYSTEM.md) + [ReactBits Inspiration Mapping](../repository/design/REACTBITS_INSPIRATION_MAPPING.md) + [Component Pattern Library](../repository/design/COMPONENT_PATTERN_LIBRARY.md) + [Performance Rules](../repository/design/PERFORMANCE_RULES.md) + [Accessibility Rules](../repository/design/ACCESSIBILITY_RULES.md) + [Sprint 08A Platform Blueprint](../repository/enterprise-platform/01_PLATFORM_MANIFEST.md) + [WordPress and WooCommerce Mapping](../repository/enterprise-platform/12_WORDPRESS_WOOCOMMERCE_MAPPING.md) → [Damavand Visual Experience System](../repository/design/DAMAVAND_VISUAL_EXPERIENCE_SYSTEM.md) → [Elementor Component Guide](../repository/design/ELEMENTOR_COMPONENT_GUIDE.md) + [ReactBits Inspired UI Rules](../repository/design/REACTBITS_INSPIRED_UI_RULES.md) → [Sprint 08B Audit](AUDIT_REPORT_SPRINT08B.md)
+
+This path is visual implementation planning only. It is `GO` for Founder visual review and Sprint 08C planning. WordPress implementation, runtime CSS/JavaScript, dependency installation, and publishing remain `NO-GO`.
+
+### Sprint 08B.5 Design Language Foundation Path
+
+[Design Manifest](../repository/design/DESIGN_MANIFEST.md) + [Damavand Visual Experience System](../repository/design/DAMAVAND_VISUAL_EXPERIENCE_SYSTEM.md) + [Elementor Component Guide](../repository/design/ELEMENTOR_COMPONENT_GUIDE.md) + [ReactBits Inspired UI Rules](../repository/design/REACTBITS_INSPIRED_UI_RULES.md) → [Enterprise Design Language](../repository/design/01_DESIGN_LANGUAGE.md) → [Design Tokens](../repository/design/02_DESIGN_TOKENS.md) + [Component State System](../repository/design/03_COMPONENT_STATE_SYSTEM.md) + [Visual Hierarchy](../repository/design/04_VISUAL_HIERARCHY.md) → [Spacing System](../repository/design/05_SPACING_SYSTEM.md) + [Grid System](../repository/design/06_GRID_SYSTEM.md) + [Typography System](../repository/design/07_TYPOGRAPHY_SYSTEM.md) + [Color System](../repository/design/08_COLOR_SYSTEM.md) → [Iconography System](../repository/design/09_ICONOGRAPHY_SYSTEM.md) + [Image System](../repository/design/10_IMAGE_SYSTEM.md) + [Enterprise Motion System](../repository/design/11_MOTION_SYSTEM.md) + [Component Naming](../repository/design/12_COMPONENT_NAMING.md) + [Admin Experience](../repository/design/13_ADMIN_EXPERIENCE.md) + [Design Versioning](../repository/design/14_VERSIONING.md) → [Sprint 08B.5 Audit](AUDIT_REPORT_SPRINT08B5.md)
+
+This path is Design Language governance only. It is `GO` for Founder Design Review. Runtime, publishing, WordPress implementation, CSS generation, JavaScript generation, dependency installation, Elementor templates, and Blocksy settings remain `NO-GO`.
+
+### Sprint 08B.6 Enterprise Content Language Path
+
+[Enterprise Content Architecture](29_CONTENT_ARCHITECTURE.md) + [Content Types](32_CONTENT_TYPES.md) + [SEO Entity Model](34_SEO_ENTITY_MODEL.md) + [Knowledge Manifest](../repository/knowledge/KNOWLEDGE_MANIFEST.md) + [Enterprise Design Language](../repository/design/01_DESIGN_LANGUAGE.md) → [Enterprise Content Language](../repository/content/01_CONTENT_LANGUAGE.md) → [Product Content Standard](../repository/content/02_PRODUCT_CONTENT_STANDARD.md) + [Category Content Standard](../repository/content/03_CATEGORY_CONTENT_STANDARD.md) + [Knowledge Article Standard](../repository/content/04_KNOWLEDGE_ARTICLE_STANDARD.md) + [FAQ Standard](../repository/content/05_FAQ_STANDARD.md) + [Brand Content Standard](../repository/content/06_BRAND_CONTENT_STANDARD.md) + [Installation Guide Standard](../repository/content/07_INSTALLATION_GUIDE_STANDARD.md) → [Material Knowledge Standard](../repository/content/08_MATERIAL_KNOWLEDGE_STANDARD.md) + [Alloy Knowledge Standard](../repository/content/09_ALLOY_KNOWLEDGE_STANDARD.md) + [Content Component Library](../repository/content/10_CONTENT_COMPONENT_LIBRARY.md) + [Content Tone of Voice](../repository/content/11_CONTENT_TONE_OF_VOICE.md) + [Content Semantic Entity Model](../repository/content/12_SEMANTIC_ENTITY_MODEL.md) + [Content Reuse Rules](../repository/content/13_CONTENT_REUSE_RULES.md) + [AI Content Governance](../repository/content/14_AI_CONTENT_GOVERNANCE.md) + [Content Versioning](../repository/content/15_CONTENT_VERSIONING.md) → [Sprint 08B.6 Audit](AUDIT_REPORT_SPRINT08B6.md)
+
+This path is Content Language governance only. It is `GO` for Founder Content Review. WordPress implementation, publishing, runtime files, SEO implementation, product description generation, and AI generation remain `NO-GO`.
+
+### Sprint 08C Enterprise WordPress Implementation Blueprint Path
+
+[WordPress Blueprint](35_WORDPRESS_BLUEPRINT.md) + [WordPress and WooCommerce Mapping](../repository/enterprise-platform/12_WORDPRESS_WOOCOMMERCE_MAPPING.md) + [Product Repository Architecture](../repository/enterprise-platform/02_PRODUCT_REPOSITORY_ARCHITECTURE.md) + [Enterprise Design Language](../repository/design/01_DESIGN_LANGUAGE.md) + [Enterprise Content Language](../repository/content/01_CONTENT_LANGUAGE.md) + [Knowledge Manifest](../repository/knowledge/KNOWLEDGE_MANIFEST.md) → [Enterprise WordPress Implementation Architecture](../repository/wordpress/01_WORDPRESS_ARCHITECTURE.md) → [WooCommerce Product Model Blueprint](../repository/wordpress/02_WOOCOMMERCE_PRODUCT_MODEL.md) + [Attribute Strategy](../repository/wordpress/03_ATTRIBUTE_STRATEGY.md) + [Taxonomy Strategy](../repository/wordpress/04_TAXONOMY_STRATEGY.md) + [ACF and Custom Field Strategy](../repository/wordpress/05_ACF_STRATEGY.md) → [Blocksy Implementation Architecture](../repository/wordpress/06_BLOCKSY_ARCHITECTURE.md) + [Elementor Implementation Architecture](../repository/wordpress/07_ELEMENTOR_ARCHITECTURE.md) + [Rank Math SEO Mapping Blueprint](../repository/wordpress/08_RANKMATH_MAPPING.md) → [Admin Workflow](../repository/wordpress/09_ADMIN_WORKFLOW.md) + [Media Library Architecture](../repository/wordpress/10_MEDIA_LIBRARY_ARCHITECTURE.md) + [Product Import Strategy](../repository/wordpress/11_PRODUCT_IMPORT_STRATEGY.md) + [Configuration Workflow](../repository/wordpress/12_CONFIGURATION_WORKFLOW.md) + [Testing Strategy](../repository/wordpress/13_TESTING_STRATEGY.md) + [Runtime Boundaries](../repository/wordpress/14_RUNTIME_BOUNDARIES.md) + [Release Plan](../repository/wordpress/15_RELEASE_PLAN.md) → [Sprint 08C Audit](AUDIT_REPORT_SPRINT08C.md)
+
+This path is WordPress implementation blueprint only. It is `GO` for Founder Architecture Review. Runtime, publishing, live WordPress, product creation, plugin installation, PHP, CSS, JavaScript, import execution, and configuration remain `NO-GO`.
+
+### Sprint 08D.1 WordPress Environment Verification Path
+
+[Runtime Boundaries](../repository/wordpress/14_RUNTIME_BOUNDARIES.md) + [WordPress Implementation Release Plan](../repository/wordpress/15_RELEASE_PLAN.md) + [Sprint 04B-A Authenticated Audit](AUDIT_REPORT_SPRINT04B_AUTHENTICATED.md) + public read-only endpoint checks → [WordPress Environment Inventory](WORDPRESS_ENVIRONMENT_INVENTORY.md) → [WordPress Read-only Audit](WORDPRESS_READ_ONLY_AUDIT.md) + [Plugin and Theme Compatibility Report](PLUGIN_THEME_COMPATIBILITY_REPORT.md) + [Site Health Blockers](SITE_HEALTH_BLOCKERS.md) → [Runtime Readiness Report](RUNTIME_READINESS_REPORT.md) → [Sprint 08D.1 Audit](AUDIT_REPORT_SPRINT08D1.md)
+
+This path is read-only verification only. It is `GO` for Founder review of evidence. Runtime, publishing, live WordPress mutation, cPanel/database/file changes, product creation, plugin changes, imports, settings changes, and remediation remain `NO-GO`.
+
+### Sprint 08D.1R Runtime Blocker Remediation Planning Path
+
+[Sprint 08D.1 Audit](AUDIT_REPORT_SPRINT08D1.md) + [Site Health Blockers](SITE_HEALTH_BLOCKERS.md) + [Runtime Readiness Report](RUNTIME_READINESS_REPORT.md) + [Runtime Boundaries](../repository/wordpress/14_RUNTIME_BOUNDARIES.md) → [Runtime Blocker Remediation Plan](RUNTIME_BLOCKER_REMEDIATION_PLAN.md) → [Remediation Sequence and Dependencies](REMEDIATION_SEQUENCE_AND_DEPENDENCIES.md) + [Backup Restore Proof Checklist](BACKUP_RESTORE_PROOF_CHECKLIST.md) + [Founder Runtime Approval Checklist](FOUNDER_RUNTIME_APPROVAL_CHECKLIST.md) → [Sprint 08D.1R Audit](AUDIT_REPORT_SPRINT08D1R.md)
+
+This path is remediation planning only. It is `GO` for Founder review of the plan. Runtime, publishing, product creation, plugin/theme changes, backup creation, restore execution, and WordPress modification remain `NO-GO`.
+
+### Sprint 09A Product Foundation Asset Path
+
+[Product Repository Architecture](../repository/enterprise-platform/02_PRODUCT_REPOSITORY_ARCHITECTURE.md) + [Product Engine](../repository/engine/product/PRODUCT_ENGINE.md) + [Pipe Product Family](../repository/data/products/pipes/PIPE_PRODUCT_FAMILY.md) + [Pipe Variation Matrix](../repository/data/products/pipes/PIPE_VARIATION_MATRIX.md) + [Pipe Attribute Model](../repository/data/attributes/PIPE_ATTRIBUTE_MODEL.md) + [WordPress Product Import Strategy](../repository/wordpress/11_PRODUCT_IMPORT_STRATEGY.md) → [Master Product Taxonomy v1](../repository/implementation-assets/product-foundation/01_MASTER_PRODUCT_TAXONOMY_V1.yaml) + [Global Attribute Library v1](../repository/implementation-assets/product-foundation/02_GLOBAL_ATTRIBUTE_LIBRARY_V1.yaml) → [Pipe Family Template v1](../repository/implementation-assets/product-foundation/03_PIPE_FAMILY_TEMPLATE_V1.yaml) + [Profile Family Template v1](../repository/implementation-assets/product-foundation/04_PROFILE_FAMILY_TEMPLATE_V1.yaml) → [Variant and SKU Rules v1](../repository/implementation-assets/product-foundation/05_VARIANT_AND_SKU_RULES_V1.md) + [Product Knowledge Mapping v1](../repository/implementation-assets/product-foundation/06_PRODUCT_KNOWLEDGE_MAPPING_V1.yaml) + [Founder Decision Register v1](../repository/implementation-assets/product-foundation/07_FOUNDER_DECISION_REGISTER_V1.md) → [Pipe/Profile WooCommerce Mapping v1](../repository/implementation-assets/import-preparation/PIPE_PROFILE_WOOCOMMERCE_MAPPING_V1.csv) + [Pipe/Profile Attribute Seed v1](../repository/implementation-assets/import-preparation/PIPE_PROFILE_ATTRIBUTE_SEED_V1.csv) + [Pipe/Profile Validation Rules v1](../repository/implementation-assets/import-preparation/PIPE_PROFILE_VALIDATION_RULES_V1.md) → [Sprint 09A Audit](AUDIT_REPORT_SPRINT09A.md)
+
+This path is Product Foundation review only. Pipe values are limited to current repository evidence. Profile values remain `STATUS: FOUNDER_INPUT_REQUIRED` where not approved. WordPress import, runtime changes, publishing, public pricing, stock, final SKUs, bulk SKU generation, and product creation remain `NO-GO`.
+
+### Sprint 09B Product DNA System Path
+
+[Product Repository Architecture](../repository/enterprise-platform/02_PRODUCT_REPOSITORY_ARCHITECTURE.md) + [Knowledge Repository Architecture](../repository/enterprise-platform/03_KNOWLEDGE_REPOSITORY_ARCHITECTURE.md) + [Product Configurator Engine](../repository/enterprise-platform/04_PRODUCT_CONFIGURATOR_ENGINE.md) + [Product Experience Engine](../repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md) + [WordPress and WooCommerce Mapping](../repository/enterprise-platform/12_WORDPRESS_WOOCOMMERCE_MAPPING.md) + [Product Content Standard](../repository/content/02_PRODUCT_CONTENT_STANDARD.md) + [Content Component Library](../repository/content/10_CONTENT_COMPONENT_LIBRARY.md) + [Product Foundation Assets](../repository/implementation-assets/product-foundation/01_MASTER_PRODUCT_TAXONOMY_V1.yaml) → [Master Product DNA](../repository/implementation-assets/product-dna/01_MASTER_PRODUCT_DNA.md) → [Product Information Model](../repository/implementation-assets/product-dna/02_PRODUCT_INFORMATION_MODEL.yaml) + [Product Component Library](../repository/implementation-assets/product-dna/03_PRODUCT_COMPONENT_LIBRARY.yaml) + [Product Knowledge Block Library](../repository/implementation-assets/product-dna/04_PRODUCT_KNOWLEDGE_BLOCK_LIBRARY.yaml) → [Product Page Assembly Engine](../repository/implementation-assets/product-dna/05_PRODUCT_PAGE_ASSEMBLY_ENGINE.yaml) + [Product Configurator UI Model](../repository/implementation-assets/product-dna/06_PRODUCT_CONFIGURATOR_UI_MODEL.yaml) + [Product Media Model](../repository/implementation-assets/product-dna/07_PRODUCT_MEDIA_MODEL.yaml) + [Product SEO Model](../repository/implementation-assets/product-dna/08_PRODUCT_SEO_MODEL.yaml) + [Product Schema Model](../repository/implementation-assets/product-dna/09_PRODUCT_SCHEMA_MODEL.yaml) + [Product Relation Model](../repository/implementation-assets/product-dna/10_PRODUCT_RELATION_MODEL.yaml) → [Product Lifecycle Model](../repository/implementation-assets/product-dna/11_PRODUCT_LIFECYCLE_MODEL.md) + [Product Validation Rules](../repository/implementation-assets/product-dna/12_PRODUCT_VALIDATION_RULES.md) + [Product Extensibility Model](../repository/implementation-assets/product-dna/13_PRODUCT_EXTENSIBILITY_MODEL.md) + [Product Admin Model](../repository/implementation-assets/product-dna/14_PRODUCT_ADMIN_MODEL.md) → [Product DNA Example Pipe](../repository/implementation-assets/product-dna/15_PRODUCT_DNA_EXAMPLE_PIPE.yaml) + [Product DNA Example Profile](../repository/implementation-assets/product-dna/16_PRODUCT_DNA_EXAMPLE_PROFILE.yaml) → [Sprint 09B Audit](AUDIT_REPORT_SPRINT09B.md)
+
+This path is Product DNA review only. It defines reusable product structure and Pipe/Profile examples without product creation, import, runtime code, SEO/schema publishing, Elementor/Blocksy/WooCommerce configuration, public pricing, or content generation.
+
 ### Technical Path
 
 [Technology Stack](05_TECH_STACK.md) → [WordPress Architecture](06_WORDPRESS_ARCHITECTURE.md) → [Development Workflow](08_DEVELOPMENT_WORKFLOW.md) → [Testing Strategy](13_TESTING_STRATEGY.md) → [Deployment](09_DEPLOYMENT.md)
@@ -210,10 +309,17 @@ Founder, New Developer, AI, Auditor, SEO, WordPress Engineer, and Content Team p
 - REST diagnostic gate: [REST API Diagnostic](REST_API_DIAGNOSTIC.md)
 - Connectivity evidence gate: [WordPress Connectivity Audit](WORDPRESS_CONNECTIVITY_AUDIT.md)
 - Site Health action gate: [Site Health Remediation Plan](SITE_HEALTH_REMEDIATION_PLAN.md)
+- Product Foundation taxonomy source: [Master Product Taxonomy v1](../repository/implementation-assets/product-foundation/01_MASTER_PRODUCT_TAXONOMY_V1.yaml)
+- Product Foundation attribute source: [Global Attribute Library v1](../repository/implementation-assets/product-foundation/02_GLOBAL_ATTRIBUTE_LIBRARY_V1.yaml)
+- Product Foundation validation gate: [Pipe/Profile Validation Rules v1](../repository/implementation-assets/import-preparation/PIPE_PROFILE_VALIDATION_RULES_V1.md)
+- Product DNA source: [Master Product DNA](../repository/implementation-assets/product-dna/01_MASTER_PRODUCT_DNA.md)
+- Product DNA validation gate: [Product Validation Rules](../repository/implementation-assets/product-dna/12_PRODUCT_VALIDATION_RULES.md)
 
 ## Navigation
 
 - [Documentation Index](08_DOCUMENTATION_INDEX.md)
+- [Project Baseline](PROJECT_BASELINE.md)
+- [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md)
 - [Glossary](11_GLOSSARY.md)
 - [Document Lifecycle](12_DOCUMENT_LIFECYCLE.md)
 - [Repository Reading Order](READING_ORDER.md)
@@ -226,6 +332,7 @@ Founder, New Developer, AI, Auditor, SEO, WordPress Engineer, and Content Team p
 - [Product Taxonomy Model](21_PRODUCT_TAXONOMY_MODEL.md)
 - [Product Attribute Model](22_PRODUCT_ATTRIBUTE_MODEL.md)
 - [Inquiry Data Model](23_INQUIRY_DATA_MODEL.md)
+- [GIT-02S Audit](AUDIT_REPORT_GIT02S.md)
 - [Enterprise Information Architecture](24_INFORMATION_ARCHITECTURE.md)
 - [Enterprise Site Structure](25_SITE_STRUCTURE.md)
 - [Enterprise URL Architecture](26_URL_ARCHITECTURE.md)
@@ -318,3 +425,129 @@ Founder, New Developer, AI, Auditor, SEO, WordPress Engineer, and Content Team p
 - [Design Accessibility Rules](../repository/design/ACCESSIBILITY_RULES.md)
 - [Design Decision Records](../repository/design/DESIGN_DECISION_RECORDS.md)
 - [Sprint 05A Audit](AUDIT_REPORT_SPRINT05A.md)
+- [Knowledge Manifest](../repository/knowledge/KNOWLEDGE_MANIFEST.md)
+- [Knowledge Entity Model](../repository/knowledge/ENTITY_MODEL.md)
+- [Knowledge Ontology Model](../repository/knowledge/ONTOLOGY_MODEL.md)
+- [Knowledge Relationship Model](../repository/knowledge/RELATIONSHIP_MODEL.md)
+- [Product Knowledge Graph](../repository/knowledge/PRODUCT_KNOWLEDGE_GRAPH.md)
+- [SEO Knowledge Graph](../repository/knowledge/SEO_KNOWLEDGE_GRAPH.md)
+- [CRM Knowledge Graph](../repository/knowledge/CRM_KNOWLEDGE_GRAPH.md)
+- [AI Knowledge Readiness](../repository/knowledge/AI_KNOWLEDGE_READINESS.md)
+- [Knowledge Governance](../repository/knowledge/KNOWLEDGE_GOVERNANCE.md)
+- [Sprint 06A Audit](AUDIT_REPORT_SPRINT06A.md)
+- [Business Manifest](../repository/business/BUSINESS_MANIFEST.md)
+- [Business Entity Model](../repository/business/BUSINESS_ENTITY_MODEL.md)
+- [Customer Lifecycle](../repository/business/CUSTOMER_LIFECYCLE.md)
+- [Inquiry Engine](../repository/business/INQUIRY_ENGINE.md)
+- [Sales Pipeline](../repository/business/SALES_PIPELINE.md)
+- [Representative Model](../repository/business/REPRESENTATIVE_MODEL.md)
+- [Commission Engine](../repository/business/COMMISSION_ENGINE.md)
+- [Project Lifecycle](../repository/business/PROJECT_LIFECYCLE.md)
+- [Supplier Model](../repository/business/SUPPLIER_MODEL.md)
+- [Service Model](../repository/business/SERVICE_MODEL.md)
+- [Business Governance](../repository/business/BUSINESS_GOVERNANCE.md)
+- [Sprint 07A Audit](AUDIT_REPORT_SPRINT07A.md)
+- [Enterprise Product and Knowledge Platform Manifest](../repository/enterprise-platform/01_PLATFORM_MANIFEST.md)
+- [Product Repository Architecture](../repository/enterprise-platform/02_PRODUCT_REPOSITORY_ARCHITECTURE.md)
+- [Knowledge Repository Architecture](../repository/enterprise-platform/03_KNOWLEDGE_REPOSITORY_ARCHITECTURE.md)
+- [Product Configurator Engine](../repository/enterprise-platform/04_PRODUCT_CONFIGURATOR_ENGINE.md)
+- [Product Experience Engine](../repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md)
+- [Guided Selection Engine](../repository/enterprise-platform/06_GUIDED_SELECTION_ENGINE.md)
+- [Assembly Engine](../repository/enterprise-platform/07_ASSEMBLY_ENGINE.md)
+- [Market Intelligence Repository](../repository/enterprise-platform/08_MARKET_INTELLIGENCE_REPOSITORY.md)
+- [Customer Knowledge Repository](../repository/enterprise-platform/09_CUSTOMER_KNOWLEDGE_REPOSITORY.md)
+- [Decision Rules Engine](../repository/enterprise-platform/10_DECISION_RULES_ENGINE.md)
+- [Single Source of Truth Rules](../repository/enterprise-platform/11_SINGLE_SOURCE_OF_TRUTH_RULES.md)
+- [WordPress and WooCommerce Mapping](../repository/enterprise-platform/12_WORDPRESS_WOOCOMMERCE_MAPPING.md)
+- [Sprint 08A Implementation Roadmap](../repository/enterprise-platform/13_IMPLEMENTATION_ROADMAP.md)
+- [Sprint 08A Audit](AUDIT_REPORT_SPRINT08A.md)
+- [Damavand Visual Experience System](../repository/design/DAMAVAND_VISUAL_EXPERIENCE_SYSTEM.md)
+- [Elementor Component Guide](../repository/design/ELEMENTOR_COMPONENT_GUIDE.md)
+- [ReactBits Inspired UI Rules](../repository/design/REACTBITS_INSPIRED_UI_RULES.md)
+- [Sprint 08B Audit](AUDIT_REPORT_SPRINT08B.md)
+- [Enterprise Design Language](../repository/design/01_DESIGN_LANGUAGE.md)
+- [Design Tokens](../repository/design/02_DESIGN_TOKENS.md)
+- [Component State System](../repository/design/03_COMPONENT_STATE_SYSTEM.md)
+- [Visual Hierarchy](../repository/design/04_VISUAL_HIERARCHY.md)
+- [Spacing System](../repository/design/05_SPACING_SYSTEM.md)
+- [Grid System](../repository/design/06_GRID_SYSTEM.md)
+- [Typography System](../repository/design/07_TYPOGRAPHY_SYSTEM.md)
+- [Color System](../repository/design/08_COLOR_SYSTEM.md)
+- [Iconography System](../repository/design/09_ICONOGRAPHY_SYSTEM.md)
+- [Image System](../repository/design/10_IMAGE_SYSTEM.md)
+- [Enterprise Motion System](../repository/design/11_MOTION_SYSTEM.md)
+- [Component Naming](../repository/design/12_COMPONENT_NAMING.md)
+- [Admin Experience](../repository/design/13_ADMIN_EXPERIENCE.md)
+- [Design Versioning](../repository/design/14_VERSIONING.md)
+- [Sprint 08B.5 Audit](AUDIT_REPORT_SPRINT08B5.md)
+- [Enterprise Content Language](../repository/content/01_CONTENT_LANGUAGE.md)
+- [Product Content Standard](../repository/content/02_PRODUCT_CONTENT_STANDARD.md)
+- [Category Content Standard](../repository/content/03_CATEGORY_CONTENT_STANDARD.md)
+- [Knowledge Article Standard](../repository/content/04_KNOWLEDGE_ARTICLE_STANDARD.md)
+- [FAQ Standard](../repository/content/05_FAQ_STANDARD.md)
+- [Brand Content Standard](../repository/content/06_BRAND_CONTENT_STANDARD.md)
+- [Installation Guide Standard](../repository/content/07_INSTALLATION_GUIDE_STANDARD.md)
+- [Material Knowledge Standard](../repository/content/08_MATERIAL_KNOWLEDGE_STANDARD.md)
+- [Alloy Knowledge Standard](../repository/content/09_ALLOY_KNOWLEDGE_STANDARD.md)
+- [Content Component Library](../repository/content/10_CONTENT_COMPONENT_LIBRARY.md)
+- [Content Tone of Voice](../repository/content/11_CONTENT_TONE_OF_VOICE.md)
+- [Content Semantic Entity Model](../repository/content/12_SEMANTIC_ENTITY_MODEL.md)
+- [Content Reuse Rules](../repository/content/13_CONTENT_REUSE_RULES.md)
+- [AI Content Governance](../repository/content/14_AI_CONTENT_GOVERNANCE.md)
+- [Content Versioning](../repository/content/15_CONTENT_VERSIONING.md)
+- [Sprint 08B.6 Audit](AUDIT_REPORT_SPRINT08B6.md)
+- [Enterprise WordPress Implementation Architecture](../repository/wordpress/01_WORDPRESS_ARCHITECTURE.md)
+- [WooCommerce Product Model Blueprint](../repository/wordpress/02_WOOCOMMERCE_PRODUCT_MODEL.md)
+- [Attribute Strategy](../repository/wordpress/03_ATTRIBUTE_STRATEGY.md)
+- [Taxonomy Strategy](../repository/wordpress/04_TAXONOMY_STRATEGY.md)
+- [ACF and Custom Field Strategy](../repository/wordpress/05_ACF_STRATEGY.md)
+- [Blocksy Implementation Architecture](../repository/wordpress/06_BLOCKSY_ARCHITECTURE.md)
+- [Elementor Implementation Architecture](../repository/wordpress/07_ELEMENTOR_ARCHITECTURE.md)
+- [Rank Math SEO Mapping Blueprint](../repository/wordpress/08_RANKMATH_MAPPING.md)
+- [WordPress Admin Workflow Blueprint](../repository/wordpress/09_ADMIN_WORKFLOW.md)
+- [Media Library Architecture](../repository/wordpress/10_MEDIA_LIBRARY_ARCHITECTURE.md)
+- [Product Import Strategy](../repository/wordpress/11_PRODUCT_IMPORT_STRATEGY.md)
+- [Configuration Workflow](../repository/wordpress/12_CONFIGURATION_WORKFLOW.md)
+- [WordPress Implementation Testing Strategy](../repository/wordpress/13_TESTING_STRATEGY.md)
+- [Runtime Boundaries](../repository/wordpress/14_RUNTIME_BOUNDARIES.md)
+- [WordPress Implementation Release Plan](../repository/wordpress/15_RELEASE_PLAN.md)
+- [Sprint 08C Audit](AUDIT_REPORT_SPRINT08C.md)
+- [WordPress Environment Inventory](WORDPRESS_ENVIRONMENT_INVENTORY.md)
+- [WordPress Read-only Audit](WORDPRESS_READ_ONLY_AUDIT.md)
+- [Plugin and Theme Compatibility Report](PLUGIN_THEME_COMPATIBILITY_REPORT.md)
+- [Site Health Blockers](SITE_HEALTH_BLOCKERS.md)
+- [Runtime Readiness Report](RUNTIME_READINESS_REPORT.md)
+- [Sprint 08D.1 Audit](AUDIT_REPORT_SPRINT08D1.md)
+- [Runtime Blocker Remediation Plan](RUNTIME_BLOCKER_REMEDIATION_PLAN.md)
+- [Remediation Sequence and Dependencies](REMEDIATION_SEQUENCE_AND_DEPENDENCIES.md)
+- [Backup Restore Proof Checklist](BACKUP_RESTORE_PROOF_CHECKLIST.md)
+- [Founder Runtime Approval Checklist](FOUNDER_RUNTIME_APPROVAL_CHECKLIST.md)
+- [Sprint 08D.1R Audit](AUDIT_REPORT_SPRINT08D1R.md)
+- [Master Product Taxonomy v1](../repository/implementation-assets/product-foundation/01_MASTER_PRODUCT_TAXONOMY_V1.yaml)
+- [Global Attribute Library v1](../repository/implementation-assets/product-foundation/02_GLOBAL_ATTRIBUTE_LIBRARY_V1.yaml)
+- [Pipe Family Template v1](../repository/implementation-assets/product-foundation/03_PIPE_FAMILY_TEMPLATE_V1.yaml)
+- [Profile Family Template v1](../repository/implementation-assets/product-foundation/04_PROFILE_FAMILY_TEMPLATE_V1.yaml)
+- [Variant and SKU Rules v1](../repository/implementation-assets/product-foundation/05_VARIANT_AND_SKU_RULES_V1.md)
+- [Product Knowledge Mapping v1](../repository/implementation-assets/product-foundation/06_PRODUCT_KNOWLEDGE_MAPPING_V1.yaml)
+- [Founder Decision Register v1](../repository/implementation-assets/product-foundation/07_FOUNDER_DECISION_REGISTER_V1.md)
+- [Pipe/Profile WooCommerce Mapping v1](../repository/implementation-assets/import-preparation/PIPE_PROFILE_WOOCOMMERCE_MAPPING_V1.csv)
+- [Pipe/Profile Attribute Seed v1](../repository/implementation-assets/import-preparation/PIPE_PROFILE_ATTRIBUTE_SEED_V1.csv)
+- [Pipe/Profile Validation Rules v1](../repository/implementation-assets/import-preparation/PIPE_PROFILE_VALIDATION_RULES_V1.md)
+- [Sprint 09A Audit](AUDIT_REPORT_SPRINT09A.md)
+- [Master Product DNA](../repository/implementation-assets/product-dna/01_MASTER_PRODUCT_DNA.md)
+- [Product Information Model](../repository/implementation-assets/product-dna/02_PRODUCT_INFORMATION_MODEL.yaml)
+- [Product Component Library](../repository/implementation-assets/product-dna/03_PRODUCT_COMPONENT_LIBRARY.yaml)
+- [Product Knowledge Block Library](../repository/implementation-assets/product-dna/04_PRODUCT_KNOWLEDGE_BLOCK_LIBRARY.yaml)
+- [Product Page Assembly Engine](../repository/implementation-assets/product-dna/05_PRODUCT_PAGE_ASSEMBLY_ENGINE.yaml)
+- [Product Configurator UI Model](../repository/implementation-assets/product-dna/06_PRODUCT_CONFIGURATOR_UI_MODEL.yaml)
+- [Product Media Model](../repository/implementation-assets/product-dna/07_PRODUCT_MEDIA_MODEL.yaml)
+- [Product SEO Model](../repository/implementation-assets/product-dna/08_PRODUCT_SEO_MODEL.yaml)
+- [Product Schema Model](../repository/implementation-assets/product-dna/09_PRODUCT_SCHEMA_MODEL.yaml)
+- [Product Relation Model](../repository/implementation-assets/product-dna/10_PRODUCT_RELATION_MODEL.yaml)
+- [Product Lifecycle Model](../repository/implementation-assets/product-dna/11_PRODUCT_LIFECYCLE_MODEL.md)
+- [Product Validation Rules](../repository/implementation-assets/product-dna/12_PRODUCT_VALIDATION_RULES.md)
+- [Product Extensibility Model](../repository/implementation-assets/product-dna/13_PRODUCT_EXTENSIBILITY_MODEL.md)
+- [Product Admin Model](../repository/implementation-assets/product-dna/14_PRODUCT_ADMIN_MODEL.md)
+- [Product DNA Example Pipe](../repository/implementation-assets/product-dna/15_PRODUCT_DNA_EXAMPLE_PIPE.yaml)
+- [Product DNA Example Profile](../repository/implementation-assets/product-dna/16_PRODUCT_DNA_EXAMPLE_PROFILE.yaml)
+- [Sprint 09B Audit](AUDIT_REPORT_SPRINT09B.md)
