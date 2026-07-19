@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Atlas Document Output",
+  "type": "object",
+  "required": [
+    "document_id",
+    "title",
+    "status",
+    "version",
+    "sections",
+    "dependencies_used",
+    "open_questions"
+  ],
+  "properties": {
+    "document_id": {
+      "type": "string",
+      "pattern": "^[A-Z]{2,3}-[0-9]{3}$"
+    },
+    "title": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "review_required",
+        "approved",
+        "canonical",
+        "rejected"
+      ]
+    },
+    "version": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "object"
+    },
+    "dependencies_used": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "entities_referenced": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rules_referenced": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "acceptance_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,552 @@
+{
+  "name": "DS Atlas — Document Generator",
+  "nodes": [
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "title"
+            },
+            {
+              "name": "domain"
+            },
+            {
+              "name": "path"
+            },
+            {
+              "name": "dependencies"
+            },
+            {
+              "name": "required_sections"
+            },
+            {
+              "name": "minimum_words"
+            },
+            {
+              "name": "pipeline",
+              "type": "object"
+            }
+          ]
+        }
+      },
+      "id": "d6672388-766b-4f40-aa68-3d8a158ef0c6",
+      "name": "Execute Workflow Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1100,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const source = $json;\nconst p = source.pipeline || {};\nconst allowed = new Set(['OFFLINE', 'VALIDATE', 'DRY_RUN', 'LIVE']);\nconst requested = p.execution_mode;\nconst executionMode = typeof requested === 'string' && allowed.has(requested) ? requested : 'OFFLINE';\nreturn [{json:{\n  ...source,\n  pipeline: {\n    ...p,\n    execution_mode: executionMode,\n    dry_run: p.dry_run === false ? false : true,\n    founder_write_approved: p.founder_write_approved === true,\n    credentials_configured: p.credentials_configured === true\n  }\n}}];"
+      },
+      "id": "e1393191-f220-4bfd-9ce6-6d16d243a81c",
+      "name": "Resolve Execution Mode",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -900,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "92708642-fd7e-4ba6-819e-a942fc99fd43",
+              "leftValue": "={{ $json.pipeline?.execution_mode === 'DRY_RUN' || $json.pipeline?.execution_mode === 'LIVE' }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "f82308ed-eb5e-4dec-bca2-0e763275ec91",
+      "name": "Repository Read Mode Allowed?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -700,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const mode = $json.pipeline?.execution_mode === 'VALIDATE' ? 'VALIDATE' : 'OFFLINE';\nreturn [{json:{\n  document_id: $json.id || null,\n  status: mode === 'VALIDATE' ? 'validate_local_only' : 'offline_local_only',\n  execution_mode: mode,\n  network_performed: false,\n  write_performed: false,\n  local_validation_required: true,\n  validation_scope: ['manifest', 'registry', 'schema', 'workflows', 'secrets', 'execution_mode'],\n  validation_command: 'python3 scripts/validate_manifest.py'\n}}];"
+      },
+      "id": "f386a66d-024c-4ff4-8a81-583c090f100c",
+      "name": "Return Local Validation Mode",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -460,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const doc = $json;\nconst p = doc.pipeline || {};\nif (p.execution_mode !== 'DRY_RUN' && p.execution_mode !== 'LIVE') {\n  throw new Error('Network access blocked by ExecutionMode.');\n}\nconst headers = {\n  Accept: 'application/vnd.github+json',\n  'X-GitHub-Api-Version':'2022-11-28',\n  Authorization:`Bearer ${$env.GITHUB_TOKEN}`\n};\nasync function fetchFile(path) {\n  const url = `https://api.github.com/repos/${p.github_owner}/${p.github_repo}/contents/${path}?ref=${p.branch}`;\n  try {\n    const r = await this.helpers.httpRequest({method:'GET',url,headers,json:true});\n    return Buffer.from((r.content||'').replace(/\\n/g,''),'base64').toString('utf8');\n  } catch (e) {\n    return '';\n  }\n}\nconst dependencies = {};\nfor (const dep of (doc.dependencies || [])) {\n  // Dependency path lookup is intentionally delegated to a repository index.\n  dependencies[dep] = await fetchFile(`generated/by-id/${dep}.md`);\n}\nconst projectBible = await fetchFile('PROJECT_BIBLE.md');\nconst governance = await fetchFile('AGENTS.md');\nreturn [{json:{...doc, context:{project_bible:projectBible, governance, dependencies}}}];"
+      },
+      "id": "cc43b065-69ca-4e83-85c4-1adf47950c93",
+      "name": "Build Repository Context",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -460,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const d=$json;\nconst prompt = `You are the canonical enterprise-document generator for Damavand Steel.\n\nDOCUMENT\nID: ${d.id}\nTitle: ${d.title}\nDomain: ${d.domain}\nTarget path: ${d.path}\nMinimum words: ${d.minimum_words}\nRequired sections: ${JSON.stringify(d.required_sections)}\n\nNON-NEGOTIABLE RULES\n1. Preserve Founder decisions and repository governance.\n2. Do not invent unresolved business facts. Put them in open_questions.\n3. Produce a complete detailed document, not an outline or summary.\n4. Every business rule must be explicit, testable, and uniquely identifiable where possible.\n5. Explain entities, fields, relationships, workflows, validations, exceptions, failure states, security, SEO, AI, and WordPress implications when relevant.\n6. Do not use TODO/TBD in the document body.\n7. Return valid JSON only.\n\nCONTEXT — PROJECT BIBLE\n${d.context.project_bible}\n\nCONTEXT — GOVERNANCE\n${d.context.governance}\n\nCONTEXT — DEPENDENCIES\n${JSON.stringify(d.context.dependencies)}\n\nReturn:\n{\n \"document_id\":\"${d.id}\",\n \"title\":\"${d.title}\",\n \"status\":\"draft\",\n \"version\":\"0.1.0\",\n \"markdown\":\"FULL MARKDOWN DOCUMENT\",\n \"dependencies_used\":[],\n \"entities_referenced\":[],\n \"rules_referenced\":[],\n \"open_questions\":[],\n \"acceptance_criteria\":[]\n}`;\nreturn [{json:{...d,prompt}}];"
+      },
+      "id": "d3eaf18a-aa2e-4ede-8a3e-7807fa402e04",
+      "name": "Build Generation Prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -220,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "9a5485ea-0809-4a62-adbf-d58e32628cf5",
+              "leftValue": "={{ $json.pipeline?.execution_mode === 'DRY_RUN' || $json.pipeline?.execution_mode === 'LIVE' }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "b55f85a4-c935-43bd-839b-71c262330b53",
+      "name": "OpenAI Mode Allowed?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        20,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/responses",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{$env.OPENAI_API_KEY}}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ JSON.stringify({model: $env.OPENAI_MODEL || 'gpt-5', input: $json.prompt, text: {format: {type: 'json_object'}}}) }}",
+        "options": {
+          "timeout": 300000,
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "92e738f2-8b95-4456-8c27-818fc4a5ef20",
+      "name": "Generate Document With OpenAI",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        260,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const source = $('Build Generation Prompt').first().json;\nlet text = '';\nif ($json.output_text) text = $json.output_text;\nif (!text && Array.isArray($json.output)) {\n  for (const out of $json.output) for (const c of (out.content||[])) if (c.text) text += c.text;\n}\nif (!text) throw new Error('OpenAI response contained no output text.');\nlet parsed;\ntry { parsed = JSON.parse(text); }\ncatch(e) {\n  const m=text.match(/\\{[\\s\\S]*\\}/);\n  if(!m) throw new Error('Model output is not valid JSON.');\n  parsed=JSON.parse(m[0]);\n}\nreturn [{json:{...source, generated:parsed}}];"
+      },
+      "id": "3f1aedd0-6b99-4ebc-8f74-1d110cbb548d",
+      "name": "Parse Structured Output",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -140,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const d=$json, g=d.generated||{}, md=String(g.markdown||'');\nconst words=md.trim().split(/\\s+/).filter(Boolean).length;\nconst headings=(md.match(/^##\\s+/gm)||[]).length;\nconst missing=(d.required_sections||[]).filter(s=>{\n  const norm=s.replace(/_/g,' ').toLowerCase();\n  return !md.toLowerCase().includes('## '+norm);\n});\nconst forbidden=/\\b(TODO|TBD|PLACEHOLDER)\\b/i.test(md);\nconst errors=[];\nif(g.document_id!==d.id) errors.push('document_id mismatch');\nif(words<Number(d.minimum_words||0)) errors.push(`word_count ${words} below ${d.minimum_words}`);\nif(headings<8) errors.push(`too few H2 sections: ${headings}`);\nif(missing.length) errors.push(`missing sections: ${missing.join(', ')}`);\nif(forbidden) errors.push('forbidden placeholder token found');\nreturn [{json:{...d, validation:{passed:errors.length===0,errors,word_count:words,heading_count:headings,missing_sections:missing}, markdown:md}}];"
+      },
+      "id": "ada72a51-c07e-449e-b8ac-398bae14b13f",
+      "name": "Structural Validator",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        100,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "35b8f848-69c8-4efd-ac3b-f1cbcdf730e5",
+              "leftValue": "={{$json.validation.passed}}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a0c60036-060e-4843-83e0-3d5716d91663",
+      "name": "Validation Passed?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        340,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "3569ed20-fe82-4836-b89d-1fef1b781f4f",
+              "leftValue": "={{ $json.pipeline?.execution_mode === 'LIVE' && $json.pipeline?.dry_run === false && $json.pipeline?.founder_write_approved === true && $json.pipeline?.credentials_configured === true && $workflow.active === true }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "8970ab52-4158-43d2-8a10-e2462efbf99c",
+      "name": "LIVE Remote Write Safety Gate",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        580,
+        -100
+      ]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "=https://api.github.com/repos/{{$json.pipeline.github_owner}}/{{$json.pipeline.github_repo}}/contents/{{$json.path}}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github+json"
+            },
+            {
+              "name": "X-GitHub-Api-Version",
+              "value": "2022-11-28"
+            },
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{$env.GITHUB_TOKEN}}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ JSON.stringify({message: `atlas: generate ${$json.id} draft`, content: Buffer.from($json.markdown).toString('base64'), branch: $json.pipeline.branch}) }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "1661670c-7722-4645-8b90-ccfca35be5f2",
+      "name": "Commit Draft To GitHub",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        840,
+        -100
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const d=$json;\nconst p=d.pipeline || {};\nconst allowed = new Set(['OFFLINE', 'VALIDATE', 'DRY_RUN', 'LIVE']);\nconst mode = typeof p.execution_mode === 'string' && allowed.has(p.execution_mode) ? p.execution_mode : 'OFFLINE';\nconst effectiveDryRun=p.dry_run !== false;\nconst founderApproved=p.founder_write_approved === true;\nconst credentialsConfigured=p.credentials_configured === true;\nconst workflowActive=$workflow.active === true;\nlet status='write_gate_blocked';\nif(mode === 'DRY_RUN') status='dry_run_blocked_write';\nelse if(mode !== 'LIVE') status='execution_mode_blocked_write';\nelse if(effectiveDryRun) status='dry_run_blocked_write';\nelse if(!founderApproved) status='founder_approval_blocked_write';\nelse if(!credentialsConfigured) status='credentials_blocked_write';\nelse if(!workflowActive) status='inactive_workflow_blocked_write';\nreturn [{json:{\n  document_id:d.id,\n  status,\n  write_performed:false,\n  execution_mode:mode,\n  dry_run:effectiveDryRun,\n  founder_write_approved:founderApproved,\n  credentials_configured:credentialsConfigured,\n  workflow_active:workflowActive,\n  validation_status:'passed',\n  path:d.path\n}}];"
+      },
+      "id": "f1765eab-af60-4931-bd57-0abf10756f4e",
+      "name": "Return Blocked Write",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        840,
+        20
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const d=$json;\nreturn [{json:{\n  document_id:d.id,\n  status:'validation_failed',\n  validation_status:'failed',\n  repair_required:true,\n  errors:d.validation.errors,\n  note:'Route this output to WF-03 Repair Loop after configuration.'\n}}];"
+      },
+      "id": "05ebaa14-1d59-4122-a515-99f2506e5218",
+      "name": "Prepare Repair Request",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        600,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const d=$('Structural Validator').first().json;\nreturn [{json:{\n  document_id:d.id,\n  status:'review_required',\n  validation_status:'passed',\n  write_performed:true,\n  execution_mode:'LIVE',\n  path:d.path,\n  word_count:d.validation.word_count,\n  github_commit:$json.commit?.sha || $json.content?.sha || null\n}}];"
+      },
+      "id": "8b8f274f-7b1c-463e-9ccd-6955911bd664",
+      "name": "Return Generation Result",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1080,
+        -100
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Execute Workflow Trigger": {
+      "main": [
+        [
+          {
+            "node": "Resolve Execution Mode",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resolve Execution Mode": {
+      "main": [
+        [
+          {
+            "node": "Repository Read Mode Allowed?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Repository Read Mode Allowed?": {
+      "main": [
+        [
+          {
+            "node": "Build Repository Context",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Return Local Validation Mode",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Repository Context": {
+      "main": [
+        [
+          {
+            "node": "Build Generation Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Generation Prompt": {
+      "main": [
+        [
+          {
+            "node": "OpenAI Mode Allowed?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Mode Allowed?": {
+      "main": [
+        [
+          {
+            "node": "Generate Document With OpenAI",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Return Local Validation Mode",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Document With OpenAI": {
+      "main": [
+        [
+          {
+            "node": "Parse Structured Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Structured Output": {
+      "main": [
+        [
+          {
+            "node": "Structural Validator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structural Validator": {
+      "main": [
+        [
+          {
+            "node": "Validation Passed?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validation Passed?": {
+      "main": [
+        [
+          {
+            "node": "LIVE Remote Write Safety Gate",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Prepare Repair Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LIVE Remote Write Safety Gate": {
+      "main": [
+        [
+          {
+            "node": "Commit Draft To GitHub",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Return Blocked Write",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Commit Draft To GitHub": {
+      "main": [
+        [
+          {
+            "node": "Return Generation Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "a28ee430-8db5-4789-b086-0d55d824abe4",
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}
