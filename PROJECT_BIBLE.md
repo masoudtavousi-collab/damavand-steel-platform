@@ -127,6 +127,10 @@ Documentation precedes implementation. Chronology, provenance, accepted architec
 
 ## Repository-first deployment workflow
 
+### Reliability and resilience principle
+
+No external service may be a single point of failure for core business operations. Critical processes must ultimately support bounded retries, idempotency, queues, timeouts, circuit breakers, rate limits, checkpoints, dead-letter handling, health checks, graceful degradation, rollback, backup, and disaster recovery.
+
 Future changes follow this order:
 
 1. Record the approved requirement, architecture, data, source, status, and acceptance criteria in the repository.
@@ -149,5 +153,5 @@ The current repository bootstrap, Atlas import, and inactive n8n workflow files 
 6. What AI scope, if any, may be considered after Phase 1, with what data, evaluation, privacy, and human-review controls?
 7. What GitHub baseline and branch/PR process will the Founder approve for the current dirty working tree?
 8. What exact staging/production target, backup/restore proof, rollback owner, and Blocksy/Elementor license evidence will satisfy runtime gates?
-9. How will the inactive n8n workflows enforce dry-run behavior, human approval, and external-write controls before any execution?
+9. Which isolated n8n version and non-production test environment will be approved to prove the implemented OFFLINE, VALIDATE, DRY_RUN, required-context, canonical-output, Founder-approval, and LIVE write-gate controls at runtime?
 10. How should Atlas workflow statuses such as `pending`, `draft`, `review_required`, `approved`, `canonical`, and `rejected` map to the repository's governed document and ADR lifecycle vocabularies?

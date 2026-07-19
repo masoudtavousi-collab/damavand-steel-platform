@@ -37,7 +37,7 @@
             {
               "id": "54ac09fd-b9bf-48e5-8753-642b6793454e",
               "name": "manifest_path",
-              "value": "config/ATLAS_MASTER_MANIFEST.json",
+              "value": "n8n/config/ATLAS_MASTER_MANIFEST.json",
               "type": "string"
             },
             {
@@ -75,6 +75,45 @@
               "name": "credentials_configured",
               "value": false,
               "type": "boolean"
+            },
+            {
+              "id": "wf1-expected-repository",
+              "name": "expected_repository",
+              "value": "CONFIGURE_EXPECTED_GITHUB_OWNER/CONFIGURE_EXPECTED_GITHUB_REPOSITORY",
+              "type": "string"
+            },
+            {
+              "id": "wf1-expected-branch",
+              "name": "expected_branch",
+              "value": "CONFIGURE_EXPECTED_BRANCH",
+              "type": "string"
+            },
+            {
+              "id": "wf1-schema-path",
+              "name": "schema_path",
+              "value": "atlas/DOCUMENT_OUTPUT_SCHEMA.json",
+              "type": "string"
+            },
+            {
+              "id": "wf1-template-path",
+              "name": "template_path",
+              "value": "atlas/DOCUMENT_TEMPLATE.md",
+              "type": "string"
+            },
+            {
+              "id": "wf1-governance-paths",
+              "name": "required_governance_paths",
+              "value": [
+                "PROJECT_BIBLE.md",
+                "AGENTS.md",
+                "docs/PROJECT_BASELINE.md",
+                "docs/CURRENT_PROJECT_STATE.md",
+                "docs/PROJECT_EXECUTION_ROADMAP.md",
+                "docs/CODEX_SPRINT_PROTOCOL.md",
+                "docs/SOURCE_OF_TRUTH_PRIORITY.md",
+                "docs/REPOSITORY_RELATIONSHIP_MAP.md"
+              ],
+              "type": "array"
             }
           ]
         },
@@ -188,7 +227,7 @@
     },
     {
       "parameters": {
-        "jsCode": "const cfg = $('Pipeline Configuration').first().json;\nconst encoded = ($json.content || '').replace(/\\n/g, '');\nif (!encoded) throw new Error('GitHub response did not contain manifest content.');\nconst manifest = JSON.parse(Buffer.from(encoded, 'base64').toString('utf8'));\nreturn [{json: {...cfg, manifest}}];"
+        "jsCode": "const cfg = $('Validate Repository Configuration').first().json;\nconst payload = $json;\nif (!payload || payload.type !== 'file' || payload.path !== cfg.manifest_path) {\n  throw new Error('Manifest repository response identity mismatch.');\n}\nif (payload.encoding !== 'base64' || typeof payload.content !== 'string' || !payload.content.trim()) {\n  throw new Error('Manifest repository response is empty or malformed.');\n}\nlet decoded;\nlet manifest;\ntry {\n  decoded = Buffer.from(payload.content.replace(/\\n/g, ''), 'base64').toString('utf8');\n  if (!decoded.trim()) throw new Error('empty decoded manifest');\n  manifest = JSON.parse(decoded);\n} catch (error) {\n  throw new Error(`Manifest decode failed: ${error.message}`);\n}\nif (!manifest.atlas || !Array.isArray(manifest.domains) || !Array.isArray(manifest.documents)) {\n  throw new Error('Manifest structure is invalid.');\n}\nconst safePath = (value) => {\n  if (typeof value !== 'string' || !value || value.startsWith('/') || value.includes('\\\\\\\\')) return false;\n  const parts = value.split('/');\n  return !parts.some(part => !part || part === '.' || part === '..');\n};\nconst ids = new Set();\nconst paths = new Set();\nfor (const document of manifest.documents) {\n  if (!document || typeof document.id !== 'string' || !/^[A-Z]{2,3}-\\d{3}$/.test(document.id)) {\n    throw new Error('Manifest contains an invalid document identity.');\n  }\n  if (ids.has(document.id)) throw new Error(`Duplicate document ID: ${document.id}`);\n  if (!safePath(document.path)) throw new Error(`Unsafe document path: ${document.id}`);\n  if (paths.has(document.path)) throw new Error(`Duplicate document path: ${document.path}`);\n  ids.add(document.id);\n  paths.add(document.path);\n}\nfor (const document of manifest.documents) {\n  const dependencies = document.dependencies || [];\n  if (!Array.isArray(dependencies) || new Set(dependencies).size !== dependencies.length) {\n    throw new Error(`Duplicate or malformed dependencies: ${document.id}`);\n  }\n  for (const dependency of dependencies) {\n    if (!ids.has(dependency)) throw new Error(`Unknown dependency ${dependency} for ${document.id}`);\n  }\n}\nreturn [{json:{...cfg, manifest, manifest_sha: payload.sha || null}}];"
       },
       "id": "3c55a745-4ec4-45c2-af61-9bee1f46ee00",
       "name": "Decode Manifest",
@@ -201,7 +240,7 @@
     },
     {
       "parameters": {
-        "jsCode": "const cfg = $json;\nconst pending = (cfg.manifest.documents || []).filter(d => d.status === 'pending');\nif (!pending.length) return [];\nreturn pending.map(d => ({json: {\n  ...d,\n  pipeline: {\n    github_owner: cfg.github_owner,\n    github_repo: cfg.github_repo,\n    branch: cfg.branch,\n    manifest_path: cfg.manifest_path,\n    execution_mode: cfg.execution_mode,\n    dry_run: cfg.dry_run,\n    founder_write_approved: cfg.founder_write_approved,\n    credentials_configured: cfg.credentials_configured,\n    generator_workflow_id: cfg.generator_workflow_id\n  }\n}}));"
+        "jsCode": "const cfg = $json;\nconst documents = cfg.manifest.documents || [];\nconst index = {};\nfor (const document of documents) {\n  index[document.id] = {\n    id: document.id,\n    title: document.title,\n    domain: document.domain,\n    path: document.path,\n    status: document.status,\n    owner: document.owner,\n    minimum_words: document.minimum_words,\n    dependencies: document.dependencies || [],\n    required_sections: document.required_sections || []\n  };\n}\nconst pending = documents.filter(document => document.status === 'pending');\nif (!pending.length) return [];\nreturn pending.map(document => ({json: {\n  ...document,\n  registry_entry: index[document.id],\n  pipeline: {\n    github_owner: cfg.github_owner,\n    github_repo: cfg.github_repo,\n    branch: cfg.branch,\n    expected_repository: cfg.expected_repository,\n    expected_branch: cfg.expected_branch,\n    manifest_path: cfg.manifest_path,\n    schema_path: cfg.schema_path,\n    template_path: cfg.template_path,\n    required_governance_paths: cfg.required_governance_paths,\n    manifest_version: cfg.manifest.atlas.version,\n    manifest_sha: cfg.manifest_sha,\n    document_index: index,\n    execution_mode: cfg.execution_mode,\n    dry_run: cfg.dry_run,\n    founder_write_approved: cfg.founder_write_approved,\n    credentials_configured: cfg.credentials_configured,\n    generator_workflow_id: cfg.generator_workflow_id\n  }\n}}));"
       },
       "id": "397bfdf8-ab99-405d-839b-a36657d75987",
       "name": "Select Pending Documents",
@@ -266,6 +305,19 @@
         440,
         -120
       ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const cfg = $json;\nconst requiredStrings = [\n  'github_owner', 'github_repo', 'branch', 'expected_repository',\n  'expected_branch', 'manifest_path', 'schema_path', 'template_path'\n];\nfor (const key of requiredStrings) {\n  const value = cfg[key];\n  if (typeof value !== 'string' || !value.trim() || value.includes('CONFIGURE_')) {\n    throw new Error(`Repository configuration invalid: ${key}`);\n  }\n}\nconst safePath = (value) => {\n  if (typeof value !== 'string' || !value || value.startsWith('/') || value.includes('\\\\\\\\')) return false;\n  const parts = value.split('/');\n  return !parts.some(part => !part || part === '.' || part === '..');\n};\nfor (const key of ['manifest_path', 'schema_path', 'template_path']) {\n  if (!safePath(cfg[key])) throw new Error(`Unsafe repository path: ${key}`);\n}\nif (cfg.manifest_path !== 'n8n/config/ATLAS_MASTER_MANIFEST.json') {\n  throw new Error('Manifest path mismatch.');\n}\nif (cfg.schema_path !== 'atlas/DOCUMENT_OUTPUT_SCHEMA.json' || cfg.template_path !== 'atlas/DOCUMENT_TEMPLATE.md') {\n  throw new Error('Canonical schema or template path mismatch.');\n}\nconst actualRepository = `${cfg.github_owner}/${cfg.github_repo}`;\nif (cfg.expected_repository !== actualRepository) throw new Error('Repository identity mismatch.');\nif (cfg.expected_branch !== cfg.branch) throw new Error('Branch identity mismatch.');\nconst governance = cfg.required_governance_paths;\nif (!Array.isArray(governance) || !governance.length || new Set(governance).size !== governance.length) {\n  throw new Error('Required governance path configuration is invalid.');\n}\nfor (const path of governance) {\n  if (!safePath(path)) throw new Error(`Unsafe governance path: ${path}`);\n}\nfor (const required of ['PROJECT_BIBLE.md', 'AGENTS.md']) {\n  if (!governance.includes(required)) throw new Error(`Missing mandatory governance path: ${required}`);\n}\nreturn [{json: cfg}];"
+      },
+      "id": "9db13073-746d-479e-a981-ff9e20d56001",
+      "name": "Validate Repository Configuration",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        720,
+        100
+      ]
     }
   ],
   "pinData": {},
@@ -307,7 +359,7 @@
       "main": [
         [
           {
-            "node": "Fetch Manifest From GitHub",
+            "node": "Validate Repository Configuration",
             "type": "main",
             "index": 0
           }
@@ -377,6 +429,17 @@
         [
           {
             "node": "Loop Over Documents",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Repository Configuration": {
+      "main": [
+        [
+          {
+            "node": "Fetch Manifest From GitHub",
             "type": "main",
             "index": 0
           }

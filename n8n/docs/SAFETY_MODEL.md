@@ -74,6 +74,16 @@ The current workflow set contains one recognized remote repository write: `Commi
 
 Every future GitHub mutation, file creation/replacement, branch, commit, pull request, release, publishing, or deployment node must have its own immediate full LIVE gate and terminal blocked path. Reusing a distant upstream check is insufficient.
 
+## Required Context and Repository Identity
+
+Network-capable modes must validate the configured repository and branch against independent expected values before the first read. The canonical runtime manifest path is `n8n/config/ATLAS_MASTER_MANIFEST.json`; schema and template paths are `atlas/DOCUMENT_OUTPUT_SCHEMA.json` and `atlas/DOCUMENT_TEMPLATE.md`.
+
+WF-02 re-reads the manifest, checks its version and SHA when supplied, resolves the requested document ID through the manifest registry, and resolves each declared dependency to its registered canonical path. `PROJECT_BIBLE.md`, `AGENTS.md`, the six mandatory governance sources, the manifest, the current registry entry, the canonical schema, the canonical template, and every declared dependency are required context. No required read is converted to an empty string. A failed read, empty content, unknown ID, duplicate ID or path, path traversal, wrong file identity, repository mismatch, or branch mismatch raises an explicit error before prompt construction and blocks rendering and remote-write preparation.
+
+## Canonical Output Contract
+
+`atlas/DOCUMENT_OUTPUT_SCHEMA.json` is the only structured output contract. WF-02 and WF-03 require schema version `1.0.0`, the registered document identity, exactly the declared non-empty `sections`, and no undeclared top-level or section properties. Generated Markdown is not an alternate source contract. It is rendered deterministically from a validated structured object through `atlas/DOCUMENT_TEMPLATE.md`; rendering cannot run before validation succeeds.
+
 ## Credential Handling
 
 - No token, API key, password, credential ID, account identifier, or production value may be committed in workflow JSON.
@@ -129,7 +139,7 @@ If an unexpected write, endpoint, credential exposure, or execution occurs:
 - `credentials_configured` is a reviewed assertion and cannot itself verify credential scope, storage, or validity.
 - The LIVE gate relies on n8n exposing `$workflow.active` as a strict runtime boolean; version compatibility remains untested.
 - Runtime import compatibility and behavior have not been tested in an n8n instance.
-- The repair workflow is intentionally not wired automatically to the generator.
+- The repair workflow is intentionally not wired automatically to the generator. Each separately approved invocation requires an integer Attempt from 1 through 3; malformed, null, negative, or excessive attempts stop locally.
 - Repository values and imported workflow IDs remain unconfigured.
 - The three-attempt repair guard limits attempts but does not replace human review of repaired content.
 - No workflow in this package is approved for production, publishing, deployment, or unattended execution.

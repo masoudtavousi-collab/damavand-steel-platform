@@ -48,7 +48,7 @@
     },
     {
       "parameters": {
-        "jsCode": "const attempt=Number($json.attempt||1);\nif(attempt>3) return [{json:{...$json,blocked:true,reason:'Maximum repair attempts exceeded'}}];\nreturn [{json:{...$json,blocked:false,attempt}}];"
+        "jsCode": "const rawAttempt = $json.attempt;\nconst valid = typeof rawAttempt === 'number'\n  && Number.isFinite(rawAttempt)\n  && Number.isInteger(rawAttempt)\n  && rawAttempt >= 1\n  && rawAttempt <= 3;\nif (!valid) {\n  return [{json:{\n    ...$json,\n    blocked: true,\n    write_performed: false,\n    reason: 'Repair attempt must be an integer from 1 through 3.'\n  }}];\n}\nreturn [{json:{...$json, blocked:false, attempt:rawAttempt}}];"
       },
       "id": "8dbf5911-7c61-4e64-b2a9-cf727d77d2a6",
       "name": "Repair Attempt Guard",
@@ -94,7 +94,7 @@
     },
     {
       "parameters": {
-        "jsCode": "const d=$json.document||{};\nconst prompt=`Repair the following Damavand Steel Atlas document without shortening it.\nDocument ID: ${d.document_id||d.id}\nValidation errors: ${JSON.stringify($json.errors)}\nExisting markdown:\n${d.markdown||''}\nReturn valid JSON only with document_id, markdown, open_questions, acceptance_criteria.`;\nreturn [{json:{...$json,prompt}}];"
+        "jsCode": "const source = $json;\nconst context = source.context;\nconst schema = context?.schema;\nconst template = context?.template;\nconst governance = context?.governance;\nif (!schema || schema.properties?.schema_version?.const !== '1.0.0') {\n  throw new Error('Repair blocked: canonical schema context is missing or invalid.');\n}\nif (typeof template !== 'string' || !template.trim()) {\n  throw new Error('Repair blocked: canonical template context is missing.');\n}\nif (!governance || typeof governance !== 'object' || !Object.keys(governance).length) {\n  throw new Error('Repair blocked: mandatory governance context is missing.');\n}\nfor (const [path, value] of Object.entries(governance)) {\n  if (!value || typeof value.content !== 'string' || !value.content.trim()) {\n    throw new Error(`Repair blocked: empty governance context ${path}`);\n  }\n}\nif (!source.registry_entry || source.registry_entry.id !== source.document_id) {\n  throw new Error('Repair blocked: document registry identity mismatch.');\n}\nif (!Array.isArray(source.required_sections) || !source.required_sections.length) {\n  throw new Error('Repair blocked: required section registry is missing.');\n}\nif (!source.document || typeof source.document !== 'object' || Array.isArray(source.document)) {\n  throw new Error('Repair blocked: invalid document output is missing.');\n}\nconst prompt = `Repair the supplied Damavand Steel structured document output.\n\nReturn exactly one JSON object conforming to the canonical schema.\nDo not return Markdown, code fences, commentary, or undeclared properties.\nKeep document_id and title identical to the registry entry.\nUse exactly the registered section keys with non-empty string content.\nUse schema_version \"1.0.0\", status \"draft\", and version \"0.1.0\".\nDo not invent business facts.\n\nATTEMPT\n${source.attempt} of 3\n\nREGISTRY ENTRY\n${JSON.stringify(source.registry_entry)}\n\nVALIDATION ERRORS\n${JSON.stringify(source.errors || [])}\n\nINVALID STRUCTURED OUTPUT\n${JSON.stringify(source.document)}\n\nCANONICAL SCHEMA\n${JSON.stringify(schema)}\n\nCANONICAL TEMPLATE\n${template}\n\nDECLARED DEPENDENCIES\n${JSON.stringify(source.dependencies || [])}\n\nGOVERNANCE CONTEXT\n${JSON.stringify(Object.fromEntries(Object.entries(governance).map(([path, value]) => [path, value.content])))}`;\nreturn [{json:{...source, prompt}}];"
       },
       "id": "677ad120-ed8d-47f5-8fa6-b835d9026932",
       "name": "Build Repair Prompt",
@@ -193,7 +193,7 @@
     },
     {
       "parameters": {
-        "jsCode": "const source=$('Build Repair Prompt').first().json;\nlet text=$json.output_text||'';\nif(!text&&Array.isArray($json.output)) for(const o of $json.output) for(const c of (o.content||[])) if(c.text) text+=c.text;\nconst parsed=JSON.parse(text.match(/\\{[\\s\\S]*\\}/)?.[0]||text);\nreturn [{json:{...parsed,pipeline:source.pipeline,attempt:source.attempt}}];"
+        "jsCode": "const source = $('Build Repair Prompt').first().json;\nlet text = $json.output_text || '';\nif (!text && Array.isArray($json.output)) {\n  for (const output of $json.output) {\n    for (const content of (output.content || [])) {\n      if (typeof content.text === 'string') text += content.text;\n    }\n  }\n}\nif (typeof text !== 'string' || !text.trim()) throw new Error('Repaired structured output is empty.');\nlet repaired;\ntry {\n  const match = text.match(/\\{[\\s\\S]*\\}/);\n  repaired = JSON.parse(match ? match[0] : text);\n} catch (error) {\n  throw new Error(`Repaired structured output parse failed: ${error.message}`);\n}\nif (!repaired || typeof repaired !== 'object' || Array.isArray(repaired)) {\n  throw new Error('Repaired structured output must be an object.');\n}\nreturn [{json:{...source, repaired}}];"
       },
       "id": "61ffce18-09a5-47c6-9445-745924de9827",
       "name": "Parse Repaired Output",
@@ -206,7 +206,7 @@
     },
     {
       "parameters": {
-        "jsCode": "const md=String($json.markdown||'');\nconst words=md.trim().split(/\\s+/).filter(Boolean).length;\nconst forbidden=/\\b(TODO|TBD|PLACEHOLDER)\\b/i.test(md);\nreturn [{json:{...$json,repair_validation:{passed:words>=3000&&!forbidden,word_count:words,forbidden}}}];"
+        "jsCode": "const d = $json;\nconst g = d.repaired;\nconst schema = d.context?.schema;\nconst errors = [];\nconst isObject = value => value && typeof value === 'object' && !Array.isArray(value);\nif (!isObject(schema) || !isObject(schema.properties)) errors.push('canonical schema missing');\nif (!isObject(g)) errors.push('output is not an object');\nif (!errors.length) {\n  const allowed = Object.keys(schema.properties);\n  for (const key of schema.required || []) {\n    if (!Object.prototype.hasOwnProperty.call(g, key)) errors.push(`missing required property: ${key}`);\n  }\n  for (const key of Object.keys(g)) {\n    if (!allowed.includes(key)) errors.push(`undeclared property: ${key}`);\n  }\n  if (g.schema_version !== schema.properties.schema_version?.const) errors.push('schema version mismatch');\n  if (g.document_id !== d.document_id || g.document_id !== d.registry_entry?.id) errors.push('invalid document identity');\n  if (g.title !== d.registry_entry?.title || typeof g.title !== 'string' || !g.title.trim()) errors.push('invalid document title');\n  if (g.status !== 'draft' || !schema.properties.status.enum.includes(g.status)) errors.push('invalid status');\n  if (g.version !== '0.1.0') errors.push('invalid version');\n  const expectedSections = d.required_sections || [];\n  if (!isObject(g.sections)) {\n    errors.push('malformed sections');\n  } else {\n    for (const key of expectedSections) {\n      if (!Object.prototype.hasOwnProperty.call(g.sections, key)) errors.push(`missing section: ${key}`);\n      else if (typeof g.sections[key] !== 'string' || !g.sections[key].trim()) errors.push(`empty required content: ${key}`);\n    }\n    for (const key of Object.keys(g.sections)) {\n      if (!expectedSections.includes(key) || !Object.prototype.hasOwnProperty.call(schema.properties.sections?.properties || {}, key)) {\n        errors.push(`undeclared section: ${key}`);\n      }\n    }\n  }\n  for (const key of ['dependencies_used', 'entities_referenced', 'rules_referenced', 'open_questions', 'acceptance_criteria']) {\n    if (Object.prototype.hasOwnProperty.call(g, key) && (!Array.isArray(g[key]) || g[key].some(value => typeof value !== 'string'))) {\n      errors.push(`malformed array: ${key}`);\n    }\n  }\n  const declared = [...(d.dependencies || [])].sort();\n  const used = Array.isArray(g.dependencies_used) ? [...g.dependencies_used] : [];\n  if (new Set(used).size !== used.length || JSON.stringify([...used].sort()) !== JSON.stringify(declared)) {\n    errors.push('dependencies_used mismatch');\n  }\n  const words = isObject(g.sections)\n    ? Object.values(g.sections).join(' ').trim().split(/\\s+/).filter(Boolean).length\n    : 0;\n  if (words < Number(d.minimum_words || 0)) errors.push(`word_count ${words} below ${d.minimum_words}`);\n  if (/\\b(TODO|TBD|PLACEHOLDER)\\b/i.test(JSON.stringify(g))) errors.push('forbidden placeholder token found');\n}\nconst wordCount = isObject(g?.sections)\n  ? Object.values(g.sections).join(' ').trim().split(/\\s+/).filter(Boolean).length\n  : 0;\nreturn [{json:{\n  ...d,\n  canonical_output: g,\n  repair_validation: {\n    passed: errors.length === 0,\n    errors,\n    word_count: wordCount,\n    schema_version: g?.schema_version || null\n  }\n}}];"
       },
       "id": "d6146130-42a4-441f-bedf-a9f891031efa",
       "name": "Validate Repair",
@@ -252,7 +252,7 @@
     },
     {
       "parameters": {
-        "jsCode": "return [{json:{...$json,status:'repair_passed',execution_mode:$json.pipeline?.execution_mode || 'OFFLINE',write_performed:false}}];"
+        "jsCode": "return [{json:{\n  ...$json,\n  status: 'repair_passed',\n  validation_status: 'passed',\n  execution_mode: $json.pipeline?.execution_mode || 'OFFLINE',\n  write_performed: false,\n  structured_output: $json.canonical_output,\n  markdown: $json.markdown\n}}];"
       },
       "id": "3fff9bc4-745a-4e18-b3ad-61be196c2427",
       "name": "Return Repaired Document",
@@ -274,6 +274,19 @@
       "position": [
         -220,
         120
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const d = $json;\nif (d.repair_validation?.passed !== true) throw new Error('Repair rendering blocked: canonical output is invalid.');\nconst output = d.canonical_output;\nlet markdown = d.context.template;\nconst entry = d.registry_entry;\nconst replacements = {\n  '{{DOCUMENT_ID}}': output.document_id,\n  '{{TITLE}}': output.title,\n  '{{DOMAIN}}': entry.domain,\n  '{{OWNER}}': entry.owner,\n  '{{DEPENDENCIES}}': (d.dependencies || []).join(', ') || 'None',\n  '{{MINIMUM_WORDS}}': String(d.minimum_words),\n  '{{VERSION}}': output.version\n};\nfor (const [token, value] of Object.entries(replacements)) {\n  markdown = markdown.split(token).join(String(value ?? ''));\n}\nconst specialHeadings = {\n  seo_impact: 'SEO Impact',\n  ai_usage: 'AI Usage',\n  wordpress_mapping: 'WordPress Mapping'\n};\nconst headingFor = key => specialHeadings[key] || key.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');\nfor (const key of d.required_sections || []) {\n  const marker = `## ${headingFor(key)}`;\n  const parts = markdown.split(marker);\n  if (parts.length !== 2) throw new Error(`Template heading missing or duplicated: ${marker}`);\n  markdown = `${parts[0]}${marker}\\n\\n${output.sections[key].trim()}${parts[1]}`;\n}\nif (/\\{\\{[^}]+\\}\\}/.test(markdown)) throw new Error('Template rendering left unresolved tokens.');\nif (!markdown.trim()) throw new Error('Deterministic Markdown rendering produced empty output.');\nreturn [{json:{...d, markdown: markdown.trim() + '\\n'}}];"
+      },
+      "id": "c113cb57-92d8-4fe7-b20f-61161e953c03",
+      "name": "Render Repaired Markdown",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2240,
+        100
       ]
     }
   ],
@@ -396,7 +409,7 @@
       "main": [
         [
           {
-            "node": "Return Repaired Document",
+            "node": "Render Repaired Markdown",
             "type": "main",
             "index": 0
           }
@@ -404,6 +417,17 @@
         [
           {
             "node": "Escalate To Human",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Render Repaired Markdown": {
+      "main": [
+        [
+          {
+            "node": "Return Repaired Document",
             "type": "main",
             "index": 0
           }

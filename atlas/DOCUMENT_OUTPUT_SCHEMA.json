@@ -3,6 +3,7 @@
   "title": "Atlas Document Output",
   "type": "object",
   "required": [
+    "schema_version",
     "document_id",
     "title",
     "status",
@@ -12,12 +13,16 @@
     "open_questions"
   ],
   "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
     "document_id": {
       "type": "string",
       "pattern": "^[A-Z]{2,3}-[0-9]{3}$"
     },
     "title": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "status": {
       "enum": [
@@ -29,10 +34,64 @@
       ]
     },
     "version": {
-      "type": "string"
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
     },
     "sections": {
-      "type": "object"
+      "type": "object",
+      "required": [
+        "purpose",
+        "scope",
+        "context",
+        "definitions",
+        "architecture",
+        "entities",
+        "fields",
+        "relationships",
+        "business_rules",
+        "workflows",
+        "validation",
+        "permissions",
+        "integrations",
+        "failure_scenarios",
+        "security",
+        "seo_impact",
+        "ai_usage",
+        "wordpress_mapping",
+        "examples",
+        "acceptance_criteria",
+        "dependencies_used",
+        "related_documents",
+        "open_questions",
+        "change_history"
+      ],
+      "properties": {
+        "purpose": { "type": "string", "minLength": 1 },
+        "scope": { "type": "string", "minLength": 1 },
+        "context": { "type": "string", "minLength": 1 },
+        "definitions": { "type": "string", "minLength": 1 },
+        "architecture": { "type": "string", "minLength": 1 },
+        "entities": { "type": "string", "minLength": 1 },
+        "fields": { "type": "string", "minLength": 1 },
+        "relationships": { "type": "string", "minLength": 1 },
+        "business_rules": { "type": "string", "minLength": 1 },
+        "workflows": { "type": "string", "minLength": 1 },
+        "validation": { "type": "string", "minLength": 1 },
+        "permissions": { "type": "string", "minLength": 1 },
+        "integrations": { "type": "string", "minLength": 1 },
+        "failure_scenarios": { "type": "string", "minLength": 1 },
+        "security": { "type": "string", "minLength": 1 },
+        "seo_impact": { "type": "string", "minLength": 1 },
+        "ai_usage": { "type": "string", "minLength": 1 },
+        "wordpress_mapping": { "type": "string", "minLength": 1 },
+        "examples": { "type": "string", "minLength": 1 },
+        "acceptance_criteria": { "type": "string", "minLength": 1 },
+        "dependencies_used": { "type": "string", "minLength": 1 },
+        "related_documents": { "type": "string", "minLength": 1 },
+        "open_questions": { "type": "string", "minLength": 1 },
+        "change_history": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
     },
     "dependencies_used": {
       "type": "array",
