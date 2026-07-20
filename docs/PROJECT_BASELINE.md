@@ -15,7 +15,7 @@
 - **Lifecycle:** Review
 - **Source of Truth:** Accepted governing sources, recorded Founder decisions, [Current Project State](CURRENT_PROJECT_STATE.md), approved Master Data, and current repository evidence within their declared scope
 - **Dependencies:** [Codex Repository Instructions](../AGENTS.md), [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md), [Current Project State](CURRENT_PROJECT_STATE.md), and [Execution Gates](EXECUTION_GATES.md)
-- **Related Documents:** [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md), [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md), [Founder Decision Log](17_FOUNDER_DECISION_LOG.md), and GIT-02S Audit (`docs/AUDIT_REPORT_GIT02S.md`, not yet part of the bootstrap baseline)
+- **Related Documents:** [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md), [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md), [Founder Decision Log](17_FOUNDER_DECISION_LOG.md), and `GIT-02S Audit`
 - **Traceability:** CP-001 through CP-010; ADR-0001; FD-PILOT-001; GIT-02S Founder directive dated 2026-07-14; Class B Wave 1 Founder authorization dated 2026-07-19
 - **AI Compatibility:** Primary concise entry point; underlying sources control within their recorded authority
 - **Approval:** Pending Founder review of the reconciled documentation; recorded Founder decisions remain accepted within their exact scope
@@ -188,14 +188,14 @@ Update this document only when an approved decision, completed sprint, verified 
 - [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md)
 - [Execution Gates](EXECUTION_GATES.md)
 - [Founder Decision Log](17_FOUNDER_DECISION_LOG.md)
-- Master Data Governance — `repository/master-data/MASTER_DATA_GOVERNANCE.md` (not yet part of the bootstrap baseline)
-- Golden Product Founder Review — `repository/golden-reference/pipe/15_GOLDEN_FOUNDER_REVIEW.md` (not yet part of the bootstrap baseline)
-- Sprint 11 Audit — `docs/AUDIT_REPORT_SPRINT11.md` (not yet part of the bootstrap baseline)
-- Sprint 12A Audit — `docs/AUDIT_REPORT_SPRINT12A.md` (not yet part of the bootstrap baseline)
+- `Master Data Governance`
+- `Golden Product Founder Review`
+- `Sprint 11 Audit`
+- `Sprint 12A Audit`
 - [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md)
 
 ## Navigation
 
 - [Repository Reading Order](READING_ORDER.md)
 - [Documentation Index](08_DOCUMENTATION_INDEX.md)
-- GIT-02S Audit — `docs/AUDIT_REPORT_GIT02S.md` (not yet part of the bootstrap baseline)
+- `GIT-02S Audit`

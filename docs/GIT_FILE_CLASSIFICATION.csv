@@ -1,0 +1,551 @@
+path,git_state_at_2026_07_14_snapshot,classification,reason,risk_level,founder_review_required
+.DS_Store,IGNORED,IGNORE_LOCAL,Local generated or operating-system metadata; remain excluded from Git.,LOW,false
+.editorconfig,TRACKED_UNCHANGED,TRACK_CONFIGURATION_TEMPLATE,"Repository configuration, automation, environment, or infrastructure template.",LOW,false
+.env.example,TRACKED_UNCHANGED_SECURITY_REVIEW,TRACK_CONFIGURATION_TEMPLATE,Tracked environment example; sensitive keys contain placeholders and no real secret value was detected.,LOW,false
+.gitattributes,MODIFIED_TRACKED,TRACK_CONFIGURATION_TEMPLATE,Repository-wide Git hygiene and normalization metadata.,LOW,false
+.github/.DS_Store,IGNORED,IGNORE_LOCAL,Local generated or operating-system metadata; remain excluded from Git.,LOW,false
+.github/ISSUE_TEMPLATE/bug_report.yml,TRACKED_UNCHANGED,TRACK_CONFIGURATION_TEMPLATE,"Repository configuration, automation, environment, or infrastructure template.",LOW,false
+.github/pull_request_template.md,TRACKED_UNCHANGED,TRACK_CONFIGURATION_TEMPLATE,"Repository configuration, automation, environment, or infrastructure template.",LOW,false
+.github/workflows/ci.yml,TRACKED_UNCHANGED,TRACK_CONFIGURATION_TEMPLATE,"Repository configuration, automation, environment, or infrastructure template.",LOW,false
+.gitignore,MODIFIED_TRACKED,TRACK_CONFIGURATION_TEMPLATE,Repository-wide Git hygiene and normalization metadata.,LOW,false
+AGENTS.md,UNTRACKED,TRACK_CANONICAL,Canonical Codex repository instruction file.,LOW,false
+CODEOWNERS,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+CONTRIBUTING.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+Makefile,TRACKED_UNCHANGED,TRACK_CONFIGURATION_TEMPLATE,"Repository configuration, automation, environment, or infrastructure template.",LOW,false
+README.md,MODIFIED_TRACKED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+SECURITY.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+assets/.DS_Store,IGNORED,IGNORE_LOCAL,Local generated or operating-system metadata; remain excluded from Git.,LOW,false
+assets/README.md,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,"Repository implementation, test, public-boundary, asset, script, or placeholder artifact retained for controlled review.",LOW,false
+assets/brand/README.md,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,"Repository implementation, test, public-boundary, asset, script, or placeholder artifact retained for controlled review.",LOW,false
+assets/documents/README.md,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,"Repository implementation, test, public-boundary, asset, script, or placeholder artifact retained for controlled review.",LOW,false
+assets/fonts/README.md,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,"Repository implementation, test, public-boundary, asset, script, or placeholder artifact retained for controlled review.",LOW,false
+assets/images/optimized/.gitkeep,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,"Repository implementation, test, public-boundary, asset, script, or placeholder artifact retained for controlled review.",LOW,false
+assets/images/source/README.md,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,"Repository implementation, test, public-boundary, asset, script, or placeholder artifact retained for controlled review.",LOW,false
+composer.json,TRACKED_UNCHANGED,TRACK_CONFIGURATION_TEMPLATE,"Repository configuration, automation, environment, or infrastructure template.",LOW,false
+config/.DS_Store,IGNORED,IGNORE_LOCAL,Local generated or operating-system metadata; remain excluded from Git.,LOW,false
+config/README.md,TRACKED_UNCHANGED,TRACK_CONFIGURATION_TEMPLATE,"Repository configuration, automation, environment, or infrastructure template.",LOW,false
+config/environments/development.env.example,TRACKED_UNCHANGED,TRACK_CONFIGURATION_TEMPLATE,"Repository configuration, automation, environment, or infrastructure template.",LOW,false
+config/environments/production.env.example,TRACKED_UNCHANGED,TRACK_CONFIGURATION_TEMPLATE,"Repository configuration, automation, environment, or infrastructure template.",LOW,false
+config/environments/staging.env.example,TRACKED_UNCHANGED,TRACK_CONFIGURATION_TEMPLATE,"Repository configuration, automation, environment, or infrastructure template.",LOW,false
+config/nginx/site.conf.template,TRACKED_UNCHANGED,TRACK_CONFIGURATION_TEMPLATE,"Repository configuration, automation, environment, or infrastructure template.",LOW,false
+config/php/php.ini.template,TRACKED_UNCHANGED,TRACK_CONFIGURATION_TEMPLATE,"Repository configuration, automation, environment, or infrastructure template.",LOW,false
+config/wordpress/wp-config.example.php,TRACKED_UNCHANGED,TRACK_CONFIGURATION_TEMPLATE,"Repository configuration, automation, environment, or infrastructure template.",LOW,false
+docs/.DS_Store,IGNORED,IGNORE_LOCAL,Local generated or operating-system metadata; remain excluded from Git.,LOW,false
+docs/00_PROJECT_BIBLE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/01_PROJECT_CONSTITUTION.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/02_ARCHITECTURE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/03_BUSINESS_RULES.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/04_PRODUCT_DATA_STRATEGY.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/05_TECH_STACK.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/06_WORDPRESS_ARCHITECTURE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/07_REPOSITORY_GUIDE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/08_DEVELOPMENT_WORKFLOW.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/08_DOCUMENTATION_INDEX.md,MODIFIED_TRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/09_DEPLOYMENT.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/09_NAVIGATION_MAP.md,MODIFIED_TRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/10_DECISION_LOG.md,MODIFIED_TRACKED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/10_SECURITY.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/11_GLOSSARY.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/11_SEO_STRATEGY.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/12_DOCUMENT_LIFECYCLE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/12_UX_PRINCIPLES.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/13_DOCUMENT_TEMPLATE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/13_TESTING_STRATEGY.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/14_CHANGELOG.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/14_CHANGELOG_POLICY.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/15_REVIEW_PROCESS.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/16_QUALITY_STANDARD.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/17_FOUNDER_DECISION_LOG.md,MODIFIED_TRACKED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/18_OPEN_QUESTIONS.md,MODIFIED_TRACKED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/19_PRODUCT_DATA_MODEL.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/20_WOOCOMMERCE_PRODUCT_MODEL.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/21_PRODUCT_TAXONOMY_MODEL.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/22_PRODUCT_ATTRIBUTE_MODEL.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/23_INQUIRY_DATA_MODEL.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/24_INFORMATION_ARCHITECTURE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/25_SITE_STRUCTURE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/26_URL_ARCHITECTURE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/27_SEARCH_AND_DISCOVERY.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/28_INTERNAL_LINKING_MODEL.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/29_CONTENT_ARCHITECTURE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/30_ENTITY_RELATIONSHIP_MODEL.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/31_SCHEMA_ORG_STRATEGY.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/32_CONTENT_TYPES.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/33_MEDIA_STRATEGY.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/34_SEO_ENTITY_MODEL.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/35_WORDPRESS_BLUEPRINT.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/36_BLOCKSY_CONFIGURATION.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/37_ELEMENTOR_ARCHITECTURE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/38_WOOCOMMERCE_CONFIGURATION.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/39_CUSTOM_POST_TYPES.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/40_TAXONOMY_IMPLEMENTATION.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/41_CUSTOM_FIELDS_MODEL.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/42_INQUIRY_WORKFLOW.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/43_USER_ROLES.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/44_PLUGIN_RESPONSIBILITY_MATRIX.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/45_REMOTE_ACCESS_ARCHITECTURE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AI_COLLABORATION.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_BATCH01.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_BATCH02.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_BATCH02A.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_BATCH02B.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_BATCH02C.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_BATCH03.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_BATCH04.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_BATCH05.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_BATCH05A.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_BATCH05B.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_BATCH06.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_BATCH07.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_BATCH08.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_FREEZE_v1.0.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_GIT02S.md,UNTRACKED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_GOV01.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT01A.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT01B.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT01C.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT01D.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT02A.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT02B.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT02C.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT03A.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT03B.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT03C.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT03D.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT03E.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT04A.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT04B.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT04B_AUTHENTICATED.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT04C.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT05A.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT06A.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT07A.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT08A.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT08B.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT08B5.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT08B6.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT08C.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT08D1.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT08D1R.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT09A.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT09B.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT09B_R.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT09C.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT09D.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT09E.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT10R.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT11.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/AUDIT_REPORT_SPRINT12A.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/BACKUP_RESTORE_PROOF_CHECKLIST.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/BASELINE_v1.0.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/CODEX_SPRINT_PROTOCOL.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/CURRENT_PROJECT_STATE.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/ENGINEERING_GUIDELINES.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/EXECUTION_GATES.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/FOUNDER_RUNTIME_APPROVAL_CHECKLIST.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/GETTING_STARTED.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/GIT_BASELINE_APPROVAL_CHECKLIST.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/GIT_BASELINE_AUDIT.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/GIT_BASELINE_COMMIT_REPORT.md,UNTRACKED,TRACK_DOCUMENTATION,Sprint GIT-02 commit evidence explicitly required and approved by the current Founder task.,LOW,false
+docs/GIT_EOF_NORMALIZATION_REPORT.md,UNTRACKED,TRACK_DOCUMENTATION,Sprint GIT-02R formatting-only correction evidence explicitly required by the current Founder task.,LOW,false
+docs/GIT_FILE_CLASSIFICATION.csv,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/GIT_GOVERNANCE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/GOLDEN_PRODUCT_RUNTIME_PREFLIGHT.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/IMPLEMENTATION_READINESS.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/IMPLEMENTATION_SEQUENCE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/INFRASTRUCTURE_AUDIT.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/KNOWLEDGE_GRAPH.md,MODIFIED_TRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/MASTER_REMEDIATION_ROADMAP.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/PIPE_PILOT_FINAL_APPROVAL.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/PIPE_PILOT_FOUNDER_DECISION.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/PLUGIN_THEME_COMPATIBILITY_REPORT.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/PROJECT_BASELINE.md,UNTRACKED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/PROJECT_EXECUTION_ROADMAP.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/READING_ORDER.md,MODIFIED_TRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/RELEASE_NOTES_v1.0.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/REMEDIATION_SEQUENCE_AND_DEPENDENCIES.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/REPOSITORY_FREEZE_REPORT.md,UNTRACKED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/REPOSITORY_HEALTH.md,MODIFIED_TRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/REPOSITORY_METADATA.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/REPOSITORY_RELATIONSHIP_MAP.md,UNTRACKED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/REST_API_DIAGNOSTIC.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/RUNTIME_BLOCKER_REMEDIATION_PLAN.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/RUNTIME_READINESS_REPORT.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/RUNTIME_REMEDIATION_PREFLIGHT.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/SITE_HEALTH_BLOCKERS.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/SITE_HEALTH_REMEDIATION_PLAN.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/SOURCE_OF_TRUTH_PRIORITY.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/SPRINT_ROADMAP.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/TRACEABILITY_MATRIX.md,MODIFIED_TRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/WORDPRESS_CONNECTIVITY_AUDIT.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/WORDPRESS_ENVIRONMENT_INVENTORY.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/WORDPRESS_READ_ONLY_AUDIT.md,UNTRACKED,TRACK_DOCUMENTATION,"Project governance, audit, readiness, or review documentation.",LOW,false
+docs/adr/0000-template.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/adr/0001-inquiry-first-commerce.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/adr/README.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/architecture/README.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/architecture/principles.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/content/README.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/deployment/README.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/operations/README.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/operations/environments.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/security/README.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+docs/seo/README.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+infrastructure/.DS_Store,IGNORED,IGNORE_LOCAL,Local generated or operating-system metadata; remain excluded from Git.,LOW,false
+infrastructure/README.md,TRACKED_UNCHANGED,TRACK_CONFIGURATION_TEMPLATE,"Repository configuration, automation, environment, or infrastructure template.",LOW,false
+infrastructure/docker/compose.yml.template,TRACKED_UNCHANGED,TRACK_CONFIGURATION_TEMPLATE,"Repository configuration, automation, environment, or infrastructure template.",LOW,false
+infrastructure/kubernetes/README.md,TRACKED_UNCHANGED,TRACK_CONFIGURATION_TEMPLATE,"Repository configuration, automation, environment, or infrastructure template.",LOW,false
+package.json,TRACKED_UNCHANGED,TRACK_CONFIGURATION_TEMPLATE,"Repository configuration, automation, environment, or infrastructure template.",LOW,false
+prompts/.DS_Store,IGNORED,IGNORE_LOCAL,Local generated or operating-system metadata; remain excluded from Git.,LOW,false
+prompts/README.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+prompts/content/README.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+prompts/development/README.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+prompts/seo/README.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+public/.DS_Store,IGNORED,IGNORE_LOCAL,Local generated or operating-system metadata; remain excluded from Git.,LOW,false
+public/wp-content/.DS_Store,IGNORED,IGNORE_LOCAL,Local generated or operating-system metadata; remain excluded from Git.,LOW,false
+public/wp-content/README.md,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,"Repository implementation, test, public-boundary, asset, script, or placeholder artifact retained for controlled review.",LOW,false
+public/wp-content/mu-plugins/README.md,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,"Repository implementation, test, public-boundary, asset, script, or placeholder artifact retained for controlled review.",LOW,false
+public/wp-content/plugins/.gitkeep,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,"Repository implementation, test, public-boundary, asset, script, or placeholder artifact retained for controlled review.",LOW,false
+public/wp-content/plugins/README.md,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,"Repository implementation, test, public-boundary, asset, script, or placeholder artifact retained for controlled review.",LOW,false
+public/wp-content/themes/README.md,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,"Repository implementation, test, public-boundary, asset, script, or placeholder artifact retained for controlled review.",LOW,false
+public/wp-content/themes/blocksy-child/.gitkeep,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,"Repository implementation, test, public-boundary, asset, script, or placeholder artifact retained for controlled review.",LOW,false
+public/wp-content/themes/blocksy-child/README.md,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,"Repository implementation, test, public-boundary, asset, script, or placeholder artifact retained for controlled review.",LOW,false
+public/wp-content/uploads/.gitkeep,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,"Repository implementation, test, public-boundary, asset, script, or placeholder artifact retained for controlled review.",LOW,false
+quality/ARCHITECTURE_CHECKLIST.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+quality/BLOCKSY_CHECKLIST.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+quality/DOCUMENTATION_CHECKLIST.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+quality/ELEMENTOR_CHECKLIST.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+quality/PERFORMANCE_CHECKLIST.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+quality/QUALITY_AUDIT.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+quality/QUALITY_STANDARD.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+quality/RELEASE_CHECKLIST.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+quality/REVIEW_CHECKLIST.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+quality/SECURITY_CHECKLIST.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+quality/SEO_CHECKLIST.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+quality/TESTING_CHECKLIST.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+quality/WOOCOMMERCE_CHECKLIST.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+quality/WORDPRESS_CHECKLIST.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,"Project, governance, audit, quality, prompt, or contributor documentation.",LOW,false
+repository/.gitignore,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/BUILD_CHECKLIST.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/IMPLEMENTATION_RULES.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/PRE_IMPLEMENTATION_CHECKLIST.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/assets/.gitkeep,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/backups/.gitkeep,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/business/BUSINESS_ENTITY_MODEL.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/business/BUSINESS_GOVERNANCE.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/business/BUSINESS_MANIFEST.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/business/COMMISSION_ENGINE.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/business/CUSTOMER_LIFECYCLE.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/business/INQUIRY_ENGINE.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/business/PROJECT_LIFECYCLE.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/business/REPRESENTATIVE_MODEL.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/business/SALES_PIPELINE.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/business/SERVICE_MODEL.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/business/SUPPLIER_MODEL.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/config/.gitkeep,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/config/DEPLOYMENT_ACCESS_POLICY.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/config/ENVIRONMENT_REPORT.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/config/HOSTING_VALIDATION_CHECKLIST.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/config/IRAN_EXECUTION_RISK_REGISTER.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/config/PLUGIN_INSTALLATION_SEQUENCE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/config/PLUGIN_INVENTORY.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/config/POST_INSTALL_VALIDATION.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/config/ROLLBACK_PLAN.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/config/SSH_ACCESS_CHECKLIST.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/config/WORDPRESS_BASELINE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/config/WORDPRESS_INSTALLATION_CHECKLIST.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/configurator/01_SELECTION_FLOW.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/configurator/02_DYNAMIC_VISIBILITY.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/configurator/03_COMPATIBILITY_ENGINE.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/configurator/04_RECOMMENDATION_RULES.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/configurator/05_ENVIRONMENT_RULES.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/configurator/06_ALLOY_SELECTION.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/configurator/07_BRAND_SELECTION.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/configurator/08_THICKNESS_SELECTION.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/configurator/09_INSTALLATION_SELECTION.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/configurator/10_SUMMARY_CARD.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/configurator/11_INQUIRY_PAYLOAD.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/configurator/12_VALIDATION_ENGINE.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/configurator/13_EDGE_CASES.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/configurator/14_TEST_CASES.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/configurator/15_FOUNDER_REVIEW.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/content/01_CONTENT_LANGUAGE.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/content/02_PRODUCT_CONTENT_STANDARD.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/content/03_CATEGORY_CONTENT_STANDARD.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/content/04_KNOWLEDGE_ARTICLE_STANDARD.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/content/05_FAQ_STANDARD.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/content/06_BRAND_CONTENT_STANDARD.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/content/07_INSTALLATION_GUIDE_STANDARD.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/content/08_MATERIAL_KNOWLEDGE_STANDARD.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/content/09_ALLOY_KNOWLEDGE_STANDARD.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/content/10_CONTENT_COMPONENT_LIBRARY.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/content/11_CONTENT_TONE_OF_VOICE.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/content/12_SEMANTIC_ENTITY_MODEL.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/content/13_CONTENT_REUSE_RULES.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/content/14_AI_CONTENT_GOVERNANCE.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/content/15_CONTENT_VERSIONING.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/data/attributes/ATTRIBUTE_DICTIONARY.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/data/attributes/PIPE_ATTRIBUTE_MODEL.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/data/imports/woocommerce/PIPE_IMPORT_MAPPING.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/data/imports/woocommerce/PIPE_IMPORT_TEMPLATE.csv,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/data/products/pipes/PIPE_PRODUCT_FAMILY.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/data/products/pipes/PIPE_VARIATION_MATRIX.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/data/products/pipes/PIPE_WOOCOMMERCE_MAPPING.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/data/seo/PIPE_SEO_ENTITY_MODEL.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/data/taxonomies/.gitkeep,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/data/taxonomies/PIPE_CATEGORY_MODEL.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/data/taxonomies/PIPE_TAXONOMY_ATTRIBUTE_CLASSIFICATION.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/data/templates/.gitkeep,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/data/validation/PIPE_DATA_GOVERNANCE_CHECKLIST.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/data/validation/PIPE_IMPORT_PRECHECK.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/data/validation/PRODUCT_DATA_VALIDATION_RULES.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/deployment/.gitkeep,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/design/01_DESIGN_LANGUAGE.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/design/02_DESIGN_TOKENS.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/design/03_COMPONENT_STATE_SYSTEM.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/design/04_VISUAL_HIERARCHY.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/design/05_SPACING_SYSTEM.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/design/06_GRID_SYSTEM.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/design/07_TYPOGRAPHY_SYSTEM.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/design/08_COLOR_SYSTEM.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/design/09_ICONOGRAPHY_SYSTEM.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/design/10_IMAGE_SYSTEM.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/design/11_MOTION_SYSTEM.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/design/12_COMPONENT_NAMING.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/design/13_ADMIN_EXPERIENCE.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/design/14_VERSIONING.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/design/ACCESSIBILITY_RULES.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/design/ANIMATION_LIBRARY.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/design/BRAND_LANGUAGE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/design/COMPONENT_PATTERN_LIBRARY.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/design/DAMAVAND_VISUAL_EXPERIENCE_SYSTEM.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/design/DESIGN_DECISION_RECORDS.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/design/DESIGN_MANIFEST.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/design/ELEMENTOR_COMPONENT_GUIDE.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/design/MOTION_SYSTEM.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/design/PERFORMANCE_RULES.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/design/REACTBITS_INSPIRATION_MAPPING.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/design/REACTBITS_INSPIRED_UI_RULES.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/docs_generated/.gitkeep,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/engine/product/ATTRIBUTE_TEMPLATE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/engine/product/ENGINE_GENERATION_GUIDE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/engine/product/ENGINE_RULES.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/engine/product/ENGINE_WORKFLOW.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/engine/product/IMPORT_TEMPLATE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/engine/product/PRODUCT_ENGINE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/engine/product/PRODUCT_FAMILY_TEMPLATE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/engine/product/SEO_TEMPLATE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/engine/product/VALIDATION_TEMPLATE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/engine/product/VARIATION_TEMPLATE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/enterprise-platform/01_PLATFORM_MANIFEST.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/enterprise-platform/02_PRODUCT_REPOSITORY_ARCHITECTURE.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/enterprise-platform/03_KNOWLEDGE_REPOSITORY_ARCHITECTURE.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/enterprise-platform/04_PRODUCT_CONFIGURATOR_ENGINE.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/enterprise-platform/06_GUIDED_SELECTION_ENGINE.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/enterprise-platform/07_ASSEMBLY_ENGINE.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/enterprise-platform/08_MARKET_INTELLIGENCE_REPOSITORY.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/enterprise-platform/09_CUSTOMER_KNOWLEDGE_REPOSITORY.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/enterprise-platform/10_DECISION_RULES_ENGINE.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/enterprise-platform/11_SINGLE_SOURCE_OF_TRUTH_RULES.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/enterprise-platform/12_WORDPRESS_WOOCOMMERCE_MAPPING.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/enterprise-platform/13_IMPLEMENTATION_ROADMAP.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/exports/.gitkeep,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/golden-reference/pipe/01_GOLDEN_PARENT_PRODUCT.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/golden-reference/pipe/02_GOLDEN_VARIATIONS.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/golden-reference/pipe/03_GOLDEN_ATTRIBUTE_MAP.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/golden-reference/pipe/04_GOLDEN_CONFIGURATOR.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/golden-reference/pipe/05_GOLDEN_KNOWLEDGE_BINDINGS.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/golden-reference/pipe/06_GOLDEN_MEDIA_MANIFEST.csv,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/golden-reference/pipe/07_GOLDEN_CONTENT_PACKAGE.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/golden-reference/pipe/08_GOLDEN_SEO_PACKAGE.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/golden-reference/pipe/09_GOLDEN_SCHEMA_PACKAGE.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/golden-reference/pipe/10_GOLDEN_RELATIONSHIP_MAP.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/golden-reference/pipe/11_GOLDEN_INQUIRY_PAYLOAD.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/golden-reference/pipe/12_GOLDEN_IMPORT_PARENT.csv,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/golden-reference/pipe/13_GOLDEN_IMPORT_VARIATIONS.csv,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/golden-reference/pipe/14_GOLDEN_VALIDATION.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/golden-reference/pipe/15_GOLDEN_FOUNDER_REVIEW.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/import-assets/01_MASTER_CATEGORY_IMPORT.csv,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/import-assets/02_MASTER_ATTRIBUTE_IMPORT.csv,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/import-assets/03_MASTER_ATTRIBUTE_TERM_IMPORT.csv,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/import-assets/04_MASTER_PRODUCT_TEMPLATE.csv,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/import-assets/05_PRODUCT_VARIATION_TEMPLATE.csv,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/import-assets/06_PRODUCT_MEDIA_MANIFEST.csv,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/import-assets/07_PRODUCT_IMAGE_NAMING_RULES.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/import-assets/08_PRODUCT_SLUG_RULES.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/import-assets/09_INTERNAL_LINK_MAPPING.csv,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/import-assets/10_SEO_IMPORT_TEMPLATE.csv,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/import-assets/11_FAQ_IMPORT_TEMPLATE.csv,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/import-assets/12_KNOWLEDGE_MAPPING_IMPORT.csv,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/import-assets/13_SCHEMA_MAPPING_REFERENCE.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/import-assets/14_IMPORT_VALIDATION_CHECKLIST.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/import-assets/15_IMPORT_EXECUTION_SEQUENCE.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/import-preparation/PIPE_PROFILE_ATTRIBUTE_SEED_V1.csv,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/import-preparation/PIPE_PROFILE_VALIDATION_RULES_V1.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/import-preparation/PIPE_PROFILE_WOOCOMMERCE_MAPPING_V1.csv,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/product-dna/01_MASTER_PRODUCT_DNA.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/product-dna/02_PRODUCT_INFORMATION_MODEL.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/product-dna/03_PRODUCT_COMPONENT_LIBRARY.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/product-dna/04_PRODUCT_KNOWLEDGE_BLOCK_LIBRARY.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/product-dna/05_PRODUCT_PAGE_ASSEMBLY_ENGINE.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/product-dna/06_PRODUCT_CONFIGURATOR_UI_MODEL.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/product-dna/07_PRODUCT_MEDIA_MODEL.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/product-dna/08_PRODUCT_SEO_MODEL.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/product-dna/09_PRODUCT_SCHEMA_MODEL.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/product-dna/10_PRODUCT_RELATION_MODEL.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/product-dna/11_PRODUCT_LIFECYCLE_MODEL.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/product-dna/12_PRODUCT_VALIDATION_RULES.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/product-dna/13_PRODUCT_EXTENSIBILITY_MODEL.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/product-dna/14_PRODUCT_ADMIN_MODEL.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/product-dna/15_PRODUCT_DNA_EXAMPLE_PIPE.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/product-dna/16_PRODUCT_DNA_EXAMPLE_PROFILE.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/product-foundation/01_MASTER_PRODUCT_TAXONOMY_V1.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/product-foundation/02_GLOBAL_ATTRIBUTE_LIBRARY_V1.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/product-foundation/03_PIPE_FAMILY_TEMPLATE_V1.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/product-foundation/04_PROFILE_FAMILY_TEMPLATE_V1.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/product-foundation/05_VARIANT_AND_SKU_RULES_V1.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/product-foundation/06_PRODUCT_KNOWLEDGE_MAPPING_V1.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/implementation-assets/product-foundation/07_FOUNDER_DECISION_REGISTER_V1.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/imports/.gitkeep,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/knowledge-cards/01_MATERIAL_CARDS.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/knowledge-cards/02_ALLOY_CARDS.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/knowledge-cards/03_INSTALLATION_CARDS.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/knowledge-cards/04_BUYING_CARDS.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/knowledge-cards/05_MAINTENANCE_CARDS.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/knowledge-cards/06_ENVIRONMENT_CARDS.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/knowledge-cards/07_FAQ_CARDS.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/knowledge-cards/08_COMPARISON_CARDS.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/knowledge-cards/09_COMMON_MISTAKES.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/knowledge-cards/10_ENGINEERING_NOTES.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/knowledge-cards/11_SELECTION_TIPS.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/knowledge-cards/12_TRUST_SIGNALS.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/knowledge/AI_KNOWLEDGE_READINESS.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/knowledge/CRM_KNOWLEDGE_GRAPH.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/knowledge/ENTITY_MODEL.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/knowledge/KNOWLEDGE_GOVERNANCE.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/knowledge/KNOWLEDGE_MANIFEST.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/knowledge/ONTOLOGY_MODEL.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/knowledge/PRODUCT_KNOWLEDGE_GRAPH.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/knowledge/RELATIONSHIP_MODEL.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/knowledge/SEO_KNOWLEDGE_GRAPH.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/logs/.gitkeep,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/master-data/IMPORT_READINESS.md,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/MASTER_DATA_AUDIT.md,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/MASTER_DATA_GOVERNANCE.md,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/QUALITY_SCORE.md,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/fittings/01_FITTINGS_MASTER_DATA.yaml,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/fittings/02_FITTINGS_VARIANT_MATRIX.csv,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/fittings/03_FITTINGS_ATTRIBUTE_MATRIX.csv,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/fittings/04_FITTINGS_COMPATIBILITY_MATRIX.csv,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/fittings/05_FITTINGS_INSTALLATION_MAPPING.csv,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/fittings/06_FITTINGS_MEDIA_MAPPING.csv,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/fittings/07_FITTINGS_SEO_MAPPING.csv,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/fittings/08_FITTINGS_KNOWLEDGE_MAPPING.yaml,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/fittings/09_FITTINGS_VALIDATION.md,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/fittings/10_FITTINGS_FOUNDER_REVIEW.md,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/pipes/01_PIPE_MASTER_DATA.yaml,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/pipes/02_PIPE_VARIANT_MATRIX.csv,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/pipes/03_PIPE_VALID_COMBINATIONS.csv,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/pipes/04_PIPE_ATTRIBUTE_VALUES.csv,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/pipes/05_PIPE_CONFIGURATION_RULES.yaml,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/pipes/06_PIPE_KNOWLEDGE_BINDINGS.yaml,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/pipes/07_PIPE_MEDIA_BINDINGS.csv,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/pipes/08_PIPE_SEO_BINDINGS.csv,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/pipes/09_PIPE_INTERNAL_LINKS.csv,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/pipes/10_PIPE_FAQ_BINDINGS.csv,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/pipes/11_PIPE_RELATED_PRODUCTS.csv,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/pipes/12_PIPE_SCHEMA_BINDINGS.yaml,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/pipes/13_PIPE_VALIDATION.md,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/pipes/14_PIPE_IMPORT_PACKAGE.md,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/master-data/pipes/15_PIPE_FOUNDER_REVIEW.md,UNTRACKED,TRACK_CANONICAL,Canonical governed Master Data or readiness record; no content change made by GIT-01.,LOW,false
+repository/media/01_MEDIA_ARCHITECTURE.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/media/02_MEDIA_FOLDER_STRUCTURE.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/media/03_IMAGE_NAMING_STANDARD.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/media/04_IMAGE_METADATA_STANDARD.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/media/05_ALT_TEXT_STANDARD.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/media/06_IMAGE_VARIANT_RULES.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/media/07_GALLERY_STRUCTURE.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/media/08_FILE_FORMAT_STANDARD.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/media/09_WEBP_OPTIMIZATION_RULES.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/media/10_IMAGE_IMPORT_MANIFEST.csv,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/media/11_PRODUCT_MEDIA_MAPPING.csv,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/media/12_MEDIA_QA_CHECKLIST.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/media/13_MEDIA_VERSIONING.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/media/14_MEDIA_VALIDATION_RULES.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/media/15_MEDIA_PIPE_EXAMPLE.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/media/16_MEDIA_PROFILE_EXAMPLE.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/migration/.gitkeep,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/page-builder/01_HERO_BLOCKS.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/page-builder/02_CONFIGURATOR_BLOCKS.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/page-builder/03_KNOWLEDGE_BLOCKS.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/page-builder/04_SPECIFICATION_BLOCKS.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/page-builder/05_COMPARISON_BLOCKS.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/page-builder/06_APPLICATION_BLOCKS.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/page-builder/07_GALLERY_BLOCKS.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/page-builder/08_DOWNLOAD_BLOCKS.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/page-builder/09_FAQ_BLOCKS.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/page-builder/10_INQUIRY_BLOCKS.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/page-builder/11_RELATED_PRODUCT_BLOCKS.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/page-builder/12_TRUST_BLOCKS.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/page-builder/13_REVIEW_BLOCKS.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/page-builder/14_CTA_BLOCKS.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/page-builder/15_FOOTER_BLOCKS.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/platform/ENGINE_BOUNDARIES.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/platform/PLATFORM_ARCHITECTURE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/platform/PLATFORM_DIRECTORY_STANDARD.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/platform/PLATFORM_EVOLUTION.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/platform/PLATFORM_GOVERNANCE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/platform/PLATFORM_LIFECYCLE.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/platform/PLATFORM_MANIFEST.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/platform/PLATFORM_PRINCIPLES.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/platform/PLATFORM_VERSIONING.md,TRACKED_UNCHANGED,TRACK_DOCUMENTATION,Repository-area documentation or navigation artifact.,LOW,false
+repository/quality/.gitkeep,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/scripts/.gitkeep,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/seo-assets/01_MASTER_SEO_TEMPLATE.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/seo-assets/02_PRODUCT_TITLE_PATTERNS.csv,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/seo-assets/03_META_DESCRIPTION_PATTERNS.csv,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/seo-assets/04_CATEGORY_SEO_PATTERNS.csv,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/seo-assets/05_FAQ_SCHEMA_LIBRARY.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/seo-assets/06_BREADCRUMB_RULES.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/seo-assets/07_INTERNAL_LINK_GRAPH.csv,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/seo-assets/08_CANONICAL_RULES.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/seo-assets/09_ENTITY_MAPPING.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/seo-assets/10_REDIRECT_RULES.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/seo-assets/11_SEO_QA_CHECKLIST.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/seo-assets/12_SEARCH_INTENT_MAPPING.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/seo-assets/13_CONTENT_SEO_MAPPING.yaml,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/seo-assets/14_SLUG_LIBRARY.csv,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/seo-assets/15_SEO_VALIDATION.md,UNTRACKED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/templates/.gitkeep,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/tools/.gitkeep,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/wordpress/.gitkeep,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,Repository implementation or planning asset intended for Founder review and later controlled projection.,LOW,false
+repository/wordpress/01_WORDPRESS_ARCHITECTURE.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/wordpress/02_WOOCOMMERCE_PRODUCT_MODEL.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/wordpress/03_ATTRIBUTE_STRATEGY.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/wordpress/04_TAXONOMY_STRATEGY.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/wordpress/05_ACF_STRATEGY.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/wordpress/06_BLOCKSY_ARCHITECTURE.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/wordpress/07_ELEMENTOR_ARCHITECTURE.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/wordpress/08_RANKMATH_MAPPING.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/wordpress/09_ADMIN_WORKFLOW.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/wordpress/10_MEDIA_LIBRARY_ARCHITECTURE.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/wordpress/11_PRODUCT_IMPORT_STRATEGY.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/wordpress/12_CONFIGURATION_WORKFLOW.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/wordpress/13_TESTING_STRATEGY.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/wordpress/14_RUNTIME_BOUNDARIES.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+repository/wordpress/15_RELEASE_PLAN.md,UNTRACKED,TRACK_CANONICAL,Canonical repository architecture or governance asset.,LOW,false
+scripts/README.md,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,"Repository implementation, test, public-boundary, asset, script, or placeholder artifact retained for controlled review.",LOW,false
+scripts/setup.sh,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,"Repository implementation, test, public-boundary, asset, script, or placeholder artifact retained for controlled review.",LOW,false
+scripts/test.sh,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,"Repository implementation, test, public-boundary, asset, script, or placeholder artifact retained for controlled review.",LOW,false
+scripts/validate.sh,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,"Repository implementation, test, public-boundary, asset, script, or placeholder artifact retained for controlled review.",LOW,false
+tests/.DS_Store,IGNORED,IGNORE_LOCAL,Local generated or operating-system metadata; remain excluded from Git.,LOW,false
+tests/README.md,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,"Repository implementation, test, public-boundary, asset, script, or placeholder artifact retained for controlled review.",LOW,false
+tests/e2e/README.md,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,"Repository implementation, test, public-boundary, asset, script, or placeholder artifact retained for controlled review.",LOW,false
+tests/fixtures/README.md,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,"Repository implementation, test, public-boundary, asset, script, or placeholder artifact retained for controlled review.",LOW,false
+tests/qa/README.md,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,"Repository implementation, test, public-boundary, asset, script, or placeholder artifact retained for controlled review.",LOW,false
+var/.DS_Store,IGNORED,IGNORE_LOCAL,Local generated or operating-system metadata; remain excluded from Git.,LOW,false
+var/cache/.gitkeep,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,"Repository implementation, test, public-boundary, asset, script, or placeholder artifact retained for controlled review.",LOW,false
+var/log/.gitkeep,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,"Repository implementation, test, public-boundary, asset, script, or placeholder artifact retained for controlled review.",LOW,false
+var/tmp/.gitkeep,TRACKED_UNCHANGED,TRACK_IMPLEMENTATION_ASSET,"Repository implementation, test, public-boundary, asset, script, or placeholder artifact retained for controlled review.",LOW,false
+var/chatgpt-work-access-test.txt,DELETED_IGNORED,DELETION_CANDIDATE,Completed local repository access test; classified before and removed under explicit Founder authorization in GIT-02S.,LOW,false

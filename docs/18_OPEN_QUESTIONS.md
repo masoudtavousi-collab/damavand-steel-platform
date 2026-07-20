@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-04
-- **Last Review:** 2026-07-04
+- **Version:** 0.3.0
+- **Last Updated:** 2026-07-19
+- **Last Review:** 2026-07-19
 - **Review Cycle:** On question creation, resolution, blocking impact, or source-document change
 - **Lifecycle:** Draft
 - **Source of Truth:** Unresolved questions and placeholders in controlled source documents; this register does not answer them
@@ -23,6 +23,10 @@
 ## Purpose
 
 Collect unresolved questions and unclassified placeholders without answering them or creating new decisions.
+
+## Current Repository-Control Resolution Boundary
+
+The 2026-07-19 Founder authorization resolves only the immediate Wave 1 Git scope: the named repository, verified remote `main` SHA, bootstrap commit, unchanged Draft PR #1, exact 19-path allowlist, one Wave 1 commit, one branch push, and one Draft PR. It does not resolve any architecture, product, WordPress, runtime, content, publication, deployment, production, mirror, backup, signing, retention, repository-setting, default-branch, or merge question. All unrelated open questions retain their prior status.
 
 ## Explicit Open-Question Sections
 
@@ -75,7 +79,7 @@ The following older documents contained unresolved `TBD.` placeholders. Batch 02
 | OQ-GOV-018 | Should the relationship vocabulary, rule-inheritance hierarchy, and conflict-resolution framework be approved together or with recorded revisions? | [Relationship Metadata](REPOSITORY_METADATA.md#relationship-metadata-model) and [Project Constitution](01_PROJECT_CONSTITUTION.md#conflict-resolution-framework) | Open |
 | OQ-GOV-019 | Should the Controlled Document Validation Checklist become the repository validation gate? | [Documentation Quality Standard](16_QUALITY_STANDARD.md#controlled-document-validation-checklist) | Open |
 | OQ-GOV-020 | Should the expanded AI change-authority and repository-protection rules be approved without changing CP-010? | [AI Collaboration Standard](AI_COLLABORATION.md#ai-change-authority-matrix) | Open |
-| OQ-GOV-021 | Should Git Governance be approved, and which primary remote, independent mirror, backup location, custodians, signing policy, and retention period are authorized? | [Git Governance](GIT_GOVERNANCE.md) and [Baseline Known Limitations](BASELINE_v1.0.md#known-limitations) | Open; exact local baseline authorized, but distribution, custody, signing, protection, and retention remain unresolved |
+| OQ-GOV-021 | Should Git Governance be approved, and which primary remote, independent mirror, backup location, custodians, signing policy, and retention period are authorized? | [Git Governance](GIT_GOVERNANCE.md) and [Baseline Known Limitations](BASELINE_v1.0.md#known-limitations) | Partially resolved for Wave 1 only: `masoudtavousi-collab/damavand-steel-platform`, remote `main`, and the exact Wave 1 branch/commit/push/Draft-PR path are authorized. Broader governance approval, mirror, backup, custody, signing, protection, retention, merge, and repository settings remain open. |
 
 ## WordPress Architecture Questions
 

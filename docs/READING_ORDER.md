@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-04
-- **Last Review:** 2026-07-04
+- **Version:** 0.3.0
+- **Last Updated:** 2026-07-19
+- **Last Review:** 2026-07-19
 - **Review Cycle:** On navigation or authority change; periodic cadence pending Founder approval
 - **Lifecycle:** Review
 - **Source of Truth:** [Documentation Index](08_DOCUMENTATION_INDEX.md) and [Navigation Map](09_NAVIGATION_MAP.md)
@@ -28,14 +28,20 @@ Provide role-specific reading paths so a new human or AI collaborator can unders
 
 Every reader starts with:
 
-1. [Project Bible](00_PROJECT_BIBLE.md), especially the Core Project Principles.
-2. [Project Constitution](01_PROJECT_CONSTITUTION.md).
-3. [Documentation Index](08_DOCUMENTATION_INDEX.md).
-4. [Glossary](11_GLOSSARY.md).
-5. [Decision Log](10_DECISION_LOG.md).
-6. [Founder Decision Log](17_FOUNDER_DECISION_LOG.md) and [Open Questions](18_OPEN_QUESTIONS.md).
+1. [Codex Repository Instructions](../AGENTS.md) for Codex sessions; other roles may use it as a concise boundary summary.
+2. [Project Baseline](PROJECT_BASELINE.md), the concise current-state entry point.
+3. [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md) when another repository, Factory, Generator, or cross-repository concept is involved.
+4. [Current Project State](CURRENT_PROJECT_STATE.md) and [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md).
+5. [Project Bible](00_PROJECT_BIBLE.md), especially the Core Project Principles.
+6. [Project Constitution](01_PROJECT_CONSTITUTION.md).
+7. [Documentation Index](08_DOCUMENTATION_INDEX.md).
+8. [Glossary](11_GLOSSARY.md).
+9. [Decision Log](10_DECISION_LOG.md).
+10. [Founder Decision Log](17_FOUNDER_DECISION_LOG.md) and [Open Questions](18_OPEN_QUESTIONS.md).
 
 Readers then follow the applicable role path.
+
+For the current Class B Wave 1 activity, readers must also review [FD-GIT-W1-001](17_FOUNDER_DECISION_LOG.md#settled-class-b-wave-1-repository-control-decision), the repository-control state in [Project Baseline](PROJECT_BASELINE.md), and the Wave 1 traceability section in [Traceability Matrix](TRACEABILITY_MATRIX.md). GIT-02S remains historical evidence. Waves 2–10, merge, runtime, WordPress, product, content, publication, deployment, and production remain outside the current path.
 
 ## Founder Reading Path
 
@@ -77,6 +83,8 @@ No implementation begins until the relevant Draft dependencies and Founder decis
 9. [Repository Health](REPOSITORY_HEALTH.md).
 10. [Git Governance](GIT_GOVERNANCE.md) for repository mutations.
 11. Latest applicable audit record.
+
+For current work after Sprint 09B, continue through Future Reference: Sprint 09C Audit — `docs/AUDIT_REPORT_SPRINT09C.md` (Not yet approved), Future Reference: Sprint 09D Audit — `docs/AUDIT_REPORT_SPRINT09D.md` (Not yet approved), Future Reference: Sprint 09E Audit — `docs/AUDIT_REPORT_SPRINT09E.md` (Not yet approved), Future Reference: Sprint 10R Audit — `docs/AUDIT_REPORT_SPRINT10R.md` (Not yet approved), Future Reference: Sprint 11 Audit — `docs/AUDIT_REPORT_SPRINT11.md` (Not yet approved), Future Reference: Golden Product Runtime Preflight — `docs/GOLDEN_PRODUCT_RUNTIME_PREFLIGHT.md` (Not yet approved), Future Reference: Sprint 12A Audit — `docs/AUDIT_REPORT_SPRINT12A.md` (Not yet approved), and Future Reference: GIT-02S Audit — `docs/AUDIT_REPORT_GIT02S.md` (Not yet approved) as evidence only. For current Git reconciliation, read [FD-GIT-W1-001](17_FOUNDER_DECISION_LOG.md#settled-class-b-wave-1-repository-control-decision), [Current Project State](CURRENT_PROJECT_STATE.md), and [Git Baseline Approval Checklist](GIT_BASELINE_APPROVAL_CHECKLIST.md); treat the [Git File Classification](GIT_FILE_CLASSIFICATION.csv) state column as a dated snapshot. Also retain Future Reference: Git Baseline Audit — `docs/GIT_BASELINE_AUDIT.md` (Not yet approved), Future Reference: Git Baseline Commit Report — `docs/GIT_BASELINE_COMMIT_REPORT.md` (Not yet approved), Future Reference: Git EOF Normalization Report — `docs/GIT_EOF_NORMALIZATION_REPORT.md` (Not yet approved), and Future Reference: Repository Freeze Report — `docs/REPOSITORY_FREEZE_REPORT.md` (Not yet approved) as historical evidence.
 
 An AI must verify current files and must not rely on a previous handoff or chat summary as authority.
 
@@ -249,6 +257,9 @@ This path documents a proposed route only. It grants no remote, account, credent
 - [Implementation Readiness Assessment](IMPLEMENTATION_READINESS.md)
 - [Remote Access and Iran Execution Constraints Architecture](45_REMOTE_ACCESS_ARCHITECTURE.md)
 - [Sprint 01D Audit](AUDIT_REPORT_SPRINT01D.md)
+- [Project Baseline](PROJECT_BASELINE.md)
+- [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md)
+- Future Reference: GIT-02S Audit — `docs/AUDIT_REPORT_GIT02S.md` (Not yet approved)
 
 ## Navigation
 

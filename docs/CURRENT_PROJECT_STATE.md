@@ -85,11 +85,11 @@
 
 - [Project Baseline](PROJECT_BASELINE.md)
 - [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md)
-- Sprint 10R Audit — `docs/AUDIT_REPORT_SPRINT10R.md` (not yet part of the bootstrap baseline)
-- Sprint 11 Audit — `docs/AUDIT_REPORT_SPRINT11.md` (not yet part of the bootstrap baseline)
-- Golden Product Runtime Preflight — `docs/GOLDEN_PRODUCT_RUNTIME_PREFLIGHT.md` (not yet part of the bootstrap baseline)
-- Sprint 12A Audit — `docs/AUDIT_REPORT_SPRINT12A.md` (not yet part of the bootstrap baseline)
-- Master Data Audit — `repository/master-data/MASTER_DATA_AUDIT.md` (not yet part of the bootstrap baseline)
-- Import Readiness — `repository/master-data/IMPORT_READINESS.md` (not yet part of the bootstrap baseline)
-- Quality Score — `repository/master-data/QUALITY_SCORE.md` (not yet part of the bootstrap baseline)
-- GIT-02S Audit — `docs/AUDIT_REPORT_GIT02S.md` (not yet part of the bootstrap baseline)
+- `Sprint 10R Audit`
+- `Sprint 11 Audit`
+- `Golden Product Runtime Preflight`
+- `Sprint 12A Audit`
+- `Master Data Audit`
+- `Import Readiness`
+- `Quality Score`
+- `GIT-02S Audit`
