@@ -85,11 +85,11 @@
 
 - [Project Baseline](PROJECT_BASELINE.md)
 - [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md)
-- [Sprint 10R Audit](AUDIT_REPORT_SPRINT10R.md)
-- [Sprint 11 Audit](AUDIT_REPORT_SPRINT11.md)
-- [Golden Product Runtime Preflight](GOLDEN_PRODUCT_RUNTIME_PREFLIGHT.md)
-- [Sprint 12A Audit](AUDIT_REPORT_SPRINT12A.md)
-- [Master Data Audit](../repository/master-data/MASTER_DATA_AUDIT.md)
-- [Import Readiness](../repository/master-data/IMPORT_READINESS.md)
-- [Quality Score](../repository/master-data/QUALITY_SCORE.md)
-- [GIT-02S Audit](AUDIT_REPORT_GIT02S.md)
+- `Sprint 10R Audit`
+- `Sprint 11 Audit`
+- `Golden Product Runtime Preflight`
+- `Sprint 12A Audit`
+- `Master Data Audit`
+- `Import Readiness`
+- `Quality Score`
+- `GIT-02S Audit`

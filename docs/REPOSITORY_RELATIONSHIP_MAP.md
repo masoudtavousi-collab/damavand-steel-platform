@@ -15,7 +15,7 @@
 - **Lifecycle:** Review
 - **Source of Truth:** Explicit Founder decisions in the GIT-02S directive dated 2026-07-14, the Class B Wave 1 authorization dated 2026-07-19, and Repository A governance
 - **Dependencies:** [Project Baseline](PROJECT_BASELINE.md), [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md), and [Project Constitution](01_PROJECT_CONSTITUTION.md)
-- **Related Documents:** [Git Governance](GIT_GOVERNANCE.md), [AI Collaboration Standard](AI_COLLABORATION.md), and [GIT-02S Audit](AUDIT_REPORT_GIT02S.md)
+- **Related Documents:** [Git Governance](GIT_GOVERNANCE.md), [AI Collaboration Standard](AI_COLLABORATION.md), and `GIT-02S Audit`
 - **Traceability:** GIT-02S Founder decisions 1–3 and 10; CP-001, CP-002, CP-010
 - **AI Compatibility:** Explicit cross-repository authority and isolation contract
 - **Approval:** Repository dispositions accepted by explicit Founder directive; document presentation pending Founder review
@@ -158,4 +158,4 @@ No passage of time, new file, Git initialization, architecture review, or AI rec
 
 - [Repository Reading Order](READING_ORDER.md)
 - [Documentation Index](08_DOCUMENTATION_INDEX.md)
-- [GIT-02S Audit](AUDIT_REPORT_GIT02S.md)
+- `GIT-02S Audit`
