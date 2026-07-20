@@ -1,0 +1,459 @@
+{
+  "name": "DS Atlas — Master Controller",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "1dfea174-238b-4b1f-be83-f0c7cc348544",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1000,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "7382dcc2-e702-4c0f-a5b1-c65249feb31e",
+              "name": "github_owner",
+              "value": "CONFIGURE_GITHUB_OWNER",
+              "type": "string"
+            },
+            {
+              "id": "652e36e2-fff4-4475-b89f-3351d3d89ed2",
+              "name": "github_repo",
+              "value": "CONFIGURE_GITHUB_REPOSITORY",
+              "type": "string"
+            },
+            {
+              "id": "3d044ca3-326c-40be-a880-40bd7e600a15",
+              "name": "branch",
+              "value": "atlas-drafts",
+              "type": "string"
+            },
+            {
+              "id": "54ac09fd-b9bf-48e5-8753-642b6793454e",
+              "name": "manifest_path",
+              "value": "n8n/config/ATLAS_MASTER_MANIFEST.json",
+              "type": "string"
+            },
+            {
+              "id": "bc91c23f-b171-4d27-b6ea-f455b1b4472a",
+              "name": "generator_workflow_id",
+              "value": "CONFIGURE_GENERATOR_WORKFLOW_ID",
+              "type": "string"
+            },
+            {
+              "id": "d30010f0-7cd4-4f66-9eb6-ee2e8c862cf1",
+              "name": "batch_size",
+              "value": 1,
+              "type": "number"
+            },
+            {
+              "id": "57cc72eb-d8ab-42a5-81fd-ccf6327ef6ac",
+              "name": "execution_mode",
+              "value": "OFFLINE",
+              "type": "string"
+            },
+            {
+              "id": "08c216f3-f480-486a-b015-a73e74633601",
+              "name": "dry_run",
+              "value": true,
+              "type": "boolean"
+            },
+            {
+              "id": "d444b35d-c702-4963-a39d-88bb4ba326ab",
+              "name": "founder_write_approved",
+              "value": false,
+              "type": "boolean"
+            },
+            {
+              "id": "f9c98dd4-4696-422f-a87d-9edb358c8584",
+              "name": "credentials_configured",
+              "value": false,
+              "type": "boolean"
+            },
+            {
+              "id": "wf1-expected-repository",
+              "name": "expected_repository",
+              "value": "CONFIGURE_EXPECTED_GITHUB_OWNER/CONFIGURE_EXPECTED_GITHUB_REPOSITORY",
+              "type": "string"
+            },
+            {
+              "id": "wf1-expected-branch",
+              "name": "expected_branch",
+              "value": "CONFIGURE_EXPECTED_BRANCH",
+              "type": "string"
+            },
+            {
+              "id": "wf1-schema-path",
+              "name": "schema_path",
+              "value": "atlas/DOCUMENT_OUTPUT_SCHEMA.json",
+              "type": "string"
+            },
+            {
+              "id": "wf1-template-path",
+              "name": "template_path",
+              "value": "atlas/DOCUMENT_TEMPLATE.md",
+              "type": "string"
+            },
+            {
+              "id": "wf1-governance-paths",
+              "name": "required_governance_paths",
+              "value": [
+                "PROJECT_BIBLE.md",
+                "AGENTS.md",
+                "docs/PROJECT_BASELINE.md",
+                "docs/CURRENT_PROJECT_STATE.md",
+                "docs/PROJECT_EXECUTION_ROADMAP.md",
+                "docs/CODEX_SPRINT_PROTOCOL.md",
+                "docs/SOURCE_OF_TRUTH_PRIORITY.md",
+                "docs/REPOSITORY_RELATIONSHIP_MAP.md"
+              ],
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1a8b3304-a2b0-4eb5-81aa-a8b256c4999e",
+      "name": "Pipeline Configuration",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -780,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const allowed = new Set(['OFFLINE', 'VALIDATE', 'DRY_RUN', 'LIVE']);\nconst requested = $json.execution_mode;\nconst executionMode = typeof requested === 'string' && allowed.has(requested) ? requested : 'OFFLINE';\nreturn [{json:{\n  ...$json,\n  execution_mode: executionMode,\n  dry_run: $json.dry_run === false ? false : true,\n  founder_write_approved: $json.founder_write_approved === true,\n  credentials_configured: $json.credentials_configured === true\n}}];"
+      },
+      "id": "33ec4dd5-5131-43fb-8ddf-114ab8374dc4",
+      "name": "Resolve Execution Mode",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -560,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "21b7f648-ef90-4444-9bf4-fb8ec361b721",
+              "leftValue": "={{ $json.execution_mode === 'DRY_RUN' || $json.execution_mode === 'LIVE' }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "6fc68319-dc92-48a1-8cab-7b6c95ce07f2",
+      "name": "Network Execution Mode?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -340,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const mode = $json.execution_mode === 'VALIDATE' ? 'VALIDATE' : 'OFFLINE';\nreturn [{json:{\n  status: mode === 'VALIDATE' ? 'validate_local_only' : 'offline_local_only',\n  execution_mode: mode,\n  network_performed: false,\n  write_performed: false,\n  local_validation_required: true,\n  validation_scope: ['manifest', 'registry', 'schema', 'workflows', 'secrets', 'execution_mode'],\n  validation_command: 'python3 scripts/validate_manifest.py'\n}}];"
+      },
+      "id": "42994ec7-9596-462c-8bef-7db635f9bf61",
+      "name": "Return Local Validation Mode",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -100,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://api.github.com/repos/{{$json.github_owner}}/{{$json.github_repo}}/contents/{{$json.manifest_path}}?ref={{$json.branch}}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github+json"
+            },
+            {
+              "name": "X-GitHub-Api-Version",
+              "value": "2022-11-28"
+            },
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{$env.GITHUB_TOKEN}}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "16228c0a-563f-412d-ac27-7e7e4a191e3e",
+      "name": "Fetch Manifest From GitHub",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -100,
+        -80
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const cfg = $('Validate Repository Configuration').first().json;\nconst payload = $json;\nif (!payload || payload.type !== 'file' || payload.path !== cfg.manifest_path) {\n  throw new Error('Manifest repository response identity mismatch.');\n}\nif (payload.encoding !== 'base64' || typeof payload.content !== 'string' || !payload.content.trim()) {\n  throw new Error('Manifest repository response is empty or malformed.');\n}\nlet decoded;\nlet manifest;\ntry {\n  decoded = Buffer.from(payload.content.replace(/\\n/g, ''), 'base64').toString('utf8');\n  if (!decoded.trim()) throw new Error('empty decoded manifest');\n  manifest = JSON.parse(decoded);\n} catch (error) {\n  throw new Error(`Manifest decode failed: ${error.message}`);\n}\nif (!manifest.atlas || !Array.isArray(manifest.domains) || !Array.isArray(manifest.documents)) {\n  throw new Error('Manifest structure is invalid.');\n}\nconst safePath = (value) => {\n  if (typeof value !== 'string' || !value || value.startsWith('/') || value.includes('\\\\\\\\')) return false;\n  const parts = value.split('/');\n  return !parts.some(part => !part || part === '.' || part === '..');\n};\nconst ids = new Set();\nconst paths = new Set();\nfor (const document of manifest.documents) {\n  if (!document || typeof document.id !== 'string' || !/^[A-Z]{2,3}-\\d{3}$/.test(document.id)) {\n    throw new Error('Manifest contains an invalid document identity.');\n  }\n  if (ids.has(document.id)) throw new Error(`Duplicate document ID: ${document.id}`);\n  if (!safePath(document.path)) throw new Error(`Unsafe document path: ${document.id}`);\n  if (paths.has(document.path)) throw new Error(`Duplicate document path: ${document.path}`);\n  ids.add(document.id);\n  paths.add(document.path);\n}\nfor (const document of manifest.documents) {\n  const dependencies = document.dependencies || [];\n  if (!Array.isArray(dependencies) || new Set(dependencies).size !== dependencies.length) {\n    throw new Error(`Duplicate or malformed dependencies: ${document.id}`);\n  }\n  for (const dependency of dependencies) {\n    if (!ids.has(dependency)) throw new Error(`Unknown dependency ${dependency} for ${document.id}`);\n  }\n}\nreturn [{json:{...cfg, manifest, manifest_sha: payload.sha || null}}];"
+      },
+      "id": "3c55a745-4ec4-45c2-af61-9bee1f46ee00",
+      "name": "Decode Manifest",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -300,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const cfg = $json;\nconst documents = cfg.manifest.documents || [];\nconst index = {};\nfor (const document of documents) {\n  index[document.id] = {\n    id: document.id,\n    title: document.title,\n    domain: document.domain,\n    path: document.path,\n    status: document.status,\n    owner: document.owner,\n    minimum_words: document.minimum_words,\n    dependencies: document.dependencies || [],\n    required_sections: document.required_sections || []\n  };\n}\nconst pending = documents.filter(document => document.status === 'pending');\nif (!pending.length) return [];\nreturn pending.map(document => ({json: {\n  ...document,\n  registry_entry: index[document.id],\n  pipeline: {\n    github_owner: cfg.github_owner,\n    github_repo: cfg.github_repo,\n    branch: cfg.branch,\n    expected_repository: cfg.expected_repository,\n    expected_branch: cfg.expected_branch,\n    manifest_path: cfg.manifest_path,\n    schema_path: cfg.schema_path,\n    template_path: cfg.template_path,\n    required_governance_paths: cfg.required_governance_paths,\n    manifest_version: cfg.manifest.atlas.version,\n    manifest_sha: cfg.manifest_sha,\n    document_index: index,\n    execution_mode: cfg.execution_mode,\n    dry_run: cfg.dry_run,\n    founder_write_approved: cfg.founder_write_approved,\n    credentials_configured: cfg.credentials_configured,\n    generator_workflow_id: cfg.generator_workflow_id\n  }\n}}));"
+      },
+      "id": "397bfdf8-ab99-405d-839b-a36657d75987",
+      "name": "Select Pending Documents",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -60,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "57e9accc-e22d-42dc-b78c-72253f7375b1",
+      "name": "Loop Over Documents",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        180,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "={{$json.pipeline.generator_workflow_id}}",
+          "mode": "id"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "id": "8a70c376-0a8f-40cb-b52b-ccfa19e93688",
+      "name": "Run Document Generator",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        440,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nreturn [{json:{\n  completed_at: new Date().toISOString(),\n  processed_documents: items.length,\n  results: items.map(i => ({id:i.json.document_id || i.json.id, status:i.json.status, validation:i.json.validation_status, write_performed:i.json.write_performed === true}))\n}}];"
+      },
+      "id": "187cf2cf-1c92-43a1-9622-be9fc9145666",
+      "name": "Run Summary",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        440,
+        -120
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const cfg = $json;\nconst requiredStrings = [\n  'github_owner', 'github_repo', 'branch', 'expected_repository',\n  'expected_branch', 'manifest_path', 'schema_path', 'template_path'\n];\nfor (const key of requiredStrings) {\n  const value = cfg[key];\n  if (typeof value !== 'string' || !value.trim() || value.includes('CONFIGURE_')) {\n    throw new Error(`Repository configuration invalid: ${key}`);\n  }\n}\nconst safePath = (value) => {\n  if (typeof value !== 'string' || !value || value.startsWith('/') || value.includes('\\\\\\\\')) return false;\n  const parts = value.split('/');\n  return !parts.some(part => !part || part === '.' || part === '..');\n};\nfor (const key of ['manifest_path', 'schema_path', 'template_path']) {\n  if (!safePath(cfg[key])) throw new Error(`Unsafe repository path: ${key}`);\n}\nif (cfg.manifest_path !== 'n8n/config/ATLAS_MASTER_MANIFEST.json') {\n  throw new Error('Manifest path mismatch.');\n}\nif (cfg.schema_path !== 'atlas/DOCUMENT_OUTPUT_SCHEMA.json' || cfg.template_path !== 'atlas/DOCUMENT_TEMPLATE.md') {\n  throw new Error('Canonical schema or template path mismatch.');\n}\nconst actualRepository = `${cfg.github_owner}/${cfg.github_repo}`;\nif (cfg.expected_repository !== actualRepository) throw new Error('Repository identity mismatch.');\nif (cfg.expected_branch !== cfg.branch) throw new Error('Branch identity mismatch.');\nconst governance = cfg.required_governance_paths;\nif (!Array.isArray(governance) || !governance.length || new Set(governance).size !== governance.length) {\n  throw new Error('Required governance path configuration is invalid.');\n}\nfor (const path of governance) {\n  if (!safePath(path)) throw new Error(`Unsafe governance path: ${path}`);\n}\nfor (const required of ['PROJECT_BIBLE.md', 'AGENTS.md']) {\n  if (!governance.includes(required)) throw new Error(`Missing mandatory governance path: ${required}`);\n}\nreturn [{json: cfg}];"
+      },
+      "id": "9db13073-746d-479e-a981-ff9e20d56001",
+      "name": "Validate Repository Configuration",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        720,
+        100
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Pipeline Configuration",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pipeline Configuration": {
+      "main": [
+        [
+          {
+            "node": "Resolve Execution Mode",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resolve Execution Mode": {
+      "main": [
+        [
+          {
+            "node": "Network Execution Mode?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Network Execution Mode?": {
+      "main": [
+        [
+          {
+            "node": "Validate Repository Configuration",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Return Local Validation Mode",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Manifest From GitHub": {
+      "main": [
+        [
+          {
+            "node": "Decode Manifest",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Decode Manifest": {
+      "main": [
+        [
+          {
+            "node": "Select Pending Documents",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select Pending Documents": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Documents",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Documents": {
+      "main": [
+        [
+          {
+            "node": "Run Summary",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Run Document Generator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run Document Generator": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Documents",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Repository Configuration": {
+      "main": [
+        [
+          {
+            "node": "Fetch Manifest From GitHub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "0c2bfa7c-9db1-4d3e-9b2d-884e087695c2",
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}

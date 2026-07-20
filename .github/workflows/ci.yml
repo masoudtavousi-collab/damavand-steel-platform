@@ -13,5 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Install pinned validation dependencies
+        run: python3 -m pip install --disable-pip-version-check PyYAML==6.0.2
+      - name: Validate Atlas contracts and safety controls
+        run: python3 scripts/validate_manifest.py
       - name: Validate scaffold
         run: ./scripts/validate.sh

@@ -1,0 +1,7 @@
+# Navigation-only environment scaffold.
+# Use one of the existing environment-specific templates:
+#   config/environments/development.env.example
+#   config/environments/staging.env.example
+#   config/environments/production.env.example
+#
+# No credentials, endpoints, production values, or deployment authority are defined here.

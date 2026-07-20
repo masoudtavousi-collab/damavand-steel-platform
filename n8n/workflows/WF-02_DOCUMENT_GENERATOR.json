@@ -1,0 +1,576 @@
+{
+  "name": "DS Atlas — Document Generator",
+  "nodes": [
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "title"
+            },
+            {
+              "name": "domain"
+            },
+            {
+              "name": "path"
+            },
+            {
+              "name": "dependencies"
+            },
+            {
+              "name": "required_sections"
+            },
+            {
+              "name": "minimum_words"
+            },
+            {
+              "name": "pipeline",
+              "type": "object"
+            }
+          ]
+        }
+      },
+      "id": "d6672388-766b-4f40-aa68-3d8a158ef0c6",
+      "name": "Execute Workflow Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1100,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const source = $json;\nconst p = source.pipeline || {};\nconst allowed = new Set(['OFFLINE', 'VALIDATE', 'DRY_RUN', 'LIVE']);\nconst requested = p.execution_mode;\nconst executionMode = typeof requested === 'string' && allowed.has(requested) ? requested : 'OFFLINE';\nreturn [{json:{\n  ...source,\n  pipeline: {\n    ...p,\n    execution_mode: executionMode,\n    dry_run: p.dry_run === false ? false : true,\n    founder_write_approved: p.founder_write_approved === true,\n    credentials_configured: p.credentials_configured === true\n  }\n}}];"
+      },
+      "id": "e1393191-f220-4bfd-9ce6-6d16d243a81c",
+      "name": "Resolve Execution Mode",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -900,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "92708642-fd7e-4ba6-819e-a942fc99fd43",
+              "leftValue": "={{ $json.pipeline?.execution_mode === 'DRY_RUN' || $json.pipeline?.execution_mode === 'LIVE' }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "f82308ed-eb5e-4dec-bca2-0e763275ec91",
+      "name": "Repository Read Mode Allowed?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -700,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const mode = $json.pipeline?.execution_mode === 'VALIDATE' ? 'VALIDATE' : 'OFFLINE';\nreturn [{json:{\n  document_id: $json.id || null,\n  status: mode === 'VALIDATE' ? 'validate_local_only' : 'offline_local_only',\n  execution_mode: mode,\n  network_performed: false,\n  write_performed: false,\n  local_validation_required: true,\n  validation_scope: ['manifest', 'registry', 'schema', 'workflows', 'secrets', 'execution_mode'],\n  validation_command: 'python3 scripts/validate_manifest.py'\n}}];"
+      },
+      "id": "f386a66d-024c-4ff4-8a81-583c090f100c",
+      "name": "Return Local Validation Mode",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -460,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const doc = $json;\nconst p = doc.pipeline || {};\nif (p.execution_mode !== 'DRY_RUN' && p.execution_mode !== 'LIVE') {\n  throw new Error('Network access blocked by ExecutionMode.');\n}\nconst requiredStrings = [\n  'github_owner', 'github_repo', 'branch', 'expected_repository',\n  'expected_branch', 'manifest_path', 'schema_path', 'template_path', 'manifest_version'\n];\nfor (const key of requiredStrings) {\n  const value = p[key];\n  if (typeof value !== 'string' || !value.trim() || value.includes('CONFIGURE_')) {\n    throw new Error(`Repository configuration invalid: ${key}`);\n  }\n}\nconst actualRepository = `${p.github_owner}/${p.github_repo}`;\nif (p.expected_repository !== actualRepository) throw new Error('Repository identity mismatch.');\nif (p.expected_branch !== p.branch) throw new Error('Branch identity mismatch.');\nif (p.manifest_path !== 'n8n/config/ATLAS_MASTER_MANIFEST.json') throw new Error('Manifest path mismatch.');\nif (p.schema_path !== 'atlas/DOCUMENT_OUTPUT_SCHEMA.json') throw new Error('Schema path mismatch.');\nif (p.template_path !== 'atlas/DOCUMENT_TEMPLATE.md') throw new Error('Template path mismatch.');\nconst safePath = (value) => {\n  if (typeof value !== 'string' || !value || value.startsWith('/') || value.includes('\\\\\\\\')) return false;\n  const parts = value.split('/');\n  return !parts.some(part => !part || part === '.' || part === '..');\n};\nfor (const key of ['manifest_path', 'schema_path', 'template_path']) {\n  if (!safePath(p[key])) throw new Error(`Unsafe repository path: ${key}`);\n}\nconst governancePaths = p.required_governance_paths;\nif (!Array.isArray(governancePaths) || !governancePaths.length || new Set(governancePaths).size !== governancePaths.length) {\n  throw new Error('Required governance paths are missing or duplicated.');\n}\nfor (const path of governancePaths) {\n  if (!safePath(path)) throw new Error(`Unsafe governance path: ${path}`);\n}\nfor (const required of ['PROJECT_BIBLE.md', 'AGENTS.md']) {\n  if (!governancePaths.includes(required)) throw new Error(`Missing mandatory governance path: ${required}`);\n}\nconst headers = {\n  Accept: 'application/vnd.github+json',\n  'X-GitHub-Api-Version': '2022-11-28',\n  Authorization: `Bearer ${$env.GITHUB_TOKEN}`\n};\nconst encodePath = (path) => path.split('/').map(encodeURIComponent).join('/');\nasync function fetchRequired(path, identity) {\n  if (!safePath(path)) throw new Error(`Unsafe required context path: ${path}`);\n  const url = `https://api.github.com/repos/${encodeURIComponent(p.github_owner)}/${encodeURIComponent(p.github_repo)}/contents/${encodePath(path)}?ref=${encodeURIComponent(p.branch)}`;\n  let payload;\n  try {\n    payload = await this.helpers.httpRequest({method: 'GET', url, headers, json: true});\n  } catch (error) {\n    throw new Error(`Required context read failed for ${identity}: ${error.message}`);\n  }\n  if (!payload || payload.type !== 'file' || payload.path !== path || payload.encoding !== 'base64') {\n    throw new Error(`Required context identity mismatch for ${identity}`);\n  }\n  if (typeof payload.content !== 'string' || !payload.content.trim()) {\n    throw new Error(`Required context is empty for ${identity}`);\n  }\n  const content = Buffer.from(payload.content.replace(/\\n/g, ''), 'base64').toString('utf8');\n  if (!content.trim()) throw new Error(`Required context decoded empty for ${identity}`);\n  return {path, sha: payload.sha || null, content};\n}\nconst manifestFile = await fetchRequired.call(this, p.manifest_path, 'Atlas manifest');\nif (p.manifest_sha && manifestFile.sha !== p.manifest_sha) throw new Error('Manifest integrity mismatch.');\nlet manifest;\ntry {\n  manifest = JSON.parse(manifestFile.content);\n} catch (error) {\n  throw new Error(`Manifest parse failed: ${error.message}`);\n}\nif (!manifest.atlas || manifest.atlas.version !== p.manifest_version || !Array.isArray(manifest.documents)) {\n  throw new Error('Manifest version or structure mismatch.');\n}\nconst byId = new Map();\nconst byPath = new Map();\nfor (const entry of manifest.documents) {\n  if (!entry || typeof entry.id !== 'string' || !/^[A-Z]{2,3}-\\d{3}$/.test(entry.id)) {\n    throw new Error('Manifest contains an invalid document identity.');\n  }\n  if (byId.has(entry.id)) throw new Error(`Duplicate manifest document ID: ${entry.id}`);\n  if (!safePath(entry.path)) throw new Error(`Unsafe manifest document path: ${entry.id}`);\n  if (byPath.has(entry.path)) throw new Error(`Duplicate manifest document path: ${entry.path}`);\n  byId.set(entry.id, entry);\n  byPath.set(entry.path, entry.id);\n}\nconst entry = byId.get(doc.id);\nif (!entry) throw new Error(`Unknown document ID: ${doc.id}`);\nconst comparable = ['id', 'title', 'domain', 'path', 'minimum_words'];\nfor (const key of comparable) {\n  if (doc[key] !== entry[key]) throw new Error(`Document registry mismatch: ${key}`);\n}\nif (!doc.registry_entry || doc.registry_entry.id !== entry.id || doc.registry_entry.path !== entry.path) {\n  throw new Error('Document registry entry is missing or inconsistent.');\n}\nif (p.document_index && (!p.document_index[entry.id] || p.document_index[entry.id].path !== entry.path)) {\n  throw new Error('Passed document index does not match the manifest.');\n}\nconst dependencyIds = entry.dependencies || [];\nif (!Array.isArray(dependencyIds) || new Set(dependencyIds).size !== dependencyIds.length) {\n  throw new Error('Declared dependencies are malformed or duplicated.');\n}\nconst schemaFile = await fetchRequired.call(this, p.schema_path, 'canonical output schema');\nconst templateFile = await fetchRequired.call(this, p.template_path, 'canonical document template');\nlet schema;\ntry {\n  schema = JSON.parse(schemaFile.content);\n} catch (error) {\n  throw new Error(`Canonical schema parse failed: ${error.message}`);\n}\nif (schema.$schema !== 'https://json-schema.org/draft/2020-12/schema' || schema.properties?.schema_version?.const !== '1.0.0') {\n  throw new Error('Canonical schema version mismatch.');\n}\nconst requiredTemplateTokens = ['{{DOCUMENT_ID}}', '{{TITLE}}', '{{DOMAIN}}', '{{OWNER}}', '{{DEPENDENCIES}}', '{{MINIMUM_WORDS}}'];\nfor (const token of requiredTemplateTokens) {\n  if (!templateFile.content.includes(token)) throw new Error(`Canonical template token missing: ${token}`);\n}\nconst governance = {};\nfor (const path of governancePaths) {\n  const loaded = await fetchRequired.call(this, path, `governance ${path}`);\n  if (loaded.content.trim().length < 40) throw new Error(`Mandatory governance content is empty: ${path}`);\n  governance[path] = loaded;\n}\nconst dependencies = {};\nfor (const dependencyId of dependencyIds) {\n  const dependencyEntry = byId.get(dependencyId);\n  if (!dependencyEntry) throw new Error(`Unknown dependency ID: ${dependencyId}`);\n  const loaded = await fetchRequired.call(this, dependencyEntry.path, `dependency ${dependencyId}`);\n  const escapedId = dependencyId.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&');\n  const identityPattern = new RegExp(`(?:^#\\\\s+${escapedId}\\\\b|^Document ID:\\\\s*${escapedId}\\\\s*$)`, 'm');\n  if (!identityPattern.test(loaded.content)) throw new Error(`Wrong file identity for dependency ${dependencyId}`);\n  dependencies[dependencyId] = {...loaded, registry_entry: dependencyEntry};\n}\nreturn [{json:{\n  ...doc,\n  registry_entry: entry,\n  dependencies: dependencyIds,\n  required_sections: entry.required_sections || [],\n  context: {\n    repository: p.expected_repository,\n    branch: p.expected_branch,\n    manifest: {path: manifestFile.path, sha: manifestFile.sha, version: manifest.atlas.version},\n    schema: schema,\n    schema_source: {path: schemaFile.path, sha: schemaFile.sha},\n    template: templateFile.content,\n    template_source: {path: templateFile.path, sha: templateFile.sha},\n    governance,\n    dependencies\n  }\n}}];"
+      },
+      "id": "cc43b065-69ca-4e83-85c4-1adf47950c93",
+      "name": "Build Repository Context",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -460,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const d = $json;\nconst schema = d.context?.schema;\nif (!schema || !d.context?.template) throw new Error('Canonical schema or template context is missing.');\nconst prompt = `You are the governed enterprise-document generator for Damavand Steel.\n\nReturn exactly one JSON object conforming to the canonical JSON Schema below.\nDo not return Markdown, code fences, commentary, or undeclared properties.\nThe sections object must contain exactly the required section keys. Every section value must be a non-empty string.\ndependencies_used must contain exactly the declared dependency IDs.\nschema_version must be \"1.0.0\", status must be \"draft\", and version must be \"0.1.0\".\n\nDOCUMENT REGISTRY ENTRY\n${JSON.stringify(d.registry_entry)}\n\nDECLARED DEPENDENCIES\n${JSON.stringify(d.dependencies || [])}\n\nCANONICAL OUTPUT SCHEMA\n${JSON.stringify(schema)}\n\nCANONICAL DOCUMENT TEMPLATE\n${d.context.template}\n\nGOVERNANCE CONTEXT\n${JSON.stringify(Object.fromEntries(Object.entries(d.context.governance || {}).map(([path, value]) => [path, value.content])))}\n\nDEPENDENCY CONTEXT\n${JSON.stringify(Object.fromEntries(Object.entries(d.context.dependencies || {}).map(([id, value]) => [id, value.content])))}\n\nNON-NEGOTIABLE RULES\n1. Preserve Founder decisions and repository governance.\n2. Do not invent unresolved business facts; record them in open_questions and the open_questions section.\n3. Meet the registered minimum word count across section content.\n4. Do not use TODO, TBD, PLACEHOLDER, or empty content.\n5. Keep document_id and title identical to the registry entry.\n6. Return valid JSON only.`;\nreturn [{json:{...d, prompt}}];"
+      },
+      "id": "d3eaf18a-aa2e-4ede-8a3e-7807fa402e04",
+      "name": "Build Generation Prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -220,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "9a5485ea-0809-4a62-adbf-d58e32628cf5",
+              "leftValue": "={{ $json.pipeline?.execution_mode === 'DRY_RUN' || $json.pipeline?.execution_mode === 'LIVE' }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "b55f85a4-c935-43bd-839b-71c262330b53",
+      "name": "OpenAI Mode Allowed?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        20,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/responses",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{$env.OPENAI_API_KEY}}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ JSON.stringify({model: $env.OPENAI_MODEL || 'gpt-5', input: $json.prompt, text: {format: {type: 'json_object'}}}) }}",
+        "options": {
+          "timeout": 300000,
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "92e738f2-8b95-4456-8c27-818fc4a5ef20",
+      "name": "Generate Document With OpenAI",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        260,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const source = $('Build Generation Prompt').first().json;\nlet text = $json.output_text || '';\nif (!text && Array.isArray($json.output)) {\n  for (const output of $json.output) {\n    for (const content of (output.content || [])) {\n      if (typeof content.text === 'string') text += content.text;\n    }\n  }\n}\nif (typeof text !== 'string' || !text.trim()) throw new Error('Generated structured output is empty.');\nlet generated;\ntry {\n  const match = text.match(/\\{[\\s\\S]*\\}/);\n  generated = JSON.parse(match ? match[0] : text);\n} catch (error) {\n  throw new Error(`Generated structured output parse failed: ${error.message}`);\n}\nif (!generated || typeof generated !== 'object' || Array.isArray(generated)) {\n  throw new Error('Generated structured output must be an object.');\n}\nreturn [{json:{...source, generated}}];"
+      },
+      "id": "3f1aedd0-6b99-4ebc-8f74-1d110cbb548d",
+      "name": "Parse Structured Output",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -140,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const d = $json;\nconst g = d.generated;\nconst schema = d.context?.schema;\nconst errors = [];\nconst isObject = value => value && typeof value === 'object' && !Array.isArray(value);\nif (!isObject(schema) || !isObject(schema.properties)) errors.push('canonical schema missing');\nif (!isObject(g)) errors.push('output is not an object');\nif (!errors.length) {\n  const allowed = Object.keys(schema.properties);\n  const required = schema.required || [];\n  for (const key of required) {\n    if (!Object.prototype.hasOwnProperty.call(g, key)) errors.push(`missing required property: ${key}`);\n  }\n  for (const key of Object.keys(g)) {\n    if (!allowed.includes(key)) errors.push(`undeclared property: ${key}`);\n  }\n  if (g.schema_version !== schema.properties.schema_version?.const) errors.push('schema version mismatch');\n  if (g.document_id !== d.id || !/^[A-Z]{2,3}-\\d{3}$/.test(String(g.document_id || ''))) errors.push('invalid document identity');\n  if (g.title !== d.title || typeof g.title !== 'string' || !g.title.trim()) errors.push('invalid document title');\n  if (g.status !== 'draft' || !schema.properties.status.enum.includes(g.status)) errors.push('invalid status');\n  if (g.version !== '0.1.0') errors.push('invalid version');\n  const expectedSections = d.required_sections || [];\n  const schemaSections = schema.properties.sections || {};\n  if (!isObject(g.sections)) {\n    errors.push('malformed sections');\n  } else {\n    const actualSections = Object.keys(g.sections);\n    for (const key of expectedSections) {\n      if (!Object.prototype.hasOwnProperty.call(g.sections, key)) errors.push(`missing section: ${key}`);\n      else if (typeof g.sections[key] !== 'string' || !g.sections[key].trim()) errors.push(`empty required content: ${key}`);\n    }\n    for (const key of actualSections) {\n      if (!expectedSections.includes(key) || !Object.prototype.hasOwnProperty.call(schemaSections.properties || {}, key)) {\n        errors.push(`undeclared section: ${key}`);\n      }\n    }\n  }\n  for (const key of ['dependencies_used', 'entities_referenced', 'rules_referenced', 'open_questions', 'acceptance_criteria']) {\n    if (Object.prototype.hasOwnProperty.call(g, key) && (!Array.isArray(g[key]) || g[key].some(value => typeof value !== 'string'))) {\n      errors.push(`malformed array: ${key}`);\n    }\n  }\n  const declared = [...(d.dependencies || [])].sort();\n  const used = Array.isArray(g.dependencies_used) ? [...g.dependencies_used] : [];\n  if (new Set(used).size !== used.length || JSON.stringify([...used].sort()) !== JSON.stringify(declared)) {\n    errors.push('dependencies_used mismatch');\n  }\n  const template = d.context?.template;\n  if (typeof template !== 'string' || !template.trim()) errors.push('canonical template missing');\n  const words = isObject(g.sections)\n    ? Object.values(g.sections).join(' ').trim().split(/\\s+/).filter(Boolean).length\n    : 0;\n  if (words < Number(d.minimum_words || 0)) errors.push(`word_count ${words} below ${d.minimum_words}`);\n  const serialized = JSON.stringify(g);\n  if (/\\b(TODO|TBD|PLACEHOLDER)\\b/i.test(serialized)) errors.push('forbidden placeholder token found');\n}\nconst wordCount = isObject(g?.sections)\n  ? Object.values(g.sections).join(' ').trim().split(/\\s+/).filter(Boolean).length\n  : 0;\nreturn [{json:{\n  ...d,\n  canonical_output: g,\n  validation: {\n    passed: errors.length === 0,\n    errors,\n    word_count: wordCount,\n    schema_version: g?.schema_version || null,\n    required_context_loaded: Boolean(d.context?.manifest && d.context?.schema && d.context?.template && d.context?.governance)\n  }\n}}];"
+      },
+      "id": "ada72a51-c07e-449e-b8ac-398bae14b13f",
+      "name": "Structural Validator",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        100,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "35b8f848-69c8-4efd-ac3b-f1cbcdf730e5",
+              "leftValue": "={{$json.validation.passed}}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a0c60036-060e-4843-83e0-3d5716d91663",
+      "name": "Validation Passed?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        340,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "3569ed20-fe82-4836-b89d-1fef1b781f4f",
+              "leftValue": "={{ $json.pipeline?.execution_mode === 'LIVE' && $json.pipeline?.dry_run === false && $json.pipeline?.founder_write_approved === true && $json.pipeline?.credentials_configured === true && $workflow.active === true }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "8970ab52-4158-43d2-8a10-e2462efbf99c",
+      "name": "LIVE Remote Write Safety Gate",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        580,
+        -100
+      ]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "=https://api.github.com/repos/{{$json.pipeline.github_owner}}/{{$json.pipeline.github_repo}}/contents/{{$json.path}}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github+json"
+            },
+            {
+              "name": "X-GitHub-Api-Version",
+              "value": "2022-11-28"
+            },
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{$env.GITHUB_TOKEN}}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ JSON.stringify({message: `atlas: generate ${$json.id} draft`, content: Buffer.from($json.markdown).toString('base64'), branch: $json.pipeline.branch}) }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "1661670c-7722-4645-8b90-ccfca35be5f2",
+      "name": "Commit Draft To GitHub",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        840,
+        -100
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const d=$json;\nconst p=d.pipeline || {};\nconst allowed = new Set(['OFFLINE', 'VALIDATE', 'DRY_RUN', 'LIVE']);\nconst mode = typeof p.execution_mode === 'string' && allowed.has(p.execution_mode) ? p.execution_mode : 'OFFLINE';\nconst effectiveDryRun=p.dry_run !== false;\nconst founderApproved=p.founder_write_approved === true;\nconst credentialsConfigured=p.credentials_configured === true;\nconst workflowActive=$workflow.active === true;\nlet status='write_gate_blocked';\nif(mode === 'DRY_RUN') status='dry_run_blocked_write';\nelse if(mode !== 'LIVE') status='execution_mode_blocked_write';\nelse if(effectiveDryRun) status='dry_run_blocked_write';\nelse if(!founderApproved) status='founder_approval_blocked_write';\nelse if(!credentialsConfigured) status='credentials_blocked_write';\nelse if(!workflowActive) status='inactive_workflow_blocked_write';\nreturn [{json:{\n  document_id:d.id,\n  status,\n  write_performed:false,\n  execution_mode:mode,\n  dry_run:effectiveDryRun,\n  founder_write_approved:founderApproved,\n  credentials_configured:credentialsConfigured,\n  workflow_active:workflowActive,\n  validation_status:'passed',\n  path:d.path\n}}];"
+      },
+      "id": "f1765eab-af60-4931-bd57-0abf10756f4e",
+      "name": "Return Blocked Write",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        840,
+        20
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const d = $json;\nreturn [{json:{\n  document_id: d.id,\n  status: 'validation_failed',\n  validation_status: 'failed',\n  repair_required: true,\n  write_performed: false,\n  attempt: 1,\n  errors: d.validation.errors,\n  document: d.canonical_output,\n  registry_entry: d.registry_entry,\n  required_sections: d.required_sections,\n  minimum_words: d.minimum_words,\n  dependencies: d.dependencies,\n  pipeline: d.pipeline,\n  context: d.context,\n  note: 'WF-03 remains separately invoked; no automatic repair routing is configured.'\n}}];"
+      },
+      "id": "05ebaa14-1d59-4122-a515-99f2506e5218",
+      "name": "Prepare Repair Request",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        600,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const d=$('Structural Validator').first().json;\nreturn [{json:{\n  document_id:d.id,\n  status:'review_required',\n  validation_status:'passed',\n  write_performed:true,\n  execution_mode:'LIVE',\n  path:d.path,\n  word_count:d.validation.word_count,\n  github_commit:$json.commit?.sha || $json.content?.sha || null\n}}];"
+      },
+      "id": "8b8f274f-7b1c-463e-9ccd-6955911bd664",
+      "name": "Return Generation Result",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1080,
+        -100
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const d = $json;\nif (d.validation?.passed !== true) throw new Error('Rendering blocked: canonical output is invalid.');\nconst output = d.canonical_output;\nlet markdown = d.context.template;\nconst replacements = {\n  '{{DOCUMENT_ID}}': output.document_id,\n  '{{TITLE}}': output.title,\n  '{{DOMAIN}}': d.domain,\n  '{{OWNER}}': d.owner,\n  '{{DEPENDENCIES}}': (d.dependencies || []).join(', ') || 'None',\n  '{{MINIMUM_WORDS}}': String(d.minimum_words),\n  '{{VERSION}}': output.version\n};\nfor (const [token, value] of Object.entries(replacements)) {\n  markdown = markdown.split(token).join(String(value ?? ''));\n}\nconst specialHeadings = {\n  seo_impact: 'SEO Impact',\n  ai_usage: 'AI Usage',\n  wordpress_mapping: 'WordPress Mapping'\n};\nconst headingFor = key => specialHeadings[key] || key.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');\nfor (const key of d.required_sections || []) {\n  const marker = `## ${headingFor(key)}`;\n  const parts = markdown.split(marker);\n  if (parts.length !== 2) throw new Error(`Template heading missing or duplicated: ${marker}`);\n  markdown = `${parts[0]}${marker}\\n\\n${output.sections[key].trim()}${parts[1]}`;\n}\nif (/\\{\\{[^}]+\\}\\}/.test(markdown)) throw new Error('Template rendering left unresolved tokens.');\nif (!markdown.trim()) throw new Error('Deterministic Markdown rendering produced empty output.');\nreturn [{json:{...d, markdown: markdown.trim() + '\\n'}}];"
+      },
+      "id": "b3bb5f71-b5d0-4dde-a621-511f613c0c02",
+      "name": "Render Canonical Markdown",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2460,
+        180
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Execute Workflow Trigger": {
+      "main": [
+        [
+          {
+            "node": "Resolve Execution Mode",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resolve Execution Mode": {
+      "main": [
+        [
+          {
+            "node": "Repository Read Mode Allowed?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Repository Read Mode Allowed?": {
+      "main": [
+        [
+          {
+            "node": "Build Repository Context",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Return Local Validation Mode",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Repository Context": {
+      "main": [
+        [
+          {
+            "node": "Build Generation Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Generation Prompt": {
+      "main": [
+        [
+          {
+            "node": "OpenAI Mode Allowed?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Mode Allowed?": {
+      "main": [
+        [
+          {
+            "node": "Generate Document With OpenAI",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Return Local Validation Mode",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Document With OpenAI": {
+      "main": [
+        [
+          {
+            "node": "Parse Structured Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Structured Output": {
+      "main": [
+        [
+          {
+            "node": "Structural Validator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structural Validator": {
+      "main": [
+        [
+          {
+            "node": "Validation Passed?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validation Passed?": {
+      "main": [
+        [
+          {
+            "node": "Render Canonical Markdown",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Prepare Repair Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LIVE Remote Write Safety Gate": {
+      "main": [
+        [
+          {
+            "node": "Commit Draft To GitHub",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Return Blocked Write",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Commit Draft To GitHub": {
+      "main": [
+        [
+          {
+            "node": "Return Generation Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Render Canonical Markdown": {
+      "main": [
+        [
+          {
+            "node": "LIVE Remote Write Safety Gate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "a28ee430-8db5-4789-b086-0d55d824abe4",
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}
