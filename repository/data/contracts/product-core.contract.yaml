@@ -1,0 +1,144 @@
+contract_id: product-core
+contract_version: "1.0.0"
+record_kind: canonical-product-entity
+schema:
+  path: repository/data/schemas/product-core.schema.json
+  draft: "https://json-schema.org/draft/2020-12/schema"
+registries:
+  entity_types: repository/data/registries/product-entity-types.yaml
+  statuses: repository/data/registries/product-statuses.yaml
+versioning:
+  scheme: semantic-version-core
+  pattern: '^[0-9]+\.[0-9]+\.[0-9]+$'
+  compatible_contract_versions:
+    - "1.0.0"
+stable_identity:
+  format: 'prd:<entity-type>:<12-lowercase-hex>'
+  pattern: '^prd:(catalog|platform|family|series|variant-rule-set|sku):[0-9a-f]{12}$'
+  independent_from:
+    - canonical_label
+    - slug
+    - wordpress_id
+    - woocommerce_id
+    - parent_product_id
+    - variation_id
+    - commercial_sku
+always_required_record_fields:
+  - contract_version
+  - entity_id
+  - entity_type
+  - canonical_label
+  - status
+  - owner
+  - provenance
+  - record_version
+conditional_parent_fields:
+  - parent_entity_id
+  - parent_entity_type
+owner_model:
+  type: object
+  required_fields:
+    - role
+  role_pattern: '^[a-z][a-z0-9-]{2,63}$'
+provenance_model:
+  type: object
+  required_fields:
+    - source_type
+    - source_reference
+    - captured_by
+    - captured_at
+    - evidence_status
+  source_type_pattern: '^[A-Z][A-Z0-9_]*$'
+  captured_by_pattern: '^role:[a-z][a-z0-9-]{2,63}$'
+  evidence_status_pattern: '^[A-Z][A-Z0-9_]*$'
+hierarchy:
+  - entity_type: CATALOG
+    position: 1
+    parent_type: null
+    child_type: PLATFORM
+    hierarchy_root: true
+    derived: false
+  - entity_type: PLATFORM
+    position: 2
+    parent_type: CATALOG
+    child_type: FAMILY
+    hierarchy_root: false
+    derived: false
+  - entity_type: FAMILY
+    position: 3
+    parent_type: PLATFORM
+    child_type: SERIES
+    hierarchy_root: false
+    derived: false
+  - entity_type: SERIES
+    position: 4
+    parent_type: FAMILY
+    child_type: VARIANT_RULE_SET
+    hierarchy_root: false
+    derived: false
+  - entity_type: VARIANT_RULE_SET
+    position: 5
+    parent_type: SERIES
+    child_type: SKU
+    hierarchy_root: false
+    derived: false
+  - entity_type: SKU
+    position: 6
+    parent_type: VARIANT_RULE_SET
+    child_type: null
+    hierarchy_root: false
+    derived: true
+validation_boundaries:
+  per_record_schema:
+    - required and unexpected fields
+    - stable identifier format
+    - controlled entity type and status
+    - conditional parent fields
+    - owner and provenance structure
+    - contract and record version format
+  multi_record_validator:
+    - duplicate entity identifiers
+    - unknown parent references
+    - parent entity-type correctness
+    - skipped hierarchy levels
+    - self-references
+    - ancestry cycles
+    - root rules
+prohibited_fact_fields:
+  - slug
+  - wordpress_id
+  - wordpress_owner
+  - woocommerce_id
+  - woocommerce_owner
+  - parent_product_id
+  - variable_parent_product_id
+  - variation_id
+  - product_group
+  - product_type
+  - commercial_sku
+  - sku
+  - price
+  - pricing
+  - cost
+  - margin
+  - stock
+  - inventory
+  - availability
+  - offer
+  - cart
+  - checkout
+  - payment
+  - publication
+  - publishing
+  - deployment
+  - material
+  - alloy
+  - size
+  - thickness
+  - length
+  - finish
+  - color
+  - brand
+  - weight
+  - content
+  - media

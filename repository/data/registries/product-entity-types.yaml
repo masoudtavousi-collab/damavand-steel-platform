@@ -1,0 +1,45 @@
+registry_id: product-entity-types
+registry_version: "1.0.0"
+entity_types:
+  - code: CATALOG
+    hierarchy_position: 1
+    allowed_parent_type: null
+    allowed_child_type: PLATFORM
+    may_be_hierarchy_root: true
+    derived: false
+    description: Root governed container for canonical Product hierarchy entities.
+  - code: PLATFORM
+    hierarchy_position: 2
+    allowed_parent_type: CATALOG
+    allowed_child_type: FAMILY
+    may_be_hierarchy_root: false
+    derived: false
+    description: Governed platform context within a Catalog.
+  - code: FAMILY
+    hierarchy_position: 3
+    allowed_parent_type: PLATFORM
+    allowed_child_type: SERIES
+    may_be_hierarchy_root: false
+    derived: false
+    description: Canonical grouping for a coherent Product family.
+  - code: SERIES
+    hierarchy_position: 4
+    allowed_parent_type: FAMILY
+    allowed_child_type: VARIANT_RULE_SET
+    may_be_hierarchy_root: false
+    derived: false
+    description: Canonical structured subdivision of a Family.
+  - code: VARIANT_RULE_SET
+    hierarchy_position: 5
+    allowed_parent_type: SERIES
+    allowed_child_type: SKU
+    may_be_hierarchy_root: false
+    derived: false
+    description: Governed rule-set identity for a Series without Product values.
+  - code: SKU
+    hierarchy_position: 6
+    allowed_parent_type: VARIANT_RULE_SET
+    allowed_child_type: null
+    may_be_hierarchy_root: false
+    derived: true
+    description: Structurally derived leaf identity after separately governed modeling.

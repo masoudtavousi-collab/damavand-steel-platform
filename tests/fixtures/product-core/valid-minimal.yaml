@@ -1,0 +1,94 @@
+- contract_version: "1.0.0"
+  entity_id: prd:catalog:000000000001
+  entity_type: CATALOG
+  canonical_label: Synthetic Test Catalog
+  status: CANDIDATE_UNVERIFIED
+  owner:
+    role: synthetic-test-owner
+  provenance:
+    source_type: SYNTHETIC_FIXTURE
+    source_reference: fixture:product-core:valid-minimal
+    captured_by: role:automated-validation
+    captured_at: "2000-01-01T00:00:00Z"
+    evidence_status: SYNTHETIC_TEST_EVIDENCE
+  record_version: "1.0.0"
+- contract_version: "1.0.0"
+  entity_id: prd:platform:000000000002
+  entity_type: PLATFORM
+  parent_entity_id: prd:catalog:000000000001
+  parent_entity_type: CATALOG
+  canonical_label: Synthetic Test Platform
+  status: CANDIDATE_UNVERIFIED
+  owner:
+    role: synthetic-test-owner
+  provenance:
+    source_type: SYNTHETIC_FIXTURE
+    source_reference: fixture:product-core:valid-minimal
+    captured_by: role:automated-validation
+    captured_at: "2000-01-01T00:00:00Z"
+    evidence_status: SYNTHETIC_TEST_EVIDENCE
+  record_version: "1.0.0"
+- contract_version: "1.0.0"
+  entity_id: prd:family:000000000003
+  entity_type: FAMILY
+  parent_entity_id: prd:platform:000000000002
+  parent_entity_type: PLATFORM
+  canonical_label: Synthetic Test Family
+  status: CANDIDATE_UNVERIFIED
+  owner:
+    role: synthetic-test-owner
+  provenance:
+    source_type: SYNTHETIC_FIXTURE
+    source_reference: fixture:product-core:valid-minimal
+    captured_by: role:automated-validation
+    captured_at: "2000-01-01T00:00:00Z"
+    evidence_status: SYNTHETIC_TEST_EVIDENCE
+  record_version: "1.0.0"
+- contract_version: "1.0.0"
+  entity_id: prd:series:000000000004
+  entity_type: SERIES
+  parent_entity_id: prd:family:000000000003
+  parent_entity_type: FAMILY
+  canonical_label: Synthetic Test Series
+  status: CANDIDATE_UNVERIFIED
+  owner:
+    role: synthetic-test-owner
+  provenance:
+    source_type: SYNTHETIC_FIXTURE
+    source_reference: fixture:product-core:valid-minimal
+    captured_by: role:automated-validation
+    captured_at: "2000-01-01T00:00:00Z"
+    evidence_status: SYNTHETIC_TEST_EVIDENCE
+  record_version: "1.0.0"
+- contract_version: "1.0.0"
+  entity_id: prd:variant-rule-set:000000000005
+  entity_type: VARIANT_RULE_SET
+  parent_entity_id: prd:series:000000000004
+  parent_entity_type: SERIES
+  canonical_label: Synthetic Test Variant Rule Set
+  status: CANDIDATE_UNVERIFIED
+  owner:
+    role: synthetic-test-owner
+  provenance:
+    source_type: SYNTHETIC_FIXTURE
+    source_reference: fixture:product-core:valid-minimal
+    captured_by: role:automated-validation
+    captured_at: "2000-01-01T00:00:00Z"
+    evidence_status: SYNTHETIC_TEST_EVIDENCE
+  record_version: "1.0.0"
+- contract_version: "1.0.0"
+  entity_id: prd:sku:000000000006
+  entity_type: SKU
+  parent_entity_id: prd:variant-rule-set:000000000005
+  parent_entity_type: VARIANT_RULE_SET
+  canonical_label: Synthetic Structural SKU Placeholder
+  status: CANDIDATE_UNVERIFIED
+  owner:
+    role: synthetic-test-owner
+  provenance:
+    source_type: SYNTHETIC_FIXTURE
+    source_reference: fixture:product-core:valid-minimal
+    captured_by: role:automated-validation
+    captured_at: "2000-01-01T00:00:00Z"
+    evidence_status: SYNTHETIC_TEST_EVIDENCE
+  record_version: "1.0.0"
