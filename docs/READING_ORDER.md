@@ -84,7 +84,7 @@ No implementation begins until the relevant Draft dependencies and Founder decis
 10. [Git Governance](GIT_GOVERNANCE.md) for repository mutations.
 11. Latest applicable audit record.
 
-For current work after Sprint 09B, continue through [Sprint 09C Audit](AUDIT_REPORT_SPRINT09C.md), [Sprint 09D Audit](AUDIT_REPORT_SPRINT09D.md), [Sprint 09E Audit](AUDIT_REPORT_SPRINT09E.md), [Sprint 10R Audit](AUDIT_REPORT_SPRINT10R.md), [Sprint 11 Audit](AUDIT_REPORT_SPRINT11.md), [Golden Product Runtime Preflight](GOLDEN_PRODUCT_RUNTIME_PREFLIGHT.md), [Sprint 12A Audit](AUDIT_REPORT_SPRINT12A.md), and [GIT-02S Audit](AUDIT_REPORT_GIT02S.md) as evidence only. For current Git reconciliation, read [FD-GIT-W1-001](17_FOUNDER_DECISION_LOG.md#settled-class-b-wave-1-repository-control-decision), [Current Project State](CURRENT_PROJECT_STATE.md), and [Git Baseline Approval Checklist](GIT_BASELINE_APPROVAL_CHECKLIST.md); treat the [Git File Classification](GIT_FILE_CLASSIFICATION.csv) state column as a dated snapshot. Also retain [Git Baseline Audit](GIT_BASELINE_AUDIT.md), [Git Baseline Commit Report](GIT_BASELINE_COMMIT_REPORT.md), [Git EOF Normalization Report](GIT_EOF_NORMALIZATION_REPORT.md), and [Repository Freeze Report](REPOSITORY_FREEZE_REPORT.md) as historical evidence.
+For current work after Sprint 09B, continue through Future Reference: Sprint 09C Audit — `docs/AUDIT_REPORT_SPRINT09C.md` (Not yet approved), Future Reference: Sprint 09D Audit — `docs/AUDIT_REPORT_SPRINT09D.md` (Not yet approved), Future Reference: Sprint 09E Audit — `docs/AUDIT_REPORT_SPRINT09E.md` (Not yet approved), Future Reference: Sprint 10R Audit — `docs/AUDIT_REPORT_SPRINT10R.md` (Not yet approved), Future Reference: Sprint 11 Audit — `docs/AUDIT_REPORT_SPRINT11.md` (Not yet approved), Future Reference: Golden Product Runtime Preflight — `docs/GOLDEN_PRODUCT_RUNTIME_PREFLIGHT.md` (Not yet approved), Future Reference: Sprint 12A Audit — `docs/AUDIT_REPORT_SPRINT12A.md` (Not yet approved), and Future Reference: GIT-02S Audit — `docs/AUDIT_REPORT_GIT02S.md` (Not yet approved) as evidence only. For current Git reconciliation, read [FD-GIT-W1-001](17_FOUNDER_DECISION_LOG.md#settled-class-b-wave-1-repository-control-decision), [Current Project State](CURRENT_PROJECT_STATE.md), and [Git Baseline Approval Checklist](GIT_BASELINE_APPROVAL_CHECKLIST.md); treat the [Git File Classification](GIT_FILE_CLASSIFICATION.csv) state column as a dated snapshot. Also retain Future Reference: Git Baseline Audit — `docs/GIT_BASELINE_AUDIT.md` (Not yet approved), Future Reference: Git Baseline Commit Report — `docs/GIT_BASELINE_COMMIT_REPORT.md` (Not yet approved), Future Reference: Git EOF Normalization Report — `docs/GIT_EOF_NORMALIZATION_REPORT.md` (Not yet approved), and Future Reference: Repository Freeze Report — `docs/REPOSITORY_FREEZE_REPORT.md` (Not yet approved) as historical evidence.
 
 An AI must verify current files and must not rely on a previous handoff or chat summary as authority.
 
@@ -259,7 +259,7 @@ This path documents a proposed route only. It grants no remote, account, credent
 - [Sprint 01D Audit](AUDIT_REPORT_SPRINT01D.md)
 - [Project Baseline](PROJECT_BASELINE.md)
 - [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md)
-- [GIT-02S Audit](AUDIT_REPORT_GIT02S.md)
+- Future Reference: GIT-02S Audit — `docs/AUDIT_REPORT_GIT02S.md` (Not yet approved)
 
 ## Navigation
 

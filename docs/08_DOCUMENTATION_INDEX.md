@@ -54,7 +54,7 @@ Remote `main` is verified at `96f2ea70f9010fce416a18310e98915e2be537b9`. Bootstr
 | [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md) | Post-Sprint 12A reconciliation, evidence, pilot, dry-run, implementation, and expansion sequence | Review | Founder |
 | [Codex Sprint Protocol](CODEX_SPRINT_PROTOCOL.md) | Compact bounded sprint protocol | Review | Founder |
 | [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md) | Scope-bound source hierarchy and conflict handling | Review | Founder |
-| [Sprint GOV-01 Audit](AUDIT_REPORT_GOV01.md) | Governance creation, conflict, size, link, and boundary evidence | Evidence | Founder |
+| Future Reference: Sprint GOV-01 Audit — `docs/AUDIT_REPORT_GOV01.md` (Not yet approved) | Governance creation, conflict, size, link, and boundary evidence | Evidence | Founder |
 | [Documentation Index](08_DOCUMENTATION_INDEX.md) | Canonical document map | Draft | Founder |
 | [Navigation Map](09_NAVIGATION_MAP.md) | Repository and reading-path navigation | Draft | Founder |
 | [Decision Log](10_DECISION_LOG.md) | Decision index; not a replacement for ADRs | Draft | Founder |
@@ -218,23 +218,23 @@ The Design Intelligence set under `repository/design/` defines review-state visu
 | [Design Performance Rules](../repository/design/PERFORMANCE_RULES.md) | No-heavy-JS/React/dependency policy, CSS/SVG/WebP preference, lazy motion, mobile reduction, and Core Web Vitals contract | Review | Founder |
 | [Design Accessibility Rules](../repository/design/ACCESSIBILITY_RULES.md) | Motion safety, reduced motion, contrast, keyboard, RTL readability, legibility, control clarity, and validation | Review | Founder |
 | [Design Decision Records](../repository/design/DESIGN_DECISION_RECORDS.md) | DDR-0001–DDR-0004 for inspiration-only ReactBits, 85/10/5, industrial premium language, and native delivery | Review | Founder |
-| [Damavand Visual Experience System](../repository/design/DAMAVAND_VISUAL_EXPERIENCE_SYSTEM.md) | Sprint 08B official visual, typography, layout, product/category/inquiry flow, mobile, accessibility, and performance planning blueprint | Review | Founder |
-| [Elementor Component Guide](../repository/design/ELEMENTOR_COMPONENT_GUIDE.md) | Sprint 08B Elementor-compatible component planning matrix with data source, widget, class, responsive, RTL, accessibility, performance, Admin, and phase status | Review | Founder |
-| [ReactBits Inspired UI Rules](../repository/design/REACTBITS_INSPIRED_UI_RULES.md) | Sprint 08B implementation-planning rules for ReactBits-inspired patterns without React/code/dependency/runtime authorization | Review | Founder |
-| [Enterprise Design Language](../repository/design/01_DESIGN_LANGUAGE.md) | Sprint 08B.5 proposed single visual source of truth, philosophy, authority, and non-goals | Review | Founder |
-| [Design Tokens](../repository/design/02_DESIGN_TOKENS.md) | Spacing, sizing, radius, shadow/elevation, opacity, border, container, width, safe-margin, mobile/desktop/RTL token vocabulary | Review | Founder |
-| [Component State System](../repository/design/03_COMPONENT_STATE_SYSTEM.md) | Default, hover, focus, active, selected, disabled, loading, empty, success, warning, error, and skeleton state rules | Review | Founder |
-| [Visual Hierarchy](../repository/design/04_VISUAL_HIERARCHY.md) | Priority levels and hierarchy rules for hero, CTA, configurator, knowledge, assembly, FAQ, trust, and footer | Review | Founder |
-| [Spacing System](../repository/design/05_SPACING_SYSTEM.md) | 4px-based spacing application, mobile/desktop/RTL spacing rules, and component spacing priorities | Review | Founder |
-| [Grid System](../repository/design/06_GRID_SYSTEM.md) | Mobile/tablet/desktop/wide breakpoints, containers, columns, product/category grids, and RTL grid behavior | Review | Founder |
-| [Typography System](../repository/design/07_TYPOGRAPHY_SYSTEM.md) | H1-H6, subtitle, body, caption, table/specification/button/configurator/knowledge text, line length, and RTL rules | Review | Founder |
-| [Color System](../repository/design/08_COLOR_SYSTEM.md) | Primary, secondary, accent, state, neutral, steel/silver/black/white/gray/orange/red/gold, background/surface/border/text hierarchy | Review | Founder |
-| [Iconography System](../repository/design/09_ICONOGRAPHY_SYSTEM.md) | Preferred icon-family criteria, sizing, stroke, color, usage, and forbidden icon rules | Review | Founder |
-| [Image System](../repository/design/10_IMAGE_SYSTEM.md) | Aspect ratios, backgrounds, lighting, reflection, cropping, padding, image types, fallbacks, and placeholders | Review | Founder |
-| [Enterprise Motion System](../repository/design/11_MOTION_SYSTEM.md) | Motion philosophy, maximum durations, timing, scroll, reduced motion, and forbidden animations | Review | Founder |
-| [Component Naming](../repository/design/12_COMPONENT_NAMING.md) | Enterprise `ds-` naming convention for components, states, templates, and forbidden names | Review | Founder |
-| [Admin Experience](../repository/design/13_ADMIN_EXPERIENCE.md) | Founder-friendly visual rules for product, knowledge, SEO, configurator, media, and navigation editing | Review | Founder |
-| [Design Versioning](../repository/design/14_VERSIONING.md) | Design v1/v1.1/v2, deprecation, migration, and version policy | Review | Founder |
+| Future Reference: Damavand Visual Experience System — `repository/design/DAMAVAND_VISUAL_EXPERIENCE_SYSTEM.md` (Not yet approved) | Sprint 08B official visual, typography, layout, product/category/inquiry flow, mobile, accessibility, and performance planning blueprint | Review | Founder |
+| Future Reference: Elementor Component Guide — `repository/design/ELEMENTOR_COMPONENT_GUIDE.md` (Not yet approved) | Sprint 08B Elementor-compatible component planning matrix with data source, widget, class, responsive, RTL, accessibility, performance, Admin, and phase status | Review | Founder |
+| Future Reference: ReactBits Inspired UI Rules — `repository/design/REACTBITS_INSPIRED_UI_RULES.md` (Not yet approved) | Sprint 08B implementation-planning rules for ReactBits-inspired patterns without React/code/dependency/runtime authorization | Review | Founder |
+| Future Reference: Enterprise Design Language — `repository/design/01_DESIGN_LANGUAGE.md` (Not yet approved) | Sprint 08B.5 proposed single visual source of truth, philosophy, authority, and non-goals | Review | Founder |
+| Future Reference: Design Tokens — `repository/design/02_DESIGN_TOKENS.md` (Not yet approved) | Spacing, sizing, radius, shadow/elevation, opacity, border, container, width, safe-margin, mobile/desktop/RTL token vocabulary | Review | Founder |
+| Future Reference: Component State System — `repository/design/03_COMPONENT_STATE_SYSTEM.md` (Not yet approved) | Default, hover, focus, active, selected, disabled, loading, empty, success, warning, error, and skeleton state rules | Review | Founder |
+| Future Reference: Visual Hierarchy — `repository/design/04_VISUAL_HIERARCHY.md` (Not yet approved) | Priority levels and hierarchy rules for hero, CTA, configurator, knowledge, assembly, FAQ, trust, and footer | Review | Founder |
+| Future Reference: Spacing System — `repository/design/05_SPACING_SYSTEM.md` (Not yet approved) | 4px-based spacing application, mobile/desktop/RTL spacing rules, and component spacing priorities | Review | Founder |
+| Future Reference: Grid System — `repository/design/06_GRID_SYSTEM.md` (Not yet approved) | Mobile/tablet/desktop/wide breakpoints, containers, columns, product/category grids, and RTL grid behavior | Review | Founder |
+| Future Reference: Typography System — `repository/design/07_TYPOGRAPHY_SYSTEM.md` (Not yet approved) | H1-H6, subtitle, body, caption, table/specification/button/configurator/knowledge text, line length, and RTL rules | Review | Founder |
+| Future Reference: Color System — `repository/design/08_COLOR_SYSTEM.md` (Not yet approved) | Primary, secondary, accent, state, neutral, steel/silver/black/white/gray/orange/red/gold, background/surface/border/text hierarchy | Review | Founder |
+| Future Reference: Iconography System — `repository/design/09_ICONOGRAPHY_SYSTEM.md` (Not yet approved) | Preferred icon-family criteria, sizing, stroke, color, usage, and forbidden icon rules | Review | Founder |
+| Future Reference: Image System — `repository/design/10_IMAGE_SYSTEM.md` (Not yet approved) | Aspect ratios, backgrounds, lighting, reflection, cropping, padding, image types, fallbacks, and placeholders | Review | Founder |
+| Future Reference: Enterprise Motion System — `repository/design/11_MOTION_SYSTEM.md` (Not yet approved) | Motion philosophy, maximum durations, timing, scroll, reduced motion, and forbidden animations | Review | Founder |
+| Future Reference: Component Naming — `repository/design/12_COMPONENT_NAMING.md` (Not yet approved) | Enterprise `ds-` naming convention for components, states, templates, and forbidden names | Review | Founder |
+| Future Reference: Admin Experience — `repository/design/13_ADMIN_EXPERIENCE.md` (Not yet approved) | Founder-friendly visual rules for product, knowledge, SEO, configurator, media, and navigation editing | Review | Founder |
+| Future Reference: Design Versioning — `repository/design/14_VERSIONING.md` (Not yet approved) | Design v1/v1.1/v2, deprecation, migration, and version policy | Review | Founder |
 
 ### Repository Enterprise Content Language
 
@@ -242,21 +242,21 @@ The Content Language set under `repository/content/` defines review-state writin
 
 | Asset | Role | Status | Owner |
 | --- | --- | --- | --- |
-| [Enterprise Content Language](../repository/content/01_CONTENT_LANGUAGE.md) | Sprint 08B.6 proposed permanent content source of truth, philosophy, terminology, vocabulary, writing, formatting, and validation rules | Review | Founder |
-| [Product Content Standard](../repository/content/02_PRODUCT_CONTENT_STANDARD.md) | Reusable product-page content structure, product fact boundaries, inquiry CTA, SEO notes, and no-public-pricing validation | Review | Founder |
-| [Category Content Standard](../repository/content/03_CATEGORY_CONTENT_STANDARD.md) | Category introduction, applications, selection, comparison, common mistakes, buying guide, FAQ, knowledge, and related-category structure | Review | Founder |
-| [Knowledge Article Standard](../repository/content/04_KNOWLEDGE_ARTICLE_STANDARD.md) | Problem, explanation, technical background, comparison, recommendations, related products/knowledge, and FAQ structure | Review | Founder |
-| [FAQ Standard](../repository/content/05_FAQ_STANDARD.md) | Question, answer, length, internal-link, entity-reference, reusable-answer, and schema-boundary rules | Review | Founder |
-| [Brand Content Standard](../repository/content/06_BRAND_CONTENT_STANDARD.md) | Brand introduction, history, quality, origin, positioning, applications, trust, and evidence-boundary rules | Review | Founder |
-| [Installation Guide Standard](../repository/content/07_INSTALLATION_GUIDE_STANDARD.md) | Tools, preparation, installation-step, warning, common-mistake, maintenance, and safety-review structure | Review | Founder |
-| [Material Knowledge Standard](../repository/content/08_MATERIAL_KNOWLEDGE_STANDARD.md) | Steel, Aluminum, ABS, Brass, Polymer, Wood, Glass, Iron, Electrostatic Steel, comparison, and selection content rules | Review | Founder |
-| [Alloy Knowledge Standard](../repository/content/09_ALLOY_KNOWLEDGE_STANDARD.md) | 201, 304, 316, 430, future alloy, comparison, selection, and environment-suitability content rules | Review | Founder |
-| [Content Component Library](../repository/content/10_CONTENT_COMPONENT_LIBRARY.md) | Technical, knowledge, warning, comparison, recommendation, assembly, installation, compatibility, maintenance, FAQ, and trust block contracts | Review | Founder |
-| [Content Tone of Voice](../repository/content/11_CONTENT_TONE_OF_VOICE.md) | Professional, industrial, trustworthy, technical, Persian-native tone, formal/conversational balance, and forbidden patterns | Review | Founder |
-| [Content Semantic Entity Model](../repository/content/12_SEMANTIC_ENTITY_MODEL.md) | Content entities, relationships, canonical names, synonyms, aliases, internal links, and ownership boundaries | Review | Founder |
-| [Content Reuse Rules](../repository/content/13_CONTENT_REUSE_RULES.md) | Reference-first reuse, duplicate prevention, single source of truth, knowledge ownership, and migration boundaries | Review | Founder |
-| [AI Content Governance](../repository/content/14_AI_CONTENT_GOVERNANCE.md) | Future AI generation rules, allowed/forbidden usage, human review, attribution, and Phase 1 no-AI boundary | Review | Founder |
-| [Content Versioning](../repository/content/15_CONTENT_VERSIONING.md) | Content v1/v1.1/v2, migration, deprecation, compatibility, and version policy | Review | Founder |
+| Future Reference: Enterprise Content Language — `repository/content/01_CONTENT_LANGUAGE.md` (Not yet approved) | Sprint 08B.6 proposed permanent content source of truth, philosophy, terminology, vocabulary, writing, formatting, and validation rules | Review | Founder |
+| Future Reference: Product Content Standard — `repository/content/02_PRODUCT_CONTENT_STANDARD.md` (Not yet approved) | Reusable product-page content structure, product fact boundaries, inquiry CTA, SEO notes, and no-public-pricing validation | Review | Founder |
+| Future Reference: Category Content Standard — `repository/content/03_CATEGORY_CONTENT_STANDARD.md` (Not yet approved) | Category introduction, applications, selection, comparison, common mistakes, buying guide, FAQ, knowledge, and related-category structure | Review | Founder |
+| Future Reference: Knowledge Article Standard — `repository/content/04_KNOWLEDGE_ARTICLE_STANDARD.md` (Not yet approved) | Problem, explanation, technical background, comparison, recommendations, related products/knowledge, and FAQ structure | Review | Founder |
+| Future Reference: FAQ Standard — `repository/content/05_FAQ_STANDARD.md` (Not yet approved) | Question, answer, length, internal-link, entity-reference, reusable-answer, and schema-boundary rules | Review | Founder |
+| Future Reference: Brand Content Standard — `repository/content/06_BRAND_CONTENT_STANDARD.md` (Not yet approved) | Brand introduction, history, quality, origin, positioning, applications, trust, and evidence-boundary rules | Review | Founder |
+| Future Reference: Installation Guide Standard — `repository/content/07_INSTALLATION_GUIDE_STANDARD.md` (Not yet approved) | Tools, preparation, installation-step, warning, common-mistake, maintenance, and safety-review structure | Review | Founder |
+| Future Reference: Material Knowledge Standard — `repository/content/08_MATERIAL_KNOWLEDGE_STANDARD.md` (Not yet approved) | Steel, Aluminum, ABS, Brass, Polymer, Wood, Glass, Iron, Electrostatic Steel, comparison, and selection content rules | Review | Founder |
+| Future Reference: Alloy Knowledge Standard — `repository/content/09_ALLOY_KNOWLEDGE_STANDARD.md` (Not yet approved) | 201, 304, 316, 430, future alloy, comparison, selection, and environment-suitability content rules | Review | Founder |
+| Future Reference: Content Component Library — `repository/content/10_CONTENT_COMPONENT_LIBRARY.md` (Not yet approved) | Technical, knowledge, warning, comparison, recommendation, assembly, installation, compatibility, maintenance, FAQ, and trust block contracts | Review | Founder |
+| Future Reference: Content Tone of Voice — `repository/content/11_CONTENT_TONE_OF_VOICE.md` (Not yet approved) | Professional, industrial, trustworthy, technical, Persian-native tone, formal/conversational balance, and forbidden patterns | Review | Founder |
+| Future Reference: Content Semantic Entity Model — `repository/content/12_SEMANTIC_ENTITY_MODEL.md` (Not yet approved) | Content entities, relationships, canonical names, synonyms, aliases, internal links, and ownership boundaries | Review | Founder |
+| Future Reference: Content Reuse Rules — `repository/content/13_CONTENT_REUSE_RULES.md` (Not yet approved) | Reference-first reuse, duplicate prevention, single source of truth, knowledge ownership, and migration boundaries | Review | Founder |
+| Future Reference: AI Content Governance — `repository/content/14_AI_CONTENT_GOVERNANCE.md` (Not yet approved) | Future AI generation rules, allowed/forbidden usage, human review, attribution, and Phase 1 no-AI boundary | Review | Founder |
+| Future Reference: Content Versioning — `repository/content/15_CONTENT_VERSIONING.md` (Not yet approved) | Content v1/v1.1/v2, migration, deprecation, compatibility, and version policy | Review | Founder |
 
 ### Repository WordPress Implementation Blueprint
 
@@ -264,21 +264,21 @@ The WordPress Implementation Blueprint set under `repository/wordpress/` maps ap
 
 | Asset | Role | Status | Owner |
 | --- | --- | --- | --- |
-| [Enterprise WordPress Implementation Architecture](../repository/wordpress/01_WORDPRESS_ARCHITECTURE.md) | Sprint 08C object mapping, implementation layer model, ownership, WordPress object allocation, and runtime boundary overview | Review | Founder |
-| [WooCommerce Product Model Blueprint](../repository/wordpress/02_WOOCOMMERCE_PRODUCT_MODEL.md) | Variable Product, parent/variation, commercial variant, configurator, knowledge, assembly, related/accessory/cross-sell/up-sell, family/series/brand/material/alloy mapping | Review | Founder |
-| [Attribute Strategy](../repository/wordpress/03_ATTRIBUTE_STRATEGY.md) | Global/local/variation/filter/SEO/CRM attribute mapping and validation boundaries | Review | Founder |
-| [Taxonomy Strategy](../repository/wordpress/04_TAXONOMY_STRATEGY.md) | Native and conditional custom taxonomies, category/tag/brand/knowledge/FAQ/installation strategy, slug, SEO, and cannibalization rules | Review | Founder |
-| [ACF and Custom Field Strategy](../repository/wordpress/05_ACF_STRATEGY.md) | Exact native-enough vs custom-field-required boundaries without selecting/installing/configuring ACF | Review | Founder |
-| [Blocksy Implementation Architecture](../repository/wordpress/06_BLOCKSY_ARCHITECTURE.md) | Blocksy ownership for theme shell, header, footer, archives, search, Woo templates, customizer, token mapping, and boundaries | Review | Founder |
-| [Elementor Implementation Architecture](../repository/wordpress/07_ELEMENTOR_ARCHITECTURE.md) | Elementor ownership for landing, configurator shell, knowledge, homepage, category sections, templates, popups, loops, and dynamic tags | Review | Founder |
-| [Rank Math SEO Mapping Blueprint](../repository/wordpress/08_RANKMATH_MAPPING.md) | Rank Math title/meta/canonical/schema/breadcrumb/sitemap mapping with no Offer/price and no AI SEO generation | Review | Founder |
-| [WordPress Admin Workflow Blueprint](../repository/wordpress/09_ADMIN_WORKFLOW.md) | Founder workflow for product, knowledge, FAQ, SEO, menus, media, inquiry, and safe daily operations | Review | Founder |
-| [Media Library Architecture](../repository/wordpress/10_MEDIA_LIBRARY_ARCHITECTURE.md) | Image naming, folders, alt text, WebP, responsive images, product gallery, knowledge images, and rights boundaries | Review | Founder |
-| [Product Import Strategy](../repository/wordpress/11_PRODUCT_IMPORT_STRATEGY.md) | Manual, CSV, future ERP, future supplier-feed, precheck, rejection, backup, and rollback strategy | Review | Founder |
-| [Configuration Workflow](../repository/wordpress/12_CONFIGURATION_WORKFLOW.md) | Safe future configuration sequence, change control, backup/rollback, test evidence, and approval gates | Review | Founder |
-| [WordPress Implementation Testing Strategy](../repository/wordpress/13_TESTING_STRATEGY.md) | Unit, visual, mobile, RTL, performance, SEO, accessibility, inquiry, configurator, and import testing blueprint | Review | Founder |
-| [Runtime Boundaries](../repository/wordpress/14_RUNTIME_BOUNDARIES.md) | Forbidden implementation/runtime actions, permanent prohibitions, and live WordPress NO-GO boundary | Review | Founder |
-| [WordPress Implementation Release Plan](../repository/wordpress/15_RELEASE_PLAN.md) | Future release phases, blockers, backup/remediation/config/data/content/inquiry/SEO/performance/Founder/production gates | Review | Founder |
+| Future Reference: Enterprise WordPress Implementation Architecture — `repository/wordpress/01_WORDPRESS_ARCHITECTURE.md` (Not yet approved) | Sprint 08C object mapping, implementation layer model, ownership, WordPress object allocation, and runtime boundary overview | Review | Founder |
+| Future Reference: WooCommerce Product Model Blueprint — `repository/wordpress/02_WOOCOMMERCE_PRODUCT_MODEL.md` (Not yet approved) | Variable Product, parent/variation, commercial variant, configurator, knowledge, assembly, related/accessory/cross-sell/up-sell, family/series/brand/material/alloy mapping | Review | Founder |
+| Future Reference: Attribute Strategy — `repository/wordpress/03_ATTRIBUTE_STRATEGY.md` (Not yet approved) | Global/local/variation/filter/SEO/CRM attribute mapping and validation boundaries | Review | Founder |
+| Future Reference: Taxonomy Strategy — `repository/wordpress/04_TAXONOMY_STRATEGY.md` (Not yet approved) | Native and conditional custom taxonomies, category/tag/brand/knowledge/FAQ/installation strategy, slug, SEO, and cannibalization rules | Review | Founder |
+| Future Reference: ACF and Custom Field Strategy — `repository/wordpress/05_ACF_STRATEGY.md` (Not yet approved) | Exact native-enough vs custom-field-required boundaries without selecting/installing/configuring ACF | Review | Founder |
+| Future Reference: Blocksy Implementation Architecture — `repository/wordpress/06_BLOCKSY_ARCHITECTURE.md` (Not yet approved) | Blocksy ownership for theme shell, header, footer, archives, search, Woo templates, customizer, token mapping, and boundaries | Review | Founder |
+| Future Reference: Elementor Implementation Architecture — `repository/wordpress/07_ELEMENTOR_ARCHITECTURE.md` (Not yet approved) | Elementor ownership for landing, configurator shell, knowledge, homepage, category sections, templates, popups, loops, and dynamic tags | Review | Founder |
+| Future Reference: Rank Math SEO Mapping Blueprint — `repository/wordpress/08_RANKMATH_MAPPING.md` (Not yet approved) | Rank Math title/meta/canonical/schema/breadcrumb/sitemap mapping with no Offer/price and no AI SEO generation | Review | Founder |
+| Future Reference: WordPress Admin Workflow Blueprint — `repository/wordpress/09_ADMIN_WORKFLOW.md` (Not yet approved) | Founder workflow for product, knowledge, FAQ, SEO, menus, media, inquiry, and safe daily operations | Review | Founder |
+| Future Reference: Media Library Architecture — `repository/wordpress/10_MEDIA_LIBRARY_ARCHITECTURE.md` (Not yet approved) | Image naming, folders, alt text, WebP, responsive images, product gallery, knowledge images, and rights boundaries | Review | Founder |
+| Future Reference: Product Import Strategy — `repository/wordpress/11_PRODUCT_IMPORT_STRATEGY.md` (Not yet approved) | Manual, CSV, future ERP, future supplier-feed, precheck, rejection, backup, and rollback strategy | Review | Founder |
+| Future Reference: Configuration Workflow — `repository/wordpress/12_CONFIGURATION_WORKFLOW.md` (Not yet approved) | Safe future configuration sequence, change control, backup/rollback, test evidence, and approval gates | Review | Founder |
+| Future Reference: WordPress Implementation Testing Strategy — `repository/wordpress/13_TESTING_STRATEGY.md` (Not yet approved) | Unit, visual, mobile, RTL, performance, SEO, accessibility, inquiry, configurator, and import testing blueprint | Review | Founder |
+| Future Reference: Runtime Boundaries — `repository/wordpress/14_RUNTIME_BOUNDARIES.md` (Not yet approved) | Forbidden implementation/runtime actions, permanent prohibitions, and live WordPress NO-GO boundary | Review | Founder |
+| Future Reference: WordPress Implementation Release Plan — `repository/wordpress/15_RELEASE_PLAN.md` (Not yet approved) | Future release phases, blockers, backup/remediation/config/data/content/inquiry/SEO/performance/Founder/production gates | Review | Founder |
 
 ### WordPress Environment Verification
 
@@ -286,11 +286,11 @@ The Sprint 08D.1 verification reports record read-only environment evidence, plu
 
 | Document | Role | Status | Owner |
 | --- | --- | --- | --- |
-| [WordPress Environment Inventory](WORDPRESS_ENVIRONMENT_INVENTORY.md) | Hosting/server/WordPress/theme/plugin/WooCommerce/Elementor/Blocksy/Rank Math/content/security/performance inventory from public checks and repository evidence | Review | Founder |
-| [WordPress Read-only Audit](WORDPRESS_READ_ONLY_AUDIT.md) | Read-only findings, access limitations, architecture comparison, severity classification, and NO-GO decision | Review | Founder |
-| [Plugin and Theme Compatibility Report](PLUGIN_THEME_COMPATIBILITY_REPORT.md) | Plugin/theme responsibility, overlap, conflict risk, performance impact, approved-stack compliance, and compatibility recommendation | Review | Founder |
-| [Site Health Blockers](SITE_HEALTH_BLOCKERS.md) | Critical blockers, high-priority improvements, GO/NO-GO conditions, and remediation boundary | Review | Founder |
-| [Runtime Readiness Report](RUNTIME_READINESS_REPORT.md) | Readiness scores, scoring methodology, missing prerequisites, Founder decisions, and runtime NO-GO status | Review | Founder |
+| Future Reference: WordPress Environment Inventory — `docs/WORDPRESS_ENVIRONMENT_INVENTORY.md` (Not yet approved) | Hosting/server/WordPress/theme/plugin/WooCommerce/Elementor/Blocksy/Rank Math/content/security/performance inventory from public checks and repository evidence | Review | Founder |
+| Future Reference: WordPress Read-only Audit — `docs/WORDPRESS_READ_ONLY_AUDIT.md` (Not yet approved) | Read-only findings, access limitations, architecture comparison, severity classification, and NO-GO decision | Review | Founder |
+| Future Reference: Plugin and Theme Compatibility Report — `docs/PLUGIN_THEME_COMPATIBILITY_REPORT.md` (Not yet approved) | Plugin/theme responsibility, overlap, conflict risk, performance impact, approved-stack compliance, and compatibility recommendation | Review | Founder |
+| Future Reference: Site Health Blockers — `docs/SITE_HEALTH_BLOCKERS.md` (Not yet approved) | Critical blockers, high-priority improvements, GO/NO-GO conditions, and remediation boundary | Review | Founder |
+| Future Reference: Runtime Readiness Report — `docs/RUNTIME_READINESS_REPORT.md` (Not yet approved) | Readiness scores, scoring methodology, missing prerequisites, Founder decisions, and runtime NO-GO status | Review | Founder |
 
 ### Runtime Blocker Remediation Planning
 
@@ -298,10 +298,10 @@ The Sprint 08D.1R planning reports convert Sprint 08D.1 blockers into a minimal,
 
 | Document | Role | Status | Owner |
 | --- | --- | --- | --- |
-| [Runtime Blocker Remediation Plan](RUNTIME_BLOCKER_REMEDIATION_PLAN.md) | P0–P8 remediation register with evidence, hypotheses, access, read-only verification, future write action, rollback, success/failure criteria, stop conditions, owner, approval, and dependency blocks | Review | Founder |
-| [Remediation Sequence and Dependencies](REMEDIATION_SEQUENCE_AND_DEPENDENCIES.md) | Ordered dependency chain, minimum remediation path, required access, stop conditions, risk by step, and first safe runtime action | Review | Founder |
-| [Backup Restore Proof Checklist](BACKUP_RESTORE_PROOF_CHECKLIST.md) | P0 backup, restore, rollback, and restoration-readiness proof checklist | Review | Founder |
-| [Founder Runtime Approval Checklist](FOUNDER_RUNTIME_APPROVAL_CHECKLIST.md) | Founder approval gates for P0 through P8 and access decisions before any future runtime task | Review | Founder |
+| Future Reference: Runtime Blocker Remediation Plan — `docs/RUNTIME_BLOCKER_REMEDIATION_PLAN.md` (Not yet approved) | P0–P8 remediation register with evidence, hypotheses, access, read-only verification, future write action, rollback, success/failure criteria, stop conditions, owner, approval, and dependency blocks | Review | Founder |
+| Future Reference: Remediation Sequence and Dependencies — `docs/REMEDIATION_SEQUENCE_AND_DEPENDENCIES.md` (Not yet approved) | Ordered dependency chain, minimum remediation path, required access, stop conditions, risk by step, and first safe runtime action | Review | Founder |
+| Future Reference: Backup Restore Proof Checklist — `docs/BACKUP_RESTORE_PROOF_CHECKLIST.md` (Not yet approved) | P0 backup, restore, rollback, and restoration-readiness proof checklist | Review | Founder |
+| Future Reference: Founder Runtime Approval Checklist — `docs/FOUNDER_RUNTIME_APPROVAL_CHECKLIST.md` (Not yet approved) | Founder approval gates for P0 through P8 and access decisions before any future runtime task | Review | Founder |
 
 ### Repository Knowledge Intelligence Foundation
 
@@ -309,15 +309,15 @@ The platform-independent Knowledge Intelligence set under `repository/knowledge/
 
 | Asset | Role | Status | Owner |
 | --- | --- | --- | --- |
-| [Knowledge Manifest](../repository/knowledge/KNOWLEDGE_MANIFEST.md) | Mission, scope, principles, layers, consumers, access, language, platform independence, and Phase 1 AI boundary | Review | Founder |
-| [Knowledge Entity Model](../repository/knowledge/ENTITY_MODEL.md) | Knowledge-node contract and non-duplicating view of product, engagement, content, governance, and projection entities | Review | Founder |
-| [Knowledge Ontology Model](../repository/knowledge/ONTOLOGY_MODEL.md) | Upper classes, controlled concepts, constraints, language, external mappings, inference, versioning, and validation | Review | Founder |
-| [Knowledge Relationship Model](../repository/knowledge/RELATIONSHIP_MODEL.md) | Typed directional assertion contract and predicate registry with evidence, access, lifecycle, and inference boundaries | Review | Founder |
-| [Product Knowledge Graph](../repository/knowledge/PRODUCT_KNOWLEDGE_GRAPH.md) | Product Engine-compatible node/edge projection, identity, Finder/Recommendation readiness, and no-price gates | Review | Founder |
-| [SEO Knowledge Graph](../repository/knowledge/SEO_KNOWLEDGE_GRAPH.md) | Public-safe canonical/entity/intent/link/schema/search projection contract | Review | Founder |
-| [CRM Knowledge Graph](../repository/knowledge/CRM_KNOWLEDGE_GRAPH.md) | Protected Customer/Inquiry/Product/Project/Representative mapping and future CRM synchronization contract | Review | Founder |
-| [AI Knowledge Readiness](../repository/knowledge/AI_KNOWLEDGE_READINESS.md) | Future source/access/retrieval/evaluation/safety readiness with explicit No AI Phase 1 boundary | Review | Founder |
-| [Knowledge Governance](../repository/knowledge/KNOWLEDGE_GOVERNANCE.md) | Authority, roles, lifecycle, provenance, access, quality, change, conflict, incident, consumer, and portability controls | Review | Founder |
+| Future Reference: Knowledge Manifest — `repository/knowledge/KNOWLEDGE_MANIFEST.md` (Not yet approved) | Mission, scope, principles, layers, consumers, access, language, platform independence, and Phase 1 AI boundary | Review | Founder |
+| Future Reference: Knowledge Entity Model — `repository/knowledge/ENTITY_MODEL.md` (Not yet approved) | Knowledge-node contract and non-duplicating view of product, engagement, content, governance, and projection entities | Review | Founder |
+| Future Reference: Knowledge Ontology Model — `repository/knowledge/ONTOLOGY_MODEL.md` (Not yet approved) | Upper classes, controlled concepts, constraints, language, external mappings, inference, versioning, and validation | Review | Founder |
+| Future Reference: Knowledge Relationship Model — `repository/knowledge/RELATIONSHIP_MODEL.md` (Not yet approved) | Typed directional assertion contract and predicate registry with evidence, access, lifecycle, and inference boundaries | Review | Founder |
+| Future Reference: Product Knowledge Graph — `repository/knowledge/PRODUCT_KNOWLEDGE_GRAPH.md` (Not yet approved) | Product Engine-compatible node/edge projection, identity, Finder/Recommendation readiness, and no-price gates | Review | Founder |
+| Future Reference: SEO Knowledge Graph — `repository/knowledge/SEO_KNOWLEDGE_GRAPH.md` (Not yet approved) | Public-safe canonical/entity/intent/link/schema/search projection contract | Review | Founder |
+| Future Reference: CRM Knowledge Graph — `repository/knowledge/CRM_KNOWLEDGE_GRAPH.md` (Not yet approved) | Protected Customer/Inquiry/Product/Project/Representative mapping and future CRM synchronization contract | Review | Founder |
+| Future Reference: AI Knowledge Readiness — `repository/knowledge/AI_KNOWLEDGE_READINESS.md` (Not yet approved) | Future source/access/retrieval/evaluation/safety readiness with explicit No AI Phase 1 boundary | Review | Founder |
+| Future Reference: Knowledge Governance — `repository/knowledge/KNOWLEDGE_GOVERNANCE.md` (Not yet approved) | Authority, roles, lifecycle, provenance, access, quality, change, conflict, incident, consumer, and portability controls | Review | Founder |
 
 ### Damavand Enterprise Business Operating System
 
@@ -325,17 +325,17 @@ The platform-independent DEBOS set under `repository/business/` defines proposed
 
 | Asset | Role | Status | Owner |
 | --- | --- | --- | --- |
-| [Business Manifest](../repository/business/BUSINESS_MANIFEST.md) | Business First → Platform Second → Runtime Last philosophy, BOS principles, goals, boundaries, layers, independence, and scalability | Review | Founder |
-| [Business Entity Model](../repository/business/BUSINESS_ENTITY_MODEL.md) | Conceptual registry of 28 requested business entities, relationships, lifecycles, ownership, access, and Founder decisions | Review | Founder |
-| [Customer Lifecycle](../repository/business/CUSTOMER_LIFECYCLE.md) | Visitor-to-long-term-relationship journey with entry/exit/triggers and identity/status separation | Review | Founder |
-| [Inquiry Engine](../repository/business/INQUIRY_ENGINE.md) | Canonical Inquiry lifecycle plus separate qualification, assignment, follow-up, escalation, and private outcomes | Review | Founder |
-| [Sales Pipeline](../repository/business/SALES_PIPELINE.md) | Lead-to-relationship private pipeline with protected Quotation/approval/execution/delivery boundaries | Review | Founder |
-| [Representative Model](../repository/business/REPRESENTATIVE_MODEL.md) | Lifecycle, approval, coverage, assignment, performance, quality, commission eligibility, and removal controls | Review | Founder |
-| [Commission Engine](../repository/business/COMMISSION_ENGINE.md) | Referral/Representative/Installer eligibility, approval, settlement, fraud, and Founder/Finance gates without rates | Review | Founder |
-| [Project Lifecycle](../repository/business/PROJECT_LIFECYCLE.md) | Inquiry-to-Portfolio stages with measurement/proposal/execution/installation/maintenance/publication boundaries | Review | Founder |
-| [Supplier Model](../repository/business/SUPPLIER_MODEL.md) | Supplier lifecycle, approval, evaluation, Product relationships, quality, availability, and replacement | Review | Founder |
-| [Service Model](../repository/business/SERVICE_MODEL.md) | Support, Warranty, Maintenance, Inspection, Customer Care, and Relationship concerns | Review | Founder |
-| [Business Governance](../repository/business/BUSINESS_GOVERNANCE.md) | Approval gates, Founder decisions, change, versioning, documentation, audit, delegation, conflict, and platform mapping | Review | Founder |
+| Future Reference: Business Manifest — `repository/business/BUSINESS_MANIFEST.md` (Not yet approved) | Business First → Platform Second → Runtime Last philosophy, BOS principles, goals, boundaries, layers, independence, and scalability | Review | Founder |
+| Future Reference: Business Entity Model — `repository/business/BUSINESS_ENTITY_MODEL.md` (Not yet approved) | Conceptual registry of 28 requested business entities, relationships, lifecycles, ownership, access, and Founder decisions | Review | Founder |
+| Future Reference: Customer Lifecycle — `repository/business/CUSTOMER_LIFECYCLE.md` (Not yet approved) | Visitor-to-long-term-relationship journey with entry/exit/triggers and identity/status separation | Review | Founder |
+| Future Reference: Inquiry Engine — `repository/business/INQUIRY_ENGINE.md` (Not yet approved) | Canonical Inquiry lifecycle plus separate qualification, assignment, follow-up, escalation, and private outcomes | Review | Founder |
+| Future Reference: Sales Pipeline — `repository/business/SALES_PIPELINE.md` (Not yet approved) | Lead-to-relationship private pipeline with protected Quotation/approval/execution/delivery boundaries | Review | Founder |
+| Future Reference: Representative Model — `repository/business/REPRESENTATIVE_MODEL.md` (Not yet approved) | Lifecycle, approval, coverage, assignment, performance, quality, commission eligibility, and removal controls | Review | Founder |
+| Future Reference: Commission Engine — `repository/business/COMMISSION_ENGINE.md` (Not yet approved) | Referral/Representative/Installer eligibility, approval, settlement, fraud, and Founder/Finance gates without rates | Review | Founder |
+| Future Reference: Project Lifecycle — `repository/business/PROJECT_LIFECYCLE.md` (Not yet approved) | Inquiry-to-Portfolio stages with measurement/proposal/execution/installation/maintenance/publication boundaries | Review | Founder |
+| Future Reference: Supplier Model — `repository/business/SUPPLIER_MODEL.md` (Not yet approved) | Supplier lifecycle, approval, evaluation, Product relationships, quality, availability, and replacement | Review | Founder |
+| Future Reference: Service Model — `repository/business/SERVICE_MODEL.md` (Not yet approved) | Support, Warranty, Maintenance, Inspection, Customer Care, and Relationship concerns | Review | Founder |
+| Future Reference: Business Governance — `repository/business/BUSINESS_GOVERNANCE.md` (Not yet approved) | Approval gates, Founder decisions, change, versioning, documentation, audit, delegation, conflict, and platform mapping | Review | Founder |
 
 ### Damavand Enterprise Product and Knowledge Platform Blueprint
 
@@ -343,19 +343,19 @@ The Sprint 08A Enterprise Platform Blueprint set under `repository/enterprise-pl
 
 | Asset | Role | Status | Owner |
 | --- | --- | --- | --- |
-| [Enterprise Product and Knowledge Platform Manifest](../repository/enterprise-platform/01_PLATFORM_MANIFEST.md) | Sprint 08A platform philosophy, layers, scope, decisions, boundaries, and review-only status | Review | Founder |
-| [Product Repository Architecture](../repository/enterprise-platform/02_PRODUCT_REPOSITORY_ARCHITECTURE.md) | Catalog → Platform → Family → Series → Variant Rules → SKU architecture and Variable Parent Product boundary | Review | Founder |
-| [Knowledge Repository Architecture](../repository/enterprise-platform/03_KNOWLEDGE_REPOSITORY_ARCHITECTURE.md) | Material, Alloy, Family, Brand, Installation, Maintenance, FAQ/Customer, AI-readiness, and SEO knowledge domains | Review | Founder |
-| [Product Configurator Engine](../repository/enterprise-platform/04_PRODUCT_CONFIGURATOR_ENGINE.md) | Primary, Secondary, and Commercial Variant blueprint with no public pricing or runtime logic | Review | Founder |
-| [Product Experience Engine](../repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md) | Selection → Education → Recommendation → Assembly → Calculation → Inquiry journey blueprint | Review | Founder |
-| [Guided Selection Engine](../repository/enterprise-platform/06_GUIDED_SELECTION_ENGINE.md) | Environment, project type, usage, budget, alloy, thickness, and brand guidance model | Review | Founder |
-| [Assembly Engine](../repository/enterprise-platform/07_ASSEMBLY_ENGINE.md) | Internal component, installation item, companion product, compatibility, and inquiry package blueprint | Review | Founder |
-| [Market Intelligence Repository](../repository/enterprise-platform/08_MARKET_INTELLIGENCE_REPOSITORY.md) | Installer preference, best-selling observation, common mistake, and recommendation evidence repository | Review | Founder |
-| [Customer Knowledge Repository](../repository/enterprise-platform/09_CUSTOMER_KNOWLEDGE_REPOSITORY.md) | Customer intent, FAQ, trust, buying, shipping, payment, installation, and maintenance knowledge boundary | Review | Founder |
-| [Decision Rules Engine](../repository/enterprise-platform/10_DECISION_RULES_ENGINE.md) | Human-readable, traceable, non-AI rule blueprint for guidance/configuration/assembly/inquiry | Review | Founder |
-| [Single Source of Truth Rules](../repository/enterprise-platform/11_SINGLE_SOURCE_OF_TRUTH_RULES.md) | Authority hierarchy, projection, conflict, and forbidden authority-inversion rules | Review | Founder |
-| [WordPress and WooCommerce Mapping](../repository/enterprise-platform/12_WORDPRESS_WOOCOMMERCE_MAPPING.md) | WooCommerce variable product, attribute, tab/card, Elementor, Blocksy, and Rank Math mapping without configuration | Review | Founder |
-| [Sprint 08A Implementation Roadmap](../repository/enterprise-platform/13_IMPLEMENTATION_ROADMAP.md) | Sequential next-step roadmap with GO for Founder review and NO-GO for runtime implementation | Review | Founder |
+| Future Reference: Enterprise Product and Knowledge Platform Manifest — `repository/enterprise-platform/01_PLATFORM_MANIFEST.md` (Not yet approved) | Sprint 08A platform philosophy, layers, scope, decisions, boundaries, and review-only status | Review | Founder |
+| Future Reference: Product Repository Architecture — `repository/enterprise-platform/02_PRODUCT_REPOSITORY_ARCHITECTURE.md` (Not yet approved) | Catalog → Platform → Family → Series → Variant Rules → SKU architecture and Variable Parent Product boundary | Review | Founder |
+| Future Reference: Knowledge Repository Architecture — `repository/enterprise-platform/03_KNOWLEDGE_REPOSITORY_ARCHITECTURE.md` (Not yet approved) | Material, Alloy, Family, Brand, Installation, Maintenance, FAQ/Customer, AI-readiness, and SEO knowledge domains | Review | Founder |
+| Future Reference: Product Configurator Engine — `repository/enterprise-platform/04_PRODUCT_CONFIGURATOR_ENGINE.md` (Not yet approved) | Primary, Secondary, and Commercial Variant blueprint with no public pricing or runtime logic | Review | Founder |
+| Future Reference: Product Experience Engine — `repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md` (Not yet approved) | Selection → Education → Recommendation → Assembly → Calculation → Inquiry journey blueprint | Review | Founder |
+| Future Reference: Guided Selection Engine — `repository/enterprise-platform/06_GUIDED_SELECTION_ENGINE.md` (Not yet approved) | Environment, project type, usage, budget, alloy, thickness, and brand guidance model | Review | Founder |
+| Future Reference: Assembly Engine — `repository/enterprise-platform/07_ASSEMBLY_ENGINE.md` (Not yet approved) | Internal component, installation item, companion product, compatibility, and inquiry package blueprint | Review | Founder |
+| Future Reference: Market Intelligence Repository — `repository/enterprise-platform/08_MARKET_INTELLIGENCE_REPOSITORY.md` (Not yet approved) | Installer preference, best-selling observation, common mistake, and recommendation evidence repository | Review | Founder |
+| Future Reference: Customer Knowledge Repository — `repository/enterprise-platform/09_CUSTOMER_KNOWLEDGE_REPOSITORY.md` (Not yet approved) | Customer intent, FAQ, trust, buying, shipping, payment, installation, and maintenance knowledge boundary | Review | Founder |
+| Future Reference: Decision Rules Engine — `repository/enterprise-platform/10_DECISION_RULES_ENGINE.md` (Not yet approved) | Human-readable, traceable, non-AI rule blueprint for guidance/configuration/assembly/inquiry | Review | Founder |
+| Future Reference: Single Source of Truth Rules — `repository/enterprise-platform/11_SINGLE_SOURCE_OF_TRUTH_RULES.md` (Not yet approved) | Authority hierarchy, projection, conflict, and forbidden authority-inversion rules | Review | Founder |
+| Future Reference: WordPress and WooCommerce Mapping — `repository/enterprise-platform/12_WORDPRESS_WOOCOMMERCE_MAPPING.md` (Not yet approved) | WooCommerce variable product, attribute, tab/card, Elementor, Blocksy, and Rank Math mapping without configuration | Review | Founder |
+| Future Reference: Sprint 08A Implementation Roadmap — `repository/enterprise-platform/13_IMPLEMENTATION_ROADMAP.md` (Not yet approved) | Sequential next-step roadmap with GO for Founder review and NO-GO for runtime implementation | Review | Founder |
 
 ### Repository Product Data Engine Assets
 
@@ -383,16 +383,16 @@ The Sprint 09A assets under `repository/implementation-assets/` prepare canonica
 
 | Asset | Role | Status | Owner |
 | --- | --- | --- | --- |
-| [Master Product Taxonomy v1](../repository/implementation-assets/product-foundation/01_MASTER_PRODUCT_TAXONOMY_V1.yaml) | Canonical Product Repository taxonomy skeleton for Catalog, Platform, Pipe/Profile Families, Profile series candidates, materials, variant-rule nodes, and SKU policy | Review | Founder |
-| [Global Attribute Library v1](../repository/implementation-assets/product-foundation/02_GLOBAL_ATTRIBUTE_LIBRARY_V1.yaml) | Canonical attribute library for material, alloy, compatible size/dimensions, diameter, profile dimensions, thickness, length, color, finish, appearance, brand, origin, packaging, supply, weight, units, protected pricing basis, and future calculator inputs | Review | Founder |
-| [Pipe Family Template v1](../repository/implementation-assets/product-foundation/03_PIPE_FAMILY_TEMPLATE_V1.yaml) | Pipe family DNA using existing repository Pipe evidence and preserving unresolved commercial values as Founder input | Review | Founder |
-| [Profile Family Template v1](../repository/implementation-assets/product-foundation/04_PROFILE_FAMILY_TEMPLATE_V1.yaml) | Profile family DNA with stainless, electrostatic-coated iron, and aluminum subfamilies marked Founder-input-required where repository evidence is absent | Review | Founder |
-| [Variant and SKU Rules v1](../repository/implementation-assets/product-foundation/05_VARIANT_AND_SKU_RULES_V1.md) | Dependency, SKU, normalization, uniqueness, no-price, and non-final representative-example rules for Pipe/Profile preparation | Review | Founder |
-| [Product Knowledge Mapping v1](../repository/implementation-assets/product-foundation/06_PRODUCT_KNOWLEDGE_MAPPING_V1.yaml) | Reference-only mapping from Pipe/Profile assets to future material, alloy, brand, family, selection, market, installation, maintenance, FAQ, application, and calculation knowledge sources | Review | Founder |
-| [Founder Decision Register v1](../repository/implementation-assets/product-foundation/07_FOUNDER_DECISION_REGISTER_V1.md) | Sprint 09A blocking, non-blocking, deferred, and settled Founder decision register | Review | Founder |
-| [Pipe/Profile WooCommerce Mapping v1](../repository/implementation-assets/import-preparation/PIPE_PROFILE_WOOCOMMERCE_MAPPING_V1.csv) | Import-preparation mapping of future WooCommerce categories, attributes, custom fields, SEO metadata, CRM fields, and helper fields without execution | Review | Founder |
-| [Pipe/Profile Attribute Seed v1](../repository/implementation-assets/import-preparation/PIPE_PROFILE_ATTRIBUTE_SEED_V1.csv) | Attribute/value seed-preparation CSV with all unresolved values set non-import-ready | Review | Founder |
-| [Pipe/Profile Validation Rules v1](../repository/implementation-assets/import-preparation/PIPE_PROFILE_VALIDATION_RULES_V1.md) | Static validation gates for YAML, CSV, keys, slugs, SKU examples, no-price headers, value dependencies, and Founder review | Review | Founder |
+| Future Reference: Master Product Taxonomy v1 — `repository/implementation-assets/product-foundation/01_MASTER_PRODUCT_TAXONOMY_V1.yaml` (Not yet approved) | Canonical Product Repository taxonomy skeleton for Catalog, Platform, Pipe/Profile Families, Profile series candidates, materials, variant-rule nodes, and SKU policy | Review | Founder |
+| Future Reference: Global Attribute Library v1 — `repository/implementation-assets/product-foundation/02_GLOBAL_ATTRIBUTE_LIBRARY_V1.yaml` (Not yet approved) | Canonical attribute library for material, alloy, compatible size/dimensions, diameter, profile dimensions, thickness, length, color, finish, appearance, brand, origin, packaging, supply, weight, units, protected pricing basis, and future calculator inputs | Review | Founder |
+| Future Reference: Pipe Family Template v1 — `repository/implementation-assets/product-foundation/03_PIPE_FAMILY_TEMPLATE_V1.yaml` (Not yet approved) | Pipe family DNA using existing repository Pipe evidence and preserving unresolved commercial values as Founder input | Review | Founder |
+| Future Reference: Profile Family Template v1 — `repository/implementation-assets/product-foundation/04_PROFILE_FAMILY_TEMPLATE_V1.yaml` (Not yet approved) | Profile family DNA with stainless, electrostatic-coated iron, and aluminum subfamilies marked Founder-input-required where repository evidence is absent | Review | Founder |
+| Future Reference: Variant and SKU Rules v1 — `repository/implementation-assets/product-foundation/05_VARIANT_AND_SKU_RULES_V1.md` (Not yet approved) | Dependency, SKU, normalization, uniqueness, no-price, and non-final representative-example rules for Pipe/Profile preparation | Review | Founder |
+| Future Reference: Product Knowledge Mapping v1 — `repository/implementation-assets/product-foundation/06_PRODUCT_KNOWLEDGE_MAPPING_V1.yaml` (Not yet approved) | Reference-only mapping from Pipe/Profile assets to future material, alloy, brand, family, selection, market, installation, maintenance, FAQ, application, and calculation knowledge sources | Review | Founder |
+| Future Reference: Founder Decision Register v1 — `repository/implementation-assets/product-foundation/07_FOUNDER_DECISION_REGISTER_V1.md` (Not yet approved) | Sprint 09A blocking, non-blocking, deferred, and settled Founder decision register | Review | Founder |
+| Future Reference: Pipe/Profile WooCommerce Mapping v1 — `repository/implementation-assets/import-preparation/PIPE_PROFILE_WOOCOMMERCE_MAPPING_V1.csv` (Not yet approved) | Import-preparation mapping of future WooCommerce categories, attributes, custom fields, SEO metadata, CRM fields, and helper fields without execution | Review | Founder |
+| Future Reference: Pipe/Profile Attribute Seed v1 — `repository/implementation-assets/import-preparation/PIPE_PROFILE_ATTRIBUTE_SEED_V1.csv` (Not yet approved) | Attribute/value seed-preparation CSV with all unresolved values set non-import-ready | Review | Founder |
+| Future Reference: Pipe/Profile Validation Rules v1 — `repository/implementation-assets/import-preparation/PIPE_PROFILE_VALIDATION_RULES_V1.md` (Not yet approved) | Static validation gates for YAML, CSV, keys, slugs, SKU examples, no-price headers, value dependencies, and Founder review | Review | Founder |
 
 ### Product DNA Implementation-Preparation Assets
 
@@ -400,22 +400,22 @@ The Sprint 09B assets under `repository/implementation-assets/product-dna/` defi
 
 | Asset | Role | Status | Owner |
 | --- | --- | --- | --- |
-| [Master Product DNA](../repository/implementation-assets/product-dna/01_MASTER_PRODUCT_DNA.md) | Canonical reusable Product DNA structure, block contract, authority boundary, no-price rule, future-AI placeholder rule, and GO/NO-GO boundary | Review | Founder |
-| [Product Information Model](../repository/implementation-assets/product-dna/02_PRODUCT_INFORMATION_MODEL.yaml) | Data ownership separation for repository, commercial, knowledge, media, operational, calculation, customer-facing, internal, Admin-only, and future-AI data | Review | Founder |
-| [Product Component Library](../repository/implementation-assets/product-dna/03_PRODUCT_COMPONENT_LIBRARY.yaml) | Reusable product UI/content component contracts for hero, specs, configurator, knowledge, media, relations, inquiry, trust, brand, certificates, and documents | Review | Founder |
-| [Product Knowledge Block Library](../repository/implementation-assets/product-dna/04_PRODUCT_KNOWLEDGE_BLOCK_LIBRARY.yaml) | Reusable knowledge block contracts for material, alloy, brand, family, installation, maintenance, buying, environment, comparison, selection, mistakes, tips, and market intelligence | Review | Founder |
-| [Product Page Assembly Engine](../repository/implementation-assets/product-dna/05_PRODUCT_PAGE_ASSEMBLY_ENGINE.yaml) | Mandatory, optional, conditional, family, material, brand, mobile, and desktop assembly contract | Review | Founder |
-| [Product Configurator UI Model](../repository/implementation-assets/product-dna/06_PRODUCT_CONFIGURATOR_UI_MODEL.yaml) | Selection order, conditional visibility, hidden/internal attributes, validation, summary card, and inquiry-preparation model | Review | Founder |
-| [Product Media Model](../repository/implementation-assets/product-dna/07_PRODUCT_MEDIA_MODEL.yaml) | Media slot, naming, folder, WebP, alt, rights, source, and accessibility contract | Review | Founder |
-| [Product SEO Model](../repository/implementation-assets/product-dna/08_PRODUCT_SEO_MODEL.yaml) | Reusable SEO patterns, canonical, heading, internal-link, knowledge-link, FAQ-link, related-product, and no-price SEO boundary | Review | Founder |
-| [Product Schema Model](../repository/implementation-assets/product-dna/09_PRODUCT_SCHEMA_MODEL.yaml) | Future schema ownership for Product, Organization, Breadcrumb, FAQ, Article, and Knowledge without Offer/price schema | Review | Founder |
-| [Product Relation Model](../repository/implementation-assets/product-dna/10_PRODUCT_RELATION_MODEL.yaml) | Product relationship graph and approved relationship-type contracts | Review | Founder |
-| [Product Lifecycle Model](../repository/implementation-assets/product-dna/11_PRODUCT_LIFECYCLE_MODEL.md) | Draft, Review, Approved, Published, Deprecated, Archived lifecycle model and revision-history requirements | Review | Founder |
-| [Product Validation Rules](../repository/implementation-assets/product-dna/12_PRODUCT_VALIDATION_RULES.md) | Product DNA validation gates, rejection conditions, YAML/CSV checks, and Founder review gates | Review | Founder |
-| [Product Extensibility Model](../repository/implementation-assets/product-dna/13_PRODUCT_EXTENSIBILITY_MODEL.md) | Extension rules for future families, attributes, components, knowledge blocks, schema, media, relationships, and runtime adapters | Review | Founder |
-| [Product Admin Model](../repository/implementation-assets/product-dna/14_PRODUCT_ADMIN_MODEL.md) | Future Admin editing ownership, validation cues, and forbidden Admin behaviors | Review | Founder |
-| [Product DNA Example Pipe](../repository/implementation-assets/product-dna/15_PRODUCT_DNA_EXAMPLE_PIPE.yaml) | Pipe Product DNA example using Sprint 09A Pipe evidence and Founder-input-required unresolved values | Review | Founder |
-| [Product DNA Example Profile](../repository/implementation-assets/product-dna/16_PRODUCT_DNA_EXAMPLE_PROFILE.yaml) | Profile Product DNA example using Sprint 09A Profile structure with Founder-input-required unresolved values | Review | Founder |
+| Future Reference: Master Product DNA — `repository/implementation-assets/product-dna/01_MASTER_PRODUCT_DNA.md` (Not yet approved) | Canonical reusable Product DNA structure, block contract, authority boundary, no-price rule, future-AI placeholder rule, and GO/NO-GO boundary | Review | Founder |
+| Future Reference: Product Information Model — `repository/implementation-assets/product-dna/02_PRODUCT_INFORMATION_MODEL.yaml` (Not yet approved) | Data ownership separation for repository, commercial, knowledge, media, operational, calculation, customer-facing, internal, Admin-only, and future-AI data | Review | Founder |
+| Future Reference: Product Component Library — `repository/implementation-assets/product-dna/03_PRODUCT_COMPONENT_LIBRARY.yaml` (Not yet approved) | Reusable product UI/content component contracts for hero, specs, configurator, knowledge, media, relations, inquiry, trust, brand, certificates, and documents | Review | Founder |
+| Future Reference: Product Knowledge Block Library — `repository/implementation-assets/product-dna/04_PRODUCT_KNOWLEDGE_BLOCK_LIBRARY.yaml` (Not yet approved) | Reusable knowledge block contracts for material, alloy, brand, family, installation, maintenance, buying, environment, comparison, selection, mistakes, tips, and market intelligence | Review | Founder |
+| Future Reference: Product Page Assembly Engine — `repository/implementation-assets/product-dna/05_PRODUCT_PAGE_ASSEMBLY_ENGINE.yaml` (Not yet approved) | Mandatory, optional, conditional, family, material, brand, mobile, and desktop assembly contract | Review | Founder |
+| Future Reference: Product Configurator UI Model — `repository/implementation-assets/product-dna/06_PRODUCT_CONFIGURATOR_UI_MODEL.yaml` (Not yet approved) | Selection order, conditional visibility, hidden/internal attributes, validation, summary card, and inquiry-preparation model | Review | Founder |
+| Future Reference: Product Media Model — `repository/implementation-assets/product-dna/07_PRODUCT_MEDIA_MODEL.yaml` (Not yet approved) | Media slot, naming, folder, WebP, alt, rights, source, and accessibility contract | Review | Founder |
+| Future Reference: Product SEO Model — `repository/implementation-assets/product-dna/08_PRODUCT_SEO_MODEL.yaml` (Not yet approved) | Reusable SEO patterns, canonical, heading, internal-link, knowledge-link, FAQ-link, related-product, and no-price SEO boundary | Review | Founder |
+| Future Reference: Product Schema Model — `repository/implementation-assets/product-dna/09_PRODUCT_SCHEMA_MODEL.yaml` (Not yet approved) | Future schema ownership for Product, Organization, Breadcrumb, FAQ, Article, and Knowledge without Offer/price schema | Review | Founder |
+| Future Reference: Product Relation Model — `repository/implementation-assets/product-dna/10_PRODUCT_RELATION_MODEL.yaml` (Not yet approved) | Product relationship graph and approved relationship-type contracts | Review | Founder |
+| Future Reference: Product Lifecycle Model — `repository/implementation-assets/product-dna/11_PRODUCT_LIFECYCLE_MODEL.md` (Not yet approved) | Draft, Review, Approved, Published, Deprecated, Archived lifecycle model and revision-history requirements | Review | Founder |
+| Future Reference: Product Validation Rules — `repository/implementation-assets/product-dna/12_PRODUCT_VALIDATION_RULES.md` (Not yet approved) | Product DNA validation gates, rejection conditions, YAML/CSV checks, and Founder review gates | Review | Founder |
+| Future Reference: Product Extensibility Model — `repository/implementation-assets/product-dna/13_PRODUCT_EXTENSIBILITY_MODEL.md` (Not yet approved) | Extension rules for future families, attributes, components, knowledge blocks, schema, media, relationships, and runtime adapters | Review | Founder |
+| Future Reference: Product Admin Model — `repository/implementation-assets/product-dna/14_PRODUCT_ADMIN_MODEL.md` (Not yet approved) | Future Admin editing ownership, validation cues, and forbidden Admin behaviors | Review | Founder |
+| Future Reference: Product DNA Example Pipe — `repository/implementation-assets/product-dna/15_PRODUCT_DNA_EXAMPLE_PIPE.yaml` (Not yet approved) | Pipe Product DNA example using Sprint 09A Pipe evidence and Founder-input-required unresolved values | Review | Founder |
+| Future Reference: Product DNA Example Profile — `repository/implementation-assets/product-dna/16_PRODUCT_DNA_EXAMPLE_PROFILE.yaml` (Not yet approved) | Profile Product DNA example using Sprint 09A Profile structure with Founder-input-required unresolved values | Review | Founder |
 
 ### Infrastructure Diagnostics and Remediation Planning
 
@@ -487,35 +487,35 @@ These current-state documents diagnose supplied Site Health/connectivity evidenc
 | [Sprint 04B Authenticated Audit](AUDIT_REPORT_SPRINT04B_AUTHENTICATED.md) | Authenticated read-only Admin evidence for runtime, plugins, themes, content, commerce, SEO, security, and operational state | Review | Founder |
 | [Sprint 04C Audit](AUDIT_REPORT_SPRINT04C.md) | Remediation-planning completeness, coverage, evidence gaps, unknowns, scope compliance, and execution decision | Review | Founder |
 | [Sprint 05A Audit](AUDIT_REPORT_SPRINT05A.md) | Design/motion completeness, dependency safety, platform compatibility, performance, accessibility, RTL, B2B, and scope evidence | Review | Founder |
-| [Sprint 06A Audit](AUDIT_REPORT_SPRINT06A.md) | Knowledge architecture/entity/relationship coverage, Product/SEO/CRM compatibility, AI readiness, independence, scope, and decision evidence | Review | Founder |
-| [Sprint 07A Audit](AUDIT_REPORT_SPRINT07A.md) | DEBOS business/entity/lifecycle/pipeline completeness, principle compliance, cross-domain compatibility, TBDs, and scope evidence | Review | Founder |
-| [Sprint 08A Audit](AUDIT_REPORT_SPRINT08A.md) | Enterprise Product and Knowledge Platform Blueprint completeness, traceability, link validation, rule compliance, and runtime NO-GO evidence | Review | Founder |
-| [Sprint 08B Audit](AUDIT_REPORT_SPRINT08B.md) | Visual Experience System, Elementor component planning, ReactBits UI-rule safety, link validation, accessibility/performance risk, and implementation NO-GO evidence | Review | Founder |
-| [Sprint 08B.5 Audit](AUDIT_REPORT_SPRINT08B5.md) | Enterprise Design Language foundation completeness, token/state/hierarchy/spacing/grid/type/color/image/icon/motion/naming/Admin/version coverage, validation, and runtime NO-GO evidence | Review | Founder |
-| [Sprint 08B.6 Audit](AUDIT_REPORT_SPRINT08B6.md) | Enterprise Content Language completeness, product/category/knowledge/FAQ/brand/installation/material/alloy standards, reuse, AI governance, validation, and runtime NO-GO evidence | Review | Founder |
-| [Sprint 08C Audit](AUDIT_REPORT_SPRINT08C.md) | WordPress implementation blueprint completeness, object mapping, WooCommerce/attribute/taxonomy/ACF/Blocksy/Elementor/Rank Math/Admin/media/import/config/testing/runtime/release coverage, validation, and live WordPress NO-GO evidence | Review | Founder |
-| [Sprint 08D.1 Audit](AUDIT_REPORT_SPRINT08D1.md) | Read-only WordPress environment verification, public endpoint checks, prior authenticated evidence reconciliation, blockers, readiness scores, and runtime NO-GO evidence | Review | Founder |
-| [Sprint 08D.1R Audit](AUDIT_REPORT_SPRINT08D1R.md) | Runtime blocker remediation planning coverage, ordered dependencies, access requirements, Founder decisions, validation, and runtime NO-GO evidence | Review | Founder |
-| [Sprint 09A Audit](AUDIT_REPORT_SPRINT09A.md) | Product Foundation Asset creation, YAML/CSV/static validation, Pipe/Profile readiness, Founder inputs, import-preparation status, and runtime/import NO-GO evidence | Review | Founder |
-| [Sprint 09B Audit](AUDIT_REPORT_SPRINT09B.md) | Product DNA system creation, reusable block/model validation, Pipe/Profile DNA examples, documentation synchronization, and runtime/import/publishing NO-GO evidence | Review | Founder |
-| [Sprint 09B-R Audit](AUDIT_REPORT_SPRINT09B_R.md) | Sprint 09B follow-up evidence and reconciliation findings | Evidence | Founder |
-| [Sprint 09C Audit](AUDIT_REPORT_SPRINT09C.md) | Import-asset preparation evidence; no import authority | Evidence | Founder |
-| [Sprint 09D Audit](AUDIT_REPORT_SPRINT09D.md) | Media and related preparation evidence; no runtime authority | Evidence | Founder |
-| [Sprint 09E Audit](AUDIT_REPORT_SPRINT09E.md) | SEO and preparation evidence; no publication authority | Evidence | Founder |
-| [Sprint 10R Audit](AUDIT_REPORT_SPRINT10R.md) | Historical Master Data reconciliation evidence before the later three-row pilot approval | Evidence | Founder |
-| [Pipe Pilot Founder Decision Worksheet](PIPE_PILOT_FOUNDER_DECISION.md) | Historical pre-decision worksheet; superseded for current pilot state by FD-PILOT-001 | Historical Evidence | Founder |
-| [Pipe Pilot Final Approval Worksheet](PIPE_PILOT_FINAL_APPROVAL.md) | Historical pre-decision worksheet; superseded for current pilot state by FD-PILOT-001 | Historical Evidence | Founder |
-| [Sprint 11 Audit](AUDIT_REPORT_SPRINT11.md) | Golden Parent and three-combination repository package evidence; no import/runtime authority | Evidence | Founder |
-| [Golden Product Runtime Preflight](GOLDEN_PRODUCT_RUNTIME_PREFLIGHT.md) | Public unauthenticated read-only runtime evidence and blockers | Evidence | Founder |
-| [Sprint 12A Audit](AUDIT_REPORT_SPRINT12A.md) | Latest completed sprint evidence; runtime/import/publishing remain NO-GO | Evidence | Founder |
-| [Git Baseline Audit](GIT_BASELINE_AUDIT.md) | Local Git baseline and working-state evidence | Evidence | Founder |
-| [Git Baseline Commit Report](GIT_BASELINE_COMMIT_REPORT.md) | Historical exact baseline commit/tag evidence | Evidence | Founder |
-| [Git EOF Normalization Report](GIT_EOF_NORMALIZATION_REPORT.md) | Historical line-ending normalization evidence | Evidence | Founder |
+| Future Reference: Sprint 06A Audit — `docs/AUDIT_REPORT_SPRINT06A.md` (Not yet approved) | Knowledge architecture/entity/relationship coverage, Product/SEO/CRM compatibility, AI readiness, independence, scope, and decision evidence | Review | Founder |
+| Future Reference: Sprint 07A Audit — `docs/AUDIT_REPORT_SPRINT07A.md` (Not yet approved) | DEBOS business/entity/lifecycle/pipeline completeness, principle compliance, cross-domain compatibility, TBDs, and scope evidence | Review | Founder |
+| Future Reference: Sprint 08A Audit — `docs/AUDIT_REPORT_SPRINT08A.md` (Not yet approved) | Enterprise Product and Knowledge Platform Blueprint completeness, traceability, link validation, rule compliance, and runtime NO-GO evidence | Review | Founder |
+| Future Reference: Sprint 08B Audit — `docs/AUDIT_REPORT_SPRINT08B.md` (Not yet approved) | Visual Experience System, Elementor component planning, ReactBits UI-rule safety, link validation, accessibility/performance risk, and implementation NO-GO evidence | Review | Founder |
+| Future Reference: Sprint 08B.5 Audit — `docs/AUDIT_REPORT_SPRINT08B5.md` (Not yet approved) | Enterprise Design Language foundation completeness, token/state/hierarchy/spacing/grid/type/color/image/icon/motion/naming/Admin/version coverage, validation, and runtime NO-GO evidence | Review | Founder |
+| Future Reference: Sprint 08B.6 Audit — `docs/AUDIT_REPORT_SPRINT08B6.md` (Not yet approved) | Enterprise Content Language completeness, product/category/knowledge/FAQ/brand/installation/material/alloy standards, reuse, AI governance, validation, and runtime NO-GO evidence | Review | Founder |
+| Future Reference: Sprint 08C Audit — `docs/AUDIT_REPORT_SPRINT08C.md` (Not yet approved) | WordPress implementation blueprint completeness, object mapping, WooCommerce/attribute/taxonomy/ACF/Blocksy/Elementor/Rank Math/Admin/media/import/config/testing/runtime/release coverage, validation, and live WordPress NO-GO evidence | Review | Founder |
+| Future Reference: Sprint 08D.1 Audit — `docs/AUDIT_REPORT_SPRINT08D1.md` (Not yet approved) | Read-only WordPress environment verification, public endpoint checks, prior authenticated evidence reconciliation, blockers, readiness scores, and runtime NO-GO evidence | Review | Founder |
+| Future Reference: Sprint 08D.1R Audit — `docs/AUDIT_REPORT_SPRINT08D1R.md` (Not yet approved) | Runtime blocker remediation planning coverage, ordered dependencies, access requirements, Founder decisions, validation, and runtime NO-GO evidence | Review | Founder |
+| Future Reference: Sprint 09A Audit — `docs/AUDIT_REPORT_SPRINT09A.md` (Not yet approved) | Product Foundation Asset creation, YAML/CSV/static validation, Pipe/Profile readiness, Founder inputs, import-preparation status, and runtime/import NO-GO evidence | Review | Founder |
+| Future Reference: Sprint 09B Audit — `docs/AUDIT_REPORT_SPRINT09B.md` (Not yet approved) | Product DNA system creation, reusable block/model validation, Pipe/Profile DNA examples, documentation synchronization, and runtime/import/publishing NO-GO evidence | Review | Founder |
+| Future Reference: Sprint 09B-R Audit — `docs/AUDIT_REPORT_SPRINT09B_R.md` (Not yet approved) | Sprint 09B follow-up evidence and reconciliation findings | Evidence | Founder |
+| Future Reference: Sprint 09C Audit — `docs/AUDIT_REPORT_SPRINT09C.md` (Not yet approved) | Import-asset preparation evidence; no import authority | Evidence | Founder |
+| Future Reference: Sprint 09D Audit — `docs/AUDIT_REPORT_SPRINT09D.md` (Not yet approved) | Media and related preparation evidence; no runtime authority | Evidence | Founder |
+| Future Reference: Sprint 09E Audit — `docs/AUDIT_REPORT_SPRINT09E.md` (Not yet approved) | SEO and preparation evidence; no publication authority | Evidence | Founder |
+| Future Reference: Sprint 10R Audit — `docs/AUDIT_REPORT_SPRINT10R.md` (Not yet approved) | Historical Master Data reconciliation evidence before the later three-row pilot approval | Evidence | Founder |
+| Future Reference: Pipe Pilot Founder Decision Worksheet — `docs/PIPE_PILOT_FOUNDER_DECISION.md` (Not yet approved) | Historical pre-decision worksheet; superseded for current pilot state by FD-PILOT-001 | Historical Evidence | Founder |
+| Future Reference: Pipe Pilot Final Approval Worksheet — `docs/PIPE_PILOT_FINAL_APPROVAL.md` (Not yet approved) | Historical pre-decision worksheet; superseded for current pilot state by FD-PILOT-001 | Historical Evidence | Founder |
+| Future Reference: Sprint 11 Audit — `docs/AUDIT_REPORT_SPRINT11.md` (Not yet approved) | Golden Parent and three-combination repository package evidence; no import/runtime authority | Evidence | Founder |
+| Future Reference: Golden Product Runtime Preflight — `docs/GOLDEN_PRODUCT_RUNTIME_PREFLIGHT.md` (Not yet approved) | Public unauthenticated read-only runtime evidence and blockers | Evidence | Founder |
+| Future Reference: Sprint 12A Audit — `docs/AUDIT_REPORT_SPRINT12A.md` (Not yet approved) | Latest completed sprint evidence; runtime/import/publishing remain NO-GO | Evidence | Founder |
+| Future Reference: Git Baseline Audit — `docs/GIT_BASELINE_AUDIT.md` (Not yet approved) | Local Git baseline and working-state evidence | Evidence | Founder |
+| Future Reference: Git Baseline Commit Report — `docs/GIT_BASELINE_COMMIT_REPORT.md` (Not yet approved) | Historical exact baseline commit/tag evidence | Evidence | Founder |
+| Future Reference: Git EOF Normalization Report — `docs/GIT_EOF_NORMALIZATION_REPORT.md` (Not yet approved) | Historical line-ending normalization evidence | Evidence | Founder |
 | [Git Baseline Approval Checklist](GIT_BASELINE_APPROVAL_CHECKLIST.md) | Historical GIT-01/GIT-02 review checklist plus current Wave 1 scope boundary; not independent Git authority | Evidence | Founder |
-| [Repository Freeze Report](REPOSITORY_FREEZE_REPORT.md) | Pre-GIT-02S freeze readiness findings and blockers | Evidence | Founder |
+| Future Reference: Repository Freeze Report — `docs/REPOSITORY_FREEZE_REPORT.md` (Not yet approved) | Pre-GIT-02S freeze readiness findings and blockers | Evidence | Founder |
 | [Git File Classification](GIT_FILE_CLASSIFICATION.csv) | Dated 2026-07-14 Repository A disposition snapshot; snapshot states are not current Git status | Evidence | Founder |
-| [Runtime Remediation Preflight](RUNTIME_REMEDIATION_PREFLIGHT.md) | Runtime Phase 0 evidence and mandatory stop record | Evidence | Founder |
-| [GIT-02S Audit](AUDIT_REPORT_GIT02S.md) | Historical 2026-07-14 state, decision, navigation, classification, and validation reconciliation evidence | Evidence | Founder |
+| Future Reference: Runtime Remediation Preflight — `docs/RUNTIME_REMEDIATION_PREFLIGHT.md` (Not yet approved) | Runtime Phase 0 evidence and mandatory stop record | Evidence | Founder |
+| Future Reference: GIT-02S Audit — `docs/AUDIT_REPORT_GIT02S.md` (Not yet approved) | Historical 2026-07-14 state, decision, navigation, classification, and validation reconciliation evidence | Evidence | Founder |
 
 ### Repository-Wide Quality System
 
@@ -660,132 +660,132 @@ The reusable quality gates are maintained outside `docs/` in [Enterprise Quality
 109. [Design Accessibility Rules](../repository/design/ACCESSIBILITY_RULES.md)
 110. [Design Decision Records](../repository/design/DESIGN_DECISION_RECORDS.md)
 111. [Sprint 05A Audit](AUDIT_REPORT_SPRINT05A.md)
-112. [Knowledge Manifest](../repository/knowledge/KNOWLEDGE_MANIFEST.md)
-113. [Knowledge Entity Model](../repository/knowledge/ENTITY_MODEL.md)
-114. [Knowledge Ontology Model](../repository/knowledge/ONTOLOGY_MODEL.md)
-115. [Knowledge Relationship Model](../repository/knowledge/RELATIONSHIP_MODEL.md)
-116. [Product Knowledge Graph](../repository/knowledge/PRODUCT_KNOWLEDGE_GRAPH.md)
-117. [SEO Knowledge Graph](../repository/knowledge/SEO_KNOWLEDGE_GRAPH.md)
-118. [CRM Knowledge Graph](../repository/knowledge/CRM_KNOWLEDGE_GRAPH.md)
-119. [AI Knowledge Readiness](../repository/knowledge/AI_KNOWLEDGE_READINESS.md)
-120. [Knowledge Governance](../repository/knowledge/KNOWLEDGE_GOVERNANCE.md)
-121. [Sprint 06A Audit](AUDIT_REPORT_SPRINT06A.md)
-122. [Business Manifest](../repository/business/BUSINESS_MANIFEST.md)
-123. [Business Entity Model](../repository/business/BUSINESS_ENTITY_MODEL.md)
-124. [Customer Lifecycle](../repository/business/CUSTOMER_LIFECYCLE.md)
-125. [Inquiry Engine](../repository/business/INQUIRY_ENGINE.md)
-126. [Sales Pipeline](../repository/business/SALES_PIPELINE.md)
-127. [Representative Model](../repository/business/REPRESENTATIVE_MODEL.md)
-128. [Commission Engine](../repository/business/COMMISSION_ENGINE.md)
-129. [Project Lifecycle](../repository/business/PROJECT_LIFECYCLE.md)
-130. [Supplier Model](../repository/business/SUPPLIER_MODEL.md)
-131. [Service Model](../repository/business/SERVICE_MODEL.md)
-132. [Business Governance](../repository/business/BUSINESS_GOVERNANCE.md)
-133. [Sprint 07A Audit](AUDIT_REPORT_SPRINT07A.md)
-134. [Enterprise Product and Knowledge Platform Manifest](../repository/enterprise-platform/01_PLATFORM_MANIFEST.md)
-135. [Product Repository Architecture](../repository/enterprise-platform/02_PRODUCT_REPOSITORY_ARCHITECTURE.md)
-136. [Knowledge Repository Architecture](../repository/enterprise-platform/03_KNOWLEDGE_REPOSITORY_ARCHITECTURE.md)
-137. [Product Configurator Engine](../repository/enterprise-platform/04_PRODUCT_CONFIGURATOR_ENGINE.md)
-138. [Product Experience Engine](../repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md)
-139. [Guided Selection Engine](../repository/enterprise-platform/06_GUIDED_SELECTION_ENGINE.md)
-140. [Assembly Engine](../repository/enterprise-platform/07_ASSEMBLY_ENGINE.md)
-141. [Market Intelligence Repository](../repository/enterprise-platform/08_MARKET_INTELLIGENCE_REPOSITORY.md)
-142. [Customer Knowledge Repository](../repository/enterprise-platform/09_CUSTOMER_KNOWLEDGE_REPOSITORY.md)
-143. [Decision Rules Engine](../repository/enterprise-platform/10_DECISION_RULES_ENGINE.md)
-144. [Single Source of Truth Rules](../repository/enterprise-platform/11_SINGLE_SOURCE_OF_TRUTH_RULES.md)
-145. [WordPress and WooCommerce Mapping](../repository/enterprise-platform/12_WORDPRESS_WOOCOMMERCE_MAPPING.md)
-146. [Sprint 08A Implementation Roadmap](../repository/enterprise-platform/13_IMPLEMENTATION_ROADMAP.md)
-147. [Sprint 08A Audit](AUDIT_REPORT_SPRINT08A.md)
-148. [Damavand Visual Experience System](../repository/design/DAMAVAND_VISUAL_EXPERIENCE_SYSTEM.md)
-149. [Elementor Component Guide](../repository/design/ELEMENTOR_COMPONENT_GUIDE.md)
-150. [ReactBits Inspired UI Rules](../repository/design/REACTBITS_INSPIRED_UI_RULES.md)
-151. [Sprint 08B Audit](AUDIT_REPORT_SPRINT08B.md)
-152. [Enterprise Design Language](../repository/design/01_DESIGN_LANGUAGE.md)
-153. [Design Tokens](../repository/design/02_DESIGN_TOKENS.md)
-154. [Component State System](../repository/design/03_COMPONENT_STATE_SYSTEM.md)
-155. [Visual Hierarchy](../repository/design/04_VISUAL_HIERARCHY.md)
-156. [Spacing System](../repository/design/05_SPACING_SYSTEM.md)
-157. [Grid System](../repository/design/06_GRID_SYSTEM.md)
-158. [Typography System](../repository/design/07_TYPOGRAPHY_SYSTEM.md)
-159. [Color System](../repository/design/08_COLOR_SYSTEM.md)
-160. [Iconography System](../repository/design/09_ICONOGRAPHY_SYSTEM.md)
-161. [Image System](../repository/design/10_IMAGE_SYSTEM.md)
-162. [Enterprise Motion System](../repository/design/11_MOTION_SYSTEM.md)
-163. [Component Naming](../repository/design/12_COMPONENT_NAMING.md)
-164. [Admin Experience](../repository/design/13_ADMIN_EXPERIENCE.md)
-165. [Design Versioning](../repository/design/14_VERSIONING.md)
-166. [Sprint 08B.5 Audit](AUDIT_REPORT_SPRINT08B5.md)
-167. [Enterprise Content Language](../repository/content/01_CONTENT_LANGUAGE.md)
-168. [Product Content Standard](../repository/content/02_PRODUCT_CONTENT_STANDARD.md)
-169. [Category Content Standard](../repository/content/03_CATEGORY_CONTENT_STANDARD.md)
-170. [Knowledge Article Standard](../repository/content/04_KNOWLEDGE_ARTICLE_STANDARD.md)
-171. [FAQ Standard](../repository/content/05_FAQ_STANDARD.md)
-172. [Brand Content Standard](../repository/content/06_BRAND_CONTENT_STANDARD.md)
-173. [Installation Guide Standard](../repository/content/07_INSTALLATION_GUIDE_STANDARD.md)
-174. [Material Knowledge Standard](../repository/content/08_MATERIAL_KNOWLEDGE_STANDARD.md)
-175. [Alloy Knowledge Standard](../repository/content/09_ALLOY_KNOWLEDGE_STANDARD.md)
-176. [Content Component Library](../repository/content/10_CONTENT_COMPONENT_LIBRARY.md)
-177. [Content Tone of Voice](../repository/content/11_CONTENT_TONE_OF_VOICE.md)
-178. [Content Semantic Entity Model](../repository/content/12_SEMANTIC_ENTITY_MODEL.md)
-179. [Content Reuse Rules](../repository/content/13_CONTENT_REUSE_RULES.md)
-180. [AI Content Governance](../repository/content/14_AI_CONTENT_GOVERNANCE.md)
-181. [Content Versioning](../repository/content/15_CONTENT_VERSIONING.md)
-182. [Sprint 08B.6 Audit](AUDIT_REPORT_SPRINT08B6.md)
-183. [Enterprise WordPress Implementation Architecture](../repository/wordpress/01_WORDPRESS_ARCHITECTURE.md)
-184. [WooCommerce Product Model Blueprint](../repository/wordpress/02_WOOCOMMERCE_PRODUCT_MODEL.md)
-185. [Attribute Strategy](../repository/wordpress/03_ATTRIBUTE_STRATEGY.md)
-186. [Taxonomy Strategy](../repository/wordpress/04_TAXONOMY_STRATEGY.md)
-187. [ACF and Custom Field Strategy](../repository/wordpress/05_ACF_STRATEGY.md)
-188. [Blocksy Implementation Architecture](../repository/wordpress/06_BLOCKSY_ARCHITECTURE.md)
-189. [Elementor Implementation Architecture](../repository/wordpress/07_ELEMENTOR_ARCHITECTURE.md)
-190. [Rank Math SEO Mapping Blueprint](../repository/wordpress/08_RANKMATH_MAPPING.md)
-191. [WordPress Admin Workflow Blueprint](../repository/wordpress/09_ADMIN_WORKFLOW.md)
-192. [Media Library Architecture](../repository/wordpress/10_MEDIA_LIBRARY_ARCHITECTURE.md)
-193. [Product Import Strategy](../repository/wordpress/11_PRODUCT_IMPORT_STRATEGY.md)
-194. [Configuration Workflow](../repository/wordpress/12_CONFIGURATION_WORKFLOW.md)
-195. [WordPress Implementation Testing Strategy](../repository/wordpress/13_TESTING_STRATEGY.md)
-196. [Runtime Boundaries](../repository/wordpress/14_RUNTIME_BOUNDARIES.md)
-197. [WordPress Implementation Release Plan](../repository/wordpress/15_RELEASE_PLAN.md)
-198. [Sprint 08C Audit](AUDIT_REPORT_SPRINT08C.md)
-199. [WordPress Environment Inventory](WORDPRESS_ENVIRONMENT_INVENTORY.md)
-200. [WordPress Read-only Audit](WORDPRESS_READ_ONLY_AUDIT.md)
-201. [Plugin and Theme Compatibility Report](PLUGIN_THEME_COMPATIBILITY_REPORT.md)
-202. [Site Health Blockers](SITE_HEALTH_BLOCKERS.md)
-203. [Runtime Readiness Report](RUNTIME_READINESS_REPORT.md)
-204. [Sprint 08D.1 Audit](AUDIT_REPORT_SPRINT08D1.md)
-205. [Runtime Blocker Remediation Plan](RUNTIME_BLOCKER_REMEDIATION_PLAN.md)
-206. [Remediation Sequence and Dependencies](REMEDIATION_SEQUENCE_AND_DEPENDENCIES.md)
-207. [Backup Restore Proof Checklist](BACKUP_RESTORE_PROOF_CHECKLIST.md)
-208. [Founder Runtime Approval Checklist](FOUNDER_RUNTIME_APPROVAL_CHECKLIST.md)
-209. [Sprint 08D.1R Audit](AUDIT_REPORT_SPRINT08D1R.md)
-210. [Master Product Taxonomy v1](../repository/implementation-assets/product-foundation/01_MASTER_PRODUCT_TAXONOMY_V1.yaml)
-211. [Global Attribute Library v1](../repository/implementation-assets/product-foundation/02_GLOBAL_ATTRIBUTE_LIBRARY_V1.yaml)
-212. [Pipe Family Template v1](../repository/implementation-assets/product-foundation/03_PIPE_FAMILY_TEMPLATE_V1.yaml)
-213. [Profile Family Template v1](../repository/implementation-assets/product-foundation/04_PROFILE_FAMILY_TEMPLATE_V1.yaml)
-214. [Variant and SKU Rules v1](../repository/implementation-assets/product-foundation/05_VARIANT_AND_SKU_RULES_V1.md)
-215. [Product Knowledge Mapping v1](../repository/implementation-assets/product-foundation/06_PRODUCT_KNOWLEDGE_MAPPING_V1.yaml)
-216. [Founder Decision Register v1](../repository/implementation-assets/product-foundation/07_FOUNDER_DECISION_REGISTER_V1.md)
-217. [Pipe/Profile WooCommerce Mapping v1](../repository/implementation-assets/import-preparation/PIPE_PROFILE_WOOCOMMERCE_MAPPING_V1.csv)
-218. [Pipe/Profile Attribute Seed v1](../repository/implementation-assets/import-preparation/PIPE_PROFILE_ATTRIBUTE_SEED_V1.csv)
-219. [Pipe/Profile Validation Rules v1](../repository/implementation-assets/import-preparation/PIPE_PROFILE_VALIDATION_RULES_V1.md)
-220. [Sprint 09A Audit](AUDIT_REPORT_SPRINT09A.md)
-221. [Master Product DNA](../repository/implementation-assets/product-dna/01_MASTER_PRODUCT_DNA.md)
-222. [Product Information Model](../repository/implementation-assets/product-dna/02_PRODUCT_INFORMATION_MODEL.yaml)
-223. [Product Component Library](../repository/implementation-assets/product-dna/03_PRODUCT_COMPONENT_LIBRARY.yaml)
-224. [Product Knowledge Block Library](../repository/implementation-assets/product-dna/04_PRODUCT_KNOWLEDGE_BLOCK_LIBRARY.yaml)
-225. [Product Page Assembly Engine](../repository/implementation-assets/product-dna/05_PRODUCT_PAGE_ASSEMBLY_ENGINE.yaml)
-226. [Product Configurator UI Model](../repository/implementation-assets/product-dna/06_PRODUCT_CONFIGURATOR_UI_MODEL.yaml)
-227. [Product Media Model](../repository/implementation-assets/product-dna/07_PRODUCT_MEDIA_MODEL.yaml)
-228. [Product SEO Model](../repository/implementation-assets/product-dna/08_PRODUCT_SEO_MODEL.yaml)
-229. [Product Schema Model](../repository/implementation-assets/product-dna/09_PRODUCT_SCHEMA_MODEL.yaml)
-230. [Product Relation Model](../repository/implementation-assets/product-dna/10_PRODUCT_RELATION_MODEL.yaml)
-231. [Product Lifecycle Model](../repository/implementation-assets/product-dna/11_PRODUCT_LIFECYCLE_MODEL.md)
-232. [Product Validation Rules](../repository/implementation-assets/product-dna/12_PRODUCT_VALIDATION_RULES.md)
-233. [Product Extensibility Model](../repository/implementation-assets/product-dna/13_PRODUCT_EXTENSIBILITY_MODEL.md)
-234. [Product Admin Model](../repository/implementation-assets/product-dna/14_PRODUCT_ADMIN_MODEL.md)
-235. [Product DNA Example Pipe](../repository/implementation-assets/product-dna/15_PRODUCT_DNA_EXAMPLE_PIPE.yaml)
-236. [Product DNA Example Profile](../repository/implementation-assets/product-dna/16_PRODUCT_DNA_EXAMPLE_PROFILE.yaml)
-237. [Sprint 09B Audit](AUDIT_REPORT_SPRINT09B.md)
+112. Future Reference: Knowledge Manifest — `repository/knowledge/KNOWLEDGE_MANIFEST.md` (Not yet approved)
+113. Future Reference: Knowledge Entity Model — `repository/knowledge/ENTITY_MODEL.md` (Not yet approved)
+114. Future Reference: Knowledge Ontology Model — `repository/knowledge/ONTOLOGY_MODEL.md` (Not yet approved)
+115. Future Reference: Knowledge Relationship Model — `repository/knowledge/RELATIONSHIP_MODEL.md` (Not yet approved)
+116. Future Reference: Product Knowledge Graph — `repository/knowledge/PRODUCT_KNOWLEDGE_GRAPH.md` (Not yet approved)
+117. Future Reference: SEO Knowledge Graph — `repository/knowledge/SEO_KNOWLEDGE_GRAPH.md` (Not yet approved)
+118. Future Reference: CRM Knowledge Graph — `repository/knowledge/CRM_KNOWLEDGE_GRAPH.md` (Not yet approved)
+119. Future Reference: AI Knowledge Readiness — `repository/knowledge/AI_KNOWLEDGE_READINESS.md` (Not yet approved)
+120. Future Reference: Knowledge Governance — `repository/knowledge/KNOWLEDGE_GOVERNANCE.md` (Not yet approved)
+121. Future Reference: Sprint 06A Audit — `docs/AUDIT_REPORT_SPRINT06A.md` (Not yet approved)
+122. Future Reference: Business Manifest — `repository/business/BUSINESS_MANIFEST.md` (Not yet approved)
+123. Future Reference: Business Entity Model — `repository/business/BUSINESS_ENTITY_MODEL.md` (Not yet approved)
+124. Future Reference: Customer Lifecycle — `repository/business/CUSTOMER_LIFECYCLE.md` (Not yet approved)
+125. Future Reference: Inquiry Engine — `repository/business/INQUIRY_ENGINE.md` (Not yet approved)
+126. Future Reference: Sales Pipeline — `repository/business/SALES_PIPELINE.md` (Not yet approved)
+127. Future Reference: Representative Model — `repository/business/REPRESENTATIVE_MODEL.md` (Not yet approved)
+128. Future Reference: Commission Engine — `repository/business/COMMISSION_ENGINE.md` (Not yet approved)
+129. Future Reference: Project Lifecycle — `repository/business/PROJECT_LIFECYCLE.md` (Not yet approved)
+130. Future Reference: Supplier Model — `repository/business/SUPPLIER_MODEL.md` (Not yet approved)
+131. Future Reference: Service Model — `repository/business/SERVICE_MODEL.md` (Not yet approved)
+132. Future Reference: Business Governance — `repository/business/BUSINESS_GOVERNANCE.md` (Not yet approved)
+133. Future Reference: Sprint 07A Audit — `docs/AUDIT_REPORT_SPRINT07A.md` (Not yet approved)
+134. Future Reference: Enterprise Product and Knowledge Platform Manifest — `repository/enterprise-platform/01_PLATFORM_MANIFEST.md` (Not yet approved)
+135. Future Reference: Product Repository Architecture — `repository/enterprise-platform/02_PRODUCT_REPOSITORY_ARCHITECTURE.md` (Not yet approved)
+136. Future Reference: Knowledge Repository Architecture — `repository/enterprise-platform/03_KNOWLEDGE_REPOSITORY_ARCHITECTURE.md` (Not yet approved)
+137. Future Reference: Product Configurator Engine — `repository/enterprise-platform/04_PRODUCT_CONFIGURATOR_ENGINE.md` (Not yet approved)
+138. Future Reference: Product Experience Engine — `repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md` (Not yet approved)
+139. Future Reference: Guided Selection Engine — `repository/enterprise-platform/06_GUIDED_SELECTION_ENGINE.md` (Not yet approved)
+140. Future Reference: Assembly Engine — `repository/enterprise-platform/07_ASSEMBLY_ENGINE.md` (Not yet approved)
+141. Future Reference: Market Intelligence Repository — `repository/enterprise-platform/08_MARKET_INTELLIGENCE_REPOSITORY.md` (Not yet approved)
+142. Future Reference: Customer Knowledge Repository — `repository/enterprise-platform/09_CUSTOMER_KNOWLEDGE_REPOSITORY.md` (Not yet approved)
+143. Future Reference: Decision Rules Engine — `repository/enterprise-platform/10_DECISION_RULES_ENGINE.md` (Not yet approved)
+144. Future Reference: Single Source of Truth Rules — `repository/enterprise-platform/11_SINGLE_SOURCE_OF_TRUTH_RULES.md` (Not yet approved)
+145. Future Reference: WordPress and WooCommerce Mapping — `repository/enterprise-platform/12_WORDPRESS_WOOCOMMERCE_MAPPING.md` (Not yet approved)
+146. Future Reference: Sprint 08A Implementation Roadmap — `repository/enterprise-platform/13_IMPLEMENTATION_ROADMAP.md` (Not yet approved)
+147. Future Reference: Sprint 08A Audit — `docs/AUDIT_REPORT_SPRINT08A.md` (Not yet approved)
+148. Future Reference: Damavand Visual Experience System — `repository/design/DAMAVAND_VISUAL_EXPERIENCE_SYSTEM.md` (Not yet approved)
+149. Future Reference: Elementor Component Guide — `repository/design/ELEMENTOR_COMPONENT_GUIDE.md` (Not yet approved)
+150. Future Reference: ReactBits Inspired UI Rules — `repository/design/REACTBITS_INSPIRED_UI_RULES.md` (Not yet approved)
+151. Future Reference: Sprint 08B Audit — `docs/AUDIT_REPORT_SPRINT08B.md` (Not yet approved)
+152. Future Reference: Enterprise Design Language — `repository/design/01_DESIGN_LANGUAGE.md` (Not yet approved)
+153. Future Reference: Design Tokens — `repository/design/02_DESIGN_TOKENS.md` (Not yet approved)
+154. Future Reference: Component State System — `repository/design/03_COMPONENT_STATE_SYSTEM.md` (Not yet approved)
+155. Future Reference: Visual Hierarchy — `repository/design/04_VISUAL_HIERARCHY.md` (Not yet approved)
+156. Future Reference: Spacing System — `repository/design/05_SPACING_SYSTEM.md` (Not yet approved)
+157. Future Reference: Grid System — `repository/design/06_GRID_SYSTEM.md` (Not yet approved)
+158. Future Reference: Typography System — `repository/design/07_TYPOGRAPHY_SYSTEM.md` (Not yet approved)
+159. Future Reference: Color System — `repository/design/08_COLOR_SYSTEM.md` (Not yet approved)
+160. Future Reference: Iconography System — `repository/design/09_ICONOGRAPHY_SYSTEM.md` (Not yet approved)
+161. Future Reference: Image System — `repository/design/10_IMAGE_SYSTEM.md` (Not yet approved)
+162. Future Reference: Enterprise Motion System — `repository/design/11_MOTION_SYSTEM.md` (Not yet approved)
+163. Future Reference: Component Naming — `repository/design/12_COMPONENT_NAMING.md` (Not yet approved)
+164. Future Reference: Admin Experience — `repository/design/13_ADMIN_EXPERIENCE.md` (Not yet approved)
+165. Future Reference: Design Versioning — `repository/design/14_VERSIONING.md` (Not yet approved)
+166. Future Reference: Sprint 08B.5 Audit — `docs/AUDIT_REPORT_SPRINT08B5.md` (Not yet approved)
+167. Future Reference: Enterprise Content Language — `repository/content/01_CONTENT_LANGUAGE.md` (Not yet approved)
+168. Future Reference: Product Content Standard — `repository/content/02_PRODUCT_CONTENT_STANDARD.md` (Not yet approved)
+169. Future Reference: Category Content Standard — `repository/content/03_CATEGORY_CONTENT_STANDARD.md` (Not yet approved)
+170. Future Reference: Knowledge Article Standard — `repository/content/04_KNOWLEDGE_ARTICLE_STANDARD.md` (Not yet approved)
+171. Future Reference: FAQ Standard — `repository/content/05_FAQ_STANDARD.md` (Not yet approved)
+172. Future Reference: Brand Content Standard — `repository/content/06_BRAND_CONTENT_STANDARD.md` (Not yet approved)
+173. Future Reference: Installation Guide Standard — `repository/content/07_INSTALLATION_GUIDE_STANDARD.md` (Not yet approved)
+174. Future Reference: Material Knowledge Standard — `repository/content/08_MATERIAL_KNOWLEDGE_STANDARD.md` (Not yet approved)
+175. Future Reference: Alloy Knowledge Standard — `repository/content/09_ALLOY_KNOWLEDGE_STANDARD.md` (Not yet approved)
+176. Future Reference: Content Component Library — `repository/content/10_CONTENT_COMPONENT_LIBRARY.md` (Not yet approved)
+177. Future Reference: Content Tone of Voice — `repository/content/11_CONTENT_TONE_OF_VOICE.md` (Not yet approved)
+178. Future Reference: Content Semantic Entity Model — `repository/content/12_SEMANTIC_ENTITY_MODEL.md` (Not yet approved)
+179. Future Reference: Content Reuse Rules — `repository/content/13_CONTENT_REUSE_RULES.md` (Not yet approved)
+180. Future Reference: AI Content Governance — `repository/content/14_AI_CONTENT_GOVERNANCE.md` (Not yet approved)
+181. Future Reference: Content Versioning — `repository/content/15_CONTENT_VERSIONING.md` (Not yet approved)
+182. Future Reference: Sprint 08B.6 Audit — `docs/AUDIT_REPORT_SPRINT08B6.md` (Not yet approved)
+183. Future Reference: Enterprise WordPress Implementation Architecture — `repository/wordpress/01_WORDPRESS_ARCHITECTURE.md` (Not yet approved)
+184. Future Reference: WooCommerce Product Model Blueprint — `repository/wordpress/02_WOOCOMMERCE_PRODUCT_MODEL.md` (Not yet approved)
+185. Future Reference: Attribute Strategy — `repository/wordpress/03_ATTRIBUTE_STRATEGY.md` (Not yet approved)
+186. Future Reference: Taxonomy Strategy — `repository/wordpress/04_TAXONOMY_STRATEGY.md` (Not yet approved)
+187. Future Reference: ACF and Custom Field Strategy — `repository/wordpress/05_ACF_STRATEGY.md` (Not yet approved)
+188. Future Reference: Blocksy Implementation Architecture — `repository/wordpress/06_BLOCKSY_ARCHITECTURE.md` (Not yet approved)
+189. Future Reference: Elementor Implementation Architecture — `repository/wordpress/07_ELEMENTOR_ARCHITECTURE.md` (Not yet approved)
+190. Future Reference: Rank Math SEO Mapping Blueprint — `repository/wordpress/08_RANKMATH_MAPPING.md` (Not yet approved)
+191. Future Reference: WordPress Admin Workflow Blueprint — `repository/wordpress/09_ADMIN_WORKFLOW.md` (Not yet approved)
+192. Future Reference: Media Library Architecture — `repository/wordpress/10_MEDIA_LIBRARY_ARCHITECTURE.md` (Not yet approved)
+193. Future Reference: Product Import Strategy — `repository/wordpress/11_PRODUCT_IMPORT_STRATEGY.md` (Not yet approved)
+194. Future Reference: Configuration Workflow — `repository/wordpress/12_CONFIGURATION_WORKFLOW.md` (Not yet approved)
+195. Future Reference: WordPress Implementation Testing Strategy — `repository/wordpress/13_TESTING_STRATEGY.md` (Not yet approved)
+196. Future Reference: Runtime Boundaries — `repository/wordpress/14_RUNTIME_BOUNDARIES.md` (Not yet approved)
+197. Future Reference: WordPress Implementation Release Plan — `repository/wordpress/15_RELEASE_PLAN.md` (Not yet approved)
+198. Future Reference: Sprint 08C Audit — `docs/AUDIT_REPORT_SPRINT08C.md` (Not yet approved)
+199. Future Reference: WordPress Environment Inventory — `docs/WORDPRESS_ENVIRONMENT_INVENTORY.md` (Not yet approved)
+200. Future Reference: WordPress Read-only Audit — `docs/WORDPRESS_READ_ONLY_AUDIT.md` (Not yet approved)
+201. Future Reference: Plugin and Theme Compatibility Report — `docs/PLUGIN_THEME_COMPATIBILITY_REPORT.md` (Not yet approved)
+202. Future Reference: Site Health Blockers — `docs/SITE_HEALTH_BLOCKERS.md` (Not yet approved)
+203. Future Reference: Runtime Readiness Report — `docs/RUNTIME_READINESS_REPORT.md` (Not yet approved)
+204. Future Reference: Sprint 08D.1 Audit — `docs/AUDIT_REPORT_SPRINT08D1.md` (Not yet approved)
+205. Future Reference: Runtime Blocker Remediation Plan — `docs/RUNTIME_BLOCKER_REMEDIATION_PLAN.md` (Not yet approved)
+206. Future Reference: Remediation Sequence and Dependencies — `docs/REMEDIATION_SEQUENCE_AND_DEPENDENCIES.md` (Not yet approved)
+207. Future Reference: Backup Restore Proof Checklist — `docs/BACKUP_RESTORE_PROOF_CHECKLIST.md` (Not yet approved)
+208. Future Reference: Founder Runtime Approval Checklist — `docs/FOUNDER_RUNTIME_APPROVAL_CHECKLIST.md` (Not yet approved)
+209. Future Reference: Sprint 08D.1R Audit — `docs/AUDIT_REPORT_SPRINT08D1R.md` (Not yet approved)
+210. Future Reference: Master Product Taxonomy v1 — `repository/implementation-assets/product-foundation/01_MASTER_PRODUCT_TAXONOMY_V1.yaml` (Not yet approved)
+211. Future Reference: Global Attribute Library v1 — `repository/implementation-assets/product-foundation/02_GLOBAL_ATTRIBUTE_LIBRARY_V1.yaml` (Not yet approved)
+212. Future Reference: Pipe Family Template v1 — `repository/implementation-assets/product-foundation/03_PIPE_FAMILY_TEMPLATE_V1.yaml` (Not yet approved)
+213. Future Reference: Profile Family Template v1 — `repository/implementation-assets/product-foundation/04_PROFILE_FAMILY_TEMPLATE_V1.yaml` (Not yet approved)
+214. Future Reference: Variant and SKU Rules v1 — `repository/implementation-assets/product-foundation/05_VARIANT_AND_SKU_RULES_V1.md` (Not yet approved)
+215. Future Reference: Product Knowledge Mapping v1 — `repository/implementation-assets/product-foundation/06_PRODUCT_KNOWLEDGE_MAPPING_V1.yaml` (Not yet approved)
+216. Future Reference: Founder Decision Register v1 — `repository/implementation-assets/product-foundation/07_FOUNDER_DECISION_REGISTER_V1.md` (Not yet approved)
+217. Future Reference: Pipe/Profile WooCommerce Mapping v1 — `repository/implementation-assets/import-preparation/PIPE_PROFILE_WOOCOMMERCE_MAPPING_V1.csv` (Not yet approved)
+218. Future Reference: Pipe/Profile Attribute Seed v1 — `repository/implementation-assets/import-preparation/PIPE_PROFILE_ATTRIBUTE_SEED_V1.csv` (Not yet approved)
+219. Future Reference: Pipe/Profile Validation Rules v1 — `repository/implementation-assets/import-preparation/PIPE_PROFILE_VALIDATION_RULES_V1.md` (Not yet approved)
+220. Future Reference: Sprint 09A Audit — `docs/AUDIT_REPORT_SPRINT09A.md` (Not yet approved)
+221. Future Reference: Master Product DNA — `repository/implementation-assets/product-dna/01_MASTER_PRODUCT_DNA.md` (Not yet approved)
+222. Future Reference: Product Information Model — `repository/implementation-assets/product-dna/02_PRODUCT_INFORMATION_MODEL.yaml` (Not yet approved)
+223. Future Reference: Product Component Library — `repository/implementation-assets/product-dna/03_PRODUCT_COMPONENT_LIBRARY.yaml` (Not yet approved)
+224. Future Reference: Product Knowledge Block Library — `repository/implementation-assets/product-dna/04_PRODUCT_KNOWLEDGE_BLOCK_LIBRARY.yaml` (Not yet approved)
+225. Future Reference: Product Page Assembly Engine — `repository/implementation-assets/product-dna/05_PRODUCT_PAGE_ASSEMBLY_ENGINE.yaml` (Not yet approved)
+226. Future Reference: Product Configurator UI Model — `repository/implementation-assets/product-dna/06_PRODUCT_CONFIGURATOR_UI_MODEL.yaml` (Not yet approved)
+227. Future Reference: Product Media Model — `repository/implementation-assets/product-dna/07_PRODUCT_MEDIA_MODEL.yaml` (Not yet approved)
+228. Future Reference: Product SEO Model — `repository/implementation-assets/product-dna/08_PRODUCT_SEO_MODEL.yaml` (Not yet approved)
+229. Future Reference: Product Schema Model — `repository/implementation-assets/product-dna/09_PRODUCT_SCHEMA_MODEL.yaml` (Not yet approved)
+230. Future Reference: Product Relation Model — `repository/implementation-assets/product-dna/10_PRODUCT_RELATION_MODEL.yaml` (Not yet approved)
+231. Future Reference: Product Lifecycle Model — `repository/implementation-assets/product-dna/11_PRODUCT_LIFECYCLE_MODEL.md` (Not yet approved)
+232. Future Reference: Product Validation Rules — `repository/implementation-assets/product-dna/12_PRODUCT_VALIDATION_RULES.md` (Not yet approved)
+233. Future Reference: Product Extensibility Model — `repository/implementation-assets/product-dna/13_PRODUCT_EXTENSIBILITY_MODEL.md` (Not yet approved)
+234. Future Reference: Product Admin Model — `repository/implementation-assets/product-dna/14_PRODUCT_ADMIN_MODEL.md` (Not yet approved)
+235. Future Reference: Product DNA Example Pipe — `repository/implementation-assets/product-dna/15_PRODUCT_DNA_EXAMPLE_PIPE.yaml` (Not yet approved)
+236. Future Reference: Product DNA Example Profile — `repository/implementation-assets/product-dna/16_PRODUCT_DNA_EXAMPLE_PROFILE.yaml` (Not yet approved)
+237. Future Reference: Sprint 09B Audit — `docs/AUDIT_REPORT_SPRINT09B.md` (Not yet approved)
 238. Relevant delivery and assurance documents
 239. Relevant ADRs, supporting specifications, and audit records
 
@@ -1084,129 +1084,129 @@ Sprint 09B Product DNA System
 - [Design Accessibility Rules](../repository/design/ACCESSIBILITY_RULES.md)
 - [Design Decision Records](../repository/design/DESIGN_DECISION_RECORDS.md)
 - [Sprint 05A Audit](AUDIT_REPORT_SPRINT05A.md)
-- [Knowledge Manifest](../repository/knowledge/KNOWLEDGE_MANIFEST.md)
-- [Knowledge Entity Model](../repository/knowledge/ENTITY_MODEL.md)
-- [Knowledge Ontology Model](../repository/knowledge/ONTOLOGY_MODEL.md)
-- [Knowledge Relationship Model](../repository/knowledge/RELATIONSHIP_MODEL.md)
-- [Product Knowledge Graph](../repository/knowledge/PRODUCT_KNOWLEDGE_GRAPH.md)
-- [SEO Knowledge Graph](../repository/knowledge/SEO_KNOWLEDGE_GRAPH.md)
-- [CRM Knowledge Graph](../repository/knowledge/CRM_KNOWLEDGE_GRAPH.md)
-- [AI Knowledge Readiness](../repository/knowledge/AI_KNOWLEDGE_READINESS.md)
-- [Knowledge Governance](../repository/knowledge/KNOWLEDGE_GOVERNANCE.md)
-- [Sprint 06A Audit](AUDIT_REPORT_SPRINT06A.md)
-- [Business Manifest](../repository/business/BUSINESS_MANIFEST.md)
-- [Business Entity Model](../repository/business/BUSINESS_ENTITY_MODEL.md)
-- [Customer Lifecycle](../repository/business/CUSTOMER_LIFECYCLE.md)
-- [Inquiry Engine](../repository/business/INQUIRY_ENGINE.md)
-- [Sales Pipeline](../repository/business/SALES_PIPELINE.md)
-- [Representative Model](../repository/business/REPRESENTATIVE_MODEL.md)
-- [Commission Engine](../repository/business/COMMISSION_ENGINE.md)
-- [Project Lifecycle](../repository/business/PROJECT_LIFECYCLE.md)
-- [Supplier Model](../repository/business/SUPPLIER_MODEL.md)
-- [Service Model](../repository/business/SERVICE_MODEL.md)
-- [Business Governance](../repository/business/BUSINESS_GOVERNANCE.md)
-- [Sprint 07A Audit](AUDIT_REPORT_SPRINT07A.md)
-- [Enterprise Product and Knowledge Platform Manifest](../repository/enterprise-platform/01_PLATFORM_MANIFEST.md)
-- [Product Repository Architecture](../repository/enterprise-platform/02_PRODUCT_REPOSITORY_ARCHITECTURE.md)
-- [Knowledge Repository Architecture](../repository/enterprise-platform/03_KNOWLEDGE_REPOSITORY_ARCHITECTURE.md)
-- [Product Configurator Engine](../repository/enterprise-platform/04_PRODUCT_CONFIGURATOR_ENGINE.md)
-- [Product Experience Engine](../repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md)
-- [Guided Selection Engine](../repository/enterprise-platform/06_GUIDED_SELECTION_ENGINE.md)
-- [Assembly Engine](../repository/enterprise-platform/07_ASSEMBLY_ENGINE.md)
-- [Market Intelligence Repository](../repository/enterprise-platform/08_MARKET_INTELLIGENCE_REPOSITORY.md)
-- [Customer Knowledge Repository](../repository/enterprise-platform/09_CUSTOMER_KNOWLEDGE_REPOSITORY.md)
-- [Decision Rules Engine](../repository/enterprise-platform/10_DECISION_RULES_ENGINE.md)
-- [Single Source of Truth Rules](../repository/enterprise-platform/11_SINGLE_SOURCE_OF_TRUTH_RULES.md)
-- [WordPress and WooCommerce Mapping](../repository/enterprise-platform/12_WORDPRESS_WOOCOMMERCE_MAPPING.md)
-- [Sprint 08A Implementation Roadmap](../repository/enterprise-platform/13_IMPLEMENTATION_ROADMAP.md)
-- [Sprint 08A Audit](AUDIT_REPORT_SPRINT08A.md)
-- [Damavand Visual Experience System](../repository/design/DAMAVAND_VISUAL_EXPERIENCE_SYSTEM.md)
-- [Elementor Component Guide](../repository/design/ELEMENTOR_COMPONENT_GUIDE.md)
-- [ReactBits Inspired UI Rules](../repository/design/REACTBITS_INSPIRED_UI_RULES.md)
-- [Sprint 08B Audit](AUDIT_REPORT_SPRINT08B.md)
-- [Enterprise Design Language](../repository/design/01_DESIGN_LANGUAGE.md)
-- [Design Tokens](../repository/design/02_DESIGN_TOKENS.md)
-- [Component State System](../repository/design/03_COMPONENT_STATE_SYSTEM.md)
-- [Visual Hierarchy](../repository/design/04_VISUAL_HIERARCHY.md)
-- [Spacing System](../repository/design/05_SPACING_SYSTEM.md)
-- [Grid System](../repository/design/06_GRID_SYSTEM.md)
-- [Typography System](../repository/design/07_TYPOGRAPHY_SYSTEM.md)
-- [Color System](../repository/design/08_COLOR_SYSTEM.md)
-- [Iconography System](../repository/design/09_ICONOGRAPHY_SYSTEM.md)
-- [Image System](../repository/design/10_IMAGE_SYSTEM.md)
-- [Enterprise Motion System](../repository/design/11_MOTION_SYSTEM.md)
-- [Component Naming](../repository/design/12_COMPONENT_NAMING.md)
-- [Admin Experience](../repository/design/13_ADMIN_EXPERIENCE.md)
-- [Design Versioning](../repository/design/14_VERSIONING.md)
-- [Sprint 08B.5 Audit](AUDIT_REPORT_SPRINT08B5.md)
-- [Enterprise Content Language](../repository/content/01_CONTENT_LANGUAGE.md)
-- [Product Content Standard](../repository/content/02_PRODUCT_CONTENT_STANDARD.md)
-- [Category Content Standard](../repository/content/03_CATEGORY_CONTENT_STANDARD.md)
-- [Knowledge Article Standard](../repository/content/04_KNOWLEDGE_ARTICLE_STANDARD.md)
-- [FAQ Standard](../repository/content/05_FAQ_STANDARD.md)
-- [Brand Content Standard](../repository/content/06_BRAND_CONTENT_STANDARD.md)
-- [Installation Guide Standard](../repository/content/07_INSTALLATION_GUIDE_STANDARD.md)
-- [Material Knowledge Standard](../repository/content/08_MATERIAL_KNOWLEDGE_STANDARD.md)
-- [Alloy Knowledge Standard](../repository/content/09_ALLOY_KNOWLEDGE_STANDARD.md)
-- [Content Component Library](../repository/content/10_CONTENT_COMPONENT_LIBRARY.md)
-- [Content Tone of Voice](../repository/content/11_CONTENT_TONE_OF_VOICE.md)
-- [Content Semantic Entity Model](../repository/content/12_SEMANTIC_ENTITY_MODEL.md)
-- [Content Reuse Rules](../repository/content/13_CONTENT_REUSE_RULES.md)
-- [AI Content Governance](../repository/content/14_AI_CONTENT_GOVERNANCE.md)
-- [Content Versioning](../repository/content/15_CONTENT_VERSIONING.md)
-- [Sprint 08B.6 Audit](AUDIT_REPORT_SPRINT08B6.md)
-- [Enterprise WordPress Implementation Architecture](../repository/wordpress/01_WORDPRESS_ARCHITECTURE.md)
-- [WooCommerce Product Model Blueprint](../repository/wordpress/02_WOOCOMMERCE_PRODUCT_MODEL.md)
-- [Attribute Strategy](../repository/wordpress/03_ATTRIBUTE_STRATEGY.md)
-- [Taxonomy Strategy](../repository/wordpress/04_TAXONOMY_STRATEGY.md)
-- [ACF and Custom Field Strategy](../repository/wordpress/05_ACF_STRATEGY.md)
-- [Blocksy Implementation Architecture](../repository/wordpress/06_BLOCKSY_ARCHITECTURE.md)
-- [Elementor Implementation Architecture](../repository/wordpress/07_ELEMENTOR_ARCHITECTURE.md)
-- [Rank Math SEO Mapping Blueprint](../repository/wordpress/08_RANKMATH_MAPPING.md)
-- [WordPress Admin Workflow Blueprint](../repository/wordpress/09_ADMIN_WORKFLOW.md)
-- [Media Library Architecture](../repository/wordpress/10_MEDIA_LIBRARY_ARCHITECTURE.md)
-- [Product Import Strategy](../repository/wordpress/11_PRODUCT_IMPORT_STRATEGY.md)
-- [Configuration Workflow](../repository/wordpress/12_CONFIGURATION_WORKFLOW.md)
-- [WordPress Implementation Testing Strategy](../repository/wordpress/13_TESTING_STRATEGY.md)
-- [Runtime Boundaries](../repository/wordpress/14_RUNTIME_BOUNDARIES.md)
-- [WordPress Implementation Release Plan](../repository/wordpress/15_RELEASE_PLAN.md)
-- [Sprint 08C Audit](AUDIT_REPORT_SPRINT08C.md)
-- [WordPress Environment Inventory](WORDPRESS_ENVIRONMENT_INVENTORY.md)
-- [WordPress Read-only Audit](WORDPRESS_READ_ONLY_AUDIT.md)
-- [Plugin and Theme Compatibility Report](PLUGIN_THEME_COMPATIBILITY_REPORT.md)
-- [Site Health Blockers](SITE_HEALTH_BLOCKERS.md)
-- [Runtime Readiness Report](RUNTIME_READINESS_REPORT.md)
-- [Sprint 08D.1 Audit](AUDIT_REPORT_SPRINT08D1.md)
-- [Runtime Blocker Remediation Plan](RUNTIME_BLOCKER_REMEDIATION_PLAN.md)
-- [Remediation Sequence and Dependencies](REMEDIATION_SEQUENCE_AND_DEPENDENCIES.md)
-- [Backup Restore Proof Checklist](BACKUP_RESTORE_PROOF_CHECKLIST.md)
-- [Founder Runtime Approval Checklist](FOUNDER_RUNTIME_APPROVAL_CHECKLIST.md)
-- [Sprint 08D.1R Audit](AUDIT_REPORT_SPRINT08D1R.md)
-- [Master Product Taxonomy v1](../repository/implementation-assets/product-foundation/01_MASTER_PRODUCT_TAXONOMY_V1.yaml)
-- [Global Attribute Library v1](../repository/implementation-assets/product-foundation/02_GLOBAL_ATTRIBUTE_LIBRARY_V1.yaml)
-- [Pipe Family Template v1](../repository/implementation-assets/product-foundation/03_PIPE_FAMILY_TEMPLATE_V1.yaml)
-- [Profile Family Template v1](../repository/implementation-assets/product-foundation/04_PROFILE_FAMILY_TEMPLATE_V1.yaml)
-- [Variant and SKU Rules v1](../repository/implementation-assets/product-foundation/05_VARIANT_AND_SKU_RULES_V1.md)
-- [Product Knowledge Mapping v1](../repository/implementation-assets/product-foundation/06_PRODUCT_KNOWLEDGE_MAPPING_V1.yaml)
-- [Founder Decision Register v1](../repository/implementation-assets/product-foundation/07_FOUNDER_DECISION_REGISTER_V1.md)
-- [Pipe/Profile WooCommerce Mapping v1](../repository/implementation-assets/import-preparation/PIPE_PROFILE_WOOCOMMERCE_MAPPING_V1.csv)
-- [Pipe/Profile Attribute Seed v1](../repository/implementation-assets/import-preparation/PIPE_PROFILE_ATTRIBUTE_SEED_V1.csv)
-- [Pipe/Profile Validation Rules v1](../repository/implementation-assets/import-preparation/PIPE_PROFILE_VALIDATION_RULES_V1.md)
-- [Sprint 09A Audit](AUDIT_REPORT_SPRINT09A.md)
-- [Master Product DNA](../repository/implementation-assets/product-dna/01_MASTER_PRODUCT_DNA.md)
-- [Product Information Model](../repository/implementation-assets/product-dna/02_PRODUCT_INFORMATION_MODEL.yaml)
-- [Product Component Library](../repository/implementation-assets/product-dna/03_PRODUCT_COMPONENT_LIBRARY.yaml)
-- [Product Knowledge Block Library](../repository/implementation-assets/product-dna/04_PRODUCT_KNOWLEDGE_BLOCK_LIBRARY.yaml)
-- [Product Page Assembly Engine](../repository/implementation-assets/product-dna/05_PRODUCT_PAGE_ASSEMBLY_ENGINE.yaml)
-- [Product Configurator UI Model](../repository/implementation-assets/product-dna/06_PRODUCT_CONFIGURATOR_UI_MODEL.yaml)
-- [Product Media Model](../repository/implementation-assets/product-dna/07_PRODUCT_MEDIA_MODEL.yaml)
-- [Product SEO Model](../repository/implementation-assets/product-dna/08_PRODUCT_SEO_MODEL.yaml)
-- [Product Schema Model](../repository/implementation-assets/product-dna/09_PRODUCT_SCHEMA_MODEL.yaml)
-- [Product Relation Model](../repository/implementation-assets/product-dna/10_PRODUCT_RELATION_MODEL.yaml)
-- [Product Lifecycle Model](../repository/implementation-assets/product-dna/11_PRODUCT_LIFECYCLE_MODEL.md)
-- [Product Validation Rules](../repository/implementation-assets/product-dna/12_PRODUCT_VALIDATION_RULES.md)
-- [Product Extensibility Model](../repository/implementation-assets/product-dna/13_PRODUCT_EXTENSIBILITY_MODEL.md)
-- [Product Admin Model](../repository/implementation-assets/product-dna/14_PRODUCT_ADMIN_MODEL.md)
-- [Product DNA Example Pipe](../repository/implementation-assets/product-dna/15_PRODUCT_DNA_EXAMPLE_PIPE.yaml)
-- [Product DNA Example Profile](../repository/implementation-assets/product-dna/16_PRODUCT_DNA_EXAMPLE_PROFILE.yaml)
-- [Sprint 09B Audit](AUDIT_REPORT_SPRINT09B.md)
+- Future Reference: Knowledge Manifest — `repository/knowledge/KNOWLEDGE_MANIFEST.md` (Not yet approved)
+- Future Reference: Knowledge Entity Model — `repository/knowledge/ENTITY_MODEL.md` (Not yet approved)
+- Future Reference: Knowledge Ontology Model — `repository/knowledge/ONTOLOGY_MODEL.md` (Not yet approved)
+- Future Reference: Knowledge Relationship Model — `repository/knowledge/RELATIONSHIP_MODEL.md` (Not yet approved)
+- Future Reference: Product Knowledge Graph — `repository/knowledge/PRODUCT_KNOWLEDGE_GRAPH.md` (Not yet approved)
+- Future Reference: SEO Knowledge Graph — `repository/knowledge/SEO_KNOWLEDGE_GRAPH.md` (Not yet approved)
+- Future Reference: CRM Knowledge Graph — `repository/knowledge/CRM_KNOWLEDGE_GRAPH.md` (Not yet approved)
+- Future Reference: AI Knowledge Readiness — `repository/knowledge/AI_KNOWLEDGE_READINESS.md` (Not yet approved)
+- Future Reference: Knowledge Governance — `repository/knowledge/KNOWLEDGE_GOVERNANCE.md` (Not yet approved)
+- Future Reference: Sprint 06A Audit — `docs/AUDIT_REPORT_SPRINT06A.md` (Not yet approved)
+- Future Reference: Business Manifest — `repository/business/BUSINESS_MANIFEST.md` (Not yet approved)
+- Future Reference: Business Entity Model — `repository/business/BUSINESS_ENTITY_MODEL.md` (Not yet approved)
+- Future Reference: Customer Lifecycle — `repository/business/CUSTOMER_LIFECYCLE.md` (Not yet approved)
+- Future Reference: Inquiry Engine — `repository/business/INQUIRY_ENGINE.md` (Not yet approved)
+- Future Reference: Sales Pipeline — `repository/business/SALES_PIPELINE.md` (Not yet approved)
+- Future Reference: Representative Model — `repository/business/REPRESENTATIVE_MODEL.md` (Not yet approved)
+- Future Reference: Commission Engine — `repository/business/COMMISSION_ENGINE.md` (Not yet approved)
+- Future Reference: Project Lifecycle — `repository/business/PROJECT_LIFECYCLE.md` (Not yet approved)
+- Future Reference: Supplier Model — `repository/business/SUPPLIER_MODEL.md` (Not yet approved)
+- Future Reference: Service Model — `repository/business/SERVICE_MODEL.md` (Not yet approved)
+- Future Reference: Business Governance — `repository/business/BUSINESS_GOVERNANCE.md` (Not yet approved)
+- Future Reference: Sprint 07A Audit — `docs/AUDIT_REPORT_SPRINT07A.md` (Not yet approved)
+- Future Reference: Enterprise Product and Knowledge Platform Manifest — `repository/enterprise-platform/01_PLATFORM_MANIFEST.md` (Not yet approved)
+- Future Reference: Product Repository Architecture — `repository/enterprise-platform/02_PRODUCT_REPOSITORY_ARCHITECTURE.md` (Not yet approved)
+- Future Reference: Knowledge Repository Architecture — `repository/enterprise-platform/03_KNOWLEDGE_REPOSITORY_ARCHITECTURE.md` (Not yet approved)
+- Future Reference: Product Configurator Engine — `repository/enterprise-platform/04_PRODUCT_CONFIGURATOR_ENGINE.md` (Not yet approved)
+- Future Reference: Product Experience Engine — `repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md` (Not yet approved)
+- Future Reference: Guided Selection Engine — `repository/enterprise-platform/06_GUIDED_SELECTION_ENGINE.md` (Not yet approved)
+- Future Reference: Assembly Engine — `repository/enterprise-platform/07_ASSEMBLY_ENGINE.md` (Not yet approved)
+- Future Reference: Market Intelligence Repository — `repository/enterprise-platform/08_MARKET_INTELLIGENCE_REPOSITORY.md` (Not yet approved)
+- Future Reference: Customer Knowledge Repository — `repository/enterprise-platform/09_CUSTOMER_KNOWLEDGE_REPOSITORY.md` (Not yet approved)
+- Future Reference: Decision Rules Engine — `repository/enterprise-platform/10_DECISION_RULES_ENGINE.md` (Not yet approved)
+- Future Reference: Single Source of Truth Rules — `repository/enterprise-platform/11_SINGLE_SOURCE_OF_TRUTH_RULES.md` (Not yet approved)
+- Future Reference: WordPress and WooCommerce Mapping — `repository/enterprise-platform/12_WORDPRESS_WOOCOMMERCE_MAPPING.md` (Not yet approved)
+- Future Reference: Sprint 08A Implementation Roadmap — `repository/enterprise-platform/13_IMPLEMENTATION_ROADMAP.md` (Not yet approved)
+- Future Reference: Sprint 08A Audit — `docs/AUDIT_REPORT_SPRINT08A.md` (Not yet approved)
+- Future Reference: Damavand Visual Experience System — `repository/design/DAMAVAND_VISUAL_EXPERIENCE_SYSTEM.md` (Not yet approved)
+- Future Reference: Elementor Component Guide — `repository/design/ELEMENTOR_COMPONENT_GUIDE.md` (Not yet approved)
+- Future Reference: ReactBits Inspired UI Rules — `repository/design/REACTBITS_INSPIRED_UI_RULES.md` (Not yet approved)
+- Future Reference: Sprint 08B Audit — `docs/AUDIT_REPORT_SPRINT08B.md` (Not yet approved)
+- Future Reference: Enterprise Design Language — `repository/design/01_DESIGN_LANGUAGE.md` (Not yet approved)
+- Future Reference: Design Tokens — `repository/design/02_DESIGN_TOKENS.md` (Not yet approved)
+- Future Reference: Component State System — `repository/design/03_COMPONENT_STATE_SYSTEM.md` (Not yet approved)
+- Future Reference: Visual Hierarchy — `repository/design/04_VISUAL_HIERARCHY.md` (Not yet approved)
+- Future Reference: Spacing System — `repository/design/05_SPACING_SYSTEM.md` (Not yet approved)
+- Future Reference: Grid System — `repository/design/06_GRID_SYSTEM.md` (Not yet approved)
+- Future Reference: Typography System — `repository/design/07_TYPOGRAPHY_SYSTEM.md` (Not yet approved)
+- Future Reference: Color System — `repository/design/08_COLOR_SYSTEM.md` (Not yet approved)
+- Future Reference: Iconography System — `repository/design/09_ICONOGRAPHY_SYSTEM.md` (Not yet approved)
+- Future Reference: Image System — `repository/design/10_IMAGE_SYSTEM.md` (Not yet approved)
+- Future Reference: Enterprise Motion System — `repository/design/11_MOTION_SYSTEM.md` (Not yet approved)
+- Future Reference: Component Naming — `repository/design/12_COMPONENT_NAMING.md` (Not yet approved)
+- Future Reference: Admin Experience — `repository/design/13_ADMIN_EXPERIENCE.md` (Not yet approved)
+- Future Reference: Design Versioning — `repository/design/14_VERSIONING.md` (Not yet approved)
+- Future Reference: Sprint 08B.5 Audit — `docs/AUDIT_REPORT_SPRINT08B5.md` (Not yet approved)
+- Future Reference: Enterprise Content Language — `repository/content/01_CONTENT_LANGUAGE.md` (Not yet approved)
+- Future Reference: Product Content Standard — `repository/content/02_PRODUCT_CONTENT_STANDARD.md` (Not yet approved)
+- Future Reference: Category Content Standard — `repository/content/03_CATEGORY_CONTENT_STANDARD.md` (Not yet approved)
+- Future Reference: Knowledge Article Standard — `repository/content/04_KNOWLEDGE_ARTICLE_STANDARD.md` (Not yet approved)
+- Future Reference: FAQ Standard — `repository/content/05_FAQ_STANDARD.md` (Not yet approved)
+- Future Reference: Brand Content Standard — `repository/content/06_BRAND_CONTENT_STANDARD.md` (Not yet approved)
+- Future Reference: Installation Guide Standard — `repository/content/07_INSTALLATION_GUIDE_STANDARD.md` (Not yet approved)
+- Future Reference: Material Knowledge Standard — `repository/content/08_MATERIAL_KNOWLEDGE_STANDARD.md` (Not yet approved)
+- Future Reference: Alloy Knowledge Standard — `repository/content/09_ALLOY_KNOWLEDGE_STANDARD.md` (Not yet approved)
+- Future Reference: Content Component Library — `repository/content/10_CONTENT_COMPONENT_LIBRARY.md` (Not yet approved)
+- Future Reference: Content Tone of Voice — `repository/content/11_CONTENT_TONE_OF_VOICE.md` (Not yet approved)
+- Future Reference: Content Semantic Entity Model — `repository/content/12_SEMANTIC_ENTITY_MODEL.md` (Not yet approved)
+- Future Reference: Content Reuse Rules — `repository/content/13_CONTENT_REUSE_RULES.md` (Not yet approved)
+- Future Reference: AI Content Governance — `repository/content/14_AI_CONTENT_GOVERNANCE.md` (Not yet approved)
+- Future Reference: Content Versioning — `repository/content/15_CONTENT_VERSIONING.md` (Not yet approved)
+- Future Reference: Sprint 08B.6 Audit — `docs/AUDIT_REPORT_SPRINT08B6.md` (Not yet approved)
+- Future Reference: Enterprise WordPress Implementation Architecture — `repository/wordpress/01_WORDPRESS_ARCHITECTURE.md` (Not yet approved)
+- Future Reference: WooCommerce Product Model Blueprint — `repository/wordpress/02_WOOCOMMERCE_PRODUCT_MODEL.md` (Not yet approved)
+- Future Reference: Attribute Strategy — `repository/wordpress/03_ATTRIBUTE_STRATEGY.md` (Not yet approved)
+- Future Reference: Taxonomy Strategy — `repository/wordpress/04_TAXONOMY_STRATEGY.md` (Not yet approved)
+- Future Reference: ACF and Custom Field Strategy — `repository/wordpress/05_ACF_STRATEGY.md` (Not yet approved)
+- Future Reference: Blocksy Implementation Architecture — `repository/wordpress/06_BLOCKSY_ARCHITECTURE.md` (Not yet approved)
+- Future Reference: Elementor Implementation Architecture — `repository/wordpress/07_ELEMENTOR_ARCHITECTURE.md` (Not yet approved)
+- Future Reference: Rank Math SEO Mapping Blueprint — `repository/wordpress/08_RANKMATH_MAPPING.md` (Not yet approved)
+- Future Reference: WordPress Admin Workflow Blueprint — `repository/wordpress/09_ADMIN_WORKFLOW.md` (Not yet approved)
+- Future Reference: Media Library Architecture — `repository/wordpress/10_MEDIA_LIBRARY_ARCHITECTURE.md` (Not yet approved)
+- Future Reference: Product Import Strategy — `repository/wordpress/11_PRODUCT_IMPORT_STRATEGY.md` (Not yet approved)
+- Future Reference: Configuration Workflow — `repository/wordpress/12_CONFIGURATION_WORKFLOW.md` (Not yet approved)
+- Future Reference: WordPress Implementation Testing Strategy — `repository/wordpress/13_TESTING_STRATEGY.md` (Not yet approved)
+- Future Reference: Runtime Boundaries — `repository/wordpress/14_RUNTIME_BOUNDARIES.md` (Not yet approved)
+- Future Reference: WordPress Implementation Release Plan — `repository/wordpress/15_RELEASE_PLAN.md` (Not yet approved)
+- Future Reference: Sprint 08C Audit — `docs/AUDIT_REPORT_SPRINT08C.md` (Not yet approved)
+- Future Reference: WordPress Environment Inventory — `docs/WORDPRESS_ENVIRONMENT_INVENTORY.md` (Not yet approved)
+- Future Reference: WordPress Read-only Audit — `docs/WORDPRESS_READ_ONLY_AUDIT.md` (Not yet approved)
+- Future Reference: Plugin and Theme Compatibility Report — `docs/PLUGIN_THEME_COMPATIBILITY_REPORT.md` (Not yet approved)
+- Future Reference: Site Health Blockers — `docs/SITE_HEALTH_BLOCKERS.md` (Not yet approved)
+- Future Reference: Runtime Readiness Report — `docs/RUNTIME_READINESS_REPORT.md` (Not yet approved)
+- Future Reference: Sprint 08D.1 Audit — `docs/AUDIT_REPORT_SPRINT08D1.md` (Not yet approved)
+- Future Reference: Runtime Blocker Remediation Plan — `docs/RUNTIME_BLOCKER_REMEDIATION_PLAN.md` (Not yet approved)
+- Future Reference: Remediation Sequence and Dependencies — `docs/REMEDIATION_SEQUENCE_AND_DEPENDENCIES.md` (Not yet approved)
+- Future Reference: Backup Restore Proof Checklist — `docs/BACKUP_RESTORE_PROOF_CHECKLIST.md` (Not yet approved)
+- Future Reference: Founder Runtime Approval Checklist — `docs/FOUNDER_RUNTIME_APPROVAL_CHECKLIST.md` (Not yet approved)
+- Future Reference: Sprint 08D.1R Audit — `docs/AUDIT_REPORT_SPRINT08D1R.md` (Not yet approved)
+- Future Reference: Master Product Taxonomy v1 — `repository/implementation-assets/product-foundation/01_MASTER_PRODUCT_TAXONOMY_V1.yaml` (Not yet approved)
+- Future Reference: Global Attribute Library v1 — `repository/implementation-assets/product-foundation/02_GLOBAL_ATTRIBUTE_LIBRARY_V1.yaml` (Not yet approved)
+- Future Reference: Pipe Family Template v1 — `repository/implementation-assets/product-foundation/03_PIPE_FAMILY_TEMPLATE_V1.yaml` (Not yet approved)
+- Future Reference: Profile Family Template v1 — `repository/implementation-assets/product-foundation/04_PROFILE_FAMILY_TEMPLATE_V1.yaml` (Not yet approved)
+- Future Reference: Variant and SKU Rules v1 — `repository/implementation-assets/product-foundation/05_VARIANT_AND_SKU_RULES_V1.md` (Not yet approved)
+- Future Reference: Product Knowledge Mapping v1 — `repository/implementation-assets/product-foundation/06_PRODUCT_KNOWLEDGE_MAPPING_V1.yaml` (Not yet approved)
+- Future Reference: Founder Decision Register v1 — `repository/implementation-assets/product-foundation/07_FOUNDER_DECISION_REGISTER_V1.md` (Not yet approved)
+- Future Reference: Pipe/Profile WooCommerce Mapping v1 — `repository/implementation-assets/import-preparation/PIPE_PROFILE_WOOCOMMERCE_MAPPING_V1.csv` (Not yet approved)
+- Future Reference: Pipe/Profile Attribute Seed v1 — `repository/implementation-assets/import-preparation/PIPE_PROFILE_ATTRIBUTE_SEED_V1.csv` (Not yet approved)
+- Future Reference: Pipe/Profile Validation Rules v1 — `repository/implementation-assets/import-preparation/PIPE_PROFILE_VALIDATION_RULES_V1.md` (Not yet approved)
+- Future Reference: Sprint 09A Audit — `docs/AUDIT_REPORT_SPRINT09A.md` (Not yet approved)
+- Future Reference: Master Product DNA — `repository/implementation-assets/product-dna/01_MASTER_PRODUCT_DNA.md` (Not yet approved)
+- Future Reference: Product Information Model — `repository/implementation-assets/product-dna/02_PRODUCT_INFORMATION_MODEL.yaml` (Not yet approved)
+- Future Reference: Product Component Library — `repository/implementation-assets/product-dna/03_PRODUCT_COMPONENT_LIBRARY.yaml` (Not yet approved)
+- Future Reference: Product Knowledge Block Library — `repository/implementation-assets/product-dna/04_PRODUCT_KNOWLEDGE_BLOCK_LIBRARY.yaml` (Not yet approved)
+- Future Reference: Product Page Assembly Engine — `repository/implementation-assets/product-dna/05_PRODUCT_PAGE_ASSEMBLY_ENGINE.yaml` (Not yet approved)
+- Future Reference: Product Configurator UI Model — `repository/implementation-assets/product-dna/06_PRODUCT_CONFIGURATOR_UI_MODEL.yaml` (Not yet approved)
+- Future Reference: Product Media Model — `repository/implementation-assets/product-dna/07_PRODUCT_MEDIA_MODEL.yaml` (Not yet approved)
+- Future Reference: Product SEO Model — `repository/implementation-assets/product-dna/08_PRODUCT_SEO_MODEL.yaml` (Not yet approved)
+- Future Reference: Product Schema Model — `repository/implementation-assets/product-dna/09_PRODUCT_SCHEMA_MODEL.yaml` (Not yet approved)
+- Future Reference: Product Relation Model — `repository/implementation-assets/product-dna/10_PRODUCT_RELATION_MODEL.yaml` (Not yet approved)
+- Future Reference: Product Lifecycle Model — `repository/implementation-assets/product-dna/11_PRODUCT_LIFECYCLE_MODEL.md` (Not yet approved)
+- Future Reference: Product Validation Rules — `repository/implementation-assets/product-dna/12_PRODUCT_VALIDATION_RULES.md` (Not yet approved)
+- Future Reference: Product Extensibility Model — `repository/implementation-assets/product-dna/13_PRODUCT_EXTENSIBILITY_MODEL.md` (Not yet approved)
+- Future Reference: Product Admin Model — `repository/implementation-assets/product-dna/14_PRODUCT_ADMIN_MODEL.md` (Not yet approved)
+- Future Reference: Product DNA Example Pipe — `repository/implementation-assets/product-dna/15_PRODUCT_DNA_EXAMPLE_PIPE.yaml` (Not yet approved)
+- Future Reference: Product DNA Example Profile — `repository/implementation-assets/product-dna/16_PRODUCT_DNA_EXAMPLE_PROFILE.yaml` (Not yet approved)
+- Future Reference: Sprint 09B Audit — `docs/AUDIT_REPORT_SPRINT09B.md` (Not yet approved)

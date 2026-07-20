@@ -45,7 +45,7 @@ The arrows express dependency and traceability, not implementation status.
 | GOV01-ROAD | [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md) | Execution Gates, Sprint 12A, FD-PILOT-001 | Gated post-pilot path | Not authorized |
 | GOV01-PROTOCOL | [Codex Sprint Protocol](CODEX_SPRINT_PROTOCOL.md) | AI Collaboration and repository governance | Bounded sprint contract | Not authorized |
 | GOV01-SOURCE | [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md) | Constitution and AI source ordering | Scope-bound evidence hierarchy | Not authorized |
-| GOV01-AUDIT | [Sprint GOV-01 Audit](AUDIT_REPORT_GOV01.md) | GOV-01 outputs and validation | Founder-review evidence | Not authorized |
+| GOV01-AUDIT | Future Reference: Sprint GOV-01 Audit — `docs/AUDIT_REPORT_GOV01.md` (Not yet approved) | GOV-01 outputs and validation | Founder-review evidence | Not authorized |
 
 ## Core Project Principle Matrix
 
@@ -202,217 +202,217 @@ The arrows express dependency and traceability, not implementation status.
 
 | Decision range | Origin and authority | Repository effect | Dependent evidence | Implementation status |
 | --- | --- | --- | --- | --- |
-| EPB-001–EPB-008 | [Enterprise Product and Knowledge Platform Manifest](../repository/enterprise-platform/01_PLATFORM_MANIFEST.md), CP-001–CP-010, ADR-0001, Product/Knowledge/Business/WordPress authorities | Establishes Sprint 08A Blueprint boundary and review-only platform flow | Founder review, specialist review, no-runtime audit evidence | Not authorized |
-| PRODREP-001–PRODREP-005 | [Product Repository Architecture](../repository/enterprise-platform/02_PRODUCT_REPOSITORY_ARCHITECTURE.md), Product Data Model, WooCommerce Product Model, Product Engine | Records Catalog → Platform → Family → Series → Variant Rules → SKU and Variable Parent Product boundary | Product family approvals, valid combinations, final SKU policy, import/staging evidence | Not authorized |
-| KREP-001–KREP-004 | [Knowledge Repository Architecture](../repository/enterprise-platform/03_KNOWLEDGE_REPOSITORY_ARCHITECTURE.md), Knowledge Manifest, SEO Entity Model | Separates Material, Alloy, Family, Brand, Installation, Maintenance, FAQ/Customer, AI-readiness, and SEO knowledge domains | Public eligibility, content/source review, no-price/schema review, AI Phase decision | Not authorized |
-| PCFG-001–PCFG-005 | [Product Configurator Engine](../repository/enterprise-platform/04_PRODUCT_CONFIGURATOR_ENGINE.md), Product Repository, Attribute Model | Defines Primary, Secondary, and Commercial Variant classes and inquiry-context output | Variation-axis validation, mobile Persian RTL UX, no-price tests, WooCommerce mapping evidence | Not authorized |
-| PEXP-001–PEXP-004 | [Product Experience Engine](../repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md), IA, Design, Knowledge, Inquiry authorities | Defines Selection → Education → Recommendation → Assembly → Calculation → Inquiry | Content/design/source review, non-price calculation boundary, inquiry QA | Not authorized |
-| GSEL-001–GSEL-004 | [Guided Selection Engine](../repository/enterprise-platform/06_GUIDED_SELECTION_ENGINE.md), Attribute/Knowledge/Customer sources | Defines environment, project type, usage, budget, alloy, thickness, and brand guidance boundaries | Rule review, privacy review, no-price public behavior, uncertainty-path QA | Not authorized |
-| ASM-001–ASM-004 | [Assembly Engine](../repository/enterprise-platform/07_ASSEMBLY_ENGINE.md), Product/Knowledge/Decision sources | Defines required/recommended/compatible/alternative relationships and inquiry package boundary | Safety/domain evidence, companion-product approval, public/protected display review | Not authorized |
-| MKT-001–MKT-004 | [Market Intelligence Repository](../repository/enterprise-platform/08_MARKET_INTELLIGENCE_REPOSITORY.md), Business/Knowledge authorities | Creates evidence-only market observation boundary | Source, privacy, protected/public conversion, Founder approval | Not authorized |
-| CUSTK-001–CUSTK-004 | [Customer Knowledge Repository](../repository/enterprise-platform/09_CUSTOMER_KNOWLEDGE_REPOSITORY.md), Customer lifecycle and Inquiry Model | Defines customer intent, FAQ, trust, buying, shipping, payment, installation, and maintenance knowledge | Content, legal/privacy, no-price, schema, and inquiry validation | Not authorized |
-| DRE-001–DRE-004 | [Decision Rules Engine](../repository/enterprise-platform/10_DECISION_RULES_ENGINE.md), Product/Knowledge/Business sources | Defines human-readable non-AI rules and source hierarchy | Rule inventory, tests, conflict handling, no-public-price validation | Not authorized |
-| SSOT-001–SSOT-004 | [Single Source of Truth Rules](../repository/enterprise-platform/11_SINGLE_SOURCE_OF_TRUTH_RULES.md), repository governance | Defines authority hierarchy, projection rules, conflict rules, and forbidden authority inversions | Repository validation, conflict review, source traceability evidence | Not authorized |
-| WPMAP-001–WPMAP-005 | [WordPress and WooCommerce Mapping](../repository/enterprise-platform/12_WORDPRESS_WOOCOMMERCE_MAPPING.md), WordPress/WooCommerce/Blocksy/Elementor/Plugin Blueprints | Maps future variable products, attributes, tabs/cards, Elementor sections, Blocksy layout, and Rank Math schema boundaries | Staging/safe-environment capability checks, rollback, no-price schema, inquiry tests | Not authorized |
-| ROAD08A-001–ROAD08A-004 | [Sprint 08A Implementation Roadmap](../repository/enterprise-platform/13_IMPLEMENTATION_ROADMAP.md), Sprint 08A execution rule | Records sequence: 08A, 08B, 08C, Commit/Tag, 08D only after backup, 08E, Final Audit | Separate Founder approvals, backup confirmation, commit/tag authorization, runtime gates | Not authorized |
+| EPB-001–EPB-008 | Future Reference: Enterprise Product and Knowledge Platform Manifest — `repository/enterprise-platform/01_PLATFORM_MANIFEST.md` (Not yet approved), CP-001–CP-010, ADR-0001, Product/Knowledge/Business/WordPress authorities | Establishes Sprint 08A Blueprint boundary and review-only platform flow | Founder review, specialist review, no-runtime audit evidence | Not authorized |
+| PRODREP-001–PRODREP-005 | Future Reference: Product Repository Architecture — `repository/enterprise-platform/02_PRODUCT_REPOSITORY_ARCHITECTURE.md` (Not yet approved), Product Data Model, WooCommerce Product Model, Product Engine | Records Catalog → Platform → Family → Series → Variant Rules → SKU and Variable Parent Product boundary | Product family approvals, valid combinations, final SKU policy, import/staging evidence | Not authorized |
+| KREP-001–KREP-004 | Future Reference: Knowledge Repository Architecture — `repository/enterprise-platform/03_KNOWLEDGE_REPOSITORY_ARCHITECTURE.md` (Not yet approved), Knowledge Manifest, SEO Entity Model | Separates Material, Alloy, Family, Brand, Installation, Maintenance, FAQ/Customer, AI-readiness, and SEO knowledge domains | Public eligibility, content/source review, no-price/schema review, AI Phase decision | Not authorized |
+| PCFG-001–PCFG-005 | Future Reference: Product Configurator Engine — `repository/enterprise-platform/04_PRODUCT_CONFIGURATOR_ENGINE.md` (Not yet approved), Product Repository, Attribute Model | Defines Primary, Secondary, and Commercial Variant classes and inquiry-context output | Variation-axis validation, mobile Persian RTL UX, no-price tests, WooCommerce mapping evidence | Not authorized |
+| PEXP-001–PEXP-004 | Future Reference: Product Experience Engine — `repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md` (Not yet approved), IA, Design, Knowledge, Inquiry authorities | Defines Selection → Education → Recommendation → Assembly → Calculation → Inquiry | Content/design/source review, non-price calculation boundary, inquiry QA | Not authorized |
+| GSEL-001–GSEL-004 | Future Reference: Guided Selection Engine — `repository/enterprise-platform/06_GUIDED_SELECTION_ENGINE.md` (Not yet approved), Attribute/Knowledge/Customer sources | Defines environment, project type, usage, budget, alloy, thickness, and brand guidance boundaries | Rule review, privacy review, no-price public behavior, uncertainty-path QA | Not authorized |
+| ASM-001–ASM-004 | Future Reference: Assembly Engine — `repository/enterprise-platform/07_ASSEMBLY_ENGINE.md` (Not yet approved), Product/Knowledge/Decision sources | Defines required/recommended/compatible/alternative relationships and inquiry package boundary | Safety/domain evidence, companion-product approval, public/protected display review | Not authorized |
+| MKT-001–MKT-004 | Future Reference: Market Intelligence Repository — `repository/enterprise-platform/08_MARKET_INTELLIGENCE_REPOSITORY.md` (Not yet approved), Business/Knowledge authorities | Creates evidence-only market observation boundary | Source, privacy, protected/public conversion, Founder approval | Not authorized |
+| CUSTK-001–CUSTK-004 | Future Reference: Customer Knowledge Repository — `repository/enterprise-platform/09_CUSTOMER_KNOWLEDGE_REPOSITORY.md` (Not yet approved), Customer lifecycle and Inquiry Model | Defines customer intent, FAQ, trust, buying, shipping, payment, installation, and maintenance knowledge | Content, legal/privacy, no-price, schema, and inquiry validation | Not authorized |
+| DRE-001–DRE-004 | Future Reference: Decision Rules Engine — `repository/enterprise-platform/10_DECISION_RULES_ENGINE.md` (Not yet approved), Product/Knowledge/Business sources | Defines human-readable non-AI rules and source hierarchy | Rule inventory, tests, conflict handling, no-public-price validation | Not authorized |
+| SSOT-001–SSOT-004 | Future Reference: Single Source of Truth Rules — `repository/enterprise-platform/11_SINGLE_SOURCE_OF_TRUTH_RULES.md` (Not yet approved), repository governance | Defines authority hierarchy, projection rules, conflict rules, and forbidden authority inversions | Repository validation, conflict review, source traceability evidence | Not authorized |
+| WPMAP-001–WPMAP-005 | Future Reference: WordPress and WooCommerce Mapping — `repository/enterprise-platform/12_WORDPRESS_WOOCOMMERCE_MAPPING.md` (Not yet approved), WordPress/WooCommerce/Blocksy/Elementor/Plugin Blueprints | Maps future variable products, attributes, tabs/cards, Elementor sections, Blocksy layout, and Rank Math schema boundaries | Staging/safe-environment capability checks, rollback, no-price schema, inquiry tests | Not authorized |
+| ROAD08A-001–ROAD08A-004 | Future Reference: Sprint 08A Implementation Roadmap — `repository/enterprise-platform/13_IMPLEMENTATION_ROADMAP.md` (Not yet approved), Sprint 08A execution rule | Records sequence: 08A, 08B, 08C, Commit/Tag, 08D only after backup, 08E, Final Audit | Separate Founder approvals, backup confirmation, commit/tag authorization, runtime gates | Not authorized |
 
 ## Sprint 08A Rule Compliance Traceability
 
 | Governing rule | Blueprint effect | Canonical evidence |
 | --- | --- | --- |
-| CP-001 Plugin First | Runtime mapping identifies capability boundaries only; no plugin is installed or selected beyond existing approved targets | [WordPress and WooCommerce Mapping](../repository/enterprise-platform/12_WORDPRESS_WOOCOMMERCE_MAPPING.md) |
-| CP-002 Configuration First | Future behavior remains configuration-first and no custom code is authorized | [Platform Manifest](../repository/enterprise-platform/01_PLATFORM_MANIFEST.md) |
-| CP-003 Mobile First | Configurator, selection, and experience flows require mobile Persian RTL validation before implementation | [Product Configurator Engine](../repository/enterprise-platform/04_PRODUCT_CONFIGURATOR_ENGINE.md), [Guided Selection Engine](../repository/enterprise-platform/06_GUIDED_SELECTION_ENGINE.md) |
-| CP-004 Persian RTL | Persian labels, terms, explanations, and mobile UX remain first-class | [Knowledge Repository Architecture](../repository/enterprise-platform/03_KNOWLEDGE_REPOSITORY_ARCHITECTURE.md), [Product Experience Engine](../repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md) |
-| CP-005 Inquiry First | Product selection, recommendation, assembly, calculation, and customer intent terminate in inquiry | [Product Experience Engine](../repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md), [Customer Knowledge Repository](../repository/enterprise-platform/09_CUSTOMER_KNOWLEDGE_REPOSITORY.md) |
-| CP-006 No Public Pricing | Public price, Offer, cart, checkout, payment, public quote, and price inference are prohibited | [Decision Rules Engine](../repository/enterprise-platform/10_DECISION_RULES_ENGINE.md), [WordPress and WooCommerce Mapping](../repository/enterprise-platform/12_WORDPRESS_WOOCOMMERCE_MAPPING.md) |
-| CP-007 No Custom Theme | Blocksy remains configuration shell; no custom/child theme is introduced | [WordPress and WooCommerce Mapping](../repository/enterprise-platform/12_WORDPRESS_WOOCOMMERCE_MAPPING.md) |
-| CP-008 No Gravity Forms | No form plugin is selected or introduced | [Platform Manifest](../repository/enterprise-platform/01_PLATFORM_MANIFEST.md) |
-| CP-009 No LiteSpeed Cache | No cache plugin or LiteSpeed Cache assumption is introduced | [Platform Manifest](../repository/enterprise-platform/01_PLATFORM_MANIFEST.md) |
-| CP-010 No AI Features Phase 1 | AI Knowledge remains readiness-only; no AI runtime/feature/recommendation is authorized | [Knowledge Repository Architecture](../repository/enterprise-platform/03_KNOWLEDGE_REPOSITORY_ARCHITECTURE.md), [Decision Rules Engine](../repository/enterprise-platform/10_DECISION_RULES_ENGINE.md) |
-| WP-FC-004 Variable Parent Product | Product Repository and WooCommerce mapping preserve variable parent products and governed variations | [Product Repository Architecture](../repository/enterprise-platform/02_PRODUCT_REPOSITORY_ARCHITECTURE.md), [WordPress and WooCommerce Mapping](../repository/enterprise-platform/12_WORDPRESS_WOOCOMMERCE_MAPPING.md) |
+| CP-001 Plugin First | Runtime mapping identifies capability boundaries only; no plugin is installed or selected beyond existing approved targets | Future Reference: WordPress and WooCommerce Mapping — `repository/enterprise-platform/12_WORDPRESS_WOOCOMMERCE_MAPPING.md` (Not yet approved) |
+| CP-002 Configuration First | Future behavior remains configuration-first and no custom code is authorized | Future Reference: Platform Manifest — `repository/enterprise-platform/01_PLATFORM_MANIFEST.md` (Not yet approved) |
+| CP-003 Mobile First | Configurator, selection, and experience flows require mobile Persian RTL validation before implementation | Future Reference: Product Configurator Engine — `repository/enterprise-platform/04_PRODUCT_CONFIGURATOR_ENGINE.md` (Not yet approved), Future Reference: Guided Selection Engine — `repository/enterprise-platform/06_GUIDED_SELECTION_ENGINE.md` (Not yet approved) |
+| CP-004 Persian RTL | Persian labels, terms, explanations, and mobile UX remain first-class | Future Reference: Knowledge Repository Architecture — `repository/enterprise-platform/03_KNOWLEDGE_REPOSITORY_ARCHITECTURE.md` (Not yet approved), Future Reference: Product Experience Engine — `repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md` (Not yet approved) |
+| CP-005 Inquiry First | Product selection, recommendation, assembly, calculation, and customer intent terminate in inquiry | Future Reference: Product Experience Engine — `repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md` (Not yet approved), Future Reference: Customer Knowledge Repository — `repository/enterprise-platform/09_CUSTOMER_KNOWLEDGE_REPOSITORY.md` (Not yet approved) |
+| CP-006 No Public Pricing | Public price, Offer, cart, checkout, payment, public quote, and price inference are prohibited | Future Reference: Decision Rules Engine — `repository/enterprise-platform/10_DECISION_RULES_ENGINE.md` (Not yet approved), Future Reference: WordPress and WooCommerce Mapping — `repository/enterprise-platform/12_WORDPRESS_WOOCOMMERCE_MAPPING.md` (Not yet approved) |
+| CP-007 No Custom Theme | Blocksy remains configuration shell; no custom/child theme is introduced | Future Reference: WordPress and WooCommerce Mapping — `repository/enterprise-platform/12_WORDPRESS_WOOCOMMERCE_MAPPING.md` (Not yet approved) |
+| CP-008 No Gravity Forms | No form plugin is selected or introduced | Future Reference: Platform Manifest — `repository/enterprise-platform/01_PLATFORM_MANIFEST.md` (Not yet approved) |
+| CP-009 No LiteSpeed Cache | No cache plugin or LiteSpeed Cache assumption is introduced | Future Reference: Platform Manifest — `repository/enterprise-platform/01_PLATFORM_MANIFEST.md` (Not yet approved) |
+| CP-010 No AI Features Phase 1 | AI Knowledge remains readiness-only; no AI runtime/feature/recommendation is authorized | Future Reference: Knowledge Repository Architecture — `repository/enterprise-platform/03_KNOWLEDGE_REPOSITORY_ARCHITECTURE.md` (Not yet approved), Future Reference: Decision Rules Engine — `repository/enterprise-platform/10_DECISION_RULES_ENGINE.md` (Not yet approved) |
+| WP-FC-004 Variable Parent Product | Product Repository and WooCommerce mapping preserve variable parent products and governed variations | Future Reference: Product Repository Architecture — `repository/enterprise-platform/02_PRODUCT_REPOSITORY_ARCHITECTURE.md` (Not yet approved), Future Reference: WordPress and WooCommerce Mapping — `repository/enterprise-platform/12_WORDPRESS_WOOCOMMERCE_MAPPING.md` (Not yet approved) |
 
 ## Sprint 08B Visual Experience System Traceability
 
 | Decision range | Origin and authority | Repository effect | Dependent evidence | Implementation status |
 | --- | --- | --- | --- | --- |
-| VES-001–VES-006 | [Damavand Visual Experience System](../repository/design/DAMAVAND_VISUAL_EXPERIENCE_SYSTEM.md), Sprint 05A Design Intelligence, Sprint 08A Platform Blueprint, CP-001–CP-010 | Defines visual direction, typography/layout planning, product/category/inquiry visual flows, mobile/a11y/performance boundaries | Founder visual review, design-token approval, accessibility/performance measurement, Blocksy/Elementor capability evidence | Not authorized |
-| ELCMP component matrix | [Elementor Component Guide](../repository/design/ELEMENTOR_COMPONENT_GUIDE.md), Elementor/Blocksy/WooCommerce Blueprints, Product/Knowledge repositories | Defines reusable component planning for header, mobile nav, hero, cards, configurator shell, variant groups, inquiry CTA, FAQ, stepper, assembly, states, and footer | Component ownership, data-source approval, widget capability, Admin usability, mobile RTL, a11y/performance evidence | Not authorized |
-| RBUI-001–RBUI-005 | [ReactBits Inspired UI Rules](../repository/design/REACTBITS_INSPIRED_UI_RULES.md), ReactBits Inspiration Mapping, Motion/Performance/Accessibility Rules | Defines pattern use, forbidden use, class naming, mobile/RTL/reduced-motion/a11y/performance/fallback/phase rules for all 15 patterns | Future design review, dependency review, static fallback, measured budget, reduced-motion validation | Not authorized |
-| S08B-AUDIT | [Sprint 08B Audit](AUDIT_REPORT_SPRINT08B.md) | Records created/updated files, reused/new decisions, risks, conflicts, link validation, and GO/NO-GO status | Founder review and future Sprint 08C planning evidence | Not authorized |
+| VES-001–VES-006 | Future Reference: Damavand Visual Experience System — `repository/design/DAMAVAND_VISUAL_EXPERIENCE_SYSTEM.md` (Not yet approved), Sprint 05A Design Intelligence, Sprint 08A Platform Blueprint, CP-001–CP-010 | Defines visual direction, typography/layout planning, product/category/inquiry visual flows, mobile/a11y/performance boundaries | Founder visual review, design-token approval, accessibility/performance measurement, Blocksy/Elementor capability evidence | Not authorized |
+| ELCMP component matrix | Future Reference: Elementor Component Guide — `repository/design/ELEMENTOR_COMPONENT_GUIDE.md` (Not yet approved), Elementor/Blocksy/WooCommerce Blueprints, Product/Knowledge repositories | Defines reusable component planning for header, mobile nav, hero, cards, configurator shell, variant groups, inquiry CTA, FAQ, stepper, assembly, states, and footer | Component ownership, data-source approval, widget capability, Admin usability, mobile RTL, a11y/performance evidence | Not authorized |
+| RBUI-001–RBUI-005 | Future Reference: ReactBits Inspired UI Rules — `repository/design/REACTBITS_INSPIRED_UI_RULES.md` (Not yet approved), ReactBits Inspiration Mapping, Motion/Performance/Accessibility Rules | Defines pattern use, forbidden use, class naming, mobile/RTL/reduced-motion/a11y/performance/fallback/phase rules for all 15 patterns | Future design review, dependency review, static fallback, measured budget, reduced-motion validation | Not authorized |
+| S08B-AUDIT | Future Reference: Sprint 08B Audit — `docs/AUDIT_REPORT_SPRINT08B.md` (Not yet approved) | Records created/updated files, reused/new decisions, risks, conflicts, link validation, and GO/NO-GO status | Founder review and future Sprint 08C planning evidence | Not authorized |
 
 ## Sprint 08B Rule Compliance Traceability
 
 | Governing rule | Visual-planning effect | Canonical evidence |
 | --- | --- | --- |
-| CP-001 Plugin First | No visual capability introduces an unapproved plugin or dependency | [ReactBits Inspired UI Rules](../repository/design/REACTBITS_INSPIRED_UI_RULES.md) |
-| CP-002 Configuration First | Future UI delivery must use Blocksy/Elementor-supported configuration before custom code | [Elementor Component Guide](../repository/design/ELEMENTOR_COMPONENT_GUIDE.md) |
-| CP-003 Mobile First | Typography, layout, product flow, category flow, and pattern behavior are mobile-first | [Damavand Visual Experience System](../repository/design/DAMAVAND_VISUAL_EXPERIENCE_SYSTEM.md) |
-| CP-004 Persian RTL | Typography, layout, navigation, stepper, variant selectors, and component behavior preserve RTL | [Damavand Visual Experience System](../repository/design/DAMAVAND_VISUAL_EXPERIENCE_SYSTEM.md), [Elementor Component Guide](../repository/design/ELEMENTOR_COMPONENT_GUIDE.md) |
-| CP-005 Inquiry First | Product visual flow and component set terminate in contextual inquiry, not public transaction | [Damavand Visual Experience System](../repository/design/DAMAVAND_VISUAL_EXPERIENCE_SYSTEM.md), [Elementor Component Guide](../repository/design/ELEMENTOR_COMPONENT_GUIDE.md) |
-| CP-006 No Public Pricing | No public price, checkout, cart, Offer, payment, or price filter component exists | [Damavand Visual Experience System](../repository/design/DAMAVAND_VISUAL_EXPERIENCE_SYSTEM.md), [ReactBits Inspired UI Rules](../repository/design/REACTBITS_INSPIRED_UI_RULES.md) |
-| CP-007 No Custom Theme | Blocksy remains shell owner; no theme-file edit or custom/child theme is planned | [Elementor Component Guide](../repository/design/ELEMENTOR_COMPONENT_GUIDE.md) |
-| CP-008 No Gravity Forms | No form plugin is introduced or selected | [Damavand Visual Experience System](../repository/design/DAMAVAND_VISUAL_EXPERIENCE_SYSTEM.md) |
-| CP-009 No LiteSpeed Cache | Performance rules do not assume LiteSpeed Cache or cache masking | [ReactBits Inspired UI Rules](../repository/design/REACTBITS_INSPIRED_UI_RULES.md) |
-| CP-010 No AI Features Phase 1 | No AI design, personalization, recommendation UI, or runtime feature is authorized | [Elementor Component Guide](../repository/design/ELEMENTOR_COMPONENT_GUIDE.md), [ReactBits Inspired UI Rules](../repository/design/REACTBITS_INSPIRED_UI_RULES.md) |
+| CP-001 Plugin First | No visual capability introduces an unapproved plugin or dependency | Future Reference: ReactBits Inspired UI Rules — `repository/design/REACTBITS_INSPIRED_UI_RULES.md` (Not yet approved) |
+| CP-002 Configuration First | Future UI delivery must use Blocksy/Elementor-supported configuration before custom code | Future Reference: Elementor Component Guide — `repository/design/ELEMENTOR_COMPONENT_GUIDE.md` (Not yet approved) |
+| CP-003 Mobile First | Typography, layout, product flow, category flow, and pattern behavior are mobile-first | Future Reference: Damavand Visual Experience System — `repository/design/DAMAVAND_VISUAL_EXPERIENCE_SYSTEM.md` (Not yet approved) |
+| CP-004 Persian RTL | Typography, layout, navigation, stepper, variant selectors, and component behavior preserve RTL | Future Reference: Damavand Visual Experience System — `repository/design/DAMAVAND_VISUAL_EXPERIENCE_SYSTEM.md` (Not yet approved), Future Reference: Elementor Component Guide — `repository/design/ELEMENTOR_COMPONENT_GUIDE.md` (Not yet approved) |
+| CP-005 Inquiry First | Product visual flow and component set terminate in contextual inquiry, not public transaction | Future Reference: Damavand Visual Experience System — `repository/design/DAMAVAND_VISUAL_EXPERIENCE_SYSTEM.md` (Not yet approved), Future Reference: Elementor Component Guide — `repository/design/ELEMENTOR_COMPONENT_GUIDE.md` (Not yet approved) |
+| CP-006 No Public Pricing | No public price, checkout, cart, Offer, payment, or price filter component exists | Future Reference: Damavand Visual Experience System — `repository/design/DAMAVAND_VISUAL_EXPERIENCE_SYSTEM.md` (Not yet approved), Future Reference: ReactBits Inspired UI Rules — `repository/design/REACTBITS_INSPIRED_UI_RULES.md` (Not yet approved) |
+| CP-007 No Custom Theme | Blocksy remains shell owner; no theme-file edit or custom/child theme is planned | Future Reference: Elementor Component Guide — `repository/design/ELEMENTOR_COMPONENT_GUIDE.md` (Not yet approved) |
+| CP-008 No Gravity Forms | No form plugin is introduced or selected | Future Reference: Damavand Visual Experience System — `repository/design/DAMAVAND_VISUAL_EXPERIENCE_SYSTEM.md` (Not yet approved) |
+| CP-009 No LiteSpeed Cache | Performance rules do not assume LiteSpeed Cache or cache masking | Future Reference: ReactBits Inspired UI Rules — `repository/design/REACTBITS_INSPIRED_UI_RULES.md` (Not yet approved) |
+| CP-010 No AI Features Phase 1 | No AI design, personalization, recommendation UI, or runtime feature is authorized | Future Reference: Elementor Component Guide — `repository/design/ELEMENTOR_COMPONENT_GUIDE.md` (Not yet approved), Future Reference: ReactBits Inspired UI Rules — `repository/design/REACTBITS_INSPIRED_UI_RULES.md` (Not yet approved) |
 
 ## Sprint 08B.5 Design Language Foundation Traceability
 
 | Decision range | Origin and authority | Repository effect | Dependent evidence | Implementation status |
 | --- | --- | --- | --- | --- |
-| DLF-001–DLF-004 | [Enterprise Design Language](../repository/design/01_DESIGN_LANGUAGE.md), Sprint 08B.5 Founder direction, Sprint 05A/08B design authorities | Establishes proposed single visual source-of-truth family and non-goals | Founder Design Review, token approval, implementation mapping evidence | Not authorized |
-| TOK-001–TOK-004 | [Design Tokens](../repository/design/02_DESIGN_TOKENS.md) | Defines proposed spacing/sizing/radius/shadow/elevation/opacity/border/container/safe-margin token vocabulary | Blocksy/Elementor mapping, accessibility and performance validation | Not authorized |
-| STATE-001–STATE-004 | [Component State System](../repository/design/03_COMPONENT_STATE_SYSTEM.md) | Defines default/hover/focus/active/selected/disabled/loading/empty/success/warning/error/skeleton state requirements | Component QA, accessibility validation, no-price state audit | Not authorized |
-| VH-001–VH-003 | [Visual Hierarchy](../repository/design/04_VISUAL_HIERARCHY.md) | Defines priority levels for hero, CTA, configurator, knowledge, assembly, FAQ, trust, and footer | Founder visual review, mobile/SEO/content review | Not authorized |
-| SPACE-001–SPACE-003 | [Spacing System](../repository/design/05_SPACING_SYSTEM.md) | Defines mobile/desktop/RTL spacing use from the token scale | Device testing, Elementor/Blocksy mapping | Not authorized |
-| GRID-001–GRID-003 | [Grid System](../repository/design/06_GRID_SYSTEM.md) | Defines mobile/tablet/desktop/wide breakpoints, containers, columns, and RTL grid rules | Responsive testing, WooCommerce/card validation | Not authorized |
-| TYPE-001–TYPE-003 | [Typography System](../repository/design/07_TYPOGRAPHY_SYSTEM.md) | Defines H1-H6 and content-specific text roles with Persian RTL rules | Font/license/performance/accessibility review | Not authorized |
-| COLOR-001–COLOR-003 | [Color System](../repository/design/08_COLOR_SYSTEM.md) | Defines color families, background/surface/border/text hierarchy, and forbidden color uses | Contrast testing and token approval | Not authorized |
-| ICON-001–ICON-003 | [Iconography System](../repository/design/09_ICONOGRAPHY_SYSTEM.md) | Defines icon family criteria, sizes, strokes, color, usage, and forbidden rules | Icon license/platform/accessibility review | Not authorized |
-| IMG-001–IMG-003 | [Image System](../repository/design/10_IMAGE_SYSTEM.md) | Defines aspect ratios, background, lighting, reflection, cropping, padding, image types, fallbacks, and placeholders | Media source/legal/performance/alt-text review | Not authorized |
-| MOT-001–MOT-003 | [Enterprise Motion System](../repository/design/11_MOTION_SYSTEM.md) | Defines duration/timing/reduced-motion/forbidden-animation rules | Performance/accessibility/reduced-motion validation | Not authorized |
-| NAME-001–NAME-003 | [Component Naming](../repository/design/12_COMPONENT_NAMING.md) | Defines `ds-` naming namespace, state names, template naming, and forbidden names | Future template/component inventory validation | Not authorized |
-| ADMIN-001–ADMIN-003 | [Admin Experience](../repository/design/13_ADMIN_EXPERIENCE.md) | Defines Founder-friendly editing rules for product, knowledge, SEO, configurator, media, and navigation | Founder usability and role/access review | Not authorized |
-| DVER-001–DVER-004 | [Design Versioning](../repository/design/14_VERSIONING.md) | Defines Design v1/v1.1/v2, deprecation, migration, and versioning limits | Founder approval, changelog, migration, rollback evidence | Not authorized |
-| S08B5-AUDIT | [Sprint 08B.5 Audit](AUDIT_REPORT_SPRINT08B5.md) | Records created/updated files, rules, conflicts, open questions, technical debt, validation, and GO/NO-GO | Founder Design Review | Not authorized |
+| DLF-001–DLF-004 | Future Reference: Enterprise Design Language — `repository/design/01_DESIGN_LANGUAGE.md` (Not yet approved), Sprint 08B.5 Founder direction, Sprint 05A/08B design authorities | Establishes proposed single visual source-of-truth family and non-goals | Founder Design Review, token approval, implementation mapping evidence | Not authorized |
+| TOK-001–TOK-004 | Future Reference: Design Tokens — `repository/design/02_DESIGN_TOKENS.md` (Not yet approved) | Defines proposed spacing/sizing/radius/shadow/elevation/opacity/border/container/safe-margin token vocabulary | Blocksy/Elementor mapping, accessibility and performance validation | Not authorized |
+| STATE-001–STATE-004 | Future Reference: Component State System — `repository/design/03_COMPONENT_STATE_SYSTEM.md` (Not yet approved) | Defines default/hover/focus/active/selected/disabled/loading/empty/success/warning/error/skeleton state requirements | Component QA, accessibility validation, no-price state audit | Not authorized |
+| VH-001–VH-003 | Future Reference: Visual Hierarchy — `repository/design/04_VISUAL_HIERARCHY.md` (Not yet approved) | Defines priority levels for hero, CTA, configurator, knowledge, assembly, FAQ, trust, and footer | Founder visual review, mobile/SEO/content review | Not authorized |
+| SPACE-001–SPACE-003 | Future Reference: Spacing System — `repository/design/05_SPACING_SYSTEM.md` (Not yet approved) | Defines mobile/desktop/RTL spacing use from the token scale | Device testing, Elementor/Blocksy mapping | Not authorized |
+| GRID-001–GRID-003 | Future Reference: Grid System — `repository/design/06_GRID_SYSTEM.md` (Not yet approved) | Defines mobile/tablet/desktop/wide breakpoints, containers, columns, and RTL grid rules | Responsive testing, WooCommerce/card validation | Not authorized |
+| TYPE-001–TYPE-003 | Future Reference: Typography System — `repository/design/07_TYPOGRAPHY_SYSTEM.md` (Not yet approved) | Defines H1-H6 and content-specific text roles with Persian RTL rules | Font/license/performance/accessibility review | Not authorized |
+| COLOR-001–COLOR-003 | Future Reference: Color System — `repository/design/08_COLOR_SYSTEM.md` (Not yet approved) | Defines color families, background/surface/border/text hierarchy, and forbidden color uses | Contrast testing and token approval | Not authorized |
+| ICON-001–ICON-003 | Future Reference: Iconography System — `repository/design/09_ICONOGRAPHY_SYSTEM.md` (Not yet approved) | Defines icon family criteria, sizes, strokes, color, usage, and forbidden rules | Icon license/platform/accessibility review | Not authorized |
+| IMG-001–IMG-003 | Future Reference: Image System — `repository/design/10_IMAGE_SYSTEM.md` (Not yet approved) | Defines aspect ratios, background, lighting, reflection, cropping, padding, image types, fallbacks, and placeholders | Media source/legal/performance/alt-text review | Not authorized |
+| MOT-001–MOT-003 | Future Reference: Enterprise Motion System — `repository/design/11_MOTION_SYSTEM.md` (Not yet approved) | Defines duration/timing/reduced-motion/forbidden-animation rules | Performance/accessibility/reduced-motion validation | Not authorized |
+| NAME-001–NAME-003 | Future Reference: Component Naming — `repository/design/12_COMPONENT_NAMING.md` (Not yet approved) | Defines `ds-` naming namespace, state names, template naming, and forbidden names | Future template/component inventory validation | Not authorized |
+| ADMIN-001–ADMIN-003 | Future Reference: Admin Experience — `repository/design/13_ADMIN_EXPERIENCE.md` (Not yet approved) | Defines Founder-friendly editing rules for product, knowledge, SEO, configurator, media, and navigation | Founder usability and role/access review | Not authorized |
+| DVER-001–DVER-004 | Future Reference: Design Versioning — `repository/design/14_VERSIONING.md` (Not yet approved) | Defines Design v1/v1.1/v2, deprecation, migration, and versioning limits | Founder approval, changelog, migration, rollback evidence | Not authorized |
+| S08B5-AUDIT | Future Reference: Sprint 08B.5 Audit — `docs/AUDIT_REPORT_SPRINT08B5.md` (Not yet approved) | Records created/updated files, rules, conflicts, open questions, technical debt, validation, and GO/NO-GO | Founder Design Review | Not authorized |
 
 ## Sprint 08B.5 Rule Compliance Traceability
 
 | Governing rule | Design-language effect | Canonical evidence |
 | --- | --- | --- |
-| CP-001 Plugin First | No design language file introduces a plugin dependency | [Enterprise Design Language](../repository/design/01_DESIGN_LANGUAGE.md) |
-| CP-002 Configuration First | Tokens and components are designed for future Blocksy/Elementor configuration mapping, not code-first implementation | [Design Tokens](../repository/design/02_DESIGN_TOKENS.md), [Admin Experience](../repository/design/13_ADMIN_EXPERIENCE.md) |
-| CP-003 Mobile First | Spacing, grid, typography, hierarchy, states, and motion start from mobile behavior | [Spacing System](../repository/design/05_SPACING_SYSTEM.md), [Grid System](../repository/design/06_GRID_SYSTEM.md) |
-| CP-004 Persian RTL | Typography, spacing, grid, naming, Admin, and component states include RTL rules | [Typography System](../repository/design/07_TYPOGRAPHY_SYSTEM.md), [Component Naming](../repository/design/12_COMPONENT_NAMING.md) |
-| CP-005 Inquiry First | Hierarchy, states, naming, and Admin rules preserve inquiry paths | [Visual Hierarchy](../repository/design/04_VISUAL_HIERARCHY.md), [Component State System](../repository/design/03_COMPONENT_STATE_SYSTEM.md) |
-| CP-006 No Public Pricing | State, color, naming, Admin, and component rules prohibit price/cart/checkout/payment/Offer UI | [Component State System](../repository/design/03_COMPONENT_STATE_SYSTEM.md), [Color System](../repository/design/08_COLOR_SYSTEM.md), [Component Naming](../repository/design/12_COMPONENT_NAMING.md) |
-| CP-007 No Custom Theme | Design language does not create or assume a custom theme | [Enterprise Design Language](../repository/design/01_DESIGN_LANGUAGE.md) |
-| CP-008 No Gravity Forms | No form plugin is selected | [Enterprise Design Language](../repository/design/01_DESIGN_LANGUAGE.md) |
-| CP-009 No LiteSpeed Cache | Performance posture does not rely on LiteSpeed Cache | [Enterprise Motion System](../repository/design/11_MOTION_SYSTEM.md) |
-| CP-010 No AI Features Phase 1 | No AI design feature or generated runtime asset is authorized | [Enterprise Design Language](../repository/design/01_DESIGN_LANGUAGE.md), [Design Versioning](../repository/design/14_VERSIONING.md) |
+| CP-001 Plugin First | No design language file introduces a plugin dependency | Future Reference: Enterprise Design Language — `repository/design/01_DESIGN_LANGUAGE.md` (Not yet approved) |
+| CP-002 Configuration First | Tokens and components are designed for future Blocksy/Elementor configuration mapping, not code-first implementation | Future Reference: Design Tokens — `repository/design/02_DESIGN_TOKENS.md` (Not yet approved), Future Reference: Admin Experience — `repository/design/13_ADMIN_EXPERIENCE.md` (Not yet approved) |
+| CP-003 Mobile First | Spacing, grid, typography, hierarchy, states, and motion start from mobile behavior | Future Reference: Spacing System — `repository/design/05_SPACING_SYSTEM.md` (Not yet approved), Future Reference: Grid System — `repository/design/06_GRID_SYSTEM.md` (Not yet approved) |
+| CP-004 Persian RTL | Typography, spacing, grid, naming, Admin, and component states include RTL rules | Future Reference: Typography System — `repository/design/07_TYPOGRAPHY_SYSTEM.md` (Not yet approved), Future Reference: Component Naming — `repository/design/12_COMPONENT_NAMING.md` (Not yet approved) |
+| CP-005 Inquiry First | Hierarchy, states, naming, and Admin rules preserve inquiry paths | Future Reference: Visual Hierarchy — `repository/design/04_VISUAL_HIERARCHY.md` (Not yet approved), Future Reference: Component State System — `repository/design/03_COMPONENT_STATE_SYSTEM.md` (Not yet approved) |
+| CP-006 No Public Pricing | State, color, naming, Admin, and component rules prohibit price/cart/checkout/payment/Offer UI | Future Reference: Component State System — `repository/design/03_COMPONENT_STATE_SYSTEM.md` (Not yet approved), Future Reference: Color System — `repository/design/08_COLOR_SYSTEM.md` (Not yet approved), Future Reference: Component Naming — `repository/design/12_COMPONENT_NAMING.md` (Not yet approved) |
+| CP-007 No Custom Theme | Design language does not create or assume a custom theme | Future Reference: Enterprise Design Language — `repository/design/01_DESIGN_LANGUAGE.md` (Not yet approved) |
+| CP-008 No Gravity Forms | No form plugin is selected | Future Reference: Enterprise Design Language — `repository/design/01_DESIGN_LANGUAGE.md` (Not yet approved) |
+| CP-009 No LiteSpeed Cache | Performance posture does not rely on LiteSpeed Cache | Future Reference: Enterprise Motion System — `repository/design/11_MOTION_SYSTEM.md` (Not yet approved) |
+| CP-010 No AI Features Phase 1 | No AI design feature or generated runtime asset is authorized | Future Reference: Enterprise Design Language — `repository/design/01_DESIGN_LANGUAGE.md` (Not yet approved), Future Reference: Design Versioning — `repository/design/14_VERSIONING.md` (Not yet approved) |
 
 ## Sprint 08B.6 Enterprise Content Language Traceability
 
 | Decision range | Origin and authority | Repository effect | Dependent evidence | Implementation status |
 | --- | --- | --- | --- | --- |
-| CL-001–CL-010 | [Enterprise Content Language](../repository/content/01_CONTENT_LANGUAGE.md), Sprint 08B.6 Founder direction, Content Architecture, Knowledge Intelligence, and Design Language | Establishes proposed permanent content-language source-of-truth family, terminology, vocabulary, formatting, and non-goals | Founder Content Review, terminology approval, content workflow mapping | Not authorized |
-| PCS-001–PCS-008 | [Product Content Standard](../repository/content/02_PRODUCT_CONTENT_STANDARD.md), Product Data/WooCommerce/Product Repository authorities | Defines reusable product-page content structure and product fact boundaries | Product/domain/SEO review and future WordPress mapping evidence | Not authorized |
-| CCS-001–CCS-007 | [Category Content Standard](../repository/content/03_CATEGORY_CONTENT_STANDARD.md), Taxonomy/Site/URL authorities | Defines category-page content structure, scope, selection/comparison/buying guide boundaries | Taxonomy/SEO/content review | Not authorized |
-| KAS-001–KAS-007 | [Knowledge Article Standard](../repository/content/04_KNOWLEDGE_ARTICLE_STANDARD.md), Knowledge Manifest and SEO Knowledge Graph | Defines knowledge article template and source-backed recommendation boundaries | Knowledge/domain/SEO/legal review | Not authorized |
-| FAQS-001–FAQS-008 | [FAQ Standard](../repository/content/05_FAQ_STANDARD.md), Schema Strategy and FAQ content governance | Defines reusable FAQ question/answer, length, link, entity, and schema-boundary rules | FAQ/schema/SEO/domain review | Not authorized |
-| BCS-001–BCS-007 | [Brand Content Standard](../repository/content/06_BRAND_CONTENT_STANDARD.md), Brand Language and Founder evidence | Defines brand introduction/history/quality/origin/positioning/application/trust boundaries | Founder/legal/brand review | Not authorized |
-| IGS-001–IGS-008 | [Installation Guide Standard](../repository/content/07_INSTALLATION_GUIDE_STANDARD.md), Product Experience and Assembly authorities | Defines tools/preparation/steps/warnings/common mistakes/maintenance structure and safety boundary | Technical/safety/legal review | Not authorized |
-| MKS-001–MKS-009 | [Material Knowledge Standard](../repository/content/08_MATERIAL_KNOWLEDGE_STANDARD.md), Product Attribute and Knowledge authorities | Defines material knowledge domains, comparison, selection, and evidence boundaries | Domain/knowledge/SEO review | Not authorized |
-| AKS-001–AKS-008 | [Alloy Knowledge Standard](../repository/content/09_ALLOY_KNOWLEDGE_STANDARD.md), Attribute Dictionary and Product Attribute sources | Defines alloy knowledge domains, comparison, selection, and environment-suitability boundaries | Domain/knowledge/product review | Not authorized |
-| CCL-001–CCL-011 | [Content Component Library](../repository/content/10_CONTENT_COMPONENT_LIBRARY.md), Design component/state authorities | Defines reusable content component contracts without runtime blocks/templates | Content/design/accessibility review | Not authorized |
-| TOV-001–TOV-008 | [Content Tone of Voice](../repository/content/11_CONTENT_TONE_OF_VOICE.md), Brand and Content Language authorities | Defines professional/industrial/trustworthy/technical Persian-native voice and forbidden patterns | Founder/content/legal review | Not authorized |
-| SEM-001–SEM-010 | [Content Semantic Entity Model](../repository/content/12_SEMANTIC_ENTITY_MODEL.md), Knowledge Entity/Relationship and SEO Entity authorities | Defines content-level canonical names, aliases, relationships, internal links, and ownership boundaries | Entity/SEO/knowledge review | Not authorized |
-| REUSE-001–REUSE-009 | [Content Reuse Rules](../repository/content/13_CONTENT_REUSE_RULES.md), Single Source of Truth and Knowledge Governance authorities | Defines reference-first reuse, duplicate prevention, component reuse, and deprecation boundaries | Content migration/deprecation evidence | Not authorized |
-| AICG-001–AICG-010 | [AI Content Governance](../repository/content/14_AI_CONTENT_GOVERNANCE.md), AI Knowledge Readiness and AI Collaboration sources | Defines future AI content usage/forbidden usage/human review/source attribution while preserving No AI Phase 1 | Separate future AI approval and governance evidence | Not authorized |
-| CV-001–CV-008 | [Content Versioning](../repository/content/15_CONTENT_VERSIONING.md), Content Architecture and Platform Versioning | Defines Content v1/v1.1/v2, migration, deprecation, compatibility, and no-publishing boundary | Founder Content Review, changelog, migration evidence | Not authorized |
-| S08B6-AUDIT | [Sprint 08B.6 Audit](AUDIT_REPORT_SPRINT08B6.md) | Records created/updated files, standards, conflicts, open questions, technical debt, missing dependencies, validation, and GO/NO-GO | Founder Content Review | Not authorized |
+| CL-001–CL-010 | Future Reference: Enterprise Content Language — `repository/content/01_CONTENT_LANGUAGE.md` (Not yet approved), Sprint 08B.6 Founder direction, Content Architecture, Knowledge Intelligence, and Design Language | Establishes proposed permanent content-language source-of-truth family, terminology, vocabulary, formatting, and non-goals | Founder Content Review, terminology approval, content workflow mapping | Not authorized |
+| PCS-001–PCS-008 | Future Reference: Product Content Standard — `repository/content/02_PRODUCT_CONTENT_STANDARD.md` (Not yet approved), Product Data/WooCommerce/Product Repository authorities | Defines reusable product-page content structure and product fact boundaries | Product/domain/SEO review and future WordPress mapping evidence | Not authorized |
+| CCS-001–CCS-007 | Future Reference: Category Content Standard — `repository/content/03_CATEGORY_CONTENT_STANDARD.md` (Not yet approved), Taxonomy/Site/URL authorities | Defines category-page content structure, scope, selection/comparison/buying guide boundaries | Taxonomy/SEO/content review | Not authorized |
+| KAS-001–KAS-007 | Future Reference: Knowledge Article Standard — `repository/content/04_KNOWLEDGE_ARTICLE_STANDARD.md` (Not yet approved), Knowledge Manifest and SEO Knowledge Graph | Defines knowledge article template and source-backed recommendation boundaries | Knowledge/domain/SEO/legal review | Not authorized |
+| FAQS-001–FAQS-008 | Future Reference: FAQ Standard — `repository/content/05_FAQ_STANDARD.md` (Not yet approved), Schema Strategy and FAQ content governance | Defines reusable FAQ question/answer, length, link, entity, and schema-boundary rules | FAQ/schema/SEO/domain review | Not authorized |
+| BCS-001–BCS-007 | Future Reference: Brand Content Standard — `repository/content/06_BRAND_CONTENT_STANDARD.md` (Not yet approved), Brand Language and Founder evidence | Defines brand introduction/history/quality/origin/positioning/application/trust boundaries | Founder/legal/brand review | Not authorized |
+| IGS-001–IGS-008 | Future Reference: Installation Guide Standard — `repository/content/07_INSTALLATION_GUIDE_STANDARD.md` (Not yet approved), Product Experience and Assembly authorities | Defines tools/preparation/steps/warnings/common mistakes/maintenance structure and safety boundary | Technical/safety/legal review | Not authorized |
+| MKS-001–MKS-009 | Future Reference: Material Knowledge Standard — `repository/content/08_MATERIAL_KNOWLEDGE_STANDARD.md` (Not yet approved), Product Attribute and Knowledge authorities | Defines material knowledge domains, comparison, selection, and evidence boundaries | Domain/knowledge/SEO review | Not authorized |
+| AKS-001–AKS-008 | Future Reference: Alloy Knowledge Standard — `repository/content/09_ALLOY_KNOWLEDGE_STANDARD.md` (Not yet approved), Attribute Dictionary and Product Attribute sources | Defines alloy knowledge domains, comparison, selection, and environment-suitability boundaries | Domain/knowledge/product review | Not authorized |
+| CCL-001–CCL-011 | Future Reference: Content Component Library — `repository/content/10_CONTENT_COMPONENT_LIBRARY.md` (Not yet approved), Design component/state authorities | Defines reusable content component contracts without runtime blocks/templates | Content/design/accessibility review | Not authorized |
+| TOV-001–TOV-008 | Future Reference: Content Tone of Voice — `repository/content/11_CONTENT_TONE_OF_VOICE.md` (Not yet approved), Brand and Content Language authorities | Defines professional/industrial/trustworthy/technical Persian-native voice and forbidden patterns | Founder/content/legal review | Not authorized |
+| SEM-001–SEM-010 | Future Reference: Content Semantic Entity Model — `repository/content/12_SEMANTIC_ENTITY_MODEL.md` (Not yet approved), Knowledge Entity/Relationship and SEO Entity authorities | Defines content-level canonical names, aliases, relationships, internal links, and ownership boundaries | Entity/SEO/knowledge review | Not authorized |
+| REUSE-001–REUSE-009 | Future Reference: Content Reuse Rules — `repository/content/13_CONTENT_REUSE_RULES.md` (Not yet approved), Single Source of Truth and Knowledge Governance authorities | Defines reference-first reuse, duplicate prevention, component reuse, and deprecation boundaries | Content migration/deprecation evidence | Not authorized |
+| AICG-001–AICG-010 | Future Reference: AI Content Governance — `repository/content/14_AI_CONTENT_GOVERNANCE.md` (Not yet approved), AI Knowledge Readiness and AI Collaboration sources | Defines future AI content usage/forbidden usage/human review/source attribution while preserving No AI Phase 1 | Separate future AI approval and governance evidence | Not authorized |
+| CV-001–CV-008 | Future Reference: Content Versioning — `repository/content/15_CONTENT_VERSIONING.md` (Not yet approved), Content Architecture and Platform Versioning | Defines Content v1/v1.1/v2, migration, deprecation, compatibility, and no-publishing boundary | Founder Content Review, changelog, migration evidence | Not authorized |
+| S08B6-AUDIT | Future Reference: Sprint 08B.6 Audit — `docs/AUDIT_REPORT_SPRINT08B6.md` (Not yet approved) | Records created/updated files, standards, conflicts, open questions, technical debt, missing dependencies, validation, and GO/NO-GO | Founder Content Review | Not authorized |
 
 ## Sprint 08B.6 Rule Compliance Traceability
 
 | Governing rule | Content-language effect | Canonical evidence |
 | --- | --- | --- |
-| CP-001 Plugin First | No content-language file introduces a plugin dependency or selects a new plugin | [Enterprise Content Language](../repository/content/01_CONTENT_LANGUAGE.md) |
-| CP-002 Configuration First | Standards remain future editor/configuration compatible and do not require custom runtime code | [Product Content Standard](../repository/content/02_PRODUCT_CONTENT_STANDARD.md), [Content Component Library](../repository/content/10_CONTENT_COMPONENT_LIBRARY.md) |
-| CP-003 Mobile First | Content structures require mobile-first order, short sections, and readable components | [Product Content Standard](../repository/content/02_PRODUCT_CONTENT_STANDARD.md), [FAQ Standard](../repository/content/05_FAQ_STANDARD.md) |
-| CP-004 Persian RTL | Persian-native writing, terminology, typography, number/unit, and tone rules are explicit | [Enterprise Content Language](../repository/content/01_CONTENT_LANGUAGE.md), [Content Tone of Voice](../repository/content/11_CONTENT_TONE_OF_VOICE.md) |
-| CP-005 Inquiry First | Product, category, FAQ, and knowledge content routes uncertainty and commercial intent to inquiry | [Product Content Standard](../repository/content/02_PRODUCT_CONTENT_STANDARD.md), [Category Content Standard](../repository/content/03_CATEGORY_CONTENT_STANDARD.md) |
-| CP-006 No Public Pricing | Product, FAQ, brand, component, and AI governance rules prohibit price/cart/checkout/payment/Offer language | [Enterprise Content Language](../repository/content/01_CONTENT_LANGUAGE.md), [AI Content Governance](../repository/content/14_AI_CONTENT_GOVERNANCE.md) |
-| CP-007 No Custom Theme | No content standard creates theme files, templates, CSS, JavaScript, or custom-theme dependency | [Content Component Library](../repository/content/10_CONTENT_COMPONENT_LIBRARY.md) |
-| CP-008 No Gravity Forms | No form plugin or inquiry plugin is selected | [Enterprise Content Language](../repository/content/01_CONTENT_LANGUAGE.md) |
-| CP-009 No LiteSpeed Cache | No content standard depends on LiteSpeed Cache or performance plugins | [Content Versioning](../repository/content/15_CONTENT_VERSIONING.md) |
-| CP-010 No AI Features Phase 1 | AI content governance is future-readiness only and prohibits Phase 1 AI generation/runtime | [AI Content Governance](../repository/content/14_AI_CONTENT_GOVERNANCE.md) |
+| CP-001 Plugin First | No content-language file introduces a plugin dependency or selects a new plugin | Future Reference: Enterprise Content Language — `repository/content/01_CONTENT_LANGUAGE.md` (Not yet approved) |
+| CP-002 Configuration First | Standards remain future editor/configuration compatible and do not require custom runtime code | Future Reference: Product Content Standard — `repository/content/02_PRODUCT_CONTENT_STANDARD.md` (Not yet approved), Future Reference: Content Component Library — `repository/content/10_CONTENT_COMPONENT_LIBRARY.md` (Not yet approved) |
+| CP-003 Mobile First | Content structures require mobile-first order, short sections, and readable components | Future Reference: Product Content Standard — `repository/content/02_PRODUCT_CONTENT_STANDARD.md` (Not yet approved), Future Reference: FAQ Standard — `repository/content/05_FAQ_STANDARD.md` (Not yet approved) |
+| CP-004 Persian RTL | Persian-native writing, terminology, typography, number/unit, and tone rules are explicit | Future Reference: Enterprise Content Language — `repository/content/01_CONTENT_LANGUAGE.md` (Not yet approved), Future Reference: Content Tone of Voice — `repository/content/11_CONTENT_TONE_OF_VOICE.md` (Not yet approved) |
+| CP-005 Inquiry First | Product, category, FAQ, and knowledge content routes uncertainty and commercial intent to inquiry | Future Reference: Product Content Standard — `repository/content/02_PRODUCT_CONTENT_STANDARD.md` (Not yet approved), Future Reference: Category Content Standard — `repository/content/03_CATEGORY_CONTENT_STANDARD.md` (Not yet approved) |
+| CP-006 No Public Pricing | Product, FAQ, brand, component, and AI governance rules prohibit price/cart/checkout/payment/Offer language | Future Reference: Enterprise Content Language — `repository/content/01_CONTENT_LANGUAGE.md` (Not yet approved), Future Reference: AI Content Governance — `repository/content/14_AI_CONTENT_GOVERNANCE.md` (Not yet approved) |
+| CP-007 No Custom Theme | No content standard creates theme files, templates, CSS, JavaScript, or custom-theme dependency | Future Reference: Content Component Library — `repository/content/10_CONTENT_COMPONENT_LIBRARY.md` (Not yet approved) |
+| CP-008 No Gravity Forms | No form plugin or inquiry plugin is selected | Future Reference: Enterprise Content Language — `repository/content/01_CONTENT_LANGUAGE.md` (Not yet approved) |
+| CP-009 No LiteSpeed Cache | No content standard depends on LiteSpeed Cache or performance plugins | Future Reference: Content Versioning — `repository/content/15_CONTENT_VERSIONING.md` (Not yet approved) |
+| CP-010 No AI Features Phase 1 | AI content governance is future-readiness only and prohibits Phase 1 AI generation/runtime | Future Reference: AI Content Governance — `repository/content/14_AI_CONTENT_GOVERNANCE.md` (Not yet approved) |
 
 ## Sprint 08C Enterprise WordPress Implementation Blueprint Traceability
 
 | Decision range | Origin and authority | Repository effect | Dependent evidence | Implementation status |
 | --- | --- | --- | --- | --- |
-| WPIMPL-001–WPIMPL-010 | [Enterprise WordPress Implementation Architecture](../repository/wordpress/01_WORDPRESS_ARCHITECTURE.md), WordPress Blueprint, WordPress/WooCommerce Mapping, Design/Content/Knowledge sources | Establishes WordPress as runtime adapter and maps enterprise objects to future WordPress/WooCommerce/Admin/consumer surfaces | Founder Architecture Review and runtime implementation tickets | Not authorized |
-| WCPIMPL-001–WCPIMPL-014 | [WooCommerce Product Model Blueprint](../repository/wordpress/02_WOOCOMMERCE_PRODUCT_MODEL.md), WooCommerce Product Model, Product Repository | Defines Variable Product, variation, commercial variant, configurator, knowledge, assembly, related/accessory/cross-sell/up-sell mapping | Product data approval, WooCommerce configuration, QA | Not authorized |
-| ATTRIMPL-001–ATTRIMPL-010 | [Attribute Strategy](../repository/wordpress/03_ATTRIBUTE_STRATEGY.md), Product Attribute Model and Attribute Dictionary | Defines global/local/variation/filter/SEO/CRM attribute strategy | Attribute/term approval and import validation | Not authorized |
-| TAXIMPL-001–TAXIMPL-012 | [Taxonomy Strategy](../repository/wordpress/04_TAXONOMY_STRATEGY.md), Product Taxonomy Model, URL Architecture | Defines native and conditional custom taxonomy strategy | IA/SEO/taxonomy approval and term governance | Not authorized |
-| ACFIMPL-001–ACFIMPL-012 | [ACF and Custom Field Strategy](../repository/wordpress/05_ACF_STRATEGY.md), Custom Fields Model | Defines native-enough vs custom-field-required boundaries without selecting/installing ACF | Field inventory, plugin approval, migration evidence | Not authorized |
-| BLOCKIMPL-001–BLOCKIMPL-010 | [Blocksy Implementation Architecture](../repository/wordpress/06_BLOCKSY_ARCHITECTURE.md), Blocksy Blueprint, Design Language | Defines Blocksy shell/header/footer/archive/search/Woo/customizer ownership | Founder Design Review and theme configuration QA | Not authorized |
-| ELEMIMPL-001–ELEMIMPL-012 | [Elementor Implementation Architecture](../repository/wordpress/07_ELEMENTOR_ARCHITECTURE.md), Elementor Blueprint, Design/Content sources | Defines Elementor landing/configurator/knowledge/home/category/template/popup/loop/dynamic-tag boundaries | Content/design/SEO/performance QA | Not authorized |
-| RANKIMPL-001–RANKIMPL-012 | [Rank Math SEO Mapping Blueprint](../repository/wordpress/08_RANKMATH_MAPPING.md), SEO Entity Model and Schema Strategy | Defines future Rank Math metadata/schema/canonical/breadcrumb mapping without Offer/price | SEO/schema validation and no-price audit | Not authorized |
-| ADMINIMPL-001–ADMINIMPL-011 | [WordPress Admin Workflow Blueprint](../repository/wordpress/09_ADMIN_WORKFLOW.md), Admin Experience and User Roles | Defines Founder-friendly product/content/FAQ/SEO/menu/media/inquiry workflows | Role/capability review and Admin usability QA | Not authorized |
-| MEDIAIMPL-001–MEDIAIMPL-010 | [Media Library Architecture](../repository/wordpress/10_MEDIA_LIBRARY_ARCHITECTURE.md), Media Strategy and Image System | Defines media naming, alt, WebP, responsive image, product gallery, and rights boundaries | Media source/legal/performance/accessibility review | Not authorized |
-| IMPORTIMPL-001–IMPORTIMPL-012 | [Product Import Strategy](../repository/wordpress/11_PRODUCT_IMPORT_STRATEGY.md), Product Engine Import Template and Pipe Import Precheck | Defines manual/CSV/future ERP/supplier-feed strategy and rejection gates | Backup/precheck/staging/import QA evidence | Not authorized |
-| CONFIGIMPL-001–CONFIGIMPL-010 | [Configuration Workflow](../repository/wordpress/12_CONFIGURATION_WORKFLOW.md), Engineering Guidelines and Execution Gates | Defines future safe configuration sequence and change control | Backup/rollback/test/Founder approval | Not authorized |
-| TESTIMPL-001–TESTIMPL-012 | [WordPress Implementation Testing Strategy](../repository/wordpress/13_TESTING_STRATEGY.md), Testing Strategy and Execution Gates | Defines unit/visual/mobile/RTL/performance/SEO/accessibility/inquiry/configurator/import tests | QA evidence before release | Not authorized |
-| RUNTIMEIMPL-001–RUNTIMEIMPL-014 | [Runtime Boundaries](../repository/wordpress/14_RUNTIME_BOUNDARIES.md), Core Principles and Runtime Scope | Defines forbidden runtime actions and permanent prohibitions | Runtime gate validation | Not authorized |
-| RELEASEIMPL-001–RELEASEIMPL-012 | [WordPress Implementation Release Plan](../repository/wordpress/15_RELEASE_PLAN.md), Sprint Roadmap and Engineering Guidelines | Defines future release phases and blockers | Release evidence and Founder approval | Not authorized |
-| S08C-AUDIT | [Sprint 08C Audit](AUDIT_REPORT_SPRINT08C.md) | Records created/updated files, mapping, dependencies, risks, Founder decisions, validation, and GO/NO-GO | Founder Architecture Review | Not authorized |
+| WPIMPL-001–WPIMPL-010 | Future Reference: Enterprise WordPress Implementation Architecture — `repository/wordpress/01_WORDPRESS_ARCHITECTURE.md` (Not yet approved), WordPress Blueprint, WordPress/WooCommerce Mapping, Design/Content/Knowledge sources | Establishes WordPress as runtime adapter and maps enterprise objects to future WordPress/WooCommerce/Admin/consumer surfaces | Founder Architecture Review and runtime implementation tickets | Not authorized |
+| WCPIMPL-001–WCPIMPL-014 | Future Reference: WooCommerce Product Model Blueprint — `repository/wordpress/02_WOOCOMMERCE_PRODUCT_MODEL.md` (Not yet approved), WooCommerce Product Model, Product Repository | Defines Variable Product, variation, commercial variant, configurator, knowledge, assembly, related/accessory/cross-sell/up-sell mapping | Product data approval, WooCommerce configuration, QA | Not authorized |
+| ATTRIMPL-001–ATTRIMPL-010 | Future Reference: Attribute Strategy — `repository/wordpress/03_ATTRIBUTE_STRATEGY.md` (Not yet approved), Product Attribute Model and Attribute Dictionary | Defines global/local/variation/filter/SEO/CRM attribute strategy | Attribute/term approval and import validation | Not authorized |
+| TAXIMPL-001–TAXIMPL-012 | Future Reference: Taxonomy Strategy — `repository/wordpress/04_TAXONOMY_STRATEGY.md` (Not yet approved), Product Taxonomy Model, URL Architecture | Defines native and conditional custom taxonomy strategy | IA/SEO/taxonomy approval and term governance | Not authorized |
+| ACFIMPL-001–ACFIMPL-012 | Future Reference: ACF and Custom Field Strategy — `repository/wordpress/05_ACF_STRATEGY.md` (Not yet approved), Custom Fields Model | Defines native-enough vs custom-field-required boundaries without selecting/installing ACF | Field inventory, plugin approval, migration evidence | Not authorized |
+| BLOCKIMPL-001–BLOCKIMPL-010 | Future Reference: Blocksy Implementation Architecture — `repository/wordpress/06_BLOCKSY_ARCHITECTURE.md` (Not yet approved), Blocksy Blueprint, Design Language | Defines Blocksy shell/header/footer/archive/search/Woo/customizer ownership | Founder Design Review and theme configuration QA | Not authorized |
+| ELEMIMPL-001–ELEMIMPL-012 | Future Reference: Elementor Implementation Architecture — `repository/wordpress/07_ELEMENTOR_ARCHITECTURE.md` (Not yet approved), Elementor Blueprint, Design/Content sources | Defines Elementor landing/configurator/knowledge/home/category/template/popup/loop/dynamic-tag boundaries | Content/design/SEO/performance QA | Not authorized |
+| RANKIMPL-001–RANKIMPL-012 | Future Reference: Rank Math SEO Mapping Blueprint — `repository/wordpress/08_RANKMATH_MAPPING.md` (Not yet approved), SEO Entity Model and Schema Strategy | Defines future Rank Math metadata/schema/canonical/breadcrumb mapping without Offer/price | SEO/schema validation and no-price audit | Not authorized |
+| ADMINIMPL-001–ADMINIMPL-011 | Future Reference: WordPress Admin Workflow Blueprint — `repository/wordpress/09_ADMIN_WORKFLOW.md` (Not yet approved), Admin Experience and User Roles | Defines Founder-friendly product/content/FAQ/SEO/menu/media/inquiry workflows | Role/capability review and Admin usability QA | Not authorized |
+| MEDIAIMPL-001–MEDIAIMPL-010 | Future Reference: Media Library Architecture — `repository/wordpress/10_MEDIA_LIBRARY_ARCHITECTURE.md` (Not yet approved), Media Strategy and Image System | Defines media naming, alt, WebP, responsive image, product gallery, and rights boundaries | Media source/legal/performance/accessibility review | Not authorized |
+| IMPORTIMPL-001–IMPORTIMPL-012 | Future Reference: Product Import Strategy — `repository/wordpress/11_PRODUCT_IMPORT_STRATEGY.md` (Not yet approved), Product Engine Import Template and Pipe Import Precheck | Defines manual/CSV/future ERP/supplier-feed strategy and rejection gates | Backup/precheck/staging/import QA evidence | Not authorized |
+| CONFIGIMPL-001–CONFIGIMPL-010 | Future Reference: Configuration Workflow — `repository/wordpress/12_CONFIGURATION_WORKFLOW.md` (Not yet approved), Engineering Guidelines and Execution Gates | Defines future safe configuration sequence and change control | Backup/rollback/test/Founder approval | Not authorized |
+| TESTIMPL-001–TESTIMPL-012 | Future Reference: WordPress Implementation Testing Strategy — `repository/wordpress/13_TESTING_STRATEGY.md` (Not yet approved), Testing Strategy and Execution Gates | Defines unit/visual/mobile/RTL/performance/SEO/accessibility/inquiry/configurator/import tests | QA evidence before release | Not authorized |
+| RUNTIMEIMPL-001–RUNTIMEIMPL-014 | Future Reference: Runtime Boundaries — `repository/wordpress/14_RUNTIME_BOUNDARIES.md` (Not yet approved), Core Principles and Runtime Scope | Defines forbidden runtime actions and permanent prohibitions | Runtime gate validation | Not authorized |
+| RELEASEIMPL-001–RELEASEIMPL-012 | Future Reference: WordPress Implementation Release Plan — `repository/wordpress/15_RELEASE_PLAN.md` (Not yet approved), Sprint Roadmap and Engineering Guidelines | Defines future release phases and blockers | Release evidence and Founder approval | Not authorized |
+| S08C-AUDIT | Future Reference: Sprint 08C Audit — `docs/AUDIT_REPORT_SPRINT08C.md` (Not yet approved) | Records created/updated files, mapping, dependencies, risks, Founder decisions, validation, and GO/NO-GO | Founder Architecture Review | Not authorized |
 
 ## Sprint 08C Rule Compliance Traceability
 
 | Governing rule | WordPress implementation-blueprint effect | Canonical evidence |
 | --- | --- | --- |
-| CP-001 Plugin First | No new plugin is installed or selected; plugin capability choices remain governed | [Configuration Workflow](../repository/wordpress/12_CONFIGURATION_WORKFLOW.md), [Runtime Boundaries](../repository/wordpress/14_RUNTIME_BOUNDARIES.md) |
-| CP-002 Configuration First | Native WordPress/WooCommerce/Blocksy/Elementor/Rank Math configuration is preferred over code | [Enterprise WordPress Implementation Architecture](../repository/wordpress/01_WORDPRESS_ARCHITECTURE.md), [ACF and Custom Field Strategy](../repository/wordpress/05_ACF_STRATEGY.md) |
-| CP-003 Mobile First | Testing and Blocksy/Elementor/content mappings require mobile-first validation | [Testing Strategy](../repository/wordpress/13_TESTING_STRATEGY.md), [Blocksy Architecture](../repository/wordpress/06_BLOCKSY_ARCHITECTURE.md) |
-| CP-004 Persian RTL | Admin, content, design, testing, and attribute strategies preserve Persian RTL | [Admin Workflow](../repository/wordpress/09_ADMIN_WORKFLOW.md), [Testing Strategy](../repository/wordpress/13_TESTING_STRATEGY.md) |
-| CP-005 Inquiry First | WooCommerce/configurator/Admin flows route commercial intent to inquiry | [WooCommerce Product Model Blueprint](../repository/wordpress/02_WOOCOMMERCE_PRODUCT_MODEL.md), [Admin Workflow](../repository/wordpress/09_ADMIN_WORKFLOW.md) |
-| CP-006 No Public Pricing | Product, Rank Math, import, testing, and runtime boundaries prohibit price/cart/checkout/payment/Offer | [Rank Math SEO Mapping Blueprint](../repository/wordpress/08_RANKMATH_MAPPING.md), [Runtime Boundaries](../repository/wordpress/14_RUNTIME_BOUNDARIES.md) |
-| CP-007 No Custom Theme | Blocksy remains vendor shell; no custom/child theme is authorized | [Blocksy Architecture](../repository/wordpress/06_BLOCKSY_ARCHITECTURE.md) |
-| CP-008 No Gravity Forms | No form plugin or inquiry replacement is selected | [Runtime Boundaries](../repository/wordpress/14_RUNTIME_BOUNDARIES.md) |
-| CP-009 No LiteSpeed Cache | Performance/caching remains plugin-neutral and no LiteSpeed Cache dependency is introduced | [Blocksy Architecture](../repository/wordpress/06_BLOCKSY_ARCHITECTURE.md), [Runtime Boundaries](../repository/wordpress/14_RUNTIME_BOUNDARIES.md) |
-| CP-010 No AI Features Phase 1 | Future AI consumers are projections only; no AI generation/runtime/assistant is authorized | [Enterprise WordPress Implementation Architecture](../repository/wordpress/01_WORDPRESS_ARCHITECTURE.md), [Runtime Boundaries](../repository/wordpress/14_RUNTIME_BOUNDARIES.md) |
+| CP-001 Plugin First | No new plugin is installed or selected; plugin capability choices remain governed | Future Reference: Configuration Workflow — `repository/wordpress/12_CONFIGURATION_WORKFLOW.md` (Not yet approved), Future Reference: Runtime Boundaries — `repository/wordpress/14_RUNTIME_BOUNDARIES.md` (Not yet approved) |
+| CP-002 Configuration First | Native WordPress/WooCommerce/Blocksy/Elementor/Rank Math configuration is preferred over code | Future Reference: Enterprise WordPress Implementation Architecture — `repository/wordpress/01_WORDPRESS_ARCHITECTURE.md` (Not yet approved), Future Reference: ACF and Custom Field Strategy — `repository/wordpress/05_ACF_STRATEGY.md` (Not yet approved) |
+| CP-003 Mobile First | Testing and Blocksy/Elementor/content mappings require mobile-first validation | Future Reference: Testing Strategy — `repository/wordpress/13_TESTING_STRATEGY.md` (Not yet approved), Future Reference: Blocksy Architecture — `repository/wordpress/06_BLOCKSY_ARCHITECTURE.md` (Not yet approved) |
+| CP-004 Persian RTL | Admin, content, design, testing, and attribute strategies preserve Persian RTL | Future Reference: Admin Workflow — `repository/wordpress/09_ADMIN_WORKFLOW.md` (Not yet approved), Future Reference: Testing Strategy — `repository/wordpress/13_TESTING_STRATEGY.md` (Not yet approved) |
+| CP-005 Inquiry First | WooCommerce/configurator/Admin flows route commercial intent to inquiry | Future Reference: WooCommerce Product Model Blueprint — `repository/wordpress/02_WOOCOMMERCE_PRODUCT_MODEL.md` (Not yet approved), Future Reference: Admin Workflow — `repository/wordpress/09_ADMIN_WORKFLOW.md` (Not yet approved) |
+| CP-006 No Public Pricing | Product, Rank Math, import, testing, and runtime boundaries prohibit price/cart/checkout/payment/Offer | Future Reference: Rank Math SEO Mapping Blueprint — `repository/wordpress/08_RANKMATH_MAPPING.md` (Not yet approved), Future Reference: Runtime Boundaries — `repository/wordpress/14_RUNTIME_BOUNDARIES.md` (Not yet approved) |
+| CP-007 No Custom Theme | Blocksy remains vendor shell; no custom/child theme is authorized | Future Reference: Blocksy Architecture — `repository/wordpress/06_BLOCKSY_ARCHITECTURE.md` (Not yet approved) |
+| CP-008 No Gravity Forms | No form plugin or inquiry replacement is selected | Future Reference: Runtime Boundaries — `repository/wordpress/14_RUNTIME_BOUNDARIES.md` (Not yet approved) |
+| CP-009 No LiteSpeed Cache | Performance/caching remains plugin-neutral and no LiteSpeed Cache dependency is introduced | Future Reference: Blocksy Architecture — `repository/wordpress/06_BLOCKSY_ARCHITECTURE.md` (Not yet approved), Future Reference: Runtime Boundaries — `repository/wordpress/14_RUNTIME_BOUNDARIES.md` (Not yet approved) |
+| CP-010 No AI Features Phase 1 | Future AI consumers are projections only; no AI generation/runtime/assistant is authorized | Future Reference: Enterprise WordPress Implementation Architecture — `repository/wordpress/01_WORDPRESS_ARCHITECTURE.md` (Not yet approved), Future Reference: Runtime Boundaries — `repository/wordpress/14_RUNTIME_BOUNDARIES.md` (Not yet approved) |
 
 ## Sprint 08D.1 WordPress Environment Verification Traceability
 
 | Evidence range | Origin and authority | Repository effect | Dependent evidence | Implementation status |
 | --- | --- | --- | --- | --- |
-| S08D1-ENV | [WordPress Environment Inventory](WORDPRESS_ENVIRONMENT_INVENTORY.md), public read-only checks, Sprint 04B-A evidence | Records hosting/server/WordPress/theme/plugin/WooCommerce/Elementor/Blocksy/Rank Math/content/security/performance inventory | Future authenticated verification and hosting evidence | Not authorized |
-| S08D1-AUDIT | [WordPress Read-only Audit](WORDPRESS_READ_ONLY_AUDIT.md) | Records access limitations, architecture comparison, mismatch classification, security/performance observations, and readiness conclusion | Founder review and remediation planning | Not authorized |
-| S08D1-PLUGIN | [Plugin and Theme Compatibility Report](PLUGIN_THEME_COMPATIBILITY_REPORT.md) | Records plugin/theme inventory, overlap, conflict risk, performance impact, and approved-stack compliance | Plugin governance/remediation decision | Not authorized |
-| S08D1-HEALTH | [Site Health Blockers](SITE_HEALTH_BLOCKERS.md) | Records backup/restore, frontend, Site Health, REST, WordPress.org, SMTP, AI, no-price, schema, and other blockers | Remediation tasks with backup/rollback | Not authorized |
-| S08D1-READY | [Runtime Readiness Report](RUNTIME_READINESS_REPORT.md) | Records WordPress Readiness Score 34/100, Runtime Readiness Score 18/100, missing prerequisites, and NO-GO | Founder readiness decision | Not authorized |
-| S08D1-AUDIT-REPORT | [Sprint 08D.1 Audit](AUDIT_REPORT_SPRINT08D1.md) | Records created/updated files, facts, limitations, risks, missing prerequisites, Founder decisions, validation, and final NO-GO | Founder review | Not authorized |
+| S08D1-ENV | Future Reference: WordPress Environment Inventory — `docs/WORDPRESS_ENVIRONMENT_INVENTORY.md` (Not yet approved), public read-only checks, Sprint 04B-A evidence | Records hosting/server/WordPress/theme/plugin/WooCommerce/Elementor/Blocksy/Rank Math/content/security/performance inventory | Future authenticated verification and hosting evidence | Not authorized |
+| S08D1-AUDIT | Future Reference: WordPress Read-only Audit — `docs/WORDPRESS_READ_ONLY_AUDIT.md` (Not yet approved) | Records access limitations, architecture comparison, mismatch classification, security/performance observations, and readiness conclusion | Founder review and remediation planning | Not authorized |
+| S08D1-PLUGIN | Future Reference: Plugin and Theme Compatibility Report — `docs/PLUGIN_THEME_COMPATIBILITY_REPORT.md` (Not yet approved) | Records plugin/theme inventory, overlap, conflict risk, performance impact, and approved-stack compliance | Plugin governance/remediation decision | Not authorized |
+| S08D1-HEALTH | Future Reference: Site Health Blockers — `docs/SITE_HEALTH_BLOCKERS.md` (Not yet approved) | Records backup/restore, frontend, Site Health, REST, WordPress.org, SMTP, AI, no-price, schema, and other blockers | Remediation tasks with backup/rollback | Not authorized |
+| S08D1-READY | Future Reference: Runtime Readiness Report — `docs/RUNTIME_READINESS_REPORT.md` (Not yet approved) | Records WordPress Readiness Score 34/100, Runtime Readiness Score 18/100, missing prerequisites, and NO-GO | Founder readiness decision | Not authorized |
+| S08D1-AUDIT-REPORT | Future Reference: Sprint 08D.1 Audit — `docs/AUDIT_REPORT_SPRINT08D1.md` (Not yet approved) | Records created/updated files, facts, limitations, risks, missing prerequisites, Founder decisions, validation, and final NO-GO | Founder review | Not authorized |
 
 ## Sprint 08D.1 Rule Compliance Traceability
 
 | Governing rule | Runtime verification result | Canonical evidence |
 | --- | --- | --- |
-| CP-001 Plugin First | Plugin-heavy runtime exists but plugin ownership remains incomplete | [Plugin and Theme Compatibility Report](PLUGIN_THEME_COMPATIBILITY_REPORT.md) |
-| CP-002 Configuration First | Runtime configuration is not approved and remains unchanged by Sprint 08D.1 | [WordPress Read-only Audit](WORDPRESS_READ_ONLY_AUDIT.md) |
-| CP-003 Mobile First | Frontend/mobile verification is blocked by homepage timeout | [Runtime Readiness Report](RUNTIME_READINESS_REPORT.md) |
-| CP-004 Persian RTL | `fa_IR` and Persian WooCommerce are observed, but frontend RTL remains unverified | [WordPress Environment Inventory](WORDPRESS_ENVIRONMENT_INVENTORY.md) |
-| CP-005 Inquiry First | No implemented inquiry-first WooCommerce flow is proven | [Site Health Blockers](SITE_HEALTH_BLOCKERS.md) |
-| CP-006 No Public Pricing | No-price and no-Offer schema enforcement are not proven; price/calculator pages require review | [WordPress Read-only Audit](WORDPRESS_READ_ONLY_AUDIT.md) |
-| CP-007 No Custom Theme | Blocksy parent active; no child/custom theme observed | [Plugin and Theme Compatibility Report](PLUGIN_THEME_COMPATIBILITY_REPORT.md) |
-| CP-008 No Gravity Forms | Gravity Forms not observed in prior plugin inventory | [Plugin and Theme Compatibility Report](PLUGIN_THEME_COMPATIBILITY_REPORT.md) |
-| CP-009 No LiteSpeed Cache | LiteSpeed Cache plugin not observed; LiteSpeed server only | [Plugin and Theme Compatibility Report](PLUGIN_THEME_COMPATIBILITY_REPORT.md) |
-| CP-010 No AI Features Phase 1 | Rank Math Content AI active in prior authenticated evidence; blocker | [Site Health Blockers](SITE_HEALTH_BLOCKERS.md) |
+| CP-001 Plugin First | Plugin-heavy runtime exists but plugin ownership remains incomplete | Future Reference: Plugin and Theme Compatibility Report — `docs/PLUGIN_THEME_COMPATIBILITY_REPORT.md` (Not yet approved) |
+| CP-002 Configuration First | Runtime configuration is not approved and remains unchanged by Sprint 08D.1 | Future Reference: WordPress Read-only Audit — `docs/WORDPRESS_READ_ONLY_AUDIT.md` (Not yet approved) |
+| CP-003 Mobile First | Frontend/mobile verification is blocked by homepage timeout | Future Reference: Runtime Readiness Report — `docs/RUNTIME_READINESS_REPORT.md` (Not yet approved) |
+| CP-004 Persian RTL | `fa_IR` and Persian WooCommerce are observed, but frontend RTL remains unverified | Future Reference: WordPress Environment Inventory — `docs/WORDPRESS_ENVIRONMENT_INVENTORY.md` (Not yet approved) |
+| CP-005 Inquiry First | No implemented inquiry-first WooCommerce flow is proven | Future Reference: Site Health Blockers — `docs/SITE_HEALTH_BLOCKERS.md` (Not yet approved) |
+| CP-006 No Public Pricing | No-price and no-Offer schema enforcement are not proven; price/calculator pages require review | Future Reference: WordPress Read-only Audit — `docs/WORDPRESS_READ_ONLY_AUDIT.md` (Not yet approved) |
+| CP-007 No Custom Theme | Blocksy parent active; no child/custom theme observed | Future Reference: Plugin and Theme Compatibility Report — `docs/PLUGIN_THEME_COMPATIBILITY_REPORT.md` (Not yet approved) |
+| CP-008 No Gravity Forms | Gravity Forms not observed in prior plugin inventory | Future Reference: Plugin and Theme Compatibility Report — `docs/PLUGIN_THEME_COMPATIBILITY_REPORT.md` (Not yet approved) |
+| CP-009 No LiteSpeed Cache | LiteSpeed Cache plugin not observed; LiteSpeed server only | Future Reference: Plugin and Theme Compatibility Report — `docs/PLUGIN_THEME_COMPATIBILITY_REPORT.md` (Not yet approved) |
+| CP-010 No AI Features Phase 1 | Rank Math Content AI active in prior authenticated evidence; blocker | Future Reference: Site Health Blockers — `docs/SITE_HEALTH_BLOCKERS.md` (Not yet approved) |
 
 ## Sprint 08D.1R Runtime Blocker Remediation Planning Traceability
 
 | Evidence range | Origin and authority | Repository effect | Dependent evidence | Implementation status |
 | --- | --- | --- | --- | --- |
-| S08D1R-PLAN | [Runtime Blocker Remediation Plan](RUNTIME_BLOCKER_REMEDIATION_PLAN.md) | Converts Sprint 08D.1 blockers into P0–P8 remediation items with owner, evidence, access, verification, future write action, rollback, criteria, stop condition, and approval fields | Founder review and separately scoped future remediation tickets | Not authorized |
-| S08D1R-SEQUENCE | [Remediation Sequence and Dependencies](REMEDIATION_SEQUENCE_AND_DEPENDENCIES.md) | Defines dependency order, required access, stop conditions, risk by step, and first safe runtime action | Founder runtime approval and P0 proof | Not authorized |
-| S08D1R-BACKUP | [Backup Restore Proof Checklist](BACKUP_RESTORE_PROOF_CHECKLIST.md) | Defines backup, restore, rollback, and restoration-readiness proof gate | Future P0 backup/restore proof task | Not authorized |
-| S08D1R-FOUNDER | [Founder Runtime Approval Checklist](FOUNDER_RUNTIME_APPROVAL_CHECKLIST.md) | Defines Founder decisions for P0 through P8, access, licensed stack, SMTP, WooCommerce, and Product Foundation | Founder approval workflow | Not authorized |
-| S08D1R-AUDIT | [Sprint 08D.1R Audit](AUDIT_REPORT_SPRINT08D1R.md) | Records created/updated files, ordered blockers, minimum remediation path, required access, decisions, risk, validation, and final GO/NO-GO | Founder review | Not authorized |
+| S08D1R-PLAN | Future Reference: Runtime Blocker Remediation Plan — `docs/RUNTIME_BLOCKER_REMEDIATION_PLAN.md` (Not yet approved) | Converts Sprint 08D.1 blockers into P0–P8 remediation items with owner, evidence, access, verification, future write action, rollback, criteria, stop condition, and approval fields | Founder review and separately scoped future remediation tickets | Not authorized |
+| S08D1R-SEQUENCE | Future Reference: Remediation Sequence and Dependencies — `docs/REMEDIATION_SEQUENCE_AND_DEPENDENCIES.md` (Not yet approved) | Defines dependency order, required access, stop conditions, risk by step, and first safe runtime action | Founder runtime approval and P0 proof | Not authorized |
+| S08D1R-BACKUP | Future Reference: Backup Restore Proof Checklist — `docs/BACKUP_RESTORE_PROOF_CHECKLIST.md` (Not yet approved) | Defines backup, restore, rollback, and restoration-readiness proof gate | Future P0 backup/restore proof task | Not authorized |
+| S08D1R-FOUNDER | Future Reference: Founder Runtime Approval Checklist — `docs/FOUNDER_RUNTIME_APPROVAL_CHECKLIST.md` (Not yet approved) | Defines Founder decisions for P0 through P8, access, licensed stack, SMTP, WooCommerce, and Product Foundation | Founder approval workflow | Not authorized |
+| S08D1R-AUDIT | Future Reference: Sprint 08D.1R Audit — `docs/AUDIT_REPORT_SPRINT08D1R.md` (Not yet approved) | Records created/updated files, ordered blockers, minimum remediation path, required access, decisions, risk, validation, and final GO/NO-GO | Founder review | Not authorized |
 
 ## Sprint 08D.1R Core Rule Preservation Traceability
 
 | Governing rule | Remediation-plan preservation | Canonical evidence |
 | --- | --- | --- |
-| CP-001 Plugin First | Plugin changes remain blocked until ownership, official source, backup, and rollback are approved | [Runtime Blocker Remediation Plan](RUNTIME_BLOCKER_REMEDIATION_PLAN.md) |
-| CP-002 Configuration First | Future write actions are defined as scoped configuration tasks after proof, not code-first fixes | [Remediation Sequence and Dependencies](REMEDIATION_SEQUENCE_AND_DEPENDENCIES.md) |
-| CP-003 Mobile First | Mobile/frontend validation remains blocked until availability is restored and baseline evidence exists | [Runtime Blocker Remediation Plan](RUNTIME_BLOCKER_REMEDIATION_PLAN.md) |
-| CP-004 Persian RTL | Persian runtime evidence remains partial; future validation must preserve RTL | [Founder Runtime Approval Checklist](FOUNDER_RUNTIME_APPROVAL_CHECKLIST.md) |
-| CP-005 Inquiry First | WooCommerce baseline is blocked until inquiry-first/no-transaction rules are approved | [Runtime Blocker Remediation Plan](RUNTIME_BLOCKER_REMEDIATION_PLAN.md) |
-| CP-006 No Public Pricing | Public price and Offer schema verification are explicit blockers before WooCommerce baseline | [Runtime Blocker Remediation Plan](RUNTIME_BLOCKER_REMEDIATION_PLAN.md) |
-| CP-007 No Custom Theme | No child/custom theme action is allowed; Blocksy parent/pro source is separately gated | [Founder Runtime Approval Checklist](FOUNDER_RUNTIME_APPROVAL_CHECKLIST.md) |
-| CP-008 No Gravity Forms | Gravity Forms confirmation is read-only first; any change requires separate approval | [Founder Runtime Approval Checklist](FOUNDER_RUNTIME_APPROVAL_CHECKLIST.md) |
-| CP-009 No LiteSpeed Cache | LiteSpeed Cache plugin remains prohibited; performance planning must respect that boundary | [Founder Runtime Approval Checklist](FOUNDER_RUNTIME_APPROVAL_CHECKLIST.md) |
-| CP-010 No AI Features Phase 1 | Rank Math Content AI remediation is planned as a separate approved task after P0 proof | [Runtime Blocker Remediation Plan](RUNTIME_BLOCKER_REMEDIATION_PLAN.md) |
+| CP-001 Plugin First | Plugin changes remain blocked until ownership, official source, backup, and rollback are approved | Future Reference: Runtime Blocker Remediation Plan — `docs/RUNTIME_BLOCKER_REMEDIATION_PLAN.md` (Not yet approved) |
+| CP-002 Configuration First | Future write actions are defined as scoped configuration tasks after proof, not code-first fixes | Future Reference: Remediation Sequence and Dependencies — `docs/REMEDIATION_SEQUENCE_AND_DEPENDENCIES.md` (Not yet approved) |
+| CP-003 Mobile First | Mobile/frontend validation remains blocked until availability is restored and baseline evidence exists | Future Reference: Runtime Blocker Remediation Plan — `docs/RUNTIME_BLOCKER_REMEDIATION_PLAN.md` (Not yet approved) |
+| CP-004 Persian RTL | Persian runtime evidence remains partial; future validation must preserve RTL | Future Reference: Founder Runtime Approval Checklist — `docs/FOUNDER_RUNTIME_APPROVAL_CHECKLIST.md` (Not yet approved) |
+| CP-005 Inquiry First | WooCommerce baseline is blocked until inquiry-first/no-transaction rules are approved | Future Reference: Runtime Blocker Remediation Plan — `docs/RUNTIME_BLOCKER_REMEDIATION_PLAN.md` (Not yet approved) |
+| CP-006 No Public Pricing | Public price and Offer schema verification are explicit blockers before WooCommerce baseline | Future Reference: Runtime Blocker Remediation Plan — `docs/RUNTIME_BLOCKER_REMEDIATION_PLAN.md` (Not yet approved) |
+| CP-007 No Custom Theme | No child/custom theme action is allowed; Blocksy parent/pro source is separately gated | Future Reference: Founder Runtime Approval Checklist — `docs/FOUNDER_RUNTIME_APPROVAL_CHECKLIST.md` (Not yet approved) |
+| CP-008 No Gravity Forms | Gravity Forms confirmation is read-only first; any change requires separate approval | Future Reference: Founder Runtime Approval Checklist — `docs/FOUNDER_RUNTIME_APPROVAL_CHECKLIST.md` (Not yet approved) |
+| CP-009 No LiteSpeed Cache | LiteSpeed Cache plugin remains prohibited; performance planning must respect that boundary | Future Reference: Founder Runtime Approval Checklist — `docs/FOUNDER_RUNTIME_APPROVAL_CHECKLIST.md` (Not yet approved) |
+| CP-010 No AI Features Phase 1 | Rank Math Content AI remediation is planned as a separate approved task after P0 proof | Future Reference: Runtime Blocker Remediation Plan — `docs/RUNTIME_BLOCKER_REMEDIATION_PLAN.md` (Not yet approved) |
 
 ## Repository Freeze v1.0 Traceability
 
@@ -864,176 +864,176 @@ Core Principles + Business/Inquiry/Product/Entity/Knowledge authority
 - [Design Accessibility Rules](../repository/design/ACCESSIBILITY_RULES.md)
 - [Design Decision Records](../repository/design/DESIGN_DECISION_RECORDS.md)
 - [Sprint 05A Audit](AUDIT_REPORT_SPRINT05A.md)
-- [Knowledge Manifest](../repository/knowledge/KNOWLEDGE_MANIFEST.md)
-- [Knowledge Entity Model](../repository/knowledge/ENTITY_MODEL.md)
-- [Knowledge Ontology Model](../repository/knowledge/ONTOLOGY_MODEL.md)
-- [Knowledge Relationship Model](../repository/knowledge/RELATIONSHIP_MODEL.md)
-- [Product Knowledge Graph](../repository/knowledge/PRODUCT_KNOWLEDGE_GRAPH.md)
-- [SEO Knowledge Graph](../repository/knowledge/SEO_KNOWLEDGE_GRAPH.md)
-- [CRM Knowledge Graph](../repository/knowledge/CRM_KNOWLEDGE_GRAPH.md)
-- [AI Knowledge Readiness](../repository/knowledge/AI_KNOWLEDGE_READINESS.md)
-- [Knowledge Governance](../repository/knowledge/KNOWLEDGE_GOVERNANCE.md)
-- [Sprint 06A Audit](AUDIT_REPORT_SPRINT06A.md)
-- [Business Manifest](../repository/business/BUSINESS_MANIFEST.md)
-- [Business Entity Model](../repository/business/BUSINESS_ENTITY_MODEL.md)
-- [Customer Lifecycle](../repository/business/CUSTOMER_LIFECYCLE.md)
-- [Inquiry Engine](../repository/business/INQUIRY_ENGINE.md)
-- [Sales Pipeline](../repository/business/SALES_PIPELINE.md)
-- [Representative Model](../repository/business/REPRESENTATIVE_MODEL.md)
-- [Commission Engine](../repository/business/COMMISSION_ENGINE.md)
-- [Project Lifecycle](../repository/business/PROJECT_LIFECYCLE.md)
-- [Supplier Model](../repository/business/SUPPLIER_MODEL.md)
-- [Service Model](../repository/business/SERVICE_MODEL.md)
-- [Business Governance](../repository/business/BUSINESS_GOVERNANCE.md)
-- [Sprint 07A Audit](AUDIT_REPORT_SPRINT07A.md)
-- [Enterprise Product and Knowledge Platform Manifest](../repository/enterprise-platform/01_PLATFORM_MANIFEST.md)
-- [Product Repository Architecture](../repository/enterprise-platform/02_PRODUCT_REPOSITORY_ARCHITECTURE.md)
-- [Knowledge Repository Architecture](../repository/enterprise-platform/03_KNOWLEDGE_REPOSITORY_ARCHITECTURE.md)
-- [Product Configurator Engine](../repository/enterprise-platform/04_PRODUCT_CONFIGURATOR_ENGINE.md)
-- [Product Experience Engine](../repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md)
-- [Guided Selection Engine](../repository/enterprise-platform/06_GUIDED_SELECTION_ENGINE.md)
-- [Assembly Engine](../repository/enterprise-platform/07_ASSEMBLY_ENGINE.md)
-- [Market Intelligence Repository](../repository/enterprise-platform/08_MARKET_INTELLIGENCE_REPOSITORY.md)
-- [Customer Knowledge Repository](../repository/enterprise-platform/09_CUSTOMER_KNOWLEDGE_REPOSITORY.md)
-- [Decision Rules Engine](../repository/enterprise-platform/10_DECISION_RULES_ENGINE.md)
-- [Single Source of Truth Rules](../repository/enterprise-platform/11_SINGLE_SOURCE_OF_TRUTH_RULES.md)
-- [WordPress and WooCommerce Mapping](../repository/enterprise-platform/12_WORDPRESS_WOOCOMMERCE_MAPPING.md)
-- [Sprint 08A Implementation Roadmap](../repository/enterprise-platform/13_IMPLEMENTATION_ROADMAP.md)
-- [Sprint 08A Audit](AUDIT_REPORT_SPRINT08A.md)
-- [Damavand Visual Experience System](../repository/design/DAMAVAND_VISUAL_EXPERIENCE_SYSTEM.md)
-- [Elementor Component Guide](../repository/design/ELEMENTOR_COMPONENT_GUIDE.md)
-- [ReactBits Inspired UI Rules](../repository/design/REACTBITS_INSPIRED_UI_RULES.md)
-- [Sprint 08B Audit](AUDIT_REPORT_SPRINT08B.md)
-- [Enterprise Design Language](../repository/design/01_DESIGN_LANGUAGE.md)
-- [Design Tokens](../repository/design/02_DESIGN_TOKENS.md)
-- [Component State System](../repository/design/03_COMPONENT_STATE_SYSTEM.md)
-- [Visual Hierarchy](../repository/design/04_VISUAL_HIERARCHY.md)
-- [Spacing System](../repository/design/05_SPACING_SYSTEM.md)
-- [Grid System](../repository/design/06_GRID_SYSTEM.md)
-- [Typography System](../repository/design/07_TYPOGRAPHY_SYSTEM.md)
-- [Color System](../repository/design/08_COLOR_SYSTEM.md)
-- [Iconography System](../repository/design/09_ICONOGRAPHY_SYSTEM.md)
-- [Image System](../repository/design/10_IMAGE_SYSTEM.md)
-- [Enterprise Motion System](../repository/design/11_MOTION_SYSTEM.md)
-- [Component Naming](../repository/design/12_COMPONENT_NAMING.md)
-- [Admin Experience](../repository/design/13_ADMIN_EXPERIENCE.md)
-- [Design Versioning](../repository/design/14_VERSIONING.md)
-- [Sprint 08B.5 Audit](AUDIT_REPORT_SPRINT08B5.md)
-- [Enterprise Content Language](../repository/content/01_CONTENT_LANGUAGE.md)
-- [Product Content Standard](../repository/content/02_PRODUCT_CONTENT_STANDARD.md)
-- [Category Content Standard](../repository/content/03_CATEGORY_CONTENT_STANDARD.md)
-- [Knowledge Article Standard](../repository/content/04_KNOWLEDGE_ARTICLE_STANDARD.md)
-- [FAQ Standard](../repository/content/05_FAQ_STANDARD.md)
-- [Brand Content Standard](../repository/content/06_BRAND_CONTENT_STANDARD.md)
-- [Installation Guide Standard](../repository/content/07_INSTALLATION_GUIDE_STANDARD.md)
-- [Material Knowledge Standard](../repository/content/08_MATERIAL_KNOWLEDGE_STANDARD.md)
-- [Alloy Knowledge Standard](../repository/content/09_ALLOY_KNOWLEDGE_STANDARD.md)
-- [Content Component Library](../repository/content/10_CONTENT_COMPONENT_LIBRARY.md)
-- [Content Tone of Voice](../repository/content/11_CONTENT_TONE_OF_VOICE.md)
-- [Content Semantic Entity Model](../repository/content/12_SEMANTIC_ENTITY_MODEL.md)
-- [Content Reuse Rules](../repository/content/13_CONTENT_REUSE_RULES.md)
-- [AI Content Governance](../repository/content/14_AI_CONTENT_GOVERNANCE.md)
-- [Content Versioning](../repository/content/15_CONTENT_VERSIONING.md)
-- [Sprint 08B.6 Audit](AUDIT_REPORT_SPRINT08B6.md)
-- [Enterprise WordPress Implementation Architecture](../repository/wordpress/01_WORDPRESS_ARCHITECTURE.md)
-- [WooCommerce Product Model Blueprint](../repository/wordpress/02_WOOCOMMERCE_PRODUCT_MODEL.md)
-- [Attribute Strategy](../repository/wordpress/03_ATTRIBUTE_STRATEGY.md)
-- [Taxonomy Strategy](../repository/wordpress/04_TAXONOMY_STRATEGY.md)
-- [ACF and Custom Field Strategy](../repository/wordpress/05_ACF_STRATEGY.md)
-- [Blocksy Implementation Architecture](../repository/wordpress/06_BLOCKSY_ARCHITECTURE.md)
-- [Elementor Implementation Architecture](../repository/wordpress/07_ELEMENTOR_ARCHITECTURE.md)
-- [Rank Math SEO Mapping Blueprint](../repository/wordpress/08_RANKMATH_MAPPING.md)
-- [WordPress Admin Workflow Blueprint](../repository/wordpress/09_ADMIN_WORKFLOW.md)
-- [Media Library Architecture](../repository/wordpress/10_MEDIA_LIBRARY_ARCHITECTURE.md)
-- [Product Import Strategy](../repository/wordpress/11_PRODUCT_IMPORT_STRATEGY.md)
-- [Configuration Workflow](../repository/wordpress/12_CONFIGURATION_WORKFLOW.md)
-- [WordPress Implementation Testing Strategy](../repository/wordpress/13_TESTING_STRATEGY.md)
-- [Runtime Boundaries](../repository/wordpress/14_RUNTIME_BOUNDARIES.md)
-- [WordPress Implementation Release Plan](../repository/wordpress/15_RELEASE_PLAN.md)
-- [Sprint 08C Audit](AUDIT_REPORT_SPRINT08C.md)
-- [WordPress Environment Inventory](WORDPRESS_ENVIRONMENT_INVENTORY.md)
-- [WordPress Read-only Audit](WORDPRESS_READ_ONLY_AUDIT.md)
-- [Plugin and Theme Compatibility Report](PLUGIN_THEME_COMPATIBILITY_REPORT.md)
-- [Site Health Blockers](SITE_HEALTH_BLOCKERS.md)
-- [Runtime Readiness Report](RUNTIME_READINESS_REPORT.md)
-- [Sprint 08D.1 Audit](AUDIT_REPORT_SPRINT08D1.md)
-- [Runtime Blocker Remediation Plan](RUNTIME_BLOCKER_REMEDIATION_PLAN.md)
-- [Remediation Sequence and Dependencies](REMEDIATION_SEQUENCE_AND_DEPENDENCIES.md)
-- [Backup Restore Proof Checklist](BACKUP_RESTORE_PROOF_CHECKLIST.md)
-- [Founder Runtime Approval Checklist](FOUNDER_RUNTIME_APPROVAL_CHECKLIST.md)
-- [Sprint 08D.1R Audit](AUDIT_REPORT_SPRINT08D1R.md)
+- Future Reference: Knowledge Manifest — `repository/knowledge/KNOWLEDGE_MANIFEST.md` (Not yet approved)
+- Future Reference: Knowledge Entity Model — `repository/knowledge/ENTITY_MODEL.md` (Not yet approved)
+- Future Reference: Knowledge Ontology Model — `repository/knowledge/ONTOLOGY_MODEL.md` (Not yet approved)
+- Future Reference: Knowledge Relationship Model — `repository/knowledge/RELATIONSHIP_MODEL.md` (Not yet approved)
+- Future Reference: Product Knowledge Graph — `repository/knowledge/PRODUCT_KNOWLEDGE_GRAPH.md` (Not yet approved)
+- Future Reference: SEO Knowledge Graph — `repository/knowledge/SEO_KNOWLEDGE_GRAPH.md` (Not yet approved)
+- Future Reference: CRM Knowledge Graph — `repository/knowledge/CRM_KNOWLEDGE_GRAPH.md` (Not yet approved)
+- Future Reference: AI Knowledge Readiness — `repository/knowledge/AI_KNOWLEDGE_READINESS.md` (Not yet approved)
+- Future Reference: Knowledge Governance — `repository/knowledge/KNOWLEDGE_GOVERNANCE.md` (Not yet approved)
+- Future Reference: Sprint 06A Audit — `docs/AUDIT_REPORT_SPRINT06A.md` (Not yet approved)
+- Future Reference: Business Manifest — `repository/business/BUSINESS_MANIFEST.md` (Not yet approved)
+- Future Reference: Business Entity Model — `repository/business/BUSINESS_ENTITY_MODEL.md` (Not yet approved)
+- Future Reference: Customer Lifecycle — `repository/business/CUSTOMER_LIFECYCLE.md` (Not yet approved)
+- Future Reference: Inquiry Engine — `repository/business/INQUIRY_ENGINE.md` (Not yet approved)
+- Future Reference: Sales Pipeline — `repository/business/SALES_PIPELINE.md` (Not yet approved)
+- Future Reference: Representative Model — `repository/business/REPRESENTATIVE_MODEL.md` (Not yet approved)
+- Future Reference: Commission Engine — `repository/business/COMMISSION_ENGINE.md` (Not yet approved)
+- Future Reference: Project Lifecycle — `repository/business/PROJECT_LIFECYCLE.md` (Not yet approved)
+- Future Reference: Supplier Model — `repository/business/SUPPLIER_MODEL.md` (Not yet approved)
+- Future Reference: Service Model — `repository/business/SERVICE_MODEL.md` (Not yet approved)
+- Future Reference: Business Governance — `repository/business/BUSINESS_GOVERNANCE.md` (Not yet approved)
+- Future Reference: Sprint 07A Audit — `docs/AUDIT_REPORT_SPRINT07A.md` (Not yet approved)
+- Future Reference: Enterprise Product and Knowledge Platform Manifest — `repository/enterprise-platform/01_PLATFORM_MANIFEST.md` (Not yet approved)
+- Future Reference: Product Repository Architecture — `repository/enterprise-platform/02_PRODUCT_REPOSITORY_ARCHITECTURE.md` (Not yet approved)
+- Future Reference: Knowledge Repository Architecture — `repository/enterprise-platform/03_KNOWLEDGE_REPOSITORY_ARCHITECTURE.md` (Not yet approved)
+- Future Reference: Product Configurator Engine — `repository/enterprise-platform/04_PRODUCT_CONFIGURATOR_ENGINE.md` (Not yet approved)
+- Future Reference: Product Experience Engine — `repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md` (Not yet approved)
+- Future Reference: Guided Selection Engine — `repository/enterprise-platform/06_GUIDED_SELECTION_ENGINE.md` (Not yet approved)
+- Future Reference: Assembly Engine — `repository/enterprise-platform/07_ASSEMBLY_ENGINE.md` (Not yet approved)
+- Future Reference: Market Intelligence Repository — `repository/enterprise-platform/08_MARKET_INTELLIGENCE_REPOSITORY.md` (Not yet approved)
+- Future Reference: Customer Knowledge Repository — `repository/enterprise-platform/09_CUSTOMER_KNOWLEDGE_REPOSITORY.md` (Not yet approved)
+- Future Reference: Decision Rules Engine — `repository/enterprise-platform/10_DECISION_RULES_ENGINE.md` (Not yet approved)
+- Future Reference: Single Source of Truth Rules — `repository/enterprise-platform/11_SINGLE_SOURCE_OF_TRUTH_RULES.md` (Not yet approved)
+- Future Reference: WordPress and WooCommerce Mapping — `repository/enterprise-platform/12_WORDPRESS_WOOCOMMERCE_MAPPING.md` (Not yet approved)
+- Future Reference: Sprint 08A Implementation Roadmap — `repository/enterprise-platform/13_IMPLEMENTATION_ROADMAP.md` (Not yet approved)
+- Future Reference: Sprint 08A Audit — `docs/AUDIT_REPORT_SPRINT08A.md` (Not yet approved)
+- Future Reference: Damavand Visual Experience System — `repository/design/DAMAVAND_VISUAL_EXPERIENCE_SYSTEM.md` (Not yet approved)
+- Future Reference: Elementor Component Guide — `repository/design/ELEMENTOR_COMPONENT_GUIDE.md` (Not yet approved)
+- Future Reference: ReactBits Inspired UI Rules — `repository/design/REACTBITS_INSPIRED_UI_RULES.md` (Not yet approved)
+- Future Reference: Sprint 08B Audit — `docs/AUDIT_REPORT_SPRINT08B.md` (Not yet approved)
+- Future Reference: Enterprise Design Language — `repository/design/01_DESIGN_LANGUAGE.md` (Not yet approved)
+- Future Reference: Design Tokens — `repository/design/02_DESIGN_TOKENS.md` (Not yet approved)
+- Future Reference: Component State System — `repository/design/03_COMPONENT_STATE_SYSTEM.md` (Not yet approved)
+- Future Reference: Visual Hierarchy — `repository/design/04_VISUAL_HIERARCHY.md` (Not yet approved)
+- Future Reference: Spacing System — `repository/design/05_SPACING_SYSTEM.md` (Not yet approved)
+- Future Reference: Grid System — `repository/design/06_GRID_SYSTEM.md` (Not yet approved)
+- Future Reference: Typography System — `repository/design/07_TYPOGRAPHY_SYSTEM.md` (Not yet approved)
+- Future Reference: Color System — `repository/design/08_COLOR_SYSTEM.md` (Not yet approved)
+- Future Reference: Iconography System — `repository/design/09_ICONOGRAPHY_SYSTEM.md` (Not yet approved)
+- Future Reference: Image System — `repository/design/10_IMAGE_SYSTEM.md` (Not yet approved)
+- Future Reference: Enterprise Motion System — `repository/design/11_MOTION_SYSTEM.md` (Not yet approved)
+- Future Reference: Component Naming — `repository/design/12_COMPONENT_NAMING.md` (Not yet approved)
+- Future Reference: Admin Experience — `repository/design/13_ADMIN_EXPERIENCE.md` (Not yet approved)
+- Future Reference: Design Versioning — `repository/design/14_VERSIONING.md` (Not yet approved)
+- Future Reference: Sprint 08B.5 Audit — `docs/AUDIT_REPORT_SPRINT08B5.md` (Not yet approved)
+- Future Reference: Enterprise Content Language — `repository/content/01_CONTENT_LANGUAGE.md` (Not yet approved)
+- Future Reference: Product Content Standard — `repository/content/02_PRODUCT_CONTENT_STANDARD.md` (Not yet approved)
+- Future Reference: Category Content Standard — `repository/content/03_CATEGORY_CONTENT_STANDARD.md` (Not yet approved)
+- Future Reference: Knowledge Article Standard — `repository/content/04_KNOWLEDGE_ARTICLE_STANDARD.md` (Not yet approved)
+- Future Reference: FAQ Standard — `repository/content/05_FAQ_STANDARD.md` (Not yet approved)
+- Future Reference: Brand Content Standard — `repository/content/06_BRAND_CONTENT_STANDARD.md` (Not yet approved)
+- Future Reference: Installation Guide Standard — `repository/content/07_INSTALLATION_GUIDE_STANDARD.md` (Not yet approved)
+- Future Reference: Material Knowledge Standard — `repository/content/08_MATERIAL_KNOWLEDGE_STANDARD.md` (Not yet approved)
+- Future Reference: Alloy Knowledge Standard — `repository/content/09_ALLOY_KNOWLEDGE_STANDARD.md` (Not yet approved)
+- Future Reference: Content Component Library — `repository/content/10_CONTENT_COMPONENT_LIBRARY.md` (Not yet approved)
+- Future Reference: Content Tone of Voice — `repository/content/11_CONTENT_TONE_OF_VOICE.md` (Not yet approved)
+- Future Reference: Content Semantic Entity Model — `repository/content/12_SEMANTIC_ENTITY_MODEL.md` (Not yet approved)
+- Future Reference: Content Reuse Rules — `repository/content/13_CONTENT_REUSE_RULES.md` (Not yet approved)
+- Future Reference: AI Content Governance — `repository/content/14_AI_CONTENT_GOVERNANCE.md` (Not yet approved)
+- Future Reference: Content Versioning — `repository/content/15_CONTENT_VERSIONING.md` (Not yet approved)
+- Future Reference: Sprint 08B.6 Audit — `docs/AUDIT_REPORT_SPRINT08B6.md` (Not yet approved)
+- Future Reference: Enterprise WordPress Implementation Architecture — `repository/wordpress/01_WORDPRESS_ARCHITECTURE.md` (Not yet approved)
+- Future Reference: WooCommerce Product Model Blueprint — `repository/wordpress/02_WOOCOMMERCE_PRODUCT_MODEL.md` (Not yet approved)
+- Future Reference: Attribute Strategy — `repository/wordpress/03_ATTRIBUTE_STRATEGY.md` (Not yet approved)
+- Future Reference: Taxonomy Strategy — `repository/wordpress/04_TAXONOMY_STRATEGY.md` (Not yet approved)
+- Future Reference: ACF and Custom Field Strategy — `repository/wordpress/05_ACF_STRATEGY.md` (Not yet approved)
+- Future Reference: Blocksy Implementation Architecture — `repository/wordpress/06_BLOCKSY_ARCHITECTURE.md` (Not yet approved)
+- Future Reference: Elementor Implementation Architecture — `repository/wordpress/07_ELEMENTOR_ARCHITECTURE.md` (Not yet approved)
+- Future Reference: Rank Math SEO Mapping Blueprint — `repository/wordpress/08_RANKMATH_MAPPING.md` (Not yet approved)
+- Future Reference: WordPress Admin Workflow Blueprint — `repository/wordpress/09_ADMIN_WORKFLOW.md` (Not yet approved)
+- Future Reference: Media Library Architecture — `repository/wordpress/10_MEDIA_LIBRARY_ARCHITECTURE.md` (Not yet approved)
+- Future Reference: Product Import Strategy — `repository/wordpress/11_PRODUCT_IMPORT_STRATEGY.md` (Not yet approved)
+- Future Reference: Configuration Workflow — `repository/wordpress/12_CONFIGURATION_WORKFLOW.md` (Not yet approved)
+- Future Reference: WordPress Implementation Testing Strategy — `repository/wordpress/13_TESTING_STRATEGY.md` (Not yet approved)
+- Future Reference: Runtime Boundaries — `repository/wordpress/14_RUNTIME_BOUNDARIES.md` (Not yet approved)
+- Future Reference: WordPress Implementation Release Plan — `repository/wordpress/15_RELEASE_PLAN.md` (Not yet approved)
+- Future Reference: Sprint 08C Audit — `docs/AUDIT_REPORT_SPRINT08C.md` (Not yet approved)
+- Future Reference: WordPress Environment Inventory — `docs/WORDPRESS_ENVIRONMENT_INVENTORY.md` (Not yet approved)
+- Future Reference: WordPress Read-only Audit — `docs/WORDPRESS_READ_ONLY_AUDIT.md` (Not yet approved)
+- Future Reference: Plugin and Theme Compatibility Report — `docs/PLUGIN_THEME_COMPATIBILITY_REPORT.md` (Not yet approved)
+- Future Reference: Site Health Blockers — `docs/SITE_HEALTH_BLOCKERS.md` (Not yet approved)
+- Future Reference: Runtime Readiness Report — `docs/RUNTIME_READINESS_REPORT.md` (Not yet approved)
+- Future Reference: Sprint 08D.1 Audit — `docs/AUDIT_REPORT_SPRINT08D1.md` (Not yet approved)
+- Future Reference: Runtime Blocker Remediation Plan — `docs/RUNTIME_BLOCKER_REMEDIATION_PLAN.md` (Not yet approved)
+- Future Reference: Remediation Sequence and Dependencies — `docs/REMEDIATION_SEQUENCE_AND_DEPENDENCIES.md` (Not yet approved)
+- Future Reference: Backup Restore Proof Checklist — `docs/BACKUP_RESTORE_PROOF_CHECKLIST.md` (Not yet approved)
+- Future Reference: Founder Runtime Approval Checklist — `docs/FOUNDER_RUNTIME_APPROVAL_CHECKLIST.md` (Not yet approved)
+- Future Reference: Sprint 08D.1R Audit — `docs/AUDIT_REPORT_SPRINT08D1R.md` (Not yet approved)
 
 ## Sprint 09A Product Foundation Asset Traceability
 
 | Trace ID | Asset | Origin and authority | Dependent evidence | Implementation status |
 | --- | --- | --- | --- | --- |
-| S09A-TAXONOMY | [Master Product Taxonomy v1](../repository/implementation-assets/product-foundation/01_MASTER_PRODUCT_TAXONOMY_V1.yaml) | Product Repository Architecture, Product Engine, Product Taxonomy Model, Pipe Category Model, Founder Sprint 09A scope | Founder taxonomy review, slug review, family/series approval, duplicate-ownership validation | Not authorized |
-| S09A-ATTRIBUTES | [Global Attribute Library v1](../repository/implementation-assets/product-foundation/02_GLOBAL_ATTRIBUTE_LIBRARY_V1.yaml) | Product Attribute Model, Attribute Dictionary, Pipe Attribute Model, Founder Sprint 09A scope | Founder/domain review, value-library approval, WooCommerce attribute review, Admin manageability review | Not authorized |
-| S09A-PIPE | [Pipe Family Template v1](../repository/implementation-assets/product-foundation/03_PIPE_FAMILY_TEMPLATE_V1.yaml) | Pipe Product Family, Pipe Variation Matrix, Pipe WooCommerce Mapping, Pipe Attribute Model | Valid-combination approval, commercial availability review, final SKU review, import precheck | Not authorized |
-| S09A-PROFILE | [Profile Family Template v1](../repository/implementation-assets/product-foundation/04_PROFILE_FAMILY_TEMPLATE_V1.yaml) | Founder Sprint 09A scope; Product Engine notes Profile facts as not generated/TBD | Founder/domain approval for subfamilies, dimensions, colors, origins, brands, optional fields, and public labels | Not authorized |
-| S09A-SKU | [Variant and SKU Rules v1](../repository/implementation-assets/product-foundation/05_VARIANT_AND_SKU_RULES_V1.md) | Product Repository Architecture SKU boundary, Product Engine, WooCommerce Product Model, no-public-pricing rules | Founder approval of compact SKU vocabulary, final ID policy, uniqueness validation, bulk-generation gate | Not authorized |
-| S09A-KNOWLEDGE | [Product Knowledge Mapping v1](../repository/implementation-assets/product-foundation/06_PRODUCT_KNOWLEDGE_MAPPING_V1.yaml) | Knowledge Repository Architecture, Product Knowledge Graph, SEO Knowledge Graph, CRM Knowledge Graph | Knowledge source approval, public/protected boundary review, content/source review | Not authorized |
-| S09A-FOUNDER | [Founder Decision Register v1](../repository/implementation-assets/product-foundation/07_FOUNDER_DECISION_REGISTER_V1.md) | Founder approval model and Sprint 09A unresolved inputs | Founder decisions FD-09A-001 through FD-09A-012 and non-blocking/deferred decision review | Not authorized |
-| S09A-WCMAP | [Pipe/Profile WooCommerce Mapping v1](../repository/implementation-assets/import-preparation/PIPE_PROFILE_WOOCOMMERCE_MAPPING_V1.csv) | WordPress Product Import Strategy, WooCommerce Product Model Blueprint, Attribute Strategy, Taxonomy Strategy | CSV mapping review, runtime ID mapping, staging evidence, backup/restore proof | Not authorized |
-| S09A-ATTRSEED | [Pipe/Profile Attribute Seed v1](../repository/implementation-assets/import-preparation/PIPE_PROFILE_ATTRIBUTE_SEED_V1.csv) | Global Attribute Library v1, Pipe/Profile templates, Product Attribute Model | Value approval, import-ready flag review, no-price validation, WooCommerce global attribute review | Not authorized |
-| S09A-VALIDATION | [Pipe/Profile Validation Rules v1](../repository/implementation-assets/import-preparation/PIPE_PROFILE_VALIDATION_RULES_V1.md) | Product Data Validation Rules, Pipe Import Precheck, Variant and SKU Rules v1 | YAML/CSV/static validation evidence, Founder review, future dry-run approval | Not authorized |
-| S09A-AUDIT | [Sprint 09A Audit](AUDIT_REPORT_SPRINT09A.md) | Current Sprint 09A repository state | Static validation results and Founder review recommendation | Not authorized |
+| S09A-TAXONOMY | Future Reference: Master Product Taxonomy v1 — `repository/implementation-assets/product-foundation/01_MASTER_PRODUCT_TAXONOMY_V1.yaml` (Not yet approved) | Product Repository Architecture, Product Engine, Product Taxonomy Model, Pipe Category Model, Founder Sprint 09A scope | Founder taxonomy review, slug review, family/series approval, duplicate-ownership validation | Not authorized |
+| S09A-ATTRIBUTES | Future Reference: Global Attribute Library v1 — `repository/implementation-assets/product-foundation/02_GLOBAL_ATTRIBUTE_LIBRARY_V1.yaml` (Not yet approved) | Product Attribute Model, Attribute Dictionary, Pipe Attribute Model, Founder Sprint 09A scope | Founder/domain review, value-library approval, WooCommerce attribute review, Admin manageability review | Not authorized |
+| S09A-PIPE | Future Reference: Pipe Family Template v1 — `repository/implementation-assets/product-foundation/03_PIPE_FAMILY_TEMPLATE_V1.yaml` (Not yet approved) | Pipe Product Family, Pipe Variation Matrix, Pipe WooCommerce Mapping, Pipe Attribute Model | Valid-combination approval, commercial availability review, final SKU review, import precheck | Not authorized |
+| S09A-PROFILE | Future Reference: Profile Family Template v1 — `repository/implementation-assets/product-foundation/04_PROFILE_FAMILY_TEMPLATE_V1.yaml` (Not yet approved) | Founder Sprint 09A scope; Product Engine notes Profile facts as not generated/TBD | Founder/domain approval for subfamilies, dimensions, colors, origins, brands, optional fields, and public labels | Not authorized |
+| S09A-SKU | Future Reference: Variant and SKU Rules v1 — `repository/implementation-assets/product-foundation/05_VARIANT_AND_SKU_RULES_V1.md` (Not yet approved) | Product Repository Architecture SKU boundary, Product Engine, WooCommerce Product Model, no-public-pricing rules | Founder approval of compact SKU vocabulary, final ID policy, uniqueness validation, bulk-generation gate | Not authorized |
+| S09A-KNOWLEDGE | Future Reference: Product Knowledge Mapping v1 — `repository/implementation-assets/product-foundation/06_PRODUCT_KNOWLEDGE_MAPPING_V1.yaml` (Not yet approved) | Knowledge Repository Architecture, Product Knowledge Graph, SEO Knowledge Graph, CRM Knowledge Graph | Knowledge source approval, public/protected boundary review, content/source review | Not authorized |
+| S09A-FOUNDER | Future Reference: Founder Decision Register v1 — `repository/implementation-assets/product-foundation/07_FOUNDER_DECISION_REGISTER_V1.md` (Not yet approved) | Founder approval model and Sprint 09A unresolved inputs | Founder decisions FD-09A-001 through FD-09A-012 and non-blocking/deferred decision review | Not authorized |
+| S09A-WCMAP | Future Reference: Pipe/Profile WooCommerce Mapping v1 — `repository/implementation-assets/import-preparation/PIPE_PROFILE_WOOCOMMERCE_MAPPING_V1.csv` (Not yet approved) | WordPress Product Import Strategy, WooCommerce Product Model Blueprint, Attribute Strategy, Taxonomy Strategy | CSV mapping review, runtime ID mapping, staging evidence, backup/restore proof | Not authorized |
+| S09A-ATTRSEED | Future Reference: Pipe/Profile Attribute Seed v1 — `repository/implementation-assets/import-preparation/PIPE_PROFILE_ATTRIBUTE_SEED_V1.csv` (Not yet approved) | Global Attribute Library v1, Pipe/Profile templates, Product Attribute Model | Value approval, import-ready flag review, no-price validation, WooCommerce global attribute review | Not authorized |
+| S09A-VALIDATION | Future Reference: Pipe/Profile Validation Rules v1 — `repository/implementation-assets/import-preparation/PIPE_PROFILE_VALIDATION_RULES_V1.md` (Not yet approved) | Product Data Validation Rules, Pipe Import Precheck, Variant and SKU Rules v1 | YAML/CSV/static validation evidence, Founder review, future dry-run approval | Not authorized |
+| S09A-AUDIT | Future Reference: Sprint 09A Audit — `docs/AUDIT_REPORT_SPRINT09A.md` (Not yet approved) | Current Sprint 09A repository state | Static validation results and Founder review recommendation | Not authorized |
 
 ## Sprint 09A Rule Compliance Traceability
 
 | Governing rule | Product Foundation effect | Canonical evidence |
 | --- | --- | --- |
-| CP-001 Plugin First | Assets prepare future WooCommerce-compatible data only; no plugin selection or installation occurs | [Pipe/Profile WooCommerce Mapping v1](../repository/implementation-assets/import-preparation/PIPE_PROFILE_WOOCOMMERCE_MAPPING_V1.csv) |
-| CP-002 Configuration First | Assets favor Admin-manageable categories, global attributes, CSV review, and validation before any custom work | [Global Attribute Library v1](../repository/implementation-assets/product-foundation/02_GLOBAL_ATTRIBUTE_LIBRARY_V1.yaml) |
-| CP-003 Mobile First | Product Foundation preserves compact, filterable, reviewable attributes for later mobile UX validation | [Variant and SKU Rules v1](../repository/implementation-assets/product-foundation/05_VARIANT_AND_SKU_RULES_V1.md) |
-| CP-004 Persian RTL | Persian labels are included for taxonomy, attributes, Pipe/Profile families, and decision registers | [Master Product Taxonomy v1](../repository/implementation-assets/product-foundation/01_MASTER_PRODUCT_TAXONOMY_V1.yaml) |
-| CP-005 Inquiry First | Assets require inquiry-only behavior and do not create transactional product flows | [Pipe Family Template v1](../repository/implementation-assets/product-foundation/03_PIPE_FAMILY_TEMPLATE_V1.yaml) |
-| CP-006 No Public Pricing | CSV headers contain no price/Offer/cart/checkout/payment columns; protected pricing/cost concepts are internal-only and non-import columns | [Pipe/Profile Validation Rules v1](../repository/implementation-assets/import-preparation/PIPE_PROFILE_VALIDATION_RULES_V1.md) |
-| CP-007 No Custom Theme | Assets create no theme, template, or presentation files | [Sprint 09A Audit](AUDIT_REPORT_SPRINT09A.md) |
-| CP-008 No Gravity Forms | Assets create no form plugin dependency or inquiry plugin selection | [Sprint 09A Audit](AUDIT_REPORT_SPRINT09A.md) |
-| CP-009 No LiteSpeed Cache | Assets create no cache plugin, cache configuration, or LiteSpeed Cache dependency | [Sprint 09A Audit](AUDIT_REPORT_SPRINT09A.md) |
-| CP-010 No AI Features Phase 1 | Knowledge mapping is reference-only and creates no AI feature, runtime, retrieval, or recommendation system | [Product Knowledge Mapping v1](../repository/implementation-assets/product-foundation/06_PRODUCT_KNOWLEDGE_MAPPING_V1.yaml) |
-| WP-FC-004 Variable Parent Product | Pipe/Profile templates preserve future Variable Parent Product mapping and block unapproved combinations | [Pipe Family Template v1](../repository/implementation-assets/product-foundation/03_PIPE_FAMILY_TEMPLATE_V1.yaml), [Profile Family Template v1](../repository/implementation-assets/product-foundation/04_PROFILE_FAMILY_TEMPLATE_V1.yaml) |
-| WP-FC-005 Founder Admin Manageability | Unresolved values are visible as `STATUS: FOUNDER_INPUT_REQUIRED`; import-ready flags remain false until review | [Founder Decision Register v1](../repository/implementation-assets/product-foundation/07_FOUNDER_DECISION_REGISTER_V1.md) |
+| CP-001 Plugin First | Assets prepare future WooCommerce-compatible data only; no plugin selection or installation occurs | Future Reference: Pipe/Profile WooCommerce Mapping v1 — `repository/implementation-assets/import-preparation/PIPE_PROFILE_WOOCOMMERCE_MAPPING_V1.csv` (Not yet approved) |
+| CP-002 Configuration First | Assets favor Admin-manageable categories, global attributes, CSV review, and validation before any custom work | Future Reference: Global Attribute Library v1 — `repository/implementation-assets/product-foundation/02_GLOBAL_ATTRIBUTE_LIBRARY_V1.yaml` (Not yet approved) |
+| CP-003 Mobile First | Product Foundation preserves compact, filterable, reviewable attributes for later mobile UX validation | Future Reference: Variant and SKU Rules v1 — `repository/implementation-assets/product-foundation/05_VARIANT_AND_SKU_RULES_V1.md` (Not yet approved) |
+| CP-004 Persian RTL | Persian labels are included for taxonomy, attributes, Pipe/Profile families, and decision registers | Future Reference: Master Product Taxonomy v1 — `repository/implementation-assets/product-foundation/01_MASTER_PRODUCT_TAXONOMY_V1.yaml` (Not yet approved) |
+| CP-005 Inquiry First | Assets require inquiry-only behavior and do not create transactional product flows | Future Reference: Pipe Family Template v1 — `repository/implementation-assets/product-foundation/03_PIPE_FAMILY_TEMPLATE_V1.yaml` (Not yet approved) |
+| CP-006 No Public Pricing | CSV headers contain no price/Offer/cart/checkout/payment columns; protected pricing/cost concepts are internal-only and non-import columns | Future Reference: Pipe/Profile Validation Rules v1 — `repository/implementation-assets/import-preparation/PIPE_PROFILE_VALIDATION_RULES_V1.md` (Not yet approved) |
+| CP-007 No Custom Theme | Assets create no theme, template, or presentation files | Future Reference: Sprint 09A Audit — `docs/AUDIT_REPORT_SPRINT09A.md` (Not yet approved) |
+| CP-008 No Gravity Forms | Assets create no form plugin dependency or inquiry plugin selection | Future Reference: Sprint 09A Audit — `docs/AUDIT_REPORT_SPRINT09A.md` (Not yet approved) |
+| CP-009 No LiteSpeed Cache | Assets create no cache plugin, cache configuration, or LiteSpeed Cache dependency | Future Reference: Sprint 09A Audit — `docs/AUDIT_REPORT_SPRINT09A.md` (Not yet approved) |
+| CP-010 No AI Features Phase 1 | Knowledge mapping is reference-only and creates no AI feature, runtime, retrieval, or recommendation system | Future Reference: Product Knowledge Mapping v1 — `repository/implementation-assets/product-foundation/06_PRODUCT_KNOWLEDGE_MAPPING_V1.yaml` (Not yet approved) |
+| WP-FC-004 Variable Parent Product | Pipe/Profile templates preserve future Variable Parent Product mapping and block unapproved combinations | Future Reference: Pipe Family Template v1 — `repository/implementation-assets/product-foundation/03_PIPE_FAMILY_TEMPLATE_V1.yaml` (Not yet approved), Future Reference: Profile Family Template v1 — `repository/implementation-assets/product-foundation/04_PROFILE_FAMILY_TEMPLATE_V1.yaml` (Not yet approved) |
+| WP-FC-005 Founder Admin Manageability | Unresolved values are visible as `STATUS: FOUNDER_INPUT_REQUIRED`; import-ready flags remain false until review | Future Reference: Founder Decision Register v1 — `repository/implementation-assets/product-foundation/07_FOUNDER_DECISION_REGISTER_V1.md` (Not yet approved) |
 
 ## Sprint 09B Product DNA System Traceability
 
 | Trace ID | Asset | Origin and authority | Dependent evidence | Implementation status |
 | --- | --- | --- | --- | --- |
-| S09B-DNA | [Master Product DNA](../repository/implementation-assets/product-dna/01_MASTER_PRODUCT_DNA.md) | Product Repository Architecture, Product Experience Engine, WordPress/WooCommerce Mapping, Product Content Standard, Sprint 09A assets | Founder Product DNA Review and reusable-block approval | Not authorized |
-| S09B-INFO | [Product Information Model](../repository/implementation-assets/product-dna/02_PRODUCT_INFORMATION_MODEL.yaml) | Product Data ownership, Content Standard, Global Attribute Library | Owner review and field ownership validation | Not authorized |
-| S09B-COMP | [Product Component Library](../repository/implementation-assets/product-dna/03_PRODUCT_COMPONENT_LIBRARY.yaml) | Content Component Library, Design Component Pattern Library, Product Experience Engine | Component overlap/accessibility/mobile/RTL review | Not authorized |
-| S09B-KBLOCK | [Product Knowledge Block Library](../repository/implementation-assets/product-dna/04_PRODUCT_KNOWLEDGE_BLOCK_LIBRARY.yaml) | Knowledge Repository Architecture, Content standards, Product Knowledge Mapping | Knowledge source and public eligibility review | Not authorized |
-| S09B-ASSEMBLY | [Product Page Assembly Engine](../repository/implementation-assets/product-dna/05_PRODUCT_PAGE_ASSEMBLY_ENGINE.yaml) | Product Experience Engine, Product Component Library, Product Content Standard | Founder page-block review and future design/SEO review | Not authorized |
-| S09B-CONFIG | [Product Configurator UI Model](../repository/implementation-assets/product-dna/06_PRODUCT_CONFIGURATOR_UI_MODEL.yaml) | Product Configurator Engine, Variant/SKU Rules, Global Attribute Library | Valid combination, conditional visibility, and inquiry-context review | Not authorized |
-| S09B-MEDIA | [Product Media Model](../repository/implementation-assets/product-dna/07_PRODUCT_MEDIA_MODEL.yaml) | Media Library Architecture, Image System, Content Component Library | Media rights/source/alt/performance review | Not authorized |
-| S09B-SEO | [Product SEO Model](../repository/implementation-assets/product-dna/08_PRODUCT_SEO_MODEL.yaml) | Rank Math Mapping, SEO Entity Model, URL Architecture | Canonical, heading, link, and no-price SEO review | Not authorized |
-| S09B-SCHEMA | [Product Schema Model](../repository/implementation-assets/product-dna/09_PRODUCT_SCHEMA_MODEL.yaml) | Schema.org Strategy, Rank Math Mapping | Product/FAQ/Breadcrumb/Article schema eligibility review without Offer/price | Not authorized |
-| S09B-REL | [Product Relation Model](../repository/implementation-assets/product-dna/10_PRODUCT_RELATION_MODEL.yaml) | Product Repository, Knowledge Repository, Assembly Engine, Product Knowledge Mapping | Relationship source, compatibility, related-product, and CRM review | Not authorized |
-| S09B-LIFE | [Product Lifecycle Model](../repository/implementation-assets/product-dna/11_PRODUCT_LIFECYCLE_MODEL.md) | Product DNA, Product Repository, Import Strategy | Lifecycle approval and revision-history review | Not authorized |
-| S09B-VALID | [Product Validation Rules](../repository/implementation-assets/product-dna/12_PRODUCT_VALIDATION_RULES.md) | Product DNA, Sprint 09A validation rules, Runtime Boundaries | Static validation, rejection-condition, and Founder review evidence | Not authorized |
-| S09B-EXT | [Product Extensibility Model](../repository/implementation-assets/product-dna/13_PRODUCT_EXTENSIBILITY_MODEL.md) | Platform Evolution, Product Engine, Product Repository | Future-family extension review and backward compatibility evidence | Not authorized |
-| S09B-ADMIN | [Product Admin Model](../repository/implementation-assets/product-dna/14_PRODUCT_ADMIN_MODEL.md) | Admin Experience, WordPress Admin Workflow, Product Information Model | Founder-friendly Admin ownership and validation-cue review | Not authorized |
-| S09B-PIPE | [Product DNA Example Pipe](../repository/implementation-assets/product-dna/15_PRODUCT_DNA_EXAMPLE_PIPE.yaml) | Sprint 09A Pipe Family Template and Pipe evidence | Founder/domain review; valid combinations and public projection still blocked | Not authorized |
-| S09B-PROFILE | [Product DNA Example Profile](../repository/implementation-assets/product-dna/16_PRODUCT_DNA_EXAMPLE_PROFILE.yaml) | Sprint 09A Profile Family Template and Profile structure | Founder/domain review; Profile facts still Founder-input-required | Not authorized |
-| S09B-AUDIT | [Sprint 09B Audit](AUDIT_REPORT_SPRINT09B.md) | Current Sprint 09B repository state | Static validation results and Founder Product DNA Review recommendation | Not authorized |
+| S09B-DNA | Future Reference: Master Product DNA — `repository/implementation-assets/product-dna/01_MASTER_PRODUCT_DNA.md` (Not yet approved) | Product Repository Architecture, Product Experience Engine, WordPress/WooCommerce Mapping, Product Content Standard, Sprint 09A assets | Founder Product DNA Review and reusable-block approval | Not authorized |
+| S09B-INFO | Future Reference: Product Information Model — `repository/implementation-assets/product-dna/02_PRODUCT_INFORMATION_MODEL.yaml` (Not yet approved) | Product Data ownership, Content Standard, Global Attribute Library | Owner review and field ownership validation | Not authorized |
+| S09B-COMP | Future Reference: Product Component Library — `repository/implementation-assets/product-dna/03_PRODUCT_COMPONENT_LIBRARY.yaml` (Not yet approved) | Content Component Library, Design Component Pattern Library, Product Experience Engine | Component overlap/accessibility/mobile/RTL review | Not authorized |
+| S09B-KBLOCK | Future Reference: Product Knowledge Block Library — `repository/implementation-assets/product-dna/04_PRODUCT_KNOWLEDGE_BLOCK_LIBRARY.yaml` (Not yet approved) | Knowledge Repository Architecture, Content standards, Product Knowledge Mapping | Knowledge source and public eligibility review | Not authorized |
+| S09B-ASSEMBLY | Future Reference: Product Page Assembly Engine — `repository/implementation-assets/product-dna/05_PRODUCT_PAGE_ASSEMBLY_ENGINE.yaml` (Not yet approved) | Product Experience Engine, Product Component Library, Product Content Standard | Founder page-block review and future design/SEO review | Not authorized |
+| S09B-CONFIG | Future Reference: Product Configurator UI Model — `repository/implementation-assets/product-dna/06_PRODUCT_CONFIGURATOR_UI_MODEL.yaml` (Not yet approved) | Product Configurator Engine, Variant/SKU Rules, Global Attribute Library | Valid combination, conditional visibility, and inquiry-context review | Not authorized |
+| S09B-MEDIA | Future Reference: Product Media Model — `repository/implementation-assets/product-dna/07_PRODUCT_MEDIA_MODEL.yaml` (Not yet approved) | Media Library Architecture, Image System, Content Component Library | Media rights/source/alt/performance review | Not authorized |
+| S09B-SEO | Future Reference: Product SEO Model — `repository/implementation-assets/product-dna/08_PRODUCT_SEO_MODEL.yaml` (Not yet approved) | Rank Math Mapping, SEO Entity Model, URL Architecture | Canonical, heading, link, and no-price SEO review | Not authorized |
+| S09B-SCHEMA | Future Reference: Product Schema Model — `repository/implementation-assets/product-dna/09_PRODUCT_SCHEMA_MODEL.yaml` (Not yet approved) | Schema.org Strategy, Rank Math Mapping | Product/FAQ/Breadcrumb/Article schema eligibility review without Offer/price | Not authorized |
+| S09B-REL | Future Reference: Product Relation Model — `repository/implementation-assets/product-dna/10_PRODUCT_RELATION_MODEL.yaml` (Not yet approved) | Product Repository, Knowledge Repository, Assembly Engine, Product Knowledge Mapping | Relationship source, compatibility, related-product, and CRM review | Not authorized |
+| S09B-LIFE | Future Reference: Product Lifecycle Model — `repository/implementation-assets/product-dna/11_PRODUCT_LIFECYCLE_MODEL.md` (Not yet approved) | Product DNA, Product Repository, Import Strategy | Lifecycle approval and revision-history review | Not authorized |
+| S09B-VALID | Future Reference: Product Validation Rules — `repository/implementation-assets/product-dna/12_PRODUCT_VALIDATION_RULES.md` (Not yet approved) | Product DNA, Sprint 09A validation rules, Runtime Boundaries | Static validation, rejection-condition, and Founder review evidence | Not authorized |
+| S09B-EXT | Future Reference: Product Extensibility Model — `repository/implementation-assets/product-dna/13_PRODUCT_EXTENSIBILITY_MODEL.md` (Not yet approved) | Platform Evolution, Product Engine, Product Repository | Future-family extension review and backward compatibility evidence | Not authorized |
+| S09B-ADMIN | Future Reference: Product Admin Model — `repository/implementation-assets/product-dna/14_PRODUCT_ADMIN_MODEL.md` (Not yet approved) | Admin Experience, WordPress Admin Workflow, Product Information Model | Founder-friendly Admin ownership and validation-cue review | Not authorized |
+| S09B-PIPE | Future Reference: Product DNA Example Pipe — `repository/implementation-assets/product-dna/15_PRODUCT_DNA_EXAMPLE_PIPE.yaml` (Not yet approved) | Sprint 09A Pipe Family Template and Pipe evidence | Founder/domain review; valid combinations and public projection still blocked | Not authorized |
+| S09B-PROFILE | Future Reference: Product DNA Example Profile — `repository/implementation-assets/product-dna/16_PRODUCT_DNA_EXAMPLE_PROFILE.yaml` (Not yet approved) | Sprint 09A Profile Family Template and Profile structure | Founder/domain review; Profile facts still Founder-input-required | Not authorized |
+| S09B-AUDIT | Future Reference: Sprint 09B Audit — `docs/AUDIT_REPORT_SPRINT09B.md` (Not yet approved) | Current Sprint 09B repository state | Static validation results and Founder Product DNA Review recommendation | Not authorized |
 
 ## Sprint 09B Rule Compliance Traceability
 
 | Governing rule | Product DNA effect | Canonical evidence |
 | --- | --- | --- |
-| CP-001 Plugin First | DNA defines data/block contracts only; no plugin or custom development is selected | [Master Product DNA](../repository/implementation-assets/product-dna/01_MASTER_PRODUCT_DNA.md) |
-| CP-002 Configuration First | DNA separates source data, Admin ownership, validation, and future adapter mapping before runtime | [Product Information Model](../repository/implementation-assets/product-dna/02_PRODUCT_INFORMATION_MODEL.yaml), [Product Admin Model](../repository/implementation-assets/product-dna/14_PRODUCT_ADMIN_MODEL.md) |
-| CP-003 Mobile First | Assembly and configurator models define mobile-first order and progressive selection | [Product Page Assembly Engine](../repository/implementation-assets/product-dna/05_PRODUCT_PAGE_ASSEMBLY_ENGINE.yaml), [Product Configurator UI Model](../repository/implementation-assets/product-dna/06_PRODUCT_CONFIGURATOR_UI_MODEL.yaml) |
-| CP-004 Persian RTL | Component/Admin/DNA contracts require Persian RTL and Persian-first labels where public | [Product Component Library](../repository/implementation-assets/product-dna/03_PRODUCT_COMPONENT_LIBRARY.yaml), [Product Admin Model](../repository/implementation-assets/product-dna/14_PRODUCT_ADMIN_MODEL.md) |
-| CP-005 Inquiry First | Configurator and component contracts terminate in inquiry context, not transaction output | [Product Configurator UI Model](../repository/implementation-assets/product-dna/06_PRODUCT_CONFIGURATOR_UI_MODEL.yaml) |
-| CP-006 No Public Pricing | DNA, SEO, Schema, Configurator, and Validation models explicitly block price/Offer/cart/checkout/payment | [Product Schema Model](../repository/implementation-assets/product-dna/09_PRODUCT_SCHEMA_MODEL.yaml), [Product Validation Rules](../repository/implementation-assets/product-dna/12_PRODUCT_VALIDATION_RULES.md) |
-| CP-007 No Custom Theme | DNA creates no theme, template, CSS, JavaScript, or runtime UI | [Sprint 09B Audit](AUDIT_REPORT_SPRINT09B.md) |
-| CP-008 No Gravity Forms | DNA creates no form plugin dependency or inquiry plugin decision | [Sprint 09B Audit](AUDIT_REPORT_SPRINT09B.md) |
-| CP-009 No LiteSpeed Cache | DNA creates no cache or performance plugin dependency | [Sprint 09B Audit](AUDIT_REPORT_SPRINT09B.md) |
-| CP-010 No AI Features Phase 1 | Future AI placeholders are readiness-only and create no AI runtime, retrieval, recommendation, or generation | [Master Product DNA](../repository/implementation-assets/product-dna/01_MASTER_PRODUCT_DNA.md), [Product Knowledge Block Library](../repository/implementation-assets/product-dna/04_PRODUCT_KNOWLEDGE_BLOCK_LIBRARY.yaml) |
-| WP-FC-004 Variable Parent Product | DNA is designed for future WooCommerce Variable Parent Products; simple exceptions require separate approval | [Master Product DNA](../repository/implementation-assets/product-dna/01_MASTER_PRODUCT_DNA.md) |
-| WP-FC-005 Founder Admin Manageability | DNA defines owner/editor/reviewer boundaries and Founder-friendly validation cues | [Product Admin Model](../repository/implementation-assets/product-dna/14_PRODUCT_ADMIN_MODEL.md) |
+| CP-001 Plugin First | DNA defines data/block contracts only; no plugin or custom development is selected | Future Reference: Master Product DNA — `repository/implementation-assets/product-dna/01_MASTER_PRODUCT_DNA.md` (Not yet approved) |
+| CP-002 Configuration First | DNA separates source data, Admin ownership, validation, and future adapter mapping before runtime | Future Reference: Product Information Model — `repository/implementation-assets/product-dna/02_PRODUCT_INFORMATION_MODEL.yaml` (Not yet approved), Future Reference: Product Admin Model — `repository/implementation-assets/product-dna/14_PRODUCT_ADMIN_MODEL.md` (Not yet approved) |
+| CP-003 Mobile First | Assembly and configurator models define mobile-first order and progressive selection | Future Reference: Product Page Assembly Engine — `repository/implementation-assets/product-dna/05_PRODUCT_PAGE_ASSEMBLY_ENGINE.yaml` (Not yet approved), Future Reference: Product Configurator UI Model — `repository/implementation-assets/product-dna/06_PRODUCT_CONFIGURATOR_UI_MODEL.yaml` (Not yet approved) |
+| CP-004 Persian RTL | Component/Admin/DNA contracts require Persian RTL and Persian-first labels where public | Future Reference: Product Component Library — `repository/implementation-assets/product-dna/03_PRODUCT_COMPONENT_LIBRARY.yaml` (Not yet approved), Future Reference: Product Admin Model — `repository/implementation-assets/product-dna/14_PRODUCT_ADMIN_MODEL.md` (Not yet approved) |
+| CP-005 Inquiry First | Configurator and component contracts terminate in inquiry context, not transaction output | Future Reference: Product Configurator UI Model — `repository/implementation-assets/product-dna/06_PRODUCT_CONFIGURATOR_UI_MODEL.yaml` (Not yet approved) |
+| CP-006 No Public Pricing | DNA, SEO, Schema, Configurator, and Validation models explicitly block price/Offer/cart/checkout/payment | Future Reference: Product Schema Model — `repository/implementation-assets/product-dna/09_PRODUCT_SCHEMA_MODEL.yaml` (Not yet approved), Future Reference: Product Validation Rules — `repository/implementation-assets/product-dna/12_PRODUCT_VALIDATION_RULES.md` (Not yet approved) |
+| CP-007 No Custom Theme | DNA creates no theme, template, CSS, JavaScript, or runtime UI | Future Reference: Sprint 09B Audit — `docs/AUDIT_REPORT_SPRINT09B.md` (Not yet approved) |
+| CP-008 No Gravity Forms | DNA creates no form plugin dependency or inquiry plugin decision | Future Reference: Sprint 09B Audit — `docs/AUDIT_REPORT_SPRINT09B.md` (Not yet approved) |
+| CP-009 No LiteSpeed Cache | DNA creates no cache or performance plugin dependency | Future Reference: Sprint 09B Audit — `docs/AUDIT_REPORT_SPRINT09B.md` (Not yet approved) |
+| CP-010 No AI Features Phase 1 | Future AI placeholders are readiness-only and create no AI runtime, retrieval, recommendation, or generation | Future Reference: Master Product DNA — `repository/implementation-assets/product-dna/01_MASTER_PRODUCT_DNA.md` (Not yet approved), Future Reference: Product Knowledge Block Library — `repository/implementation-assets/product-dna/04_PRODUCT_KNOWLEDGE_BLOCK_LIBRARY.yaml` (Not yet approved) |
+| WP-FC-004 Variable Parent Product | DNA is designed for future WooCommerce Variable Parent Products; simple exceptions require separate approval | Future Reference: Master Product DNA — `repository/implementation-assets/product-dna/01_MASTER_PRODUCT_DNA.md` (Not yet approved) |
+| WP-FC-005 Founder Admin Manageability | DNA defines owner/editor/reviewer boundaries and Founder-friendly validation cues | Future Reference: Product Admin Model — `repository/implementation-assets/product-dna/14_PRODUCT_ADMIN_MODEL.md` (Not yet approved) |
 
 ## GIT-02S Governance Reconciliation Traceability
 
@@ -1042,11 +1042,11 @@ Core Principles + Business/Inquiry/Product/Entity/Knowledge authority
 | GIT02S-BASE | [Project Baseline](PROJECT_BASELINE.md) | Accepted governance, FD-PILOT-001, Current Project State, Sprint 12A evidence | Concise first-read current-state entry point | Not authorized |
 | GIT02S-REL | [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md) | Explicit GIT-02S Founder repository dispositions | Repository A canonical; Repository B `QUARANTINED_ARCHITECTURE_RESEARCH` | Merge/implementation not authorized |
 | GIT02S-PILOT | [FD-PILOT-001](17_FOUNDER_DECISION_LOG.md#settled-golden-pipe-pilot-decision) | Explicit Founder directive plus existing Golden and Master Data evidence | Golden Parent and exactly three pilot combinations registered; references are not final SKUs | Import/runtime/publishing not authorized |
-| GIT02S-PIPE | [Pipe Combination Register](../repository/master-data/pipes/03_PIPE_VALID_COMBINATIONS.csv) | FD-PILOT-001 and Sprint 11 evidence | 3 `APPROVED`; 879 `CANDIDATE_UNVERIFIED`; availability missing for all 882 | Not import-ready |
+| GIT02S-PIPE | Future Reference: Pipe Combination Register — `repository/master-data/pipes/03_PIPE_VALID_COMBINATIONS.csv` (Not yet approved) | FD-PILOT-001 and Sprint 11 evidence | 3 `APPROVED`; 879 `CANDIDATE_UNVERIFIED`; availability missing for all 882 | Not import-ready |
 | GIT02S-STATE | [Current Project State](CURRENT_PROJECT_STATE.md), [Roadmap](PROJECT_EXECUTION_ROADMAP.md), and [Codex Instructions](../AGENTS.md) | Sprint 12A and GIT-02S Founder directive | Last completed sprint and next-action drift reconciled | No active implementation sprint |
 | GIT02S-NAV | [Documentation Index](08_DOCUMENTATION_INDEX.md), [Navigation Map](09_NAVIGATION_MAP.md), [Reading Order](READING_ORDER.md), and [Knowledge Graph](KNOWLEDGE_GRAPH.md) | Current files and authority boundaries | Sprint 09C–12A and Git reconciliation evidence made discoverable | Navigation only |
 | GIT02S-CLASS | [Git File Classification](GIT_FILE_CLASSIFICATION.csv) | Dated 2026-07-14 Repository A inventory | One historical disposition row per GIT-02S snapshot item | Snapshot only; not current Git state or authority |
-| GIT02S-AUDIT | [GIT-02S Audit](AUDIT_REPORT_GIT02S.md) | GIT-02S changes and static validation | Evidence-only reconciliation record | Not governing authority |
+| GIT02S-AUDIT | Future Reference: GIT-02S Audit — `docs/AUDIT_REPORT_GIT02S.md` (Not yet approved) | GIT-02S changes and static validation | Evidence-only reconciliation record | Not governing authority |
 
 Historically, the GIT-02S Founder directive permitted documentation reconciliation only. It did not pass an Execution Gate or authorize Git staging, commit, tag, push, merge, WordPress, runtime, import, product creation, deployment, or publishing. `FD-GIT-W1-001` later supersedes only the Git staging/commit/branch-push/Draft-PR boundary for its exact 19-path scope.
 
