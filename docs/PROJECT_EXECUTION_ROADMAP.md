@@ -2,29 +2,30 @@
 
 ## Current Reconciliation State
 
-**Last completed product/runtime sprint:** Sprint 12A. **Last completed repository integration:** Class B Wave 1 Governance. **Active implementation sprint:** None. GIT-02S and the 2026-07-19 Wave 1 authorization remain historical governance evidence. The current authorized activity is documentation-only post-merge baseline reconciliation. Wave 2 has not started and remains unauthorized. Repository B remains isolated `QUARANTINED_ARCHITECTURE_RESEARCH`.
+**Last completed product/runtime evidence sprint:** Sprint 12A. **Last completed repository integration:** Post-merge Governance Reconciliation through PR #3. **Active implementation sprint:** None. GIT-02S and the 2026-07-19 Wave 1 authorization remain historical governance evidence. Wave 1 and read-only Wave 2 discovery are complete. The current authorized activity is documentation-only Wave 2 pre-implementation governance reconciliation. Wave 2A is proposed, not authorized, and not started. Repository B remains isolated `QUARANTINED_ARCHITECTURE_RESEARCH`.
 
 ## Repository Integration Track
 
-- Canonical `main` and the verified shared baseline resolve to `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`.
+- Canonical/default `main` and the verified shared baseline resolve to `d702c5217f7caa2f23e56f965f3f993967e3c17d`; `origin/HEAD` resolves to `origin/main`.
 - Bootstrap PR #1 is complete and merged through `530a4c46cc47bd02b794cfac1ef24eef56918e75`.
 - Wave 1 Governance PR #2 is complete and merged through `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`; Wave 1 is complete.
+- Post-merge Governance Reconciliation PR #3 is complete and merged through `d702c5217f7caa2f23e56f965f3f993967e3c17d`.
 - The historical Wave 1 branch/commit/push/Draft-PR scope did not authorize merge and remains preserved as chronology. Its later approved merge granted no Wave 2, runtime, or implementation authority.
-- Wave 2 and the remaining Class B integration waves have not started and require separate Founder approval.
+- Wave 2 discovery is complete. Wave 2 implementation has not started; Wave 2A requires separate Founder authorization after this documentation PR is reviewed and merged.
 - Workflows remain inactive. No runtime, WordPress or Product Repository implementation, publication, deployment, or production mutation has occurred.
-- GitHub's default branch remains `codex/bootstrap-atlas-foundation`; changing it to the intended `main` default is deferred to a separately approved repository-settings sprint.
+- `main` is the GitHub default branch and is protected with administrator enforcement, strict required check `repository-validation`, force-push disabled, and deletion disabled.
 
 ## Phase 1 — Architecture
 
-**Status:** ARTIFACT COVERAGE COMPLETE; GOVERNING APPROVAL / IMPLEMENTATION READINESS NOT GRANTED
+**Status:** ARCHITECTURE/PROPOSAL COVERAGE EXISTS; GOVERNING APPROVAL / IMPLEMENTATION READINESS NOT GRANTED
 
 ## Phase 2 — Governance, Design and Content Systems
 
-**Status:** ARTIFACT COVERAGE COMPLETE / READY FOR FOUNDER APPROVAL
+**Status:** PROPOSAL COVERAGE EXISTS / FOUNDER REVIEW REMAINS REQUIRED
 
 ## Phase 3 — Implementation Assets
 
-**Status:** SUBSTANTIALLY COMPLETE
+**Status:** NOT IMPLEMENTATION READY — machine-readable Product/Knowledge core contracts are absent
 
 ## Phase 4 — Master Data Reconciliation
 
@@ -42,9 +43,9 @@ Remaining exit evidence: final slug/SKU policy where applicable, media and right
 
 ## Phase 6 — Pilot Import Asset Package
 
-**Status:** REPOSITORY ASSET PACKAGE CREATED; IMPORT READINESS AND EXECUTION BLOCKED
+**Status:** HISTORICAL PACKAGE CLAIM ONLY; CANONICAL MACHINE-READABLE PACKAGE ABSENT; IMPORT BLOCKED
 
-Sprint 11 created a Golden repository package for one Parent Product and three approved variations. It is `PILOT_ASSET_READY` / `FOUNDER_REVIEW_READY`, not Import Ready, Runtime Ready, or Publishing Ready. No production import.
+Sprint 11 historically reported a Golden package for one Parent Product and three approved variations, but that referenced package is absent from canonical `main`. Current approval exists through Founder decisions and governing prose only. No production import occurred; Import, Runtime, and Publishing remain `NO-GO`.
 
 ## Phase 7 — Import Dry Run
 
@@ -86,4 +87,4 @@ Sequence: Pipe → Profile → approved Fittings families → remaining approved
 
 ## Do Not Yet
 
-No merge of the post-merge reconciliation PR, Wave 2 or later, repository-settings change, workflow activation, bulk import, full-catalog or 882-variation generation, WordPress implementation, Product Repository implementation, production publishing, deployment, live prices, payment/cart/checkout, Phase 1 AI, speculative Fittings data, or Central Steel runtime.
+No autonomous merge of the Wave 2 pre-implementation reconciliation PR, Wave 2A implementation, repository-settings change, workflow activation, bulk import, full-catalog or 882-variation generation, WordPress implementation, Product/Knowledge Repository implementation, production publishing, deployment, live prices, payment/cart/checkout, Phase 1 AI, speculative Fittings data, or Central Steel runtime. The next action is Founder review and merge decision for the documentation PR, followed by a separate Wave 2A authorization decision.

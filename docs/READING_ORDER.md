@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.3.0
+- **Version:** 0.4.0
 - **Last Updated:** 2026-07-20
-- **Last Review:** 2026-07-19
+- **Last Review:** 2026-07-20
 - **Review Cycle:** On navigation or authority change; periodic cadence pending Founder approval
 - **Lifecycle:** Review
 - **Source of Truth:** [Documentation Index](08_DOCUMENTATION_INDEX.md) and [Navigation Map](09_NAVIGATION_MAP.md)
@@ -41,7 +41,7 @@ Every reader starts with:
 
 Readers then follow the applicable role path.
 
-For the current post-merge governance reconciliation, readers must review the repository-control state in [Project Baseline](PROJECT_BASELINE.md), the completed Wave 1 traceability section in [Traceability Matrix](TRACEABILITY_MATRIX.md), and [Open Questions](18_OPEN_QUESTIONS.md) for the default-branch remediation item. [FD-GIT-W1-001](17_FOUNDER_DECISION_LOG.md#settled-class-b-wave-1-repository-control-decision) and GIT-02S remain historical evidence. PR #1 and PR #2 are merged, Wave 1 is complete, and Wave 2, runtime, workflows, WordPress, Product Repository implementation, publication, deployment, production, and repository-settings changes remain outside the current authorization.
+For the current Wave 2 pre-implementation governance reconciliation, readers must review [Project Baseline](PROJECT_BASELINE.md), the Wave 2 governance section in [Traceability Matrix](TRACEABILITY_MATRIX.md), `FD-W2G-001` through `FD-W2G-004` in the [Founder Decision Log](17_FOUNDER_DECISION_LOG.md#settled-wave-2-pre-implementation-governance-decisions), [Product Data Model](19_PRODUCT_DATA_MODEL.md), and [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md). [FD-GIT-W1-001](17_FOUNDER_DECISION_LOG.md#settled-class-b-wave-1-repository-control-decision) and GIT-02S remain historical evidence. PR #1–#3 are merged, default `main` and protection are established, and Wave 2 discovery is complete. Wave 2A implementation, runtime, workflows, WordPress, Product/Knowledge implementation, publication, deployment, production, and repository-settings changes remain outside the current authorization.
 
 ## Founder Reading Path
 
@@ -84,7 +84,7 @@ No implementation begins until the relevant Draft dependencies and Founder decis
 10. [Git Governance](GIT_GOVERNANCE.md) for repository mutations.
 11. Latest applicable audit record.
 
-For current work after Sprint 09B, continue through Future Reference: Sprint 09C Audit — `docs/AUDIT_REPORT_SPRINT09C.md` (Not yet approved), Future Reference: Sprint 09D Audit — `docs/AUDIT_REPORT_SPRINT09D.md` (Not yet approved), Future Reference: Sprint 09E Audit — `docs/AUDIT_REPORT_SPRINT09E.md` (Not yet approved), Future Reference: Sprint 10R Audit — `docs/AUDIT_REPORT_SPRINT10R.md` (Not yet approved), Future Reference: Sprint 11 Audit — `docs/AUDIT_REPORT_SPRINT11.md` (Not yet approved), Future Reference: Golden Product Runtime Preflight — `docs/GOLDEN_PRODUCT_RUNTIME_PREFLIGHT.md` (Not yet approved), Future Reference: Sprint 12A Audit — `docs/AUDIT_REPORT_SPRINT12A.md` (Not yet approved), and Future Reference: GIT-02S Audit — `docs/AUDIT_REPORT_GIT02S.md` (Not yet approved) as evidence only. For current Git reconciliation, read [FD-GIT-W1-001](17_FOUNDER_DECISION_LOG.md#settled-class-b-wave-1-repository-control-decision), [Current Project State](CURRENT_PROJECT_STATE.md), and [Git Baseline Approval Checklist](GIT_BASELINE_APPROVAL_CHECKLIST.md); treat the [Git File Classification](GIT_FILE_CLASSIFICATION.csv) state column as a dated snapshot. Also retain Future Reference: Git Baseline Audit — `docs/GIT_BASELINE_AUDIT.md` (Not yet approved), Future Reference: Git Baseline Commit Report — `docs/GIT_BASELINE_COMMIT_REPORT.md` (Not yet approved), Future Reference: Git EOF Normalization Report — `docs/GIT_EOF_NORMALIZATION_REPORT.md` (Not yet approved), and Future Reference: Repository Freeze Report — `docs/REPOSITORY_FREEZE_REPORT.md` (Not yet approved) as historical evidence.
+For current work after Sprint 09B, treat the listed future Sprint 09C–12A, Golden, GIT-02S, Git baseline, and Repository Freeze references as historical evidence only; many referenced files are absent from canonical `main` and do not establish present asset readiness. For current governance, read `FD-W2G-001` through `FD-W2G-004`, [Current Project State](CURRENT_PROJECT_STATE.md), [Implementation Readiness](IMPLEMENTATION_READINESS.md), and [Git Baseline Approval Checklist](GIT_BASELINE_APPROVAL_CHECKLIST.md). Treat [Git File Classification](GIT_FILE_CLASSIFICATION.csv) as a dated snapshot, not current Git state or implementation authority.
 
 An AI must verify current files and must not rely on a previous handoff or chat summary as authority.
 

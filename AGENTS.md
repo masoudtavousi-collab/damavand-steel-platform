@@ -31,12 +31,29 @@ Use exactly:
 Catalog → Platform → Family → Series → Variant Rules → SKU
 ```
 
+This is the canonical repository hierarchy. Catalog, Platform, Family, Series, and Variant Rules are canonical repository concepts. SKU is derived only after governed product modeling. Product Family, Product Group, Product Type, Variable Parent Product, Parent Product, and Variation may be retained only as legacy, commerce-adapter, or presentation mappings; they do not replace the canonical hierarchy. Labels, slugs, WooCommerce IDs, Parent IDs, Variation IDs, and SKUs are not canonical entity identities.
+
 - **PRIMARY:** material, alloy, size, thickness, length.
 - **SECONDARY:** color, finish, appearance.
 - **COMMERCIAL:** brand, origin, packaging, supply status.
 - **OPERATIONAL / INTERNAL:** weight, cost, margin, calculation, internal pricing inputs, shipping inputs.
 
-A Variable Parent Product represents a product family or coherent commercial product. Do not create isolated products for every theoretical attribute combination. A Cartesian product never proves commercial availability. Valid variations require evidence or explicit Founder approval.
+A Variable Parent Product may represent a Family or coherent commercial presentation in a downstream commerce adapter. It is not the canonical repository owner. Do not create isolated products for every theoretical attribute combination. A Cartesian product never proves commercial availability. Valid variations require evidence or explicit Founder approval.
+
+Canonical repository path ownership is:
+
+- `repository/data/contracts/`: machine-readable contracts.
+- `repository/data/schemas/`: schemas.
+- `repository/data/registries/`: controlled vocabularies and identifier registries.
+- `repository/data/validation/`: domain validators.
+- `repository/data/master-data/`: governed Product Master Data.
+- `repository/data/golden-reference/`: Golden reference packages.
+- `repository/knowledge/`: canonical Knowledge Repository assets.
+- `repository/content/`: governed reusable content assets.
+- `repository/implementation-assets/`: derived implementation and adapter assets.
+- `repository/wordpress/`: WordPress/WooCommerce adapters only.
+
+Path approval does not create a directory or authorize implementation. WordPress, WooCommerce, import assets, adapters, page builders, and runtime systems may consume canonical repository data but may never own canonical Product or Knowledge truth.
 
 ## 5. Status Vocabulary
 
@@ -67,23 +84,26 @@ Founder-approved product data outranks competitor data. Competitor data may info
 
 ## 7. Current Project Phase
 
-- Architecture and governance asset coverage: **substantially complete**; governing approval and implementation readiness remain pending where source documents are Draft/Review.
-- Implementation assets: **substantially complete**.
-- Master Data: **in reconciliation / Founder review**.
-- Last completed sprint: **Sprint 12A**.
+- Architecture and governance proposal coverage exists; governing approval remains lifecycle- and scope-gated.
+- Product Repository machine-readable core contracts do not exist and the Product Repository is `NOT_IMPLEMENTATION_READY`.
+- Knowledge architecture proposals exist, but machine-readable Knowledge contracts and content instances do not; the Knowledge Repository is `NOT_IMPLEMENTATION_READY`.
+- No canonical machine-readable Master Data or Golden reference package currently exists on `main`.
+- Last completed product/runtime evidence sprint: **Sprint 12A**.
+- Wave 1, post-merge reconciliation, default-branch correction, main protection, and the read-only Wave 2 kickoff discovery are complete.
+- Wave 2 implementation has not started. Wave 2A is proposed and not authorized.
 
 Current evidence:
 
 - 3 Pipe combinations are `APPROVED` for the limited Golden Product pilot; 879 remain `CANDIDATE_UNVERIFIED`; market availability is `MISSING_DATA_VALUE` for all 882.
 - 18 Founder-approved Fittings family names are recovered; Fittings are `PARTIALLY_MODELED`.
-- Pipe Configurator is `READY_FOR_FOUNDER_REVIEW`; Profile and Glass are `BLOCKED_BY_MISSING_DATA`; Pool is `DEFERRED`.
-- Knowledge Cards and Page Builder contracts are ready, while final content is missing.
-- The Golden Product package is `PILOT_ASSET_READY` / `FOUNDER_REVIEW_READY`, not Import Ready, Runtime Ready, or Publishing Ready. Its three `GOLD-PIPE-*` identifiers are pilot references, not final commercial SKUs.
+- Existing Product Engine and Platform documents are design inputs, not implemented contracts. No final Product identifier registry, SKU vocabulary, or Product-domain executable test exists.
+- `repository/knowledge/` is the approved future Knowledge location; it does not yet exist. Knowledge implementation depends on stable shared Product identities, and Phase 1 AI remains prohibited.
+- The Golden Parent and exactly three combinations are approved through Founder decisions and governing prose. No canonical machine-readable Golden package exists on `main`; the `GOLD-PIPE-*` identifiers are pilot references, not final commercial SKUs.
 - `/Users/masoudtavousi/Desktop/damavand-enterprise-repository` is `QUARANTINED_ARCHITECTURE_RESEARCH`: isolated, unapproved, non-authoritative, not merge-ready, and not implementation-ready.
 - Quality Score: 82/100.
 - Runtime, import, publishing, and bulk SKU generation: **NO-GO**.
 
-Approved immediate next action: **Founder reconciliation review, evidence completion, and preparation for a future governed Git/documentation baseline review only**. No implementation sprint is active. Always begin with [Project Baseline](docs/PROJECT_BASELINE.md) and confirm current detail in [Current Project State](docs/CURRENT_PROJECT_STATE.md).
+Approved immediate next action: **Founder review and merge decision for the Wave 2 pre-implementation documentation reconciliation Draft PR, followed by a separate Founder authorization decision for Wave 2A**. No implementation sprint is active. Always begin with [Project Baseline](docs/PROJECT_BASELINE.md) and confirm current detail in [Current Project State](docs/CURRENT_PROJECT_STATE.md).
 
 ## 8. Sprint Execution Protocol
 
@@ -133,7 +153,7 @@ Runtime requires explicit Founder approval, confirmed target environment, verifi
 - [Codex Sprint Protocol](docs/CODEX_SPRINT_PROTOCOL.md)
 - [Source of Truth Priority](docs/SOURCE_OF_TRUTH_PRIORITY.md)
 
-Consult only relevant assets under `repository/enterprise-platform/`, `design/`, `content/`, `wordpress/`, `implementation-assets/`, `master-data/`, `configurator/`, `knowledge-cards/`, and `page-builder/`.
+Consult only relevant existing assets and approved canonical paths. Do not infer that a referenced future path exists. Product and Knowledge work must follow the ownership model in Section 4; derived WordPress, content, and implementation assets remain downstream consumers.
 
 ## 13. Conflict Resolution
 

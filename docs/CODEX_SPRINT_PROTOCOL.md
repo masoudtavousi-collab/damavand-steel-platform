@@ -1,10 +1,10 @@
 # Codex Sprint Protocol
 
-## Current Post-Merge Reconciliation Boundary
+## Current Wave 2 Pre-Implementation Reconciliation Boundary
 
-Bootstrap PR #1 and Wave 1 Governance PR #2 are merged. Canonical `main` is verified at `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`, and Wave 1 is complete. Historically, the 2026-07-19 Founder authorization permitted the exact Wave 1 branch/commit/push/Draft-PR sequence while merge remained prohibited; that chronology must remain intact.
+Bootstrap PR #1, Wave 1 Governance PR #2, and Post-merge Governance Reconciliation PR #3 are merged. Canonical/default `main` is verified at `d702c5217f7caa2f23e56f965f3f993967e3c17d`; main protection and required `repository-validation` are active. Wave 1 and the read-only Wave 2 discovery are complete. Historically, the 2026-07-19 Founder authorization permitted the exact Wave 1 branch/commit/push/Draft-PR sequence while merge remained prohibited; that chronology must remain intact.
 
-The current Founder authorization permits documentation-only post-merge baseline reconciliation on `codex/post-merge-governance-reconciliation`, one commit, push of only that branch, and one Draft PR against `main`. Wave 2 has not started and remains unauthorized. Merge of the reconciliation PR, workflow execution or activation, runtime, WordPress, Product Repository implementation, publication, deployment, production mutation, repository-setting changes, and default-branch changes remain `NO-GO`.
+The current Founder authorization permits documentation-only Wave 2 pre-implementation reconciliation on `codex/wave-2-preimplementation-reconciliation`, one commit, push of only that branch, and one Draft PR against `main`. Wave 2A is proposed but not authorized or started. The approved next action is Founder review and merge decision for this documentation PR, followed by a separate Wave 2A authorization decision. Autonomous merge, workflow execution or activation, runtime, WordPress, Product/Knowledge Repository implementation, publication, deployment, production mutation, and repository-setting changes remain `NO-GO`.
 
 ## Standard Prompt Structure
 

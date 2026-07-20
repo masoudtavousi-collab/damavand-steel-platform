@@ -8,12 +8,12 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.2.0
+- **Version:** 0.3.0
 - **Last Updated:** 2026-07-20
-- **Last Review:** 2026-07-19
+- **Last Review:** 2026-07-20
 - **Review Cycle:** On repository creation, disposition, authority, ownership, namespace, lifecycle, merge, or promotion proposal
 - **Lifecycle:** Review
-- **Source of Truth:** Explicit Founder decisions in the GIT-02S directive dated 2026-07-14, the Class B Wave 1 authorization dated 2026-07-19, verified PR #1 and PR #2 merge state, the Founder-approved post-merge reconciliation dated 2026-07-20, and Repository A governance
+- **Source of Truth:** Explicit Founder decisions in the GIT-02S directive dated 2026-07-14, the Class B Wave 1 authorization dated 2026-07-19, verified PR #1–#3 merge state, Founder-approved current Git governance, the Wave 2 pre-implementation decisions dated 2026-07-20, and Repository A governance
 - **Dependencies:** [Project Baseline](PROJECT_BASELINE.md), [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md), and [Project Constitution](01_PROJECT_CONSTITUTION.md)
 - **Related Documents:** [Git Governance](GIT_GOVERNANCE.md), [AI Collaboration Standard](AI_COLLABORATION.md), and `GIT-02S Audit`
 - **Traceability:** GIT-02S Founder decisions 1–3 and 10; CP-001, CP-002, CP-010
@@ -36,7 +36,7 @@ Define the authority, isolation, adoption, and future-promotion boundaries betwe
 | Consumers | DamavandSteel.com; future approved CentralSteel.ir and other explicitly approved systems |
 | Outputs | Approved governance, product/knowledge truth, controlled assets, evidence, and separately authorized runtime projections |
 | Source-of-truth scope | Scope-bound sources ordered by [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md) |
-| Git status | Canonical `main` and the verified shared baseline resolve to `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`; Bootstrap PR #1 and Wave 1 Governance PR #2 are merged; Wave 1 is complete; Wave 2 has not started and is unauthorized; GitHub's default-branch mismatch remains a separately gated remediation item |
+| Git status | Canonical/default `main` and verified shared baseline resolve to `d702c5217f7caa2f23e56f965f3f993967e3c17d`; PR #1–#3 are merged; Wave 1 and Wave 2 discovery are complete; main protection is active; Wave 2A is proposed and unauthorized |
 | Allowed future operations | Read-only review; approved documentation work; later explicitly scoped Git, backup, import, or runtime operations after applicable gates |
 | Prohibited authority inversions | WordPress, external tools, Repository B, generated outputs, audits, AI, or runtime observations cannot silently override approved Repository A truth |
 
@@ -140,11 +140,12 @@ No passage of time, new file, Git initialization, architecture review, or AI rec
 
 - Repository A canonical authority: **CONFIRMED**.
 - Repository B classification: **`QUARANTINED_ARCHITECTURE_RESEARCH`**.
-- Bootstrap PR #1 and Wave 1 Governance PR #2: **MERGED**; current shared baseline `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`.
+- Bootstrap PR #1, Wave 1 Governance PR #2, and Post-merge Governance Reconciliation PR #3: **MERGED**; current shared baseline `d702c5217f7caa2f23e56f965f3f993967e3c17d`.
 - Class B Wave 1 exact-scope Git/documentation integration: **COMPLETE**; its 2026-07-19 authorization remains historical evidence and did not itself authorize merge.
-- Wave 2 and later Class B integration: **NOT STARTED / NO-GO pending separate Founder approval**.
+- Default branch `main` and main protection: **COMPLETE**; strict `repository-validation`, administrator enforcement, force-push prohibition, and deletion prohibition verified.
+- Wave 2 discovery: **COMPLETE**. Wave 2A implementation: **PROPOSED / NOT STARTED / NO-GO pending separate Founder approval**.
 - Workflow activation, runtime, WordPress or Product Repository implementation, publication, deployment, and production mutation: **NO-GO**.
-- GitHub default-branch or other repository-settings remediation: **NO-GO pending separate Founder approval**.
+- Further repository-settings mutation: **NO-GO pending separate Founder approval**.
 - Repository B merge, implementation, runtime, Git initialization, or authority: **NO-GO**.
 - Concept review in a separately approved future sprint: **CONDITIONAL GO**.
 - Any status change: **FOUNDER DECISION REQUIRED**.

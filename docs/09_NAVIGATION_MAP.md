@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.4.0
+- **Version:** 0.5.0
 - **Last Updated:** 2026-07-20
-- **Last Review:** 2026-07-19
+- **Last Review:** 2026-07-20
 - **Review Cycle:** On repository path, document index, reading path, or relationship change
 - **Lifecycle:** Draft
 - **Source of Truth:** [Documentation Index](08_DOCUMENTATION_INDEX.md) and current repository paths
@@ -39,13 +39,13 @@ Define repository navigation and reading paths without changing directory owners
 9. [Settled Class B Wave 1 Repository-Control Decision](17_FOUNDER_DECISION_LOG.md#settled-class-b-wave-1-repository-control-decision)
 10. Future Reference: GIT-02S Audit — `docs/AUDIT_REPORT_GIT02S.md` (Not yet approved) as historical 2026-07-14 evidence
 
-This path is governance and Founder-review only. The historical Wave 1 directive permitted its exact documentation commit, branch push, and Draft PR while merge remained prohibited. PR #1 and PR #2 were later separately approved and merged, and Wave 1 is complete. Wave 2 has not started and remains unauthorized. No runtime, workflow activation, WordPress or Product Repository implementation, publication, deployment, production mutation, or automatic pilot execution is authorized.
+This path is governance and Founder-review only. The historical Wave 1 directive permitted its exact documentation commit, branch push, and Draft PR while merge remained prohibited. PR #1–#3 were later separately approved and merged; Wave 1 and Wave 2 discovery are complete. Wave 2 implementation has not started, and Wave 2A is proposed but not authorized. No runtime, workflow activation, WordPress or Product/Knowledge implementation, publication, deployment, production mutation, or automatic pilot execution is authorized.
 
 ### Completed Git Integration Path and Current Boundary
 
-Historical `main` at `96f2ea70f9010fce416a18310e98915e2be537b9` → Bootstrap PR #1 → merge commit `530a4c46cc47bd02b794cfac1ef24eef56918e75` → Wave 1 governance and link-repair commits → PR #2 → current `main` at `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26` → documentation-only post-merge reconciliation Draft PR → Founder review → **STOP before merge or Wave 2**.
+Historical `main` at `96f2ea70f9010fce416a18310e98915e2be537b9` → Bootstrap PR #1 → `530a4c46cc47bd02b794cfac1ef24eef56918e75` → Wave 1 PR #2 → `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26` → post-merge reconciliation PR #3 → current `main` at `d702c5217f7caa2f23e56f965f3f993967e3c17d` → default branch `main` + active protection → Wave 2 discovery complete → Wave 2 pre-implementation reconciliation Draft PR → Founder review and merge decision → separate Wave 2A authorization decision → **STOP before implementation**.
 
-Wave 2 and later Class B integration work remain unapproved and outside this path. The GitHub default-branch mismatch is a separate repository-settings remediation item; this path authorizes no settings change.
+Wave 2A and later implementation work remain unapproved and outside this path. Default-branch and protection remediation are complete; this path authorizes no repository-settings change.
 
 | Path | Existing responsibility | Primary documentation |
 | --- | --- | --- |
@@ -59,6 +59,12 @@ Wave 2 and later Class B integration work remain unapproved and outside this pat
 | `/prompts` | Versioned prompt materials | [Repository Standards](07_REPOSITORY_GUIDE.md) |
 | `/tests` | Test scaffolding and evidence locations | [Testing Strategy](13_TESTING_STRATEGY.md) |
 | `/var` | Local runtime placeholders | [Deployment](09_DEPLOYMENT.md) |
+| `/repository/data/contracts`, `/repository/data/schemas`, `/repository/data/registries`, `/repository/data/validation` | Approved Product machine contracts and validation ownership | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md); only the validation directory currently has tracked proposal/checklist files, not executable domain validators |
+| `/repository/data/master-data`, `/repository/data/golden-reference` | Approved future governed Product and Golden data ownership | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md); paths currently absent |
+| `/repository/knowledge` | Approved future canonical Knowledge Repository | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md); path currently absent |
+| `/repository/content` | Approved future governed reusable content | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md); path currently absent |
+| `/repository/implementation-assets` | Approved future derived implementation/adapters | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md); path currently absent |
+| `/repository/wordpress` | WordPress/WooCommerce adapters only | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md); no canonical Product/Knowledge ownership |
 
 ## Cross-Reference Rules
 

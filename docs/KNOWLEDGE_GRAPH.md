@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.4.0
+- **Version:** 0.5.0
 - **Last Updated:** 2026-07-20
-- **Last Review:** 2026-07-19
+- **Last Review:** 2026-07-20
 - **Review Cycle:** On authority, relationship, or dependency change; periodic cadence pending Founder approval
 - **Lifecycle:** Review
 - **Source of Truth:** [Documentation Index](08_DOCUMENTATION_INDEX.md), [Core Project Principles](00_PROJECT_BIBLE.md#core-project-principles), and accepted ADRs; this graph is a supporting model
@@ -150,16 +150,33 @@ Wave 1 Governance PR #2
   MERGED_AS -> 4a0f229107716a1b9f7f825f5cd5f16ea78a1b26
   COMPLETES -> Class B Wave 1
 
-Canonical main 4a0f229107716a1b9f7f825f5cd5f16ea78a1b26
-  RECORDS -> Bootstrap complete
-  RECORDS -> Wave 1 complete
-  CONSTRAINS -> Wave 2 not started and unauthorized
+Post-PR-#2 main 4a0f229107716a1b9f7f825f5cd5f16ea78a1b26
+  RECORDS -> Historical Wave 1 completion checkpoint
+  SUPERSEDED_AS_CURRENT_BASELINE_BY -> PR #3 merge commit d702c5217f7caa2f23e56f965f3f993967e3c17d
+
+Post-merge Governance Reconciliation PR #3
+  STATUS -> MERGED
+  MERGED_AS -> d702c5217f7caa2f23e56f965f3f993967e3c17d
+
+Canonical/default main d702c5217f7caa2f23e56f965f3f993967e3c17d
+  RECORDS -> PR #1 through PR #3 complete
+  RECORDS -> Wave 1 and Wave 2 discovery complete
+  RECORDS -> main protection with strict repository-validation
+  CONSTRAINS -> Wave 2 implementation not started; Wave 2A proposed and unauthorized
   CONSTRAINS -> Workflows inactive
   CONSTRAINS -> No runtime, WordPress or Product Repository implementation, publication, deployment, or production mutation
 
-GitHub default branch codex/bootstrap-atlas-foundation
-  CONFLICTS_WITH -> Intended canonical default main
-  REQUIRES -> Separate Founder-approved repository-settings sprint
+Canonical Product hierarchy
+  STRUCTURE -> Catalog -> Platform -> Family -> Series -> Variant Rules -> SKU
+  MAPS_TO -> Optional downstream Parent Product and Variation presentation
+  EXCLUDES_FROM_CANONICAL_IDENTITY -> Labels, slugs, WooCommerce IDs, Parent IDs, Variation IDs, SKUs
+
+Canonical path ownership
+  PRODUCT_MACHINE_TRUTH -> repository/data/contracts + schemas + registries + validation
+  PRODUCT_DATA_TRUTH -> repository/data/master-data + golden-reference
+  KNOWLEDGE_TRUTH -> repository/knowledge
+  DERIVES_TO -> repository/content + implementation-assets + wordpress adapters
+  CONSTRAINS -> Approved future paths do not imply current file presence or implementation
 ```
 
 ## Relationship Enforcement

@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.4.0
+- **Version:** 0.5.0
 - **Last Updated:** 2026-07-20
-- **Last Review:** 2026-07-19
+- **Last Review:** 2026-07-20
 - **Review Cycle:** On governing-rule or dependency change; periodic cadence pending Founder approval
 - **Lifecycle:** Review
 - **Source of Truth:** [Core Project Principles](00_PROJECT_BIBLE.md#core-project-principles), approved governing documents, and accepted ADRs; this matrix is a supporting view
@@ -1041,8 +1041,8 @@ Core Principles + Business/Inquiry/Product/Entity/Knowledge authority
 | --- | --- | --- | --- | --- |
 | GIT02S-BASE | [Project Baseline](PROJECT_BASELINE.md) | Accepted governance, FD-PILOT-001, Current Project State, Sprint 12A evidence | Concise first-read current-state entry point | Not authorized |
 | GIT02S-REL | [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md) | Explicit GIT-02S Founder repository dispositions | Repository A canonical; Repository B `QUARANTINED_ARCHITECTURE_RESEARCH` | Merge/implementation not authorized |
-| GIT02S-PILOT | [FD-PILOT-001](17_FOUNDER_DECISION_LOG.md#settled-golden-pipe-pilot-decision) | Explicit Founder directive plus existing Golden and Master Data evidence | Golden Parent and exactly three pilot combinations registered; references are not final SKUs | Import/runtime/publishing not authorized |
-| GIT02S-PIPE | Future Reference: Pipe Combination Register — `repository/master-data/pipes/03_PIPE_VALID_COMBINATIONS.csv` (Not yet approved) | FD-PILOT-001 and Sprint 11 evidence | 3 `APPROVED`; 879 `CANDIDATE_UNVERIFIED`; availability missing for all 882 | Not import-ready |
+| GIT02S-PILOT | [FD-PILOT-001](17_FOUNDER_DECISION_LOG.md#settled-golden-pipe-pilot-decision) | Explicit Founder directive plus historical Golden and Master Data evidence references | Golden Parent and exactly three pilot combinations registered in decision/prose authority; machine packages absent; references are not final SKUs | Import/runtime/publishing not authorized |
+| GIT02S-PIPE | Historical Future Reference: Pipe Combination Register — `repository/master-data/pipes/03_PIPE_VALID_COMBINATIONS.csv` (not present; current approved future ownership is under `repository/data/master-data/`) | FD-PILOT-001 and Sprint 11 evidence | 3 `APPROVED`; 879 `CANDIDATE_UNVERIFIED`; availability missing for all 882 | Not import-ready; no canonical machine package exists |
 | GIT02S-STATE | [Current Project State](CURRENT_PROJECT_STATE.md), [Roadmap](PROJECT_EXECUTION_ROADMAP.md), and [Codex Instructions](../AGENTS.md) | Sprint 12A and GIT-02S Founder directive | Last completed sprint and next-action drift reconciled | No active implementation sprint |
 | GIT02S-NAV | [Documentation Index](08_DOCUMENTATION_INDEX.md), [Navigation Map](09_NAVIGATION_MAP.md), [Reading Order](READING_ORDER.md), and [Knowledge Graph](KNOWLEDGE_GRAPH.md) | Current files and authority boundaries | Sprint 09C–12A and Git reconciliation evidence made discoverable | Navigation only |
 | GIT02S-CLASS | [Git File Classification](GIT_FILE_CLASSIFICATION.csv) | Dated 2026-07-14 Repository A inventory | One historical disposition row per GIT-02S snapshot item | Snapshot only; not current Git state or authority |
@@ -1055,7 +1055,7 @@ Historically, the GIT-02S Founder directive permitted documentation reconciliati
 | Trace ID | Asset or decision | Authority input | Reconciled outcome | Boundary |
 | --- | --- | --- | --- | --- |
 | `W1-GOV-AUTH` | [FD-GIT-W1-001](17_FOUNDER_DECISION_LOG.md#settled-class-b-wave-1-repository-control-decision) | Explicit Founder authorization dated 2026-07-19 | Historical exact 19-path allowlist, one commit, one branch push, and one Draft PR | The authorization itself granted no merge or Wave 2 authority |
-| `W1-GOV-BASE` | Canonical `main` and verified Git refs | Post-merge verification dated 2026-07-20 | `main` = `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`; local, `origin/main`, and live GitHub agree | Default-branch setting remains separately gated |
+| `W1-GOV-BASE` | Historical post-PR-#2 `main` and verified Git refs | Post-merge verification dated 2026-07-20 | At that checkpoint, `main` = `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`; later superseded as current baseline by merged PR #3 | Chronology only; current state is recorded below |
 | `W1-GOV-PR1` | Bootstrap PR #1 | Verified GitHub merge state | `MERGED` through `530a4c46cc47bd02b794cfac1ef24eef56918e75` | Bootstrap complete; no runtime authority |
 | `W1-GOV-PR2` | Wave 1 Governance PR #2 | Verified GitHub merge state | `MERGED` through `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`; Wave 1 complete | No Wave 2 authority |
 | `W1-GOV-CI` | PR #2 head and merge-commit CI | GitHub Actions plus canonical validator evidence | Both CI runs `SUCCESS`; canonical validator `PASS` | Static evidence only; no runtime readiness |
@@ -1063,7 +1063,19 @@ Historically, the GIT-02S Founder directive permitted documentation reconciliati
 | `W1-GOV-NAV` | [Documentation Index](08_DOCUMENTATION_INDEX.md), [Navigation Map](09_NAVIGATION_MAP.md), [Reading Order](READING_ORDER.md), and [Knowledge Graph](KNOWLEDGE_GRAPH.md) | Current baseline and source priority | Wave 1 completion and current exclusions discoverable | Navigation only |
 | `W1-GOV-CLASS` | [Git File Classification](GIT_FILE_CLASSIFICATION.csv) and [Git Baseline Approval Checklist](GIT_BASELINE_APPROVAL_CHECKLIST.md) | Dated GIT-02S inventory plus current Founder task | Snapshot Git states labeled historical; current exact-path authority separated | No deletion; no broad staging |
 
-Wave 1 is complete. Its merges created no runtime, WordPress, Product Repository implementation, publication, deployment, production, workflow-activation, or architecture authority. Wave 2 has not started and requires separate Founder approval. The post-merge reconciliation Draft PR must not be merged without later Founder approval.
+Wave 1 is complete. Its merges created no runtime, WordPress, Product Repository implementation, publication, deployment, production, workflow-activation, or architecture authority. The later PR #3, default-branch correction, main protection, and Wave 2 discovery are traced below without rewriting Wave 1 chronology.
+
+## Wave 2 Pre-Implementation Governance Traceability
+
+| Trace ID | Asset or decision | Authority input | Reconciled outcome | Boundary |
+| --- | --- | --- | --- | --- |
+| `W2-GOV-BASE` | Canonical/default `main` and verified Git refs | PR #3 plus Git/GitHub verification dated 2026-07-20 | Local `main`, `origin/main`, and live GitHub `main` = `d702c5217f7caa2f23e56f965f3f993967e3c17d`; `origin/HEAD` = `origin/main` | Shared repository baseline only |
+| `W2-GOV-PR3` | Post-merge Governance Reconciliation PR #3 | Verified GitHub merge state | `MERGED` through `d702c5217f7caa2f23e56f965f3f993967e3c17d` | No implementation/runtime authority |
+| `W2-GOV-PROTECT` | Main branch protection | Verified GitHub protection state | Administrator enforcement and strict required `repository-validation` enabled; force-push and deletion disabled | Repository governance only |
+| `W2-GOV-HIER` | `FD-W2G-001`, [Product Data Model](19_PRODUCT_DATA_MODEL.md), and [Information Architecture](24_INFORMATION_ARCHITECTURE.md) | Explicit Founder decision dated 2026-07-20 | Canonical `Catalog → Platform → Family → Series → Variant Rules → SKU`; Parent/Variation concepts downstream only | No contract, Product record, or SKU implementation |
+| `W2-GOV-PATH` | `FD-W2G-002` and [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md) | Explicit Founder decision dated 2026-07-20 | Canonical ownership assigned for Product data subpaths, Knowledge, content, implementation assets, and WordPress adapters | Path ownership only; absent directories not created |
+| `W2-GOV-READY` | `FD-W2G-004`, [Current Project State](CURRENT_PROJECT_STATE.md), and [Implementation Readiness](IMPLEMENTATION_READINESS.md) | Wave 2 discovery inventory and Founder decision | Product and Knowledge Repositories `NOT_IMPLEMENTATION_READY`; Golden/Master Data machine packages absent; legacy Pipe matrix demoted to candidate scaffold | Wave 2A proposed, not authorized |
+| `W2-GOV-NEXT` | Current Founder authorization | Exact 21-file documentation allowlist | One documentation commit, branch push, and Draft PR for Founder review | Merge requires Founder review; Wave 2A requires separate authorization |
 
 ## Navigation
 

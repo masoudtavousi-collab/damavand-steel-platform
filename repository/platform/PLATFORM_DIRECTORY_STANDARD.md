@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Enterprise Architect, Repository Guardian, Engine Owners, Build Authority, Security Reviewer, and Operations Reviewer
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-04
-- **Last Review:** 2026-07-04
+- **Version:** 0.2.0
+- **Last Updated:** 2026-07-20
+- **Last Review:** 2026-07-20
 - **Review Cycle:** On platform layer, directory, ownership, artifact class, naming, retention, or repository-structure change
 - **Lifecycle:** Review
 - **Source of Truth:** [Platform Manifest](PLATFORM_MANIFEST.md), [Platform Architecture](PLATFORM_ARCHITECTURE.md), Repository Implementation Rules, and explicit Founder approval
@@ -18,7 +18,7 @@
 - **Related Documents:** [Engine Boundaries](ENGINE_BOUNDARIES.md), [Platform Governance](PLATFORM_GOVERNANCE.md), [Platform Versioning](PLATFORM_VERSIONING.md), and [Repository Guide](../../docs/07_REPOSITORY_GUIDE.md)
 - **Traceability:** PM-001 through PM-010, PP-004 through PP-008, S01A-001 through S01A-010, Sprint 03E, and directory rules PDS-001 through PDS-012
 - **AI Compatibility:** AI-readable proposed directory standard; no autonomous folder creation, move, rename, or deletion
-- **Approval:** Pending Founder/repository/architecture review; only `repository/platform/` is created in Sprint 03E
+- **Approval:** Canonical path-ownership model approved by Founder on 2026-07-20; physical creation and remaining proposed rules require separate authorization
 
 ## Purpose
 
@@ -31,10 +31,10 @@ Define the permanent logical/physical location, ownership, artifact class, and b
 | PDS-001 | Preserve the existing repository root and directory names; no implied rename/move occurs through this standard. | Proposed pending Founder approval |
 | PDS-002 | Keep Platform constitution sources under `repository/platform/`. | Proposed pending Founder approval |
 | PDS-003 | Keep reusable Engine contracts under `repository/engine/<engine-key>/`. | Proposed pending Founder approval |
-| PDS-004 | Keep canonical family/data contracts under `repository/data/` by concern. | Proposed pending Founder approval |
-| PDS-005 | Keep runtime adapters separate from Platform/Engine/domain authority. | Proposed pending Founder approval |
-| PDS-006 | Treat WordPress as one runtime target under existing `repository/wordpress/` and `public/` boundaries. | Proposed pending Founder approval |
-| PDS-007 | Keep controlled institutional knowledge under `docs/` and graph/index/traceability sources; do not create a duplicate knowledge authority. | Proposed pending Founder approval |
+| PDS-004 | Keep canonical machine contracts, schemas, registries, validators, Master Data, and Golden references under the approved `repository/data/` concern paths. | `APPROVED` by Founder on 2026-07-20; directory creation remains separately gated |
+| PDS-005 | Keep derived implementation and runtime adapters separate from Platform/Engine/domain authority. | Ownership boundary `APPROVED` by Founder on 2026-07-20 |
+| PDS-006 | Treat WordPress/WooCommerce as downstream adapters under `repository/wordpress/` and controlled runtime boundaries. | Ownership boundary `APPROVED` by Founder on 2026-07-20 |
+| PDS-007 | Keep canonical Knowledge Repository assets under `repository/knowledge/`; documentation governance under `docs/` remains separate and must not duplicate business Knowledge authority. | `APPROVED` by Founder on 2026-07-20; directory creation remains separately gated |
 | PDS-008 | Keep imports, exports, backups, logs, secrets, and generated data governed by access/retention/ignore rules; presence of a folder does not authorize payloads. | Proposed pending Founder approval |
 | PDS-009 | Keep validation contracts/evidence close to their domain while repository-wide quality standards remain under `quality/`. | Proposed pending Founder approval |
 | PDS-010 | Every directory has one primary owner and permitted artifact classes. | Proposed pending Founder approval |
@@ -56,14 +56,22 @@ repository-root/
     │   ├── product/                   current Product Engine
     │   └── <future-engine>/           only after Engine admission approval
     ├── data/
+    │   ├── contracts/                 canonical machine-readable contracts
+    │   ├── schemas/                   canonical schemas
+    │   ├── registries/                controlled vocabularies and identifier registries
+    │   ├── validation/                canonical domain validators
+    │   ├── master-data/               canonical governed Product Master Data
+    │   ├── golden-reference/          canonical Golden reference packages
     │   ├── products/
     │   ├── attributes/
     │   ├── taxonomies/
     │   ├── imports/woocommerce/
     │   ├── seo/
-    │   ├── validation/
     │   └── templates/                 reserved; not a second Engine-template authority
-    ├── wordpress/                     current runtime adapter/artifact boundary
+    ├── knowledge/                     canonical Knowledge Repository assets
+    ├── content/                       governed reusable content assets
+    ├── implementation-assets/         derived implementation and adapter assets
+    ├── wordpress/                     WordPress/WooCommerce adapters only
     ├── config/                        non-secret configuration inventories/templates
     ├── deployment/                    approved deployment definitions/runbooks
     ├── migration/                     approved ordered migration artifacts/plans
@@ -79,7 +87,7 @@ repository-root/
     └── templates/                     general implementation templates, not Product Engine authority
 ```
 
-Only paths already present plus `repository/platform/` are established physically by Sprint 03E. Future paths shown in angle brackets or described as future are not created.
+This tree records approved ownership, not file presence or implementation. As of the verified `d702c5217f7caa2f23e56f965f3f993967e3c17d` baseline, the new canonical contract/schema/registry/Master Data/Golden/Knowledge/content/implementation paths are absent, and `repository/wordpress/` has no substantive adapter artifacts. Creation requires a separate exact-scope Founder authorization.
 
 ## Logical-to-Physical Mapping
 
@@ -89,8 +97,13 @@ Only paths already present plus `repository/platform/` are established physicall
 | Repository | Repository root plus `repository/` workspace | Controlled source/evidence boundary |
 | Engine | `repository/engine/<engine-key>/` | One approved Engine per subdirectory |
 | Runtime | Logical layer; adapters/artifacts under `repository/wordpress/`, future approved runtime paths, and environment-specific external systems | No generic runtime folder is created now |
-| WordPress | `repository/wordpress/` and controlled `public/` scaffold boundary | Current target, replaceable adapter |
-| Knowledge | `docs/`, Documentation Index, Knowledge Graph, Traceability Matrix, reading/navigation records | No duplicate `knowledge/` directory authority |
+| Canonical Product contracts | `repository/data/contracts/`, `repository/data/schemas/`, `repository/data/registries/`, and `repository/data/validation/` | Approved ownership; not yet created or implemented |
+| Product Master Data | `repository/data/master-data/` | Approved ownership; absent until separately authorized |
+| Golden reference packages | `repository/data/golden-reference/` | Approved ownership; absent until separately authorized |
+| WordPress | `repository/wordpress/` and controlled `public/` scaffold boundary | Replaceable adapter only; never canonical Product or Knowledge owner |
+| Knowledge | `repository/knowledge/` | Canonical business Knowledge Repository; approved future location, currently absent |
+| Reusable content | `repository/content/` | Governed reusable content; currently absent |
+| Derived implementation assets | `repository/implementation-assets/` | Downstream artifacts only; currently absent |
 | Exports | `repository/exports/` | Generated/export payloads stay out of Git; schemas/manifests only when approved |
 | Imports | Domain staging under `repository/data/imports/`; implementation imports under `repository/imports/` | Both require explicit contracts/review; no execution implied |
 | Backups | `repository/backups/` placeholder plus approved external protected custody | No backup payload in Git |
@@ -102,8 +115,11 @@ Only paths already present plus `repository/platform/` are established physicall
 | --- | --- | --- | --- |
 | `repository/platform/` | Founder/Platform Architecture | Repository Guardian | Proposed/approved Platform constitutional sources |
 | `repository/engine/` | Founder + relevant Engine authority | Engine Owner | Versioned Engine contracts/templates/guides |
-| `repository/data/` | Product/domain authorities | Product Data Owner | Controlled data contracts, sanitized staging templates, validation |
-| `docs/` | Applicable governing owner | Documentation Owner | Controlled knowledge, decisions, audits, guides |
+| `repository/data/` | Product/domain authorities | Product Data Owner | Canonical contracts, schemas, registries, validators, Master Data, Golden references, and approved staging inputs by subpath |
+| `repository/knowledge/` | Knowledge authority | Knowledge Owner | Canonical Knowledge contracts, governed instances, relationships, and provenance |
+| `repository/content/` | Content authority | Content Owner | Governed reusable content assets that reference canonical facts |
+| `repository/implementation-assets/` | Applicable source authority | Build/Adapter Owner | Derived implementation and adapter assets only |
+| `docs/` | Applicable governing owner | Documentation Owner | Governance, decisions, audits, guides, and repository navigation; not duplicate business Knowledge authority |
 | `quality/` | Quality authority | Quality Owner | Reusable standards/checklists |
 | `repository/wordpress/` | Platform/WordPress architecture | Runtime/Build Owner | Approved runtime adapter artifacts only |
 | `repository/config/` | Platform/runtime authority | Configuration Owner | Non-secret inventories/templates |
@@ -152,6 +168,7 @@ Directory creation/move/rename/removal requires scope, owner, purpose, overlap s
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2.0 | 2026-07-20 | Recorded Founder-approved canonical ownership for Product contracts, schemas, registries, validation, Master Data, Golden references, Knowledge, content, implementation assets, and WordPress adapters; no directory created. |
 | 0.1.0 | 2026-07-04 | Initial Sprint 03E proposed permanent Platform Directory Standard; no restructuring. |
 
 ## Navigation

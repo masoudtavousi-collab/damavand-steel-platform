@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.2.0
-- **Last Updated:** 2026-07-03
-- **Last Review:** 2026-07-03
+- **Version:** 0.3.0
+- **Last Updated:** 2026-07-20
+- **Last Review:** 2026-07-20
 - **Review Cycle:** On product hierarchy, entity, ownership, lifecycle, taxonomy, attribute, inquiry, CRM, ERP, or Founder-decision change
 - **Lifecycle:** Review
 - **Source of Truth:** [Core Project Principles](00_PROJECT_BIBLE.md#core-project-principles), [ADR 0001](adr/0001-inquiry-first-commerce.md), and [WordPress Enterprise Architecture](06_WORDPRESS_ARCHITECTURE.md#founder-constraints-and-decision-sources)
@@ -22,7 +22,7 @@
 
 ## Purpose
 
-Define the logical enterprise product entities, responsibilities, relationships, identifiers, and lifecycle boundaries required for a Persian RTL, inquiry-first WooCommerce catalog.
+Define the logical enterprise Product Repository entities, responsibilities, relationships, identifiers, lifecycle boundaries, and downstream commerce mappings required for a Persian RTL, inquiry-first platform.
 
 ## Scope
 
@@ -31,7 +31,8 @@ This model defines product data concepts only. It does not define database table
 ## Governing Rules
 
 - Inquiry First and No Public Pricing govern all catalog and inquiry data.
-- Variable Parent Product is the required catalog model.
+- The canonical repository hierarchy is `Catalog → Platform → Family → Series → Variant Rules → SKU`.
+- Variable Parent Product and Variation are downstream commerce/presentation constructs, not canonical repository identity layers.
 - Plugin First and Configuration First govern future physical implementation.
 - Mobile First and Persian RTL govern labels, editing, filtering, and public presentation.
 - WordPress Admin must remain manageable for the non-programmer Founder.
@@ -41,8 +42,8 @@ This model defines product data concepts only. It does not define database table
 
 | ID | Proposed decision | Status |
 | --- | --- | --- |
-| PDM-001 | Use Product Family → Product Group → Product Type → Variable Parent Product → Variation as the logical hierarchy. | Proposed pending Founder approval |
-| PDM-002 | Give every governed entity a stable internal ID independent of Persian labels, slugs, SKUs, and external system IDs. | Proposed pending Founder approval |
+| PDM-001 | Use `Catalog → Platform → Family → Series → Variant Rules → SKU` as the canonical repository hierarchy. Product Family → Product Group → Product Type → Variable Parent Product → Variation may exist only as a legacy, presentation, or commerce-adapter mapping. | `APPROVED` by explicit Founder decision dated 2026-07-20 |
+| PDM-002 | Give every governed entity a stable internal ID independent of Persian labels, slugs, WooCommerce IDs, Parent IDs, Variation IDs, SKUs, and external system IDs. | Exclusion of those downstream identifiers from canonical identity is `APPROVED`; the stable-ID contract and registry design remain proposed pending separate approval |
 | PDM-003 | Govern reusable terms through canonical taxonomy and attribute registries instead of free-text duplication. | Proposed pending Founder approval |
 | PDM-004 | Record ownership, lifecycle, visibility, validation, and change evidence for product data. | Proposed pending Founder approval |
 | PDM-005 | Reserve versioned external identifiers and mappings for future ERP, CRM, and CentralSteel compatibility without making them current authorities. | Proposed pending Founder approval |
@@ -53,24 +54,40 @@ This model defines product data concepts only. It does not define database table
 ## Product Hierarchy
 
 ```text
-Product Family
-  -> Product Group
-      -> Product Type
-          -> Variable Parent Product
-              -> Variation
+Catalog
+  -> Platform
+      -> Family
+          -> Series
+              -> Variant Rules
+                  -> SKU
 ```
 
-The hierarchy is logical. Exact names, depth, term values, parent-child assignments, and WooCommerce physical mapping require Founder and qualified steel-domain approval.
+This hierarchy is canonical and authoritative. Catalog, Platform, Family, Series, and Variant Rules are repository concepts. SKU is derived only after governed product modeling; it is not the canonical identity of a preceding entity. Exact Family/Series values, Variant Rules, valid combinations, and derived SKUs still require evidence and approval.
+
+### Downstream Commerce and Legacy Mapping
+
+```text
+Canonical Family / Series / Variant Rules
+  -> optional Product Family / Product Group / Product Type presentation mapping
+      -> Variable Parent Product
+          -> Variation
+```
+
+This mapping supports WooCommerce and other presentation surfaces only. It may be shallower, relabeled, or implementation-specific, but it must preserve stable canonical references and cannot replace, reorder, or redefine the repository hierarchy.
 
 ## Core Entity Definitions
 
 | Entity | Definition | Required relationships and boundaries |
 | --- | --- | --- |
-| Product Family | Highest governed commercial/catalog grouping for related steel offerings | Contains Product Groups; not automatically a public URL or WooCommerce category until taxonomy approval |
-| Product Group | Intermediate grouping that separates materially different subsets within a Product Family | Belongs to one approved Product Family; exact use is optional per approved family model |
-| Product Type | Governed structural type that determines the applicable attribute profile, dimensions, variation axes, media, and documents | Belongs to one Product Group or Product Family; not the WooCommerce `product_type` implementation field by definition |
-| Variable Parent Product | Canonical catalog entity holding shared title, narrative, family/type relationships, common media, documents, SEO references, and permitted variation axes | Must have one or more governed variations or an approved staged-data exception; never a public price authority |
-| Variation | Valid, selectable configuration of one parent product | Belongs to exactly one parent; has approved attribute combination and operational identifier |
+| Catalog | Root governed product-domain container | Contains approved Platforms; not a menu, WordPress category, or public URL by definition |
+| Platform | Governed product-platform context within a Catalog | Contains approved Families and preserves ecosystem ownership across consumers |
+| Family | Canonical grouping for a coherent product family | Belongs to one Platform; has a stable repository identity independent of presentation labels and commerce IDs |
+| Series | Canonical structured subdivision of a Family | Belongs to one Family; controls the applicable modeling context without becoming a WooCommerce product type |
+| Variant Rules | Governed axes, constraints, evidence, and valid-combination rules for a Series | Belongs to one Series; Cartesian possibility never proves validity or availability |
+| SKU | Derived commercial/operational identifier after governed modeling | Requires an approved SKU policy and valid governed product record; never substitutes for canonical entity identity |
+| Product Family / Product Group / Product Type | Legacy or presentation grouping labels | May map to canonical Family/Series concepts only through an explicit versioned mapping; not canonical repository layers |
+| Variable Parent Product / Parent Product | Downstream commerce or presentation entity holding shared display and inquiry context | References canonical Family/Series/Variant Rules; never owns canonical Product truth or public price authority |
+| Variation | Downstream selectable commerce/presentation projection | References one approved governed combination; its ID and SKU are not canonical Product entity identities |
 | Attribute | Controlled property used for specification, variation, filtering, integration, or presentation | Defined by the Product Attribute Model; free-text use requires explicit exception |
 | Material | Canonical material classification applicable to product specification and discovery | References one controlled Material term; does not duplicate Material Category authority |
 | Alloy | Canonical alloy designation or family within an approved Material context | Requires qualified technical review and stable mapping; no alloy values are approved here |
@@ -103,15 +120,18 @@ Every governed entity must support:
 - Created/updated evidence without treating timestamps as authority.
 - Optional external-system identifiers scoped by system and mapping version.
 
-Labels, slugs, SKUs, and external IDs may change under governance; the stable internal ID must not be repurposed.
+Labels, slugs, WooCommerce IDs, Parent IDs, Variation IDs, SKUs, and external IDs may change under governance; the stable internal ID must not be repurposed.
 
 ## Relationship Model
 
 | Relationship | Direction | Rule |
 | --- | --- | --- |
-| Contains | Family/Group/Type/Parent to child | Child has one approved structural parent unless an explicit multi-classification decision exists |
-| Varies By | Parent to global Attribute | Variation axis must be approved for the Product Type and parent |
-| Has Variation | Parent to Variation | Only valid combinations may be published or offered for inquiry |
+| Contains | Catalog/Platform/Family/Series to canonical child | Child has one approved structural parent unless an explicit multi-classification decision exists |
+| Governed By | Series to Variant Rules | Axes, constraints, evidence, and valid combinations are explicit and versioned |
+| Derives | Governed Product record to SKU | Derivation occurs only after approved modeling and SKU policy |
+| Maps To | Canonical entity/rule to commerce or presentation entity | Mapping is downstream, versioned, and cannot transfer canonical ownership |
+| Varies By | Commerce Parent to global Attribute | Axis must map to approved canonical Variant Rules |
+| Has Variation | Commerce Parent to Variation | Only governed, evidence-backed combinations may be exposed for inquiry |
 | Classified By | Product to taxonomy term | One canonical term registry per classification concept |
 | Described By | Product/Variation to attribute value | Value conforms to type, unit, source, and allowed-value policy |
 | Uses Media | Product/Variation/Content to Media Set item | Applicability and ordering are explicit |
@@ -193,7 +213,8 @@ The following roles must be assigned before the corresponding data can receive o
 
 | Governed concern | Accountable owner | Required reviewer or approval context |
 | --- | --- | --- |
-| Product hierarchy, parent products, variations, and lifecycle | TODO (Founder Decision Required) | Founder and qualified product/domain review |
+| Canonical Product hierarchy | Founder | Hierarchy settled on 2026-07-20; Family/Series values and Variant Rules still require qualified product/domain review |
+| Commerce parent/variation mapping and lifecycle | TODO (Founder Decision Required) | Founder, product/domain, and commerce-adapter review |
 | Taxonomy terms, Collections, Product Tags, and mappings | TODO (Founder Decision Required) | Founder, domain, and SEO review as applicable |
 | Attribute definitions, values, units, profiles, and Size derivation | TODO (Founder Decision Required) | Founder and qualified steel-domain review |
 | Media Sets and rights/access metadata | TODO (Founder Decision Required) | Content/accessibility/security review as applicable |
@@ -216,13 +237,13 @@ No implementation role, WordPress role, or repository author inherits these acco
 - Routine entity, relationship, label, media, and document maintenance must be manageable through supported WordPress Admin capabilities after an approved implementation design.
 - Admin interfaces must use Persian-capable labels, clear help text, controlled selections, validation, preview, bulk review, and reversible workflows.
 - Free-text duplication is rejected when a controlled value exists.
-- Required fields and valid combinations vary by Product Type through an approved profile; no profile values are invented here.
+- Required fields and valid combinations vary by canonical Series and approved Variant Rules. A downstream Product Type/profile may project those rules but cannot own or invent them.
 - Bulk operations require dry-run, validation report, stable-ID preservation, and approval before mutation.
 
 ## Founder Decisions
 
-- Approve, revise, or reject PDM-001 through PDM-008.
-- Approve the hierarchy depth and whether Product Group is mandatory for every Product Family.
+- PDM-001 and the downstream-ID exclusions in PDM-002 are settled by the explicit Founder decision dated 2026-07-20; the stable-ID contract and remaining proposal scope still require separate review.
+- Approve exact canonical Family/Series values, Variant Rules, and any explicit mapping to Product Family/Product Group/Product Type/Parent/Variation constructs.
 - Assign every role in the Operational Ownership Matrix.
 - Approve product lifecycle, stock states, Persian labels, public messages, and transition authority.
 - Approve the stable-ID, SKU, unit, external-ID, and data-retention policies.
@@ -230,8 +251,8 @@ No implementation role, WordPress role, or repository author inherits these acco
 
 ## Open Questions
 
-- What Product Families, Groups, and Types are approved?
-- Which dimensions, units, materials, alloys, finishes, colors, standards, brands, and quality levels apply to each Product Type?
+- Which canonical Families and Series are approved, and which legacy/commerce labels map to them?
+- Which dimensions, units, materials, alloys, finishes, colors, standards, brands, and quality levels apply through each Series' Variant Rules?
 - Which stock source and state transitions are authoritative before ERP integration?
 - Which product lifecycle states, transition owners, evidence, public behaviors, restoration rules, and archival rules are approved?
 - Which documents and media may be public, protected, expired, or version-replaced?
@@ -241,12 +262,13 @@ No implementation role, WordPress role, or repository author inherits these acco
 
 ## Approval Status
 
-Review. This proposed data model is not approved and does not authorize product creation, WooCommerce configuration, database design, import, or implementation.
+Review. The canonical hierarchy and identity distinction are Founder-approved within their exact scope. The remaining data-model proposals are not approved and this document does not authorize contracts, schemas, registries, Product records, WooCommerce configuration, database design, import, or implementation.
 
 ## Change Notes
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.3.0 | 2026-07-20 | Reconciled the Founder-approved canonical repository hierarchy and separated canonical identities from legacy/commerce Parent and Variation mappings; documentation only. |
 | 0.2.0 | 2026-07-03 | Batch 05B remediation: explicit product lifecycle, ownership requirements, and Draft Product Data Strategy authority boundary; documentation only. |
 | 0.1.0 | 2026-07-03 | Initial Batch 05 enterprise product data model; documentation only. |
 
