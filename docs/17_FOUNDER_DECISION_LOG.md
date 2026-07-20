@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.8.0
-- **Last Updated:** 2026-07-19
-- **Last Review:** 2026-07-19
+- **Version:** 0.9.0
+- **Last Updated:** 2026-07-20
+- **Last Review:** 2026-07-20
 - **Review Cycle:** On Founder decision creation, resolution, supersession, or dependency change
 - **Lifecycle:** Draft
 - **Source of Truth:** Explicit Founder-decision requirements in controlled source documents; this log is an index only
@@ -85,16 +85,25 @@ Index every repository item explicitly marked as requiring a Founder decision. T
 | --- | --- | --- | --- | --- |
 | `FD-GIT-W1-001` | Execute Class B Wave 1 only through branch `codex/class-b-wave-01-governance`. Reconcile and integrate exactly `.gitattributes`, `README.md`, `docs/08_DOCUMENTATION_INDEX.md`, `docs/09_NAVIGATION_MAP.md`, `docs/10_DECISION_LOG.md`, `docs/17_FOUNDER_DECISION_LOG.md`, `docs/18_OPEN_QUESTIONS.md`, `docs/CODEX_SPRINT_PROTOCOL.md`, `docs/CURRENT_PROJECT_STATE.md`, `docs/GIT_BASELINE_APPROVAL_CHECKLIST.md`, `docs/GIT_FILE_CLASSIFICATION.csv`, `docs/KNOWLEDGE_GRAPH.md`, `docs/PROJECT_BASELINE.md`, `docs/PROJECT_EXECUTION_ROADMAP.md`, `docs/READING_ORDER.md`, `docs/REPOSITORY_HEALTH.md`, `docs/REPOSITORY_RELATIONSHIP_MAP.md`, `docs/SOURCE_OF_TRUTH_PRIORITY.md`, and `docs/TRACEABILITY_MATRIX.md`; create one commit, push only that branch, and open one Draft PR. | Founder / 2026-07-19 | Git and documentation integration for the named 19 paths only. PR #1 must remain unchanged; Waves 2–10 and the six Sprint 1 reports remain excluded. | `APPROVED` within exact scope. Merge, runtime, workflow activation/execution, WordPress, product, content, publication, deployment, production, repository-setting, and default-branch changes remain `NO-GO`. |
 
+## Settled Wave 2 Pre-Implementation Governance Decisions
+
+| ID | Settled decision | Decision source | Exact scope | Resulting status |
+| --- | --- | --- | --- | --- |
+| `FD-W2G-001` | The canonical Product Repository hierarchy is exactly `Catalog → Platform → Family → Series → Variant Rules → SKU`. Catalog through Variant Rules are canonical repository concepts; SKU is derived only after governed modeling. Product Family, Product Group, Product Type, Parent Product, Variable Parent Product, and Variation may be retained only as legacy, presentation, or commerce-adapter mappings. Labels, slugs, WooCommerce IDs, Parent IDs, Variation IDs, and SKUs are not canonical entity identities. | Founder / 2026-07-20 Wave 2 pre-implementation governance reconciliation approval | Documentation authority for Product hierarchy and identity boundaries only | `APPROVED`; no schema, registry, Product record, SKU, mapping, or implementation is created or authorized |
+| `FD-W2G-002` | Canonical path ownership is `repository/data/contracts/`, `repository/data/schemas/`, `repository/data/registries/`, `repository/data/validation/`, `repository/data/master-data/`, `repository/data/golden-reference/`, `repository/knowledge/`, `repository/content/`, `repository/implementation-assets/`, and adapter-only `repository/wordpress/`. WordPress, WooCommerce, imports, page builders, adapters, and runtime consumers never own canonical Product or Knowledge truth. | Founder / 2026-07-20 Wave 2 pre-implementation governance reconciliation approval | Directory ownership and non-duplication rule only | `APPROVED`; path creation and implementation remain separately gated. Older Future Reference paths in historical rows preserve their original chronology and do not designate current ownership |
+| `FD-W2G-003` | Record PR #1–#3 merged; Wave 1 and post-merge reconciliation complete; canonical/default `main` at `d702c5217f7caa2f23e56f965f3f993967e3c17d`; `origin/HEAD` at `origin/main`; main protection, administrator enforcement, strict required `repository-validation`, force-push prohibition, and deletion prohibition active; Wave 2 discovery complete; Wave 2 implementation not started; Wave 2A proposed but not authorized. | Founder / 2026-07-20 plus verified GitHub and Git evidence | Current repository-governance documentation only | `APPROVED` for reconciliation; Runtime, Import, Publishing, Deployment, and implementation remain `NO-GO` |
+| `FD-W2G-004` | Product and Knowledge architecture proposals exist, but their machine-readable core contracts/instances and Product-domain tests do not. No canonical machine-readable Master Data or Golden package exists on `main`. The approved Golden Parent and exactly three combinations remain decision/prose authority only; 879 remain `CANDIDATE_UNVERIFIED`, availability is `MISSING_DATA_VALUE` across all 882, brand is absent/hidden, and weight is `DEFERRED`. `PIPE_VARIATION_MATRIX.md` is a legacy theoretical scaffold and has no Golden, availability, Master Data, import, SKU, or runtime authority. | Founder / 2026-07-20 Wave 2 pre-implementation governance reconciliation approval | Readiness and evidence classification only | `APPROVED`; Product Repository and Knowledge Repository are `NOT_IMPLEMENTATION_READY`, and no Product/Golden data or implementation is authorized |
+
 ## Product Data Decisions Required
 
 | ID | Decision required | Source | Status |
 | --- | --- | --- | --- |
-| FD-DATA-001 | Approve, revise, or reject PDM-001 through PDM-008. | [Enterprise Product Data Model](19_PRODUCT_DATA_MODEL.md#data-model-decisions) | Pending; no product creation authorized |
+| FD-DATA-001 | Approve, revise, or reject PDM-001 through PDM-008. | [Enterprise Product Data Model](19_PRODUCT_DATA_MODEL.md#data-model-decisions) | Partially resolved: PDM-001 and PDM-002's exclusion of downstream identifiers from canonical identity are settled by `FD-W2G-001`; stable-ID contract/registry design and remaining proposal scope are pending; no product creation authorized |
 | FD-DATA-002 | Approve, revise, or reject WCM-001 through WCM-008. | [WooCommerce Product Model](20_WOOCOMMERCE_PRODUCT_MODEL.md#woocommerce-model-decisions) | Pending; no WooCommerce configuration authorized |
 | FD-DATA-003 | Approve, revise, or reject TAX-001 through TAX-008. | [Product Taxonomy Model](21_PRODUCT_TAXONOMY_MODEL.md#taxonomy-decisions) | Pending; no taxonomy or term creation authorized |
 | FD-DATA-004 | Approve, revise, or reject ATT-001 through ATT-007, including proposed Persian labels, English keys, hierarchy boundary, and Size classification. | [Product Attribute Model](22_PRODUCT_ATTRIBUTE_MODEL.md#attribute-decisions) | Pending; qualified domain review required |
 | FD-DATA-005 | Approve, revise, or reject INQ-001 through INQ-008. | [Inquiry Data Model](23_INQUIRY_DATA_MODEL.md#inquiry-decisions) | Pending; Sales, security, and privacy review required |
-| FD-DATA-006 | Assign owners and approve exact product hierarchy and lifecycle, taxonomy/Collections/Tags, Application/Use-Case terminology, attributes/Size, local exceptions, Customer identity/lifecycle, values, units, SKU, slug, stock, inquiry, SEO, CRM, ERP, and CentralSteel policies before implementation. | [Batch 05 Open Questions](18_OPEN_QUESTIONS.md#product-data-questions) | Pending; no implementation authorized |
+| FD-DATA-006 | Assign owners and approve lifecycle, exact Family/Series values, Variant Rules, taxonomy/Collections/Tags, Application/Use-Case terminology, attributes/Size, local exceptions, Customer identity/lifecycle, values, units, SKU, slug, stock, inquiry, SEO, CRM, ERP, and CentralSteel policies before implementation. | [Batch 05 Open Questions](18_OPEN_QUESTIONS.md#product-data-questions) | Canonical hierarchy resolved by `FD-W2G-001`; remaining decisions pending; no implementation authorized |
 
 ## Information Architecture Decisions Required
 

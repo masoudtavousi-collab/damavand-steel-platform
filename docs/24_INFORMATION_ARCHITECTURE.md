@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Lead Enterprise Information Architect
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-03
-- **Last Review:** 2026-07-03
+- **Version:** 0.2.0
+- **Last Updated:** 2026-07-20
+- **Last Review:** 2026-07-20
 - **Review Cycle:** On business-information layer, content type, product, inquiry, representative, support, navigation, URL, search, ownership, or expansion change
 - **Lifecycle:** Review
 - **Source of Truth:** [Core Project Principles](00_PROJECT_BIBLE.md#core-project-principles), [ADR 0001](adr/0001-inquiry-first-commerce.md), [WordPress Enterprise Architecture](06_WORDPRESS_ARCHITECTURE.md), and the Batch 05 product, taxonomy, attribute, and inquiry models
@@ -61,7 +61,7 @@ The platform is modeled as governed nodes connected by explicit relationships:
 | Node family | Examples from approved reference models | Canonical authority |
 | --- | --- | --- |
 | Business identity | Company information, policies, contact context | Approved business/content owner |
-| Product | Product Family, Product Group, Product Type, Variable Parent Product, Variation | Product Data and WooCommerce models |
+| Product | Canonical Catalog, Platform, Family, Series, Variant Rules, and derived SKU; downstream Parent Product and Variation presentation constructs | Product Repository authority with versioned commerce mappings |
 | Classification | Taxonomy term, attribute definition/value, Collection, Product Tag | Taxonomy and Attribute models |
 | Knowledge | Knowledge Page, Article, FAQ, guide-like educational content | Approved content owner; exact types pending |
 | Landing | Product, taxonomy, application/use-case, industry, brand, campaign, or curated SEO landing | Single approved landing owner per intent |
@@ -88,7 +88,7 @@ Allowed relationship vocabulary includes `contains`, `classifies`, `describes`, 
 ## Content Layers
 
 1. **Foundation content:** stable company, contact, policy, and support-entry information.
-2. **Catalog content:** parent products, variation context, approved specifications, media, and documents.
+2. **Catalog content:** canonical Family/Series context plus downstream parent/variation presentation, approved specifications, media, and documents.
 3. **Context content:** application/use-case, industry, material, finish, brand, Collection, and approved SEO landing context.
 4. **Knowledge content:** educational/reference content that links back to canonical products and classifications.
 5. **Engagement content:** inquiry guidance and contextual inquiry entry without pricing or purchase language.
@@ -100,16 +100,20 @@ The layers describe responsibility, not WordPress post types or page-builder tem
 
 ```text
 Product discovery
-  -> Product Family
-      -> Product Group (when approved for that family)
-          -> Product Type
-              -> Variable Parent Product
-                  -> Variation context
-                      -> Contextual Inquiry
+  -> Catalog
+      -> Platform
+          -> Family
+              -> Series
+                  -> Variant Rules
+                      -> governed product selection
+                          -> optional Parent Product / Variation commerce presentation
+                              -> Contextual Inquiry
 ```
 
-- The canonical public product owner is the Variable Parent Product unless a later approved decision states otherwise.
-- Variations provide selectable context and do not automatically become independent canonical pages.
+- Catalog, Platform, Family, Series, and Variant Rules are canonical repository concepts. SKU is derived only after governed modeling.
+- Parent Product and Variation are downstream commerce or presentation constructs. They reference canonical identities and never own canonical Product truth.
+- A Variable Parent Product may own one public presentation page, but that page ownership does not make its WooCommerce, Parent, Variation, slug, or SKU identifier canonical repository identity.
+- Variations provide selectable context and do not automatically become independent canonical pages or repository entities.
 - Categories, attributes, filters, knowledge, landings, and representative scope link to products; they do not duplicate product-master facts.
 - Product lifecycle, stock state, inquiry eligibility, SEO eligibility, and public visibility remain separate decisions.
 
@@ -166,16 +170,16 @@ No landing type is automatically indexable. SEO Landing Categories do not author
 
 ## Category Hierarchy
 
-- Product Family is the primary governed catalog grouping.
-- Product Group is optional according to the approved family model.
-- Product Type governs structure and applicable attribute profile.
+- Family is the canonical governed product grouping within a Platform.
+- Series is the canonical structural subdivision that receives approved Variant Rules.
+- Product Family, Product Group, and Product Type may appear only in a documented legacy, navigation, or commerce-adapter mapping.
 - Material, Alloy, Application/Use Case, Industry, Finish, Brand, Collection, Product Tag, and SEO Landing classifications retain the purposes and overlap controls in the Taxonomy Model.
 - Category navigation never changes canonical product identity or creates new attribute values.
 - Exact category terms, depth, labels, and public hierarchy remain unapproved.
 
 ## Product Hierarchy
 
-The product hierarchy is exactly the one defined by PDM-001. Information architecture may expose shallower navigation views for usability, but it must not delete, reorder, or reinterpret the governed Family → Group → Type → Variable Parent → Variation relationship.
+The canonical Product Repository hierarchy is exactly `Catalog → Platform → Family → Series → Variant Rules → SKU`, as settled by PDM-001 and the Founder decision dated 2026-07-20. Information architecture may expose shallower navigation and downstream Parent/Variation views for usability, but it must not delete, reorder, reinterpret, or replace the canonical hierarchy.
 
 ## Knowledge Hierarchy
 
@@ -212,7 +216,8 @@ Document type, version, language, owner, reviewer, product applicability, replac
 
 | Information concern | Canonical owner source | Assignment status |
 | --- | --- | --- |
-| Product and variation facts | Product Data/WooCommerce models | Operational role pending Founder decision |
+| Canonical Product identities, hierarchy, and rules | Product Repository models | Operational role pending Founder decision; WooCommerce is a consumer only |
+| Parent Product and Variation presentation | Approved commerce-adapter mapping | Operational role pending Founder decision; no canonical Product ownership |
 | Taxonomy and attribute facts | Taxonomy/Attribute models | Operational role pending Founder decision |
 | Knowledge and editorial content | Content governance | TODO (Founder Decision Required) |
 | Landing intent and indexation | SEO governance | TODO (Founder Decision Required) |
@@ -227,14 +232,15 @@ One role may hold multiple assignments, but one concern must not have competing 
 
 ```text
 Core Project Principles + ADR 0001
-  -> WordPress Enterprise Architecture + approved reference models
-      -> Enterprise Information Architecture
-          -> Site Structure + URL Architecture
-          -> Search and Discovery + Internal Linking Model
-              -> future configuration and validation evidence
+  -> Canonical Product and Knowledge Repository authority
+      -> approved reference and commerce-adapter models
+          -> Enterprise Information Architecture
+              -> Site Structure + URL Architecture
+              -> Search and Discovery + Internal Linking Model
+                  -> future configuration and validation evidence
 ```
 
-The flow transfers constraints, not approval. Site, URL, search, navigation, or linking documents cannot override product, taxonomy, inquiry, privacy, SEO, or governance authority.
+The flow transfers constraints, not approval. WordPress, WooCommerce, Parent/Variation presentation, site, URL, search, navigation, or linking documents cannot override Product, Knowledge, taxonomy, inquiry, privacy, SEO, or governance authority.
 
 ## Future Expansion Rules
 
@@ -276,6 +282,7 @@ Review. The logical information architecture is proposed for Founder review. It 
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2.0 | 2026-07-20 | Reconciled Information Architecture with the canonical Product Repository hierarchy and downstream commerce/presentation mappings; documentation only. |
 | 0.1.0 | 2026-07-03 | Initial Batch 06 enterprise information architecture; documentation only. |
 
 ## Related Documents

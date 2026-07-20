@@ -4,13 +4,13 @@
 
 - **Document ID:** `repository/data/products/pipes/PIPE_VARIATION_MATRIX.md`
 - **Status:** Review
-- **Authority:** Product Data Asset
+- **Authority:** Legacy Theoretical Candidate Scaffold
 - **Owner:** Founder
 - **Reviewer:** Product Data Owner and Qualified Steel-Domain Reviewer
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-04
-- **Last Review:** 2026-07-04
+- **Version:** 0.2.0
+- **Last Updated:** 2026-07-20
+- **Last Review:** 2026-07-20
 - **Review Cycle:** On controlled value, variation axis, valid combination, commercial availability, unit, label, or import change
 - **Lifecycle:** Review
 - **Source of Truth:** Sprint 03A supplied Grade/Finish/Dimension values and [Attribute Dictionary](../../attributes/ATTRIBUTE_DICTIONARY.md)
@@ -22,7 +22,13 @@
 
 ## Purpose
 
-Define finite candidate value sets and combination controls for future Stainless Steel Pipe variations without generating unverified commercial products.
+Preserve the Sprint 03A theoretical candidate value sets and combination controls as a legacy scaffold without generating or authorizing commercial products.
+
+## Current Authority Boundary
+
+This file is not Golden authority, availability evidence, approved Master Data, import authority, SKU authority, or runtime authority. Its thickness set and theoretical 1,584 Cartesian tuples do not override the Founder-approved three-combination pilot or the separate 882-row governed decision scope.
+
+The approved Parent is `لوله استیل دکوراتیو`, with exactly these decision references: `GOLD-PIPE-201-51-050-6M` / `PIPE-COMB-0023`, `GOLD-PIPE-201-38-050-6M` / `PIPE-COMB-0016`, and `GOLD-PIPE-201-16-035-6M` / `PIPE-COMB-0001`. These are pilot references only, not final commercial SKUs. No Golden or Master Data records are created by this clarification.
 
 ## Normalization Decision
 
@@ -39,36 +45,36 @@ This working normalization requires Founder and qualified steel-domain approval 
 
 | Order | Stored value | Persian display | Commercial availability |
 | --- | --- | --- | --- |
-| 1 | `201` | گرید ۲۰۱ | `TBD` |
-| 2 | `304` | گرید ۳۰۴ | `TBD` |
-| 3 | `316` | گرید ۳۱۶ | `TBD` |
-| 4 | `430` | گرید ۴۳۰ | `TBD` |
+| 1 | `201` | گرید ۲۰۱ | Not established by this scaffold |
+| 2 | `304` | گرید ۳۰۴ | Not established by this scaffold |
+| 3 | `316` | گرید ۳۱۶ | Not established by this scaffold |
+| 4 | `430` | گرید ۴۳۰ | Not established by this scaffold |
 
 ### Finish
 
 | Order | Stored value | English display | Persian display | Commercial availability |
 | --- | --- | --- | --- | --- |
-| 1 | `silver` | Silver | نقره‌ای | `TBD` |
-| 2 | `gold-pvd` | Gold PVD | طلایی PVD | `TBD` |
-| 3 | `black-pvd` | Black PVD | مشکی PVD | `TBD` |
+| 1 | `silver` | Silver | نقره‌ای | Not established by this scaffold |
+| 2 | `gold-pvd` | Gold PVD | طلایی PVD | Not established by this scaffold |
+| 3 | `black-pvd` | Black PVD | مشکی PVD | Not established by this scaffold |
 
 ### Diameter
 
 | Unit | Allowed numeric values | Commercial availability |
 | --- | --- | --- |
-| mm | `16`, `19`, `22`, `25`, `32`, `38`, `42`, `51`, `63`, `76`, `102` | `TBD` for every combination |
+| mm | `16`, `19`, `22`, `25`, `32`, `38`, `42`, `51`, `63`, `76`, `102` | Not established by this scaffold |
 
 ### Thickness
 
 | Unit | Allowed numeric values | Commercial availability |
 | --- | --- | --- |
-| mm | `0.6`, `0.8`, `1`, `1.2`, `1.5`, `2` | `TBD` for every combination |
+| mm | `0.6`, `0.8`, `1`, `1.2`, `1.5`, `2` | Legacy candidate set only; excludes approved pilot values 0.35 and 0.50 and therefore cannot model the pilot |
 
 ### Length
 
 | Unit | Allowed numeric values | Commercial availability |
 | --- | --- | --- |
-| m | `3`, `6` | `TBD` for every combination |
+| m | `3`, `6` | Not established by this scaffold |
 
 ## Fixed Rules
 
@@ -77,10 +83,11 @@ This working normalization requires Founder and qualified steel-domain approval 
 | Unit | `meter` |
 | Pricing visibility | Hidden; all public price fields empty |
 | Inquiry required | `yes` |
-| Commercial availability | `TBD` unless separately verified and approved |
+| Commercial availability | Not established; this scaffold is not availability evidence |
 | Parent product type | `variable` |
 | Child product type | `variation` |
-| Canonical owner | Variable Parent Product |
+| Canonical repository owner | Governed Family/Series/Variant Rules; not established by this legacy scaffold |
+| Commerce presentation owner | Variable Parent Product may be used downstream only |
 | Variation canonical/indexation | Not independently canonical/indexable by default |
 
 ## Candidate-Space Calculation
@@ -91,7 +98,7 @@ The supplied sets produce a theoretical Cartesian candidate space:
 4 grades × 3 finishes × 11 diameters × 6 thicknesses × 2 lengths = 1,584 candidate tuples
 ```
 
-This calculation is a validation warning, not a product count or authorization. No assumption is made that all 1,584 combinations are technically valid, supplied, stocked, useful, or manageable.
+This calculation is a historical validation warning, not the current governed decision-scope count, product count, or authorization. No assumption is made that any or all of the 1,584 tuples are technically valid, supplied, stocked, useful, available, or manageable. It does not amend the 3 `APPROVED` plus 879 `CANDIDATE_UNVERIFIED` decision scope, for which availability is `MISSING_DATA_VALUE` across all 882 rows.
 
 ## Valid-Combination Rules
 
@@ -99,10 +106,10 @@ This calculation is a validation warning, not a product count or authorization. 
 - Every tuple must use exactly one value from each variation axis.
 - Duplicate tuples under the same parent are rejected.
 - Technically invalid, commercially unverified, unsupported, or incomplete tuples are rejected or held in staging.
-- `TBD` commercial availability blocks publication and import as an available product.
+- Missing commercial-availability evidence blocks publication and import as an available product.
 - Brand, Country, supplier, weight per meter, Quality Level, stock quantity, lead time, and price are never derived from the tuple.
 - Grade/Finish/Dimension changes create a different variation identity; they do not silently overwrite an existing variation.
-- A valid tuple still requires a stable internal ID, approved unique variation SKU, lifecycle approval, and inquiry eligibility.
+- A valid tuple still requires a canonical stable identity, approved Variant Rules, evidence, lifecycle approval, and inquiry eligibility. Any SKU is derived only after governed modeling and separate SKU-policy approval.
 
 ## Variation Display Pattern
 
@@ -126,9 +133,9 @@ Samples validate structure only and do not represent available products.
 
 | Sample | Material | Grade | Finish | Diameter mm | Thickness mm | Length m | Unit | Availability | Inquiry | Public price |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `SAMPLE-001` | stainless-steel | 304 | silver | 16 | 0.6 | 3 | meter | `TBD` | yes | empty |
-| `SAMPLE-002` | stainless-steel | 316 | gold-pvd | 25 | 1.2 | 6 | meter | `TBD` | yes | empty |
-| `SAMPLE-003` | stainless-steel | 430 | black-pvd | 51 | 2 | 6 | meter | `TBD` | yes | empty |
+| `SAMPLE-001` | stainless-steel | 304 | silver | 16 | 0.6 | 3 | meter | `CANDIDATE_UNVERIFIED` | yes | empty |
+| `SAMPLE-002` | stainless-steel | 316 | gold-pvd | 25 | 1.2 | 6 | meter | `CANDIDATE_UNVERIFIED` | yes | empty |
+| `SAMPLE-003` | stainless-steel | 430 | black-pvd | 51 | 2 | 6 | meter | `CANDIDATE_UNVERIFIED` | yes | empty |
 
 Sample identifiers are not SKUs, product IDs, or commercial records.
 
@@ -147,6 +154,7 @@ Sample identifiers are not SKUs, product IDs, or commercial records.
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2.0 | 2026-07-20 | Classified the matrix as a legacy theoretical candidate scaffold and separated it from Golden, 882-row Master Data, availability, SKU, import, and runtime authority. |
 | 0.1.0 | 2026-07-04 | Initial Sprint 03A candidate variation matrix; commercial validity remains TBD. |
 
 ## Navigation

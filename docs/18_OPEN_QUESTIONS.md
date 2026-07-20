@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.3.0
+- **Version:** 0.4.0
 - **Last Updated:** 2026-07-20
-- **Last Review:** 2026-07-19
+- **Last Review:** 2026-07-20
 - **Review Cycle:** On question creation, resolution, blocking impact, or source-document change
 - **Lifecycle:** Draft
 - **Source of Truth:** Unresolved questions and placeholders in controlled source documents; this register does not answer them
@@ -26,7 +26,7 @@ Collect unresolved questions and unclassified placeholders without answering the
 
 ## Current Repository-Control Resolution Boundary
 
-The 2026-07-19 Founder authorization historically resolved the immediate Wave 1 branch/commit/push/Draft-PR scope but did not authorize merge. PR #1 and PR #2 were later separately approved and merged, and Wave 1 is complete at shared baseline `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`. Wave 2 remains unauthorized. Architecture, product, WordPress, runtime, content, publication, deployment, production, mirror, backup, signing, retention, and repository-setting questions retain their prior status unless explicitly updated below.
+The 2026-07-19 Founder authorization historically resolved the immediate Wave 1 branch/commit/push/Draft-PR scope but did not itself authorize merge. PR #1–#3 were later separately approved and merged; Wave 1 and Wave 2 discovery are complete at shared baseline `d702c5217f7caa2f23e56f965f3f993967e3c17d`. Default `main` and main protection are established. Wave 2A implementation remains unauthorized. Product hierarchy and canonical path ownership are settled by `FD-W2G-001` and `FD-W2G-002`; remaining architecture, product values, WordPress, runtime, content, publication, deployment, production, mirror, backup, signing, and retention questions retain their prior status unless explicitly updated below.
 
 ## Explicit Open-Question Sections
 
@@ -79,8 +79,10 @@ The following older documents contained unresolved `TBD.` placeholders. Batch 02
 | OQ-GOV-018 | Should the relationship vocabulary, rule-inheritance hierarchy, and conflict-resolution framework be approved together or with recorded revisions? | [Relationship Metadata](REPOSITORY_METADATA.md#relationship-metadata-model) and [Project Constitution](01_PROJECT_CONSTITUTION.md#conflict-resolution-framework) | Open |
 | OQ-GOV-019 | Should the Controlled Document Validation Checklist become the repository validation gate? | [Documentation Quality Standard](16_QUALITY_STANDARD.md#controlled-document-validation-checklist) | Open |
 | OQ-GOV-020 | Should the expanded AI change-authority and repository-protection rules be approved without changing CP-010? | [AI Collaboration Standard](AI_COLLABORATION.md#ai-change-authority-matrix) | Open |
-| OQ-GOV-021 | Should Git Governance be approved, and which primary remote, independent mirror, backup location, custodians, signing policy, and retention period are authorized? | [Git Governance](GIT_GOVERNANCE.md) and [Baseline Known Limitations](BASELINE_v1.0.md#known-limitations) | Partially resolved: `masoudtavousi-collab/damavand-steel-platform` and canonical `main` at `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26` are verified; PR #1 and PR #2 are merged and Wave 1 is complete. Broader governance approval, mirror, backup, custody, signing, protection, retention, future merges, and repository settings remain open. |
-| OQ-GOV-022 | Should the GitHub default branch be changed from `codex/bootstrap-atlas-foundation` to the intended canonical `main`, and what branch-protection policy should apply? | Current GitHub repository metadata and [Repository Health](REPOSITORY_HEALTH.md#git-governance-coverage) | Open; requires a separate Founder-approved repository-settings sprint. No setting change is authorized by the post-merge documentation reconciliation. |
+| OQ-GOV-021 | Should Git Governance be approved, and which independent mirror, backup location, custodians, signing policy, and retention period are authorized? | [Git Governance](GIT_GOVERNANCE.md) and [Baseline Known Limitations](BASELINE_v1.0.md#known-limitations) | Partially resolved: primary repository, canonical/default `main` at `d702c5217f7caa2f23e56f965f3f993967e3c17d`, PR #1–#3, and main protection are verified. Broader governance approval, mirror, backup, custody, signing, retention, and future merge policy remain open. |
+| OQ-GOV-022 | Should the GitHub default branch be `main`, and what branch-protection policy should apply? | Current GitHub repository metadata and [Repository Health](REPOSITORY_HEALTH.md#git-governance-coverage) | Resolved on 2026-07-20: default branch `main`; administrator enforcement and strict required `repository-validation` enabled; force-push and deletion disabled. Further settings mutation remains separately gated. |
+| OQ-GOV-023 | Which Product Repository hierarchy is canonical, and how do Parent/Variation commerce constructs relate to it? | `FD-W2G-001` and [Enterprise Product Data Model](19_PRODUCT_DATA_MODEL.md#product-hierarchy) | Resolved on 2026-07-20: `Catalog → Platform → Family → Series → Variant Rules → SKU`; Parent/Variation constructs are downstream mappings only. Exact Family/Series values and Variant Rules remain open data decisions. |
+| OQ-GOV-024 | Which repository paths own Product contracts, schemas, registries, validation, Master Data, Golden references, Knowledge, content, derived implementation assets, and WordPress adapters? | `FD-W2G-002` and [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md) | Resolved on 2026-07-20. Path creation and implementation remain separately gated. |
 
 ## WordPress Architecture Questions
 

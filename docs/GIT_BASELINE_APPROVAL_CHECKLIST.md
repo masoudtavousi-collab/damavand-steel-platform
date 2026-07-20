@@ -8,7 +8,7 @@ The current `docs/GIT_FILE_CLASSIFICATION.csv` is a dated 2026-07-14 inventory s
 
 Historically, the explicit 2026-07-19 Class B Wave 1 Founder authorization permitted exactly 19 approved paths, one scoped commit, push of only `codex/class-b-wave-01-governance`, and one Draft PR while merge remained excluded. That authorization must not be rewritten as earlier merge authority.
 
-PR #1 and PR #2 were later separately approved and merged, Wave 1 is complete, and canonical `main` is verified at shared baseline `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`. The old Wave 1 branch and Draft-PR authorization no longer describe the current repository state. Current Git mutation authority is limited to the Founder-approved fourteen-file post-merge documentation reconciliation, one commit, push of only `codex/post-merge-governance-reconciliation`, and one Draft PR against `main`; its merge is not approved. Wave 2 and repository-settings remediation remain unauthorized. No workflow activation, runtime execution, WordPress or Product Repository implementation, publication, deployment, or production mutation has occurred.
+PR #1, PR #2, and PR #3 were later separately approved and merged; Wave 1 and read-only Wave 2 discovery are complete. Canonical/default `main` is verified at shared baseline `d702c5217f7caa2f23e56f965f3f993967e3c17d`, `origin/HEAD` resolves to `origin/main`, and main protection is active with administrator enforcement and strict required check `repository-validation`; force-push and deletion are disabled. The old Wave 1 and post-merge Draft-PR authorizations remain historical evidence only. Current Git mutation authority is limited to the Founder-approved 21-file-ceiling Wave 2 pre-implementation documentation reconciliation, one commit, push of only `codex/wave-2-preimplementation-reconciliation`, and one Draft PR against `main`; Codex may not merge it. Wave 2A implementation remains unauthorized. No workflow activation, runtime execution, WordPress or Product Repository implementation, publication, deployment, or production mutation has occurred.
 
 ## Historical Review Scope
 
@@ -57,7 +57,11 @@ A future commit sprint may begin only after the Founder approves the classificat
 - Class B Wave 1 exact-path commit: **GO by separate 2026-07-19 authorization**
 - Push of `codex/class-b-wave-01-governance`: **GO by separate 2026-07-19 authorization**
 - One Draft PR for Wave 1: **GO by separate 2026-07-19 authorization**
-- Merge and Wave 2–10: **NO-GO**
+- Historical Wave 1 and PR #3 merges: **COMPLETE by later separate Founder approvals**
+- Default branch and main protection remediation: **COMPLETE by separate Founder approvals**
+- Wave 2 discovery: **COMPLETE, read-only**
+- Wave 2 pre-implementation documentation Draft PR: **GO within the exact current authorization; merge requires Founder review**
+- Wave 2A implementation and later implementation work: **NO-GO pending separate Founder authorization**
 - Deployment: **NO-GO**
 - Runtime: **NO-GO**
 - Import: **NO-GO**

@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.4.0
+- **Version:** 0.5.0
 - **Last Updated:** 2026-07-20
-- **Last Review:** 2026-07-19
+- **Last Review:** 2026-07-20
 - **Review Cycle:** On document creation, removal, rename, lifecycle, authority, or navigation change
 - **Lifecycle:** Draft
 - **Source of Truth:** Current repository documentation paths plus each document's recorded status and authority
@@ -26,7 +26,7 @@ Provide the canonical map of repository documentation without replacing the auth
 
 ## Current Repository-Control Context
 
-Canonical `main` and the verified shared baseline resolve to `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`. Bootstrap PR #1 and Wave 1 Governance PR #2 are merged; Wave 1 is complete. The 2026-07-19 Wave 1 branch/commit/push/Draft-PR authorization remains historical context and did not itself authorize merge. Wave 2 has not started and remains unauthorized. Workflows remain inactive, and no runtime, WordPress or Product Repository implementation, publication, deployment, or production mutation has occurred. GitHub's default branch still points to `codex/bootstrap-atlas-foundation`; changing it to the intended `main` default requires separate Founder approval.
+Canonical/default `main` and the verified shared baseline resolve to `d702c5217f7caa2f23e56f965f3f993967e3c17d`; `origin/HEAD` resolves to `origin/main`. PR #1, PR #2, and PR #3 are merged; Wave 1, post-merge reconciliation, default-branch correction, main protection, and read-only Wave 2 discovery are complete. The 2026-07-19 Wave 1 authorization remains historical context and did not itself authorize merge. Wave 2 implementation has not started; Wave 2A is proposed and not authorized. Workflows remain inactive, and no runtime, WordPress, Product/Knowledge implementation, publication, deployment, or production mutation has occurred. Approved future canonical paths do not imply that their machine-readable assets currently exist.
 
 ## Categories and Complete Document Map
 

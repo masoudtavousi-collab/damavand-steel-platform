@@ -1,12 +1,13 @@
 # Current Project State
 
 - **Current date:** 2026-07-20
-- **Current phase:** Post-merge governance baseline reconciliation; Wave 1 complete; Wave 2 not started
-- **Last completed sprint:** Sprint 12A
-- **Last completed repository integration:** Class B Wave 1 Governance through merged PR #2
-- **Current approved activity:** Documentation-only reconciliation of the verified post-merge baseline, one exact-scope commit, push of only `codex/post-merge-governance-reconciliation`, and one Draft PR for Founder review
-- **Active documentation sprint:** Post-merge governance baseline reconciliation only; Wave 2 remains unapproved
+- **Current phase:** Wave 2 pre-implementation governance reconciliation; Wave 1 and Wave 2 discovery complete
+- **Last completed product/runtime evidence sprint:** Sprint 12A
+- **Last completed repository integration:** Post-merge Governance Reconciliation through merged PR #3
+- **Current approved activity:** Documentation-only reconciliation on `codex/wave-2-preimplementation-reconciliation`, one exact-scope commit, push of only that branch, and one Draft PR for Founder review
+- **Active documentation sprint:** Wave 2 pre-implementation governance reconciliation only
 - **Active implementation sprint:** None
+- **Wave 2A:** Proposed, not authorized, and not started
 - **Runtime:** NO-GO
 - **Import:** NO-GO
 - **Publishing:** NO-GO
@@ -16,20 +17,20 @@
 
 ## Completed
 
-- Enterprise, Product Repository, and Knowledge Repository Architecture asset coverage (approval remains lifecycle-gated)
-- Visual Experience System, Design Language, and Content Language
-- WordPress Blueprint
-- Product Foundation and Product DNA
-- Import, Media, and SEO asset scaffolds
-- Master Data scaffolds and Configurator contracts
-- Knowledge Card and Page Builder contracts
+- Enterprise, Product Repository, and Knowledge Repository architecture/proposal coverage (approval remains lifecycle-gated)
+- Tracked Design proposal/scaffold coverage; historically referenced expanded Visual Experience and Content Language sets are absent from canonical `main`
+- Tracked WordPress architecture/Blueprint proposals; `repository/wordpress/` has no substantive adapter artifact
+- Current tracked Product Engine, Product Data, Platform, Design, import-mapping, media, and SEO proposal/scaffold coverage; this does not establish absent machine-readable contracts or packages
 - Sprint 10R reconciliation
-- Sprint 11 Golden Reference Product Package creation (assets created; no import, runtime, WordPress, or publishing execution)
+- Historical Sprint 11 Golden package claim preserved as evidence; the referenced package is absent from canonical `main`
 - Sprint 12A Golden Product WordPress and cPanel public read-only preflight (no authenticated access and no runtime mutation)
 - GIT-02S Founder decisions confirm Repository A as canonical, Repository B as isolated research, and the existing three-combination Golden pilot scope
 - Bootstrap PR #1 merged through `530a4c46cc47bd02b794cfac1ef24eef56918e75`
 - Wave 1 Governance PR #2 merged through `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`; Wave 1 is complete
-- Canonical `main` and the verified shared baseline resolve to `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`
+- Post-merge Governance Reconciliation PR #3 merged through `d702c5217f7caa2f23e56f965f3f993967e3c17d`
+- Canonical/default `main`, local `main`, `origin/main`, and the verified shared baseline resolve to `d702c5217f7caa2f23e56f965f3f993967e3c17d`; `origin/HEAD` resolves to `origin/main`
+- Main protection, administrator enforcement, strict/up-to-date checks, and required check `repository-validation` are enabled; force-push and branch deletion are disabled
+- Read-only Wave 2 kickoff discovery completed; Wave 2 implementation did not start
 - Sprint 1 classified the preserved Class B working tree and proposed ten controlled integration waves; its six reports remain local and unstaged
 
 ## Current Master Data State
@@ -40,8 +41,9 @@
 - The approved Golden Parent is `لوله استیل دکوراتیو`; its three approved variations are 201/silver/51/0.50/6m, 201/silver/38/0.50/6m, and 201/silver/16/0.35/6m.
 - Their `GOLD-PIPE-*` identifiers are pilot references only and are not final commercial SKUs.
 - Market availability remains `MISSING_DATA_VALUE` across all 882 rows; no stock quantity is asserted.
-- The Golden asset package is `PILOT_ASSET_READY` / `FOUNDER_REVIEW_READY`, but is not Import Ready, Runtime Ready, or Publishing Ready and has not been imported or executed.
-- Ready for Founder review only.
+- Approval exists through Founder decisions and governing prose; no canonical machine-readable Golden or Master Data package exists on `main`.
+- Brand is approved absent/hidden and brand-neutral. Weight is `DEFERRED` and must not be inferred.
+- Import, Runtime, and Publishing remain `NO-GO`.
 
 ### Fittings
 
@@ -54,14 +56,16 @@
 - Glass: `BLOCKED_BY_MISSING_DATA`.
 - Pool: `DEFERRED`.
 
-### Knowledge and Page Assets
+### Product and Knowledge Repository Readiness
 
-- Knowledge Cards: contracts ready; final content missing.
-- Page Builder: contracts ready; final content missing.
+- Product architecture/design inputs exist; machine-readable core contracts, schemas, registries, final Product identifiers, final SKU vocabulary, and Product-domain executable tests do not.
+- Product Repository is `NOT_IMPLEMENTATION_READY` until Wave 2A is separately authorized, completed, reviewed, and approved.
+- Knowledge architecture proposals exist. `repository/knowledge/` is the approved future canonical location, but machine-readable Knowledge contracts and content instances do not exist.
+- Knowledge Repository is `NOT_IMPLEMENTATION_READY`; implementation depends on stable shared Product identities. No Knowledge population, retrieval implementation, or Phase 1 AI is authorized.
 
 ## Current Blockers
 
-- Brand, weight, media files and rights, and the final slug remain incomplete for the Golden Parent.
+- Media files and rights and the final slug remain incomplete for the Golden Parent. Brand is settled as absent/hidden; weight is settled as `DEFERRED`.
 - Exact availability, product relationships, and compatibility remain unverified.
 - Public slug policy remains unresolved where applicable.
 - No final SKU vocabulary approval.
@@ -72,8 +76,7 @@
 - Product-level suppression of public price, Offer schema, cart, and checkout is not proven.
 - Blocksy Pro and Elementor Pro availability and license ownership remain unresolved.
 - Site URL and Home URL expose an HTTP-versus-HTTPS scheme mismatch through the public REST root.
-- Canonical `main` is verified at `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`. Wave 2 has not started and remains unauthorized; independent backup and restore proof remain unestablished.
-- GitHub still reports `codex/bootstrap-atlas-foundation` as the default branch. Changing it to the intended `main` default requires a separate Founder-approved repository-settings sprint.
+- Canonical/default `main` is verified at `d702c5217f7caa2f23e56f965f3f993967e3c17d`. Wave 2 discovery is complete; Wave 2 implementation has not started and Wave 2A remains unapproved. Independent backup and restore proof remain unestablished.
 - Workflows remain inactive. No runtime execution, WordPress or Product Repository implementation, publication, deployment, or production mutation has occurred.
 
 ## Repository Disposition
@@ -84,7 +87,7 @@
 
 ## Approved Next Action
 
-**Complete the post-merge governance baseline reconciliation only:** validate the approved documentation allowlist, create one exact-scope commit, push only `codex/post-merge-governance-reconciliation`, and open one Draft PR against `main`. Stop for Founder review before merge. Wave 2, repository-settings changes, runtime, workflows, WordPress, Product Repository implementation, publication, deployment, and production remain outside this authorization.
+**Complete the Wave 2 pre-implementation governance reconciliation only:** validate the approved documentation allowlist, create one exact-scope commit, push only `codex/wave-2-preimplementation-reconciliation`, and open one Draft PR against `main`. The next action is Founder review and merge decision for that Draft PR, followed by a separate Wave 2A authorization decision. Do not merge autonomously or begin implementation. Runtime, workflows, WordPress, Product/Knowledge implementation, publication, deployment, and production remain outside this authorization.
 
 ## Latest Reports
 
