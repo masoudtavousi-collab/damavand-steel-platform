@@ -9,7 +9,7 @@
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
 - **Version:** 0.3.0
-- **Last Updated:** 2026-07-19
+- **Last Updated:** 2026-07-20
 - **Last Review:** 2026-07-19
 - **Review Cycle:** On question creation, resolution, blocking impact, or source-document change
 - **Lifecycle:** Draft
@@ -26,7 +26,7 @@ Collect unresolved questions and unclassified placeholders without answering the
 
 ## Current Repository-Control Resolution Boundary
 
-The 2026-07-19 Founder authorization resolves only the immediate Wave 1 Git scope: the named repository, verified remote `main` SHA, bootstrap commit, unchanged Draft PR #1, exact 19-path allowlist, one Wave 1 commit, one branch push, and one Draft PR. It does not resolve any architecture, product, WordPress, runtime, content, publication, deployment, production, mirror, backup, signing, retention, repository-setting, default-branch, or merge question. All unrelated open questions retain their prior status.
+The 2026-07-19 Founder authorization historically resolved the immediate Wave 1 branch/commit/push/Draft-PR scope but did not authorize merge. PR #1 and PR #2 were later separately approved and merged, and Wave 1 is complete at shared baseline `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`. Wave 2 remains unauthorized. Architecture, product, WordPress, runtime, content, publication, deployment, production, mirror, backup, signing, retention, and repository-setting questions retain their prior status unless explicitly updated below.
 
 ## Explicit Open-Question Sections
 
@@ -79,7 +79,8 @@ The following older documents contained unresolved `TBD.` placeholders. Batch 02
 | OQ-GOV-018 | Should the relationship vocabulary, rule-inheritance hierarchy, and conflict-resolution framework be approved together or with recorded revisions? | [Relationship Metadata](REPOSITORY_METADATA.md#relationship-metadata-model) and [Project Constitution](01_PROJECT_CONSTITUTION.md#conflict-resolution-framework) | Open |
 | OQ-GOV-019 | Should the Controlled Document Validation Checklist become the repository validation gate? | [Documentation Quality Standard](16_QUALITY_STANDARD.md#controlled-document-validation-checklist) | Open |
 | OQ-GOV-020 | Should the expanded AI change-authority and repository-protection rules be approved without changing CP-010? | [AI Collaboration Standard](AI_COLLABORATION.md#ai-change-authority-matrix) | Open |
-| OQ-GOV-021 | Should Git Governance be approved, and which primary remote, independent mirror, backup location, custodians, signing policy, and retention period are authorized? | [Git Governance](GIT_GOVERNANCE.md) and [Baseline Known Limitations](BASELINE_v1.0.md#known-limitations) | Partially resolved for Wave 1 only: `masoudtavousi-collab/damavand-steel-platform`, remote `main`, and the exact Wave 1 branch/commit/push/Draft-PR path are authorized. Broader governance approval, mirror, backup, custody, signing, protection, retention, merge, and repository settings remain open. |
+| OQ-GOV-021 | Should Git Governance be approved, and which primary remote, independent mirror, backup location, custodians, signing policy, and retention period are authorized? | [Git Governance](GIT_GOVERNANCE.md) and [Baseline Known Limitations](BASELINE_v1.0.md#known-limitations) | Partially resolved: `masoudtavousi-collab/damavand-steel-platform` and canonical `main` at `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26` are verified; PR #1 and PR #2 are merged and Wave 1 is complete. Broader governance approval, mirror, backup, custody, signing, protection, retention, future merges, and repository settings remain open. |
+| OQ-GOV-022 | Should the GitHub default branch be changed from `codex/bootstrap-atlas-foundation` to the intended canonical `main`, and what branch-protection policy should apply? | Current GitHub repository metadata and [Repository Health](REPOSITORY_HEALTH.md#git-governance-coverage) | Open; requires a separate Founder-approved repository-settings sprint. No setting change is authorized by the post-merge documentation reconciliation. |
 
 ## WordPress Architecture Questions
 

@@ -2,15 +2,17 @@
 
 ## Current Reconciliation State
 
-**Last completed product/runtime sprint:** Sprint 12A. **Active implementation sprint:** None. GIT-02S is completed historical governance-reconciliation evidence. The current authorized documentation activity is Class B Wave 1 only: controlled reconciliation and Git integration of exactly 19 governance and repository-control paths. Repository B remains isolated `QUARANTINED_ARCHITECTURE_RESEARCH`.
+**Last completed product/runtime sprint:** Sprint 12A. **Last completed repository integration:** Class B Wave 1 Governance. **Active implementation sprint:** None. GIT-02S and the 2026-07-19 Wave 1 authorization remain historical governance evidence. The current authorized activity is documentation-only post-merge baseline reconciliation. Wave 2 has not started and remains unauthorized. Repository B remains isolated `QUARANTINED_ARCHITECTURE_RESEARCH`.
 
 ## Repository Integration Track
 
-- Remote `main` exists at `96f2ea70f9010fce416a18310e98915e2be537b9`.
-- Bootstrap commit `b20e95de8b1b67d2bc610130648700e82a6855b3` remains the sole commit in open, Draft, unmerged PR #1, which contains exactly 24 approved paths.
-- Wave 1 is authorized on `codex/class-b-wave-01-governance` for one exact-scope commit, branch push, and Draft PR.
-- Class B Waves 2–10 and the six Sprint 1 reports remain local, unapproved, and excluded.
-- Wave 1 does not advance any product, WordPress, runtime, import, content, publication, deployment, or production phase below.
+- Canonical `main` and the verified shared baseline resolve to `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`.
+- Bootstrap PR #1 is complete and merged through `530a4c46cc47bd02b794cfac1ef24eef56918e75`.
+- Wave 1 Governance PR #2 is complete and merged through `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`; Wave 1 is complete.
+- The historical Wave 1 branch/commit/push/Draft-PR scope did not authorize merge and remains preserved as chronology. Its later approved merge granted no Wave 2, runtime, or implementation authority.
+- Wave 2 and the remaining Class B integration waves have not started and require separate Founder approval.
+- Workflows remain inactive. No runtime, WordPress or Product Repository implementation, publication, deployment, or production mutation has occurred.
+- GitHub's default branch remains `codex/bootstrap-atlas-foundation`; changing it to the intended `main` default is deferred to a separately approved repository-settings sprint.
 
 ## Phase 1 — Architecture
 
@@ -84,4 +86,4 @@ Sequence: Pipe → Profile → approved Fittings families → remaining approved
 
 ## Do Not Yet
 
-No PR merge, Wave 2 or later, bulk import, full-catalog or 882-variation generation, production publishing, live prices, payment/cart/checkout, Phase 1 AI, speculative Fittings data, or Central Steel runtime.
+No merge of the post-merge reconciliation PR, Wave 2 or later, repository-settings change, workflow activation, bulk import, full-catalog or 882-variation generation, WordPress implementation, Product Repository implementation, production publishing, deployment, live prices, payment/cart/checkout, Phase 1 AI, speculative Fittings data, or Central Steel runtime.

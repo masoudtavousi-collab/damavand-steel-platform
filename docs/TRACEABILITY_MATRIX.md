@@ -9,7 +9,7 @@
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
 - **Version:** 0.4.0
-- **Last Updated:** 2026-07-19
+- **Last Updated:** 2026-07-20
 - **Last Review:** 2026-07-19
 - **Review Cycle:** On governing-rule or dependency change; periodic cadence pending Founder approval
 - **Lifecycle:** Review
@@ -1048,20 +1048,22 @@ Core Principles + Business/Inquiry/Product/Entity/Knowledge authority
 | GIT02S-CLASS | [Git File Classification](GIT_FILE_CLASSIFICATION.csv) | Dated 2026-07-14 Repository A inventory | One historical disposition row per GIT-02S snapshot item | Snapshot only; not current Git state or authority |
 | GIT02S-AUDIT | Future Reference: GIT-02S Audit — `docs/AUDIT_REPORT_GIT02S.md` (Not yet approved) | GIT-02S changes and static validation | Evidence-only reconciliation record | Not governing authority |
 
-Historically, the GIT-02S Founder directive permitted documentation reconciliation only. It did not pass an Execution Gate or authorize Git staging, commit, tag, push, merge, WordPress, runtime, import, product creation, deployment, or publishing. `FD-GIT-W1-001` later supersedes only the Git staging/commit/branch-push/Draft-PR boundary for its exact 19-path scope.
+Historically, the GIT-02S Founder directive permitted documentation reconciliation only. It did not pass an Execution Gate or authorize Git staging, commit, tag, push, merge, WordPress, runtime, import, product creation, deployment, or publishing. `FD-GIT-W1-001` later superseded only the Git staging/commit/branch-push/Draft-PR boundary for its exact 19-path scope.
 
-## Class B Wave 1 Repository-Control Traceability
+## Completed Class B Wave 1 Repository-Control Traceability
 
 | Trace ID | Asset or decision | Authority input | Reconciled outcome | Boundary |
 | --- | --- | --- | --- | --- |
-| `W1-GOV-AUTH` | [FD-GIT-W1-001](17_FOUNDER_DECISION_LOG.md#settled-class-b-wave-1-repository-control-decision) | Explicit Founder authorization dated 2026-07-19 | Exact 19-path allowlist, one commit, one branch push, and one Draft PR | No merge or Wave 2–10 |
-| `W1-GOV-BASE` | Remote `main` and bootstrap commit | Verified Git refs and read-only PR #1 inspection | `main` = `96f2ea70f9010fce416a18310e98915e2be537b9`; bootstrap = `b20e95de8b1b67d2bc610130648700e82a6855b3` | No main/default-branch/repository-setting change |
-| `W1-GOV-PR1` | Existing Draft PR #1 | Founder preservation rule and read-only GitHub evidence | Open, Draft, unmerged, one commit, exactly 24 bootstrap paths | Must remain unchanged |
-| `W1-GOV-STATE` | [Project Baseline](PROJECT_BASELINE.md), [Current Project State](CURRENT_PROJECT_STATE.md), and [Roadmap](PROJECT_EXECUTION_ROADMAP.md) | Verified repository facts plus historical GIT-02S evidence | Current Wave 1 state separated from historical claims | No lifecycle or architecture promotion |
-| `W1-GOV-NAV` | [Documentation Index](08_DOCUMENTATION_INDEX.md), [Navigation Map](09_NAVIGATION_MAP.md), [Reading Order](READING_ORDER.md), and [Knowledge Graph](KNOWLEDGE_GRAPH.md) | Current Wave 1 scope and source priority | Wave 1 authority and exclusions discoverable | Navigation only |
+| `W1-GOV-AUTH` | [FD-GIT-W1-001](17_FOUNDER_DECISION_LOG.md#settled-class-b-wave-1-repository-control-decision) | Explicit Founder authorization dated 2026-07-19 | Historical exact 19-path allowlist, one commit, one branch push, and one Draft PR | The authorization itself granted no merge or Wave 2 authority |
+| `W1-GOV-BASE` | Canonical `main` and verified Git refs | Post-merge verification dated 2026-07-20 | `main` = `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`; local, `origin/main`, and live GitHub agree | Default-branch setting remains separately gated |
+| `W1-GOV-PR1` | Bootstrap PR #1 | Verified GitHub merge state | `MERGED` through `530a4c46cc47bd02b794cfac1ef24eef56918e75` | Bootstrap complete; no runtime authority |
+| `W1-GOV-PR2` | Wave 1 Governance PR #2 | Verified GitHub merge state | `MERGED` through `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`; Wave 1 complete | No Wave 2 authority |
+| `W1-GOV-CI` | PR #2 head and merge-commit CI | GitHub Actions plus canonical validator evidence | Both CI runs `SUCCESS`; canonical validator `PASS` | Static evidence only; no runtime readiness |
+| `W1-GOV-STATE` | [Project Baseline](PROJECT_BASELINE.md), [Current Project State](CURRENT_PROJECT_STATE.md), and [Roadmap](PROJECT_EXECUTION_ROADMAP.md) | Verified post-merge facts plus historical GIT-02S and Wave 1 evidence | Current post-merge state separated from historical authorization | No lifecycle or architecture promotion |
+| `W1-GOV-NAV` | [Documentation Index](08_DOCUMENTATION_INDEX.md), [Navigation Map](09_NAVIGATION_MAP.md), [Reading Order](READING_ORDER.md), and [Knowledge Graph](KNOWLEDGE_GRAPH.md) | Current baseline and source priority | Wave 1 completion and current exclusions discoverable | Navigation only |
 | `W1-GOV-CLASS` | [Git File Classification](GIT_FILE_CLASSIFICATION.csv) and [Git Baseline Approval Checklist](GIT_BASELINE_APPROVAL_CHECKLIST.md) | Dated GIT-02S inventory plus current Founder task | Snapshot Git states labeled historical; current exact-path authority separated | No deletion; no broad staging |
 
-Wave 1 creates no runtime, WordPress, product, content, publication, deployment, production, workflow, or architecture authority. Founder approval remains required before merge.
+Wave 1 is complete. Its merges created no runtime, WordPress, Product Repository implementation, publication, deployment, production, workflow-activation, or architecture authority. Wave 2 has not started and requires separate Founder approval. The post-merge reconciliation Draft PR must not be merged without later Founder approval.
 
 ## Navigation
 

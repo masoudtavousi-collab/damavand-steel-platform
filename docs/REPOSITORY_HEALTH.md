@@ -9,7 +9,7 @@
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
 - **Version:** 0.4.0
-- **Last Updated:** 2026-07-19
+- **Last Updated:** 2026-07-20
 - **Last Review:** 2026-07-19
 - **Review Cycle:** On repository-governance, document, authority, metadata, navigation, traceability, or validation change
 - **Lifecycle:** Review
@@ -22,7 +22,7 @@
 
 ## Evidence Scope
 
-The inventory and documentation counts below describe the GIT-02S repository snapshot on 2026-07-14 and the local tagged baseline established earlier; they are retained as dated evidence rather than current counts. On 2026-07-19, remote `main`, the bootstrap branch, and PR #1 were verified directly for the current Wave 1 task. Independent backup/restore and external runtime state are not inferred.
+The inventory and documentation counts below describe the GIT-02S repository snapshot on 2026-07-14 and the local tagged baseline established earlier; they are retained as dated evidence rather than current counts. The 2026-07-19 pre-merge verification remains historical evidence. On 2026-07-20, PR #1 and PR #2 were verified merged, canonical `main` was verified at `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`, both associated CI runs passed, and the pre-reconciliation working tree was clean. Independent backup/restore and external runtime state are not inferred.
 
 ## Repository Completeness
 
@@ -32,7 +32,7 @@ The inventory and documentation counts below describe the GIT-02S repository sna
 | Documentation inventory | GIT-02S snapshot: 159 Markdown files under `docs/`, 179 under `repository/`, and 379 repository-wide | Historical measurement after GIT-02S reconciliation |
 | File classification | GIT-02S snapshot: 549 files classified plus one explicit deleted-test disposition record | Historical evidence only; not current Git state, staging, deletion, or baseline approval |
 | Documentation navigation | GIT-02S snapshot: 0 zero-inbound root `docs/*.md` files | Historical entry-point and evidence-path result |
-| Local Markdown links and anchors | GIT-02S snapshot: 7,487 relative Markdown links checked; 0 broken file destinations; 0 broken anchors | Historical result; Wave 1 links require fresh validation |
+| Local Markdown links and anchors | GIT-02S snapshot: 7,487 relative Markdown links checked; 0 broken file destinations; 0 broken anchors | Historical result; the post-merge reconciliation requires fresh validation before publication of its Draft PR |
 | Substantive content | Draft placeholders and Founder TODOs remain in foundation, delivery, and assurance documents | Incomplete |
 
 Repository completeness means inventory and discoverability only. It does not imply that Draft requirements, architecture, business content, or implementation prerequisites are complete.
@@ -122,16 +122,18 @@ All requested capabilities have a current canonical location. None becomes appro
 
 ## Git Governance Coverage
 
-The Repository Freeze v1.0 facts remain historical evidence. Current repository-control facts verified on 2026-07-19 are:
+The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain historical evidence. Current repository-control facts verified on 2026-07-20 are:
 
-- The working directory is a Git repository. The current Wave 1 branch is `codex/class-b-wave-01-governance`, created from bootstrap commit `b20e95de8b1b67d2bc610130648700e82a6855b3`.
-- The immutable baseline contains 157 tracked files; `main` and both baseline tags still resolve to the original baseline commit.
+- The working directory is a Git repository, and the canonical branch is `main`.
+- The historical immutable baseline contains 157 tracked files; both baseline tags still resolve to the original baseline commit.
 - Annotated tags `baseline-v1.0.0` and `repo-v1.0.0` resolve to the same baseline commit.
 - The tagged tree contains the baseline manifest, release notes, readiness assessment, roadmap, engineering guidelines, synchronized repository records, and Freeze Audit.
-- Local `main`, `origin/main`, and remote `main` resolve to `96f2ea70f9010fce416a18310e98915e2be537b9`.
-- Draft PR #1 is open and unmerged, has one commit at `b20e95de8b1b67d2bc610130648700e82a6855b3`, and contains exactly 24 approved bootstrap paths.
+- Local `main`, `origin/main`, and live GitHub `main` resolve to the verified shared baseline `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`.
+- Bootstrap PR #1 is merged through `530a4c46cc47bd02b794cfac1ef24eef56918e75`. Wave 1 Governance PR #2 is merged through `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`; Wave 1 is complete.
+- Wave 2 has not started and remains unauthorized. Workflows remain inactive, and no runtime, WordPress or Product Repository implementation, publication, deployment, or production mutation occurred.
+- GitHub currently reports `codex/bootstrap-atlas-foundation` as the default branch. The intended default is `main`; changing repository settings requires separate Founder approval.
 - The primary GitHub repository for this task is `masoudtavousi-collab/damavand-steel-platform`. Independent mirror, backup, signing, branch-protection, and retention evidence remain unresolved.
-- The working tree preserves Class B Waves 2–10 and the six Sprint 1 reports outside the exact Wave 1 allowlist.
+- The protected stash preserves prior local material outside the current reconciliation scope and remains uninspected and untouched.
 - [Git Governance](GIT_GOVERNANCE.md) remains Proposed Governing/Review; the exact Founder-authorized baseline does not approve the entire policy.
 
 ## WordPress Architecture Coverage
@@ -454,17 +456,17 @@ The Repository Freeze v1.0 facts remain historical evidence. Current repository-
 - Golden assets are `PILOT_ASSET_READY` / `FOUNDER_REVIEW_READY`, not Import Ready, Runtime Ready, or Publishing Ready.
 - The latest completed sprint is Sprint 12A; no implementation sprint is active.
 - GIT-02S created no ADR because it introduced no new enterprise architecture decision.
-- Repository A static validation passed within the dated GIT-02S evidence scope; that result does not substitute for fresh Wave 1 validation.
-- Runtime, import, publishing, deployment, product creation, bulk SKU generation, Factory implementation, and repository merge remain `NO-GO`.
+- Repository A static validation passed within the dated GIT-02S evidence scope; that result does not substitute for fresh post-merge reconciliation validation.
+- Runtime, import, publishing, deployment, product creation, bulk SKU generation, Factory implementation, and any further repository merge remain `NO-GO` without separate Founder approval.
 
-## Current Class B Wave 1 Coverage
+## Completed Class B Wave 1 Coverage and Current Boundary
 
-- `FD-GIT-W1-001` authorizes exactly 19 governance and repository-control paths, one commit, push of only `codex/class-b-wave-01-governance`, and one Draft PR.
-- Remote `main`, the bootstrap commit, and PR #1 were verified before Wave 1 branch creation.
-- PR #1 remains outside Wave 1 and must not be modified, closed, rebased, merged, or supplemented.
-- Class B Waves 2–10, the six Sprint 1 reports, every `repository/**` path, workflows, and runtime assets remain unstaged and excluded.
-- Wave 1 changes repository governance evidence only. It does not change architecture, product truth, Master Data, WordPress, runtime, publication, deployment, or production state.
-- Merge remains `NO-GO` pending Founder review.
+- `FD-GIT-W1-001` historically authorized exactly 19 governance and repository-control paths, one commit, push of only `codex/class-b-wave-01-governance`, and one Draft PR while merge remained prohibited.
+- PR #1 and PR #2 were later separately approved and merged. The required Wave 1 commits remain in `main` ancestry, and both PR-head and merge-commit CI runs succeeded.
+- Wave 1 is complete. The verified shared baseline is `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26` on canonical `main`.
+- Wave 2, every `repository/**` implementation path, workflow activation or execution, and runtime assets remain excluded and unauthorized.
+- The merges changed repository foundation and governance evidence only. They did not start WordPress or Product Repository implementation, runtime, publication, deployment, or production work.
+- Merge of the post-merge reconciliation Draft PR remains `NO-GO` pending separate Founder approval.
 
 ## Known Gaps
 
@@ -474,7 +476,7 @@ The Repository Freeze v1.0 facts remain historical evidence. Current repository-
 - Documentation numbering, broad versioning policy, steel terminology, and child-theme placeholder decisions remain unresolved; the exact local v1.0.0 baseline decision is resolved.
 - External-link validation is not part of the current evidence set.
 - Sprint 03A–03E and Sprint 04A–04C authorize repository Product Data/Engine/Platform/audit/planning assets only; WordPress/runtime import, deployment, remediation, and production mutation remain unauthorized.
-- A local approved Git baseline and tags plus current `origin/main` exist; independent mirror, approved backup custody, signing, branch protection evidence, product release, and production release remain unresolved.
+- A local approved Git baseline and tags plus synchronized `origin/main` exist; the GitHub default-branch mismatch, independent mirror, approved backup custody, signing, branch-protection evidence, product release, and production release remain unresolved.
 - WordPress Enterprise Architecture is not Approved, and its dependent Product Data, SEO, Security, UX, Testing, and operational documents retain Draft gaps.
 - FD-DATA-001 through FD-DATA-006 and OQ-DATA-001 through OQ-DATA-009 remain unresolved; no Batch 05 model is Approved.
 - FD-IA-001 through FD-IA-006 and OQ-IA-001 through OQ-IA-008 remain unresolved; no Batch 06 model is Approved.

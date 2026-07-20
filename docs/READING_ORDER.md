@@ -9,7 +9,7 @@
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
 - **Version:** 0.3.0
-- **Last Updated:** 2026-07-19
+- **Last Updated:** 2026-07-20
 - **Last Review:** 2026-07-19
 - **Review Cycle:** On navigation or authority change; periodic cadence pending Founder approval
 - **Lifecycle:** Review
@@ -41,7 +41,7 @@ Every reader starts with:
 
 Readers then follow the applicable role path.
 
-For the current Class B Wave 1 activity, readers must also review [FD-GIT-W1-001](17_FOUNDER_DECISION_LOG.md#settled-class-b-wave-1-repository-control-decision), the repository-control state in [Project Baseline](PROJECT_BASELINE.md), and the Wave 1 traceability section in [Traceability Matrix](TRACEABILITY_MATRIX.md). GIT-02S remains historical evidence. Waves 2–10, merge, runtime, WordPress, product, content, publication, deployment, and production remain outside the current path.
+For the current post-merge governance reconciliation, readers must review the repository-control state in [Project Baseline](PROJECT_BASELINE.md), the completed Wave 1 traceability section in [Traceability Matrix](TRACEABILITY_MATRIX.md), and [Open Questions](18_OPEN_QUESTIONS.md) for the default-branch remediation item. [FD-GIT-W1-001](17_FOUNDER_DECISION_LOG.md#settled-class-b-wave-1-repository-control-decision) and GIT-02S remain historical evidence. PR #1 and PR #2 are merged, Wave 1 is complete, and Wave 2, runtime, workflows, WordPress, Product Repository implementation, publication, deployment, production, and repository-settings changes remain outside the current authorization.
 
 ## Founder Reading Path
 

@@ -9,14 +9,14 @@
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
 - **Version:** 0.2.0
-- **Last Updated:** 2026-07-19
+- **Last Updated:** 2026-07-20
 - **Last Review:** 2026-07-19
 - **Review Cycle:** On approved decision, completed sprint, repository disposition, readiness, or execution-state change
 - **Lifecycle:** Review
 - **Source of Truth:** Accepted governing sources, recorded Founder decisions, [Current Project State](CURRENT_PROJECT_STATE.md), approved Master Data, and current repository evidence within their declared scope
 - **Dependencies:** [Codex Repository Instructions](../AGENTS.md), [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md), [Current Project State](CURRENT_PROJECT_STATE.md), and [Execution Gates](EXECUTION_GATES.md)
 - **Related Documents:** [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md), [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md), [Founder Decision Log](17_FOUNDER_DECISION_LOG.md), and `GIT-02S Audit`
-- **Traceability:** CP-001 through CP-010; ADR-0001; FD-PILOT-001; GIT-02S Founder directive dated 2026-07-14; Class B Wave 1 Founder authorization dated 2026-07-19
+- **Traceability:** CP-001 through CP-010; ADR-0001; FD-PILOT-001; GIT-02S Founder directive dated 2026-07-14; Class B Wave 1 Founder authorization dated 2026-07-19; verified PR #1 and PR #2 merge state plus Founder-approved post-merge reconciliation dated 2026-07-20
 - **AI Compatibility:** Primary concise entry point; underlying sources control within their recorded authority
 - **Approval:** Pending Founder review of the reconciled documentation; recorded Founder decisions remain accepted within their exact scope
 
@@ -48,13 +48,14 @@ Repository B cannot override the Founder, Repository A, CP-001 through CP-010, t
 
 | Item | Current state |
 | --- | --- |
-| Current phase | Class B Wave 1 governance and repository-control integration |
+| Current phase | Post-merge governance baseline reconciliation; Wave 1 complete; Wave 2 not started |
 | Last completed sprint | Sprint 12A |
-| Active documentation sprint | Class B Wave 1 only; GIT-02S is retained as completed historical reconciliation evidence |
+| Last completed repository integration | Class B Wave 1 Governance through merged PR #2 |
+| Active documentation sprint | Documentation-only post-merge baseline reconciliation; GIT-02S and the Wave 1 authorization remain historical evidence |
 | Active implementation sprint | None |
-| Approved next action | Reconcile and integrate exactly 19 approved Wave 1 paths, create one commit, push only the Wave 1 branch, and open one Draft PR for Founder review |
+| Approved next action | Founder review of one documentation-only post-merge reconciliation Draft PR; no merge or Wave 2 work |
 
-Historically, GIT-02S did not authorize staging, commit, tag, push, merge, runtime, import, product creation, deployment, or publishing. The 2026-07-19 Founder authorization supersedes only that Git-action boundary for the exact 19-path Wave 1 allowlist and one scoped branch/commit/push/Draft-PR sequence. Merge and every runtime or implementation action remain unauthorized.
+Historically, GIT-02S did not authorize staging, commit, tag, push, merge, runtime, import, product creation, deployment, or publishing. The 2026-07-19 Founder authorization superseded only that Git-action boundary for the exact 19-path Wave 1 branch/commit/push/Draft-PR sequence; it did not authorize merge. PR #1 and PR #2 were later separately approved and merged. Wave 1 is complete, while Wave 2 and every runtime or implementation action remain unauthorized.
 
 ## Architecture and Governance Status
 
@@ -109,28 +110,31 @@ Sprint 12A provides public, unauthenticated, read-only evidence of WordPress, Wo
 | Product creation | `NO-GO` |
 | Bulk SKU generation | `NO-GO` |
 | Factory implementation | `NO-GO` |
-| Repository merge | `NO-GO` |
+| Any further repository merge | `NO-GO` |
 
 ## Git, Backup, Restore, and Staging
 
-- Repository A has a valid local historical v1.0 baseline, but the current working tree contains substantial untracked and modified work outside that baseline.
-- Remote `main` exists and was verified at `96f2ea70f9010fce416a18310e98915e2be537b9` on 2026-07-19.
-- The bootstrap feature commit is `b20e95de8b1b67d2bc610130648700e82a6855b3`; Draft PR #1 remains open, unmerged, and limited to its 24 approved bootstrap paths.
-- Class B Wave 1 is authorized on `codex/class-b-wave-01-governance` for exactly 19 governance and repository-control paths. Waves 2–10 and the six Sprint 1 analysis reports remain local and excluded.
-- This authorization permits one Wave 1 commit, push of only that branch, and one Draft PR. It does not authorize tag creation, merge, repository-setting changes, default-branch changes, or any other remote mutation.
+- Repository A retains its historical v1.0 baseline. Before this reconciliation sprint, the synchronized `main` working tree was verified clean.
+- The canonical branch is `main`; local `main`, `origin/main`, and live GitHub `main` were verified at the shared baseline `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26` on 2026-07-20.
+- Bootstrap PR #1 is merged through `530a4c46cc47bd02b794cfac1ef24eef56918e75`. Wave 1 Governance PR #2 is merged through `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`; Wave 1 is complete.
+- The 2026-07-19 Wave 1 branch, exact allowlist, commit, push, and Draft-PR restrictions remain historical execution evidence and must not be rewritten as earlier merge authority.
+- Wave 2 has not started and remains unauthorized. Workflows remain inactive, and no runtime, WordPress or Product Repository implementation, publication, deployment, or production mutation occurred through either merge.
+- GitHub currently reports `codex/bootstrap-atlas-foundation` as the default branch even though `main` is the intended canonical default. No repository-setting change is authorized in this sprint.
 - No independent backup custody, isolated restore proof, current rollback proof, or staging environment has been verified.
-- Static validation passing does not make the repository baseline-ready.
+- Static validation passing does not establish import, runtime, publishing, deployment, or production readiness.
 
 ## Current GO and NO-GO
 
-**GO:** Controlled reconciliation of the exact 19 Wave 1 files; exact-path staging; one Wave 1 commit; push of only `codex/class-b-wave-01-governance`; one Draft PR; Founder review.
+**GO:** Documentation-only reconciliation of the approved post-merge baseline allowlist; one scoped branch, commit, push, and Draft PR; Founder review.
 
-**NO-GO:** Merge; Wave 2 or later; changes to PR #1; WordPress or hosting change; runtime; deployment; import; product or variation creation; publication; public pricing; Offer schema; cart/checkout/payment; bulk SKU generation; Repository B mutation or merge; Factory/Generator implementation; tag creation; repository-setting or default-branch changes.
+**NO-GO:** Merge of the reconciliation PR; Wave 2 or later; WordPress or hosting change; runtime; workflow activation or execution; deployment; import; Product Repository implementation; product or variation creation; publication; public pricing; Offer schema; cart/checkout/payment; bulk SKU generation; Repository B mutation or merge; Factory/Generator implementation; tag creation; repository-setting or default-branch changes.
 
 ## Settled Founder Decisions
 
 - Repository A is the only canonical Damavand Steel repository.
 - Repository B is `QUARANTINED_ARCHITECTURE_RESEARCH` and has no current project authority.
+- Bootstrap PR #1 and Wave 1 Governance PR #2 are merged; the verified shared `main` baseline is `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`.
+- Wave 1 is complete. Wave 2 has not started and is not authorized.
 - Sprint 12A is the last completed sprint; no implementation sprint is active.
 - The Golden Parent and three listed Pipe combinations are approved only for the limited pilot.
 - The three pilot references are not final commercial SKUs.
@@ -146,6 +150,7 @@ Sprint 12A provides public, unauthenticated, read-only evidence of WordPress, Wo
 - Blocksy Pro and Elementor Pro package/license ownership and compatibility.
 - Approval or revision of remaining `Review`/`Draft` governance and architecture decisions.
 - Future disposition or possible promotion of Repository B concepts; any status change requires a separate Founder decision.
+- Repository-settings remediation: whether to change the GitHub default branch from `codex/bootstrap-atlas-foundation` to `main` and what branch-protection policy to approve.
 
 Missing availability, files, measurements, or operational evidence are not automatically Founder decisions.
 
@@ -157,8 +162,8 @@ Missing availability, files, measurements, or operational evidence are not autom
 - Media files and rights are missing.
 - All 882 availability values are missing.
 - Independent backup/restore and staging are unproven.
-- The current repository contains substantial work outside the historical baseline.
-- Stale documents can cause AI or human readers to misclassify pilot and runtime readiness.
+- The GitHub default-branch setting does not match the intended canonical branch and requires a separate authorized settings sprint.
+- Documentation drift can cause AI or human readers to misclassify repository, pilot, and runtime readiness.
 
 ## Source-of-Truth Priority
 
@@ -166,7 +171,7 @@ Apply [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md): accepted governin
 
 ## Exact Next Safe Action
 
-Complete Wave 1 validation, stage exactly the approved 19 paths, create the single authorized commit, push only the Wave 1 branch, and open one Draft PR against `main`. Stop for Founder review without merging or starting Wave 2.
+Complete the approved post-merge documentation reconciliation, open one Draft PR against `main`, and stop for Founder review. Do not merge, change repository settings, or begin Wave 2.
 
 ## Baseline Update Rules
 

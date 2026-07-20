@@ -1,10 +1,11 @@
 # Current Project State
 
-- **Current date:** 2026-07-19
-- **Current phase:** Class B Wave 1 governance and repository-control integration
+- **Current date:** 2026-07-20
+- **Current phase:** Post-merge governance baseline reconciliation; Wave 1 complete; Wave 2 not started
 - **Last completed sprint:** Sprint 12A
-- **Current approved activity:** Controlled factual reconciliation of exactly 19 Wave 1 files, one exact-scope commit, push of only `codex/class-b-wave-01-governance`, and one Draft PR for Founder review
-- **Active documentation sprint:** Class B Wave 1 only; Waves 2–10 remain unapproved
+- **Last completed repository integration:** Class B Wave 1 Governance through merged PR #2
+- **Current approved activity:** Documentation-only reconciliation of the verified post-merge baseline, one exact-scope commit, push of only `codex/post-merge-governance-reconciliation`, and one Draft PR for Founder review
+- **Active documentation sprint:** Post-merge governance baseline reconciliation only; Wave 2 remains unapproved
 - **Active implementation sprint:** None
 - **Runtime:** NO-GO
 - **Import:** NO-GO
@@ -26,7 +27,9 @@
 - Sprint 11 Golden Reference Product Package creation (assets created; no import, runtime, WordPress, or publishing execution)
 - Sprint 12A Golden Product WordPress and cPanel public read-only preflight (no authenticated access and no runtime mutation)
 - GIT-02S Founder decisions confirm Repository A as canonical, Repository B as isolated research, and the existing three-combination Golden pilot scope
-- Atlas bootstrap commit `b20e95de8b1b67d2bc610130648700e82a6855b3` published through open, Draft, unmerged PR #1 with exactly 24 approved paths
+- Bootstrap PR #1 merged through `530a4c46cc47bd02b794cfac1ef24eef56918e75`
+- Wave 1 Governance PR #2 merged through `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`; Wave 1 is complete
+- Canonical `main` and the verified shared baseline resolve to `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`
 - Sprint 1 classified the preserved Class B working tree and proposed ten controlled integration waves; its six reports remain local and unstaged
 
 ## Current Master Data State
@@ -69,7 +72,9 @@
 - Product-level suppression of public price, Offer schema, cart, and checkout is not proven.
 - Blocksy Pro and Elementor Pro availability and license ownership remain unresolved.
 - Site URL and Home URL expose an HTTP-versus-HTTPS scheme mismatch through the public REST root.
-- Remote `main` is verified at `96f2ea70f9010fce416a18310e98915e2be537b9`, and the bootstrap remote branch is verified at `b20e95de8b1b67d2bc610130648700e82a6855b3`. Substantial Class B work remains local outside Wave 1; independent backup and restore proof remain unestablished.
+- Canonical `main` is verified at `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`. Wave 2 has not started and remains unauthorized; independent backup and restore proof remain unestablished.
+- GitHub still reports `codex/bootstrap-atlas-foundation` as the default branch. Changing it to the intended `main` default requires a separate Founder-approved repository-settings sprint.
+- Workflows remain inactive. No runtime execution, WordPress or Product Repository implementation, publication, deployment, or production mutation has occurred.
 
 ## Repository Disposition
 
@@ -79,7 +84,7 @@
 
 ## Approved Next Action
 
-**Complete Class B Wave 1 only:** reconcile the approved 19 governance paths, validate them, create one exact-scope commit, push only the Wave 1 branch, and open one Draft PR. Stop for Founder review before merge. PR #1, Waves 2–10, Sprint 12B, runtime, WordPress, content, product, publication, deployment, and production remain outside this authorization.
+**Complete the post-merge governance baseline reconciliation only:** validate the approved documentation allowlist, create one exact-scope commit, push only `codex/post-merge-governance-reconciliation`, and open one Draft PR against `main`. Stop for Founder review before merge. Wave 2, repository-settings changes, runtime, workflows, WordPress, Product Repository implementation, publication, deployment, and production remain outside this authorization.
 
 ## Latest Reports
 
