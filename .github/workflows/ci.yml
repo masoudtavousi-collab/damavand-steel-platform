@@ -15,6 +15,30 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install pinned validation dependencies
         run: python3 -m pip install --disable-pip-version-check PyYAML==6.0.2
+      - name: Validate Product core contract fixtures
+        shell: bash
+        run: |
+          set -euo pipefail
+          validator=repository/data/validation/validate_product_core.py
+          python3 "$validator" tests/fixtures/product-core/valid-minimal.yaml
+
+          set +e
+          invalid_output="$(python3 "$validator" tests/fixtures/product-core/invalid-missing-provenance.yaml 2>&1)"
+          invalid_status=$?
+          set -e
+          printf '%s\n' "$invalid_output"
+
+          if [ "$invalid_status" -eq 0 ]; then
+            echo "Expected invalid-missing-provenance.yaml to fail validation" >&2
+            exit 1
+          fi
+          case "$invalid_output" in
+            *MISSING_PROVENANCE*) ;;
+            *)
+              echo "Expected a MISSING_PROVENANCE validation error" >&2
+              exit 1
+              ;;
+          esac
       - name: Validate Atlas contracts and safety controls
         run: python3 scripts/validate_manifest.py
       - name: Validate scaffold

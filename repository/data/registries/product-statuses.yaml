@@ -1,0 +1,59 @@
+registry_id: product-statuses
+registry_version: "1.0.0"
+statuses:
+  - code: APPROVED
+    meaning: Explicitly approved governing value or record.
+    allowed_use: Record an approval without implying downstream publication, import, or runtime readiness.
+    represents_approved_factual_data: true
+    may_be_published_by_status_alone: false
+    may_be_imported_by_status_alone: false
+    founder_action_required: false
+    terminal: false
+  - code: CANDIDATE_UNVERIFIED
+    meaning: Proposed or theoretical value that has not been commercially validated.
+    allowed_use: Preserve a candidate without asserting factual availability or approval.
+    represents_approved_factual_data: false
+    may_be_published_by_status_alone: false
+    may_be_imported_by_status_alone: false
+    founder_action_required: false
+    terminal: false
+  - code: MISSING_DATA_VALUE
+    meaning: Required operational data is absent and must not be inferred.
+    allowed_use: Distinguish missing data from zero, false, an empty string, or unavailability.
+    represents_approved_factual_data: false
+    may_be_published_by_status_alone: false
+    may_be_imported_by_status_alone: false
+    founder_action_required: false
+    terminal: false
+  - code: FOUNDER_INPUT_REQUIRED
+    meaning: An explicit Founder decision is required before dependent finalization.
+    allowed_use: Block dependent finalization while recording a genuine governance decision need.
+    represents_approved_factual_data: false
+    may_be_published_by_status_alone: false
+    may_be_imported_by_status_alone: false
+    founder_action_required: true
+    terminal: false
+  - code: DEFERRED
+    meaning: The value or decision is intentionally postponed.
+    allowed_use: Preserve intentional postponement without inference or fabrication.
+    represents_approved_factual_data: false
+    may_be_published_by_status_alone: false
+    may_be_imported_by_status_alone: false
+    founder_action_required: false
+    terminal: false
+  - code: NOT_APPLICABLE
+    meaning: The field or concept does not apply in the governed context.
+    allowed_use: Suppress an irrelevant concept while remaining distinct from missing data.
+    represents_approved_factual_data: false
+    may_be_published_by_status_alone: false
+    may_be_imported_by_status_alone: false
+    founder_action_required: false
+    terminal: true
+  - code: INVALID
+    meaning: The record failed validation or violates the core contract.
+    allowed_use: Block further processing until the invalid record is corrected and revalidated.
+    represents_approved_factual_data: false
+    may_be_published_by_status_alone: false
+    may_be_imported_by_status_alone: false
+    founder_action_required: false
+    terminal: true

@@ -1,0 +1,279 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:damavand-steel:schema:product-core:1.0.0",
+  "title": "Canonical Product Repository entity record",
+  "description": "Per-record structural schema for the Wave 2A Product core contract. Graph-wide hierarchy and reference rules are enforced by validate_product_core.py.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "entity_id",
+    "entity_type",
+    "canonical_label",
+    "status",
+    "owner",
+    "provenance",
+    "record_version"
+  ],
+  "properties": {
+    "contract_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "entity_id": {
+      "type": "string",
+      "pattern": "^prd:(catalog|platform|family|series|variant-rule-set|sku):[0-9a-f]{12}$"
+    },
+    "entity_type": {
+      "type": "string",
+      "enum": [
+        "CATALOG",
+        "PLATFORM",
+        "FAMILY",
+        "SERIES",
+        "VARIANT_RULE_SET",
+        "SKU"
+      ]
+    },
+    "parent_entity_id": {
+      "type": "string",
+      "pattern": "^prd:(catalog|platform|family|series|variant-rule-set|sku):[0-9a-f]{12}$"
+    },
+    "parent_entity_type": {
+      "type": "string",
+      "enum": [
+        "CATALOG",
+        "PLATFORM",
+        "FAMILY",
+        "SERIES",
+        "VARIANT_RULE_SET"
+      ]
+    },
+    "canonical_label": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": ".*\\S.*"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "APPROVED",
+        "CANDIDATE_UNVERIFIED",
+        "MISSING_DATA_VALUE",
+        "FOUNDER_INPUT_REQUIRED",
+        "DEFERRED",
+        "NOT_APPLICABLE",
+        "INVALID"
+      ]
+    },
+    "owner": {
+      "$ref": "#/$defs/owner"
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "record_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "entity_type": {
+            "const": "CATALOG"
+          }
+        },
+        "required": [
+          "entity_type"
+        ]
+      },
+      "then": {
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "parent_entity_id"
+              ]
+            },
+            {
+              "required": [
+                "parent_entity_type"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "entity_type": {
+            "enum": [
+              "PLATFORM",
+              "FAMILY",
+              "SERIES",
+              "VARIANT_RULE_SET",
+              "SKU"
+            ]
+          }
+        },
+        "required": [
+          "entity_type"
+        ]
+      },
+      "then": {
+        "required": [
+          "parent_entity_id",
+          "parent_entity_type"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "entity_type": {
+            "const": "PLATFORM"
+          }
+        },
+        "required": [
+          "entity_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "parent_entity_type": {
+            "const": "CATALOG"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "entity_type": {
+            "const": "FAMILY"
+          }
+        },
+        "required": [
+          "entity_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "parent_entity_type": {
+            "const": "PLATFORM"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "entity_type": {
+            "const": "SERIES"
+          }
+        },
+        "required": [
+          "entity_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "parent_entity_type": {
+            "const": "FAMILY"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "entity_type": {
+            "const": "VARIANT_RULE_SET"
+          }
+        },
+        "required": [
+          "entity_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "parent_entity_type": {
+            "const": "SERIES"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "entity_type": {
+            "const": "SKU"
+          }
+        },
+        "required": [
+          "entity_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "parent_entity_type": {
+            "const": "VARIANT_RULE_SET"
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "owner": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role"
+      ],
+      "properties": {
+        "role": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]{2,63}$"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_type",
+        "source_reference",
+        "captured_by",
+        "captured_at",
+        "evidence_status"
+      ],
+      "properties": {
+        "source_type": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$"
+        },
+        "source_reference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "captured_by": {
+          "type": "string",
+          "pattern": "^role:[a-z][a-z0-9-]{2,63}$"
+        },
+        "captured_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "evidence_status": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$"
+        }
+      }
+    }
+  }
+}
