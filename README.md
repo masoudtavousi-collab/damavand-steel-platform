@@ -15,16 +15,16 @@ Repository status, file presence, or named target components do not prove implem
 
 ## Repository control state
 
-Verified on 2026-07-19:
+Verified on 2026-07-20:
 
-- Remote `main` exists at `96f2ea70f9010fce416a18310e98915e2be537b9`.
-- The Atlas bootstrap commit is `b20e95de8b1b67d2bc610130648700e82a6855b3`.
-- Draft PR #1 remains open and unmerged with exactly 24 approved bootstrap paths.
-- Class B Wave 1 is limited to 19 governance and repository-control paths on `codex/class-b-wave-01-governance`.
-- Class B Waves 2–10 remain local, unstaged, unapproved, and outside Wave 1.
-- All included n8n workflows remain inactive. No workflow execution, deployment, publication, or production mutation has occurred.
+- The canonical branch is `main`, and the verified shared baseline is `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`.
+- Bootstrap PR #1 is complete and merged through merge commit `530a4c46cc47bd02b794cfac1ef24eef56918e75`.
+- Wave 1 Governance PR #2 is complete and merged through merge commit `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`.
+- Wave 1 is complete. Wave 2 has not started and remains unauthorized pending separate Founder approval.
+- All included n8n workflows remain inactive. No workflow execution, WordPress or Product Repository implementation, deployment, publication, or production mutation has occurred.
+- GitHub still reports `codex/bootstrap-atlas-foundation` as the repository default branch. The intended default is `main`; changing repository settings requires separate Founder approval.
 
-Wave 1 authorizes only its controlled documentation reconciliation, one scoped commit, branch push, and Draft PR. It does not authorize merge, runtime, WordPress, content, product, publication, deployment, or production work.
+Historically, the 2026-07-19 Wave 1 authorization allowed one scoped governance commit, branch push, and Draft PR while merge remained prohibited. That sequence and its separately approved merge are now complete. It granted no Wave 2, runtime, WordPress, product, publication, deployment, production, or repository-settings authority.
 
 ## Repository map
 
@@ -47,4 +47,4 @@ Wave 1 authorizes only its controlled documentation reconciliation, one scoped c
 - The three Golden Pipe identifiers are pilot references only, not final commercial SKUs.
 - The separate `damavand-enterprise-repository` is isolated `QUARANTINED_ARCHITECTURE_RESEARCH` and has no Damavand Steel authority.
 
-Runtime, import, publishing, deployment, product creation, bulk SKU generation, repository merge, and Factory implementation remain **NO-GO**. See the [Project Baseline](docs/PROJECT_BASELINE.md) for the exact current boundary.
+Runtime, import, publishing, deployment, product creation, bulk SKU generation, any further repository merge, and Factory implementation remain **NO-GO** without separate Founder approval. See the [Project Baseline](docs/PROJECT_BASELINE.md) for the exact current boundary.

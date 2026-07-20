@@ -9,7 +9,7 @@
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
 - **Version:** 0.4.0
-- **Last Updated:** 2026-07-19
+- **Last Updated:** 2026-07-20
 - **Last Review:** 2026-07-19
 - **Review Cycle:** On authority, relationship, or dependency change; periodic cadence pending Founder approval
 - **Lifecycle:** Review
@@ -131,28 +131,35 @@ Sprint 10R / Sprint 11 / Sprint 12A / GIT-02S Audits
   cannot GOVERNS -> Project architecture or approval
 ```
 
-## Current Class B Wave 1 Relationships
+## Completed Class B Wave 1 and Current Boundary
 
 ```text
-Founder Authorization 2026-07-19
+Historical Founder Authorization 2026-07-19
   DECIDED_BY -> Founder
   GOVERNS -> Exact 19-path Wave 1 allowlist
   GOVERNS -> One Wave 1 commit, branch push, and Draft PR
-  CONSTRAINS -> PR #1 remains unchanged
-  CONSTRAINS -> Waves 2-10 and six Sprint 1 reports remain local and excluded
-  CONSTRAINS -> No merge, runtime, WordPress, product, content, publication, deployment, or production work
+  CONSTRAINS -> Merge was not authorized by this decision
+  CONSTRAINS -> No runtime, WordPress, product, content, publication, deployment, or production work
 
-Remote main 96f2ea70f9010fce416a18310e98915e2be537b9
-  PARENT_OF -> Bootstrap commit b20e95de8b1b67d2bc610130648700e82a6855b3
+Bootstrap PR #1
+  STATUS -> MERGED
+  MERGED_AS -> 530a4c46cc47bd02b794cfac1ef24eef56918e75
 
-Bootstrap commit b20e95de8b1b67d2bc610130648700e82a6855b3
-  REFERENCES -> Open, Draft, unmerged PR #1
-  PARENT_OF -> codex/class-b-wave-01-governance
+Wave 1 Governance PR #2
+  STATUS -> MERGED
+  MERGED_AS -> 4a0f229107716a1b9f7f825f5cd5f16ea78a1b26
+  COMPLETES -> Class B Wave 1
 
-Class B Wave 1
-  DEPENDS_ON -> Project Baseline and Source of Truth Priority
-  REFERENCES -> Decision Log, Founder Decision Log, Current Project State, and Traceability Matrix
-  cannot GOVERNS -> Architecture, product truth, WordPress, or runtime
+Canonical main 4a0f229107716a1b9f7f825f5cd5f16ea78a1b26
+  RECORDS -> Bootstrap complete
+  RECORDS -> Wave 1 complete
+  CONSTRAINS -> Wave 2 not started and unauthorized
+  CONSTRAINS -> Workflows inactive
+  CONSTRAINS -> No runtime, WordPress or Product Repository implementation, publication, deployment, or production mutation
+
+GitHub default branch codex/bootstrap-atlas-foundation
+  CONFLICTS_WITH -> Intended canonical default main
+  REQUIRES -> Separate Founder-approved repository-settings sprint
 ```
 
 ## Relationship Enforcement

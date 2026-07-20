@@ -1,8 +1,10 @@
 # Codex Sprint Protocol
 
-## Current Wave 1 Execution Boundary
+## Current Post-Merge Reconciliation Boundary
 
-The Founder authorization dated 2026-07-19 permits Class B Wave 1 only: controlled reconciliation and integration of the exact 19 approved governance paths on `codex/class-b-wave-01-governance`, one commit, push of only that branch, and one Draft PR. Mixed-tree work outside the allowlist must remain unstaged and preserved. PR #1 must remain unchanged. Merge, Wave 2–10, runtime, workflow execution or activation, WordPress, product, content, publication, deployment, production, repository-setting, and default-branch changes remain `NO-GO`.
+Bootstrap PR #1 and Wave 1 Governance PR #2 are merged. Canonical `main` is verified at `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`, and Wave 1 is complete. Historically, the 2026-07-19 Founder authorization permitted the exact Wave 1 branch/commit/push/Draft-PR sequence while merge remained prohibited; that chronology must remain intact.
+
+The current Founder authorization permits documentation-only post-merge baseline reconciliation on `codex/post-merge-governance-reconciliation`, one commit, push of only that branch, and one Draft PR against `main`. Wave 2 has not started and remains unauthorized. Merge of the reconciliation PR, workflow execution or activation, runtime, WordPress, Product Repository implementation, publication, deployment, production mutation, repository-setting changes, and default-branch changes remain `NO-GO`.
 
 ## Standard Prompt Structure
 

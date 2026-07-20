@@ -9,7 +9,7 @@
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
 - **Version:** 0.4.0
-- **Last Updated:** 2026-07-19
+- **Last Updated:** 2026-07-20
 - **Last Review:** 2026-07-19
 - **Review Cycle:** On document creation, removal, rename, lifecycle, authority, or navigation change
 - **Lifecycle:** Draft
@@ -26,7 +26,7 @@ Provide the canonical map of repository documentation without replacing the auth
 
 ## Current Repository-Control Context
 
-Remote `main` is verified at `96f2ea70f9010fce416a18310e98915e2be537b9`. Bootstrap commit `b20e95de8b1b67d2bc610130648700e82a6855b3` remains in open, Draft, unmerged PR #1 with exactly 24 approved paths. The current Class B Wave 1 authorization is limited to 19 governance and repository-control paths; Waves 2–10 and the six Sprint 1 reports remain local and excluded. This index records those facts without changing any document lifecycle or granting merge, runtime, WordPress, product, content, publication, deployment, or production authority.
+Canonical `main` and the verified shared baseline resolve to `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`. Bootstrap PR #1 and Wave 1 Governance PR #2 are merged; Wave 1 is complete. The 2026-07-19 Wave 1 branch/commit/push/Draft-PR authorization remains historical context and did not itself authorize merge. Wave 2 has not started and remains unauthorized. Workflows remain inactive, and no runtime, WordPress or Product Repository implementation, publication, deployment, or production mutation has occurred. GitHub's default branch still points to `codex/bootstrap-atlas-foundation`; changing it to the intended `main` default requires separate Founder approval.
 
 ## Categories and Complete Document Map
 
@@ -511,7 +511,7 @@ These current-state documents diagnose supplied Site Health/connectivity evidenc
 | Future Reference: Git Baseline Audit — `docs/GIT_BASELINE_AUDIT.md` (Not yet approved) | Local Git baseline and working-state evidence | Evidence | Founder |
 | Future Reference: Git Baseline Commit Report — `docs/GIT_BASELINE_COMMIT_REPORT.md` (Not yet approved) | Historical exact baseline commit/tag evidence | Evidence | Founder |
 | Future Reference: Git EOF Normalization Report — `docs/GIT_EOF_NORMALIZATION_REPORT.md` (Not yet approved) | Historical line-ending normalization evidence | Evidence | Founder |
-| [Git Baseline Approval Checklist](GIT_BASELINE_APPROVAL_CHECKLIST.md) | Historical GIT-01/GIT-02 review checklist plus current Wave 1 scope boundary; not independent Git authority | Evidence | Founder |
+| [Git Baseline Approval Checklist](GIT_BASELINE_APPROVAL_CHECKLIST.md) | Historical GIT-01/GIT-02 and Wave 1 review context plus current post-merge reconciliation boundary; not independent Git authority | Evidence | Founder |
 | Future Reference: Repository Freeze Report — `docs/REPOSITORY_FREEZE_REPORT.md` (Not yet approved) | Pre-GIT-02S freeze readiness findings and blockers | Evidence | Founder |
 | [Git File Classification](GIT_FILE_CLASSIFICATION.csv) | Dated 2026-07-14 Repository A disposition snapshot; snapshot states are not current Git status | Evidence | Founder |
 | Future Reference: Runtime Remediation Preflight — `docs/RUNTIME_REMEDIATION_PREFLIGHT.md` (Not yet approved) | Runtime Phase 0 evidence and mandatory stop record | Evidence | Founder |

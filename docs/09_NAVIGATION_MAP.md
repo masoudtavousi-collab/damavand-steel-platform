@@ -9,7 +9,7 @@
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
 - **Version:** 0.4.0
-- **Last Updated:** 2026-07-19
+- **Last Updated:** 2026-07-20
 - **Last Review:** 2026-07-19
 - **Review Cycle:** On repository path, document index, reading path, or relationship change
 - **Lifecycle:** Draft
@@ -39,13 +39,13 @@ Define repository navigation and reading paths without changing directory owners
 9. [Settled Class B Wave 1 Repository-Control Decision](17_FOUNDER_DECISION_LOG.md#settled-class-b-wave-1-repository-control-decision)
 10. Future Reference: GIT-02S Audit — `docs/AUDIT_REPORT_GIT02S.md` (Not yet approved) as historical 2026-07-14 evidence
 
-This path is governance and Founder-review only. The current Wave 1 directive permits only its exact 19-path documentation commit, branch push, and Draft PR. It authorizes no merge, Wave 2–10 integration, runtime, import, WordPress, content, product, publishing, deployment, production mutation, or automatic pilot execution.
+This path is governance and Founder-review only. The historical Wave 1 directive permitted its exact documentation commit, branch push, and Draft PR while merge remained prohibited. PR #1 and PR #2 were later separately approved and merged, and Wave 1 is complete. Wave 2 has not started and remains unauthorized. No runtime, workflow activation, WordPress or Product Repository implementation, publication, deployment, production mutation, or automatic pilot execution is authorized.
 
-### Current Git Integration Path
+### Completed Git Integration Path and Current Boundary
 
-`main` at `96f2ea70f9010fce416a18310e98915e2be537b9` → bootstrap commit `b20e95de8b1b67d2bc610130648700e82a6855b3` → open, Draft, unmerged PR #1 with 24 paths → `codex/class-b-wave-01-governance` with exactly 19 approved governance paths → new Draft PR → Founder review → **STOP before merge**.
+Historical `main` at `96f2ea70f9010fce416a18310e98915e2be537b9` → Bootstrap PR #1 → merge commit `530a4c46cc47bd02b794cfac1ef24eef56918e75` → Wave 1 governance and link-repair commits → PR #2 → current `main` at `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26` → documentation-only post-merge reconciliation Draft PR → Founder review → **STOP before merge or Wave 2**.
 
-Class B Waves 2–10 and the six Sprint 1 reports remain local, unstaged, unapproved, and outside this path.
+Wave 2 and later Class B integration work remain unapproved and outside this path. The GitHub default-branch mismatch is a separate repository-settings remediation item; this path authorizes no settings change.
 
 | Path | Existing responsibility | Primary documentation |
 | --- | --- | --- |
