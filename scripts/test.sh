@@ -44,6 +44,8 @@ python3 "$attribute_validator" tests/fixtures/product-attributes/valid-foundatio
 python3 "$attribute_validator" tests/fixtures/product-attributes/valid-measured-attribute.yaml
 expect_failure tests/fixtures/product-attributes/invalid-naming.yaml ATTRIBUTE_KEY_FORMAT "$attribute_validator"
 
+python3 repository/data/validation/validate_bp2_data_blueprint.py
+
 python3 scripts/validate_manifest.py
 python3 scripts/validate_atlas_adoption.py
 ./scripts/validate.sh

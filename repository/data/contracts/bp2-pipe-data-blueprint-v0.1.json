@@ -1,0 +1,253 @@
+{
+  "blueprint_id": "bp2-pipe-data-blueprint",
+  "blueprint_version": "0.1.0",
+  "scope": {
+    "phase": "BP2",
+    "purpose": "Machine-readable governance blueprint for decorative stainless-steel pipe data.",
+    "creates_products": false,
+    "creates_skus": false,
+    "changes_wordpress": false,
+    "allows_import": false,
+    "allows_publication": false,
+    "allows_deployment": false
+  },
+  "hierarchy": [
+    "CATALOG",
+    "PLATFORM",
+    "FAMILY",
+    "SERIES",
+    "VARIANT_RULE_SET",
+    "SKU"
+  ],
+  "family": {
+    "family_key": "decorative_stainless_steel_pipe",
+    "canonical_label_fa": "لوله استیل دکوراتیو",
+    "material_key": "stainless-steel",
+    "commerce_mode": "INQUIRY_FIRST",
+    "public_price": false,
+    "woocommerce_projection_only": true,
+    "status": "APPROVED"
+  },
+  "governance_statuses": [
+    "APPROVED",
+    "CANDIDATE_UNVERIFIED",
+    "MISSING_DATA_VALUE",
+    "FOUNDER_INPUT_REQUIRED",
+    "DEFERRED",
+    "NOT_APPLICABLE",
+    "INVALID"
+  ],
+  "admin_actions": {
+    "registries": [
+      "ADD",
+      "EDIT",
+      "DELETE_OR_ARCHIVE"
+    ],
+    "default_delete_mode": "SOFT_DELETE",
+    "preserve_history": true,
+    "audit_required": true,
+    "cascade_delete": false,
+    "physical_delete_policy": "Only unused erroneous drafts may be physically deleted with audit evidence.",
+    "approved_record_delete_requires_founder": true
+  },
+  "controlled_values": {
+    "grades": [
+      {
+        "code": "201",
+        "status": "APPROVED"
+      },
+      {
+        "code": "304",
+        "status": "APPROVED"
+      },
+      {
+        "code": "316",
+        "status": "CANDIDATE_UNVERIFIED"
+      },
+      {
+        "code": "430",
+        "status": "CANDIDATE_UNVERIFIED"
+      }
+    ],
+    "colors": [
+      {
+        "code": "SILVER",
+        "status": "APPROVED"
+      },
+      {
+        "code": "GOLD_PVD",
+        "status": "APPROVED"
+      },
+      {
+        "code": "BLACK_PVD",
+        "status": "CANDIDATE_UNVERIFIED"
+      }
+    ],
+    "surface_types": [
+      {
+        "code": "MIRROR",
+        "status": "DEFERRED"
+      },
+      {
+        "code": "HAIRLINE",
+        "status": "DEFERRED"
+      }
+    ],
+    "diameters_mm": [
+      {
+        "value": 16,
+        "status": "APPROVED"
+      },
+      {
+        "value": 25,
+        "status": "CANDIDATE_UNVERIFIED"
+      },
+      {
+        "value": 38,
+        "status": "APPROVED"
+      },
+      {
+        "value": 51,
+        "status": "APPROVED"
+      }
+    ],
+    "thicknesses_mm": [
+      {
+        "value": 0.35,
+        "status": "APPROVED"
+      },
+      {
+        "value": 0.5,
+        "status": "APPROVED"
+      },
+      {
+        "value": 0.55,
+        "status": "CANDIDATE_UNVERIFIED"
+      },
+      {
+        "value": 0.6,
+        "status": "CANDIDATE_UNVERIFIED"
+      },
+      {
+        "value": 0.7,
+        "status": "CANDIDATE_UNVERIFIED"
+      },
+      {
+        "value": 0.8,
+        "status": "CANDIDATE_UNVERIFIED"
+      },
+      {
+        "value": 1.0,
+        "status": "CANDIDATE_UNVERIFIED"
+      }
+    ],
+    "lengths_m": [
+      {
+        "value": 3,
+        "status": "APPROVED"
+      },
+      {
+        "value": 6,
+        "status": "APPROVED"
+      }
+    ],
+    "supply_statuses": [
+      "CONFIRMED",
+      "SUPPLY_AFTER_INQUIRY",
+      "TEMPORARILY_UNAVAILABLE",
+      "DISCONTINUED",
+      "FOUNDER_INPUT_REQUIRED"
+    ]
+  },
+  "measurement_policy": {
+    "sales_and_inquiry_unit": "BRANCH",
+    "calculation_unit": "METER",
+    "calculated_meters_formula": "branch_quantity * branch_length_m",
+    "custom_length": "INQUIRY_ONLY"
+  },
+  "attribute_policy": {
+    "brand": {
+      "display_default": false,
+      "status": "NOT_APPLICABLE",
+      "future_registry_add_allowed": true
+    },
+    "weight": {
+      "manual_reference_allowed": true,
+      "calculated_approximate_allowed": true,
+      "value_inference_forbidden": true,
+      "status": "DEFERRED"
+    }
+  },
+  "approved_diameter_thickness_rules": [
+    {
+      "diameter_mm": 16,
+      "thickness_mm": 0.35
+    },
+    {
+      "diameter_mm": 38,
+      "thickness_mm": 0.5
+    },
+    {
+      "diameter_mm": 51,
+      "thickness_mm": 0.5
+    }
+  ],
+  "approved_pilot_combinations": [
+    {
+      "combination_id": "PIPE-COMB-0001",
+      "reference_code": "GOLD-PIPE-201-16-035-6M",
+      "reference_is_final_sku": false,
+      "grade": "201",
+      "color": "SILVER",
+      "diameter_mm": 16,
+      "thickness_mm": 0.35,
+      "length_m": 6,
+      "supply_status": "SUPPLY_AFTER_INQUIRY",
+      "status": "APPROVED"
+    },
+    {
+      "combination_id": "PIPE-COMB-0016",
+      "reference_code": "GOLD-PIPE-201-38-050-6M",
+      "reference_is_final_sku": false,
+      "grade": "201",
+      "color": "SILVER",
+      "diameter_mm": 38,
+      "thickness_mm": 0.5,
+      "length_m": 6,
+      "supply_status": "SUPPLY_AFTER_INQUIRY",
+      "status": "APPROVED"
+    },
+    {
+      "combination_id": "PIPE-COMB-0023",
+      "reference_code": "GOLD-PIPE-201-51-050-6M",
+      "reference_is_final_sku": false,
+      "grade": "201",
+      "color": "SILVER",
+      "diameter_mm": 51,
+      "thickness_mm": 0.5,
+      "length_m": 6,
+      "supply_status": "SUPPLY_AFTER_INQUIRY",
+      "status": "APPROVED"
+    }
+  ],
+  "historical_matrix": {
+    "total_rows": 882,
+    "approved_pilot_rows": 3,
+    "candidate_rows": 879,
+    "cartesian_generation_forbidden": true
+  },
+  "custom_inquiry": {
+    "approved_combination_selectable": true,
+    "other_free_text_allowed": true,
+    "auto_creates_master_data": false,
+    "auto_creates_product": false,
+    "auto_creates_variation": false
+  },
+  "provenance": {
+    "source_type": "FOUNDER_DECISIONS",
+    "source_reference": "BP2 Data Blueprint v0.1 conversation decisions",
+    "captured_by": "role:project-governance",
+    "captured_at": "2026-07-23T00:00:00Z",
+    "evidence_status": "APPROVED"
+  }
+}
