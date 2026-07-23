@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:damavand-steel:schema:bp2-pipe-data-blueprint:0.1.0",
+  "title": "BP2 decorative stainless-steel pipe data blueprint",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "blueprint_id",
+    "blueprint_version",
+    "scope",
+    "hierarchy",
+    "family",
+    "governance_statuses",
+    "admin_actions",
+    "controlled_values",
+    "measurement_policy",
+    "attribute_policy",
+    "approved_diameter_thickness_rules",
+    "approved_pilot_combinations",
+    "historical_matrix",
+    "custom_inquiry",
+    "provenance"
+  ],
+  "properties": {
+    "blueprint_id": {
+      "const": "bp2-pipe-data-blueprint"
+    },
+    "blueprint_version": {
+      "const": "0.1.0"
+    },
+    "scope": {
+      "type": "object"
+    },
+    "hierarchy": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "uniqueItems": true
+    },
+    "family": {
+      "type": "object"
+    },
+    "governance_statuses": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "uniqueItems": true
+    },
+    "admin_actions": {
+      "type": "object"
+    },
+    "controlled_values": {
+      "type": "object"
+    },
+    "measurement_policy": {
+      "type": "object"
+    },
+    "attribute_policy": {
+      "type": "object"
+    },
+    "approved_diameter_thickness_rules": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "uniqueItems": true
+    },
+    "approved_pilot_combinations": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": [
+          "combination_id",
+          "reference_code",
+          "reference_is_final_sku",
+          "grade",
+          "color",
+          "diameter_mm",
+          "thickness_mm",
+          "length_m",
+          "supply_status",
+          "status"
+        ],
+        "properties": {
+          "reference_is_final_sku": {
+            "const": false
+          },
+          "status": {
+            "const": "APPROVED"
+          }
+        }
+      }
+    },
+    "historical_matrix": {
+      "type": "object"
+    },
+    "custom_inquiry": {
+      "type": "object"
+    },
+    "provenance": {
+      "type": "object"
+    }
+  }
+}
