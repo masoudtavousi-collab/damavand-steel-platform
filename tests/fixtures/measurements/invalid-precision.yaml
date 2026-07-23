@@ -1,0 +1,49 @@
+contract_version: "1.0.0"
+dimensions:
+  - contract_version: "1.0.0"
+    dimension_id: dimension:111111111111
+    dimension_key: synthetic_precision
+    canonical_name: Synthetic Precision
+    description: Synthetic dimension used to reject unsupported precision.
+    base_unit_id: unit:111111111111
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: synthetic-test-owner
+    provenance:
+      source_type: SYNTHETIC_FIXTURE
+      source_reference: fixture:measurements:invalid-precision
+      captured_by: role:automated-validation
+      captured_at: "2000-01-01T00:00:00Z"
+      evidence_status: SYNTHETIC_TEST_EVIDENCE
+    record_version: "1.0.0"
+units:
+  - contract_version: "1.0.0"
+    unit_id: unit:111111111111
+    unit_key: synthetic_precision_unit
+    canonical_name: Synthetic Precision Unit
+    symbol: sp
+    dimension_id: dimension:111111111111
+    is_base_unit: true
+    base_unit_id: unit:111111111111
+    conversion_to_base:
+      multiplier:
+        numerator: 1
+        denominator: 1
+      offset:
+        numerator: 0
+        denominator: 1
+    allowed_data_types:
+      - DECIMAL
+    precision:
+      maximum_decimal_places: 13
+      rounding_mode: HALF_EVEN
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: synthetic-test-owner
+    provenance:
+      source_type: SYNTHETIC_FIXTURE
+      source_reference: fixture:measurements:invalid-precision
+      captured_by: role:automated-validation
+      captured_at: "2000-01-01T00:00:00Z"
+      evidence_status: SYNTHETIC_TEST_EVIDENCE
+    record_version: "1.0.0"

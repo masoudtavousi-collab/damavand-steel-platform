@@ -1,0 +1,294 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:damavand-steel:schema:measurement-foundation:1.0.0",
+  "title": "Canonical measurement foundation",
+  "description": "Closed schema for dimension and Unit definitions. Referential integrity, uniqueness, normalized conversions, and cycle detection are enforced by validate_measurements.py.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "dimensions",
+    "units"
+  ],
+  "properties": {
+    "contract_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "dimensions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/dimension"
+      }
+    },
+    "units": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/unit"
+      }
+    }
+  },
+  "$defs": {
+    "dimension": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract_version",
+        "dimension_id",
+        "dimension_key",
+        "canonical_name",
+        "description",
+        "base_unit_id",
+        "status",
+        "owner",
+        "provenance",
+        "record_version"
+      ],
+      "properties": {
+        "contract_version": {
+          "type": "string",
+          "const": "1.0.0"
+        },
+        "dimension_id": {
+          "type": "string",
+          "pattern": "^dimension:[0-9a-f]{12}$"
+        },
+        "dimension_key": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "canonical_name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": ".*\\S.*"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500,
+          "pattern": ".*\\S.*"
+        },
+        "base_unit_id": {
+          "type": "string",
+          "pattern": "^unit:[0-9a-f]{12}$"
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "owner": {
+          "$ref": "#/$defs/owner"
+        },
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        },
+        "record_version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        }
+      }
+    },
+    "unit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract_version",
+        "unit_id",
+        "unit_key",
+        "canonical_name",
+        "symbol",
+        "dimension_id",
+        "is_base_unit",
+        "base_unit_id",
+        "conversion_to_base",
+        "allowed_data_types",
+        "precision",
+        "status",
+        "owner",
+        "provenance",
+        "record_version"
+      ],
+      "properties": {
+        "contract_version": {
+          "type": "string",
+          "const": "1.0.0"
+        },
+        "unit_id": {
+          "type": "string",
+          "pattern": "^unit:[0-9a-f]{12}$"
+        },
+        "unit_key": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "canonical_name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": ".*\\S.*"
+        },
+        "symbol": {
+          "type": "string",
+          "pattern": "^\\S{1,16}$"
+        },
+        "dimension_id": {
+          "type": "string",
+          "pattern": "^dimension:[0-9a-f]{12}$"
+        },
+        "is_base_unit": {
+          "type": "boolean"
+        },
+        "base_unit_id": {
+          "type": "string",
+          "pattern": "^unit:[0-9a-f]{12}$"
+        },
+        "conversion_to_base": {
+          "$ref": "#/$defs/conversion"
+        },
+        "allowed_data_types": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "INTEGER",
+              "DECIMAL"
+            ]
+          }
+        },
+        "precision": {
+          "$ref": "#/$defs/precision"
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "owner": {
+          "$ref": "#/$defs/owner"
+        },
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        },
+        "record_version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        }
+      }
+    },
+    "conversion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "multiplier",
+        "offset"
+      ],
+      "properties": {
+        "multiplier": {
+          "$ref": "#/$defs/rational"
+        },
+        "offset": {
+          "$ref": "#/$defs/rational"
+        }
+      }
+    },
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "numerator",
+        "denominator"
+      ],
+      "properties": {
+        "numerator": {
+          "type": "integer"
+        },
+        "denominator": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "precision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "maximum_decimal_places",
+        "rounding_mode"
+      ],
+      "properties": {
+        "maximum_decimal_places": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 12
+        },
+        "rounding_mode": {
+          "type": "string",
+          "enum": [
+            "HALF_EVEN"
+          ]
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "APPROVED",
+        "CANDIDATE_UNVERIFIED",
+        "MISSING_DATA_VALUE",
+        "FOUNDER_INPUT_REQUIRED",
+        "DEFERRED",
+        "NOT_APPLICABLE",
+        "INVALID"
+      ]
+    },
+    "owner": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role"
+      ],
+      "properties": {
+        "role": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]{2,63}$"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_type",
+        "source_reference",
+        "captured_by",
+        "captured_at",
+        "evidence_status"
+      ],
+      "properties": {
+        "source_type": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$"
+        },
+        "source_reference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "captured_by": {
+          "type": "string",
+          "pattern": "^role:[a-z][a-z0-9-]{2,63}$"
+        },
+        "captured_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "evidence_status": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$"
+        }
+      }
+    }
+  }
+}

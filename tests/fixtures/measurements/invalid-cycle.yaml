@@ -1,0 +1,79 @@
+contract_version: "1.0.0"
+dimensions:
+  - contract_version: "1.0.0"
+    dimension_id: dimension:cccccccccccc
+    dimension_key: synthetic_cycle
+    canonical_name: Synthetic Cycle
+    description: Synthetic dimension whose Unit graph must be rejected.
+    base_unit_id: unit:cccccccccccc
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: synthetic-test-owner
+    provenance:
+      source_type: SYNTHETIC_FIXTURE
+      source_reference: fixture:measurements:invalid-cycle
+      captured_by: role:automated-validation
+      captured_at: "2000-01-01T00:00:00Z"
+      evidence_status: SYNTHETIC_TEST_EVIDENCE
+    record_version: "1.0.0"
+units:
+  - contract_version: "1.0.0"
+    unit_id: unit:cccccccccccc
+    unit_key: synthetic_cycle_one
+    canonical_name: Synthetic Cycle One
+    symbol: sc1
+    dimension_id: dimension:cccccccccccc
+    is_base_unit: false
+    base_unit_id: unit:dddddddddddd
+    conversion_to_base:
+      multiplier:
+        numerator: 1
+        denominator: 1
+      offset:
+        numerator: 0
+        denominator: 1
+    allowed_data_types:
+      - DECIMAL
+    precision:
+      maximum_decimal_places: 6
+      rounding_mode: HALF_EVEN
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: synthetic-test-owner
+    provenance:
+      source_type: SYNTHETIC_FIXTURE
+      source_reference: fixture:measurements:invalid-cycle
+      captured_by: role:automated-validation
+      captured_at: "2000-01-01T00:00:00Z"
+      evidence_status: SYNTHETIC_TEST_EVIDENCE
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    unit_id: unit:dddddddddddd
+    unit_key: synthetic_cycle_two
+    canonical_name: Synthetic Cycle Two
+    symbol: sc2
+    dimension_id: dimension:cccccccccccc
+    is_base_unit: false
+    base_unit_id: unit:cccccccccccc
+    conversion_to_base:
+      multiplier:
+        numerator: 1
+        denominator: 1
+      offset:
+        numerator: 0
+        denominator: 1
+    allowed_data_types:
+      - DECIMAL
+    precision:
+      maximum_decimal_places: 6
+      rounding_mode: HALF_EVEN
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: synthetic-test-owner
+    provenance:
+      source_type: SYNTHETIC_FIXTURE
+      source_reference: fixture:measurements:invalid-cycle
+      captured_by: role:automated-validation
+      captured_at: "2000-01-01T00:00:00Z"
+      evidence_status: SYNTHETIC_TEST_EVIDENCE
+    record_version: "1.0.0"
