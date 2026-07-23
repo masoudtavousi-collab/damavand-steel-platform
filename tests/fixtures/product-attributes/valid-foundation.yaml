@@ -1,0 +1,27 @@
+- contract_version: "1.0.0"
+  attribute_id: attr:000000000001
+  attribute_key: synthetic_test_attribute
+  canonical_label: Synthetic Test Attribute
+  description: Synthetic definition used only to exercise the Attribute foundation.
+  category: PRIMARY
+  data_type: TEXT
+  unit_policy:
+    mode: FORBIDDEN
+    allowed_unit_ids: []
+  validation:
+    nullable: false
+    multiple_values: false
+    constraints:
+      min_length: 1
+      max_length: 64
+      pattern: '^synthetic-'
+  status: CANDIDATE_UNVERIFIED
+  owner:
+    role: synthetic-test-owner
+  provenance:
+    source_type: SYNTHETIC_FIXTURE
+    source_reference: fixture:product-attributes:valid-foundation
+    captured_by: role:automated-validation
+    captured_at: "2000-01-01T00:00:00Z"
+    evidence_status: SYNTHETIC_TEST_EVIDENCE
+  record_version: "1.0.0"

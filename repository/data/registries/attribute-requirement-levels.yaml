@@ -1,0 +1,23 @@
+registry_id: attribute-requirement-levels
+registry_version: "1.0.0"
+requirement_levels:
+  - code: REQUIRED
+    requires_value: true
+    requires_condition_reference: false
+    permits_value: true
+    description: A value must be present within an explicitly applicable future profile.
+  - code: OPTIONAL
+    requires_value: false
+    requires_condition_reference: false
+    permits_value: true
+    description: A value may be absent within an explicitly applicable future profile.
+  - code: CONDITIONAL
+    requires_value: false
+    requires_condition_reference: true
+    permits_value: true
+    description: Presence is governed by an explicit condition in a future profile.
+  - code: PROHIBITED
+    requires_value: false
+    requires_condition_reference: false
+    permits_value: false
+    description: A value must be rejected within the applicable future profile.

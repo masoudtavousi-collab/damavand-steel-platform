@@ -1,0 +1,26 @@
+- contract_version: "1.0.0"
+  attribute_id: attr:ffffffffffff
+  attribute_key: Synthetic-Test-Attribute
+  canonical_label: Synthetic Invalid Naming Test
+  description: Synthetic definition that must fail only the canonical key convention.
+  category: PRIMARY
+  data_type: TEXT
+  unit_policy:
+    mode: FORBIDDEN
+    allowed_unit_ids: []
+  validation:
+    nullable: false
+    multiple_values: false
+    constraints:
+      min_length: 1
+      max_length: 64
+  status: CANDIDATE_UNVERIFIED
+  owner:
+    role: synthetic-test-owner
+  provenance:
+    source_type: SYNTHETIC_FIXTURE
+    source_reference: fixture:product-attributes:invalid-naming
+    captured_by: role:automated-validation
+    captured_at: "2000-01-01T00:00:00Z"
+    evidence_status: SYNTHETIC_TEST_EVIDENCE
+  record_version: "1.0.0"

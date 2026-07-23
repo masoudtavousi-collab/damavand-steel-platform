@@ -1,0 +1,146 @@
+contract_id: product-attribute
+contract_version: "1.0.0"
+record_kind: canonical-product-attribute-definition
+schema:
+  path: repository/data/schemas/product-attribute.schema.json
+  draft: "https://json-schema.org/draft/2020-12/schema"
+registries:
+  attributes: repository/data/registries/product-attributes.yaml
+  data_types: repository/data/registries/attribute-data-types.yaml
+  categories: repository/data/registries/attribute-categories.yaml
+  units: repository/data/registries/attribute-units.yaml
+  requirement_levels: repository/data/registries/attribute-requirement-levels.yaml
+  statuses: repository/data/registries/product-statuses.yaml
+versioning:
+  scheme: semantic-version-core
+  pattern: '^[0-9]+\.[0-9]+\.[0-9]+$'
+  compatible_contract_versions:
+    - "1.0.0"
+canonical_naming:
+  attribute_id:
+    format: 'attr:<12-lowercase-hex>'
+    pattern: '^attr:[0-9a-f]{12}$'
+    immutable: true
+  attribute_key:
+    format: lower_snake_case
+    pattern: '^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$'
+    mutable_only_by_governance: true
+  unit_id:
+    format: 'unit:<12-lowercase-hex>'
+    pattern: '^unit:[0-9a-f]{12}$'
+  unit_code:
+    format: lower_snake_case
+    pattern: '^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$'
+  identity_independent_from:
+    - canonical_label
+    - attribute_key
+    - slug
+    - wordpress_id
+    - woocommerce_id
+always_required_attribute_fields:
+  - contract_version
+  - attribute_id
+  - attribute_key
+  - canonical_label
+  - description
+  - category
+  - data_type
+  - unit_policy
+  - validation
+  - status
+  - owner
+  - provenance
+  - record_version
+owner_model:
+  type: object
+  required_fields:
+    - role
+  role_pattern: '^[a-z][a-z0-9-]{2,63}$'
+provenance_model:
+  type: object
+  required_fields:
+    - source_type
+    - source_reference
+    - captured_by
+    - captured_at
+    - evidence_status
+  source_type_pattern: '^[A-Z][A-Z0-9_]*$'
+  captured_by_pattern: '^role:[a-z][a-z0-9-]{2,63}$'
+  evidence_status_pattern: '^[A-Z][A-Z0-9_]*$'
+requiredness_rules:
+  assignment_scope: future-attribute-profile
+  global_attribute_requiredness: prohibited
+  levels:
+    - REQUIRED
+    - OPTIONAL
+    - CONDITIONAL
+    - PROHIBITED
+  rules:
+    - Requiredness never creates a Product value.
+    - CONDITIONAL requires an explicit future condition reference.
+    - PROHIBITED rejects a value in the applicable future profile.
+    - No requirement-level assignment is created in Wave 2B.
+unit_policy:
+  modes:
+    - FORBIDDEN
+    - OPTIONAL
+    - REQUIRED
+  rules:
+    - Unit references must resolve through the canonical Unit registry.
+    - Data types without unit support must use FORBIDDEN with no unit IDs.
+    - REQUIRED must declare at least one allowed unit ID.
+    - No Unit entry is created in Wave 2B.
+validation_definitions:
+  common_fields:
+    - nullable
+    - multiple_values
+    - constraints
+  constraint_fields:
+    - min_length
+    - max_length
+    - minimum
+    - maximum
+    - decimal_places
+    - pattern
+    - value_registry_reference
+    - target_registry_reference
+  rules:
+    - Constraint fields must be compatible with the selected data type.
+    - Minimum values must not exceed maximum values.
+    - Pattern constraints must compile as deterministic regular expressions.
+    - Controlled terms require a value registry reference.
+    - Entity references require a target registry reference.
+data_boundary:
+  canonical_attribute_entries_allowed_in_wave_2b: false
+  canonical_unit_entries_allowed_in_wave_2b: false
+  product_records_allowed: false
+  sku_records_allowed: false
+  business_values_allowed: false
+  runtime_mappings_allowed: false
+prohibited_fields:
+  - product_id
+  - entity_id
+  - sku
+  - commercial_sku
+  - product_value
+  - allowed_values
+  - slug
+  - wordpress_id
+  - wordpress_owner
+  - woocommerce_id
+  - woocommerce_owner
+  - variation_id
+  - price
+  - pricing
+  - cost
+  - margin
+  - stock
+  - inventory
+  - availability
+  - offer
+  - cart
+  - checkout
+  - payment
+  - publication
+  - publishing
+  - deployment
