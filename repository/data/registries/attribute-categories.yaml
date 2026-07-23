@@ -1,0 +1,19 @@
+registry_id: attribute-categories
+registry_version: "1.0.0"
+categories:
+  - code: PRIMARY
+    contains_business_data: false
+    grants_publication_authority: false
+    description: Structural classification for primary Product specification concerns.
+  - code: SECONDARY
+    contains_business_data: false
+    grants_publication_authority: false
+    description: Structural classification for secondary appearance concerns.
+  - code: COMMERCIAL
+    contains_business_data: false
+    grants_publication_authority: false
+    description: Structural classification for future governed commercial concerns.
+  - code: OPERATIONAL_INTERNAL
+    contains_business_data: false
+    grants_publication_authority: false
+    description: Structural classification for protected operational or internal concerns.

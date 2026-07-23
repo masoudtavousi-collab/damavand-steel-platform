@@ -1,0 +1,372 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:damavand-steel:schema:product-attribute:1.0.0",
+  "title": "Canonical Product Attribute definition",
+  "description": "Closed per-definition schema for the data-free Wave 2B Product Attribute foundation. Registry-wide uniqueness and cross-registry references are enforced by validate_product_attributes.py.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "attribute_id",
+    "attribute_key",
+    "canonical_label",
+    "description",
+    "category",
+    "data_type",
+    "unit_policy",
+    "validation",
+    "status",
+    "owner",
+    "provenance",
+    "record_version"
+  ],
+  "properties": {
+    "contract_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "attribute_id": {
+      "type": "string",
+      "pattern": "^attr:[0-9a-f]{12}$"
+    },
+    "attribute_key": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+    },
+    "canonical_label": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": ".*\\S.*"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500,
+      "pattern": ".*\\S.*"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "PRIMARY",
+        "SECONDARY",
+        "COMMERCIAL",
+        "OPERATIONAL_INTERNAL"
+      ]
+    },
+    "data_type": {
+      "type": "string",
+      "enum": [
+        "TEXT",
+        "INTEGER",
+        "DECIMAL",
+        "BOOLEAN",
+        "CONTROLLED_TERM",
+        "ENTITY_REFERENCE"
+      ]
+    },
+    "unit_policy": {
+      "$ref": "#/$defs/unit_policy"
+    },
+    "validation": {
+      "$ref": "#/$defs/validation"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "APPROVED",
+        "CANDIDATE_UNVERIFIED",
+        "MISSING_DATA_VALUE",
+        "FOUNDER_INPUT_REQUIRED",
+        "DEFERRED",
+        "NOT_APPLICABLE",
+        "INVALID"
+      ]
+    },
+    "owner": {
+      "$ref": "#/$defs/owner"
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "record_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "data_type": {
+            "enum": [
+              "TEXT",
+              "BOOLEAN",
+              "CONTROLLED_TERM",
+              "ENTITY_REFERENCE"
+            ]
+          }
+        },
+        "required": [
+          "data_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "unit_policy": {
+            "properties": {
+              "mode": {
+                "const": "FORBIDDEN"
+              },
+              "allowed_unit_ids": {
+                "maxItems": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "data_type": {
+            "const": "BOOLEAN"
+          }
+        },
+        "required": [
+          "data_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "validation": {
+            "properties": {
+              "multiple_values": {
+                "const": false
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "data_type": {
+            "const": "CONTROLLED_TERM"
+          }
+        },
+        "required": [
+          "data_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "validation": {
+            "properties": {
+              "constraints": {
+                "required": [
+                  "value_registry_reference"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "data_type": {
+            "const": "ENTITY_REFERENCE"
+          }
+        },
+        "required": [
+          "data_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "validation": {
+            "properties": {
+              "constraints": {
+                "required": [
+                  "target_registry_reference"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "unit_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "allowed_unit_ids"
+      ],
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": [
+            "FORBIDDEN",
+            "OPTIONAL",
+            "REQUIRED"
+          ]
+        },
+        "allowed_unit_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^unit:[0-9a-f]{12}$"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "const": "FORBIDDEN"
+              }
+            },
+            "required": [
+              "mode"
+            ]
+          },
+          "then": {
+            "properties": {
+              "allowed_unit_ids": {
+                "maxItems": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "const": "REQUIRED"
+              }
+            },
+            "required": [
+              "mode"
+            ]
+          },
+          "then": {
+            "properties": {
+              "allowed_unit_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "nullable",
+        "multiple_values",
+        "constraints"
+      ],
+      "properties": {
+        "nullable": {
+          "type": "boolean"
+        },
+        "multiple_values": {
+          "type": "boolean"
+        },
+        "constraints": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "min_length": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "max_length": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "minimum": {
+              "type": "number"
+            },
+            "maximum": {
+              "type": "number"
+            },
+            "decimal_places": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 12
+            },
+            "pattern": {
+              "type": "string",
+              "minLength": 1
+            },
+            "value_registry_reference": {
+              "type": "string",
+              "minLength": 1
+            },
+            "target_registry_reference": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "owner": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role"
+      ],
+      "properties": {
+        "role": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]{2,63}$"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_type",
+        "source_reference",
+        "captured_by",
+        "captured_at",
+        "evidence_status"
+      ],
+      "properties": {
+        "source_type": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$"
+        },
+        "source_reference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "captured_by": {
+          "type": "string",
+          "pattern": "^role:[a-z][a-z0-9-]{2,63}$"
+        },
+        "captured_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "evidence_status": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$"
+        }
+      }
+    }
+  }
+}

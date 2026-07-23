@@ -1,0 +1,39 @@
+registry_id: attribute-data-types
+registry_version: "1.0.0"
+data_types:
+  - code: TEXT
+    json_value_type: string
+    supports_units: false
+    supports_multiple_values: true
+    required_constraint: NONE
+    description: Governed text constrained by length or pattern when defined.
+  - code: INTEGER
+    json_value_type: integer
+    supports_units: true
+    supports_multiple_values: true
+    required_constraint: NONE
+    description: Whole-number value with optional numeric bounds and governed units.
+  - code: DECIMAL
+    json_value_type: number
+    supports_units: true
+    supports_multiple_values: true
+    required_constraint: NONE
+    description: Decimal value with optional bounds, precision, and governed units.
+  - code: BOOLEAN
+    json_value_type: boolean
+    supports_units: false
+    supports_multiple_values: false
+    required_constraint: NONE
+    description: Explicit true or false value without unit or free-text substitution.
+  - code: CONTROLLED_TERM
+    json_value_type: string
+    supports_units: false
+    supports_multiple_values: true
+    required_constraint: VALUE_REGISTRY_REFERENCE
+    description: Stable reference to a separately governed controlled-value registry.
+  - code: ENTITY_REFERENCE
+    json_value_type: string
+    supports_units: false
+    supports_multiple_values: true
+    required_constraint: TARGET_REGISTRY_REFERENCE
+    description: Stable reference to an entity in a separately governed target registry.
