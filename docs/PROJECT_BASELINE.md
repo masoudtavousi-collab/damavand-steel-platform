@@ -8,15 +8,15 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.3.0
-- **Last Updated:** 2026-07-20
-- **Last Review:** 2026-07-20
+- **Version:** 0.4.0
+- **Last Updated:** 2026-07-23
+- **Last Review:** 2026-07-23
 - **Review Cycle:** On approved decision, completed sprint, repository disposition, readiness, or execution-state change
 - **Lifecycle:** Review
 - **Source of Truth:** Accepted governing sources, recorded Founder decisions, [Current Project State](CURRENT_PROJECT_STATE.md), approved Master Data, and current repository evidence within their declared scope
 - **Dependencies:** [Codex Repository Instructions](../AGENTS.md), [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md), [Current Project State](CURRENT_PROJECT_STATE.md), and [Execution Gates](EXECUTION_GATES.md)
 - **Related Documents:** [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md), [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md), [Founder Decision Log](17_FOUNDER_DECISION_LOG.md), and `GIT-02S Audit`
-- **Traceability:** CP-001 through CP-010; ADR-0001; FD-PILOT-001; GIT-02S Founder directive dated 2026-07-14; Class B Wave 1 Founder authorization dated 2026-07-19; PR #1–#3 merge state; default-branch and main-protection verification; Wave 2 discovery; Founder-approved pre-implementation reconciliation dated 2026-07-20
+- **Traceability:** CP-001 through CP-010; ADR-0001; FD-PILOT-001; GIT-02S; PR #1–#7 merge evidence; Wave 2A–2C structural foundations; FD-K01-001
 - **AI Compatibility:** Primary concise entry point; underlying sources control within their recorded authority
 - **Approval:** Pending Founder review of the reconciled documentation; recorded Founder decisions remain accepted within their exact scope
 
@@ -48,15 +48,15 @@ Repository B cannot override the Founder, Repository A, CP-001 through CP-010, t
 
 | Item | Current state |
 | --- | --- |
-| Current phase | Wave 2 pre-implementation governance reconciliation; Wave 1 and Wave 2 discovery complete |
+| Current phase | K-01 Governance and Knowledge Reconciliation |
 | Last completed product/runtime evidence sprint | Sprint 12A |
-| Last completed repository integration | Post-merge Governance Reconciliation through merged PR #3 |
-| Active documentation sprint | Wave 2 pre-implementation governance reconciliation only; historical GIT-02S and Wave 1 evidence remains preserved |
+| Last completed repository integration | Wave 2C Measurement Foundation through merged PR #7 |
+| Active documentation sprint | K-01 governance/current-state, Atlas adoption, and test reconciliation |
 | Active implementation sprint | None |
-| Wave 2A | Proposed; not authorized and not started |
-| Approved next action | Founder review and merge decision for this documentation reconciliation Draft PR, followed by a separate Founder authorization decision for Wave 2A |
+| Wave 2A–2C | Structural foundations merged; no Product Data or runtime authority |
+| Approved next action | One K-01 commit, push of `codex/k-01-governance-knowledge-reconciliation`, and one Draft PR; then stop for Founder review |
 
-Historically, GIT-02S did not authorize staging, commit, tag, push, merge, runtime, import, product creation, deployment, or publishing. The 2026-07-19 Founder authorization superseded only that Git-action boundary for the exact Wave 1 sequence and did not itself authorize merge. PR #1, PR #2, and PR #3 were later separately approved and merged. Default-branch correction, main protection, Wave 2 discovery, and this documentation sprint were separately approved. No approval in that chronology authorizes Wave 2A implementation or runtime action.
+Historical Git authorizations retain their original exact scope and do not become retroactive merge or runtime authority. PR #1–#7 are repository evidence; a merge is not a substitute for the originating Founder authorization record. The exact mutable state is maintained in [Current Project State](CURRENT_PROJECT_STATE.md).
 
 ## Architecture and Governance Status
 
@@ -69,7 +69,7 @@ Historically, GIT-02S did not authorize staging, commit, tag, push, merge, runti
 
 | Area | Status |
 | --- | --- |
-| Product Repository | Architecture/design inputs exist; machine-readable core contracts, schemas, registries, final identifiers, SKU vocabulary, and executable domain tests do not exist; `NOT_IMPLEMENTATION_READY` |
+| Product Repository | Product core, Product Attribute, and measurement structural contracts/schemas/registries/validators exist; no canonical Product rows, approved Product Attribute definitions, final SKU vocabulary, Master Data, or Golden package exists |
 | Knowledge Repository | Architecture proposals exist; `repository/knowledge/` is the approved future location, but machine-readable contracts and content instances do not exist; `NOT_IMPLEMENTATION_READY` |
 | Master Data | No canonical machine-readable package exists on `main`; decision records and governing prose remain the current evidence |
 | Knowledge Cards and Page Builder assets | Referenced historical/future assets are absent from canonical `main`; no implementation-readiness claim is made |
@@ -116,33 +116,33 @@ Sprint 12A provides public, unauthenticated, read-only evidence of WordPress, Wo
 ## Git, Backup, Restore, and Staging
 
 - Repository A retains its historical v1.0 baseline. Before this reconciliation sprint, the synchronized `main` working tree was verified clean.
-- The canonical and GitHub default branch is `main`; local `main`, `origin/main`, and live GitHub `main` were verified at shared baseline `d702c5217f7caa2f23e56f965f3f993967e3c17d` on 2026-07-20. `origin/HEAD` resolves to `origin/main`.
-- Bootstrap PR #1 is merged through `530a4c46cc47bd02b794cfac1ef24eef56918e75`; Wave 1 Governance PR #2 is merged through `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`; Post-merge Governance Reconciliation PR #3 is merged through `d702c5217f7caa2f23e56f965f3f993967e3c17d`.
+- The canonical and GitHub default branch is `main`; its current verified SHA is recorded only in [Current Project State](CURRENT_PROJECT_STATE.md).
+- PR #1–#7 are merged. PR #5 added Product core, PR #6 added Product Attributes, and PR #7 added measurements.
 - The 2026-07-19 Wave 1 branch, exact allowlist, commit, push, and Draft-PR restrictions remain historical execution evidence and must not be rewritten as earlier merge authority.
-- Wave 2 discovery is complete. Wave 2 implementation has not started; Wave 2A is proposed and not authorized. Workflows remain inactive, and no runtime, WordPress or Product Repository implementation, publication, deployment, or production mutation occurred.
+- Wave 2A–2C structural foundations are present. No Product records, WordPress/runtime implementation, publication, deployment, or production mutation occurred.
 - Main-branch protection is enabled with administrator enforcement, strict status checks, required check `repository-validation`, force-push disabled, and branch deletion disabled.
 - No independent backup custody, isolated restore proof, current rollback proof, or staging environment has been verified.
 - Static validation passing does not establish import, runtime, publishing, deployment, or production readiness.
 
 ## Current GO and NO-GO
 
-**GO:** Documentation-only Wave 2 pre-implementation reconciliation of the exact allowlist; one scoped branch, commit, push, and Draft PR; Founder review.
+**GO:** K-01 governance/current-state reconciliation, Atlas disposition, unified validation entry point, one scoped branch/commit/push, one Draft PR, and Founder review.
 
-**NO-GO:** Merge of this reconciliation PR without Founder review; Wave 2A implementation; WordPress or hosting change; runtime; workflow activation or execution; deployment; import; Product or Knowledge Repository implementation; product or variation creation; publication; public pricing; Offer schema; cart/checkout/payment; bulk SKU generation; Repository B mutation or merge; Factory/Generator implementation; tag creation; or repository-setting changes.
+**NO-GO:** Merge without Founder review; Wave 2D or Product/Knowledge population; WordPress or hosting change; runtime; workflow activation or execution; deployment; import; product or variation creation; publication; public pricing; Offer schema; cart/checkout/payment; bulk SKU generation; Repository B mutation or merge; Factory/Generator implementation; tag creation; or repository-setting changes.
 
 ## Settled Founder Decisions
 
 - Repository A is the only canonical Damavand Steel repository.
 - Repository B is `QUARANTINED_ARCHITECTURE_RESEARCH` and has no current project authority.
-- PR #1, PR #2, and PR #3 are merged; the verified shared `main` baseline is `d702c5217f7caa2f23e56f965f3f993967e3c17d`.
+- PR #1–#7 are merged; the current `main` baseline is maintained in Current Project State.
 - `main` is the default branch and is protected with the required `repository-validation` check.
-- Wave 1 and Wave 2 discovery are complete. Wave 2A is proposed, not authorized, and not started.
+- Wave 1 and Wave 2 discovery are complete. Wave 2A–2C structural foundations are merged without Product Data or runtime authority.
 - The canonical repository hierarchy is `Catalog → Platform → Family → Series → Variant Rules → SKU`; commerce Parent/Variation constructs are downstream mappings.
 - Canonical Product, Knowledge, content, implementation, Master Data, Golden, validation, schema, contract, and registry path ownership follows the approved `repository/data/**` and `repository/**` model recorded in the Platform Directory Standard.
 - The Golden Parent and three listed Pipe combinations are approved only for the limited pilot.
 - The three pilot references are not final commercial SKUs.
 - The other 879 rows remain `CANDIDATE_UNVERIFIED`; market availability is missing for all 882 rows.
-- Runtime, import, publishing, deployment, product creation, bulk SKU generation, Factory implementation, and repository merge remain `NO-GO`.
+- Runtime, import, publishing, deployment, product creation, bulk SKU generation, Factory implementation, and autonomous repository merge remain `NO-GO`.
 
 ## Genuine Unresolved Founder Decisions
 
@@ -152,7 +152,8 @@ Sprint 12A provides public, unauthenticated, read-only evidence of WordPress, Wo
 - Blocksy Pro and Elementor Pro package/license ownership and compatibility.
 - Approval or revision of remaining `Review`/`Draft` governance and architecture decisions.
 - Future disposition or possible promotion of Repository B concepts; any status change requires a separate Founder decision.
-- Separate authorization and exact allowlist for Wave 2A after this reconciliation is reviewed and merged.
+- Historical originating authorization references for Wave 2A and Wave 2B must be linked without inferring them from merge history.
+- Separate authorization and exact allowlist for the next Product Data or implementation sprint after K-01 review.
 
 Missing availability, files, measurements, or operational evidence are not automatically Founder decisions.
 
@@ -172,7 +173,7 @@ Apply [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md): accepted governin
 
 ## Exact Next Safe Action
 
-Complete this approved documentation reconciliation and open one Draft PR against `main`. The next action is Founder review and merge decision for that PR, followed by a separate Founder authorization decision for Wave 2A. Do not merge autonomously, change repository settings, or begin implementation.
+Complete K-01 and open one Draft PR against `main`. The next action is Founder review and merge decision. Do not merge autonomously, change repository settings, begin Wave 2D, populate Product/Knowledge data, or begin runtime work.
 
 ## Baseline Update Rules
 

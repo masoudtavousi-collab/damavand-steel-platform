@@ -2,17 +2,16 @@
 
 ## Current Reconciliation State
 
-**Last completed product/runtime evidence sprint:** Sprint 12A. **Last completed repository integration:** Post-merge Governance Reconciliation through PR #3. **Active implementation sprint:** None. GIT-02S and the 2026-07-19 Wave 1 authorization remain historical governance evidence. Wave 1 and read-only Wave 2 discovery are complete. The current authorized activity is documentation-only Wave 2 pre-implementation governance reconciliation. Wave 2A is proposed, not authorized, and not started. Repository B remains isolated `QUARANTINED_ARCHITECTURE_RESEARCH`.
+**Last completed product/runtime evidence sprint:** Sprint 12A. **Last completed repository integration:** Wave 2C through PR #7. **Active implementation sprint:** None. The current authorized activity is K-01 Governance and Knowledge Reconciliation. Wave 2A–2C structural foundations exist, but Product Data population and runtime work are not authorized. Repository B remains isolated `QUARANTINED_ARCHITECTURE_RESEARCH`. Mutable detail is maintained in [Current Project State](CURRENT_PROJECT_STATE.md).
 
 ## Repository Integration Track
 
-- Canonical/default `main` and the verified shared baseline resolve to `d702c5217f7caa2f23e56f965f3f993967e3c17d`; `origin/HEAD` resolves to `origin/main`.
-- Bootstrap PR #1 is complete and merged through `530a4c46cc47bd02b794cfac1ef24eef56918e75`.
-- Wave 1 Governance PR #2 is complete and merged through `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`; Wave 1 is complete.
-- Post-merge Governance Reconciliation PR #3 is complete and merged through `d702c5217f7caa2f23e56f965f3f993967e3c17d`.
+- Canonical/default `main` and its verified SHA are recorded in Current Project State.
+- PR #1–#4 completed repository/bootstrap and Wave 2 pre-implementation governance reconciliation.
+- PR #5 completed Wave 2A Product Core; PR #6 completed Wave 2B Product Attributes; PR #7 completed Wave 2C Measurements.
 - The historical Wave 1 branch/commit/push/Draft-PR scope did not authorize merge and remains preserved as chronology. Its later approved merge granted no Wave 2, runtime, or implementation authority.
-- Wave 2 discovery is complete. Wave 2 implementation has not started; Wave 2A requires separate Founder authorization after this documentation PR is reviewed and merged.
-- Workflows remain inactive. No runtime, WordPress or Product Repository implementation, publication, deployment, or production mutation has occurred.
+- Wave 2A–2C are structural, platform-independent foundations. They created no canonical Product rows, Product Attribute definitions, Master Data, Golden package, WordPress implementation, publication, deployment, or production mutation.
+- Workflows remain inactive.
 - `main` is the GitHub default branch and is protected with administrator enforcement, strict required check `repository-validation`, force-push disabled, and deletion disabled.
 
 ## Phase 1 — Architecture
@@ -25,7 +24,7 @@
 
 ## Phase 3 — Implementation Assets
 
-**Status:** NOT IMPLEMENTATION READY — machine-readable Product/Knowledge core contracts are absent
+**Status:** STRUCTURAL PRODUCT FOUNDATION PRESENT; PRODUCT DATA, KNOWLEDGE, AND RUNTIME NOT READY
 
 ## Phase 4 — Master Data Reconciliation
 
@@ -87,4 +86,4 @@ Sequence: Pipe → Profile → approved Fittings families → remaining approved
 
 ## Do Not Yet
 
-No autonomous merge of the Wave 2 pre-implementation reconciliation PR, Wave 2A implementation, repository-settings change, workflow activation, bulk import, full-catalog or 882-variation generation, WordPress implementation, Product/Knowledge Repository implementation, production publishing, deployment, live prices, payment/cart/checkout, Phase 1 AI, speculative Fittings data, or Central Steel runtime. The next action is Founder review and merge decision for the documentation PR, followed by a separate Wave 2A authorization decision.
+No autonomous merge of the K-01 Draft PR, Wave 2D or Product/Knowledge population, repository-settings change, workflow activation, bulk import, full-catalog or 882-variation generation, WordPress implementation, production publishing, deployment, live prices, payment/cart/checkout, Phase 1 AI, speculative Fittings data, or Central Steel runtime. The next action after the K-01 Draft PR is Founder review.

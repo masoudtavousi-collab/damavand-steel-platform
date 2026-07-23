@@ -30,7 +30,7 @@ The GIT-02S and local tagged-baseline counts below are retained as dated evidenc
 | --- | --- | --- |
 | Repository inventory | GIT-02S snapshot: 549 files, comprising 538 non-ignored and 11 ignored local files | Historical measurement after GIT-02S creation and the authorized access-test deletion |
 | Documentation inventory | GIT-02S snapshot: 159 Markdown files under `docs/`, 179 under `repository/`, and 379 repository-wide | Historical measurement after GIT-02S reconciliation |
-| Current tracked baseline inventory | Wave 2 discovery: 285 tracked files, 125 under `docs/`, 72 under `repository/`, and 228 Markdown files repository-wide | Current Git-tree evidence at `d702c5217f7caa2f23e56f965f3f993967e3c17d` |
+| Historical Wave 2-discovery inventory | 285 tracked files, 125 under `docs/`, 72 under `repository/`, and 228 Markdown files repository-wide | Dated Git-tree evidence at `d702c5217f7caa2f23e56f965f3f993967e3c17d`; not a current count |
 | File classification | GIT-02S snapshot: 549 files classified plus one explicit deleted-test disposition record | Historical evidence only; not current Git state, staging, deletion, or baseline approval |
 | Documentation navigation | GIT-02S snapshot: 0 zero-inbound root `docs/*.md` files | Historical entry-point and evidence-path result |
 | Local Markdown links and anchors | GIT-02S snapshot: 7,487 relative Markdown links checked; 0 broken file destinations; 0 broken anchors | Historical result; the post-merge reconciliation requires fresh validation before publication of its Draft PR |
@@ -123,15 +123,15 @@ Current tracked proposals have discoverable locations. Approved future Product/K
 
 ## Git Governance Coverage
 
-The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain historical evidence. Current repository-control facts verified on 2026-07-20 are:
+The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain historical evidence. Mutable repository-control facts are maintained in [Current Project State](CURRENT_PROJECT_STATE.md). K-01 verified:
 
 - The working directory is a Git repository, and the canonical branch is `main`.
 - The historical immutable baseline contains 157 tracked files; both baseline tags still resolve to the original baseline commit.
 - Annotated tags `baseline-v1.0.0` and `repo-v1.0.0` resolve to the same baseline commit.
 - The tagged tree contains the baseline manifest, release notes, readiness assessment, roadmap, engineering guidelines, synchronized repository records, and Freeze Audit.
-- Local `main`, `origin/main`, and live GitHub `main` resolve to the verified shared baseline `d702c5217f7caa2f23e56f965f3f993967e3c17d`; `origin/HEAD` resolves to `origin/main`.
-- Bootstrap PR #1, Wave 1 Governance PR #2, and Post-merge Governance Reconciliation PR #3 are merged through `530a4c46cc47bd02b794cfac1ef24eef56918e75`, `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`, and `d702c5217f7caa2f23e56f965f3f993967e3c17d` respectively.
-- Wave 1 and read-only Wave 2 discovery are complete. Wave 2 implementation has not started; Wave 2A is proposed and not authorized. Workflows remain inactive, and no runtime, WordPress or Product Repository implementation, publication, deployment, or production mutation occurred.
+- Local `main`, `origin/main`, and live GitHub `main` were synchronized at the K-01 start; the exact SHA is recorded in Current Project State.
+- PR #1–#7 are merged. Wave 2A–2C provide Product core, Product Attribute, and measurement structural foundations.
+- Workflows remain inactive. No Product Data population, WordPress/runtime implementation, publication, deployment, or production mutation occurred.
 - GitHub default branch is `main`. Main protection has administrator enforcement, strict/up-to-date required check `repository-validation`, force-push disabled, and deletion disabled.
 - The primary GitHub repository is `masoudtavousi-collab/damavand-steel-platform`. Independent mirror, backup, signing, custody, and retention evidence remain unresolved; branch-protection state itself is verified.
 - The protected stash preserves prior local material outside the current reconciliation scope and remains uninspected and untouched.
@@ -463,10 +463,9 @@ The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain histo
 
 - `FD-GIT-W1-001` historically authorized exactly 19 governance and repository-control paths, one commit, push of only `codex/class-b-wave-01-governance`, and one Draft PR while merge remained prohibited.
 - PR #1 and PR #2 were later separately approved and merged. The required Wave 1 commits remain in `main` ancestry, and both PR-head and merge-commit CI runs succeeded.
-- Wave 1 and post-merge reconciliation are complete. The verified shared baseline is `d702c5217f7caa2f23e56f965f3f993967e3c17d` on canonical/default `main`.
-- Wave 2 discovery is complete. Wave 2A and every Product/Knowledge implementation path, workflow activation or execution, and runtime asset remain excluded and unauthorized.
-- The merges changed repository foundation and governance evidence only. They did not start WordPress or Product Repository implementation, runtime, publication, deployment, or production work.
-- Merge of the Wave 2 pre-implementation reconciliation Draft PR remains `NO-GO` until Founder review. The approved next action is that review and merge decision, followed by a separate Wave 2A authorization decision.
+- Wave 1, reconciliation, and Wave 2A–2C structural foundations are complete through PR #7.
+- Product/Knowledge population, workflow activation or execution, WordPress/runtime assets, publication, deployment, and production remain excluded and unauthorized.
+- Merge of the K-01 Draft PR remains `NO-GO` until Founder review.
 
 ## Known Gaps
 

@@ -1,6 +1,6 @@
 # Git Baseline Approval Checklist
 
-## Current Applicability — 2026-07-20
+## Historical Applicability
 
 This checklist is preserved as historical GIT-01/GIT-02 review evidence. Its 298-row counts and future-authorization wording below were valid for that earlier review and do not describe the current repository or grant current authority.
 
@@ -8,7 +8,7 @@ The current `docs/GIT_FILE_CLASSIFICATION.csv` is a dated 2026-07-14 inventory s
 
 Historically, the explicit 2026-07-19 Class B Wave 1 Founder authorization permitted exactly 19 approved paths, one scoped commit, push of only `codex/class-b-wave-01-governance`, and one Draft PR while merge remained excluded. That authorization must not be rewritten as earlier merge authority.
 
-PR #1, PR #2, and PR #3 were later separately approved and merged; Wave 1 and read-only Wave 2 discovery are complete. Canonical/default `main` is verified at shared baseline `d702c5217f7caa2f23e56f965f3f993967e3c17d`, `origin/HEAD` resolves to `origin/main`, and main protection is active with administrator enforcement and strict required check `repository-validation`; force-push and deletion are disabled. The old Wave 1 and post-merge Draft-PR authorizations remain historical evidence only. Current Git mutation authority is limited to the Founder-approved 21-file-ceiling Wave 2 pre-implementation documentation reconciliation, one commit, push of only `codex/wave-2-preimplementation-reconciliation`, and one Draft PR against `main`; Codex may not merge it. Wave 2A implementation remains unauthorized. No workflow activation, runtime execution, WordPress or Product Repository implementation, publication, deployment, or production mutation has occurred.
+This checklist no longer describes current Git mutation authority. Use [Current Project State](CURRENT_PROJECT_STATE.md) for the active baseline, branch, scope, and next action. PR #1–#7 and later evidence do not alter this checklist's dated historical meaning.
 
 ## Historical Review Scope
 
@@ -60,8 +60,9 @@ A future commit sprint may begin only after the Founder approves the classificat
 - Historical Wave 1 and PR #3 merges: **COMPLETE by later separate Founder approvals**
 - Default branch and main protection remediation: **COMPLETE by separate Founder approvals**
 - Wave 2 discovery: **COMPLETE, read-only**
-- Wave 2 pre-implementation documentation Draft PR: **GO within the exact current authorization; merge requires Founder review**
-- Wave 2A implementation and later implementation work: **NO-GO pending separate Founder authorization**
+- Wave 2A–2C structural foundation merges: **COMPLETE as later repository evidence; not authorized by this checklist**
+- Current K-01 work: **governed only by FD-K01-001 and Current Project State**
+- Wave 2D and later implementation work: **NO-GO pending separate Founder authorization**
 - Deployment: **NO-GO**
 - Runtime: **NO-GO**
 - Import: **NO-GO**

@@ -158,13 +158,37 @@ Post-merge Governance Reconciliation PR #3
   STATUS -> MERGED
   MERGED_AS -> d702c5217f7caa2f23e56f965f3f993967e3c17d
 
-Canonical/default main d702c5217f7caa2f23e56f965f3f993967e3c17d
-  RECORDS -> PR #1 through PR #3 complete
-  RECORDS -> Wave 1 and Wave 2 discovery complete
+Wave 2A Product Core PR #5
+  STATUS -> MERGED
+  CREATES -> Structural Product core contract foundation
+
+Wave 2B Product Attributes PR #6
+  STATUS -> MERGED
+  CREATES -> Structural Product Attribute foundation
+  CONSTRAINS -> Canonical Product Attribute registry remains empty
+
+Wave 2C Measurements PR #7
+  STATUS -> MERGED
+  MERGED_AS -> ed0841bcd46d315dba8c4ecfd64b1eb105048da5
+  CREATES -> Structural measurement foundation
+  CONSTRAINS -> Dimensions and units remain candidate infrastructure
+
+Canonical/default main
+  CURRENT_SHA_FROM -> docs/CURRENT_PROJECT_STATE.md
+  RECORDS -> PR #1 through PR #7 complete
+  RECORDS -> Wave 2A through Wave 2C structural foundations complete
   RECORDS -> main protection with strict repository-validation
-  CONSTRAINS -> Wave 2 implementation not started; Wave 2A proposed and unauthorized
+  CONSTRAINS -> No Product Data population or runtime authority
   CONSTRAINS -> Workflows inactive
-  CONSTRAINS -> No runtime, WordPress or Product Repository implementation, publication, deployment, or production mutation
+  CONSTRAINS -> No runtime, WordPress, publication, deployment, or production mutation
+
+K-01 Governance and Knowledge Reconciliation
+  DECIDED_BY -> FD-K01-001
+  CREATES -> Knowledge Archive Standard
+  CLASSIFIES -> Atlas intake and legacy Library Atlas references
+  UNIFIES -> Repository test entry point
+  CONSTRAINS -> One branch, commit, push, and Draft PR
+  CONSTRAINS -> No merge, runtime, Product/Knowledge population, or production mutation
 
 Canonical Product hierarchy
   STRUCTURE -> Catalog -> Platform -> Family -> Series -> Variant Rules -> SKU

@@ -2,8 +2,8 @@
 
 help:
 	@echo "setup     Prepare local environment (placeholder)"
-	@echo "validate  Validate project configuration (placeholder)"
-	@echo "test      Run project tests (placeholder)"
+	@echo "validate  Validate repository scaffold"
+	@echo "test      Run Product foundations, Atlas, and scaffold validation"
 
 setup:
 	@./scripts/setup.sh

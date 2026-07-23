@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.5.0
-- **Last Updated:** 2026-07-20
-- **Last Review:** 2026-07-20
+- **Version:** 0.6.0
+- **Last Updated:** 2026-07-23
+- **Last Review:** 2026-07-23
 - **Review Cycle:** On document creation, removal, rename, lifecycle, authority, or navigation change
 - **Lifecycle:** Draft
 - **Source of Truth:** Current repository documentation paths plus each document's recorded status and authority
@@ -26,7 +26,7 @@ Provide the canonical map of repository documentation without replacing the auth
 
 ## Current Repository-Control Context
 
-Canonical/default `main` and the verified shared baseline resolve to `d702c5217f7caa2f23e56f965f3f993967e3c17d`; `origin/HEAD` resolves to `origin/main`. PR #1, PR #2, and PR #3 are merged; Wave 1, post-merge reconciliation, default-branch correction, main protection, and read-only Wave 2 discovery are complete. The 2026-07-19 Wave 1 authorization remains historical context and did not itself authorize merge. Wave 2 implementation has not started; Wave 2A is proposed and not authorized. Workflows remain inactive, and no runtime, WordPress, Product/Knowledge implementation, publication, deployment, or production mutation has occurred. Approved future canonical paths do not imply that their machine-readable assets currently exist.
+[Current Project State](CURRENT_PROJECT_STATE.md) is the only mutable operational-state pointer. PR #1–#7 are merged; Wave 2A–2C structural foundations exist. K-01 is the current documentation/Atlas/test reconciliation. No Product Data population, Knowledge implementation, WordPress/runtime work, import, publication, deployment, or production mutation is authorized. Historical records retain chronology and approved future paths do not imply asset presence.
 
 ## Categories and Complete Document Map
 
@@ -50,7 +50,8 @@ Canonical/default `main` and the verified shared baseline resolve to `d702c5217f
 | [Codex Repository Instructions](../AGENTS.md) | Concise Codex behavior, authority, phase, sprint, data, and runtime boundaries | Review | Founder |
 | [Project Baseline](PROJECT_BASELINE.md) | Concise current-state entry point for humans and AI; indexes but does not replace governing sources | Review | Founder |
 | [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md) | Canonical Repository A authority and Repository B quarantine/isolation contract | Review | Founder |
-| [Current Project State](CURRENT_PROJECT_STATE.md) | Current phase, readiness, blockers, and approved next action | Evidence | Founder |
+| [Current Project State](CURRENT_PROJECT_STATE.md) | Sole mutable operational pointer for baseline, phase, branch, readiness, blockers, and next action | Evidence | Founder |
+| [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md) | Proposed archive layers, one-owner rules, status separation, conflict resolution, and Atlas intake policy | Review | Founder |
 | [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md) | Post-Sprint 12A reconciliation, evidence, pilot, dry-run, implementation, and expansion sequence | Review | Founder |
 | [Codex Sprint Protocol](CODEX_SPRINT_PROTOCOL.md) | Compact bounded sprint protocol | Review | Founder |
 | [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md) | Scope-bound source hierarchy and conflict handling | Review | Founder |
@@ -456,6 +457,7 @@ These current-state documents diagnose supplied Site Health/connectivity evidenc
 
 | Document | Role | Status | Owner |
 | --- | --- | --- | --- |
+| [K-01 Governance and Knowledge Reconciliation Audit](AUDIT_REPORT_K01.md) | Current governance-drift, decision, Atlas disposition, archive, and unified-validation evidence | Evidence | Founder |
 | [Batch 01 Audit](AUDIT_REPORT_BATCH01.md) | Historical audit record | Draft | Founder |
 | [Batch 02 Audit](AUDIT_REPORT_BATCH02.md) | Batch 02 implementation and audit record | Draft | Founder |
 | [Batch 02A Audit](AUDIT_REPORT_BATCH02A.md) | Governance remediation and approval recommendation | Review | Founder |
@@ -549,20 +551,23 @@ The reusable quality gates are maintained outside `docs/` in [Enterprise Quality
 
 ## Reading Order
 
-1. [Project Bible](00_PROJECT_BIBLE.md)
-2. [Project Constitution](01_PROJECT_CONSTITUTION.md)
-3. [Documentation Index](08_DOCUMENTATION_INDEX.md)
-4. [Glossary](11_GLOSSARY.md)
-5. [Repository Reading Order](READING_ORDER.md)
-6. [Decision Log](10_DECISION_LOG.md)
-7. [Document Lifecycle](12_DOCUMENT_LIFECYCLE.md)
-8. [Repository Health](REPOSITORY_HEALTH.md)
-9. [Git Governance](GIT_GOVERNANCE.md)
-10. [Business Rules](03_BUSINESS_RULES.md)
-11. [Enterprise Architecture](02_ARCHITECTURE.md)
-12. [Technology Stack](05_TECH_STACK.md)
-13. [WordPress Architecture](06_WORDPRESS_ARCHITECTURE.md)
-14. [Enterprise Product Data Model](19_PRODUCT_DATA_MODEL.md)
+1. [Current Project State](CURRENT_PROJECT_STATE.md)
+2. [Project Baseline](PROJECT_BASELINE.md)
+3. [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md)
+4. [Repository Reading Order](READING_ORDER.md)
+5. [Project Bible](00_PROJECT_BIBLE.md)
+6. [Project Constitution](01_PROJECT_CONSTITUTION.md)
+7. [Documentation Index](08_DOCUMENTATION_INDEX.md)
+8. [Glossary](11_GLOSSARY.md)
+9. [Decision Log](10_DECISION_LOG.md)
+10. [Document Lifecycle](12_DOCUMENT_LIFECYCLE.md)
+11. [Repository Health](REPOSITORY_HEALTH.md)
+12. [Git Governance](GIT_GOVERNANCE.md)
+13. [Business Rules](03_BUSINESS_RULES.md)
+14. [Enterprise Architecture](02_ARCHITECTURE.md)
+15. [Technology Stack](05_TECH_STACK.md)
+16. [WordPress Architecture](06_WORDPRESS_ARCHITECTURE.md)
+17. [Enterprise Product Data Model](19_PRODUCT_DATA_MODEL.md)
 15. [Product Taxonomy Model](21_PRODUCT_TAXONOMY_MODEL.md)
 16. [Product Attribute Model](22_PRODUCT_ATTRIBUTE_MODEL.md)
 17. [WooCommerce Product Model](20_WOOCOMMERCE_PRODUCT_MODEL.md)

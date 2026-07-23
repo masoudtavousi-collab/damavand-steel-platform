@@ -29,19 +29,21 @@ Provide role-specific reading paths so a new human or AI collaborator can unders
 Every reader starts with:
 
 1. [Codex Repository Instructions](../AGENTS.md) for Codex sessions; other roles may use it as a concise boundary summary.
-2. [Project Baseline](PROJECT_BASELINE.md), the concise current-state entry point.
-3. [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md) when another repository, Factory, Generator, or cross-repository concept is involved.
-4. [Current Project State](CURRENT_PROJECT_STATE.md) and [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md).
-5. [Project Bible](00_PROJECT_BIBLE.md), especially the Core Project Principles.
-6. [Project Constitution](01_PROJECT_CONSTITUTION.md).
-7. [Documentation Index](08_DOCUMENTATION_INDEX.md).
-8. [Glossary](11_GLOSSARY.md).
-9. [Decision Log](10_DECISION_LOG.md).
-10. [Founder Decision Log](17_FOUNDER_DECISION_LOG.md) and [Open Questions](18_OPEN_QUESTIONS.md).
+2. [Current Project State](CURRENT_PROJECT_STATE.md), the only mutable operational-state pointer.
+3. [Project Baseline](PROJECT_BASELINE.md), the concise orientation layer.
+4. [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md), for ownership, status, and archive rules.
+5. [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md) when another repository, Factory, Generator, or cross-repository concept is involved.
+6. [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md).
+7. [Project Bible](00_PROJECT_BIBLE.md), especially the Core Project Principles.
+8. [Project Constitution](01_PROJECT_CONSTITUTION.md).
+9. [Documentation Index](08_DOCUMENTATION_INDEX.md).
+10. [Glossary](11_GLOSSARY.md).
+11. [Decision Log](10_DECISION_LOG.md).
+12. [Founder Decision Log](17_FOUNDER_DECISION_LOG.md) and [Open Questions](18_OPEN_QUESTIONS.md).
 
 Readers then follow the applicable role path.
 
-For the current Wave 2 pre-implementation governance reconciliation, readers must review [Project Baseline](PROJECT_BASELINE.md), the Wave 2 governance section in [Traceability Matrix](TRACEABILITY_MATRIX.md), `FD-W2G-001` through `FD-W2G-004` in the [Founder Decision Log](17_FOUNDER_DECISION_LOG.md#settled-wave-2-pre-implementation-governance-decisions), [Product Data Model](19_PRODUCT_DATA_MODEL.md), and [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md). [FD-GIT-W1-001](17_FOUNDER_DECISION_LOG.md#settled-class-b-wave-1-repository-control-decision) and GIT-02S remain historical evidence. PR #1–#3 are merged, default `main` and protection are established, and Wave 2 discovery is complete. Wave 2A implementation, runtime, workflows, WordPress, Product/Knowledge implementation, publication, deployment, production, and repository-settings changes remain outside the current authorization.
+For K-01, readers must review Current Project State, Knowledge Archive Standard, the Wave 2/K-01 section in [Traceability Matrix](TRACEABILITY_MATRIX.md), `FD-W2G-001` through `FD-W2G-004` and `FD-K01-001` in the Founder Decision Log, the three machine-readable foundations under `repository/data/`, and the [Atlas Adoption Matrix](../atlas/ATLAS_ADOPTION_MATRIX.csv). Historical Git decisions remain evidence within their original scope. Runtime, WordPress, Product/Knowledge population, import, publication, deployment, production, and repository-settings changes remain outside K-01.
 
 ## Founder Reading Path
 

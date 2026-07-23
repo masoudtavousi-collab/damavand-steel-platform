@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.9.0
-- **Last Updated:** 2026-07-20
-- **Last Review:** 2026-07-20
+- **Version:** 0.10.0
+- **Last Updated:** 2026-07-23
+- **Last Review:** 2026-07-23
 - **Review Cycle:** On Founder decision creation, resolution, supersession, or dependency change
 - **Lifecycle:** Draft
 - **Source of Truth:** Explicit Founder-decision requirements in controlled source documents; this log is an index only
@@ -93,6 +93,16 @@ Index every repository item explicitly marked as requiring a Founder decision. T
 | `FD-W2G-002` | Canonical path ownership is `repository/data/contracts/`, `repository/data/schemas/`, `repository/data/registries/`, `repository/data/validation/`, `repository/data/master-data/`, `repository/data/golden-reference/`, `repository/knowledge/`, `repository/content/`, `repository/implementation-assets/`, and adapter-only `repository/wordpress/`. WordPress, WooCommerce, imports, page builders, adapters, and runtime consumers never own canonical Product or Knowledge truth. | Founder / 2026-07-20 Wave 2 pre-implementation governance reconciliation approval | Directory ownership and non-duplication rule only | `APPROVED`; path creation and implementation remain separately gated. Older Future Reference paths in historical rows preserve their original chronology and do not designate current ownership |
 | `FD-W2G-003` | Record PR #1–#3 merged; Wave 1 and post-merge reconciliation complete; canonical/default `main` at `d702c5217f7caa2f23e56f965f3f993967e3c17d`; `origin/HEAD` at `origin/main`; main protection, administrator enforcement, strict required `repository-validation`, force-push prohibition, and deletion prohibition active; Wave 2 discovery complete; Wave 2 implementation not started; Wave 2A proposed but not authorized. | Founder / 2026-07-20 plus verified GitHub and Git evidence | Current repository-governance documentation only | `APPROVED` for reconciliation; Runtime, Import, Publishing, Deployment, and implementation remain `NO-GO` |
 | `FD-W2G-004` | Product and Knowledge architecture proposals exist, but their machine-readable core contracts/instances and Product-domain tests do not. No canonical machine-readable Master Data or Golden package exists on `main`. The approved Golden Parent and exactly three combinations remain decision/prose authority only; 879 remain `CANDIDATE_UNVERIFIED`, availability is `MISSING_DATA_VALUE` across all 882, brand is absent/hidden, and weight is `DEFERRED`. `PIPE_VARIATION_MATRIX.md` is a legacy theoretical scaffold and has no Golden, availability, Master Data, import, SKU, or runtime authority. | Founder / 2026-07-20 Wave 2 pre-implementation governance reconciliation approval | Readiness and evidence classification only | `APPROVED`; Product Repository and Knowledge Repository are `NOT_IMPLEMENTATION_READY`, and no Product/Golden data or implementation is authorized |
+
+## Settled K-01 Governance and Knowledge Reconciliation Decision
+
+| ID | Settled decision | Decision source | Exact scope | Resulting status |
+| --- | --- | --- | --- | --- |
+| `FD-K01-001` | Execute K-01 through an independent branch with repository edits and one Draft PR. Reconcile current-state and decision records after Wave 2A–2C, define one knowledge-archive ownership model, disposition the 173 current Atlas rows, classify legacy Library Atlas material as noncanonical archive reference, and make `make test` run the repository validators. | Founder / 2026-07-23 selection: “Branch + edits + Draft PR” | `codex/k-01-governance-knowledge-reconciliation`; governance/docs, Atlas classification, tests, one commit, branch push, and one Draft PR only | `APPROVED` within exact scope. Merge, WordPress/WooCommerce/runtime mutation, import, publishing, deployment, production, Product/Knowledge population, Wave 2D, and repository-settings changes remain `NO-GO` |
+
+## Wave 2A–2C Evidence Reconciliation
+
+PR #5, PR #6, and PR #7 verify that Product core, Product Attribute, and measurement structural foundations are present. These are implementation outcomes, not new Founder decisions created by this log. The Wave 2C registries explicitly cite `founder-authorization:wave-2c:2026-07-23`; equivalent originating authorization references for Wave 2A and Wave 2B are not explicit in this log and must not be inferred from merge history. See `EV-W2A-001` through `EV-W2C-001` in the [Decision Log](10_DECISION_LOG.md#wave-2-foundation-implementation-evidence).
 
 ## Product Data Decisions Required
 

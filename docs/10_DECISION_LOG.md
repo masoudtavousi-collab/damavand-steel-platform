@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.3.0
-- **Last Updated:** 2026-07-19
-- **Last Review:** 2026-07-19
+- **Version:** 0.4.0
+- **Last Updated:** 2026-07-23
+- **Last Review:** 2026-07-23
 - **Review Cycle:** On decision classification, status, or authority change
 - **Lifecycle:** Draft
 - **Source of Truth:** Approved governing documents and explicitly accepted decision records; this log is an index only
@@ -209,6 +209,24 @@ RA-001 through RA-012 are Review-state proposals and security boundaries. Their 
 | Decision ID | Decision | Source | Status |
 | --- | --- | --- | --- |
 | `FD-GIT-W1-001` | Integrate exactly the 19 approved Wave 1 governance and repository-control paths through `codex/class-b-wave-01-governance`, one commit, push of only that branch, and one Draft PR. Preserve PR #1 and all other Class B work; do not merge or begin Wave 2. | [Founder Decision Log](17_FOUNDER_DECISION_LOG.md#settled-class-b-wave-1-repository-control-decision) and explicit Founder authorization dated 2026-07-19 | `APPROVED` for exact Git/documentation scope only; no runtime, WordPress, product, content, publication, deployment, production, repository-setting, or default-branch authority |
+
+## Wave 2 Foundation Implementation Evidence
+
+These rows reconcile repository evidence. They do not infer or retroactively create Founder approval from a commit or merge.
+
+| Record | Verified repository outcome | Evidence | Authority interpretation |
+| --- | --- | --- | --- |
+| `EV-W2A-001` | Product core contract, schema, entity/status registries, validator, and fixtures are present | PR #5; merge ancestry through `fd8326c`; implementation commit `743fe8e` | Structural implementation evidence only; no Product rows, Master Data, SKU, import, or runtime authority |
+| `EV-W2B-001` | Product Attribute contract, schema, supporting registries, validator, and fixtures are present; Product Attribute registry is empty | PR #6; merge ancestry through `1222ea2`; implementation commit `6c0df69` | Structural implementation evidence only; no attribute business values or Product/runtime authority |
+| `EV-W2C-001` | Measurement contract/schema, two candidate dimensions, four candidate units, validator, and fixtures are present | PR #7; merge commit `ed0841b`; implementation commit `27baf69`; registry provenance `founder-authorization:wave-2c:2026-07-23` | Authorized infrastructure evidence within recorded provenance; entries remain `CANDIDATE_UNVERIFIED` and create no Product fact/runtime authority |
+
+The originating authorization references for Wave 2A and Wave 2B must be linked in the Founder Decision Log when authoritative evidence is available. Their merged state alone is insufficient.
+
+## K-01 Governance and Knowledge Reconciliation Decision
+
+| ID | Decision | Source | Status |
+| --- | --- | --- | --- |
+| `FD-K01-001` | Reconcile current-state/governance documents, create the Knowledge Archive Standard, disposition all 173 Atlas registry rows, classify legacy Library Atlas material as noncanonical archive reference, unify repository tests, create one scoped commit, push only `codex/k-01-governance-knowledge-reconciliation`, and open one Draft PR. | Founder selection of “Branch + edits + Draft PR” on 2026-07-23 | `APPROVED` for exact K-01 scope; merge, WordPress, runtime, import, publishing, deployment, production, Product/Knowledge population, and Wave 2D remain `NO-GO` |
 
 ## Pending Decisions
 

@@ -518,10 +518,10 @@ def validate_template() -> None:
             raise ValidationError(f"Document template heading mismatch: {marker}")
 
 
-def git_tracked_paths() -> set[str]:
+def repository_working_paths() -> set[str]:
     try:
         result = subprocess.run(
-            ["git", "ls-files"],
+            ["git", "ls-files", "--cached", "--others", "--exclude-standard"],
             cwd=ROOT,
             text=True,
             capture_output=True,
@@ -530,7 +530,7 @@ def git_tracked_paths() -> set[str]:
     except FileNotFoundError as exc:
         raise ValidationError("Git is required for repository validation") from exc
     if result.returncode != 0:
-        raise ValidationError("Unable to enumerate tracked repository files")
+        raise ValidationError("Unable to enumerate repository working-tree files")
     paths = {line for line in result.stdout.splitlines() if line}
     for required in REQUIRED_GOVERNANCE_FILES:
         if (ROOT / required).is_file():
@@ -1226,12 +1226,23 @@ def validate_ci_configuration() -> None:
         "permissions:",
         "contents: read",
         "PyYAML==6.0.2",
-        "python3 scripts/validate_manifest.py",
-        "./scripts/validate.sh",
+        "make test",
     )
     missing = [token for token in required if token not in content]
     if missing:
         raise ValidationError("CI configuration missing: " + ", ".join(missing))
+
+    test_entry = read_text(ROOT / "scripts" / "test.sh", "unified test entry point")
+    entry_required = (
+        "python3 scripts/validate_manifest.py",
+        "python3 scripts/validate_atlas_adoption.py",
+        "./scripts/validate.sh",
+    )
+    missing_entry = [token for token in entry_required if token not in test_entry]
+    if missing_entry:
+        raise ValidationError(
+            "Unified test entry point missing: " + ", ".join(missing_entry)
+        )
 
 
 def main() -> int:
@@ -1247,10 +1258,10 @@ def main() -> int:
         context_fixtures = validate_context_fixtures()
         repair_fixtures = validate_repair_attempt_fixtures()
         workflow_metrics = validate_workflows()
-        tracked_paths = git_tracked_paths()
-        markdown_links = validate_markdown_links(tracked_paths)
-        case_collisions = validate_case_collisions(tracked_paths)
-        detected_secrets = scan_for_secrets(tracked_paths)
+        working_paths = repository_working_paths()
+        markdown_links = validate_markdown_links(working_paths)
+        case_collisions = validate_case_collisions(working_paths)
+        detected_secrets = scan_for_secrets(working_paths)
         if detected_secrets:
             raise ValidationError(f"detected secret values: {detected_secrets}")
         validate_ci_configuration()

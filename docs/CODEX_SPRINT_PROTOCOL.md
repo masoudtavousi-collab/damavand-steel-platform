@@ -1,10 +1,10 @@
 # Codex Sprint Protocol
 
-## Current Wave 2 Pre-Implementation Reconciliation Boundary
+## Current-State Boundary
 
-Bootstrap PR #1, Wave 1 Governance PR #2, and Post-merge Governance Reconciliation PR #3 are merged. Canonical/default `main` is verified at `d702c5217f7caa2f23e56f965f3f993967e3c17d`; main protection and required `repository-validation` are active. Wave 1 and the read-only Wave 2 discovery are complete. Historically, the 2026-07-19 Founder authorization permitted the exact Wave 1 branch/commit/push/Draft-PR sequence while merge remained prohibited; that chronology must remain intact.
+[Current Project State](CURRENT_PROJECT_STATE.md) is the sole source for the active branch, baseline SHA, authorization, next action, and GO/NO-GO boundary. Historical sprint permissions remain evidence within their original exact scope and must not be presented as current authority.
 
-The current Founder authorization permits documentation-only Wave 2 pre-implementation reconciliation on `codex/wave-2-preimplementation-reconciliation`, one commit, push of only that branch, and one Draft PR against `main`. Wave 2A is proposed but not authorized or started. The approved next action is Founder review and merge decision for this documentation PR, followed by a separate Wave 2A authorization decision. Autonomous merge, workflow execution or activation, runtime, WordPress, Product/Knowledge Repository implementation, publication, deployment, production mutation, and repository-setting changes remain `NO-GO`.
+For K-01, the Founder authorized governance/current-state reconciliation, Atlas disposition, unified tests, one scoped commit, push of only `codex/k-01-governance-knowledge-reconciliation`, and one Draft PR against `main`. Autonomous merge, Wave 2D, Product/Knowledge population, workflow execution or activation, runtime, WordPress, import, publication, deployment, production mutation, and repository-setting changes remain `NO-GO`.
 
 ## Standard Prompt Structure
 

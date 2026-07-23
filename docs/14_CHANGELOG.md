@@ -1,52 +1,61 @@
 # Changelog
 
-## Purpose
+## Document Control
 
-TODO (Founder Decision Required)
+- **Document ID:** `docs/14_CHANGELOG.md`
+- **Status:** Review
+- **Authority:** Historical Evidence Index
+- **Owner:** Founder
+- **Reviewer:** Repository Guardian
+- **Approval Authority:** Founder
+- **Version:** 0.2.0
+- **Last Updated:** 2026-07-23
+- **Lifecycle:** Review
+- **Source of Truth:** Merged Git history and scoped decision/evidence records
+- **Approval:** Pending Founder review; merged Git history remains evidence
 
-## Scope
+This changelog records repository outcomes. It does not create approval, runtime readiness, Product facts, or release authority.
 
-TODO (Founder Decision Required)
+## Unreleased — K-01
 
-## Status
+- Reconcile current-state, baseline, decision, traceability, navigation, and health records after Wave 2A–2C.
+- Establish one Knowledge Archive Standard and separate lifecycle, Product Data, execution, and Atlas disposition vocabularies.
+- Disposition all 173 Atlas planning rows and mark legacy Library Atlas documents as noncanonical archive references.
+- Replace the placeholder test entry point with the validators already enforced by CI.
+- Scope: branch, one commit, push, and Draft PR only; merge and runtime remain `NO-GO`.
 
-Draft
+## 2026-07-23 — Wave 2C Measurement Foundation
 
-## Owner
+- PR #7 merged measurement contract/schema, two candidate dimensions, four candidate units, validator, fixtures, and CI checks.
+- Measurement entries remain `CANDIDATE_UNVERIFIED`; no Product value, weight, availability, price, import, or runtime fact was created.
 
-Founder
+## 2026-07-23 — Wave 2B Product Attribute Foundation
 
-## Reviewer
+- PR #6 merged Product Attribute contract/schema, supporting controlled registries, validator, fixtures, and CI checks.
+- Canonical Product Attribute registry remains empty; no business values or Product records were created.
 
-Repository Guardian
+## 2026-07-23 — Wave 2A Product Core Foundation
 
-## Approval Authority
+- PR #5 merged Product core contract/schema, hierarchy entity/status registries, validator, fixtures, and CI checks.
+- No canonical Product rows, Master Data, Golden data, commercial SKU, import, or runtime asset was created.
 
-Founder
+## 2026-07-20 — Wave 2 Governance Reconciliation
 
-## Version
+- PR #4 merged pre-implementation governance reconciliation.
+- Canonical Product hierarchy and repository path ownership were recorded.
 
-0.1.0
+## Earlier Repository Integration
 
-## Last Updated
+- PR #3 merged post-Wave-1 governance reconciliation.
+- PR #2 merged Wave 1 governance.
+- PR #1 merged repository bootstrap.
 
-2026-07-03
-
-## Last Review
-
-2026-07-03
-
-## Placeholder Sections
-
-TODO (Founder Decision Required)
+Exact SHAs and current branch state belong in [Current Project State](CURRENT_PROJECT_STATE.md), not this historical index.
 
 ## Related Documents
 
 - [Changelog Policy](14_CHANGELOG_POLICY.md)
+- [Current Project State](CURRENT_PROJECT_STATE.md)
 - [Decision Log](10_DECISION_LOG.md)
-- [Review Process](15_REVIEW_PROCESS.md)
-
-## Navigation
-
-- [Documentation Index](08_DOCUMENTATION_INDEX.md)
-- [Document Lifecycle](12_DOCUMENT_LIFECYCLE.md)
+- [Founder Decision Log](17_FOUNDER_DECISION_LOG.md)
+- [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md)
