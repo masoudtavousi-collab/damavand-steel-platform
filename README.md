@@ -7,25 +7,18 @@ Canonical repository for the Damavand Steel Enterprise Product and Knowledge Pla
 Every new contributor and AI session must read, in order:
 
 1. [AGENTS.md](AGENTS.md)
-2. [Project Baseline](docs/PROJECT_BASELINE.md)
-3. [Repository Reading Order](docs/READING_ORDER.md)
-4. [Current Project State](docs/CURRENT_PROJECT_STATE.md)
+2. [Current Project State](docs/CURRENT_PROJECT_STATE.md)
+3. [Project Baseline](docs/PROJECT_BASELINE.md)
+4. [Knowledge Archive Standard](docs/KNOWLEDGE_ARCHIVE_STANDARD.md)
+5. [Repository Reading Order](docs/READING_ORDER.md)
 
 Repository status, file presence, or named target components do not prove implementation, licensing, runtime readiness, or commercial approval.
 
 ## Repository control state
 
-Verified on 2026-07-20:
+The mutable SHA, active branch, completed foundation waves, approved next action, and GO/NO-GO boundary are maintained only in [Current Project State](docs/CURRENT_PROJECT_STATE.md). Historical audits and older baselines preserve chronology but do not override that pointer.
 
-- The canonical and GitHub default branch is `main`, and the verified shared baseline is `d702c5217f7caa2f23e56f965f3f993967e3c17d`.
-- Bootstrap PR #1 is complete and merged through merge commit `530a4c46cc47bd02b794cfac1ef24eef56918e75`.
-- Wave 1 Governance PR #2 is complete and merged through merge commit `4a0f229107716a1b9f7f825f5cd5f16ea78a1b26`.
-- Post-merge Governance Reconciliation PR #3 is complete and merged through merge commit `d702c5217f7caa2f23e56f965f3f993967e3c17d`.
-- Wave 1 and the read-only Wave 2 kickoff discovery are complete. Wave 2 implementation has not started; Wave 2A is proposed and requires separate Founder authorization after this governance reconciliation is reviewed and merged.
-- Main-branch protection is enabled with administrator enforcement, strict/up-to-date checks, required check `repository-validation`, force-push disabled, and branch deletion disabled.
-- All included n8n workflows remain inactive. No workflow execution, WordPress or Product Repository implementation, deployment, publication, or production mutation has occurred.
-
-Historically, the 2026-07-19 Wave 1 authorization allowed one scoped governance commit, branch push, and Draft PR while merge remained prohibited. That sequence and its separately approved merge are complete. Later approvals separately authorized PR #3, default-branch correction, main protection, Wave 2 discovery, and this documentation-only reconciliation; none authorizes Wave 2A implementation, runtime, WordPress, product creation, publication, deployment, or production mutation.
+Wave 2A–2C structural foundations now exist for Product core, Product Attributes, and measurements. They contain no canonical Product rows, approved Product Attribute definitions, final SKUs, Master Data, Golden package, WordPress implementation, import, publishing, or production authority.
 
 ## Repository map
 
@@ -34,12 +27,12 @@ Historically, the 2026-07-19 Wave 1 authorization allowed one scoped governance 
 - `infrastructure/` — container and orchestration templates
 - `docs/` — architecture, operations, content, SEO, security, and ADRs
 - `prompts/` — versioned AI prompt templates
-- `scripts/` — operational script placeholders
+- `scripts/` — repository and data-foundation validation entry points
 - `assets/` — source brand, media, font, and document assets
 - `tests/` — QA, fixture, and end-to-end test scaffolding
 - `repository/` — current Platform, Product Engine, Product Data, and Design proposals/scaffolds plus approved future canonical ownership boundaries; a named future directory is not an existing or implemented asset
 
-Canonical future ownership is `repository/data/contracts/`, `repository/data/schemas/`, `repository/data/registries/`, `repository/data/validation/`, `repository/data/master-data/`, `repository/data/golden-reference/`, `repository/knowledge/`, `repository/content/`, `repository/implementation-assets/`, and adapter-only `repository/wordpress/`. These paths may be created only by a separately approved implementation sprint. WordPress, WooCommerce, imports, page builders, and runtime systems may consume canonical data but may never own Product or Knowledge truth.
+Canonical ownership is `repository/data/contracts/`, `repository/data/schemas/`, `repository/data/registries/`, `repository/data/validation/`, future `repository/data/master-data/`, future `repository/data/golden-reference/`, future `repository/knowledge/`, future `repository/content/`, future `repository/implementation-assets/`, and adapter-only future `repository/wordpress/`. Existing foundation paths do not imply that the future data/content paths or their assets exist. WordPress, WooCommerce, imports, page builders, and runtime systems may consume canonical data but may never own Product or Knowledge truth.
 
 ## Important constraints
 
@@ -50,4 +43,4 @@ Canonical future ownership is `repository/data/contracts/`, `repository/data/sch
 - The three Golden Pipe identifiers are pilot references only, not final commercial SKUs.
 - The separate `damavand-enterprise-repository` is isolated `QUARANTINED_ARCHITECTURE_RESEARCH` and has no Damavand Steel authority.
 
-Runtime, import, publishing, deployment, product creation, bulk SKU generation, Wave 2A implementation, merge of the current Draft PR, and Factory implementation remain **NO-GO** without separate Founder approval. The approved next action is Founder review and merge decision for this documentation reconciliation PR, followed only then by a separate Wave 2A authorization decision. See the [Project Baseline](docs/PROJECT_BASELINE.md) for the exact current boundary.
+Runtime, import, publishing, deployment, product creation, bulk SKU generation, merge of any current Draft PR, and Factory implementation remain **NO-GO** without separate Founder approval. See [Current Project State](docs/CURRENT_PROJECT_STATE.md) for the exact current boundary and next action.

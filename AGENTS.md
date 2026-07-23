@@ -85,25 +85,25 @@ Founder-approved product data outranks competitor data. Competitor data may info
 ## 7. Current Project Phase
 
 - Architecture and governance proposal coverage exists; governing approval remains lifecycle- and scope-gated.
-- Product Repository machine-readable core contracts do not exist and the Product Repository is `NOT_IMPLEMENTATION_READY`.
+- Product core, Product Attribute, and measurement machine-readable structural foundations exist and are validated.
+- No canonical Product rows, approved Product Attribute definitions, final Product/SKU vocabulary, Master Data, or Golden package exists.
 - Knowledge architecture proposals exist, but machine-readable Knowledge contracts and content instances do not; the Knowledge Repository is `NOT_IMPLEMENTATION_READY`.
 - No canonical machine-readable Master Data or Golden reference package currently exists on `main`.
 - Last completed product/runtime evidence sprint: **Sprint 12A**.
-- Wave 1, post-merge reconciliation, default-branch correction, main protection, and the read-only Wave 2 kickoff discovery are complete.
-- Wave 2 implementation has not started. Wave 2A is proposed and not authorized.
+- Wave 2A–2C structural foundations are merged; they do not authorize Product Data population or runtime work.
 
 Current evidence:
 
 - 3 Pipe combinations are `APPROVED` for the limited Golden Product pilot; 879 remain `CANDIDATE_UNVERIFIED`; market availability is `MISSING_DATA_VALUE` for all 882.
 - 18 Founder-approved Fittings family names are recovered; Fittings are `PARTIALLY_MODELED`.
-- Existing Product Engine and Platform documents are design inputs, not implemented contracts. No final Product identifier registry, SKU vocabulary, or Product-domain executable test exists.
+- Existing Product Engine and Platform documents remain design inputs. Structural contracts and executable validators now exist, but no final Product record set or SKU vocabulary exists.
 - `repository/knowledge/` is the approved future Knowledge location; it does not yet exist. Knowledge implementation depends on stable shared Product identities, and Phase 1 AI remains prohibited.
 - The Golden Parent and exactly three combinations are approved through Founder decisions and governing prose. No canonical machine-readable Golden package exists on `main`; the `GOLD-PIPE-*` identifiers are pilot references, not final commercial SKUs.
 - `/Users/masoudtavousi/Desktop/damavand-enterprise-repository` is `QUARANTINED_ARCHITECTURE_RESEARCH`: isolated, unapproved, non-authoritative, not merge-ready, and not implementation-ready.
 - Quality Score: 82/100.
 - Runtime, import, publishing, and bulk SKU generation: **NO-GO**.
 
-Approved immediate next action: **Founder review and merge decision for the Wave 2 pre-implementation documentation reconciliation Draft PR, followed by a separate Founder authorization decision for Wave 2A**. No implementation sprint is active. Always begin with [Project Baseline](docs/PROJECT_BASELINE.md) and confirm current detail in [Current Project State](docs/CURRENT_PROJECT_STATE.md).
+Do not copy mutable current-state facts into this file. Always begin with [Current Project State](docs/CURRENT_PROJECT_STATE.md), then [Project Baseline](docs/PROJECT_BASELINE.md) and [Knowledge Archive Standard](docs/KNOWLEDGE_ARCHIVE_STANDARD.md). The current branch, SHA, authorization, next action, and GO/NO-GO boundary are defined there.
 
 ## 8. Sprint Execution Protocol
 

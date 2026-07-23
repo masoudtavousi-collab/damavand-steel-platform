@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.3.0
-- **Last Updated:** 2026-07-20
-- **Last Review:** 2026-07-20
+- **Version:** 0.4.0
+- **Last Updated:** 2026-07-23
+- **Last Review:** 2026-07-23
 - **Review Cycle:** On repository creation, disposition, authority, ownership, namespace, lifecycle, merge, or promotion proposal
 - **Lifecycle:** Review
 - **Source of Truth:** Explicit Founder decisions in the GIT-02S directive dated 2026-07-14, the Class B Wave 1 authorization dated 2026-07-19, verified PR #1–#3 merge state, Founder-approved current Git governance, the Wave 2 pre-implementation decisions dated 2026-07-20, and Repository A governance
@@ -36,7 +36,7 @@ Define the authority, isolation, adoption, and future-promotion boundaries betwe
 | Consumers | DamavandSteel.com; future approved CentralSteel.ir and other explicitly approved systems |
 | Outputs | Approved governance, product/knowledge truth, controlled assets, evidence, and separately authorized runtime projections |
 | Source-of-truth scope | Scope-bound sources ordered by [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md) |
-| Git status | Canonical/default `main` and verified shared baseline resolve to `d702c5217f7caa2f23e56f965f3f993967e3c17d`; PR #1–#3 are merged; Wave 1 and Wave 2 discovery are complete; main protection is active; Wave 2A is proposed and unauthorized |
+| Git status | Canonical/default `main`; exact mutable baseline in [Current Project State](CURRENT_PROJECT_STATE.md); PR #1–#7 merged; Wave 2A–2C structural foundations present; K-01 active; main protection active |
 | Allowed future operations | Read-only review; approved documentation work; later explicitly scoped Git, backup, import, or runtime operations after applicable gates |
 | Prohibited authority inversions | WordPress, external tools, Repository B, generated outputs, audits, AI, or runtime observations cannot silently override approved Repository A truth |
 
@@ -140,10 +140,10 @@ No passage of time, new file, Git initialization, architecture review, or AI rec
 
 - Repository A canonical authority: **CONFIRMED**.
 - Repository B classification: **`QUARANTINED_ARCHITECTURE_RESEARCH`**.
-- Bootstrap PR #1, Wave 1 Governance PR #2, and Post-merge Governance Reconciliation PR #3: **MERGED**; current shared baseline `d702c5217f7caa2f23e56f965f3f993967e3c17d`.
+- PR #1–#7: **MERGED**; current shared baseline is maintained in Current Project State.
 - Class B Wave 1 exact-scope Git/documentation integration: **COMPLETE**; its 2026-07-19 authorization remains historical evidence and did not itself authorize merge.
 - Default branch `main` and main protection: **COMPLETE**; strict `repository-validation`, administrator enforcement, force-push prohibition, and deletion prohibition verified.
-- Wave 2 discovery: **COMPLETE**. Wave 2A implementation: **PROPOSED / NOT STARTED / NO-GO pending separate Founder approval**.
+- Wave 2 discovery and Wave 2A–2C structural foundations: **COMPLETE**. Product/Knowledge population and Wave 2D: **NO-GO pending separate Founder approval**.
 - Workflow activation, runtime, WordPress or Product Repository implementation, publication, deployment, and production mutation: **NO-GO**.
 - Further repository-settings mutation: **NO-GO pending separate Founder approval**.
 - Repository B merge, implementation, runtime, Git initialization, or authority: **NO-GO**.
