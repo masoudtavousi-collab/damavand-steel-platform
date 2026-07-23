@@ -1,0 +1,80 @@
+contract_version: "1.0.0"
+dimensions:
+  - contract_version: "1.0.0"
+    dimension_id: dimension:aaaaaaaaaaaa
+    dimension_key: synthetic_measure
+    canonical_name: Synthetic Measure
+    description: Synthetic dimension used only for deterministic validation.
+    base_unit_id: unit:aaaaaaaaaaaa
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: synthetic-test-owner
+    provenance:
+      source_type: SYNTHETIC_FIXTURE
+      source_reference: fixture:measurements:valid-foundation
+      captured_by: role:automated-validation
+      captured_at: "2000-01-01T00:00:00Z"
+      evidence_status: SYNTHETIC_TEST_EVIDENCE
+    record_version: "1.0.0"
+units:
+  - contract_version: "1.0.0"
+    unit_id: unit:aaaaaaaaaaaa
+    unit_key: synthetic_base_unit
+    canonical_name: Synthetic Base Unit
+    symbol: su
+    dimension_id: dimension:aaaaaaaaaaaa
+    is_base_unit: true
+    base_unit_id: unit:aaaaaaaaaaaa
+    conversion_to_base:
+      multiplier:
+        numerator: 1
+        denominator: 1
+      offset:
+        numerator: 0
+        denominator: 1
+    allowed_data_types:
+      - INTEGER
+      - DECIMAL
+    precision:
+      maximum_decimal_places: 12
+      rounding_mode: HALF_EVEN
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: synthetic-test-owner
+    provenance:
+      source_type: SYNTHETIC_FIXTURE
+      source_reference: fixture:measurements:valid-foundation
+      captured_by: role:automated-validation
+      captured_at: "2000-01-01T00:00:00Z"
+      evidence_status: SYNTHETIC_TEST_EVIDENCE
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    unit_id: unit:bbbbbbbbbbbb
+    unit_key: synthetic_subunit
+    canonical_name: Synthetic Subunit
+    symbol: ssu
+    dimension_id: dimension:aaaaaaaaaaaa
+    is_base_unit: false
+    base_unit_id: unit:aaaaaaaaaaaa
+    conversion_to_base:
+      multiplier:
+        numerator: 1
+        denominator: 100
+      offset:
+        numerator: 0
+        denominator: 1
+    allowed_data_types:
+      - DECIMAL
+    precision:
+      maximum_decimal_places: 6
+      rounding_mode: HALF_EVEN
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: synthetic-test-owner
+    provenance:
+      source_type: SYNTHETIC_FIXTURE
+      source_reference: fixture:measurements:valid-foundation
+      captured_by: role:automated-validation
+      captured_at: "2000-01-01T00:00:00Z"
+      evidence_status: SYNTHETIC_TEST_EVIDENCE
+    record_version: "1.0.0"

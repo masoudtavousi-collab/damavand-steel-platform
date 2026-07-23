@@ -1,0 +1,36 @@
+registry_id: measurement-dimensions
+registry_version: "1.0.0"
+contract_version: "1.0.0"
+dimensions:
+  - contract_version: "1.0.0"
+    dimension_id: dimension:000000000001
+    dimension_key: length
+    canonical_name: Length
+    description: Universal one-dimensional spatial extent.
+    base_unit_id: unit:000000000001
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: repository-governance
+    provenance:
+      source_type: FOUNDER_AUTHORIZATION
+      source_reference: founder-authorization:wave-2c:2026-07-23
+      captured_by: role:codex-build-engine
+      captured_at: "2026-07-23T00:00:00Z"
+      evidence_status: AUTHORIZED_INFRASTRUCTURE
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    dimension_id: dimension:000000000002
+    dimension_key: mass
+    canonical_name: Mass
+    description: Universal quantity of matter represented independently from weight.
+    base_unit_id: unit:000000000003
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: repository-governance
+    provenance:
+      source_type: FOUNDER_AUTHORIZATION
+      source_reference: founder-authorization:wave-2c:2026-07-23
+      captured_by: role:codex-build-engine
+      captured_at: "2026-07-23T00:00:00Z"
+      evidence_status: AUTHORIZED_INFRASTRUCTURE
+    record_version: "1.0.0"

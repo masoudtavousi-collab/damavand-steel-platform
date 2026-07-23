@@ -1,3 +1,128 @@
 registry_id: attribute-units
-registry_version: "1.0.0"
-units: []
+registry_version: "1.1.0"
+contract_version: "1.0.0"
+units:
+  - contract_version: "1.0.0"
+    unit_id: unit:000000000001
+    unit_key: metre
+    canonical_name: Metre
+    symbol: m
+    dimension_id: dimension:000000000001
+    is_base_unit: true
+    base_unit_id: unit:000000000001
+    conversion_to_base:
+      multiplier:
+        numerator: 1
+        denominator: 1
+      offset:
+        numerator: 0
+        denominator: 1
+    allowed_data_types:
+      - INTEGER
+      - DECIMAL
+    precision:
+      maximum_decimal_places: 12
+      rounding_mode: HALF_EVEN
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: repository-governance
+    provenance:
+      source_type: FOUNDER_AUTHORIZATION
+      source_reference: founder-authorization:wave-2c:2026-07-23
+      captured_by: role:codex-build-engine
+      captured_at: "2026-07-23T00:00:00Z"
+      evidence_status: AUTHORIZED_INFRASTRUCTURE
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    unit_id: unit:000000000002
+    unit_key: millimetre
+    canonical_name: Millimetre
+    symbol: mm
+    dimension_id: dimension:000000000001
+    is_base_unit: false
+    base_unit_id: unit:000000000001
+    conversion_to_base:
+      multiplier:
+        numerator: 1
+        denominator: 1000
+      offset:
+        numerator: 0
+        denominator: 1
+    allowed_data_types:
+      - INTEGER
+      - DECIMAL
+    precision:
+      maximum_decimal_places: 12
+      rounding_mode: HALF_EVEN
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: repository-governance
+    provenance:
+      source_type: FOUNDER_AUTHORIZATION
+      source_reference: founder-authorization:wave-2c:2026-07-23
+      captured_by: role:codex-build-engine
+      captured_at: "2026-07-23T00:00:00Z"
+      evidence_status: AUTHORIZED_INFRASTRUCTURE
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    unit_id: unit:000000000003
+    unit_key: kilogram
+    canonical_name: Kilogram
+    symbol: kg
+    dimension_id: dimension:000000000002
+    is_base_unit: true
+    base_unit_id: unit:000000000003
+    conversion_to_base:
+      multiplier:
+        numerator: 1
+        denominator: 1
+      offset:
+        numerator: 0
+        denominator: 1
+    allowed_data_types:
+      - INTEGER
+      - DECIMAL
+    precision:
+      maximum_decimal_places: 12
+      rounding_mode: HALF_EVEN
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: repository-governance
+    provenance:
+      source_type: FOUNDER_AUTHORIZATION
+      source_reference: founder-authorization:wave-2c:2026-07-23
+      captured_by: role:codex-build-engine
+      captured_at: "2026-07-23T00:00:00Z"
+      evidence_status: AUTHORIZED_INFRASTRUCTURE
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    unit_id: unit:000000000004
+    unit_key: gram
+    canonical_name: Gram
+    symbol: g
+    dimension_id: dimension:000000000002
+    is_base_unit: false
+    base_unit_id: unit:000000000003
+    conversion_to_base:
+      multiplier:
+        numerator: 1
+        denominator: 1000
+      offset:
+        numerator: 0
+        denominator: 1
+    allowed_data_types:
+      - INTEGER
+      - DECIMAL
+    precision:
+      maximum_decimal_places: 12
+      rounding_mode: HALF_EVEN
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: repository-governance
+    provenance:
+      source_type: FOUNDER_AUTHORIZATION
+      source_reference: founder-authorization:wave-2c:2026-07-23
+      captured_by: role:codex-build-engine
+      captured_at: "2026-07-23T00:00:00Z"
+      evidence_status: AUTHORIZED_INFRASTRUCTURE
+    record_version: "1.0.0"

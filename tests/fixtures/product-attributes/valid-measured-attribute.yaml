@@ -1,0 +1,28 @@
+- contract_version: "1.0.0"
+  attribute_id: attr:000000000002
+  attribute_key: synthetic_measured_attribute
+  canonical_label: Synthetic Measured Attribute
+  description: Synthetic numeric definition used only to verify canonical Unit integration.
+  category: PRIMARY
+  data_type: DECIMAL
+  unit_policy:
+    mode: REQUIRED
+    allowed_unit_ids:
+      - unit:000000000002
+  validation:
+    nullable: false
+    multiple_values: false
+    constraints:
+      minimum: 0
+      maximum: 1000
+      decimal_places: 3
+  status: CANDIDATE_UNVERIFIED
+  owner:
+    role: synthetic-test-owner
+  provenance:
+    source_type: SYNTHETIC_FIXTURE
+    source_reference: fixture:product-attributes:valid-measured-attribute
+    captured_by: role:automated-validation
+    captured_at: "2000-01-01T00:00:00Z"
+    evidence_status: SYNTHETIC_TEST_EVIDENCE
+  record_version: "1.0.0"

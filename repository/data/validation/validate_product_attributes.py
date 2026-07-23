@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Deterministic offline validation for the Wave 2B Attribute foundation."""
+"""Deterministic offline validation for the Product Attribute foundation."""
 
 from __future__ import annotations
 
@@ -13,6 +13,11 @@ import subprocess
 import sys
 from typing import Any, Iterable
 
+from validate_measurements import (
+    MeasurementDefinitionError,
+    load_canonical_foundation,
+)
+
 
 ROOT = Path(__file__).resolve().parents[3]
 CONTRACT_PATH = ROOT / "repository/data/contracts/product-attribute.contract.yaml"
@@ -20,7 +25,6 @@ SCHEMA_PATH = ROOT / "repository/data/schemas/product-attribute.schema.json"
 ATTRIBUTES_PATH = ROOT / "repository/data/registries/product-attributes.yaml"
 DATA_TYPES_PATH = ROOT / "repository/data/registries/attribute-data-types.yaml"
 CATEGORIES_PATH = ROOT / "repository/data/registries/attribute-categories.yaml"
-UNITS_PATH = ROOT / "repository/data/registries/attribute-units.yaml"
 REQUIREMENTS_PATH = ROOT / "repository/data/registries/attribute-requirement-levels.yaml"
 STATUSES_PATH = ROOT / "repository/data/registries/product-statuses.yaml"
 
@@ -125,7 +129,7 @@ class Definitions:
     data_types: dict[str, dict[str, Any]]
     categories: set[str]
     statuses: set[str]
-    unit_ids: set[str]
+    units: dict[str, dict[str, Any]]
     parser_sources: tuple[str, ...]
 
 
@@ -320,9 +324,9 @@ def validate_statuses(value: Any) -> set[str]:
     return codes
 
 
-def validate_empty_registries(
-    attributes_value: Any, units_value: Any, contract_version: str
-) -> set[str]:
+def validate_attribute_registry(
+    attributes_value: Any, contract_version: str
+) -> None:
     attributes = require_mapping(attributes_value, "Product Attribute registry")
     require_exact_keys(
         attributes,
@@ -336,15 +340,6 @@ def validate_empty_registries(
         raise DefinitionError("Attribute registry contract_version is incompatible")
     if attributes["attributes"] != []:
         raise DefinitionError("Wave 2B Product Attribute registry must contain zero entries")
-
-    units = require_mapping(units_value, "Attribute Unit registry")
-    require_exact_keys(units, {"registry_id", "registry_version", "units"}, "Unit registry")
-    if units["registry_id"] != "attribute-units":
-        raise DefinitionError("Unit registry_id must be attribute-units")
-    require_semver(units["registry_version"], "Unit registry_version")
-    if units["units"] != []:
-        raise DefinitionError("Wave 2B Unit registry must contain zero entries")
-    return set()
 
 
 def validate_contract_schema(
@@ -432,8 +427,11 @@ def load_definitions() -> Definitions:
     )
     status_registry, status_parser = load_yaml(STATUSES_PATH, "Product statuses")
     attributes_registry, attribute_parser = load_yaml(ATTRIBUTES_PATH, "Product Attributes")
-    units_registry, unit_parser = load_yaml(UNITS_PATH, "Attribute Units")
     schema = load_json(SCHEMA_PATH, "Product Attribute JSON Schema")
+    try:
+        measurement_foundation = load_canonical_foundation()
+    except MeasurementDefinitionError as exc:
+        raise DefinitionError(str(exc)) from exc
 
     data_types = validate_data_types(data_type_registry)
     categories = validate_categories(category_registry)
@@ -447,9 +445,7 @@ def load_definitions() -> Definitions:
         required_fields,
         prohibited_fields,
     ) = validate_contract_schema(contract, schema, data_types, categories, statuses)
-    unit_ids = validate_empty_registries(
-        attributes_registry, units_registry, contract_version
-    )
+    validate_attribute_registry(attributes_registry, contract_version)
     return Definitions(
         contract_version=contract_version,
         attribute_id_pattern=attribute_id_pattern,
@@ -460,7 +456,7 @@ def load_definitions() -> Definitions:
         data_types=data_types,
         categories=categories,
         statuses=statuses,
-        unit_ids=unit_ids,
+        units=measurement_foundation.units,
         parser_sources=(
             contract_parser,
             type_parser,
@@ -468,8 +464,8 @@ def load_definitions() -> Definitions:
             requirement_parser,
             status_parser,
             attribute_parser,
-            unit_parser,
-        ),
+        )
+        + measurement_foundation.parser_sources,
     )
 
 
@@ -780,7 +776,7 @@ def validate_fixture(
                             unit_id
                         ):
                             add(str(attribute), "UNIT_ID_FORMAT", f"invalid unit ID: {unit_id}")
-                        elif unit_id not in definitions.unit_ids:
+                        elif unit_id not in definitions.units:
                             add(str(attribute), "UNKNOWN_UNIT", f"unknown unit ID: {unit_id}")
                 if mode == "FORBIDDEN" and unit_ids:
                     add(str(attribute), "UNIT_FORBIDDEN", "FORBIDDEN mode requires zero unit IDs")
@@ -794,6 +790,21 @@ def validate_fixture(
                             "UNIT_TYPE_MISMATCH",
                             f"{data_type} does not support units",
                         )
+                    for unit_id in unit_ids:
+                        unit = (
+                            definitions.units.get(unit_id)
+                            if isinstance(unit_id, str)
+                            else None
+                        )
+                        if (
+                            unit is not None
+                            and data_type not in unit["allowed_data_types"]
+                        ):
+                            add(
+                                str(attribute),
+                                "UNIT_DATA_TYPE_INCOMPATIBLE",
+                                f"{unit_id} does not allow {data_type}",
+                            )
 
         validation = record.get("validation")
         if validation is not None:

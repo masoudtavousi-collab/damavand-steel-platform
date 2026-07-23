@@ -1,0 +1,49 @@
+contract_version: "1.0.0"
+dimensions:
+  - contract_version: "1.0.0"
+    dimension_id: dimension:333333333333
+    dimension_key: synthetic_conversion
+    canonical_name: Synthetic Conversion
+    description: Synthetic dimension used to reject an invalid rational conversion.
+    base_unit_id: unit:333333333333
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: synthetic-test-owner
+    provenance:
+      source_type: SYNTHETIC_FIXTURE
+      source_reference: fixture:measurements:invalid-conversion
+      captured_by: role:automated-validation
+      captured_at: "2000-01-01T00:00:00Z"
+      evidence_status: SYNTHETIC_TEST_EVIDENCE
+    record_version: "1.0.0"
+units:
+  - contract_version: "1.0.0"
+    unit_id: unit:333333333333
+    unit_key: synthetic_conversion_unit
+    canonical_name: Synthetic Conversion Unit
+    symbol: scv
+    dimension_id: dimension:333333333333
+    is_base_unit: true
+    base_unit_id: unit:333333333333
+    conversion_to_base:
+      multiplier:
+        numerator: 1
+        denominator: 0
+      offset:
+        numerator: 0
+        denominator: 1
+    allowed_data_types:
+      - DECIMAL
+    precision:
+      maximum_decimal_places: 6
+      rounding_mode: HALF_EVEN
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: synthetic-test-owner
+    provenance:
+      source_type: SYNTHETIC_FIXTURE
+      source_reference: fixture:measurements:invalid-conversion
+      captured_by: role:automated-validation
+      captured_at: "2000-01-01T00:00:00Z"
+      evidence_status: SYNTHETIC_TEST_EVIDENCE
+    record_version: "1.0.0"
