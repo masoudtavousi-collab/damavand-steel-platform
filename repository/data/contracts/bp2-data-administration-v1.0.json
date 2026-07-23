@@ -1,0 +1,146 @@
+{
+  "contract_id": "bp2-data-administration",
+  "contract_version": "1.0.0",
+  "lifecycle": {
+    "status": "DRAFT",
+    "approval_authority": "FOUNDER",
+    "implementation_authority": false
+  },
+  "scope": {
+    "phase": "BP2",
+    "documentation_only": true,
+    "implements_admin_ui": false,
+    "creates_products": false,
+    "creates_skus": false,
+    "changes_wordpress": false,
+    "allows_import": false,
+    "allows_publication": false,
+    "allows_deployment": false
+  },
+  "source_contract": {
+    "path": "repository/data/contracts/bp2-pipe-data-blueprint-v0.1.json",
+    "version": "0.1.0"
+  },
+  "canonical_hierarchy": [
+    "CATALOG",
+    "PLATFORM",
+    "FAMILY",
+    "SERIES",
+    "VARIANT_RULE_SET",
+    "SKU"
+  ],
+  "status_vocabulary": [
+    "APPROVED",
+    "CANDIDATE_UNVERIFIED",
+    "MISSING_DATA_VALUE",
+    "FOUNDER_INPUT_REQUIRED",
+    "DEFERRED",
+    "NOT_APPLICABLE",
+    "INVALID"
+  ],
+  "registries": [
+    "MATERIAL",
+    "GRADE",
+    "DIAMETER_SIZE",
+    "THICKNESS",
+    "COLOR_FINISH",
+    "SURFACE_DESIGN",
+    "BRANCH_LENGTH",
+    "SALES_CALCULATION_UNITS",
+    "SUPPLY_STATUS",
+    "VALID_COMBINATION_RULES",
+    "PILOT_COMBINATIONS",
+    "PROVENANCE_EVIDENCE"
+  ],
+  "registry_capabilities": {
+    "actions": ["ADD", "EDIT", "DELETE_OR_ARCHIVE"],
+    "default_delete_mode": "SOFT_DELETE",
+    "dependency_check_required": true,
+    "audit_required": true
+  },
+  "governance": {
+    "preserve_history": true,
+    "cascade_delete": false,
+    "approved_record_delete_requires_founder": true,
+    "archive_is_governance_status": false,
+    "physical_delete_policy": "UNUSED_ERRONEOUS_DRAFT_WITH_AUDIT_ONLY",
+    "audit_fields": [
+      "actor",
+      "occurred_at",
+      "reason",
+      "before_snapshot",
+      "after_snapshot",
+      "evidence_reference"
+    ]
+  },
+  "smart_inquiry_sequence": [
+    "FAMILY",
+    "MATERIAL",
+    "GRADE",
+    "DIAMETER_SIZE",
+    "VALID_THICKNESS",
+    "COLOR_FINISH",
+    "SURFACE_DESIGN",
+    "LENGTH"
+  ],
+  "pipe_family_policy": {
+    "family_key": "decorative_stainless_steel_pipe",
+    "administered_grades": ["201", "304", "316"],
+    "excluded_grades": [
+      {"code": "430", "disposition": "DEFERRED"}
+    ],
+    "base_lengths_m": [3, 6],
+    "custom_length": "INQUIRY_ONLY",
+    "sales_and_inquiry_unit": "BRANCH",
+    "calculation_unit": "METER",
+    "thickness_in_product_name": false,
+    "thickness_in_category": false,
+    "cartesian_generation_forbidden": true,
+    "approved_pilot_count": 3,
+    "candidate_count": 879,
+    "aluminum_and_iron_thickness": "NOT_APPLICABLE",
+    "sheet_administration": "DEFERRED"
+  },
+  "selection_policy": {
+    "approved_combination_selectable": true,
+    "candidate_selectable": false,
+    "candidate_auto_promotion": false,
+    "free_text_inquiry_allowed": true,
+    "auto_creates_master_data": false,
+    "auto_creates_product": false,
+    "auto_creates_sku": false
+  },
+  "future_admin_experience": {
+    "locale": "fa-IR",
+    "direction": "RTL",
+    "mobile_first": true,
+    "components": [
+      "REGISTRY_COUNTS",
+      "STATUS_FILTERS",
+      "SEARCH",
+      "ADD_EDIT_ARCHIVE",
+      "DEPENDENCY_PREVIEW",
+      "COMBINATION_PREVIEW",
+      "AUDIT_LOG",
+      "FOUNDER_APPROVAL_QUEUE"
+    ],
+    "implementation_authority": false
+  },
+  "stop_conditions": [
+    "ADMIN_UI_IMPLEMENTATION",
+    "PRODUCT_OR_SKU_MUTATION",
+    "WORDPRESS_OR_WOOCOMMERCE_CHANGE",
+    "DATA_IMPORT",
+    "PUBLICATION",
+    "DEPLOYMENT",
+    "CANDIDATE_PROMOTION",
+    "SCOPE_EXPANSION"
+  ],
+  "provenance": {
+    "source_type": "FOUNDER_DECISIONS",
+    "source_reference": "BP2 Data Administration Scope v1.0 authorization",
+    "captured_by": "role:project-governance",
+    "captured_at": "2026-07-23T00:00:00Z",
+    "evidence_status": "APPROVED"
+  }
+}

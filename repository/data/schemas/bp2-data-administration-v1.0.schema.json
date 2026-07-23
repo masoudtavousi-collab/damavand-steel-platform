@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://damavand-steel.local/schemas/bp2-data-administration-v1.0.schema.json",
+  "title": "BP2 Data Administration Contract v1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_id",
+    "contract_version",
+    "lifecycle",
+    "scope",
+    "source_contract",
+    "canonical_hierarchy",
+    "status_vocabulary",
+    "registries",
+    "registry_capabilities",
+    "governance",
+    "smart_inquiry_sequence",
+    "pipe_family_policy",
+    "selection_policy",
+    "future_admin_experience",
+    "stop_conditions",
+    "provenance"
+  ],
+  "properties": {
+    "contract_id": {"const": "bp2-data-administration"},
+    "contract_version": {"const": "1.0.0"},
+    "lifecycle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "approval_authority", "implementation_authority"],
+      "properties": {
+        "status": {"const": "DRAFT"},
+        "approval_authority": {"const": "FOUNDER"},
+        "implementation_authority": {"const": false}
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["phase", "documentation_only", "implements_admin_ui", "creates_products", "creates_skus", "changes_wordpress", "allows_import", "allows_publication", "allows_deployment"],
+      "properties": {
+        "phase": {"const": "BP2"},
+        "documentation_only": {"const": true},
+        "implements_admin_ui": {"const": false},
+        "creates_products": {"const": false},
+        "creates_skus": {"const": false},
+        "changes_wordpress": {"const": false},
+        "allows_import": {"const": false},
+        "allows_publication": {"const": false},
+        "allows_deployment": {"const": false}
+      }
+    },
+    "source_contract": {"type": "object"},
+    "canonical_hierarchy": {"type": "array", "minItems": 6, "maxItems": 6, "uniqueItems": true},
+    "status_vocabulary": {"type": "array", "minItems": 7, "maxItems": 7, "uniqueItems": true},
+    "registries": {"type": "array", "minItems": 12, "maxItems": 12, "uniqueItems": true},
+    "registry_capabilities": {"type": "object"},
+    "governance": {"type": "object"},
+    "smart_inquiry_sequence": {"type": "array", "minItems": 8, "maxItems": 8, "uniqueItems": true},
+    "pipe_family_policy": {"type": "object"},
+    "selection_policy": {"type": "object"},
+    "future_admin_experience": {"type": "object"},
+    "stop_conditions": {"type": "array", "minItems": 8, "uniqueItems": true},
+    "provenance": {"type": "object"}
+  }
+}
