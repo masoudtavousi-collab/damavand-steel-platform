@@ -1,0 +1,41 @@
+{
+  "fixture_id": "BP1-DEMO-PIPE",
+  "status": "CANDIDATE_UNVERIFIED",
+  "canonical": false,
+  "publishable": false,
+  "title_fa": "لوله استیل — نمونه نمایشی",
+  "family_label_fa": "لوله‌های استیل",
+  "facts": [
+    {
+      "label_fa": "آلیاژ",
+      "value_fa": "نیازمند تأیید"
+    },
+    {
+      "label_fa": "قطر",
+      "value_fa": "نیازمند تأیید"
+    },
+    {
+      "label_fa": "ضخامت",
+      "value_fa": "نیازمند تأیید"
+    },
+    {
+      "label_fa": "طول",
+      "value_fa": "نیازمند تأیید"
+    },
+    {
+      "label_fa": "سطح و رنگ",
+      "value_fa": "نیازمند تأیید"
+    }
+  ],
+  "prohibited": [
+    "sku",
+    "price",
+    "stock",
+    "availability",
+    "brand",
+    "origin",
+    "certification",
+    "compatibility",
+    "offer"
+  ]
+}
