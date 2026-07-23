@@ -6,7 +6,7 @@
   --color-steel: #a9b3be;
   --color-steel-bright: #e4e9ed;
   --color-text: #f6f7f8;
-  --color-text-muted: #aeb7c0;
+  --color-text-muted: #bdc5cd;
   --color-accent: #e6492d;
   --color-accent-strong: #ff6b3f;
   --color-warning: #f6bd60;
@@ -19,7 +19,7 @@
   --step-1: clamp(1.15rem, 1.05rem + 0.45vw, 1.4rem);
   --step-2: clamp(1.45rem, 1.2rem + 1vw, 2rem);
   --step-3: clamp(2rem, 1.55rem + 2vw, 3.2rem);
-  --step-4: clamp(2.6rem, 1.8rem + 3.4vw, 5rem);
+  --step-4: clamp(2.25rem, 1.8rem + 2.5vw, 4.25rem);
   --space-1: 0.35rem;
   --space-2: 0.65rem;
   --space-3: 1rem;

@@ -8,12 +8,14 @@
     const closeNavigation = () => {
       navigation.dataset.open = "false";
       navToggle.setAttribute("aria-expanded", "false");
+      navToggle.setAttribute("aria-label", "باز کردن منوی اصلی");
     };
 
     navToggle.addEventListener("click", () => {
       const isOpen = navigation.dataset.open === "true";
       navigation.dataset.open = String(!isOpen);
       navToggle.setAttribute("aria-expanded", String(!isOpen));
+      navToggle.setAttribute("aria-label", isOpen ? "باز کردن منوی اصلی" : "بستن منوی اصلی");
     });
 
     navigation.addEventListener("click", (event) => {
@@ -26,6 +28,22 @@
       if (event.key === "Escape") {
         closeNavigation();
         navToggle.focus();
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      if (
+        navigation.dataset.open === "true"
+        && !navigation.contains(event.target)
+        && !navToggle.contains(event.target)
+      ) {
+        closeNavigation();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.matchMedia("(min-width: 50rem)").matches) {
+        closeNavigation();
       }
     });
   }
