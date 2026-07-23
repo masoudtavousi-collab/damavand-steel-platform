@@ -80,7 +80,7 @@ BP8 separately authorized controlled production pilot
 1. The repository is the canonical control plane for governed Product identities, contracts, Product Master Data, reusable content assets, mappings, and release evidence.
 2. The first build proves the real user experience locally before the project invests in broad platform infrastructure.
 3. Repository contracts constrain the prototype, but a minimal local adapter or fixture is sufficient until the WordPress/WooCommerce boundary is approved.
-4. Theme, page-builder, custom-plugin, and child-theme choices require a short comparative architecture decision before they become implementation commitments; the WordPress/WooCommerce target boundary is defined in BP4.
+4. Blocksy Pro owns the site shell and theme-level WooCommerce presentation; Elementor Pro owns delegated body composition. No Custom Theme or Child Theme is permitted. BP4 confirms supported versions, licenses, exact Elementor boundaries, and capability ownership without reopening the approved presentation stack.
 5. WordPress and WooCommerce numeric IDs, slugs, post types, product IDs, variation IDs, and template state never become canonical identities.
 6. WooCommerce, if selected for the runtime slice, provides catalog capabilities without public price, cart, checkout, payment, sale, discount, or Offer schema.
 7. Every phase is reversible and carries proportionate validation, backup, rollback, security, accessibility, mobile, and Persian RTL gates.
@@ -99,7 +99,7 @@ BP8 separately authorized controlled production pilot
 | Integration Adapter | Map approved repository records through supported runtime interfaces | Minimal boundary in BP4; advanced packaging and reconciliation in BP6 or later | Canonical Product facts, theme rendering, direct database writes |
 | WordPress Runtime | Pages, posts, media, users, roles, editorial workflow, revisions, supported APIs | WordPress Core and approved single-owner capabilities | Canonical Product identity or unreviewed business truth |
 | Commerce Runtime | Inquiry-first catalog projection and valid selectable variations | WooCommerce with transaction surfaces disabled | Public pricing, canonical hierarchy, speculative combinations |
-| Presentation | Site shell, templates, responsive behavior, and bounded composition | Theme/page-builder/child-theme approach pending comparative Founder decision | Product rules, data authority, schema authority |
+| Presentation | Site shell, templates, responsive behavior, and bounded composition | Blocksy Pro for the shell and theme-level WooCommerce presentation; Elementor Pro for delegated body composition; no Custom Theme or Child Theme | Product rules, data authority, schema authority |
 | Discovery | Search index, filters, SEO metadata, redirects, sitemaps | BP7 single-owner capabilities fed by approved public projections | Independent facts, uncontrolled indexable archives |
 | Operations | Environments, secrets, backup/restore, deployment, monitoring | Approved external services and least-privilege runbooks | Canonical content or approval authority |
 
@@ -161,13 +161,13 @@ Custom plugin work begins only if BP4 proves that native configuration and appro
 
 ## Repository to Theme Relationship
 
-The repository provides design intent, reusable tokens, content relationships, and presentation requirements. It does not decide the implementation package merely by naming a preferred stack.
+The approved presentation stack is fixed: Blocksy Pro owns the site shell, global layout, archives, and theme-level WooCommerce presentation; Elementor Pro owns delegated body composition for approved homepage, landing, Product-experience, Knowledge, and Inquiry sections.
 
-- BP1 defines portable design tokens and visible acceptance criteria before selecting a long-term theme or page builder.
-- A short BP1/BP4 comparative architecture decision must assess at least native block/theme capabilities, Blocksy Pro, Elementor Pro where relevant, and the minimum child-theme or custom-code boundary.
-- The comparison must cover repository fit, RTL/mobile quality, accessibility, performance, WooCommerce/inquiry behavior, maintainability, exportability, licensing, security, upgrade risk, Founder Admin usability, and rollback.
-- Existing repository references to Blocksy Pro and Elementor Pro are design inputs whose lifecycle and explicit approval evidence must be verified; this roadmap does not lock them in.
-- No-child-theme is not assumed by this roadmap. Any child-theme or custom-theme proposal must identify the exact governed need, conflict with existing constraints, maintenance cost, migration path, and explicit Founder approval.
+- BP1 defines portable design tokens and visible acceptance criteria without reopening the approved theme or page-builder selection.
+- BP4 verifies supported Blocksy Pro and Elementor Pro versions, license availability, compatibility, Persian RTL/mobile quality, accessibility, performance, WooCommerce/Inquiry behavior, Founder Admin usability, security, upgrade behavior, and rollback.
+- Elementor scope must remain bounded. It must not take ownership of canonical Product facts, global theme responsibilities assigned to Blocksy Pro, or uncontrolled template-local business data.
+- No Custom Theme is permitted. No Child Theme is permitted. Any future exception requires a separate Founder decision that explicitly supersedes this rule; this roadmap neither proposes nor anticipates such an exception.
+- Custom plugin work remains separately gated and begins only when native WordPress/WooCommerce configuration and approved plugins cannot satisfy a demonstrated requirement.
 - Dynamic templates read WordPress/WooCommerce projections by stable mappings; template-local copied Product facts are prohibited.
 - Theme and page-builder exports are implementation artifacts, not canonical business or Product sources.
 - Vendor-file modification remains prohibited.
@@ -280,7 +280,7 @@ A future post-BP8 AI feature requires a separate Founder-approved architecture a
 1. **BP1 — Visible Local Prototype:** Put a locally runnable Persian RTL homepage shell, navigation, Pipes landing, representative Pipe page, and inquiry-first CTA in front of the Founder.
 2. **BP2 — First Product Family: Pipes:** Replace the thin prototype model with the smallest governed Pipes family data and narrow configuration behavior.
 3. **BP3 — Inquiry Workflow:** Make the visible inquiry journey functional in a local, privacy-safe environment without checkout or public pricing.
-4. **BP4 — WordPress/WooCommerce Integration Boundary:** Define the target runtime mapping, compare and decide the theme/page-builder/child-theme/plugin boundaries, then prove the minimum supported adapter.
+4. **BP4 — WordPress/WooCommerce Integration Boundary:** Define the target runtime mapping, confirm supported Blocksy Pro and Elementor Pro versions and responsibility boundaries, decide only the still-open plugin capabilities, and prove the minimum supported adapter.
 5. **BP5 — Staging Deployment:** Reproduce the approved slice in an isolated staging environment with access, backup, restore, monitoring, and rollback.
 6. **BP6 — Product Data Synchronization:** Add bounded automated validation, mapping, dry run, apply, reconciliation, and rollback for the Pipes slice.
 7. **BP7 — SEO, Search, Performance and QA:** Harden the staging product experience and close discovery, accessibility, security, Persian RTL/mobile, and performance gates.
@@ -319,10 +319,10 @@ Complexity estimates are relative: **Low** is primarily bounded documentation or
 
 | Wave | Objective | Expected output | Complexity | Dependencies | Rollback strategy |
 | --- | --- | --- | --- | --- | --- |
-| BP1 — Visible Local Prototype | Build the first visible vertical slice and make it locally runnable without production connectivity | Homepage shell, main navigation, Pipes landing, representative Pipe page, inquiry-first CTA, no pricing, reusable tokens, Persian RTL/mobile behavior, accessibility/security smoke tests, start/stop instructions, and theme/page-builder comparison brief | Medium | Approved BP1 scope; representative content boundaries; local toolchain | Stop local process; revert BP1 commit; no external state exists |
+| BP1 — Visible Local Prototype | Build the first visible vertical slice and make it locally runnable without production connectivity | Homepage shell, main navigation, Pipes landing, representative Pipe page, inquiry-first CTA, no pricing, reusable tokens, Persian RTL/mobile behavior, accessibility/security smoke tests, and start/stop instructions aligned with the approved presentation ownership | Medium | Approved BP1 scope; representative content boundaries; local toolchain | Stop local process; revert BP1 commit; no external state exists |
 | BP2 — First Product Family: Pipes | Replace the thin fixture with the smallest governed real Pipes family model and narrow configuration behavior | Approved Pipes family records, attributes/units, representative Product presentation, allowed Variant Rules, content/media references, and Product tests; no speculative combinations | High | BP1 visual acceptance; Founder-approved Pipes evidence; existing contracts | Revert candidate records before approval or supersede them after adoption; restore BP1 fixture |
 | BP3 — Inquiry Workflow | Implement the end-to-end inquiry-first interaction for the representative Pipe without commerce transactions | Accessible local inquiry form/context, consent and privacy handling, validation, success/failure states, protected storage or approved mock boundary, and no cart/checkout/payment | High | BP1–BP2; Founder approval of fields, consent, routing, retention, and security | Disable inquiry feature; remove local protected test data; restore static CTA |
-| BP4 — WordPress/WooCommerce Integration Boundary | Define the target runtime mapping, make the short presentation-architecture decision, and prove only the minimum runtime boundary | Approved Product/content/Inquiry mapping to WordPress/WooCommerce; Founder decision on theme, page builder, child-theme/custom-code boundary, capability ownership, supported versions, and a local integration proof using supported APIs | High | BP1–BP3 evidence; governance review; license/version/security data | Remove local proof package/configuration; return to the accepted local prototype |
+| BP4 — WordPress/WooCommerce Integration Boundary | Define the target runtime mapping, confirm the approved presentation stack's supported implementation boundary, and prove only the minimum runtime boundary | Approved Product/content/Inquiry mapping to WordPress/WooCommerce; verified Blocksy Pro and Elementor Pro versions/licenses; explicit ownership matrix for Blocksy, Elementor, WooCommerce, SEO, Search, Inquiry, and any justified plugin capability; no Custom/Child Theme; local integration proof using supported APIs | High | BP1–BP3 evidence; governance review; license/version/security data | Remove local proof package/configuration; return to the accepted local prototype |
 | BP5 — Staging Deployment | Reproduce the accepted visible slice in isolated staging without production mutation | Staging environment, least privilege, secrets handling, sanitized data, backup/restore proof, monitoring, reproducible deployment, and Founder UAT URL | High | BP4 decisions; hosting approval; operations/security owners | Destroy/rebuild staging or restore baseline snapshot; revoke temporary access |
 | BP6 — Product Data Synchronization | Automate only the approved Pipes projection after runtime boundaries are proven | Validated mapping, dry-run plan, idempotent bounded apply, reconciliation, audit evidence, rollback, and positive/adversarial tests | Very High | BP2, BP4, BP5; source/field authority; backup/restore | Apply prior accepted input or restore staging; disable synchronization and retain canonical records |
 | BP7 — SEO, Search, Performance and QA | Harden the complete staging slice for discovery, speed, security, accessibility, and Persian use | SEO/schema/no-price report, Persian search and filters, redirect/canonical plan, performance budget, accessibility/security results, mobile/RTL regression suite, and resolved blocking defects | High | BP5–BP6; SEO/indexation/search decisions | Restore previous metadata/configuration/index; disable affected capability; return defects to owning wave |
@@ -349,7 +349,7 @@ No wave begins automatically. Every wave requires an exact Founder-approved scop
 | M1 — Visible local prototype | Founder can locally run and inspect the Persian RTL homepage, navigation, Pipes landing, representative Pipe page, and inquiry CTA on mobile and desktop | Approve/revise the experience and authorize BP2 |
 | M2 — Real Pipes slice | Approved Pipes facts and narrow Variant Rules replace the thin fixture without speculative data | Approve/revise Product slice and authorize BP3 |
 | M3 — Inquiry slice | Local end-to-end inquiry behavior passes privacy, validation, accessibility, and no-transaction gates | Approve/revise Inquiry and authorize BP4 |
-| M4 — Runtime boundary decided | Comparative architecture decision and local integration proof are accepted | Approve/reject staging implementation |
+| M4 — Runtime boundary decided | Blocksy Pro/Elementor Pro ownership, supported versions, open plugin responsibilities, and local integration proof are accepted | Approve/reject staging implementation |
 | M5 — Staging experience ready | Founder-accessible staging slice has recovery, security, and UAT evidence | Approve/reject synchronization |
 | M6 — Staging release candidate | Product synchronization, SEO, search, performance, accessibility, security, RTL/mobile, and QA pass | Approve/reject production pilot |
 | M7 — Production pilot decided | Bounded pilot is observed with no unresolved critical issue | Expand, hold, or roll back |
@@ -365,7 +365,7 @@ No wave begins automatically. Every wave requires an exact Founder-approved scop
 | Invalid Product combinations or invented commercial facts appear | High | Critical | Approved Variant Rules only, provenance/status enforcement, adversarial validation |
 | Public price or transaction behavior leaks through WooCommerce, extensions, APIs, feeds, schema, or cache | Medium | Critical | Exhaustive no-price/no-transaction test matrix and single-owner review |
 | WordPress/WooCommerce/plugin/theme versions conflict | Medium | High | Supported-version matrix, staged upgrade rehearsal, pinned release evidence |
-| Theme or page-builder choice is locked before comparison | Medium | High | BP1 comparison brief, BP4 Founder decision, portable design tokens, no vendor commitment in BP1 |
+| Blocksy Pro and Elementor Pro responsibilities overlap or expand beyond their approved boundary | Medium | High | Fixed ownership matrix, bounded Elementor scope, portable design tokens, supported-version proof, and no Custom/Child Theme |
 | Plugin, theme/page-builder, SEO, and search responsibilities overlap | High | High | One owner per concern and capability responsibility review before installation |
 | Synchronization partially applies or cannot reconcile | Medium | Critical | Bounded batches, idempotency, ordered releases, audit log, restore and forward-recovery tests |
 | Runtime edits are overwritten or silently become canonical | Medium | High | Field ownership, difference approval, Draft default, evidence-only upstream path |
@@ -398,7 +398,7 @@ A successful technical check never substitutes for Founder approval.
 1. Approve the exact BP1 visible scope and acceptance criteria listed in this roadmap.
 2. Approve the representative Pipe page's permitted local fixture facts, labels, media, and placeholder policy.
 3. Approve a provisional local prototype toolchain that does not establish the long-term runtime choice.
-4. Approve the short comparative architecture brief and criteria for the later Founder decision on native theme/block capabilities, Blocksy Pro, Elementor Pro, other justified presentation options, and any child-theme/custom-code boundary.
+4. Confirm BP1 follows the approved Blocksy Pro shell and Elementor Pro delegated-composition boundary, uses portable design tokens, and introduces no Custom Theme, Child Theme, or unapproved plugin responsibility.
 5. Assign BP1 Product/content, Persian RTL/mobile, accessibility, security, and Founder acceptance reviewers.
 6. Confirm BP1 contains no production credentials, external writes, publication, Product/SKU creation, or production mutation.
 
@@ -413,5 +413,6 @@ Product-to-WooCommerce mapping, supported runtime versions, inquiry retention/ro
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2.1 | 2026-07-23 | Reconciled the roadmap with permanent architecture: fixed Blocksy Pro and Elementor Pro ownership, prohibited Custom/Child Theme, removed stack reselection, and retained only supported-version, bounded-Elementor, plugin-responsibility, and integration-proof decisions. |
 | 0.2.0 | 2026-07-23 | Replaced the infrastructure-first sequence with the Founder-directed visible-product-first model; made BP1 a local Persian RTL Pipes prototype; reduced delivery to BP1–BP8; deferred synchronization, migration, release hardening, and AI; moved theme/page-builder/child-theme choices to a comparative Founder decision. |
 | 0.1.0 | 2026-07-23 | Initial Build Phase 1 implementation roadmap based on the verified post-Wave 2C baseline; planning only. |
