@@ -1,0 +1,37 @@
+:root {
+  color-scheme: dark;
+  --color-canvas: #080a0c;
+  --color-surface: #11151a;
+  --color-surface-raised: #181e25;
+  --color-steel: #a9b3be;
+  --color-steel-bright: #e4e9ed;
+  --color-text: #f6f7f8;
+  --color-text-muted: #bdc5cd;
+  --color-accent: #e6492d;
+  --color-accent-strong: #ff6b3f;
+  --color-warning: #f6bd60;
+  --color-border: #2a323b;
+  --color-focus: #80c7ff;
+  --font-body: Tahoma, Arial, sans-serif;
+  --font-display: Tahoma, Arial, sans-serif;
+  --step--1: 0.82rem;
+  --step-0: 1rem;
+  --step-1: clamp(1.15rem, 1.05rem + 0.45vw, 1.4rem);
+  --step-2: clamp(1.45rem, 1.2rem + 1vw, 2rem);
+  --step-3: clamp(2rem, 1.55rem + 2vw, 3.2rem);
+  --step-4: clamp(2.25rem, 1.8rem + 2.5vw, 4.25rem);
+  --space-1: 0.35rem;
+  --space-2: 0.65rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.25rem;
+  --space-6: 3.5rem;
+  --space-7: 5.5rem;
+  --radius-sm: 0.55rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --container: 74rem;
+  --content: 48rem;
+  --shadow: 0 1.2rem 3rem rgb(0 0 0 / 28%);
+  --transition: 180ms ease;
+}
