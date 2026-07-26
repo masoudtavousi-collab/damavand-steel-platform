@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.6.0
-- **Last Updated:** 2026-07-23
-- **Last Review:** 2026-07-23
+- **Version:** 0.7.0
+- **Last Updated:** 2026-07-26
+- **Last Review:** 2026-07-26
 - **Review Cycle:** On document creation, removal, rename, lifecycle, authority, or navigation change
 - **Lifecycle:** Draft
 - **Source of Truth:** Current repository documentation paths plus each document's recorded status and authority
@@ -26,7 +26,7 @@ Provide the canonical map of repository documentation without replacing the auth
 
 ## Current Repository-Control Context
 
-[Current Project State](CURRENT_PROJECT_STATE.md) is the only mutable operational-state pointer. PR #1–#7 are merged; Wave 2A–2C structural foundations exist. K-01 is the current documentation/Atlas/test reconciliation. No Product Data population, Knowledge implementation, WordPress/runtime work, import, publication, deployment, or production mutation is authorized. Historical records retain chronology and approved future paths do not imply asset presence.
+[Current Project State](CURRENT_PROJECT_STATE.md) is the only mutable operational-state pointer. This index records document roles and stable integration history; it does not restate the active branch, current authorization, pull-request state, or next action. K-01, the Build Phase 1 roadmap, BP1, and the BP2 data blueprint retain their recorded bounded meanings. Historical records retain chronology and approved future paths do not imply asset presence.
 
 ## Categories and Complete Document Map
 
@@ -457,6 +457,7 @@ These current-state documents diagnose supplied Site Health/connectivity evidenc
 
 | Document | Role | Status | Owner |
 | --- | --- | --- | --- |
+| [Claude Recovery and Repository Consolidation Audit](AUDIT_REPORT_CLAUDE_RECOVERY_2026-07-26.md) | Recovery-source inventory, security closure, disposition, chronology rules, repository comparison, and scoped reconciliation evidence | Draft Evidence | Founder |
 | [K-01 Governance and Knowledge Reconciliation Audit](AUDIT_REPORT_K01.md) | Current governance-drift, decision, Atlas disposition, archive, and unified-validation evidence | Evidence | Founder |
 | [Batch 01 Audit](AUDIT_REPORT_BATCH01.md) | Historical audit record | Draft | Founder |
 | [Batch 02 Audit](AUDIT_REPORT_BATCH02.md) | Batch 02 implementation and audit record | Draft | Founder |

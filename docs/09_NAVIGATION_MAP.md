@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.6.0
-- **Last Updated:** 2026-07-23
-- **Last Review:** 2026-07-23
+- **Version:** 0.7.0
+- **Last Updated:** 2026-07-26
+- **Last Review:** 2026-07-26
 - **Review Cycle:** On repository path, document index, reading path, or relationship change
 - **Lifecycle:** Draft
 - **Source of Truth:** [Documentation Index](08_DOCUMENTATION_INDEX.md) and current repository paths
@@ -39,13 +39,13 @@ Define repository navigation and reading paths without changing directory owners
 9. [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md)
 10. [Founder Decision Log](17_FOUNDER_DECISION_LOG.md)
 
-This path is governance and Founder-review only. PR #1–#7 are merged and Wave 2A–2C structural foundations exist. K-01 permits only governance/current-state reconciliation, Atlas disposition, unified tests, one branch/commit/push, and one Draft PR. No Product/Knowledge population, runtime, workflow activation, WordPress, import, publication, deployment, production mutation, or automatic pilot execution is authorized.
+This path is governance and Founder-review only. Completed integrations retain their recorded bounded meanings. For the active branch, exact authorization, pull-request state, GO/NO-GO boundary, and next action, follow [Current Project State](CURRENT_PROJECT_STATE.md). The [Claude Recovery Audit](AUDIT_REPORT_CLAUDE_RECOVERY_2026-07-26.md) is evidence, not an operational-state owner.
 
 ### Completed Git Integration Path and Current Boundary
 
-Historical baseline → PR #1–#4 governance integration → PR #5 Wave 2A Product Core → PR #6 Wave 2B Product Attributes → PR #7 Wave 2C Measurements → current `main` in [Current Project State](CURRENT_PROJECT_STATE.md) → K-01 Draft PR → Founder review → **STOP before any next implementation sprint**.
+Historical baseline → PR #1–#4 governance integration → PR #5 Wave 2A Product Core → PR #6 Wave 2B Product Attributes → PR #7 Wave 2C Measurements → PR #9 K-01 integration → PR #8 Build Phase 1 implementation roadmap → PR #10 BP1 local prototype → PR #11 BP2 data blueprint → current operational state in [Current Project State](CURRENT_PROJECT_STATE.md).
 
-Wave 2D, Product/Knowledge population, and runtime work remain outside this path. Default-branch and protection remediation are complete; this path authorizes no repository-settings change.
+Any later proposal, Product/Knowledge population, runtime work, or repository-settings change remains separately governed. This navigation path grants no execution authority.
 
 | Path | Existing responsibility | Primary documentation |
 | --- | --- | --- |

@@ -8,8 +8,8 @@
 - **Owner:** Founder
 - **Reviewer:** Build Engineer
 - **Approval Authority:** Founder
-- **Version:** 0.3.0
-- **Last Updated:** 2026-07-23
+- **Version:** 0.4.0
+- **Last Updated:** 2026-07-26
 - **Lifecycle:** Review
 - **Source of Truth:** [Current Project State](CURRENT_PROJECT_STATE.md), current repository evidence, accepted decisions, and execution gates
 - **Dependencies:** [Project Baseline](PROJECT_BASELINE.md), [Execution Gates](EXECUTION_GATES.md), and [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md)
@@ -28,6 +28,9 @@ Wave 2A–2C established platform-independent Product core, Product Attribute, a
 | Product core structure | Foundation ready | Contract, schema, entity/status registries, validator, fixtures | No canonical Product rows, final Product identifiers, Master Data, or SKU vocabulary |
 | Product Attribute structure | Foundation ready | Contract, schema, supporting registries, validator, fixtures | Canonical Product Attribute registry is empty; no governed business definitions or values |
 | Measurement structure | Foundation ready | Contract, schema, two dimensions, four units, validator, fixtures | Entries remain `CANDIDATE_UNVERIFIED`; no Product values or business-specific unit policy |
+| BP1 local prototype | Review evidence only | PR #10; bounded Persian RTL local prototype and safety validator | Not WordPress, production, a canonical UI implementation, or Product truth |
+| BP2 data blueprint | Blueprint ready for governed review | PR #11; controlled Pipe blueprint, schema, and offline validator | Not final SKU, import, runtime, WordPress, WooCommerce, or production authority |
+| BP2 administration proposal | Separately governed | Proposed contracts and administration scope; exact live state is maintained in Current Project State | No proposal creates merge, runtime, import, WordPress, WooCommerce, or production authority |
 | Product Data | Blocked | Architecture and three pilot decisions exist | No canonical machine-readable Master Data or Golden package; availability and commercial validity incomplete |
 | Knowledge Repository | Blocked | Architecture proposals exist | No contract, content instances, population process, retrieval implementation, or approved AI capability |
 | Atlas | Controlled intake | 173 registered pending rows; K-01 adoption matrix | No row is canonical without mapping, review, and approval |
@@ -60,7 +63,7 @@ Wave 2A–2C established platform-independent Product core, Product Attribute, a
 
 ## Prerequisites for the Next Product-Data Sprint
 
-1. Founder reviews and decides the K-01 Draft PR.
+1. Consult [Current Project State](CURRENT_PROJECT_STATE.md) for the exact active authorization and obtain separate Founder approval for every later Git action.
 2. Historical Wave 2A and Wave 2B originating authorization references are linked without inferring approval from merge history.
 3. The next sprint has an exact scope, branch, allowlist, acceptance tests, exclusions, and stop conditions.
 4. Product Attribute definitions and Product records use existing contracts and controlled registries.
@@ -97,12 +100,13 @@ Repository tests passing cannot satisfy these runtime prerequisites.
 
 ## Recommended Next Step
 
-Complete K-01 governance and knowledge reconciliation, then stop for Founder review. After merge approval, choose one separately authorized, data-bounded sprint; do not begin Wave 2D or runtime work automatically.
+Follow the exact next action and GO/NO-GO boundary in [Current Project State](CURRENT_PROJECT_STATE.md). Do not begin Product Data population, WordPress administration implementation, or runtime work automatically.
 
 ## Change Notes
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.4.0 | 2026-07-26 | Reconciled readiness with merged PR #9–#11, recovery evidence, and the separately governed BP2 administration proposal. |
 | 0.3.0 | 2026-07-23 | Reconciled readiness after merged Wave 2A–2C foundations; separated structural readiness from Product Data and runtime readiness. |
 | 0.2.0 | 2026-07-20 | Recorded pre-Wave-2 implementation blockers and proposed Wave 2A. |
 | 0.1.0 | 2026-07-04 | Initial v1.0 baseline readiness assessment. |
