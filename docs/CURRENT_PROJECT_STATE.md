@@ -2,12 +2,12 @@
 
 - **Current date:** 2026-07-26
 - **Canonical repository:** `masoudtavousi-collab/damavand-steel-platform`
-- **Verified `main` baseline:** `0fb51e5ab2c57ba7ef0f48a12d1fb56f7c2c624f`
-- **Last completed repository integration:** BP2 Machine-Readable Data Blueprint, merged by PR #11
-- **Current phase:** Claude Recovery and Repository Consolidation
-- **Current authorized branch:** `codex/claude-recovery-consolidation`
-- **Current authorization:** recovery audit and reconciliation are committed and pushed in Draft PR #13; validation and CI review are authorized, while Ready for Review, merge, and any additional scope remain unauthorized
-- **Merge:** NO-GO; PR #13 remains Draft pending validation and CI review, while PR #12 remains Draft and separately blocked pending contract/schema/validator hardening
+- **Verified recovery baseline:** `43cad482616c1a41f9ae6b94af6d8cb97582a42c`, the PR #13 merge commit; resolve the live `main` tip from Git
+- **Last completed substantive repository integration:** Claude Recovery and Repository Consolidation, merged by PR #13
+- **Current phase:** BP2 Data Administration Contract Hardening Review
+- **Current authorized branch:** no implementation branch is authorized; `codex/bp2-data-administration-scope-v1` remains the existing Draft PR #12 review target
+- **Current authorization:** inspect PR #12 and prepare an exact schema, validator, and test-hardening plan; modification, push, Ready for Review, and merge require separate Founder approval
+- **Merge:** NO-GO; PR #12 remains Draft and blocked pending contract/schema/validator hardening
 - **Runtime / WordPress / WooCommerce mutation:** NO-GO
 - **Import / publishing / deployment / product creation / bulk SKU generation:** NO-GO
 
@@ -23,6 +23,7 @@ This file is the only operational current-state pointer. Other documents may pre
 | K-01 — Governance and Knowledge Reconciliation | PR #9; current-state ownership, Knowledge Archive Standard, Atlas disposition, and unified local/CI validation | Governance reconciliation is integrated; merge does not promote Atlas rows, Product facts, or lifecycle approval |
 | BP1 — Visible Local Prototype | PR #10; Persian RTL local prototype, inquiry-first preview, local design tokens, and safety validator | Local review evidence only; it is not a WordPress implementation, production site, or Product truth source |
 | BP2 — Machine-Readable Data Blueprint | PR #11; controlled Pipe blueprint, schema, offline validator, three approved pilot decisions, and 879 historical candidates | Data-administration design input exists; it creates no final SKU, import, publication, WordPress, WooCommerce, or production authority |
+| Claude Recovery and Repository Consolidation | PR #13; recovery audit and reconciliation of current-state and navigation documents | Recovery evidence is classified and governance sources are reconciled; no recovered runtime, credential, Product, publication, deployment, or production authority was introduced |
 | Atlas planning registry | 173 pending document records across 21 domains | Intake inventory only; no Atlas row is canonical merely because it is registered |
 
 Repository validators are active in CI and unified under `make test`. PR #12 adds a proposed BP2 administration scope, but remains Draft and `NO-GO` for merge until its schema, validator, and positive/negative/adversarial tests are hardened.
@@ -93,9 +94,9 @@ A Variable Parent Product is a commerce presentation and never the owner of cano
 
 ## Approved Next Action
 
-On branch `codex/claude-recovery-consolidation`, keep Draft PR #13 limited to the recovery audit and the ten authorized status/navigation documents. Correct this current-state pointer, rerun repository validation, push the exact one-file correction, and inspect the resulting GitHub Actions and PR checks.
+Inspect Draft PR #12 against the current `main` baseline and prepare an exact hardening plan covering closed nested schema objects, offline JSON Schema Draft 2020-12 validation, deterministic validator behavior, and positive, negative, and adversarial fixtures wired into `make test`.
 
-Then stop. Ready for Review and merge require separate explicit authorization. PR #12 hardening remains a separate scope. Do not begin Product/Knowledge population, WordPress work, runtime work, import, publishing, deployment, or production mutation.
+Then stop for Founder review. Do not modify or push PR #12, mark it Ready for Review, merge it, populate Product/Knowledge data, change WordPress/WooCommerce, run imports, publish, deploy, or mutate production without separate explicit authorization.
 
 ## Current References
 
