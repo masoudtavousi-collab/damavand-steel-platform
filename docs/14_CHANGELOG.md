@@ -8,21 +8,38 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.3.0
-- **Last Updated:** 2026-07-26
+- **Version:** 0.4.0
+- **Last Updated:** 2026-07-27
 - **Lifecycle:** Review
 - **Source of Truth:** Merged Git history and scoped decision/evidence records
 - **Approval:** Pending Founder review; merged Git history remains evidence
 
 This changelog records repository outcomes. It does not create approval, runtime readiness, Product facts, or release authority.
 
-## Unreleased — Claude Recovery Consolidation
+## 2026-07-27 — Post-PR12 Governance Reconciliation
 
-- Add a security-sanitized evidence report covering recovered Claude conversations, Project Knowledge, recovered file packages, and comparison with current `main`.
-- Record the Founder-confirmed closure of four exposed credentials without retaining their values.
-- Reject wholesale restoration of superseded repositories, raw exports, Mac inventory reports, legacy runtime code, and voided Product drafts.
-- Reconcile the ten named current-state/navigation documents against the recorded integration history and keep mutable operational state exclusively in Current Project State.
-- This unreleased record grants no Commit, Push, PR, merge, WordPress, Product/SKU, publication, deployment, or production authority.
+- PR #15 reconciled the active current-state, baseline, readiness, roadmap, documentation index, navigation, reading order, repository health, traceability, changelog, and open-question records after PR #12.
+- Obsolete claims that PR #12 remained open or blocked for merge were removed from active documents; historical audit evidence was preserved unchanged.
+- The reconciliation retains the BP2 Data Administration contract's `DRAFT` lifecycle and all Product, Knowledge, Admin UI, WordPress/WooCommerce, import, publication, deployment, and production `NO-GO` boundaries.
+
+## 2026-07-27 — BP2 Data Administration Hardening
+
+- PR #12 merged the documentation-only BP2 Data Administration scope and machine-readable contract.
+- The merge added a closed JSON Schema Draft 2020-12 contract, deterministic offline validation, and positive, negative, and adversarial tests.
+- The contract remains `DRAFT` with `implementation_authority: false`; no Admin UI, Product/SKU, WordPress/WooCommerce, import, publication, deployment, or production authority was created.
+
+## 2026-07-26 — Post-Recovery Current State
+
+- PR #14 aligned the current-state pointer after the recovery consolidation and preserved PR #12 as the then-open independent review target.
+- That state was accurate before PR #12 hardening and merge; later active documents supersede its mutable operational facts.
+
+## 2026-07-26 — Claude Recovery Consolidation
+
+- PR #13 added a security-sanitized evidence report covering recovered Claude conversations, Project Knowledge, recovered file packages, and comparison with the then-current `main`.
+- It recorded the Founder-confirmed closure of four exposed credentials without retaining their values.
+- It rejected wholesale restoration of superseded repositories, raw exports, Mac inventory reports, legacy runtime code, and voided Product drafts.
+- It reconciled the named current-state/navigation documents and retained mutable operational state exclusively in Current Project State.
+- The merge granted no WordPress, Product/SKU, publication, deployment, or production authority.
 
 ## 2026-07-23 — BP2 Machine-Readable Data Blueprint
 

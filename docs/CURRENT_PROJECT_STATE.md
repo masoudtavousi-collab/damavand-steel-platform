@@ -1,13 +1,13 @@
 # Current Project State
 
-- **Current date:** 2026-07-26
+- **Current date:** 2026-07-27
 - **Canonical repository:** `masoudtavousi-collab/damavand-steel-platform`
-- **Verified recovery baseline:** `43cad482616c1a41f9ae6b94af6d8cb97582a42c`, the PR #13 merge commit; resolve the live `main` tip from Git
-- **Last completed substantive repository integration:** Claude Recovery and Repository Consolidation, merged by PR #13
-- **Current phase:** BP2 Data Administration Contract Hardening Review
-- **Current authorized branch:** no implementation branch is authorized; `codex/bp2-data-administration-scope-v1` remains the existing Draft PR #12 review target
-- **Current authorization:** inspect PR #12 and prepare an exact schema, validator, and test-hardening plan; modification, push, Ready for Review, and merge require separate Founder approval
-- **Merge:** NO-GO; PR #12 remains Draft and blocked pending contract/schema/validator hardening
+- **Verified pre-reconciliation `main` baseline:** `1f1222ba4165ffd197216c54ddb0896c61afcaa4`, the PR #12 merge commit; resolve the live `main` tip from Git after PR #15
+- **Last completed substantive repository integration:** Post-PR12 Governance Reconciliation, integrated by PR #15 after PR #12
+- **Current phase:** BP1 Acceptance and BP2 Data Administration Lifecycle Decision Planning
+- **Current authorized branch:** no Product, Knowledge, Admin UI, or runtime implementation branch is authorized after the documentation-only PR #15 integration
+- **Current authorization:** merge PR #15 only; after merge, perform read-only BP1 acceptance/revision assessment and prepare a BP2 Data Administration lifecycle decision package
+- **Merge:** PR #15 is the separately approved documentation-only integration; no subsequent PR or merge is authorized
 - **Runtime / WordPress / WooCommerce mutation:** NO-GO
 - **Import / publishing / deployment / product creation / bulk SKU generation:** NO-GO
 
@@ -24,9 +24,12 @@ This file is the only operational current-state pointer. Other documents may pre
 | BP1 — Visible Local Prototype | PR #10; Persian RTL local prototype, inquiry-first preview, local design tokens, and safety validator | Local review evidence only; it is not a WordPress implementation, production site, or Product truth source |
 | BP2 — Machine-Readable Data Blueprint | PR #11; controlled Pipe blueprint, schema, offline validator, three approved pilot decisions, and 879 historical candidates | Data-administration design input exists; it creates no final SKU, import, publication, WordPress, WooCommerce, or production authority |
 | Claude Recovery and Repository Consolidation | PR #13; recovery audit and reconciliation of current-state and navigation documents | Recovery evidence is classified and governance sources are reconciled; no recovered runtime, credential, Product, publication, deployment, or production authority was introduced |
+| Post-Recovery Current State | PR #14; current-state pointer aligned to the completed recovery baseline and the then-open PR #12 review boundary | Historical bridge between PR #13 and PR #12; it granted no Product, runtime, import, publication, deployment, or production authority |
+| BP2 — Data Administration Contract Hardening | PR #12; administration scope, contract, closed Draft 2020-12 schema, deterministic offline validator, and positive/negative/adversarial tests | Technical hardening is complete and merged; the contract remains `DRAFT`, has no implementation authority, and creates no Admin UI, Product/SKU, WordPress/WooCommerce, import, publication, deployment, or production authority |
+| Post-PR12 Governance Reconciliation | PR #15; active state, baseline, readiness, roadmap, index, navigation, health, traceability, changelog, and open-question alignment | Removes obsolete PR #12 merge blockers from active documents while preserving historical audits and all Product/runtime `NO-GO` boundaries |
 | Atlas planning registry | 173 pending document records across 21 domains | Intake inventory only; no Atlas row is canonical merely because it is registered |
 
-Repository validators are active in CI and unified under `make test`. PR #12 adds a proposed BP2 administration scope, but remains Draft and `NO-GO` for merge until its schema, validator, and positive/negative/adversarial tests are hardened.
+Repository validators are active in CI and unified under `make test`. PR #12 hardening is merged: nested schema objects are closed, JSON Schema Draft 2020-12 is enforced offline, validation output is deterministic, and positive, negative, and adversarial tests are wired into the unified test entry point. This technical completion does not change the administration contract's `DRAFT` lifecycle or authorize implementation.
 
 ## Current Product and Knowledge Readiness
 
@@ -89,14 +92,16 @@ A Variable Parent Product is a commerce presentation and never the owner of cano
 - Blocksy Pro and Elementor Pro package/license compatibility remains unresolved.
 - Atlas rows require controlled adoption decisions before any content generation or promotion.
 - Historical authorization evidence for Wave 2A and Wave 2B is not explicitly linked in the current Founder Decision Log; merge history is implementation evidence, not a substitute for the originating authorization record.
-- PR #12 must close nested schema objects against unknown fields, validate the contract offline against JSON Schema Draft 2020-12, add positive and negative/adversarial tests, and wire all tests into `make test`.
+- The BP2 Data Administration contract remains `DRAFT`; Founder approval or a recorded revision decision is required before it may govern a later administration or Product Data sprint.
+- Canonical Product records, Product Attribute definitions, Master Data, Golden package, final SKU/slug policy, content/media rights, and availability evidence remain absent or incomplete.
+- Local validation setup is not yet reproducible from `scripts/setup.sh`, and the standalone BP1 safety validator is not yet wired into `make test`; those are separate test-tooling tasks.
 - The recovered Claude export and file packages are historical/private evidence only; raw exports, credentials, Mac inventory reports, legacy runtime code, and superseded repository snapshots are prohibited from repository integration.
 
 ## Approved Next Action
 
-Inspect Draft PR #12 against the current `main` baseline and prepare an exact hardening plan covering closed nested schema objects, offline JSON Schema Draft 2020-12 validation, deterministic validator behavior, and positive, negative, and adversarial fixtures wired into `make test`.
+After PR #15 is accepted on `main`, perform a read-only formal assessment of BP1 against Milestone M1 acceptance criteria and prepare a separate Founder decision package for the merged BP2 Data Administration contract's `DRAFT` lifecycle.
 
-Then stop for Founder review. Do not modify or push PR #12, mark it Ready for Review, merge it, populate Product/Knowledge data, change WordPress/WooCommerce, run imports, publish, deploy, or mutate production without separate explicit authorization.
+Then stop for Founder decisions. Do not modify BP1, approve the BP2 contract by inference, populate Product/Knowledge data, implement an Admin UI, change WordPress/WooCommerce, run imports, publish, deploy, or mutate production without separate explicit authorization.
 
 ## Current References
 
@@ -105,6 +110,7 @@ Then stop for Founder review. Do not modify or push PR #12, mark it Ready for Re
 - [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md)
 - [K-01 Audit](AUDIT_REPORT_K01.md)
 - [Claude Recovery and Repository Consolidation Audit](AUDIT_REPORT_CLAUDE_RECOVERY_2026-07-26.md)
+- [BP2 Data Administration Scope v1.0](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md)
 - [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md)
 - [Founder Decision Log](17_FOUNDER_DECISION_LOG.md)
 - [Open Questions](18_OPEN_QUESTIONS.md)
