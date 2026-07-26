@@ -1,0 +1,407 @@
+{
+  "cases": [
+    {
+      "id": "N04_MISSING_ROOT_PROVENANCE",
+      "target": "contract",
+      "operation": "delete",
+      "path": "/provenance",
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "N05_UNKNOWN_ROOT_PROPERTY",
+      "target": "contract",
+      "operation": "set",
+      "path": "/unexpected_authority",
+      "value": true,
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "N06_UNKNOWN_LIFECYCLE_PROPERTY",
+      "target": "contract",
+      "operation": "set",
+      "path": "/lifecycle/ready_for_merge",
+      "value": true,
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "N06_UNKNOWN_SCOPE_PROPERTY",
+      "target": "contract",
+      "operation": "set",
+      "path": "/scope/allows_production_mutation",
+      "value": true,
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "N06_UNKNOWN_SOURCE_PROPERTY",
+      "target": "contract",
+      "operation": "set",
+      "path": "/source_contract/remote_url",
+      "value": "https://example.invalid/source.json",
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "N06_UNKNOWN_CAPABILITY_PROPERTY",
+      "target": "contract",
+      "operation": "set",
+      "path": "/registry_capabilities/bypass_audit",
+      "value": true,
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "N06_UNKNOWN_GOVERNANCE_PROPERTY",
+      "target": "contract",
+      "operation": "set",
+      "path": "/governance/hard_delete_enabled",
+      "value": true,
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "N06_UNKNOWN_PIPE_POLICY_PROPERTY",
+      "target": "contract",
+      "operation": "set",
+      "path": "/pipe_family_policy/bulk_generation_enabled",
+      "value": true,
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "N06_UNKNOWN_EXCLUDED_GRADE_PROPERTY",
+      "target": "contract",
+      "operation": "set",
+      "path": "/pipe_family_policy/excluded_grades/0/auto_activate",
+      "value": true,
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "N06_UNKNOWN_SELECTION_PROPERTY",
+      "target": "contract",
+      "operation": "set",
+      "path": "/selection_policy/auto_publish",
+      "value": true,
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "N06_UNKNOWN_ADMIN_EXPERIENCE_PROPERTY",
+      "target": "contract",
+      "operation": "set",
+      "path": "/future_admin_experience/runtime_enabled",
+      "value": true,
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "N06_UNKNOWN_PROVENANCE_PROPERTY",
+      "target": "contract",
+      "operation": "set",
+      "path": "/provenance/self_approved",
+      "value": true,
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "A02_LIFECYCLE_PROMOTION",
+      "target": "contract",
+      "operation": "set",
+      "path": "/lifecycle/status",
+      "value": "APPROVED",
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "A03_IMPLEMENTATION_AUTHORITY",
+      "target": "contract",
+      "operation": "set",
+      "path": "/lifecycle/implementation_authority",
+      "value": true,
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "A04_SCOPE_ADMIN_UI",
+      "target": "contract",
+      "operation": "set",
+      "path": "/scope/implements_admin_ui",
+      "value": true,
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "A04_SCOPE_PRODUCTS",
+      "target": "contract",
+      "operation": "set",
+      "path": "/scope/creates_products",
+      "value": true,
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "A04_SCOPE_SKUS",
+      "target": "contract",
+      "operation": "set",
+      "path": "/scope/creates_skus",
+      "value": true,
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "A04_SCOPE_WORDPRESS",
+      "target": "contract",
+      "operation": "set",
+      "path": "/scope/changes_wordpress",
+      "value": true,
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "A04_SCOPE_IMPORT",
+      "target": "contract",
+      "operation": "set",
+      "path": "/scope/allows_import",
+      "value": true,
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "A04_SCOPE_PUBLICATION",
+      "target": "contract",
+      "operation": "set",
+      "path": "/scope/allows_publication",
+      "value": true,
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "A04_SCOPE_DEPLOYMENT",
+      "target": "contract",
+      "operation": "set",
+      "path": "/scope/allows_deployment",
+      "value": true,
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "A05_TRUTHY_INTEGER",
+      "target": "contract",
+      "operation": "set",
+      "path": "/registry_capabilities/audit_required",
+      "value": 1,
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "A05_FALSEY_INTEGER",
+      "target": "contract",
+      "operation": "set",
+      "path": "/pipe_family_policy/thickness_in_product_name",
+      "value": 0,
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "N08_WRONG_HIERARCHY_SAME_LENGTH",
+      "target": "contract",
+      "operation": "set",
+      "path": "/canonical_hierarchy",
+      "value": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "N09_REORDERED_STATUS_VOCABULARY",
+      "target": "contract",
+      "operation": "set",
+      "path": "/status_vocabulary",
+      "value": [
+        "INVALID",
+        "NOT_APPLICABLE",
+        "DEFERRED",
+        "FOUNDER_INPUT_REQUIRED",
+        "MISSING_DATA_VALUE",
+        "CANDIDATE_UNVERIFIED",
+        "APPROVED"
+      ],
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "N10_DUPLICATE_REGISTRY",
+      "target": "contract",
+      "operation": "set",
+      "path": "/registries",
+      "value": [
+        "MATERIAL",
+        "MATERIAL",
+        "DIAMETER_SIZE",
+        "THICKNESS",
+        "COLOR_FINISH",
+        "SURFACE_DESIGN",
+        "BRANCH_LENGTH",
+        "SALES_CALCULATION_UNITS",
+        "SUPPLY_STATUS",
+        "VALID_COMBINATION_RULES",
+        "PILOT_COMBINATIONS",
+        "PROVENANCE_EVIDENCE"
+      ],
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "N11_SOURCE_PATH_TRAVERSAL",
+      "target": "contract",
+      "operation": "set",
+      "path": "/source_contract/path",
+      "value": "../../etc/passwd",
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "N11_SOURCE_VERSION_MISMATCH",
+      "target": "contract",
+      "operation": "set",
+      "path": "/source_contract/version",
+      "value": "9.9.9",
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "A07_ARCHIVED_GOVERNANCE_STATUS",
+      "target": "contract",
+      "operation": "append",
+      "path": "/status_vocabulary",
+      "value": "ARCHIVED",
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "A08_CANDIDATE_SELECTABLE",
+      "target": "contract",
+      "operation": "set",
+      "path": "/selection_policy/candidate_selectable",
+      "value": true,
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "A08_CANDIDATE_AUTO_PROMOTION",
+      "target": "contract",
+      "operation": "set",
+      "path": "/selection_policy/candidate_auto_promotion",
+      "value": true,
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "A08_AUTO_CREATE_SKU",
+      "target": "contract",
+      "operation": "set",
+      "path": "/selection_policy/auto_creates_sku",
+      "value": true,
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "A09_DEPLOY_COMPONENT",
+      "target": "contract",
+      "operation": "append",
+      "path": "/future_admin_experience/components",
+      "value": "PRODUCTION_DEPLOY_BUTTON",
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "A09_STOP_CONDITIONS_REMOVED",
+      "target": "contract",
+      "operation": "set",
+      "path": "/stop_conditions",
+      "value": [],
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "A14_NESTED_TYPE_CONFUSION",
+      "target": "contract",
+      "operation": "set",
+      "path": "/governance",
+      "value": [],
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "N12_INVALID_PROVENANCE_TIMESTAMP",
+      "target": "contract",
+      "operation": "set",
+      "path": "/provenance/captured_at",
+      "value": "not-a-date",
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "A11_SCHEMA_NESTED_CLOSURE_REMOVED",
+      "target": "schema",
+      "operation": "delete",
+      "path": "/properties/governance/additionalProperties",
+      "expected_code": "SCHEMA_CONTRACT_WEAKENED"
+    },
+    {
+      "id": "A11_SCHEMA_CONST_REMOVED",
+      "target": "schema",
+      "operation": "delete",
+      "path": "/properties/scope/properties/allows_deployment/const",
+      "expected_code": "SCHEMA_CONTRACT_WEAKENED"
+    },
+    {
+      "id": "A11_SCHEMA_REQUIRED_WEAKENED",
+      "target": "schema",
+      "operation": "set",
+      "path": "/properties/lifecycle/required",
+      "value": [
+        "status",
+        "approval_authority"
+      ],
+      "expected_code": "SCHEMA_CONTRACT_WEAKENED"
+    },
+    {
+      "id": "A11_SCHEMA_IDENTITY_CHANGED",
+      "target": "schema",
+      "operation": "set",
+      "path": "/$id",
+      "value": "https://example.invalid/weakened-schema.json",
+      "expected_code": "SCHEMA_CONTRACT_WEAKENED"
+    },
+    {
+      "id": "A11_SCHEMA_TRUTHY_CONST",
+      "target": "schema",
+      "operation": "set",
+      "path": "/properties/registry_capabilities/properties/audit_required/const",
+      "value": 1,
+      "expected_code": "SCHEMA_CONTRACT_WEAKENED"
+    },
+    {
+      "id": "A11_SCHEMA_FALSEY_CONST",
+      "target": "schema",
+      "operation": "set",
+      "path": "/properties/pipe_family_policy/properties/thickness_in_product_name/const",
+      "value": 0,
+      "expected_code": "SCHEMA_CONTRACT_WEAKENED"
+    },
+    {
+      "id": "A11_SCHEMA_LEAF_TYPE_REMOVED",
+      "target": "schema",
+      "operation": "delete",
+      "path": "/properties/future_admin_experience/properties/implementation_authority/type",
+      "expected_code": "SCHEMA_CONTRACT_WEAKENED"
+    },
+    {
+      "id": "S01_SOURCE_BLUEPRINT_ID_CHANGED",
+      "target": "source",
+      "operation": "set",
+      "path": "/blueprint_id",
+      "value": "forged-blueprint",
+      "expected_code": "SOURCE_IDENTITY"
+    },
+    {
+      "id": "S02_SOURCE_GRADE_PROMOTED",
+      "target": "source",
+      "operation": "set",
+      "path": "/controlled_values/grades/2/status",
+      "value": "APPROVED",
+      "expected_code": "SOURCE_RELATION"
+    },
+    {
+      "id": "S03_SOURCE_COUNTS_CHANGED",
+      "target": "source",
+      "operation": "set",
+      "path": "/historical_matrix/candidate_rows",
+      "value": 878,
+      "expected_code": "SOURCE_RELATION"
+    },
+    {
+      "id": "S04_SOURCE_PILOT_FORGED",
+      "target": "source",
+      "operation": "set",
+      "path": "/approved_pilot_combinations/0/reference_code",
+      "value": "FORGED-PILOT-REFERENCE",
+      "expected_code": "SOURCE_RELATION"
+    }
+  ]
+}
