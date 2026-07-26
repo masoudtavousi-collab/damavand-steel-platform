@@ -1,0 +1,499 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:damavand-steel:schema:bp2-data-administration:1.0.0",
+  "title": "BP2 Data Administration Contract v1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_id",
+    "contract_version",
+    "lifecycle",
+    "scope",
+    "source_contract",
+    "canonical_hierarchy",
+    "status_vocabulary",
+    "registries",
+    "registry_capabilities",
+    "governance",
+    "smart_inquiry_sequence",
+    "pipe_family_policy",
+    "selection_policy",
+    "future_admin_experience",
+    "stop_conditions",
+    "provenance"
+  ],
+  "properties": {
+    "contract_id": {
+      "type": "string",
+      "const": "bp2-data-administration"
+    },
+    "contract_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "lifecycle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "approval_authority",
+        "implementation_authority"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "const": "DRAFT"
+        },
+        "approval_authority": {
+          "type": "string",
+          "const": "FOUNDER"
+        },
+        "implementation_authority": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "phase",
+        "documentation_only",
+        "implements_admin_ui",
+        "creates_products",
+        "creates_skus",
+        "changes_wordpress",
+        "allows_import",
+        "allows_publication",
+        "allows_deployment"
+      ],
+      "properties": {
+        "phase": {
+          "type": "string",
+          "const": "BP2"
+        },
+        "documentation_only": {
+          "type": "boolean",
+          "const": true
+        },
+        "implements_admin_ui": {
+          "type": "boolean",
+          "const": false
+        },
+        "creates_products": {
+          "type": "boolean",
+          "const": false
+        },
+        "creates_skus": {
+          "type": "boolean",
+          "const": false
+        },
+        "changes_wordpress": {
+          "type": "boolean",
+          "const": false
+        },
+        "allows_import": {
+          "type": "boolean",
+          "const": false
+        },
+        "allows_publication": {
+          "type": "boolean",
+          "const": false
+        },
+        "allows_deployment": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    },
+    "source_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "version"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "const": "repository/data/contracts/bp2-pipe-data-blueprint-v0.1.json"
+        },
+        "version": {
+          "type": "string",
+          "const": "0.1.0"
+        }
+      }
+    },
+    "canonical_hierarchy": {
+      "type": "array",
+      "const": [
+        "CATALOG",
+        "PLATFORM",
+        "FAMILY",
+        "SERIES",
+        "VARIANT_RULE_SET",
+        "SKU"
+      ]
+    },
+    "status_vocabulary": {
+      "type": "array",
+      "const": [
+        "APPROVED",
+        "CANDIDATE_UNVERIFIED",
+        "MISSING_DATA_VALUE",
+        "FOUNDER_INPUT_REQUIRED",
+        "DEFERRED",
+        "NOT_APPLICABLE",
+        "INVALID"
+      ]
+    },
+    "registries": {
+      "type": "array",
+      "const": [
+        "MATERIAL",
+        "GRADE",
+        "DIAMETER_SIZE",
+        "THICKNESS",
+        "COLOR_FINISH",
+        "SURFACE_DESIGN",
+        "BRANCH_LENGTH",
+        "SALES_CALCULATION_UNITS",
+        "SUPPLY_STATUS",
+        "VALID_COMBINATION_RULES",
+        "PILOT_COMBINATIONS",
+        "PROVENANCE_EVIDENCE"
+      ]
+    },
+    "registry_capabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "actions",
+        "default_delete_mode",
+        "dependency_check_required",
+        "audit_required"
+      ],
+      "properties": {
+        "actions": {
+          "type": "array",
+          "const": [
+            "ADD",
+            "EDIT",
+            "DELETE_OR_ARCHIVE"
+          ]
+        },
+        "default_delete_mode": {
+          "type": "string",
+          "const": "SOFT_DELETE"
+        },
+        "dependency_check_required": {
+          "type": "boolean",
+          "const": true
+        },
+        "audit_required": {
+          "type": "boolean",
+          "const": true
+        }
+      }
+    },
+    "governance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "preserve_history",
+        "cascade_delete",
+        "approved_record_delete_requires_founder",
+        "archive_is_governance_status",
+        "physical_delete_policy",
+        "audit_fields"
+      ],
+      "properties": {
+        "preserve_history": {
+          "type": "boolean",
+          "const": true
+        },
+        "cascade_delete": {
+          "type": "boolean",
+          "const": false
+        },
+        "approved_record_delete_requires_founder": {
+          "type": "boolean",
+          "const": true
+        },
+        "archive_is_governance_status": {
+          "type": "boolean",
+          "const": false
+        },
+        "physical_delete_policy": {
+          "type": "string",
+          "const": "UNUSED_ERRONEOUS_DRAFT_WITH_AUDIT_ONLY"
+        },
+        "audit_fields": {
+          "type": "array",
+          "const": [
+            "actor",
+            "occurred_at",
+            "reason",
+            "before_snapshot",
+            "after_snapshot",
+            "evidence_reference"
+          ]
+        }
+      }
+    },
+    "smart_inquiry_sequence": {
+      "type": "array",
+      "const": [
+        "FAMILY",
+        "MATERIAL",
+        "GRADE",
+        "DIAMETER_SIZE",
+        "VALID_THICKNESS",
+        "COLOR_FINISH",
+        "SURFACE_DESIGN",
+        "LENGTH"
+      ]
+    },
+    "pipe_family_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "family_key",
+        "administered_grades",
+        "excluded_grades",
+        "base_lengths_m",
+        "custom_length",
+        "sales_and_inquiry_unit",
+        "calculation_unit",
+        "thickness_in_product_name",
+        "thickness_in_category",
+        "cartesian_generation_forbidden",
+        "approved_pilot_count",
+        "candidate_count",
+        "aluminum_and_iron_thickness",
+        "sheet_administration"
+      ],
+      "properties": {
+        "family_key": {
+          "type": "string",
+          "const": "decorative_stainless_steel_pipe"
+        },
+        "administered_grades": {
+          "type": "array",
+          "const": [
+            "201",
+            "304",
+            "316"
+          ]
+        },
+        "excluded_grades": {
+          "type": "array",
+          "const": [
+            {
+              "code": "430",
+              "disposition": "DEFERRED"
+            }
+          ],
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "code",
+              "disposition"
+            ],
+            "properties": {
+              "code": {
+                "type": "string",
+                "const": "430"
+              },
+              "disposition": {
+                "type": "string",
+                "const": "DEFERRED"
+              }
+            }
+          }
+        },
+        "base_lengths_m": {
+          "type": "array",
+          "const": [
+            3,
+            6
+          ]
+        },
+        "custom_length": {
+          "type": "string",
+          "const": "INQUIRY_ONLY"
+        },
+        "sales_and_inquiry_unit": {
+          "type": "string",
+          "const": "BRANCH"
+        },
+        "calculation_unit": {
+          "type": "string",
+          "const": "METER"
+        },
+        "thickness_in_product_name": {
+          "type": "boolean",
+          "const": false
+        },
+        "thickness_in_category": {
+          "type": "boolean",
+          "const": false
+        },
+        "cartesian_generation_forbidden": {
+          "type": "boolean",
+          "const": true
+        },
+        "approved_pilot_count": {
+          "type": "integer",
+          "const": 3
+        },
+        "candidate_count": {
+          "type": "integer",
+          "const": 879
+        },
+        "aluminum_and_iron_thickness": {
+          "type": "string",
+          "const": "NOT_APPLICABLE"
+        },
+        "sheet_administration": {
+          "type": "string",
+          "const": "DEFERRED"
+        }
+      }
+    },
+    "selection_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "approved_combination_selectable",
+        "candidate_selectable",
+        "candidate_auto_promotion",
+        "free_text_inquiry_allowed",
+        "auto_creates_master_data",
+        "auto_creates_product",
+        "auto_creates_sku"
+      ],
+      "properties": {
+        "approved_combination_selectable": {
+          "type": "boolean",
+          "const": true
+        },
+        "candidate_selectable": {
+          "type": "boolean",
+          "const": false
+        },
+        "candidate_auto_promotion": {
+          "type": "boolean",
+          "const": false
+        },
+        "free_text_inquiry_allowed": {
+          "type": "boolean",
+          "const": true
+        },
+        "auto_creates_master_data": {
+          "type": "boolean",
+          "const": false
+        },
+        "auto_creates_product": {
+          "type": "boolean",
+          "const": false
+        },
+        "auto_creates_sku": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    },
+    "future_admin_experience": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "locale",
+        "direction",
+        "mobile_first",
+        "components",
+        "implementation_authority"
+      ],
+      "properties": {
+        "locale": {
+          "type": "string",
+          "const": "fa-IR"
+        },
+        "direction": {
+          "type": "string",
+          "const": "RTL"
+        },
+        "mobile_first": {
+          "type": "boolean",
+          "const": true
+        },
+        "components": {
+          "type": "array",
+          "const": [
+            "REGISTRY_COUNTS",
+            "STATUS_FILTERS",
+            "SEARCH",
+            "ADD_EDIT_ARCHIVE",
+            "DEPENDENCY_PREVIEW",
+            "COMBINATION_PREVIEW",
+            "AUDIT_LOG",
+            "FOUNDER_APPROVAL_QUEUE"
+          ]
+        },
+        "implementation_authority": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    },
+    "stop_conditions": {
+      "type": "array",
+      "const": [
+        "ADMIN_UI_IMPLEMENTATION",
+        "PRODUCT_OR_SKU_MUTATION",
+        "WORDPRESS_OR_WOOCOMMERCE_CHANGE",
+        "DATA_IMPORT",
+        "PUBLICATION",
+        "DEPLOYMENT",
+        "CANDIDATE_PROMOTION",
+        "SCOPE_EXPANSION"
+      ]
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_type",
+        "source_reference",
+        "captured_by",
+        "captured_at",
+        "evidence_status"
+      ],
+      "properties": {
+        "source_type": {
+          "type": "string",
+          "const": "FOUNDER_DECISIONS"
+        },
+        "source_reference": {
+          "type": "string",
+          "const": "BP2 Data Administration Scope v1.0 authorization"
+        },
+        "captured_by": {
+          "type": "string",
+          "const": "role:project-governance"
+        },
+        "captured_at": {
+          "type": "string",
+          "format": "date-time",
+          "const": "2026-07-23T00:00:00Z"
+        },
+        "evidence_status": {
+          "type": "string",
+          "const": "APPROVED"
+        }
+      }
+    }
+  }
+}

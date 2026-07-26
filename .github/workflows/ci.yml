@@ -14,6 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - name: Install pinned validation dependencies
-        run: python3 -m pip install --disable-pip-version-check PyYAML==6.0.2
+        run: >-
+          python3 -m pip install --disable-pip-version-check
+          PyYAML==6.0.2
+          jsonschema==4.25.1
       - name: Run unified repository validation
         run: make test

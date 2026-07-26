@@ -1,0 +1,5 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:damavand-steel:schema:bp2-data-administration:1.0.0",
+  "type": 7
+}
