@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.5.0
-- **Last Updated:** 2026-07-26
-- **Last Review:** 2026-07-26
+- **Version:** 0.6.0
+- **Last Updated:** 2026-07-27
+- **Last Review:** 2026-07-27
 - **Review Cycle:** On repository creation, disposition, authority, ownership, namespace, lifecycle, merge, or promotion proposal
 - **Lifecycle:** Review
 - **Source of Truth:** Explicit Founder decisions in the GIT-02S directive dated 2026-07-14, the Class B Wave 1 authorization dated 2026-07-19, verified PR #1–#3 merge state, Founder-approved current Git governance, the Wave 2 pre-implementation decisions dated 2026-07-20, and Repository A governance
@@ -140,13 +140,13 @@ No passage of time, new file, Git initialization, architecture review, or AI rec
 
 - Repository A canonical authority: **CONFIRMED**.
 - Repository B classification: **`QUARANTINED_ARCHITECTURE_RESEARCH`**.
-- PR #1–#11: **MERGED**; current shared baseline is maintained in Current Project State.
+- PR #1–#14: **MERGED**; PR #13 and PR #14 preceded the final PR #12 merge, and the current shared baseline is maintained in Current Project State.
 - Class B Wave 1 exact-scope Git/documentation integration: **COMPLETE**; its 2026-07-19 authorization remains historical evidence and did not itself authorize merge.
 - Default branch `main` and main protection: **COMPLETE**; strict `repository-validation`, administrator enforcement, force-push prohibition, and deletion prohibition verified.
 - Wave 2 discovery and Wave 2A–2C structural foundations: **COMPLETE**. Product/Knowledge population and Wave 2D: **NO-GO pending separate Founder approval**.
-- K-01, BP1 local prototype, and BP2 data blueprint: **INTEGRATED WITH BOUNDED MEANING**; none creates runtime, Product/SKU, publication, or production authority.
+- K-01, BP1 local prototype, BP2 data blueprint, Claude recovery consolidation, post-recovery state, and BP2 Data Administration hardening: **INTEGRATED WITH BOUNDED MEANING**; none creates runtime, Product/SKU, publication, or production authority.
 - Claude recovery material is classified by the recovery audit; exact current authorization is maintained only in Current Project State.
-- Any BP2 administration proposal remains separately governed and creates no merge or runtime authority.
+- The BP2 Data Administration contract is merged but remains `DRAFT`, separately governed, and without Admin UI, Product, runtime, import, publication, deployment, or production authority.
 - Workflow activation, runtime, WordPress or Product Repository implementation, publication, deployment, and production mutation: **NO-GO**.
 - Further repository-settings mutation: **NO-GO pending separate Founder approval**.
 - Repository B merge, implementation, runtime, Git initialization, or authority: **NO-GO**.

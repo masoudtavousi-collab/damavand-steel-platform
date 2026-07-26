@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.5.0
-- **Last Updated:** 2026-07-20
-- **Last Review:** 2026-07-20
+- **Version:** 0.6.0
+- **Last Updated:** 2026-07-27
+- **Last Review:** 2026-07-27
 - **Review Cycle:** On governing-rule or dependency change; periodic cadence pending Founder approval
 - **Lifecycle:** Review
 - **Source of Truth:** [Core Project Principles](00_PROJECT_BIBLE.md#core-project-principles), approved governing documents, and accepted ADRs; this matrix is a supporting view
@@ -23,6 +23,18 @@
 ## Purpose
 
 Provide a single navigational view from governing rules through business, architecture, repository, WordPress, and future implementation layers without authorizing implementation.
+
+## Post-PR12 Governance and Data-Administration Traceability
+
+| Trace ID | Asset or event | Authority/evidence input | Reconciled outcome | Implementation status |
+| --- | --- | --- | --- | --- |
+| `POST12-MAIN` | PR #13, PR #14, and PR #12 merged history | GitHub merge evidence and [Current Project State](CURRENT_PROJECT_STATE.md) | Records the actual order: recovery consolidation, post-recovery state, then BP2 Data Administration hardening | Repository evidence only |
+| `POST12-SCOPE` | [BP2 Data Administration Scope v1.0](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md) | BP2 blueprint, Founder-scoped administration decisions, and PR #12 | Documents 12 governed registries, mutation governance, smart inquiry order, stop conditions, and rollback boundary | `DRAFT`; no implementation authority |
+| `POST12-CONTRACT` | `repository/data/contracts/bp2-data-administration-v1.0.json` | BP2 Data Administration Scope and source blueprint | Machine-readable documentation-only administration contract | No Product/SKU or runtime authority |
+| `POST12-SCHEMA` | `repository/data/schemas/bp2-data-administration-v1.0.schema.json` | JSON Schema Draft 2020-12 | Closes root and nested object shapes and constrains the contract offline | Structural validation only |
+| `POST12-VALIDATOR` | `repository/data/validation/validate_bp2_data_administration.py` | Contract, schema, source blueprint, and fail-closed governance rules | Deterministic offline validation; remote references and unsupported schema behavior are rejected | Validation only |
+| `POST12-TESTS` | `tests/test_bp2_data_administration.py` and fixtures | Positive, negative, boundary, malformed, duplicate-key, permissive-schema, and remote-reference cases | Ten automated test methods are wired into `make test` and protected CI | Test evidence only |
+| `POST12-LIFECYCLE` | Merged Git state versus document lifecycle | Document Lifecycle and Current Project State | Explicitly separates PR merge completion from Founder approval of the contract | Founder approval or revision still required |
 
 ## Traceability Direction
 

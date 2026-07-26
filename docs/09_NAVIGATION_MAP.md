@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.7.0
-- **Last Updated:** 2026-07-26
-- **Last Review:** 2026-07-26
+- **Version:** 0.8.0
+- **Last Updated:** 2026-07-27
+- **Last Review:** 2026-07-27
 - **Review Cycle:** On repository path, document index, reading path, or relationship change
 - **Lifecycle:** Draft
 - **Source of Truth:** [Documentation Index](08_DOCUMENTATION_INDEX.md) and current repository paths
@@ -43,7 +43,7 @@ This path is governance and Founder-review only. Completed integrations retain t
 
 ### Completed Git Integration Path and Current Boundary
 
-Historical baseline → PR #1–#4 governance integration → PR #5 Wave 2A Product Core → PR #6 Wave 2B Product Attributes → PR #7 Wave 2C Measurements → PR #9 K-01 integration → PR #8 Build Phase 1 implementation roadmap → PR #10 BP1 local prototype → PR #11 BP2 data blueprint → current operational state in [Current Project State](CURRENT_PROJECT_STATE.md).
+Historical baseline → PR #1–#4 governance integration → PR #5 Wave 2A Product Core → PR #6 Wave 2B Product Attributes → PR #7 Wave 2C Measurements → PR #9 K-01 integration → PR #8 Build Phase 1 implementation roadmap → PR #10 BP1 local prototype → PR #11 BP2 data blueprint → PR #13 Claude recovery consolidation → PR #14 post-recovery current state → PR #12 BP2 Data Administration hardening → current operational state in [Current Project State](CURRENT_PROJECT_STATE.md).
 
 Any later proposal, Product/Knowledge population, runtime work, or repository-settings change remains separately governed. This navigation path grants no execution authority.
 
@@ -59,7 +59,7 @@ Any later proposal, Product/Knowledge population, runtime work, or repository-se
 | `/prompts` | Versioned prompt materials | [Repository Standards](07_REPOSITORY_GUIDE.md) |
 | `/tests` | Product-foundation fixtures and future QA evidence | [Testing Strategy](13_TESTING_STRATEGY.md) |
 | `/var` | Local runtime placeholders | [Deployment](09_DEPLOYMENT.md) |
-| `/repository/data/contracts`, `/repository/data/schemas`, `/repository/data/registries`, `/repository/data/validation` | Product core, attribute, measurement contracts and validation ownership | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md); Wave 2A–2C structural foundations and executable validators exist |
+| `/repository/data/contracts`, `/repository/data/schemas`, `/repository/data/registries`, `/repository/data/validation` | Product core, attribute, measurement, BP2 blueprint, and BP2 administration contract/validation ownership | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md) and [BP2 Data Administration Scope v1.0](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md); structural foundations and executable validators exist, while Product/runtime authority remains absent |
 | `/repository/data/master-data`, `/repository/data/golden-reference` | Approved future governed Product and Golden data ownership | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md); paths currently absent |
 | `/repository/knowledge` | Approved future canonical Knowledge Repository | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md); path currently absent |
 | `/repository/content` | Approved future governed reusable content | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md); path currently absent |
@@ -102,7 +102,7 @@ Any later proposal, Product/Knowledge population, runtime work, or repository-se
 
 ### Product Data Path
 
-[Business Rules](03_BUSINESS_RULES.md) → [WordPress Enterprise Architecture](06_WORDPRESS_ARCHITECTURE.md) → [Enterprise Product Data Model](19_PRODUCT_DATA_MODEL.md) → [Product Taxonomy Model](21_PRODUCT_TAXONOMY_MODEL.md) → [Product Attribute Model](22_PRODUCT_ATTRIBUTE_MODEL.md) → [WooCommerce Product Model](20_WOOCOMMERCE_PRODUCT_MODEL.md) → [Inquiry Data Model](23_INQUIRY_DATA_MODEL.md) → [Batch 05 Audit](AUDIT_REPORT_BATCH05.md) → [Batch 05A Audit](AUDIT_REPORT_BATCH05A.md) → [Batch 05B Audit](AUDIT_REPORT_BATCH05B.md)
+[Business Rules](03_BUSINESS_RULES.md) → [WordPress Enterprise Architecture](06_WORDPRESS_ARCHITECTURE.md) → [Enterprise Product Data Model](19_PRODUCT_DATA_MODEL.md) → [Product Taxonomy Model](21_PRODUCT_TAXONOMY_MODEL.md) → [Product Attribute Model](22_PRODUCT_ATTRIBUTE_MODEL.md) → [WooCommerce Product Model](20_WOOCOMMERCE_PRODUCT_MODEL.md) → [Inquiry Data Model](23_INQUIRY_DATA_MODEL.md) → [BP2 Data Administration Scope v1.0](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md) → [Batch 05 Audit](AUDIT_REPORT_BATCH05.md) → [Batch 05A Audit](AUDIT_REPORT_BATCH05A.md) → [Batch 05B Audit](AUDIT_REPORT_BATCH05B.md)
 
 ### Information Architecture Path
 

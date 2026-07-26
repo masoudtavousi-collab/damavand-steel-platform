@@ -13,7 +13,9 @@ This roadmap defines sequence and gates, not mutable operational state. The exac
 - PR #8 integrated the Build Phase 1 implementation roadmap after the PR #9 governance baseline; it is planning evidence only.
 - PR #10 integrated the bounded BP1 local Persian RTL prototype; it is not runtime or Product truth.
 - PR #11 integrated the BP2 machine-readable data blueprint; it is not final SKU, import, WordPress, or production authority.
-- Later administration proposals remain separately governed and derive no authority from this roadmap.
+- PR #13 integrated the Claude recovery consolidation; PR #14 then aligned the post-recovery current-state boundary.
+- PR #12 subsequently integrated the hardened BP2 Data Administration scope, contract, closed Draft 2020-12 schema, deterministic offline validator, and positive/negative/adversarial tests.
+- The merged BP2 Data Administration contract remains `DRAFT`, has `implementation_authority: false`, and derives no Product, Admin UI, runtime, import, publication, deployment, or production authority from this roadmap or its merge.
 - The historical Wave 1 branch/commit/push/Draft-PR scope did not authorize merge and remains preserved as chronology. Its later approved merge granted no Wave 2, runtime, or implementation authority.
 - Wave 2A–2C are structural, platform-independent foundations. They created no canonical Product rows, Product Attribute definitions, Master Data, Golden package, WordPress implementation, publication, deployment, or production mutation.
 - Workflows remain inactive.
@@ -29,7 +31,7 @@ This roadmap defines sequence and gates, not mutable operational state. The exac
 
 ## Phase 3 — Implementation Assets
 
-**Status:** STRUCTURAL PRODUCT FOUNDATION PRESENT; PRODUCT DATA, KNOWLEDGE, AND RUNTIME NOT READY
+**Status:** STRUCTURAL PRODUCT AND DATA-ADMINISTRATION FOUNDATIONS PRESENT; PRODUCT DATA, KNOWLEDGE, AND RUNTIME NOT READY
 
 ## Phase 4 — Master Data Reconciliation
 
