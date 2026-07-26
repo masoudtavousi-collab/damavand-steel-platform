@@ -5,9 +5,9 @@
 - **Verified `main` baseline:** `0fb51e5ab2c57ba7ef0f48a12d1fb56f7c2c624f`
 - **Last completed repository integration:** BP2 Machine-Readable Data Blueprint, merged by PR #11
 - **Current phase:** Claude Recovery and Repository Consolidation
-- **Current authorized branch:** local `codex/claude-recovery-consolidation`
-- **Current authorization:** add the recovery audit and prepare reconciliation of the ten named status/navigation documents locally; Commit, Push, and PR remain unauthorized
-- **Merge:** NO-GO; PR #12 remains Draft and separately blocked from merge pending contract/schema/validator hardening
+- **Current authorized branch:** `codex/claude-recovery-consolidation`
+- **Current authorization:** recovery audit and reconciliation are committed and pushed in Draft PR #13; validation and CI review are authorized, while Ready for Review, merge, and any additional scope remain unauthorized
+- **Merge:** NO-GO; PR #13 remains Draft pending validation and CI review, while PR #12 remains Draft and separately blocked pending contract/schema/validator hardening
 - **Runtime / WordPress / WooCommerce mutation:** NO-GO
 - **Import / publishing / deployment / product creation / bulk SKU generation:** NO-GO
 
@@ -93,9 +93,9 @@ A Variable Parent Product is a commerce presentation and never the owner of cano
 
 ## Approved Next Action
 
-On local branch `codex/claude-recovery-consolidation`, add the recovery audit, reconcile only the ten authorized status/navigation documents, run repository validation and secret/link/diff checks, and present the exact unstaged diff for Founder review.
+On branch `codex/claude-recovery-consolidation`, keep Draft PR #13 limited to the recovery audit and the ten authorized status/navigation documents. Correct this current-state pointer, rerun repository validation, push the exact one-file correction, and inspect the resulting GitHub Actions and PR checks.
 
-Then stop. Commit, Push, PR, staging, and merge require later explicit authorization. PR #12 hardening remains a separate scope. Do not begin Product/Knowledge population, WordPress work, runtime work, import, publishing, deployment, or production mutation.
+Then stop. Ready for Review and merge require separate explicit authorization. PR #12 hardening remains a separate scope. Do not begin Product/Knowledge population, WordPress work, runtime work, import, publishing, deployment, or production mutation.
 
 ## Current References
 
