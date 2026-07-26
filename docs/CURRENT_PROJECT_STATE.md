@@ -5,9 +5,9 @@
 - **Verified `main` baseline:** `1f1222ba4165ffd197216c54ddb0896c61afcaa4`, the PR #12 merge commit
 - **Last completed substantive repository integration:** BP2 Data Administration contract and validation hardening, merged by PR #12 after PR #13 and PR #14
 - **Current phase:** Post-PR12 Governance Reconciliation
-- **Current authorized branch:** `agent/post-pr12-governance-reconciliation`; documentation-only reconciliation, with no Product or runtime implementation authority
-- **Current authorization:** reconcile active current-state, baseline, readiness, roadmap, navigation, traceability, health, changelog, and open-question records; validate; commit; push; and open one Draft PR
-- **Merge:** PR #12 is complete; merge of the reconciliation Draft PR requires separate Founder review and approval
+- **Current authorized branch:** `agent/post-pr12-governance-reconciliation`; documentation-only Draft PR #15, with no Product or runtime implementation authority
+- **Current authorization:** reconcile active current-state, baseline, readiness, roadmap, navigation, traceability, health, changelog, and open-question records; validate; commit; push; and maintain Draft PR #15 for review
+- **Merge:** PR #12 is complete; Ready for Review or merge of Draft PR #15 requires separate Founder review and approval
 - **Runtime / WordPress / WooCommerce mutation:** NO-GO
 - **Import / publishing / deployment / product creation / bulk SKU generation:** NO-GO
 
@@ -98,7 +98,7 @@ A Variable Parent Product is a commerce presentation and never the owner of cano
 
 ## Approved Next Action
 
-Complete and review the documentation-only Post-PR12 Governance Reconciliation change set. It must record the merged PR #13, PR #14, and PR #12 chronology, remove obsolete PR #12 Draft/merge blockers from active documents, preserve historical audits unchanged, and keep the BP2 administration contract's `DRAFT` lifecycle distinct from its merged Git state.
+Review Draft PR #15, the documentation-only Post-PR12 Governance Reconciliation change set. It records the merged PR #13, PR #14, and PR #12 chronology, removes obsolete PR #12 Draft/merge blockers from active documents, preserves historical audits unchanged, and keeps the BP2 administration contract's `DRAFT` lifecycle distinct from its merged Git state.
 
 Then stop for Founder review of the resulting Draft PR. After that reconciliation is accepted on `main`, the next project decision is a formal BP1 acceptance/revision review and a separate BP2 Data Administration lifecycle decision. Do not populate Product/Knowledge data, implement an Admin UI, change WordPress/WooCommerce, run imports, publish, deploy, or mutate production without separate explicit authorization.
 
