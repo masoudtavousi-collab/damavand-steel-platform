@@ -1,13 +1,13 @@
 # Current Project State
 
-- **Current date:** 2026-07-23
+- **Current date:** 2026-07-26
 - **Canonical repository:** `masoudtavousi-collab/damavand-steel-platform`
-- **Verified `main` baseline:** `ed0841bcd46d315dba8c4ecfd64b1eb105048da5`
-- **Last completed repository integration:** Wave 2C Measurement Foundation, merged by PR #7
-- **Current phase:** K-01 Governance and Knowledge Reconciliation
-- **Current authorized branch:** `codex/k-01-governance-knowledge-reconciliation`
-- **Current authorization:** reconcile governance/current-state documents, classify Atlas intake, unify repository tests, create one commit, push this branch, and open one Draft PR
-- **Merge:** NO-GO pending Founder review
+- **Verified `main` baseline:** `0fb51e5ab2c57ba7ef0f48a12d1fb56f7c2c624f`
+- **Last completed repository integration:** BP2 Machine-Readable Data Blueprint, merged by PR #11
+- **Current phase:** Claude Recovery and Repository Consolidation
+- **Current authorized branch:** local `codex/claude-recovery-consolidation`
+- **Current authorization:** add the recovery audit and prepare reconciliation of the ten named status/navigation documents locally; Commit, Push, and PR remain unauthorized
+- **Merge:** NO-GO; PR #12 remains Draft and separately blocked from merge pending contract/schema/validator hardening
 - **Runtime / WordPress / WooCommerce mutation:** NO-GO
 - **Import / publishing / deployment / product creation / bulk SKU generation:** NO-GO
 
@@ -20,9 +20,12 @@ This file is the only operational current-state pointer. Other documents may pre
 | Wave 2A — Product Core | PR #5; `product-core` contract, schema, entity-type/status registries, validator, and fixtures | Platform-independent structural foundation exists; no Product, Golden, SKU, commercial, import, or runtime record was created |
 | Wave 2B — Product Attributes | PR #6; `product-attribute` contract, schema, controlled supporting registries, validator, and fixtures | Attribute-definition foundation exists; canonical Product Attribute registry remains empty and no business values were approved |
 | Wave 2C — Measurements | PR #7; measurement contract/schema, two candidate dimensions, four candidate units, validator, and fixtures | Measurement infrastructure exists; entries are `CANDIDATE_UNVERIFIED` and do not assert Product values, weight, availability, pricing, or runtime mappings |
+| K-01 — Governance and Knowledge Reconciliation | PR #9; current-state ownership, Knowledge Archive Standard, Atlas disposition, and unified local/CI validation | Governance reconciliation is integrated; merge does not promote Atlas rows, Product facts, or lifecycle approval |
+| BP1 — Visible Local Prototype | PR #10; Persian RTL local prototype, inquiry-first preview, local design tokens, and safety validator | Local review evidence only; it is not a WordPress implementation, production site, or Product truth source |
+| BP2 — Machine-Readable Data Blueprint | PR #11; controlled Pipe blueprint, schema, offline validator, three approved pilot decisions, and 879 historical candidates | Data-administration design input exists; it creates no final SKU, import, publication, WordPress, WooCommerce, or production authority |
 | Atlas planning registry | 173 pending document records across 21 domains | Intake inventory only; no Atlas row is canonical merely because it is registered |
 
-All Wave 2A–2C validators are active in CI. The local `make test` entry point is being reconciled in K-01 to run the same foundation checks.
+Repository validators are active in CI and unified under `make test`. PR #12 adds a proposed BP2 administration scope, but remains Draft and `NO-GO` for merge until its schema, validator, and positive/negative/adversarial tests are hardened.
 
 ## Current Product and Knowledge Readiness
 
@@ -85,12 +88,14 @@ A Variable Parent Product is a commerce presentation and never the owner of cano
 - Blocksy Pro and Elementor Pro package/license compatibility remains unresolved.
 - Atlas rows require controlled adoption decisions before any content generation or promotion.
 - Historical authorization evidence for Wave 2A and Wave 2B is not explicitly linked in the current Founder Decision Log; merge history is implementation evidence, not a substitute for the originating authorization record.
+- PR #12 must close nested schema objects against unknown fields, validate the contract offline against JSON Schema Draft 2020-12, add positive and negative/adversarial tests, and wire all tests into `make test`.
+- The recovered Claude export and file packages are historical/private evidence only; raw exports, credentials, Mac inventory reports, legacy runtime code, and superseded repository snapshots are prohibited from repository integration.
 
 ## Approved Next Action
 
-Complete K-01 on `codex/k-01-governance-knowledge-reconciliation`, run repository validation and unified tests, create one scoped commit, push only that branch, and open one Draft PR against `main`.
+On local branch `codex/claude-recovery-consolidation`, add the recovery audit, reconcile only the ten authorized status/navigation documents, run repository validation and secret/link/diff checks, and present the exact unstaged diff for Founder review.
 
-Then stop for Founder review. Do not merge autonomously and do not begin Wave 2D, Product/Knowledge population, WordPress work, runtime work, import, publishing, deployment, or production mutation.
+Then stop. Commit, Push, PR, staging, and merge require later explicit authorization. PR #12 hardening remains a separate scope. Do not begin Product/Knowledge population, WordPress work, runtime work, import, publishing, deployment, or production mutation.
 
 ## Current References
 
@@ -98,6 +103,7 @@ Then stop for Founder review. Do not merge autonomously and do not begin Wave 2D
 - [Implementation Readiness](IMPLEMENTATION_READINESS.md)
 - [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md)
 - [K-01 Audit](AUDIT_REPORT_K01.md)
+- [Claude Recovery and Repository Consolidation Audit](AUDIT_REPORT_CLAUDE_RECOVERY_2026-07-26.md)
 - [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md)
 - [Founder Decision Log](17_FOUNDER_DECISION_LOG.md)
 - [Open Questions](18_OPEN_QUESTIONS.md)

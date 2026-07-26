@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.4.0
-- **Last Updated:** 2026-07-20
-- **Last Review:** 2026-07-20
+- **Version:** 0.5.0
+- **Last Updated:** 2026-07-26
+- **Last Review:** 2026-07-26
 - **Review Cycle:** On navigation or authority change; periodic cadence pending Founder approval
 - **Lifecycle:** Review
 - **Source of Truth:** [Documentation Index](08_DOCUMENTATION_INDEX.md) and [Navigation Map](09_NAVIGATION_MAP.md)
@@ -43,7 +43,7 @@ Every reader starts with:
 
 Readers then follow the applicable role path.
 
-For K-01, readers must review Current Project State, Knowledge Archive Standard, the Wave 2/K-01 section in [Traceability Matrix](TRACEABILITY_MATRIX.md), `FD-W2G-001` through `FD-W2G-004` and `FD-K01-001` in the Founder Decision Log, the three machine-readable foundations under `repository/data/`, and the [Atlas Adoption Matrix](../atlas/ATLAS_ADOPTION_MATRIX.csv). Historical Git decisions remain evidence within their original scope. Runtime, WordPress, Product/Knowledge population, import, publication, deployment, production, and repository-settings changes remain outside K-01.
+For current work, readers must obtain the exact phase, branch, authorization, pull-request state, GO/NO-GO boundary, and next action from Current Project State. The [Claude Recovery Audit](AUDIT_REPORT_CLAUDE_RECOVERY_2026-07-26.md), K-01 audit, Atlas Adoption Matrix, and merged pull requests remain evidence within their recorded scopes; none owns mutable operational state or grants execution authority.
 
 ## Founder Reading Path
 

@@ -8,11 +8,11 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-23
+- **Version:** 0.2.0
+- **Last Updated:** 2026-07-26
 - **Lifecycle:** Review
-- **Source of Truth:** Current repository evidence, accepted governing rules, explicit Founder decisions, and K-01 reconciliation
-- **Approval:** Pending Founder review of the K-01 Draft PR
+- **Source of Truth:** Current repository evidence, accepted governing rules, explicit Founder decisions, integrated K-01 reconciliation, and scoped recovery evidence
+- **Approval:** K-01 integration through PR #9 is repository evidence; document lifecycle approval remains separately governed and must not be inferred from merge
 
 ## Purpose
 
@@ -29,7 +29,7 @@ Define one non-duplicative archive structure for decisions, architecture, Produc
 | 5. Controlled Intake | Planned Atlas documents and adoption decisions | `atlas/` | No; intake is noncanonical until mapped, reviewed, and approved |
 | 6. Evidence Archive | Audits, snapshots, reports, historical prompts, and superseded records | `docs/AUDIT_REPORT_*`, dated reports, and explicitly marked archive references | No; evidence only |
 
-Physical relocation or deletion is a separate destructive-change decision. K-01 classifies material but does not move or delete historical files.
+Physical relocation or deletion is a separate destructive-change decision. K-01 classified material without moving or deleting historical files. The Claude recovery audit likewise classifies recovered sources as evidence, superseded material, prohibited sensitive/private content, or noncanonical reference; it authorizes no wholesale copy or promotion.
 
 ## One Owner Per Kind of Truth
 
@@ -82,7 +82,7 @@ Every Atlas row must have one disposition in `atlas/ATLAS_ADOPTION_MATRIX.csv`.
 - `REJECT`: concept conflicts with controlling rules or has no project value.
 - `ARCHIVE_REFERENCE`: preserve only as historical/reference material.
 
-All 173 current Atlas registry rows begin as controlled intake. K-01 may map obvious duplicates, but no `pending` row becomes canonical through this matrix alone.
+All 173 current Atlas registry rows began as controlled intake. K-01 mapped their dispositions through the integrated adoption matrix, but no `pending` row became canonical through that matrix or PR merge alone.
 
 ## Legacy Library Atlas Rule
 
@@ -108,3 +108,4 @@ Review this standard whenever a current-state owner, decision register, canonica
 - [Open Questions](18_OPEN_QUESTIONS.md)
 - [Repository Reading Order](READING_ORDER.md)
 - [Atlas Legacy Disposition](../atlas/LEGACY_ATLAS_DISPOSITION.md)
+- [Claude Recovery and Repository Consolidation Audit](AUDIT_REPORT_CLAUDE_RECOVERY_2026-07-26.md)
