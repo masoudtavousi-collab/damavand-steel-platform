@@ -33,8 +33,15 @@ Press `Control-C` in the terminal running the local server.
 ## Validate
 
 ```sh
-python3 prototypes/bp1-visible-local/tests/validate_bp1.py
+make setup
 make test
+```
+
+The setup command creates an ignored `.venv` with the same pinned validation
+dependencies used by CI. To run only the BP1 safety and contrast checks:
+
+```sh
+python3 prototypes/bp1-visible-local/tests/validate_bp1.py
 git diff --check
 ```
 

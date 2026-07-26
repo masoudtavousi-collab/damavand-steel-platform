@@ -38,6 +38,10 @@ SECRET_PATTERNS = (
     re.compile(r"\bgh[oprsu]_[A-Za-z0-9_]{20,}\b"),
     re.compile(r"\bsk-[A-Za-z0-9_-]{20,}\b"),
 )
+COLOR_TOKEN_PATTERN = re.compile(
+    r"(?P<name>--[a-z0-9-]+)\s*:\s*(?P<value>#[0-9a-fA-F]{6})\s*;"
+)
+MINIMUM_NORMAL_TEXT_CONTRAST = 4.5
 
 
 class PrototypeParser(HTMLParser):
@@ -70,6 +74,39 @@ class PrototypeParser(HTMLParser):
 def fail(message: str) -> None:
     print(f"BP1 VALIDATION FAILED: {message}", file=sys.stderr)
     raise SystemExit(1)
+
+
+def relative_luminance(hex_color: str) -> float:
+    channels = [
+        int(hex_color[index : index + 2], 16) / 255
+        for index in (1, 3, 5)
+    ]
+    linear = [
+        channel / 12.92
+        if channel <= 0.04045
+        else ((channel + 0.055) / 1.055) ** 2.4
+        for channel in channels
+    ]
+    return 0.2126 * linear[0] + 0.7152 * linear[1] + 0.0722 * linear[2]
+
+
+def contrast_ratio(first: str, second: str) -> float:
+    first_luminance = relative_luminance(first)
+    second_luminance = relative_luminance(second)
+    lighter = max(first_luminance, second_luminance)
+    darker = min(first_luminance, second_luminance)
+    return (lighter + 0.05) / (darker + 0.05)
+
+
+def css_rule_body(stylesheet: str, selector: str) -> str:
+    match = re.search(
+        rf"{re.escape(selector)}\s*\{{(?P<body>[^}}]*)\}}",
+        stylesheet,
+        flags=re.DOTALL,
+    )
+    if not match:
+        fail(f"missing required CSS rule: {selector}")
+    return match.group("body")
 
 
 for required_file in REQUIRED_FILES:
@@ -132,8 +169,70 @@ for storage_api in ("localStorage", "sessionStorage", "indexedDB", "document.coo
     if storage_api in javascript:
         fail(f"browser storage API found in prototype JavaScript: {storage_api}")
 
+tokens_css = (ROOT / "assets" / "css" / "tokens.css").read_text(encoding="utf-8")
+components_css = (ROOT / "assets" / "css" / "components.css").read_text(
+    encoding="utf-8"
+)
+color_tokens = {
+    match.group("name"): match.group("value")
+    for match in COLOR_TOKEN_PATTERN.finditer(tokens_css)
+}
+required_color_tokens = (
+    "--color-accent",
+    "--color-accent-strong",
+    "--color-on-accent",
+)
+missing_color_tokens = [
+    token for token in required_color_tokens if token not in color_tokens
+]
+if missing_color_tokens:
+    fail(f"missing required color tokens: {', '.join(missing_color_tokens)}")
+
+primary_body = css_rule_body(components_css, ".button-primary")
+primary_hover_body = css_rule_body(components_css, ".button-primary:hover")
+required_primary_declarations = (
+    (
+        primary_body,
+        r"background\s*:\s*var\(--color-accent\)\s*;",
+        "primary button must use --color-accent",
+    ),
+    (
+        primary_body,
+        r"color\s*:\s*var\(--color-on-accent\)\s*;",
+        "primary button must use --color-on-accent",
+    ),
+    (
+        primary_hover_body,
+        r"background\s*:\s*var\(--color-accent-strong\)\s*;",
+        "primary button hover must use --color-accent-strong",
+    ),
+)
+for rule_body, pattern, message in required_primary_declarations:
+    if not re.search(pattern, rule_body):
+        fail(message)
+
+primary_contrast = contrast_ratio(
+    color_tokens["--color-on-accent"],
+    color_tokens["--color-accent"],
+)
+primary_hover_contrast = contrast_ratio(
+    color_tokens["--color-on-accent"],
+    color_tokens["--color-accent-strong"],
+)
+for state, ratio in (
+    ("default", primary_contrast),
+    ("hover", primary_hover_contrast),
+):
+    if ratio < MINIMUM_NORMAL_TEXT_CONTRAST:
+        fail(
+            f"primary button {state} contrast {ratio:.2f}:1 is below "
+            f"{MINIMUM_NORMAL_TEXT_CONTRAST:.1f}:1"
+        )
+
 print(
     "BP1 VALIDATION PASSED: "
     f"{len(HTML_FILES)} Persian RTL pages; no forms, external resources, "
-    "network APIs, browser storage, public-commerce markup, or secrets."
+    "network APIs, browser storage, public-commerce markup, or secrets; "
+    f"primary CTA contrast {primary_contrast:.2f}:1 default and "
+    f"{primary_hover_contrast:.2f}:1 hover."
 )
