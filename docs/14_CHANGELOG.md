@@ -16,6 +16,12 @@
 
 This changelog records repository outcomes. It does not create approval, runtime readiness, Product facts, or release authority.
 
+## 2026-07-27 — Post-PR12 Governance Reconciliation
+
+- PR #15 reconciled the active current-state, baseline, readiness, roadmap, documentation index, navigation, reading order, repository health, traceability, changelog, and open-question records after PR #12.
+- Obsolete claims that PR #12 remained open or blocked for merge were removed from active documents; historical audit evidence was preserved unchanged.
+- The reconciliation retains the BP2 Data Administration contract's `DRAFT` lifecycle and all Product, Knowledge, Admin UI, WordPress/WooCommerce, import, publication, deployment, and production `NO-GO` boundaries.
+
 ## 2026-07-27 — BP2 Data Administration Hardening
 
 - PR #12 merged the documentation-only BP2 Data Administration scope and machine-readable contract.

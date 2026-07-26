@@ -139,8 +139,8 @@ The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain histo
 
 ## Post-PR12 Integration and Validation Coverage
 
-- PR #1–#14 are merged; PR numbering does not express merge order.
-- PR #13 integrated the Claude recovery consolidation, PR #14 aligned the post-recovery state, and PR #12 subsequently integrated the hardened BP2 Data Administration scope.
+- PR #1–#15 are merged; PR numbering does not express merge order.
+- PR #13 integrated the Claude recovery consolidation, PR #14 aligned the post-recovery state, PR #12 subsequently integrated the hardened BP2 Data Administration scope, and PR #15 reconciled the active governance state.
 - PR #12 added the documentation-only administration contract, a closed JSON Schema Draft 2020-12 schema, deterministic offline validation, and positive, negative, and adversarial tests.
 - The BP2 Data Administration contract remains `DRAFT` with implementation authority disabled. Its merge does not create Product/SKU, Admin UI, WordPress/WooCommerce, import, publication, deployment, or production authority.
 - The protected `main` baseline after PR #12 is maintained only in [Current Project State](CURRENT_PROJECT_STATE.md).
@@ -472,7 +472,7 @@ The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain histo
 
 - `FD-GIT-W1-001` historically authorized exactly 19 governance and repository-control paths, one commit, push of only `codex/class-b-wave-01-governance`, and one Draft PR while merge remained prohibited.
 - PR #1 and PR #2 were later separately approved and merged. The required Wave 1 commits remain in `main` ancestry, and both PR-head and merge-commit CI runs succeeded.
-- Wave 1, reconciliation, Wave 2A–2C structural foundations, K-01, the Build Phase 1 roadmap, BP1 prototype, BP2 blueprint, recovery consolidation, post-recovery state, and BP2 Data Administration hardening are integrated through PR #14 and the final PR #12 merge.
+- Wave 1, reconciliation, Wave 2A–2C structural foundations, K-01, the Build Phase 1 roadmap, BP1 prototype, BP2 blueprint, recovery consolidation, post-recovery state, BP2 Data Administration hardening, and post-PR12 governance reconciliation are integrated through PR #15.
 - Product/Knowledge population, workflow activation or execution, WordPress/runtime assets, publication, deployment, and production remain excluded and unauthorized.
 - PR #9 later merged K-01 after separate Founder approval; the earlier Draft-merge restriction is historical evidence and no longer a current blocker.
 

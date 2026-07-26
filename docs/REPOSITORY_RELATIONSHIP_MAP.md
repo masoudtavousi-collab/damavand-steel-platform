@@ -140,11 +140,11 @@ No passage of time, new file, Git initialization, architecture review, or AI rec
 
 - Repository A canonical authority: **CONFIRMED**.
 - Repository B classification: **`QUARANTINED_ARCHITECTURE_RESEARCH`**.
-- PR #1–#14: **MERGED**; PR #13 and PR #14 preceded the final PR #12 merge, and the current shared baseline is maintained in Current Project State.
+- PR #1–#15: **MERGED**; PR #13 and PR #14 preceded the final PR #12 merge, PR #15 reconciled the active governance state afterward, and the current shared baseline is maintained in Current Project State.
 - Class B Wave 1 exact-scope Git/documentation integration: **COMPLETE**; its 2026-07-19 authorization remains historical evidence and did not itself authorize merge.
 - Default branch `main` and main protection: **COMPLETE**; strict `repository-validation`, administrator enforcement, force-push prohibition, and deletion prohibition verified.
 - Wave 2 discovery and Wave 2A–2C structural foundations: **COMPLETE**. Product/Knowledge population and Wave 2D: **NO-GO pending separate Founder approval**.
-- K-01, BP1 local prototype, BP2 data blueprint, Claude recovery consolidation, post-recovery state, and BP2 Data Administration hardening: **INTEGRATED WITH BOUNDED MEANING**; none creates runtime, Product/SKU, publication, or production authority.
+- K-01, BP1 local prototype, BP2 data blueprint, Claude recovery consolidation, post-recovery state, BP2 Data Administration hardening, and post-PR12 governance reconciliation: **INTEGRATED WITH BOUNDED MEANING**; none creates runtime, Product/SKU, publication, or production authority.
 - Claude recovery material is classified by the recovery audit; exact current authorization is maintained only in Current Project State.
 - The BP2 Data Administration contract is merged but remains `DRAFT`, separately governed, and without Admin UI, Product, runtime, import, publication, deployment, or production authority.
 - Workflow activation, runtime, WordPress or Product Repository implementation, publication, deployment, and production mutation: **NO-GO**.

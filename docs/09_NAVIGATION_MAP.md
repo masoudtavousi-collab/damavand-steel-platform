@@ -43,7 +43,7 @@ This path is governance and Founder-review only. Completed integrations retain t
 
 ### Completed Git Integration Path and Current Boundary
 
-Historical baseline → PR #1–#4 governance integration → PR #5 Wave 2A Product Core → PR #6 Wave 2B Product Attributes → PR #7 Wave 2C Measurements → PR #9 K-01 integration → PR #8 Build Phase 1 implementation roadmap → PR #10 BP1 local prototype → PR #11 BP2 data blueprint → PR #13 Claude recovery consolidation → PR #14 post-recovery current state → PR #12 BP2 Data Administration hardening → current operational state in [Current Project State](CURRENT_PROJECT_STATE.md).
+Historical baseline → PR #1–#4 governance integration → PR #5 Wave 2A Product Core → PR #6 Wave 2B Product Attributes → PR #7 Wave 2C Measurements → PR #9 K-01 integration → PR #8 Build Phase 1 implementation roadmap → PR #10 BP1 local prototype → PR #11 BP2 data blueprint → PR #13 Claude recovery consolidation → PR #14 post-recovery current state → PR #12 BP2 Data Administration hardening → PR #15 post-PR12 governance reconciliation → current operational state in [Current Project State](CURRENT_PROJECT_STATE.md).
 
 Any later proposal, Product/Knowledge population, runtime work, or repository-settings change remains separately governed. This navigation path grants no execution authority.
 
