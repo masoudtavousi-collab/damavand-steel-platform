@@ -8,13 +8,25 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.4.0
-- **Last Updated:** 2026-07-27
+- **Version:** 0.4.2
+- **Last Updated:** 2026-07-28
 - **Lifecycle:** Review
 - **Source of Truth:** Merged Git history and scoped decision/evidence records
 - **Approval:** Pending Founder review; merged Git history remains evidence
 
 This changelog records repository outcomes. It does not create approval, runtime readiness, Product facts, or release authority.
+
+## 2026-07-28 — Post-PR16 Governance Reconciliation
+
+- PR #17 reconciled the active current-state, baseline, roadmap, repository relationship, documentation index, navigation, repository health, traceability, changelog, and open-question records after PR #16.
+- The reconciliation records the completed BP1 M1 hardening, removes its closed validation-tooling blocker, and advances the next safe action to read-only BP2 lifecycle decision preparation.
+- BP2 remains `DRAFT`; Product/Knowledge population, Admin UI, WordPress/WooCommerce, import, publication, deployment, runtime, and production remain `NO-GO`.
+
+## 2026-07-28 — BP1 M1 Accessibility and Local Validation Hardening
+
+- PR #16 corrected primary-CTA contrast and added fail-closed contrast validation for the bounded BP1 local prototype.
+- Local setup now creates an ignored validation environment from shared pinned requirements, and the BP1 validator is included in `make test`.
+- PR and post-merge `main` CI succeeded. The merge created no WordPress/WooCommerce, Product/SKU, import, publication, deployment, runtime, or production authority.
 
 ## 2026-07-27 — Post-PR12 Governance Reconciliation
 

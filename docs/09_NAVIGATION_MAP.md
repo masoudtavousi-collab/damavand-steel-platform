@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.8.0
-- **Last Updated:** 2026-07-27
-- **Last Review:** 2026-07-27
+- **Version:** 0.8.2
+- **Last Updated:** 2026-07-28
+- **Last Review:** 2026-07-28
 - **Review Cycle:** On repository path, document index, reading path, or relationship change
 - **Lifecycle:** Draft
 - **Source of Truth:** [Documentation Index](08_DOCUMENTATION_INDEX.md) and current repository paths
@@ -43,7 +43,7 @@ This path is governance and Founder-review only. Completed integrations retain t
 
 ### Completed Git Integration Path and Current Boundary
 
-Historical baseline → PR #1–#4 governance integration → PR #5 Wave 2A Product Core → PR #6 Wave 2B Product Attributes → PR #7 Wave 2C Measurements → PR #9 K-01 integration → PR #8 Build Phase 1 implementation roadmap → PR #10 BP1 local prototype → PR #11 BP2 data blueprint → PR #13 Claude recovery consolidation → PR #14 post-recovery current state → PR #12 BP2 Data Administration hardening → PR #15 post-PR12 governance reconciliation → current operational state in [Current Project State](CURRENT_PROJECT_STATE.md).
+Historical baseline → PR #1–#4 governance integration → PR #5 Wave 2A Product Core → PR #6 Wave 2B Product Attributes → PR #7 Wave 2C Measurements → PR #9 K-01 integration → PR #8 Build Phase 1 implementation roadmap → PR #10 BP1 local prototype → PR #11 BP2 data blueprint → PR #13 Claude recovery consolidation → PR #14 post-recovery current state → PR #12 BP2 Data Administration hardening → PR #15 post-PR12 governance reconciliation → PR #16 BP1 M1 accessibility and local-validation hardening → PR #17 post-PR16 governance reconciliation → current operational state in [Current Project State](CURRENT_PROJECT_STATE.md).
 
 Any later proposal, Product/Knowledge population, runtime work, or repository-settings change remains separately governed. This navigation path grants no execution authority.
 

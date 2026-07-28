@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.6.0
-- **Last Updated:** 2026-07-27
-- **Last Review:** 2026-07-27
+- **Version:** 0.6.2
+- **Last Updated:** 2026-07-28
+- **Last Review:** 2026-07-28
 - **Review Cycle:** On governing-rule or dependency change; periodic cadence pending Founder approval
 - **Lifecycle:** Review
 - **Source of Truth:** [Core Project Principles](00_PROJECT_BIBLE.md#core-project-principles), approved governing documents, and accepted ADRs; this matrix is a supporting view
@@ -24,11 +24,11 @@
 
 Provide a single navigational view from governing rules through business, architecture, repository, WordPress, and future implementation layers without authorizing implementation.
 
-## Post-PR12 Governance and Data-Administration Traceability
+## Post-PR12 Governance, Data-Administration, and BP1 M1 Traceability
 
 | Trace ID | Asset or event | Authority/evidence input | Reconciled outcome | Implementation status |
 | --- | --- | --- | --- | --- |
-| `POST12-MAIN` | PR #13, PR #14, PR #12, and PR #15 merged history | GitHub merge evidence and [Current Project State](CURRENT_PROJECT_STATE.md) | Records the actual order: recovery consolidation, post-recovery state, BP2 Data Administration hardening, then governance reconciliation | Repository evidence only |
+| `POST12-MAIN` | PR #13, PR #14, PR #12, PR #15, PR #16, and PR #17 merged history | GitHub merge evidence and [Current Project State](CURRENT_PROJECT_STATE.md) | Records the actual order: recovery consolidation, post-recovery state, BP2 Data Administration hardening, governance reconciliation, BP1 M1 hardening, then post-PR16 governance reconciliation | Repository evidence only |
 | `POST12-SCOPE` | [BP2 Data Administration Scope v1.0](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md) | BP2 blueprint, Founder-scoped administration decisions, and PR #12 | Documents 12 governed registries, mutation governance, smart inquiry order, stop conditions, and rollback boundary | `DRAFT`; no implementation authority |
 | `POST12-CONTRACT` | `repository/data/contracts/bp2-data-administration-v1.0.json` | BP2 Data Administration Scope and source blueprint | Machine-readable documentation-only administration contract | No Product/SKU or runtime authority |
 | `POST12-SCHEMA` | `repository/data/schemas/bp2-data-administration-v1.0.schema.json` | JSON Schema Draft 2020-12 | Closes root and nested object shapes and constrains the contract offline | Structural validation only |
@@ -36,6 +36,8 @@ Provide a single navigational view from governing rules through business, archit
 | `POST12-TESTS` | `tests/test_bp2_data_administration.py` and fixtures | Positive, negative, boundary, malformed, duplicate-key, permissive-schema, and remote-reference cases | Ten automated test methods are wired into `make test` and protected CI | Test evidence only |
 | `POST12-LIFECYCLE` | Merged Git state versus document lifecycle | Document Lifecycle and Current Project State | Explicitly separates PR merge completion from Founder approval of the contract | Founder approval or revision still required |
 | `POST12-STATE` | PR #15 active-document reconciliation | Current State, Baseline, Readiness, Roadmap, Index, Navigation, Reading Order, Health, Traceability, Changelog, and Open Questions | Removes obsolete PR #12 merge blockers from active records and advances the next action to read-only BP1 and BP2 lifecycle assessment | Documentation evidence only |
+| `BP1-M1-HARDENING` | PR #16 BP1 accessibility and local-validation hardening | M1 acceptance evidence, BP1 prototype, pinned validation requirements, and protected CI | Corrects primary-CTA contrast, adds fail-closed contrast checks, and unifies reproducible local/CI validation | Local prototype and test evidence only; no runtime authority |
+| `POST16-STATE` | PR #17 active-document reconciliation | Current State, Baseline, Roadmap, Repository Relationship Map, Index, Navigation, Health, Traceability, Changelog, and Open Questions | Records PR #16 completion, removes its closed blocker, and advances the next action to read-only BP2 lifecycle decision preparation | Documentation evidence only |
 
 ## Traceability Direction
 
