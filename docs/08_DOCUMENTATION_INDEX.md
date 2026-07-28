@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.8.0
-- **Last Updated:** 2026-07-27
-- **Last Review:** 2026-07-27
+- **Version:** 0.8.1
+- **Last Updated:** 2026-07-28
+- **Last Review:** 2026-07-28
 - **Review Cycle:** On document creation, removal, rename, lifecycle, authority, or navigation change
 - **Lifecycle:** Draft
 - **Source of Truth:** Current repository documentation paths plus each document's recorded status and authority
@@ -26,7 +26,7 @@ Provide the canonical map of repository documentation without replacing the auth
 
 ## Current Repository-Control Context
 
-[Current Project State](CURRENT_PROJECT_STATE.md) is the only mutable operational-state pointer. This index records document roles and stable integration history; it does not restate the active branch, current authorization, pull-request state, or next action. K-01, the Build Phase 1 roadmap, BP1, the BP2 data blueprint, Claude recovery consolidation, post-recovery state, the merged BP2 Data Administration hardening, and PR #15 governance reconciliation retain their recorded bounded meanings. The administration contract remains `DRAFT` and grants no implementation authority. Historical records retain chronology and approved future paths do not imply asset presence.
+[Current Project State](CURRENT_PROJECT_STATE.md) is the only mutable operational-state pointer. This index records document roles and stable integration history; it does not restate the active branch, current authorization, pull-request state, or next action. K-01, the Build Phase 1 roadmap, BP1 and its PR #16 M1 hardening, the BP2 data blueprint, Claude recovery consolidation, post-recovery state, the merged BP2 Data Administration hardening, and PR #15 governance reconciliation retain their recorded bounded meanings. The administration contract remains `DRAFT` and grants no implementation authority. Historical records retain chronology and approved future paths do not imply asset presence.
 
 ## Categories and Complete Document Map
 

@@ -16,6 +16,7 @@ This roadmap defines sequence and gates, not mutable operational state. The exac
 - PR #13 integrated the Claude recovery consolidation; PR #14 then aligned the post-recovery current-state boundary.
 - PR #12 subsequently integrated the hardened BP2 Data Administration scope, contract, closed Draft 2020-12 schema, deterministic offline validator, and positive/negative/adversarial tests.
 - PR #15 reconciled the active current-state, baseline, readiness, roadmap, navigation, health, traceability, changelog, and open-question records after PR #12.
+- PR #16 integrated the bounded BP1 M1 accessibility and local-validation hardening; it remains local prototype and test-tooling evidence only.
 - The merged BP2 Data Administration contract remains `DRAFT`, has `implementation_authority: false`, and derives no Product, Admin UI, runtime, import, publication, deployment, or production authority from this roadmap or its merge.
 - The historical Wave 1 branch/commit/push/Draft-PR scope did not authorize merge and remains preserved as chronology. Its later approved merge granted no Wave 2, runtime, or implementation authority.
 - Wave 2A–2C are structural, platform-independent foundations. They created no canonical Product rows, Product Attribute definitions, Master Data, Golden package, WordPress implementation, publication, deployment, or production mutation.
