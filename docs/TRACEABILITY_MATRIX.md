@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.7.0
+- **Version:** 0.8.0
 - **Last Updated:** 2026-07-28
 - **Last Review:** 2026-07-28
 - **Review Cycle:** On governing-rule or dependency change; periodic cadence pending Founder approval
@@ -24,11 +24,11 @@
 
 Provide a single navigational view from governing rules through business, architecture, repository, WordPress, and future implementation layers without authorizing implementation.
 
-## Post-PR12 Governance, Data-Administration, and BP1 M1 Traceability
+## Post-PR12 and Cross-Domain Governance Traceability
 
 | Trace ID | Asset or event | Authority/evidence input | Reconciled outcome | Implementation status |
 | --- | --- | --- | --- | --- |
-| `POST12-MAIN` | PR #13, PR #14, PR #12, PR #15, PR #16, PR #17, and PR #18 merged history | GitHub merge evidence and [Current Project State](CURRENT_PROJECT_STATE.md) | Records the actual order: recovery consolidation, post-recovery state, BP2 hardening, governance reconciliation, BP1 M1 hardening, post-PR16 reconciliation, then BP2 lifecycle approval | Repository evidence only |
+| `POST12-MAIN` | PR #13, PR #14, PR #12, PR #15, PR #16, PR #17, PR #18, and PR #19 merged history | GitHub merge evidence and [Current Project State](CURRENT_PROJECT_STATE.md) | Records the actual order: recovery consolidation, post-recovery state, BP2 hardening, governance reconciliation, BP1 M1 hardening, post-PR16 reconciliation, BP2 lifecycle approval, then post-PR18 reconciliation | Repository evidence only |
 | `POST12-SCOPE` | [BP2 Data Administration Scope v1.0](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md) | BP2 blueprint, PR #12, and `FD-BP2-ADM-001` | Documents 12 governed registries, mutation governance, smart inquiry order, stop conditions, lifecycle evidence, and rollback boundary | `APPROVED` documentation governance; no implementation authority |
 | `POST12-CONTRACT` | `repository/data/contracts/bp2-data-administration-v1.0.json` | BP2 Data Administration Scope, source blueprint, `FD-BP2-ADM-001`, and `BP2-ADM-REVIEW-001` | Machine-readable documentation-only administration contract with linear `DRAFT → REVIEW → APPROVED` evidence | No Product/SKU or runtime authority |
 | `POST12-SCHEMA` | `repository/data/schemas/bp2-data-administration-v1.0.schema.json` | JSON Schema Draft 2020-12 | Closes root and nested object shapes and constrains the contract offline | Structural validation only |
@@ -38,6 +38,11 @@ Provide a single navigational view from governing rules through business, archit
 | `POST12-STATE` | PR #15 active-document reconciliation | Current State, Baseline, Readiness, Roadmap, Index, Navigation, Reading Order, Health, Traceability, Changelog, and Open Questions | Removes obsolete PR #12 merge blockers from active records and advances the next action to read-only BP1 and BP2 lifecycle assessment | Documentation evidence only |
 | `BP1-M1-HARDENING` | PR #16 BP1 accessibility and local-validation hardening | M1 acceptance evidence, BP1 prototype, pinned validation requirements, and protected CI | Corrects primary-CTA contrast, adds fail-closed contrast checks, and unifies reproducible local/CI validation | Local prototype and test evidence only; no runtime authority |
 | `POST16-STATE` | PR #17 active-document reconciliation | Current State, Baseline, Roadmap, Repository Relationship Map, Index, Navigation, Health, Traceability, Changelog, and Open Questions | Records PR #16 completion, removes its closed blocker, and advances the next action to read-only BP2 lifecycle decision preparation | Documentation evidence only |
+| `POST18-STATE` | PR #19 active-document reconciliation | PR #18 merge and post-merge CI | Closes the BP2 lifecycle integration cycle and returns the project to read-only next-step planning | Documentation evidence only |
+| `GOV-XD-00-AUTH` | `FD-GOV-XD-00` | Founder authorization dated 2026-07-28 | Exact eleven-file governance allowlist, conditional Git cycle, independent QA, and no branch deletion | Governance-only authorization |
+| `GOV-XD-00-STATE` | [Current Project State](CURRENT_PROJECT_STATE.md), [Project Baseline](PROJECT_BASELINE.md), and [Codex Sprint Protocol](CODEX_SPRINT_PROTOCOL.md) | Reviewed input anchor `b391ca1...`, PR #19, CI run `30372385447`, and self-reference review | Separates semantic operational state, reviewed input anchor, and dynamically resolved live Git tip | No implementation authority |
+| `GOV-XD-00-ORDER` | [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md) and [Implementation Readiness](IMPLEMENTATION_READINESS.md) | Five domain plans and independent cross-domain QA | Orders Product Data, Administration, Runtime, Knowledge, adapter, pilot, QA, expansion, and launch gates; selects `PD-01` only as a decision-package target | `PD-01` execution not authorized |
+| `GOV-XD-00-SOD` | [Codex Sprint Protocol](CODEX_SPRINT_PROTOCOL.md) | Founder control and independent QA | Requires separate executor, reviewer, Founder approval, exact Scope/Approval Packet, and Sprint-specific Test Contract | Process boundary only |
 
 ## Traceability Direction
 

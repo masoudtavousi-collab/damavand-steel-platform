@@ -2,9 +2,24 @@
 
 ## Current-State Boundary
 
-[Current Project State](CURRENT_PROJECT_STATE.md) is the sole source for the active branch, baseline SHA, authorization, next action, and GO/NO-GO boundary. Historical sprint permissions remain evidence within their original exact scope and must not be presented as current authority.
+[Current Project State](CURRENT_PROJECT_STATE.md) is the sole source for the semantic phase, authorization, next action, and GO/NO-GO boundary. The live `main` SHA is not stored as permanent current state: resolve GitHub `refs/heads/main` at dispatch time and record the exact starting SHA in the Sprint Scope/Approval Packet. Historical sprint permissions and fixed SHAs remain dated evidence within their original exact scope and must not be presented as current authority.
 
 For K-01, the Founder authorized governance/current-state reconciliation, Atlas disposition, unified tests, one scoped commit, push of only `codex/k-01-governance-knowledge-reconciliation`, and one Draft PR against `main`. Autonomous merge, Wave 2D, Product/Knowledge population, workflow execution or activation, runtime, WordPress, import, publication, deployment, production mutation, and repository-setting changes remain `NO-GO`.
+
+For `GOV-XD-00`, the Founder authorized only the eleven-path governance allowlist recorded in `FD-GOV-XD-00`, one scoped Branch/Commit/Push/Draft-PR cycle, independent review, conditional Merge Commit, and post-merge `main` CI. This authorization ends when that cycle closes and grants no `PD-01`, Product Data, BP2 implementation, Knowledge, WordPress/WooCommerce, import, runtime, deployment, production, or branch-deletion authority.
+
+## Baseline and Approval Packet
+
+Every dispatched Sprint must record:
+
+- the exact GitHub `main` starting SHA resolved at dispatch time;
+- one objective and exact path/system allowlist;
+- sources, exclusions, stop conditions, and expected evidence;
+- named executor, independent reviewer, Founder approval boundary, and rollback owner where applicable;
+- a Sprint-specific Test Contract covering positive, negative, boundary, adversarial, cross-file, and fail-closed behavior in proportion to risk; and
+- explicit Git, data, runtime, and production permissions as separate gates.
+
+Changing the live Git tip alone does not trigger a Current Project State update. A state-document change is required only when semantic phase, authorization, next action, gate state, or GO/NO-GO changes.
 
 ## Standard Prompt Structure
 
@@ -25,6 +40,7 @@ GO / NO-GO
 ## Mandatory Rules
 
 - One objective per sprint; no silent scope expansion or automatic next sprint.
+- Separate executor, independent reviewer, and Founder approval authority; no self-review or self-approval.
 - Do not duplicate architecture. Corrections update files in place; no V2 duplication unless explicitly requested.
 - Technically valid does not mean commercially approved.
 - Every commercially meaningful row needs provenance and status.

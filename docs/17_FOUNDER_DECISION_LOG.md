@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.11.0
+- **Version:** 0.12.0
 - **Last Updated:** 2026-07-28
 - **Last Review:** 2026-07-28
 - **Review Cycle:** On Founder decision creation, resolution, supersession, or dependency change
@@ -60,6 +60,12 @@ Index every repository item explicitly marked as requiring a Founder decision. T
 | ID | Decision | Decision owner / date | Approval scope | Evidence | Status / supersession |
 | --- | --- | --- | --- | --- | --- |
 | `FD-BP2-ADM-001` | Execute the BP2 Data Administration lifecycle in the ordered sequence `DRAFT → REVIEW → APPROVED`; perform governance-only review and corrections; preserve `implementation_authority: false`; and reject any direct `DRAFT → APPROVED` transition. | Founder / 2026-07-28 | BP2 scope, Contract, Schema, Validator, tests, direct governance reconciliation, scoped Branch/Commit/Push/PR, conditional Merge Commit, and post-merge CI only | Founder authorization recorded in the active Codex task; [BP2 Data Administration Scope](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md); `BP2-ADM-REVIEW-001`; merged PR #18; successful local, Review-stage, final-PR, and post-merge `main` validation | `APPROVED` on 2026-07-28 after recorded `DRAFT → REVIEW → APPROVED`, completed review, resolved blockers, successful CI, and Merge Commit `180bea23a3f13e3c957f3a323bc215b9d2e4b972`. No Admin UI, Product/SKU, WordPress/WooCommerce, import, publication, deployment, runtime, production, or branch deletion is authorized. |
+
+## Cross-Domain Execution Charter Decision
+
+| ID | Decision | Decision owner / date | Approval scope | Evidence | Status / supersession |
+| --- | --- | --- | --- | --- | --- |
+| `FD-GOV-XD-00` | Execute the documentation-only Cross-Domain Execution Charter; separate semantic operational state from the dynamic Git tip; require per-Sprint starting-SHA resolution, exact Scope/Approval and Test Contracts, executor/reviewer/Founder separation, and ordered dependency gates; select `PD-01` only as the next decision-package target. | Founder / 2026-07-28 | Exactly `AGENTS.md`, `docs/CURRENT_PROJECT_STATE.md`, `docs/PROJECT_BASELINE.md`, `docs/IMPLEMENTATION_READINESS.md`, `docs/PROJECT_EXECUTION_ROADMAP.md`, `docs/CODEX_SPRINT_PROTOCOL.md`, `docs/REPOSITORY_HEALTH.md`, `docs/17_FOUNDER_DECISION_LOG.md`, `docs/18_OPEN_QUESTIONS.md`, `docs/TRACEABILITY_MATRIX.md`, and `docs/14_CHANGELOG.md`; Branch `codex/gov-xd-00-execution-charter`; scoped Commit/Push/Draft PR; independent review; conditional Merge Commit and post-merge `main` CI | Reviewed input anchor `b391ca1632d4a7d266e33aa5e279e214941901ae`; PR #19; CI run `30372385447`; five domain plans; independent QA and self-reference review; Founder authorization recorded in the active Codex task | `APPROVED` for this exact governance/Git cycle. The state declaration becomes effective when its carrying PR merges. No Contract, Schema, Validator, Test, Product/Knowledge data, BP2 implementation, Admin UI, WordPress/WooCommerce, import, credential, backup, staging, runtime, deployment, production, branch deletion, or `PD-01` execution is authorized. |
 
 ## Settled Golden Pipe Pilot Decision
 
