@@ -26,7 +26,7 @@ Provide the canonical map of repository documentation without replacing the auth
 
 ## Current Repository-Control Context
 
-[Current Project State](CURRENT_PROJECT_STATE.md) is the only mutable operational-state pointer. This index records document roles and stable integration history; it does not restate the active branch, current authorization, pull-request state, or next action. K-01, the Build Phase 1 roadmap, BP1 and its PR #16 M1 hardening, the BP2 data blueprint, Claude recovery consolidation, post-recovery state, the merged BP2 Data Administration hardening, PR #15 governance reconciliation, PR #17 post-PR16 reconciliation, and `FD-BP2-ADM-001` retain their recorded bounded meanings. The administration contract is `APPROVED` only as documentation governance and grants no implementation authority. Historical records retain chronology and approved future paths do not imply asset presence.
+[Current Project State](CURRENT_PROJECT_STATE.md) is the only mutable operational-state pointer. This index records document roles and stable integration history; it does not restate the active branch, current authorization, pull-request state, or next action. K-01, the Build Phase 1 roadmap, BP1 and its PR #16 M1 hardening, the BP2 data blueprint, Claude recovery consolidation, post-recovery state, the merged BP2 Data Administration hardening, PR #15 governance reconciliation, PR #17 post-PR16 reconciliation, and PR #18 BP2 lifecycle approval retain their recorded bounded meanings. The administration contract is `APPROVED` only as documentation governance and grants no implementation authority. Historical records retain chronology and approved future paths do not imply asset presence.
 
 ## Categories and Complete Document Map
 

@@ -140,7 +140,7 @@ No passage of time, new file, Git initialization, architecture review, or AI rec
 
 - Repository A canonical authority: **CONFIRMED**.
 - Repository B classification: **`QUARANTINED_ARCHITECTURE_RESEARCH`**.
-- PR #1–#17: **MERGED**; PR #13 and PR #14 preceded the final PR #12 merge, PR #15 reconciled the active governance state afterward, PR #16 hardened BP1 M1 accessibility and local validation, PR #17 reconciled the resulting governance state, and the current shared baseline is maintained in Current Project State.
+- PR #1–#18: **MERGED**; PR #13 and PR #14 preceded the final PR #12 merge, PR #15 reconciled the active governance state afterward, PR #16 hardened BP1 M1 accessibility and local validation, PR #17 reconciled the resulting governance state, PR #18 integrated the BP2 lifecycle approval, and the current shared baseline is maintained in Current Project State.
 - Class B Wave 1 exact-scope Git/documentation integration: **COMPLETE**; its 2026-07-19 authorization remains historical evidence and did not itself authorize merge.
 - Default branch `main` and main protection: **COMPLETE**; strict `repository-validation`, administrator enforcement, force-push prohibition, and deletion prohibition verified.
 - Wave 2 discovery and Wave 2A–2C structural foundations: **COMPLETE**. Product/Knowledge population and Wave 2D: **NO-GO pending separate Founder approval**.
