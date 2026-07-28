@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.6.1
+- **Version:** 0.6.2
 - **Last Updated:** 2026-07-28
 - **Last Review:** 2026-07-28
 - **Review Cycle:** On approved decision, completed sprint, repository disposition, readiness, or execution-state change
@@ -16,7 +16,7 @@
 - **Source of Truth:** Accepted governing sources, recorded Founder decisions, [Current Project State](CURRENT_PROJECT_STATE.md), approved Master Data, and current repository evidence within their declared scope
 - **Dependencies:** [Codex Repository Instructions](../AGENTS.md), [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md), [Current Project State](CURRENT_PROJECT_STATE.md), and [Execution Gates](EXECUTION_GATES.md)
 - **Related Documents:** [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md), [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md), [Founder Decision Log](17_FOUNDER_DECISION_LOG.md), and `GIT-02S Audit`
-- **Traceability:** CP-001 through CP-010; ADR-0001; FD-PILOT-001; GIT-02S; PR #1–#16 merge evidence; Wave 2A–2C; FD-K01-001; BP1; BP2; Claude Recovery Audit
+- **Traceability:** CP-001 through CP-010; ADR-0001; FD-PILOT-001; GIT-02S; PR #1–#17 merge evidence; Wave 2A–2C; FD-K01-001; BP1; BP2; Claude Recovery Audit
 - **AI Compatibility:** Primary concise entry point; underlying sources control within their recorded authority
 - **Approval:** Pending Founder review of the reconciled documentation; recorded Founder decisions remain accepted within their exact scope
 
@@ -48,7 +48,7 @@ Repository B cannot override the Founder, Repository A, CP-001 through CP-010, t
 
 The exact current phase, baseline SHA, active branch, authorization, pull-request state, GO/NO-GO boundary, and next action are maintained only in [Current Project State](CURRENT_PROJECT_STATE.md).
 
-Historical Git authorizations retain their original exact scope and do not become retroactive merge or runtime authority. PR #1–#16 are repository evidence; their numbering does not represent merge order, and a merge is not a substitute for the originating Founder authorization record or lifecycle approval. PR #13 recovery consolidation and PR #14 post-recovery state preceded the final merge of PR #12; PR #15 then reconciled the active governance state, and PR #16 closed the bounded BP1 M1 accessibility and local-validation gaps. Wave 2A–2C remain structural foundations, while BP1 and BP2 remain bounded evidence/design assets rather than runtime or final-SKU authority.
+Historical Git authorizations retain their original exact scope and do not become retroactive merge or runtime authority. PR #1–#17 are repository evidence; their numbering does not represent merge order, and a merge is not a substitute for the originating Founder authorization record or lifecycle approval. PR #13 recovery consolidation and PR #14 post-recovery state preceded the final merge of PR #12; PR #15 then reconciled the active governance state, PR #16 closed the bounded BP1 M1 accessibility and local-validation gaps, and PR #17 reconciled the resulting active governance state. Wave 2A–2C remain structural foundations, while BP1 and BP2 remain bounded evidence/design assets rather than runtime or final-SKU authority.
 
 ## Architecture and Governance Status
 
@@ -109,8 +109,8 @@ Sprint 12A provides public, unauthenticated, read-only evidence of WordPress, Wo
 ## Git, Backup, Restore, and Staging
 
 - Repository A retains its historical v1.0 baseline. Before this reconciliation sprint, the synchronized `main` working tree was verified clean.
-- The canonical and GitHub default branch is `main`; its current verified SHA is recorded only in [Current Project State](CURRENT_PROJECT_STATE.md).
-- PR #1–#16 are merged. PR #5 added Product core, PR #6 added Product Attributes, PR #7 added measurements, PR #9 integrated K-01, PR #8 added the Build Phase 1 implementation roadmap after the PR #9 governance baseline, PR #10 added the bounded BP1 local prototype, PR #11 added the BP2 machine-readable data blueprint, PR #13 consolidated Claude recovery evidence, PR #14 aligned the post-recovery state, PR #12 subsequently merged the hardened BP2 Data Administration contract and validation suite, PR #15 reconciled active governance after that merge, and PR #16 hardened BP1 M1 accessibility and local validation.
+- The canonical and GitHub default branch is `main`; its verified baseline evidence and live-tip resolution rule are recorded only in [Current Project State](CURRENT_PROJECT_STATE.md).
+- PR #1–#17 are merged. PR #5 added Product core, PR #6 added Product Attributes, PR #7 added measurements, PR #9 integrated K-01, PR #8 added the Build Phase 1 implementation roadmap after the PR #9 governance baseline, PR #10 added the bounded BP1 local prototype, PR #11 added the BP2 machine-readable data blueprint, PR #13 consolidated Claude recovery evidence, PR #14 aligned the post-recovery state, PR #12 subsequently merged the hardened BP2 Data Administration contract and validation suite, PR #15 reconciled active governance after that merge, PR #16 hardened BP1 M1 accessibility and local validation, and PR #17 reconciled the post-PR16 governance state.
 - The 2026-07-19 Wave 1 branch, exact allowlist, commit, push, and Draft-PR restrictions remain historical execution evidence and must not be rewritten as earlier merge authority.
 - Wave 2A–2C structural foundations are present. No Product records, WordPress/runtime implementation, publication, deployment, or production mutation occurred.
 - Main-branch protection is enabled with administrator enforcement, strict status checks, required check `repository-validation`, force-push disabled, and branch deletion disabled.
@@ -125,7 +125,7 @@ The operational GO/NO-GO boundary is maintained only in [Current Project State](
 
 - Repository A is the only canonical Damavand Steel repository.
 - Repository B is `QUARANTINED_ARCHITECTURE_RESEARCH` and has no current project authority.
-- PR #1–#16 are merged; the current `main` baseline is maintained in Current Project State.
+- PR #1–#17 are merged; the current `main` baseline is maintained in Current Project State.
 - `main` is the default branch and is protected with the required `repository-validation` check.
 - Wave 1 and Wave 2 discovery are complete. Wave 2A–2C structural foundations are merged without Product Data or runtime authority.
 - The canonical repository hierarchy is `Catalog → Platform → Family → Series → Variant Rules → SKU`; commerce Parent/Variation constructs are downstream mappings.

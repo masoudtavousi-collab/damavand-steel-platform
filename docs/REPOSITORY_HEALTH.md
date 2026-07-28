@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.6.1
+- **Version:** 0.6.2
 - **Last Updated:** 2026-07-28
 - **Last Review:** 2026-07-28
 - **Review Cycle:** On repository-governance, document, authority, metadata, navigation, traceability, or validation change
@@ -129,7 +129,7 @@ The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain histo
 - The historical immutable baseline contains 157 tracked files; both baseline tags still resolve to the original baseline commit.
 - Annotated tags `baseline-v1.0.0` and `repo-v1.0.0` resolve to the same baseline commit.
 - The tagged tree contains the baseline manifest, release notes, readiness assessment, roadmap, engineering guidelines, synchronized repository records, and Freeze Audit.
-- Local `main`, `origin/main`, and live GitHub `main` were synchronized at the K-01 start; the exact SHA is recorded in Current Project State.
+- Local `main`, `origin/main`, and live GitHub `main` were synchronized at the K-01 start; that dated SHA remains K-01 evidence, while the current baseline and live-tip resolution rule are maintained in Current Project State.
 - At the K-01 verification point, PR #1–#7 were merged and Wave 2A–2C provided Product core, Product Attribute, and measurement structural foundations. Later integrations are recorded below and in Current Project State.
 - Workflows remain inactive. No Product Data population, WordPress/runtime implementation, publication, deployment, or production mutation occurred.
 - GitHub default branch is `main`. Main protection has administrator enforcement, strict/up-to-date required check `repository-validation`, force-push disabled, and deletion disabled.
@@ -139,12 +139,12 @@ The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain histo
 
 ## Post-PR12 Integration and Validation Coverage
 
-- PR #1–#16 are merged; PR numbering does not express merge order.
-- PR #13 integrated the Claude recovery consolidation, PR #14 aligned the post-recovery state, PR #12 subsequently integrated the hardened BP2 Data Administration scope, PR #15 reconciled the active governance state, and PR #16 hardened BP1 M1 accessibility and local validation.
+- PR #1–#17 are merged; PR numbering does not express merge order.
+- PR #13 integrated the Claude recovery consolidation, PR #14 aligned the post-recovery state, PR #12 subsequently integrated the hardened BP2 Data Administration scope, PR #15 reconciled the active governance state, PR #16 hardened BP1 M1 accessibility and local validation, and PR #17 reconciled the resulting governance state.
 - PR #12 added the documentation-only administration contract, a closed JSON Schema Draft 2020-12 schema, deterministic offline validation, and positive, negative, and adversarial tests.
 - The BP2 Data Administration contract remains `DRAFT` with implementation authority disabled. Its merge does not create Product/SKU, Admin UI, WordPress/WooCommerce, import, publication, deployment, or production authority.
 - The current protected `main` baseline is maintained only in [Current Project State](CURRENT_PROJECT_STATE.md).
-- Unified repository validation passes with pinned dependencies; PR #16 added the BP1 safety/contrast validator and reproducible local setup, and its post-merge `main` CI succeeded. Static success does not satisfy Product Data or runtime gates.
+- Unified repository validation passes with pinned dependencies; PR #16 added the BP1 safety/contrast validator and reproducible local setup, its post-merge `main` CI succeeded, and PR #17 branch CI passed before its approved merge. Static success does not satisfy Product Data or runtime gates.
 
 ## WordPress Architecture Coverage
 
@@ -463,7 +463,7 @@ The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain histo
 - `FD-PILOT-001` durably records the Golden Parent and exactly three approved pilot combinations; their reference IDs are not final commercial SKUs.
 - Current Pipe counts are 3 `APPROVED`, 879 `CANDIDATE_UNVERIFIED`, and 882 with market availability `MISSING_DATA_VALUE`.
 - Golden approval exists in Founder decisions and governing prose, but no canonical machine-readable Golden or Master Data package exists on `main`. Import, Runtime, and Publishing remain `NO-GO`.
-- Sprint 12A remains historical product/runtime evidence. Later repository integrations through PR #16 are governance, prototype, contract, and validation evidence only; no runtime implementation sprint is active.
+- Sprint 12A remains historical product/runtime evidence. Later repository integrations through PR #17 are governance, prototype, contract, and validation evidence only; no runtime implementation sprint is active.
 - GIT-02S created no ADR because it introduced no new enterprise architecture decision.
 - Repository A static validation passed within the dated GIT-02S evidence scope; that result does not substitute for fresh post-merge reconciliation validation.
 - Runtime, import, publishing, deployment, product creation, bulk SKU generation, Factory implementation, and any unscoped or autonomous repository merge remain `NO-GO` without separate Founder approval.
@@ -472,7 +472,7 @@ The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain histo
 
 - `FD-GIT-W1-001` historically authorized exactly 19 governance and repository-control paths, one commit, push of only `codex/class-b-wave-01-governance`, and one Draft PR while merge remained prohibited.
 - PR #1 and PR #2 were later separately approved and merged. The required Wave 1 commits remain in `main` ancestry, and both PR-head and merge-commit CI runs succeeded.
-- Wave 1, reconciliation, Wave 2A–2C structural foundations, K-01, the Build Phase 1 roadmap, BP1 prototype and M1 hardening, BP2 blueprint, recovery consolidation, post-recovery state, BP2 Data Administration hardening, and post-PR12 governance reconciliation are integrated through PR #16.
+- Wave 1, reconciliation, Wave 2A–2C structural foundations, K-01, the Build Phase 1 roadmap, BP1 prototype and M1 hardening, BP2 blueprint, recovery consolidation, post-recovery state, BP2 Data Administration hardening, post-PR12 governance reconciliation, and post-PR16 governance reconciliation are integrated through PR #17.
 - Product/Knowledge population, workflow activation or execution, WordPress/runtime assets, publication, deployment, and production remain excluded and unauthorized.
 - PR #9 later merged K-01 after separate Founder approval; the earlier Draft-merge restriction is historical evidence and no longer a current blocker.
 

@@ -2,12 +2,12 @@
 
 - **Current date:** 2026-07-28
 - **Canonical repository:** `masoudtavousi-collab/damavand-steel-platform`
-- **Verified `main` baseline:** `aeb4cf9fa3c13ee3de7d519e111cf0291dab8fd2`, the PR #16 merge commit
+- **Verified pre-PR17 `main` baseline:** `aeb4cf9fa3c13ee3de7d519e111cf0291dab8fd2`, the PR #16 merge commit; resolve the live `main` tip from Git after PR #17
 - **Last completed substantive repository integration:** BP1 M1 Accessibility and Local Validation Hardening, integrated by PR #16
 - **Current phase:** BP1 M1 Hardening Complete; BP2 Data Administration Lifecycle Decision Planning
-- **Current authorized branch:** `codex/post-pr16-governance-reconciliation`, documentation-only
-- **Current authorization:** reconcile active governance records to the verified PR #16 merge state and validate locally; no Product, Knowledge, Admin UI, runtime, commit, push, pull-request, or merge authority is granted by this record
-- **Merge:** PR #16 was separately approved and merged; merge of the current reconciliation branch is not authorized
+- **Current authorized branch:** no Product, Knowledge, Admin UI, or runtime implementation branch is authorized after the documentation-only PR #17 integration
+- **Current authorization:** after PR #17 integration, prepare a read-only Founder decision package for the merged BP2 Data Administration contract's `DRAFT` lifecycle
+- **Merge:** PR #17 is the separately approved documentation-only integration; no subsequent PR or merge is authorized
 - **Runtime / WordPress / WooCommerce mutation:** NO-GO
 - **Import / publishing / deployment / product creation / bulk SKU generation:** NO-GO
 
@@ -28,6 +28,7 @@ This file is the only operational current-state pointer. Other documents may pre
 | BP2 — Data Administration Contract Hardening | PR #12; administration scope, contract, closed Draft 2020-12 schema, deterministic offline validator, and positive/negative/adversarial tests | Technical hardening is complete and merged; the contract remains `DRAFT`, has no implementation authority, and creates no Admin UI, Product/SKU, WordPress/WooCommerce, import, publication, deployment, or production authority |
 | Post-PR12 Governance Reconciliation | PR #15; active state, baseline, readiness, roadmap, index, navigation, health, traceability, changelog, and open-question alignment | Removes obsolete PR #12 merge blockers from active documents while preserving historical audits and all Product/runtime `NO-GO` boundaries |
 | BP1 — M1 Accessibility and Local Validation Hardening | PR #16; primary-CTA contrast correction, fail-closed contrast validation, reproducible local setup, and unified local/CI test entry point | Closes the recorded BP1 M1 contrast and validation-tooling gaps; the prototype remains local-only evidence and creates no WordPress, WooCommerce, Product/SKU, import, publication, deployment, or production authority |
+| Post-PR16 Governance Reconciliation | PR #17; active state, baseline, roadmap, repository relationship, index, navigation, health, traceability, changelog, and open-question alignment | Records the PR #16 completion and removes its closed blocker while preserving the BP2 `DRAFT` lifecycle and all Product/runtime `NO-GO` boundaries |
 | Atlas planning registry | 173 pending document records across 21 domains | Intake inventory only; no Atlas row is canonical merely because it is registered |
 
 Repository validators are active in CI and unified under `make test`. PR #12 hardening is merged: nested schema objects are closed, JSON Schema Draft 2020-12 is enforced offline, validation output is deterministic, and positive, negative, and adversarial tests are wired into the unified test entry point. PR #16 adds the BP1 safety/contrast validator to that entry point and aligns local setup with the pinned CI dependencies. These technical completions do not change the administration contract's `DRAFT` lifecycle or authorize implementation.
@@ -99,9 +100,9 @@ A Variable Parent Product is a commerce presentation and never the owner of cano
 
 ## Approved Next Action
 
-On `codex/post-pr16-governance-reconciliation`, reconcile the active governance records to PR #16 and the verified `main` baseline, run local validation, and stop before commit, push, pull request, or merge unless each Git gate is separately authorized.
+After PR #17 is accepted on `main`, prepare a read-only Founder decision package for the merged BP2 Data Administration contract's `DRAFT` lifecycle.
 
-After any separately approved integration of this reconciliation, prepare a read-only Founder decision package for the merged BP2 Data Administration contract's `DRAFT` lifecycle. Do not modify BP1, approve the BP2 contract by inference, populate Product/Knowledge data, implement an Admin UI, change WordPress/WooCommerce, run imports, publish, deploy, or mutate production without separate explicit authorization.
+Then stop for a Founder lifecycle decision. Do not modify BP1, approve or promote the BP2 contract by inference, populate Product/Knowledge data, implement an Admin UI, change WordPress/WooCommerce, run imports, publish, deploy, or mutate production without separate explicit authorization.
 
 ## Current References
 
