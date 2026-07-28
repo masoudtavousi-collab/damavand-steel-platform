@@ -1,9 +1,9 @@
 .PHONY: help setup validate test
 
 help:
-	@echo "setup     Prepare local environment (placeholder)"
+	@echo "setup     Prepare isolated local validation environment"
 	@echo "validate  Validate repository scaffold"
-	@echo "test      Run Product foundations, Atlas, and scaffold validation"
+	@echo "test      Run unified repository and BP1 validation"
 
 setup:
 	@./scripts/setup.sh

@@ -24,6 +24,7 @@ TEMPLATE_PATH = ROOT / "atlas" / "DOCUMENT_TEMPLATE.md"
 REGISTRY_PATH = ROOT / "atlas" / "DOCUMENT_REGISTRY.csv"
 WORKFLOW_DIR = ROOT / "n8n" / "workflows"
 CI_PATH = ROOT / ".github" / "workflows" / "ci.yml"
+VALIDATION_REQUIREMENTS_PATH = ROOT / "requirements-validation.txt"
 
 EXPECTED_DOMAIN_COUNT = 21
 EXPECTED_DOCUMENT_COUNT = 173
@@ -1222,26 +1223,64 @@ def validate_ci_configuration() -> None:
     parsed, _ = load_yaml(CI_PATH, "GitHub CI workflow")
     if not isinstance(parsed, dict):
         raise ValidationError("GitHub CI workflow must contain a YAML object")
-    required = (
+    required_ci_tokens = (
         "permissions:",
         "contents: read",
-        "PyYAML==6.0.2",
+        "--requirement requirements-validation.txt",
         "make test",
     )
-    missing = [token for token in required if token not in content]
-    if missing:
-        raise ValidationError("CI configuration missing: " + ", ".join(missing))
+    missing_ci_tokens = [
+        token for token in required_ci_tokens if token not in content
+    ]
+    if missing_ci_tokens:
+        raise ValidationError(
+            "CI configuration missing: " + ", ".join(missing_ci_tokens)
+        )
+
+    requirements = read_text(
+        VALIDATION_REQUIREMENTS_PATH,
+        "validation requirements",
+    )
+    actual_dependencies = tuple(
+        line.strip()
+        for line in requirements.splitlines()
+        if line.strip() and not line.lstrip().startswith("#")
+    )
+    expected_dependencies = (
+        "PyYAML==6.0.2",
+        "jsonschema==4.25.1",
+    )
+    if actual_dependencies != expected_dependencies:
+        raise ValidationError(
+            "Validation dependencies must be exactly pinned: "
+            + ", ".join(expected_dependencies)
+        )
 
     test_entry = read_text(ROOT / "scripts" / "test.sh", "unified test entry point")
     entry_required = (
-        "python3 scripts/validate_manifest.py",
-        "python3 scripts/validate_atlas_adoption.py",
+        '.venv/bin/python3',
+        '"$python" prototypes/bp1-visible-local/tests/validate_bp1.py',
+        '"$python" scripts/validate_manifest.py',
+        '"$python" scripts/validate_atlas_adoption.py',
         "./scripts/validate.sh",
     )
     missing_entry = [token for token in entry_required if token not in test_entry]
     if missing_entry:
         raise ValidationError(
             "Unified test entry point missing: " + ", ".join(missing_entry)
+        )
+
+    setup_entry = read_text(ROOT / "scripts" / "setup.sh", "local setup")
+    setup_required = (
+        ".venv",
+        "requirements-validation.txt",
+        "-m venv",
+        "-m pip install",
+    )
+    missing_setup = [token for token in setup_required if token not in setup_entry]
+    if missing_setup:
+        raise ValidationError(
+            "Local setup missing: " + ", ".join(missing_setup)
         )
 
 
