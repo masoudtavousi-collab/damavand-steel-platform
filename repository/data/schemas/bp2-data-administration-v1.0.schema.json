@@ -37,12 +37,17 @@
       "required": [
         "status",
         "approval_authority",
-        "implementation_authority"
+        "implementation_authority",
+        "decision_id",
+        "review_record_id",
+        "review_outcome",
+        "reviewers",
+        "transition_history"
       ],
       "properties": {
         "status": {
           "type": "string",
-          "const": "DRAFT"
+          "const": "APPROVED"
         },
         "approval_authority": {
           "type": "string",
@@ -51,6 +56,46 @@
         "implementation_authority": {
           "type": "boolean",
           "const": false
+        },
+        "decision_id": {
+          "type": "string",
+          "const": "FD-BP2-ADM-001"
+        },
+        "review_record_id": {
+          "type": "string",
+          "const": "BP2-ADM-REVIEW-001"
+        },
+        "review_outcome": {
+          "type": "string",
+          "const": "PASS"
+        },
+        "reviewers": {
+          "type": "array",
+          "const": [
+            "CHIEF_ARCHITECT_PRODUCT_OWNER_QA",
+            "REPOSITORY_GUARDIAN"
+          ]
+        },
+        "transition_history": {
+          "type": "array",
+          "const": [
+            {
+              "from": "DRAFT",
+              "to": "REVIEW",
+              "decided_by": "FOUNDER",
+              "decided_on": "2026-07-28",
+              "decision_id": "FD-BP2-ADM-001",
+              "evidence_reference": "docs/17_FOUNDER_DECISION_LOG.md#bp2-data-administration-lifecycle-decision"
+            },
+            {
+              "from": "REVIEW",
+              "to": "APPROVED",
+              "decided_by": "FOUNDER",
+              "decided_on": "2026-07-28",
+              "decision_id": "FD-BP2-ADM-001",
+              "evidence_reference": "docs/17_FOUNDER_DECISION_LOG.md#bp2-data-administration-lifecycle-decision"
+            }
+          ]
         }
       }
     },

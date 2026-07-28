@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.6.2
+- **Version:** 0.7.0
 - **Last Updated:** 2026-07-28
 - **Last Review:** 2026-07-28
 - **Review Cycle:** On repository-governance, document, authority, metadata, navigation, traceability, or validation change
@@ -142,9 +142,9 @@ The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain histo
 - PR #1–#17 are merged; PR numbering does not express merge order.
 - PR #13 integrated the Claude recovery consolidation, PR #14 aligned the post-recovery state, PR #12 subsequently integrated the hardened BP2 Data Administration scope, PR #15 reconciled the active governance state, PR #16 hardened BP1 M1 accessibility and local validation, and PR #17 reconciled the resulting governance state.
 - PR #12 added the documentation-only administration contract, a closed JSON Schema Draft 2020-12 schema, deterministic offline validation, and positive, negative, and adversarial tests.
-- The BP2 Data Administration contract remains `DRAFT` with implementation authority disabled. Its merge does not create Product/SKU, Admin UI, WordPress/WooCommerce, import, publication, deployment, or production authority.
+- `FD-BP2-ADM-001` records the BP2 Data Administration contract's reviewed `DRAFT → REVIEW → APPROVED` sequence with implementation authority disabled. Approval does not create Product/SKU, Admin UI, WordPress/WooCommerce, import, publication, deployment, or production authority.
 - The current protected `main` baseline is maintained only in [Current Project State](CURRENT_PROJECT_STATE.md).
-- Unified repository validation passes with pinned dependencies; PR #16 added the BP1 safety/contrast validator and reproducible local setup, its post-merge `main` CI succeeded, and PR #17 branch CI passed before its approved merge. Static success does not satisfy Product Data or runtime gates.
+- Unified repository validation passes with pinned dependencies; PR #16 added the BP1 safety/contrast validator and reproducible local setup, its post-merge `main` CI succeeded, PR #17 branch CI passed before merge, and PR #18 Review-stage CI passed. Static success does not satisfy Product Data or runtime gates.
 
 ## WordPress Architecture Coverage
 

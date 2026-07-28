@@ -96,11 +96,52 @@
       "expected_code": "SCHEMA_INSTANCE_INVALID"
     },
     {
-      "id": "A02_LIFECYCLE_PROMOTION",
+      "id": "A02_LIFECYCLE_STATUS_DEMOTION",
       "target": "contract",
       "operation": "set",
       "path": "/lifecycle/status",
-      "value": "APPROVED",
+      "value": "REVIEW",
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "A02_LIFECYCLE_DIRECT_APPROVAL_HISTORY",
+      "target": "contract",
+      "operation": "set",
+      "path": "/lifecycle/transition_history",
+      "value": [
+        {
+          "from": "DRAFT",
+          "to": "APPROVED",
+          "decided_by": "FOUNDER",
+          "decided_on": "2026-07-28",
+          "decision_id": "FD-BP2-ADM-001",
+          "evidence_reference": "docs/17_FOUNDER_DECISION_LOG.md#bp2-data-administration-lifecycle-decision"
+        }
+      ],
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "A02_LIFECYCLE_DECISION_FORGED",
+      "target": "contract",
+      "operation": "set",
+      "path": "/lifecycle/decision_id",
+      "value": "FD-FORGED-001",
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "A02_LIFECYCLE_REVIEWERS_REMOVED",
+      "target": "contract",
+      "operation": "set",
+      "path": "/lifecycle/reviewers",
+      "value": [],
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "A02_LIFECYCLE_HISTORY_REMOVED",
+      "target": "contract",
+      "operation": "set",
+      "path": "/lifecycle/transition_history",
+      "value": [],
       "expected_code": "SCHEMA_INSTANCE_INVALID"
     },
     {

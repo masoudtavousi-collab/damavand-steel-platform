@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.6.2
+- **Version:** 0.7.0
 - **Last Updated:** 2026-07-28
 - **Last Review:** 2026-07-28
 - **Review Cycle:** On repository creation, disposition, authority, ownership, namespace, lifecycle, merge, or promotion proposal
@@ -146,7 +146,7 @@ No passage of time, new file, Git initialization, architecture review, or AI rec
 - Wave 2 discovery and Wave 2A–2C structural foundations: **COMPLETE**. Product/Knowledge population and Wave 2D: **NO-GO pending separate Founder approval**.
 - K-01, BP1 local prototype and M1 hardening, BP2 data blueprint, Claude recovery consolidation, post-recovery state, BP2 Data Administration hardening, post-PR12 governance reconciliation, and post-PR16 governance reconciliation: **INTEGRATED WITH BOUNDED MEANING**; none creates runtime, Product/SKU, publication, or production authority.
 - Claude recovery material is classified by the recovery audit; exact current authorization is maintained only in Current Project State.
-- The BP2 Data Administration contract is merged but remains `DRAFT`, separately governed, and without Admin UI, Product, runtime, import, publication, deployment, or production authority.
+- The BP2 Data Administration contract is `APPROVED` under `FD-BP2-ADM-001` only as documentation governance and remains without Admin UI, Product, runtime, import, publication, deployment, or production authority.
 - Workflow activation, runtime, WordPress or Product Repository implementation, publication, deployment, and production mutation: **NO-GO**.
 - Further repository-settings mutation: **NO-GO pending separate Founder approval**.
 - Repository B merge, implementation, runtime, Git initialization, or authority: **NO-GO**.

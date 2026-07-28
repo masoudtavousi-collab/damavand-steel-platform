@@ -8,8 +8,8 @@
 - **Owner:** Founder
 - **Reviewer:** Build Engineer
 - **Approval Authority:** Founder
-- **Version:** 0.5.0
-- **Last Updated:** 2026-07-27
+- **Version:** 0.6.0
+- **Last Updated:** 2026-07-28
 - **Lifecycle:** Review
 - **Source of Truth:** [Current Project State](CURRENT_PROJECT_STATE.md), current repository evidence, accepted decisions, and execution gates
 - **Dependencies:** [Project Baseline](PROJECT_BASELINE.md), [Execution Gates](EXECUTION_GATES.md), and [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md)
@@ -30,7 +30,7 @@ Wave 2A–2C established platform-independent Product core, Product Attribute, a
 | Measurement structure | Foundation ready | Contract, schema, two dimensions, four units, validator, fixtures | Entries remain `CANDIDATE_UNVERIFIED`; no Product values or business-specific unit policy |
 | BP1 local prototype | Review evidence only | PR #10; bounded Persian RTL local prototype and safety validator | Not WordPress, production, a canonical UI implementation, or Product truth |
 | BP2 data blueprint | Blueprint ready for governed review | PR #11; controlled Pipe blueprint, schema, and offline validator | Not final SKU, import, runtime, WordPress, WooCommerce, or production authority |
-| BP2 administration contract | Technically hardened; lifecycle still Draft | PR #12; documentation-only scope, machine-readable contract, closed Draft 2020-12 schema, deterministic offline validator, and positive/negative/adversarial tests | Founder lifecycle approval or revision remains required; no Admin UI, Product/SKU, runtime, import, WordPress, WooCommerce, or production authority |
+| BP2 administration contract | Approved governance contract; implementation disabled | PR #12, `FD-BP2-ADM-001`, PR #18 review evidence, documentation-only scope, machine-readable contract, closed Draft 2020-12 schema, deterministic offline validator, and positive/negative/adversarial tests | Separate implementation or Product Data authorization remains required; no Admin UI, Product/SKU, runtime, import, WordPress, WooCommerce, or production authority |
 | Product Data | Blocked | Architecture and three pilot decisions exist | No canonical machine-readable Master Data or Golden package; availability and commercial validity incomplete |
 | Knowledge Repository | Blocked | Architecture proposals exist | No contract, content instances, population process, retrieval implementation, or approved AI capability |
 | Atlas | Controlled intake | 173 registered pending rows; K-01 adoption matrix | No row is canonical without mapping, review, and approval |
@@ -97,7 +97,7 @@ Repository tests passing cannot satisfy these runtime prerequisites.
 | Runtime target and recovery | Authenticated target, staging, backup/restore proof, rollback owner, and execution approval |
 | Inquiry-only commerce proof | Product-level no-price, no-Offer, no-cart, and no-checkout validation |
 | Wave 2A/2B authorization trace | Link authoritative originating records without inferring approval from merges |
-| BP2 administration lifecycle | Record Founder approval or revision of the merged `DRAFT` contract before any implementation or Product Data use |
+| BP2 administration implementation | Obtain a separate exact-scope Founder decision, data/evidence gate, implementation plan, and tests; lifecycle approval grants no implementation authority |
 
 ## Recommended Next Step
 
@@ -107,6 +107,7 @@ Follow the exact next action and GO/NO-GO boundary in [Current Project State](CU
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.6.0 | 2026-07-28 | Recorded `FD-BP2-ADM-001` and the reviewed BP2 lifecycle approval while preserving all Product Data and runtime blockers. |
 | 0.5.0 | 2026-07-27 | Reconciled readiness after PR #13, PR #14, and the final PR #12 hardening merge; preserved Draft lifecycle and all Product/runtime blockers. |
 | 0.4.0 | 2026-07-26 | Reconciled readiness with merged PR #9–#11, recovery evidence, and the separately governed BP2 administration proposal. |
 | 0.3.0 | 2026-07-23 | Reconciled readiness after merged Wave 2A–2C foundations; separated structural readiness from Product Data and runtime readiness. |

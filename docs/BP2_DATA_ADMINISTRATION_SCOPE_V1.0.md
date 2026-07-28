@@ -1,8 +1,21 @@
 # BP2 Data Administration Scope v1.0
 
-Status: `DRAFT`
-Approval authority: Founder
-Execution authority: documentation and machine-readable contracts only
+## Document control
+
+- **Document ID:** `docs/BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md`
+- **Status:** Approved
+- **Authority:** Governing within the documentation-only BP2 Data Administration scope
+- **Owner:** Founder
+- **Reviewers:** Chief Architect / Product Owner / QA; Repository Guardian
+- **Approval Authority:** Founder
+- **Version:** 1.0.0
+- **Last Updated:** 2026-07-28
+- **Lifecycle:** Approved
+- **Decision ID:** `FD-BP2-ADM-001`
+- **Review Record:** `BP2-ADM-REVIEW-001`
+- **Execution Authority:** Documentation and machine-readable contracts only
+- **Implementation Authority:** `false`
+- **Approval:** `FD-BP2-ADM-001`; Founder approved the ordered `DRAFT → REVIEW → APPROVED` lifecycle on 2026-07-28 after successful review
 
 ## Purpose
 
@@ -96,6 +109,20 @@ This document does not authorize or implement that panel.
 - Three approved pilots and 879 candidates reconcile with the source blueprint.
 - Automated validation fails on forbidden implementation authority or scope expansion.
 - No Product/SKU, WordPress/WooCommerce, import, publication, deployment, or production mutation is introduced.
+
+## Lifecycle review record
+
+| Field | Recorded value |
+| --- | --- |
+| Document | `docs/BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md`, version 1.0.0 |
+| Change scope | Lifecycle evidence and fail-closed Contract/Schema/Validator/Test hardening only |
+| Reviewers | Chief Architect / Product Owner / QA; Repository Guardian |
+| Evidence | Contract, closed Draft 2020-12 schema, deterministic offline validator, 12 positive/negative/adversarial test methods, 51 mutation cases, local `make test`, and successful protected Review-stage CI on PR #18 |
+| Findings | No blocking findings; direct `DRAFT → APPROVED` remains forbidden and is tested |
+| Exceptions | None |
+| Outcome | Pass |
+| Proposed lifecycle | Approved |
+| Approval | `FD-BP2-ADM-001`; Founder authorization and approval dated 2026-07-28 |
 
 ## Stop conditions
 

@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.6.2
+- **Version:** 0.7.0
 - **Last Updated:** 2026-07-28
 - **Last Review:** 2026-07-28
 - **Review Cycle:** On approved decision, completed sprint, repository disposition, readiness, or execution-state change
@@ -16,7 +16,7 @@
 - **Source of Truth:** Accepted governing sources, recorded Founder decisions, [Current Project State](CURRENT_PROJECT_STATE.md), approved Master Data, and current repository evidence within their declared scope
 - **Dependencies:** [Codex Repository Instructions](../AGENTS.md), [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md), [Current Project State](CURRENT_PROJECT_STATE.md), and [Execution Gates](EXECUTION_GATES.md)
 - **Related Documents:** [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md), [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md), [Founder Decision Log](17_FOUNDER_DECISION_LOG.md), and `GIT-02S Audit`
-- **Traceability:** CP-001 through CP-010; ADR-0001; FD-PILOT-001; GIT-02S; PR #1–#17 merge evidence; Wave 2A–2C; FD-K01-001; BP1; BP2; Claude Recovery Audit
+- **Traceability:** CP-001 through CP-010; ADR-0001; FD-PILOT-001; FD-BP2-ADM-001; GIT-02S; PR #1–#17 merge evidence; PR #18 review evidence; Wave 2A–2C; FD-K01-001; BP1; BP2; Claude Recovery Audit
 - **AI Compatibility:** Primary concise entry point; underlying sources control within their recorded authority
 - **Approval:** Pending Founder review of the reconciled documentation; recorded Founder decisions remain accepted within their exact scope
 
@@ -48,7 +48,7 @@ Repository B cannot override the Founder, Repository A, CP-001 through CP-010, t
 
 The exact current phase, baseline SHA, active branch, authorization, pull-request state, GO/NO-GO boundary, and next action are maintained only in [Current Project State](CURRENT_PROJECT_STATE.md).
 
-Historical Git authorizations retain their original exact scope and do not become retroactive merge or runtime authority. PR #1–#17 are repository evidence; their numbering does not represent merge order, and a merge is not a substitute for the originating Founder authorization record or lifecycle approval. PR #13 recovery consolidation and PR #14 post-recovery state preceded the final merge of PR #12; PR #15 then reconciled the active governance state, PR #16 closed the bounded BP1 M1 accessibility and local-validation gaps, and PR #17 reconciled the resulting active governance state. Wave 2A–2C remain structural foundations, while BP1 and BP2 remain bounded evidence/design assets rather than runtime or final-SKU authority.
+Historical Git authorizations retain their original exact scope and do not become retroactive merge or runtime authority. PR #1–#17 are merged repository evidence; PR #18 contains the reviewed BP2 lifecycle integration. PR numbering does not represent merge order, and a merge is not a substitute for the originating Founder authorization record or lifecycle approval. PR #13 recovery consolidation and PR #14 post-recovery state preceded the final merge of PR #12; PR #15 then reconciled the active governance state, PR #16 closed the bounded BP1 M1 accessibility and local-validation gaps, and PR #17 reconciled the resulting active governance state. Wave 2A–2C remain structural foundations, while BP1 and BP2 remain bounded evidence/design assets rather than runtime or final-SKU authority.
 
 ## Architecture and Governance Status
 
@@ -62,7 +62,7 @@ Historical Git authorizations retain their original exact scope and do not becom
 | Area | Status |
 | --- | --- |
 | Product Repository | Product core, Product Attribute, and measurement structural contracts/schemas/registries/validators exist; no canonical Product rows, approved Product Attribute definitions, final SKU vocabulary, Master Data, or Golden package exists |
-| BP2 Data Administration | PR #12 merged a documentation-only administration scope, closed Draft 2020-12 schema, deterministic offline validator, and adversarial tests; the contract lifecycle remains `DRAFT` and implementation authority remains false |
+| BP2 Data Administration | `FD-BP2-ADM-001` completed `DRAFT → REVIEW → APPROVED` with a documentation-only scope, closed Draft 2020-12 schema, deterministic offline validator, and adversarial tests; implementation authority remains false |
 | Knowledge Repository | Architecture proposals exist; `repository/knowledge/` is the approved future location, but machine-readable contracts and content instances do not exist; `NOT_IMPLEMENTATION_READY` |
 | Master Data | No canonical machine-readable package exists on `main`; decision records and governing prose remain the current evidence |
 | Knowledge Cards and Page Builder assets | Referenced historical/future assets are absent from canonical `main`; no implementation-readiness claim is made |
@@ -125,7 +125,7 @@ The operational GO/NO-GO boundary is maintained only in [Current Project State](
 
 - Repository A is the only canonical Damavand Steel repository.
 - Repository B is `QUARANTINED_ARCHITECTURE_RESEARCH` and has no current project authority.
-- PR #1–#17 are merged; the current `main` baseline is maintained in Current Project State.
+- PR #1–#17 are merged; PR #18 is the scoped BP2 lifecycle integration; the current `main` baseline and live PR state are maintained in Current Project State.
 - `main` is the default branch and is protected with the required `repository-validation` check.
 - Wave 1 and Wave 2 discovery are complete. Wave 2A–2C structural foundations are merged without Product Data or runtime authority.
 - The canonical repository hierarchy is `Catalog → Platform → Family → Series → Variant Rules → SKU`; commerce Parent/Variation constructs are downstream mappings.
@@ -133,6 +133,7 @@ The operational GO/NO-GO boundary is maintained only in [Current Project State](
 - The Golden Parent and three listed Pipe combinations are approved only for the limited pilot.
 - The three pilot references are not final commercial SKUs.
 - The other 879 rows remain `CANDIDATE_UNVERIFIED`; market availability is missing for all 882 rows.
+- `FD-BP2-ADM-001` approves the BP2 Data Administration contract only as a documentation-only governance boundary; implementation authority remains false.
 - Runtime, import, publishing, deployment, product creation, bulk SKU generation, Factory implementation, and autonomous repository merge remain `NO-GO`.
 
 ## Genuine Unresolved Founder Decisions
@@ -145,7 +146,7 @@ The operational GO/NO-GO boundary is maintained only in [Current Project State](
 - Future disposition or possible promotion of Repository B concepts; any status change requires a separate Founder decision.
 - Historical originating authorization references for Wave 2A and Wave 2B must be linked without inferring them from merge history.
 - Separate authorization and exact allowlist for any next Product Data or implementation sprint.
-- Founder approval or revision of the merged BP2 Data Administration contract's `DRAFT` lifecycle before any implementation or Product Data use.
+- Separate exact-scope authorization for any BP2 administration implementation or Product Data use; lifecycle approval alone grants neither.
 
 Missing availability, files, measurements, or operational evidence are not automatically Founder decisions.
 
