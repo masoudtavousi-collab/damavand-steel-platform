@@ -8,13 +8,20 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.5.0
+- **Version:** 0.6.0
 - **Last Updated:** 2026-07-28
 - **Lifecycle:** Review
 - **Source of Truth:** Merged Git history and scoped decision/evidence records
 - **Approval:** Pending Founder review; merged Git history remains evidence
 
 This changelog records repository outcomes. It does not create approval, runtime readiness, Product facts, or release authority.
+
+## 2026-07-28 — GOV-XD-00 Cross-Domain Execution Charter
+
+- `FD-GOV-XD-00` records the exact eleven-path governance scope and conditional Git cycle approved by the Founder.
+- Current-state semantics now separate the reviewed input anchor, semantic operational state, and dynamically resolved live GitHub `main` tip, eliminating tip-only post-merge reconciliation loops.
+- Five domain plans and independent QA establish the ordered path from `PD-01` through Product Data, Administration, Runtime, Knowledge, the controlled pilot, QA, expansion, and launch.
+- `PD-01` is only the next read-only decision-package target. Contract, Schema, Validator, Test, Product/Knowledge data, Admin UI, WordPress/WooCommerce, import, runtime, deployment, production, and branch deletion remain `NO-GO`.
 
 ## 2026-07-28 — BP2 Data Administration Lifecycle Approval
 

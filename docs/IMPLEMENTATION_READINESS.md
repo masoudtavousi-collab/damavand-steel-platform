@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Build Engineer
 - **Approval Authority:** Founder
-- **Version:** 0.6.0
+- **Version:** 0.7.0
 - **Last Updated:** 2026-07-28
 - **Lifecycle:** Review
 - **Source of Truth:** [Current Project State](CURRENT_PROJECT_STATE.md), current repository evidence, accepted decisions, and execution gates
@@ -31,6 +31,7 @@ Wave 2A–2C established platform-independent Product core, Product Attribute, a
 | BP1 local prototype | Review evidence only | PR #10; bounded Persian RTL local prototype and safety validator | Not WordPress, production, a canonical UI implementation, or Product truth |
 | BP2 data blueprint | Blueprint ready for governed review | PR #11; controlled Pipe blueprint, schema, and offline validator | Not final SKU, import, runtime, WordPress, WooCommerce, or production authority |
 | BP2 administration contract | Approved governance contract; implementation disabled | PR #12, `FD-BP2-ADM-001`, merged PR #18, documentation-only scope, machine-readable contract, closed Draft 2020-12 schema, deterministic offline validator, and positive/negative/adversarial tests | Separate implementation or Product Data authorization remains required; no Admin UI, Product/SKU, runtime, import, WordPress, WooCommerce, or production authority |
+| Cross-domain execution charter | Governance ready; implementation disabled | `FD-GOV-XD-00`, six-task read-only gap analysis, independent QA, stable live-tip resolution, separation of duties, and ordered dependency gates | `PD-01` still requires its own exact Founder approval, allowlist, Test Contract, and Git authorization |
 | Product Data | Blocked | Architecture and three pilot decisions exist | No canonical machine-readable Master Data or Golden package; availability and commercial validity incomplete |
 | Knowledge Repository | Blocked | Architecture proposals exist | No contract, content instances, population process, retrieval implementation, or approved AI capability |
 | Atlas | Controlled intake | 173 registered pending rows; K-01 adoption matrix | No row is canonical without mapping, review, and approval |
@@ -54,7 +55,7 @@ Wave 2A–2C established platform-independent Product core, Product Attribute, a
 | Risk | Control | Residual condition |
 | --- | --- | --- |
 | A valid schema is mistaken for approved business data | Contracts prohibit Product/commercial fact fields and statuses remain explicit | Reviewers must still distinguish structural validity from factual approval |
-| Old current-state prose overrides merged repository evidence | `CURRENT_PROJECT_STATE.md` is the sole operational pointer | Active documents must link instead of duplicating mutable state |
+| Old current-state prose overrides merged repository evidence | `CURRENT_PROJECT_STATE.md` owns semantic operational state; live Git tip is resolved per task | Active documents must not present fixed SHAs as permanent current-tip claims |
 | Atlas generates duplicate or conflicting documents | Adoption matrix and archive standard | Every proposed adoption still requires human review |
 | Historical Library Atlas files claim canonical status | Explicit `ARCHIVE_REFERENCE / NONCANONICAL` classification | No content promotion without path-level mapping |
 | WooCommerce becomes source of truth | Canonical hierarchy and adapter boundary | Future implementation tests still required |
@@ -63,13 +64,14 @@ Wave 2A–2C established platform-independent Product core, Product Attribute, a
 
 ## Prerequisites for the Next Product-Data Sprint
 
-1. Consult [Current Project State](CURRENT_PROJECT_STATE.md) for the exact active authorization and obtain separate Founder approval for every later Git action.
+1. Consult [Current Project State](CURRENT_PROJECT_STATE.md), resolve the exact live GitHub `main` SHA, and record that SHA plus the exact active authorization in the Sprint Scope/Approval Packet.
 2. Historical Wave 2A and Wave 2B originating authorization references are linked without inferring approval from merge history.
 3. The next sprint has an exact scope, branch, allowlist, acceptance tests, exclusions, and stop conditions.
 4. Product Attribute definitions and Product records use existing contracts and controlled registries.
 5. Commercially meaningful values carry provenance and an allowed Product Data status.
 6. No Cartesian combination is treated as availability evidence.
 7. WordPress, WooCommerce, import, runtime, publishing, deployment, and production remain excluded unless separately authorized.
+8. A Sprint-specific Test Contract, executor/reviewer separation, exact path allowlist, and conditional Git controls are recorded before writing.
 
 ## Runtime Prerequisites
 
@@ -98,15 +100,19 @@ Repository tests passing cannot satisfy these runtime prerequisites.
 | Inquiry-only commerce proof | Product-level no-price, no-Offer, no-cart, and no-checkout validation |
 | Wave 2A/2B authorization trace | Link authoritative originating records without inferring approval from merges |
 | BP2 administration implementation | Obtain a separate exact-scope Founder decision, data/evidence gate, implementation plan, and tests; lifecycle approval grants no implementation authority |
+| Legacy canonical-owner conflict | Reconcile or explicitly classify Review-state Product/Content/SEO documents that treat a Variable Parent Product as canonical owner before Knowledge, SEO, or Woo mapping approval |
+| Runtime ordering conflict | Founder resolves the G02/G03 credential-containment versus pre-mutation backup/restore order before external access or mutation |
+| Cross-domain roles and tests | Approve a shared separation-of-duties matrix and a Sprint-specific Test Contract before implementation |
 
 ## Recommended Next Step
 
-Follow the exact next action and GO/NO-GO boundary in [Current Project State](CURRENT_PROJECT_STATE.md). Do not begin Product Data population, WordPress administration implementation, or runtime work automatically.
+Prepare the exact, read-only `PD-01` decision package identified by [Current Project State](CURRENT_PROJECT_STATE.md). Do not create or modify Contract, Schema, Validator, Test, Product Data, WordPress administration, or runtime assets without a new Founder authorization.
 
 ## Change Notes
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.7.0 | 2026-07-28 | Integrated the `GOV-XD-00` execution-charter boundary, per-task live-tip resolution, separation of duties, cross-domain blockers, and read-only `PD-01` decision-package next step. |
 | 0.6.0 | 2026-07-28 | Recorded `FD-BP2-ADM-001` and the reviewed BP2 lifecycle approval while preserving all Product Data and runtime blockers. |
 | 0.5.0 | 2026-07-27 | Reconciled readiness after PR #13, PR #14, and the final PR #12 hardening merge; preserved Draft lifecycle and all Product/runtime blockers. |
 | 0.4.0 | 2026-07-26 | Reconciled readiness with merged PR #9–#11, recovery evidence, and the separately governed BP2 administration proposal. |

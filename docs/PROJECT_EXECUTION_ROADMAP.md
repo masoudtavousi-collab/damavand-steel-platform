@@ -2,11 +2,11 @@
 
 ## Current Reconciliation State
 
-This roadmap defines sequence and gates, not mutable operational state. The exact current phase, latest integration, active branch, authorization, pull-request state, GO/NO-GO boundary, and next action are maintained only in [Current Project State](CURRENT_PROJECT_STATE.md). Repository B remains isolated `QUARANTINED_ARCHITECTURE_RESEARCH`.
+This roadmap defines sequence and gates, not mutable operational state. The exact semantic phase, authorization, GO/NO-GO boundary, and next action are maintained only in [Current Project State](CURRENT_PROJECT_STATE.md). The live GitHub `main` SHA is resolved and recorded per Sprint Approval Packet. Repository B remains isolated `QUARANTINED_ARCHITECTURE_RESEARCH`.
 
 ## Repository Integration Track
 
-- Canonical/default `main` and its verified SHA are recorded in Current Project State.
+- Canonical/default `main` is resolved dynamically at each Sprint dispatch; Current Project State records semantic state and dated evidence anchors.
 - PR #1–#4 completed repository/bootstrap and Wave 2 pre-implementation governance reconciliation.
 - PR #5 completed Wave 2A Product Core; PR #6 completed Wave 2B Product Attributes; PR #7 completed Wave 2C Measurements.
 - PR #9 integrated K-01 governance, archive, Atlas disposition, and unified validation.
@@ -19,11 +19,35 @@ This roadmap defines sequence and gates, not mutable operational state. The exac
 - PR #16 integrated the bounded BP1 M1 accessibility and local-validation hardening; it remains local prototype and test-tooling evidence only.
 - PR #17 reconciled the active governance records after PR #16 and advanced the next safe action to a read-only BP2 lifecycle decision package.
 - PR #18 integrated `FD-BP2-ADM-001`, the reviewed `DRAFT → REVIEW → APPROVED` lifecycle evidence, and its fail-closed Contract/Schema/Validator/Test hardening.
+- PR #19 reconciled the post-PR18 governance state and returned the project to read-only next-step planning.
+- `FD-GOV-XD-00` then approved the cross-domain execution charter, stable live-tip semantics, separation of duties, and the ordered decision path below. It does not authorize `PD-01` or implementation.
 - The approved BP2 Data Administration contract remains documentation-only with `implementation_authority: false`; approval derives no Product, Admin UI, runtime, import, publication, deployment, or production authority.
 - The historical Wave 1 branch/commit/push/Draft-PR scope did not authorize merge and remains preserved as chronology. Its later approved merge granted no Wave 2, runtime, or implementation authority.
 - Wave 2A–2C are structural, platform-independent foundations. They created no canonical Product rows, Product Attribute definitions, Master Data, Golden package, WordPress implementation, publication, deployment, or production mutation.
 - Workflows remain inactive.
 - `main` is the GitHub default branch and is protected with administrator enforcement, strict required check `repository-validation`, force-push disabled, and deletion disabled.
+
+## Cross-Domain Execution Order
+
+1. `GOV-XD-00` — stabilize operational-state semantics, dependency order, roles, and approval gates.
+2. `PD-01` — Product Data Contract/Schema/Validator/tests with synthetic fixtures only.
+3. `PD-02` — controlled value registries and minimum Attribute Profiles.
+4. `PD-03` — exactly three canonical pilot records with provenance and explicit status.
+5. `PD-04` — Golden Repository Package with `import_ready=false` and `runtime_ready=false`.
+6. `PD-05` — commercial evidence plus final SKU/slug policy before any import.
+7. `ADM-0` through `ADM-3` — separate charter, operation contracts, validator/tests, and offline reference engine.
+8. Resolve Runtime `G02/G03` ordering, then prove least-privilege access, backup, and isolated restore.
+9. Establish isolated staging, current baseline, connectivity, compatibility, security, monitoring, and licenses.
+10. `KX-0` hierarchy reconciliation, then Knowledge/Content governance after stable Product identities.
+11. Build the WordPress/WooCommerce adapter manifest and mapping preview offline.
+12. Run the separately authorized staging pilot: one Draft Parent and exactly three Draft Variations.
+13. Perform reconciliation, Inquiry-only QA, and rollback rehearsal in that order.
+14. Complete Founder UX review and bounded pilot fixes.
+15. Complete full Security, Privacy, RTL, Mobile, Accessibility, SEO, Performance, and recovery QA.
+16. Expand one approved family at a time.
+17. Complete Launch Readiness, obtain Production approval, deploy, and observe.
+
+The Product Data sequence is serial. Runtime evidence planning may proceed in parallel with repository-only planning, but external actions remain separately gated. Knowledge contracts, an offline Admin engine, and an offline adapter manifest may later proceed in isolated worktrees only after stable Product identities and their own approvals. All merges, shared-path changes, imports, runtime steps, and release actions remain serial.
 
 ## Phase 1 — Architecture
 
@@ -97,4 +121,4 @@ Sequence: Pipe → Profile → approved Fittings families → remaining approved
 
 ## Do Not Yet
 
-No Product/Knowledge population, repository-settings change, workflow activation, bulk import, full-catalog or 882-variation generation, WordPress implementation, production publishing, deployment, live prices, payment/cart/checkout, Phase 1 AI, speculative Fittings data, or Central Steel runtime without the applicable separate approval. Consult [Current Project State](CURRENT_PROJECT_STATE.md) for the exact current Git boundary and next action.
+No `PD-01` execution, Product/Knowledge population, repository-settings change, workflow activation, bulk import, full-catalog or 882-variation generation, WordPress implementation, production publishing, deployment, live prices, payment/cart/checkout, Phase 1 AI, speculative Fittings data, or Central Steel runtime without the applicable separate approval. Consult [Current Project State](CURRENT_PROJECT_STATE.md) for the semantic Git boundary and next action, then resolve the live `main` SHA for the task packet.

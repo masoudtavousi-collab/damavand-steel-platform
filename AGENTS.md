@@ -84,7 +84,7 @@ Founder-approved product data outranks competitor data. Competitor data may info
 
 ## 7. Current Project Phase
 
-- Architecture and governance proposal coverage exists; governing approval remains lifecycle- and scope-gated.
+- Architecture and governance proposal coverage exists; the `GOV-XD-00` cross-domain execution charter is Founder-approved within its documentation-only scope, while implementation remains lifecycle- and scope-gated.
 - Product core, Product Attribute, and measurement machine-readable structural foundations exist and are validated.
 - No canonical Product rows, approved Product Attribute definitions, final Product/SKU vocabulary, Master Data, or Golden package exists.
 - Knowledge architecture proposals exist, but machine-readable Knowledge contracts and content instances do not; the Knowledge Repository is `NOT_IMPLEMENTATION_READY`.
@@ -103,7 +103,7 @@ Current evidence:
 - Quality Score: 82/100.
 - Runtime, import, publishing, and bulk SKU generation: **NO-GO**.
 
-Do not copy mutable current-state facts into this file. Always begin with [Current Project State](docs/CURRENT_PROJECT_STATE.md), then [Project Baseline](docs/PROJECT_BASELINE.md) and [Knowledge Archive Standard](docs/KNOWLEDGE_ARCHIVE_STANDARD.md). The current branch, SHA, authorization, next action, and GO/NO-GO boundary are defined there.
+Do not copy mutable current-state facts into this file. Always begin with [Current Project State](docs/CURRENT_PROJECT_STATE.md), then [Project Baseline](docs/PROJECT_BASELINE.md) and [Knowledge Archive Standard](docs/KNOWLEDGE_ARCHIVE_STANDARD.md). Current Project State defines the semantic phase, authorization, next action, and GO/NO-GO boundary. The exact live `main` SHA is dynamic: resolve it from GitHub at the start of every task and record it in that task's Scope/Approval Packet. Any fixed SHA in repository prose is a dated evidence anchor, never a permanent claim about the live tip.
 
 ## 8. Sprint Execution Protocol
 

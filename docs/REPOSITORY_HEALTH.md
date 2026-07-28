@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.7.0
+- **Version:** 0.8.0
 - **Last Updated:** 2026-07-28
 - **Last Review:** 2026-07-28
 - **Review Cycle:** On repository-governance, document, authority, metadata, navigation, traceability, or validation change
@@ -22,7 +22,7 @@
 
 ## Evidence Scope
 
-The GIT-02S and local tagged-baseline counts below are retained as dated evidence, not current counts. The Wave 2 discovery verified the current `d702c5217f7caa2f23e56f965f3f993967e3c17d` baseline after PR #1–#3: 285 tracked files, 125 files under `docs/`, 228 Markdown files repository-wide, and a clean synchronized `main`. Historical sprint reports may describe assets that are absent from this baseline; those claims remain chronology only and do not establish current file presence, implementation readiness, backup/restore, or runtime state.
+The GIT-02S and local tagged-baseline counts below are retained as dated evidence, not current counts. Wave 2 discovery verified the dated `d702c5217f7caa2f23e56f965f3f993967e3c17d` baseline after PR #1–#3: 285 tracked files, 125 files under `docs/`, 228 Markdown files repository-wide, and a clean synchronized `main`. `GOV-XD-00` now requires every task to resolve the live GitHub `main` SHA at dispatch and record it in that task's Scope/Approval Packet. Historical sprint reports may describe assets that are absent from the reviewed tree; those claims remain chronology only and do not establish current file presence, implementation readiness, backup/restore, or runtime state.
 
 ## Repository Completeness
 
@@ -42,7 +42,7 @@ Repository completeness means inventory and discoverability only. It does not im
 
 | Governance capability | Canonical location | Current state |
 | --- | --- | --- |
-| Codex guidance and current execution state | [Codex Instructions](../AGENTS.md), [Current Project State](CURRENT_PROJECT_STATE.md), [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md), [Codex Sprint Protocol](CODEX_SPRINT_PROTOCOL.md), and [Source Priority](SOURCE_OF_TRUTH_PRIORITY.md) | Created by Sprint GOV-01; Founder review pending; runtime/import/publishing remain NO-GO |
+| Codex guidance and current execution state | [Codex Instructions](../AGENTS.md), [Current Project State](CURRENT_PROJECT_STATE.md), [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md), [Codex Sprint Protocol](CODEX_SPRINT_PROTOCOL.md), and [Source Priority](SOURCE_OF_TRUTH_PRIORITY.md) | `GOV-XD-00` approves stable state/tip semantics, ordered gates, and separation of duties; implementation, runtime, import, and publishing remain `NO-GO` |
 | Decision classification | [Decision Log](10_DECISION_LOG.md#decision-classification-framework) | Draft; pending Founder approval |
 | Repository state machine | [Document Lifecycle](12_DOCUMENT_LIFECYCLE.md) | Draft; pending Founder approval |
 | Dependency and relationship model | [Repository Metadata Standard](REPOSITORY_METADATA.md#relationship-metadata-model) and [Knowledge Graph](KNOWLEDGE_GRAPH.md#relationship-types) | Review; pending Founder approval |
@@ -123,13 +123,13 @@ Current tracked proposals have discoverable locations. Approved future Product/K
 
 ## Git Governance Coverage
 
-The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain historical evidence. Mutable repository-control facts are maintained in [Current Project State](CURRENT_PROJECT_STATE.md). K-01 verified:
+The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain historical evidence. Semantic repository-control facts are maintained in [Current Project State](CURRENT_PROJECT_STATE.md); the live Git tip is resolved per task and is not stored as permanent current prose. K-01 verified:
 
 - The working directory is a Git repository, and the canonical branch is `main`.
 - The historical immutable baseline contains 157 tracked files; both baseline tags still resolve to the original baseline commit.
 - Annotated tags `baseline-v1.0.0` and `repo-v1.0.0` resolve to the same baseline commit.
 - The tagged tree contains the baseline manifest, release notes, readiness assessment, roadmap, engineering guidelines, synchronized repository records, and Freeze Audit.
-- Local `main`, `origin/main`, and live GitHub `main` were synchronized at the K-01 start; that dated SHA remains K-01 evidence, while the current baseline and live-tip resolution rule are maintained in Current Project State.
+- Local `main`, `origin/main`, and live GitHub `main` were synchronized at the K-01 start; that dated SHA remains K-01 evidence. `GOV-XD-00` supersedes any interpretation of a stored SHA as the permanent live tip.
 - At the K-01 verification point, PR #1–#7 were merged and Wave 2A–2C provided Product core, Product Attribute, and measurement structural foundations. Later integrations are recorded below and in Current Project State.
 - Workflows remain inactive. No Product Data population, WordPress/runtime implementation, publication, deployment, or production mutation occurred.
 - GitHub default branch is `main`. Main protection has administrator enforcement, strict/up-to-date required check `repository-validation`, force-push disabled, and deletion disabled.
@@ -139,12 +139,12 @@ The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain histo
 
 ## Post-PR12 Integration and Validation Coverage
 
-- PR #1–#18 are merged; PR numbering does not express merge order.
-- PR #13 integrated the Claude recovery consolidation, PR #14 aligned the post-recovery state, PR #12 subsequently integrated the hardened BP2 Data Administration scope, PR #15 reconciled the active governance state, PR #16 hardened BP1 M1 accessibility and local validation, PR #17 reconciled the resulting governance state, and PR #18 integrated the reviewed BP2 lifecycle approval.
+- PR #1–#19 are merged; PR numbering does not express merge order.
+- PR #13 integrated the Claude recovery consolidation, PR #14 aligned the post-recovery state, PR #12 subsequently integrated the hardened BP2 Data Administration scope, PR #15 reconciled the active governance state, PR #16 hardened BP1 M1 accessibility and local validation, PR #17 reconciled the resulting governance state, PR #18 integrated the reviewed BP2 lifecycle approval, and PR #19 closed the post-PR18 integration cycle.
 - PR #12 added the documentation-only administration contract, a closed JSON Schema Draft 2020-12 schema, deterministic offline validation, and positive, negative, and adversarial tests.
 - `FD-BP2-ADM-001` records the BP2 Data Administration contract's reviewed `DRAFT → REVIEW → APPROVED` sequence with implementation authority disabled. Approval does not create Product/SKU, Admin UI, WordPress/WooCommerce, import, publication, deployment, or production authority.
-- The current protected `main` baseline is maintained only in [Current Project State](CURRENT_PROJECT_STATE.md).
-- Unified repository validation passes with pinned dependencies; PR #16 added the BP1 safety/contrast validator and reproducible local setup, its post-merge `main` CI succeeded, PR #17 branch CI passed before merge, and PR #18 Review-stage, final-PR, and post-merge `main` CI passed. Static success does not satisfy Product Data or runtime gates.
+- The reviewed input anchor and semantic state are maintained in [Current Project State](CURRENT_PROJECT_STATE.md); every task must resolve its own live starting SHA.
+- Unified repository validation passes with pinned dependencies; PR #16 added the BP1 safety/contrast validator and reproducible local setup, its post-merge `main` CI succeeded, PR #17 branch CI passed before merge, PR #18 Review-stage, final-PR, and post-merge `main` CI passed, and PR #19 post-merge `main` CI run `30372385447` passed. Static success does not satisfy Product Data or runtime gates.
 
 ## WordPress Architecture Coverage
 
@@ -463,7 +463,7 @@ The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain histo
 - `FD-PILOT-001` durably records the Golden Parent and exactly three approved pilot combinations; their reference IDs are not final commercial SKUs.
 - Current Pipe counts are 3 `APPROVED`, 879 `CANDIDATE_UNVERIFIED`, and 882 with market availability `MISSING_DATA_VALUE`.
 - Golden approval exists in Founder decisions and governing prose, but no canonical machine-readable Golden or Master Data package exists on `main`. Import, Runtime, and Publishing remain `NO-GO`.
-- Sprint 12A remains historical product/runtime evidence. Later repository integrations through PR #17 are governance, prototype, contract, and validation evidence only; no runtime implementation sprint is active.
+- Sprint 12A remains historical product/runtime evidence. Later repository integrations through PR #19 are governance, prototype, contract, and validation evidence only; no runtime implementation sprint is active.
 - GIT-02S created no ADR because it introduced no new enterprise architecture decision.
 - Repository A static validation passed within the dated GIT-02S evidence scope; that result does not substitute for fresh post-merge reconciliation validation.
 - Runtime, import, publishing, deployment, product creation, bulk SKU generation, Factory implementation, and any unscoped or autonomous repository merge remain `NO-GO` without separate Founder approval.
@@ -482,6 +482,7 @@ The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain histo
 - Full canonical Document Control coverage is 128 of 159 Markdown files under `docs/`; 31 files retain compact, legacy, or incomplete metadata.
 - Foundation, business, architecture, technology, WordPress, delivery, security, SEO, UX, testing, and changelog documents contain unresolved Draft sections or placeholders.
 - Documentation numbering, broad versioning policy, steel terminology, and child-theme placeholder decisions remain unresolved; the exact local v1.0.0 baseline decision is resolved.
+- `GOV-XD-00` resolves the self-referential live-tip wording, but does not resolve the cross-domain role assignments, Sprint Test Contracts, G02/G03 runtime ordering, or legacy canonical-owner conflicts.
 - External-link validation is not part of the current evidence set.
 - Sprint 03A–03E and Sprint 04A–04C authorize repository Product Data/Engine/Platform/audit/planning assets only; WordPress/runtime import, deployment, remediation, and production mutation remain unauthorized.
 - A local approved historical baseline/tags and synchronized canonical/default `main` exist; main protection is verified. Independent mirror, approved backup custody, signing, retention, product release, and production release remain unresolved.
@@ -526,6 +527,8 @@ The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain histo
 
 ## Future Work
 
+- Prepare the exact read-only `PD-01` Founder decision package; do not begin Contract, Schema, Validator, Test, registry, Product Data, or Golden-package work automatically.
+- Resolve the shared separation-of-duties matrix, Sprint-specific Test Contract, legacy Variable Parent Product ownership conflicts, and G02/G03 sequencing before their dependent implementation or runtime work.
 - Obtain Founder and applicable specialist review of the Master Remediation Roadmap, Implementation Sequence, and Execution Gates before creating any remediation ticket.
 - Close `G01` through `G05` for the exact intended scope before considering mutable investigation or implementation.
 - Obtain Founder and specialist approval of the Sprint 05A Design Intelligence set before translating any pattern into a future implementation proposal.
