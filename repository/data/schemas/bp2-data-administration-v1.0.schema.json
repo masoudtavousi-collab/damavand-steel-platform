@@ -47,7 +47,7 @@
       "properties": {
         "status": {
           "type": "string",
-          "const": "REVIEW"
+          "const": "APPROVED"
         },
         "approval_authority": {
           "type": "string",
@@ -67,7 +67,7 @@
         },
         "review_outcome": {
           "type": "string",
-          "const": "IN_PROGRESS"
+          "const": "PASS"
         },
         "reviewers": {
           "type": "array",
@@ -82,6 +82,14 @@
             {
               "from": "DRAFT",
               "to": "REVIEW",
+              "decided_by": "FOUNDER",
+              "decided_on": "2026-07-28",
+              "decision_id": "FD-BP2-ADM-001",
+              "evidence_reference": "docs/17_FOUNDER_DECISION_LOG.md#bp2-data-administration-lifecycle-decision"
+            },
+            {
+              "from": "REVIEW",
+              "to": "APPROVED",
               "decided_by": "FOUNDER",
               "decided_on": "2026-07-28",
               "decision_id": "FD-BP2-ADM-001",

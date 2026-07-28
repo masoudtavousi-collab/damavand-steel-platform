@@ -8,13 +8,19 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.4.2
+- **Version:** 0.5.0
 - **Last Updated:** 2026-07-28
 - **Lifecycle:** Review
 - **Source of Truth:** Merged Git history and scoped decision/evidence records
 - **Approval:** Pending Founder review; merged Git history remains evidence
 
 This changelog records repository outcomes. It does not create approval, runtime readiness, Product facts, or release authority.
+
+## 2026-07-28 — BP2 Data Administration Lifecycle Approval
+
+- `FD-BP2-ADM-001` records the ordered `DRAFT → REVIEW → APPROVED` lifecycle and completed review record `BP2-ADM-REVIEW-001`.
+- Contract, Schema, Validator, and tests now require Founder decision evidence, named review roles, a linear transition history, and rejection of direct `DRAFT → APPROVED`.
+- Approval is documentation governance only: `implementation_authority` remains false and Product/Knowledge population, Admin UI, WordPress/WooCommerce, import, publication, deployment, runtime, and production remain `NO-GO`.
 
 ## 2026-07-28 — Post-PR16 Governance Reconciliation
 

@@ -160,7 +160,15 @@ EXPECTED_LIFECYCLE_HISTORY = [
         "decided_on": "2026-07-28",
         "decision_id": LIFECYCLE_DECISION_ID,
         "evidence_reference": LIFECYCLE_EVIDENCE_REFERENCE,
-    }
+    },
+    {
+        "from": "REVIEW",
+        "to": "APPROVED",
+        "decided_by": "FOUNDER",
+        "decided_on": "2026-07-28",
+        "decision_id": LIFECYCLE_DECISION_ID,
+        "evidence_reference": LIFECYCLE_EVIDENCE_REFERENCE,
+    },
 ]
 
 ROOT_FIELDS = {
@@ -261,12 +269,12 @@ OBJECT_FIELDS = {
 EXPECTED_SCHEMA_CONSTS: dict[tuple[str, ...], Any] = {
     ("contract_id",): "bp2-data-administration",
     ("contract_version",): "1.0.0",
-    ("lifecycle", "status"): "REVIEW",
+    ("lifecycle", "status"): "APPROVED",
     ("lifecycle", "approval_authority"): "FOUNDER",
     ("lifecycle", "implementation_authority"): False,
     ("lifecycle", "decision_id"): LIFECYCLE_DECISION_ID,
     ("lifecycle", "review_record_id"): LIFECYCLE_REVIEW_RECORD_ID,
-    ("lifecycle", "review_outcome"): "IN_PROGRESS",
+    ("lifecycle", "review_outcome"): "PASS",
     ("lifecycle", "reviewers"): LIFECYCLE_REVIEWERS,
     ("lifecycle", "transition_history"): EXPECTED_LIFECYCLE_HISTORY,
     ("scope", "phase"): "BP2",
@@ -878,7 +886,7 @@ def run(argv: Sequence[str] | None = None) -> None:
     print(
         "BP2 DATA ADMINISTRATION VALIDATION PASSED: "
         "Draft 2020-12 schema enforced offline; all nested objects closed; "
-        "DRAFT -> REVIEW lifecycle evidence verified; "
+        "DRAFT -> REVIEW -> APPROVED lifecycle evidence verified; "
         "12 governed registries; add/edit/soft-delete; 3 approved pilots preserved; "
         "879 candidates not promoted; no admin UI, Product, SKU, WordPress, import, "
         "publication, or deployment authority."

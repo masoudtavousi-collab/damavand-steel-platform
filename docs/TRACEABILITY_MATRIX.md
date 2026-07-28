@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.6.2
+- **Version:** 0.7.0
 - **Last Updated:** 2026-07-28
 - **Last Review:** 2026-07-28
 - **Review Cycle:** On governing-rule or dependency change; periodic cadence pending Founder approval
@@ -29,12 +29,12 @@ Provide a single navigational view from governing rules through business, archit
 | Trace ID | Asset or event | Authority/evidence input | Reconciled outcome | Implementation status |
 | --- | --- | --- | --- | --- |
 | `POST12-MAIN` | PR #13, PR #14, PR #12, PR #15, PR #16, and PR #17 merged history | GitHub merge evidence and [Current Project State](CURRENT_PROJECT_STATE.md) | Records the actual order: recovery consolidation, post-recovery state, BP2 Data Administration hardening, governance reconciliation, BP1 M1 hardening, then post-PR16 governance reconciliation | Repository evidence only |
-| `POST12-SCOPE` | [BP2 Data Administration Scope v1.0](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md) | BP2 blueprint, Founder-scoped administration decisions, and PR #12 | Documents 12 governed registries, mutation governance, smart inquiry order, stop conditions, and rollback boundary | `DRAFT`; no implementation authority |
-| `POST12-CONTRACT` | `repository/data/contracts/bp2-data-administration-v1.0.json` | BP2 Data Administration Scope and source blueprint | Machine-readable documentation-only administration contract | No Product/SKU or runtime authority |
+| `POST12-SCOPE` | [BP2 Data Administration Scope v1.0](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md) | BP2 blueprint, PR #12, and `FD-BP2-ADM-001` | Documents 12 governed registries, mutation governance, smart inquiry order, stop conditions, lifecycle evidence, and rollback boundary | `APPROVED` documentation governance; no implementation authority |
+| `POST12-CONTRACT` | `repository/data/contracts/bp2-data-administration-v1.0.json` | BP2 Data Administration Scope, source blueprint, `FD-BP2-ADM-001`, and `BP2-ADM-REVIEW-001` | Machine-readable documentation-only administration contract with linear `DRAFT → REVIEW → APPROVED` evidence | No Product/SKU or runtime authority |
 | `POST12-SCHEMA` | `repository/data/schemas/bp2-data-administration-v1.0.schema.json` | JSON Schema Draft 2020-12 | Closes root and nested object shapes and constrains the contract offline | Structural validation only |
 | `POST12-VALIDATOR` | `repository/data/validation/validate_bp2_data_administration.py` | Contract, schema, source blueprint, and fail-closed governance rules | Deterministic offline validation; remote references and unsupported schema behavior are rejected | Validation only |
-| `POST12-TESTS` | `tests/test_bp2_data_administration.py` and fixtures | Positive, negative, boundary, malformed, duplicate-key, permissive-schema, and remote-reference cases | Ten automated test methods are wired into `make test` and protected CI | Test evidence only |
-| `POST12-LIFECYCLE` | Merged Git state versus document lifecycle | Document Lifecycle and Current Project State | Explicitly separates PR merge completion from Founder approval of the contract | Founder approval or revision still required |
+| `POST12-TESTS` | `tests/test_bp2_data_administration.py` and fixtures | Positive, negative, boundary, malformed, duplicate-key, lifecycle, permissive-schema, and remote-reference cases | Twelve automated test methods and 51 mutation cases are wired into `make test` and protected CI | Test evidence only |
+| `POST12-LIFECYCLE` | `FD-BP2-ADM-001` and `BP2-ADM-REVIEW-001` | Founder authorization, Review-stage CI, and Current Project State | Records the legal `DRAFT → REVIEW → APPROVED` sequence while keeping `implementation_authority: false` | Lifecycle approved; implementation and Product Data use remain separately gated |
 | `POST12-STATE` | PR #15 active-document reconciliation | Current State, Baseline, Readiness, Roadmap, Index, Navigation, Reading Order, Health, Traceability, Changelog, and Open Questions | Removes obsolete PR #12 merge blockers from active records and advances the next action to read-only BP1 and BP2 lifecycle assessment | Documentation evidence only |
 | `BP1-M1-HARDENING` | PR #16 BP1 accessibility and local-validation hardening | M1 acceptance evidence, BP1 prototype, pinned validation requirements, and protected CI | Corrects primary-CTA contrast, adds fail-closed contrast checks, and unifies reproducible local/CI validation | Local prototype and test evidence only; no runtime authority |
 | `POST16-STATE` | PR #17 active-document reconciliation | Current State, Baseline, Roadmap, Repository Relationship Map, Index, Navigation, Health, Traceability, Changelog, and Open Questions | Records PR #16 completion, removes its closed blocker, and advances the next action to read-only BP2 lifecycle decision preparation | Documentation evidence only |

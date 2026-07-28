@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.5.2
+- **Version:** 0.6.0
 - **Last Updated:** 2026-07-28
 - **Last Review:** 2026-07-28
 - **Review Cycle:** On question creation, resolution, blocking impact, or source-document change
@@ -26,7 +26,7 @@ Collect unresolved questions and unclassified placeholders without answering the
 
 ## Current Repository-Control Resolution Boundary
 
-Historical Git authorizations retain their original scope. PR #1–#17 are merged, with PR #13 and PR #14 preceding the final PR #12 merge, PR #15 reconciling active governance afterward, PR #16 hardening BP1 M1 accessibility and local validation, and PR #17 reconciling the resulting governance state; baseline evidence and live-tip resolution are maintained in [Current Project State](CURRENT_PROJECT_STATE.md). Product hierarchy and canonical path ownership are settled by `FD-W2G-001` and `FD-W2G-002`. K-01 is authorized by `FD-K01-001`. PR #12 technically hardened the BP2 Data Administration contract, but its lifecycle remains `DRAFT` and implementation authority remains false. Product values, Product Attribute definitions, WordPress, runtime, content, publication, deployment, production, mirror, backup, signing, and retention questions retain their prior status unless explicitly updated below. Originating authorization references for Wave 2A and Wave 2B remain to be linked; merge history must not be used as a substitute.
+Historical Git authorizations retain their original scope. PR #1–#17 are merged, with PR #13 and PR #14 preceding the final PR #12 merge, PR #15 reconciling active governance afterward, PR #16 hardening BP1 M1 accessibility and local validation, and PR #17 reconciling the resulting governance state; PR #18 contains the scoped BP2 lifecycle integration. Baseline evidence and live-tip resolution are maintained in [Current Project State](CURRENT_PROJECT_STATE.md). Product hierarchy and canonical path ownership are settled by `FD-W2G-001` and `FD-W2G-002`. K-01 is authorized by `FD-K01-001`. `FD-BP2-ADM-001` approves the BP2 Data Administration contract only as documentation governance; implementation authority remains false. Product values, Product Attribute definitions, WordPress, runtime, content, publication, deployment, production, mirror, backup, signing, and retention questions retain their prior status unless explicitly updated below. Originating authorization references for Wave 2A and Wave 2B remain to be linked; merge history must not be used as a substitute.
 
 ## Explicit Open-Question Sections
 

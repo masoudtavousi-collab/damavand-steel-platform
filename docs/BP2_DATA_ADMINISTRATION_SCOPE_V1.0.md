@@ -3,19 +3,19 @@
 ## Document control
 
 - **Document ID:** `docs/BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md`
-- **Status:** Review
-- **Authority:** Proposed Governing
+- **Status:** Approved
+- **Authority:** Governing within the documentation-only BP2 Data Administration scope
 - **Owner:** Founder
 - **Reviewers:** Chief Architect / Product Owner / QA; Repository Guardian
 - **Approval Authority:** Founder
 - **Version:** 1.0.0
 - **Last Updated:** 2026-07-28
-- **Lifecycle:** Review
+- **Lifecycle:** Approved
 - **Decision ID:** `FD-BP2-ADM-001`
 - **Review Record:** `BP2-ADM-REVIEW-001`
 - **Execution Authority:** Documentation and machine-readable contracts only
 - **Implementation Authority:** `false`
-- **Approval:** Founder authorized the ordered `DRAFT → REVIEW → APPROVED` lifecycle on 2026-07-28; review is in progress and approval is not yet recorded
+- **Approval:** `FD-BP2-ADM-001`; Founder approved the ordered `DRAFT → REVIEW → APPROVED` lifecycle on 2026-07-28 after successful review
 
 ## Purpose
 
@@ -117,12 +117,12 @@ This document does not authorize or implement that panel.
 | Document | `docs/BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md`, version 1.0.0 |
 | Change scope | Lifecycle evidence and fail-closed Contract/Schema/Validator/Test hardening only |
 | Reviewers | Chief Architect / Product Owner / QA; Repository Guardian |
-| Evidence | Contract, closed Draft 2020-12 schema, deterministic offline validator, positive/negative/adversarial tests, and protected CI |
-| Findings | Review in progress; direct `DRAFT → APPROVED` remains forbidden |
+| Evidence | Contract, closed Draft 2020-12 schema, deterministic offline validator, 12 positive/negative/adversarial test methods, 51 mutation cases, local `make test`, and successful protected Review-stage CI on PR #18 |
+| Findings | No blocking findings; direct `DRAFT → APPROVED` remains forbidden and is tested |
 | Exceptions | None |
-| Outcome | In Progress |
-| Proposed lifecycle | Review |
-| Approval | `FD-BP2-ADM-001`; Founder authorization dated 2026-07-28 |
+| Outcome | Pass |
+| Proposed lifecycle | Approved |
+| Approval | `FD-BP2-ADM-001`; Founder authorization and approval dated 2026-07-28 |
 
 ## Stop conditions
 

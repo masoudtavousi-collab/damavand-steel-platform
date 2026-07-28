@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.6.0
-- **Last Updated:** 2026-07-27
-- **Last Review:** 2026-07-27
+- **Version:** 0.7.0
+- **Last Updated:** 2026-07-28
+- **Last Review:** 2026-07-28
 - **Review Cycle:** On navigation or authority change; periodic cadence pending Founder approval
 - **Lifecycle:** Review
 - **Source of Truth:** [Documentation Index](08_DOCUMENTATION_INDEX.md) and [Navigation Map](09_NAVIGATION_MAP.md)
@@ -43,7 +43,7 @@ Every reader starts with:
 
 Readers then follow the applicable role path.
 
-For current work, readers must obtain the exact phase, branch, authorization, pull-request state, GO/NO-GO boundary, and next action from Current Project State. The [Claude Recovery Audit](AUDIT_REPORT_CLAUDE_RECOVERY_2026-07-26.md), K-01 audit, Atlas Adoption Matrix, and merged pull requests remain evidence within their recorded scopes; none owns mutable operational state or grants execution authority. PR #12's merged Git state must not be confused with approval of the [BP2 Data Administration Scope](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md), which remains `DRAFT`.
+For current work, readers must obtain the exact phase, branch, authorization, pull-request state, GO/NO-GO boundary, and next action from Current Project State. The [Claude Recovery Audit](AUDIT_REPORT_CLAUDE_RECOVERY_2026-07-26.md), K-01 audit, Atlas Adoption Matrix, and merged pull requests remain evidence within their recorded scopes; none owns mutable operational state or grants execution authority. The [BP2 Data Administration Scope](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md) is `APPROVED` under `FD-BP2-ADM-001` only for documentation governance and grants no implementation authority.
 
 ## Founder Reading Path
 
@@ -162,7 +162,7 @@ No product taxonomy or steel terminology may be inferred while the relevant Foun
 7. [Product Attribute Model](22_PRODUCT_ATTRIBUTE_MODEL.md).
 8. [WooCommerce Product Model](20_WOOCOMMERCE_PRODUCT_MODEL.md).
 9. [Inquiry Data Model](23_INQUIRY_DATA_MODEL.md).
-10. [BP2 Data Administration Scope v1.0](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md), treated as a merged but `DRAFT`, documentation-only contract with no implementation authority.
+10. [BP2 Data Administration Scope v1.0](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md), treated as an `APPROVED`, documentation-only governance contract with no implementation authority.
 11. [Traceability Matrix](TRACEABILITY_MATRIX.md).
 12. [Batch 05 Audit](AUDIT_REPORT_BATCH05.md), [Batch 05A Audit](AUDIT_REPORT_BATCH05A.md), and [Batch 05B Audit](AUDIT_REPORT_BATCH05B.md).
 
