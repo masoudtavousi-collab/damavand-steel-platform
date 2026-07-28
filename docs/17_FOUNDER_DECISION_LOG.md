@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.10.0
-- **Last Updated:** 2026-07-23
-- **Last Review:** 2026-07-23
+- **Version:** 0.11.0
+- **Last Updated:** 2026-07-28
+- **Last Review:** 2026-07-28
 - **Review Cycle:** On Founder decision creation, resolution, supersession, or dependency change
 - **Lifecycle:** Draft
 - **Source of Truth:** Explicit Founder-decision requirements in controlled source documents; this log is an index only
@@ -54,6 +54,12 @@ Index every repository item explicitly marked as requiring a Founder decision. T
 | --- | --- | --- | --- |
 | FD-ARC-001 | Approve, revise, or reject WP-ARC-001 through WP-ARC-012 as the WordPress Enterprise Architecture. | [WordPress Enterprise Architecture](06_WORDPRESS_ARCHITECTURE.md#architecture-decision-register) | Pending; no implementation authorized |
 | FD-ARC-002 | Resolve or delegate the product, taxonomy, role, inquiry, SEO, media, version, plugin, integration, security, and performance decisions required before configuration. | [Open Architecture Decisions](06_WORDPRESS_ARCHITECTURE.md#open-architecture-decisions) | Pending; domain review required |
+
+## BP2 Data Administration Lifecycle Decision
+
+| ID | Decision | Decision owner / date | Approval scope | Evidence | Status / supersession |
+| --- | --- | --- | --- | --- | --- |
+| `FD-BP2-ADM-001` | Execute the BP2 Data Administration lifecycle in the ordered sequence `DRAFT → REVIEW → APPROVED`; perform governance-only review and corrections; preserve `implementation_authority: false`; and reject any direct `DRAFT → APPROVED` transition. | Founder / 2026-07-28 | BP2 scope, Contract, Schema, Validator, tests, direct governance reconciliation, scoped Branch/Commit/Push/PR, conditional Merge Commit, and post-merge CI only | Founder authorization recorded in the active Codex task; [BP2 Data Administration Scope](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md); `BP2-ADM-REVIEW-001`; protected CI | `REVIEW` entered on 2026-07-28. Final `APPROVED` remains conditional on completed review, resolved blockers, successful CI, no conflict, and no out-of-scope change. No Admin UI, Product/SKU, WordPress/WooCommerce, import, publication, deployment, runtime, production, or branch deletion is authorized. |
 
 ## Settled Golden Pipe Pilot Decision
 

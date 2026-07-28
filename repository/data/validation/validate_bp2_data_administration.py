@@ -142,6 +142,26 @@ EXPECTED_SOURCE_PILOTS = {
         "APPROVED",
     ),
 }
+LIFECYCLE_DECISION_ID = "FD-BP2-ADM-001"
+LIFECYCLE_REVIEW_RECORD_ID = "BP2-ADM-REVIEW-001"
+LIFECYCLE_REVIEWERS = [
+    "CHIEF_ARCHITECT_PRODUCT_OWNER_QA",
+    "REPOSITORY_GUARDIAN",
+]
+LIFECYCLE_EVIDENCE_REFERENCE = (
+    "docs/17_FOUNDER_DECISION_LOG.md"
+    "#bp2-data-administration-lifecycle-decision"
+)
+EXPECTED_LIFECYCLE_HISTORY = [
+    {
+        "from": "DRAFT",
+        "to": "REVIEW",
+        "decided_by": "FOUNDER",
+        "decided_on": "2026-07-28",
+        "decision_id": LIFECYCLE_DECISION_ID,
+        "evidence_reference": LIFECYCLE_EVIDENCE_REFERENCE,
+    }
+]
 
 ROOT_FIELDS = {
     "contract_id",
@@ -166,6 +186,11 @@ OBJECT_FIELDS = {
         "status",
         "approval_authority",
         "implementation_authority",
+        "decision_id",
+        "review_record_id",
+        "review_outcome",
+        "reviewers",
+        "transition_history",
     },
     ("scope",): {
         "phase",
@@ -236,9 +261,14 @@ OBJECT_FIELDS = {
 EXPECTED_SCHEMA_CONSTS: dict[tuple[str, ...], Any] = {
     ("contract_id",): "bp2-data-administration",
     ("contract_version",): "1.0.0",
-    ("lifecycle", "status"): "DRAFT",
+    ("lifecycle", "status"): "REVIEW",
     ("lifecycle", "approval_authority"): "FOUNDER",
     ("lifecycle", "implementation_authority"): False,
+    ("lifecycle", "decision_id"): LIFECYCLE_DECISION_ID,
+    ("lifecycle", "review_record_id"): LIFECYCLE_REVIEW_RECORD_ID,
+    ("lifecycle", "review_outcome"): "IN_PROGRESS",
+    ("lifecycle", "reviewers"): LIFECYCLE_REVIEWERS,
+    ("lifecycle", "transition_history"): EXPECTED_LIFECYCLE_HISTORY,
     ("scope", "phase"): "BP2",
     ("scope", "documentation_only"): True,
     ("scope", "implements_admin_ui"): False,
@@ -549,6 +579,86 @@ def validate_contract_instance(
         )
 
 
+def validate_lifecycle_history(contract: dict[str, Any]) -> None:
+    lifecycle = require_mapping(
+        contract.get("lifecycle"),
+        "lifecycle",
+        "LIFECYCLE_TRANSITION",
+    )
+    history = require_list(
+        lifecycle.get("transition_history"),
+        "lifecycle transition_history",
+        "LIFECYCLE_TRANSITION",
+    )
+    current_status = "DRAFT"
+    expected_fields = {
+        "from",
+        "to",
+        "decided_by",
+        "decided_on",
+        "decision_id",
+        "evidence_reference",
+    }
+    allowed_transitions = {
+        ("DRAFT", "REVIEW"),
+        ("REVIEW", "APPROVED"),
+    }
+
+    for index, transition_value in enumerate(history):
+        transition = require_mapping(
+            transition_value,
+            f"lifecycle transition {index}",
+            "LIFECYCLE_TRANSITION",
+        )
+        if set(transition) != expected_fields:
+            fail(
+                "LIFECYCLE_TRANSITION",
+                f"lifecycle transition {index} must contain exact evidence fields",
+            )
+        edge = (transition.get("from"), transition.get("to"))
+        if edge not in allowed_transitions or edge[0] != current_status:
+            fail(
+                "LIFECYCLE_TRANSITION",
+                f"illegal or non-linear lifecycle transition at index {index}",
+            )
+        if (
+            transition.get("decided_by") != "FOUNDER"
+            or transition.get("decided_on") != "2026-07-28"
+            or transition.get("decision_id") != LIFECYCLE_DECISION_ID
+            or transition.get("evidence_reference")
+            != LIFECYCLE_EVIDENCE_REFERENCE
+        ):
+            fail(
+                "LIFECYCLE_TRANSITION",
+                f"invalid lifecycle authority evidence at index {index}",
+            )
+        current_status = transition["to"]
+
+    if current_status != lifecycle.get("status"):
+        fail(
+            "LIFECYCLE_TRANSITION",
+            "lifecycle history does not terminate at the current status",
+        )
+    if (
+        lifecycle.get("decision_id") != LIFECYCLE_DECISION_ID
+        or lifecycle.get("review_record_id") != LIFECYCLE_REVIEW_RECORD_ID
+        or lifecycle.get("reviewers") != LIFECYCLE_REVIEWERS
+        or "FOUNDER" in lifecycle.get("reviewers", [])
+    ):
+        fail(
+            "LIFECYCLE_TRANSITION",
+            "lifecycle decision or independent review evidence differs",
+        )
+    expected_outcome = (
+        "PASS" if lifecycle.get("status") == "APPROVED" else "IN_PROGRESS"
+    )
+    if lifecycle.get("review_outcome") != expected_outcome:
+        fail(
+            "LIFECYCLE_TRANSITION",
+            "review outcome is inconsistent with lifecycle status",
+        )
+
+
 def validate_source_relationship(
     contract: dict[str, Any],
     source: dict[str, Any],
@@ -763,10 +873,12 @@ def run(argv: Sequence[str] | None = None) -> None:
     source = load_json(args.source, "source")
     validate_schema_definition(schema)
     validate_contract_instance(contract, schema)
+    validate_lifecycle_history(contract)
     validate_source_relationship(contract, source)
     print(
         "BP2 DATA ADMINISTRATION VALIDATION PASSED: "
         "Draft 2020-12 schema enforced offline; all nested objects closed; "
+        "DRAFT -> REVIEW lifecycle evidence verified; "
         "12 governed registries; add/edit/soft-delete; 3 approved pilots preserved; "
         "879 candidates not promoted; no admin UI, Product, SKU, WordPress, import, "
         "publication, or deployment authority."

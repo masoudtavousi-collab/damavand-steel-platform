@@ -96,11 +96,35 @@
       "expected_code": "SCHEMA_INSTANCE_INVALID"
     },
     {
-      "id": "A02_LIFECYCLE_PROMOTION",
+      "id": "A02_LIFECYCLE_DIRECT_APPROVAL",
       "target": "contract",
       "operation": "set",
       "path": "/lifecycle/status",
       "value": "APPROVED",
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "A02_LIFECYCLE_DECISION_FORGED",
+      "target": "contract",
+      "operation": "set",
+      "path": "/lifecycle/decision_id",
+      "value": "FD-FORGED-001",
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "A02_LIFECYCLE_REVIEWERS_REMOVED",
+      "target": "contract",
+      "operation": "set",
+      "path": "/lifecycle/reviewers",
+      "value": [],
+      "expected_code": "SCHEMA_INSTANCE_INVALID"
+    },
+    {
+      "id": "A02_LIFECYCLE_HISTORY_REMOVED",
+      "target": "contract",
+      "operation": "set",
+      "path": "/lifecycle/transition_history",
+      "value": [],
       "expected_code": "SCHEMA_INSTANCE_INVALID"
     },
     {

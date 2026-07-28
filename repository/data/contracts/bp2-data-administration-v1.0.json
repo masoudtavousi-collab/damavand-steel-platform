@@ -2,9 +2,26 @@
   "contract_id": "bp2-data-administration",
   "contract_version": "1.0.0",
   "lifecycle": {
-    "status": "DRAFT",
+    "status": "REVIEW",
     "approval_authority": "FOUNDER",
-    "implementation_authority": false
+    "implementation_authority": false,
+    "decision_id": "FD-BP2-ADM-001",
+    "review_record_id": "BP2-ADM-REVIEW-001",
+    "review_outcome": "IN_PROGRESS",
+    "reviewers": [
+      "CHIEF_ARCHITECT_PRODUCT_OWNER_QA",
+      "REPOSITORY_GUARDIAN"
+    ],
+    "transition_history": [
+      {
+        "from": "DRAFT",
+        "to": "REVIEW",
+        "decided_by": "FOUNDER",
+        "decided_on": "2026-07-28",
+        "decision_id": "FD-BP2-ADM-001",
+        "evidence_reference": "docs/17_FOUNDER_DECISION_LOG.md#bp2-data-administration-lifecycle-decision"
+      }
+    ]
   },
   "scope": {
     "phase": "BP2",

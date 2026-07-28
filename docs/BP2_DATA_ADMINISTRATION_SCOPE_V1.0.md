@@ -1,8 +1,21 @@
 # BP2 Data Administration Scope v1.0
 
-Status: `DRAFT`
-Approval authority: Founder
-Execution authority: documentation and machine-readable contracts only
+## Document control
+
+- **Document ID:** `docs/BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md`
+- **Status:** Review
+- **Authority:** Proposed Governing
+- **Owner:** Founder
+- **Reviewers:** Chief Architect / Product Owner / QA; Repository Guardian
+- **Approval Authority:** Founder
+- **Version:** 1.0.0
+- **Last Updated:** 2026-07-28
+- **Lifecycle:** Review
+- **Decision ID:** `FD-BP2-ADM-001`
+- **Review Record:** `BP2-ADM-REVIEW-001`
+- **Execution Authority:** Documentation and machine-readable contracts only
+- **Implementation Authority:** `false`
+- **Approval:** Founder authorized the ordered `DRAFT → REVIEW → APPROVED` lifecycle on 2026-07-28; review is in progress and approval is not yet recorded
 
 ## Purpose
 
@@ -96,6 +109,20 @@ This document does not authorize or implement that panel.
 - Three approved pilots and 879 candidates reconcile with the source blueprint.
 - Automated validation fails on forbidden implementation authority or scope expansion.
 - No Product/SKU, WordPress/WooCommerce, import, publication, deployment, or production mutation is introduced.
+
+## Lifecycle review record
+
+| Field | Recorded value |
+| --- | --- |
+| Document | `docs/BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md`, version 1.0.0 |
+| Change scope | Lifecycle evidence and fail-closed Contract/Schema/Validator/Test hardening only |
+| Reviewers | Chief Architect / Product Owner / QA; Repository Guardian |
+| Evidence | Contract, closed Draft 2020-12 schema, deterministic offline validator, positive/negative/adversarial tests, and protected CI |
+| Findings | Review in progress; direct `DRAFT → APPROVED` remains forbidden |
+| Exceptions | None |
+| Outcome | In Progress |
+| Proposed lifecycle | Review |
+| Approval | `FD-BP2-ADM-001`; Founder authorization dated 2026-07-28 |
 
 ## Stop conditions
 

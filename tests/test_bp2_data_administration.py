@@ -157,6 +157,48 @@ class BP2DataAdministrationTests(unittest.TestCase):
         self.assertEqual(stdout.getvalue(), "")
         self.assertEqual(stderr.getvalue(), "")
 
+    def test_positive_lifecycle_transition_chain(self) -> None:
+        lifecycle = self.canonical["contract"]["lifecycle"]
+        current_status = "DRAFT"
+        for transition in lifecycle["transition_history"]:
+            self.assertEqual(transition["from"], current_status)
+            self.assertNotEqual(
+                (transition["from"], transition["to"]),
+                ("DRAFT", "APPROVED"),
+            )
+            current_status = transition["to"]
+        self.assertEqual(current_status, lifecycle["status"])
+        self.assertNotIn("FOUNDER", lifecycle["reviewers"])
+
+    def test_negative_direct_draft_to_approved_transition(self) -> None:
+        spec = importlib.util.spec_from_file_location(
+            "bp2_data_administration_lifecycle_validator",
+            VALIDATOR,
+        )
+        self.assertIsNotNone(spec)
+        self.assertIsNotNone(spec.loader)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        mutated = copy.deepcopy(self.canonical["contract"])
+        mutated["lifecycle"]["status"] = "APPROVED"
+        mutated["lifecycle"]["review_outcome"] = "PASS"
+        mutated["lifecycle"]["transition_history"] = [
+            {
+                "from": "DRAFT",
+                "to": "APPROVED",
+                "decided_by": "FOUNDER",
+                "decided_on": "2026-07-28",
+                "decision_id": "FD-BP2-ADM-001",
+                "evidence_reference": (
+                    "docs/17_FOUNDER_DECISION_LOG.md"
+                    "#bp2-data-administration-lifecycle-decision"
+                ),
+            }
+        ]
+        with self.assertRaises(module.ValidationFailure) as context:
+            module.validate_lifecycle_history(mutated)
+        self.assertEqual(context.exception.code, "LIFECYCLE_TRANSITION")
+
     def test_negative_raw_json_fixtures(self) -> None:
         fixtures = [
             ("invalid-malformed.json", "JSON_INVALID"),
