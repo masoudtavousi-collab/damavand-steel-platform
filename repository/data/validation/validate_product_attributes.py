@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Deterministic offline validation for the Product Attribute foundation."""
+"""Deterministic offline validation for the PD-01 Product Attribute foundation."""
 
 from __future__ import annotations
 
@@ -9,9 +9,11 @@ from datetime import datetime
 import json
 from pathlib import Path
 import re
-import subprocess
 import sys
 from typing import Any, Iterable
+
+from jsonschema import Draft202012Validator, FormatChecker
+from jsonschema.exceptions import SchemaError
 
 from validate_measurements import (
     MeasurementDefinitionError,
@@ -20,6 +22,9 @@ from validate_measurements import (
 
 
 ROOT = Path(__file__).resolve().parents[3]
+MAX_INPUT_BYTES = 2_000_000
+MAX_NESTING_DEPTH = 64
+MAX_STRUCTURE_NODES = 20_000
 CONTRACT_PATH = ROOT / "repository/data/contracts/product-attribute.contract.yaml"
 SCHEMA_PATH = ROOT / "repository/data/schemas/product-attribute.schema.json"
 ATTRIBUTES_PATH = ROOT / "repository/data/registries/product-attributes.yaml"
@@ -130,68 +135,128 @@ class Definitions:
     categories: set[str]
     statuses: set[str]
     units: dict[str, dict[str, Any]]
+    schema_validator: Any
     parser_sources: tuple[str, ...]
 
 
-def read_text(path: Path, label: str) -> str:
+def safe_path(path: Path, label: str) -> Path:
     try:
-        return path.read_text(encoding="utf-8")
+        if path.is_symlink():
+            raise DefinitionError(f"{label} must not be a symbolic link")
+        resolved = path.resolve(strict=True)
     except FileNotFoundError as exc:
-        raise DefinitionError(f"missing {label}: {path.relative_to(ROOT)}") from exc
+        raise DefinitionError(f"missing {label}: {path}") from exc
+    if resolved != ROOT and ROOT not in resolved.parents:
+        raise DefinitionError(f"{label} must remain inside the repository")
+    return resolved
+
+
+def read_text(path: Path, label: str) -> str:
+    resolved = safe_path(path, label)
+    if resolved.stat().st_size > MAX_INPUT_BYTES:
+        raise DefinitionError(f"{label} exceeds the {MAX_INPUT_BYTES}-byte limit")
+    try:
+        return resolved.read_text(encoding="utf-8")
+    except UnicodeDecodeError as exc:
+        raise DefinitionError(f"{label} must be valid UTF-8") from exc
+
+
+def ensure_bounded_structure(value: Any, label: str) -> Any:
+    stack: list[tuple[Any, int]] = [(value, 0)]
+    nodes = 0
+    while stack:
+        item, depth = stack.pop()
+        nodes += 1
+        if nodes > MAX_STRUCTURE_NODES:
+            raise DefinitionError(
+                f"{label} exceeds the {MAX_STRUCTURE_NODES}-node limit"
+            )
+        if depth > MAX_NESTING_DEPTH:
+            raise DefinitionError(
+                f"{label} exceeds the {MAX_NESTING_DEPTH}-level nesting limit"
+            )
+        if isinstance(item, dict):
+            stack.extend((child, depth + 1) for child in item.values())
+        elif isinstance(item, list):
+            stack.extend((child, depth + 1) for child in item)
+    return value
 
 
 def parse_yaml(raw: str, label: str) -> tuple[Any, str]:
     try:
         import yaml  # type: ignore[import-not-found]
-    except ModuleNotFoundError:
-        command = [
-            "ruby",
-            "-ryaml",
-            "-rjson",
-            "-e",
-            (
-                "value=YAML.safe_load(STDIN.read, [], [], false); "
-                "STDOUT.write(JSON.generate(value))"
-            ),
-        ]
-        try:
-            result = subprocess.run(
-                command,
-                input=raw,
-                text=True,
-                capture_output=True,
-                check=False,
-            )
-        except FileNotFoundError as exc:
-            raise DefinitionError(
-                "YAML validation requires approved PyYAML or Ruby Psych; neither is available"
-            ) from exc
-        if result.returncode != 0:
-            raise DefinitionError(
-                f"invalid YAML in {label} via Ruby Psych: {result.stderr.strip()}"
-            )
-        try:
-            return json.loads(result.stdout), "Ruby Psych fallback"
-        except json.JSONDecodeError as exc:
-            raise DefinitionError(f"Ruby Psych returned invalid JSON for {label}") from exc
+    except ModuleNotFoundError as exc:
+        raise DefinitionError("strict YAML validation requires approved PyYAML") from exc
+
+    class UniqueKeyLoader(yaml.SafeLoader):  # type: ignore[attr-defined]
+        pass
+
+    def construct_mapping(loader: Any, node: Any, deep: bool = False) -> dict[Any, Any]:
+        mapping: dict[Any, Any] = {}
+        for key_node, value_node in node.value:
+            key = loader.construct_object(key_node, deep=deep)
+            try:
+                if key in mapping:
+                    raise DefinitionError(f"duplicate YAML key in {label}: {key!r}")
+            except TypeError as exc:
+                raise DefinitionError(f"unhashable YAML key in {label}: {key!r}") from exc
+            mapping[key] = loader.construct_object(value_node, deep=deep)
+        return mapping
+
+    UniqueKeyLoader.add_constructor(
+        yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG,  # type: ignore[attr-defined]
+        construct_mapping,
+    )
 
     try:
-        return yaml.safe_load(raw), f"PyYAML {yaml.__version__}"
+        return (
+            ensure_bounded_structure(
+                yaml.load(raw, Loader=UniqueKeyLoader),
+                label,
+            ),
+            f"PyYAML {yaml.__version__} strict",
+        )
     except yaml.YAMLError as exc:  # type: ignore[attr-defined]
         raise DefinitionError(f"invalid YAML in {label}: {exc}") from exc
+    except RecursionError as exc:
+        raise DefinitionError(f"unsafe YAML nesting in {label}") from exc
 
 
 def load_yaml(path: Path, label: str) -> tuple[Any, str]:
     return parse_yaml(read_text(path, label), label)
 
 
-def load_json(path: Path, label: str) -> Any:
+def parse_json(raw: str, label: str) -> Any:
+    def strict_object(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
+        result: dict[str, Any] = {}
+        for key, value in pairs:
+            if key in result:
+                raise DefinitionError(f"duplicate JSON key in {label}: {key!r}")
+            result[key] = value
+        return result
+
+    def reject_constant(value: str) -> None:
+        raise DefinitionError(f"non-finite JSON number in {label}: {value}")
+
     try:
-        return json.loads(read_text(path, label))
+        return ensure_bounded_structure(
+            json.loads(
+                raw,
+                object_pairs_hook=strict_object,
+                parse_constant=reject_constant,
+            ),
+            label,
+        )
     except json.JSONDecodeError as exc:
         raise DefinitionError(
             f"invalid JSON in {label} at line {exc.lineno}, column {exc.colno}: {exc.msg}"
         ) from exc
+    except RecursionError as exc:
+        raise DefinitionError(f"unsafe JSON nesting in {label}") from exc
+
+
+def load_json(path: Path, label: str) -> Any:
+    return parse_json(read_text(path, label), label)
 
 
 def require_mapping(value: Any, label: str) -> dict[str, Any]:
@@ -326,7 +391,7 @@ def validate_statuses(value: Any) -> set[str]:
 
 def validate_attribute_registry(
     attributes_value: Any, contract_version: str
-) -> None:
+) -> list[Any]:
     attributes = require_mapping(attributes_value, "Product Attribute registry")
     require_exact_keys(
         attributes,
@@ -338,8 +403,26 @@ def validate_attribute_registry(
     require_semver(attributes["registry_version"], "Attribute registry_version")
     if attributes["contract_version"] != contract_version:
         raise DefinitionError("Attribute registry contract_version is incompatible")
-    if attributes["attributes"] != []:
-        raise DefinitionError("Wave 2B Product Attribute registry must contain zero entries")
+    entries = attributes["attributes"]
+    if not isinstance(entries, list):
+        raise DefinitionError("Product Attribute registry entries must be a list")
+    return entries
+
+
+def reject_nonlocal_schema_references(value: Any, path: str = "#") -> None:
+    if isinstance(value, dict):
+        for key, item in value.items():
+            child = f"{path}/{key}"
+            if key == "$ref" and (
+                not isinstance(item, str) or not item.startswith("#/")
+            ):
+                raise DefinitionError(
+                    f"non-local schema reference is forbidden in PD-01: {child}"
+                )
+            reject_nonlocal_schema_references(item, child)
+    elif isinstance(value, list):
+        for index, item in enumerate(value):
+            reject_nonlocal_schema_references(item, f"{path}/{index}")
 
 
 def validate_contract_schema(
@@ -348,11 +431,66 @@ def validate_contract_schema(
     data_types: dict[str, dict[str, Any]],
     categories: set[str],
     statuses: set[str],
-) -> tuple[str, re.Pattern[str], re.Pattern[str], re.Pattern[str], set[str], set[str]]:
+) -> tuple[
+    str,
+    re.Pattern[str],
+    re.Pattern[str],
+    re.Pattern[str],
+    set[str],
+    set[str],
+    Any,
+]:
     contract = require_mapping(contract_value, "Product Attribute contract")
     if contract.get("contract_id") != "product-attribute":
         raise DefinitionError("contract_id must be product-attribute")
     contract_version = require_semver(contract.get("contract_version"), "contract_version")
+    if contract_version != "2.0.0":
+        raise DefinitionError("PD-01 Product Attribute contract_version must be 2.0.0")
+    lifecycle = require_mapping(contract.get("pd01_lifecycle"), "pd01_lifecycle")
+    if lifecycle.get("decision_id") != "FD-PD01-001":
+        raise DefinitionError("PD-01 lifecycle decision_id must be FD-PD01-001")
+    if lifecycle.get("allowed_transition_sequence") != [
+        "DRAFT",
+        "REVIEW",
+        "APPROVED",
+    ]:
+        raise DefinitionError("PD-01 lifecycle sequence must be DRAFT -> REVIEW -> APPROVED")
+    status = lifecycle.get("current_status")
+    expected_history = {
+        "DRAFT": [],
+        "REVIEW": [
+            {
+                "from": "DRAFT",
+                "to": "REVIEW",
+                "evidence_reference": "PD01-REVIEW-001",
+            }
+        ],
+        "APPROVED": [
+            {
+                "from": "DRAFT",
+                "to": "REVIEW",
+                "evidence_reference": "PD01-REVIEW-001",
+            },
+            {
+                "from": "REVIEW",
+                "to": "APPROVED",
+                "evidence_reference": "FD-PD01-001",
+            },
+        ],
+    }
+    if status not in expected_history or lifecycle.get("transition_history") != expected_history[status]:
+        raise DefinitionError("PD-01 lifecycle history is invalid or skips REVIEW")
+    if lifecycle.get("direct_draft_to_approved_forbidden") is not True:
+        raise DefinitionError("direct DRAFT -> APPROVED must remain forbidden")
+    if lifecycle.get("canonical_population_authority") is not False:
+        raise DefinitionError("PD-01 must not grant canonical population authority")
+    registry_policy = require_mapping(contract.get("registry_policy"), "registry_policy")
+    if registry_policy != {
+        "validator_supports_entry_validation": True,
+        "canonical_registry_must_remain_empty_in_pd01": True,
+        "nonempty_registry_requires_separate_founder_approval": True,
+    }:
+        raise DefinitionError("PD-01 registry policy differs from the approved boundary")
     required_fields = set(contract.get("always_required_attribute_fields", []))
     expected_required = {
         "contract_version",
@@ -384,7 +522,7 @@ def validate_contract_schema(
     prohibited_fields = {str(item) for item in prohibited}
     boundary = require_mapping(contract.get("data_boundary"), "data_boundary")
     if any(boundary.values()):
-        raise DefinitionError("Wave 2B data and runtime boundaries must all remain false")
+        raise DefinitionError("PD-01 data and runtime boundaries must all remain false")
 
     schema = require_mapping(schema_value, "Product Attribute JSON Schema")
     if schema.get("$schema") != "https://json-schema.org/draft/2020-12/schema":
@@ -408,6 +546,12 @@ def validate_contract_schema(
         raise DefinitionError("JSON Schema categories differ from the registry")
     if set(properties.get("status", {}).get("enum", [])) != statuses:
         raise DefinitionError("JSON Schema statuses differ from the approved registry")
+    reject_nonlocal_schema_references(schema)
+    try:
+        Draft202012Validator.check_schema(schema)
+    except SchemaError as exc:
+        raise DefinitionError(f"Product Attribute JSON Schema is invalid: {exc.message}") from exc
+    schema_validator = Draft202012Validator(schema, format_checker=FormatChecker())
     return (
         contract_version,
         attribute_id_pattern,
@@ -415,6 +559,7 @@ def validate_contract_schema(
         unit_id_pattern,
         required_fields,
         prohibited_fields,
+        schema_validator,
     )
 
 
@@ -444,9 +589,10 @@ def load_definitions() -> Definitions:
         unit_id_pattern,
         required_fields,
         prohibited_fields,
+        schema_validator,
     ) = validate_contract_schema(contract, schema, data_types, categories, statuses)
-    validate_attribute_registry(attributes_registry, contract_version)
-    return Definitions(
+    canonical_entries = validate_attribute_registry(attributes_registry, contract_version)
+    definitions = Definitions(
         contract_version=contract_version,
         attribute_id_pattern=attribute_id_pattern,
         attribute_key_pattern=attribute_key_pattern,
@@ -457,6 +603,7 @@ def load_definitions() -> Definitions:
         categories=categories,
         statuses=statuses,
         units=measurement_foundation.units,
+        schema_validator=schema_validator,
         parser_sources=(
             contract_parser,
             type_parser,
@@ -467,6 +614,21 @@ def load_definitions() -> Definitions:
         )
         + measurement_foundation.parser_sources,
     )
+    if canonical_entries:
+        issues = validate_fixture(
+            canonical_entries,
+            "repository/data/registries/product-attributes.yaml",
+            definitions,
+        )
+        if issues:
+            raise DefinitionError(
+                "canonical Product Attribute registry is structurally invalid:\n"
+                + "\n".join(issue.render() for issue in issues)
+            )
+        raise DefinitionError(
+            "PD-01 requires the canonical Product Attribute registry to remain empty"
+        )
+    return definitions
 
 
 def nonempty_string(value: Any, maximum: int | None = None) -> bool:
@@ -663,6 +825,19 @@ def validate_fixture(
             add(str(attribute), "RECORD_TYPE", "attribute definition must be a mapping")
             continue
         record = raw
+        for error in sorted(
+            definitions.schema_validator.iter_errors(record),
+            key=lambda item: (
+                tuple(str(part) for part in item.absolute_path),
+                item.message,
+            ),
+        ):
+            location = "/".join(str(part) for part in error.absolute_path) or "<root>"
+            add(
+                str(attribute),
+                "SCHEMA_VALIDATION",
+                f"{location}: {error.message}",
+            )
         string_keys = {key for key in record if isinstance(key, str)}
         for key in record:
             if not isinstance(key, str):

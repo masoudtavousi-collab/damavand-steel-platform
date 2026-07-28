@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "urn:damavand-steel:schema:product-attribute:1.0.0",
+  "$id": "urn:damavand-steel:schema:product-attribute:2.0.0",
   "title": "Canonical Product Attribute definition",
-  "description": "Closed per-definition schema for the data-free Wave 2B Product Attribute foundation. Registry-wide uniqueness and cross-registry references are enforced by validate_product_attributes.py.",
+  "description": "Closed per-definition schema for PD-01 synthetic validation. The canonical Product Attribute registry remains empty; uniqueness and cross-registry references are enforced by validate_product_attributes.py.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -23,7 +23,7 @@
   "properties": {
     "contract_version": {
       "type": "string",
-      "const": "1.0.0"
+      "const": "2.0.0"
     },
     "attribute_id": {
       "type": "string",

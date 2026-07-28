@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.12.0
+- **Version:** 0.13.0
 - **Last Updated:** 2026-07-28
 - **Last Review:** 2026-07-28
 - **Review Cycle:** On Founder decision creation, resolution, supersession, or dependency change
@@ -65,7 +65,13 @@ Index every repository item explicitly marked as requiring a Founder decision. T
 
 | ID | Decision | Decision owner / date | Approval scope | Evidence | Status / supersession |
 | --- | --- | --- | --- | --- | --- |
-| `FD-GOV-XD-00` | Execute the documentation-only Cross-Domain Execution Charter; separate semantic operational state from the dynamic Git tip; require per-Sprint starting-SHA resolution, exact Scope/Approval and Test Contracts, executor/reviewer/Founder separation, and ordered dependency gates; select `PD-01` only as the next decision-package target. | Founder / 2026-07-28 | Exactly `AGENTS.md`, `docs/CURRENT_PROJECT_STATE.md`, `docs/PROJECT_BASELINE.md`, `docs/IMPLEMENTATION_READINESS.md`, `docs/PROJECT_EXECUTION_ROADMAP.md`, `docs/CODEX_SPRINT_PROTOCOL.md`, `docs/REPOSITORY_HEALTH.md`, `docs/17_FOUNDER_DECISION_LOG.md`, `docs/18_OPEN_QUESTIONS.md`, `docs/TRACEABILITY_MATRIX.md`, and `docs/14_CHANGELOG.md`; Branch `codex/gov-xd-00-execution-charter`; scoped Commit/Push/Draft PR; independent review; conditional Merge Commit and post-merge `main` CI | Reviewed input anchor `b391ca1632d4a7d266e33aa5e279e214941901ae`; PR #19; CI run `30372385447`; five domain plans; independent QA and self-reference review; Founder authorization recorded in the active Codex task | `APPROVED` for this exact governance/Git cycle. The state declaration becomes effective when its carrying PR merges. No Contract, Schema, Validator, Test, Product/Knowledge data, BP2 implementation, Admin UI, WordPress/WooCommerce, import, credential, backup, staging, runtime, deployment, production, branch deletion, or `PD-01` execution is authorized. |
+| `FD-GOV-XD-00` | Execute the documentation-only Cross-Domain Execution Charter; separate semantic operational state from the dynamic Git tip; require per-Sprint starting-SHA resolution, exact Scope/Approval and Test Contracts, executor/reviewer/Founder separation, and ordered dependency gates; select `PD-01` only as the next decision-package target. | Founder / 2026-07-28 | Exactly `AGENTS.md`, `docs/CURRENT_PROJECT_STATE.md`, `docs/PROJECT_BASELINE.md`, `docs/IMPLEMENTATION_READINESS.md`, `docs/PROJECT_EXECUTION_ROADMAP.md`, `docs/CODEX_SPRINT_PROTOCOL.md`, `docs/REPOSITORY_HEALTH.md`, `docs/17_FOUNDER_DECISION_LOG.md`, `docs/18_OPEN_QUESTIONS.md`, `docs/TRACEABILITY_MATRIX.md`, and `docs/14_CHANGELOG.md`; Branch `codex/gov-xd-00-execution-charter`; scoped Commit/Push/Draft PR; independent review; conditional Merge Commit and post-merge `main` CI | Reviewed input anchor `b391ca1632d4a7d266e33aa5e279e214941901ae`; PR #19; CI run `30372385447`; five domain plans; independent QA and self-reference review; Founder authorization recorded in the active Codex task | `APPROVED` and integrated by PR #20. This decision itself granted no Contract, Schema, Validator, Test, Product/Knowledge data, BP2 implementation, Admin UI, WordPress/WooCommerce, import, credential, backup, staging, runtime, deployment, production, branch deletion, or `PD-01` execution; later `FD-PD01-001` is separate. |
+
+## PD-01 Product Data Contract Enablement Decision
+
+| ID | Decision | Decision owner / date | Approval scope | Evidence | Status / supersession |
+| --- | --- | --- | --- | --- | --- |
+| `FD-PD01-001` | Execute PD-01 through the legal sequence `DRAFT → REVIEW → APPROVED` with synthetic fixtures only; require the exact 30-path allowlist, independent `PASS`, successful tests/CI, no conflict or scope drift, and Merge Commit only after every condition passes. | Founder / 2026-07-28 | [PD-01 Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md); Branch `codex/pd-01-product-data-contract-enablement`; scoped Commit/Push/Draft PR; limited in-scope corrections; lifecycle evidence; conditional ready-for-review/Merge Commit; post-merge `main` CI | Founder authorization in the active Codex task; starting `main` SHA `6577cd461e88463903b18c11b0e5bdbfa88375e2`; merged PR #20 and successful required-check run `30376465378`; exact Test Contract and stop conditions in the Scope packet | `EXECUTION AUTHORIZED`; technical lifecycle currently `DRAFT`. Canonical Product Attribute registry must remain empty. No Product, real Pilot, 879-row data, Master Data, Golden package, SKU, slug, availability, WordPress/WooCommerce, import, runtime, deploy, production, or branch deletion is authorized. |
 
 ## Settled Golden Pipe Pilot Decision
 

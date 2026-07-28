@@ -8,13 +8,21 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.6.0
+- **Version:** 0.7.0
 - **Last Updated:** 2026-07-28
 - **Lifecycle:** Review
 - **Source of Truth:** Merged Git history and scoped decision/evidence records
 - **Approval:** Pending Founder review; merged Git history remains evidence
 
 This changelog records repository outcomes. It does not create approval, runtime readiness, Product facts, or release authority.
+
+## 2026-07-28 — PD-01 Product Data Contract Enablement (`DRAFT`)
+
+- `FD-PD01-001` authorizes the legal `DRAFT → REVIEW → APPROVED` cycle and conditional Git controls for the exact 30 paths in [PD-01 Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md).
+- Product Attribute validation advances to Contract `2.0.0` while the canonical Product Attribute registry remains empty.
+- A closed Draft 2020-12 Product Master Data schema and deterministic offline validator define only synthetic Attribute Profiles, typed Value Assignments, and explicit Variant Rule Set combinations.
+- Positive, negative, cross-file, fail-closed, and adversarial tests include more than 50 named mutation cases and prohibit direct `DRAFT → APPROVED`.
+- This entry records a `DRAFT`, not completion or canonical Product Data. Product/Pilot/879-row data, Master Data, Golden, SKU, slug, availability, WordPress/WooCommerce, import, runtime, deploy, production, and branch deletion remain `NO-GO`.
 
 ## 2026-07-28 — GOV-XD-00 Cross-Domain Execution Charter
 

@@ -1,0 +1,58 @@
+contract_version: "1.0.0"
+bundle_id: pmd:000000000001
+bundle_version: "1.0.0"
+data_classification: SYNTHETIC_FIXTURE
+product_core_contract_version: "1.0.0"
+product_attribute_contract_version: "2.0.0"
+measurement_contract_version: "1.0.0"
+attribute_profiles:
+  - profile_id: pprof:000000000001
+    scope_entity_id: prd:series:000000000004
+    scope_entity_type: SERIES
+    attribute_rules:
+      - attribute_id: attr:000000000002
+        requirement_level: REQUIRED
+        condition_reference: null
+        public_visibility: PUBLIC
+        variation_axis: true
+        filtering: true
+        inquiry_use: SELECTABLE
+        seo_use: NON_INDEXABLE
+    record_version: "1.0.0"
+value_assignments:
+  - assignment_id: pval:000000000001
+    entity_id: prd:series:000000000004
+    attribute_id: attr:000000000002
+    value:
+      decimal: 10.5
+    unit_id: unit:000000000002
+    status: CANDIDATE_UNVERIFIED
+    provenance:
+      source_type: SYNTHETIC_FIXTURE
+      source_reference: fixture:product-master-data:valid-synthetic-minimal
+      captured_by: role:automated-validation
+      captured_at: "2000-01-01T00:00:00Z"
+      evidence_status: SYNTHETIC_TEST_EVIDENCE
+    record_version: "1.0.0"
+variant_rule_sets:
+  - rule_set_entity_id: prd:variant-rule-set:000000000005
+    profile_id: pprof:000000000001
+    axes:
+      - attr:000000000002
+    cartesian_generation_forbidden: true
+    allowed_combinations:
+      - combination_id: pcomb:000000000001
+        assignment_ids:
+          - pval:000000000001
+        status: CANDIDATE_UNVERIFIED
+    record_version: "1.0.0"
+readiness:
+  import_ready: false
+  runtime_ready: false
+  golden_ready: false
+provenance:
+  source_type: SYNTHETIC_FIXTURE
+  source_reference: fixture:product-master-data:valid-synthetic-minimal
+  captured_by: role:automated-validation
+  captured_at: "2000-01-01T00:00:00Z"
+  evidence_status: SYNTHETIC_TEST_EVIDENCE

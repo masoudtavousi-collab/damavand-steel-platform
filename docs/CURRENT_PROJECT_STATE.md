@@ -2,14 +2,14 @@
 
 - **Current date:** 2026-07-28
 - **Canonical repository:** `masoudtavousi-collab/damavand-steel-platform`
-- **Reviewed input anchor:** `b391ca1632d4a7d266e33aa5e279e214941901ae`, PR #19 Merge Commit; successful post-merge CI run `30372385447`
+- **Reviewed input anchor:** `6577cd461e88463903b18c11b0e5bdbfa88375e2`, PR #20 Merge Commit; successful required-check run `30376465378`
 - **Live `main` tip:** resolve dynamically from GitHub `refs/heads/main` at task start; do not treat the reviewed input anchor as a permanent live-tip claim
-- **Last completed substantive repository integration:** BP2 Data Administration Lifecycle Approval, integrated by PR #18
-- **Last completed governance reconciliation:** post-PR18 reconciliation, integrated by PR #19
-- **Current phase:** `GOV-XD-00` Cross-Domain Execution Charter complete when the PR carrying this declaration merges; no implementation sprint active
-- **Current authorized branch:** no Product, Knowledge, Admin UI, or runtime implementation branch is authorized
-- **Current authorization:** read-only preparation of an exact `PD-01` decision package only; `PD-01` execution is not authorized
-- **Merge:** no merge after the PR carrying `GOV-XD-00` is authorized without a new exact Founder approval
+- **Last completed substantive repository integration:** `GOV-XD-00` Cross-Domain Execution Charter, integrated by PR #20
+- **Last completed governance reconciliation:** `GOV-XD-00`, integrated by PR #20
+- **Current phase:** `PD-01` Product Data Contract Enablement — `DRAFT`
+- **Current authorized branch:** `codex/pd-01-product-data-contract-enablement`
+- **Current authorization:** exact 30-path, synthetic-only implementation and conditional Git/lifecycle cycle under `FD-PD01-001`
+- **Merge:** conditional Merge Commit is authorized only after legal `DRAFT → REVIEW → APPROVED`, successful tests/CI, no conflict or scope drift, and independent `PASS`
 - **Runtime / WordPress / WooCommerce mutation:** NO-GO
 - **Import / publishing / deployment / product creation / bulk SKU generation:** NO-GO
 
@@ -42,9 +42,10 @@ This file is the only semantic operational-state pointer. Other documents may pr
 | Post-PR16 Governance Reconciliation | PR #17; active state, baseline, roadmap, repository relationship, index, navigation, health, traceability, changelog, and open-question alignment | Records the PR #16 completion and removes its closed blocker while preserving the BP2 `DRAFT` lifecycle and all Product/runtime `NO-GO` boundaries |
 | Post-PR18 Governance Reconciliation | PR #19; direct governance and current-state alignment after PR #18 | Closes the BP2 lifecycle integration cycle and returns the project to read-only next-step planning without implementation authority |
 | `GOV-XD-00` Cross-Domain Execution Charter | Founder authorization dated 2026-07-28; six-task read-only analysis; independent QA; the PR carrying this declaration | Separates semantic operational state from the dynamic Git tip, records cross-domain dependency order and separation of duties, and selects `PD-01` only as the next decision-package target |
+| `PD-01` Product Data Contract Enablement | `FD-PD01-001`; [PD-01 Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md); exact 30-path allowlist; starting SHA `6577cd461e88463903b18c11b0e5bdbfa88375e2` | `DRAFT`; synthetic Contract/Schema/Validator/Test enablement only; canonical Product Attribute registry remains empty; no Product, SKU, Master Data, Golden, import, runtime, or production authority |
 | Atlas planning registry | 173 pending document records across 21 domains | Intake inventory only; no Atlas row is canonical merely because it is registered |
 
-Repository validators are active in CI and unified under `make test`. PR #12 hardening is merged: nested schema objects are closed, JSON Schema Draft 2020-12 is enforced offline, validation output is deterministic, and positive, negative, and adversarial tests are wired into the unified test entry point. `FD-BP2-ADM-001` records the completed legal `DRAFT → REVIEW → APPROVED` sequence; this lifecycle approval does not authorize implementation.
+Repository validators are active in CI and unified under `make test`. PR #12 hardening is merged: nested schema objects are closed, JSON Schema Draft 2020-12 is enforced offline, validation output is deterministic, and positive, negative, and adversarial tests are wired into the unified test entry point. `FD-BP2-ADM-001` records the completed legal `DRAFT → REVIEW → APPROVED` sequence; this lifecycle approval does not authorize implementation. PD-01 is currently a separate `DRAFT` contract-enablement Sprint and is not canonical Product Data.
 
 ## Current Product and Knowledge Readiness
 
@@ -107,9 +108,9 @@ A Variable Parent Product is a commerce presentation and never the owner of cano
 - Blocksy Pro and Elementor Pro package/license compatibility remains unresolved.
 - Atlas rows require controlled adoption decisions before any content generation or promotion.
 - Historical authorization evidence for Wave 2A and Wave 2B is not explicitly linked in the current Founder Decision Log; merge history is implementation evidence, not a substitute for the originating authorization record.
-- The BP2 Data Administration contract is `APPROVED` only as a documentation-only administration boundary; a separate exact-scope Founder decision is still required before any administration implementation or Product Data sprint.
+- The BP2 Data Administration contract is `APPROVED` only as a documentation-only administration boundary; it does not grant authority to PD-01 or any administration engine.
 - Canonical Product records, Product Attribute definitions, Master Data, Golden package, final SKU/slug policy, content/media rights, and availability evidence remain absent or incomplete.
-- Product Data, BP2 Administration, Runtime, WordPress/WooCommerce, and Knowledge/Content plans are all blocked from writing until their own exact Founder authorization and domain gates pass.
+- PD-01 permits only the exact synthetic Contract/Schema/Validator/Test and governance allowlist; canonical Product Data, BP2 Administration, Runtime, WordPress/WooCommerce, and Knowledge/Content writes remain blocked.
 - The ordering conflict between credential containment and mandatory pre-mutation backup/restore evidence remains unresolved.
 - Legacy Review-state Product/Content/SEO documents that describe a Variable Parent Product as canonical owner must be reconciled before Knowledge, SEO, or WooCommerce mapping approval.
 - A shared role/separation-of-duties matrix and Sprint-specific Test Contract remain required before implementation.
@@ -117,9 +118,9 @@ A Variable Parent Product is a commerce presentation and never the owner of cano
 
 ## Approved Next Action
 
-Prepare one exact, read-only `PD-01` decision package for Founder review. It may define objective, proposed allowlist, Contract/Schema/Validator/Test scope, synthetic fixtures, risks, stop conditions, and conditional Git controls. It must not create or modify any Product Data, Contract, Schema, Validator, Test, Branch, PR, or runtime asset.
+Complete PD-01 strictly through the legal `DRAFT → REVIEW → APPROVED` lifecycle in [PD-01 Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md): validate the synthetic-only DRAFT, create the scoped Draft PR, obtain independent `PD01-REVIEW-001`, apply only in-allowlist corrections, record Founder approval, and use a Merge Commit only if every conditional Git gate passes.
 
-Do not modify BP1, populate Product/Knowledge data, implement an Admin UI, change WordPress/WooCommerce, run imports, publish, deploy, delete the branch, or mutate production.
+Do not populate the empty Product Attribute registry, create Product/Pilot/879-row/Master Data/Golden/SKU/slug/availability data, modify BP1, implement an Admin UI, change WordPress/WooCommerce, run imports, publish, deploy, delete the branch, or mutate production.
 
 ## Current References
 

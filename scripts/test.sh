@@ -52,6 +52,11 @@ attribute_validator="repository/data/validation/validate_product_attributes.py"
 "$python" "$attribute_validator" tests/fixtures/product-attributes/valid-measured-attribute.yaml
 expect_failure tests/fixtures/product-attributes/invalid-naming.yaml ATTRIBUTE_KEY_FORMAT "$attribute_validator"
 
+product_master_data_validator="repository/data/validation/validate_product_master_data.py"
+"$python" "$product_master_data_validator" tests/fixtures/product-master-data/valid-synthetic-minimal.yaml
+expect_failure tests/fixtures/product-master-data/invalid-duplicate-key.yaml DUPLICATE_KEY "$product_master_data_validator"
+"$python" tests/test_product_master_data.py
+
 "$python" repository/data/validation/validate_bp2_data_blueprint.py
 "$python" repository/data/validation/validate_bp2_data_administration.py
 "$python" tests/test_bp2_data_administration.py

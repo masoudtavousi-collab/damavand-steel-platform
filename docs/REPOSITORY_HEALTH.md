@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.8.0
+- **Version:** 0.9.0
 - **Last Updated:** 2026-07-28
 - **Last Review:** 2026-07-28
 - **Review Cycle:** On repository-governance, document, authority, metadata, navigation, traceability, or validation change
@@ -139,12 +139,12 @@ The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain histo
 
 ## Post-PR12 Integration and Validation Coverage
 
-- PR #1–#19 are merged; PR numbering does not express merge order.
-- PR #13 integrated the Claude recovery consolidation, PR #14 aligned the post-recovery state, PR #12 subsequently integrated the hardened BP2 Data Administration scope, PR #15 reconciled the active governance state, PR #16 hardened BP1 M1 accessibility and local validation, PR #17 reconciled the resulting governance state, PR #18 integrated the reviewed BP2 lifecycle approval, and PR #19 closed the post-PR18 integration cycle.
+- PR #1–#20 are merged; PR numbering does not express merge order.
+- PR #13 integrated the Claude recovery consolidation, PR #14 aligned the post-recovery state, PR #12 subsequently integrated the hardened BP2 Data Administration scope, PR #15 reconciled the active governance state, PR #16 hardened BP1 M1 accessibility and local validation, PR #17 reconciled the resulting governance state, PR #18 integrated the reviewed BP2 lifecycle approval, PR #19 closed the post-PR18 integration cycle, and PR #20 integrated `GOV-XD-00`.
 - PR #12 added the documentation-only administration contract, a closed JSON Schema Draft 2020-12 schema, deterministic offline validation, and positive, negative, and adversarial tests.
 - `FD-BP2-ADM-001` records the BP2 Data Administration contract's reviewed `DRAFT → REVIEW → APPROVED` sequence with implementation authority disabled. Approval does not create Product/SKU, Admin UI, WordPress/WooCommerce, import, publication, deployment, or production authority.
 - The reviewed input anchor and semantic state are maintained in [Current Project State](CURRENT_PROJECT_STATE.md); every task must resolve its own live starting SHA.
-- Unified repository validation passes with pinned dependencies; PR #16 added the BP1 safety/contrast validator and reproducible local setup, its post-merge `main` CI succeeded, PR #17 branch CI passed before merge, PR #18 Review-stage, final-PR, and post-merge `main` CI passed, and PR #19 post-merge `main` CI run `30372385447` passed. Static success does not satisfy Product Data or runtime gates.
+- Unified repository validation passes with pinned dependencies; PR #16 added the BP1 safety/contrast validator and reproducible local setup, its post-merge `main` CI succeeded, PR #17 branch CI passed before merge, PR #18 Review-stage, final-PR, and post-merge `main` CI passed, PR #19 post-merge `main` CI run `30372385447` passed, and PR #20 required-check run `30376465378` passed. Static success does not satisfy canonical Product Data or runtime gates.
 
 ## WordPress Architecture Coverage
 
@@ -158,6 +158,7 @@ The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain histo
 ## Product Data Model Coverage
 
 - Five tracked Review-state models propose enterprise product entities, WooCommerce mapping, taxonomy governance, global attributes, inquiry data, and the Customer identity boundary.
+- `FD-PD01-001` separately authorizes the exact 30-path PD-01 `DRAFT`: Product Attribute `2.0.0` hardening plus a synthetic-only Product Master Data Contract/Schema/Validator/Test boundary. The canonical Product Attribute registry remains empty and the Sprint creates no Product, Master Data, Golden, SKU, import, or runtime authority.
 - The Batch 05A remediation findings are structurally represented without creating runtime entities or schemas: product lifecycle, operational ownership requirements, Collections, Product Tags, Application/Use-Case terminology, attribute hierarchy, derived Size, local-attribute exceptions, Customer governance, and the Draft Product Data Strategy authority boundary.
 - The Product Attribute Model contains 16 proposed Persian labels and English internal keys; no allowed values are approved.
 - The canonical hierarchy `Catalog → Platform → Family → Series → Variant Rules → SKU`, stable identity, downstream Parent/Variation mapping, hidden pricing, inquiry actions, duplicate prevention, and future compatibility boundaries are documented.
@@ -463,7 +464,7 @@ The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain histo
 - `FD-PILOT-001` durably records the Golden Parent and exactly three approved pilot combinations; their reference IDs are not final commercial SKUs.
 - Current Pipe counts are 3 `APPROVED`, 879 `CANDIDATE_UNVERIFIED`, and 882 with market availability `MISSING_DATA_VALUE`.
 - Golden approval exists in Founder decisions and governing prose, but no canonical machine-readable Golden or Master Data package exists on `main`. Import, Runtime, and Publishing remain `NO-GO`.
-- Sprint 12A remains historical product/runtime evidence. Later repository integrations through PR #19 are governance, prototype, contract, and validation evidence only; no runtime implementation sprint is active.
+- Sprint 12A remains historical product/runtime evidence. Later repository integrations through PR #20 are governance, prototype, contract, and validation evidence only; no runtime implementation sprint is active.
 - GIT-02S created no ADR because it introduced no new enterprise architecture decision.
 - Repository A static validation passed within the dated GIT-02S evidence scope; that result does not substitute for fresh post-merge reconciliation validation.
 - Runtime, import, publishing, deployment, product creation, bulk SKU generation, Factory implementation, and any unscoped or autonomous repository merge remain `NO-GO` without separate Founder approval.
@@ -527,7 +528,7 @@ The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain histo
 
 ## Future Work
 
-- Prepare the exact read-only `PD-01` Founder decision package; do not begin Contract, Schema, Validator, Test, registry, Product Data, or Golden-package work automatically.
+- Complete only the authorized PD-01 `DRAFT → REVIEW → APPROVED` cycle under its exact 30-path Scope; do not populate the empty registry, create canonical Product/Master/Golden data, or begin `PD-02` automatically.
 - Resolve the shared separation-of-duties matrix, Sprint-specific Test Contract, legacy Variable Parent Product ownership conflicts, and G02/G03 sequencing before their dependent implementation or runtime work.
 - Obtain Founder and applicable specialist review of the Master Remediation Roadmap, Implementation Sequence, and Execution Gates before creating any remediation ticket.
 - Close `G01` through `G05` for the exact intended scope before considering mutable investigation or implementation.
