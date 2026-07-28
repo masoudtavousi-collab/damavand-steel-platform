@@ -18,7 +18,7 @@ This roadmap defines sequence and gates, not mutable operational state. The exac
 - PR #15 reconciled the active current-state, baseline, readiness, roadmap, navigation, health, traceability, changelog, and open-question records after PR #12.
 - PR #16 integrated the bounded BP1 M1 accessibility and local-validation hardening; it remains local prototype and test-tooling evidence only.
 - PR #17 reconciled the active governance records after PR #16 and advanced the next safe action to a read-only BP2 lifecycle decision package.
-- PR #18 records `FD-BP2-ADM-001`, the reviewed `DRAFT → REVIEW → APPROVED` lifecycle evidence, and the direct governance reconciliation.
+- PR #18 integrated `FD-BP2-ADM-001`, the reviewed `DRAFT → REVIEW → APPROVED` lifecycle evidence, and its fail-closed Contract/Schema/Validator/Test hardening.
 - The approved BP2 Data Administration contract remains documentation-only with `implementation_authority: false`; approval derives no Product, Admin UI, runtime, import, publication, deployment, or production authority.
 - The historical Wave 1 branch/commit/push/Draft-PR scope did not authorize merge and remains preserved as chronology. Its later approved merge granted no Wave 2, runtime, or implementation authority.
 - Wave 2A–2C are structural, platform-independent foundations. They created no canonical Product rows, Product Attribute definitions, Master Data, Golden package, WordPress implementation, publication, deployment, or production mutation.

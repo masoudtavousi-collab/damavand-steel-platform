@@ -117,7 +117,7 @@ This document does not authorize or implement that panel.
 | Document | `docs/BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md`, version 1.0.0 |
 | Change scope | Lifecycle evidence and fail-closed Contract/Schema/Validator/Test hardening only |
 | Reviewers | Chief Architect / Product Owner / QA; Repository Guardian |
-| Evidence | Contract, closed Draft 2020-12 schema, deterministic offline validator, 12 positive/negative/adversarial test methods, 51 mutation cases, local `make test`, and successful protected Review-stage CI on PR #18 |
+| Evidence | Contract, closed Draft 2020-12 schema, deterministic offline validator, 12 positive/negative/adversarial test methods, 51 mutation cases, local `make test`, merged PR #18, and successful protected Review-stage, final-PR, and post-merge `main` CI |
 | Findings | No blocking findings; direct `DRAFT → APPROVED` remains forbidden and is tested |
 | Exceptions | None |
 | Outcome | Pass |

@@ -20,6 +20,7 @@ This changelog records repository outcomes. It does not create approval, runtime
 
 - `FD-BP2-ADM-001` records the ordered `DRAFT → REVIEW → APPROVED` lifecycle and completed review record `BP2-ADM-REVIEW-001`.
 - Contract, Schema, Validator, and tests now require Founder decision evidence, named review roles, a linear transition history, and rejection of direct `DRAFT → APPROVED`.
+- PR #18 merged the reviewed lifecycle record by Merge Commit, and protected Review-stage, final-PR, and post-merge `main` CI succeeded.
 - Approval is documentation governance only: `implementation_authority` remains false and Product/Knowledge population, Admin UI, WordPress/WooCommerce, import, publication, deployment, runtime, and production remain `NO-GO`.
 
 ## 2026-07-28 — Post-PR16 Governance Reconciliation

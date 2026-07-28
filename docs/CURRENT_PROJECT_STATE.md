@@ -2,12 +2,12 @@
 
 - **Current date:** 2026-07-28
 - **Canonical repository:** `masoudtavousi-collab/damavand-steel-platform`
-- **Verified `main` baseline:** `0b539e89ca6fbb9f97dda0e8394c0d86f68b1c3d`, the PR #17 merge commit
-- **Last completed repository integration:** Post-PR16 Governance Reconciliation, integrated by PR #17
-- **Current phase:** BP2 Data Administration Lifecycle Approved; PR #18 Integration
-- **Current authorized branch:** `codex/bp2-data-administration-lifecycle`
-- **Current authorization:** complete PR #18 integration for the approved BP2 lifecycle under `FD-BP2-ADM-001`; no implementation or Product Data use is authorized
-- **Merge:** conditional Merge Commit is authorized only after successful CI, no conflict, completed review, and no out-of-scope change
+- **Verified post-PR18 `main` baseline:** `180bea23a3f13e3c957f3a323bc215b9d2e4b972`, the PR #18 merge commit
+- **Last completed substantive repository integration:** BP2 Data Administration Lifecycle Approval, integrated by PR #18
+- **Current phase:** BP2 Data Administration Lifecycle Complete; no implementation sprint active
+- **Current authorized branch:** no Product, Knowledge, Admin UI, or runtime implementation branch is authorized; the post-PR18 reconciliation branch is documentation-only
+- **Current authorization:** complete the post-PR18 governance reconciliation and then return to read-only next-step planning
+- **Merge:** the post-PR18 documentation reconciliation is the final authorized merge in this cycle; no subsequent merge is authorized
 - **Runtime / WordPress / WooCommerce mutation:** NO-GO
 - **Import / publishing / deployment / product creation / bulk SKU generation:** NO-GO
 
@@ -25,7 +25,7 @@ This file is the only operational current-state pointer. Other documents may pre
 | BP2 — Machine-Readable Data Blueprint | PR #11; controlled Pipe blueprint, schema, offline validator, three approved pilot decisions, and 879 historical candidates | Data-administration design input exists; it creates no final SKU, import, publication, WordPress, WooCommerce, or production authority |
 | Claude Recovery and Repository Consolidation | PR #13; recovery audit and reconciliation of current-state and navigation documents | Recovery evidence is classified and governance sources are reconciled; no recovered runtime, credential, Product, publication, deployment, or production authority was introduced |
 | Post-Recovery Current State | PR #14; current-state pointer aligned to the completed recovery baseline and the then-open PR #12 review boundary | Historical bridge between PR #13 and PR #12; it granted no Product, runtime, import, publication, deployment, or production authority |
-| BP2 — Data Administration Contract Lifecycle | PR #12 plus `FD-BP2-ADM-001` and PR #18 review evidence; administration scope, contract, closed Draft 2020-12 schema, deterministic offline validator, and positive/negative/adversarial tests | The contract completed `DRAFT → REVIEW → APPROVED`; it governs only the documentation-only BP2 administration boundary and implementation authority remains false |
+| BP2 — Data Administration Contract Lifecycle | PR #12, `FD-BP2-ADM-001`, `BP2-ADM-REVIEW-001`, and merged PR #18; administration scope, contract, closed Draft 2020-12 schema, deterministic offline validator, and positive/negative/adversarial tests | The contract completed `DRAFT → REVIEW → APPROVED`; it governs only the documentation-only BP2 administration boundary and implementation authority remains false |
 | Post-PR12 Governance Reconciliation | PR #15; active state, baseline, readiness, roadmap, index, navigation, health, traceability, changelog, and open-question alignment | Removes obsolete PR #12 merge blockers from active documents while preserving historical audits and all Product/runtime `NO-GO` boundaries |
 | BP1 — M1 Accessibility and Local Validation Hardening | PR #16; primary-CTA contrast correction, fail-closed contrast validation, reproducible local setup, and unified local/CI test entry point | Closes the recorded BP1 M1 contrast and validation-tooling gaps; the prototype remains local-only evidence and creates no WordPress, WooCommerce, Product/SKU, import, publication, deployment, or production authority |
 | Post-PR16 Governance Reconciliation | PR #17; active state, baseline, roadmap, repository relationship, index, navigation, health, traceability, changelog, and open-question alignment | Records the PR #16 completion and removes its closed blocker while preserving the BP2 `DRAFT` lifecycle and all Product/runtime `NO-GO` boundaries |
@@ -100,7 +100,7 @@ A Variable Parent Product is a commerce presentation and never the owner of cano
 
 ## Approved Next Action
 
-Complete PR #18 by pushing the approved lifecycle record, obtaining successful protected CI, confirming no conflict or out-of-scope change, merging by Merge Commit, verifying `main` CI, and stopping.
+After the post-PR18 documentation reconciliation is integrated and `main` CI succeeds, stop. The next permissible action is read-only planning for a separately authorized BP2 administration or Product Data sprint.
 
 Do not modify BP1, populate Product/Knowledge data, implement an Admin UI, change WordPress/WooCommerce, run imports, publish, deploy, delete the branch, or mutate production.
 
