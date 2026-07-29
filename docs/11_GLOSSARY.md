@@ -64,6 +64,17 @@ No steel term, classification, grade, standard, dimension, or taxonomy is approv
 
 ## Terminology Rules
 
+## PD-02B Controlled Terms
+
+- **فولاد زنگ‌نزن / Stainless Steel:** canonical Material term with code
+  `stainless_steel`; `استیل` is a common Persian alias only.
+- **گرید فولاد / Steel Grade:** the Attribute that holds the exact identifiers
+  `201`, `304`, and `316` in PD-02B, without technical/application claims.
+- **لوله استیل / Stainless Steel Pipe:** the exact PD-02B Family label; it does
+  not imply a Product, SKU, availability, finish, dimension, or runtime entry.
+- **INTERNAL Attribute Profile:** repository-only requirement policy; it grants
+  no SEO, filtering, variation, inquiry, or commerce authority.
+
 - Use the glossary term exactly when it has an approved definition.
 - Do not define project product taxonomy in this glossary without an approved source.
 - Add or change controlled terms through the [Review Process](15_REVIEW_PROCESS.md).

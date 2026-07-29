@@ -1,0 +1,57 @@
+registry_id: product-data-approval-evidence
+registry_version: "1.0.0"
+contract_version: "1.0.0"
+data_classification: SYNTHETIC_FIXTURE
+evidence:
+  - contract_version: "1.0.0"
+    approval_evidence_id: papproval:000000000001
+    decision_id: FD-PD02B-001
+    lifecycle_status: APPROVED
+    scope_reference: docs/PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md
+    dataset_hashes:
+      - path: repository/data/registries/product-entities.yaml
+        sha256: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      - path: repository/data/registries/product-attributes.yaml
+        sha256: bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+      - path: repository/data/registries/product-attribute-value-registries.yaml
+        sha256: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+      - path: repository/data/registries/product-attribute-profiles.yaml
+        sha256: dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+      - path: repository/data/registries/product-data-localized-labels.yaml
+        sha256: eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    founder_decision:
+      reviewer_id: Founder پروژه Damavand Steel
+      scope: Exact PD-02B Minimum Canonical Slice
+      verdict: PASS
+      evidence_reference: task:019faec6-5d14-7da2-909a-450fe030b551
+      independent: false
+      review_date: "2026-07-29"
+    domain_reviews:
+      - reviewer_id: SS-MATERIAL-REVIEWER-02
+        scope: Material taxonomy only
+        verdict: PASS
+        evidence_reference: synthetic:material-review
+        independent: true
+        review_date: "2026-07-29"
+      - reviewer_id: SS-INDEPENDENT-REVIEWER-20Y-01
+        scope: Grade identifiers 201, 304 and 316 only
+        verdict: PASS
+        evidence_reference: synthetic:grade-review
+        independent: true
+        review_date: "2026-07-29"
+    technical_review:
+      reviewer_id: repository-guardian-independent
+      scope: PD-02B contracts, schemas, validators, tests and exact canonical slice
+      verdict: PASS
+      evidence_reference: synthetic:technical-review
+      independent: true
+      review_date: "2026-07-29"
+    approval:
+      approved_by: Founder پروژه Damavand Steel
+      approved_at: "2026-07-29T18:41:26Z"
+      evidence_reference: FD-PD02B-001
+    anti_replay:
+      nonce: "000000000001000000000002"
+      consumed: true
+    status: APPROVED
+    record_version: "1.0.0"

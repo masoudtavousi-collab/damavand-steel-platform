@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:damavand-steel:schema:product-data-localized-label:1.0.0",
+  "title": "PD-02B localized product-data label",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "label_id",
+    "subject_id",
+    "subject_kind",
+    "locale",
+    "label",
+    "aliases",
+    "status",
+    "provenance",
+    "record_version"
+  ],
+  "properties": {
+    "contract_version": {
+      "const": "1.0.0"
+    },
+    "label_id": {
+      "type": "string",
+      "pattern": "^plabel:[0-9a-f]{12}$"
+    },
+    "subject_id": {
+      "type": "string",
+      "pattern": "^(?:prd:(?:catalog|platform|family)|attr|vterm):[0-9a-f]{12}$"
+    },
+    "subject_kind": {
+      "enum": [
+        "PRODUCT_ENTITY",
+        "PRODUCT_ATTRIBUTE",
+        "CONTROLLED_TERM"
+      ]
+    },
+    "locale": {
+      "enum": [
+        "fa-IR",
+        "en"
+      ]
+    },
+    "label": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": ".*\\S.*"
+    },
+    "aliases": {
+      "type": "array",
+      "maxItems": 10,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 200,
+        "pattern": ".*\\S.*"
+      }
+    },
+    "status": {
+      "enum": [
+        "APPROVED",
+        "CANDIDATE_UNVERIFIED"
+      ]
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "record_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    }
+  },
+  "$defs": {
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_type",
+        "source_reference",
+        "captured_by",
+        "captured_at",
+        "evidence_status"
+      ],
+      "properties": {
+        "source_type": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$"
+        },
+        "source_reference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "captured_by": {
+          "type": "string",
+          "pattern": "^role:[a-z][a-z0-9-]{2,63}$"
+        },
+        "captured_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "evidence_status": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$"
+        }
+      }
+    }
+  }
+}

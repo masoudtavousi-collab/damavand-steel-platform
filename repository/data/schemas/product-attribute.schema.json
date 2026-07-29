@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "urn:damavand-steel:schema:product-attribute:2.0.0",
   "title": "Canonical Product Attribute definition",
-  "description": "Closed per-definition schema for PD-01 and PD-02A synthetic validation. The canonical Product Attribute registry remains empty; uniqueness and cross-registry references are enforced offline.",
+  "description": "Closed per-definition schema for PD-01/PD-02A synthetic validation and the exact PD-02B canonical Material/Grade slice; uniqueness and cross-registry references are enforced offline.",
   "type": "object",
   "additionalProperties": false,
   "required": [

@@ -1,5 +1,46 @@
 registry_id: product-attribute-profiles
 registry_version: "1.0.0"
 contract_version: "1.0.0"
-data_classification: CANONICAL_EMPTY
-profiles: []
+data_classification: CANONICAL_PD02B
+profiles:
+  - contract_version: "1.0.0"
+    profile_id: pprof:26a474c2e100
+    scope_entity_id: prd:family:a10c6d8ceabc
+    scope_entity_type: FAMILY
+    attribute_rules:
+      - attribute_id: attr:dbf5365ee1e5
+        requirement_level: REQUIRED
+        condition_reference: null
+        public_visibility: INTERNAL
+        variation_axis: false
+        filtering: false
+        inquiry_use: NOT_USED
+        seo_use: PROHIBITED
+        value_source: CONTROLLED_REGISTRY
+        value_registry_id: vreg:302188e2fc8a
+        allowed_unit_ids: []
+        precision: null
+      - attribute_id: attr:28565665c910
+        requirement_level: REQUIRED
+        condition_reference: null
+        public_visibility: INTERNAL
+        variation_axis: false
+        filtering: false
+        inquiry_use: NOT_USED
+        seo_use: PROHIBITED
+        value_source: CONTROLLED_REGISTRY
+        value_registry_id: vreg:e1b9dd333df8
+        allowed_unit_ids: []
+        precision: null
+    status: APPROVED
+    owner:
+      role: product-data-steward
+    reviewer:
+      role: repository-guardian
+    provenance:
+      source_type: FOUNDER_DECISION
+      source_reference: task:019faec6-5d14-7da2-909a-450fe030b551
+      captured_by: role:product-data-steward
+      captured_at: "2026-07-29T00:00:00Z"
+      evidence_status: FOUNDER_CONFIRMED_SCOPE
+    record_version: "1.0.0"

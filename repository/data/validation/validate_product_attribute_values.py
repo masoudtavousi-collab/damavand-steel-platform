@@ -38,11 +38,13 @@ SCHEMA_PATH = (
 REGISTRY_PATH = (
     ROOT / "repository/data/registries/product-attribute-value-registries.yaml"
 )
+ATTRIBUTE_REGISTRY_PATH = ROOT / "repository/data/registries/product-attributes.yaml"
 
 SEMVER_PATTERN = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+$")
 ROLE_PATTERN = re.compile(r"^[a-z][a-z0-9-]{2,63}$")
 CAPTURED_BY_PATTERN = re.compile(r"^role:[a-z][a-z0-9-]{2,63}$")
 MACHINE_CODE_PATTERN = re.compile(r"^[A-Z][A-Z0-9_]*$")
+GRADE_CODE_PATTERN = re.compile(r"^[0-9]{3}$")
 EXPECTED_STATUSES = {
     "APPROVED",
     "CANDIDATE_UNVERIFIED",
@@ -116,6 +118,45 @@ def validate_lifecycle(contract: dict[str, Any]) -> None:
         raise DefinitionError("direct DRAFT -> APPROVED must remain forbidden")
     if lifecycle.get("canonical_population_authority") is not False:
         raise DefinitionError("PD-02A must not grant canonical population authority")
+    pd02b = require_mapping(contract.get("pd02b_lifecycle"), "pd02b_lifecycle")
+    pd02b_history = {
+        "DRAFT": [],
+        "REVIEW": [
+            {
+                "from": "DRAFT",
+                "to": "REVIEW",
+                "evidence_reference": "PD02B-TECH-REVIEW-001",
+            }
+        ],
+        "APPROVED": [
+            {
+                "from": "DRAFT",
+                "to": "REVIEW",
+                "evidence_reference": "PD02B-TECH-REVIEW-001",
+            },
+            {
+                "from": "REVIEW",
+                "to": "APPROVED",
+                "evidence_reference": "FD-PD02B-001",
+            },
+        ],
+    }
+    pd02b_status = pd02b.get("current_status")
+    if (
+        pd02b.get("decision_id") != "FD-PD02B-001"
+        or pd02b.get("allowed_transition_sequence") != ["DRAFT", "REVIEW", "APPROVED"]
+        or pd02b_status not in pd02b_history
+        or pd02b.get("transition_history") != pd02b_history[pd02b_status]
+        or pd02b.get("direct_draft_to_approved_forbidden") is not True
+        or pd02b.get("canonical_population_authority") is not True
+        or pd02b.get("exact_registry_count") != 2
+        or pd02b.get("exact_value_count") != 4
+        or pd02b.get("allowed_registry_keys") != ["material_values", "grade_values"]
+        or pd02b.get("allowed_value_codes")
+        != ["stainless_steel", "201", "304", "316"]
+        or pd02b.get("approval_evidence_required_for_approved_status") is not True
+    ):
+        raise DefinitionError("PD-02B value-registry lifecycle or boundary is invalid")
 
 
 def load_definitions(
@@ -287,20 +328,26 @@ def validate_registry(
     if value.get("contract_version") != definitions.contract_version:
         add("<registry>", "CONTRACT_VERSION", "contract_version is incompatible")
     classification = value.get("data_classification")
-    expected_classification = "CANONICAL_EMPTY" if canonical else "SYNTHETIC_FIXTURE"
+    expected_classification = "CANONICAL_PD02B" if canonical else "SYNTHETIC_FIXTURE"
     if classification != expected_classification:
         add("<registry>", "DATA_CLASSIFICATION", f"expected {expected_classification}")
     entries = value.get("value_registries")
     if not isinstance(entries, list):
         add("<registry>", "REGISTRY_ENTRIES", "value_registries must be a list")
         return sorted(issues, key=lambda item: item.render())
-    if canonical:
-        if entries:
-            add("<registry>", "CANONICAL_REGISTRY_NOT_EMPTY", "PD-02A canonical registry must remain empty")
-        return sorted(issues, key=lambda item: item.render())
-    if not entries:
+    if not canonical and not entries:
         add("<registry>", "EMPTY_SYNTHETIC_FIXTURE", "synthetic fixture needs one registry")
-    attribute_dependencies = value.get("synthetic_attribute_dependencies")
+    if canonical:
+        canonical_attributes, _ = load_yaml(
+            ATTRIBUTE_REGISTRY_PATH, "PD-02B canonical Product Attributes"
+        )
+        if not isinstance(canonical_attributes, dict):
+            add("<registry>", "ATTRIBUTE_REGISTRY_TYPE", "canonical attribute registry must be a mapping")
+            attribute_dependencies = []
+        else:
+            attribute_dependencies = canonical_attributes.get("attributes")
+    else:
+        attribute_dependencies = value.get("synthetic_attribute_dependencies")
     attribute_issues = validate_attribute_fixture(
         attribute_dependencies,
         "<synthetic-value-registry-attributes>",
@@ -370,7 +417,11 @@ def validate_registry(
             add(str(subject), "ATTRIBUTE_ID", "attribute_id format is invalid")
         attribute = attributes.get(attribute_id)
         if attribute is None:
-            add(str(subject), "UNKNOWN_ATTRIBUTE", f"unknown synthetic attribute: {attribute_id}")
+            add(
+                str(subject),
+                "UNKNOWN_ATTRIBUTE",
+                f"unknown {'canonical' if canonical else 'synthetic'} attribute: {attribute_id}",
+            )
         else:
             if attribute.get("data_type") != "CONTROLLED_TERM":
                 add(
@@ -395,13 +446,13 @@ def validate_registry(
             if normalized_label in registry_labels:
                 add(str(subject), "DUPLICATE_NORMALIZED_REGISTRY_LABEL", "normalized registry label collides")
             registry_labels.add(normalized_label)
-        if raw.get("status") != "CANDIDATE_UNVERIFIED":
+        if not canonical and raw.get("status") != "CANDIDATE_UNVERIFIED":
             add(str(subject), "SYNTHETIC_STATUS", "synthetic registry status must be CANDIDATE_UNVERIFIED")
         if not valid_role(raw.get("owner")) or not valid_role(raw.get("reviewer")):
             add(str(subject), "ROLE_STRUCTURE", "owner and reviewer must be stable roles")
         elif raw["owner"]["role"] == raw["reviewer"]["role"]:
             add(str(subject), "SEGREGATION_OF_DUTIES", "owner and reviewer must differ")
-        validate_provenance(raw.get("provenance"), str(subject), add, True)
+        validate_provenance(raw.get("provenance"), str(subject), add, not canonical)
 
         values = raw.get("values")
         if not isinstance(values, list):
@@ -427,8 +478,20 @@ def validate_registry(
             else:
                 global_value_ids.add(value_id)
             code = term.get("value_code")
-            if not isinstance(code, str) or not definitions.key_pattern.fullmatch(code):
-                add(str(term_subject), "VALUE_CODE", "value_code must use lower_snake_case")
+            code_valid = isinstance(code, str) and (
+                definitions.key_pattern.fullmatch(code) is not None
+                or (
+                    canonical
+                    and raw.get("registry_key") == "grade_values"
+                    and GRADE_CODE_PATTERN.fullmatch(code) is not None
+                )
+            )
+            if not code_valid:
+                add(
+                    str(term_subject),
+                    "VALUE_CODE",
+                    "value_code must use lower_snake_case; canonical Grade codes use three digits",
+                )
             elif code in codes:
                 add(str(term_subject), "DUPLICATE_VALUE_CODE", f"duplicate value code: {code}")
             else:
@@ -442,13 +505,20 @@ def validate_registry(
                 if not isinstance(name, str) or not name.strip():
                     continue
                 normalized_name = normalized(name)
+                if (
+                    canonical
+                    and raw.get("registry_key") == "grade_values"
+                    and name == term.get("canonical_label")
+                    and name == code
+                ):
+                    continue
                 if normalized_name in labels_and_aliases:
                     add(str(term_subject), "DUPLICATE_NORMALIZED_TERM", f"normalized label or alias collides: {name}")
                 else:
                     labels_and_aliases.add(normalized_name)
-            if term.get("status") != "CANDIDATE_UNVERIFIED":
+            if not canonical and term.get("status") != "CANDIDATE_UNVERIFIED":
                 add(str(term_subject), "SYNTHETIC_STATUS", "synthetic value status must be CANDIDATE_UNVERIFIED")
-            validate_provenance(term.get("provenance"), str(term_subject), add, True)
+            validate_provenance(term.get("provenance"), str(term_subject), add, not canonical)
     return sorted(issues, key=lambda item: item.render())
 
 
@@ -481,8 +551,8 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     count = len(registry["value_registries"])
     print(
-        f"PD-02A value-registry validation PASS: {count} registry fixture(s); "
-        f"parser={parser}; canonical population, network, side effects=false."
+        f"PD-02A/PD-02B value-registry validation PASS: {count} registry item(s); "
+        f"parser={parser}; network, side effects=false."
     )
     return 0
 

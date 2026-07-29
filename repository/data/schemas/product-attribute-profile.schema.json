@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "urn:damavand-steel:schema:product-attribute-profile:1.0.0",
   "title": "Canonical Product Attribute Profile",
-  "description": "Closed schema for PD-02A synthetic standalone Attribute Profiles. Canonical profiles remain empty.",
+  "description": "Closed schema for PD-02A synthetic profiles and the exact PD-02B canonical INTERNAL Family profile.",
   "type": "object",
   "additionalProperties": false,
   "required": [

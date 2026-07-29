@@ -1,0 +1,35 @@
+registry_id: product-data-localized-labels
+registry_version: "1.0.0"
+contract_version: "1.0.0"
+data_classification: SYNTHETIC_FIXTURE
+labels:
+  - contract_version: "1.0.0"
+    label_id: plabel:000000000001
+    subject_id: attr:000000000001
+    subject_kind: PRODUCT_ATTRIBUTE
+    locale: fa-IR
+    label: برچسب آزمایشی
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance:
+      source_type: SYNTHETIC_FIXTURE
+      source_reference: fixture:pd02b:localized-labels
+      captured_by: role:automated-validation
+      captured_at: "2000-01-01T00:00:00Z"
+      evidence_status: SYNTHETIC_TEST_EVIDENCE
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:000000000002
+    subject_id: attr:000000000001
+    subject_kind: PRODUCT_ATTRIBUTE
+    locale: en
+    label: Synthetic Label
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance:
+      source_type: SYNTHETIC_FIXTURE
+      source_reference: fixture:pd02b:localized-labels
+      captured_by: role:automated-validation
+      captured_at: "2000-01-01T00:00:00Z"
+      evidence_status: SYNTHETIC_TEST_EVIDENCE
+    record_version: "1.0.0"

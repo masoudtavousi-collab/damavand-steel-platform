@@ -36,6 +36,11 @@ ROOT = Path(__file__).resolve().parents[3]
 CONTRACT_PATH = ROOT / "repository/data/contracts/product-attribute-profile.contract.yaml"
 SCHEMA_PATH = ROOT / "repository/data/schemas/product-attribute-profile.schema.json"
 REGISTRY_PATH = ROOT / "repository/data/registries/product-attribute-profiles.yaml"
+CANONICAL_ATTRIBUTES = ROOT / "repository/data/registries/product-attributes.yaml"
+CANONICAL_VALUES = (
+    ROOT / "repository/data/registries/product-attribute-value-registries.yaml"
+)
+CANONICAL_ENTITIES = ROOT / "repository/data/registries/product-entities.yaml"
 DEFAULT_ATTRIBUTES = ROOT / "tests/fixtures/product-attributes/valid-foundation.yaml"
 DEFAULT_VALUES = ROOT / "tests/fixtures/pd02/valid-synthetic-controlled-values.yaml"
 DEFAULT_ENTITIES = ROOT / "tests/fixtures/product-core/valid-minimal.yaml"
@@ -111,6 +116,48 @@ def validate_lifecycle(contract: dict[str, Any]) -> None:
         raise DefinitionError("direct DRAFT -> APPROVED must remain forbidden")
     if lifecycle.get("canonical_population_authority") is not False:
         raise DefinitionError("PD-02A must not grant canonical population authority")
+    pd02b = require_mapping(contract.get("pd02b_lifecycle"), "pd02b_lifecycle")
+    pd02b_history = {
+        "DRAFT": [],
+        "REVIEW": [
+            {
+                "from": "DRAFT",
+                "to": "REVIEW",
+                "evidence_reference": "PD02B-TECH-REVIEW-001",
+            }
+        ],
+        "APPROVED": [
+            {
+                "from": "DRAFT",
+                "to": "REVIEW",
+                "evidence_reference": "PD02B-TECH-REVIEW-001",
+            },
+            {
+                "from": "REVIEW",
+                "to": "APPROVED",
+                "evidence_reference": "FD-PD02B-001",
+            },
+        ],
+    }
+    pd02b_status = pd02b.get("current_status")
+    if (
+        pd02b.get("decision_id") != "FD-PD02B-001"
+        or pd02b.get("allowed_transition_sequence") != ["DRAFT", "REVIEW", "APPROVED"]
+        or pd02b_status not in pd02b_history
+        or pd02b.get("transition_history") != pd02b_history[pd02b_status]
+        or pd02b.get("direct_draft_to_approved_forbidden") is not True
+        or pd02b.get("canonical_population_authority") is not True
+        or pd02b.get("exact_profile_count") != 1
+        or pd02b.get("scope_entity_type") != "FAMILY"
+        or pd02b.get("required_attribute_keys") != ["material", "grade"]
+        or pd02b.get("public_visibility") != "INTERNAL"
+        or pd02b.get("variation_axis") is not False
+        or pd02b.get("filtering") is not False
+        or pd02b.get("inquiry_use") != "NOT_USED"
+        or pd02b.get("seo_use") != "PROHIBITED"
+        or pd02b.get("approval_evidence_required_for_approved_status") is not True
+    ):
+        raise DefinitionError("PD-02B Attribute Profile lifecycle or boundary is invalid")
 
 
 def load_definitions(
@@ -199,7 +246,9 @@ def valid_role(value: Any) -> bool:
     )
 
 
-def validate_provenance(value: Any, subject: str, add: Any) -> None:
+def validate_provenance(
+    value: Any, subject: str, add: Any, *, synthetic: bool
+) -> None:
     expected = {
         "source_type",
         "source_reference",
@@ -210,7 +259,7 @@ def validate_provenance(value: Any, subject: str, add: Any) -> None:
     if not isinstance(value, dict) or set(value) != expected:
         add(subject, "PROVENANCE_STRUCTURE", "provenance fields differ from the contract")
         return
-    if value["source_type"] != "SYNTHETIC_FIXTURE":
+    if synthetic and value["source_type"] != "SYNTHETIC_FIXTURE":
         add(subject, "FORGED_CLASSIFICATION", "synthetic provenance is required")
     if not isinstance(value["source_reference"], str) or not value["source_reference"].strip():
         add(subject, "PROVENANCE_SOURCE_REFERENCE", "source_reference is required")
@@ -220,7 +269,7 @@ def validate_provenance(value: Any, subject: str, add: Any) -> None:
         add(subject, "PROVENANCE_CAPTURED_BY", "captured_by must identify a role")
     if not rfc3339_utc(value["captured_at"]):
         add(subject, "PROVENANCE_CAPTURED_AT", "captured_at must be RFC 3339 UTC")
-    if value["evidence_status"] != "SYNTHETIC_TEST_EVIDENCE":
+    if synthetic and value["evidence_status"] != "SYNTHETIC_TEST_EVIDENCE":
         add(subject, "FORGED_EVIDENCE", "synthetic test evidence is required")
 
 
@@ -228,11 +277,20 @@ def registry_maps(
     attributes_value: Any,
     values_value: Any,
     value_definitions: ValueDefinitions,
+    *,
+    canonical: bool = False,
 ) -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, Any]], list[ValidationIssue]]:
     issues: list[ValidationIssue] = []
     attribute_definitions = load_attribute_definitions()
+    attribute_entries = (
+        attributes_value.get("attributes")
+        if canonical and isinstance(attributes_value, dict)
+        else attributes_value
+    )
     attribute_issues = validate_attribute_fixture(
-        attributes_value, "<synthetic-product-attributes>", attribute_definitions
+        attribute_entries,
+        "<canonical-product-attributes>" if canonical else "<synthetic-product-attributes>",
+        attribute_definitions,
     )
     for issue in attribute_issues:
         issues.append(
@@ -245,15 +303,15 @@ def registry_maps(
         )
     value_issues = validate_value_registry(
         values_value,
-        "<synthetic-value-registries>",
+        "<canonical-value-registries>" if canonical else "<synthetic-value-registries>",
         value_definitions,
-        canonical=False,
+        canonical=canonical,
     )
     for issue in value_issues:
         issues.append(ValidationIssue(issue.source, issue.subject, issue.code, issue.message))
     attributes = {
         item["attribute_id"]: item
-        for item in attributes_value
+        for item in (attribute_entries if isinstance(attribute_entries, list) else [])
         if isinstance(item, dict) and isinstance(item.get("attribute_id"), str)
     }
     value_registries = {
@@ -330,18 +388,14 @@ def validate_registry(
         add("<registry>", "REGISTRY_VERSION", "registry_version must use X.Y.Z")
     if value.get("contract_version") != definitions.contract_version:
         add("<registry>", "CONTRACT_VERSION", "contract_version is incompatible")
-    expected_classification = "CANONICAL_EMPTY" if canonical else "SYNTHETIC_FIXTURE"
+    expected_classification = "CANONICAL_PD02B" if canonical else "SYNTHETIC_FIXTURE"
     if value.get("data_classification") != expected_classification:
         add("<registry>", "DATA_CLASSIFICATION", f"expected {expected_classification}")
     profiles = value.get("profiles")
     if not isinstance(profiles, list):
         add("<registry>", "PROFILE_ENTRIES", "profiles must be a list")
         return sorted(issues, key=lambda item: item.render())
-    if canonical:
-        if profiles:
-            add("<registry>", "CANONICAL_REGISTRY_NOT_EMPTY", "PD-02A canonical profiles must remain empty")
-        return sorted(issues, key=lambda item: item.render())
-    if not profiles:
+    if not canonical and not profiles:
         add("<registry>", "EMPTY_SYNTHETIC_FIXTURE", "synthetic fixture needs one profile")
 
     attributes = attributes or {}
@@ -392,20 +446,26 @@ def validate_registry(
         if not isinstance(scope_id, str) or not definitions.scope_id_pattern.fullmatch(scope_id):
             add(str(subject), "SCOPE_ID", "scope_entity_id format is invalid")
         elif scope_id not in resolved_scope_entities:
-            add(str(subject), "ORPHAN_PROFILE_SCOPE", f"unknown synthetic scope: {scope_id}")
+            add(
+                str(subject),
+                "ORPHAN_PROFILE_SCOPE",
+                f"unknown {'canonical' if canonical else 'synthetic'} scope: {scope_id}",
+            )
         elif resolved_scope_entities[scope_id] != scope_type:
             add(str(subject), "SCOPE_TYPE_MISMATCH", "scope type differs from resolved entity")
         elif scope_id in scope_ids:
             add(str(subject), "DUPLICATE_PROFILE_SCOPE", f"duplicate profile scope: {scope_id}")
         else:
             scope_ids.add(scope_id)
-        if raw.get("status") != "CANDIDATE_UNVERIFIED":
+        if not canonical and raw.get("status") != "CANDIDATE_UNVERIFIED":
             add(str(subject), "SYNTHETIC_STATUS", "synthetic profile status must be CANDIDATE_UNVERIFIED")
         if not valid_role(raw.get("owner")) or not valid_role(raw.get("reviewer")):
             add(str(subject), "ROLE_STRUCTURE", "owner and reviewer must be stable roles")
         elif raw["owner"]["role"] == raw["reviewer"]["role"]:
             add(str(subject), "SEGREGATION_OF_DUTIES", "owner and reviewer must differ")
-        validate_provenance(raw.get("provenance"), str(subject), add)
+        validate_provenance(
+            raw.get("provenance"), str(subject), add, synthetic=not canonical
+        )
 
         seen_attributes: set[str] = set()
         for rule in raw.get("attribute_rules", []) if isinstance(raw.get("attribute_rules"), list) else []:
@@ -519,13 +579,38 @@ def main(argv: list[str] | None = None) -> int:
         profiles, profile_parser = load_yaml(Path(args.profiles), "PD-02A profiles")
         canonical = Path(args.profiles).resolve() == REGISTRY_PATH.resolve()
         if canonical:
-            issues = validate_registry(
+            attributes_value, attribute_parser = load_yaml(
+                CANONICAL_ATTRIBUTES, "PD-02B canonical attributes"
+            )
+            values_value, value_parser = load_yaml(
+                CANONICAL_VALUES, "PD-02B canonical value registries"
+            )
+            entities_value, entity_parser = load_yaml(
+                CANONICAL_ENTITIES, "PD-02B canonical Product Core"
+            )
+            value_definitions = load_value_definitions()
+            attributes, value_registries, dependency_issues = registry_maps(
+                attributes_value,
+                values_value,
+                value_definitions,
+                canonical=True,
+            )
+            scope_entities, scope_issues = validated_scope_entities(entities_value)
+            issues = dependency_issues + scope_issues + validate_registry(
                 profiles,
                 str(args.profiles),
                 definitions,
                 canonical=True,
+                attributes=attributes,
+                value_registries=value_registries,
+                scope_entities=scope_entities,
             )
-            parser_sources = [profile_parser]
+            parser_sources = [
+                profile_parser,
+                attribute_parser,
+                value_parser,
+                entity_parser,
+            ]
         else:
             attributes_value, attribute_parser = load_yaml(
                 Path(args.attributes), "PD-02A synthetic attributes"
@@ -567,9 +652,9 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     count = len(profiles["profiles"])
     print(
-        f"PD-02A Attribute Profile validation PASS: {count} profile fixture(s); "
+        f"PD-02A/PD-02B Attribute Profile validation PASS: {count} profile item(s); "
         f"parsers={'; '.join(sorted(set(parser_sources)))}; "
-        "canonical population, Cartesian generation, network, side effects=false."
+        "Cartesian generation, network, side effects=false."
     )
     return 0
 

@@ -17,6 +17,7 @@ from typing import Any, Iterable
 ROOT = Path(__file__).resolve().parents[3]
 CONTRACT_PATH = ROOT / "repository/data/contracts/product-core.contract.yaml"
 SCHEMA_PATH = ROOT / "repository/data/schemas/product-core.schema.json"
+REGISTRY_PATH = ROOT / "repository/data/registries/product-entities.yaml"
 ENTITY_TYPES_PATH = ROOT / "repository/data/registries/product-entity-types.yaml"
 STATUSES_PATH = ROOT / "repository/data/registries/product-statuses.yaml"
 
@@ -254,6 +255,43 @@ def validate_contract_and_schema(
     contract_version = contract.get("contract_version")
     if not isinstance(contract_version, str) or not SEMVER_PATTERN.fullmatch(contract_version):
         raise DefinitionError("contract_version must use semantic-version core")
+    lifecycle = require_mapping(contract.get("pd02b_lifecycle"), "pd02b_lifecycle")
+    expected_history = {
+        "DRAFT": [],
+        "REVIEW": [
+            {
+                "from": "DRAFT",
+                "to": "REVIEW",
+                "evidence_reference": "PD02B-TECH-REVIEW-001",
+            }
+        ],
+        "APPROVED": [
+            {
+                "from": "DRAFT",
+                "to": "REVIEW",
+                "evidence_reference": "PD02B-TECH-REVIEW-001",
+            },
+            {
+                "from": "REVIEW",
+                "to": "APPROVED",
+                "evidence_reference": "FD-PD02B-001",
+            },
+        ],
+    }
+    lifecycle_status = lifecycle.get("current_status")
+    if (
+        lifecycle.get("decision_id") != "FD-PD02B-001"
+        or lifecycle.get("allowed_transition_sequence")
+        != ["DRAFT", "REVIEW", "APPROVED"]
+        or lifecycle_status not in expected_history
+        or lifecycle.get("transition_history") != expected_history[lifecycle_status]
+        or lifecycle.get("direct_draft_to_approved_forbidden") is not True
+        or lifecycle.get("canonical_population_authority") is not True
+        or lifecycle.get("exact_entity_count") != 3
+        or lifecycle.get("allowed_entity_types") != ["CATALOG", "PLATFORM", "FAMILY"]
+        or lifecycle.get("approval_evidence_required_for_approved_status") is not True
+    ):
+        raise DefinitionError("PD-02B Product Core lifecycle or boundary is invalid")
     required_fields = set(contract.get("always_required_record_fields", []))
     expected_required = {
         "contract_version",
@@ -678,7 +716,12 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Validate a YAML sequence of canonical Product core entity records."
     )
-    parser.add_argument("source", help="YAML fixture path, or '-' to read YAML from stdin")
+    parser.add_argument(
+        "source",
+        nargs="?",
+        default=str(REGISTRY_PATH),
+        help="YAML dataset path, '-' for stdin, or omitted for the canonical registry",
+    )
     return parser.parse_args(argv)
 
 

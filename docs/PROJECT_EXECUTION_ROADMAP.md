@@ -33,8 +33,8 @@ This roadmap defines sequence and gates, not mutable operational state. The exac
 
 1. `GOV-XD-00` — stabilize operational-state semantics, dependency order, roles, and approval gates.
 2. `PD-01` — Product Data Contract/Schema/Validator/tests with synthetic fixtures only. **Complete when PR #21 merges; canonical population disabled.**
-3. `PD-02A` — controlled-value and standalone Attribute Profile Contract/Schema/Validator/tests with synthetic fixtures and empty canonical registries. **`APPROVED`; independent PASS and REVIEW CI recorded; conditional Git integration pending.**
-4. `PD-02B` — minimum canonical Family scope, Attribute definitions, controlled values, and Attribute Profile. **Blocked pending exact terminology, stable scope identity, assigned Product Data owner, qualified steel-domain review, and separate approval.**
+3. `PD-02A` — controlled-value and standalone Attribute Profile Contract/Schema/Validator/tests with synthetic fixtures and empty canonical registries. **`APPROVED` and integrated through PR #22.**
+4. `PD-02B` — minimum canonical Catalog/Platform/Family scope, Material/Grade definitions, four controlled terms, INTERNAL Profile, 18 labels, and Approval Evidence. **`APPROVED` after legal `DRAFT → REVIEW → APPROVED`, independent PASS, and Founder approval; conditional Git integration remains separate.**
 5. `PD-03` — exactly three canonical pilot records with provenance and explicit status.
 6. `PD-04` — Golden Repository Package with `import_ready=false` and `runtime_ready=false`.
 7. `PD-05` — commercial evidence plus final SKU/slug policy before any import.
@@ -124,4 +124,4 @@ Sequence: Pipe → Profile → approved Fittings families → remaining approved
 
 ## Do Not Yet
 
-Do not execute `PD-02B`; populate Product/Knowledge data or any empty Product Attribute/value/Profile registry; create Family/Product/Pilot/879-row/Master Data/Golden/SKU/slug/availability data; change repository settings; activate workflows; import; implement WordPress; publish; deploy; expose prices/payment/cart/checkout; enable Phase 1 AI; create speculative Fittings data; delete PD-01 or PD-02A branches; or mutate Central Steel/runtime without the applicable separate approval. Consult [Current Project State](CURRENT_PROJECT_STATE.md) for the semantic Git boundary.
+Do not exceed the exact [PD-02B Scope](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md); populate Product/Knowledge/Pilot/879-row/Master Data/Golden/SKU/slug/availability data; add 430, Finish/Color/PVD, dimensions, or Units; change repository settings; activate workflows; import; implement WordPress; publish; deploy; expose prices/payment/cart/checkout; enable Phase 1 AI; create speculative Fittings data; delete branches; or mutate Central Steel/runtime without separate approval. Consult [Current Project State](CURRENT_PROJECT_STATE.md) for the semantic Git boundary.

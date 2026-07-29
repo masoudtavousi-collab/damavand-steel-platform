@@ -1,0 +1,57 @@
+registry_id: product-data-approval-evidence
+registry_version: "1.0.0"
+contract_version: "1.0.0"
+data_classification: CANONICAL_PD02B
+evidence:
+  - contract_version: "1.0.0"
+    approval_evidence_id: papproval:f8c559c1228c
+    decision_id: FD-PD02B-001
+    lifecycle_status: APPROVED
+    scope_reference: docs/PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md
+    dataset_hashes:
+      - path: repository/data/registries/product-entities.yaml
+        sha256: de2c111de622a633b01288f4588bc80c5ea27c0a051b5f2bd252ec9e9b7e6030
+      - path: repository/data/registries/product-attributes.yaml
+        sha256: 73d4a8b871fe76b18fb6dedd6ab4b2adddbe5dd740641c4b8d3bdec981522a4e
+      - path: repository/data/registries/product-attribute-value-registries.yaml
+        sha256: 7ffd870037243450e242db40b056e2e38bf744ea813d4f92ed4e67f1481641fa
+      - path: repository/data/registries/product-attribute-profiles.yaml
+        sha256: 7689b98e75a5324a3ae192dffabaf3214febbc0de6fc92f5c337c1491d81936e
+      - path: repository/data/registries/product-data-localized-labels.yaml
+        sha256: 57c34f08d3cfbe360f3d8aa256db23caed9a0670ac83c5653df575ccf8beabe8
+    founder_decision:
+      reviewer_id: Founder پروژه Damavand Steel
+      scope: Exact PD-02B Minimum Canonical Slice
+      verdict: PASS
+      evidence_reference: task:019faec6-5d14-7da2-909a-450fe030b551
+      independent: false
+      review_date: "2026-07-29"
+    domain_reviews:
+      - reviewer_id: SS-MATERIAL-REVIEWER-02
+        scope: Material taxonomy only
+        verdict: PASS
+        evidence_reference: PD02B-MATERIAL-REVIEW
+        independent: true
+        review_date: "2026-07-29"
+      - reviewer_id: SS-INDEPENDENT-REVIEWER-20Y-01
+        scope: Grade identifiers 201, 304 and 316 only
+        verdict: PASS
+        evidence_reference: task:019faedc-2b72-7602-a16f-351b780af85e
+        independent: true
+        review_date: "2026-07-29"
+    technical_review:
+      reviewer_id: repository-guardian-independent
+      scope: PD-02B contracts, schemas, validators, tests and exact canonical slice
+      verdict: PASS
+      evidence_reference: PD02B-TECH-REVIEW-001:attempt-2:f38eb44721b90f2cf6b451c280e2d8a91c789f55
+      independent: true
+      review_date: "2026-07-29"
+    approval:
+      approved_by: Founder پروژه Damavand Steel
+      approved_at: "2026-07-29T18:41:26Z"
+      evidence_reference: FD-PD02B-001
+    anti_replay:
+      nonce: f8c559c1228ca3868f6227bb
+      consumed: true
+    status: APPROVED
+    record_version: "1.0.0"

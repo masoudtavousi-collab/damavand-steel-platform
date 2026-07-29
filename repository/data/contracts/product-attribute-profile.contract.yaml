@@ -27,6 +27,33 @@ pd02a_lifecycle:
       evidence_reference: FD-PD02A-001
   direct_draft_to_approved_forbidden: true
   canonical_population_authority: false
+pd02b_lifecycle:
+  decision_id: FD-PD02B-001
+  current_status: APPROVED
+  allowed_transition_sequence:
+    - DRAFT
+    - REVIEW
+    - APPROVED
+  transition_history:
+    - from: DRAFT
+      to: REVIEW
+      evidence_reference: PD02B-TECH-REVIEW-001
+    - from: REVIEW
+      to: APPROVED
+      evidence_reference: FD-PD02B-001
+  direct_draft_to_approved_forbidden: true
+  canonical_population_authority: true
+  exact_profile_count: 1
+  scope_entity_type: FAMILY
+  required_attribute_keys:
+    - material
+    - grade
+  public_visibility: INTERNAL
+  variation_axis: false
+  filtering: false
+  inquiry_use: NOT_USED
+  seo_use: PROHIBITED
+  approval_evidence_required_for_approved_status: true
 registry_policy:
   canonical_registry_must_remain_empty_in_pd02a: true
   fixtures_must_be_synthetic: true

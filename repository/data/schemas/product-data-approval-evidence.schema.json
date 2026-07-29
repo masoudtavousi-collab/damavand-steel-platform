@@ -1,0 +1,187 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:damavand-steel:schema:product-data-approval-evidence:1.0.0",
+  "title": "PD-02B machine-readable approval evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "approval_evidence_id",
+    "decision_id",
+    "lifecycle_status",
+    "scope_reference",
+    "dataset_hashes",
+    "founder_decision",
+    "domain_reviews",
+    "technical_review",
+    "approval",
+    "anti_replay",
+    "status",
+    "record_version"
+  ],
+  "properties": {
+    "contract_version": {
+      "const": "1.0.0"
+    },
+    "approval_evidence_id": {
+      "type": "string",
+      "pattern": "^papproval:[0-9a-f]{12}$"
+    },
+    "decision_id": {
+      "const": "FD-PD02B-001"
+    },
+    "lifecycle_status": {
+      "enum": [
+        "DRAFT",
+        "REVIEW",
+        "APPROVED"
+      ]
+    },
+    "scope_reference": {
+      "const": "docs/PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md"
+    },
+    "dataset_hashes": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    "founder_decision": {
+      "$ref": "#/$defs/review"
+    },
+    "domain_reviews": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "$ref": "#/$defs/review"
+      }
+    },
+    "technical_review": {
+      "$ref": "#/$defs/review"
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "approved_by",
+        "approved_at",
+        "evidence_reference"
+      ],
+      "properties": {
+        "approved_by": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "approved_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "evidence_reference": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "anti_replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "nonce",
+        "consumed"
+      ],
+      "properties": {
+        "nonce": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{24}$"
+        },
+        "consumed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "status": {
+      "enum": [
+        "APPROVED",
+        "CANDIDATE_UNVERIFIED"
+      ]
+    },
+    "record_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    }
+  },
+  "$defs": {
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reviewer_id",
+        "scope",
+        "verdict",
+        "evidence_reference",
+        "independent",
+        "review_date"
+      ],
+      "properties": {
+        "reviewer_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "verdict": {
+          "enum": [
+            "PASS",
+            "PENDING"
+          ]
+        },
+        "evidence_reference": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 500
+        },
+        "independent": {
+          "type": "boolean"
+        },
+        "review_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        }
+      }
+    }
+  }
+}

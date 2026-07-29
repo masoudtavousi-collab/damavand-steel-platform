@@ -119,6 +119,15 @@ Material, Surface, Unit, Brand, Country, Quality Level, Application, Environment
 | --- | --- | --- |
 | 0.1.0 | 2026-07-04 | Initial Sprint 03C Pipe global attribute profile; no attribute or term implementation. |
 
+## PD-02B Profile Reconciliation
+
+The canonical PD-02B APPROVED Profile is
+`pprof:26a474c2e100` for Family `prd:family:a10c6d8ceabc`. It contains only
+Material and Grade, both REQUIRED and `INTERNAL`, with variation, filtering,
+inquiry, and SEO use disabled. This does not approve the broader Pipe Attribute
+model, Units, dimensions, Finish/Color/PVD, combinations, Products, or runtime
+mappings.
+
 ## Navigation
 
 - [Attribute Dictionary](ATTRIBUTE_DICTIONARY.md)

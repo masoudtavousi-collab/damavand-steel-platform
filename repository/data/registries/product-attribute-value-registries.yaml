@@ -1,5 +1,90 @@
 registry_id: product-attribute-value-registries
 registry_version: "1.0.0"
 contract_version: "1.0.0"
-data_classification: CANONICAL_EMPTY
-value_registries: []
+data_classification: CANONICAL_PD02B
+value_registries:
+  - contract_version: "1.0.0"
+    value_registry_id: vreg:302188e2fc8a
+    registry_key: material_values
+    attribute_id: attr:dbf5365ee1e5
+    canonical_label: Material Values
+    values:
+      - value_id: vterm:5ff9c0ceca39
+        value_code: stainless_steel
+        canonical_label: Stainless Steel
+        aliases:
+          - استیل
+        status: APPROVED
+        provenance:
+          source_type: DOMAIN_REVIEW
+          source_reference: PD02B-MATERIAL-REVIEW
+          captured_by: role:product-data-steward
+          captured_at: "2026-07-29T00:00:00Z"
+          evidence_status: INDEPENDENT_HUMAN_REVIEW_PASS
+        record_version: "1.0.0"
+    status: APPROVED
+    owner:
+      role: product-data-steward
+    reviewer:
+      role: material-domain-reviewer
+    provenance:
+      source_type: DOMAIN_REVIEW
+      source_reference: PD02B-MATERIAL-REVIEW
+      captured_by: role:product-data-steward
+      captured_at: "2026-07-29T00:00:00Z"
+      evidence_status: INDEPENDENT_HUMAN_REVIEW_PASS
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    value_registry_id: vreg:e1b9dd333df8
+    registry_key: grade_values
+    attribute_id: attr:28565665c910
+    canonical_label: Steel Grade Values
+    values:
+      - value_id: vterm:a891bfdfdd6b
+        value_code: "201"
+        canonical_label: "201"
+        aliases: []
+        status: APPROVED
+        provenance:
+          source_type: DOMAIN_REVIEW
+          source_reference: SS-INDEPENDENT-REVIEWER-20Y-01
+          captured_by: role:product-data-steward
+          captured_at: "2026-07-29T00:00:00Z"
+          evidence_status: INDEPENDENT_HUMAN_REVIEW_PASS
+        record_version: "1.0.0"
+      - value_id: vterm:9c1a18d4b69b
+        value_code: "304"
+        canonical_label: "304"
+        aliases: []
+        status: APPROVED
+        provenance:
+          source_type: DOMAIN_REVIEW
+          source_reference: SS-INDEPENDENT-REVIEWER-20Y-01
+          captured_by: role:product-data-steward
+          captured_at: "2026-07-29T00:00:00Z"
+          evidence_status: INDEPENDENT_HUMAN_REVIEW_PASS
+        record_version: "1.0.0"
+      - value_id: vterm:c62157b97d36
+        value_code: "316"
+        canonical_label: "316"
+        aliases: []
+        status: APPROVED
+        provenance:
+          source_type: DOMAIN_REVIEW
+          source_reference: SS-INDEPENDENT-REVIEWER-20Y-01
+          captured_by: role:product-data-steward
+          captured_at: "2026-07-29T00:00:00Z"
+          evidence_status: INDEPENDENT_HUMAN_REVIEW_PASS
+        record_version: "1.0.0"
+    status: APPROVED
+    owner:
+      role: product-data-steward
+    reviewer:
+      role: steel-domain-reviewer
+    provenance:
+      source_type: DOMAIN_REVIEW
+      source_reference: SS-INDEPENDENT-REVIEWER-20Y-01
+      captured_by: role:product-data-steward
+      captured_at: "2026-07-29T00:00:00Z"
+      evidence_status: INDEPENDENT_HUMAN_REVIEW_PASS
+    record_version: "1.0.0"

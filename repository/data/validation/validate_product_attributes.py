@@ -533,6 +533,42 @@ def validate_contract_schema(
     ):
         if extension.get(authority) is not False:
             raise DefinitionError(f"PD-02A must keep {authority}=false")
+    pd02b = require_mapping(contract.get("pd02b_extension"), "pd02b_extension")
+    pd02b_history = {
+        "DRAFT": [],
+        "REVIEW": [
+            {
+                "from": "DRAFT",
+                "to": "REVIEW",
+                "evidence_reference": "PD02B-TECH-REVIEW-001",
+            }
+        ],
+        "APPROVED": [
+            {
+                "from": "DRAFT",
+                "to": "REVIEW",
+                "evidence_reference": "PD02B-TECH-REVIEW-001",
+            },
+            {
+                "from": "REVIEW",
+                "to": "APPROVED",
+                "evidence_reference": "FD-PD02B-001",
+            },
+        ],
+    }
+    pd02b_status = pd02b.get("current_status")
+    if (
+        pd02b.get("decision_id") != "FD-PD02B-001"
+        or pd02b.get("allowed_transition_sequence") != ["DRAFT", "REVIEW", "APPROVED"]
+        or pd02b_status not in pd02b_history
+        or pd02b.get("transition_history") != pd02b_history[pd02b_status]
+        or pd02b.get("direct_draft_to_approved_forbidden") is not True
+        or pd02b.get("canonical_attribute_population_authority") is not True
+        or pd02b.get("exact_attribute_count") != 2
+        or pd02b.get("allowed_attribute_keys") != ["material", "grade"]
+        or pd02b.get("approved_status_requires_approval_evidence") is not True
+    ):
+        raise DefinitionError("PD-02B Product Attribute lifecycle or boundary is invalid")
     registry_policy = require_mapping(contract.get("registry_policy"), "registry_policy")
     if registry_policy != {
         "validator_supports_entry_validation": True,
@@ -674,9 +710,6 @@ def load_definitions() -> Definitions:
                 "canonical Product Attribute registry is structurally invalid:\n"
                 + "\n".join(issue.render() for issue in issues)
             )
-        raise DefinitionError(
-            "PD-01 requires the canonical Product Attribute registry to remain empty"
-        )
     return definitions
 
 
@@ -1064,7 +1097,7 @@ def validate_fixture(
 
 def parse_args(argv: list[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Validate synthetic Product Attribute definition fixtures."
+        description="Validate Product Attribute definitions offline."
     )
     parser.add_argument("source", help="YAML fixture path, or '-' for stdin")
     return parser.parse_args(argv)
@@ -1093,7 +1126,7 @@ def main(argv: list[str] | None = None) -> int:
 
     parsers = sorted(set(definitions.parser_sources + (fixture_parser,)))
     print(
-        f"VALIDATION PASSED: {source} ({len(value)} synthetic definitions; "
+        f"VALIDATION PASSED: {source} ({len(value)} definitions; "
         f"parser={'; '.join(parsers)})"
     )
     return 0
