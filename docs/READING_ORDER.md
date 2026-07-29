@@ -43,7 +43,7 @@ Every reader starts with:
 
 Readers then follow the applicable role path.
 
-For current work, readers must obtain the exact phase, branch, authorization, pull-request state, GO/NO-GO boundary, and next action from Current Project State. The [Claude Recovery Audit](AUDIT_REPORT_CLAUDE_RECOVERY_2026-07-26.md), K-01 audit, Atlas Adoption Matrix, and merged pull requests remain evidence within their recorded scopes; none owns mutable operational state or grants execution authority. The [BP2 Data Administration Scope](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md) is `APPROVED` under `FD-BP2-ADM-001` only for documentation governance and grants no implementation authority. The [PD-01 Scope](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md) is a separate approved synthetic-only contract boundary with no canonical population authority.
+For current work, readers must obtain the exact phase, branch, authorization, pull-request state, GO/NO-GO boundary, and next action from Current Project State. The [Claude Recovery Audit](AUDIT_REPORT_CLAUDE_RECOVERY_2026-07-26.md), K-01 audit, Atlas Adoption Matrix, and merged pull requests remain evidence within their recorded scopes; none owns mutable operational state or grants execution authority. The [BP2 Data Administration Scope](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md) is `APPROVED` under `FD-BP2-ADM-001` only for documentation governance and grants no implementation authority. The [PD-01 Scope](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md) is a separate approved synthetic-only contract boundary. The [PD-02A Scope](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md) is the active exact synthetic-only foundation and requires all canonical Attribute/value/Profile collections to remain empty.
 
 ## Founder Reading Path
 
@@ -164,8 +164,9 @@ No product taxonomy or steel terminology may be inferred while the relevant Foun
 9. [Inquiry Data Model](23_INQUIRY_DATA_MODEL.md).
 10. [BP2 Data Administration Scope v1.0](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md), treated as an `APPROVED`, documentation-only governance contract with no implementation authority.
 11. [PD-01 Product Data Contract Enablement Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md), treated as the approved exact synthetic-only Scope/Approval and Test Contract; it creates no canonical Product Data.
-12. [Traceability Matrix](TRACEABILITY_MATRIX.md).
-13. [Batch 05 Audit](AUDIT_REPORT_BATCH05.md), [Batch 05A Audit](AUDIT_REPORT_BATCH05A.md), and [Batch 05B Audit](AUDIT_REPORT_BATCH05B.md).
+12. [PD-02A Controlled Values and Attribute Profiles Scope v1.0](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md), treated as the active Draft synthetic-only Scope/Approval and Test Contract; its canonical registries must remain empty.
+13. [Traceability Matrix](TRACEABILITY_MATRIX.md).
+14. [Batch 05 Audit](AUDIT_REPORT_BATCH05.md), [Batch 05A Audit](AUDIT_REPORT_BATCH05A.md), and [Batch 05B Audit](AUDIT_REPORT_BATCH05B.md).
 
 No product, term, attribute value, variation, inquiry form, setting, import, schema, UI, or implementation may be created from these Review-state models without explicit approval.
 

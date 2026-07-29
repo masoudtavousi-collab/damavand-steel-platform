@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.10.0
-- **Last Updated:** 2026-07-28
-- **Last Review:** 2026-07-28
+- **Version:** 0.11.0
+- **Last Updated:** 2026-07-29
+- **Last Review:** 2026-07-29
 - **Review Cycle:** On governing-rule or dependency change; periodic cadence pending Founder approval
 - **Lifecycle:** Review
 - **Source of Truth:** [Core Project Principles](00_PROJECT_BIBLE.md#core-project-principles), approved governing documents, and accepted ADRs; this matrix is a supporting view
@@ -1105,6 +1105,16 @@ Wave 1 is complete. Its merges created no runtime, WordPress, Product Repository
 | `W2C-FOUNDATION` | `EV-W2C-001` and PR #7 | Measurement contract/schema, two dimensions, four units, validator, and fixtures | Structural foundation merged; entries remain `CANDIDATE_UNVERIFIED` | No Product measurement, weight, availability, pricing, import, or runtime authority |
 | `K01-AUTH` | `FD-K01-001` | Founder selection dated 2026-07-23 | Governance/current-state reconciliation, Atlas disposition, unified tests, one commit/push/Draft PR | Merge and all runtime/Product/Knowledge population remain `NO-GO` |
 | `K01-ARCHIVE` | [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md) and `atlas/ATLAS_ADOPTION_MATRIX.csv` | K-01 reconciliation | One owner per truth kind; 173 Atlas rows dispositioned; legacy Library Atlas noncanonical | Classification only; no physical deletion/move or canonical promotion |
+
+## PD-02A Controlled Values and Attribute Profiles Traceability
+
+| Trace ID | Asset or decision | Authority input | Reconciled outcome | Boundary |
+| --- | --- | --- | --- | --- |
+| `PD02A-AUTH` | `FD-PD02A-001` and [PD-02A Scope](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md) | Founder authorization dated 2026-07-29; starting `main` SHA `d8ae556d17ab518970149533d975b7924f3af3e1` | Exact 38-path, synthetic-only `DRAFT → REVIEW → APPROVED` and conditional Git cycle | No canonical population, Product, runtime, or branch deletion authority |
+| `PD02A-VALUE` | Product Attribute Value Registry Contract/Schema/Validator/Test | PD-02A Test Contract | Stable `vreg`/`vterm`, NFC duplicate controls, ownership/reviewer separation, provenance, closed offline validation | Canonical `value_registries: []` required |
+| `PD02A-PROFILE` | Product Attribute Profile Contract/Schema/Validator/Test | PD-02A Test Contract and approved hierarchy boundary | Stable `pprof`, Family/Series scope format, Attribute/value-registry/Unit resolution, Profile use rules, Cartesian prohibition | Canonical `profiles: []`; no real scope identity |
+| `PD02A-ATTR` | Product Attribute Contract `2.0.0` PD-02A extension | Approved PD-01 base plus `FD-PD02A-001` | Stable `vreg` reference format added without changing the empty-registry boundary | Canonical `attributes: []` required |
+| `PD02A-TEST` | `tests/test_pd02_product_data.py` and mutation matrix | Positive, negative, adversarial, security, lifecycle, and side-effect requirements | At least 60 named mutations; deterministic offline validation | Passing tests do not approve business data |
 
 ## Navigation
 

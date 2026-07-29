@@ -8,8 +8,8 @@
 - **Owner:** Founder
 - **Reviewer:** Build Engineer
 - **Approval Authority:** Founder
-- **Version:** 0.9.0
-- **Last Updated:** 2026-07-28
+- **Version:** 0.10.0
+- **Last Updated:** 2026-07-29
 - **Lifecycle:** Review
 - **Source of Truth:** [Current Project State](CURRENT_PROJECT_STATE.md), current repository evidence, accepted decisions, and execution gates
 - **Dependencies:** [Project Baseline](PROJECT_BASELINE.md), [Execution Gates](EXECUTION_GATES.md), and [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md)
@@ -33,6 +33,7 @@ Wave 2A–2C established platform-independent Product core, Product Attribute, a
 | BP2 administration contract | Approved governance contract; implementation disabled | PR #12, `FD-BP2-ADM-001`, merged PR #18, documentation-only scope, machine-readable contract, closed Draft 2020-12 schema, deterministic offline validator, and positive/negative/adversarial tests | Separate implementation or Product Data authorization remains required; no Admin UI, Product/SKU, runtime, import, WordPress, WooCommerce, or production authority |
 | Cross-domain execution charter | Governance ready; implementation disabled | `FD-GOV-XD-00`, six-task read-only gap analysis, independent QA, stable live-tip resolution, separation of duties, and ordered dependency gates | Satisfied its own scope through PR #20; it grants no implementation authority and PD-01 depends on separate `FD-PD01-001` |
 | PD-01 Product Data Contract Enablement | Approved synthetic contract foundation; canonical population disabled | `FD-PD01-001`; legal `DRAFT → REVIEW → APPROVED`; `PD01-REVIEW-001` zero findings; PR #21; CI `30390311445` and `30466264564`; exact 30 paths; strict offline boundary | Canonical Product Attribute registry is empty; `PD-02`, real Product Data, Master/Golden, SKU, import, and runtime require separate approvals |
+| PD-02A Controlled Values and Attribute Profiles | DRAFT synthetic foundation; canonical population disabled | `FD-PD02A-001`; exact 38 paths; separate closed value-registry and Profile contracts/schemas; offline validators; synthetic fixtures; positive/negative/adversarial tests | All three canonical collections must remain empty; stable Family scope, real terminology, assigned data/domain roles, and PD-02B approval remain missing |
 | Product Data | Blocked | Architecture and three pilot decisions exist | No canonical machine-readable Master Data or Golden package; availability and commercial validity incomplete |
 | Knowledge Repository | Blocked | Architecture proposals exist | No contract, content instances, population process, retrieval implementation, or approved AI capability |
 | Atlas | Controlled intake | 173 registered pending rows; K-01 adoption matrix | No row is canonical without mapping, review, and approval |

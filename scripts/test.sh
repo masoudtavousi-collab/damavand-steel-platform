@@ -52,6 +52,20 @@ attribute_validator="repository/data/validation/validate_product_attributes.py"
 "$python" "$attribute_validator" tests/fixtures/product-attributes/valid-measured-attribute.yaml
 expect_failure tests/fixtures/product-attributes/invalid-naming.yaml ATTRIBUTE_KEY_FORMAT "$attribute_validator"
 
+pd02a_value_validator="repository/data/validation/validate_product_attribute_values.py"
+"$python" "$pd02a_value_validator"
+"$python" "$pd02a_value_validator" tests/fixtures/pd02/valid-synthetic-controlled-values.yaml
+expect_failure tests/fixtures/pd02/invalid-duplicate-normalized-term.yaml DUPLICATE_NORMALIZED_TERM "$pd02a_value_validator"
+
+pd02a_profile_validator="repository/data/validation/validate_product_attribute_profiles.py"
+"$python" "$pd02a_profile_validator"
+"$python" "$pd02a_profile_validator" tests/fixtures/pd02/valid-synthetic-profile.yaml
+expect_failure tests/fixtures/pd02/invalid-unresolved-registry.yaml UNRESOLVED_VALUE_REGISTRY "$pd02a_profile_validator"
+expect_failure tests/fixtures/pd02/invalid-orphan-profile.yaml ORPHAN_PROFILE_SCOPE "$pd02a_profile_validator"
+expect_failure tests/fixtures/pd02/invalid-term-attribute-mismatch.yaml VALUE_SOURCE_TYPE "$pd02a_profile_validator"
+expect_failure tests/fixtures/pd02/invalid-status-promotion.yaml SYNTHETIC_STATUS "$pd02a_profile_validator"
+"$python" tests/test_pd02_product_data.py
+
 product_master_data_validator="repository/data/validation/validate_product_master_data.py"
 "$python" "$product_master_data_validator" tests/fixtures/product-master-data/valid-synthetic-minimal.yaml
 expect_failure tests/fixtures/product-master-data/invalid-duplicate-key.yaml DUPLICATE_KEY "$product_master_data_validator"

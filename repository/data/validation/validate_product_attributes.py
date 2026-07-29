@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Deterministic offline validation for the PD-01 Product Attribute foundation."""
+"""Deterministic offline validation for the PD-01/PD-02A Attribute foundation."""
 
 from __future__ import annotations
 
@@ -37,6 +37,7 @@ SEMVER_PATTERN = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+$")
 MACHINE_CODE_PATTERN = re.compile(r"^[A-Z][A-Z0-9_]*$")
 OWNER_ROLE_PATTERN = re.compile(r"^[a-z][a-z0-9-]{2,63}$")
 CAPTURED_BY_PATTERN = re.compile(r"^role:[a-z][a-z0-9-]{2,63}$")
+VALUE_REGISTRY_ID_PATTERN = re.compile(r"^vreg:[0-9a-f]{12}$")
 
 EXPECTED_DATA_TYPES = {
     "TEXT": ("string", False, True, "NONE"),
@@ -417,7 +418,7 @@ def reject_nonlocal_schema_references(value: Any, path: str = "#") -> None:
                 not isinstance(item, str) or not item.startswith("#/")
             ):
                 raise DefinitionError(
-                    f"non-local schema reference is forbidden in PD-01: {child}"
+                    f"non-local schema reference is forbidden: {child}"
                 )
             reject_nonlocal_schema_references(item, child)
     elif isinstance(value, list):
@@ -484,6 +485,54 @@ def validate_contract_schema(
         raise DefinitionError("direct DRAFT -> APPROVED must remain forbidden")
     if lifecycle.get("canonical_population_authority") is not False:
         raise DefinitionError("PD-01 must not grant canonical population authority")
+    extension = require_mapping(contract.get("pd02a_extension"), "pd02a_extension")
+    if extension.get("decision_id") != "FD-PD02A-001":
+        raise DefinitionError("PD-02A extension decision_id must be FD-PD02A-001")
+    if extension.get("allowed_transition_sequence") != [
+        "DRAFT",
+        "REVIEW",
+        "APPROVED",
+    ]:
+        raise DefinitionError("PD-02A extension must use DRAFT -> REVIEW -> APPROVED")
+    extension_history = {
+        "DRAFT": [],
+        "REVIEW": [
+            {
+                "from": "DRAFT",
+                "to": "REVIEW",
+                "evidence_reference": "PD02A-REVIEW-001",
+            }
+        ],
+        "APPROVED": [
+            {
+                "from": "DRAFT",
+                "to": "REVIEW",
+                "evidence_reference": "PD02A-REVIEW-001",
+            },
+            {
+                "from": "REVIEW",
+                "to": "APPROVED",
+                "evidence_reference": "FD-PD02A-001",
+            },
+        ],
+    }
+    extension_status = extension.get("current_status")
+    if (
+        extension_status not in extension_history
+        or extension.get("transition_history") != extension_history[extension_status]
+    ):
+        raise DefinitionError("PD-02A extension history is invalid or skips REVIEW")
+    if extension.get("direct_draft_to_approved_forbidden") is not True:
+        raise DefinitionError("PD-02A direct DRAFT -> APPROVED must remain forbidden")
+    if extension.get("value_registry_id_pattern") != VALUE_REGISTRY_ID_PATTERN.pattern:
+        raise DefinitionError("PD-02A value-registry identifier pattern differs")
+    for authority in (
+        "canonical_attribute_population_authority",
+        "canonical_value_population_authority",
+        "canonical_profile_population_authority",
+    ):
+        if extension.get(authority) is not False:
+            raise DefinitionError(f"PD-02A must keep {authority}=false")
     registry_policy = require_mapping(contract.get("registry_policy"), "registry_policy")
     if registry_policy != {
         "validator_supports_entry_validation": True,
@@ -791,6 +840,16 @@ def validate_constraints(
     for field in ("value_registry_reference", "target_registry_reference"):
         if field in constraints and not nonempty_string(constraints[field], 500):
             add("REGISTRY_REFERENCE", f"{field} must be a non-empty reference")
+    if "value_registry_reference" in constraints and (
+        not isinstance(constraints["value_registry_reference"], str)
+        or not VALUE_REGISTRY_ID_PATTERN.fullmatch(
+            constraints["value_registry_reference"]
+        )
+    ):
+        add(
+            "VALUE_REGISTRY_ID_FORMAT",
+            "value_registry_reference must use vreg:<12-lowercase-hex>",
+        )
     if data_type == "CONTROLLED_TERM" and "value_registry_reference" not in constraints:
         add("VALUE_REGISTRY_REQUIRED", "CONTROLLED_TERM requires value_registry_reference")
     if data_type == "ENTITY_REFERENCE" and "target_registry_reference" not in constraints:

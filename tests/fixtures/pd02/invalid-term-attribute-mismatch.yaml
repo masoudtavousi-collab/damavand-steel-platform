@@ -1,0 +1,34 @@
+registry_id: product-attribute-profiles
+registry_version: "1.0.0"
+contract_version: "1.0.0"
+data_classification: SYNTHETIC_FIXTURE
+profiles:
+  - contract_version: "1.0.0"
+    profile_id: pprof:000000000004
+    scope_entity_id: prd:family:000000000001
+    scope_entity_type: FAMILY
+    attribute_rules:
+      - attribute_id: attr:000000000001
+        requirement_level: OPTIONAL
+        condition_reference: null
+        public_visibility: INTERNAL
+        variation_axis: false
+        filtering: false
+        inquiry_use: NOT_USED
+        seo_use: PROHIBITED
+        value_source: CONTROLLED_REGISTRY
+        value_registry_id: vreg:000000000001
+        allowed_unit_ids: []
+        precision: null
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: synthetic-profile-owner
+    reviewer:
+      role: synthetic-profile-reviewer
+    provenance:
+      source_type: SYNTHETIC_FIXTURE
+      source_reference: fixture:pd02:invalid-term-attribute-mismatch
+      captured_by: role:automated-validation
+      captured_at: "2000-01-01T00:00:00Z"
+      evidence_status: SYNTHETIC_TEST_EVIDENCE
+    record_version: "1.0.0"

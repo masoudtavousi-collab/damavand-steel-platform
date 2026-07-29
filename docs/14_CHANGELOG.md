@@ -8,13 +8,21 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.8.0
-- **Last Updated:** 2026-07-28
+- **Version:** 0.9.0
+- **Last Updated:** 2026-07-29
 - **Lifecycle:** Review
 - **Source of Truth:** Merged Git history and scoped decision/evidence records
 - **Approval:** Pending Founder review; merged Git history remains evidence
 
 This changelog records repository outcomes. It does not create approval, runtime readiness, Product facts, or release authority.
+
+## 2026-07-29 — PD-02A Controlled Values and Attribute Profiles (`DRAFT`)
+
+- `FD-PD02A-001` authorizes the legal `DRAFT → REVIEW → APPROVED` cycle and conditional Git controls for the exact 38 paths in [PD-02A Scope v1.0](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md).
+- Closed Draft 2020-12 Contracts/Schemas and deterministic offline validators define synthetic controlled-value registries and standalone Attribute Profiles.
+- Stable `vreg`, `vterm`, and `pprof` identities, NFC duplicate detection, owner/reviewer separation, provenance, scope/Attribute/registry/Unit resolution, and Cartesian prohibition are fail-closed.
+- Positive, negative, and adversarial coverage requires at least 60 uniquely named mutations.
+- The canonical Product Attribute, controlled-value, and Profile collections remain empty. PD-02B, Product/Pilot/Master/Golden/SKU, WordPress/WooCommerce, import, runtime, deploy, production, and branch deletion remain `NO-GO`.
 
 ## 2026-07-29 — PD-01 Product Data Contract Enablement (`APPROVED`)
 

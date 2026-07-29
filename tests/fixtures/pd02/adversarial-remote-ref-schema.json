@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:damavand-steel:test:pd02a:remote-ref",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "remote": {
+      "$ref": "https://example.invalid/pd02a.schema.json"
+    }
+  }
+}

@@ -32,6 +32,19 @@ pd01_lifecycle:
       evidence_reference: FD-PD01-001
   direct_draft_to_approved_forbidden: true
   canonical_population_authority: false
+pd02a_extension:
+  decision_id: FD-PD02A-001
+  current_status: DRAFT
+  allowed_transition_sequence:
+    - DRAFT
+    - REVIEW
+    - APPROVED
+  transition_history: []
+  direct_draft_to_approved_forbidden: true
+  value_registry_id_pattern: '^vreg:[0-9a-f]{12}$'
+  canonical_attribute_population_authority: false
+  canonical_value_population_authority: false
+  canonical_profile_population_authority: false
 registry_policy:
   validator_supports_entry_validation: true
   canonical_registry_must_remain_empty_in_pd01: true
@@ -129,6 +142,7 @@ validation_definitions:
     - Minimum values must not exceed maximum values.
     - Pattern constraints must compile as deterministic regular expressions.
     - Controlled terms require a value registry reference.
+    - Value registry references use a stable vreg identifier and must resolve through the separately governed Product Attribute Value Registry contract.
     - Entity references require a target registry reference.
 data_boundary:
   canonical_attribute_entries_allowed_in_pd01: false

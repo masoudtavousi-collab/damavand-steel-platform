@@ -1,0 +1,36 @@
+registry_id: product-attribute-value-registries
+registry_version: "1.0.0"
+contract_version: "1.0.0"
+data_classification: SYNTHETIC_FIXTURE
+value_registries:
+  - contract_version: "1.0.0"
+    value_registry_id: vreg:000000000001
+    registry_key: synthetic_test_values
+    attribute_id: attr:000000000001
+    canonical_label: Synthetic Test Values
+    values:
+      - value_id: vterm:000000000001
+        value_code: synthetic_alpha
+        canonical_label: Synthetic Alpha
+        aliases:
+          - Synthetic A
+        status: CANDIDATE_UNVERIFIED
+        provenance:
+          source_type: SYNTHETIC_FIXTURE
+          source_reference: fixture:pd02:valid-controlled-values
+          captured_by: role:automated-validation
+          captured_at: "2000-01-01T00:00:00Z"
+          evidence_status: SYNTHETIC_TEST_EVIDENCE
+        record_version: "1.0.0"
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: synthetic-data-owner
+    reviewer:
+      role: synthetic-domain-reviewer
+    provenance:
+      source_type: SYNTHETIC_FIXTURE
+      source_reference: fixture:pd02:valid-controlled-values
+      captured_by: role:automated-validation
+      captured_at: "2000-01-01T00:00:00Z"
+      evidence_status: SYNTHETIC_TEST_EVIDENCE
+    record_version: "1.0.0"

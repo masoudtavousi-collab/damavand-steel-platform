@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.2.0
-- **Last Updated:** 2026-07-03
-- **Last Review:** 2026-07-03
+- **Version:** 0.3.0
+- **Last Updated:** 2026-07-29
+- **Last Review:** 2026-07-29
 - **Review Cycle:** On attribute definition, label, key, value, unit, variation, filtering, SEO, Product Type profile, or integration-mapping change
 - **Lifecycle:** Review
 - **Source of Truth:** [Enterprise Product Data Model](19_PRODUCT_DATA_MODEL.md), [WooCommerce Product Model](20_WOOCOMMERCE_PRODUCT_MODEL.md), and [WordPress Enterprise Architecture](06_WORDPRESS_ARCHITECTURE.md#enterprise-product-architecture)
@@ -112,6 +112,12 @@ Each Product Type receives a profile with these flags per attribute:
 
 Profiles prevent every attribute from appearing on every product and prevent variation explosion.
 
+## Relationship to PD-02A Foundation
+
+[PD-02A Scope v1.0](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md) defines closed, offline, synthetic-only machine contracts for controlled-value registries and standalone Attribute Profiles. It exercises stable identities, NFC duplicate detection, owner/reviewer separation, provenance, scope/Attribute/value-registry/Unit resolution, and the Profile fields above without approving any business term.
+
+The canonical Product Attribute registry remains `attributes: []`; the new canonical value and Profile collections remain `value_registries: []` and `profiles: []`. Real labels, keys, values, Profile behavior, Family scope, and domain ownership remain PD-02B decisions.
+
 ## Allowed Values Policy
 
 - Controlled-term attributes accept only approved canonical terms.
@@ -177,12 +183,13 @@ Profiles prevent every attribute from appearing on every product and prevent var
 
 ## Approval Status
 
-Review. No attribute, term, value, variation axis, filter, archive, unit conversion, WooCommerce setting, or import is approved or created.
+Review. PD-02A approves only a synthetic validation foundation. No real attribute, term, value, Profile, variation axis, filter, archive, unit conversion, WooCommerce setting, or import is approved or created.
 
 ## Change Notes
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.3.0 | 2026-07-29 | Linked the PD-02A synthetic controlled-value/Profile foundation and preserved all canonical registries as empty. |
 | 0.2.0 | 2026-07-03 | Batch 05B remediation: explicit flat-by-default hierarchy policy and derived/non-global Size classification; documentation only. |
 | 0.1.0 | 2026-07-03 | Initial Batch 05 global product attribute model with proposed Persian labels; documentation only. |
 

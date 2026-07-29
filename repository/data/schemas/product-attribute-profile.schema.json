@@ -1,0 +1,284 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:damavand-steel:schema:product-attribute-profile:1.0.0",
+  "title": "Canonical Product Attribute Profile",
+  "description": "Closed schema for PD-02A synthetic standalone Attribute Profiles. Canonical profiles remain empty.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "profile_id",
+    "scope_entity_id",
+    "scope_entity_type",
+    "attribute_rules",
+    "status",
+    "owner",
+    "reviewer",
+    "provenance",
+    "record_version"
+  ],
+  "properties": {
+    "contract_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "profile_id": {
+      "type": "string",
+      "pattern": "^pprof:[0-9a-f]{12}$"
+    },
+    "scope_entity_id": {
+      "type": "string",
+      "pattern": "^prd:(family|series):[0-9a-f]{12}$"
+    },
+    "scope_entity_type": {
+      "type": "string",
+      "enum": [
+        "FAMILY",
+        "SERIES"
+      ]
+    },
+    "attribute_rules": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 100,
+      "items": {
+        "$ref": "#/$defs/attribute_rule"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "APPROVED",
+        "CANDIDATE_UNVERIFIED",
+        "MISSING_DATA_VALUE",
+        "FOUNDER_INPUT_REQUIRED",
+        "DEFERRED",
+        "NOT_APPLICABLE",
+        "INVALID"
+      ]
+    },
+    "owner": {
+      "$ref": "#/$defs/role"
+    },
+    "reviewer": {
+      "$ref": "#/$defs/role"
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "record_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    }
+  },
+  "$defs": {
+    "attribute_rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "attribute_id",
+        "requirement_level",
+        "condition_reference",
+        "public_visibility",
+        "variation_axis",
+        "filtering",
+        "inquiry_use",
+        "seo_use",
+        "value_source",
+        "value_registry_id",
+        "allowed_unit_ids",
+        "precision"
+      ],
+      "properties": {
+        "attribute_id": {
+          "type": "string",
+          "pattern": "^attr:[0-9a-f]{12}$"
+        },
+        "requirement_level": {
+          "type": "string",
+          "enum": [
+            "REQUIRED",
+            "OPTIONAL",
+            "CONDITIONAL",
+            "PROHIBITED"
+          ]
+        },
+        "condition_reference": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "public_visibility": {
+          "type": "string",
+          "enum": [
+            "PUBLIC",
+            "PROTECTED",
+            "INTERNAL",
+            "INTEGRATION_ONLY"
+          ]
+        },
+        "variation_axis": {
+          "type": "boolean"
+        },
+        "filtering": {
+          "type": "boolean"
+        },
+        "inquiry_use": {
+          "type": "string",
+          "enum": [
+            "PREFILLED",
+            "SELECTABLE",
+            "FREE_REQUIREMENT",
+            "NOT_USED"
+          ]
+        },
+        "seo_use": {
+          "type": "string",
+          "enum": [
+            "SUPPORTING",
+            "LANDING_OWNER",
+            "NON_INDEXABLE",
+            "PROHIBITED"
+          ]
+        },
+        "value_source": {
+          "type": "string",
+          "enum": [
+            "TYPED_VALIDATION",
+            "CONTROLLED_REGISTRY",
+            "ENTITY_REFERENCE"
+          ]
+        },
+        "value_registry_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^vreg:[0-9a-f]{12}$"
+        },
+        "allowed_unit_ids": {
+          "type": "array",
+          "maxItems": 20,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^unit:[0-9a-f]{12}$"
+          }
+        },
+        "precision": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 12
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "requirement_level": {
+                "const": "CONDITIONAL"
+              }
+            },
+            "required": [
+              "requirement_level"
+            ]
+          },
+          "then": {
+            "properties": {
+              "condition_reference": {
+                "type": "string"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "condition_reference": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "value_source": {
+                "const": "CONTROLLED_REGISTRY"
+              }
+            },
+            "required": [
+              "value_source"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value_registry_id": {
+                "type": "string"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "value_registry_id": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "role": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role"
+      ],
+      "properties": {
+        "role": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]{2,63}$"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_type",
+        "source_reference",
+        "captured_by",
+        "captured_at",
+        "evidence_status"
+      ],
+      "properties": {
+        "source_type": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$"
+        },
+        "source_reference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500,
+          "pattern": ".*\\S.*"
+        },
+        "captured_by": {
+          "type": "string",
+          "pattern": "^role:[a-z][a-z0-9-]{2,63}$"
+        },
+        "captured_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "evidence_status": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$"
+        }
+      }
+    }
+  }
+}

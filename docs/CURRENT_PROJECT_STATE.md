@@ -2,14 +2,14 @@
 
 - **Current date:** 2026-07-28
 - **Canonical repository:** `masoudtavousi-collab/damavand-steel-platform`
-- **Reviewed input anchor:** `6577cd461e88463903b18c11b0e5bdbfa88375e2`, PR #20 Merge Commit; successful required-check run `30376465378`
+- **Reviewed input anchor:** `d8ae556d17ab518970149533d975b7924f3af3e1`, PR #21 Merge Commit; successful required post-merge `repository-validation`
 - **Live `main` tip:** resolve dynamically from GitHub `refs/heads/main` at task start; do not treat the reviewed input anchor as a permanent live-tip claim
-- **Last completed substantive repository integration:** `PD-01` Product Data Contract Enablement when PR #21 carrying this declaration merges
-- **Last completed governance reconciliation:** PD-01 direct 13-document reconciliation when PR #21 merges
-- **Current phase:** `PD-01` complete when PR #21 merges; no canonical Product Data implementation Sprint active
-- **Current authorized branch:** no further Product, Knowledge, Admin UI, or runtime implementation branch is authorized after the PR #21 cycle closes
-- **Current authorization:** read-only preparation of an exact `PD-02` decision package only after PR #21 integration; `PD-02` execution is not authorized
-- **Merge:** only conditional Merge Commit of PR #21 is authorized; no later merge is authorized without a new exact Founder approval
+- **Last completed substantive repository integration:** `PD-01` Product Data Contract Enablement through merged PR #21
+- **Last completed governance reconciliation:** PD-01 direct 13-document reconciliation through PR #21
+- **Current phase:** `PD-02A` synthetic Controlled Values and Attribute Profiles foundation — `DRAFT`
+- **Current authorized branch:** `codex/pd-02a-controlled-values-profile-foundation`
+- **Current authorization:** exact 38-path, synthetic-only PD-02A Contract/Schema/Validator/Test lifecycle; all canonical Product Attribute, controlled-value, and Profile registries must remain empty
+- **Merge:** conditional Merge Commit of the future PD-02A PR is authorized only after legal `DRAFT → REVIEW → APPROVED`, independent `PASS`, successful CI, no conflict, exact path equality, and empty-registry proof
 - **Runtime / WordPress / WooCommerce mutation:** NO-GO
 - **Import / publishing / deployment / product creation / bulk SKU generation:** NO-GO
 
@@ -43,6 +43,7 @@ This file is the only semantic operational-state pointer. Other documents may pr
 | Post-PR18 Governance Reconciliation | PR #19; direct governance and current-state alignment after PR #18 | Closes the BP2 lifecycle integration cycle and returns the project to read-only next-step planning without implementation authority |
 | `GOV-XD-00` Cross-Domain Execution Charter | Founder authorization dated 2026-07-28; six-task read-only analysis; independent QA; the PR carrying this declaration | Separates semantic operational state from the dynamic Git tip, records cross-domain dependency order and separation of duties, and selects `PD-01` only as the next decision-package target |
 | `PD-01` Product Data Contract Enablement | `FD-PD01-001`; `PD01-REVIEW-001`; [PD-01 Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md); exact 30-path allowlist; starting SHA `6577cd461e88463903b18c11b0e5bdbfa88375e2`; PR #21; DRAFT CI `30390311445`; REVIEW CI `30466264564` | `APPROVED` after legal `DRAFT → REVIEW → APPROVED`; synthetic Contract/Schema/Validator/Test enablement only; canonical Product Attribute registry remains empty; no Product, SKU, Master Data, Golden, import, runtime, or production authority |
+| `PD-02A` Controlled Values and Attribute Profiles foundation | `FD-PD02A-001`; [PD-02A Scope v1.0](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md); exact 38-path allowlist; starting SHA `d8ae556d17ab518970149533d975b7924f3af3e1` | Active `DRAFT`; synthetic Contract/Schema/Validator/Test work only; all three canonical collections remain empty and PD-02B population is unauthorized |
 | Atlas planning registry | 173 pending document records across 21 domains | Intake inventory only; no Atlas row is canonical merely because it is registered |
 
 Repository validators are active in CI and unified under `make test`. PR #12 hardening is merged: nested schema objects are closed, JSON Schema Draft 2020-12 is enforced offline, validation output is deterministic, and positive, negative, and adversarial tests are wired into the unified test entry point. `FD-BP2-ADM-001` records the completed legal BP2 lifecycle without implementation authority. `FD-PD01-001` approves a separate synthetic Product Data contract boundary; it is not canonical Product Data.
@@ -111,6 +112,7 @@ A Variable Parent Product is a commerce presentation and never the owner of cano
 - The BP2 Data Administration contract is `APPROVED` only as a documentation-only administration boundary; it does not grant authority to PD-01 or any administration engine.
 - Canonical Product records, Product Attribute definitions, Master Data, Golden package, final SKU/slug policy, content/media rights, and availability evidence remain absent or incomplete.
 - PD-01 permits only the exact synthetic Contract/Schema/Validator/Test and governance allowlist; canonical Product Data, BP2 Administration, Runtime, WordPress/WooCommerce, and Knowledge/Content writes remain blocked.
+- PD-02A permits only synthetic controlled-value and standalone Profile infrastructure. Stable Family scope, real terminology, real Attribute/value/Profile ownership, and qualified steel-domain review remain prerequisites for PD-02B.
 - The ordering conflict between credential containment and mandatory pre-mutation backup/restore evidence remains unresolved.
 - Legacy Review-state Product/Content/SEO documents that describe a Variable Parent Product as canonical owner must be reconciled before Knowledge, SEO, or WooCommerce mapping approval.
 - A shared role/separation-of-duties matrix and Sprint-specific Test Contract remain required before implementation.
@@ -118,9 +120,9 @@ A Variable Parent Product is a commerce presentation and never the owner of cano
 
 ## Approved Next Action
 
-After PR #21 merges and post-merge `main` CI succeeds, prepare one exact, read-only `PD-02` decision package for Founder review. It may propose controlled-value registries and minimum Attribute Profiles, exact paths, evidence, Test Contract, roles, risks, stop conditions, and conditional Git controls. It must not create or modify Product Data, registries, Product records, Branch, PR, or runtime assets.
+Execute [PD-02A Scope v1.0](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md) through the legal `DRAFT → REVIEW → APPROVED` sequence on its authorized branch. Require exact 38-path equality, independent `PD02A-REVIEW-001`, successful local and GitHub CI, empty canonical registries, Merge Commit only, and post-merge `main` CI.
 
-Do not populate the empty Product Attribute registry, create Product/Pilot/879-row/Master Data/Golden/SKU/slug/availability data, modify BP1, implement an Admin UI, change WordPress/WooCommerce, run imports, publish, deploy, delete the branch, or mutate production.
+Do not begin PD-02B, populate any canonical Product Attribute/value/Profile registry, allocate a real Family identity, create Product/Pilot/879-row/Master Data/Golden/SKU/slug/availability data, modify BP1, implement an Admin UI, change WordPress/WooCommerce, run imports, publish, deploy, delete the branch, or mutate production.
 
 ## Current References
 

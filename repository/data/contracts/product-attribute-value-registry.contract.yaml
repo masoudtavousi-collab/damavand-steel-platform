@@ -1,0 +1,90 @@
+contract_id: product-attribute-value-registry
+contract_version: "1.0.0"
+record_kind: canonical-product-attribute-value-registry
+schema:
+  path: repository/data/schemas/product-attribute-value-registry.schema.json
+  draft: "https://json-schema.org/draft/2020-12/schema"
+registry:
+  path: repository/data/registries/product-attribute-value-registries.yaml
+pd02a_lifecycle:
+  decision_id: FD-PD02A-001
+  current_status: DRAFT
+  allowed_transition_sequence:
+    - DRAFT
+    - REVIEW
+    - APPROVED
+  transition_history: []
+  direct_draft_to_approved_forbidden: true
+  canonical_population_authority: false
+registry_policy:
+  canonical_registry_must_remain_empty_in_pd02a: true
+  fixtures_must_be_synthetic: true
+  network_allowed: false
+  side_effects_allowed: false
+stable_identity:
+  registry_id:
+    pattern: '^vreg:[0-9a-f]{12}$'
+  value_id:
+    pattern: '^vterm:[0-9a-f]{12}$'
+  attribute_id:
+    pattern: '^attr:[0-9a-f]{12}$'
+  allocation_policy: CSPRNG_12_HEX_WITH_COLLISION_CHECK
+normalization:
+  unicode_form: NFC
+  key_pattern: '^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$'
+  duplicate_comparison:
+    - NFC
+    - casefold
+    - trim
+  aliases_cannot_collide_with:
+    - canonical labels
+    - value codes
+    - other aliases in the same registry
+required_registry_fields:
+  - contract_version
+  - value_registry_id
+  - registry_key
+  - attribute_id
+  - canonical_label
+  - values
+  - status
+  - owner
+  - reviewer
+  - provenance
+  - record_version
+required_value_fields:
+  - value_id
+  - value_code
+  - canonical_label
+  - aliases
+  - status
+  - provenance
+  - record_version
+synthetic_boundary:
+  allowed_data_classification: SYNTHETIC_FIXTURE
+  allowed_status: CANDIDATE_UNVERIFIED
+  approval_evidence_allowed: false
+prohibited_fields:
+  - product_id
+  - entity_id
+  - sku
+  - commercial_sku
+  - slug
+  - wordpress_id
+  - woocommerce_id
+  - price
+  - pricing
+  - cost
+  - margin
+  - stock
+  - inventory
+  - availability
+  - offer
+  - cart
+  - checkout
+  - payment
+  - publication
+  - publishing
+  - import
+  - deployment
+  - production
