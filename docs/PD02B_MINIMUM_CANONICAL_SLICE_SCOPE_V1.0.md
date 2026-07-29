@@ -85,6 +85,20 @@ approval.
 
 Direct `DRAFT → APPROVED` is prohibited. Passing tests alone never promotes data.
 
+## Independent Review History
+
+- `PD02B-TECH-REVIEW-001` attempt 1 reviewed Commit
+  `b9f8b5d4bc475a0c137ef3c29cacd0c7a2b68dea` and returned `REWORK`
+  with Critical 0, High 0, Medium 1, Low 0.
+- The finding identified that the declared 20-case mutation manifest was counted
+  but not dispatched through real validators, and that the permissive-schema
+  assertion did not exercise the schema loader.
+- The DRAFT correction executes all 20 mutations against temporary copies of the
+  canonical datasets/contracts, asserts each expected fail-closed code, and
+  routes permissive and remote-reference schemas through the real loader.
+- Lifecycle remains `DRAFT`; attempt 2 must independently return `PASS` before
+  any transition to REVIEW.
+
 ## Exact Allowlist
 
 Only these 57 paths may change:

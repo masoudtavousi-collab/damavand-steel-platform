@@ -10,6 +10,10 @@
 - Records remain `CANDIDATE_UNVERIFIED`; independent technical review and final
   Founder approval are pending. No runtime, Product/SKU, pilot, Master/Golden,
   availability, import, deployment, production, or branch deletion is allowed.
+- Independent review attempt 1 returned `REWORK` with one Medium test-depth
+  finding. The DRAFT correction now executes all 20 declared mutations and
+  routes adversarial schemas through real rejection paths; re-review remains
+  required before REVIEW.
 
 ## Document Control
 

@@ -94,8 +94,11 @@ def lifecycle_status(contract: dict[str, Any]) -> str:
     return str(status)
 
 
-def load_validator() -> tuple[Draft202012Validator, str]:
-    contract, _ = load_yaml(CONTRACT_PATH, "PD-02B localized-label contract")
+def load_validator(
+    contract_path: Path = CONTRACT_PATH,
+    schema_path: Path = SCHEMA_PATH,
+) -> tuple[Draft202012Validator, str]:
+    contract, _ = load_yaml(contract_path, "PD-02B localized-label contract")
     contract = require_mapping(contract, "PD-02B localized-label contract")
     if (
         contract.get("contract_id") != "product-data-localized-labels"
@@ -104,7 +107,7 @@ def load_validator() -> tuple[Draft202012Validator, str]:
         raise DefinitionError("localized-label contract identity differs")
     status = lifecycle_status(contract)
     schema = require_mapping(
-        load_json(SCHEMA_PATH, "PD-02B localized-label schema"),
+        load_json(schema_path, "PD-02B localized-label schema"),
         "PD-02B localized-label schema",
     )
     if (

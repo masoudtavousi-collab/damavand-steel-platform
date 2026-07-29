@@ -1120,6 +1120,7 @@ Wave 1 is complete. Its merges created no runtime, WordPress, Product Repository
 | `PD02B-DATA` | Six canonical registries plus Product Core/Attribute/value/Profile contracts and closed schemas | Founder decisions, Material reviewer `SS-MATERIAL-REVIEWER-02`, Grade reviewer `SS-INDEPENDENT-REVIEWER-20Y-01` | Exact 3 entities, 2 Attributes, 2 Value Registries, 4 Terms, 1 INTERNAL Profile, and 18 labels | All records remain `CANDIDATE_UNVERIFIED` until final approval |
 | `PD02B-EVIDENCE` | Approval Evidence contract/schema/registry/validator | Founder, domain, future technical-review references; five SHA-256 dataset bindings; anti-replay nonce | Reject missing/forged reviews, hash tampering, premature approval, and replay | `PD02B-TECH-REVIEW-001` and final Founder approval pending in DRAFT |
 | `PD02B-TEST` | `validate_pd02b_canonical_slice.py`, dedicated validators, synthetic fixtures, 20-case mutation manifest, and `tests/test_pd02b_product_data.py` | Positive, negative, adversarial, lifecycle, Unicode, schema, identity, and side-effect boundaries | Deterministic offline validation under unified test entry point | Passing tests do not promote lifecycle status |
+| `PD02B-REVIEW` | `PD02B-TECH-REVIEW-001` attempt 1 on Commit `b9f8b5d4bc475a0c137ef3c29cacd0c7a2b68dea`; CI run `30478833314` | Independent read-only technical review | `REWORK`: 0 Critical, 0 High, 1 Medium, 0 Low; mutation manifest execution and real permissive-schema rejection required | DRAFT correction implemented; independent attempt 2 PASS remains mandatory |
 
 ## Navigation
 

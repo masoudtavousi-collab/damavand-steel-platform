@@ -4,10 +4,16 @@
 from __future__ import annotations
 
 import copy
+from contextlib import redirect_stderr, redirect_stdout
+import io
 import json
 from pathlib import Path
 import sys
+import tempfile
 import unittest
+from unittest.mock import patch
+
+import yaml
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -27,6 +33,7 @@ from validate_product_data_approval_evidence import (  # noqa: E402
     validate_registry as validate_approval,
 )
 from validate_product_data_localized_labels import (  # noqa: E402
+    CONTRACT_PATH as LABEL_CONTRACT_PATH,
     REGISTRY_PATH as LABEL_PATH,
     load_validator as load_label_validator,
     validate_registry as validate_labels,
@@ -34,6 +41,20 @@ from validate_product_data_localized_labels import (  # noqa: E402
 
 
 FIXTURES = ROOT / "tests/fixtures/pd02b"
+
+
+def set_at_path(document: object, path: list[object], value: object) -> None:
+    current = document
+    for part in path[:-1]:
+        current = current[part]
+    current[path[-1]] = value
+
+
+def get_at_path(document: object, path: list[object]) -> object:
+    current = document
+    for part in path:
+        current = current[part]
+    return current
 
 
 class PD02BProductDataTests(unittest.TestCase):
@@ -150,11 +171,11 @@ class PD02BProductDataTests(unittest.TestCase):
         self.assertIn("PREMATURE_APPROVAL", rendered)
 
     def test_adversarial_permissive_schema_rejected(self) -> None:
-        schema = load_json(
-            FIXTURES / "adversarial-permissive-schema.json", "permissive schema"
-        )
-        self.assertIs(schema.get("additionalProperties"), True)
-        self.assertNotEqual(schema.get("additionalProperties"), False)
+        with self.assertRaisesRegex(DefinitionError, "closed Draft 2020-12"):
+            load_label_validator(
+                contract_path=LABEL_CONTRACT_PATH,
+                schema_path=FIXTURES / "adversarial-permissive-schema.json",
+            )
 
     def test_adversarial_remote_ref_rejected(self) -> None:
         schema = load_json(
@@ -163,12 +184,87 @@ class PD02BProductDataTests(unittest.TestCase):
         with self.assertRaisesRegex(DefinitionError, "non-local schema reference"):
             reject_nonlocal_schema_references(schema)
 
-    def test_mutation_manifest_is_complete_and_unique(self) -> None:
+    def test_mutation_manifest_executes_all_cases(self) -> None:
         cases = json.loads((FIXTURES / "mutation-cases.json").read_text("utf-8"))
         names = [case["name"] for case in cases]
         self.assertEqual(len(cases), 20)
         self.assertEqual(len(set(names)), 20)
         self.assertTrue(all(case["expected_code"] for case in cases))
+        for case in cases:
+            with self.subTest(case=case["name"]):
+                if case["document"] == "schema":
+                    with self.assertRaisesRegex(
+                        DefinitionError, case["expected_code"]
+                    ):
+                        load_label_validator(
+                            contract_path=LABEL_CONTRACT_PATH,
+                            schema_path=FIXTURES / case["fixture"],
+                        )
+                    continue
+
+                datasets = {
+                    name: load_yaml(path, f"mutation {case['name']} {name}")[0]
+                    for name, path in canonical_validator.PATHS.items()
+                }
+                contracts = {
+                    name: load_yaml(path, f"mutation {case['name']} {name} contract")[0]
+                    for name, path in canonical_validator.CONTRACTS.items()
+                }
+                if case["document"].startswith("contract_"):
+                    document = contracts[case["document"].removeprefix("contract_")]
+                else:
+                    document = datasets[case["document"]]
+                if case["operation"] == "set":
+                    set_at_path(document, case["path"], case["value"])
+                elif case["operation"] == "append_copy":
+                    target = get_at_path(document, case["path"])
+                    target.append(copy.deepcopy(target[case["source_index"]]))
+                elif case["operation"] == "pop":
+                    target = get_at_path(document, case["path"])
+                    target.pop(case["index"])
+                else:
+                    self.fail(f"unsupported mutation operation: {case['operation']}")
+
+                with tempfile.TemporaryDirectory(
+                    dir=FIXTURES, prefix=".pd02b-mutation-"
+                ) as temporary:
+                    temporary_root = Path(temporary)
+                    dataset_paths = {}
+                    contract_paths = {}
+                    for name, value in datasets.items():
+                        output_path = temporary_root / f"{name}.yaml"
+                        output_path.write_text(
+                            yaml.safe_dump(
+                                value,
+                                allow_unicode=True,
+                                sort_keys=False,
+                            ),
+                            encoding="utf-8",
+                        )
+                        dataset_paths[name] = output_path
+                    for name, value in contracts.items():
+                        output_path = temporary_root / f"contract-{name}.yaml"
+                        output_path.write_text(
+                            yaml.safe_dump(
+                                value,
+                                allow_unicode=True,
+                                sort_keys=False,
+                            ),
+                            encoding="utf-8",
+                        )
+                        contract_paths[name] = output_path
+                    stdout = io.StringIO()
+                    stderr = io.StringIO()
+                    with (
+                        patch.object(canonical_validator, "PATHS", dataset_paths),
+                        patch.object(canonical_validator, "CONTRACTS", contract_paths),
+                        redirect_stdout(stdout),
+                        redirect_stderr(stderr),
+                    ):
+                        result = canonical_validator.main()
+                    rendered = stdout.getvalue() + stderr.getvalue()
+                    self.assertNotEqual(result, 0, rendered)
+                    self.assertIn(case["expected_code"], rendered)
 
     def test_no_deferred_grade_430_in_terms(self) -> None:
         values, _ = load_yaml(
