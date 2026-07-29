@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.13.0
+- **Version:** 0.14.0
 - **Last Updated:** 2026-07-28
 - **Last Review:** 2026-07-28
 - **Review Cycle:** On Founder decision creation, resolution, supersession, or dependency change
@@ -71,7 +71,7 @@ Index every repository item explicitly marked as requiring a Founder decision. T
 
 | ID | Decision | Decision owner / date | Approval scope | Evidence | Status / supersession |
 | --- | --- | --- | --- | --- | --- |
-| `FD-PD01-001` | Execute PD-01 through the legal sequence `DRAFT → REVIEW → APPROVED` with synthetic fixtures only; require the exact 30-path allowlist, independent `PASS`, successful tests/CI, no conflict or scope drift, and Merge Commit only after every condition passes. | Founder / 2026-07-28 | [PD-01 Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md); Branch `codex/pd-01-product-data-contract-enablement`; scoped Commit/Push/Draft PR; limited in-scope corrections; lifecycle evidence; conditional ready-for-review/Merge Commit; post-merge `main` CI | Founder authorization in the active Codex task; starting `main` SHA `6577cd461e88463903b18c11b0e5bdbfa88375e2`; merged PR #20 and successful required-check run `30376465378`; Draft Commit `4cc1805`; Draft PR #21; CI run `30390311445`; independent `PD01-REVIEW-001` PASS with zero findings | `REVIEW` on 2026-07-29 after legal `DRAFT → REVIEW`. Founder promotion remains pending. Canonical Product Attribute registry must remain empty. No Product, real Pilot, 879-row data, Master Data, Golden package, SKU, slug, availability, WordPress/WooCommerce, import, runtime, deploy, production, or branch deletion is authorized. |
+| `FD-PD01-001` | Execute PD-01 through the legal sequence `DRAFT → REVIEW → APPROVED` with synthetic fixtures only; require the exact 30-path allowlist, independent `PASS`, successful tests/CI, no conflict or scope drift, and Merge Commit only after every condition passes. | Founder / 2026-07-28; lifecycle approval recorded 2026-07-29 | [PD-01 Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md); Branch `codex/pd-01-product-data-contract-enablement`; scoped Commit/Push/Draft PR; limited in-scope corrections; lifecycle evidence; conditional ready-for-review/Merge Commit; post-merge `main` CI | Founder authorization in the active Codex task; starting `main` SHA `6577cd461e88463903b18c11b0e5bdbfa88375e2`; merged PR #20 and successful required-check run `30376465378`; Draft Commit `4cc1805`; Draft PR #21; DRAFT CI `30390311445`; independent `PD01-REVIEW-001` PASS with zero findings; REVIEW Commit `a3c547a`; REVIEW CI `30466264564` | `APPROVED` on 2026-07-29 after legal `DRAFT → REVIEW → APPROVED`. Approval covers only the synthetic Contract/Schema/Validator/Test boundary. Canonical Product Attribute registry must remain empty. No Product, real Pilot, 879-row data, Master Data, Golden package, SKU, slug, availability, WordPress/WooCommerce, import, runtime, deploy, production, or branch deletion is authorized. |
 
 ## Settled Golden Pipe Pilot Decision
 

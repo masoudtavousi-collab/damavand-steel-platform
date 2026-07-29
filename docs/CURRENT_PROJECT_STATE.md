@@ -4,12 +4,12 @@
 - **Canonical repository:** `masoudtavousi-collab/damavand-steel-platform`
 - **Reviewed input anchor:** `6577cd461e88463903b18c11b0e5bdbfa88375e2`, PR #20 Merge Commit; successful required-check run `30376465378`
 - **Live `main` tip:** resolve dynamically from GitHub `refs/heads/main` at task start; do not treat the reviewed input anchor as a permanent live-tip claim
-- **Last completed substantive repository integration:** `GOV-XD-00` Cross-Domain Execution Charter, integrated by PR #20
-- **Last completed governance reconciliation:** `GOV-XD-00`, integrated by PR #20
-- **Current phase:** `PD-01` Product Data Contract Enablement — `REVIEW`
-- **Current authorized branch:** `codex/pd-01-product-data-contract-enablement`
-- **Current authorization:** exact 30-path, synthetic-only implementation and conditional Git/lifecycle cycle under `FD-PD01-001`
-- **Merge:** conditional Merge Commit is authorized only after legal `DRAFT → REVIEW → APPROVED`, successful tests/CI, no conflict or scope drift, and independent `PASS`
+- **Last completed substantive repository integration:** `PD-01` Product Data Contract Enablement when PR #21 carrying this declaration merges
+- **Last completed governance reconciliation:** PD-01 direct 13-document reconciliation when PR #21 merges
+- **Current phase:** `PD-01` complete when PR #21 merges; no canonical Product Data implementation Sprint active
+- **Current authorized branch:** no further Product, Knowledge, Admin UI, or runtime implementation branch is authorized after the PR #21 cycle closes
+- **Current authorization:** read-only preparation of an exact `PD-02` decision package only after PR #21 integration; `PD-02` execution is not authorized
+- **Merge:** only conditional Merge Commit of PR #21 is authorized; no later merge is authorized without a new exact Founder approval
 - **Runtime / WordPress / WooCommerce mutation:** NO-GO
 - **Import / publishing / deployment / product creation / bulk SKU generation:** NO-GO
 
@@ -42,10 +42,10 @@ This file is the only semantic operational-state pointer. Other documents may pr
 | Post-PR16 Governance Reconciliation | PR #17; active state, baseline, roadmap, repository relationship, index, navigation, health, traceability, changelog, and open-question alignment | Records the PR #16 completion and removes its closed blocker while preserving the BP2 `DRAFT` lifecycle and all Product/runtime `NO-GO` boundaries |
 | Post-PR18 Governance Reconciliation | PR #19; direct governance and current-state alignment after PR #18 | Closes the BP2 lifecycle integration cycle and returns the project to read-only next-step planning without implementation authority |
 | `GOV-XD-00` Cross-Domain Execution Charter | Founder authorization dated 2026-07-28; six-task read-only analysis; independent QA; the PR carrying this declaration | Separates semantic operational state from the dynamic Git tip, records cross-domain dependency order and separation of duties, and selects `PD-01` only as the next decision-package target |
-| `PD-01` Product Data Contract Enablement | `FD-PD01-001`; `PD01-REVIEW-001`; [PD-01 Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md); exact 30-path allowlist; starting SHA `6577cd461e88463903b18c11b0e5bdbfa88375e2`; Draft PR #21; CI `30390311445` | `REVIEW`; independent PASS with zero findings; synthetic Contract/Schema/Validator/Test enablement only; canonical Product Attribute registry remains empty; no Product, SKU, Master Data, Golden, import, runtime, or production authority |
+| `PD-01` Product Data Contract Enablement | `FD-PD01-001`; `PD01-REVIEW-001`; [PD-01 Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md); exact 30-path allowlist; starting SHA `6577cd461e88463903b18c11b0e5bdbfa88375e2`; PR #21; DRAFT CI `30390311445`; REVIEW CI `30466264564` | `APPROVED` after legal `DRAFT → REVIEW → APPROVED`; synthetic Contract/Schema/Validator/Test enablement only; canonical Product Attribute registry remains empty; no Product, SKU, Master Data, Golden, import, runtime, or production authority |
 | Atlas planning registry | 173 pending document records across 21 domains | Intake inventory only; no Atlas row is canonical merely because it is registered |
 
-Repository validators are active in CI and unified under `make test`. PR #12 hardening is merged: nested schema objects are closed, JSON Schema Draft 2020-12 is enforced offline, validation output is deterministic, and positive, negative, and adversarial tests are wired into the unified test entry point. `FD-BP2-ADM-001` records the completed legal `DRAFT → REVIEW → APPROVED` sequence; this lifecycle approval does not authorize implementation. PD-01 is currently a separate `DRAFT` contract-enablement Sprint and is not canonical Product Data.
+Repository validators are active in CI and unified under `make test`. PR #12 hardening is merged: nested schema objects are closed, JSON Schema Draft 2020-12 is enforced offline, validation output is deterministic, and positive, negative, and adversarial tests are wired into the unified test entry point. `FD-BP2-ADM-001` records the completed legal BP2 lifecycle without implementation authority. `FD-PD01-001` approves a separate synthetic Product Data contract boundary; it is not canonical Product Data.
 
 ## Current Product and Knowledge Readiness
 
@@ -118,7 +118,7 @@ A Variable Parent Product is a commerce presentation and never the owner of cano
 
 ## Approved Next Action
 
-Apply the already-authorized Founder approval only after confirming that `PD01-REVIEW-001` remains `PASS`, all tests/CI pass, the exact 30-path scope remains intact, and the canonical Product Attribute registry remains empty. Then record `REVIEW → APPROVED`; do not skip or rewrite the completed transition.
+After PR #21 merges and post-merge `main` CI succeeds, prepare one exact, read-only `PD-02` decision package for Founder review. It may propose controlled-value registries and minimum Attribute Profiles, exact paths, evidence, Test Contract, roles, risks, stop conditions, and conditional Git controls. It must not create or modify Product Data, registries, Product records, Branch, PR, or runtime assets.
 
 Do not populate the empty Product Attribute registry, create Product/Pilot/879-row/Master Data/Golden/SKU/slug/availability data, modify BP1, implement an Admin UI, change WordPress/WooCommerce, run imports, publish, deploy, delete the branch, or mutate production.
 

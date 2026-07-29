@@ -3,21 +3,21 @@
 ## Document Control
 
 - **Document ID:** `docs/PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md`
-- **Status:** Review
+- **Status:** Approved
 - **Authority:** Sprint Scope and Approval Packet
 - **Owner:** Founder
 - **Executor:** Codex Build Engine in the Founder-authorized PD-01 task
 - **Independent Reviewer:** Codex independent read-only QA reviewer `/root/pd01_review_retry`, recorded as `PD01-REVIEW-001`
 - **Approval Authority:** Founder
 - **Rollback Owner:** Repository Guardian, acting only through a separately visible corrective commit or revert approved by the Founder
-- **Version:** 1.0.1
+- **Version:** 1.0.2
 - **Last Updated:** 2026-07-29
-- **Lifecycle:** `REVIEW`
+- **Lifecycle:** `APPROVED`
 - **Decision ID:** `FD-PD01-001`
 - **Starting GitHub `main` SHA:** `6577cd461e88463903b18c11b0e5bdbfa88375e2`
 - **Starting evidence:** merged PR #20 and successful required check `repository-validation`, Actions run `30376465378`
 - **Authorized branch:** `codex/pd-01-product-data-contract-enablement`
-- **Approval:** Execution and the conditional Git/lifecycle cycle were authorized by the Founder on 2026-07-28; independent review passed on 2026-07-29; Founder lifecycle promotion to `APPROVED` remains the next gate
+- **Approval:** Founder-approved on 2026-07-29 after the legal `DRAFT → REVIEW → APPROVED` sequence, independent `PASS`, repeated local validation, and successful DRAFT/REVIEW branch CI
 
 ## Objective
 
@@ -189,13 +189,14 @@ Stop and report `NO-GO` if:
 ## GO / NO-GO
 
 - **Completed DRAFT gate:** exact-scope implementation, synthetic fixtures, local validation, scoped Commit/Push/Draft PR, branch CI, and independent review all passed.
-- **GO in `REVIEW`:** record the independent PASS, repeat validation/CI, and apply the already-authorized Founder approval only if every boundary remains intact.
-- **Conditional later GO:** `DRAFT → REVIEW → APPROVED`, ready-for-review, Merge Commit, and post-merge `main` CI only after every recorded condition passes.
+- **Completed REVIEW gate:** `PD01-REVIEW-001` PASS, repeated local validation, CI run `30466264564`, exact path equality, and empty-registry checks passed.
+- **APPROVED boundary:** the synthetic Contract/Schema/Validator/Test foundation is approved; ready-for-review, Merge Commit, and post-merge `main` CI remain conditional Git steps.
 - **NO-GO:** canonical population, real Product data, Registry population, Pilot/879 rows, Master Data/Golden package, SKU/slug/availability, Admin UI, Product/SKU creation, WordPress/WooCommerce, import, runtime, deploy, production, branch deletion, or any work outside the allowlist.
 
 ## Change History
 
 | Version | Date | State | Change |
 | --- | --- | --- | --- |
+| 1.0.2 | 2026-07-29 | `APPROVED` | Recorded Founder approval and legal `REVIEW → APPROVED` after independent PASS and successful REVIEW-stage CI run `30466264564`; preserved all canonical-data/runtime prohibitions. |
 | 1.0.1 | 2026-07-29 | `REVIEW` | Recorded `PD01-REVIEW-001` independent PASS for Commit `4cc1805`, zero findings, successful targeted and branch CI evidence, and legal `DRAFT → REVIEW`. |
 | 1.0.0 | 2026-07-28 | `DRAFT` | Created exact PD-01 Scope/Approval Packet, 30-path allowlist, synthetic-only Contract and Test boundaries, roles, Git controls, and stop conditions from the Founder authorization. |

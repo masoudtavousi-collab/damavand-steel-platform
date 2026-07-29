@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Build Engineer
 - **Approval Authority:** Founder
-- **Version:** 0.8.0
+- **Version:** 0.9.0
 - **Last Updated:** 2026-07-28
 - **Lifecycle:** Review
 - **Source of Truth:** [Current Project State](CURRENT_PROJECT_STATE.md), current repository evidence, accepted decisions, and execution gates
@@ -32,7 +32,7 @@ Wave 2A–2C established platform-independent Product core, Product Attribute, a
 | BP2 data blueprint | Blueprint ready for governed review | PR #11; controlled Pipe blueprint, schema, and offline validator | Not final SKU, import, runtime, WordPress, WooCommerce, or production authority |
 | BP2 administration contract | Approved governance contract; implementation disabled | PR #12, `FD-BP2-ADM-001`, merged PR #18, documentation-only scope, machine-readable contract, closed Draft 2020-12 schema, deterministic offline validator, and positive/negative/adversarial tests | Separate implementation or Product Data authorization remains required; no Admin UI, Product/SKU, runtime, import, WordPress, WooCommerce, or production authority |
 | Cross-domain execution charter | Governance ready; implementation disabled | `FD-GOV-XD-00`, six-task read-only gap analysis, independent QA, stable live-tip resolution, separation of duties, and ordered dependency gates | Satisfied its own scope through PR #20; it grants no implementation authority and PD-01 depends on separate `FD-PD01-001` |
-| PD-01 Product Data Contract Enablement | `REVIEW`; synthetic implementation independently passed | `FD-PD01-001`, `PD01-REVIEW-001` zero findings, Draft PR #21, CI `30390311445`, exact 30-path allowlist, strict offline Contract/Schema/Validator/Test boundary | Founder `REVIEW → APPROVED`, repeated CI, and final scope equality remain required; no canonical data or runtime readiness |
+| PD-01 Product Data Contract Enablement | Approved synthetic contract foundation; canonical population disabled | `FD-PD01-001`; legal `DRAFT → REVIEW → APPROVED`; `PD01-REVIEW-001` zero findings; PR #21; CI `30390311445` and `30466264564`; exact 30 paths; strict offline boundary | Canonical Product Attribute registry is empty; `PD-02`, real Product Data, Master/Golden, SKU, import, and runtime require separate approvals |
 | Product Data | Blocked | Architecture and three pilot decisions exist | No canonical machine-readable Master Data or Golden package; availability and commercial validity incomplete |
 | Knowledge Repository | Blocked | Architecture proposals exist | No contract, content instances, population process, retrieval implementation, or approved AI capability |
 | Atlas | Controlled intake | 173 registered pending rows; K-01 adoption matrix | No row is canonical without mapping, review, and approval |
@@ -107,12 +107,13 @@ Repository tests passing cannot satisfy these runtime prerequisites.
 
 ## Recommended Next Step
 
-Complete only the exact synthetic PD-01 cycle identified by [Current Project State](CURRENT_PROJECT_STATE.md) and [PD-01 Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md). Do not populate Product Attributes or Product Data, begin `PD-02`, or create WordPress administration/runtime assets without a new Founder authorization.
+After PR #21 integration and successful post-merge `main` CI, prepare only an exact read-only `PD-02` decision package identified by [Current Project State](CURRENT_PROJECT_STATE.md). Do not populate Product Attributes or Product Data, execute `PD-02`, or create WordPress administration/runtime assets without a new Founder authorization.
 
 ## Change Notes
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.9.0 | 2026-07-29 | Recorded approved PD-01 synthetic contract readiness after legal lifecycle, independent PASS, and repeated CI while preserving all canonical-data and runtime blockers. |
 | 0.8.0 | 2026-07-28 | Recorded `FD-PD01-001`, the exact 30-path synthetic-only enablement scope, and current `DRAFT` readiness without promoting canonical data or runtime readiness. |
 | 0.7.0 | 2026-07-28 | Integrated the `GOV-XD-00` execution-charter boundary, per-task live-tip resolution, separation of duties, cross-domain blockers, and read-only `PD-01` decision-package next step. |
 | 0.6.0 | 2026-07-28 | Recorded `FD-BP2-ADM-001` and the reviewed BP2 lifecycle approval while preserving all Product Data and runtime blockers. |

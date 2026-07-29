@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.10.0
+- **Version:** 0.11.0
 - **Last Updated:** 2026-07-28
 - **Last Review:** 2026-07-28
 - **Review Cycle:** On document creation, removal, rename, lifecycle, authority, or navigation change
@@ -26,7 +26,7 @@ Provide the canonical map of repository documentation without replacing the auth
 
 ## Current Repository-Control Context
 
-[Current Project State](CURRENT_PROJECT_STATE.md) is the only mutable operational-state pointer. This index records document roles and stable integration history; it does not restate the active branch, current authorization, pull-request state, or next action. K-01, the Build Phase 1 roadmap, BP1 and its PR #16 M1 hardening, the BP2 data blueprint, Claude recovery consolidation, post-recovery state, the merged BP2 Data Administration hardening, PR #15 governance reconciliation, PR #17 post-PR16 reconciliation, PR #18 BP2 lifecycle approval, and PR #20 `GOV-XD-00` integration retain their recorded bounded meanings. The administration contract is `APPROVED` only as documentation governance and grants no implementation authority. PD-01 has a separate exact synthetic-only `DRAFT` scope. Historical records retain chronology and approved future paths do not imply asset presence.
+[Current Project State](CURRENT_PROJECT_STATE.md) is the only mutable operational-state pointer. This index records document roles and stable integration history; it does not restate the active branch, current authorization, pull-request state, or next action. K-01, the Build Phase 1 roadmap, BP1 and its PR #16 M1 hardening, the BP2 data blueprint, Claude recovery consolidation, post-recovery state, the merged BP2 Data Administration hardening, PR #15 governance reconciliation, PR #17 post-PR16 reconciliation, PR #18 BP2 lifecycle approval, PR #20 `GOV-XD-00`, and PR #21 PD-01 integration retain their recorded bounded meanings. The administration contract is `APPROVED` only as documentation governance and grants no implementation authority. PD-01 has a separate approved synthetic-only scope that grants no canonical data authority. Historical records retain chronology and approved future paths do not imply asset presence.
 
 ## Categories and Complete Document Map
 
@@ -103,7 +103,7 @@ Provide the canonical map of repository documentation without replacing the auth
 | [Product Attribute Model](22_PRODUCT_ATTRIBUTE_MODEL.md) | Proposed global attribute labels, keys, values, hierarchy boundary, derived Size, variation, filtering, SEO, and Admin policy | Review | Founder |
 | [Inquiry Data Model](23_INQUIRY_DATA_MODEL.md) | Proposed inquiry and Customer objects, fields, lifecycle boundaries, routing, notifications, anti-spam, and CRM compatibility | Review | Founder |
 | [BP2 Data Administration Scope v1.0](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md) | Approved documentation-only administration boundary linked to a machine-readable contract, closed Draft 2020-12 schema, offline validator, lifecycle evidence, and adversarial tests; no implementation authority | Approved | Founder |
-| [PD-01 Product Data Contract Enablement Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md) | Exact 30-path Scope/Approval Packet, synthetic Contract/Schema/Validator/Test boundary, lifecycle, roles, Git controls, and stop conditions | Draft | Founder |
+| [PD-01 Product Data Contract Enablement Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md) | Approved exact 30-path Scope/Approval Packet and synthetic Contract/Schema/Validator/Test boundary after legal lifecycle and independent PASS; no canonical population authority | Approved | Founder |
 
 ### Information Architecture
 

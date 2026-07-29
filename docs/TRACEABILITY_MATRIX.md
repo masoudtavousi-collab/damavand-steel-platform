@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.9.0
+- **Version:** 0.10.0
 - **Last Updated:** 2026-07-28
 - **Last Review:** 2026-07-28
 - **Review Cycle:** On governing-rule or dependency change; periodic cadence pending Founder approval
@@ -28,7 +28,7 @@ Provide a single navigational view from governing rules through business, archit
 
 | Trace ID | Asset or event | Authority/evidence input | Reconciled outcome | Implementation status |
 | --- | --- | --- | --- | --- |
-| `POST12-MAIN` | PR #13, PR #14, PR #12, PR #15, PR #16, PR #17, PR #18, PR #19, and PR #20 merged history | GitHub merge evidence and [Current Project State](CURRENT_PROJECT_STATE.md) | Records the actual order: recovery consolidation, post-recovery state, BP2 hardening, governance reconciliation, BP1 M1 hardening, post-PR16 reconciliation, BP2 lifecycle approval, post-PR18 reconciliation, then `GOV-XD-00` | Repository evidence only |
+| `POST12-MAIN` | PR #13, PR #14, PR #12, PR #15, PR #16, PR #17, PR #18, PR #19, PR #20, and PR #21 integration history | GitHub merge evidence and [Current Project State](CURRENT_PROJECT_STATE.md) | Records the actual order: recovery consolidation, post-recovery state, BP2 hardening, governance reconciliation, BP1 M1 hardening, post-PR16 reconciliation, BP2 lifecycle approval, post-PR18 reconciliation, `GOV-XD-00`, then PD-01 | Repository evidence only |
 | `POST12-SCOPE` | [BP2 Data Administration Scope v1.0](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md) | BP2 blueprint, PR #12, and `FD-BP2-ADM-001` | Documents 12 governed registries, mutation governance, smart inquiry order, stop conditions, lifecycle evidence, and rollback boundary | `APPROVED` documentation governance; no implementation authority |
 | `POST12-CONTRACT` | `repository/data/contracts/bp2-data-administration-v1.0.json` | BP2 Data Administration Scope, source blueprint, `FD-BP2-ADM-001`, and `BP2-ADM-REVIEW-001` | Machine-readable documentation-only administration contract with linear `DRAFT → REVIEW → APPROVED` evidence | No Product/SKU or runtime authority |
 | `POST12-SCHEMA` | `repository/data/schemas/bp2-data-administration-v1.0.schema.json` | JSON Schema Draft 2020-12 | Closes root and nested object shapes and constrains the contract offline | Structural validation only |
@@ -43,10 +43,10 @@ Provide a single navigational view from governing rules through business, archit
 | `GOV-XD-00-STATE` | [Current Project State](CURRENT_PROJECT_STATE.md), [Project Baseline](PROJECT_BASELINE.md), and [Codex Sprint Protocol](CODEX_SPRINT_PROTOCOL.md) | Reviewed input anchor `b391ca1...`, PR #19, CI run `30372385447`, and self-reference review | Separates semantic operational state, reviewed input anchor, and dynamically resolved live Git tip | No implementation authority |
 | `GOV-XD-00-ORDER` | [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md) and [Implementation Readiness](IMPLEMENTATION_READINESS.md) | Five domain plans and independent cross-domain QA | Orders Product Data, Administration, Runtime, Knowledge, adapter, pilot, QA, expansion, and launch gates; selected `PD-01` only as a decision-package target at that time | `GOV-XD-00` itself granted no PD-01 execution; later `FD-PD01-001` is separate |
 | `GOV-XD-00-SOD` | [Codex Sprint Protocol](CODEX_SPRINT_PROTOCOL.md) | Founder control and independent QA | Requires separate executor, reviewer, Founder approval, exact Scope/Approval Packet, and Sprint-specific Test Contract | Process boundary only |
-| `PD01-SCOPE` | [PD-01 Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md), `FD-PD01-001`, and `PD01-REVIEW-001` | Starting SHA `6577cd461e88463903b18c11b0e5bdbfa88375e2`, exact 30-path allowlist, Founder task authorization, independent zero-finding PASS | Defines synthetic-only Contract/Schema/Validator/Test scope, roles, lifecycle, Git controls, and stop conditions | `REVIEW`; no canonical Product Data authority |
-| `PD01-ATTRIBUTE` | Product Attribute Contract `2.0.0`, closed schema, empty canonical registry, validator, and synthetic fixtures | Wave 2B foundation plus `FD-PD01-001` and `PD01-REVIEW-001` | Enables strict entry validation while requiring canonical registry `attributes: []` | `REVIEW`; no Attribute definition approved |
-| `PD01-MASTER` | Product Master Data Contract/Schema/Validator and synthetic fixtures/tests | Product Core `1.0.0`, Product Attribute `2.0.0`, Measurement `1.0.0`, and `PD01-REVIEW-001` | Defines synthetic Profiles, typed Assignments, explicit combinations, cross-file validation, and readiness=false | `REVIEW`; no Product, Master Data, Golden, SKU, import, or runtime authority |
-| `PD01-TEST` | PD-01 mutation manifest and test suite | Sprint Test Contract | Covers positive, negative, boundary, cross-file, deterministic, offline, and adversarial behavior with at least 50 named mutations | Must pass locally, in PR CI, and on merged `main` |
+| `PD01-SCOPE` | [PD-01 Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md), `FD-PD01-001`, and `PD01-REVIEW-001` | Starting SHA `6577cd461e88463903b18c11b0e5bdbfa88375e2`, exact 30-path allowlist, Founder task authorization, independent zero-finding PASS, DRAFT/REVIEW CI | Defines synthetic-only Contract/Schema/Validator/Test scope, roles, lifecycle, Git controls, and stop conditions | `APPROVED`; no canonical Product Data authority |
+| `PD01-ATTRIBUTE` | Product Attribute Contract `2.0.0`, closed schema, empty canonical registry, validator, and synthetic fixtures | Wave 2B foundation plus `FD-PD01-001` and `PD01-REVIEW-001` | Enables strict entry validation while requiring canonical registry `attributes: []` | `APPROVED` synthetic foundation; no Attribute definition approved |
+| `PD01-MASTER` | Product Master Data Contract/Schema/Validator and synthetic fixtures/tests | Product Core `1.0.0`, Product Attribute `2.0.0`, Measurement `1.0.0`, `PD01-REVIEW-001`, and `FD-PD01-001` | Defines synthetic Profiles, typed Assignments, explicit combinations, cross-file validation, and readiness=false | `APPROVED` synthetic foundation; no Product, Master Data, Golden, SKU, import, or runtime authority |
+| `PD01-TEST` | PD-01 mutation manifest and test suite | Sprint Test Contract, 90 named mutations, 17 targeted tests, CI `30390311445` and `30466264564` | Covers positive, negative, boundary, cross-file, deterministic, offline, and adversarial behavior | Approved test boundary; post-merge `main` CI remains a Git completion check |
 
 ## Traceability Direction
 

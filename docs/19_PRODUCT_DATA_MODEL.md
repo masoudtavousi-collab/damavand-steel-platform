@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.4.0
+- **Version:** 0.5.0
 - **Last Updated:** 2026-07-28
 - **Last Review:** 2026-07-28
 - **Review Cycle:** On product hierarchy, entity, ownership, lifecycle, taxonomy, attribute, inquiry, CRM, ERP, or Founder-decision change
@@ -234,7 +234,7 @@ No implementation role, WordPress role, or repository author inherits these acco
 
 ## Relationship to PD-01 Contract Enablement
 
-[PD-01 Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md) implements a bounded machine-readable subset of this model for synthetic validation only: stable ID patterns, Attribute Profiles, typed Product Value Assignments, and explicit Variant Rule Set combinations. Its lifecycle is `DRAFT`.
+[PD-01 Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md) implements an approved bounded machine-readable subset of this model for synthetic validation only: stable ID patterns, Attribute Profiles, typed Product Value Assignments, and explicit Variant Rule Set combinations. It completed legal `DRAFT → REVIEW → APPROVED` with independent `PD01-REVIEW-001`.
 
 PD-01 does not approve any canonical Family, Series, Product, Attribute definition, value, Unit, valid commercial combination, SKU, stock state, availability, Master Data, Golden package, commerce mapping, or runtime object. The canonical Product Attribute registry remains empty. Any later controlled-value or canonical-record work begins only through a separately authorized `PD-02` or later scope.
 
@@ -268,12 +268,13 @@ PD-01 does not approve any canonical Family, Series, Product, Attribute definiti
 
 ## Approval Status
 
-Review. The canonical hierarchy and identity distinction are Founder-approved within their exact scope. `FD-PD01-001` separately authorizes only the exact synthetic Contract/Schema/Validator/Test subset in the PD-01 Scope while it completes its own lifecycle. The remaining data-model proposals are not approved, and neither this document nor PD-01 authorizes canonical registries, Product records, WooCommerce configuration, database design, import, or runtime implementation.
+Review. The canonical hierarchy and identity distinction are Founder-approved within their exact scope. `FD-PD01-001` separately approves only the exact synthetic Contract/Schema/Validator/Test subset in the PD-01 Scope. The remaining data-model proposals are not approved, and neither this document nor PD-01 authorizes canonical registry population, Product records, WooCommerce configuration, database design, import, or runtime implementation.
 
 ## Change Notes
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.5.0 | 2026-07-29 | Recorded approved PD-01 synthetic Contract subset after legal lifecycle and independent PASS without promoting canonical Product data. |
 | 0.4.0 | 2026-07-28 | Linked the exact synthetic-only PD-01 Contract Enablement scope without approving canonical values, Product records, SKU, Master Data, Golden, import, or runtime work. |
 | 0.3.0 | 2026-07-20 | Reconciled the Founder-approved canonical repository hierarchy and separated canonical identities from legacy/commerce Parent and Variation mappings; documentation only. |
 | 0.2.0 | 2026-07-03 | Batch 05B remediation: explicit product lifecycle, ownership requirements, and Draft Product Data Strategy authority boundary; documentation only. |
