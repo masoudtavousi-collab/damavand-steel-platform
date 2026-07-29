@@ -18,12 +18,15 @@ versioning:
     - "2.0.0"
 pd01_lifecycle:
   decision_id: FD-PD01-001
-  current_status: DRAFT
+  current_status: REVIEW
   allowed_transition_sequence:
     - DRAFT
     - REVIEW
     - APPROVED
-  transition_history: []
+  transition_history:
+    - from: DRAFT
+      to: REVIEW
+      evidence_reference: PD01-REVIEW-001
   direct_draft_to_approved_forbidden: true
   canonical_population_authority: false
 registry_policy:

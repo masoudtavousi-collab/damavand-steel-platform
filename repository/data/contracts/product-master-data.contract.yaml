@@ -16,12 +16,15 @@ dependencies:
     version: "1.0.0"
 pd01_lifecycle:
   decision_id: FD-PD01-001
-  current_status: DRAFT
+  current_status: REVIEW
   allowed_transition_sequence:
     - DRAFT
     - REVIEW
     - APPROVED
-  transition_history: []
+  transition_history:
+    - from: DRAFT
+      to: REVIEW
+      evidence_reference: PD01-REVIEW-001
   direct_draft_to_approved_forbidden: true
 data_boundary:
   validation_mode: SYNTHETIC_ONLY

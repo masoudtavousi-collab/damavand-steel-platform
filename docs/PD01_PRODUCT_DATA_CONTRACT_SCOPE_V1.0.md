@@ -3,21 +3,21 @@
 ## Document Control
 
 - **Document ID:** `docs/PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md`
-- **Status:** Draft
+- **Status:** Review
 - **Authority:** Sprint Scope and Approval Packet
 - **Owner:** Founder
 - **Executor:** Codex Build Engine in the Founder-authorized PD-01 task
-- **Independent Reviewer:** Separate read-only QA agent; evidence record `PD01-REVIEW-001` must identify the assigned reviewer before `REVIEW`
+- **Independent Reviewer:** Codex independent read-only QA reviewer `/root/pd01_review_retry`, recorded as `PD01-REVIEW-001`
 - **Approval Authority:** Founder
 - **Rollback Owner:** Repository Guardian, acting only through a separately visible corrective commit or revert approved by the Founder
-- **Version:** 1.0.0
-- **Last Updated:** 2026-07-28
-- **Lifecycle:** `DRAFT`
+- **Version:** 1.0.1
+- **Last Updated:** 2026-07-29
+- **Lifecycle:** `REVIEW`
 - **Decision ID:** `FD-PD01-001`
 - **Starting GitHub `main` SHA:** `6577cd461e88463903b18c11b0e5bdbfa88375e2`
 - **Starting evidence:** merged PR #20 and successful required check `repository-validation`, Actions run `30376465378`
 - **Authorized branch:** `codex/pd-01-product-data-contract-enablement`
-- **Approval:** Execution and the conditional Git/lifecycle cycle were authorized by the Founder on 2026-07-28; technical acceptance is not established while this packet is `DRAFT`
+- **Approval:** Execution and the conditional Git/lifecycle cycle were authorized by the Founder on 2026-07-28; independent review passed on 2026-07-29; Founder lifecycle promotion to `APPROVED` remains the next gate
 
 ## Objective
 
@@ -149,6 +149,18 @@ The fixture IDs, labels, values, Unit references, entity references, and combina
 
 Direct `DRAFT → APPROVED` is invalid and must fail validation.
 
+## Independent Review Record — PD01-REVIEW-001
+
+- **Reviewer:** Codex independent read-only QA reviewer `/root/pd01_review_retry`
+- **Review date:** 2026-07-29
+- **Reviewed commit:** `4cc18057c2d6ccbd350ddbe0fbf10c3a4c1ab028`
+- **Independence boundary:** Read-only; no file, Git, PR, lifecycle, runtime, or production write authority
+- **Findings:** Critical 0; High 0; Medium 0; Low 0
+- **Evidence:** exact 30-path equality; canonical `attributes: []`; synthetic-only boundary; closed Draft 2020-12 schemas; offline deterministic fail-closed validators; direct-transition rejection; 90 unique mutations; targeted 17/17 PASS; `git diff --check` PASS; CI run `30390311445` PASS; no secrets or unexpected production endpoints
+- **Verdict:** `PASS`
+
+No corrective change was requested by the independent reviewer.
+
 ## Git Controls
 
 - Work occurs only on `codex/pd-01-product-data-contract-enablement`.
@@ -176,7 +188,8 @@ Stop and report `NO-GO` if:
 
 ## GO / NO-GO
 
-- **GO in `DRAFT`:** exact-scope repository implementation, synthetic fixtures, local validation, scoped commits/pushes, Draft PR, read-only independent review, and limited in-scope corrections.
+- **Completed DRAFT gate:** exact-scope implementation, synthetic fixtures, local validation, scoped Commit/Push/Draft PR, branch CI, and independent review all passed.
+- **GO in `REVIEW`:** record the independent PASS, repeat validation/CI, and apply the already-authorized Founder approval only if every boundary remains intact.
 - **Conditional later GO:** `DRAFT → REVIEW → APPROVED`, ready-for-review, Merge Commit, and post-merge `main` CI only after every recorded condition passes.
 - **NO-GO:** canonical population, real Product data, Registry population, Pilot/879 rows, Master Data/Golden package, SKU/slug/availability, Admin UI, Product/SKU creation, WordPress/WooCommerce, import, runtime, deploy, production, branch deletion, or any work outside the allowlist.
 
@@ -184,4 +197,5 @@ Stop and report `NO-GO` if:
 
 | Version | Date | State | Change |
 | --- | --- | --- | --- |
+| 1.0.1 | 2026-07-29 | `REVIEW` | Recorded `PD01-REVIEW-001` independent PASS for Commit `4cc1805`, zero findings, successful targeted and branch CI evidence, and legal `DRAFT → REVIEW`. |
 | 1.0.0 | 2026-07-28 | `DRAFT` | Created exact PD-01 Scope/Approval Packet, 30-path allowlist, synthetic-only Contract and Test boundaries, roles, Git controls, and stop conditions from the Founder authorization. |
