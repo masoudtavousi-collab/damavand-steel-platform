@@ -8,12 +8,15 @@ registry:
   path: repository/data/registries/product-data-approval-evidence.yaml
 pd02b_lifecycle:
   decision_id: FD-PD02B-001
-  current_status: DRAFT
+  current_status: REVIEW
   allowed_transition_sequence:
     - DRAFT
     - REVIEW
     - APPROVED
-  transition_history: []
+  transition_history:
+    - from: DRAFT
+      to: REVIEW
+      evidence_reference: PD02B-TECH-REVIEW-001
   direct_draft_to_approved_forbidden: true
 evidence_policy:
   exact_evidence_count: 1

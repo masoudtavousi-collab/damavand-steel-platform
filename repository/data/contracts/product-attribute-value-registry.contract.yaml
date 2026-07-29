@@ -24,12 +24,15 @@ pd02a_lifecycle:
   canonical_population_authority: false
 pd02b_lifecycle:
   decision_id: FD-PD02B-001
-  current_status: DRAFT
+  current_status: REVIEW
   allowed_transition_sequence:
     - DRAFT
     - REVIEW
     - APPROVED
-  transition_history: []
+  transition_history:
+    - from: DRAFT
+      to: REVIEW
+      evidence_reference: PD02B-TECH-REVIEW-001
   direct_draft_to_approved_forbidden: true
   canonical_population_authority: true
   exact_registry_count: 2

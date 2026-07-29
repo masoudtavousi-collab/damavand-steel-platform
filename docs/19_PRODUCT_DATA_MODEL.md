@@ -250,7 +250,7 @@ synthetic-only boundary remains unchanged.
 [PD-02B Scope v1.0](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md) separately
 authorizes exactly one Catalog → Platform → Family chain, Material and Grade,
 four Controlled Terms, one INTERNAL Family Profile, 18 localized labels, and
-one Approval Evidence. During DRAFT/REVIEW every record remains
+one Approval Evidence. During REVIEW every record remains
 `CANDIDATE_UNVERIFIED`.
 
 PD-02B does not authorize Series, Variant Rules, SKU, Product records, 430,

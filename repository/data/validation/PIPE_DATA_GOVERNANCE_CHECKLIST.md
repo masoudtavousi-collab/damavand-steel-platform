@@ -172,8 +172,8 @@ Reject or stop when any of the following occurs:
 - [x] Direct DRAFT → APPROVED, premature approval, and replay are rejected.
 - [x] 430, Finish/Color/PVD, dimensions/Units, Product/SKU, Pilot/879 rows,
   Master/Golden, availability, and runtime authority are excluded.
-- [ ] Independent `PD02B-TECH-REVIEW-001` PASS is recorded.
-- [ ] Legal DRAFT → REVIEW transition is recorded.
+- [x] Independent `PD02B-TECH-REVIEW-001` PASS is recorded.
+- [x] Legal DRAFT → REVIEW transition is recorded.
 - [ ] Final Founder approval and REVIEW → APPROVED transition are recorded.
 - [ ] Conditional PR/CI/no-conflict/exact-scope merge gates pass.
 

@@ -6,7 +6,7 @@ evidence:
   - contract_version: "1.0.0"
     approval_evidence_id: papproval:000000000005
     decision_id: FD-PD02B-001
-    lifecycle_status: DRAFT
+    lifecycle_status: REVIEW
     scope_reference: docs/PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md
     dataset_hashes:
       - {path: repository/data/registries/product-entities.yaml, sha256: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa}
@@ -27,10 +27,10 @@ evidence:
     technical_review:
       reviewer_id: repository-guardian-independent
       scope: PD-02B contracts, schemas, validators, tests and exact canonical slice
-      verdict: PENDING
-      evidence_reference: null
+      verdict: PASS
+      evidence_reference: synthetic:technical-review
       independent: true
-      review_date: null
+      review_date: "2026-07-29"
     approval: {approved_by: null, approved_at: null, evidence_reference: null}
     anti_replay: {nonce: "000000000005000000000006", consumed: true}
     status: CANDIDATE_UNVERIFIED

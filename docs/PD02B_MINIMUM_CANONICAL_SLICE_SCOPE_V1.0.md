@@ -2,7 +2,7 @@
 
 **Decision ID:** `FD-PD02B-001`
 
-**Lifecycle:** `DRAFT`
+**Lifecycle:** `REVIEW`
 
 **Baseline:** `main@6ed6fc89e555b1be3a97d7f9c64c9e2b989af1df`
 
@@ -96,8 +96,12 @@ Direct `DRAFT → APPROVED` is prohibited. Passing tests alone never promotes da
 - The DRAFT correction executes all 20 mutations against temporary copies of the
   canonical datasets/contracts, asserts each expected fail-closed code, and
   routes permissive and remote-reference schemas through the real loader.
-- Lifecycle remains `DRAFT`; attempt 2 must independently return `PASS` before
-  any transition to REVIEW.
+- `PD02B-TECH-REVIEW-001` attempt 2 reviewed Commit
+  `f38eb44721b90f2cf6b451c280e2d8a91c789f55` and returned `PASS`
+  with Critical 0, High 0, Medium 0, Low 0. Exact-head CI run `30479723615`
+  passed.
+- Lifecycle legally transitioned `DRAFT → REVIEW`; all canonical records remain
+  `CANDIDATE_UNVERIFIED` and final Founder approval remains absent.
 
 ## Exact Allowlist
 

@@ -1,19 +1,21 @@
 # Changelog
 
-## 2026-07-29 — PD-02B Minimum Canonical Slice (`DRAFT`)
+## 2026-07-29 — PD-02B Minimum Canonical Slice (`REVIEW`)
 
 - `FD-PD02B-001` authorizes the exact 57-path repository-only lifecycle recorded
   in [PD-02B Scope v1.0](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md).
-- The DRAFT contains exactly 3 Product Entities, 2 Attributes, 2 Value
+- The REVIEW snapshot contains exactly 3 Product Entities, 2 Attributes, 2 Value
   Registries, 4 Controlled Terms, 1 INTERNAL Family Profile, 18 localized
   labels, and 1 machine-readable Approval Evidence.
-- Records remain `CANDIDATE_UNVERIFIED`; independent technical review and final
-  Founder approval are pending. No runtime, Product/SKU, pilot, Master/Golden,
+- Records remain `CANDIDATE_UNVERIFIED`; independent technical review is
+  complete and final Founder approval remains pending. No runtime, Product/SKU, pilot, Master/Golden,
   availability, import, deployment, production, or branch deletion is allowed.
 - Independent review attempt 1 returned `REWORK` with one Medium test-depth
   finding. The DRAFT correction now executes all 20 declared mutations and
-  routes adversarial schemas through real rejection paths; re-review remains
-  required before REVIEW.
+  routes adversarial schemas through real rejection paths.
+- Independent attempt 2 returned `PASS` with zero findings on `f38eb447…`;
+  exact-head CI `30479723615` passed and the lifecycle legally transitioned
+  `DRAFT → REVIEW`. Final Founder approval remains absent.
 
 ## Document Control
 
