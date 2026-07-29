@@ -22,7 +22,7 @@ This roadmap defines sequence and gates, not mutable operational state. The exac
 - PR #19 reconciled the post-PR18 governance state and returned the project to read-only next-step planning.
 - `FD-GOV-XD-00` then approved the cross-domain execution charter, stable live-tip semantics, separation of duties, and the ordered decision path below; PR #20 integrated it.
 - `FD-PD01-001` approves the exact 30-path, synthetic-only PD-01 Contract Enablement boundary recorded in [PD-01 Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md) after legal lifecycle and independent PASS. PR #21 carries its integration; no canonical population or runtime authority exists.
-- `FD-PD02A-001` authorizes the exact 38-path, synthetic-only Controlled Values and Attribute Profiles foundation recorded in [PD-02A Scope v1.0](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md). It is active in `DRAFT`; all canonical Attribute, value-registry, and Profile collections remain empty.
+- `FD-PD02A-001` authorizes the exact 38-path, synthetic-only Controlled Values and Attribute Profiles foundation recorded in [PD-02A Scope v1.0](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md). It is active in `REVIEW` after independent `PD02A-REVIEW-001` PASS; all canonical Attribute, value-registry, and Profile collections remain empty.
 - The approved BP2 Data Administration contract remains documentation-only with `implementation_authority: false`; approval derives no Product, Admin UI, runtime, import, publication, deployment, or production authority.
 - The historical Wave 1 branch/commit/push/Draft-PR scope did not authorize merge and remains preserved as chronology. Its later approved merge granted no Wave 2, runtime, or implementation authority.
 - Wave 2A–2C are structural, platform-independent foundations. They created no canonical Product rows, Product Attribute definitions, Master Data, Golden package, WordPress implementation, publication, deployment, or production mutation.
@@ -33,7 +33,7 @@ This roadmap defines sequence and gates, not mutable operational state. The exac
 
 1. `GOV-XD-00` — stabilize operational-state semantics, dependency order, roles, and approval gates.
 2. `PD-01` — Product Data Contract/Schema/Validator/tests with synthetic fixtures only. **Complete when PR #21 merges; canonical population disabled.**
-3. `PD-02A` — controlled-value and standalone Attribute Profile Contract/Schema/Validator/tests with synthetic fixtures and empty canonical registries. **Active `DRAFT`; exact lifecycle authorized.**
+3. `PD-02A` — controlled-value and standalone Attribute Profile Contract/Schema/Validator/tests with synthetic fixtures and empty canonical registries. **Active `REVIEW`; independent PASS recorded and final lifecycle/CI/Git gates pending.**
 4. `PD-02B` — minimum canonical Family scope, Attribute definitions, controlled values, and Attribute Profile. **Blocked pending exact terminology, stable scope identity, assigned Product Data owner, qualified steel-domain review, and separate approval.**
 5. `PD-03` — exactly three canonical pilot records with provenance and explicit status.
 6. `PD-04` — Golden Repository Package with `import_ready=false` and `runtime_ready=false`.

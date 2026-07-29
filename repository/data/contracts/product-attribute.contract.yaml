@@ -34,12 +34,15 @@ pd01_lifecycle:
   canonical_population_authority: false
 pd02a_extension:
   decision_id: FD-PD02A-001
-  current_status: DRAFT
+  current_status: REVIEW
   allowed_transition_sequence:
     - DRAFT
     - REVIEW
     - APPROVED
-  transition_history: []
+  transition_history:
+    - from: DRAFT
+      to: REVIEW
+      evidence_reference: PD02A-REVIEW-001
   direct_draft_to_approved_forbidden: true
   value_registry_id_pattern: '^vreg:[0-9a-f]{12}$'
   canonical_attribute_population_authority: false

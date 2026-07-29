@@ -3,21 +3,21 @@
 ## Document Control
 
 - **Document ID:** `docs/PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md`
-- **Status:** Draft
+- **Status:** Review
 - **Authority:** Sprint Scope and Approval Packet
 - **Owner:** Founder
 - **Executor:** Codex controlled Build Engine
-- **Independent Reviewer:** assigned at the `DRAFT → REVIEW` gate as `PD02A-REVIEW-001`
+- **Independent Reviewer:** Codex independent read-only QA reviewer `/root/pd01_review_retry`, recorded as `PD02A-REVIEW-001`
 - **Approval Authority:** Founder
 - **Rollback Owner:** Repository Guardian through a separately visible corrective commit or Founder-approved revert
-- **Version:** 1.0.0
+- **Version:** 1.0.1
 - **Last Updated:** 2026-07-29
-- **Lifecycle:** `DRAFT`
+- **Lifecycle:** `REVIEW`
 - **Decision ID:** `FD-PD02A-001`
 - **Starting GitHub `main` SHA:** `d8ae556d17ab518970149533d975b7924f3af3e1`
 - **Starting evidence:** merged PR #21 and successful required post-merge `repository-validation`
 - **Authorized branch:** `codex/pd-02a-controlled-values-profile-foundation`
-- **Approval:** Founder execution and conditional Git authorization recorded on 2026-07-29
+- **Approval:** Founder execution and conditional Git authorization recorded on 2026-07-29; legal `DRAFT → REVIEW` recorded after independent `PASS`
 
 ## Objective
 
@@ -181,6 +181,24 @@ this Sprint.
   are limited to this exact 38-path allowlist and require independent
   re-review.
 
+### `PD02A-REVIEW-001` — DRAFT attempt 2
+
+- **Reviewer:** Codex independent read-only QA reviewer
+  `/root/pd01_review_retry`
+- **Reviewed commit:** `23e8ac2e16ca42cd43d4957298edbc18a7d8740f`
+- **Branch CI:** PASS, run `30469883442`
+- **Findings:** Critical 0; High 0; Medium 0; Low 0
+- **Verdict:** `PASS`
+- **Regression evidence:** all four prior findings are closed; targeted tests
+  pass 16/16; the mutation matrix contains 71/71 unique cases; exact cumulative
+  path equality is 38/38; all three canonical collections remain empty.
+- **Boundary evidence:** closed local-only schemas, synthetic fixtures, and no
+  secret, unexpected endpoint, real Product/commercial datum, or runtime
+  change.
+- **Chronology:** this independent `PASS` is the evidence for the legal
+  `DRAFT → REVIEW` transition. Founder approval remains the separate
+  `REVIEW → APPROVED` gate.
+
 ## Roles and Separation of Duties
 
 | Role | Authority in PD-02A |
@@ -236,8 +254,13 @@ Stop and report `NO-GO` if:
 
 ## GO / NO-GO
 
+- **Completed DRAFT gate:** exact-scope implementation, in-scope corrections,
+  local tests, Draft PR #22, CI runs `30469027782` and `30469883442`, and
+  independent `PD02A-REVIEW-001` PASS.
+- **Current REVIEW gate:** repeat validation and CI with the legal lifecycle
+  record while preserving exact path equality and empty canonical registries.
 - **GO:** exact PD-02A synthetic Contract/Schema/Validator/Test work and its
-  conditional Git lifecycle.
+  remaining conditional Git lifecycle.
 - **NO-GO:** PD-02B canonical population; Family identity; real Attribute,
   controlled term, or Profile data; PD-03; Product/SKU; WordPress/WooCommerce;
   import; runtime; deploy; production; branch deletion.
@@ -246,4 +269,5 @@ Stop and report `NO-GO` if:
 
 | Version | Date | State | Change |
 | --- | --- | --- | --- |
+| 1.0.1 | 2026-07-29 | `REVIEW` | Recorded attempt-1 `REWORK`, the four exact-scope corrections, attempt-2 `PD02A-REVIEW-001` PASS on Commit `23e8ac2`, CI run `30469883442`, and the legal `DRAFT → REVIEW` transition. |
 | 1.0.0 | 2026-07-29 | `DRAFT` | Created the exact 38-path, synthetic-only PD-02A foundation scope and recorded Founder execution and conditional Git authorization. |
