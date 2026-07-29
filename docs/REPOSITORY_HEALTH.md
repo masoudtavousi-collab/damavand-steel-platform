@@ -159,6 +159,22 @@ The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain histo
 
 ## Product Data Model Coverage
 
+### PD-02B Minimum Canonical Slice
+
+- `FD-PD02B-001` authorizes exactly 3 Product Entities, 2 Attributes, 2 Value
+  Registries, 4 Controlled Terms, 1 INTERNAL Profile, 18 localized labels, and
+  1 Approval Evidence under the 57-path allowlist.
+- Closed Draft 2020-12 schemas, strict YAML/JSON parsing, offline validators,
+  exact cross-reference/count checks, SHA-256 binding, anti-replay controls,
+  Unicode-confusable rejection, and positive/negative/adversarial tests are
+  present in the DRAFT.
+- All canonical records remain `CANDIDATE_UNVERIFIED`. Independent
+  `PD02B-TECH-REVIEW-001`, final Founder approval, CI, no-conflict, and exact
+  scope gates remain pending.
+- Repository health for this bounded slice does not imply Product/SKU,
+  pilot/879-row, Master/Golden, availability, WordPress/WooCommerce, import,
+  runtime, deployment, or production readiness.
+
 - Five tracked Review-state models propose enterprise product entities, WooCommerce mapping, taxonomy governance, global attributes, inquiry data, and the Customer identity boundary.
 - `FD-PD01-001` approves the exact 30-path PD-01 synthetic boundary after legal `DRAFT → REVIEW → APPROVED` and independent `PD01-REVIEW-001` PASS: Product Attribute `2.0.0` hardening plus a synthetic-only Product Master Data Contract/Schema/Validator/Test boundary. The canonical Product Attribute registry remains empty and the Sprint creates no Product, Master Data, Golden, SKU, import, or runtime authority.
 - The Batch 05A remediation findings are structurally represented without creating runtime entities or schemas: product lifecycle, operational ownership requirements, Collections, Product Tags, Application/Use-Case terminology, attribute hierarchy, derived Size, local-attribute exceptions, Customer governance, and the Draft Product Data Strategy authority boundary.

@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-07-29 — PD-02B Minimum Canonical Slice (`DRAFT`)
+
+- `FD-PD02B-001` authorizes the exact 57-path repository-only lifecycle recorded
+  in [PD-02B Scope v1.0](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md).
+- The DRAFT contains exactly 3 Product Entities, 2 Attributes, 2 Value
+  Registries, 4 Controlled Terms, 1 INTERNAL Family Profile, 18 localized
+  labels, and 1 machine-readable Approval Evidence.
+- Records remain `CANDIDATE_UNVERIFIED`; independent technical review and final
+  Founder approval are pending. No runtime, Product/SKU, pilot, Master/Golden,
+  availability, import, deployment, production, or branch deletion is allowed.
+
 ## Document Control
 
 - **Document ID:** `docs/14_CHANGELOG.md`

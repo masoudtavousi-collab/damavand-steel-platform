@@ -180,12 +180,22 @@ class ProductMasterDataTests(unittest.TestCase):
             )
         self.assertEqual(issues, [])
 
-    def test_positive_registry_remains_empty(self) -> None:
+    def test_positive_pd02b_attributes_do_not_enable_master_data(self) -> None:
         registry, _ = self.module.load_yaml(
             CANONICAL_ATTRIBUTE_REGISTRY,
             "canonical Product Attribute registry",
         )
-        self.assertEqual(registry["attributes"], [])
+        attributes = registry["attributes"]
+        self.assertEqual(
+            {attribute["attribute_key"] for attribute in attributes},
+            {"material", "grade"},
+        )
+        self.assertTrue(
+            all(
+                attribute["status"] == "CANDIDATE_UNVERIFIED"
+                for attribute in attributes
+            )
+        )
         self.assertFalse(
             self.definitions.contract["data_boundary"][
                 "canonical_population_authority"

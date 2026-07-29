@@ -66,6 +66,7 @@ Historical Git authorizations retain their original exact scope and do not becom
 | Cross-domain execution governance | `FD-GOV-XD-00` defines stable live-tip resolution, separation of duties, Sprint-specific Approval/Test Contracts, and an ordered path toward `PD-01`; it creates no implementation authority |
 | PD-01 Product Data Contract Enablement | `APPROVED` under `FD-PD01-001` after `PD01-REVIEW-001`; exact 30-path Contract/Schema/Validator/Test and governance scope with synthetic fixtures only; canonical Product Attribute registry remains empty |
 | PD-02A Controlled Values and Attribute Profiles | `APPROVED` under `FD-PD02A-001` after legal lifecycle and `PD02A-REVIEW-001` PASS with zero findings; exact 38-path synthetic-only Contract/Schema/Validator/Test foundation; conditional Git integration pending; canonical Product Attribute, controlled-value, and Profile collections remain empty |
+| PD-02B Minimum Canonical Slice | `DRAFT` under `FD-PD02B-001`; exact 57-path repository-only slice from `main@6ed6fc89e555b1be3a97d7f9c64c9e2b989af1df`; 3 entities, 2 Attributes, 2 Value Registries, 4 Terms, 1 INTERNAL Profile, 18 labels, and 1 Approval Evidence remain `CANDIDATE_UNVERIFIED` pending technical review and Founder approval |
 | Knowledge Repository | Architecture proposals exist; `repository/knowledge/` is the approved future location, but machine-readable contracts and content instances do not exist; `NOT_IMPLEMENTATION_READY` |
 | Master Data | No canonical machine-readable package exists on `main`; decision records and governing prose remain the current evidence |
 | Knowledge Cards and Page Builder assets | Referenced historical/future assets are absent from canonical `main`; no implementation-readiness claim is made |
@@ -139,7 +140,8 @@ The operational GO/NO-GO boundary is maintained only in [Current Project State](
 - `FD-BP2-ADM-001` approves the BP2 Data Administration contract only as a documentation-only governance boundary; implementation authority remains false.
 - `FD-GOV-XD-00` approved only the cross-domain execution charter integrated by PR #20.
 - `FD-PD01-001` approves the exact synthetic-only PD-01 30-path Contract boundary after legal `DRAFT → REVIEW → APPROVED`; this approval creates no canonical Product Data or runtime authority.
-- `FD-PD02A-001` authorizes only the exact synthetic PD-02A lifecycle. Stable Family identity, real Attribute/value/Profile records, and PD-02B remain separately blocked.
+- `FD-PD02A-001` completed the synthetic foundation through merged PR #22.
+- `FD-PD02B-001` authorizes only the exact minimum canonical slice; it grants no Product/SKU, pilot, Master/Golden, availability, import, runtime, or production authority.
 - Runtime, import, publishing, deployment, product creation, bulk SKU generation, Factory implementation, and autonomous repository merge remain `NO-GO`.
 
 ## Genuine Unresolved Founder Decisions

@@ -1,0 +1,46 @@
+- contract_version: "1.0.0"
+  entity_id: prd:catalog:a3868f6227bb
+  entity_type: CATALOG
+  canonical_label: Damavand Steel Product Catalog
+  status: CANDIDATE_UNVERIFIED
+  owner:
+    role: product-data-steward
+  provenance:
+    source_type: FOUNDER_DECISION
+    source_reference: task:019faec6-5d14-7da2-909a-450fe030b551
+    captured_by: role:product-data-steward
+    captured_at: "2026-07-29T00:00:00Z"
+    evidence_status: FOUNDER_CONFIRMED_SCOPE
+  record_version: "1.0.0"
+- contract_version: "1.0.0"
+  entity_id: prd:platform:603354ec2045
+  entity_type: PLATFORM
+  parent_entity_id: prd:catalog:a3868f6227bb
+  parent_entity_type: CATALOG
+  canonical_label: Stainless Steel Products
+  status: CANDIDATE_UNVERIFIED
+  owner:
+    role: product-data-steward
+  provenance:
+    source_type: FOUNDER_DECISION
+    source_reference: task:019faec6-5d14-7da2-909a-450fe030b551
+    captured_by: role:product-data-steward
+    captured_at: "2026-07-29T00:00:00Z"
+    evidence_status: FOUNDER_CONFIRMED_SCOPE
+  record_version: "1.0.0"
+- contract_version: "1.0.0"
+  entity_id: prd:family:a10c6d8ceabc
+  entity_type: FAMILY
+  parent_entity_id: prd:platform:603354ec2045
+  parent_entity_type: PLATFORM
+  canonical_label: Stainless Steel Pipe
+  status: CANDIDATE_UNVERIFIED
+  owner:
+    role: product-data-steward
+  provenance:
+    source_type: FOUNDER_DECISION
+    source_reference: task:019faec6-5d14-7da2-909a-450fe030b551
+    captured_by: role:product-data-steward
+    captured_at: "2026-07-29T00:00:00Z"
+    evidence_status: FOUNDER_CONFIRMED_SCOPE
+  record_version: "1.0.0"

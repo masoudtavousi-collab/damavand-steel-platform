@@ -1,0 +1,57 @@
+registry_id: product-data-approval-evidence
+registry_version: "1.0.0"
+contract_version: "1.0.0"
+data_classification: CANONICAL_PD02B
+evidence:
+  - contract_version: "1.0.0"
+    approval_evidence_id: papproval:f8c559c1228c
+    decision_id: FD-PD02B-001
+    lifecycle_status: DRAFT
+    scope_reference: docs/PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md
+    dataset_hashes:
+      - path: repository/data/registries/product-entities.yaml
+        sha256: 0003467f751e9861f947bbdc246c19067e4334d6c5a16992bc1e83977107b503
+      - path: repository/data/registries/product-attributes.yaml
+        sha256: b55172bb3d35d51c9b2c1835fe19e97237189b5e7b191614e020494e6dedaeab
+      - path: repository/data/registries/product-attribute-value-registries.yaml
+        sha256: 0b21980a7a77b4c8ead5a5667f6afbac037d7c3b5177d2bd56df83f930d34aac
+      - path: repository/data/registries/product-attribute-profiles.yaml
+        sha256: ecce991fcbdce81fc8c835b09b105d25e53959b7c6a4a5c9dc44379fc4f30e03
+      - path: repository/data/registries/product-data-localized-labels.yaml
+        sha256: f66e8ac37134b2b802329ee981bcc705f3f510f4e7c7c1ee7d063e9dc1a136ff
+    founder_decision:
+      reviewer_id: Founder پروژه Damavand Steel
+      scope: Exact PD-02B Minimum Canonical Slice
+      verdict: PASS
+      evidence_reference: task:019faec6-5d14-7da2-909a-450fe030b551
+      independent: false
+      review_date: "2026-07-29"
+    domain_reviews:
+      - reviewer_id: SS-MATERIAL-REVIEWER-02
+        scope: Material taxonomy only
+        verdict: PASS
+        evidence_reference: PD02B-MATERIAL-REVIEW
+        independent: true
+        review_date: "2026-07-29"
+      - reviewer_id: SS-INDEPENDENT-REVIEWER-20Y-01
+        scope: Grade identifiers 201, 304 and 316 only
+        verdict: PASS
+        evidence_reference: task:019faedc-2b72-7602-a16f-351b780af85e
+        independent: true
+        review_date: "2026-07-29"
+    technical_review:
+      reviewer_id: repository-guardian-independent
+      scope: PD-02B contracts, schemas, validators, tests and exact canonical slice
+      verdict: PENDING
+      evidence_reference: null
+      independent: true
+      review_date: null
+    approval:
+      approved_by: null
+      approved_at: null
+      evidence_reference: null
+    anti_replay:
+      nonce: f8c559c1228ca3868f6227bb
+      consumed: false
+    status: CANDIDATE_UNVERIFIED
+    record_version: "1.0.0"

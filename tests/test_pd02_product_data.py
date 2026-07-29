@@ -133,22 +133,30 @@ class PD02AProductDataTests(unittest.TestCase):
             scope_entities=self.scope_definitions,
         )
 
-    def test_positive_canonical_registries_are_empty(self) -> None:
+    def test_positive_pd02b_successor_population_is_valid(self) -> None:
         values, _ = self.values_module.load_yaml(CANONICAL_VALUES, "canonical values")
         profiles, _ = self.values_module.load_yaml(CANONICAL_PROFILES, "canonical profiles")
-        self.assertEqual(values["value_registries"], [])
-        self.assertEqual(profiles["profiles"], [])
+        self.assertEqual(values["data_classification"], "CANONICAL_PD02B")
+        self.assertEqual(profiles["data_classification"], "CANONICAL_PD02B")
+        self.assertEqual(len(values["value_registries"]), 2)
+        self.assertEqual(len(profiles["profiles"]), 1)
         self.assertEqual(
             self.values_module.validate_registry(
                 values, "<canonical-values>", self.value_definitions, canonical=True
             ),
             [],
         )
+        profile_result = subprocess.run(
+            [sys.executable, str(PROFILE_VALIDATOR)],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
         self.assertEqual(
-            self.profiles_module.validate_registry(
-                profiles, "<canonical-profiles>", self.profile_definitions, canonical=True
-            ),
-            [],
+            profile_result.returncode,
+            0,
+            profile_result.stdout + profile_result.stderr,
         )
 
     def test_positive_synthetic_fixtures(self) -> None:

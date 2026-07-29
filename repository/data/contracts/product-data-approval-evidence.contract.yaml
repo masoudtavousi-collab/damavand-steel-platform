@@ -1,0 +1,39 @@
+contract_id: product-data-approval-evidence
+contract_version: "1.0.0"
+record_kind: canonical-product-data-approval-evidence
+schema:
+  path: repository/data/schemas/product-data-approval-evidence.schema.json
+  draft: "https://json-schema.org/draft/2020-12/schema"
+registry:
+  path: repository/data/registries/product-data-approval-evidence.yaml
+pd02b_lifecycle:
+  decision_id: FD-PD02B-001
+  current_status: DRAFT
+  allowed_transition_sequence:
+    - DRAFT
+    - REVIEW
+    - APPROVED
+  transition_history: []
+  direct_draft_to_approved_forbidden: true
+evidence_policy:
+  exact_evidence_count: 1
+  founder_decision_required: true
+  independent_material_review_required: true
+  independent_grade_review_required: true
+  independent_technical_review_required_before_approval: true
+  dataset_hashes_required: true
+  anti_replay_required: true
+  approved_status_requires_founder_approval: true
+stable_identity:
+  evidence_id_pattern: '^papproval:[0-9a-f]{12}$'
+  allocation_policy: CSPRNG_12_HEX_WITH_COLLISION_CHECK
+prohibited_fields:
+  - secret
+  - credential
+  - token
+  - password
+  - sku
+  - wordpress_id
+  - woocommerce_id
+  - deployment
+  - production

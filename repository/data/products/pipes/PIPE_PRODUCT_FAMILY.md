@@ -26,7 +26,7 @@
 | --- | --- | --- |
 | Product Family | Stainless Steel Pipe | Defined by Sprint 03A |
 | Persian family name | لوله استیل | Defined by Sprint 03A |
-| Stable family ID | `TBD` | Founder/Product Data decision required |
+| Stable family ID | `prd:family:a10c6d8ceabc` | PD-02B DRAFT identity; `CANDIDATE_UNVERIFIED`, not Product/SKU/runtime authority |
 | Product Group | `TBD` | Must not be invented |
 | Product Type | Stainless Steel Pipe / لوله استیل | Working profile; Founder/domain approval required |
 | Initial Variable Parent Product | Stainless Steel Pipe / لوله استیل | Candidate parent; identity/SKU approval required |
@@ -198,6 +198,14 @@ All commercial unknowns remain `TBD`; none may be converted into a claim during 
 | Version | Date | Change |
 | --- | --- | --- |
 | 0.1.0 | 2026-07-04 | Initial Sprint 03A Stainless Steel Pipe family asset; no WordPress product or import created. |
+
+## PD-02B Boundary
+
+The stable Family identity and labels are governed by
+`docs/PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md`. PD-02B does not approve
+this document's broader Series, variant, dimensions, Finish/Color/PVD,
+availability, Product, SKU, SEO, import, or WooCommerce proposals. Those
+sections remain Review-state context.
 
 ## Navigation
 

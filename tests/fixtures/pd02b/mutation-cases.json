@@ -1,0 +1,22 @@
+[
+  {"name": "direct-draft-approved", "target": "contract", "expected_code": "LIFECYCLE"},
+  {"name": "unknown-entity", "target": "entities", "expected_code": "ENTITY_TYPES"},
+  {"name": "broken-parent", "target": "entities", "expected_code": "ENTITY_HIERARCHY"},
+  {"name": "duplicate-stable-id", "target": "identifiers", "expected_code": "STABLE_ID_COLLISION"},
+  {"name": "extra-attribute", "target": "attributes", "expected_code": "EXACT_ATTRIBUTE_COUNT"},
+  {"name": "grade-as-material", "target": "values", "expected_code": "EXACT_TERMS"},
+  {"name": "deferred-430", "target": "values", "expected_code": "EXACT_TERMS"},
+  {"name": "public-profile", "target": "profiles", "expected_code": "PROFILE_BOUNDARY"},
+  {"name": "variation-enabled", "target": "profiles", "expected_code": "PROFILE_BOUNDARY"},
+  {"name": "filter-enabled", "target": "profiles", "expected_code": "PROFILE_BOUNDARY"},
+  {"name": "seo-enabled", "target": "profiles", "expected_code": "PROFILE_BOUNDARY"},
+  {"name": "missing-locale", "target": "labels", "expected_code": "LOCALE_PAIR_MISSING"},
+  {"name": "confusable-label", "target": "labels", "expected_code": "UNICODE_CONFUSABLE_LABEL"},
+  {"name": "missing-material-review", "target": "approval", "expected_code": "MISSING_DOMAIN_APPROVAL"},
+  {"name": "forged-reviewer", "target": "approval", "expected_code": "DOMAIN_APPROVAL_INVALID"},
+  {"name": "approval-replay", "target": "approval", "expected_code": "APPROVAL_REPLAY"},
+  {"name": "premature-approved-record", "target": "approval", "expected_code": "PREMATURE_APPROVAL"},
+  {"name": "tampered-dataset-hash", "target": "approval", "expected_code": "DATASET_HASH_MISMATCH"},
+  {"name": "permissive-schema", "target": "schema", "expected_code": "SCHEMA_CLOSED"},
+  {"name": "remote-ref-schema", "target": "schema", "expected_code": "NONLOCAL_SCHEMA_REFERENCE"}
+]

@@ -164,6 +164,19 @@ Reject or stop when any of the following occurs:
 | --- | --- | --- |
 | 0.1.0 | 2026-07-04 | Initial Sprint 03C Pipe data governance checklist; no implementation or import. |
 
+## PD-02B Minimum-Slice Gate
+
+- [x] Exact 3/2/2/4/1/18/1 DRAFT slice is machine validated.
+- [x] Material and Grade human-review evidence is recorded with distinct scopes.
+- [x] Five canonical registries are bound by SHA-256 in one Approval Evidence.
+- [x] Direct DRAFT → APPROVED, premature approval, and replay are rejected.
+- [x] 430, Finish/Color/PVD, dimensions/Units, Product/SKU, Pilot/879 rows,
+  Master/Golden, availability, and runtime authority are excluded.
+- [ ] Independent `PD02B-TECH-REVIEW-001` PASS is recorded.
+- [ ] Legal DRAFT → REVIEW transition is recorded.
+- [ ] Final Founder approval and REVIEW → APPROVED transition are recorded.
+- [ ] Conditional PR/CI/no-conflict/exact-scope merge gates pass.
+
 ## Navigation
 
 - [Pipe Taxonomy and Attribute Classification](../taxonomies/PIPE_TAXONOMY_ATTRIBUTE_CLASSIFICATION.md)

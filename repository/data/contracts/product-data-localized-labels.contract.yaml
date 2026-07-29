@@ -1,0 +1,45 @@
+contract_id: product-data-localized-labels
+contract_version: "1.0.0"
+record_kind: canonical-product-data-localized-label
+schema:
+  path: repository/data/schemas/product-data-localized-labels.schema.json
+  draft: "https://json-schema.org/draft/2020-12/schema"
+registry:
+  path: repository/data/registries/product-data-localized-labels.yaml
+pd02b_lifecycle:
+  decision_id: FD-PD02B-001
+  current_status: DRAFT
+  allowed_transition_sequence:
+    - DRAFT
+    - REVIEW
+    - APPROVED
+  transition_history: []
+  direct_draft_to_approved_forbidden: true
+  canonical_population_authority: true
+stable_identity:
+  label_id_pattern: '^plabel:[0-9a-f]{12}$'
+  allocation_policy: CSPRNG_12_HEX_WITH_COLLISION_CHECK
+label_policy:
+  exact_label_count: 18
+  locales:
+    - fa-IR
+    - en
+  exact_subject_count: 9
+  one_label_per_subject_per_locale: true
+  unicode_form: NFC
+  approval_evidence_required_for_approved_status: true
+  aliases_are_not_additional_labels: true
+prohibited_fields:
+  - slug
+  - sku
+  - availability
+  - seo
+  - filter
+  - variation
+  - inquiry
+  - commerce
+  - wordpress_id
+  - woocommerce_id
+  - import
+  - deployment
+  - production

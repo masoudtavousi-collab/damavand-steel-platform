@@ -1,4 +1,54 @@
 registry_id: product-attributes
 registry_version: "1.0.0"
 contract_version: "2.0.0"
-attributes: []
+attributes:
+  - contract_version: "2.0.0"
+    attribute_id: attr:dbf5365ee1e5
+    attribute_key: material
+    canonical_label: Material
+    description: Controlled material taxonomy for the approved minimum canonical slice.
+    category: PRIMARY
+    data_type: CONTROLLED_TERM
+    unit_policy:
+      mode: FORBIDDEN
+      allowed_unit_ids: []
+    validation:
+      nullable: false
+      multiple_values: false
+      constraints:
+        value_registry_reference: vreg:302188e2fc8a
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: product-data-steward
+    provenance:
+      source_type: FOUNDER_DECISION
+      source_reference: task:019faec6-5d14-7da2-909a-450fe030b551
+      captured_by: role:product-data-steward
+      captured_at: "2026-07-29T00:00:00Z"
+      evidence_status: FOUNDER_CONFIRMED_SCOPE
+    record_version: "1.0.0"
+  - contract_version: "2.0.0"
+    attribute_id: attr:28565665c910
+    attribute_key: grade
+    canonical_label: Steel Grade
+    description: Controlled grade identifiers for the approved minimum canonical slice; no technical or application claims.
+    category: PRIMARY
+    data_type: CONTROLLED_TERM
+    unit_policy:
+      mode: FORBIDDEN
+      allowed_unit_ids: []
+    validation:
+      nullable: false
+      multiple_values: false
+      constraints:
+        value_registry_reference: vreg:e1b9dd333df8
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: product-data-steward
+    provenance:
+      source_type: FOUNDER_DECISION
+      source_reference: task:019faec6-5d14-7da2-909a-450fe030b551
+      captured_by: role:product-data-steward
+      captured_at: "2026-07-29T00:00:00Z"
+      evidence_status: FOUNDER_CONFIRMED_SCOPE
+    record_version: "1.0.0"

@@ -242,7 +242,21 @@ PD-01 does not approve any canonical Family, Series, Product, Attribute definiti
 
 [PD-02A Scope v1.0](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md) implements only the standalone controlled-value Registry and Attribute Profile Contract/Schema/Validator/Test mechanisms with synthetic fixtures. It requires the existing Product Attribute registry and both new canonical registries to remain empty.
 
-PD-02A does not allocate a real Catalog, Platform, Family, or Series identity and does not settle Grade/Alloy, Color/Finish, owner, or qualified steel-domain review questions. Those decisions and any canonical rows belong to a separately approved PD-02B scope.
+PD-02A did not allocate real identities or business terms. Its historical
+synthetic-only boundary remains unchanged.
+
+## Relationship to PD-02B Minimum Canonical Slice
+
+[PD-02B Scope v1.0](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md) separately
+authorizes exactly one Catalog → Platform → Family chain, Material and Grade,
+four Controlled Terms, one INTERNAL Family Profile, 18 localized labels, and
+one Approval Evidence. During DRAFT/REVIEW every record remains
+`CANDIDATE_UNVERIFIED`.
+
+PD-02B does not authorize Series, Variant Rules, SKU, Product records, 430,
+Finish/Color/PVD, dimensions, Units, pilot/879-row data, Master/Golden,
+availability, SEO, filters, variation generation, inquiry/commerce behavior,
+WordPress/WooCommerce, import, runtime, deployment, or production.
 
 ## Administration and Data Quality
 
@@ -274,7 +288,11 @@ PD-02A does not allocate a real Catalog, Platform, Family, or Series identity an
 
 ## Approval Status
 
-Review. The canonical hierarchy and identity distinction are Founder-approved within their exact scope. `FD-PD01-001` and `FD-PD02A-001` approve only their exact synthetic Contract/Schema/Validator/Test scopes. The remaining data-model proposals are not approved, and neither this document, PD-01, nor PD-02A authorizes canonical registry population, Product records, WooCommerce configuration, database design, import, or runtime implementation.
+Review. The canonical hierarchy and identity distinction are Founder-approved
+within their exact scope. `FD-PD02B-001` adds only its explicitly enumerated
+minimum slice. The remaining data-model proposals are not approved, and no
+listed scope authorizes Product records, WooCommerce configuration, database
+design, import, or runtime implementation.
 
 ## Change Notes
 

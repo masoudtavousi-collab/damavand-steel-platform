@@ -1,0 +1,206 @@
+registry_id: product-data-localized-labels
+registry_version: "1.0.0"
+contract_version: "1.0.0"
+data_classification: CANONICAL_PD02B
+labels:
+  - contract_version: "1.0.0"
+    label_id: plabel:03344b709c83
+    subject_id: prd:catalog:a3868f6227bb
+    subject_kind: PRODUCT_ENTITY
+    locale: fa-IR
+    label: کاتالوگ محصولات دماوند استیل
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance: &founder_provenance
+      source_type: FOUNDER_DECISION
+      source_reference: task:019faec6-5d14-7da2-909a-450fe030b551
+      captured_by: role:product-data-steward
+      captured_at: "2026-07-29T00:00:00Z"
+      evidence_status: FOUNDER_CONFIRMED_SCOPE
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:0209ba6e9b2c
+    subject_id: prd:catalog:a3868f6227bb
+    subject_kind: PRODUCT_ENTITY
+    locale: en
+    label: Damavand Steel Product Catalog
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance: *founder_provenance
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:d006a1536538
+    subject_id: prd:platform:603354ec2045
+    subject_kind: PRODUCT_ENTITY
+    locale: fa-IR
+    label: محصولات فولاد زنگ‌نزن (استنلس استیل)
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance: *founder_provenance
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:5998042a26c5
+    subject_id: prd:platform:603354ec2045
+    subject_kind: PRODUCT_ENTITY
+    locale: en
+    label: Stainless Steel Products
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance: *founder_provenance
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:a2ae5d3a0248
+    subject_id: prd:family:a10c6d8ceabc
+    subject_kind: PRODUCT_ENTITY
+    locale: fa-IR
+    label: لوله استیل
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance: *founder_provenance
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:57ff4ac7bc69
+    subject_id: prd:family:a10c6d8ceabc
+    subject_kind: PRODUCT_ENTITY
+    locale: en
+    label: Stainless Steel Pipe
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance: *founder_provenance
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:834d970f75d9
+    subject_id: attr:dbf5365ee1e5
+    subject_kind: PRODUCT_ATTRIBUTE
+    locale: fa-IR
+    label: جنس
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance: *founder_provenance
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:e4cdb7cfb798
+    subject_id: attr:dbf5365ee1e5
+    subject_kind: PRODUCT_ATTRIBUTE
+    locale: en
+    label: Material
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance: *founder_provenance
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:5d102fc3f42c
+    subject_id: attr:28565665c910
+    subject_kind: PRODUCT_ATTRIBUTE
+    locale: fa-IR
+    label: گرید فولاد
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance: *founder_provenance
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:1c4d2b6dc4e3
+    subject_id: attr:28565665c910
+    subject_kind: PRODUCT_ATTRIBUTE
+    locale: en
+    label: Steel Grade
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance: *founder_provenance
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:8c28ea4e3d0b
+    subject_id: vterm:5ff9c0ceca39
+    subject_kind: CONTROLLED_TERM
+    locale: fa-IR
+    label: فولاد زنگ‌نزن
+    aliases:
+      - استیل
+    status: CANDIDATE_UNVERIFIED
+    provenance:
+      source_type: DOMAIN_REVIEW
+      source_reference: PD02B-MATERIAL-REVIEW
+      captured_by: role:product-data-steward
+      captured_at: "2026-07-29T00:00:00Z"
+      evidence_status: INDEPENDENT_HUMAN_REVIEW_PASS
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:23deb09f0bae
+    subject_id: vterm:5ff9c0ceca39
+    subject_kind: CONTROLLED_TERM
+    locale: en
+    label: Stainless Steel
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance:
+      source_type: DOMAIN_REVIEW
+      source_reference: PD02B-MATERIAL-REVIEW
+      captured_by: role:product-data-steward
+      captured_at: "2026-07-29T00:00:00Z"
+      evidence_status: INDEPENDENT_HUMAN_REVIEW_PASS
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:31ffd7d4739a
+    subject_id: vterm:a891bfdfdd6b
+    subject_kind: CONTROLLED_TERM
+    locale: fa-IR
+    label: "201"
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance: &grade_provenance
+      source_type: DOMAIN_REVIEW
+      source_reference: SS-INDEPENDENT-REVIEWER-20Y-01
+      captured_by: role:product-data-steward
+      captured_at: "2026-07-29T00:00:00Z"
+      evidence_status: INDEPENDENT_HUMAN_REVIEW_PASS
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:2cff90f9ce92
+    subject_id: vterm:a891bfdfdd6b
+    subject_kind: CONTROLLED_TERM
+    locale: en
+    label: "201"
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance: *grade_provenance
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:337886c3c115
+    subject_id: vterm:9c1a18d4b69b
+    subject_kind: CONTROLLED_TERM
+    locale: fa-IR
+    label: "304"
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance: *grade_provenance
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:c47cd975ac24
+    subject_id: vterm:9c1a18d4b69b
+    subject_kind: CONTROLLED_TERM
+    locale: en
+    label: "304"
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance: *grade_provenance
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:fdf99fae6909
+    subject_id: vterm:c62157b97d36
+    subject_kind: CONTROLLED_TERM
+    locale: fa-IR
+    label: "316"
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance: *grade_provenance
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:0f628c073b24
+    subject_id: vterm:c62157b97d36
+    subject_kind: CONTROLLED_TERM
+    locale: en
+    label: "316"
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance: *grade_provenance
+    record_version: "1.0.0"

@@ -51,6 +51,21 @@ pd02a_extension:
   canonical_attribute_population_authority: false
   canonical_value_population_authority: false
   canonical_profile_population_authority: false
+pd02b_extension:
+  decision_id: FD-PD02B-001
+  current_status: DRAFT
+  allowed_transition_sequence:
+    - DRAFT
+    - REVIEW
+    - APPROVED
+  transition_history: []
+  direct_draft_to_approved_forbidden: true
+  canonical_attribute_population_authority: true
+  exact_attribute_count: 2
+  allowed_attribute_keys:
+    - material
+    - grade
+  approved_status_requires_approval_evidence: true
 registry_policy:
   validator_supports_entry_validation: true
   canonical_registry_must_remain_empty_in_pd01: true

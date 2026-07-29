@@ -66,6 +66,21 @@ expect_failure tests/fixtures/pd02/invalid-term-attribute-mismatch.yaml VALUE_SO
 expect_failure tests/fixtures/pd02/invalid-status-promotion.yaml SYNTHETIC_STATUS "$pd02a_profile_validator"
 "$python" tests/test_pd02_product_data.py
 
+pd02b_label_validator="repository/data/validation/validate_product_data_localized_labels.py"
+"$python" "$pd02b_label_validator"
+"$python" "$pd02b_label_validator" tests/fixtures/pd02b/valid-synthetic-localized-labels.yaml
+expect_failure tests/fixtures/pd02b/invalid-unicode-confusable-label.yaml UNICODE_CONFUSABLE_LABEL "$pd02b_label_validator"
+
+pd02b_approval_validator="repository/data/validation/validate_product_data_approval_evidence.py"
+"$python" "$pd02b_approval_validator"
+"$python" "$pd02b_approval_validator" tests/fixtures/pd02b/valid-synthetic-approval-evidence.yaml
+expect_failure tests/fixtures/pd02b/invalid-missing-domain-approval.yaml MISSING_DOMAIN_APPROVAL "$pd02b_approval_validator"
+expect_failure tests/fixtures/pd02b/invalid-approval-replay.yaml APPROVAL_REPLAY "$pd02b_approval_validator"
+
+"$python" repository/data/validation/validate_product_core.py
+"$python" repository/data/validation/validate_pd02b_canonical_slice.py
+"$python" tests/test_pd02b_product_data.py
+
 product_master_data_validator="repository/data/validation/validate_product_master_data.py"
 "$python" "$product_master_data_validator" tests/fixtures/product-master-data/valid-synthetic-minimal.yaml
 expect_failure tests/fixtures/product-master-data/invalid-duplicate-key.yaml DUPLICATE_KEY "$product_master_data_validator"

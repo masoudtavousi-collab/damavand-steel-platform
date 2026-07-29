@@ -204,6 +204,15 @@ Review. No taxonomy, term, hierarchy, slug, archive, landing page, filter, custo
 | 0.2.0 | 2026-07-03 | Batch 05B remediation: Collections and Product Tags governance plus explicit Application/Use-Case alias boundary; documentation only. |
 | 0.1.0 | 2026-07-03 | Initial Batch 05 product taxonomy governance model; documentation only. |
 
+## PD-02B Taxonomy Boundary
+
+PD-02B records only the stable hierarchy `Damavand Steel Product Catalog →
+Stainless Steel Products → Stainless Steel Pipe`, with the approved Persian
+labels in [PD-02B Scope v1.0](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md).
+This hierarchy is repository Product Data, not a WordPress taxonomy, URL,
+Product Category, Product, variable parent, slug, filter, SEO landing owner, or
+commerce mapping.
+
 ## References
 
 - [Enterprise Product Data Model](19_PRODUCT_DATA_MODEL.md)

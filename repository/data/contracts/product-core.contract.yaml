@@ -5,8 +5,25 @@ schema:
   path: repository/data/schemas/product-core.schema.json
   draft: "https://json-schema.org/draft/2020-12/schema"
 registries:
+  entities: repository/data/registries/product-entities.yaml
   entity_types: repository/data/registries/product-entity-types.yaml
   statuses: repository/data/registries/product-statuses.yaml
+pd02b_lifecycle:
+  decision_id: FD-PD02B-001
+  current_status: DRAFT
+  allowed_transition_sequence:
+    - DRAFT
+    - REVIEW
+    - APPROVED
+  transition_history: []
+  direct_draft_to_approved_forbidden: true
+  canonical_population_authority: true
+  exact_entity_count: 3
+  allowed_entity_types:
+    - CATALOG
+    - PLATFORM
+    - FAMILY
+  approval_evidence_required_for_approved_status: true
 versioning:
   scheme: semantic-version-core
   pattern: '^[0-9]+\.[0-9]+\.[0-9]+$'

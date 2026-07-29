@@ -91,6 +91,15 @@ Define the implementation-ready attribute contract for the Stainless Steel Pipe 
 | --- | --- | --- |
 | 0.1.0 | 2026-07-04 | Initial Sprint 03A attribute dictionary for Stainless Steel Pipe. |
 
+## PD-02B Canonical Subset
+
+Only `material` (`attr:dbf5365ee1e5`) and `grade`
+(`attr:28565665c910`) are included in the PD-02B DRAFT. Their controlled terms
+are limited to `stainless_steel`, `201`, `304`, and `316`; Material and Grade
+are REQUIRED only in the INTERNAL Family Profile. Every other dictionary row,
+Unit, dimension, Finish/Color/PVD field, filter, variation, SEO, inquiry, and
+commerce behavior remains outside PD-02B.
+
 ## Navigation
 
 - [Stainless Steel Pipe Product Family](../products/pipes/PIPE_PRODUCT_FAMILY.md)

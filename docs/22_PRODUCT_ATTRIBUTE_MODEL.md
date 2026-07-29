@@ -116,7 +116,22 @@ Profiles prevent every attribute from appearing on every product and prevent var
 
 [PD-02A Scope v1.0](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md) defines closed, offline, synthetic-only machine contracts for controlled-value registries and standalone Attribute Profiles. It exercises stable identities, NFC duplicate detection, owner/reviewer separation, provenance, scope/Attribute/value-registry/Unit resolution, and the Profile fields above without approving any business term.
 
-The canonical Product Attribute registry remains `attributes: []`; the new canonical value and Profile collections remain `value_registries: []` and `profiles: []`. Real labels, keys, values, Profile behavior, Family scope, and domain ownership remain PD-02B decisions.
+That empty-registry rule remains the historical PD-02A boundary. The separately
+authorized PD-02B DRAFT may populate only Material, Grade, their two Value
+Registries, `stainless_steel`/`201`/`304`/`316`, and one INTERNAL Family
+Profile. All remain `CANDIDATE_UNVERIFIED` until final approval.
+
+## PD-02B Attribute Boundary
+
+Material uses key `material`, canonical English label `Material`, Persian label
+`جنس`, and the sole controlled term `stainless_steel` with Persian alias
+`استیل`. Grade uses key `grade`, canonical English label `Steel Grade`, Persian
+label `گرید فولاد`, and exact identifiers `201`, `304`, and `316` without
+technical or application claims.
+
+Both rules are REQUIRED only within the repository-internal Family Profile.
+They are not public, variation axes, filters, inquiry fields, SEO authority,
+Units, or commerce fields.
 
 ## Allowed Values Policy
 
@@ -183,7 +198,9 @@ The canonical Product Attribute registry remains `attributes: []`; the new canon
 
 ## Approval Status
 
-Review. PD-02A approves only a synthetic validation foundation. No real attribute, term, value, Profile, variation axis, filter, archive, unit conversion, WooCommerce setting, or import is approved or created.
+Review. PD-02B creates only its exact DRAFT Attribute/Term/Profile slice.
+Variation axes, filters, Units, WooCommerce settings, import, and all broader
+attributes remain unapproved.
 
 ## Change Notes
 
