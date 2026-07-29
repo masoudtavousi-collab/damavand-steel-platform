@@ -29,6 +29,7 @@ from validate_product_attribute_values import (
     load_definitions as load_value_definitions,
     validate_registry as validate_value_registry,
 )
+import validate_product_core as product_core_validator
 
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -37,6 +38,7 @@ SCHEMA_PATH = ROOT / "repository/data/schemas/product-attribute-profile.schema.j
 REGISTRY_PATH = ROOT / "repository/data/registries/product-attribute-profiles.yaml"
 DEFAULT_ATTRIBUTES = ROOT / "tests/fixtures/product-attributes/valid-foundation.yaml"
 DEFAULT_VALUES = ROOT / "tests/fixtures/pd02/valid-synthetic-controlled-values.yaml"
+DEFAULT_ENTITIES = ROOT / "tests/fixtures/product-core/valid-minimal.yaml"
 
 SEMVER_PATTERN = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+$")
 ROLE_PATTERN = re.compile(r"^[a-z][a-z0-9-]{2,63}$")
@@ -62,6 +64,12 @@ class Definitions:
     scope_id_pattern: re.Pattern[str]
     prohibited_fields: set[str]
     schema_validator: Any
+
+
+@dataclass(frozen=True)
+class ScopeDefinitions:
+    entities: dict[str, str]
+    product_core_validated: bool
 
 
 def validate_lifecycle(contract: dict[str, Any]) -> None:
@@ -120,12 +128,27 @@ def load_definitions(
         "canonical_registry_must_remain_empty_in_pd02a": True,
         "fixtures_must_be_synthetic": True,
         "scope_references_must_resolve": True,
+        "scope_dependencies_must_pass_product_core_validation": True,
         "attribute_references_must_resolve": True,
         "value_registry_references_must_resolve": True,
+        "profile_policy_must_not_weaken_attribute_policy": True,
         "network_allowed": False,
         "side_effects_allowed": False,
     }:
         raise DefinitionError("Attribute Profile registry policy differs from PD-02A")
+    profile_policy = require_mapping(contract.get("profile_policy"), "profile_policy")
+    reconciliation = require_mapping(
+        profile_policy.get("reconciliation"), "profile_policy.reconciliation"
+    )
+    if reconciliation != {
+        "controlled_registry_must_match_attribute_reference": True,
+        "required_attribute_units_must_remain_nonempty": True,
+        "profile_units_must_be_attribute_allowed": True,
+        "profile_precision_must_not_exceed_attribute_precision": True,
+    }:
+        raise DefinitionError("Profile reconciliation policy differs from PD-02A")
+    if profile_policy.get("cartesian_generation_forbidden") is not True:
+        raise DefinitionError("Cartesian generation must remain forbidden")
     naming = require_mapping(contract.get("stable_identity"), "stable_identity")
     try:
         profile_id_pattern = re.compile(str(naming["profile_id_pattern"]))
@@ -241,6 +264,37 @@ def registry_maps(
     return attributes, value_registries, issues
 
 
+def validated_scope_entities(
+    entities_value: Any,
+) -> tuple[ScopeDefinitions, list[ValidationIssue]]:
+    issues: list[ValidationIssue] = []
+    definitions = product_core_validator.load_definitions()
+    entity_issues = product_core_validator.validate_dataset(
+        entities_value,
+        "<synthetic-product-core>",
+        definitions,
+    )
+    for issue in entity_issues:
+        issues.append(
+            ValidationIssue(
+                issue.source,
+                issue.entity,
+                f"PRODUCT_CORE_{issue.code}",
+                issue.message,
+            )
+        )
+    scopes = {
+        item["entity_id"]: item["entity_type"]
+        for item in (
+            entities_value if isinstance(entities_value, list) else []
+        )
+        if isinstance(item, dict)
+        and item.get("entity_type") in {"FAMILY", "SERIES"}
+        and isinstance(item.get("entity_id"), str)
+    }
+    return ScopeDefinitions(scopes, not issues), issues
+
+
 def validate_registry(
     value: Any,
     source: str,
@@ -249,7 +303,7 @@ def validate_registry(
     canonical: bool,
     attributes: dict[str, dict[str, Any]] | None = None,
     value_registries: dict[str, dict[str, Any]] | None = None,
-    scope_entities: dict[str, str] | None = None,
+    scope_entities: ScopeDefinitions | None = None,
 ) -> list[ValidationIssue]:
     issues: list[ValidationIssue] = []
 
@@ -292,7 +346,19 @@ def validate_registry(
 
     attributes = attributes or {}
     value_registries = value_registries or {}
-    scope_entities = scope_entities or {}
+    if (
+        scope_entities is None
+        or not isinstance(scope_entities, ScopeDefinitions)
+        or not scope_entities.product_core_validated
+    ):
+        add(
+            "<registry>",
+            "UNVALIDATED_SCOPE_DEPENDENCIES",
+            "Profile scopes require a successfully validated Product Core dataset",
+        )
+        resolved_scope_entities: dict[str, str] = {}
+    else:
+        resolved_scope_entities = scope_entities.entities
     profile_ids: set[str] = set()
     scope_ids: set[str] = set()
     for index, raw in enumerate(profiles):
@@ -325,9 +391,9 @@ def validate_registry(
         scope_type = raw.get("scope_entity_type")
         if not isinstance(scope_id, str) or not definitions.scope_id_pattern.fullmatch(scope_id):
             add(str(subject), "SCOPE_ID", "scope_entity_id format is invalid")
-        elif scope_id not in scope_entities:
+        elif scope_id not in resolved_scope_entities:
             add(str(subject), "ORPHAN_PROFILE_SCOPE", f"unknown synthetic scope: {scope_id}")
-        elif scope_entities[scope_id] != scope_type:
+        elif resolved_scope_entities[scope_id] != scope_type:
             add(str(subject), "SCOPE_TYPE_MISMATCH", "scope type differs from resolved entity")
         elif scope_id in scope_ids:
             add(str(subject), "DUPLICATE_PROFILE_SCOPE", f"duplicate profile scope: {scope_id}")
@@ -378,6 +444,17 @@ def validate_registry(
                     add(str(subject), "UNRESOLVED_VALUE_REGISTRY", f"unknown value registry: {registry_id}")
                 elif registry.get("attribute_id") != attribute_id:
                     add(str(subject), "REGISTRY_ATTRIBUTE_MISMATCH", "value registry belongs to another attribute")
+                declared_registry = (
+                    attribute.get("validation", {})
+                    .get("constraints", {})
+                    .get("value_registry_reference")
+                )
+                if registry_id != declared_registry:
+                    add(
+                        str(subject),
+                        "ATTRIBUTE_REGISTRY_POLICY",
+                        "Profile registry differs from the Attribute value_registry_reference",
+                    )
             elif source_kind == "ENTITY_REFERENCE":
                 if data_type != "ENTITY_REFERENCE":
                     add(str(subject), "VALUE_SOURCE_TYPE", "entity source requires ENTITY_REFERENCE")
@@ -386,13 +463,41 @@ def validate_registry(
                     add(str(subject), "VALUE_SOURCE_TYPE", f"{data_type} cannot use typed validation")
 
             allowed_units = rule.get("allowed_unit_ids")
-            attribute_units = attribute.get("unit_policy", {}).get("allowed_unit_ids", [])
+            attribute_unit_policy = attribute.get("unit_policy", {})
+            attribute_units = attribute_unit_policy.get("allowed_unit_ids", [])
             if isinstance(allowed_units, list):
+                if attribute_unit_policy.get("mode") == "REQUIRED" and not allowed_units:
+                    add(
+                        str(subject),
+                        "REQUIRED_UNITS_EMPTY",
+                        "Profile must retain at least one Unit for a REQUIRED-unit Attribute",
+                    )
+                if attribute_unit_policy.get("mode") == "FORBIDDEN" and allowed_units:
+                    add(
+                        str(subject),
+                        "FORBIDDEN_UNITS_PRESENT",
+                        "Profile cannot add Units to a unit-forbidden Attribute",
+                    )
                 for unit_id in allowed_units:
                     if unit_id not in attribute_units:
                         add(str(subject), "UNIT_NOT_ALLOWED", f"unit is not allowed by attribute: {unit_id}")
             if rule.get("precision") is not None and data_type != "DECIMAL":
                 add(str(subject), "PRECISION_TYPE", "precision is allowed only for DECIMAL")
+            attribute_precision = (
+                attribute.get("validation", {})
+                .get("constraints", {})
+                .get("decimal_places")
+            )
+            if (
+                isinstance(rule.get("precision"), int)
+                and isinstance(attribute_precision, int)
+                and rule["precision"] > attribute_precision
+            ):
+                add(
+                    str(subject),
+                    "PRECISION_WEAKENS_ATTRIBUTE",
+                    "Profile precision exceeds the Attribute decimal_places limit",
+                )
     return sorted(issues, key=lambda item: item.render())
 
 
@@ -403,10 +508,7 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     parser.add_argument("profiles", nargs="?", default=str(REGISTRY_PATH))
     parser.add_argument("--attributes", default=str(DEFAULT_ATTRIBUTES))
     parser.add_argument("--value-registries", default=str(DEFAULT_VALUES))
-    parser.add_argument(
-        "--synthetic-scope-id", default="prd:family:000000000001"
-    )
-    parser.add_argument("--synthetic-scope-type", default="FAMILY")
+    parser.add_argument("--entities", default=str(DEFAULT_ENTITIES))
     return parser.parse_args(argv)
 
 
@@ -431,10 +533,14 @@ def main(argv: list[str] | None = None) -> int:
             values_value, value_parser = load_yaml(
                 Path(args.value_registries), "PD-02A synthetic value registries"
             )
+            entities_value, entity_parser = load_yaml(
+                Path(args.entities), "PD-02A synthetic Product Core"
+            )
             value_definitions = load_value_definitions()
             attributes, value_registries, dependency_issues = registry_maps(
                 attributes_value, values_value, value_definitions
             )
+            scope_entities, scope_issues = validated_scope_entities(entities_value)
             issues = dependency_issues + validate_registry(
                 profiles,
                 str(args.profiles),
@@ -442,12 +548,16 @@ def main(argv: list[str] | None = None) -> int:
                 canonical=False,
                 attributes=attributes,
                 value_registries=value_registries,
-                scope_entities={
-                    args.synthetic_scope_id: args.synthetic_scope_type,
-                },
+                scope_entities=scope_entities,
             )
-            parser_sources = [profile_parser, attribute_parser, value_parser]
-    except (DefinitionError, OSError) as exc:
+            issues = scope_issues + issues
+            parser_sources = [
+                profile_parser,
+                attribute_parser,
+                value_parser,
+                entity_parser,
+            ]
+    except (DefinitionError, product_core_validator.DefinitionError, OSError) as exc:
         print(f"PD02A_PROFILE_CONFIGURATION: {exc}", file=sys.stderr)
         return 2
     issues = sorted(issues, key=lambda item: item.render())

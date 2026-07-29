@@ -16,6 +16,7 @@ from jsonschema.exceptions import SchemaError
 
 from validate_product_attributes import (
     DefinitionError,
+    load_definitions as load_attribute_definitions,
     load_json,
     load_yaml,
     parse_json,
@@ -23,6 +24,7 @@ from validate_product_attributes import (
     reject_nonlocal_schema_references,
     require_mapping,
     rfc3339_utc,
+    validate_fixture as validate_attribute_fixture,
 )
 
 
@@ -72,6 +74,7 @@ class Definitions:
     key_pattern: re.Pattern[str]
     prohibited_fields: set[str]
     schema_validator: Any
+    attribute_definitions: Any
 
 
 def validate_lifecycle(contract: dict[str, Any]) -> None:
@@ -133,6 +136,20 @@ def load_definitions(
         "side_effects_allowed": False,
     }:
         raise DefinitionError("value-registry policy differs from PD-02A")
+    synthetic_boundary = require_mapping(
+        contract.get("synthetic_boundary"), "synthetic_boundary"
+    )
+    if synthetic_boundary != {
+        "allowed_data_classification": "SYNTHETIC_FIXTURE",
+        "allowed_status": "CANDIDATE_UNVERIFIED",
+        "approval_evidence_allowed": False,
+        "embedded_attribute_dependencies_required": True,
+        "embedded_attributes_must_pass_product_attribute_validation": True,
+        "registry_attribute_must_exist": True,
+        "registry_attribute_data_type": "CONTROLLED_TERM",
+        "registry_id_must_match_attribute_reference": True,
+    }:
+        raise DefinitionError("synthetic dependency boundary differs from PD-02A")
     naming = require_mapping(contract.get("stable_identity"), "stable_identity")
     normalization = require_mapping(contract.get("normalization"), "normalization")
     if normalization.get("unicode_form") != "NFC":
@@ -171,6 +188,7 @@ def load_definitions(
         key_pattern=key_pattern,
         prohibited_fields={str(item) for item in prohibited},
         schema_validator=Draft202012Validator(schema, format_checker=FormatChecker()),
+        attribute_definitions=load_attribute_definitions(),
     )
 
 
@@ -253,6 +271,8 @@ def validate_registry(
         "data_classification",
         "value_registries",
     }
+    if not canonical:
+        expected_envelope.add("synthetic_attribute_dependencies")
     if not isinstance(value, dict):
         add("<registry>", "REGISTRY_TYPE", "registry must be a mapping")
         return issues
@@ -280,6 +300,28 @@ def validate_registry(
         return sorted(issues, key=lambda item: item.render())
     if not entries:
         add("<registry>", "EMPTY_SYNTHETIC_FIXTURE", "synthetic fixture needs one registry")
+    attribute_dependencies = value.get("synthetic_attribute_dependencies")
+    attribute_issues = validate_attribute_fixture(
+        attribute_dependencies,
+        "<synthetic-value-registry-attributes>",
+        definitions.attribute_definitions,
+    )
+    for issue in attribute_issues:
+        add(
+            issue.attribute,
+            f"PRODUCT_ATTRIBUTE_{issue.code}",
+            issue.message,
+        )
+    attributes = {
+        item["attribute_id"]: item
+        for item in (
+            attribute_dependencies
+            if isinstance(attribute_dependencies, list)
+            else []
+        )
+        if isinstance(item, dict)
+        and isinstance(item.get("attribute_id"), str)
+    }
 
     registry_ids: set[str] = set()
     registry_keys: set[str] = set()
@@ -326,6 +368,27 @@ def validate_registry(
             attribute_id
         ):
             add(str(subject), "ATTRIBUTE_ID", "attribute_id format is invalid")
+        attribute = attributes.get(attribute_id)
+        if attribute is None:
+            add(str(subject), "UNKNOWN_ATTRIBUTE", f"unknown synthetic attribute: {attribute_id}")
+        else:
+            if attribute.get("data_type") != "CONTROLLED_TERM":
+                add(
+                    str(subject),
+                    "ATTRIBUTE_TYPE_MISMATCH",
+                    "controlled-value registry requires a CONTROLLED_TERM attribute",
+                )
+            declared_registry = (
+                attribute.get("validation", {})
+                .get("constraints", {})
+                .get("value_registry_reference")
+            )
+            if declared_registry != registry_id:
+                add(
+                    str(subject),
+                    "ATTRIBUTE_REGISTRY_MISMATCH",
+                    "registry ID differs from the Attribute value_registry_reference",
+                )
         label = raw.get("canonical_label")
         if isinstance(label, str) and label.strip():
             normalized_label = normalized(label)
@@ -370,6 +433,7 @@ def validate_registry(
                 add(str(term_subject), "DUPLICATE_VALUE_CODE", f"duplicate value code: {code}")
             else:
                 codes.add(code)
+                labels_and_aliases.add(normalized(code))
             names: list[Any] = [term.get("canonical_label")]
             aliases = term.get("aliases")
             if isinstance(aliases, list):

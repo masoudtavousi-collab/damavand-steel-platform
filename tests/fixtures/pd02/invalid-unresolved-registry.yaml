@@ -5,7 +5,7 @@ data_classification: SYNTHETIC_FIXTURE
 profiles:
   - contract_version: "1.0.0"
     profile_id: pprof:000000000002
-    scope_entity_id: prd:family:000000000001
+    scope_entity_id: prd:family:000000000003
     scope_entity_type: FAMILY
     attribute_rules:
       - attribute_id: attr:000000000001

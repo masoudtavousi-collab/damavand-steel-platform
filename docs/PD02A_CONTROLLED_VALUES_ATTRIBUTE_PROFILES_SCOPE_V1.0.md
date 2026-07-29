@@ -163,6 +163,24 @@ this Sprint.
 - Require successful branch CI, no conflict, independent `PASS`, and
   successful post-merge `main` CI.
 
+## Independent Review History
+
+### `PD02A-REVIEW-001` — DRAFT attempt 1
+
+- **Reviewed commit:** `a6f7e095cc48dffb987f9a48b67c71e329ee7d3b`
+- **Branch CI:** PASS, run `30469027782`
+- **Findings:** Critical 0; High 2; Medium 2; Low 0
+- **Verdict:** `REWORK`
+- **High corrections required:** resolve controlled-value registries against a
+  validated `CONTROLLED_TERM` Product Attribute and replace caller-asserted
+  Profile scopes with validated Product Core dependencies.
+- **Medium corrections required:** prevent Profiles from weakening an
+  Attribute's declared registry/Unit/precision policy and reject aliases that
+  collide with value codes.
+- **Chronology:** lifecycle remains `DRAFT`; no promotion occurred. Corrections
+  are limited to this exact 38-path allowlist and require independent
+  re-review.
+
 ## Roles and Separation of Duties
 
 | Role | Authority in PD-02A |

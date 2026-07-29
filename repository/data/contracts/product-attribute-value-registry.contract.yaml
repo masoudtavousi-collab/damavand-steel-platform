@@ -64,6 +64,11 @@ synthetic_boundary:
   allowed_data_classification: SYNTHETIC_FIXTURE
   allowed_status: CANDIDATE_UNVERIFIED
   approval_evidence_allowed: false
+  embedded_attribute_dependencies_required: true
+  embedded_attributes_must_pass_product_attribute_validation: true
+  registry_attribute_must_exist: true
+  registry_attribute_data_type: CONTROLLED_TERM
+  registry_id_must_match_attribute_reference: true
 prohibited_fields:
   - product_id
   - entity_id

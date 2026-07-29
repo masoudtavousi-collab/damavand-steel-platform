@@ -5,14 +5,12 @@ from __future__ import annotations
 
 import copy
 import importlib
-import io
 import json
 from pathlib import Path
 import subprocess
 import sys
 import tempfile
 import unittest
-from contextlib import redirect_stderr, redirect_stdout
 from unittest.mock import patch
 
 
@@ -36,10 +34,11 @@ CANONICAL_PROFILES = (
     ROOT / "repository/data/registries/product-attribute-profiles.yaml"
 )
 ATTRIBUTES = ROOT / "tests/fixtures/product-attributes/valid-foundation.yaml"
+MEASURED_ATTRIBUTES = ROOT / "tests/fixtures/product-attributes/valid-measured-attribute.yaml"
+ENTITIES = ROOT / "tests/fixtures/product-core/valid-minimal.yaml"
 VALID_VALUES = FIXTURES / "valid-synthetic-controlled-values.yaml"
 VALID_PROFILE = FIXTURES / "valid-synthetic-profile.yaml"
 MUTATIONS = FIXTURES / "mutation-cases.json"
-SCOPE = {"prd:family:000000000001": "FAMILY"}
 
 
 def import_modules() -> tuple[object, object]:
@@ -70,6 +69,8 @@ def apply_mutation(document: dict, case: dict) -> None:
         entry["values"].append(copy.deepcopy(entry["values"][0]))
     elif operation == "unknown_envelope":
         document["unexpected"] = True
+    elif operation == "alias_equals_code":
+        entry["values"][0]["aliases"] = [entry["values"][0]["value_code"]]
     elif operation == "unknown_scope":
         entry["scope_entity_id"] = "prd:family:ffffffffffff"
     elif operation == "unknown_attribute":
@@ -95,6 +96,10 @@ class PD02AProductDataTests(unittest.TestCase):
         cls.values, _ = cls.values_module.load_yaml(VALID_VALUES, "valid PD-02A values")
         cls.profiles, _ = cls.values_module.load_yaml(VALID_PROFILE, "valid PD-02A profiles")
         cls.attributes, _ = cls.values_module.load_yaml(ATTRIBUTES, "synthetic attributes")
+        cls.measured_attributes, _ = cls.values_module.load_yaml(
+            MEASURED_ATTRIBUTES, "synthetic measured attributes"
+        )
+        cls.entities, _ = cls.values_module.load_yaml(ENTITIES, "synthetic Product Core")
         (
             cls.attribute_map,
             cls.value_registry_map,
@@ -103,6 +108,9 @@ class PD02AProductDataTests(unittest.TestCase):
             cls.attributes,
             cls.values,
             cls.value_definitions,
+        )
+        cls.scope_definitions, cls.scope_issues = (
+            cls.profiles_module.validated_scope_entities(cls.entities)
         )
         cls.mutations = json.loads(MUTATIONS.read_text(encoding="utf-8"))
 
@@ -122,7 +130,7 @@ class PD02AProductDataTests(unittest.TestCase):
             canonical=False,
             attributes=self.attribute_map,
             value_registries=self.value_registry_map,
-            scope_entities=SCOPE,
+            scope_entities=self.scope_definitions,
         )
 
     def test_positive_canonical_registries_are_empty(self) -> None:
@@ -145,6 +153,7 @@ class PD02AProductDataTests(unittest.TestCase):
 
     def test_positive_synthetic_fixtures(self) -> None:
         self.assertEqual(self.dependency_issues, [])
+        self.assertEqual(self.scope_issues, [])
         self.assertEqual(self.value_issues(copy.deepcopy(self.values)), [])
         self.assertEqual(self.profile_issues(copy.deepcopy(self.profiles)), [])
 
@@ -170,18 +179,26 @@ class PD02AProductDataTests(unittest.TestCase):
 
     def test_positive_import_has_no_output_or_side_effect(self) -> None:
         before = {path: path.stat().st_mtime_ns for path in (CANONICAL_VALUES, CANONICAL_PROFILES)}
-        out = io.StringIO()
-        err = io.StringIO()
-        sys.path.insert(0, str(VALIDATION_DIR))
-        try:
-            with redirect_stdout(out), redirect_stderr(err):
-                importlib.reload(self.values_module)
-                importlib.reload(self.profiles_module)
-        finally:
-            sys.path.remove(str(VALIDATION_DIR))
+        result = subprocess.run(
+            [
+                sys.executable,
+                "-c",
+                (
+                    "import sys;"
+                    f"sys.path.insert(0, {str(VALIDATION_DIR)!r});"
+                    "import validate_product_attribute_values;"
+                    "import validate_product_attribute_profiles"
+                ),
+            ],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
         after = {path: path.stat().st_mtime_ns for path in (CANONICAL_VALUES, CANONICAL_PROFILES)}
-        self.assertEqual(out.getvalue(), "")
-        self.assertEqual(err.getvalue(), "")
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertEqual(result.stdout, "")
+        self.assertEqual(result.stderr, "")
         self.assertEqual(before, after)
 
     def test_negative_named_fixtures(self) -> None:
@@ -203,6 +220,88 @@ class PD02AProductDataTests(unittest.TestCase):
         self.assertTrue(
             any(issue.code == "DUPLICATE_NORMALIZED_TERM" for issue in duplicate_issues)
         )
+
+    def test_negative_value_registry_attribute_and_alias_reconciliation(self) -> None:
+        wrong_type = copy.deepcopy(self.values)
+        wrong_type["synthetic_attribute_dependencies"][0]["data_type"] = "TEXT"
+        issues = self.value_issues(wrong_type)
+        self.assertTrue(
+            any(issue.code == "ATTRIBUTE_TYPE_MISMATCH" for issue in issues),
+            [issue.render() for issue in issues],
+        )
+        alias_collision = copy.deepcopy(self.values)
+        term = alias_collision["value_registries"][0]["values"][0]
+        term["aliases"] = [term["value_code"]]
+        issues = self.value_issues(alias_collision)
+        self.assertTrue(
+            any(issue.code == "DUPLICATE_NORMALIZED_TERM" for issue in issues),
+            [issue.render() for issue in issues],
+        )
+
+    def test_negative_profile_cannot_weaken_attribute_policy(self) -> None:
+        measured_map = {
+            self.measured_attributes[0]["attribute_id"]: self.measured_attributes[0]
+        }
+        weakened = copy.deepcopy(self.profiles)
+        rule = weakened["profiles"][0]["attribute_rules"][0]
+        rule["attribute_id"] = "attr:000000000002"
+        rule["allowed_unit_ids"] = []
+        rule["precision"] = 12
+        issues = self.profiles_module.validate_registry(
+            weakened,
+            "<weakened-profile>",
+            self.profile_definitions,
+            canonical=False,
+            attributes=measured_map,
+            value_registries={},
+            scope_entities=self.scope_definitions,
+        )
+        codes = {issue.code for issue in issues}
+        self.assertIn("REQUIRED_UNITS_EMPTY", codes)
+        self.assertIn("PRECISION_WEAKENS_ATTRIBUTE", codes)
+
+        controlled_attribute = self.values["synthetic_attribute_dependencies"][0]
+        controlled = copy.deepcopy(self.profiles)
+        controlled_rule = controlled["profiles"][0]["attribute_rules"][0]
+        controlled_rule["attribute_id"] = controlled_attribute["attribute_id"]
+        controlled_rule["value_source"] = "CONTROLLED_REGISTRY"
+        controlled_rule["value_registry_id"] = "vreg:000000000099"
+        fake_registry = {
+            "vreg:000000000099": {
+                "value_registry_id": "vreg:000000000099",
+                "attribute_id": controlled_attribute["attribute_id"],
+            }
+        }
+        issues = self.profiles_module.validate_registry(
+            controlled,
+            "<registry-policy-profile>",
+            self.profile_definitions,
+            canonical=False,
+            attributes={controlled_attribute["attribute_id"]: controlled_attribute},
+            value_registries=fake_registry,
+            scope_entities=self.scope_definitions,
+        )
+        self.assertTrue(
+            any(issue.code == "ATTRIBUTE_REGISTRY_POLICY" for issue in issues),
+            [issue.render() for issue in issues],
+        )
+
+    def test_adversarial_scope_cli_cannot_assert_unvalidated_identity(self) -> None:
+        result = subprocess.run(
+            [
+                sys.executable,
+                str(PROFILE_VALIDATOR),
+                str(VALID_PROFILE),
+                "--synthetic-scope-id",
+                "prd:family:ffffffffffff",
+            ],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("unrecognized arguments", result.stderr)
 
     def test_negative_direct_draft_to_approved_is_rejected(self) -> None:
         for contract_path, module in (

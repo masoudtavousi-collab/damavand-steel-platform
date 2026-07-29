@@ -22,6 +22,7 @@ This changelog records repository outcomes. It does not create approval, runtime
 - Closed Draft 2020-12 Contracts/Schemas and deterministic offline validators define synthetic controlled-value registries and standalone Attribute Profiles.
 - Stable `vreg`, `vterm`, and `pprof` identities, NFC duplicate detection, owner/reviewer separation, provenance, scope/Attribute/registry/Unit resolution, and Cartesian prohibition are fail-closed.
 - Positive, negative, and adversarial coverage requires at least 60 uniquely named mutations.
+- Initial independent `PD02A-REVIEW-001` on Commit `a6f7e09` returned `REWORK` with 2 High and 2 Medium findings covering Attribute resolution, validated Product Core scope, Profile policy reconciliation, and alias/code collision. Lifecycle remains `DRAFT` while exact-scope corrections and re-review proceed.
 - The canonical Product Attribute, controlled-value, and Profile collections remain empty. PD-02B, Product/Pilot/Master/Golden/SKU, WordPress/WooCommerce, import, runtime, deploy, production, and branch deletion remain `NO-GO`.
 
 ## 2026-07-29 — PD-01 Product Data Contract Enablement (`APPROVED`)

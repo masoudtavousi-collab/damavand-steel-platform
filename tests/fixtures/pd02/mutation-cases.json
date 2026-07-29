@@ -32,6 +32,7 @@
   {"id": "V31_FORGED_CLASSIFICATION", "document": "values", "operation": "invalid_classification"},
   {"id": "V32_DUPLICATE_TERM", "document": "values", "operation": "duplicate_term"},
   {"id": "V33_UNKNOWN_ENVELOPE", "document": "values", "operation": "unknown_envelope"},
+  {"id": "V34_ALIAS_EQUALS_CODE", "document": "values", "operation": "alias_equals_code"},
   {"id": "P01_PRODUCT_ID", "document": "profiles", "operation": "inject_prohibited", "field": "product_id"},
   {"id": "P02_SKU", "document": "profiles", "operation": "inject_prohibited", "field": "sku"},
   {"id": "P03_COMMERCIAL_SKU", "document": "profiles", "operation": "inject_prohibited", "field": "commercial_sku"},
