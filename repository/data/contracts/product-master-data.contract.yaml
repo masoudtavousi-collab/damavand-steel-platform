@@ -1,0 +1,142 @@
+contract_id: product-master-data
+contract_version: "1.0.0"
+record_kind: product-master-data-bundle
+schema:
+  path: repository/data/schemas/product-master-data.schema.json
+  draft: "https://json-schema.org/draft/2020-12/schema"
+dependencies:
+  product_core_contract:
+    path: repository/data/contracts/product-core.contract.yaml
+    version: "1.0.0"
+  product_attribute_contract:
+    path: repository/data/contracts/product-attribute.contract.yaml
+    version: "2.0.0"
+  measurement_contract:
+    path: repository/data/contracts/measurement.contract.yaml
+    version: "1.0.0"
+pd01_lifecycle:
+  decision_id: FD-PD01-001
+  current_status: APPROVED
+  allowed_transition_sequence:
+    - DRAFT
+    - REVIEW
+    - APPROVED
+  transition_history:
+    - from: DRAFT
+      to: REVIEW
+      evidence_reference: PD01-REVIEW-001
+    - from: REVIEW
+      to: APPROVED
+      evidence_reference: FD-PD01-001
+  direct_draft_to_approved_forbidden: true
+data_boundary:
+  validation_mode: SYNTHETIC_ONLY
+  canonical_population_authority: false
+  product_creation_authority: false
+  sku_authority: false
+  golden_package_authority: false
+  import_ready: false
+  runtime_ready: false
+  network_allowed: false
+bundle_fields:
+  - contract_version
+  - bundle_id
+  - bundle_version
+  - data_classification
+  - product_core_contract_version
+  - product_attribute_contract_version
+  - measurement_contract_version
+  - attribute_profiles
+  - value_assignments
+  - variant_rule_sets
+  - readiness
+  - provenance
+stable_identity:
+  allocation_policy: CSPRNG_12_HEX_WITH_COLLISION_CHECK
+  immutable: true
+  independent_from:
+    - label
+    - slug
+    - sku
+    - wordpress_id
+    - woocommerce_id
+  patterns:
+    bundle_id: '^pmd:[0-9a-f]{12}$'
+    profile_id: '^pprof:[0-9a-f]{12}$'
+    assignment_id: '^pval:[0-9a-f]{12}$'
+    combination_id: '^pcomb:[0-9a-f]{12}$'
+attribute_profile:
+  allowed_scope_entity_types:
+    - FAMILY
+    - SERIES
+  requirement_levels:
+    - REQUIRED
+    - OPTIONAL
+    - CONDITIONAL
+    - PROHIBITED
+  public_visibility:
+    - PUBLIC
+    - PROTECTED
+    - INTERNAL
+    - INTEGRATION_ONLY
+  inquiry_use:
+    - PREFILLED
+    - SELECTABLE
+    - FREE_REQUIREMENT
+    - NOT_USED
+  seo_use:
+    - SUPPORTING
+    - LANDING_OWNER
+    - NON_INDEXABLE
+    - PROHIBITED
+value_assignment:
+  status: CANDIDATE_UNVERIFIED
+  value_fields:
+    - text
+    - integer
+    - decimal
+    - boolean
+    - term_id
+    - entity_reference
+  unit_reference_required_by_attribute_policy: true
+variant_rule_set:
+  explicit_allowed_combinations_only: true
+  cartesian_generation_forbidden: true
+  evidence_required_for_canonical_use: true
+readiness:
+  import_ready: false
+  runtime_ready: false
+  golden_ready: false
+prohibited_fields:
+  - sku
+  - commercial_sku
+  - slug
+  - canonical_slug
+  - availability
+  - supply_status
+  - stock
+  - inventory
+  - price
+  - pricing
+  - cost
+  - margin
+  - offer
+  - cart
+  - checkout
+  - payment
+  - wordpress_id
+  - woocommerce_id
+  - parent_product_id
+  - variation_id
+  - import
+  - publication
+  - deployment
+  - production
+validation_boundaries:
+  - Apply the complete Draft 2020-12 schema offline.
+  - Reject duplicate YAML and JSON object keys.
+  - Reject non-local schema references.
+  - Resolve Product, Attribute, Unit, Profile, Assignment, and Variant Rule references.
+  - Enforce value type, unit, range, precision, requiredness, and variation-axis rules.
+  - Reject schema-valid records that violate PD-01 governance boundaries.
+  - Produce deterministic sorted errors without network access or side effects.

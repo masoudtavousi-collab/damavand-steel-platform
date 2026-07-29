@@ -1,4 +1,4 @@
-- contract_version: "1.0.0"
+- contract_version: "2.0.0"
   attribute_id: attr:000000000002
   attribute_key: synthetic_measured_attribute
   canonical_label: Synthetic Measured Attribute

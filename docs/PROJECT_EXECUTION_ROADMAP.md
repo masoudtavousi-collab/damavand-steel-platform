@@ -20,7 +20,8 @@ This roadmap defines sequence and gates, not mutable operational state. The exac
 - PR #17 reconciled the active governance records after PR #16 and advanced the next safe action to a read-only BP2 lifecycle decision package.
 - PR #18 integrated `FD-BP2-ADM-001`, the reviewed `DRAFT → REVIEW → APPROVED` lifecycle evidence, and its fail-closed Contract/Schema/Validator/Test hardening.
 - PR #19 reconciled the post-PR18 governance state and returned the project to read-only next-step planning.
-- `FD-GOV-XD-00` then approved the cross-domain execution charter, stable live-tip semantics, separation of duties, and the ordered decision path below. It does not authorize `PD-01` or implementation.
+- `FD-GOV-XD-00` then approved the cross-domain execution charter, stable live-tip semantics, separation of duties, and the ordered decision path below; PR #20 integrated it.
+- `FD-PD01-001` approves the exact 30-path, synthetic-only PD-01 Contract Enablement boundary recorded in [PD-01 Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md) after legal lifecycle and independent PASS. PR #21 carries its integration; no canonical population or runtime authority exists.
 - The approved BP2 Data Administration contract remains documentation-only with `implementation_authority: false`; approval derives no Product, Admin UI, runtime, import, publication, deployment, or production authority.
 - The historical Wave 1 branch/commit/push/Draft-PR scope did not authorize merge and remains preserved as chronology. Its later approved merge granted no Wave 2, runtime, or implementation authority.
 - Wave 2A–2C are structural, platform-independent foundations. They created no canonical Product rows, Product Attribute definitions, Master Data, Golden package, WordPress implementation, publication, deployment, or production mutation.
@@ -30,8 +31,8 @@ This roadmap defines sequence and gates, not mutable operational state. The exac
 ## Cross-Domain Execution Order
 
 1. `GOV-XD-00` — stabilize operational-state semantics, dependency order, roles, and approval gates.
-2. `PD-01` — Product Data Contract/Schema/Validator/tests with synthetic fixtures only.
-3. `PD-02` — controlled value registries and minimum Attribute Profiles.
+2. `PD-01` — Product Data Contract/Schema/Validator/tests with synthetic fixtures only. **Complete when PR #21 merges; canonical population disabled.**
+3. `PD-02` — controlled value registries and minimum Attribute Profiles. **Next decision-package target only; execution not authorized.**
 4. `PD-03` — exactly three canonical pilot records with provenance and explicit status.
 5. `PD-04` — Golden Repository Package with `import_ready=false` and `runtime_ready=false`.
 6. `PD-05` — commercial evidence plus final SKU/slug policy before any import.
@@ -121,4 +122,4 @@ Sequence: Pipe → Profile → approved Fittings families → remaining approved
 
 ## Do Not Yet
 
-No `PD-01` execution, Product/Knowledge population, repository-settings change, workflow activation, bulk import, full-catalog or 882-variation generation, WordPress implementation, production publishing, deployment, live prices, payment/cart/checkout, Phase 1 AI, speculative Fittings data, or Central Steel runtime without the applicable separate approval. Consult [Current Project State](CURRENT_PROJECT_STATE.md) for the semantic Git boundary and next action, then resolve the live `main` SHA for the task packet.
+Do not execute `PD-02`; populate Product/Knowledge data or the empty Product Attribute registry; create Product, Pilot, 879-row, Master Data, Golden, SKU, slug, or availability data; change repository settings; activate workflows; import; implement WordPress; publish; deploy; expose prices/payment/cart/checkout; enable Phase 1 AI; create speculative Fittings data; delete the PD-01 branch; or mutate Central Steel/runtime without the applicable separate approval. Consult [Current Project State](CURRENT_PROJECT_STATE.md) for the semantic Git boundary.
