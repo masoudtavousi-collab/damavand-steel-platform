@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:damavand-steel:test:pd02a:permissive",
+  "type": "object",
+  "additionalProperties": true
+}

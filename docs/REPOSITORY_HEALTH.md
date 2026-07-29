@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.10.0
-- **Last Updated:** 2026-07-28
-- **Last Review:** 2026-07-28
+- **Version:** 0.11.0
+- **Last Updated:** 2026-07-29
+- **Last Review:** 2026-07-29
 - **Review Cycle:** On repository-governance, document, authority, metadata, navigation, traceability, or validation change
 - **Lifecycle:** Review
 - **Source of Truth:** Current repository state and local tagged [Repository Baseline v1.0](BASELINE_v1.0.md); this health record is evidence, not governing authority
@@ -23,6 +23,8 @@
 ## Evidence Scope
 
 The GIT-02S and local tagged-baseline counts below are retained as dated evidence, not current counts. Wave 2 discovery verified the dated `d702c5217f7caa2f23e56f965f3f993967e3c17d` baseline after PR #1–#3: 285 tracked files, 125 files under `docs/`, 228 Markdown files repository-wide, and a clean synchronized `main`. `GOV-XD-00` now requires every task to resolve the live GitHub `main` SHA at dispatch and record it in that task's Scope/Approval Packet. Historical sprint reports may describe assets that are absent from the reviewed tree; those claims remain chronology only and do not establish current file presence, implementation readiness, backup/restore, or runtime state.
+
+PD-02A starts from reviewed `main` SHA `d8ae556d17ab518970149533d975b7924f3af3e1` under an exact 38-path synthetic-only scope. Its new controlled-value and Attribute Profile registries are required to remain empty, as is the existing Product Attribute registry. Passing validation proves only the structural foundation and creates no canonical Product Data.
 
 ## Repository Completeness
 

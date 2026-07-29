@@ -1,0 +1,5 @@
+registry_id: product-attribute-value-registries
+registry_version: "1.0.0"
+contract_version: "1.0.0"
+data_classification: CANONICAL_EMPTY
+value_registries: []

@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.5.0
-- **Last Updated:** 2026-07-28
-- **Last Review:** 2026-07-28
+- **Version:** 0.6.0
+- **Last Updated:** 2026-07-29
+- **Last Review:** 2026-07-29
 - **Review Cycle:** On product hierarchy, entity, ownership, lifecycle, taxonomy, attribute, inquiry, CRM, ERP, or Founder-decision change
 - **Lifecycle:** Review
 - **Source of Truth:** [Core Project Principles](00_PROJECT_BIBLE.md#core-project-principles), [ADR 0001](adr/0001-inquiry-first-commerce.md), and [WordPress Enterprise Architecture](06_WORDPRESS_ARCHITECTURE.md#founder-constraints-and-decision-sources)
@@ -238,6 +238,12 @@ No implementation role, WordPress role, or repository author inherits these acco
 
 PD-01 does not approve any canonical Family, Series, Product, Attribute definition, value, Unit, valid commercial combination, SKU, stock state, availability, Master Data, Golden package, commerce mapping, or runtime object. The canonical Product Attribute registry remains empty. Any later controlled-value or canonical-record work begins only through a separately authorized `PD-02` or later scope.
 
+## Relationship to PD-02A Foundation
+
+[PD-02A Scope v1.0](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md) implements only the standalone controlled-value Registry and Attribute Profile Contract/Schema/Validator/Test mechanisms with synthetic fixtures. It requires the existing Product Attribute registry and both new canonical registries to remain empty.
+
+PD-02A does not allocate a real Catalog, Platform, Family, or Series identity and does not settle Grade/Alloy, Color/Finish, owner, or qualified steel-domain review questions. Those decisions and any canonical rows belong to a separately approved PD-02B scope.
+
 ## Administration and Data Quality
 
 - Routine entity, relationship, label, media, and document maintenance must be manageable through supported WordPress Admin capabilities after an approved implementation design.
@@ -268,12 +274,13 @@ PD-01 does not approve any canonical Family, Series, Product, Attribute definiti
 
 ## Approval Status
 
-Review. The canonical hierarchy and identity distinction are Founder-approved within their exact scope. `FD-PD01-001` separately approves only the exact synthetic Contract/Schema/Validator/Test subset in the PD-01 Scope. The remaining data-model proposals are not approved, and neither this document nor PD-01 authorizes canonical registry population, Product records, WooCommerce configuration, database design, import, or runtime implementation.
+Review. The canonical hierarchy and identity distinction are Founder-approved within their exact scope. `FD-PD01-001` and `FD-PD02A-001` approve only their exact synthetic Contract/Schema/Validator/Test scopes. The remaining data-model proposals are not approved, and neither this document, PD-01, nor PD-02A authorizes canonical registry population, Product records, WooCommerce configuration, database design, import, or runtime implementation.
 
 ## Change Notes
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.6.0 | 2026-07-29 | Linked the synthetic-only PD-02A controlled-value/Profile foundation and preserved the empty canonical registries and PD-02B decision boundary. |
 | 0.5.0 | 2026-07-29 | Recorded approved PD-01 synthetic Contract subset after legal lifecycle and independent PASS without promoting canonical Product data. |
 | 0.4.0 | 2026-07-28 | Linked the exact synthetic-only PD-01 Contract Enablement scope without approving canonical values, Product records, SKU, Master Data, Golden, import, or runtime work. |
 | 0.3.0 | 2026-07-20 | Reconciled the Founder-approved canonical repository hierarchy and separated canonical identities from legacy/commerce Parent and Variation mappings; documentation only. |

@@ -1,0 +1,107 @@
+contract_id: product-attribute-profile
+contract_version: "1.0.0"
+record_kind: canonical-product-attribute-profile
+schema:
+  path: repository/data/schemas/product-attribute-profile.schema.json
+  draft: "https://json-schema.org/draft/2020-12/schema"
+registry:
+  path: repository/data/registries/product-attribute-profiles.yaml
+dependencies:
+  product_core: repository/data/contracts/product-core.contract.yaml
+  product_attribute: repository/data/contracts/product-attribute.contract.yaml
+  value_registry: repository/data/contracts/product-attribute-value-registry.contract.yaml
+  measurement: repository/data/contracts/measurement.contract.yaml
+pd02a_lifecycle:
+  decision_id: FD-PD02A-001
+  current_status: APPROVED
+  allowed_transition_sequence:
+    - DRAFT
+    - REVIEW
+    - APPROVED
+  transition_history:
+    - from: DRAFT
+      to: REVIEW
+      evidence_reference: PD02A-REVIEW-001
+    - from: REVIEW
+      to: APPROVED
+      evidence_reference: FD-PD02A-001
+  direct_draft_to_approved_forbidden: true
+  canonical_population_authority: false
+registry_policy:
+  canonical_registry_must_remain_empty_in_pd02a: true
+  fixtures_must_be_synthetic: true
+  scope_references_must_resolve: true
+  scope_dependencies_must_pass_product_core_validation: true
+  attribute_references_must_resolve: true
+  value_registry_references_must_resolve: true
+  profile_policy_must_not_weaken_attribute_policy: true
+  network_allowed: false
+  side_effects_allowed: false
+stable_identity:
+  profile_id_pattern: '^pprof:[0-9a-f]{12}$'
+  scope_id_pattern: '^prd:(family|series):[0-9a-f]{12}$'
+  allocation_policy: CSPRNG_12_HEX_WITH_COLLISION_CHECK
+profile_policy:
+  allowed_scope_entity_types:
+    - FAMILY
+    - SERIES
+  requirement_levels:
+    - REQUIRED
+    - OPTIONAL
+    - CONDITIONAL
+    - PROHIBITED
+  public_visibility:
+    - PUBLIC
+    - PROTECTED
+    - INTERNAL
+    - INTEGRATION_ONLY
+  value_sources:
+    - TYPED_VALIDATION
+    - CONTROLLED_REGISTRY
+    - ENTITY_REFERENCE
+  inquiry_use:
+    - PREFILLED
+    - SELECTABLE
+    - FREE_REQUIREMENT
+    - NOT_USED
+  seo_use:
+    - SUPPORTING
+    - LANDING_OWNER
+    - NON_INDEXABLE
+    - PROHIBITED
+  cartesian_generation_forbidden: true
+  reconciliation:
+    controlled_registry_must_match_attribute_reference: true
+    required_attribute_units_must_remain_nonempty: true
+    profile_units_must_be_attribute_allowed: true
+    profile_precision_must_not_exceed_attribute_precision: true
+synthetic_boundary:
+  allowed_data_classification: SYNTHETIC_FIXTURE
+  allowed_status: CANDIDATE_UNVERIFIED
+  approval_evidence_allowed: false
+prohibited_fields:
+  - product_id
+  - sku
+  - commercial_sku
+  - slug
+  - availability
+  - supply_status
+  - stock
+  - inventory
+  - price
+  - pricing
+  - cost
+  - margin
+  - offer
+  - cart
+  - checkout
+  - payment
+  - wordpress_id
+  - woocommerce_id
+  - parent_product_id
+  - variation_id
+  - allowed_combinations
+  - import
+  - publication
+  - deployment
+  - production

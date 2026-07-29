@@ -1,0 +1,187 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:damavand-steel:schema:product-attribute-value-registry:1.0.0",
+  "title": "Product Attribute controlled-value registry definition",
+  "description": "Closed schema for PD-02A synthetic controlled-value fixtures. Canonical value registries remain empty.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "value_registry_id",
+    "registry_key",
+    "attribute_id",
+    "canonical_label",
+    "values",
+    "status",
+    "owner",
+    "reviewer",
+    "provenance",
+    "record_version"
+  ],
+  "properties": {
+    "contract_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "value_registry_id": {
+      "type": "string",
+      "pattern": "^vreg:[0-9a-f]{12}$"
+    },
+    "registry_key": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+    },
+    "attribute_id": {
+      "type": "string",
+      "pattern": "^attr:[0-9a-f]{12}$"
+    },
+    "canonical_label": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": ".*\\S.*"
+    },
+    "values": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 500,
+      "items": {
+        "$ref": "#/$defs/value"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "APPROVED",
+        "CANDIDATE_UNVERIFIED",
+        "MISSING_DATA_VALUE",
+        "FOUNDER_INPUT_REQUIRED",
+        "DEFERRED",
+        "NOT_APPLICABLE",
+        "INVALID"
+      ]
+    },
+    "owner": {
+      "$ref": "#/$defs/role"
+    },
+    "reviewer": {
+      "$ref": "#/$defs/role"
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "record_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    }
+  },
+  "$defs": {
+    "value": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value_id",
+        "value_code",
+        "canonical_label",
+        "aliases",
+        "status",
+        "provenance",
+        "record_version"
+      ],
+      "properties": {
+        "value_id": {
+          "type": "string",
+          "pattern": "^vterm:[0-9a-f]{12}$"
+        },
+        "value_code": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+        },
+        "canonical_label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": ".*\\S.*"
+        },
+        "aliases": {
+          "type": "array",
+          "maxItems": 50,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200,
+            "pattern": ".*\\S.*"
+          }
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "APPROVED",
+            "CANDIDATE_UNVERIFIED",
+            "MISSING_DATA_VALUE",
+            "FOUNDER_INPUT_REQUIRED",
+            "DEFERRED",
+            "NOT_APPLICABLE",
+            "INVALID"
+          ]
+        },
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        },
+        "record_version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        }
+      }
+    },
+    "role": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role"
+      ],
+      "properties": {
+        "role": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]{2,63}$"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_type",
+        "source_reference",
+        "captured_by",
+        "captured_at",
+        "evidence_status"
+      ],
+      "properties": {
+        "source_type": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$"
+        },
+        "source_reference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500,
+          "pattern": ".*\\S.*"
+        },
+        "captured_by": {
+          "type": "string",
+          "pattern": "^role:[a-z][a-z0-9-]{2,63}$"
+        },
+        "captured_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "evidence_status": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$"
+        }
+      }
+    }
+  }
+}
