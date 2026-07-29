@@ -1,5 +1,5 @@
 [
-  {"name":"direct-draft-approved","document":"contract_core","operation":"set","path":["pd02b_lifecycle","current_status"],"value":"APPROVED","expected_code":"LIFECYCLE_DIVERGENCE"},
+  {"name":"lifecycle-divergence","document":"contract_core","operation":"set","path":["pd02b_lifecycle","current_status"],"value":"DRAFT","expected_code":"LIFECYCLE_DIVERGENCE"},
   {"name":"unknown-entity","document":"entities","operation":"set","path":[1,"entity_type"],"value":"SERIES","expected_code":"ENTITY_TYPES"},
   {"name":"broken-parent","document":"entities","operation":"set","path":[2,"parent_entity_id"],"value":"prd:catalog:a3868f6227bb","expected_code":"ENTITY_HIERARCHY"},
   {"name":"duplicate-stable-id","document":"attributes","operation":"set","path":["attributes",1,"attribute_id"],"value":"attr:a3868f6227bb","expected_code":"STABLE_ID_COLLISION"},
@@ -14,8 +14,8 @@
   {"name":"confusable-label","document":"labels","operation":"set","path":["labels",1,"label"],"value":"Dаmavand Steel Product Catalog","expected_code":"UNICODE_CONFUSABLE_LABEL"},
   {"name":"missing-material-review","document":"approval","operation":"pop","path":["evidence",0,"domain_reviews"],"index":0,"expected_code":"MISSING_DOMAIN_APPROVAL"},
   {"name":"forged-reviewer","document":"approval","operation":"set","path":["evidence",0,"domain_reviews",0,"scope"],"value":"All product data","expected_code":"DOMAIN_APPROVAL_INVALID"},
-  {"name":"approval-replay","document":"approval","operation":"set","path":["evidence",0,"anti_replay","consumed"],"value":true,"expected_code":"APPROVAL_REPLAY"},
-  {"name":"premature-approved-record","document":"approval","operation":"set","path":["evidence",0,"approval","approved_by"],"value":"Founder پروژه Damavand Steel","expected_code":"PREMATURE_APPROVAL"},
+  {"name":"approval-not-consumed","document":"approval","operation":"set","path":["evidence",0,"anti_replay","consumed"],"value":false,"expected_code":"APPROVAL_NOT_CONSUMED"},
+  {"name":"missing-founder-approval","document":"approval","operation":"set","path":["evidence",0,"approval","approved_by"],"value":null,"expected_code":"FOUNDER_APPROVAL_MISSING"},
   {"name":"tampered-dataset-hash","document":"approval","operation":"set","path":["evidence",0,"dataset_hashes",0,"sha256"],"value":"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff","expected_code":"DATASET_HASH_MISMATCH"},
   {"name":"permissive-schema","document":"schema","fixture":"adversarial-permissive-schema.json","expected_code":"closed Draft 2020-12"},
   {"name":"remote-ref-schema","document":"schema","fixture":"adversarial-remote-ref-schema.json","expected_code":"non-local schema reference"}

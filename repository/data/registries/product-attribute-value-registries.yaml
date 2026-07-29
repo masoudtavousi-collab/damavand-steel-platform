@@ -14,7 +14,7 @@ value_registries:
         canonical_label: Stainless Steel
         aliases:
           - استیل
-        status: CANDIDATE_UNVERIFIED
+        status: APPROVED
         provenance:
           source_type: DOMAIN_REVIEW
           source_reference: PD02B-MATERIAL-REVIEW
@@ -22,7 +22,7 @@ value_registries:
           captured_at: "2026-07-29T00:00:00Z"
           evidence_status: INDEPENDENT_HUMAN_REVIEW_PASS
         record_version: "1.0.0"
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     owner:
       role: product-data-steward
     reviewer:
@@ -44,7 +44,7 @@ value_registries:
         value_code: "201"
         canonical_label: "201"
         aliases: []
-        status: CANDIDATE_UNVERIFIED
+        status: APPROVED
         provenance:
           source_type: DOMAIN_REVIEW
           source_reference: SS-INDEPENDENT-REVIEWER-20Y-01
@@ -56,7 +56,7 @@ value_registries:
         value_code: "304"
         canonical_label: "304"
         aliases: []
-        status: CANDIDATE_UNVERIFIED
+        status: APPROVED
         provenance:
           source_type: DOMAIN_REVIEW
           source_reference: SS-INDEPENDENT-REVIEWER-20Y-01
@@ -68,7 +68,7 @@ value_registries:
         value_code: "316"
         canonical_label: "316"
         aliases: []
-        status: CANDIDATE_UNVERIFIED
+        status: APPROVED
         provenance:
           source_type: DOMAIN_REVIEW
           source_reference: SS-INDEPENDENT-REVIEWER-20Y-01
@@ -76,7 +76,7 @@ value_registries:
           captured_at: "2026-07-29T00:00:00Z"
           evidence_status: INDEPENDENT_HUMAN_REVIEW_PASS
         record_version: "1.0.0"
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     owner:
       role: product-data-steward
     reviewer:

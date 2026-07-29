@@ -2,7 +2,7 @@
   entity_id: prd:catalog:a3868f6227bb
   entity_type: CATALOG
   canonical_label: Damavand Steel Product Catalog
-  status: CANDIDATE_UNVERIFIED
+  status: APPROVED
   owner:
     role: product-data-steward
   provenance:
@@ -18,7 +18,7 @@
   parent_entity_id: prd:catalog:a3868f6227bb
   parent_entity_type: CATALOG
   canonical_label: Stainless Steel Products
-  status: CANDIDATE_UNVERIFIED
+  status: APPROVED
   owner:
     role: product-data-steward
   provenance:
@@ -34,7 +34,7 @@
   parent_entity_id: prd:platform:603354ec2045
   parent_entity_type: PLATFORM
   canonical_label: Stainless Steel Pipe
-  status: CANDIDATE_UNVERIFIED
+  status: APPROVED
   owner:
     role: product-data-steward
   provenance:

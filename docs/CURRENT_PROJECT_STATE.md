@@ -4,12 +4,12 @@
 - **Canonical repository:** `masoudtavousi-collab/damavand-steel-platform`
 - **Reviewed input anchor:** `6ed6fc89e555b1be3a97d7f9c64c9e2b989af1df`, merged PR #22 baseline; successful required post-merge validation
 - **Live `main` tip:** resolve dynamically from GitHub `refs/heads/main` at task start; do not treat the reviewed input anchor as a permanent live-tip claim
-- **Last completed substantive repository integration:** `PD-02A` through merged PR #22
-- **Last completed governance reconciliation:** PD-02A direct reconciliation through PR #22
-- **Current phase:** `PD-02B` Minimum Canonical Slice — `REVIEW`
-- **Current authorized branch:** `codex/pd-02b-minimum-canonical-slice`
+- **Last completed substantive repository integration:** `PD-02B` through PR #23 when this declaration becomes effective on merged `main`
+- **Last completed governance reconciliation:** PD-02B direct reconciliation through PR #23 when merged
+- **Current phase:** `PD-02B` Minimum Canonical Slice — `APPROVED`; next-phase selection is read-only planning only
+- **Current authorized branch:** none after PR #23 integration; any further write requires separate authorization
 - **Current authorization:** exact 57-path repository-only slice: 3 entities, 2 Attributes, 2 Value Registries, 4 Terms, 1 INTERNAL Profile, 18 labels, 1 Approval Evidence, and two successor-compatible historical regression assertions
-- **Merge:** conditional Merge Commit only after legal `DRAFT → REVIEW → APPROVED`, independent `PD02B-TECH-REVIEW-001` PASS, successful CI, no conflict, exact path equality, and complete evidence
+- **Merge:** PR #23 is the conditional integration vehicle; this state becomes effective only after Merge Commit, successful checks, no conflict, exact path equality, complete evidence, and successful `main` CI
 - **Runtime / WordPress / WooCommerce mutation:** NO-GO
 - **Import / publishing / deployment / product creation / bulk SKU generation:** NO-GO
 
@@ -44,7 +44,7 @@ This file is the only semantic operational-state pointer. Other documents may pr
 | `GOV-XD-00` Cross-Domain Execution Charter | Founder authorization dated 2026-07-28; six-task read-only analysis; independent QA; the PR carrying this declaration | Separates semantic operational state from the dynamic Git tip, records cross-domain dependency order and separation of duties, and selects `PD-01` only as the next decision-package target |
 | `PD-01` Product Data Contract Enablement | `FD-PD01-001`; `PD01-REVIEW-001`; [PD-01 Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md); exact 30-path allowlist; starting SHA `6577cd461e88463903b18c11b0e5bdbfa88375e2`; PR #21; DRAFT CI `30390311445`; REVIEW CI `30466264564` | `APPROVED` after legal `DRAFT → REVIEW → APPROVED`; synthetic Contract/Schema/Validator/Test enablement only; canonical Product Attribute registry remains empty; no Product, SKU, Master Data, Golden, import, runtime, or production authority |
 | `PD-02A` Controlled Values and Attribute Profiles foundation | `FD-PD02A-001`; `PD02A-REVIEW-001`; [PD-02A Scope v1.0](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md); exact 38-path allowlist; merged PR #22; successful post-merge validation | `APPROVED` synthetic foundation; its historical empty-registry boundary is preserved and later canonical population requires PD-02B |
-| `PD-02B` Minimum Canonical Slice | `FD-PD02B-001`; `PD02B-TECH-REVIEW-001`; [PD-02B Scope v1.0](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md); exact 57-path allowlist; starting SHA `6ed6fc89e555b1be3a97d7f9c64c9e2b989af1df`; PASS on `f38eb447…`; CI `30479723615` | `REVIEW` after legal `DRAFT → REVIEW`; all records remain `CANDIDATE_UNVERIFIED`; final Founder approval and REVIEW → APPROVED remain pending |
+| `PD-02B` Minimum Canonical Slice | `FD-PD02B-001`; `PD02B-TECH-REVIEW-001`; [PD-02B Scope v1.0](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md); exact 57-path allowlist; starting SHA `6ed6fc89e555b1be3a97d7f9c64c9e2b989af1df`; PASS on `f38eb447…`; CI `30479723615` and REVIEW-stage CI `30480571732`; PR #23 | `APPROVED` after legal `DRAFT → REVIEW → APPROVED`; all 31 bounded records are approved; no broader Product/runtime authority |
 | Atlas planning registry | 173 pending document records across 21 domains | Intake inventory only; no Atlas row is canonical merely because it is registered |
 
 Repository validators are active in CI and unified under `make test`. PR #12 hardening is merged: nested schema objects are closed, JSON Schema Draft 2020-12 is enforced offline, validation output is deterministic, and positive, negative, and adversarial tests are wired into the unified test entry point. `FD-BP2-ADM-001` records the completed legal BP2 lifecycle without implementation authority. `FD-PD01-001` approves a separate synthetic Product Data contract boundary; it is not canonical Product Data.
@@ -54,7 +54,7 @@ Repository validators are active in CI and unified under `make test`. PR #12 har
 ### Product Repository
 
 - Machine-readable core, attribute, and measurement foundations exist.
-- PD-02B creates only the exact minimum canonical Catalog/Platform/Family, Material/Grade, controlled-term, INTERNAL Profile, localized-label, and evidence slice while its lifecycle progresses.
+- PD-02B approves only the exact minimum canonical Catalog/Platform/Family, Material/Grade, controlled-term, INTERNAL Profile, localized-label, and evidence slice.
 - No Product/SKU records, final SKU vocabulary, Master Data package, Golden reference package, dimensions, Finish/Color/PVD, availability, import, or runtime mapping is authorized.
 - Stable structural contracts do not prove commercial truth, availability, import readiness, or runtime readiness.
 - Broader Product Data readiness remains **blocked**; the PD-02B minimum slice does not make pilot, Master/Golden, commerce, import, or runtime data ready.
@@ -114,7 +114,6 @@ A Variable Parent Product is a commerce presentation and never the owner of cano
 - The BP2 Data Administration contract is `APPROVED` only as a documentation-only administration boundary; it does not grant authority to PD-01 or any administration engine.
 - Canonical Product records, Product Attribute definitions, Master Data, Golden package, final SKU/slug policy, content/media rights, and availability evidence remain absent or incomplete.
 - PD-01 permits only the exact synthetic Contract/Schema/Validator/Test and governance allowlist; canonical Product Data, BP2 Administration, Runtime, WordPress/WooCommerce, and Knowledge/Content writes remain blocked.
-- PD-02B is in `REVIEW`; its records cannot become `APPROVED` until final Founder approval evidence is recorded.
 - The ordering conflict between credential containment and mandatory pre-mutation backup/restore evidence remains unresolved.
 - Legacy Review-state Product/Content/SEO documents that describe a Variable Parent Product as canonical owner must be reconciled before Knowledge, SEO, or WooCommerce mapping approval.
 - A shared role/separation-of-duties matrix and Sprint-specific Test Contract remain required before implementation.
@@ -122,7 +121,10 @@ A Variable Parent Product is a commerce presentation and never the owner of cano
 
 ## Approved Next Action
 
-Record final Founder approval for [PD-02B Scope v1.0](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md), then perform only the legal `REVIEW → APPROVED` transition. Final PR CI, no-conflict, exact-scope, Ready, Merge Commit, and post-merge `main` CI remain separate conditional gates.
+After PR #23 satisfies final CI, no-conflict, exact-scope, Ready, Merge Commit,
+and post-merge `main` CI gates, prepare a read-only decision package to select
+the next Product Data phase. No subsequent implementation is authorized by
+PD-02B.
 
 Do not add data beyond the exact PD-02B slice; create Product/Pilot/879-row/Master Data/Golden/SKU/slug/availability data; add Grade 430, Finish/Color/PVD, dimensions, or Units; modify BP1; implement an Admin UI; change WordPress/WooCommerce; run imports; publish; deploy; delete the branch; or mutate production.
 

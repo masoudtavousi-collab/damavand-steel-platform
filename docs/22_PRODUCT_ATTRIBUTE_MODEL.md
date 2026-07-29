@@ -117,9 +117,9 @@ Profiles prevent every attribute from appearing on every product and prevent var
 [PD-02A Scope v1.0](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md) defines closed, offline, synthetic-only machine contracts for controlled-value registries and standalone Attribute Profiles. It exercises stable identities, NFC duplicate detection, owner/reviewer separation, provenance, scope/Attribute/value-registry/Unit resolution, and the Profile fields above without approving any business term.
 
 That empty-registry rule remains the historical PD-02A boundary. The separately
-authorized PD-02B REVIEW scope may populate only Material, Grade, their two Value
+authorized PD-02B APPROVED scope populates only Material, Grade, their two Value
 Registries, `stainless_steel`/`201`/`304`/`316`, and one INTERNAL Family
-Profile. All remain `CANDIDATE_UNVERIFIED` until final approval.
+Profile. These bounded records are `APPROVED`.
 
 ## PD-02B Attribute Boundary
 
@@ -198,7 +198,7 @@ Units, or commerce fields.
 
 ## Approval Status
 
-Review. PD-02B creates only its exact REVIEW-state Attribute/Term/Profile slice.
+Approved only for the exact PD-02B Attribute/Term/Profile slice.
 Variation axes, filters, Units, WooCommerce settings, import, and all broader
 attributes remain unapproved.
 

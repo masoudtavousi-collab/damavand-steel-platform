@@ -2,7 +2,7 @@
 
 **Decision ID:** `FD-PD02B-001`
 
-**Lifecycle:** `REVIEW`
+**Lifecycle:** `APPROVED`
 
 **Baseline:** `main@6ed6fc89e555b1be3a97d7f9c64c9e2b989af1df`
 
@@ -100,8 +100,12 @@ Direct `DRAFT → APPROVED` is prohibited. Passing tests alone never promotes da
   `f38eb44721b90f2cf6b451c280e2d8a91c789f55` and returned `PASS`
   with Critical 0, High 0, Medium 0, Low 0. Exact-head CI run `30479723615`
   passed.
-- Lifecycle legally transitioned `DRAFT → REVIEW`; all canonical records remain
-  `CANDIDATE_UNVERIFIED` and final Founder approval remains absent.
+- REVIEW Commit `8b71feb924de684201fdd982403b5151f83902fa` and exact-head CI
+  run `30480571732` passed with the PR clean and mergeable.
+- The Founder approval recorded under `FD-PD02B-001` completed the legal
+  `REVIEW → APPROVED` transition at `2026-07-29T18:41:26Z`; all 31 records are
+  `APPROVED`, the five dataset hashes were refreshed, and the approval nonce
+  was consumed exactly once.
 
 ## Exact Allowlist
 

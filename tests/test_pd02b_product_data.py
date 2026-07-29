@@ -97,7 +97,7 @@ class PD02BProductDataTests(unittest.TestCase):
         )
         self.assertIn("MISSING_DOMAIN_APPROVAL", rendered)
 
-    def test_negative_approval_replay(self) -> None:
+    def test_negative_approval_not_consumed(self) -> None:
         validator, lifecycle = load_approval_validator()
         value, _ = load_yaml(
             FIXTURES / "invalid-approval-replay.yaml", "approval replay"
@@ -107,7 +107,7 @@ class PD02BProductDataTests(unittest.TestCase):
                 value, "approval replay", validator, lifecycle, canonical=False
             )
         )
-        self.assertIn("APPROVAL_REPLAY", rendered)
+        self.assertIn("APPROVAL_NOT_CONSUMED", rendered)
 
     def test_negative_unicode_confusable(self) -> None:
         validator, lifecycle = load_label_validator()
@@ -151,24 +151,22 @@ class PD02BProductDataTests(unittest.TestCase):
         )
         self.assertIn("DATASET_HASH_MISMATCH", rendered)
 
-    def test_adversarial_premature_approval(self) -> None:
+    def test_adversarial_missing_founder_approval(self) -> None:
         validator, lifecycle = load_approval_validator()
         value, _ = load_yaml(APPROVAL_PATH, "canonical approval")
         mutated = copy.deepcopy(value)
-        mutated["evidence"][0]["approval"]["approved_by"] = (
-            "Founder پروژه Damavand Steel"
-        )
+        mutated["evidence"][0]["approval"]["approved_by"] = None
         rendered = "\n".join(
             validate_approval(
                 mutated,
-                "premature approval",
+                "missing Founder approval",
                 validator,
                 lifecycle,
                 canonical=True,
                 verify_hashes=False,
             )
         )
-        self.assertIn("PREMATURE_APPROVAL", rendered)
+        self.assertIn("FOUNDER_APPROVAL_MISSING", rendered)
 
     def test_adversarial_permissive_schema_rejected(self) -> None:
         with self.assertRaisesRegex(DefinitionError, "closed Draft 2020-12"):

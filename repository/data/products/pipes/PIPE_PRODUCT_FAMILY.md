@@ -26,7 +26,7 @@
 | --- | --- | --- |
 | Product Family | Stainless Steel Pipe | Defined by Sprint 03A |
 | Persian family name | لوله استیل | Defined by Sprint 03A |
-| Stable family ID | `prd:family:a10c6d8ceabc` | PD-02B REVIEW identity; `CANDIDATE_UNVERIFIED`, not Product/SKU/runtime authority |
+| Stable family ID | `prd:family:a10c6d8ceabc` | PD-02B APPROVED identity; not Product/SKU/runtime authority |
 | Product Group | `TBD` | Must not be invented |
 | Product Type | Stainless Steel Pipe / لوله استیل | Working profile; Founder/domain approval required |
 | Initial Variable Parent Product | Stainless Steel Pipe / لوله استیل | Candidate parent; identity/SKU approval required |

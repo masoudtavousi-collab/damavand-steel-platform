@@ -167,11 +167,11 @@ The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain histo
 - Closed Draft 2020-12 schemas, strict YAML/JSON parsing, offline validators,
   exact cross-reference/count checks, SHA-256 binding, anti-replay controls,
   Unicode-confusable rejection, and positive/negative/adversarial tests are
-  present in the DRAFT.
-- All canonical records remain `CANDIDATE_UNVERIFIED`.
-  `PD02B-TECH-REVIEW-001` attempt 2 passed with zero findings and exact-head CI
-  passed. Final Founder approval, REVIEW → APPROVED, final CI, no-conflict, and
-  exact-scope gates remain pending.
+  present in the approved slice.
+- All 31 bounded records are `APPROVED`.
+  `PD02B-TECH-REVIEW-001` attempt 2 passed with zero findings, exact-head CI
+  passed, and `FD-PD02B-001` completed the legal `REVIEW → APPROVED`
+  transition. Conditional Git integration and post-merge CI remain separate.
 - Repository health for this bounded slice does not imply Product/SKU,
   pilot/879-row, Master/Golden, availability, WordPress/WooCommerce, import,
   runtime, deployment, or production readiness.

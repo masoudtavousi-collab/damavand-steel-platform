@@ -75,7 +75,7 @@ pd02b_approval_validator="repository/data/validation/validate_product_data_appro
 "$python" "$pd02b_approval_validator"
 "$python" "$pd02b_approval_validator" tests/fixtures/pd02b/valid-synthetic-approval-evidence.yaml
 expect_failure tests/fixtures/pd02b/invalid-missing-domain-approval.yaml MISSING_DOMAIN_APPROVAL "$pd02b_approval_validator"
-expect_failure tests/fixtures/pd02b/invalid-approval-replay.yaml APPROVAL_REPLAY "$pd02b_approval_validator"
+expect_failure tests/fixtures/pd02b/invalid-approval-replay.yaml APPROVAL_NOT_CONSUMED "$pd02b_approval_validator"
 
 "$python" repository/data/validation/validate_product_core.py
 "$python" repository/data/validation/validate_pd02b_canonical_slice.py

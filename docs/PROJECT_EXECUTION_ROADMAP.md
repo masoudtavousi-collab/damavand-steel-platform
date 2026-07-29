@@ -34,7 +34,7 @@ This roadmap defines sequence and gates, not mutable operational state. The exac
 1. `GOV-XD-00` — stabilize operational-state semantics, dependency order, roles, and approval gates.
 2. `PD-01` — Product Data Contract/Schema/Validator/tests with synthetic fixtures only. **Complete when PR #21 merges; canonical population disabled.**
 3. `PD-02A` — controlled-value and standalone Attribute Profile Contract/Schema/Validator/tests with synthetic fixtures and empty canonical registries. **`APPROVED` and integrated through PR #22.**
-4. `PD-02B` — minimum canonical Catalog/Platform/Family scope, Material/Grade definitions, four controlled terms, INTERNAL Profile, 18 labels, and Approval Evidence. **`REVIEW` after `PD02B-TECH-REVIEW-001` PASS; final Founder approval remains gated.**
+4. `PD-02B` — minimum canonical Catalog/Platform/Family scope, Material/Grade definitions, four controlled terms, INTERNAL Profile, 18 labels, and Approval Evidence. **`APPROVED` after legal `DRAFT → REVIEW → APPROVED`, independent PASS, and Founder approval; conditional Git integration remains separate.**
 5. `PD-03` — exactly three canonical pilot records with provenance and explicit status.
 6. `PD-04` — Golden Repository Package with `import_ready=false` and `runtime_ready=false`.
 7. `PD-05` — commercial evidence plus final SKU/slug policy before any import.

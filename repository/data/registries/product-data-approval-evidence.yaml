@@ -6,19 +6,19 @@ evidence:
   - contract_version: "1.0.0"
     approval_evidence_id: papproval:f8c559c1228c
     decision_id: FD-PD02B-001
-    lifecycle_status: REVIEW
+    lifecycle_status: APPROVED
     scope_reference: docs/PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md
     dataset_hashes:
       - path: repository/data/registries/product-entities.yaml
-        sha256: 0003467f751e9861f947bbdc246c19067e4334d6c5a16992bc1e83977107b503
+        sha256: de2c111de622a633b01288f4588bc80c5ea27c0a051b5f2bd252ec9e9b7e6030
       - path: repository/data/registries/product-attributes.yaml
-        sha256: b55172bb3d35d51c9b2c1835fe19e97237189b5e7b191614e020494e6dedaeab
+        sha256: 73d4a8b871fe76b18fb6dedd6ab4b2adddbe5dd740641c4b8d3bdec981522a4e
       - path: repository/data/registries/product-attribute-value-registries.yaml
-        sha256: 0b21980a7a77b4c8ead5a5667f6afbac037d7c3b5177d2bd56df83f930d34aac
+        sha256: 7ffd870037243450e242db40b056e2e38bf744ea813d4f92ed4e67f1481641fa
       - path: repository/data/registries/product-attribute-profiles.yaml
-        sha256: ecce991fcbdce81fc8c835b09b105d25e53959b7c6a4a5c9dc44379fc4f30e03
+        sha256: 7689b98e75a5324a3ae192dffabaf3214febbc0de6fc92f5c337c1491d81936e
       - path: repository/data/registries/product-data-localized-labels.yaml
-        sha256: f66e8ac37134b2b802329ee981bcc705f3f510f4e7c7c1ee7d063e9dc1a136ff
+        sha256: 57c34f08d3cfbe360f3d8aa256db23caed9a0670ac83c5653df575ccf8beabe8
     founder_decision:
       reviewer_id: Founder پروژه Damavand Steel
       scope: Exact PD-02B Minimum Canonical Slice
@@ -47,11 +47,11 @@ evidence:
       independent: true
       review_date: "2026-07-29"
     approval:
-      approved_by: null
-      approved_at: null
-      evidence_reference: null
+      approved_by: Founder پروژه Damavand Steel
+      approved_at: "2026-07-29T18:41:26Z"
+      evidence_reference: FD-PD02B-001
     anti_replay:
       nonce: f8c559c1228ca3868f6227bb
-      consumed: false
-    status: CANDIDATE_UNVERIFIED
+      consumed: true
+    status: APPROVED
     record_version: "1.0.0"

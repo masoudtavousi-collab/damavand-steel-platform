@@ -10,7 +10,7 @@ labels:
     locale: fa-IR
     label: کاتالوگ محصولات دماوند استیل
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance: &founder_provenance
       source_type: FOUNDER_DECISION
       source_reference: task:019faec6-5d14-7da2-909a-450fe030b551
@@ -25,7 +25,7 @@ labels:
     locale: en
     label: Damavand Steel Product Catalog
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance: *founder_provenance
     record_version: "1.0.0"
   - contract_version: "1.0.0"
@@ -35,7 +35,7 @@ labels:
     locale: fa-IR
     label: محصولات فولاد زنگ‌نزن (استنلس استیل)
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance: *founder_provenance
     record_version: "1.0.0"
   - contract_version: "1.0.0"
@@ -45,7 +45,7 @@ labels:
     locale: en
     label: Stainless Steel Products
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance: *founder_provenance
     record_version: "1.0.0"
   - contract_version: "1.0.0"
@@ -55,7 +55,7 @@ labels:
     locale: fa-IR
     label: لوله استیل
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance: *founder_provenance
     record_version: "1.0.0"
   - contract_version: "1.0.0"
@@ -65,7 +65,7 @@ labels:
     locale: en
     label: Stainless Steel Pipe
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance: *founder_provenance
     record_version: "1.0.0"
   - contract_version: "1.0.0"
@@ -75,7 +75,7 @@ labels:
     locale: fa-IR
     label: جنس
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance: *founder_provenance
     record_version: "1.0.0"
   - contract_version: "1.0.0"
@@ -85,7 +85,7 @@ labels:
     locale: en
     label: Material
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance: *founder_provenance
     record_version: "1.0.0"
   - contract_version: "1.0.0"
@@ -95,7 +95,7 @@ labels:
     locale: fa-IR
     label: گرید فولاد
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance: *founder_provenance
     record_version: "1.0.0"
   - contract_version: "1.0.0"
@@ -105,7 +105,7 @@ labels:
     locale: en
     label: Steel Grade
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance: *founder_provenance
     record_version: "1.0.0"
   - contract_version: "1.0.0"
@@ -116,7 +116,7 @@ labels:
     label: فولاد زنگ‌نزن
     aliases:
       - استیل
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance:
       source_type: DOMAIN_REVIEW
       source_reference: PD02B-MATERIAL-REVIEW
@@ -131,7 +131,7 @@ labels:
     locale: en
     label: Stainless Steel
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance:
       source_type: DOMAIN_REVIEW
       source_reference: PD02B-MATERIAL-REVIEW
@@ -146,7 +146,7 @@ labels:
     locale: fa-IR
     label: "201"
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance: &grade_provenance
       source_type: DOMAIN_REVIEW
       source_reference: SS-INDEPENDENT-REVIEWER-20Y-01
@@ -161,7 +161,7 @@ labels:
     locale: en
     label: "201"
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance: *grade_provenance
     record_version: "1.0.0"
   - contract_version: "1.0.0"
@@ -171,7 +171,7 @@ labels:
     locale: fa-IR
     label: "304"
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance: *grade_provenance
     record_version: "1.0.0"
   - contract_version: "1.0.0"
@@ -181,7 +181,7 @@ labels:
     locale: en
     label: "304"
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance: *grade_provenance
     record_version: "1.0.0"
   - contract_version: "1.0.0"
@@ -191,7 +191,7 @@ labels:
     locale: fa-IR
     label: "316"
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance: *grade_provenance
     record_version: "1.0.0"
   - contract_version: "1.0.0"
@@ -201,6 +201,6 @@ labels:
     locale: en
     label: "316"
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance: *grade_provenance
     record_version: "1.0.0"

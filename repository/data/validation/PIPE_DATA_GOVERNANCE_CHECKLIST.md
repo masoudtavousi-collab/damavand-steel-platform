@@ -166,7 +166,7 @@ Reject or stop when any of the following occurs:
 
 ## PD-02B Minimum-Slice Gate
 
-- [x] Exact 3/2/2/4/1/18/1 DRAFT slice is machine validated.
+- [x] Exact 3/2/2/4/1/18/1 slice is machine validated.
 - [x] Material and Grade human-review evidence is recorded with distinct scopes.
 - [x] Five canonical registries are bound by SHA-256 in one Approval Evidence.
 - [x] Direct DRAFT → APPROVED, premature approval, and replay are rejected.
@@ -174,7 +174,7 @@ Reject or stop when any of the following occurs:
   Master/Golden, availability, and runtime authority are excluded.
 - [x] Independent `PD02B-TECH-REVIEW-001` PASS is recorded.
 - [x] Legal DRAFT → REVIEW transition is recorded.
-- [ ] Final Founder approval and REVIEW → APPROVED transition are recorded.
+- [x] Final Founder approval and REVIEW → APPROVED transition are recorded.
 - [ ] Conditional PR/CI/no-conflict/exact-scope merge gates pass.
 
 ## Navigation

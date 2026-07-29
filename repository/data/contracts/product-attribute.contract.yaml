@@ -53,7 +53,7 @@ pd02a_extension:
   canonical_profile_population_authority: false
 pd02b_extension:
   decision_id: FD-PD02B-001
-  current_status: REVIEW
+  current_status: APPROVED
   allowed_transition_sequence:
     - DRAFT
     - REVIEW
@@ -62,6 +62,9 @@ pd02b_extension:
     - from: DRAFT
       to: REVIEW
       evidence_reference: PD02B-TECH-REVIEW-001
+    - from: REVIEW
+      to: APPROVED
+      evidence_reference: FD-PD02B-001
   direct_draft_to_approved_forbidden: true
   canonical_attribute_population_authority: true
   exact_attribute_count: 2

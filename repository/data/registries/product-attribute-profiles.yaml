@@ -32,7 +32,7 @@ profiles:
         value_registry_id: vreg:e1b9dd333df8
         allowed_unit_ids: []
         precision: null
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     owner:
       role: product-data-steward
     reviewer:

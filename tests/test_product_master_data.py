@@ -192,7 +192,7 @@ class ProductMasterDataTests(unittest.TestCase):
         )
         self.assertTrue(
             all(
-                attribute["status"] == "CANDIDATE_UNVERIFIED"
+                attribute["status"] == "APPROVED"
                 for attribute in attributes
             )
         )

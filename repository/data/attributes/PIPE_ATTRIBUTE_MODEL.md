@@ -121,7 +121,7 @@ Material, Surface, Unit, Brand, Country, Quality Level, Application, Environment
 
 ## PD-02B Profile Reconciliation
 
-The canonical PD-02B REVIEW Profile is
+The canonical PD-02B APPROVED Profile is
 `pprof:26a474c2e100` for Family `prd:family:a10c6d8ceabc`. It contains only
 Material and Grade, both REQUIRED and `INTERNAL`, with variation, filtering,
 inquiry, and SEO use disabled. This does not approve the broader Pipe Attribute

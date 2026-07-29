@@ -17,7 +17,7 @@ attributes:
       multiple_values: false
       constraints:
         value_registry_reference: vreg:302188e2fc8a
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     owner:
       role: product-data-steward
     provenance:
@@ -42,7 +42,7 @@ attributes:
       multiple_values: false
       constraints:
         value_registry_reference: vreg:e1b9dd333df8
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     owner:
       role: product-data-steward
     provenance:
