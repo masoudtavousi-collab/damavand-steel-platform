@@ -1115,7 +1115,7 @@ Wave 1 is complete. Its merges created no runtime, WordPress, Product Repository
 | `PD02A-PROFILE` | Product Attribute Profile Contract/Schema/Validator/Test | PD-02A Test Contract and approved hierarchy boundary | Stable `pprof`, Family/Series scope format, Attribute/value-registry/Unit resolution, Profile use rules, Cartesian prohibition | Canonical `profiles: []`; no real scope identity |
 | `PD02A-ATTR` | Product Attribute Contract `2.0.0` PD-02A extension | Approved PD-01 base plus `FD-PD02A-001` | Stable `vreg` reference format added without changing the empty-registry boundary | Canonical `attributes: []` required |
 | `PD02A-TEST` | `tests/test_pd02_product_data.py` and mutation matrix | Positive, negative, adversarial, security, lifecycle, and side-effect requirements | At least 60 named mutations; deterministic offline validation | Passing tests do not approve business data |
-| `PD02A-REVIEW` | `PD02A-REVIEW-001` attempts 1 and 2; Commits `a6f7e09` and `23e8ac2`; CI runs `30469027782` and `30469883442` | Independent read-only review and exact-scope correction cycle | Attempt 1 `REWORK` with 2 High/2 Medium; attempt 2 `PASS` with zero findings; legal `DRAFT → REVIEW` recorded | Founder `REVIEW → APPROVED` and final Git gates remain separate |
+| `PD02A-REVIEW` | `PD02A-REVIEW-001` attempts 1 and 2; Commits `a6f7e09`, `23e8ac2`, and REVIEW Commit `1791539`; CI runs `30469027782`, `30469883442`, and `30470305597` | Independent read-only review, exact-scope correction cycle, and Founder lifecycle authority | Attempt 1 `REWORK` with 2 High/2 Medium; attempt 2 `PASS` with zero findings; legal `DRAFT → REVIEW → APPROVED` recorded | Final ready/Merge Commit/post-merge CI gates remain separate |
 
 ## Navigation
 

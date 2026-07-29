@@ -13,7 +13,7 @@ dependencies:
   measurement: repository/data/contracts/measurement.contract.yaml
 pd02a_lifecycle:
   decision_id: FD-PD02A-001
-  current_status: REVIEW
+  current_status: APPROVED
   allowed_transition_sequence:
     - DRAFT
     - REVIEW
@@ -22,6 +22,9 @@ pd02a_lifecycle:
     - from: DRAFT
       to: REVIEW
       evidence_reference: PD02A-REVIEW-001
+    - from: REVIEW
+      to: APPROVED
+      evidence_reference: FD-PD02A-001
   direct_draft_to_approved_forbidden: true
   canonical_population_authority: false
 registry_policy:

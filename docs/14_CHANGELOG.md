@@ -16,7 +16,7 @@
 
 This changelog records repository outcomes. It does not create approval, runtime readiness, Product facts, or release authority.
 
-## 2026-07-29 — PD-02A Controlled Values and Attribute Profiles (`REVIEW`)
+## 2026-07-29 — PD-02A Controlled Values and Attribute Profiles (`APPROVED`)
 
 - `FD-PD02A-001` authorizes the legal `DRAFT → REVIEW → APPROVED` cycle and conditional Git controls for the exact 38 paths in [PD-02A Scope v1.0](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md).
 - Closed Draft 2020-12 Contracts/Schemas and deterministic offline validators define synthetic controlled-value registries and standalone Attribute Profiles.
@@ -24,6 +24,7 @@ This changelog records repository outcomes. It does not create approval, runtime
 - Positive, negative, and adversarial coverage requires at least 60 uniquely named mutations.
 - Initial independent `PD02A-REVIEW-001` on Commit `a6f7e09` returned `REWORK` with 2 High and 2 Medium findings covering Attribute resolution, validated Product Core scope, Profile policy reconciliation, and alias/code collision.
 - Exact-scope corrections on Commit `23e8ac2` passed 16/16 targeted tests, 71/71 unique mutation cases, CI run `30469883442`, and independent re-review with zero findings. The legal `DRAFT → REVIEW` transition is recorded; Founder approval and final conditional Git gates remain separate.
+- REVIEW Commit `1791539` and CI run `30470305597` passed; the Founder-authorized `REVIEW → APPROVED` transition completes the legal lifecycle while ready/Merge Commit/post-merge CI remain conditional.
 - The canonical Product Attribute, controlled-value, and Profile collections remain empty. PD-02B, Product/Pilot/Master/Golden/SKU, WordPress/WooCommerce, import, runtime, deploy, production, and branch deletion remain `NO-GO`.
 
 ## 2026-07-29 — PD-01 Product Data Contract Enablement (`APPROVED`)

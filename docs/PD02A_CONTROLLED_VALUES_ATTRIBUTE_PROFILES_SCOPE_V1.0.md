@@ -3,21 +3,21 @@
 ## Document Control
 
 - **Document ID:** `docs/PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md`
-- **Status:** Review
+- **Status:** Approved
 - **Authority:** Sprint Scope and Approval Packet
 - **Owner:** Founder
 - **Executor:** Codex controlled Build Engine
 - **Independent Reviewer:** Codex independent read-only QA reviewer `/root/pd01_review_retry`, recorded as `PD02A-REVIEW-001`
 - **Approval Authority:** Founder
 - **Rollback Owner:** Repository Guardian through a separately visible corrective commit or Founder-approved revert
-- **Version:** 1.0.1
+- **Version:** 1.0.2
 - **Last Updated:** 2026-07-29
-- **Lifecycle:** `REVIEW`
+- **Lifecycle:** `APPROVED`
 - **Decision ID:** `FD-PD02A-001`
 - **Starting GitHub `main` SHA:** `d8ae556d17ab518970149533d975b7924f3af3e1`
 - **Starting evidence:** merged PR #21 and successful required post-merge `repository-validation`
 - **Authorized branch:** `codex/pd-02a-controlled-values-profile-foundation`
-- **Approval:** Founder execution and conditional Git authorization recorded on 2026-07-29; legal `DRAFT → REVIEW` recorded after independent `PASS`
+- **Approval:** Founder-approved on 2026-07-29 after the legal `DRAFT → REVIEW → APPROVED` sequence, independent `PASS`, repeated local validation, and successful DRAFT/REVIEW branch CI
 
 ## Objective
 
@@ -257,10 +257,12 @@ Stop and report `NO-GO` if:
 - **Completed DRAFT gate:** exact-scope implementation, in-scope corrections,
   local tests, Draft PR #22, CI runs `30469027782` and `30469883442`, and
   independent `PD02A-REVIEW-001` PASS.
-- **Current REVIEW gate:** repeat validation and CI with the legal lifecycle
-  record while preserving exact path equality and empty canonical registries.
-- **GO:** exact PD-02A synthetic Contract/Schema/Validator/Test work and its
-  remaining conditional Git lifecycle.
+- **Completed REVIEW gate:** legal lifecycle Commit `1791539`, repeated local
+  validation, CI run `30470305597`, exact path equality, and empty-registry
+  checks passed.
+- **APPROVED boundary:** the synthetic controlled-value and Attribute Profile
+  foundation is approved; ready-for-review, Merge Commit, and post-merge
+  `main` CI remain conditional Git steps.
 - **NO-GO:** PD-02B canonical population; Family identity; real Attribute,
   controlled term, or Profile data; PD-03; Product/SKU; WordPress/WooCommerce;
   import; runtime; deploy; production; branch deletion.
@@ -269,5 +271,6 @@ Stop and report `NO-GO` if:
 
 | Version | Date | State | Change |
 | --- | --- | --- | --- |
+| 1.0.2 | 2026-07-29 | `APPROVED` | Recorded Founder approval and legal `REVIEW → APPROVED` after independent PASS and successful REVIEW-stage CI run `30470305597`; preserved all canonical-data/runtime prohibitions. |
 | 1.0.1 | 2026-07-29 | `REVIEW` | Recorded attempt-1 `REWORK`, the four exact-scope corrections, attempt-2 `PD02A-REVIEW-001` PASS on Commit `23e8ac2`, CI run `30469883442`, and the legal `DRAFT → REVIEW` transition. |
 | 1.0.0 | 2026-07-29 | `DRAFT` | Created the exact 38-path, synthetic-only PD-02A foundation scope and recorded Founder execution and conditional Git authorization. |

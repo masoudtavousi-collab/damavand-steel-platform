@@ -6,7 +6,7 @@
 - **Live `main` tip:** resolve dynamically from GitHub `refs/heads/main` at task start; do not treat the reviewed input anchor as a permanent live-tip claim
 - **Last completed substantive repository integration:** `PD-01` Product Data Contract Enablement through merged PR #21
 - **Last completed governance reconciliation:** PD-01 direct 13-document reconciliation through PR #21
-- **Current phase:** `PD-02A` synthetic Controlled Values and Attribute Profiles foundation — `REVIEW`
+- **Current phase:** `PD-02A` synthetic Controlled Values and Attribute Profiles foundation — `APPROVED`, conditional Git integration pending
 - **Current authorized branch:** `codex/pd-02a-controlled-values-profile-foundation`
 - **Current authorization:** exact 38-path, synthetic-only PD-02A Contract/Schema/Validator/Test lifecycle; all canonical Product Attribute, controlled-value, and Profile registries must remain empty
 - **Merge:** conditional Merge Commit of the future PD-02A PR is authorized only after legal `DRAFT → REVIEW → APPROVED`, independent `PASS`, successful CI, no conflict, exact path equality, and empty-registry proof
@@ -43,7 +43,7 @@ This file is the only semantic operational-state pointer. Other documents may pr
 | Post-PR18 Governance Reconciliation | PR #19; direct governance and current-state alignment after PR #18 | Closes the BP2 lifecycle integration cycle and returns the project to read-only next-step planning without implementation authority |
 | `GOV-XD-00` Cross-Domain Execution Charter | Founder authorization dated 2026-07-28; six-task read-only analysis; independent QA; the PR carrying this declaration | Separates semantic operational state from the dynamic Git tip, records cross-domain dependency order and separation of duties, and selects `PD-01` only as the next decision-package target |
 | `PD-01` Product Data Contract Enablement | `FD-PD01-001`; `PD01-REVIEW-001`; [PD-01 Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md); exact 30-path allowlist; starting SHA `6577cd461e88463903b18c11b0e5bdbfa88375e2`; PR #21; DRAFT CI `30390311445`; REVIEW CI `30466264564` | `APPROVED` after legal `DRAFT → REVIEW → APPROVED`; synthetic Contract/Schema/Validator/Test enablement only; canonical Product Attribute registry remains empty; no Product, SKU, Master Data, Golden, import, runtime, or production authority |
-| `PD-02A` Controlled Values and Attribute Profiles foundation | `FD-PD02A-001`; `PD02A-REVIEW-001`; [PD-02A Scope v1.0](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md); exact 38-path allowlist; starting SHA `d8ae556d17ab518970149533d975b7924f3af3e1`; Draft PR #22; CI runs `30469027782` and `30469883442` | Active `REVIEW` after independent PASS with zero findings; synthetic Contract/Schema/Validator/Test work only; all three canonical collections remain empty and PD-02B population is unauthorized |
+| `PD-02A` Controlled Values and Attribute Profiles foundation | `FD-PD02A-001`; `PD02A-REVIEW-001`; [PD-02A Scope v1.0](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md); exact 38-path allowlist; starting SHA `d8ae556d17ab518970149533d975b7924f3af3e1`; Draft PR #22; CI runs `30469027782`, `30469883442`, and `30470305597` | `APPROVED` after legal `DRAFT → REVIEW → APPROVED` and independent PASS with zero findings; conditional ready/Merge Commit/post-merge CI pending; all three canonical collections remain empty and PD-02B population is unauthorized |
 | Atlas planning registry | 173 pending document records across 21 domains | Intake inventory only; no Atlas row is canonical merely because it is registered |
 
 Repository validators are active in CI and unified under `make test`. PR #12 hardening is merged: nested schema objects are closed, JSON Schema Draft 2020-12 is enforced offline, validation output is deterministic, and positive, negative, and adversarial tests are wired into the unified test entry point. `FD-BP2-ADM-001` records the completed legal BP2 lifecycle without implementation authority. `FD-PD01-001` approves a separate synthetic Product Data contract boundary; it is not canonical Product Data.
@@ -120,7 +120,7 @@ A Variable Parent Product is a commerce presentation and never the owner of cano
 
 ## Approved Next Action
 
-Complete the `REVIEW → APPROVED` gate for [PD-02A Scope v1.0](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md) on its authorized branch, then permit ready-for-review and Merge Commit only if exact 38-path equality, successful CI, no conflict, independent `PD02A-REVIEW-001` PASS, and empty canonical registries remain proven. Verify required CI again on `main`.
+Complete the conditional Git integration for [PD-02A Scope v1.0](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md): require final branch CI, exact 38-path equality, no conflict, independent `PD02A-REVIEW-001` PASS, and empty canonical registries before ready-for-review and Merge Commit. Verify required CI again on `main`.
 
 Do not begin PD-02B, populate any canonical Product Attribute/value/Profile registry, allocate a real Family identity, create Product/Pilot/879-row/Master Data/Golden/SKU/slug/availability data, modify BP1, implement an Admin UI, change WordPress/WooCommerce, run imports, publish, deploy, delete the branch, or mutate production.
 
