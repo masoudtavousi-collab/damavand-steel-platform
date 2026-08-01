@@ -22,7 +22,7 @@
         "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
       }
     },
-    "review": {
+    "failed_review": {
       "type": "object",
       "additionalProperties": false,
       "required": ["reviewer_id", "scope", "verdict", "evidence_reference", "independent", "review_date"],
@@ -33,6 +33,24 @@
         "evidence_reference": {"type": ["string", "null"], "maxLength": 500},
         "independent": {"type": "boolean"},
         "review_date": {"type": ["string", "null"], "format": "date"}
+      }
+    },
+    "technical_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["review_id", "reviewer_id", "scope", "verdict", "evidence_reference", "independent", "review_date", "reviewed_head_sha", "reviewed_base_sha", "verdict_artifact", "verdict_artifact_sha256"],
+      "properties": {
+        "review_id": {"const": "PD03A-TECH-REVIEW-001"},
+        "reviewer_id": {"const": "repository-guardian-independent"},
+        "scope": {"const": "PD-03A contracts, schemas, validators, tests, extension integrity, lifecycle and exact allowlist"},
+        "verdict": {"enum": ["PASS", "PENDING"]},
+        "evidence_reference": {"type": ["string", "null"], "maxLength": 500},
+        "independent": {"const": true},
+        "review_date": {"type": ["string", "null"], "format": "date"},
+        "reviewed_head_sha": {"type": ["string", "null"], "pattern": "^[0-9a-f]{40}$"},
+        "reviewed_base_sha": {"const": "dd4d4e9dde59ce652edb5b99d2df3e84b56b8031"},
+        "verdict_artifact": {"type": ["string", "null"], "maxLength": 500},
+        "verdict_artifact_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"}
       }
     },
     "founder_decision": {
@@ -73,10 +91,35 @@
     "anti_replay": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["nonce", "consumed"],
+      "required": ["nonce_derivation", "binding", "nonce", "consumed", "consumption_history"],
       "properties": {
+        "nonce_derivation": {"const": "SHA256_FIRST_24_HEX"},
+        "binding": {"$ref": "#/$defs/anti_replay_binding"},
         "nonce": {"type": "string", "pattern": "^[0-9a-f]{24}$"},
-        "consumed": {"type": "boolean"}
+        "consumed": {"type": "boolean"},
+        "consumption_history": {"type": "array", "maxItems": 1, "items": {"$ref": "#/$defs/consumption_event"}}
+      }
+    },
+    "anti_replay_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["decision_id", "extension_id", "approval_evidence_id", "baseline_sha"],
+      "properties": {
+        "decision_id": {"const": "FD-PD03A-001"},
+        "extension_id": {"const": "pdext:ad46d9948af1"},
+        "approval_evidence_id": {"const": "papproval:50ba27766106"},
+        "baseline_sha": {"const": "dd4d4e9dde59ce652edb5b99d2df3e84b56b8031"}
+      }
+    },
+    "consumption_event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["decision_id", "approval_evidence_id", "evidence_reference", "consumed_at"],
+      "properties": {
+        "decision_id": {"const": "FD-PD03A-001"},
+        "approval_evidence_id": {"const": "papproval:50ba27766106"},
+        "evidence_reference": {"const": "FD-PD03A-001"},
+        "consumed_at": {"type": "string", "format": "date-time"}
       }
     },
     "evidence_record": {
@@ -91,9 +134,9 @@
         "scope_reference": {"const": "docs/PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md"},
         "dataset_hashes": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/hash_record"}},
         "founder_decision": {"$ref": "#/$defs/founder_decision"},
-        "failed_review_attempts": {"type": "array", "minItems": 2, "maxItems": 10, "items": {"$ref": "#/$defs/review"}},
+        "failed_review_attempts": {"type": "array", "minItems": 2, "maxItems": 10, "items": {"$ref": "#/$defs/failed_review"}},
         "domain_basis": {"$ref": "#/$defs/domain_basis"},
-        "technical_review": {"$ref": "#/$defs/review"},
+        "technical_review": {"$ref": "#/$defs/technical_review"},
         "approval": {"$ref": "#/$defs/approval"},
         "anti_replay": {"$ref": "#/$defs/anti_replay"},
         "status": {"enum": ["CANDIDATE_UNVERIFIED", "APPROVED"]},

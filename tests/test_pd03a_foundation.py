@@ -4,9 +4,12 @@
 from __future__ import annotations
 
 import copy
+import hashlib
 import json
+import math
 from pathlib import Path
 import sys
+import tempfile
 import unittest
 
 
@@ -119,6 +122,12 @@ class PD03AFoundationTests(unittest.TestCase):
                 value["readiness"]["golden_ready"] = True
             elif mutation == "historical_identity":
                 first["historical_reference_is_identity"] = True
+            elif mutation == "cross_file_references":
+                value["series_entity_id"] = "prd:series:000000000000"
+                value["variant_rule_set_entity_id"] = "prd:variant-rule-set:000000000000"
+                value["profile_id"] = "pprof:000000000000"
+            elif mutation == "wrong_combination_id":
+                first["combination_id"] = "pcomb:abcdefabcdef"
             else:
                 self.fail(f"undispatched pilot mutation: {mutation}")
             messages = rendered_schema_errors(self.pilot_validator, value)
@@ -129,10 +138,32 @@ class PD03AFoundationTests(unittest.TestCase):
             value = copy.deepcopy(self.approval_value)
             record = value["evidence"][0]
             verify_hashes = False
+            lifecycle = self.lifecycle
+            lifecycle_contract = copy.deepcopy(self.contract)
             if mutation == "forged_technical_pass":
                 record["technical_review"]["verdict"] = "PASS"
                 record["technical_review"]["evidence_reference"] = "forged"
                 record["technical_review"]["review_date"] = "2026-08-01"
+            elif mutation == "forged_technical_pass_review":
+                lifecycle = "REVIEW"
+                reviewed_head = "a" * 40
+                artifact = approval.technical_artifact(reviewed_head)
+                digest = hashlib.sha256(artifact.encode("utf-8")).hexdigest()
+                lifecycle_contract["lifecycle"].update({
+                    "current_status": "REVIEW",
+                    "transition_history": [{
+                        "from": "DRAFT", "to": "REVIEW",
+                        "evidence_reference": "PD03A-TECH-REVIEW-001",
+                    }],
+                    "technical_reviewed_sha": reviewed_head,
+                    "technical_review_artifact_sha256": digest,
+                })
+                record["lifecycle_status"] = "REVIEW"
+                record["technical_review"].update({
+                    "verdict": "PASS", "evidence_reference": "forged",
+                    "review_date": "2026-08-01", "reviewed_head_sha": reviewed_head,
+                    "verdict_artifact": artifact, "verdict_artifact_sha256": digest,
+                })
             elif mutation == "premature_approval":
                 record["approval"] = {
                     "approved_by": "Founder پروژه Damavand Steel",
@@ -146,10 +177,17 @@ class PD03AFoundationTests(unittest.TestCase):
                 verify_hashes = True
             elif mutation == "failed_review_as_pass":
                 record["failed_review_attempts"][0]["verdict"] = "PASS"
+            elif mutation == "arbitrary_nonce":
+                record["anti_replay"]["nonce"] = "0" * 24
+            elif mutation == "approval_id_collision":
+                record["approval_evidence_id"] = "papproval:f8c559c1228c"
             else:
                 self.fail(f"undispatched approval mutation: {mutation}")
             return "\n".join(
-                approval.validate_registry(value, self.lifecycle, verify_hashes=verify_hashes)
+                approval.validate_registry(
+                    value, lifecycle, verify_hashes=verify_hashes,
+                    lifecycle_contract=lifecycle_contract,
+                )
             )
 
         if target == "foundation":
@@ -170,38 +208,120 @@ class PD03AFoundationTests(unittest.TestCase):
                     if label["locale"] == "en":
                         label["label"] = "Sіlver"
                         break
+            elif mutation == "alias_pvd":
+                value["localized_labels"][-1]["aliases"] = ["PVD"]
+            elif mutation == "wrong_category":
+                value["attributes"][1]["category"] = "SECONDARY"
+            elif mutation == "wrong_parent_type":
+                value["entities"][0]["parent_entity_type"] = "SERIES"
+            elif mutation == "wrong_owner":
+                value["entities"][0]["owner"]["role"] = "attacker-controlled"
+            elif mutation == "wrong_subject_kind":
+                value["localized_labels"][0]["subject_kind"] = "CONTROLLED_TERM"
+            elif mutation == "unknown_nested_field":
+                value["entities"][0]["owner"]["privilege"] = "admin"
+            elif mutation == "malformed_provenance":
+                value["attributes"][0]["provenance"] = []
+            elif mutation == "non_finite_foundation":
+                value["attributes"][1]["validation"]["constraints"]["minimum"] = math.inf
             else:
                 self.fail(f"undispatched foundation mutation: {mutation}")
             messages = rendered_schema_errors(self.foundation_validator, value)
             messages.extend(foundation.validate_bundle(value, self.contract, self.lifecycle))
             return "\n".join(messages)
 
-        if target == "loader" and mutation == "duplicate_yaml_key":
+        if target == "loader":
             try:
-                foundation.load_yaml(FIXTURES / "adversarial-duplicate-keys.yaml")
+                if mutation == "duplicate_yaml_key":
+                    foundation.load_yaml(FIXTURES / "adversarial-duplicate-keys.yaml")
+                elif mutation in {"duplicate_json_key", "nonfinite_json"}:
+                    payload = '{"key":1,"key":2}' if mutation == "duplicate_json_key" else '{"key":NaN}'
+                    with tempfile.NamedTemporaryFile(mode="w", suffix=".json", encoding="utf-8") as handle:
+                        handle.write(payload)
+                        handle.flush()
+                        foundation.load_json(Path(handle.name))
+                else:
+                    self.fail(f"undispatched loader mutation: {mutation}")
             except foundation.ValidationConfigurationError as exc:
                 return str(exc)
             return ""
 
         if target == "schema":
-            path = (
-                FIXTURES / "adversarial-remote-ref-schema.json"
-                if mutation == "remote_ref"
-                else FIXTURES / "adversarial-permissive-schema.json"
-            )
             try:
-                foundation.validate_schema(
-                    foundation.require_mapping(foundation.load_json(path), str(path))
-                )
+                if mutation in {"remote_ref", "permissive_schema"}:
+                    path = (
+                        FIXTURES / "adversarial-remote-ref-schema.json"
+                        if mutation == "remote_ref"
+                        else FIXTURES / "adversarial-permissive-schema.json"
+                    )
+                    schema = foundation.require_mapping(foundation.load_json(path), str(path))
+                elif mutation == "nested_empty_schema":
+                    schema = {
+                        "$schema": "https://json-schema.org/draft/2020-12/schema",
+                        "type": "object", "additionalProperties": False,
+                        "properties": {"payload": {}},
+                    }
+                elif mutation == "nested_true_schema":
+                    schema = {
+                        "$schema": "https://json-schema.org/draft/2020-12/schema",
+                        "type": "object", "additionalProperties": False,
+                        "properties": {"payload": {"anyOf": [True, {"type": "string"}]}},
+                    }
+                else:
+                    self.fail(f"undispatched schema mutation: {mutation}")
+                foundation.validate_schema(schema)
             except foundation.ValidationConfigurationError as exc:
                 return str(exc)
+            return ""
+
+        if target == "foundation_contract":
+            contract = copy.deepcopy(self.contract)
+            if mutation == "role_tampering":
+                contract["roles"]["technical_reviewer"] = "attacker-controlled"
+            elif mutation == "prohibited_tampering":
+                contract["prohibited"].remove("pvd")
+            else:
+                self.fail(f"undispatched foundation contract mutation: {mutation}")
+            try:
+                foundation.validate_contract(contract)
+            except foundation.ValidationConfigurationError as exc:
+                return str(exc)
+            return ""
+
+        if target == "approval_contract":
+            contract = foundation.load_yaml(approval.CONTRACT_PATH)
+            if mutation == "network_enabled":
+                contract["evidence_policy"]["network_allowed"] = True
+            else:
+                self.fail(f"undispatched approval contract mutation: {mutation}")
+            try:
+                approval.validate_contract(contract)
+            except foundation.ValidationConfigurationError as exc:
+                return str(exc)
+            return ""
+
+        if target == "pilot_contract":
+            contract = foundation.load_yaml(pilot.CONTRACT_PATH)
+            if mutation == "side_effects_enabled":
+                contract["validation"]["side_effects_allowed"] = True
+            else:
+                self.fail(f"undispatched pilot contract mutation: {mutation}")
+            with tempfile.NamedTemporaryFile(mode="w", suffix=".yaml", encoding="utf-8") as handle:
+                import yaml
+
+                yaml.safe_dump(contract, handle, sort_keys=False, allow_unicode=True)
+                handle.flush()
+                try:
+                    pilot.load_validator(Path(handle.name), pilot.SCHEMA_PATH)
+                except foundation.ValidationConfigurationError as exc:
+                    return str(exc)
             return ""
 
         self.fail(f"undispatched mutation target={target} mutation={mutation}")
         return ""
 
     def test_all_mutations_reach_real_validators_and_fail_closed(self) -> None:
-        self.assertEqual(len(self.mutations), 25)
+        self.assertEqual(len(self.mutations), 46)
         dispatched: set[str] = set()
         for case in self.mutations:
             with self.subTest(case=case["id"]):

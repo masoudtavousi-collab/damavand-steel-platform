@@ -31,6 +31,7 @@ exact_test_model:
   availability_status: MISSING_DATA_VALUE
   cartesian_generation_forbidden: true
   historical_references_are_non_identity: true
+  cross_file_reference_resolution_required: true
 readiness:
   import_ready: false
   runtime_ready: false
@@ -58,3 +59,4 @@ validation:
   duplicate_json_or_yaml_keys_rejected: true
   non_finite_numbers_rejected: true
   remote_schema_references_rejected: true
+  exact_contract_validation_required: true

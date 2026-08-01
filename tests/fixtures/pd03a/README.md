@@ -13,6 +13,10 @@ Pilot, Master Data, Golden, SKU, availability, import, or runtime records.
   `adversarial-remote-ref-schema.json` exercise the real schema loader.
 - `mutation-cases.json` is dispatched by the test suite; every entry must reach
   a real validator and fail with the declared code.
+- The manifest covers review head/base/artifact binding, deterministic nonce
+  binding, Approval-ID collisions, exact roles/relationships/aliases, cross-file
+  references, Contract tampering, duplicate/non-finite JSON, and nested
+  implicit-true Schema branches.
 
 No fixture may be promoted, imported, published, or copied into a canonical
 Pilot registry.

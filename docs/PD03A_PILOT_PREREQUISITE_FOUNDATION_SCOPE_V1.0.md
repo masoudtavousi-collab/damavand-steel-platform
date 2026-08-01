@@ -132,6 +132,17 @@ false. Fixtures must never be promoted or copied into a canonical registry.
 Direct `DRAFT → APPROVED` is prohibited. Tests, CI, a Commit, or a PR never
 substitute for the independent technical review or Founder approval.
 
+## Technical Review History
+
+- Attempt 1 reviewed DRAFT SHA
+  `26e67af184a02f5ade0263f163c5c01a40d5aeef` against baseline
+  `dd4d4e9dde59ce652edb5b99d2df3e84b56b8031` with CI run
+  `30694859806` successful. Verdict: `PD03A-TECH-REVIEW-001: REWORK`
+  (`Critical 0 / High 2 / Medium 3 / Low 0`). Required corrections bind the
+  technical review artifact, nonce, exact semantics, Approval ID collisions,
+  cross-file references, nested Schema boundaries, Contracts, and adversarial
+  tests. No lifecycle promotion occurred from this attempt.
+
 ## Test Contract
 
 Positive coverage requires:
@@ -157,7 +168,11 @@ Adversarial coverage rejects:
   fields, Unicode confusables, non-finite numbers, ID collisions, and malformed
   nested structures.
 
-The mutation manifest contains 25 dispatched cases. A counted but undispatched
+The mutation manifest contains 46 dispatched cases, including exact review-SHA
+and artifact-digest binding, deterministic nonce binding and consumption
+history, global ID collision, cross-file resolution, exact role/relationship/
+alias semantics, Contract tampering, duplicate JSON, non-finite JSON, and
+nested implicit-true Schema branches. A counted but undispatched
 case fails the test suite.
 
 ## Exact Allowlist

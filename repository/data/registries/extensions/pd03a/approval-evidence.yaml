@@ -44,18 +44,30 @@ evidence:
       commercial_claims_authorized: false
       source_reference: FD-PD03A-001
     technical_review:
+      review_id: PD03A-TECH-REVIEW-001
       reviewer_id: repository-guardian-independent
       scope: PD-03A contracts, schemas, validators, tests, extension integrity, lifecycle and exact allowlist
       verdict: PENDING
       evidence_reference: null
       independent: true
       review_date: null
+      reviewed_head_sha: null
+      reviewed_base_sha: dd4d4e9dde59ce652edb5b99d2df3e84b56b8031
+      verdict_artifact: null
+      verdict_artifact_sha256: null
     approval:
       approved_by: null
       approved_at: null
       evidence_reference: null
     anti_replay:
-      nonce: 50ba27766106ad46d9948af1
+      nonce_derivation: SHA256_FIRST_24_HEX
+      binding:
+        decision_id: FD-PD03A-001
+        extension_id: pdext:ad46d9948af1
+        approval_evidence_id: papproval:50ba27766106
+        baseline_sha: dd4d4e9dde59ce652edb5b99d2df3e84b56b8031
+      nonce: faa4be80717be41352723a01
       consumed: false
+      consumption_history: []
     status: CANDIDATE_UNVERIFIED
     record_version: "1.0.0"

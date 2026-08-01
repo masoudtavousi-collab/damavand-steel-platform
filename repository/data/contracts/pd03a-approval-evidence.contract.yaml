@@ -17,7 +17,18 @@ evidence_policy:
   failed_review_attempts_preserved: true
   failed_review_attempts_never_satisfy_pass: true
   independent_technical_pass_required_after_draft: true
+  technical_review_id: PD03A-TECH-REVIEW-001
+  exact_reviewed_head_and_base_sha_required: true
+  verdict_artifact_digest_required: true
   founder_approval_required_for_approved: true
   anti_replay_required: true
+  anti_replay_binding_fields:
+    - decision_id
+    - extension_id
+    - approval_evidence_id
+    - baseline_sha
+  anti_replay_nonce_derivation: SHA256_FIRST_24_HEX
+  exact_single_consumption_history_required: true
+  global_id_collision_check_required: true
   network_allowed: false
   side_effects_allowed: false

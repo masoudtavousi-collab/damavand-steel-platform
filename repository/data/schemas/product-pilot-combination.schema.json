@@ -7,11 +7,11 @@
   "required": ["contract_version", "fixture_id", "data_classification", "series_entity_id", "variant_rule_set_entity_id", "profile_id", "axes", "fixed_material_term_id", "cartesian_generation_forbidden", "combinations", "readiness", "provenance"],
   "properties": {
     "contract_version": {"const": "1.0.0"},
-    "fixture_id": {"type": "string", "pattern": "^ptest:[0-9a-f]{12}$"},
+    "fixture_id": {"const": "ptest:dfa2ea0b6c2e"},
     "data_classification": {"const": "SYNTHETIC_FIXTURE"},
-    "series_entity_id": {"type": "string", "pattern": "^prd:series:[0-9a-f]{12}$"},
-    "variant_rule_set_entity_id": {"type": "string", "pattern": "^prd:variant-rule-set:[0-9a-f]{12}$"},
-    "profile_id": {"type": "string", "pattern": "^pprof:[0-9a-f]{12}$"},
+    "series_entity_id": {"const": "prd:series:e1657d35ac35"},
+    "variant_rule_set_entity_id": {"const": "prd:variant-rule-set:eb255662accc"},
+    "profile_id": {"const": "pprof:4c556c63c1a9"},
     "axes": {
       "type": "array",
       "minItems": 5,
@@ -68,9 +68,9 @@
       "required": ["source_type", "source_reference", "captured_by", "captured_at", "evidence_status"],
       "properties": {
         "source_type": {"const": "SYNTHETIC_FIXTURE"},
-        "source_reference": {"type": "string", "minLength": 1, "maxLength": 500},
-        "captured_by": {"type": "string", "pattern": "^role:[a-z][a-z0-9-]{2,63}$"},
-        "captured_at": {"type": "string", "format": "date-time"},
+        "source_reference": {"const": "tests/fixtures/pd03a/valid-synthetic-pilot-combinations.yaml"},
+        "captured_by": {"const": "role:codex-build-engine"},
+        "captured_at": {"const": "2026-08-01T00:00:00Z"},
         "evidence_status": {"const": "SYNTHETIC_TEST_EVIDENCE"}
       }
     }

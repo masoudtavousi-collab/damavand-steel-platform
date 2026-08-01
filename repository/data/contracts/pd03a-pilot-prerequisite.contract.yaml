@@ -20,6 +20,8 @@ lifecycle:
   transition_history: []
   direct_draft_to_approved_forbidden: true
   approval_evidence_required: true
+  technical_reviewed_sha: null
+  technical_review_artifact_sha256: null
 extension_policy:
   immutable_base_registries: true
   base_registries:
@@ -119,8 +121,11 @@ evidence_policy:
   no_claim_domain_basis_allowed: true
   failed_human_reviews_are_not_pass: true
   independent_technical_review_required_before_review: true
+  technical_review_exact_head_and_base_binding_required: true
+  technical_review_artifact_digest_required: true
   dataset_hashes_required: true
   anti_replay_required: true
+  anti_replay_binding_and_consumption_history_required: true
 roles:
   decision_authority: Founder پروژه Damavand Steel
   data_steward: product-data-steward
