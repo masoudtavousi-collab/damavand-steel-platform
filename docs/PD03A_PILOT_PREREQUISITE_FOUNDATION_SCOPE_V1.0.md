@@ -2,7 +2,7 @@
 
 **Decision ID:** `FD-PD03A-001`
 
-**Lifecycle:** `REVIEW`
+**Lifecycle:** `APPROVED`
 
 **Baseline:** `main@dd4d4e9dde59ce652edb5b99d2df3e84b56b8031`
 
@@ -159,6 +159,12 @@ substitute for the independent technical review or Founder approval.
   `f843938deb49189f04f16add10c24b4ab32633bce7beb9a12d1f6e9eb8b0ee01`.
   This evidence authorizes only the legal `DRAFT → REVIEW` transition; final
   Founder approval remains a separate lifecycle step.
+
+Founder approval `FD-PD03A-001` was recorded at `2026-08-01T10:50:12Z` after
+successful REVIEW-stage validation. The legal `REVIEW → APPROVED` transition
+promotes only the exact extension records plus Length/Metre/Millimetre; the
+anti-replay nonce is consumed once. All Product/Pilot/SKU/availability and
+runtime prohibitions remain unchanged.
 
 ## Test Contract
 

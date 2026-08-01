@@ -182,16 +182,16 @@ Reject or stop when any of the following occurs:
 ## PD-03A Prerequisite Gate
 
 - [x] PD-02B aggregate registries and hashes remain unchanged.
-- [x] The DRAFT extension has exact 2/4/1/1/1/11/1 counts.
+- [x] The APPROVED extension has exact 2/4/1/1/1/11/1 counts.
 - [x] Series has only the Persian official label.
 - [x] Silver is appearance-only; technical/commercial claims are rejected.
 - [x] The six-rule Profile is INTERNAL with five axes and fixed Material.
 - [x] Length/Metre/Millimetre status is bound to the legal lifecycle.
 - [x] Pilot-combination fixtures are synthetic-only; readiness is false.
 - [x] Fifty mutation cases are dispatched through real validators.
-- [ ] Independent `PD03A-TECH-REVIEW-001` returns PASS.
-- [ ] Legal DRAFT → REVIEW transition is recorded.
-- [ ] Founder evidence and REVIEW → APPROVED transition are recorded.
+- [x] Independent `PD03A-TECH-REVIEW-001` returns PASS.
+- [x] Legal DRAFT → REVIEW transition is recorded.
+- [x] Founder evidence and REVIEW → APPROVED transition are recorded.
 - [ ] Conditional PR/CI/no-conflict/allowlist/Merge/main-CI gates pass.
 
 Until every remaining box passes, PD-03B and all Product/SKU/import/runtime work

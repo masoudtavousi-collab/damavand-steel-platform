@@ -180,19 +180,18 @@ The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain histo
 
 - `FD-PD03A-001` authorizes a maximum 49-path immutable extension over the
   unchanged PD-02B base. PD-02B aggregate registries and hashes remain valid.
-- REVIEW contains exact 2 Candidate entities, 4 Candidate Attributes, 1
-  Candidate Finish Registry/Term, 1 Candidate six-rule INTERNAL Series
-  Profile, 11 Candidate labels, and 1 Candidate Approval Evidence.
-- Length/Metre/Millimetre are lifecycle-bound and remain Candidate until
-  APPROVED. Mass/Kilogram/Gram are unchanged.
+- APPROVED contains exact 2 entities, 4 Attributes, 1 Finish Registry/Term, 1
+  six-rule INTERNAL Series Profile, 11 labels, and 1 Approval Evidence.
+- Length/Metre/Millimetre are approved under the exact lifecycle.
+  Mass/Kilogram/Gram remain Candidate and unchanged.
 - The pilot-combination contract is synthetic-only; three tuple fixtures are
   not canonical Pilots and every readiness flag is false.
 - Closed schemas, duplicate-key rejection, remote/permissive-schema rejection,
   exact review-artifact/hash and nonce-history checks, global/base-extension ID
   collision checks, cross-file reference resolution, and 50 dispatched
   positive/negative/adversarial mutations are present.
-- Independent technical PASS and `DRAFT → REVIEW` are complete; Founder
-  `REVIEW → APPROVED` and remaining conditional Git gates are required. No
+- Independent technical PASS and legal `DRAFT → REVIEW → APPROVED` are
+  complete; remaining conditional Git gates are required. No
   Product/SKU/Slug/availability, Master/Golden, import, runtime, deployment, or
   production readiness follows.
 

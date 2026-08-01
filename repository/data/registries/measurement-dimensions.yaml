@@ -8,7 +8,7 @@ dimensions:
     canonical_name: Length
     description: Universal one-dimensional spatial extent.
     base_unit_id: unit:000000000001
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     owner:
       role: repository-governance
     provenance:

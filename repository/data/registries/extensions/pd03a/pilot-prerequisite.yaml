@@ -9,7 +9,7 @@ entities:
     parent_entity_id: prd:family:a10c6d8ceabc
     parent_entity_type: FAMILY
     canonical_label: لوله استیل دکوراتیو
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     owner:
       role: product-data-steward
     provenance: &founder_provenance
@@ -25,7 +25,7 @@ entities:
     parent_entity_id: prd:series:e1657d35ac35
     parent_entity_type: SERIES
     canonical_label: PD-03 Pipe Pilot Variant Rules
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     owner:
       role: product-data-steward
     provenance: *founder_provenance
@@ -46,7 +46,7 @@ attributes:
       multiple_values: false
       constraints:
         value_registry_reference: vreg:3d37a24e09ea
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     owner:
       role: product-data-steward
     provenance: *founder_provenance
@@ -68,7 +68,7 @@ attributes:
       constraints:
         decimal_places: 0
         minimum: 0
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     owner:
       role: product-data-steward
     provenance: *founder_provenance
@@ -90,7 +90,7 @@ attributes:
       constraints:
         decimal_places: 2
         minimum: 0
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     owner:
       role: product-data-steward
     provenance: *founder_provenance
@@ -112,7 +112,7 @@ attributes:
       constraints:
         decimal_places: 0
         minimum: 0
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     owner:
       role: product-data-steward
     provenance: *founder_provenance
@@ -128,10 +128,10 @@ value_registries:
         value_code: silver
         canonical_label: Silver
         aliases: []
-        status: CANDIDATE_UNVERIFIED
+        status: APPROVED
         provenance: *founder_provenance
         record_version: "1.0.0"
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     owner:
       role: product-data-steward
     reviewer:
@@ -219,7 +219,7 @@ profiles:
         allowed_unit_ids:
           - unit:000000000001
         precision: 0
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     owner:
       role: product-data-steward
     reviewer:
@@ -235,7 +235,7 @@ localized_labels:
     locale: fa-IR
     label: لوله استیل دکوراتیو
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance: *founder_provenance
     record_version: "1.0.0"
   - contract_version: "1.0.0"
@@ -245,7 +245,7 @@ localized_labels:
     locale: fa-IR
     label: رنگ و پوشش
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance: *founder_provenance
     record_version: "1.0.0"
   - contract_version: "1.0.0"
@@ -255,7 +255,7 @@ localized_labels:
     locale: en
     label: Finish
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance: *founder_provenance
     record_version: "1.0.0"
   - contract_version: "1.0.0"
@@ -265,7 +265,7 @@ localized_labels:
     locale: fa-IR
     label: قطر
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance: *founder_provenance
     record_version: "1.0.0"
   - contract_version: "1.0.0"
@@ -275,7 +275,7 @@ localized_labels:
     locale: en
     label: Diameter
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance: *founder_provenance
     record_version: "1.0.0"
   - contract_version: "1.0.0"
@@ -285,7 +285,7 @@ localized_labels:
     locale: fa-IR
     label: ضخامت
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance: *founder_provenance
     record_version: "1.0.0"
   - contract_version: "1.0.0"
@@ -295,7 +295,7 @@ localized_labels:
     locale: en
     label: Thickness
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance: *founder_provenance
     record_version: "1.0.0"
   - contract_version: "1.0.0"
@@ -305,7 +305,7 @@ localized_labels:
     locale: fa-IR
     label: طول
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance: *founder_provenance
     record_version: "1.0.0"
   - contract_version: "1.0.0"
@@ -315,7 +315,7 @@ localized_labels:
     locale: en
     label: Length
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance: *founder_provenance
     record_version: "1.0.0"
   - contract_version: "1.0.0"
@@ -325,7 +325,7 @@ localized_labels:
     locale: fa-IR
     label: نقره‌ای
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance: *founder_provenance
     record_version: "1.0.0"
   - contract_version: "1.0.0"
@@ -335,7 +335,7 @@ localized_labels:
     locale: en
     label: Silver
     aliases: []
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     provenance: *founder_provenance
     record_version: "1.0.0"
-status: CANDIDATE_UNVERIFIED
+status: APPROVED

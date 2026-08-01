@@ -1,22 +1,24 @@
 # Changelog
 
-## 2026-08-01 — PD-03A Pilot Prerequisite Foundation (`REVIEW`)
+## 2026-08-01 — PD-03A Pilot Prerequisite Foundation (`APPROVED`)
 
 - `FD-PD03A-001` authorizes the maximum 49-path immutable-extension lifecycle
   recorded in [PD-03A Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md).
 - PD-02B aggregate registries and approval hashes remain unchanged.
-- The REVIEW extension contains exactly 2 Candidate entities, 4 Candidate
-  Attributes, one Candidate Silver appearance term, one Candidate six-rule
-  INTERNAL Series Profile, and 11 Candidate labels.
-- Length, Metre, and Millimetre remain Candidate until APPROVED. The dedicated
+- The APPROVED extension contains exactly 2 entities, 4 Attributes, one Silver
+  appearance term, one six-rule INTERNAL Series Profile, and 11 labels.
+- Length, Metre, and Millimetre are approved; Mass/Kilogram/Gram remain
+  Candidate. The dedicated
   pilot-combination Contract/Schema/Validator uses synthetic fixtures only and
   grants no canonical Pilot authority.
 - Two failed human-review attempts are preserved as Blocked history; no human
   domain PASS is claimed. Technical attempts 1–2 returned REWORK; attempt 3
   returned zero-finding `PD03A-TECH-REVIEW-001: PASS` on `cb6c817…`, with CI
   `30696083295` successful and exact Commit-object/verdict-artifact evidence.
-- The lifecycle legally transitioned `DRAFT → REVIEW`; all records and
-  Length/Metre/Millimetre remain Candidate until Founder `REVIEW → APPROVED`.
+- REVIEW CI `30696444576` passed. Founder evidence at
+  `2026-08-01T10:50:12Z` completed the legal
+  `DRAFT → REVIEW → APPROVED` lifecycle, refreshed four dataset hashes, and
+  consumed the approval nonce once.
 - Product/Pilot/SKU/Slug/availability, 879 rows, Master/Golden,
   WordPress/WooCommerce, import, runtime, deployment, production, and branch
   deletion remain `NO-GO`.

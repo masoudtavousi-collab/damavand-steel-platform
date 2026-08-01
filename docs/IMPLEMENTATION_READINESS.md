@@ -35,7 +35,7 @@ Wave 2A–2C established platform-independent Product core, Product Attribute, a
 | PD-01 Product Data Contract Enablement | Approved synthetic contract foundation; canonical population disabled | `FD-PD01-001`; legal `DRAFT → REVIEW → APPROVED`; `PD01-REVIEW-001` zero findings; PR #21; CI `30390311445` and `30466264564`; exact 30 paths; strict offline boundary | Canonical Product Attribute registry is empty; `PD-02`, real Product Data, Master/Golden, SKU, import, and runtime require separate approvals |
 | PD-02A Controlled Values and Attribute Profiles | Approved synthetic foundation | `FD-PD02A-001`; legal `DRAFT → REVIEW → APPROVED`; independent PASS; merged PR #22 and successful post-merge validation | Historical PD-02A authorization remains synthetic-only; canonical population requires the separate PD-02B decision |
 | PD-02B Minimum Canonical Slice | APPROVED; repository-only | `FD-PD02B-001`; legal `DRAFT → REVIEW → APPROVED`; exact 57 paths; `PD02B-TECH-REVIEW-001` PASS; closed schemas; offline validators; Material and Grade human-review evidence; hashes and anti-replay; exact 3/2/2/4/1/18/1 counts | Conditional Git integration gates remain separate; no Product/SKU, pilot, Master/Golden, availability, import, runtime, or production authority |
-| PD-03A Pilot Prerequisite Foundation | REVIEW; immutable repository extension | `FD-PD03A-001`; legal `DRAFT → REVIEW`; `PD03A-TECH-REVIEW-001` zero-finding PASS on `cb6c817…`; CI `30696083295`; maximum 49 paths; exact 2/4/1/1/1/11/1 extension; controlled measurement lifecycle; synthetic-only pilot contract; 50 dispatched mutations | Requires REVIEW-stage CI and Founder `REVIEW → APPROVED`; no canonical Pilot/Product/SKU/availability, Master/Golden, import, runtime, or production authority |
+| PD-03A Pilot Prerequisite Foundation | APPROVED; immutable repository extension | `FD-PD03A-001`; legal `DRAFT → REVIEW → APPROVED`; `PD03A-TECH-REVIEW-001` zero-finding PASS on `cb6c817…`; CI `30696083295` and REVIEW CI `30696444576`; exact 2/4/1/1/1/11/1 extension; Length/Metre/Millimetre approved; 50 dispatched mutations | Final conditional Git integration remains; no canonical Pilot/Product/SKU/availability, Master/Golden, import, runtime, or production authority |
 | Product Data | Blocked | Architecture and three pilot decisions exist | No canonical machine-readable Master Data or Golden package; availability and commercial validity incomplete |
 | Knowledge Repository | Blocked | Architecture proposals exist | No contract, content instances, population process, retrieval implementation, or approved AI capability |
 | Atlas | Controlled intake | 173 registered pending rows; K-01 adoption matrix | No row is canonical without mapping, review, and approval |
@@ -110,8 +110,8 @@ Repository tests passing cannot satisfy these runtime prerequisites.
 
 ## Recommended Next Step
 
-Complete only the authorized PD-03A lifecycle and conditional Git cycle. PD-03B
-remains blocked until PD-03A is approved, merged, validated on `main`, and a
+Complete only the remaining conditional Git integration for approved PD-03A.
+PD-03B remains blocked until PD-03A is merged, validated on `main`, and a
 separate exact authorization exists. Synthetic tuples are not canonical Pilots.
 Do not expand into Product/SKU, 879 rows, Master/Golden, availability,
 WordPress/WooCommerce, import, runtime, deployment, or production work.

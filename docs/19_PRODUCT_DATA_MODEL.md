@@ -291,8 +291,8 @@ WordPress/WooCommerce, import, runtime, deployment, or production.
 ## PD-03A Immutable Prerequisite Extension
 
 [PD-03A Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md)
-adds Candidate identities for the decorative Pipe Series and its internal
-Variant Rule Set without rewriting PD-02B. Its Candidate Series Profile
+adds APPROVED prerequisite identities for the decorative Pipe Series and its
+internal Variant Rule Set without rewriting PD-02B. Its APPROVED Series Profile
 separates five INTERNAL axes—Grade, Finish, Diameter, Thickness, and
 Length—from fixed non-axis Material and forbids Cartesian generation.
 
@@ -302,8 +302,8 @@ combination, SKU, Slug, availability value, supply promise, Master/Golden
 package, downstream Parent/Variation mapping, or runtime record.
 
 Review. The canonical hierarchy and identity distinction are Founder-approved
-within their exact scope. `FD-PD02B-001` adds only its explicitly enumerated
-minimum slice. The remaining data-model proposals are not approved, and no
+within their exact scope. `FD-PD02B-001` and `FD-PD03A-001` add only their
+explicitly enumerated slices. The remaining data-model proposals are not approved, and no
 listed scope authorizes Product records, WooCommerce configuration, database
 design, import, or runtime implementation.
 

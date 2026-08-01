@@ -142,6 +142,23 @@ class PD03AFoundationTests(unittest.TestCase):
             verify_hashes = False
             lifecycle = self.lifecycle
             lifecycle_contract = copy.deepcopy(self.contract)
+            if mutation in {"premature_approval", "approval_replay"}:
+                lifecycle = "REVIEW"
+                lifecycle_contract["lifecycle"].update({
+                    "current_status": "REVIEW",
+                    "transition_history": [{
+                        "from": "DRAFT", "to": "REVIEW",
+                        "evidence_reference": "PD03A-TECH-REVIEW-001",
+                    }],
+                })
+                record["lifecycle_status"] = "REVIEW"
+                record["status"] = "CANDIDATE_UNVERIFIED"
+                record["approval"] = {
+                    "approved_by": None, "approved_at": None,
+                    "evidence_reference": None,
+                }
+                record["anti_replay"]["consumed"] = False
+                record["anti_replay"]["consumption_history"] = []
             if mutation == "forged_technical_pass":
                 record["technical_review"]["verdict"] = "PASS"
                 record["technical_review"]["evidence_reference"] = "forged"

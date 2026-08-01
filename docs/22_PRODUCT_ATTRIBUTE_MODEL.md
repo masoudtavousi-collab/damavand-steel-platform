@@ -213,9 +213,10 @@ non-axis. Filtering, SEO, inquiry, public visibility, Cartesian generation,
 commerce, and runtime use are prohibited. Synthetic tuple tests create no
 canonical Product values.
 
-Approved only for the exact PD-02B Attribute/Term/Profile slice.
-Variation axes, filters, Units, WooCommerce settings, import, and all broader
-attributes remain unapproved.
+Approved for the exact PD-02B Attribute/Term/Profile slice and the separately
+bounded PD-03A INTERNAL prerequisite extension. Public variation generation,
+filters, WooCommerce settings, import, and all broader attributes remain
+unapproved.
 
 ## Change Notes
 

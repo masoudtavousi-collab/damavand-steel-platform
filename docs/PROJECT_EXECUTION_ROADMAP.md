@@ -35,7 +35,7 @@ This roadmap defines sequence and gates, not mutable operational state. The exac
 2. `PD-01` — Product Data Contract/Schema/Validator/tests with synthetic fixtures only. **Complete when PR #21 merges; canonical population disabled.**
 3. `PD-02A` — controlled-value and standalone Attribute Profile Contract/Schema/Validator/tests with synthetic fixtures and empty canonical registries. **`APPROVED` and integrated through PR #22.**
 4. `PD-02B` — minimum canonical Catalog/Platform/Family scope, Material/Grade definitions, four controlled terms, INTERNAL Profile, 18 labels, and Approval Evidence. **`APPROVED` after legal `DRAFT → REVIEW → APPROVED`, independent PASS, and Founder approval; conditional Git integration remains separate.**
-5. `PD-03A` — immutable Pilot Prerequisite Foundation: Series, internal Variant Rule identity, four Attributes, Silver appearance term, Series Profile, Length/Metre/Millimetre promotion, and synthetic-only tuple validation. **REVIEW after independent PASS; all records remain Candidate and no canonical Pilot record exists.**
+5. `PD-03A` — immutable Pilot Prerequisite Foundation: Series, internal Variant Rule identity, four Attributes, Silver appearance term, Series Profile, Length/Metre/Millimetre promotion, and synthetic-only tuple validation. **APPROVED after legal lifecycle and independent PASS; no canonical Pilot record exists.**
 6. `PD-03B` — exactly three canonical pilot records with provenance and explicit status; requires separate authorization after PD-03A integration.
 7. `PD-04` — Golden Repository Package with `import_ready=false` and `runtime_ready=false`.
 8. `PD-05` — commercial evidence plus final SKU/slug policy before any import.
