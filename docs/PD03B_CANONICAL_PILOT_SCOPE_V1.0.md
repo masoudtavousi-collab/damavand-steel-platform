@@ -3,7 +3,7 @@
 ## Control
 
 - **Decision ID:** `FD-PD03B-001`
-- **Status:** `REVIEW`
+- **Status:** `APPROVED`
 - **Date:** 2026-08-01
 - **Starting GitHub main:** `e72c32bdb041448d34c925c969fe01a2156f9e1d`
 - **Branch:** `codex/pd-03b-canonical-pilot-records`
@@ -13,7 +13,9 @@
 `PD03B-TECH-REVIEW-001` passed with zero findings on corrected DRAFT SHA
 `41849b30055efd828654995d7a6a13fbedd3bf39`, bound to successful CI run
 `30698352338` / job `91364922275`. This permits only `DRAFT → REVIEW`;
-Founder lifecycle approval and nonce consumption remain pending.
+Founder lifecycle approval was recorded after successful REVIEW CI
+`30698582671` / job `91365511827` at `2026-08-01T11:54:38Z`. The legal
+`REVIEW → APPROVED` transition consumed the nonce exactly once.
 
 ## Objective
 

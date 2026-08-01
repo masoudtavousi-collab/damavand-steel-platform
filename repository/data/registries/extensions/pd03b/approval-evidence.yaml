@@ -7,11 +7,11 @@ evidence:
     approval_evidence_id: papproval:d9d7811dd4f5
     decision_id: FD-PD03B-001
     bundle_id: pilotset:36c1085ffbe9
-    lifecycle_status: REVIEW
+    lifecycle_status: APPROVED
     scope_reference: docs/PD03B_CANONICAL_PILOT_SCOPE_V1.0.md
     dataset_hashes:
       - path: repository/data/registries/extensions/pd03b/canonical-pilots.yaml
-        sha256: d521b31319ad1ad21fb529cacace5f83d040a840b697c7517f4750a007013d4f
+        sha256: 58d36eccb9afb72ec3ed7dcaf4dd74c36f94647b984895cd8542d3280bcdb247
       - path: repository/data/registries/extensions/pd03a/pilot-prerequisite.yaml
         sha256: 021540a2c0b9f1145ec97c748c91f41f46c1b939d3ff4893acf3d0bf7ce1e1c3
       - path: repository/data/registries/product-entities.yaml
@@ -49,9 +49,9 @@ evidence:
       verdict_artifact: PD03B-TECH-REVIEW-001|PASS|41849b30055efd828654995d7a6a13fbedd3bf39|e72c32bdb041448d34c925c969fe01a2156f9e1d|ed8c6195d392b40222ef53f5e2de8483567aceea3b94bb556653703b9df17c5b|30698352338|91364922275
       verdict_artifact_sha256: a5d7fd174173536cbc780a911838ffbdde46a512d4d7c66b671357858c57957f
     approval:
-      approved_by: null
-      approved_at: null
-      evidence_reference: null
+      approved_by: Founder پروژه Damavand Steel
+      approved_at: "2026-08-01T11:54:38Z"
+      evidence_reference: FD-PD03B-001
     anti_replay:
       nonce_derivation: SHA256_FIRST_24_HEX
       binding:
@@ -60,7 +60,11 @@ evidence:
         approval_evidence_id: papproval:d9d7811dd4f5
         baseline_sha: e72c32bdb041448d34c925c969fe01a2156f9e1d
       nonce: 16da0c3947ab608ae37191a5
-      consumed: false
-      consumption_history: []
-    status: CANDIDATE_UNVERIFIED
+      consumed: true
+      consumption_history:
+        - decision_id: FD-PD03B-001
+          approval_evidence_id: papproval:d9d7811dd4f5
+          evidence_reference: FD-PD03B-001
+          consumed_at: "2026-08-01T11:54:38Z"
+    status: APPROVED
     record_version: "1.0.0"

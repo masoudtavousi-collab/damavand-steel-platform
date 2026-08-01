@@ -30,7 +30,7 @@ pilots:
       thickness: {attribute_id: attr:d1890e85f84c, decimal_lexeme: "0.35", unit_id: unit:000000000002}
       length: {attribute_id: attr:d782d47eae7f, decimal_lexeme: "6", unit_id: unit:000000000001}
     availability_status: MISSING_DATA_VALUE
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     owner: {role: product-data-steward}
     provenance: &provenance
       source_type: FOUNDER_DECISION
@@ -52,7 +52,7 @@ pilots:
       thickness: {attribute_id: attr:d1890e85f84c, decimal_lexeme: "0.50", unit_id: unit:000000000002}
       length: {attribute_id: attr:d782d47eae7f, decimal_lexeme: "6", unit_id: unit:000000000001}
     availability_status: MISSING_DATA_VALUE
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     owner: {role: product-data-steward}
     provenance: *provenance
     record_version: "1.0.0"
@@ -69,7 +69,7 @@ pilots:
       thickness: {attribute_id: attr:d1890e85f84c, decimal_lexeme: "0.50", unit_id: unit:000000000002}
       length: {attribute_id: attr:d782d47eae7f, decimal_lexeme: "6", unit_id: unit:000000000001}
     availability_status: MISSING_DATA_VALUE
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     owner: {role: product-data-steward}
     provenance: *provenance
     record_version: "1.0.0"
@@ -77,4 +77,4 @@ readiness:
   import_ready: false
   runtime_ready: false
   golden_ready: false
-status: CANDIDATE_UNVERIFIED
+status: APPROVED

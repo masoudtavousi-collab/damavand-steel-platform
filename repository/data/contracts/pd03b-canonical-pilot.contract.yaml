@@ -12,7 +12,7 @@ baseline:
   immutable_prerequisite_decision: FD-PD03A-001
 lifecycle:
   decision_id: FD-PD03B-001
-  current_status: REVIEW
+  current_status: APPROVED
   allowed_transition_sequence:
     - DRAFT
     - REVIEW
@@ -21,6 +21,9 @@ lifecycle:
     - from: DRAFT
       to: REVIEW
       evidence_reference: PD03B-TECH-REVIEW-001
+    - from: REVIEW
+      to: APPROVED
+      evidence_reference: FD-PD03B-001
   direct_draft_to_approved_forbidden: true
   approval_evidence_required: true
   technical_reviewed_sha: 41849b30055efd828654995d7a6a13fbedd3bf39
