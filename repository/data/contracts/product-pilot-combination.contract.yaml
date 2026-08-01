@@ -1,0 +1,62 @@
+contract_id: product-pilot-combination
+contract_version: "1.0.0"
+record_kind: synthetic-pilot-combination-test-bundle
+schema:
+  path: repository/data/schemas/product-pilot-combination.schema.json
+  draft: https://json-schema.org/draft/2020-12/schema
+authority:
+  decision_id: FD-PD03A-001
+  canonical_population_authority: false
+  fixtures_only: true
+  allowed_data_classification: SYNTHETIC_FIXTURE
+  allowed_status: CANDIDATE_UNVERIFIED
+exact_test_model:
+  combination_count: 3
+  axes:
+    - grade
+    - finish
+    - diameter
+    - thickness
+    - length
+  fixed_non_axis:
+    material: stainless_steel
+  tuple_lexemes:
+    - ["201", silver, "16", "0.35", "6"]
+    - ["201", silver, "38", "0.50", "6"]
+    - ["201", silver, "51", "0.50", "6"]
+  units:
+    diameter: unit:000000000002
+    thickness: unit:000000000002
+    length: unit:000000000001
+  availability_status: MISSING_DATA_VALUE
+  cartesian_generation_forbidden: true
+  historical_references_are_non_identity: true
+  cross_file_reference_resolution_required: true
+readiness:
+  import_ready: false
+  runtime_ready: false
+  golden_ready: false
+prohibited_fields:
+  - product_id
+  - sku
+  - commercial_sku
+  - slug
+  - stock
+  - inventory
+  - availability_value
+  - supply_status
+  - price
+  - offer
+  - wordpress_id
+  - woocommerce_id
+  - import
+  - publication
+  - deployment
+  - production
+validation:
+  network_allowed: false
+  side_effects_allowed: false
+  duplicate_json_or_yaml_keys_rejected: true
+  non_finite_numbers_rejected: true
+  remote_schema_references_rejected: true
+  exact_contract_validation_required: true

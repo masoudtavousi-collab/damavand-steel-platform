@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-08-01 — PD-03A Pilot Prerequisite Foundation (`APPROVED`)
+
+- `FD-PD03A-001` authorizes the maximum 49-path immutable-extension lifecycle
+  recorded in [PD-03A Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md).
+- PD-02B aggregate registries and approval hashes remain unchanged.
+- The APPROVED extension contains exactly 2 entities, 4 Attributes, one Silver
+  appearance term, one six-rule INTERNAL Series Profile, and 11 labels.
+- Length, Metre, and Millimetre are approved; Mass/Kilogram/Gram remain
+  Candidate. The dedicated
+  pilot-combination Contract/Schema/Validator uses synthetic fixtures only and
+  grants no canonical Pilot authority.
+- Two failed human-review attempts are preserved as Blocked history; no human
+  domain PASS is claimed. Technical attempts 1–2 returned REWORK; attempt 3
+  returned zero-finding `PD03A-TECH-REVIEW-001: PASS` on `cb6c817…`, with CI
+  `30696083295` successful and exact Commit-object/verdict-artifact evidence.
+- REVIEW CI `30696444576` passed. Founder evidence at
+  `2026-08-01T10:50:12Z` completed the legal
+  `DRAFT → REVIEW → APPROVED` lifecycle, refreshed four dataset hashes, and
+  consumed the approval nonce once.
+- Product/Pilot/SKU/Slug/availability, 879 rows, Master/Golden,
+  WordPress/WooCommerce, import, runtime, deployment, production, and branch
+  deletion remain `NO-GO`.
+
 ## 2026-07-29 — PD-02B Minimum Canonical Slice (`APPROVED`)
 
 - `FD-PD02B-001` authorizes the exact 57-path repository-only lifecycle recorded
@@ -28,8 +51,8 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.9.0
-- **Last Updated:** 2026-07-29
+- **Version:** 0.10.0
+- **Last Updated:** 2026-08-01
 - **Lifecycle:** Review
 - **Source of Truth:** Merged Git history and scoped decision/evidence records
 - **Approval:** Pending Founder review; merged Git history remains evidence

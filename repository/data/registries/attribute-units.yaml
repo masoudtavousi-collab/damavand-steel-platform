@@ -23,7 +23,7 @@ units:
     precision:
       maximum_decimal_places: 12
       rounding_mode: HALF_EVEN
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     owner:
       role: repository-governance
     provenance:
@@ -54,7 +54,7 @@ units:
     precision:
       maximum_decimal_places: 12
       rounding_mode: HALF_EVEN
-    status: CANDIDATE_UNVERIFIED
+    status: APPROVED
     owner:
       role: repository-governance
     provenance:

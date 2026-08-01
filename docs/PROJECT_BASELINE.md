@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.11.0
-- **Last Updated:** 2026-07-29
-- **Last Review:** 2026-07-29
+- **Version:** 0.12.0
+- **Last Updated:** 2026-08-01
+- **Last Review:** 2026-08-01
 - **Review Cycle:** On approved decision, completed sprint, repository disposition, readiness, or execution-state change
 - **Lifecycle:** Review
 - **Source of Truth:** Accepted governing sources, recorded Founder decisions, [Current Project State](CURRENT_PROJECT_STATE.md), approved Master Data, and current repository evidence within their declared scope
@@ -67,9 +67,15 @@ Historical Git authorizations retain their original exact scope and do not becom
 | PD-01 Product Data Contract Enablement | `APPROVED` under `FD-PD01-001` after `PD01-REVIEW-001`; exact 30-path Contract/Schema/Validator/Test and governance scope with synthetic fixtures only; canonical Product Attribute registry remains empty |
 | PD-02A Controlled Values and Attribute Profiles | `APPROVED` under `FD-PD02A-001` after legal lifecycle and `PD02A-REVIEW-001` PASS with zero findings; exact 38-path synthetic-only Contract/Schema/Validator/Test foundation; conditional Git integration pending; canonical Product Attribute, controlled-value, and Profile collections remain empty |
 | PD-02B Minimum Canonical Slice | `APPROVED` under `FD-PD02B-001` after legal `DRAFT → REVIEW → APPROVED`, `PD02B-TECH-REVIEW-001` PASS, and REVIEW-stage CI; exact 57-path repository-only slice from `main@6ed6fc89e555b1be3a97d7f9c64c9e2b989af1df`; exactly 3 entities, 2 Attributes, 2 Value Registries, 4 Terms, 1 INTERNAL Profile, 18 labels, and 1 Approval Evidence are approved without broader Product/runtime authority |
+| PD-03A Pilot Prerequisite Foundation | `APPROVED` under `FD-PD03A-001` after legal `DRAFT → REVIEW → APPROVED`, zero-finding `PD03A-TECH-REVIEW-001` PASS on `cb6c817…`, CI `30696083295`, and REVIEW CI `30696444576`; immutable extension over the unchanged PD-02B base; exact bounded records plus Length/Metre/Millimetre approved; no canonical Pilot/Product/SKU/availability or runtime authority |
 | Knowledge Repository | Architecture proposals exist; `repository/knowledge/` is the approved future location, but machine-readable contracts and content instances do not exist; `NOT_IMPLEMENTATION_READY` |
 | Master Data | No canonical machine-readable package exists on `main`; decision records and governing prose remain the current evidence |
 | Knowledge Cards and Page Builder assets | Referenced historical/future assets are absent from canonical `main`; no implementation-readiness claim is made |
+
+PD-03A does not modify the aggregate PD-02B registries or their historical
+hashes. Until its lifecycle reaches `APPROVED`, every extension record and the
+Length/Metre/Millimetre promotion remain `CANDIDATE_UNVERIFIED`. Synthetic
+tuples are test evidence and must not be promoted or treated as Pilots.
 
 ## Master Data and Family Status
 

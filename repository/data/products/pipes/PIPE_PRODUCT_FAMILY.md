@@ -209,6 +209,17 @@ sections remain Review-state context.
 
 ## Navigation
 
+## PD-03A Prerequisite Override
+
+For the exact PD-03A scope, the canonical Series label is
+`لوله استیل دکوراتیو` and only the Persian official label exists. The Series
+and internal Variant Rule identity are APPROVED only as the bounded PD-03A
+prerequisite. Legacy Product Type, Parent Product, variation, WooCommerce, Slug,
+and import descriptions in this file remain downstream or historical inputs.
+
+PD-03A creates no Product, canonical Pilot, SKU, Slug, actual availability,
+Master/Golden package, import mapping, or runtime record.
+
 - [Attribute Dictionary](../../attributes/ATTRIBUTE_DICTIONARY.md)
 - [Pipe Variation Matrix](PIPE_VARIATION_MATRIX.md)
 - [Pipe SEO Entity Model](../../seo/PIPE_SEO_ENTITY_MODEL.md)

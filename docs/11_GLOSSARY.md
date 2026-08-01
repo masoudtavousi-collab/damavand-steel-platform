@@ -64,6 +64,21 @@ No steel term, classification, grade, standard, dimension, or taxonomy is approv
 
 ## Terminology Rules
 
+## PD-03A Controlled Prerequisite Terms
+
+- **لوله استیل دکوراتیو:** Persian-only official Series label in the exact
+  PD-03A prerequisite scope; it is not a Product, SKU, Slug, availability, or
+  commerce record.
+- **Finish / رنگ و پوشش:** internal key/label used only for the bounded pilot
+  prerequisite. It does not establish a general Finish/Color/Surface taxonomy.
+- **Silver / نقره‌ای:** appearance designation with code `silver`; it asserts
+  no PVD, coating type, material, quality, standard, tolerance, application, or
+  availability.
+- **Synthetic Pilot Combination:** test fixture exercising the three approved
+  reference tuples. It is never a canonical Pilot record and cannot be promoted.
+- **Immutable Product Data Extension:** separately governed additive records
+  that cannot mutate or shadow the approved base registries or historical hashes.
+
 ## PD-02B Controlled Terms
 
 - **فولاد زنگ‌نزن / Stainless Steel:** canonical Material term with code

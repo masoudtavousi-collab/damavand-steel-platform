@@ -107,6 +107,33 @@ compatibility:
     - Every Unit must declare at least one allowed data type.
     - Allowed data types must exist and declare unit support.
     - Product Attribute Unit references must resolve to a compatible Unit definition.
+pd03a_extension:
+  decision_id: FD-PD03A-001
+  current_status: APPROVED
+  allowed_transition_sequence:
+    - DRAFT
+    - REVIEW
+    - APPROVED
+  transition_history:
+    - from: DRAFT
+      to: REVIEW
+      evidence_reference: PD03A-TECH-REVIEW-001
+    - from: REVIEW
+      to: APPROVED
+      evidence_reference: FD-PD03A-001
+  direct_draft_to_approved_forbidden: true
+  exact_dimension_ids:
+    - dimension:000000000001
+  exact_unit_ids:
+    - unit:000000000001
+    - unit:000000000002
+  status_by_lifecycle:
+    DRAFT: CANDIDATE_UNVERIFIED
+    REVIEW: CANDIDATE_UNVERIFIED
+    APPROVED: APPROVED
+  product_values_allowed: false
+  commercial_claims_allowed: false
+  runtime_authority: false
 data_boundary:
   product_records_allowed: false
   sku_records_allowed: false

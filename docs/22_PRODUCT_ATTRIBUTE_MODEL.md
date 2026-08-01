@@ -198,14 +198,31 @@ Units, or commerce fields.
 
 ## Approval Status
 
-Approved only for the exact PD-02B Attribute/Term/Profile slice.
-Variation axes, filters, Units, WooCommerce settings, import, and all broader
-attributes remain unapproved.
+## PD-03A Bounded Attribute Extension
+
+PD-03A adds only `finish`, `diameter`, `thickness`, and `length` inside an
+immutable prerequisite extension. `finish=Silver` is an internal appearance
+designation, not a general surface-finish, color, coating, quality, standards,
+or availability taxonomy decision. PVD and every other Finish/Color value are
+excluded.
+
+Diameter uses `mm` at precision 0; Thickness uses `mm` at precision 2; Length
+uses `m` at precision 0. All six Series rules are REQUIRED and INTERNAL. Grade,
+Finish, Diameter, Thickness, and Length are axes; Material is fixed and
+non-axis. Filtering, SEO, inquiry, public visibility, Cartesian generation,
+commerce, and runtime use are prohibited. Synthetic tuple tests create no
+canonical Product values.
+
+Approved for the exact PD-02B Attribute/Term/Profile slice and the separately
+bounded PD-03A INTERNAL prerequisite extension. Public variation generation,
+filters, WooCommerce settings, import, and all broader attributes remain
+unapproved.
 
 ## Change Notes
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.4.0 | 2026-08-01 | Added the bounded PD-03A Attribute/Profile override without public, commerce, or runtime authority. |
 | 0.3.0 | 2026-07-29 | Linked the PD-02A synthetic controlled-value/Profile foundation and preserved all canonical registries as empty. |
 | 0.2.0 | 2026-07-03 | Batch 05B remediation: explicit flat-by-default hierarchy policy and derived/non-global Size classification; documentation only. |
 | 0.1.0 | 2026-07-03 | Initial Batch 05 global product attribute model with proposed Persian labels; documentation only. |

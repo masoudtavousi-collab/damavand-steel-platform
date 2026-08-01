@@ -288,9 +288,22 @@ WordPress/WooCommerce, import, runtime, deployment, or production.
 
 ## Approval Status
 
+## PD-03A Immutable Prerequisite Extension
+
+[PD-03A Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md)
+adds APPROVED prerequisite identities for the decorative Pipe Series and its
+internal Variant Rule Set without rewriting PD-02B. Its APPROVED Series Profile
+separates five INTERNAL axes—Grade, Finish, Diameter, Thickness, and
+Length—from fixed non-axis Material and forbids Cartesian generation.
+
+The pilot-combination contract is synthetic-only and has no canonical
+population authority. PD-03A creates no Product, Pilot, valid commercial
+combination, SKU, Slug, availability value, supply promise, Master/Golden
+package, downstream Parent/Variation mapping, or runtime record.
+
 Review. The canonical hierarchy and identity distinction are Founder-approved
-within their exact scope. `FD-PD02B-001` adds only its explicitly enumerated
-minimum slice. The remaining data-model proposals are not approved, and no
+within their exact scope. `FD-PD02B-001` and `FD-PD03A-001` add only their
+explicitly enumerated slices. The remaining data-model proposals are not approved, and no
 listed scope authorizes Product records, WooCommerce configuration, database
 design, import, or runtime implementation.
 
@@ -298,6 +311,7 @@ design, import, or runtime implementation.
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.7.0 | 2026-08-01 | Added the exact PD-03A immutable prerequisite and synthetic-only Pilot boundary. |
 | 0.6.0 | 2026-07-29 | Linked the synthetic-only PD-02A controlled-value/Profile foundation and preserved the empty canonical registries and PD-02B decision boundary. |
 | 0.5.0 | 2026-07-29 | Recorded approved PD-01 synthetic Contract subset after legal lifecycle and independent PASS without promoting canonical Product data. |
 | 0.4.0 | 2026-07-28 | Linked the exact synthetic-only PD-01 Contract Enablement scope without approving canonical values, Product records, SKU, Master Data, Golden, import, or runtime work. |

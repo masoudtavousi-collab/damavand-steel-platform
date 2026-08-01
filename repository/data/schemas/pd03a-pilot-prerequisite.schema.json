@@ -1,0 +1,238 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:damavand-steel:schema:pd03a-pilot-prerequisite:1.0.0",
+  "title": "PD-03A immutable pilot-prerequisite extension",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "extension_id",
+    "data_classification",
+    "baseline_sha",
+    "entities",
+    "attributes",
+    "value_registries",
+    "profiles",
+    "localized_labels",
+    "status"
+  ],
+  "properties": {
+    "contract_version": {"const": "1.0.0"},
+    "extension_id": {"type": "string", "pattern": "^pdext:[0-9a-f]{12}$"},
+    "data_classification": {"const": "CANONICAL_PD03A_EXTENSION"},
+    "baseline_sha": {"const": "dd4d4e9dde59ce652edb5b99d2df3e84b56b8031"},
+    "entities": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {"$ref": "#/$defs/entity"}
+    },
+    "attributes": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/attribute"}
+    },
+    "value_registries": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": {"$ref": "#/$defs/value_registry"}
+    },
+    "profiles": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": {"$ref": "#/$defs/profile"}
+    },
+    "localized_labels": {
+      "type": "array",
+      "minItems": 11,
+      "maxItems": 11,
+      "items": {"$ref": "#/$defs/localized_label"}
+    },
+    "status": {"$ref": "#/$defs/status"}
+  },
+  "$defs": {
+    "status": {
+      "type": "string",
+      "enum": ["APPROVED", "CANDIDATE_UNVERIFIED"]
+    },
+    "role": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["role"],
+      "properties": {
+        "role": {"type": "string", "pattern": "^[a-z][a-z0-9-]{2,63}$"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_type", "source_reference", "captured_by", "captured_at", "evidence_status"],
+      "properties": {
+        "source_type": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]*$"},
+        "source_reference": {"type": "string", "minLength": 1, "maxLength": 500, "pattern": ".*\\S.*"},
+        "captured_by": {"type": "string", "pattern": "^role:[a-z][a-z0-9-]{2,63}$"},
+        "captured_at": {"type": "string", "format": "date-time"},
+        "evidence_status": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]*$"}
+      }
+    },
+    "entity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contract_version", "entity_id", "entity_type", "parent_entity_id", "parent_entity_type", "canonical_label", "status", "owner", "provenance", "record_version"],
+      "properties": {
+        "contract_version": {"const": "1.0.0"},
+        "entity_id": {"type": "string", "pattern": "^prd:(series|variant-rule-set):[0-9a-f]{12}$"},
+        "entity_type": {"enum": ["SERIES", "VARIANT_RULE_SET"]},
+        "parent_entity_id": {"type": "string", "pattern": "^prd:(family|series):[0-9a-f]{12}$"},
+        "parent_entity_type": {"enum": ["FAMILY", "SERIES"]},
+        "canonical_label": {"type": "string", "minLength": 1, "maxLength": 200, "pattern": ".*\\S.*"},
+        "status": {"$ref": "#/$defs/status"},
+        "owner": {"$ref": "#/$defs/role"},
+        "provenance": {"$ref": "#/$defs/provenance"},
+        "record_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"}
+      }
+    },
+    "unit_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "allowed_unit_ids"],
+      "properties": {
+        "mode": {"enum": ["FORBIDDEN", "REQUIRED"]},
+        "allowed_unit_ids": {
+          "type": "array",
+          "maxItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^unit:[0-9a-f]{12}$"}
+        }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "decimal_places": {"type": "integer", "minimum": 0, "maximum": 12},
+        "minimum": {"type": "number"},
+        "maximum": {"type": "number"},
+        "value_registry_reference": {"type": "string", "pattern": "^vreg:[0-9a-f]{12}$"}
+      }
+    },
+    "attribute_validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["nullable", "multiple_values", "constraints"],
+      "properties": {
+        "nullable": {"const": false},
+        "multiple_values": {"const": false},
+        "constraints": {"$ref": "#/$defs/constraints"}
+      }
+    },
+    "attribute": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contract_version", "attribute_id", "attribute_key", "canonical_label", "description", "category", "data_type", "unit_policy", "validation", "status", "owner", "provenance", "record_version"],
+      "properties": {
+        "contract_version": {"const": "2.0.0"},
+        "attribute_id": {"type": "string", "pattern": "^attr:[0-9a-f]{12}$"},
+        "attribute_key": {"enum": ["finish", "diameter", "thickness", "length"]},
+        "canonical_label": {"type": "string", "minLength": 1, "maxLength": 200},
+        "description": {"type": "string", "minLength": 1, "maxLength": 1000},
+        "category": {"enum": ["PRIMARY", "SECONDARY"]},
+        "data_type": {"enum": ["CONTROLLED_TERM", "DECIMAL"]},
+        "unit_policy": {"$ref": "#/$defs/unit_policy"},
+        "validation": {"$ref": "#/$defs/attribute_validation"},
+        "status": {"$ref": "#/$defs/status"},
+        "owner": {"$ref": "#/$defs/role"},
+        "provenance": {"$ref": "#/$defs/provenance"},
+        "record_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"}
+      }
+    },
+    "value": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value_id", "value_code", "canonical_label", "aliases", "status", "provenance", "record_version"],
+      "properties": {
+        "value_id": {"type": "string", "pattern": "^vterm:[0-9a-f]{12}$"},
+        "value_code": {"const": "silver"},
+        "canonical_label": {"const": "Silver"},
+        "aliases": {"type": "array", "maxItems": 0},
+        "status": {"$ref": "#/$defs/status"},
+        "provenance": {"$ref": "#/$defs/provenance"},
+        "record_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"}
+      }
+    },
+    "value_registry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contract_version", "value_registry_id", "registry_key", "attribute_id", "canonical_label", "values", "status", "owner", "reviewer", "provenance", "record_version"],
+      "properties": {
+        "contract_version": {"const": "1.0.0"},
+        "value_registry_id": {"type": "string", "pattern": "^vreg:[0-9a-f]{12}$"},
+        "registry_key": {"const": "finish_values"},
+        "attribute_id": {"type": "string", "pattern": "^attr:[0-9a-f]{12}$"},
+        "canonical_label": {"const": "Finish Values"},
+        "values": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"$ref": "#/$defs/value"}},
+        "status": {"$ref": "#/$defs/status"},
+        "owner": {"$ref": "#/$defs/role"},
+        "reviewer": {"$ref": "#/$defs/role"},
+        "provenance": {"$ref": "#/$defs/provenance"},
+        "record_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"}
+      }
+    },
+    "profile_rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["attribute_id", "requirement_level", "condition_reference", "public_visibility", "variation_axis", "filtering", "inquiry_use", "seo_use", "value_source", "value_registry_id", "allowed_unit_ids", "precision"],
+      "properties": {
+        "attribute_id": {"type": "string", "pattern": "^attr:[0-9a-f]{12}$"},
+        "requirement_level": {"const": "REQUIRED"},
+        "condition_reference": {"type": "null"},
+        "public_visibility": {"const": "INTERNAL"},
+        "variation_axis": {"type": "boolean"},
+        "filtering": {"const": false},
+        "inquiry_use": {"const": "NOT_USED"},
+        "seo_use": {"const": "PROHIBITED"},
+        "value_source": {"enum": ["CONTROLLED_REGISTRY", "TYPED_VALIDATION"]},
+        "value_registry_id": {"type": ["string", "null"], "pattern": "^vreg:[0-9a-f]{12}$"},
+        "allowed_unit_ids": {"type": "array", "maxItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^unit:[0-9a-f]{12}$"}},
+        "precision": {"type": ["integer", "null"], "minimum": 0, "maximum": 12}
+      }
+    },
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contract_version", "profile_id", "scope_entity_id", "scope_entity_type", "attribute_rules", "status", "owner", "reviewer", "provenance", "record_version"],
+      "properties": {
+        "contract_version": {"const": "1.0.0"},
+        "profile_id": {"type": "string", "pattern": "^pprof:[0-9a-f]{12}$"},
+        "scope_entity_id": {"type": "string", "pattern": "^prd:series:[0-9a-f]{12}$"},
+        "scope_entity_type": {"const": "SERIES"},
+        "attribute_rules": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/profile_rule"}},
+        "status": {"$ref": "#/$defs/status"},
+        "owner": {"$ref": "#/$defs/role"},
+        "reviewer": {"$ref": "#/$defs/role"},
+        "provenance": {"$ref": "#/$defs/provenance"},
+        "record_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"}
+      }
+    },
+    "localized_label": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contract_version", "label_id", "subject_id", "subject_kind", "locale", "label", "aliases", "status", "provenance", "record_version"],
+      "properties": {
+        "contract_version": {"const": "1.0.0"},
+        "label_id": {"type": "string", "pattern": "^plabel:[0-9a-f]{12}$"},
+        "subject_id": {"type": "string", "pattern": "^(?:prd:series|attr|vterm):[0-9a-f]{12}$"},
+        "subject_kind": {"enum": ["PRODUCT_ENTITY", "PRODUCT_ATTRIBUTE", "CONTROLLED_TERM"]},
+        "locale": {"enum": ["fa-IR", "en"]},
+        "label": {"type": "string", "minLength": 1, "maxLength": 200},
+        "aliases": {"type": "array", "maxItems": 0},
+        "status": {"$ref": "#/$defs/status"},
+        "provenance": {"$ref": "#/$defs/provenance"},
+        "record_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"}
+      }
+    }
+  }
+}

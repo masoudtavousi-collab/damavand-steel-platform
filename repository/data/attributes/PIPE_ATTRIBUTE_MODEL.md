@@ -130,6 +130,19 @@ mappings.
 
 ## Navigation
 
+## PD-03A Exact Prerequisite Boundary
+
+The legacy public/filter/SEO/WooCommerce columns above do not control PD-03A.
+The exact extension permits only INTERNAL Grade, Finish, Diameter, Thickness,
+and Length axes; required fixed non-axis Material; `finish=Silver` as a
+no-claim appearance designation; Diameter in `mm` at precision 0; Thickness in
+`mm` at precision 2; and Length in `m` at precision 0.
+
+Synthetic tests exercise only 201/Silver/16/0.35/6,
+201/Silver/38/0.50/6, and 201/Silver/51/0.50/6. They create no filter, SEO,
+Product table, inquiry, PVD, 430, 3m, WooCommerce, Product, canonical Pilot,
+SKU, Slug, availability, import, or runtime authority.
+
 - [Attribute Dictionary](ATTRIBUTE_DICTIONARY.md)
 - [Pipe Taxonomy and Attribute Classification](../taxonomies/PIPE_TAXONOMY_ATTRIBUTE_CLASSIFICATION.md)
 - [Pipe Category Model](../taxonomies/PIPE_CATEGORY_MODEL.md)

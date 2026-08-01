@@ -1,0 +1,81 @@
+registry_id: pd03a-approval-evidence
+registry_version: "1.0.0"
+contract_version: "1.0.0"
+data_classification: CANONICAL_PD03A_EVIDENCE
+evidence:
+  - contract_version: "1.0.0"
+    approval_evidence_id: papproval:50ba27766106
+    decision_id: FD-PD03A-001
+    lifecycle_status: APPROVED
+    scope_reference: docs/PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md
+    dataset_hashes:
+      - path: repository/data/registries/extensions/pd03a/pilot-prerequisite.yaml
+        sha256: 021540a2c0b9f1145ec97c748c91f41f46c1b939d3ff4893acf3d0bf7ce1e1c3
+      - path: repository/data/contracts/measurement.contract.yaml
+        sha256: a8ea421b6a58866446cec38d2ffa37c0eaccd17c11df76481e393703d2cd6210
+      - path: repository/data/registries/measurement-dimensions.yaml
+        sha256: dee57aaf5a2b9e5973e6c1ab413aa5eb4c6b875c4c39c7ecdba371ec84bad85c
+      - path: repository/data/registries/attribute-units.yaml
+        sha256: c7af40450d937c5a2483630e6e0d48354393dde94564d4a6a540a39f0662582e
+    founder_decision:
+      reviewer_id: Founder پروژه Damavand Steel
+      scope: Exact PD-03A Pilot Prerequisite Foundation
+      verdict: PASS
+      evidence_reference: task:019fa05e-1889-79b3-8e83-9477cd1648c6
+      independent: false
+      review_date: "2026-08-01"
+    failed_review_attempts:
+      - reviewer_id: reviewer-id-placeholder
+        scope: PD-03A0 sections A through E
+        verdict: BLOCKED_REVIEWER_INCOMPLETE
+        evidence_reference: task:019fbc59-74b3-7643-907b-dae234ab871f
+        independent: true
+        review_date: "2026-08-01"
+      - reviewer_id: same-scope-participant
+        scope: PD-03A0 sections B and C
+        verdict: BLOCKED_REVIEWER_INELIGIBLE
+        evidence_reference: task:019fbc74-4be4-7983-9fbd-5f098cd2a06f
+        independent: false
+        review_date: "2026-08-01"
+    domain_basis:
+      basis: FOUNDER_APPROVED_NO_CLAIM_PILOT_REFERENCES
+      human_pass_claimed: false
+      technical_claims_authorized: false
+      commercial_claims_authorized: false
+      source_reference: FD-PD03A-001
+    technical_review:
+      review_id: PD03A-TECH-REVIEW-001
+      reviewer_id: repository-guardian-independent
+      scope: PD-03A contracts, schemas, validators, tests, extension integrity, lifecycle and exact allowlist
+      verdict: PASS
+      evidence_reference: PD03A-TECH-REVIEW-001
+      independent: true
+      review_date: "2026-08-01"
+      reviewed_head_sha: cb6c817116d0e97e2d217fe2402d85ff4b96f53a
+      reviewed_base_sha: dd4d4e9dde59ce652edb5b99d2df3e84b56b8031
+      reviewed_commit_object_b64: dHJlZSBiZWY0NWQ3NjFkMzEwOGNkNDYzY2NjMmY1YTc3NDhlNzIxNjE3NTg3CnBhcmVudCA0M2Q2ZGMwY2U5OGFmMWEzOTBkNzNiZjNjNWE0M2M5MWNkYjM3ZGE4CmF1dGhvciBNYXNvdWQgVGF2b3VzaSA8bWFzb3VkLnRhdm91c2lAZ21haWwuY29tPiAxNzg1NTgwNjU5ICswMzMwCmNvbW1pdHRlciBNYXNvdWQgVGF2b3VzaSA8bWFzb3VkLnRhdm91c2lAZ21haWwuY29tPiAxNzg1NTgwNjU5ICswMzMwCgpWZXJpZnkgUEQtMDNBIHJldmlldyBjb21taXRzIGFuZCBzY2hlbWEgYXNzZXJ0aW9ucwo=
+      reviewed_commit_object_sha256: b1bff46dab757efbdf6e107654a1d5df379cc1e220bf9d6b33abf8c3e1fdd4e1
+      ci_run_id: "30696083295"
+      ci_job_id: "91359111107"
+      verdict_artifact: PD03A-TECH-REVIEW-001|PASS|cb6c817116d0e97e2d217fe2402d85ff4b96f53a|dd4d4e9dde59ce652edb5b99d2df3e84b56b8031|b1bff46dab757efbdf6e107654a1d5df379cc1e220bf9d6b33abf8c3e1fdd4e1|30696083295|91359111107
+      verdict_artifact_sha256: f843938deb49189f04f16add10c24b4ab32633bce7beb9a12d1f6e9eb8b0ee01
+    approval:
+      approved_by: Founder پروژه Damavand Steel
+      approved_at: "2026-08-01T10:50:12Z"
+      evidence_reference: FD-PD03A-001
+    anti_replay:
+      nonce_derivation: SHA256_FIRST_24_HEX
+      binding:
+        decision_id: FD-PD03A-001
+        extension_id: pdext:ad46d9948af1
+        approval_evidence_id: papproval:50ba27766106
+        baseline_sha: dd4d4e9dde59ce652edb5b99d2df3e84b56b8031
+      nonce: faa4be80717be41352723a01
+      consumed: true
+      consumption_history:
+        - decision_id: FD-PD03A-001
+          approval_evidence_id: papproval:50ba27766106
+          evidence_reference: FD-PD03A-001
+          consumed_at: "2026-08-01T10:50:12Z"
+    status: APPROVED
+    record_version: "1.0.0"
