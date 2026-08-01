@@ -34,8 +34,8 @@ class PD03BCanonicalPilotTests(unittest.TestCase):
         cls.approval_value = shared.load_yaml(approval.REGISTRY_PATH)
         cls.manifest = shared.load_json(FIXTURES / "mutation-cases.json")
 
-    def test_positive_exact_draft(self) -> None:
-        self.assertEqual(self.lifecycle, "DRAFT")
+    def test_positive_exact_current_lifecycle(self) -> None:
+        self.assertIn(self.lifecycle, {"DRAFT", "REVIEW", "APPROVED"})
         self.assertEqual(pilot.validate_bundle(self.bundle, self.lifecycle, self.validator), [])
         self.assertEqual(
             approval.validate_registry(
@@ -102,7 +102,9 @@ class PD03BCanonicalPilotTests(unittest.TestCase):
             elif mutation == "unknown_profile":
                 value["profile_id"] = "pprof:000000000000"
             elif mutation == "lifecycle_status":
-                first["status"] = "APPROVED"
+                first["status"] = (
+                    "CANDIDATE_UNVERIFIED" if self.lifecycle == "APPROVED" else "APPROVED"
+                )
             elif mutation == "owner":
                 first["owner"]["role"] = "attacker-controlled"
             elif mutation == "provenance":
@@ -143,13 +145,21 @@ class PD03BCanonicalPilotTests(unittest.TestCase):
                 record["technical_review"]["verdict"] = "PASS"
                 record["technical_review"]["evidence_reference"] = "forged"
             elif mutation == "premature_approval":
-                record["approval"] = {
-                    "approved_by": "Founder پروژه Damavand Steel",
-                    "approved_at": "2026-08-01T00:00:00Z",
-                    "evidence_reference": "FD-PD03B-001",
-                }
+                record["approval"] = (
+                    {"approved_by": None, "approved_at": None, "evidence_reference": None}
+                    if self.lifecycle == "APPROVED"
+                    else {
+                        "approved_by": "Founder پروژه Damavand Steel",
+                        "approved_at": "2026-08-01T00:00:00Z",
+                        "evidence_reference": "FD-PD03B-001",
+                    }
+                )
             elif mutation == "approval_replay":
-                record["anti_replay"]["consumed"] = True
+                if self.lifecycle == "APPROVED":
+                    record["anti_replay"]["consumed"] = False
+                    record["anti_replay"]["consumption_history"] = []
+                else:
+                    record["anti_replay"]["consumed"] = True
             elif mutation == "hash_tamper":
                 record["dataset_hashes"][0]["sha256"] = "0" * 64
                 verify_hashes = True

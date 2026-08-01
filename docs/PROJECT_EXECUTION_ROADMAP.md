@@ -36,7 +36,7 @@ This roadmap defines sequence and gates, not mutable operational state. The exac
 3. `PD-02A` — controlled-value and standalone Attribute Profile Contract/Schema/Validator/tests with synthetic fixtures and empty canonical registries. **`APPROVED` and integrated through PR #22.**
 4. `PD-02B` — minimum canonical Catalog/Platform/Family scope, Material/Grade definitions, four controlled terms, INTERNAL Profile, 18 labels, and Approval Evidence. **`APPROVED` after legal `DRAFT → REVIEW → APPROVED`, independent PASS, and Founder approval; conditional Git integration remains separate.**
 5. `PD-03A` — immutable Pilot Prerequisite Foundation: Series, internal Variant Rule identity, four Attributes, Silver appearance term, Series Profile, Length/Metre/Millimetre promotion, and synthetic-only tuple validation. **APPROVED after legal lifecycle and independent PASS; no canonical Pilot record exists.**
-6. `PD-03B` — exactly three canonical Pilot records with provenance and explicit status. **Authorized and DRAFT on the exact 33-path boundary; independent review and legal lifecycle remain pending.**
+6. `PD-03B` — exactly three canonical Pilot records with provenance and explicit status. **REVIEW after zero-finding independent technical PASS; final Founder approval and conditional Git gates remain pending.**
 7. `PD-04` — Golden Repository Package with `import_ready=false` and `runtime_ready=false`.
 8. `PD-05` — commercial evidence plus final SKU/slug policy before any import.
 9. `ADM-0` through `ADM-3` — separate charter, operation contracts, validator/tests, and offline reference engine.

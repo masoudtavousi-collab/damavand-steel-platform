@@ -6,7 +6,7 @@
 - **Live `main` tip:** resolve dynamically from GitHub `refs/heads/main` at task start; do not treat the reviewed input anchor as a permanent live-tip claim
 - **Last completed substantive repository integration:** `PD-03A` through merged PR #24 and successful post-merge main CI
 - **Last completed governance reconciliation:** PD-03A direct reconciliation through PR #24
-- **Current phase:** `PD-03B` Canonical Pilot Records — `DRAFT`
+- **Current phase:** `PD-03B` Canonical Pilot Records — `REVIEW`
 - **Current authorized branch:** `codex/pd-03b-canonical-pilot-records`
 - **Current authorization:** maximum 33-path repository-only scope for exactly three canonical Pilot records, dedicated Contract/Schema/Validator/Test, one Approval Evidence, legal lifecycle, and conditional Git integration
 - **Merge:** conditional after independent technical PASS, legal `DRAFT → REVIEW → APPROVED`, exact allowlist, successful tests/CI, no conflict or scope drift, Merge Commit, and successful `main` CI
@@ -46,7 +46,7 @@ This file is the only semantic operational-state pointer. Other documents may pr
 | `PD-02A` Controlled Values and Attribute Profiles foundation | `FD-PD02A-001`; `PD02A-REVIEW-001`; [PD-02A Scope v1.0](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md); exact 38-path allowlist; merged PR #22; successful post-merge validation | `APPROVED` synthetic foundation; its historical empty-registry boundary is preserved and later canonical population requires PD-02B |
 | `PD-02B` Minimum Canonical Slice | `FD-PD02B-001`; `PD02B-TECH-REVIEW-001`; [PD-02B Scope v1.0](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md); exact 57-path allowlist; starting SHA `6ed6fc89e555b1be3a97d7f9c64c9e2b989af1df`; PASS on `f38eb447…`; CI `30479723615` and REVIEW-stage CI `30480571732`; PR #23 | `APPROVED` after legal `DRAFT → REVIEW → APPROVED`; all 31 bounded records are approved; no broader Product/runtime authority |
 | `PD-03A` Pilot Prerequisite Foundation | `FD-PD03A-001`; `PD03A-TECH-REVIEW-001`; [PD-03A Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md); starting SHA `dd4d4e9dde59ce652edb5b99d2df3e84b56b8031`; PASS on `cb6c817…`; DRAFT CI `30696083295`; REVIEW CI `30696444576`; PR #24; main CI `30696801759`; immutable extension; 50 dispatched mutation cases | `APPROVED`, merged by Merge Commit `e72c32bdb041448d34c925c969fe01a2156f9e1d`, and validated on `main`; exact extension records and Length/Metre/Millimetre are approved; PD-02B aggregate registries/hashes remain unchanged; no canonical Pilot/Product/SKU/availability or runtime authority |
-| `PD-03B` Canonical Pilot Records | `FD-PD03B-001`; [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md); starting SHA `e72c32bdb041448d34c925c969fe01a2156f9e1d`; exact 33-path allowlist; 43 mutation cases | `DRAFT`; exactly three lifecycle-gated Pilot records only. Technical review, REVIEW, final Founder approval, Merge Commit, and main CI remain conditional. No Product/SKU, availability, Master/Golden, import, or runtime authority |
+| `PD-03B` Canonical Pilot Records | `FD-PD03B-001`; [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md); starting SHA `e72c32bdb041448d34c925c969fe01a2156f9e1d`; exact 33-path allowlist; 43 mutation cases; `PD03B-TECH-REVIEW-001` PASS on `41849b3…`; CI `30698352338` | `REVIEW`; exactly three records remain `CANDIDATE_UNVERIFIED`. Final Founder approval, APPROVED promotion, Merge Commit, and main CI remain conditional. No Product/SKU, availability, Master/Golden, import, or runtime authority |
 | Atlas planning registry | 173 pending document records across 21 domains | Intake inventory only; no Atlas row is canonical merely because it is registered |
 
 Repository validators are active in CI and unified under `make test`. PR #12 hardening is merged: nested schema objects are closed, JSON Schema Draft 2020-12 is enforced offline, validation output is deterministic, and positive, negative, and adversarial tests are wired into the unified test entry point. `FD-BP2-ADM-001` records the completed legal BP2 lifecycle without implementation authority. `FD-PD01-001` approves a separate synthetic Product Data contract boundary; it is not canonical Product Data.
@@ -63,9 +63,10 @@ Repository validators are active in CI and unified under `make test`. PR #12 har
 - PD-03A is an APPROVED prerequisite extension only. Its bounded records and
   Length/Metre/Millimetre are approved, but its synthetic tuples remain test
   evidence, not Pilots. PR #24 integration grants no broader authority.
-- PD-03B is DRAFT. Its three stable Pilot identities and exact tuples remain
-  `CANDIDATE_UNVERIFIED` until independent technical PASS and legal lifecycle
-  approval. A Pilot record is not a Product, SKU, Golden package, or availability.
+- PD-03B is REVIEW after zero-finding independent technical PASS. Its three
+  stable Pilot identities and exact tuples remain `CANDIDATE_UNVERIFIED` until
+  final Founder lifecycle approval. A Pilot record is not a Product, SKU,
+  Golden package, or availability.
 
 ### Knowledge Repository
 

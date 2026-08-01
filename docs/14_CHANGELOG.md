@@ -1,6 +1,6 @@
 # Changelog
 
-# 2026-08-01 — PD-03B Canonical Pilot Records (`DRAFT`)
+# 2026-08-01 — PD-03B Canonical Pilot Records (`REVIEW`)
 
 - Recorded `FD-PD03B-001` and the exact 33-path scope from merged PR #24
   baseline `e72c32bdb041448d34c925c969fe01a2156f9e1d`.
@@ -11,6 +11,10 @@
 - Availability remains `MISSING_DATA_VALUE`; all readiness flags remain false.
   No Product/SKU, 879 rows, Master/Golden, WordPress/WooCommerce, import,
   runtime, deployment, production, or branch deletion is authorized.
+- Independent technical review attempt 1 returned `REWORK`; corrected SHA
+  `41849b3…` then received zero-finding `PD03B-TECH-REVIEW-001: PASS` with CI
+  `30698352338`. The lifecycle advanced legally to `REVIEW`; records remain
+  `CANDIDATE_UNVERIFIED`, approval is absent, and the nonce is unconsumed.
 
 ## 2026-08-01 — PD-03A Pilot Prerequisite Foundation (`APPROVED`)
 

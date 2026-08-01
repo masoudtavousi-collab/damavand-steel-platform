@@ -7,7 +7,7 @@ evidence:
     approval_evidence_id: papproval:d9d7811dd4f5
     decision_id: FD-PD03B-001
     bundle_id: pilotset:36c1085ffbe9
-    lifecycle_status: DRAFT
+    lifecycle_status: REVIEW
     scope_reference: docs/PD03B_CANONICAL_PILOT_SCOPE_V1.0.md
     dataset_hashes:
       - path: repository/data/registries/extensions/pd03b/canonical-pilots.yaml
@@ -36,18 +36,18 @@ evidence:
       review_id: PD03B-TECH-REVIEW-001
       reviewer_id: repository-guardian-independent
       scope: PD-03B contracts, schemas, registries, validators, tests, lifecycle, exact records and allowlist
-      verdict: PENDING
-      evidence_reference: null
+      verdict: PASS
+      evidence_reference: PD03B-TECH-REVIEW-001
       independent: true
-      review_date: null
-      reviewed_head_sha: null
+      review_date: "2026-08-01"
+      reviewed_head_sha: 41849b30055efd828654995d7a6a13fbedd3bf39
       reviewed_base_sha: e72c32bdb041448d34c925c969fe01a2156f9e1d
-      reviewed_commit_object_b64: null
-      reviewed_commit_object_sha256: null
-      ci_run_id: null
-      ci_job_id: null
-      verdict_artifact: null
-      verdict_artifact_sha256: null
+      reviewed_commit_object_b64: dHJlZSBlZjMxZTkyMDBhMDM0YTA1NzA2NWVhYzg4MGFiNDU5OTJlYWJjYWNjCnBhcmVudCA2Yjc1YTVkN2ZjZjhmYTEwOTgyMjRkMWM4NjlmNzU0NGFlZjUyMjAzCmF1dGhvciBNYXNvdWQgVGF2b3VzaSA8bWFzb3VkLnRhdm91c2lAZ21haWwuY29tPiAxNzg1NTg0NzcyICswMzMwCmNvbW1pdHRlciBNYXNvdWQgVGF2b3VzaSA8bWFzb3VkLnRhdm91c2lAZ21haWwuY29tPiAxNzg1NTg0NzcyICswMzMwCgpIYXJkZW4gUEQtMDNCIGdsb2JhbCBpZGVudGl0eSBjaGVja3MK
+      reviewed_commit_object_sha256: ed8c6195d392b40222ef53f5e2de8483567aceea3b94bb556653703b9df17c5b
+      ci_run_id: "30698352338"
+      ci_job_id: "91364922275"
+      verdict_artifact: PD03B-TECH-REVIEW-001|PASS|41849b30055efd828654995d7a6a13fbedd3bf39|e72c32bdb041448d34c925c969fe01a2156f9e1d|ed8c6195d392b40222ef53f5e2de8483567aceea3b94bb556653703b9df17c5b|30698352338|91364922275
+      verdict_artifact_sha256: a5d7fd174173536cbc780a911838ffbdde46a512d4d7c66b671357858c57957f
     approval:
       approved_by: null
       approved_at: null

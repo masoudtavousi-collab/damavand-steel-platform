@@ -52,7 +52,7 @@ Provide the canonical map of repository documentation without replacing the auth
 | [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md) | Canonical Repository A authority and Repository B quarantine/isolation contract | Review | Founder |
 | [Current Project State](CURRENT_PROJECT_STATE.md) | Sole mutable operational pointer for baseline, phase, branch, readiness, blockers, and next action | Evidence | Founder |
 | [PD-03A Pilot Prerequisite Foundation Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md) | Exact immutable-extension scope, lifecycle, evidence, allowlist, Test Contract, and Stop Conditions | Approved | Founder |
-| [PD-03B Canonical Pilot Records Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md) | Exact three-record scope, lifecycle, evidence, 33-path Allowlist, Test Contract, and Stop Conditions | Draft | Founder |
+| [PD-03B Canonical Pilot Records Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md) | Exact three-record scope, lifecycle, evidence, 33-path Allowlist, Test Contract, and Stop Conditions | Review | Founder |
 | [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md) | Proposed archive layers, one-owner rules, status separation, conflict resolution, and Atlas intake policy | Review | Founder |
 | [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md) | Post-Sprint 12A reconciliation, evidence, pilot, dry-run, implementation, and expansion sequence | Review | Founder |
 | [Codex Sprint Protocol](CODEX_SPRINT_PROTOCOL.md) | Compact bounded sprint protocol | Review | Founder |
