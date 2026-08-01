@@ -8,8 +8,8 @@
 - **Owner:** Founder
 - **Reviewer:** Build Engineer
 - **Approval Authority:** Founder
-- **Version:** 0.10.0
-- **Last Updated:** 2026-07-29
+- **Version:** 0.11.0
+- **Last Updated:** 2026-08-01
 - **Lifecycle:** Review
 - **Source of Truth:** [Current Project State](CURRENT_PROJECT_STATE.md), current repository evidence, accepted decisions, and execution gates
 - **Dependencies:** [Project Baseline](PROJECT_BASELINE.md), [Execution Gates](EXECUTION_GATES.md), and [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md)
@@ -35,6 +35,7 @@ Wave 2A–2C established platform-independent Product core, Product Attribute, a
 | PD-01 Product Data Contract Enablement | Approved synthetic contract foundation; canonical population disabled | `FD-PD01-001`; legal `DRAFT → REVIEW → APPROVED`; `PD01-REVIEW-001` zero findings; PR #21; CI `30390311445` and `30466264564`; exact 30 paths; strict offline boundary | Canonical Product Attribute registry is empty; `PD-02`, real Product Data, Master/Golden, SKU, import, and runtime require separate approvals |
 | PD-02A Controlled Values and Attribute Profiles | Approved synthetic foundation | `FD-PD02A-001`; legal `DRAFT → REVIEW → APPROVED`; independent PASS; merged PR #22 and successful post-merge validation | Historical PD-02A authorization remains synthetic-only; canonical population requires the separate PD-02B decision |
 | PD-02B Minimum Canonical Slice | APPROVED; repository-only | `FD-PD02B-001`; legal `DRAFT → REVIEW → APPROVED`; exact 57 paths; `PD02B-TECH-REVIEW-001` PASS; closed schemas; offline validators; Material and Grade human-review evidence; hashes and anti-replay; exact 3/2/2/4/1/18/1 counts | Conditional Git integration gates remain separate; no Product/SKU, pilot, Master/Golden, availability, import, runtime, or production authority |
+| PD-03A Pilot Prerequisite Foundation | DRAFT; immutable repository extension | `FD-PD03A-001`; maximum 49 paths; exact 2/4/1/1/1/11/1 extension; controlled measurement lifecycle; synthetic-only pilot contract; approval hashes and 25 dispatched mutations | Requires independent technical PASS and legal lifecycle; no canonical Pilot/Product/SKU/availability, Master/Golden, import, runtime, or production authority |
 | Product Data | Blocked | Architecture and three pilot decisions exist | No canonical machine-readable Master Data or Golden package; availability and commercial validity incomplete |
 | Knowledge Repository | Blocked | Architecture proposals exist | No contract, content instances, population process, retrieval implementation, or approved AI capability |
 | Atlas | Controlled intake | 173 registered pending rows; K-01 adoption matrix | No row is canonical without mapping, review, and approval |
@@ -109,7 +110,11 @@ Repository tests passing cannot satisfy these runtime prerequisites.
 
 ## Recommended Next Step
 
-After the conditional PD-02B Git integration closes, prepare only a read-only decision package for the next Product Data phase. Do not expand PD-02B into Product/SKU, pilot, 879-row, Master/Golden, availability, WordPress/WooCommerce, import, runtime, deployment, or production work.
+Complete only the authorized PD-03A lifecycle and conditional Git cycle. PD-03B
+remains blocked until PD-03A is approved, merged, validated on `main`, and a
+separate exact authorization exists. Synthetic tuples are not canonical Pilots.
+Do not expand into Product/SKU, 879 rows, Master/Golden, availability,
+WordPress/WooCommerce, import, runtime, deployment, or production work.
 
 ## Change Notes
 

@@ -1,0 +1,153 @@
+contract_id: pd03a-pilot-prerequisite
+contract_version: "1.0.0"
+record_kind: canonical-product-data-extension
+schema:
+  path: repository/data/schemas/pd03a-pilot-prerequisite.schema.json
+  draft: https://json-schema.org/draft/2020-12/schema
+registry:
+  path: repository/data/registries/extensions/pd03a/pilot-prerequisite.yaml
+baseline:
+  repository: masoudtavousi-collab/damavand-steel-platform
+  main_sha: dd4d4e9dde59ce652edb5b99d2df3e84b56b8031
+  immutable_base_decision: FD-PD02B-001
+lifecycle:
+  decision_id: FD-PD03A-001
+  current_status: DRAFT
+  allowed_transition_sequence:
+    - DRAFT
+    - REVIEW
+    - APPROVED
+  transition_history: []
+  direct_draft_to_approved_forbidden: true
+  approval_evidence_required: true
+extension_policy:
+  immutable_base_registries: true
+  base_registries:
+    entities: repository/data/registries/product-entities.yaml
+    attributes: repository/data/registries/product-attributes.yaml
+    values: repository/data/registries/product-attribute-value-registries.yaml
+    profiles: repository/data/registries/product-attribute-profiles.yaml
+    labels: repository/data/registries/product-data-localized-labels.yaml
+  collision_check_across_base_and_extension: true
+  labels_slugs_skus_are_not_identity: true
+  stable_id_allocation: CSPRNG_12_HEX_WITH_COLLISION_CHECK
+exact_extension:
+  entity_count: 2
+  entity_types:
+    - SERIES
+    - VARIANT_RULE_SET
+  attribute_count: 4
+  attribute_keys:
+    - finish
+    - diameter
+    - thickness
+    - length
+  value_registry_count: 1
+  value_registry_key: finish_values
+  controlled_term_count: 1
+  controlled_term_code: silver
+  profile_count: 1
+  profile_rule_count: 6
+  localized_label_count: 11
+  approval_evidence_count: 1
+series_policy:
+  canonical_label: لوله استیل دکوراتیو
+  parent_family_id: prd:family:a10c6d8ceabc
+  official_locales:
+    - fa-IR
+  english_official_label_forbidden: true
+attribute_policy:
+  finish:
+    category: SECONDARY
+    data_type: CONTROLLED_TERM
+    canonical_label: Finish
+    persian_label: رنگ و پوشش
+    term_code: silver
+    term_label_en: Silver
+    term_label_fa: نقره‌ای
+    claim_boundary: APPEARANCE_DESIGNATION_ONLY
+  diameter:
+    category: PRIMARY
+    data_type: DECIMAL
+    unit_id: unit:000000000002
+    precision: 0
+  thickness:
+    category: PRIMARY
+    data_type: DECIMAL
+    unit_id: unit:000000000002
+    precision: 2
+  length:
+    category: PRIMARY
+    data_type: DECIMAL
+    unit_id: unit:000000000001
+    precision: 0
+profile_policy:
+  scope_entity_type: SERIES
+  required_rules:
+    - material
+    - grade
+    - finish
+    - diameter
+    - thickness
+    - length
+  variation_axes:
+    - grade
+    - finish
+    - diameter
+    - thickness
+    - length
+  fixed_non_axis:
+    - material
+  public_visibility: INTERNAL
+  filtering: false
+  inquiry_use: NOT_USED
+  seo_use: PROHIBITED
+  cartesian_generation_forbidden: true
+measurement_promotion:
+  dimension_ids:
+    - dimension:000000000001
+  unit_ids:
+    - unit:000000000001
+    - unit:000000000002
+  status_by_lifecycle:
+    DRAFT: CANDIDATE_UNVERIFIED
+    REVIEW: CANDIDATE_UNVERIFIED
+    APPROVED: APPROVED
+evidence_policy:
+  founder_decision_required: true
+  founder_scope_reference: task:019fa05e-1889-79b3-8e83-9477cd1648c6
+  no_claim_domain_basis_allowed: true
+  failed_human_reviews_are_not_pass: true
+  independent_technical_review_required_before_review: true
+  dataset_hashes_required: true
+  anti_replay_required: true
+roles:
+  decision_authority: Founder پروژه Damavand Steel
+  data_steward: product-data-steward
+  executor: codex-build-engine
+  technical_reviewer: repository-guardian-independent
+  ai_domain_authority: false
+prohibited:
+  - canonical_pilot_record
+  - product
+  - sku
+  - slug
+  - actual_availability
+  - supply_promise
+  - master_data
+  - golden_package
+  - wordpress
+  - woocommerce
+  - import
+  - runtime
+  - deploy
+  - production
+  - branch_deletion
+  - technical_standard_claim
+  - tolerance_claim
+  - quality_claim
+  - application_claim
+  - cartesian_generation
+  - grade_430
+  - pvd
+  - length_3m

@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.12.0
-- **Last Updated:** 2026-07-29
-- **Last Review:** 2026-07-29
+- **Version:** 0.13.0
+- **Last Updated:** 2026-08-01
+- **Last Review:** 2026-08-01
 - **Review Cycle:** On document creation, removal, rename, lifecycle, authority, or navigation change
 - **Lifecycle:** Draft
 - **Source of Truth:** Current repository documentation paths plus each document's recorded status and authority
@@ -26,7 +26,7 @@ Provide the canonical map of repository documentation without replacing the auth
 
 ## Current Repository-Control Context
 
-[Current Project State](CURRENT_PROJECT_STATE.md) is the only mutable operational-state pointer. This index records document roles and stable integration history; it does not restate the active branch, current authorization, pull-request state, or next action. K-01, the Build Phase 1 roadmap, BP1 and its PR #16 M1 hardening, the BP2 data blueprint, Claude recovery consolidation, post-recovery state, the merged BP2 Data Administration hardening, PR #15 governance reconciliation, PR #17 post-PR16 reconciliation, PR #18 BP2 lifecycle approval, PR #20 `GOV-XD-00`, PR #21 PD-01, and PR #22 PD-02A retain their recorded bounded meanings. PD-02B is APPROVED under its exact 57-path scope; its Git integration remains conditional until all live gates pass. Historical records retain chronology and approved future paths do not imply runtime or broader Product Data authority.
+[Current Project State](CURRENT_PROJECT_STATE.md) is the only mutable operational-state pointer. This index records document roles and stable integration history; it does not restate the active branch, pull-request state, or live Git tip. K-01, BP1/BP2, recovery, `GOV-XD-00`, PD-01, PD-02A, and approved PD-02B retain their recorded bounded meanings. [PD-03A Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md) is the DRAFT authority for only its immutable prerequisite extension and synthetic tests; it grants no canonical Pilot or runtime authority.
 
 ## Categories and Complete Document Map
 
@@ -51,6 +51,7 @@ Provide the canonical map of repository documentation without replacing the auth
 | [Project Baseline](PROJECT_BASELINE.md) | Concise current-state entry point for humans and AI; indexes but does not replace governing sources | Review | Founder |
 | [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md) | Canonical Repository A authority and Repository B quarantine/isolation contract | Review | Founder |
 | [Current Project State](CURRENT_PROJECT_STATE.md) | Sole mutable operational pointer for baseline, phase, branch, readiness, blockers, and next action | Evidence | Founder |
+| [PD-03A Pilot Prerequisite Foundation Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md) | Exact immutable-extension scope, lifecycle, evidence, allowlist, Test Contract, and Stop Conditions | Draft | Founder |
 | [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md) | Proposed archive layers, one-owner rules, status separation, conflict resolution, and Atlas intake policy | Review | Founder |
 | [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md) | Post-Sprint 12A reconciliation, evidence, pilot, dry-run, implementation, and expansion sequence | Review | Founder |
 | [Codex Sprint Protocol](CODEX_SPRINT_PROTOCOL.md) | Compact bounded sprint protocol | Review | Founder |

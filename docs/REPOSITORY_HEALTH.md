@@ -176,6 +176,24 @@ The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain histo
   pilot/879-row, Master/Golden, availability, WordPress/WooCommerce, import,
   runtime, deployment, or production readiness.
 
+### PD-03A Pilot Prerequisite Foundation
+
+- `FD-PD03A-001` authorizes a maximum 49-path immutable extension over the
+  unchanged PD-02B base. PD-02B aggregate registries and hashes remain valid.
+- DRAFT contains exact 2 Candidate entities, 4 Candidate Attributes, 1
+  Candidate Finish Registry/Term, 1 Candidate six-rule INTERNAL Series
+  Profile, 11 Candidate labels, and 1 Candidate Approval Evidence.
+- Length/Metre/Millimetre are lifecycle-bound and remain Candidate until
+  APPROVED. Mass/Kilogram/Gram are unchanged.
+- The pilot-combination contract is synthetic-only; three tuple fixtures are
+  not canonical Pilots and every readiness flag is false.
+- Closed schemas, duplicate-key rejection, remote/permissive-schema rejection,
+  hash/anti-replay checks, base-extension ID collision checks, and 25 dispatched
+  positive/negative/adversarial mutations are present.
+- Independent technical PASS and legal lifecycle remain required. No
+  Product/SKU/Slug/availability, Master/Golden, import, runtime, deployment, or
+  production readiness follows.
+
 - Five tracked Review-state models propose enterprise product entities, WooCommerce mapping, taxonomy governance, global attributes, inquiry data, and the Customer identity boundary.
 - `FD-PD01-001` approves the exact 30-path PD-01 synthetic boundary after legal `DRAFT → REVIEW → APPROVED` and independent `PD01-REVIEW-001` PASS: Product Attribute `2.0.0` hardening plus a synthetic-only Product Master Data Contract/Schema/Validator/Test boundary. The canonical Product Attribute registry remains empty and the Sprint creates no Product, Master Data, Golden, SKU, import, or runtime authority.
 - The Batch 05A remediation findings are structurally represented without creating runtime entities or schemas: product lifecycle, operational ownership requirements, Collections, Product Tags, Application/Use-Case terminology, attribute hierarchy, derived Size, local-attribute exceptions, Customer governance, and the Draft Product Data Strategy authority boundary.

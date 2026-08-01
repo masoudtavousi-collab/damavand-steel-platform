@@ -1,0 +1,20 @@
+data_classification: SYNTHETIC_FIXTURE
+expected_extension_counts:
+  entities: 2
+  attributes: 4
+  value_registries: 1
+  controlled_terms: 1
+  profiles: 1
+  profile_rules: 6
+  localized_labels: 11
+expected_measurement_references:
+  dimension_ids:
+    - dimension:000000000001
+  unit_ids:
+    - unit:000000000001
+    - unit:000000000002
+canonical_population_authority: false
+readiness:
+  import_ready: false
+  runtime_ready: false
+  golden_ready: false

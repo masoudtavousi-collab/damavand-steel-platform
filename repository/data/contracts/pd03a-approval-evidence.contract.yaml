@@ -1,0 +1,23 @@
+contract_id: pd03a-approval-evidence
+contract_version: "1.0.0"
+record_kind: canonical-pd03a-approval-evidence
+schema:
+  path: repository/data/schemas/pd03a-approval-evidence.schema.json
+  draft: https://json-schema.org/draft/2020-12/schema
+registry:
+  path: repository/data/registries/extensions/pd03a/approval-evidence.yaml
+lifecycle_source: repository/data/contracts/pd03a-pilot-prerequisite.contract.yaml
+evidence_policy:
+  exact_record_count: 1
+  exact_hash_paths:
+    - repository/data/registries/extensions/pd03a/pilot-prerequisite.yaml
+    - repository/data/contracts/measurement.contract.yaml
+    - repository/data/registries/measurement-dimensions.yaml
+    - repository/data/registries/attribute-units.yaml
+  failed_review_attempts_preserved: true
+  failed_review_attempts_never_satisfy_pass: true
+  independent_technical_pass_required_after_draft: true
+  founder_approval_required_for_approved: true
+  anti_replay_required: true
+  network_allowed: false
+  side_effects_allowed: false

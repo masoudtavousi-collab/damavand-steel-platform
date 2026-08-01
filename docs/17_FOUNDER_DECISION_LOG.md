@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.14.0
-- **Last Updated:** 2026-07-28
-- **Last Review:** 2026-07-28
+- **Version:** 0.15.0
+- **Last Updated:** 2026-08-01
+- **Last Review:** 2026-08-01
 - **Review Cycle:** On Founder decision creation, resolution, supersession, or dependency change
 - **Lifecycle:** Draft
 - **Source of Truth:** Explicit Founder-decision requirements in controlled source documents; this log is an index only
@@ -84,6 +84,12 @@ Index every repository item explicitly marked as requiring a Founder decision. T
 | ID | Decision | Decision owner / date | Approval scope | Evidence | Status / supersession |
 | --- | --- | --- | --- | --- | --- |
 | `FD-PD02B-001` | Execute the exact minimum canonical slice through `DRAFT → REVIEW → APPROVED`: 3 Product Entities, 2 Attributes, 2 Value Registries, 4 Terms, 1 INTERNAL Profile, 18 localized labels, and 1 Approval Evidence; require independent technical PASS, successful tests/CI, no conflict or scope drift, and Merge Commit only after every condition passes. | Founder / 2026-07-29; lifecycle approval recorded 2026-07-29 | [PD-02B Scope v1.0](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md); exact 57 paths after separately approved successor-compatibility corrections to the PD-02A and Product Master Data regression tests; Branch `codex/pd-02b-minimum-canonical-slice`; scoped Commit/Push/Draft PR; allowlisted corrections; conditional ready/Merge Commit/post-merge CI | Founder task `019faec6-5d14-7da2-909a-450fe030b551`; Material PASS `SS-MATERIAL-REVIEWER-02`; Grade PASS `SS-INDEPENDENT-REVIEWER-20Y-01`; starting `main` SHA `6ed6fc89e555b1be3a97d7f9c64c9e2b989af1df`; `PD02B-TECH-REVIEW-001` attempt 2 = `PASS` on `f38eb44721b90f2cf6b451c280e2d8a91c789f55`; CI `30479723615` and REVIEW-stage CI `30480571732` = `PASS`; final approval timestamp `2026-07-29T18:41:26Z` | `APPROVED` after legal `DRAFT → REVIEW → APPROVED`; all 31 bounded records are approved. Ready/Merge Commit/post-merge CI remain conditional Git gates. No 430, Finish/Color/PVD, dimensions/Units, Product/Pilot/879-row/Master/Golden/SKU/slug/availability, SEO/filter/variation/inquiry/commerce, WordPress/WooCommerce/import/runtime/deploy/production, or branch deletion is authorized. |
+
+## PD-03A Pilot Prerequisite Foundation Decision
+
+| ID | Decision | Decision owner / date | Approval scope | Evidence | Status / supersession |
+| --- | --- | --- | --- | --- | --- |
+| `FD-PD03A-001` | Build a successor-safe immutable extension for the decorative Pipe Series prerequisite through `DRAFT → REVIEW → APPROVED`; preserve all PD-02B files and hashes; add exactly 2 entities, 4 Attributes, one Silver appearance term, one six-rule INTERNAL Series Profile, 11 labels, controlled Length/Metre/Millimetre promotion, one Approval Evidence, and synthetic-only pilot-combination validation. | Founder / 2026-08-01 | [PD-03A Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md); maximum 49 paths; Branch `codex/pd-03a-pilot-prerequisite-foundation`; scoped Commit/Push/Draft PR; independent technical review; legal lifecycle; conditional Merge Commit and post-merge CI | Founder authorization in active task `019fa05e-1889-79b3-8e83-9477cd1648c6`; starting `main` SHA `dd4d4e9dde59ce652edb5b99d2df3e84b56b8031`; two failed human-review attempts preserved as Blocked evidence; no human PASS claimed; 25-case mutation contract | `DRAFT`. No technical, standard, tolerance, quality, application, commercial, availability, supply, Product/Pilot/SKU/Slug, Master/Golden, WordPress/WooCommerce, import, runtime, deployment, production, or branch-deletion authority. PD-03B remains separately gated. |
 
 ## Settled Golden Pipe Pilot Decision
 

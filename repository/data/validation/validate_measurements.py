@@ -487,6 +487,50 @@ def load_definitions() -> Definitions:
     )
 
 
+def pd03a_lifecycle_status(contract_value: Any) -> str:
+    contract = require_mapping(contract_value, "Measurement contract")
+    extension = require_mapping(contract.get("pd03a_extension"), "pd03a_extension")
+    history = {
+        "DRAFT": [],
+        "REVIEW": [
+            {
+                "from": "DRAFT",
+                "to": "REVIEW",
+                "evidence_reference": "PD03A-TECH-REVIEW-001",
+            }
+        ],
+        "APPROVED": [
+            {
+                "from": "DRAFT",
+                "to": "REVIEW",
+                "evidence_reference": "PD03A-TECH-REVIEW-001",
+            },
+            {
+                "from": "REVIEW",
+                "to": "APPROVED",
+                "evidence_reference": "FD-PD03A-001",
+            },
+        ],
+    }
+    status = extension.get("current_status")
+    if (
+        extension.get("decision_id") != "FD-PD03A-001"
+        or extension.get("allowed_transition_sequence")
+        != ["DRAFT", "REVIEW", "APPROVED"]
+        or extension.get("direct_draft_to_approved_forbidden") is not True
+        or status not in history
+        or extension.get("transition_history") != history[status]
+        or extension.get("exact_dimension_ids") != ["dimension:000000000001"]
+        or extension.get("exact_unit_ids")
+        != ["unit:000000000001", "unit:000000000002"]
+        or extension.get("product_values_allowed") is not False
+        or extension.get("commercial_claims_allowed") is not False
+        or extension.get("runtime_authority") is not False
+    ):
+        raise MeasurementDefinitionError("PD-03A measurement extension differs")
+    return str(status)
+
+
 def nonempty_string(value: Any, maximum: int | None = None) -> bool:
     return (
         isinstance(value, str)
@@ -1173,6 +1217,8 @@ def validate_bundle(
 
 def load_canonical_foundation() -> MeasurementFoundation:
     definitions = load_definitions()
+    measurement_contract, _ = load_yaml(CONTRACT_PATH, "Measurement contract")
+    pd03a_status = pd03a_lifecycle_status(measurement_contract)
     dimensions_registry, dimensions_parser = load_yaml(
         DIMENSIONS_PATH, "Measurement dimensions"
     )
@@ -1222,6 +1268,19 @@ def load_canonical_foundation() -> MeasurementFoundation:
         raise MeasurementDefinitionError(
             f"canonical measurement foundation is invalid:\n{rendered}"
         )
+    expected_pd03a_status = (
+        "APPROVED" if pd03a_status == "APPROVED" else "CANDIDATE_UNVERIFIED"
+    )
+    length = result.dimensions.get("dimension:000000000001", {})
+    if length.get("status") != expected_pd03a_status:
+        raise MeasurementDefinitionError(
+            "PD-03A Length dimension status differs from lifecycle"
+        )
+    for unit_id in ("unit:000000000001", "unit:000000000002"):
+        if result.units.get(unit_id, {}).get("status") != expected_pd03a_status:
+            raise MeasurementDefinitionError(
+                f"PD-03A Unit status differs from lifecycle: {unit_id}"
+            )
     return MeasurementFoundation(
         contract_version=definitions.contract_version,
         dimensions=result.dimensions,

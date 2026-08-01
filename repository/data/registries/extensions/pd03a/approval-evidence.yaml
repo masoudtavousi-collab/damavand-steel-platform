@@ -1,0 +1,61 @@
+registry_id: pd03a-approval-evidence
+registry_version: "1.0.0"
+contract_version: "1.0.0"
+data_classification: CANONICAL_PD03A_EVIDENCE
+evidence:
+  - contract_version: "1.0.0"
+    approval_evidence_id: papproval:50ba27766106
+    decision_id: FD-PD03A-001
+    lifecycle_status: DRAFT
+    scope_reference: docs/PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md
+    dataset_hashes:
+      - path: repository/data/registries/extensions/pd03a/pilot-prerequisite.yaml
+        sha256: b4a7f0ec04ca03f7c71ad04f156469c44a84213e983a4af073d98f5e264d6500
+      - path: repository/data/contracts/measurement.contract.yaml
+        sha256: 84d793972482d24a0696c1d55f3a7a0d3fd0fcf89fc368fc23df720c401fd266
+      - path: repository/data/registries/measurement-dimensions.yaml
+        sha256: 46608d0b8ac8279a122263b94ceae9c5ba3eba078b20a6301fa37161bb0ed3bc
+      - path: repository/data/registries/attribute-units.yaml
+        sha256: 474100723e46034f0009d930e625a8618110395df7e9abca77cee4379a3f3119
+    founder_decision:
+      reviewer_id: Founder پروژه Damavand Steel
+      scope: Exact PD-03A Pilot Prerequisite Foundation
+      verdict: PASS
+      evidence_reference: task:019fa05e-1889-79b3-8e83-9477cd1648c6
+      independent: false
+      review_date: "2026-08-01"
+    failed_review_attempts:
+      - reviewer_id: reviewer-id-placeholder
+        scope: PD-03A0 sections A through E
+        verdict: BLOCKED_REVIEWER_INCOMPLETE
+        evidence_reference: task:019fbc59-74b3-7643-907b-dae234ab871f
+        independent: true
+        review_date: "2026-08-01"
+      - reviewer_id: same-scope-participant
+        scope: PD-03A0 sections B and C
+        verdict: BLOCKED_REVIEWER_INELIGIBLE
+        evidence_reference: task:019fbc74-4be4-7983-9fbd-5f098cd2a06f
+        independent: false
+        review_date: "2026-08-01"
+    domain_basis:
+      basis: FOUNDER_APPROVED_NO_CLAIM_PILOT_REFERENCES
+      human_pass_claimed: false
+      technical_claims_authorized: false
+      commercial_claims_authorized: false
+      source_reference: FD-PD03A-001
+    technical_review:
+      reviewer_id: repository-guardian-independent
+      scope: PD-03A contracts, schemas, validators, tests, extension integrity, lifecycle and exact allowlist
+      verdict: PENDING
+      evidence_reference: null
+      independent: true
+      review_date: null
+    approval:
+      approved_by: null
+      approved_at: null
+      evidence_reference: null
+    anti_replay:
+      nonce: 50ba27766106ad46d9948af1
+      consumed: false
+    status: CANDIDATE_UNVERIFIED
+    record_version: "1.0.0"

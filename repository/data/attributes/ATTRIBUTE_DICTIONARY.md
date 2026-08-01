@@ -102,6 +102,22 @@ commerce behavior remains outside PD-02B.
 
 ## Navigation
 
+## PD-03A Exact Override
+
+PD-03A supersedes legacy candidates only within its immutable extension:
+
+- `finish`: only `silver`, as an INTERNAL appearance designation without PVD,
+  coating, quality, standard, application, or availability claim.
+- `diameter`: decimal, `mm`, precision 0; synthetic tuples use 16, 38, and 51.
+- `thickness`: decimal, `mm`, precision 2; synthetic tuples use 0.35 and 0.50.
+- `length`: decimal, `m`, precision 0; synthetic tuples use 6.
+- INTERNAL axes: Grade, Finish, Diameter, Thickness, and Length.
+- fixed INTERNAL non-axis: Material.
+
+Legacy 430, Gold/Black PVD, 3m, broader dimensions, filtering, SEO, CRM,
+WooCommerce, stock-status, and import statements remain outside PD-03A.
+Synthetic tuples are not Product or Pilot records.
+
 - [Stainless Steel Pipe Product Family](../products/pipes/PIPE_PRODUCT_FAMILY.md)
 - [Pipe Variation Matrix](../products/pipes/PIPE_VARIATION_MATRIX.md)
 - [Pipe Import Template](../imports/woocommerce/PIPE_IMPORT_TEMPLATE.csv)

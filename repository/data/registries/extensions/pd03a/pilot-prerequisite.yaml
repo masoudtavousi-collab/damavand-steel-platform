@@ -1,0 +1,341 @@
+contract_version: "1.0.0"
+extension_id: pdext:ad46d9948af1
+data_classification: CANONICAL_PD03A_EXTENSION
+baseline_sha: dd4d4e9dde59ce652edb5b99d2df3e84b56b8031
+entities:
+  - contract_version: "1.0.0"
+    entity_id: prd:series:e1657d35ac35
+    entity_type: SERIES
+    parent_entity_id: prd:family:a10c6d8ceabc
+    parent_entity_type: FAMILY
+    canonical_label: لوله استیل دکوراتیو
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: product-data-steward
+    provenance: &founder_provenance
+      source_type: FOUNDER_DECISION
+      source_reference: task:019fa05e-1889-79b3-8e83-9477cd1648c6
+      captured_by: role:product-data-steward
+      captured_at: "2026-08-01T00:00:00Z"
+      evidence_status: FOUNDER_CONFIRMED_NO_CLAIM_SCOPE
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    entity_id: prd:variant-rule-set:eb255662accc
+    entity_type: VARIANT_RULE_SET
+    parent_entity_id: prd:series:e1657d35ac35
+    parent_entity_type: SERIES
+    canonical_label: PD-03 Pipe Pilot Variant Rules
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: product-data-steward
+    provenance: *founder_provenance
+    record_version: "1.0.0"
+attributes:
+  - contract_version: "2.0.0"
+    attribute_id: attr:1926e2ad4629
+    attribute_key: finish
+    canonical_label: Finish
+    description: Internal appearance designation for the bounded pilot prerequisite; it asserts no coating, PVD, material, quality, or standard.
+    category: SECONDARY
+    data_type: CONTROLLED_TERM
+    unit_policy:
+      mode: FORBIDDEN
+      allowed_unit_ids: []
+    validation:
+      nullable: false
+      multiple_values: false
+      constraints:
+        value_registry_reference: vreg:3d37a24e09ea
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: product-data-steward
+    provenance: *founder_provenance
+    record_version: "1.0.0"
+  - contract_version: "2.0.0"
+    attribute_id: attr:252ab175be12
+    attribute_key: diameter
+    canonical_label: Diameter
+    description: Internal decimal diameter value with an explicit millimetre reference; no tolerance or standard is asserted.
+    category: PRIMARY
+    data_type: DECIMAL
+    unit_policy:
+      mode: REQUIRED
+      allowed_unit_ids:
+        - unit:000000000002
+    validation:
+      nullable: false
+      multiple_values: false
+      constraints:
+        decimal_places: 0
+        minimum: 0
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: product-data-steward
+    provenance: *founder_provenance
+    record_version: "1.0.0"
+  - contract_version: "2.0.0"
+    attribute_id: attr:d1890e85f84c
+    attribute_key: thickness
+    canonical_label: Thickness
+    description: Internal decimal thickness value with an explicit millimetre reference; no tolerance or standard is asserted.
+    category: PRIMARY
+    data_type: DECIMAL
+    unit_policy:
+      mode: REQUIRED
+      allowed_unit_ids:
+        - unit:000000000002
+    validation:
+      nullable: false
+      multiple_values: false
+      constraints:
+        decimal_places: 2
+        minimum: 0
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: product-data-steward
+    provenance: *founder_provenance
+    record_version: "1.0.0"
+  - contract_version: "2.0.0"
+    attribute_id: attr:d782d47eae7f
+    attribute_key: length
+    canonical_label: Length
+    description: Internal decimal length value with an explicit metre reference; no supply-length or availability claim is asserted.
+    category: PRIMARY
+    data_type: DECIMAL
+    unit_policy:
+      mode: REQUIRED
+      allowed_unit_ids:
+        - unit:000000000001
+    validation:
+      nullable: false
+      multiple_values: false
+      constraints:
+        decimal_places: 0
+        minimum: 0
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: product-data-steward
+    provenance: *founder_provenance
+    record_version: "1.0.0"
+value_registries:
+  - contract_version: "1.0.0"
+    value_registry_id: vreg:3d37a24e09ea
+    registry_key: finish_values
+    attribute_id: attr:1926e2ad4629
+    canonical_label: Finish Values
+    values:
+      - value_id: vterm:1df9a5493546
+        value_code: silver
+        canonical_label: Silver
+        aliases: []
+        status: CANDIDATE_UNVERIFIED
+        provenance: *founder_provenance
+        record_version: "1.0.0"
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: product-data-steward
+    reviewer:
+      role: repository-guardian
+    provenance: *founder_provenance
+    record_version: "1.0.0"
+profiles:
+  - contract_version: "1.0.0"
+    profile_id: pprof:4c556c63c1a9
+    scope_entity_id: prd:series:e1657d35ac35
+    scope_entity_type: SERIES
+    attribute_rules:
+      - attribute_id: attr:dbf5365ee1e5
+        requirement_level: REQUIRED
+        condition_reference: null
+        public_visibility: INTERNAL
+        variation_axis: false
+        filtering: false
+        inquiry_use: NOT_USED
+        seo_use: PROHIBITED
+        value_source: CONTROLLED_REGISTRY
+        value_registry_id: vreg:302188e2fc8a
+        allowed_unit_ids: []
+        precision: null
+      - attribute_id: attr:28565665c910
+        requirement_level: REQUIRED
+        condition_reference: null
+        public_visibility: INTERNAL
+        variation_axis: true
+        filtering: false
+        inquiry_use: NOT_USED
+        seo_use: PROHIBITED
+        value_source: CONTROLLED_REGISTRY
+        value_registry_id: vreg:e1b9dd333df8
+        allowed_unit_ids: []
+        precision: null
+      - attribute_id: attr:1926e2ad4629
+        requirement_level: REQUIRED
+        condition_reference: null
+        public_visibility: INTERNAL
+        variation_axis: true
+        filtering: false
+        inquiry_use: NOT_USED
+        seo_use: PROHIBITED
+        value_source: CONTROLLED_REGISTRY
+        value_registry_id: vreg:3d37a24e09ea
+        allowed_unit_ids: []
+        precision: null
+      - attribute_id: attr:252ab175be12
+        requirement_level: REQUIRED
+        condition_reference: null
+        public_visibility: INTERNAL
+        variation_axis: true
+        filtering: false
+        inquiry_use: NOT_USED
+        seo_use: PROHIBITED
+        value_source: TYPED_VALIDATION
+        value_registry_id: null
+        allowed_unit_ids:
+          - unit:000000000002
+        precision: 0
+      - attribute_id: attr:d1890e85f84c
+        requirement_level: REQUIRED
+        condition_reference: null
+        public_visibility: INTERNAL
+        variation_axis: true
+        filtering: false
+        inquiry_use: NOT_USED
+        seo_use: PROHIBITED
+        value_source: TYPED_VALIDATION
+        value_registry_id: null
+        allowed_unit_ids:
+          - unit:000000000002
+        precision: 2
+      - attribute_id: attr:d782d47eae7f
+        requirement_level: REQUIRED
+        condition_reference: null
+        public_visibility: INTERNAL
+        variation_axis: true
+        filtering: false
+        inquiry_use: NOT_USED
+        seo_use: PROHIBITED
+        value_source: TYPED_VALIDATION
+        value_registry_id: null
+        allowed_unit_ids:
+          - unit:000000000001
+        precision: 0
+    status: CANDIDATE_UNVERIFIED
+    owner:
+      role: product-data-steward
+    reviewer:
+      role: repository-guardian
+    provenance: *founder_provenance
+    record_version: "1.0.0"
+localized_labels:
+  - &series_fa
+    contract_version: "1.0.0"
+    label_id: plabel:b95d5211b63b
+    subject_id: prd:series:e1657d35ac35
+    subject_kind: PRODUCT_ENTITY
+    locale: fa-IR
+    label: لوله استیل دکوراتیو
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance: *founder_provenance
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:5024b061b393
+    subject_id: attr:1926e2ad4629
+    subject_kind: PRODUCT_ATTRIBUTE
+    locale: fa-IR
+    label: رنگ و پوشش
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance: *founder_provenance
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:8a9b60f9e03c
+    subject_id: attr:1926e2ad4629
+    subject_kind: PRODUCT_ATTRIBUTE
+    locale: en
+    label: Finish
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance: *founder_provenance
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:c762e6ae0573
+    subject_id: attr:252ab175be12
+    subject_kind: PRODUCT_ATTRIBUTE
+    locale: fa-IR
+    label: قطر
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance: *founder_provenance
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:6315b25f82f6
+    subject_id: attr:252ab175be12
+    subject_kind: PRODUCT_ATTRIBUTE
+    locale: en
+    label: Diameter
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance: *founder_provenance
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:0dc557363e77
+    subject_id: attr:d1890e85f84c
+    subject_kind: PRODUCT_ATTRIBUTE
+    locale: fa-IR
+    label: ضخامت
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance: *founder_provenance
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:b4ed88686bc7
+    subject_id: attr:d1890e85f84c
+    subject_kind: PRODUCT_ATTRIBUTE
+    locale: en
+    label: Thickness
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance: *founder_provenance
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:888caa01bfcc
+    subject_id: attr:d782d47eae7f
+    subject_kind: PRODUCT_ATTRIBUTE
+    locale: fa-IR
+    label: طول
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance: *founder_provenance
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:cb0e64f1f322
+    subject_id: attr:d782d47eae7f
+    subject_kind: PRODUCT_ATTRIBUTE
+    locale: en
+    label: Length
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance: *founder_provenance
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:53ad45e25cc5
+    subject_id: vterm:1df9a5493546
+    subject_kind: CONTROLLED_TERM
+    locale: fa-IR
+    label: نقره‌ای
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance: *founder_provenance
+    record_version: "1.0.0"
+  - contract_version: "1.0.0"
+    label_id: plabel:685397bd1e7b
+    subject_id: vterm:1df9a5493546
+    subject_kind: CONTROLLED_TERM
+    locale: en
+    label: Silver
+    aliases: []
+    status: CANDIDATE_UNVERIFIED
+    provenance: *founder_provenance
+    record_version: "1.0.0"
+status: CANDIDATE_UNVERIFIED

@@ -35,20 +35,21 @@ This roadmap defines sequence and gates, not mutable operational state. The exac
 2. `PD-01` — Product Data Contract/Schema/Validator/tests with synthetic fixtures only. **Complete when PR #21 merges; canonical population disabled.**
 3. `PD-02A` — controlled-value and standalone Attribute Profile Contract/Schema/Validator/tests with synthetic fixtures and empty canonical registries. **`APPROVED` and integrated through PR #22.**
 4. `PD-02B` — minimum canonical Catalog/Platform/Family scope, Material/Grade definitions, four controlled terms, INTERNAL Profile, 18 labels, and Approval Evidence. **`APPROVED` after legal `DRAFT → REVIEW → APPROVED`, independent PASS, and Founder approval; conditional Git integration remains separate.**
-5. `PD-03` — exactly three canonical pilot records with provenance and explicit status.
-6. `PD-04` — Golden Repository Package with `import_ready=false` and `runtime_ready=false`.
-7. `PD-05` — commercial evidence plus final SKU/slug policy before any import.
-7. `ADM-0` through `ADM-3` — separate charter, operation contracts, validator/tests, and offline reference engine.
-8. Resolve Runtime `G02/G03` ordering, then prove least-privilege access, backup, and isolated restore.
-9. Establish isolated staging, current baseline, connectivity, compatibility, security, monitoring, and licenses.
-10. `KX-0` hierarchy reconciliation, then Knowledge/Content governance after stable Product identities.
-11. Build the WordPress/WooCommerce adapter manifest and mapping preview offline.
-12. Run the separately authorized staging pilot: one Draft Parent and exactly three Draft Variations.
-13. Perform reconciliation, Inquiry-only QA, and rollback rehearsal in that order.
-14. Complete Founder UX review and bounded pilot fixes.
-15. Complete full Security, Privacy, RTL, Mobile, Accessibility, SEO, Performance, and recovery QA.
-16. Expand one approved family at a time.
-17. Complete Launch Readiness, obtain Production approval, deploy, and observe.
+5. `PD-03A` — immutable Pilot Prerequisite Foundation: Series, internal Variant Rule identity, four Attributes, Silver appearance term, Series Profile, Length/Metre/Millimetre promotion, and synthetic-only tuple validation. **DRAFT; no canonical Pilot record.**
+6. `PD-03B` — exactly three canonical pilot records with provenance and explicit status; requires separate authorization after PD-03A integration.
+7. `PD-04` — Golden Repository Package with `import_ready=false` and `runtime_ready=false`.
+8. `PD-05` — commercial evidence plus final SKU/slug policy before any import.
+9. `ADM-0` through `ADM-3` — separate charter, operation contracts, validator/tests, and offline reference engine.
+10. Resolve Runtime `G02/G03` ordering, then prove least-privilege access, backup, and isolated restore.
+11. Establish isolated staging, current baseline, connectivity, compatibility, security, monitoring, and licenses.
+12. `KX-0` hierarchy reconciliation, then Knowledge/Content governance after stable Product identities.
+13. Build the WordPress/WooCommerce adapter manifest and mapping preview offline.
+14. Run the separately authorized staging pilot: one Draft Parent and exactly three Draft Variations.
+15. Perform reconciliation, Inquiry-only QA, and rollback rehearsal in that order.
+16. Complete Founder UX review and bounded pilot fixes.
+17. Complete full Security, Privacy, RTL, Mobile, Accessibility, SEO, Performance, and recovery QA.
+18. Expand one approved family at a time.
+19. Complete Launch Readiness, obtain Production approval, deploy, and observe.
 
 The Product Data sequence is serial. Runtime evidence planning may proceed in parallel with repository-only planning, but external actions remain separately gated. Knowledge contracts, an offline Admin engine, and an offline adapter manifest may later proceed in isolated worktrees only after stable Product identities and their own approvals. All merges, shared-path changes, imports, runtime steps, and release actions remain serial.
 
