@@ -10,10 +10,7 @@ import sys
 from typing import Any
 
 from validate_pd03a_pilot_prerequisite import (
-    BASE_PATHS,
-    REGISTRY_PATH as PD03A_REGISTRY,
     ROOT,
-    UNITS_PATH,
     ValidationConfigurationError,
     collect_ids,
     load_json,
@@ -27,6 +24,28 @@ from validate_pd03a_pilot_prerequisite import (
 CONTRACT_PATH = ROOT / "repository/data/contracts/pd03b-canonical-pilot.contract.yaml"
 SCHEMA_PATH = ROOT / "repository/data/schemas/pd03b-canonical-pilot.schema.json"
 REGISTRY_PATH = ROOT / "repository/data/registries/extensions/pd03b/canonical-pilots.yaml"
+IDENTITY_REGISTRY_PATHS = tuple(
+    ROOT / path
+    for path in (
+        "repository/data/registries/attribute-categories.yaml",
+        "repository/data/registries/attribute-data-types.yaml",
+        "repository/data/registries/attribute-requirement-levels.yaml",
+        "repository/data/registries/attribute-units.yaml",
+        "repository/data/registries/extensions/pd03a/approval-evidence.yaml",
+        "repository/data/registries/extensions/pd03a/pilot-prerequisite.yaml",
+        "repository/data/registries/extensions/pd03b/approval-evidence.yaml",
+        "repository/data/registries/extensions/pd03b/canonical-pilots.yaml",
+        "repository/data/registries/measurement-dimensions.yaml",
+        "repository/data/registries/product-attribute-profiles.yaml",
+        "repository/data/registries/product-attribute-value-registries.yaml",
+        "repository/data/registries/product-attributes.yaml",
+        "repository/data/registries/product-data-approval-evidence.yaml",
+        "repository/data/registries/product-data-localized-labels.yaml",
+        "repository/data/registries/product-entities.yaml",
+        "repository/data/registries/product-entity-types.yaml",
+        "repository/data/registries/product-statuses.yaml",
+    )
+)
 EXPECTED_IDS = {
     "pilot:b12aa359af76",
     "pilot:8a1546edb732",
@@ -266,7 +285,9 @@ def validate_bundle(value: Any, lifecycle: str, validator: Any) -> list[str]:
             add("EXACT_ROOT", f"exact root field differs: {key}")
 
     available_ids: set[str] = set()
-    for path in (*BASE_PATHS, PD03A_REGISTRY, UNITS_PATH):
+    for path in IDENTITY_REGISTRY_PATHS:
+        if path == REGISTRY_PATH:
+            continue
         available_ids.update(collect_reference_ids(load_yaml(path)))
     references = {
         value.get("series_entity_id"), value.get("variant_rule_set_entity_id"), value.get("profile_id")
@@ -344,8 +365,13 @@ def validate_bundle(value: Any, lifecycle: str, validator: Any) -> list[str]:
         add("EXACT_PILOT_IDS", "exact three fresh stable pilot IDs are required")
     allocations = {str(value.get("bundle_id")), *pilot_ids}
     suffixes = [item.rsplit(":", 1)[-1] for item in allocations]
-    existing_suffixes = {item.rsplit(":", 1)[-1] for item in available_ids}
-    if len(suffixes) != len(set(suffixes)) or set(suffixes).intersection(existing_suffixes):
+    cross_namespace_collision = any(
+        allocated != existing
+        and allocated.rsplit(":", 1)[-1] == existing.rsplit(":", 1)[-1]
+        for allocated in allocations
+        for existing in available_ids
+    )
+    if len(suffixes) != len(set(suffixes)) or cross_namespace_collision:
         add("GLOBAL_ID_COLLISION", "Pilot set/record suffix collides internally or with approved prerequisites")
     if actual_refs != EXPECTED_REFERENCES:
         add("EXACT_PILOT_TUPLES", "exact three approved historical reference/measurement tuples are required")

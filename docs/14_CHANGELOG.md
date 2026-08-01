@@ -7,7 +7,7 @@
 - Added exactly three lifecycle-gated Pilot records with fresh stable IDs;
   `GOLD-PIPE-*` and `PIPE-COMB-*` remain non-identity historical references.
 - Added closed Contract/Schema/Validator/Test and one DRAFT Approval Evidence;
-  42 counted negative/adversarial mutations must dispatch and fail closed.
+  43 counted negative/adversarial mutations must dispatch and fail closed.
 - Availability remains `MISSING_DATA_VALUE`; all readiness flags remain false.
   No Product/SKU, 879 rows, Master/Golden, WordPress/WooCommerce, import,
   runtime, deployment, production, or branch deletion is authorized.

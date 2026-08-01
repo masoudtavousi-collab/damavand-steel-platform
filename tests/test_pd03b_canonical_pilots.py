@@ -48,6 +48,8 @@ class PD03BCanonicalPilotTests(unittest.TestCase):
             self.bundle["readiness"],
             {"import_ready": False, "runtime_ready": False, "golden_ready": False},
         )
+        self.assertEqual(len(pilot.IDENTITY_REGISTRY_PATHS), 17)
+        self.assertTrue(all(path.is_file() for path in pilot.IDENTITY_REGISTRY_PATHS))
 
     def dispatch(self, target: str, mutation: str) -> str:
         if target == "pilot":
@@ -111,9 +113,14 @@ class PD03BCanonicalPilotTests(unittest.TestCase):
                 first["owner"]["admin"] = True
             elif mutation == "swapped_pilot_ids":
                 first["pilot_id"], second["pilot_id"] = second["pilot_id"], first["pilot_id"]
+            elif mutation == "omitted_registry_collision":
+                first["pilot_id"] = "pilot:000000000001"
             else:
                 self.fail(f"undispatched pilot mutation: {mutation}")
-            return "\n".join(pilot.validate_bundle(value, self.lifecycle, self.validator))
+            message = "\n".join(pilot.validate_bundle(value, self.lifecycle, self.validator))
+            if mutation == "omitted_registry_collision":
+                self.assertIn("GLOBAL_ID_COLLISION", message)
+            return message
 
         if target == "lifecycle":
             contract = copy.deepcopy(self.contract)
@@ -214,9 +221,9 @@ class PD03BCanonicalPilotTests(unittest.TestCase):
 
     def test_all_counted_mutations_dispatch_and_fail_closed(self) -> None:
         cases = self.manifest["cases"]
-        self.assertEqual(self.manifest["expected_case_count"], 42)
-        self.assertEqual(len(cases), 42)
-        self.assertEqual(len({case["id"] for case in cases}), 42)
+        self.assertEqual(self.manifest["expected_case_count"], 43)
+        self.assertEqual(len(cases), 43)
+        self.assertEqual(len({case["id"] for case in cases}), 43)
         for case in cases:
             with self.subTest(case=case["id"]):
                 message = self.dispatch(case["target"], case["mutation"])

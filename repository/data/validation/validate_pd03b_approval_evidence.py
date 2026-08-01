@@ -13,8 +13,6 @@ import sys
 from typing import Any
 
 from validate_pd03a_pilot_prerequisite import (
-    BASE_PATHS,
-    REGISTRY_PATH as PD03A_REGISTRY,
     ROOT,
     ValidationConfigurationError,
     load_json,
@@ -23,7 +21,7 @@ from validate_pd03a_pilot_prerequisite import (
     validate_schema,
 )
 from validate_pd03b_canonical_pilots import (
-    REGISTRY_PATH as PILOT_REGISTRY,
+    IDENTITY_REGISTRY_PATHS,
     collect_reference_ids,
     lifecycle_status,
 )
@@ -45,9 +43,6 @@ HASH_PATHS = [
     "repository/data/registries/product-attribute-value-registries.yaml",
     "repository/data/registries/attribute-units.yaml",
 ]
-PD03A_APPROVAL_REGISTRY = ROOT / "repository/data/registries/extensions/pd03a/approval-evidence.yaml"
-
-
 def expected_nonce() -> str:
     material = "|".join((DECISION_ID, BUNDLE_ID, APPROVAL_ID, BASELINE_SHA))
     return hashlib.sha256(material.encode("utf-8")).hexdigest()[:24]
@@ -184,7 +179,9 @@ def validate_registry(
         if record.get(key) != expected:
             add("EVIDENCE_IDENTITY", f"exact evidence field differs: {key}")
     existing_ids: set[str] = set()
-    for path in (*BASE_PATHS, PD03A_REGISTRY, PD03A_APPROVAL_REGISTRY, PILOT_REGISTRY):
+    for path in IDENTITY_REGISTRY_PATHS:
+        if path == REGISTRY_PATH:
+            continue
         existing_ids.update(collect_reference_ids(load_yaml(path)))
     approval_suffix = str(record.get("approval_evidence_id")).rsplit(":", 1)[-1]
     if approval_suffix in {item.rsplit(":", 1)[-1] for item in existing_ids}:

@@ -1,6 +1,6 @@
 {
   "manifest_version": "1.0.0",
-  "expected_case_count": 42,
+  "expected_case_count": 43,
   "cases": [
     {"id": "extra-pilot", "target": "pilot", "mutation": "extra_pilot"},
     {"id": "missing-pilot", "target": "pilot", "mutation": "missing_pilot"},
@@ -30,6 +30,7 @@
     {"id": "unicode-confusable", "target": "pilot", "mutation": "unicode_confusable"},
     {"id": "unknown-nested-field", "target": "pilot", "mutation": "unknown_nested"},
     {"id": "swapped-pilot-identities", "target": "pilot", "mutation": "swapped_pilot_ids"},
+    {"id": "previously-omitted-registry-collision", "target": "pilot", "mutation": "omitted_registry_collision"},
     {"id": "direct-draft-approved", "target": "lifecycle", "mutation": "direct_approved"},
     {"id": "pilot-contract-tamper", "target": "contract", "mutation": "pilot_contract_tamper"},
     {"id": "approval-contract-tamper", "target": "contract", "mutation": "approval_contract_tamper"},
