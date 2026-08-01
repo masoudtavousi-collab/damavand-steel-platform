@@ -26,7 +26,7 @@ Provide the canonical map of repository documentation without replacing the auth
 
 ## Current Repository-Control Context
 
-[Current Project State](CURRENT_PROJECT_STATE.md) is the only mutable operational-state pointer. This index records document roles and stable integration history; it does not restate the active branch, pull-request state, or live Git tip. K-01, BP1/BP2, recovery, `GOV-XD-00`, PD-01, PD-02A, approved PD-02B, and approved PD-03A retain their recorded bounded meanings. [PD-03A Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md) is the APPROVED authority only for its immutable prerequisite extension and synthetic tests; it grants no canonical Pilot or runtime authority.
+[Current Project State](CURRENT_PROJECT_STATE.md) is the only mutable operational-state pointer. This index records document roles and stable integration history; it does not restate the active branch, pull-request state, or live Git tip. K-01, BP1/BP2, recovery, `GOV-XD-00`, PD-01, PD-02A, approved PD-02B, and approved PD-03A retain their recorded bounded meanings. [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md) governs only the three lifecycle-gated repository Pilot records and grants no Product/SKU, Availability, Master/Golden, Import, or Runtime authority.
 
 ## Categories and Complete Document Map
 
@@ -52,6 +52,7 @@ Provide the canonical map of repository documentation without replacing the auth
 | [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md) | Canonical Repository A authority and Repository B quarantine/isolation contract | Review | Founder |
 | [Current Project State](CURRENT_PROJECT_STATE.md) | Sole mutable operational pointer for baseline, phase, branch, readiness, blockers, and next action | Evidence | Founder |
 | [PD-03A Pilot Prerequisite Foundation Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md) | Exact immutable-extension scope, lifecycle, evidence, allowlist, Test Contract, and Stop Conditions | Approved | Founder |
+| [PD-03B Canonical Pilot Records Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md) | Exact three-record scope, lifecycle, evidence, 33-path Allowlist, Test Contract, and Stop Conditions | Approved | Founder |
 | [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md) | Proposed archive layers, one-owner rules, status separation, conflict resolution, and Atlas intake policy | Review | Founder |
 | [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md) | Post-Sprint 12A reconciliation, evidence, pilot, dry-run, implementation, and expansion sequence | Review | Founder |
 | [Codex Sprint Protocol](CODEX_SPRINT_PROTOCOL.md) | Compact bounded sprint protocol | Review | Founder |

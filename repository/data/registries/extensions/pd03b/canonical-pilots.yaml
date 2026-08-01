@@ -1,0 +1,80 @@
+registry_id: pd03b-canonical-pilots
+registry_version: "1.0.0"
+contract_version: "1.0.0"
+bundle_id: pilotset:36c1085ffbe9
+data_classification: CANONICAL_PD03B_PILOT_SET
+baseline_sha: e72c32bdb041448d34c925c969fe01a2156f9e1d
+series_entity_id: prd:series:e1657d35ac35
+variant_rule_set_entity_id: prd:variant-rule-set:eb255662accc
+profile_id: pprof:4c556c63c1a9
+axes:
+  - grade
+  - finish
+  - diameter
+  - thickness
+  - length
+fixed_non_axis:
+  - material
+cartesian_generation_forbidden: true
+pilots:
+  - pilot_id: pilot:b12aa359af76
+    historical_references:
+      golden_reference: GOLD-PIPE-201-16-035-6M
+      combination_reference: PIPE-COMB-0001
+      references_are_identity: false
+    attribute_values:
+      material: {attribute_id: attr:dbf5365ee1e5, term_id: vterm:5ff9c0ceca39}
+      grade: {attribute_id: attr:28565665c910, term_id: vterm:a891bfdfdd6b}
+      finish: {attribute_id: attr:1926e2ad4629, term_id: vterm:1df9a5493546}
+      diameter: {attribute_id: attr:252ab175be12, decimal_lexeme: "16", unit_id: unit:000000000002}
+      thickness: {attribute_id: attr:d1890e85f84c, decimal_lexeme: "0.35", unit_id: unit:000000000002}
+      length: {attribute_id: attr:d782d47eae7f, decimal_lexeme: "6", unit_id: unit:000000000001}
+    availability_status: MISSING_DATA_VALUE
+    status: APPROVED
+    owner: {role: product-data-steward}
+    provenance: &provenance
+      source_type: FOUNDER_DECISION
+      source_references: [FD-PILOT-001, FD-PD03A-001, "task:019fa05e-1889-79b3-8e83-9477cd1648c6"]
+      captured_by: role:product-data-steward
+      captured_at: "2026-08-01T00:00:00Z"
+      evidence_status: FOUNDER_APPROVED_EXACT_NO_CLAIM_TUPLES
+    record_version: "1.0.0"
+  - pilot_id: pilot:8a1546edb732
+    historical_references:
+      golden_reference: GOLD-PIPE-201-38-050-6M
+      combination_reference: PIPE-COMB-0016
+      references_are_identity: false
+    attribute_values:
+      material: {attribute_id: attr:dbf5365ee1e5, term_id: vterm:5ff9c0ceca39}
+      grade: {attribute_id: attr:28565665c910, term_id: vterm:a891bfdfdd6b}
+      finish: {attribute_id: attr:1926e2ad4629, term_id: vterm:1df9a5493546}
+      diameter: {attribute_id: attr:252ab175be12, decimal_lexeme: "38", unit_id: unit:000000000002}
+      thickness: {attribute_id: attr:d1890e85f84c, decimal_lexeme: "0.50", unit_id: unit:000000000002}
+      length: {attribute_id: attr:d782d47eae7f, decimal_lexeme: "6", unit_id: unit:000000000001}
+    availability_status: MISSING_DATA_VALUE
+    status: APPROVED
+    owner: {role: product-data-steward}
+    provenance: *provenance
+    record_version: "1.0.0"
+  - pilot_id: pilot:f5922666261e
+    historical_references:
+      golden_reference: GOLD-PIPE-201-51-050-6M
+      combination_reference: PIPE-COMB-0023
+      references_are_identity: false
+    attribute_values:
+      material: {attribute_id: attr:dbf5365ee1e5, term_id: vterm:5ff9c0ceca39}
+      grade: {attribute_id: attr:28565665c910, term_id: vterm:a891bfdfdd6b}
+      finish: {attribute_id: attr:1926e2ad4629, term_id: vterm:1df9a5493546}
+      diameter: {attribute_id: attr:252ab175be12, decimal_lexeme: "51", unit_id: unit:000000000002}
+      thickness: {attribute_id: attr:d1890e85f84c, decimal_lexeme: "0.50", unit_id: unit:000000000002}
+      length: {attribute_id: attr:d782d47eae7f, decimal_lexeme: "6", unit_id: unit:000000000001}
+    availability_status: MISSING_DATA_VALUE
+    status: APPROVED
+    owner: {role: product-data-steward}
+    provenance: *provenance
+    record_version: "1.0.0"
+readiness:
+  import_ready: false
+  runtime_ready: false
+  golden_ready: false
+status: APPROVED

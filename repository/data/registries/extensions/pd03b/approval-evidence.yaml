@@ -1,0 +1,70 @@
+registry_id: pd03b-approval-evidence
+registry_version: "1.0.0"
+contract_version: "1.0.0"
+data_classification: CANONICAL_PD03B_EVIDENCE
+evidence:
+  - contract_version: "1.0.0"
+    approval_evidence_id: papproval:d9d7811dd4f5
+    decision_id: FD-PD03B-001
+    bundle_id: pilotset:36c1085ffbe9
+    lifecycle_status: APPROVED
+    scope_reference: docs/PD03B_CANONICAL_PILOT_SCOPE_V1.0.md
+    dataset_hashes:
+      - path: repository/data/registries/extensions/pd03b/canonical-pilots.yaml
+        sha256: 58d36eccb9afb72ec3ed7dcaf4dd74c36f94647b984895cd8542d3280bcdb247
+      - path: repository/data/registries/extensions/pd03a/pilot-prerequisite.yaml
+        sha256: 021540a2c0b9f1145ec97c748c91f41f46c1b939d3ff4893acf3d0bf7ce1e1c3
+      - path: repository/data/registries/product-entities.yaml
+        sha256: de2c111de622a633b01288f4588bc80c5ea27c0a051b5f2bd252ec9e9b7e6030
+      - path: repository/data/registries/product-attribute-value-registries.yaml
+        sha256: 7ffd870037243450e242db40b056e2e38bf744ea813d4f92ed4e67f1481641fa
+      - path: repository/data/registries/attribute-units.yaml
+        sha256: c7af40450d937c5a2483630e6e0d48354393dde94564d4a6a540a39f0662582e
+    founder_decision:
+      reviewer_id: Founder پروژه Damavand Steel
+      scope: Exact PD-03B Canonical Pilot Records
+      verdict: PASS
+      evidence_reference: task:019fa05e-1889-79b3-8e83-9477cd1648c6
+      review_date: "2026-08-01"
+    domain_basis:
+      basis: FOUNDER_APPROVED_EXACT_NO_CLAIM_TUPLES
+      source_references: [FD-PILOT-001, FD-PD03A-001]
+      new_domain_claims_authorized: false
+      availability_authorized: false
+      commercial_identity_authorized: false
+    technical_review:
+      review_id: PD03B-TECH-REVIEW-001
+      reviewer_id: repository-guardian-independent
+      scope: PD-03B contracts, schemas, registries, validators, tests, lifecycle, exact records and allowlist
+      verdict: PASS
+      evidence_reference: PD03B-TECH-REVIEW-001
+      independent: true
+      review_date: "2026-08-01"
+      reviewed_head_sha: 41849b30055efd828654995d7a6a13fbedd3bf39
+      reviewed_base_sha: e72c32bdb041448d34c925c969fe01a2156f9e1d
+      reviewed_commit_object_b64: dHJlZSBlZjMxZTkyMDBhMDM0YTA1NzA2NWVhYzg4MGFiNDU5OTJlYWJjYWNjCnBhcmVudCA2Yjc1YTVkN2ZjZjhmYTEwOTgyMjRkMWM4NjlmNzU0NGFlZjUyMjAzCmF1dGhvciBNYXNvdWQgVGF2b3VzaSA8bWFzb3VkLnRhdm91c2lAZ21haWwuY29tPiAxNzg1NTg0NzcyICswMzMwCmNvbW1pdHRlciBNYXNvdWQgVGF2b3VzaSA8bWFzb3VkLnRhdm91c2lAZ21haWwuY29tPiAxNzg1NTg0NzcyICswMzMwCgpIYXJkZW4gUEQtMDNCIGdsb2JhbCBpZGVudGl0eSBjaGVja3MK
+      reviewed_commit_object_sha256: ed8c6195d392b40222ef53f5e2de8483567aceea3b94bb556653703b9df17c5b
+      ci_run_id: "30698352338"
+      ci_job_id: "91364922275"
+      verdict_artifact: PD03B-TECH-REVIEW-001|PASS|41849b30055efd828654995d7a6a13fbedd3bf39|e72c32bdb041448d34c925c969fe01a2156f9e1d|ed8c6195d392b40222ef53f5e2de8483567aceea3b94bb556653703b9df17c5b|30698352338|91364922275
+      verdict_artifact_sha256: a5d7fd174173536cbc780a911838ffbdde46a512d4d7c66b671357858c57957f
+    approval:
+      approved_by: Founder پروژه Damavand Steel
+      approved_at: "2026-08-01T11:54:38Z"
+      evidence_reference: FD-PD03B-001
+    anti_replay:
+      nonce_derivation: SHA256_FIRST_24_HEX
+      binding:
+        decision_id: FD-PD03B-001
+        bundle_id: pilotset:36c1085ffbe9
+        approval_evidence_id: papproval:d9d7811dd4f5
+        baseline_sha: e72c32bdb041448d34c925c969fe01a2156f9e1d
+      nonce: 16da0c3947ab608ae37191a5
+      consumed: true
+      consumption_history:
+        - decision_id: FD-PD03B-001
+          approval_evidence_id: papproval:d9d7811dd4f5
+          evidence_reference: FD-PD03B-001
+          consumed_at: "2026-08-01T11:54:38Z"
+    status: APPROVED
+    record_version: "1.0.0"

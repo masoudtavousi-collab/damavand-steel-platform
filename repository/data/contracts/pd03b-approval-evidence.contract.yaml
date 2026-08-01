@@ -1,0 +1,39 @@
+contract_id: pd03b-approval-evidence
+contract_version: "1.0.0"
+record_kind: canonical-pd03b-approval-evidence
+schema:
+  path: repository/data/schemas/pd03b-approval-evidence.schema.json
+  draft: https://json-schema.org/draft/2020-12/schema
+registry:
+  path: repository/data/registries/extensions/pd03b/approval-evidence.yaml
+lifecycle_source: repository/data/contracts/pd03b-canonical-pilot.contract.yaml
+evidence_policy:
+  exact_record_count: 1
+  exact_hash_paths:
+    - repository/data/registries/extensions/pd03b/canonical-pilots.yaml
+    - repository/data/registries/extensions/pd03a/pilot-prerequisite.yaml
+    - repository/data/registries/product-entities.yaml
+    - repository/data/registries/product-attribute-value-registries.yaml
+    - repository/data/registries/attribute-units.yaml
+  founder_scope_and_data_decision_required: true
+  settled_pilot_decision_reference: FD-PILOT-001
+  prerequisite_decision_reference: FD-PD03A-001
+  independent_technical_pass_required_after_draft: true
+  technical_review_id: PD03B-TECH-REVIEW-001
+  exact_reviewed_head_and_base_sha_required: true
+  reviewed_commit_object_proof_required: true
+  reviewed_commit_git_existence_required_when_repository_complete: true
+  exact_ci_run_and_job_binding_required: true
+  verdict_artifact_digest_required: true
+  founder_approval_required_for_approved: true
+  anti_replay_required: true
+  anti_replay_binding_fields:
+    - decision_id
+    - bundle_id
+    - approval_evidence_id
+    - baseline_sha
+  anti_replay_nonce_derivation: SHA256_FIRST_24_HEX
+  exact_single_consumption_history_required: true
+  global_id_collision_check_required: true
+  network_allowed: false
+  side_effects_allowed: false

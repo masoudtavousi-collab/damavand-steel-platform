@@ -2,13 +2,13 @@
 
 - **Current date:** 2026-08-01
 - **Canonical repository:** `masoudtavousi-collab/damavand-steel-platform`
-- **Reviewed input anchor:** `dd4d4e9dde59ce652edb5b99d2df3e84b56b8031`, merged PR #23 baseline; successful required post-merge validation
+- **Reviewed input anchor:** `e72c32bdb041448d34c925c969fe01a2156f9e1d`, merged PR #24 PD-03A baseline; successful main CI `30696801759`
 - **Live `main` tip:** resolve dynamically from GitHub `refs/heads/main` at task start; do not treat the reviewed input anchor as a permanent live-tip claim
-- **Last completed substantive repository integration:** `PD-02B` through PR #23 when this declaration becomes effective on merged `main`
-- **Last completed governance reconciliation:** PD-02B direct reconciliation through PR #23 when merged
-- **Current phase:** `PD-03A` Pilot Prerequisite Foundation — `APPROVED`; conditional Git integration in progress
-- **Current authorized branch:** `codex/pd-03a-pilot-prerequisite-foundation`
-- **Current authorization:** maximum 49-path repository-only immutable-extension scope: 2 entities, 4 Attributes, 1 Value Registry/Term, 1 six-rule INTERNAL Series Profile, 11 labels, Length/Metre/Millimetre lifecycle promotion, 1 Approval Evidence, and synthetic-only pilot-combination Contract/Schema/Validator/Test
+- **Last completed substantive repository integration:** `PD-03A` through merged PR #24 and successful post-merge main CI
+- **Last completed governance reconciliation:** PD-03A direct reconciliation through PR #24
+- **Current phase:** `PD-03B` Canonical Pilot Records — `APPROVED`; conditional Git integration in progress
+- **Current authorized branch:** `codex/pd-03b-canonical-pilot-records`
+- **Current authorization:** maximum 33-path repository-only scope for exactly three canonical Pilot records, dedicated Contract/Schema/Validator/Test, one Approval Evidence, legal lifecycle, and conditional Git integration
 - **Merge:** conditional after independent technical PASS, legal `DRAFT → REVIEW → APPROVED`, exact allowlist, successful tests/CI, no conflict or scope drift, Merge Commit, and successful `main` CI
 - **Runtime / WordPress / WooCommerce mutation:** NO-GO
 - **Import / publishing / deployment / product creation / bulk SKU generation:** NO-GO
@@ -45,7 +45,8 @@ This file is the only semantic operational-state pointer. Other documents may pr
 | `PD-01` Product Data Contract Enablement | `FD-PD01-001`; `PD01-REVIEW-001`; [PD-01 Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md); exact 30-path allowlist; starting SHA `6577cd461e88463903b18c11b0e5bdbfa88375e2`; PR #21; DRAFT CI `30390311445`; REVIEW CI `30466264564` | `APPROVED` after legal `DRAFT → REVIEW → APPROVED`; synthetic Contract/Schema/Validator/Test enablement only; canonical Product Attribute registry remains empty; no Product, SKU, Master Data, Golden, import, runtime, or production authority |
 | `PD-02A` Controlled Values and Attribute Profiles foundation | `FD-PD02A-001`; `PD02A-REVIEW-001`; [PD-02A Scope v1.0](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md); exact 38-path allowlist; merged PR #22; successful post-merge validation | `APPROVED` synthetic foundation; its historical empty-registry boundary is preserved and later canonical population requires PD-02B |
 | `PD-02B` Minimum Canonical Slice | `FD-PD02B-001`; `PD02B-TECH-REVIEW-001`; [PD-02B Scope v1.0](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md); exact 57-path allowlist; starting SHA `6ed6fc89e555b1be3a97d7f9c64c9e2b989af1df`; PASS on `f38eb447…`; CI `30479723615` and REVIEW-stage CI `30480571732`; PR #23 | `APPROVED` after legal `DRAFT → REVIEW → APPROVED`; all 31 bounded records are approved; no broader Product/runtime authority |
-| `PD-03A` Pilot Prerequisite Foundation | `FD-PD03A-001`; `PD03A-TECH-REVIEW-001`; [PD-03A Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md); starting SHA `dd4d4e9dde59ce652edb5b99d2df3e84b56b8031`; PASS on `cb6c817…`; DRAFT CI `30696083295`; REVIEW CI `30696444576`; immutable extension; 50 dispatched mutation cases | `APPROVED` after legal `DRAFT → REVIEW → APPROVED`; exact extension records and Length/Metre/Millimetre are approved; final PR CI, Ready/Merge Commit and post-merge main CI remain conditional; PD-02B aggregate registries/hashes remain unchanged; no canonical Pilot/Product/SKU/availability or runtime authority |
+| `PD-03A` Pilot Prerequisite Foundation | `FD-PD03A-001`; `PD03A-TECH-REVIEW-001`; [PD-03A Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md); starting SHA `dd4d4e9dde59ce652edb5b99d2df3e84b56b8031`; PASS on `cb6c817…`; DRAFT CI `30696083295`; REVIEW CI `30696444576`; PR #24; main CI `30696801759`; immutable extension; 50 dispatched mutation cases | `APPROVED`, merged by Merge Commit `e72c32bdb041448d34c925c969fe01a2156f9e1d`, and validated on `main`; exact extension records and Length/Metre/Millimetre are approved; PD-02B aggregate registries/hashes remain unchanged; no canonical Pilot/Product/SKU/availability or runtime authority |
+| `PD-03B` Canonical Pilot Records | `FD-PD03B-001`; [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md); starting SHA `e72c32bdb041448d34c925c969fe01a2156f9e1d`; exact 33-path allowlist; 43 mutation cases; `PD03B-TECH-REVIEW-001` PASS on `41849b3…`; DRAFT CI `30698352338`; REVIEW CI `30698582671`; final approval `2026-08-01T11:54:38Z` | `APPROVED` after legal lifecycle; exactly three Pilot records are approved. Final PR CI, Merge Commit, and main CI remain conditional. No Product/SKU, availability, Master/Golden, import, or runtime authority |
 | Atlas planning registry | 173 pending document records across 21 domains | Intake inventory only; no Atlas row is canonical merely because it is registered |
 
 Repository validators are active in CI and unified under `make test`. PR #12 hardening is merged: nested schema objects are closed, JSON Schema Draft 2020-12 is enforced offline, validation output is deterministic, and positive, negative, and adversarial tests are wired into the unified test entry point. `FD-BP2-ADM-001` records the completed legal BP2 lifecycle without implementation authority. `FD-PD01-001` approves a separate synthetic Product Data contract boundary; it is not canonical Product Data.
@@ -61,7 +62,10 @@ Repository validators are active in CI and unified under `make test`. PR #12 har
 - Broader Product Data readiness remains **blocked**; the PD-02B minimum slice does not make pilot, Master/Golden, commerce, import, or runtime data ready.
 - PD-03A is an APPROVED prerequisite extension only. Its bounded records and
   Length/Metre/Millimetre are approved, but its synthetic tuples remain test
-  evidence, not Pilots. Conditional Git integration is not broader authority.
+  evidence, not Pilots. PR #24 integration grants no broader authority.
+- PD-03B is APPROVED after zero-finding independent technical PASS and legal
+  lifecycle. Exactly three stable Pilot records are approved. A Pilot record is
+  not a Product, SKU, Golden package, import asset, runtime object, or availability.
 
 ### Knowledge Repository
 
@@ -74,6 +78,8 @@ Repository validators are active in CI and unified under `make test`. PR #12 har
 
 - The approved Golden Parent remains `لوله استیل دکوراتیو`.
 - Exactly three pilot combinations are approved in Founder decisions and governing prose.
+- PD-03B encodes only these three combinations as approved canonical Pilot
+  records; approval grants no Product/SKU, Availability, Golden, Import, or Runtime authority.
 - Their `GOLD-PIPE-*` identifiers are pilot references, not final commercial SKUs.
 - The other 879 combinations remain `CANDIDATE_UNVERIFIED`.
 - Availability remains `MISSING_DATA_VALUE` for all 882 rows.
@@ -125,14 +131,14 @@ A Variable Parent Product is a commerce presentation and never the owner of cano
 
 ## Approved Next Action
 
-Complete only the remaining conditional Git integration for the approved
-PD-03A scope. Stop unless final PR CI, allowlist, no-conflict, Merge Commit,
-and post-merge `main` CI gates succeed.
+Complete only the remaining conditional Git integration for approved PD-03B:
+final PR CI, exact Allowlist, no conflict or scope drift, Ready for Review,
+Merge Commit, and successful post-merge `main` CI.
 
-Do not create a canonical Pilot, Product, 879-row set, Master Data, Golden
-package, SKU, Slug, availability value, supply promise, Grade 430, PVD, 3m,
+Do not create a Product, fourth Pilot, 879-row set, Master Data, Golden package,
+SKU, Slug, availability value, supply promise, Grade 430, PVD, 3m,
 WordPress/WooCommerce mapping, import, publication, runtime, deployment,
-production mutation, or branch deletion. PD-03B requires separate approval.
+production mutation, or branch deletion. PD-04 requires separate approval.
 
 ## Current References
 
@@ -143,6 +149,7 @@ production mutation, or branch deletion. PD-03B requires separate approval.
 - [Claude Recovery and Repository Consolidation Audit](AUDIT_REPORT_CLAUDE_RECOVERY_2026-07-26.md)
 - [BP2 Data Administration Scope v1.0](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md)
 - [PD-02B Minimum Canonical Slice Scope v1.0](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md)
+- [PD-03B Canonical Pilot Records Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md)
 - [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md)
 - [Founder Decision Log](17_FOUNDER_DECISION_LOG.md)
 - [Open Questions](18_OPEN_QUESTIONS.md)

@@ -94,6 +94,12 @@ pd03a_pilot_validator="repository/data/validation/validate_product_pilot_combina
 "$python" "$pd03a_pilot_validator" tests/fixtures/pd03a/valid-synthetic-pilot-combinations.yaml
 "$python" tests/test_pd03a_foundation.py
 
+pd03b_pilot_validator="repository/data/validation/validate_pd03b_canonical_pilots.py"
+pd03b_approval_validator="repository/data/validation/validate_pd03b_approval_evidence.py"
+"$python" "$pd03b_pilot_validator"
+"$python" "$pd03b_approval_validator"
+"$python" tests/test_pd03b_canonical_pilots.py
+
 "$python" repository/data/validation/validate_bp2_data_blueprint.py
 "$python" repository/data/validation/validate_bp2_data_administration.py
 "$python" tests/test_bp2_data_administration.py
