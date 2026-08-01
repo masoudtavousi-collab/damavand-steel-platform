@@ -1,0 +1,139 @@
+contract_id: pd03b-canonical-pilot
+contract_version: "1.0.0"
+record_kind: canonical-pilot-record-set
+schema:
+  path: repository/data/schemas/pd03b-canonical-pilot.schema.json
+  draft: https://json-schema.org/draft/2020-12/schema
+registry:
+  path: repository/data/registries/extensions/pd03b/canonical-pilots.yaml
+baseline:
+  repository: masoudtavousi-collab/damavand-steel-platform
+  main_sha: e72c32bdb041448d34c925c969fe01a2156f9e1d
+  immutable_prerequisite_decision: FD-PD03A-001
+lifecycle:
+  decision_id: FD-PD03B-001
+  current_status: DRAFT
+  allowed_transition_sequence:
+    - DRAFT
+    - REVIEW
+    - APPROVED
+  transition_history: []
+  direct_draft_to_approved_forbidden: true
+  approval_evidence_required: true
+  technical_reviewed_sha: null
+  technical_review_artifact_sha256: null
+identity_policy:
+  set_id_pattern: '^pilotset:[0-9a-f]{12}$'
+  pilot_id_pattern: '^pilot:[0-9a-f]{12}$'
+  allocation: CSPRNG_12_HEX_WITH_GLOBAL_COLLISION_CHECK
+  immutable: true
+  historical_references_are_identity: false
+  labels_slugs_skus_are_identity: false
+exact_scope:
+  pilot_record_count: 3
+  canonical_set_id: pilotset:36c1085ffbe9
+  series_entity_id: prd:series:e1657d35ac35
+  variant_rule_set_entity_id: prd:variant-rule-set:eb255662accc
+  profile_id: pprof:4c556c63c1a9
+  fixed_material_term_id: vterm:5ff9c0ceca39
+  grade_term_id: vterm:a891bfdfdd6b
+  finish_term_id: vterm:1df9a5493546
+  axes:
+    - grade
+    - finish
+    - diameter
+    - thickness
+    - length
+  fixed_non_axis:
+    - material
+  tuple_lexemes:
+    - ["201", silver, "16", "0.35", "6"]
+    - ["201", silver, "38", "0.50", "6"]
+    - ["201", silver, "51", "0.50", "6"]
+  historical_references:
+    - golden_reference: GOLD-PIPE-201-16-035-6M
+      combination_reference: PIPE-COMB-0001
+    - golden_reference: GOLD-PIPE-201-38-050-6M
+      combination_reference: PIPE-COMB-0016
+    - golden_reference: GOLD-PIPE-201-51-050-6M
+      combination_reference: PIPE-COMB-0023
+attribute_references:
+  material: attr:dbf5365ee1e5
+  grade: attr:28565665c910
+  finish: attr:1926e2ad4629
+  diameter: attr:252ab175be12
+  thickness: attr:d1890e85f84c
+  length: attr:d782d47eae7f
+measurement_policy:
+  diameter:
+    unit_id: unit:000000000002
+    precision: 0
+  thickness:
+    unit_id: unit:000000000002
+    precision: 2
+  length:
+    unit_id: unit:000000000001
+    precision: 0
+status_policy:
+  record_status_by_lifecycle:
+    DRAFT: CANDIDATE_UNVERIFIED
+    REVIEW: CANDIDATE_UNVERIFIED
+    APPROVED: APPROVED
+  availability_status: MISSING_DATA_VALUE
+  cartesian_generation_forbidden: true
+  import_ready: false
+  runtime_ready: false
+  golden_ready: false
+provenance_policy:
+  source_type: FOUNDER_DECISION
+  source_references:
+    - FD-PILOT-001
+    - FD-PD03A-001
+    - task:019fa05e-1889-79b3-8e83-9477cd1648c6
+  captured_by: role:product-data-steward
+  captured_at: "2026-08-01T00:00:00Z"
+  evidence_status: FOUNDER_APPROVED_EXACT_NO_CLAIM_TUPLES
+roles:
+  decision_authority: Founder پروژه Damavand Steel
+  data_steward: product-data-steward
+  executor: codex-build-engine
+  technical_reviewer: repository-guardian-independent
+  qa_and_rollback_owner: repository-guardian
+  ai_domain_authority: false
+validation:
+  offline_only: true
+  network_allowed: false
+  side_effects_allowed: false
+  exact_contract_required: true
+  exact_three_records_required: true
+  cross_file_reference_resolution_required: true
+  duplicate_json_or_yaml_keys_rejected: true
+  non_finite_numbers_rejected: true
+  remote_or_permissive_schema_rejected: true
+  mutation_manifest_dispatch_required: true
+prohibited:
+  - product
+  - sku
+  - commercial_sku
+  - slug
+  - availability_value
+  - supply_status
+  - stock
+  - inventory
+  - price
+  - offer
+  - master_data
+  - golden_package
+  - additional_candidate_rows
+  - cartesian_generation
+  - wordpress
+  - woocommerce
+  - import
+  - runtime
+  - deploy
+  - production
+  - branch_deletion
+  - technical_standard_claim
+  - tolerance_claim
+  - quality_claim
+  - application_claim

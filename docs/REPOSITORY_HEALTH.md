@@ -195,6 +195,20 @@ The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain histo
   Product/SKU/Slug/availability, Master/Golden, import, runtime, deployment, or
   production readiness follows.
 
+### PD-03B Canonical Pilot Records
+
+- `FD-PD03B-001` authorizes an exact 33-path repository-only cycle from merged
+  PR #24 baseline `e72c32b…` for exactly three Pilot records.
+- The DRAFT uses fresh stable identities; all `GOLD-PIPE-*` and `PIPE-COMB-*`
+  values remain non-identity historical references.
+- Records remain `CANDIDATE_UNVERIFIED`; Availability is
+  `MISSING_DATA_VALUE`; Golden/Import/Runtime readiness remains false.
+- Dedicated closed schemas, offline validators, hash/technical-review binding,
+  anti-replay evidence, and 42 dispatched mutations are required.
+- Independent technical PASS and legal lifecycle remain pending. No Product,
+  SKU, 879 rows, Master/Golden, WordPress/WooCommerce, import, runtime,
+  deployment, or production readiness follows.
+
 - Five tracked Review-state models propose enterprise product entities, WooCommerce mapping, taxonomy governance, global attributes, inquiry data, and the Customer identity boundary.
 - `FD-PD01-001` approves the exact 30-path PD-01 synthetic boundary after legal `DRAFT → REVIEW → APPROVED` and independent `PD01-REVIEW-001` PASS: Product Attribute `2.0.0` hardening plus a synthetic-only Product Master Data Contract/Schema/Validator/Test boundary. The canonical Product Attribute registry remains empty and the Sprint creates no Product, Master Data, Golden, SKU, import, or runtime authority.
 - The Batch 05A remediation findings are structurally represented without creating runtime entities or schemas: product lifecycle, operational ownership requirements, Collections, Product Tags, Application/Use-Case terminology, attribute hierarchy, derived Size, local-attribute exceptions, Customer governance, and the Draft Product Data Strategy authority boundary.

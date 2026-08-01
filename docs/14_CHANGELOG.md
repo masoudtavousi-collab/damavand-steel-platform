@@ -1,5 +1,17 @@
 # Changelog
 
+# 2026-08-01 — PD-03B Canonical Pilot Records (`DRAFT`)
+
+- Recorded `FD-PD03B-001` and the exact 33-path scope from merged PR #24
+  baseline `e72c32bdb041448d34c925c969fe01a2156f9e1d`.
+- Added exactly three lifecycle-gated Pilot records with fresh stable IDs;
+  `GOLD-PIPE-*` and `PIPE-COMB-*` remain non-identity historical references.
+- Added closed Contract/Schema/Validator/Test and one DRAFT Approval Evidence;
+  42 counted negative/adversarial mutations must dispatch and fail closed.
+- Availability remains `MISSING_DATA_VALUE`; all readiness flags remain false.
+  No Product/SKU, 879 rows, Master/Golden, WordPress/WooCommerce, import,
+  runtime, deployment, production, or branch deletion is authorized.
+
 ## 2026-08-01 — PD-03A Pilot Prerequisite Foundation (`APPROVED`)
 
 - `FD-PD03A-001` authorizes the maximum 49-path immutable-extension lifecycle

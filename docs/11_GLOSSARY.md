@@ -76,6 +76,11 @@ No steel term, classification, grade, standard, dimension, or taxonomy is approv
   availability.
 - **Synthetic Pilot Combination:** test fixture exercising the three approved
   reference tuples. It is never a canonical Pilot record and cannot be promoted.
+- **Canonical Pilot Record:** lifecycle-gated repository record for one exact
+  Founder-approved tuple with a stable `pilot:` identity. Historical
+  `GOLD-PIPE-*` and `PIPE-COMB-*` values remain non-identity references. A Pilot
+  is not a Product, SKU, Availability value, Master Data row, Golden package,
+  import asset, or runtime object.
 - **Immutable Product Data Extension:** separately governed additive records
   that cannot mutate or shadow the approved base registries or historical hashes.
 

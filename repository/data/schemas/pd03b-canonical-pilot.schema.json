@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:damavand-steel:schema:pd03b-canonical-pilot:1.0.0",
+  "title": "PD-03B exact canonical pilot record set",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["registry_id", "registry_version", "contract_version", "bundle_id", "data_classification", "baseline_sha", "series_entity_id", "variant_rule_set_entity_id", "profile_id", "axes", "fixed_non_axis", "cartesian_generation_forbidden", "pilots", "readiness", "status"],
+  "properties": {
+    "registry_id": {"const": "pd03b-canonical-pilots"},
+    "registry_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "contract_version": {"const": "1.0.0"},
+    "bundle_id": {"const": "pilotset:36c1085ffbe9"},
+    "data_classification": {"const": "CANONICAL_PD03B_PILOT_SET"},
+    "baseline_sha": {"const": "e72c32bdb041448d34c925c969fe01a2156f9e1d"},
+    "series_entity_id": {"const": "prd:series:e1657d35ac35"},
+    "variant_rule_set_entity_id": {"const": "prd:variant-rule-set:eb255662accc"},
+    "profile_id": {"const": "pprof:4c556c63c1a9"},
+    "axes": {"type": "array", "prefixItems": [{"const": "grade"}, {"const": "finish"}, {"const": "diameter"}, {"const": "thickness"}, {"const": "length"}], "items": false, "minItems": 5, "maxItems": 5},
+    "fixed_non_axis": {"type": "array", "prefixItems": [{"const": "material"}], "items": false, "minItems": 1, "maxItems": 1},
+    "cartesian_generation_forbidden": {"const": true},
+    "pilots": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/pilot"}},
+    "readiness": {"$ref": "#/$defs/readiness"},
+    "status": {"enum": ["CANDIDATE_UNVERIFIED", "APPROVED"]}
+  },
+  "$defs": {
+    "historical_references": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["golden_reference", "combination_reference", "references_are_identity"],
+      "properties": {
+        "golden_reference": {"enum": ["GOLD-PIPE-201-16-035-6M", "GOLD-PIPE-201-38-050-6M", "GOLD-PIPE-201-51-050-6M"]},
+        "combination_reference": {"enum": ["PIPE-COMB-0001", "PIPE-COMB-0016", "PIPE-COMB-0023"]},
+        "references_are_identity": {"const": false}
+      }
+    },
+    "term_value": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["attribute_id", "term_id"],
+      "properties": {
+        "attribute_id": {"pattern": "^attr:[0-9a-f]{12}$", "type": "string"},
+        "term_id": {"pattern": "^vterm:[0-9a-f]{12}$", "type": "string"}
+      }
+    },
+    "decimal_value": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["attribute_id", "decimal_lexeme", "unit_id"],
+      "properties": {
+        "attribute_id": {"pattern": "^attr:[0-9a-f]{12}$", "type": "string"},
+        "decimal_lexeme": {"pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$", "type": "string"},
+        "unit_id": {"pattern": "^unit:[0-9a-f]{12}$", "type": "string"}
+      }
+    },
+    "attribute_values": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["material", "grade", "finish", "diameter", "thickness", "length"],
+      "properties": {
+        "material": {"$ref": "#/$defs/term_value"},
+        "grade": {"$ref": "#/$defs/term_value"},
+        "finish": {"$ref": "#/$defs/term_value"},
+        "diameter": {"$ref": "#/$defs/decimal_value"},
+        "thickness": {"$ref": "#/$defs/decimal_value"},
+        "length": {"$ref": "#/$defs/decimal_value"}
+      }
+    },
+    "owner": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["role"],
+      "properties": {"role": {"const": "product-data-steward"}}
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_type", "source_references", "captured_by", "captured_at", "evidence_status"],
+      "properties": {
+        "source_type": {"const": "FOUNDER_DECISION"},
+        "source_references": {"type": "array", "prefixItems": [{"const": "FD-PILOT-001"}, {"const": "FD-PD03A-001"}, {"const": "task:019fa05e-1889-79b3-8e83-9477cd1648c6"}], "items": false, "minItems": 3, "maxItems": 3},
+        "captured_by": {"const": "role:product-data-steward"},
+        "captured_at": {"const": "2026-08-01T00:00:00Z"},
+        "evidence_status": {"const": "FOUNDER_APPROVED_EXACT_NO_CLAIM_TUPLES"}
+      }
+    },
+    "pilot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pilot_id", "historical_references", "attribute_values", "availability_status", "status", "owner", "provenance", "record_version"],
+      "properties": {
+        "pilot_id": {"type": "string", "pattern": "^pilot:[0-9a-f]{12}$"},
+        "historical_references": {"$ref": "#/$defs/historical_references"},
+        "attribute_values": {"$ref": "#/$defs/attribute_values"},
+        "availability_status": {"const": "MISSING_DATA_VALUE"},
+        "status": {"enum": ["CANDIDATE_UNVERIFIED", "APPROVED"]},
+        "owner": {"$ref": "#/$defs/owner"},
+        "provenance": {"$ref": "#/$defs/provenance"},
+        "record_version": {"const": "1.0.0"}
+      }
+    },
+    "readiness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["import_ready", "runtime_ready", "golden_ready"],
+      "properties": {
+        "import_ready": {"const": false},
+        "runtime_ready": {"const": false},
+        "golden_ready": {"const": false}
+      }
+    }
+  }
+}
