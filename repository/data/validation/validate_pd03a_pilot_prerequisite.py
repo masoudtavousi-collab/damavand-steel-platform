@@ -141,6 +141,7 @@ EXPECTED_NON_LIFECYCLE_CONTRACT = {
         "failed_human_reviews_are_not_pass": True,
         "independent_technical_review_required_before_review": True,
         "technical_review_exact_head_and_base_binding_required": True,
+        "technical_review_commit_object_and_ci_binding_required": True,
         "technical_review_artifact_digest_required": True,
         "dataset_hashes_required": True,
         "anti_replay_required": True,
@@ -241,6 +242,24 @@ def _audit_schema_node(node: Any, path: str = "<root>") -> None:
         return
     if not isinstance(node, dict) or not node:
         raise ValidationConfigurationError(f"empty or malformed schema node: {path}")
+    assertion_keywords = {
+        "$ref", "type", "const", "enum", "multipleOf", "maximum",
+        "exclusiveMaximum", "minimum", "exclusiveMinimum", "maxLength",
+        "minLength", "pattern", "maxItems", "minItems", "uniqueItems",
+        "maxContains", "minContains", "maxProperties", "minProperties",
+        "required", "dependentRequired", "properties", "patternProperties",
+        "additionalProperties", "unevaluatedProperties", "propertyNames",
+        "prefixItems", "items", "contains", "allOf", "anyOf", "oneOf",
+        "not", "if", "then", "else",
+    }
+    if not assertion_keywords.intersection(node):
+        raise ValidationConfigurationError(f"annotation-only schema is permissive: {path}")
+    if node.get("not") is False:
+        raise ValidationConfigurationError(f"not:false is an implicit true schema: {path}")
+    if "if" in node and "then" not in node and "else" not in node:
+        raise ValidationConfigurationError(f"if without then/else is non-assertive: {path}")
+    if ("then" in node or "else" in node) and "if" not in node:
+        raise ValidationConfigurationError(f"then/else without if is non-assertive: {path}")
     ref = node.get("$ref")
     if isinstance(ref, str) and not ref.startswith("#/"):
         raise ValidationConfigurationError(f"non-local schema reference: {ref}")
@@ -269,6 +288,8 @@ def _audit_schema_node(node: Any, path: str = "<root>") -> None:
     for keyword in ("prefixItems", "allOf", "anyOf", "oneOf"):
         children = node.get(keyword, [])
         if isinstance(children, list):
+            if keyword in node and not children:
+                raise ValidationConfigurationError(f"empty applicator is prohibited: {path}/{keyword}")
             for index, child in enumerate(children):
                 _audit_schema_node(child, f"{path}/{keyword}/{index}")
     for keyword in ("patternProperties", "dependentSchemas"):

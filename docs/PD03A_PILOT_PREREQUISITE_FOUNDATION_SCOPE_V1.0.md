@@ -142,6 +142,13 @@ substitute for the independent technical review or Founder approval.
   technical review artifact, nonce, exact semantics, Approval ID collisions,
   cross-file references, nested Schema boundaries, Contracts, and adversarial
   tests. No lifecycle promotion occurred from this attempt.
+- Attempt 2 reviewed corrected DRAFT SHA
+  `43d6dc0ce98af1a390d73bf3c5a43c91cdb37da8` with CI run
+  `30695723727` successful. Verdict: `PD03A-TECH-REVIEW-001: REWORK`
+  (`Critical 0 / High 1 / Medium 1 / Low 0`). It confirmed four prior finding
+  groups closed and required proof that the reviewed SHA resolves to a real
+  Git commit plus rejection of implicit-true Schema equivalents. No lifecycle
+  promotion occurred from this attempt.
 
 ## Test Contract
 
@@ -168,7 +175,7 @@ Adversarial coverage rejects:
   fields, Unicode confusables, non-finite numbers, ID collisions, and malformed
   nested structures.
 
-The mutation manifest contains 46 dispatched cases, including exact review-SHA
+The mutation manifest contains 50 dispatched cases, including exact review-SHA
 and artifact-digest binding, deterministic nonce binding and consumption
 history, global ID collision, cross-file resolution, exact role/relationship/
 alias semantics, Contract tampering, duplicate JSON, non-finite JSON, and

@@ -24,7 +24,7 @@
   {"id": "duplicate-yaml-key", "target": "loader", "mutation": "duplicate_yaml_key", "expected": "duplicate YAML key"},
   {"id": "remote-schema-ref", "target": "schema", "mutation": "remote_ref", "expected": "non-local schema reference"},
   {"id": "permissive-schema", "target": "schema", "mutation": "permissive_schema", "expected": "every object schema must be closed"},
-  {"id": "forged-technical-pass-review", "target": "approval", "mutation": "forged_technical_pass_review", "expected": "TECHNICAL_REVIEW_BINDING"},
+  {"id": "forged-technical-pass-review", "target": "approval", "mutation": "forged_technical_pass_review", "expected": "TECHNICAL_REVIEW_COMMIT"},
   {"id": "arbitrary-nonce", "target": "approval", "mutation": "arbitrary_nonce", "expected": "ANTI_REPLAY_BINDING"},
   {"id": "approval-id-collision", "target": "approval", "mutation": "approval_id_collision", "expected": "APPROVAL_ID_COLLISION"},
   {"id": "label-alias-pvd", "target": "foundation", "mutation": "alias_pvd", "expected": "LABEL_EXACT_RECORD"},
@@ -44,5 +44,9 @@
   {"id": "nonfinite-json", "target": "loader", "mutation": "nonfinite_json", "expected": "non-finite JSON number"},
   {"id": "unknown-nested-field", "target": "foundation", "mutation": "unknown_nested_field", "expected": "SCHEMA_VALIDATION"},
   {"id": "malformed-provenance", "target": "foundation", "mutation": "malformed_provenance", "expected": "SCHEMA_VALIDATION"},
-  {"id": "nonfinite-foundation", "target": "foundation", "mutation": "non_finite_foundation", "expected": "NON_FINITE_NUMBER"}
+  {"id": "nonfinite-foundation", "target": "foundation", "mutation": "non_finite_foundation", "expected": "NON_FINITE_NUMBER"},
+  {"id": "wrong-review-reference-review", "target": "approval", "mutation": "wrong_review_reference_review", "expected": "TECHNICAL_REVIEW_BINDING"},
+  {"id": "not-false-schema", "target": "schema", "mutation": "not_false_schema", "expected": "not:false is an implicit true schema"},
+  {"id": "annotation-only-schema", "target": "schema", "mutation": "annotation_only_schema", "expected": "annotation-only schema is permissive"},
+  {"id": "if-without-branch-schema", "target": "schema", "mutation": "if_without_branch_schema", "expected": "if without then/else is non-assertive"}
 ]

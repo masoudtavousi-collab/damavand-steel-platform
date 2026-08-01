@@ -3,8 +3,11 @@
 
 from __future__ import annotations
 
+import base64
 import hashlib
+import os
 from pathlib import Path
+import subprocess
 import sys
 from typing import Any
 
@@ -68,6 +71,9 @@ EXPECTED_APPROVAL_CONTRACT = {
         "independent_technical_pass_required_after_draft": True,
         "technical_review_id": REVIEW_ID,
         "exact_reviewed_head_and_base_sha_required": True,
+        "reviewed_commit_object_proof_required": True,
+        "reviewed_commit_git_existence_required_when_repository_complete": True,
+        "exact_ci_run_and_job_binding_required": True,
         "verdict_artifact_digest_required": True,
         "founder_approval_required_for_approved": True,
         "anti_replay_required": True,
@@ -88,13 +94,72 @@ def validate_contract(contract: dict[str, Any]) -> None:
         raise ValidationConfigurationError("PD-03A approval contract differs from exact fail-closed policy")
 
 
-def technical_artifact(reviewed_head_sha: str) -> str:
-    return f"{REVIEW_ID}|PASS|{reviewed_head_sha}|{BASELINE_SHA}"
+def technical_artifact(
+    reviewed_head_sha: str,
+    commit_object_sha256: str,
+    ci_run_id: str,
+    ci_job_id: str,
+) -> str:
+    return "|".join((
+        REVIEW_ID, "PASS", reviewed_head_sha, BASELINE_SHA,
+        commit_object_sha256, ci_run_id, ci_job_id,
+    ))
 
 
 def expected_nonce() -> str:
     material = "|".join((DECISION_ID, EXTENSION_ID, APPROVAL_ID, BASELINE_SHA))
     return hashlib.sha256(material.encode("utf-8")).hexdigest()[:24]
+
+
+def git_commit_oid(raw_commit: bytes) -> str:
+    header = f"commit {len(raw_commit)}\0".encode("ascii")
+    return hashlib.sha1(header + raw_commit).hexdigest()  # noqa: S324 - Git object identity is SHA-1 by protocol.
+
+
+def verify_reviewed_commit(
+    reviewed_head: Any,
+    object_b64: Any,
+    object_sha256: Any,
+) -> list[str]:
+    issues: list[str] = []
+    try:
+        if not isinstance(object_b64, str):
+            raise ValueError("commit object proof is missing")
+        raw_commit = base64.b64decode(object_b64, validate=True)
+    except (ValueError, TypeError) as exc:
+        return [f"[TECHNICAL_REVIEW_COMMIT] invalid commit object proof: {exc}"]
+    actual_sha256 = hashlib.sha256(raw_commit).hexdigest()
+    if actual_sha256 != object_sha256:
+        issues.append("[TECHNICAL_REVIEW_COMMIT] commit object SHA-256 differs")
+    if git_commit_oid(raw_commit) != reviewed_head:
+        issues.append("[TECHNICAL_REVIEW_COMMIT] commit object does not produce reviewed head SHA")
+
+    shallow_result = subprocess.run(
+        ["git", "-C", str(ROOT), "rev-parse", "--is-shallow-repository"],
+        check=False, capture_output=True, text=True,
+    )
+    is_shallow = shallow_result.returncode == 0 and shallow_result.stdout.strip() == "true"
+    object_result = subprocess.run(
+        ["git", "-C", str(ROOT), "cat-file", "commit", str(reviewed_head)],
+        check=False, capture_output=True,
+    )
+    if object_result.returncode == 0:
+        if object_result.stdout != raw_commit:
+            issues.append("[TECHNICAL_REVIEW_COMMIT] stored Git commit differs from embedded object proof")
+        if not is_shallow:
+            for ancestor, descendant, label in (
+                (BASELINE_SHA, str(reviewed_head), "baseline-to-reviewed-head"),
+                (str(reviewed_head), "HEAD", "reviewed-head-to-current-HEAD"),
+            ):
+                result = subprocess.run(
+                    ["git", "-C", str(ROOT), "merge-base", "--is-ancestor", ancestor, descendant],
+                    check=False, capture_output=True,
+                )
+                if result.returncode != 0:
+                    issues.append(f"[TECHNICAL_REVIEW_COMMIT] Git ancestry check failed: {label}")
+    elif not (is_shallow and os.environ.get("GITHUB_ACTIONS") == "true"):
+        issues.append("[TECHNICAL_REVIEW_COMMIT] reviewed head does not exist in the complete local Git repository")
+    return issues
 
 
 def validate_registry(
@@ -182,17 +247,27 @@ def validate_registry(
         expected_technical = {
             **common_technical, "verdict": "PENDING", "evidence_reference": None,
             "review_date": None, "reviewed_head_sha": None,
+            "reviewed_commit_object_b64": None, "reviewed_commit_object_sha256": None,
+            "ci_run_id": None, "ci_job_id": None,
             "verdict_artifact": None, "verdict_artifact_sha256": None,
         }
         if technical != expected_technical:
             add("TECHNICAL_REVIEW", "DRAFT technical review must remain exact PENDING evidence")
     else:
         reviewed_head = technical.get("reviewed_head_sha")
-        artifact = technical_artifact(str(reviewed_head))
+        commit_object_sha256 = str(technical.get("reviewed_commit_object_sha256"))
+        ci_run_id = str(technical.get("ci_run_id"))
+        ci_job_id = str(technical.get("ci_job_id"))
+        artifact = technical_artifact(
+            str(reviewed_head), commit_object_sha256, ci_run_id, ci_job_id,
+        )
         artifact_digest = hashlib.sha256(artifact.encode("utf-8")).hexdigest()
         expected_technical = {
             **common_technical, "verdict": "PASS", "evidence_reference": REVIEW_ID,
             "review_date": "2026-08-01", "reviewed_head_sha": reviewed_head,
+            "reviewed_commit_object_b64": technical.get("reviewed_commit_object_b64"),
+            "reviewed_commit_object_sha256": commit_object_sha256,
+            "ci_run_id": ci_run_id, "ci_job_id": ci_job_id,
             "verdict_artifact": artifact, "verdict_artifact_sha256": artifact_digest,
         }
         if technical != expected_technical:
@@ -204,6 +279,11 @@ def validate_registry(
             or lifecycle_fields.get("technical_review_artifact_sha256") != artifact_digest
         ):
             add("TECHNICAL_REVIEW_LIFECYCLE_BINDING", "technical PASS differs from lifecycle-bound reviewed SHA or artifact digest")
+        issues.extend(verify_reviewed_commit(
+            reviewed_head,
+            technical.get("reviewed_commit_object_b64"),
+            technical.get("reviewed_commit_object_sha256"),
+        ))
     approval = record.get("approval", {})
     anti_replay = record.get("anti_replay", {})
     expected_binding = NONCE_BINDING

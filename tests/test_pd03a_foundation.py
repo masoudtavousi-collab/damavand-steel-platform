@@ -4,11 +4,13 @@
 from __future__ import annotations
 
 import copy
+import base64
 import hashlib
 import json
 import math
 from pathlib import Path
 import sys
+import subprocess
 import tempfile
 import unittest
 
@@ -147,7 +149,50 @@ class PD03AFoundationTests(unittest.TestCase):
             elif mutation == "forged_technical_pass_review":
                 lifecycle = "REVIEW"
                 reviewed_head = "a" * 40
-                artifact = approval.technical_artifact(reviewed_head)
+                raw_commit = subprocess.check_output([
+                    "git", "-C", str(ROOT), "cat-file", "commit", "HEAD",
+                ])
+                object_b64 = base64.b64encode(raw_commit).decode("ascii")
+                object_sha256 = hashlib.sha256(raw_commit).hexdigest()
+                ci_run_id = "30695723727"
+                ci_job_id = "91358155209"
+                artifact = approval.technical_artifact(
+                    reviewed_head, object_sha256, ci_run_id, ci_job_id,
+                )
+                digest = hashlib.sha256(artifact.encode("utf-8")).hexdigest()
+                lifecycle_contract["lifecycle"].update({
+                    "current_status": "REVIEW",
+                    "transition_history": [{
+                        "from": "DRAFT", "to": "REVIEW",
+                        "evidence_reference": "PD03A-TECH-REVIEW-001",
+                    }],
+                    "technical_reviewed_sha": reviewed_head,
+                    "technical_review_artifact_sha256": digest,
+                })
+                record["lifecycle_status"] = "REVIEW"
+                record["technical_review"].update({
+                    "verdict": "PASS", "evidence_reference": "PD03A-TECH-REVIEW-001",
+                    "review_date": "2026-08-01", "reviewed_head_sha": reviewed_head,
+                    "reviewed_commit_object_b64": object_b64,
+                    "reviewed_commit_object_sha256": object_sha256,
+                    "ci_run_id": ci_run_id, "ci_job_id": ci_job_id,
+                    "verdict_artifact": artifact, "verdict_artifact_sha256": digest,
+                })
+            elif mutation == "wrong_review_reference_review":
+                lifecycle = "REVIEW"
+                reviewed_head = subprocess.check_output([
+                    "git", "-C", str(ROOT), "rev-parse", "HEAD",
+                ], text=True).strip()
+                raw_commit = subprocess.check_output([
+                    "git", "-C", str(ROOT), "cat-file", "commit", reviewed_head,
+                ])
+                object_b64 = base64.b64encode(raw_commit).decode("ascii")
+                object_sha256 = hashlib.sha256(raw_commit).hexdigest()
+                ci_run_id = "30695723727"
+                ci_job_id = "91358155209"
+                artifact = approval.technical_artifact(
+                    reviewed_head, object_sha256, ci_run_id, ci_job_id,
+                )
                 digest = hashlib.sha256(artifact.encode("utf-8")).hexdigest()
                 lifecycle_contract["lifecycle"].update({
                     "current_status": "REVIEW",
@@ -162,6 +207,9 @@ class PD03AFoundationTests(unittest.TestCase):
                 record["technical_review"].update({
                     "verdict": "PASS", "evidence_reference": "forged",
                     "review_date": "2026-08-01", "reviewed_head_sha": reviewed_head,
+                    "reviewed_commit_object_b64": object_b64,
+                    "reviewed_commit_object_sha256": object_sha256,
+                    "ci_run_id": ci_run_id, "ci_job_id": ci_job_id,
                     "verdict_artifact": artifact, "verdict_artifact_sha256": digest,
                 })
             elif mutation == "premature_approval":
@@ -267,6 +315,24 @@ class PD03AFoundationTests(unittest.TestCase):
                         "type": "object", "additionalProperties": False,
                         "properties": {"payload": {"anyOf": [True, {"type": "string"}]}},
                     }
+                elif mutation == "not_false_schema":
+                    schema = {
+                        "$schema": "https://json-schema.org/draft/2020-12/schema",
+                        "type": "object", "additionalProperties": False,
+                        "properties": {"payload": {"not": False}},
+                    }
+                elif mutation == "annotation_only_schema":
+                    schema = {
+                        "$schema": "https://json-schema.org/draft/2020-12/schema",
+                        "type": "object", "additionalProperties": False,
+                        "properties": {"payload": {"description": "accepts anything"}},
+                    }
+                elif mutation == "if_without_branch_schema":
+                    schema = {
+                        "$schema": "https://json-schema.org/draft/2020-12/schema",
+                        "type": "object", "additionalProperties": False,
+                        "properties": {"payload": {"if": {"type": "string"}}},
+                    }
                 else:
                     self.fail(f"undispatched schema mutation: {mutation}")
                 foundation.validate_schema(schema)
@@ -321,7 +387,7 @@ class PD03AFoundationTests(unittest.TestCase):
         return ""
 
     def test_all_mutations_reach_real_validators_and_fail_closed(self) -> None:
-        self.assertEqual(len(self.mutations), 46)
+        self.assertEqual(len(self.mutations), 50)
         dispatched: set[str] = set()
         for case in self.mutations:
             with self.subTest(case=case["id"]):

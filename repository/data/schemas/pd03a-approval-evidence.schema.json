@@ -38,7 +38,7 @@
     "technical_review": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["review_id", "reviewer_id", "scope", "verdict", "evidence_reference", "independent", "review_date", "reviewed_head_sha", "reviewed_base_sha", "verdict_artifact", "verdict_artifact_sha256"],
+      "required": ["review_id", "reviewer_id", "scope", "verdict", "evidence_reference", "independent", "review_date", "reviewed_head_sha", "reviewed_base_sha", "reviewed_commit_object_b64", "reviewed_commit_object_sha256", "ci_run_id", "ci_job_id", "verdict_artifact", "verdict_artifact_sha256"],
       "properties": {
         "review_id": {"const": "PD03A-TECH-REVIEW-001"},
         "reviewer_id": {"const": "repository-guardian-independent"},
@@ -49,6 +49,10 @@
         "review_date": {"type": ["string", "null"], "format": "date"},
         "reviewed_head_sha": {"type": ["string", "null"], "pattern": "^[0-9a-f]{40}$"},
         "reviewed_base_sha": {"const": "dd4d4e9dde59ce652edb5b99d2df3e84b56b8031"},
+        "reviewed_commit_object_b64": {"type": ["string", "null"], "pattern": "^[A-Za-z0-9+/]+={0,2}$"},
+        "reviewed_commit_object_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+        "ci_run_id": {"type": ["string", "null"], "pattern": "^[1-9][0-9]*$"},
+        "ci_job_id": {"type": ["string", "null"], "pattern": "^[1-9][0-9]*$"},
         "verdict_artifact": {"type": ["string", "null"], "maxLength": 500},
         "verdict_artifact_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"}
       }

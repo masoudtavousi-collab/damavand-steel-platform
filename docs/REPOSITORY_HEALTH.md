@@ -189,7 +189,7 @@ The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain histo
   not canonical Pilots and every readiness flag is false.
 - Closed schemas, duplicate-key rejection, remote/permissive-schema rejection,
   exact review-artifact/hash and nonce-history checks, global/base-extension ID
-  collision checks, cross-file reference resolution, and 46 dispatched
+  collision checks, cross-file reference resolution, and 50 dispatched
   positive/negative/adversarial mutations are present.
 - Independent technical PASS and legal lifecycle remain required. No
   Product/SKU/Slug/availability, Master/Golden, import, runtime, deployment, or

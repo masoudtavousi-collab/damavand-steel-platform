@@ -53,6 +53,10 @@ evidence:
       review_date: null
       reviewed_head_sha: null
       reviewed_base_sha: dd4d4e9dde59ce652edb5b99d2df3e84b56b8031
+      reviewed_commit_object_b64: null
+      reviewed_commit_object_sha256: null
+      ci_run_id: null
+      ci_job_id: null
       verdict_artifact: null
       verdict_artifact_sha256: null
     approval:

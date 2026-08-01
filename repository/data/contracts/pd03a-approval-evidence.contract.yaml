@@ -19,6 +19,9 @@ evidence_policy:
   independent_technical_pass_required_after_draft: true
   technical_review_id: PD03A-TECH-REVIEW-001
   exact_reviewed_head_and_base_sha_required: true
+  reviewed_commit_object_proof_required: true
+  reviewed_commit_git_existence_required_when_repository_complete: true
+  exact_ci_run_and_job_binding_required: true
   verdict_artifact_digest_required: true
   founder_approval_required_for_approved: true
   anti_replay_required: true

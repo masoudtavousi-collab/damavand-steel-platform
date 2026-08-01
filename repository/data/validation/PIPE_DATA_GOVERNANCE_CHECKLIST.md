@@ -188,7 +188,7 @@ Reject or stop when any of the following occurs:
 - [x] The six-rule Profile is INTERNAL with five axes and fixed Material.
 - [x] Length/Metre/Millimetre status is bound to the legal lifecycle.
 - [x] Pilot-combination fixtures are synthetic-only; readiness is false.
-- [x] Forty-six mutation cases are dispatched through real validators.
+- [x] Fifty mutation cases are dispatched through real validators.
 - [ ] Independent `PD03A-TECH-REVIEW-001` returns PASS.
 - [ ] Legal DRAFT → REVIEW transition is recorded.
 - [ ] Founder evidence and REVIEW → APPROVED transition are recorded.
