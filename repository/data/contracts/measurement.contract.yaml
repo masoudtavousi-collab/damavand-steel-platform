@@ -109,12 +109,15 @@ compatibility:
     - Product Attribute Unit references must resolve to a compatible Unit definition.
 pd03a_extension:
   decision_id: FD-PD03A-001
-  current_status: DRAFT
+  current_status: REVIEW
   allowed_transition_sequence:
     - DRAFT
     - REVIEW
     - APPROVED
-  transition_history: []
+  transition_history:
+    - from: DRAFT
+      to: REVIEW
+      evidence_reference: PD03A-TECH-REVIEW-001
   direct_draft_to_approved_forbidden: true
   exact_dimension_ids:
     - dimension:000000000001

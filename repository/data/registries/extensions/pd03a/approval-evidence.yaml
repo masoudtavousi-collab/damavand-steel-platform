@@ -6,13 +6,13 @@ evidence:
   - contract_version: "1.0.0"
     approval_evidence_id: papproval:50ba27766106
     decision_id: FD-PD03A-001
-    lifecycle_status: DRAFT
+    lifecycle_status: REVIEW
     scope_reference: docs/PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md
     dataset_hashes:
       - path: repository/data/registries/extensions/pd03a/pilot-prerequisite.yaml
         sha256: b4a7f0ec04ca03f7c71ad04f156469c44a84213e983a4af073d98f5e264d6500
       - path: repository/data/contracts/measurement.contract.yaml
-        sha256: 84d793972482d24a0696c1d55f3a7a0d3fd0fcf89fc368fc23df720c401fd266
+        sha256: 79d6b7ece42fd71fb7aa20b6d3f47ba3b06f8c2013b0e6e6fbe058c93c3cfa79
       - path: repository/data/registries/measurement-dimensions.yaml
         sha256: 46608d0b8ac8279a122263b94ceae9c5ba3eba078b20a6301fa37161bb0ed3bc
       - path: repository/data/registries/attribute-units.yaml
@@ -47,18 +47,18 @@ evidence:
       review_id: PD03A-TECH-REVIEW-001
       reviewer_id: repository-guardian-independent
       scope: PD-03A contracts, schemas, validators, tests, extension integrity, lifecycle and exact allowlist
-      verdict: PENDING
-      evidence_reference: null
+      verdict: PASS
+      evidence_reference: PD03A-TECH-REVIEW-001
       independent: true
-      review_date: null
-      reviewed_head_sha: null
+      review_date: "2026-08-01"
+      reviewed_head_sha: cb6c817116d0e97e2d217fe2402d85ff4b96f53a
       reviewed_base_sha: dd4d4e9dde59ce652edb5b99d2df3e84b56b8031
-      reviewed_commit_object_b64: null
-      reviewed_commit_object_sha256: null
-      ci_run_id: null
-      ci_job_id: null
-      verdict_artifact: null
-      verdict_artifact_sha256: null
+      reviewed_commit_object_b64: dHJlZSBiZWY0NWQ3NjFkMzEwOGNkNDYzY2NjMmY1YTc3NDhlNzIxNjE3NTg3CnBhcmVudCA0M2Q2ZGMwY2U5OGFmMWEzOTBkNzNiZjNjNWE0M2M5MWNkYjM3ZGE4CmF1dGhvciBNYXNvdWQgVGF2b3VzaSA8bWFzb3VkLnRhdm91c2lAZ21haWwuY29tPiAxNzg1NTgwNjU5ICswMzMwCmNvbW1pdHRlciBNYXNvdWQgVGF2b3VzaSA8bWFzb3VkLnRhdm91c2lAZ21haWwuY29tPiAxNzg1NTgwNjU5ICswMzMwCgpWZXJpZnkgUEQtMDNBIHJldmlldyBjb21taXRzIGFuZCBzY2hlbWEgYXNzZXJ0aW9ucwo=
+      reviewed_commit_object_sha256: b1bff46dab757efbdf6e107654a1d5df379cc1e220bf9d6b33abf8c3e1fdd4e1
+      ci_run_id: "30696083295"
+      ci_job_id: "91359111107"
+      verdict_artifact: PD03A-TECH-REVIEW-001|PASS|cb6c817116d0e97e2d217fe2402d85ff4b96f53a|dd4d4e9dde59ce652edb5b99d2df3e84b56b8031|b1bff46dab757efbdf6e107654a1d5df379cc1e220bf9d6b33abf8c3e1fdd4e1|30696083295|91359111107
+      verdict_artifact_sha256: f843938deb49189f04f16add10c24b4ab32633bce7beb9a12d1f6e9eb8b0ee01
     approval:
       approved_by: null
       approved_at: null

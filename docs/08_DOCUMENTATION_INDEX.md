@@ -26,7 +26,7 @@ Provide the canonical map of repository documentation without replacing the auth
 
 ## Current Repository-Control Context
 
-[Current Project State](CURRENT_PROJECT_STATE.md) is the only mutable operational-state pointer. This index records document roles and stable integration history; it does not restate the active branch, pull-request state, or live Git tip. K-01, BP1/BP2, recovery, `GOV-XD-00`, PD-01, PD-02A, and approved PD-02B retain their recorded bounded meanings. [PD-03A Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md) is the DRAFT authority for only its immutable prerequisite extension and synthetic tests; it grants no canonical Pilot or runtime authority.
+[Current Project State](CURRENT_PROJECT_STATE.md) is the only mutable operational-state pointer. This index records document roles and stable integration history; it does not restate the active branch, pull-request state, or live Git tip. K-01, BP1/BP2, recovery, `GOV-XD-00`, PD-01, PD-02A, and approved PD-02B retain their recorded bounded meanings. [PD-03A Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md) is the REVIEW authority for only its immutable prerequisite extension and synthetic tests; it grants no canonical Pilot or runtime authority.
 
 ## Categories and Complete Document Map
 

@@ -12,16 +12,19 @@ baseline:
   immutable_base_decision: FD-PD02B-001
 lifecycle:
   decision_id: FD-PD03A-001
-  current_status: DRAFT
+  current_status: REVIEW
   allowed_transition_sequence:
     - DRAFT
     - REVIEW
     - APPROVED
-  transition_history: []
+  transition_history:
+    - from: DRAFT
+      to: REVIEW
+      evidence_reference: PD03A-TECH-REVIEW-001
   direct_draft_to_approved_forbidden: true
   approval_evidence_required: true
-  technical_reviewed_sha: null
-  technical_review_artifact_sha256: null
+  technical_reviewed_sha: cb6c817116d0e97e2d217fe2402d85ff4b96f53a
+  technical_review_artifact_sha256: f843938deb49189f04f16add10c24b4ab32633bce7beb9a12d1f6e9eb8b0ee01
 extension_policy:
   immutable_base_registries: true
   base_registries:

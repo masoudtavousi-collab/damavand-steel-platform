@@ -2,7 +2,7 @@
 
 **Decision ID:** `FD-PD03A-001`
 
-**Lifecycle:** `DRAFT`
+**Lifecycle:** `REVIEW`
 
 **Baseline:** `main@dd4d4e9dde59ce652edb5b99d2df3e84b56b8031`
 
@@ -149,6 +149,16 @@ substitute for the independent technical review or Founder approval.
   groups closed and required proof that the reviewed SHA resolves to a real
   Git commit plus rejection of implicit-true Schema equivalents. No lifecycle
   promotion occurred from this attempt.
+- Attempt 3 reviewed corrected DRAFT SHA
+  `cb6c817116d0e97e2d217fe2402d85ff4b96f53a`; CI run `30696083295`
+  and job `91359111107` succeeded. Verdict:
+  `PD03A-TECH-REVIEW-001: PASS` with zero findings at every severity. The
+  reviewed Commit object SHA-256 is
+  `b1bff46dab757efbdf6e107654a1d5df379cc1e220bf9d6b33abf8c3e1fdd4e1`
+  and the bound verdict-artifact digest is
+  `f843938deb49189f04f16add10c24b4ab32633bce7beb9a12d1f6e9eb8b0ee01`.
+  This evidence authorizes only the legal `DRAFT → REVIEW` transition; final
+  Founder approval remains a separate lifecycle step.
 
 ## Test Contract
 
