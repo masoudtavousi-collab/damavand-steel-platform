@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Build Engineer
 - **Approval Authority:** Founder
-- **Version:** 0.12.0
+- **Version:** 0.13.0
 - **Last Updated:** 2026-08-02
 - **Lifecycle:** Review
 - **Source of Truth:** [Current Project State](CURRENT_PROJECT_STATE.md), current repository evidence, accepted decisions, and execution gates
@@ -32,6 +32,7 @@ Wave 2A–2C established platform-independent Product core, Product Attribute, a
 | BP2 data blueprint | Blueprint ready for governed review | PR #11; controlled Pipe blueprint, schema, and offline validator | Not final SKU, import, runtime, WordPress, WooCommerce, or production authority |
 | BP2 administration contract | Approved governance contract; implementation disabled | PR #12, `FD-BP2-ADM-001`, merged PR #18, documentation-only scope, machine-readable contract, closed Draft 2020-12 schema, deterministic offline validator, and positive/negative/adversarial tests | Separate implementation or Product Data authorization remains required; no Admin UI, Product/SKU, runtime, import, WordPress, WooCommerce, or production authority |
 | Cross-domain execution charter | Governance ready; implementation disabled | `FD-GOV-XD-00`, six-task read-only gap analysis, independent QA, stable live-tip resolution, separation of duties, and ordered dependency gates | Satisfied its own scope through PR #20; it grants no implementation authority and PD-01 depends on separate `FD-PD01-001` |
+| Campaign 001 DS program directives | Governance integrated; execution separately gated | Post-PD-03B operational-state reconciliation through PR #26 and main CI `30763959936`; `FD-DS-PROGRAM-001`; DS-PC accepted as `HOW`; DS-SPD accepted as `WHAT`; completed `C1-T04`; merged PR #27, Merge Commit `a48cc9e…`; main CI `30765167988` | Governance evidence is complete. C1-T06 execution, Product/SKU, fourth Pilot, 879-row population, Availability, Master/Golden, WordPress/WooCommerce, import, runtime, deployment, and production remain unauthorized |
 | PD-01 Product Data Contract Enablement | Approved synthetic contract foundation; canonical population disabled | `FD-PD01-001`; legal `DRAFT → REVIEW → APPROVED`; `PD01-REVIEW-001` zero findings; PR #21; CI `30390311445` and `30466264564`; exact 30 paths; strict offline boundary | PD-01's original empty-registry boundary is preserved as chronology; later PD-02B/PD-03A approved six definitions, while Product data, Master/Golden, SKU, import, and runtime still require separate approvals |
 | PD-02A Controlled Values and Attribute Profiles | Approved synthetic foundation | `FD-PD02A-001`; legal `DRAFT → REVIEW → APPROVED`; independent PASS; merged PR #22 and successful post-merge validation | Historical PD-02A authorization remains synthetic-only; canonical population requires the separate PD-02B decision |
 | PD-02B Minimum Canonical Slice | APPROVED, merged, and validated on main; repository-only | `FD-PD02B-001`; legal `DRAFT → REVIEW → APPROVED`; exact 57 paths; `PD02B-TECH-REVIEW-001` PASS; closed schemas; offline validators; Material and Grade human-review evidence; hashes and anti-replay; exact 3/2/2/4/1/18/1 counts; merged PR #23; main CI `30482348480` | Integration is complete; no Product/SKU, pilot, Master/Golden, availability, import, runtime, or production authority |
@@ -111,15 +112,16 @@ Repository tests passing cannot satisfy these runtime prerequisites.
 
 ## Recommended Next Step
 
-Prepare only Campaign 001 directive/governance integration planning. Planning
-does not authorize repository writes or Git publication and must not expand
-into Product/SKU, 879 rows, Master/Golden, availability, WordPress/WooCommerce,
-import, runtime, deployment, or production work.
+Consult [Current Project State](CURRENT_PROJECT_STATE.md#approved-next-action) for the sole current
+next action and mutable authorization and GO/NO-GO boundary. This evidence
+record creates no independent authorization and does not restate mutable
+operational instructions.
 
 ## Change Notes
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.13.0 | 2026-08-02 | Recorded completed post-PD-03B reconciliation through PR #26/main CI `30763959936` and completed DS program governance integration through `FD-DS-PROGRAM-001`, `C1-T04`, PR #27, and main CI `30765167988`; preserved PD-03B as the latest Product Data integration and advanced only to preparation/submission of the `C1-T06-CANONICAL-OWNER` approval packet, not execution. |
 | 0.12.0 | 2026-08-02 | Reconciled readiness with merged PR #25 and successful main CI `30698838847`; preserved exactly three approved Pilot records, 879 candidates, missing availability for all 882 rows, false readiness, and all downstream blockers; advanced only to Campaign 001 directive/governance integration planning. |
 | 0.9.0 | 2026-07-29 | Recorded approved PD-01 synthetic contract readiness after legal lifecycle, independent PASS, and repeated CI while preserving all canonical-data and runtime blockers. |
 | 0.8.0 | 2026-07-28 | Recorded `FD-PD01-001`, the exact 30-path synthetic-only enablement scope, and current `DRAFT` readiness without promoting canonical data or runtime readiness. |

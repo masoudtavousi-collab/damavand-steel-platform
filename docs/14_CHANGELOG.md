@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-08-02 — Post-PR27 Operational-State Reconciliation
+
+- Reconciled active operational records after merged PR #26, Merge Commit
+  `90d0aaa207801037c151e204d04bb98ac482e7b5`, and successful main CI
+  `30763959936`, followed by merged PR #27, Merge Commit
+  `a48cc9ee6cfc6b5e3abd906f13f05f9751428f94`, and successful main CI
+  `30765167988`.
+- Closed successor planning-only claims about Campaign 001 DS directive
+  integration: `FD-DS-PROGRAM-001` and completed `C1-T04` establish DS-PC as
+  `HOW` and DS-SPD as `WHAT`, with their companion relationship and gates
+  integrated as governance evidence.
+- Preserved PD-03B as the latest Product Data integration, with exactly three
+  approved Pilots, 879 candidates, missing Availability for all 882 rows, and
+  false downstream readiness.
+- Recorded the current phase as Campaign 001 — Project Stabilization &
+  Governance Consolidation. The sole next action is preparing/submitting the
+  `C1-T06-CANONICAL-OWNER` Scope/Approval Packet for Founder approval.
+- This reconciliation does not authorize C1-T06 execution, another branch,
+  staging, commit, push, PR, merge, branch deletion, PD-04, Campaign 002,
+  Product/SKU, a fourth Pilot, 879-row population, Availability, Master/Golden,
+  WordPress/WooCommerce, import, runtime, deployment, or production work.
+
 ## 2026-08-02 — DS Program Directive Integration
 
 - Added the complete normalized [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md) as the accepted program execution method (`HOW`) and [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) as the accepted Version 1.0 strategic outcome (`WHAT`).
@@ -93,7 +115,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.11.0
+- **Version:** 0.12.0
 - **Last Updated:** 2026-08-02
 - **Lifecycle:** Review
 - **Source of Truth:** Merged Git history and scoped decision/evidence records
