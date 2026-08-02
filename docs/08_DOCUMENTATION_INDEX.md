@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.13.0
-- **Last Updated:** 2026-08-01
-- **Last Review:** 2026-08-01
+- **Version:** 0.14.0
+- **Last Updated:** 2026-08-02
+- **Last Review:** 2026-08-02
 - **Review Cycle:** On document creation, removal, rename, lifecycle, authority, or navigation change
 - **Lifecycle:** Draft
 - **Source of Truth:** Current repository documentation paths plus each document's recorded status and authority
@@ -26,7 +26,7 @@ Provide the canonical map of repository documentation without replacing the auth
 
 ## Current Repository-Control Context
 
-[Current Project State](CURRENT_PROJECT_STATE.md) is the only mutable operational-state pointer. This index records document roles and stable integration history; it does not restate the active branch, pull-request state, or live Git tip. K-01, BP1/BP2, recovery, `GOV-XD-00`, PD-01, PD-02A, approved PD-02B, and approved PD-03A retain their recorded bounded meanings. [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md) governs only the three lifecycle-gated repository Pilot records and grants no Product/SKU, Availability, Master/Golden, Import, or Runtime authority.
+[Current Project State](CURRENT_PROJECT_STATE.md) is the only mutable operational-state pointer. This index records document roles and stable integration history; it does not restate the active branch, pull-request state, or live Git tip. [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md) is the accepted program `HOW` and [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) is the accepted Version 1.0 `WHAT` under `FD-DS-PROGRAM-001`; they are companion governing sources and do not compete with Current Project State. K-01, BP1/BP2, recovery, `GOV-XD-00`, PD-01, PD-02A, approved PD-02B, and approved PD-03A retain their recorded bounded meanings. [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md) governs only the three lifecycle-gated repository Pilot records and grants no Product/SKU, Availability, Master/Golden, Import, or Runtime authority. The directive integration does not authorize PD-04, Campaign 002, Product/SKU, Golden/Master Data, Runtime, Import, Deployment, Production, or branch deletion.
 
 ## Categories and Complete Document Map
 
@@ -34,6 +34,8 @@ Provide the canonical map of repository documentation without replacing the auth
 
 | Document | Role | Status | Owner |
 | --- | --- | --- | --- |
+| [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md) | Accepted governing program execution method (`HOW`); companion to DS-SPD under `FD-DS-PROGRAM-001` | Approved | Founder |
+| [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) | Accepted governing Version 1.0 strategic outcome (`WHAT`); companion to DS-PC under `FD-DS-PROGRAM-001` | Approved | Founder |
 | [DS-000 Project Bible](00_PROJECT_BIBLE.md) | Project-level governing context; Core Project Principles are Accepted by Founder directive | Draft | Founder |
 | [DS-001 Project Constitution](01_PROJECT_CONSTITUTION.md) | Project governance context | Draft | Founder |
 | [DS-002 Enterprise Architecture](02_ARCHITECTURE.md) | Enterprise architecture authority | Draft | Founder |
@@ -533,6 +535,7 @@ The reusable quality gates are maintained outside `docs/` in [Enterprise Quality
 ## Relationships
 
 - Foundation documents govern project direction, architecture, business rules, technology, and repository standards.
+- DS-PC governs program execution method (`HOW`) and DS-SPD governs the Version 1.0 strategic outcome (`WHAT`) as accepted companions; neither replaces Current Project State, more specific accepted authority, or separate execution gates.
 - Governance documents control document discovery, lifecycle, terminology, review, quality, decisions, and unresolved work.
 - Delivery documents translate approved governing material into implementation and operational guidance.
 - ADRs preserve individual decisions; the Decision Log indexes them.
@@ -559,6 +562,8 @@ The reusable quality gates are maintained outside `docs/` in [Enterprise Quality
 ## Reading Order
 
 1. [Current Project State](CURRENT_PROJECT_STATE.md)
+   - Then read [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md) for the accepted program `HOW`.
+   - Then read [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) for the accepted Version 1.0 `WHAT`.
 2. [Project Baseline](PROJECT_BASELINE.md)
 3. [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md)
 4. [Repository Reading Order](READING_ORDER.md)
@@ -804,6 +809,10 @@ The reusable quality gates are maintained outside `docs/` in [Enterprise Quality
 ## Dependency Graph
 
 ```text
+DS-PC Program Charter (HOW) + DS-SPD Strategic Program Directive (WHAT)
+  -> bounded Scope/Approval Packets and campaign tasks
+  -> Current Project State remains the sole mutable operational pointer
+
 Project Bible
   -> Project Constitution
       -> Business Rules

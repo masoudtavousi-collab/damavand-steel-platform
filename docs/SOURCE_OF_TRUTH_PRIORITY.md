@@ -4,7 +4,7 @@ Authority is scope-bound. File existence, recency, task inclusion, or conversati
 
 | Priority / source | Authority and permitted use | Prohibited use | Conflict handling / evidence |
 | --- | --- | --- | --- |
-| 1. Accepted Project Bible, Constitution, and governing documents | Govern within declared approved scope | Cannot be weakened by supporting records | Preserve accepted text and traceability |
+| 1. Accepted Project Bible, Constitution, and governing documents, including [DS-PC — HOW](DS_PC_001_PROGRAM_CHARTER.md) and [DS-SPD — WHAT](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) under `FD-DS-PROGRAM-001` | Govern only within declared approved scope; DS-PC and DS-SPD operate as companion program sources | Cannot be weakened by supporting records; cannot approve surrounding Draft content or bypass a more specific accepted decision or gate | Preserve accepted text, the `HOW`/`WHAT` relationship, and traceability |
 | 2. Explicit Founder-approved decisions and accepted ADRs | Decide only their recorded scope | Cannot approve surrounding Draft content | Require recorded decision ID/scope |
 | 3. Current Founder task instruction | Defines immediate scope and permission | Cannot silently amend durable authority | Preserve task evidence; promote durable decisions through governance |
 | 4. Approved Product Foundation | Canonical taxonomy/attribute foundations | No invented terms or commercial validity | Require approval/provenance |
@@ -16,6 +16,8 @@ Authority is scope-bound. File existence, recency, task inclusion, or conversati
 | 10. External Research | Only when explicitly requested | Cannot become authority by citation alone | Prefer primary sources and record review |
 | 11. Audit Reports | Current-state evidence and findings | Not governing approval | Reconcile with higher authority |
 | 12. Conversation Context | Clarifies immediate intent | Not durable canonical data | Promote through approved repository record |
+
+`FD-DS-PROGRAM-001` accepts DS-PC and DS-SPD as companion program-level governing sources. It does not silently approve the full Draft Project Bible or Constitution, supersede CP-001 through CP-010, accepted Founder decisions or ADRs, accepted architecture, source-priority controls, production controls, `GOV-XD-00` history, or domain roadmaps. More specific accepted authority continues to control its recorded scope.
 
 Competitor research may inform alternative names, search aliases, FAQ ideas, market language, customer questions, UX inspiration, content gaps, and presentation patterns.
 

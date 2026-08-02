@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-08-02 — DS Program Directive Integration
+
+- Added the complete normalized [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md) as the accepted program execution method (`HOW`) and [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) as the accepted Version 1.0 strategic outcome (`WHAT`).
+- Recorded `FD-DS-PROGRAM-001`, including source and canonical SHA-256 evidence, companion-document relationship, roles, exact integration scope, exclusions, and explicit supersession controls.
+- Clarified that the Founder remains final authority; ChatGPT is Project Commander, Chief Architect, Product Owner, and Repository Governor; Codex is operational Program Commander and Build Engine only inside exact task gates and cannot self-approve or bypass review or execution gates.
+- Preserved CP-001 through CP-010, accepted Founder decisions and ADRs, accepted architecture, source-priority and production controls, `GOV-XD-00` history, domain-roadmap authority, and separation of duties.
+- This integration does not silently approve the full Draft Project Bible/Constitution, update the sole mutable Current Project State, or authorize PD-04, Campaign 002, Product/SKU, Golden/Master Data, Runtime, Import, Deployment, Production, Git publication, merge, or branch deletion. A separate Current Project State reconciliation remains required after approved integration.
+
 ## 2026-08-02 — Post-PD-03B Operational-State Reconciliation
 
 - Reconciled active operational records with merged PR #25, Merge Commit

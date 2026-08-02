@@ -8,14 +8,14 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.7.0
-- **Last Updated:** 2026-07-28
-- **Last Review:** 2026-07-28
+- **Version:** 0.8.0
+- **Last Updated:** 2026-08-02
+- **Last Review:** 2026-08-02
 - **Review Cycle:** On repository creation, disposition, authority, ownership, namespace, lifecycle, merge, or promotion proposal
 - **Lifecycle:** Review
-- **Source of Truth:** Explicit Founder decisions in the GIT-02S directive dated 2026-07-14, the Class B Wave 1 authorization dated 2026-07-19, verified PR #1–#3 merge state, Founder-approved current Git governance, the Wave 2 pre-implementation decisions dated 2026-07-20, and Repository A governance
+- **Source of Truth:** Explicit Founder decisions in the GIT-02S directive dated 2026-07-14, the Class B Wave 1 authorization dated 2026-07-19, verified PR #1–#3 merge state, Founder-approved current Git governance, the Wave 2 pre-implementation decisions dated 2026-07-20, `FD-DS-PROGRAM-001`, and Repository A governance
 - **Dependencies:** [Project Baseline](PROJECT_BASELINE.md), [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md), and [Project Constitution](01_PROJECT_CONSTITUTION.md)
-- **Related Documents:** [Git Governance](GIT_GOVERNANCE.md), [AI Collaboration Standard](AI_COLLABORATION.md), and `GIT-02S Audit`
+- **Related Documents:** [Program Charter](DS_PC_001_PROGRAM_CHARTER.md), [Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md), [Git Governance](GIT_GOVERNANCE.md), [AI Collaboration Standard](AI_COLLABORATION.md), and `GIT-02S Audit`
 - **Traceability:** GIT-02S Founder decisions 1–3 and 10; CP-001, CP-002, CP-010
 - **AI Compatibility:** Explicit cross-repository authority and isolation contract
 - **Approval:** Repository dispositions accepted by explicit Founder directive; document presentation pending Founder review
@@ -23,6 +23,17 @@
 ## Purpose
 
 Define the authority, isolation, adoption, and future-promotion boundaries between the canonical Damavand Steel repository and the secondary research repository. This map authorizes no copy, move, merge, Git initialization, implementation, runtime action, or status promotion.
+
+## Program Document Relationship
+
+| Document / record | Relationship and authority | Does not do |
+| --- | --- | --- |
+| [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md) | Governs program execution method (`HOW`) under `FD-DS-PROGRAM-001`; companion to DS-SPD | Does not replace the sole operational pointer, approve runtime work, or override a more specific accepted decision or gate |
+| [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) | Governs Version 1.0 strategic outcome (`WHAT`) under `FD-DS-PROGRAM-001`; companion to DS-PC | Does not become an execution ticket, domain roadmap, Product/SKU approval, or production authorization |
+| [Current Project State](CURRENT_PROJECT_STATE.md) | Remains the sole mutable pointer for current phase, exact authorization, branch/PR state, blockers, next action, and GO/NO-GO | Must not be duplicated or inferred from the two stable program documents |
+| `FD-DS-PROGRAM-001` | Records acceptance, roles, hashes, relationship, exclusions, and supersession limits | Does not rewrite `GOV-XD-00`, prior decisions, or repository chronology |
+
+DS-PC and DS-SPD establish successor program context for future bounded task packets. They do not auto-supersede domain roadmaps, `GOV-XD-00`, CP-001 through CP-010, accepted Founder decisions or ADRs, accepted architecture, source-priority rules, production controls, or historical evidence. Any later supersession must name the affected source and exact scope in a new Founder decision. Campaign 002, PD-04, Product/SKU, Golden/Master Data, Runtime, Import, Deployment, Production, and branch deletion remain separately gated.
 
 ## Repository A — Canonical Project
 

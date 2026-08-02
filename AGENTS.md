@@ -4,7 +4,7 @@
 
 - Damavand Steel is an Enterprise Product and Knowledge Platform, not a conventional WooCommerce retail store.
 - DamavandSteel.com is the first implementation; CentralSteel.ir is a future ecosystem consumer.
-- The Founder is non-technical. ChatGPT acts as Chief Architect and Product Owner. Codex acts as the Build and Repository Execution Engine.
+- The Founder is non-technical and remains the final authority. ChatGPT acts as Project Commander, Chief Architect, Product Owner, and Repository Governor. Codex acts as the operational Program Commander and Build Engine only inside exact Founder-approved task gates.
 - WordPress is an implementation layer, never the source of architectural truth.
 
 ## 2. Permanent Business Rules
@@ -71,7 +71,7 @@ Missing operational data is not automatically a Founder decision. `هیچ‌کد
 
 ## 6. Source-of-Truth Priority
 
-1. Accepted governing documents and Project Bible within their authority.
+1. Accepted governing documents within their authority, including the [Program Charter](docs/DS_PC_001_PROGRAM_CHARTER.md) for `HOW` and the [Strategic Program Directive](docs/DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) for `WHAT` under `FD-DS-PROGRAM-001`.
 2. Explicit Founder-approved decisions and accepted ADRs within recorded scope.
 3. Current Founder task instruction for immediate scope and permission only.
 4. Approved Product Foundation, Product DNA, and Master Data.
@@ -149,6 +149,8 @@ Runtime requires explicit Founder approval, confirmed target environment, verifi
 - [Implementation Readiness](docs/IMPLEMENTATION_READINESS.md)
 - [Execution Gates](docs/EXECUTION_GATES.md)
 - [Current Project State](docs/CURRENT_PROJECT_STATE.md)
+- [Program Charter — HOW](docs/DS_PC_001_PROGRAM_CHARTER.md)
+- [Strategic Program Directive — WHAT](docs/DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md)
 - [Project Execution Roadmap](docs/PROJECT_EXECUTION_ROADMAP.md)
 - [Codex Sprint Protocol](docs/CODEX_SPRINT_PROTOCOL.md)
 - [Source of Truth Priority](docs/SOURCE_OF_TRUTH_PRIORITY.md)
@@ -167,7 +169,7 @@ Optimize for correctness, traceability, reversibility, Founder manageability, Wo
 
 - Use a repository-first workflow: record approved architecture, decisions, configuration, evidence, and implementation assets here before projecting them into external tools or runtime systems.
 - GitHub is the single source of truth for shared, versioned repository history and approved baselines. Local uncommitted work is not an approved baseline, and GitHub history does not override the content authority defined in Section 6.
-- ChatGPT serves as Chief Architect, Product Owner, and QA. Codex serves as the Build Engine. Neither role may grant its own Founder approval.
+- ChatGPT serves as Project Commander, Chief Architect, Product Owner, and Repository Governor. Codex serves as the operational Program Commander and Build Engine only within exact task gates. Neither role may grant its own Founder approval or replace required independent review.
 - n8n is the Orchestrator only. It may execute explicitly approved workflows but may not become a source of architectural, product, commercial, or approval truth.
 - Apply least-privilege access to repositories, secrets, automation, hosting, WordPress, databases, and deployment systems.
 - Preserve chronology, provenance, recorded Founder decisions, and supersession links. Never rewrite history to make a later decision appear earlier.
@@ -178,8 +180,8 @@ Optimize for correctness, traceability, reversibility, Founder manageability, Wo
 
 The Founder is the final business, commercial, canonical-document, publishing, and runtime approval authority. File existence, successful validation, an AI recommendation, an n8n result, a Git commit, or a pull request never substitutes for recorded Founder approval.
 
-- **ChatGPT — Chief Architect, Product Owner, and QA:** defines and reviews architecture, scope, acceptance criteria, product intent, and quality evidence within Founder-approved boundaries. ChatGPT cannot self-approve its own outputs.
-- **Codex — controlled Build Engine:** performs scoped repository work, preserves provenance, runs validation, and reports exact diffs. Codex must not publish, merge, deploy, activate workflows, or mutate production without explicit authority.
+- **ChatGPT — Project Commander, Chief Architect, Product Owner, and Repository Governor:** defines and coordinates architecture, scope, acceptance criteria, product intent, repository governance, and quality evidence within Founder-approved boundaries. ChatGPT cannot self-approve its own outputs or replace required independent review.
+- **Codex — operational Program Commander and controlled Build Engine:** decomposes and coordinates execution, performs scoped repository work, preserves provenance, runs validation, and reports exact diffs only inside the exact approved task gates. Codex cannot self-approve or bypass repository, Git, runtime, production, human-review, Founder-review, or branch-deletion gates.
 - **n8n — Orchestrator:** coordinates approved deterministic steps. It cannot establish truth, approve documents, invent business data, bypass review, or execute external writes merely because a workflow imports successfully.
 
 All n8n workflows use exactly four execution modes:

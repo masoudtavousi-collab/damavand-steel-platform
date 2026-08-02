@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.10.0
-- **Last Updated:** 2026-08-01
-- **Last Review:** 2026-08-01
+- **Version:** 0.11.0
+- **Last Updated:** 2026-08-02
+- **Last Review:** 2026-08-02
 - **Review Cycle:** On navigation or authority change; periodic cadence pending Founder approval
 - **Lifecycle:** Review
 - **Source of Truth:** [Documentation Index](08_DOCUMENTATION_INDEX.md) and [Navigation Map](09_NAVIGATION_MAP.md)
@@ -30,20 +30,22 @@ Every reader starts with:
 
 1. [Codex Repository Instructions](../AGENTS.md) for Codex sessions; other roles may use it as a concise boundary summary.
 2. [Current Project State](CURRENT_PROJECT_STATE.md), the only mutable operational-state pointer.
-3. [Project Baseline](PROJECT_BASELINE.md), the concise orientation layer.
-4. [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md), for ownership, status, and archive rules.
-5. [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md) when another repository, Factory, Generator, or cross-repository concept is involved.
-6. [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md).
-7. [Project Bible](00_PROJECT_BIBLE.md), especially the Core Project Principles.
-8. [Project Constitution](01_PROJECT_CONSTITUTION.md).
-9. [Documentation Index](08_DOCUMENTATION_INDEX.md).
-10. [Glossary](11_GLOSSARY.md).
-11. [Decision Log](10_DECISION_LOG.md).
-12. [Founder Decision Log](17_FOUNDER_DECISION_LOG.md) and [Open Questions](18_OPEN_QUESTIONS.md).
+3. [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md), the accepted program execution method (`HOW`).
+4. [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md), the accepted Version 1.0 strategic outcome (`WHAT`).
+5. [Project Baseline](PROJECT_BASELINE.md), the concise orientation layer.
+6. [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md), for ownership, status, and archive rules.
+7. [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md) when another repository, Factory, Generator, or cross-repository concept is involved.
+8. [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md).
+9. [Project Bible](00_PROJECT_BIBLE.md), especially the Core Project Principles.
+10. [Project Constitution](01_PROJECT_CONSTITUTION.md).
+11. [Documentation Index](08_DOCUMENTATION_INDEX.md).
+12. [Glossary](11_GLOSSARY.md).
+13. [Decision Log](10_DECISION_LOG.md).
+14. [Founder Decision Log](17_FOUNDER_DECISION_LOG.md) and [Open Questions](18_OPEN_QUESTIONS.md).
 
 Readers then follow the applicable role path.
 
-For current work, readers must obtain the exact phase, branch, authorization, pull-request state, GO/NO-GO boundary, and next action from Current Project State. Historical scopes retain their original boundaries. [PD-02B Scope v1.0](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md) remains the immutable APPROVED base. [PD-03A Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md) governs the APPROVED prerequisite extension. [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md) governs only exactly three lifecycle-gated Pilot records and grants no Product/SKU, Availability, Master/Golden, Import, Runtime, Deployment, or Production authority.
+For current work, readers must obtain the exact phase, branch, authorization, pull-request state, GO/NO-GO boundary, and next action from Current Project State. DS-PC (`HOW`) and DS-SPD (`WHAT`) are stable companion governing sources and do not compete with that operational pointer. Their acceptance does not auto-authorize PD-04, Campaign 002, Product/SKU, Golden/Master Data, Runtime, Import, Deployment, Production, or branch deletion. Historical scopes retain their original boundaries. [PD-02B Scope v1.0](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md) remains the immutable APPROVED base. [PD-03A Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md) governs the APPROVED prerequisite extension. [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md) governs only exactly three lifecycle-gated Pilot records and grants no Product/SKU, Availability, Master/Golden, Import, Runtime, Deployment, or Production authority.
 
 ## Founder Reading Path
 
