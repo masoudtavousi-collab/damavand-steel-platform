@@ -26,6 +26,8 @@ This roadmap defines sequence and gates, not mutable operational state. The exac
 - PR #23 integrated the exact approved PD-02B minimum canonical slice and main CI `30482348480` passed; no Product/SKU, Pilot, Master/Golden, availability, import, or runtime authority followed.
 - PR #24 integrated the approved PD-03A prerequisite foundation and main CI `30696801759` passed; its tuples remain synthetic test evidence rather than Pilots.
 - PR #25 integrated exactly three approved PD-03B Pilot records and main CI `30698838847` passed; all 879 other rows remain `CANDIDATE_UNVERIFIED`, availability remains `MISSING_DATA_VALUE` for all 882 rows, and every readiness flag remains false.
+- PR #26 reconciled the post-PD-03B operational state and main CI `30763959936` passed; PD-03B remains the latest Product Data integration and no downstream authority was created.
+- `FD-DS-PROGRAM-001` and `C1-T04` then integrated DS-PC as the accepted program execution method (`HOW`) and DS-SPD as the accepted Version 1.0 strategic outcome (`WHAT`) through PR #27, Merge Commit `a48cc9e…`, and successful main CI `30765167988`; the governance integration is complete and remains scope-bound.
 - The approved BP2 Data Administration contract remains documentation-only with `implementation_authority: false`; approval derives no Product, Admin UI, runtime, import, publication, deployment, or production authority.
 - The historical Wave 1 branch/commit/push/Draft-PR scope did not authorize merge and remains preserved as chronology. Its later approved merge granted no Wave 2, runtime, or implementation authority.
 - Wave 2A–2C are structural, platform-independent foundations. They created no canonical Product rows, Product Attribute definitions, Master Data, Golden package, WordPress implementation, publication, deployment, or production mutation.
@@ -54,7 +56,7 @@ This roadmap defines sequence and gates, not mutable operational state. The exac
 18. Expand one approved family at a time.
 19. Complete Launch Readiness, obtain Production approval, deploy, and observe.
 
-The Product Data sequence is serial. The current next action is only Campaign 001 directive/governance integration planning; it does not start PD-04 or authorize repository mutation or Git publication. Runtime evidence planning may proceed in parallel with repository-only planning, but external actions remain separately gated. Knowledge contracts, an offline Admin engine, and an offline adapter manifest may later proceed in isolated worktrees only after stable Product identities and their own approvals. All merges, shared-path changes, imports, runtime steps, and release actions remain serial.
+The Product Data sequence is serial. Consult [Current Project State](CURRENT_PROJECT_STATE.md#approved-next-action) for the sole current next action and mutable authorization and GO/NO-GO boundary; this sequence document creates no independent authorization and does not restate mutable operational instructions. Runtime evidence planning, Knowledge contracts, an offline Admin engine, and an offline adapter manifest remain subject to their own approvals and the dependencies recorded here. All merges, shared-path changes, imports, runtime steps, and release actions remain serial.
 
 ## Phase 1 — Architecture
 

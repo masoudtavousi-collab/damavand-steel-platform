@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.12.0
+- **Version:** 0.13.0
 - **Last Updated:** 2026-08-02
 - **Last Review:** 2026-08-02
 - **Review Cycle:** On repository-governance, document, authority, metadata, navigation, traceability, or validation change
@@ -44,7 +44,7 @@ Repository completeness means inventory and discoverability only. It does not im
 
 | Governance capability | Canonical location | Current state |
 | --- | --- | --- |
-| Codex guidance and current execution state | [Codex Instructions](../AGENTS.md), [Current Project State](CURRENT_PROJECT_STATE.md), [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md), [Codex Sprint Protocol](CODEX_SPRINT_PROTOCOL.md), and [Source Priority](SOURCE_OF_TRUTH_PRIORITY.md) | `GOV-XD-00` approves stable state/tip semantics, ordered gates, and separation of duties; implementation, runtime, import, and publishing remain `NO-GO` |
+| Codex guidance and current execution state | [Codex Instructions](../AGENTS.md), [Current Project State](CURRENT_PROJECT_STATE.md), [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md), [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md), [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md), [Codex Sprint Protocol](CODEX_SPRINT_PROTOCOL.md), and [Source Priority](SOURCE_OF_TRUTH_PRIORITY.md) | `GOV-XD-00` approves stable state/tip semantics, ordered gates, and separation of duties; `FD-DS-PROGRAM-001` and completed `C1-T04` establish DS-PC=`HOW` and DS-SPD=`WHAT`; implementation, runtime, import, and publishing remain `NO-GO` |
 | Decision classification | [Decision Log](10_DECISION_LOG.md#decision-classification-framework) | Draft; pending Founder approval |
 | Repository state machine | [Document Lifecycle](12_DOCUMENT_LIFECYCLE.md) | Draft; pending Founder approval |
 | Dependency and relationship model | [Repository Metadata Standard](REPOSITORY_METADATA.md#relationship-metadata-model) and [Knowledge Graph](KNOWLEDGE_GRAPH.md#relationship-types) | Review; pending Founder approval |
@@ -141,12 +141,19 @@ The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain histo
 
 ## Post-PR12 Integration and Validation Coverage
 
-- PR #1–#25 are integration evidence; PR numbering does not express merge order.
-- PR #13 integrated the Claude recovery consolidation, PR #14 aligned the post-recovery state, PR #12 subsequently integrated the hardened BP2 Data Administration scope, PR #15 reconciled the active governance state, PR #16 hardened BP1 M1 accessibility and local validation, PR #17 reconciled the resulting governance state, PR #18 integrated the reviewed BP2 lifecycle approval, PR #19 closed the post-PR18 integration cycle, PR #20 integrated `GOV-XD-00`, PR #21 integrated PD-01, PR #22 integrated PD-02A, PR #23 integrated PD-02B, PR #24 integrated PD-03A, and PR #25 integrated PD-03B.
+- PR #1–#27 are integration evidence; PR numbering does not express merge order.
+- PR #13 integrated the Claude recovery consolidation, PR #14 aligned the post-recovery state, PR #12 subsequently integrated the hardened BP2 Data Administration scope, PR #15 reconciled the active governance state, PR #16 hardened BP1 M1 accessibility and local validation, PR #17 reconciled the resulting governance state, PR #18 integrated the reviewed BP2 lifecycle approval, PR #19 closed the post-PR18 integration cycle, PR #20 integrated `GOV-XD-00`, PR #21 integrated PD-01, PR #22 integrated PD-02A, PR #23 integrated PD-02B, PR #24 integrated PD-03A, PR #25 integrated PD-03B, PR #26 reconciled the post-PD-03B operational state, and PR #27 integrated the DS program directives.
 - PR #12 added the documentation-only administration contract, a closed JSON Schema Draft 2020-12 schema, deterministic offline validation, and positive, negative, and adversarial tests.
 - `FD-BP2-ADM-001` records the BP2 Data Administration contract's reviewed `DRAFT → REVIEW → APPROVED` sequence with implementation authority disabled. Approval does not create Product/SKU, Admin UI, WordPress/WooCommerce, import, publication, deployment, or production authority.
 - The reviewed input anchor and semantic state are maintained in [Current Project State](CURRENT_PROJECT_STATE.md); every task must resolve its own live starting SHA.
-- Unified repository validation passes with pinned dependencies; PR #16 added the BP1 safety/contrast validator and reproducible local setup, its post-merge `main` CI succeeded, PR #17 branch CI passed before merge, PR #18 Review-stage, final-PR, and post-merge `main` CI passed, PR #19 post-merge `main` CI run `30372385447` passed, PR #20 required-check run `30376465378` passed, PD-01 DRAFT/REVIEW CI runs `30390311445` and `30466264564` passed, and the post-merge main CI runs for PR #21–#25 were `30467128643`, `30471480775`, `30482348480`, `30696801759`, and `30698838847`. Static success does not satisfy Product/SKU, availability, Master/Golden, import, or runtime gates.
+- Unified repository validation passes with pinned dependencies; PR #16 added the BP1 safety/contrast validator and reproducible local setup, its post-merge `main` CI succeeded, PR #17 branch CI passed before merge, PR #18 Review-stage, final-PR, and post-merge `main` CI passed, PR #19 post-merge `main` CI run `30372385447` passed, PR #20 required-check run `30376465378` passed, PD-01 DRAFT/REVIEW CI runs `30390311445` and `30466264564` passed, the post-merge main CI runs for PR #21–#25 were `30467128643`, `30471480775`, `30482348480`, `30696801759`, and `30698838847`, and post-merge main CI for PR #26 and PR #27 passed as `30763959936` and `30765167988`. Static success does not satisfy Product/SKU, Availability, Master/Golden, import, or runtime gates.
+
+## Campaign 001 DS Program Governance Coverage
+
+- The post-PD-03B operational-state reconciliation is integrated through PR #26, Merge Commit `90d0aaa207801037c151e204d04bb98ac482e7b5`, and successful main CI `30763959936`.
+- `FD-DS-PROGRAM-001` and `C1-T04` are integrated through PR #27, Merge Commit `a48cc9ee6cfc6b5e3abd906f13f05f9751428f94`, and successful main CI `30765167988`.
+- [DS-PC-001](DS_PC_001_PROGRAM_CHARTER.md) is the accepted program execution method (`HOW`); [DS-SPD-001](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) is the accepted Version 1.0 strategic outcome (`WHAT`). Their companion relationship and governance integration are complete evidence.
+- This coverage creates no C1-T06 execution, Product/SKU, fourth Pilot, 879-row population, Availability, Master/Golden, WordPress/WooCommerce, import, runtime, deployment, production, or Git-publication authority.
 
 ## WordPress Architecture Coverage
 
@@ -520,7 +527,7 @@ The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain histo
 - `FD-PILOT-001` durably records the Golden Parent and exactly three approved pilot combinations; their reference IDs are not final commercial SKUs.
 - Current Pipe counts are 3 `APPROVED`, 879 `CANDIDATE_UNVERIFIED`, and 882 with market availability `MISSING_DATA_VALUE`.
 - Golden approval exists in Founder decisions and governing prose, but no canonical machine-readable Golden or Master Data package exists on `main`. Import, Runtime, and Publishing remain `NO-GO`.
-- Sprint 12A remains historical product/runtime evidence. Later repository integrations through PR #25 are governance, prototype, contract, validation, and exact Pilot-record evidence only; no runtime implementation sprint is active.
+- Sprint 12A remains historical product/runtime evidence. Later repository integrations through PR #27 are governance, prototype, contract, validation, exact Pilot-record, state-reconciliation, and DS program-directive evidence only; no runtime implementation sprint is active.
 - GIT-02S created no ADR because it introduced no new enterprise architecture decision.
 - Repository A static validation passed within the dated GIT-02S evidence scope; that result does not substitute for fresh post-merge reconciliation validation.
 - Runtime, import, publishing, deployment, product creation, bulk SKU generation, Factory implementation, and any unscoped or autonomous repository merge remain `NO-GO` without separate Founder approval.
@@ -584,7 +591,7 @@ The Repository Freeze v1.0 facts and the 2026-07-19 pre-merge state remain histo
 
 ## Future Work
 
-- Prepare only Campaign 001 directive/governance integration planning. Do not integrate its directives, start PD-04, mutate repository or runtime data, or perform Git publication without a separate exact-scope Founder authorization.
+- Consult [Current Project State](CURRENT_PROJECT_STATE.md#approved-next-action) for the sole current next action and mutable authorization and GO/NO-GO boundary. This health record creates no independent authorization and does not restate mutable operational instructions.
 - Resolve the shared separation-of-duties matrix, Sprint-specific Test Contract, legacy Variable Parent Product ownership conflicts, and G02/G03 sequencing before their dependent implementation or runtime work.
 - Obtain Founder and applicable specialist review of the Master Remediation Roadmap, Implementation Sequence, and Execution Gates before creating any remediation ticket.
 - Close `G01` through `G05` for the exact intended scope before considering mutable investigation or implementation.
