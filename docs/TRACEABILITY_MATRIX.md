@@ -8,14 +8,14 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.12.0
+- **Version:** 0.13.0
 - **Last Updated:** 2026-08-02
 - **Last Review:** 2026-08-02
 - **Review Cycle:** On governing-rule or dependency change; periodic cadence pending Founder approval
 - **Lifecycle:** Review
 - **Source of Truth:** [Core Project Principles](00_PROJECT_BIBLE.md#core-project-principles), approved governing documents, and accepted ADRs; this matrix is a supporting view
 - **Dependencies:** [Core Project Principles](00_PROJECT_BIBLE.md#core-project-principles), [Business Rules](03_BUSINESS_RULES.md), [Enterprise Architecture](02_ARCHITECTURE.md)
-- **Related Documents:** [Decision Log](10_DECISION_LOG.md), [Repository Metadata Standard](REPOSITORY_METADATA.md), [Knowledge Graph](KNOWLEDGE_GRAPH.md), [Git Governance](GIT_GOVERNANCE.md), [WordPress Enterprise Architecture](06_WORDPRESS_ARCHITECTURE.md), [Enterprise Product Data Model](19_PRODUCT_DATA_MODEL.md), and [Repository Health](REPOSITORY_HEALTH.md)
+- **Related Documents:** [Program Charter](DS_PC_001_PROGRAM_CHARTER.md), [Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md), [Decision Log](10_DECISION_LOG.md), [Repository Metadata Standard](REPOSITORY_METADATA.md), [Knowledge Graph](KNOWLEDGE_GRAPH.md), [Git Governance](GIT_GOVERNANCE.md), [WordPress Enterprise Architecture](06_WORDPRESS_ARCHITECTURE.md), [Enterprise Product Data Model](19_PRODUCT_DATA_MODEL.md), and [Repository Health](REPOSITORY_HEALTH.md)
 - **Traceability:** This document maps CP-001 through CP-010 across governing, dependent, and future-evidence layers
 - **AI Compatibility:** AI-ready after Founder approval
 - **Approval:** Pending Founder approval
@@ -28,6 +28,7 @@ Provide a single navigational view from governing rules through business, archit
 
 | Trace ID | Asset or event | Authority/evidence input | Reconciled outcome | Implementation status |
 | --- | --- | --- | --- | --- |
+| `DS-PROGRAM-001` | [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md), [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md), and `FD-DS-PROGRAM-001` | Founder instruction effective 2026-08-02; raw and normalized SHA-256 evidence; exact eleven-path governance allowlist | Establishes DS-PC as `HOW` and DS-SPD as `WHAT`; preserves Founder final authority, ChatGPT program/architecture/product/repository command, Codex operational Program Commander/Build Engine responsibility inside exact gates, Current Project State as sole mutable pointer, and all existing separation-of-duties and supersession controls | Governance integration only; no PD-04, Campaign 002, Product/SKU, Golden/Master Data, Runtime, Import, Deployment, Production, Git publication, merge, or branch deletion authority |
 | `POST12-MAIN` | PR #13, PR #14, PR #12, and PR #15–#25 integration history | GitHub merge evidence and [Current Project State](CURRENT_PROJECT_STATE.md) | Records the actual order: recovery consolidation, post-recovery state, BP2 hardening, governance reconciliation, BP1 M1 hardening, post-PR16 reconciliation, BP2 lifecycle approval, post-PR18 reconciliation, `GOV-XD-00`, PD-01, PD-02A, PD-02B, PD-03A, then PD-03B | Repository evidence only |
 | `C1-T01-STATE` | Post-PD-03B operational-state reconciliation | Founder-approved exact-scope packet; merged PR #25; Merge Commit `64511d7caf95d88122847abfef9914e9d0605954`; successful main CI `30698838847` | Closes stale PD-03B conditional-integration and branch-state claims; preserves exactly 3 approved Pilots, 879 candidates, missing availability for all 882 rows, and false readiness; sets only Campaign 001 directive/governance integration planning as next action | Documentation reconciliation only; no directive integration, product/runtime mutation, Git publication, merge, or branch deletion authority |
 | `POST12-SCOPE` | [BP2 Data Administration Scope v1.0](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md) | BP2 blueprint, PR #12, and `FD-BP2-ADM-001` | Documents 12 governed registries, mutation governance, smart inquiry order, stop conditions, lifecycle evidence, and rollback boundary | `APPROVED` documentation governance; no implementation authority |
@@ -761,6 +762,7 @@ Core Principles + Business/Inquiry/Product/Entity/Knowledge authority
 
 | Concern | Governing source | Supporting sources | Evidence or register |
 | --- | --- | --- | --- |
+| Program method and Version 1.0 outcome | [DS-PC — HOW](DS_PC_001_PROGRAM_CHARTER.md) and [DS-SPD — WHAT](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) | [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md), [Reading Order](READING_ORDER.md), and [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md) | `FD-DS-PROGRAM-001`, raw/normalized hashes, and exact-scope validation evidence |
 | Authority and hierarchy | [Documentation Index](08_DOCUMENTATION_INDEX.md) | [Navigation Map](09_NAVIGATION_MAP.md), [Knowledge Graph](KNOWLEDGE_GRAPH.md) | Batch audit reports |
 | Decision classification | [Decision Log](10_DECISION_LOG.md#decision-classification-framework) after approval | [Founder Decision Log](17_FOUNDER_DECISION_LOG.md), ADR Guide | Decision source, classification, approval, and impact evidence |
 | Lifecycle and approval | [Document Lifecycle](12_DOCUMENT_LIFECYCLE.md) | [Review Process](15_REVIEW_PROCESS.md), [Metadata Standard](REPOSITORY_METADATA.md) | Review records |
@@ -784,6 +786,8 @@ Core Principles + Business/Inquiry/Product/Entity/Knowledge authority
 
 ## References
 
+- [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md)
+- [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md)
 - [Project Bible Rule Traceability](00_PROJECT_BIBLE.md#rule-traceability)
 - [Decision Log](10_DECISION_LOG.md)
 - [Repository Metadata Standard](REPOSITORY_METADATA.md)

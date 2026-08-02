@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.16.0
+- **Version:** 0.17.0
 - **Last Updated:** 2026-08-02
 - **Last Review:** 2026-08-02
 - **Review Cycle:** On Founder decision creation, resolution, supersession, or dependency change
@@ -54,6 +54,12 @@ Index every repository item explicitly marked as requiring a Founder decision. T
 | --- | --- | --- | --- |
 | FD-ARC-001 | Approve, revise, or reject WP-ARC-001 through WP-ARC-012 as the WordPress Enterprise Architecture. | [WordPress Enterprise Architecture](06_WORDPRESS_ARCHITECTURE.md#architecture-decision-register) | Pending; no implementation authorized |
 | FD-ARC-002 | Resolve or delegate the product, taxonomy, role, inquiry, SEO, media, version, plugin, integration, security, and performance decisions required before configuration. | [Open Architecture Decisions](06_WORDPRESS_ARCHITECTURE.md#open-architecture-decisions) | Pending; domain review required |
+
+## DS Program Charter and Strategic Directive Decision
+
+| ID | Decision | Decision owner / effective date | Approval scope | Evidence | Status / supersession |
+| --- | --- | --- | --- | --- | --- |
+| `FD-DS-PROGRAM-001` | Accept [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md) as the program execution method (`HOW`) and [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) as the Version 1.0 strategic outcome (`WHAT`). The Founder remains final authority. ChatGPT serves as Project Commander, Chief Architect, Product Owner, and Repository Governor. Codex serves as operational Program Commander and Build Engine only inside exact task gates and cannot self-approve or bypass repository, Git, runtime, production, human-review, Founder-review, or branch-deletion gates. | Founder / effective 2026-08-02 | Canonicalize the two complete source texts using only UTF-8 decoding, CRLF/CR and U+2028/U+2029 to LF, and NFC normalization; update only `AGENTS.md`, the two canonical documents, Source of Truth Priority, Decision Log, Founder Decision Log, Repository Relationship Map, Reading Order, Documentation Index, Traceability Matrix, and Changelog. | DS-PC raw SHA-256 `ee750ca9a3ba47f4f48fd906675714922fc7cbe88904d3f580aee734237a0e0c`; normalized SHA-256 `3e6e9c7a827fc4998bb96b343842b84efe80573febf2c688247a98b9f01e44d4`; canonical path `docs/DS_PC_001_PROGRAM_CHARTER.md`. DS-SPD raw SHA-256 `aa10c18ff06b38d0054908e4267848c8f7432e649b32d2de7b4bf0c55015d40c`; normalized SHA-256 `929b96e17207e93c8b3543241c5db361093f1030f31431d3c5960bf4ea010bf6`; canonical path `docs/DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md`. | `APPROVED` within this exact governance-integration scope. DS-PC and DS-SPD are companions and successor program context; neither silently approves the full Draft Project Bible/Constitution, rewrites `GOV-XD-00` history, auto-supersedes domain roadmaps, or overrides CP-001–CP-010, accepted Founder decisions/ADRs, accepted architecture, source priority, or production controls. PD-04, Campaign 002, Product/SKU, Golden/Master Data, Runtime, Import, Deployment, Production, Git publication, merge, and branch deletion require separate authority. Any supersession must be explicit, scoped, and recorded by a later Founder decision. |
 
 ## BP2 Data Administration Lifecycle Decision
 

@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.4.0
-- **Last Updated:** 2026-07-23
-- **Last Review:** 2026-07-23
+- **Version:** 0.5.0
+- **Last Updated:** 2026-08-02
+- **Last Review:** 2026-08-02
 - **Review Cycle:** On decision classification, status, or authority change
 - **Lifecycle:** Draft
 - **Source of Truth:** Approved governing documents and explicitly accepted decision records; this log is an index only
@@ -69,6 +69,12 @@ Every accepted decision must identify:
 | IDs | Decision set | Source | Status |
 | --- | --- | --- | --- |
 | CP-001–CP-010 | Plugin First, Configuration First, Mobile First, Persian RTL, Inquiry First, No Public Pricing, No Custom Theme, No Gravity Forms, No LiteSpeed Cache, and No AI Features (Phase 1) | [Core Project Principles](00_PROJECT_BIBLE.md#core-project-principles) | Accepted by Founder directive |
+
+## Program Governance Decision
+
+| ID | Decision | Source | Status |
+| --- | --- | --- | --- |
+| `FD-DS-PROGRAM-001` | Accept [DS-PC-001](DS_PC_001_PROGRAM_CHARTER.md) as the program execution method (`HOW`) and [DS-SPD-001](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) as the Version 1.0 strategic outcome (`WHAT`); preserve Founder final authority; assign ChatGPT the Project Commander / Chief Architect / Product Owner / Repository Governor roles and Codex the operational Program Commander / Build Engine role only inside exact task gates. | [Founder Decision Log](17_FOUNDER_DECISION_LOG.md#ds-program-charter-and-strategic-directive-decision), effective 2026-08-02 | Accepted within exact recorded scope. Does not approve the full Draft Bible/Constitution, supersede CP-001–CP-010 or more specific accepted authority, or authorize PD-04, Campaign 002, Product/SKU, Golden/Master Data, Runtime, Import, Deployment, Production, Git publication, or branch deletion. |
 
 ## Architecture Decisions
 
