@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-08-02 — Post-PD-03B Operational-State Reconciliation
+
+- Reconciled active operational records with merged PR #25, Merge Commit
+  `64511d7caf95d88122847abfef9914e9d0605954`, and successful post-merge
+  `main` CI `30698838847`.
+- Closed stale PD-03B conditional-integration and active-branch wording while
+  preserving its original authorization and review chronology.
+- Preserved exactly three `APPROVED` Pilot records, 879
+  `CANDIDATE_UNVERIFIED` combinations, `MISSING_DATA_VALUE` availability for
+  all 882 rows, and false Golden/Import/Runtime readiness.
+- Set only Campaign 001 directive/governance integration planning as the next
+  action. This reconciliation does not integrate those directives or authorize
+  Product/SKU, Master/Golden, import, runtime, staging, commit, push, PR, merge,
+  or branch deletion.
+
 # 2026-08-01 — PD-03B Canonical Pilot Records (`APPROVED`)
 
 - Recorded `FD-PD03B-001` and the exact 33-path scope from merged PR #24
@@ -70,8 +85,8 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.10.0
-- **Last Updated:** 2026-08-01
+- **Version:** 0.11.0
+- **Last Updated:** 2026-08-02
 - **Lifecycle:** Review
 - **Source of Truth:** Merged Git history and scoped decision/evidence records
 - **Approval:** Pending Founder review; merged Git history remains evidence
