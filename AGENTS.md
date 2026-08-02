@@ -86,7 +86,7 @@ Founder-approved product data outranks competitor data. Competitor data may info
 
 - Architecture and governance proposal coverage exists; the `GOV-XD-00` cross-domain execution charter is Founder-approved within its documentation-only scope, while implementation remains lifecycle- and scope-gated.
 - Product core, Product Attribute, and measurement machine-readable structural foundations exist and are validated.
-- No canonical Product rows, approved Product Attribute definitions, final Product/SKU vocabulary, Master Data, or Golden package exists.
+- Exactly six Product Attribute definitions are approved within bounded repository scope: Material and Grade through PD-02B, plus Finish, Diameter, Thickness, and Length through PD-03A. No canonical Product or SKU rows, final Product/SKU vocabulary, Master Data, or Golden package exists, and the approved definitions do not create Product values or runtime readiness.
 - Knowledge architecture proposals exist, but machine-readable Knowledge contracts and content instances do not; the Knowledge Repository is `NOT_IMPLEMENTATION_READY`.
 - No canonical machine-readable Master Data or Golden reference package currently exists on `main`.
 - Last completed product/runtime evidence sprint: **Sprint 12A**.

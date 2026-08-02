@@ -8,15 +8,15 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.12.0
-- **Last Updated:** 2026-08-01
-- **Last Review:** 2026-08-01
+- **Version:** 0.13.0
+- **Last Updated:** 2026-08-02
+- **Last Review:** 2026-08-02
 - **Review Cycle:** On approved decision, completed sprint, repository disposition, readiness, or execution-state change
 - **Lifecycle:** Review
 - **Source of Truth:** Accepted governing sources, recorded Founder decisions, [Current Project State](CURRENT_PROJECT_STATE.md), approved Master Data, and current repository evidence within their declared scope
 - **Dependencies:** [Codex Repository Instructions](../AGENTS.md), [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md), [Current Project State](CURRENT_PROJECT_STATE.md), and [Execution Gates](EXECUTION_GATES.md)
 - **Related Documents:** [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md), [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md), [Founder Decision Log](17_FOUNDER_DECISION_LOG.md), and `GIT-02S Audit`
-- **Traceability:** CP-001 through CP-010; ADR-0001; FD-PILOT-001; FD-BP2-ADM-001; FD-GOV-XD-00; FD-PD01-001; PD01-REVIEW-001; FD-PD02A-001; GIT-02S; PR #1–#21 integration evidence; Wave 2A–2C; FD-K01-001; BP1; BP2; Claude Recovery Audit
+- **Traceability:** CP-001 through CP-010; ADR-0001; FD-PILOT-001; FD-BP2-ADM-001; FD-GOV-XD-00; FD-PD01-001; PD01-REVIEW-001; FD-PD02A-001; FD-PD02B-001; FD-PD03A-001; FD-PD03B-001; GIT-02S; PR #1–#25 integration evidence; Wave 2A–2C; FD-K01-001; BP1; BP2; Claude Recovery Audit
 - **AI Compatibility:** Primary concise entry point; underlying sources control within their recorded authority
 - **Approval:** `GOV-XD-00` scope and stable current-state semantics approved by the Founder on 2026-07-28; recorded Founder decisions remain accepted only within their exact scope
 
@@ -48,7 +48,7 @@ Repository B cannot override the Founder, Repository A, CP-001 through CP-010, t
 
 The exact semantic phase, authorization, GO/NO-GO boundary, and next action are maintained only in [Current Project State](CURRENT_PROJECT_STATE.md). The exact live GitHub `main` SHA is resolved dynamically at task dispatch and recorded in that task's Scope/Approval Packet; fixed SHAs in repository prose are dated evidence anchors.
 
-Historical Git authorizations retain their original exact scope and do not become retroactive merge or runtime authority. PR #1–#21 are integration evidence when PR #21 carrying this declaration merges. PR numbering does not represent merge order, and a merge is not a substitute for the originating Founder authorization record or lifecycle approval. PR #13 recovery consolidation and PR #14 post-recovery state preceded the final merge of PR #12; PR #15 then reconciled the active governance state, PR #16 closed the bounded BP1 M1 accessibility and local-validation gaps, PR #17 reconciled the resulting state, PR #18 integrated the reviewed BP2 lifecycle approval, PR #19 closed that integration cycle, PR #20 integrated `GOV-XD-00`, and PR #21 integrates the approved synthetic PD-01 contract boundary. Wave 2A–2C and PD-01 remain structural foundations, while BP1 and BP2 remain bounded evidence/design assets rather than runtime or final-SKU authority.
+Historical Git authorizations retain their original exact scope and do not become retroactive merge or runtime authority. PR #1–#25 are integration evidence; PR numbering does not represent merge order, and a merge is not a substitute for the originating Founder authorization record or lifecycle approval. PR #13 recovery consolidation and PR #14 post-recovery state preceded the final merge of PR #12; PR #15 then reconciled the active governance state, PR #16 closed the bounded BP1 M1 accessibility and local-validation gaps, PR #17 reconciled the resulting state, PR #18 integrated the reviewed BP2 lifecycle approval, PR #19 closed that integration cycle, PR #20 integrated `GOV-XD-00`, PR #21 integrated PD-01, PR #22 integrated PD-02A, PR #23 integrated PD-02B, PR #24 integrated PD-03A, and PR #25 integrated PD-03B. These remain scope-bound repository foundations and records rather than runtime or final-SKU authority.
 
 ## Architecture and Governance Status
 
@@ -61,22 +61,23 @@ Historical Git authorizations retain their original exact scope and do not becom
 
 | Area | Status |
 | --- | --- |
-| Product Repository | Product core, Product Attribute, and measurement structural contracts/schemas/registries/validators exist; no canonical Product rows, approved Product Attribute definitions, final SKU vocabulary, Master Data, or Golden package exists |
+| Product Repository | Product core, Product Attribute, and measurement structural contracts/schemas/registries/validators exist; exactly six Product Attribute definitions are approved—2 through PD-02B and 4 through PD-03A—while no canonical Product/SKU rows, Product-level values, final SKU vocabulary, Master Data, or Golden package exists |
 | BP2 Data Administration | `FD-BP2-ADM-001` completed `DRAFT → REVIEW → APPROVED` with a documentation-only scope, closed Draft 2020-12 schema, deterministic offline validator, and adversarial tests; implementation authority remains false |
 | Cross-domain execution governance | `FD-GOV-XD-00` defines stable live-tip resolution, separation of duties, Sprint-specific Approval/Test Contracts, and an ordered path toward `PD-01`; it creates no implementation authority |
-| PD-01 Product Data Contract Enablement | `APPROVED` under `FD-PD01-001` after `PD01-REVIEW-001`; exact 30-path Contract/Schema/Validator/Test and governance scope with synthetic fixtures only; canonical Product Attribute registry remains empty |
-| PD-02A Controlled Values and Attribute Profiles | `APPROVED` under `FD-PD02A-001` after legal lifecycle and `PD02A-REVIEW-001` PASS with zero findings; exact 38-path synthetic-only Contract/Schema/Validator/Test foundation; conditional Git integration pending; canonical Product Attribute, controlled-value, and Profile collections remain empty |
-| PD-02B Minimum Canonical Slice | `APPROVED` under `FD-PD02B-001` after legal `DRAFT → REVIEW → APPROVED`, `PD02B-TECH-REVIEW-001` PASS, and REVIEW-stage CI; exact 57-path repository-only slice from `main@6ed6fc89e555b1be3a97d7f9c64c9e2b989af1df`; exactly 3 entities, 2 Attributes, 2 Value Registries, 4 Terms, 1 INTERNAL Profile, 18 labels, and 1 Approval Evidence are approved without broader Product/runtime authority |
-| PD-03A Pilot Prerequisite Foundation | `APPROVED` under `FD-PD03A-001` after legal `DRAFT → REVIEW → APPROVED`, zero-finding `PD03A-TECH-REVIEW-001` PASS on `cb6c817…`, CI `30696083295`, and REVIEW CI `30696444576`; immutable extension over the unchanged PD-02B base; exact bounded records plus Length/Metre/Millimetre approved; no canonical Pilot/Product/SKU/availability or runtime authority |
-| PD-03B Canonical Pilot Records | `APPROVED` under `FD-PD03B-001` after legal lifecycle and zero-finding independent PASS; exactly three stable repository Pilot records only, with historical references non-identifying, Availability `MISSING_DATA_VALUE`, and Golden/Import/Runtime readiness false; Product/SKU and downstream authority remain absent |
+| PD-01 Product Data Contract Enablement | `APPROVED` under `FD-PD01-001` after `PD01-REVIEW-001`; exact 30-path Contract/Schema/Validator/Test and governance scope with synthetic fixtures only; its original empty-registry boundary is preserved as chronology, while later PD-02B/PD-03A approved exactly six definitions without creating Product values |
+| PD-02A Controlled Values and Attribute Profiles | `APPROVED` under `FD-PD02A-001` after legal lifecycle and `PD02A-REVIEW-001` PASS with zero findings; exact 38-path synthetic-only Contract/Schema/Validator/Test foundation integrated by PR #22; canonical Product Attribute, controlled-value, and Profile collections were required to remain empty in that scope |
+| PD-02B Minimum Canonical Slice | `APPROVED` under `FD-PD02B-001` after legal `DRAFT → REVIEW → APPROVED`, `PD02B-TECH-REVIEW-001` PASS, REVIEW-stage CI, merged PR #23, and main CI `30482348480`; exact 57-path repository-only slice; exactly 3 entities, 2 Attributes, 2 Value Registries, 4 Terms, 1 INTERNAL Profile, 18 labels, and 1 Approval Evidence are approved without broader Product/runtime authority |
+| PD-03A Pilot Prerequisite Foundation | `APPROVED` under `FD-PD03A-001` after legal `DRAFT → REVIEW → APPROVED`, zero-finding `PD03A-TECH-REVIEW-001` PASS on `cb6c817…`, merged PR #24, and main CI `30696801759`; immutable extension over the unchanged PD-02B base; exact bounded records plus Length/Metre/Millimetre approved; no Product/SKU/availability or runtime authority |
+| PD-03B Canonical Pilot Records | `APPROVED` under `FD-PD03B-001` after legal lifecycle and zero-finding independent PASS; merged PR #25 and main CI `30698838847`; exactly three stable repository Pilot records only, with historical references non-identifying, Availability `MISSING_DATA_VALUE`, and every readiness flag false; Product/SKU and downstream authority remain absent |
 | Knowledge Repository | Architecture proposals exist; `repository/knowledge/` is the approved future location, but machine-readable contracts and content instances do not exist; `NOT_IMPLEMENTATION_READY` |
 | Master Data | No canonical machine-readable package exists on `main`; decision records and governing prose remain the current evidence |
 | Knowledge Cards and Page Builder assets | Referenced historical/future assets are absent from canonical `main`; no implementation-readiness claim is made |
 
-PD-03A does not modify the aggregate PD-02B registries or their historical
-hashes. Until its lifecycle reaches `APPROVED`, every extension record and the
-Length/Metre/Millimetre promotion remain `CANDIDATE_UNVERIFIED`. Synthetic
-tuples are test evidence and must not be promoted or treated as Pilots.
+PD-03A did not modify the aggregate PD-02B registries or their historical
+hashes. Its synthetic tuples remain test evidence and must not be promoted or
+treated as Pilots. The only canonical Pilot records are the exact three
+PD-03B records integrated by PR #25; that status grants no Product/SKU,
+availability, Master/Golden, import, or runtime authority.
 
 ## Master Data and Family Status
 
@@ -121,7 +122,7 @@ Sprint 12A provides public, unauthenticated, read-only evidence of WordPress, Wo
 
 - Repository A retains its historical v1.0 baseline. Before this reconciliation sprint, the synchronized `main` working tree was verified clean.
 - The canonical and GitHub default branch is `main`; its live tip is resolved dynamically at task dispatch. [Current Project State](CURRENT_PROJECT_STATE.md) records the semantic state and the reviewed input anchor, not a permanent live-tip claim.
-- PR #1–#21 are integration evidence when PR #21 merges. PR #5 added Product core, PR #6 added Product Attributes, PR #7 added measurements, PR #9 integrated K-01, PR #8 added the Build Phase 1 implementation roadmap after the PR #9 governance baseline, PR #10 added the bounded BP1 local prototype, PR #11 added the BP2 machine-readable data blueprint, PR #13 consolidated Claude recovery evidence, PR #14 aligned the post-recovery state, PR #12 subsequently merged the hardened BP2 Data Administration contract and validation suite, PR #15 reconciled active governance after that merge, PR #16 hardened BP1 M1 accessibility and local validation, PR #17 reconciled the post-PR16 governance state, PR #18 integrated the BP2 lifecycle approval, PR #19 reconciled the post-PR18 state, PR #20 integrated `GOV-XD-00`, and PR #21 integrates PD-01.
+- PR #1–#25 are integration evidence. PR #5 added Product core, PR #6 added Product Attributes, PR #7 added measurements, PR #9 integrated K-01, PR #8 added the Build Phase 1 implementation roadmap after the PR #9 governance baseline, PR #10 added the bounded BP1 local prototype, PR #11 added the BP2 machine-readable data blueprint, PR #13 consolidated Claude recovery evidence, PR #14 aligned the post-recovery state, PR #12 subsequently merged the hardened BP2 Data Administration contract and validation suite, PR #15 reconciled active governance after that merge, PR #16 hardened BP1 M1 accessibility and local validation, PR #17 reconciled the post-PR16 governance state, PR #18 integrated the BP2 lifecycle approval, PR #19 reconciled the post-PR18 state, PR #20 integrated `GOV-XD-00`, PR #21 integrated PD-01, PR #22 integrated PD-02A, PR #23 integrated PD-02B, PR #24 integrated PD-03A, and PR #25 integrated PD-03B.
 - The 2026-07-19 Wave 1 branch, exact allowlist, commit, push, and Draft-PR restrictions remain historical execution evidence and must not be rewritten as earlier merge authority.
 - Wave 2A–2C structural foundations are present. No Product records, WordPress/runtime implementation, publication, deployment, or production mutation occurred.
 - Main-branch protection is enabled with administrator enforcement, strict status checks, required check `repository-validation`, force-push disabled, and branch deletion disabled.
@@ -136,7 +137,7 @@ The operational GO/NO-GO boundary is maintained only in [Current Project State](
 
 - Repository A is the only canonical Damavand Steel repository.
 - Repository B is `QUARANTINED_ARCHITECTURE_RESEARCH` and has no current project authority.
-- PR #1–#21 are integration evidence when PR #21 merges; Current Project State maintains semantic authorization, while each Sprint resolves and records its own exact starting `main` SHA.
+- PR #1–#25 are integration evidence; Current Project State maintains semantic authorization, while each Sprint resolves and records its own exact starting `main` SHA.
 - `main` is the default branch and is protected with the required `repository-validation` check.
 - Wave 1 and Wave 2 discovery are complete. Wave 2A–2C structural foundations are merged without Product Data or runtime authority.
 - The canonical repository hierarchy is `Catalog → Platform → Family → Series → Variant Rules → SKU`; commerce Parent/Variation constructs are downstream mappings.
@@ -160,7 +161,7 @@ The operational GO/NO-GO boundary is maintained only in [Current Project State](
 - Approval or revision of remaining `Review`/`Draft` governance and architecture decisions.
 - Future disposition or possible promotion of Repository B concepts; any status change requires a separate Founder decision.
 - Historical originating authorization references for Wave 2A and Wave 2B must be linked without inferring them from merge history.
-- `PD-02` or any later controlled-value/canonical Product Data Sprint requires a separate exact Founder authorization; PD-01 approval grants none.
+- `PD-04` or any later Product Data Sprint requires a separate exact Founder authorization; PD-03B approval grants none.
 - Separate exact-scope authorization for any BP2 administration implementation or Product Data use; lifecycle approval alone grants neither.
 
 Missing availability, files, measurements, or operational evidence are not automatically Founder decisions.

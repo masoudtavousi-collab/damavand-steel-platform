@@ -1,15 +1,15 @@
 # Current Project State
 
-- **Current date:** 2026-08-01
+- **Current date:** 2026-08-02
 - **Canonical repository:** `masoudtavousi-collab/damavand-steel-platform`
-- **Reviewed input anchor:** `e72c32bdb041448d34c925c969fe01a2156f9e1d`, merged PR #24 PD-03A baseline; successful main CI `30696801759`
+- **Reviewed input anchor:** `64511d7caf95d88122847abfef9914e9d0605954`, merged PR #25 PD-03B baseline; successful main CI `30698838847`
 - **Live `main` tip:** resolve dynamically from GitHub `refs/heads/main` at task start; do not treat the reviewed input anchor as a permanent live-tip claim
-- **Last completed substantive repository integration:** `PD-03A` through merged PR #24 and successful post-merge main CI
-- **Last completed governance reconciliation:** PD-03A direct reconciliation through PR #24
-- **Current phase:** `PD-03B` Canonical Pilot Records — `APPROVED`; conditional Git integration in progress
-- **Current authorized branch:** `codex/pd-03b-canonical-pilot-records`
-- **Current authorization:** maximum 33-path repository-only scope for exactly three canonical Pilot records, dedicated Contract/Schema/Validator/Test, one Approval Evidence, legal lifecycle, and conditional Git integration
-- **Merge:** conditional after independent technical PASS, legal `DRAFT → REVIEW → APPROVED`, exact allowlist, successful tests/CI, no conflict or scope drift, Merge Commit, and successful `main` CI
+- **Last completed substantive repository integration:** `PD-03B` through merged PR #25 and successful post-merge main CI
+- **Last completed governance reconciliation:** post-PD-03B operational-state reconciliation through PR #25 evidence
+- **Current phase:** Campaign 001 directive/governance integration planning only
+- **Current authorized branch:** None granted by this state record
+- **Current authorization:** planning only; any repository mutation or Git publication requires a separate exact-scope Founder packet
+- **Merge:** NO-GO without separate Founder authorization
 - **Runtime / WordPress / WooCommerce mutation:** NO-GO
 - **Import / publishing / deployment / product creation / bulk SKU generation:** NO-GO
 
@@ -29,8 +29,8 @@ This file is the only semantic operational-state pointer. Other documents may pr
 | Foundation | Evidence | Current meaning |
 | --- | --- | --- |
 | Wave 2A — Product Core | PR #5; `product-core` contract, schema, entity-type/status registries, validator, and fixtures | Platform-independent structural foundation exists; no Product, Golden, SKU, commercial, import, or runtime record was created |
-| Wave 2B — Product Attributes | PR #6; `product-attribute` contract, schema, controlled supporting registries, validator, and fixtures | Attribute-definition foundation exists; canonical Product Attribute registry remains empty and no business values were approved |
-| Wave 2C — Measurements | PR #7; measurement contract/schema, two candidate dimensions, four candidate units, validator, and fixtures | Measurement infrastructure exists; entries are `CANDIDATE_UNVERIFIED` and do not assert Product values, weight, availability, pricing, or runtime mappings |
+| Wave 2B — Product Attributes | PR #6; `product-attribute` contract, schema, controlled supporting registries, validator, and fixtures | The original Wave 2B foundation kept the canonical registry empty; later PD-02B and PD-03A approved exactly six definitions—Material, Grade, Finish, Diameter, Thickness, and Length—without approving Product values or runtime use |
+| Wave 2C — Measurements | PR #7; measurement contract/schema, two initially candidate dimensions, four initially candidate units, validator, and fixtures | The original foundation asserted no Product values. PD-03A later approved Length, Metre, and Millimetre; Mass, Kilogram, and Gram remain `CANDIDATE_UNVERIFIED`, and no weight, availability, pricing, or runtime mapping is asserted |
 | K-01 — Governance and Knowledge Reconciliation | PR #9; current-state ownership, Knowledge Archive Standard, Atlas disposition, and unified local/CI validation | Governance reconciliation is integrated; merge does not promote Atlas rows, Product facts, or lifecycle approval |
 | BP1 — Visible Local Prototype | PR #10; Persian RTL local prototype, inquiry-first preview, local design tokens, and safety validator | Local review evidence only; it is not a WordPress implementation, production site, or Product truth source |
 | BP2 — Machine-Readable Data Blueprint | PR #11; controlled Pipe blueprint, schema, offline validator, three approved pilot decisions, and 879 historical candidates | Data-administration design input exists; it creates no final SKU, import, publication, WordPress, WooCommerce, or production authority |
@@ -42,11 +42,11 @@ This file is the only semantic operational-state pointer. Other documents may pr
 | Post-PR16 Governance Reconciliation | PR #17; active state, baseline, roadmap, repository relationship, index, navigation, health, traceability, changelog, and open-question alignment | Records the PR #16 completion and removes its closed blocker while preserving the BP2 `DRAFT` lifecycle and all Product/runtime `NO-GO` boundaries |
 | Post-PR18 Governance Reconciliation | PR #19; direct governance and current-state alignment after PR #18 | Closes the BP2 lifecycle integration cycle and returns the project to read-only next-step planning without implementation authority |
 | `GOV-XD-00` Cross-Domain Execution Charter | Founder authorization dated 2026-07-28; six-task read-only analysis; independent QA; the PR carrying this declaration | Separates semantic operational state from the dynamic Git tip, records cross-domain dependency order and separation of duties, and selects `PD-01` only as the next decision-package target |
-| `PD-01` Product Data Contract Enablement | `FD-PD01-001`; `PD01-REVIEW-001`; [PD-01 Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md); exact 30-path allowlist; starting SHA `6577cd461e88463903b18c11b0e5bdbfa88375e2`; PR #21; DRAFT CI `30390311445`; REVIEW CI `30466264564` | `APPROVED` after legal `DRAFT → REVIEW → APPROVED`; synthetic Contract/Schema/Validator/Test enablement only; canonical Product Attribute registry remains empty; no Product, SKU, Master Data, Golden, import, runtime, or production authority |
+| `PD-01` Product Data Contract Enablement | `FD-PD01-001`; `PD01-REVIEW-001`; [PD-01 Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md); exact 30-path allowlist; starting SHA `6577cd461e88463903b18c11b0e5bdbfa88375e2`; PR #21; DRAFT CI `30390311445`; REVIEW CI `30466264564` | `APPROVED` after legal `DRAFT → REVIEW → APPROVED`; synthetic Contract/Schema/Validator/Test enablement only. Its original empty-registry boundary is preserved as chronology; later PD-02B/PD-03A approved exactly six definitions without creating Product, SKU, Master Data, Golden, import, runtime, or production authority |
 | `PD-02A` Controlled Values and Attribute Profiles foundation | `FD-PD02A-001`; `PD02A-REVIEW-001`; [PD-02A Scope v1.0](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md); exact 38-path allowlist; merged PR #22; successful post-merge validation | `APPROVED` synthetic foundation; its historical empty-registry boundary is preserved and later canonical population requires PD-02B |
 | `PD-02B` Minimum Canonical Slice | `FD-PD02B-001`; `PD02B-TECH-REVIEW-001`; [PD-02B Scope v1.0](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md); exact 57-path allowlist; starting SHA `6ed6fc89e555b1be3a97d7f9c64c9e2b989af1df`; PASS on `f38eb447…`; CI `30479723615` and REVIEW-stage CI `30480571732`; PR #23 | `APPROVED` after legal `DRAFT → REVIEW → APPROVED`; all 31 bounded records are approved; no broader Product/runtime authority |
-| `PD-03A` Pilot Prerequisite Foundation | `FD-PD03A-001`; `PD03A-TECH-REVIEW-001`; [PD-03A Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md); starting SHA `dd4d4e9dde59ce652edb5b99d2df3e84b56b8031`; PASS on `cb6c817…`; DRAFT CI `30696083295`; REVIEW CI `30696444576`; PR #24; main CI `30696801759`; immutable extension; 50 dispatched mutation cases | `APPROVED`, merged by Merge Commit `e72c32bdb041448d34c925c969fe01a2156f9e1d`, and validated on `main`; exact extension records and Length/Metre/Millimetre are approved; PD-02B aggregate registries/hashes remain unchanged; no canonical Pilot/Product/SKU/availability or runtime authority |
-| `PD-03B` Canonical Pilot Records | `FD-PD03B-001`; [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md); starting SHA `e72c32bdb041448d34c925c969fe01a2156f9e1d`; exact 33-path allowlist; 43 mutation cases; `PD03B-TECH-REVIEW-001` PASS on `41849b3…`; DRAFT CI `30698352338`; REVIEW CI `30698582671`; final approval `2026-08-01T11:54:38Z` | `APPROVED` after legal lifecycle; exactly three Pilot records are approved. Final PR CI, Merge Commit, and main CI remain conditional. No Product/SKU, availability, Master/Golden, import, or runtime authority |
+| `PD-03A` Pilot Prerequisite Foundation | `FD-PD03A-001`; `PD03A-TECH-REVIEW-001`; [PD-03A Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md); starting SHA `dd4d4e9dde59ce652edb5b99d2df3e84b56b8031`; PASS on `cb6c817…`; DRAFT CI `30696083295`; REVIEW CI `30696444576`; PR #24; main CI `30696801759`; immutable extension; 50 dispatched mutation cases | `APPROVED`, merged by Merge Commit `e72c32bdb041448d34c925c969fe01a2156f9e1d`, and validated on `main`; exact extension records and Length/Metre/Millimetre are approved; PD-02B aggregate registries/hashes remain unchanged; PD-03A itself granted no Pilot/Product/SKU/availability or runtime authority; the separate PD-03B Pilot outcome is recorded below |
+| `PD-03B` Canonical Pilot Records | `FD-PD03B-001`; [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md); starting SHA `e72c32bdb041448d34c925c969fe01a2156f9e1d`; exact 33-path allowlist; 43 mutation cases; `PD03B-TECH-REVIEW-001` PASS on `41849b3…`; DRAFT CI `30698352338`; REVIEW CI `30698582671`; final approval `2026-08-01T11:54:38Z`; merged PR #25; Merge Commit `64511d7caf95d88122847abfef9914e9d0605954`; main CI `30698838847` | `APPROVED`, merged, and validated on `main`; exactly three Pilot records are approved, all availability remains `MISSING_DATA_VALUE`, and every readiness flag remains false. No Product/SKU, 879-row population, Master/Golden, import, or runtime authority |
 | Atlas planning registry | 173 pending document records across 21 domains | Intake inventory only; no Atlas row is canonical merely because it is registered |
 
 Repository validators are active in CI and unified under `make test`. PR #12 hardening is merged: nested schema objects are closed, JSON Schema Draft 2020-12 is enforced offline, validation output is deterministic, and positive, negative, and adversarial tests are wired into the unified test entry point. `FD-BP2-ADM-001` records the completed legal BP2 lifecycle without implementation authority. `FD-PD01-001` approves a separate synthetic Product Data contract boundary; it is not canonical Product Data.
@@ -57,7 +57,13 @@ Repository validators are active in CI and unified under `make test`. PR #12 har
 
 - Machine-readable core, attribute, and measurement foundations exist.
 - PD-02B approves only the exact minimum canonical Catalog/Platform/Family, Material/Grade, controlled-term, INTERNAL Profile, localized-label, and evidence slice.
-- No Product/SKU records, final SKU vocabulary, Master Data package, Golden reference package, dimensions, Finish/Color/PVD, availability, import, or runtime mapping is authorized.
+- Exactly six Product Attribute definitions are approved: Material and Grade
+  through PD-02B, plus Finish, Diameter, Thickness, and Length through PD-03A.
+  Length, Metre, Millimetre, and the bounded Silver Finish term are approved.
+  These approvals create no Product-level values, Product/SKU record, final SKU
+  vocabulary, Master Data or Golden package, availability, import, or runtime
+  mapping. Mass, Kilogram, Gram, any other Finish/Color/PVD term, and every
+  unapproved dimension or Unit remain candidate or unauthorized.
 - Stable structural contracts do not prove commercial truth, availability, import readiness, or runtime readiness.
 - Broader Product Data readiness remains **blocked**; the PD-02B minimum slice does not make pilot, Master/Golden, commerce, import, or runtime data ready.
 - PD-03A is an APPROVED prerequisite extension only. Its bounded records and
@@ -131,9 +137,9 @@ A Variable Parent Product is a commerce presentation and never the owner of cano
 
 ## Approved Next Action
 
-Complete only the remaining conditional Git integration for approved PD-03B:
-final PR CI, exact Allowlist, no conflict or scope drift, Ready for Review,
-Merge Commit, and successful post-merge `main` CI.
+Prepare only Campaign 001 directive/governance integration planning. Planning
+does not integrate the Campaign 001 directives and does not authorize a branch,
+repository writes, staging, commit, push, PR, merge, or branch deletion.
 
 Do not create a Product, fourth Pilot, 879-row set, Master Data, Golden package,
 SKU, Slug, availability value, supply promise, Grade 430, PVD, 3m,

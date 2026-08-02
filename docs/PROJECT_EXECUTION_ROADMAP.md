@@ -21,8 +21,11 @@ This roadmap defines sequence and gates, not mutable operational state. The exac
 - PR #18 integrated `FD-BP2-ADM-001`, the reviewed `DRAFT → REVIEW → APPROVED` lifecycle evidence, and its fail-closed Contract/Schema/Validator/Test hardening.
 - PR #19 reconciled the post-PR18 governance state and returned the project to read-only next-step planning.
 - `FD-GOV-XD-00` then approved the cross-domain execution charter, stable live-tip semantics, separation of duties, and the ordered decision path below; PR #20 integrated it.
-- `FD-PD01-001` approves the exact 30-path, synthetic-only PD-01 Contract Enablement boundary recorded in [PD-01 Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md) after legal lifecycle and independent PASS. PR #21 carries its integration; no canonical population or runtime authority exists.
-- `FD-PD02A-001` approves the exact 38-path, synthetic-only Controlled Values and Attribute Profiles foundation recorded in [PD-02A Scope v1.0](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md) after legal lifecycle and independent `PD02A-REVIEW-001` PASS. Conditional Git integration remains pending; all canonical Attribute, value-registry, and Profile collections remain empty.
+- `FD-PD01-001` approves the exact 30-path, synthetic-only PD-01 Contract Enablement boundary recorded in [PD-01 Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md) after legal lifecycle and independent PASS. PR #21 integrated it; no canonical population or runtime authority exists.
+- `FD-PD02A-001` approves the exact 38-path, synthetic-only Controlled Values and Attribute Profiles foundation recorded in [PD-02A Scope v1.0](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md) after legal lifecycle and independent `PD02A-REVIEW-001` PASS. PR #22 integrated it; its synthetic-only empty-registry boundary remains historical scope evidence.
+- PR #23 integrated the exact approved PD-02B minimum canonical slice and main CI `30482348480` passed; no Product/SKU, Pilot, Master/Golden, availability, import, or runtime authority followed.
+- PR #24 integrated the approved PD-03A prerequisite foundation and main CI `30696801759` passed; its tuples remain synthetic test evidence rather than Pilots.
+- PR #25 integrated exactly three approved PD-03B Pilot records and main CI `30698838847` passed; all 879 other rows remain `CANDIDATE_UNVERIFIED`, availability remains `MISSING_DATA_VALUE` for all 882 rows, and every readiness flag remains false.
 - The approved BP2 Data Administration contract remains documentation-only with `implementation_authority: false`; approval derives no Product, Admin UI, runtime, import, publication, deployment, or production authority.
 - The historical Wave 1 branch/commit/push/Draft-PR scope did not authorize merge and remains preserved as chronology. Its later approved merge granted no Wave 2, runtime, or implementation authority.
 - Wave 2A–2C are structural, platform-independent foundations. They created no canonical Product rows, Product Attribute definitions, Master Data, Golden package, WordPress implementation, publication, deployment, or production mutation.
@@ -32,11 +35,11 @@ This roadmap defines sequence and gates, not mutable operational state. The exac
 ## Cross-Domain Execution Order
 
 1. `GOV-XD-00` — stabilize operational-state semantics, dependency order, roles, and approval gates.
-2. `PD-01` — Product Data Contract/Schema/Validator/tests with synthetic fixtures only. **Complete when PR #21 merges; canonical population disabled.**
+2. `PD-01` — Product Data Contract/Schema/Validator/tests with synthetic fixtures only. **Complete through merged PR #21; canonical population disabled.**
 3. `PD-02A` — controlled-value and standalone Attribute Profile Contract/Schema/Validator/tests with synthetic fixtures and empty canonical registries. **`APPROVED` and integrated through PR #22.**
-4. `PD-02B` — minimum canonical Catalog/Platform/Family scope, Material/Grade definitions, four controlled terms, INTERNAL Profile, 18 labels, and Approval Evidence. **`APPROVED` after legal `DRAFT → REVIEW → APPROVED`, independent PASS, and Founder approval; conditional Git integration remains separate.**
-5. `PD-03A` — immutable Pilot Prerequisite Foundation: Series, internal Variant Rule identity, four Attributes, Silver appearance term, Series Profile, Length/Metre/Millimetre promotion, and synthetic-only tuple validation. **APPROVED after legal lifecycle and independent PASS; no canonical Pilot record exists.**
-6. `PD-03B` — exactly three canonical Pilot records with provenance and explicit status. **APPROVED after legal lifecycle and zero-finding independent PASS; final conditional Git integration remains.**
+4. `PD-02B` — minimum canonical Catalog/Platform/Family scope, Material/Grade definitions, four controlled terms, INTERNAL Profile, 18 labels, and Approval Evidence. **`APPROVED` and integrated through PR #23 after legal lifecycle and independent PASS; no broader authority.**
+5. `PD-03A` — immutable Pilot Prerequisite Foundation: Series, internal Variant Rule identity, four Attributes, Silver appearance term, Series Profile, Length/Metre/Millimetre promotion, and synthetic-only tuple validation. **`APPROVED` and integrated through PR #24; its tuples are not canonical Pilots.**
+6. `PD-03B` — exactly three canonical Pilot records with provenance and explicit status. **`APPROVED` and integrated through PR #25 after legal lifecycle, zero-finding independent PASS, and successful main CI.**
 7. `PD-04` — Golden Repository Package with `import_ready=false` and `runtime_ready=false`.
 8. `PD-05` — commercial evidence plus final SKU/slug policy before any import.
 9. `ADM-0` through `ADM-3` — separate charter, operation contracts, validator/tests, and offline reference engine.
@@ -51,7 +54,7 @@ This roadmap defines sequence and gates, not mutable operational state. The exac
 18. Expand one approved family at a time.
 19. Complete Launch Readiness, obtain Production approval, deploy, and observe.
 
-The Product Data sequence is serial. Runtime evidence planning may proceed in parallel with repository-only planning, but external actions remain separately gated. Knowledge contracts, an offline Admin engine, and an offline adapter manifest may later proceed in isolated worktrees only after stable Product identities and their own approvals. All merges, shared-path changes, imports, runtime steps, and release actions remain serial.
+The Product Data sequence is serial. The current next action is only Campaign 001 directive/governance integration planning; it does not start PD-04 or authorize repository mutation or Git publication. Runtime evidence planning may proceed in parallel with repository-only planning, but external actions remain separately gated. Knowledge contracts, an offline Admin engine, and an offline adapter manifest may later proceed in isolated worktrees only after stable Product identities and their own approvals. All merges, shared-path changes, imports, runtime steps, and release actions remain serial.
 
 ## Phase 1 — Architecture
 
@@ -125,4 +128,4 @@ Sequence: Pipe → Profile → approved Fittings families → remaining approved
 
 ## Do Not Yet
 
-Do not exceed the exact [PD-02B Scope](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md); populate Product/Knowledge/Pilot/879-row/Master Data/Golden/SKU/slug/availability data; add 430, Finish/Color/PVD, dimensions, or Units; change repository settings; activate workflows; import; implement WordPress; publish; deploy; expose prices/payment/cart/checkout; enable Phase 1 AI; create speculative Fittings data; delete branches; or mutate Central Steel/runtime without separate approval. Consult [Current Project State](CURRENT_PROJECT_STATE.md) for the semantic Git boundary.
+Do not add a fourth Pilot or populate Product/Knowledge/879-row/Master Data/Golden/SKU/slug/availability data; add 430, PVD, 3m, or unapproved dimensions/Units; change repository settings; activate workflows; import; implement WordPress; publish; deploy; expose prices/payment/cart/checkout; enable Phase 1 AI; create speculative Fittings data; delete branches; or mutate Central Steel/runtime without separate approval. Consult [Current Project State](CURRENT_PROJECT_STATE.md) for the semantic Git boundary.
