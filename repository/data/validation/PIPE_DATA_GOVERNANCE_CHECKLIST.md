@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Product Data Owner, Qualified Steel-Domain Reviewer, SEO Reviewer, CRM Reviewer, Quality Reviewer, and WooCommerce Technical Reviewer
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-04
-- **Last Review:** 2026-07-04
+- **Version:** 0.1.1
+- **Last Updated:** 2026-08-03
+- **Last Review:** 2026-08-03
 - **Review Cycle:** Before classification approval, import readiness review, or any Pipe data/model change
 - **Lifecycle:** Review
 - **Source of Truth:** Current Sprint 03A through Sprint 03C Pipe data, mapping, classification, category, attribute, and validation assets
@@ -34,21 +34,21 @@ Provide the mandatory human-review and rejection gates for Pipe classification, 
 
 ## Founder Approval Checklist
 
-- [ ] Approve the Pipe Product Family/category identity, Persian/English names, and scope.
+- [ ] Approve the canonical Pipe Family/Series source references separately from any legacy Product Family/category downstream identity, Persian/English display names, and scope.
 - [ ] Approve or revise every classification marked Founder review required.
 - [ ] Approve Material/Grade/Finish terminology.
-- [ ] Approve the five variation axes and selection order.
-- [ ] Approve the valid commercial-combination dataset.
-- [ ] Approve the category parent/root placement and public slug policy.
+- [ ] Approve the downstream selection projection and order of the five axes only after the governing Variant Rules are approved.
+- [ ] Approve the valid commercial-combination evidence in the applicable Variant Rules; this checklist does not originate tuple validity.
+- [ ] Approve the downstream category parent/root placement and public-page slug policy.
 - [ ] Approve Custom Field, CRM, SEO, filter, and product-table boundaries.
 - [ ] Assign Product Data, domain, Sales/Operations, SEO, CRM/privacy, and WooCommerce reviewers.
 - [ ] Issue separate authorization before any implementation or import activity.
 
 ## Attribute Approval Checklist
 
-- [x] All 14 product-specification attributes are assigned one global attribute identity.
+- [x] All 14 product-specification attributes are assigned one system-local downstream global-attribute mapping; none is canonical Product identity.
 - [x] No local attribute is proposed for a reusable specification.
-- [x] Grade, Finish, Diameter, Thickness, and Length are the only variation-driving attributes.
+- [x] Grade, Finish, Diameter, Thickness, and Length are the only downstream variation-attribute projections in this profile; Variant Rules govern the axes.
 - [x] Controlled candidate values match the Sprint 03A matrix.
 - [ ] Founder/domain reviewer approves every attribute name, Persian label, slug, definition, and scope.
 - [ ] Founder/domain reviewer approves every allowed value and alias.
@@ -59,13 +59,13 @@ Provide the mandatory human-review and rejection gates for Pipe classification, 
 
 ## Category Approval Checklist
 
-- [x] Product Family is separated from product specifications.
+- [x] The legacy Product Family category projection is separated from product specifications and from canonical Family/Series identity.
 - [x] Grade, Finish, dimensions, and other Pipe specifications are prohibited as Pipe subcategories.
 - [x] No unsupported child category is invented.
 - [ ] Founder approves `لوله استیل / Stainless Steel Pipe` as the category label/scope.
-- [ ] Founder approves the higher parent/Product Group or explicit root-level placement.
+- [ ] Founder approves the higher downstream navigation parent/legacy Product Group or explicit root-level category placement.
 - [ ] Founder/SEO approves the public slug language policy and final slug.
-- [ ] Founder/SEO approves category-versus-parent-product search intent and canonical ownership.
+- [ ] Founder/SEO approves category-versus-Parent-page search intent and canonical public-page/URL ownership; neither may own Product truth.
 - [ ] Category content, owner, indexation, internal links, lifecycle, and review cycle are approved.
 - [ ] Duplicate, alias, former-term, redirect, reserved-path, and external-mapping checks pass.
 
@@ -74,11 +74,11 @@ Provide the mandatory human-review and rejection gates for Pipe classification, 
 - [x] The staging template has 23 columns and four shape-only placeholder rows.
 - [x] All 23 columns have a documented mapping class/rule.
 - [x] All 29 unique Pipe fields have exactly one primary classification.
-- [ ] Final stable family, parent, and variation identities exist.
+- [ ] Final canonical Family/Series/Variant Rule Set references and separate downstream Parent/Variation adapter IDs exist.
 - [ ] Final SKU policy and values exist and pass collision checks.
-- [ ] Approved valid combinations replace placeholder-only samples.
+- [ ] Variant Rules contain approved valid tuples that replace placeholder-only samples.
 - [ ] Required commercial values, including approved stock-state mapping, are resolved without invention.
-- [ ] Category, global attribute, term, and canonical-slug mappings are approved.
+- [ ] Downstream category/global-attribute/term mappings and the canonical public-page slug are approved.
 - [ ] Exact target importer/version capability and field mapping are verified.
 - [ ] Isolated staging, backup/restore, dry-run, reconciliation, rollback, operator, and permissions evidence exists.
 - [ ] [Pipe Import Precheck](PIPE_IMPORT_PRECHECK.md) contains no pending, blocked, failed, or required not-run hard gate.
@@ -106,10 +106,10 @@ Provide the mandatory human-review and rejection gates for Pipe classification, 
 ## SEO Readiness Checklist
 
 - [x] Category, canonical metadata, and attribute SEO responsibilities are separated.
-- [x] Variable Parent Product/category canonical conflict requires explicit review.
+- [x] Variable Parent Product/category canonical public-page/URL conflict requires explicit review; neither may own Product truth.
 - [x] Variation states and filter combinations are non-canonical/non-indexable by default.
 - [x] Offer/price schema and unsupported availability claims are prohibited.
-- [ ] Public category/product slugs and canonical owner are approved.
+- [ ] Public category/product slugs and their canonical public-page/URL owner are approved.
 - [ ] Search intent, Persian content, title, description, FAQ answers, internal links, and schema eligibility are approved.
 - [ ] Cannibalization, duplicate URL, reserved path, redirect, sitemap, and indexation checks pass.
 - [ ] Future rendered metadata/schema matches visible approved facts.
@@ -117,16 +117,16 @@ Provide the mandatory human-review and rejection gates for Pipe classification, 
 ## CRM Readiness Checklist
 
 - [x] `inquiry_priority` is the only primary Internal CRM Field in the Pipe classification.
-- [x] Product facts remain product-master data; CRM receives references/snapshots only.
+- [x] Product facts remain canonical Repository data; CRM receives references/snapshots only.
 - [x] Stock status, notes, and CRM controls are not public.
 - [ ] CRM owner, statuses, field mapping, access, retention, consent, audit, and error handling are approved.
-- [ ] Stable product/variation IDs and approved SKU snapshots exist.
+- [ ] Stable canonical source references, downstream Parent/Variation adapter IDs, and approved derived-SKU snapshots exist.
 - [ ] CRM integration capability, authentication, retry, reconciliation, and rollback remain separately approved before use.
 
 ## WooCommerce Readiness Checklist
 
-- [x] Variable Parent Product and variation roles are explicit.
-- [x] Five controlled global variation attributes are explicit.
+- [x] Downstream Variable Parent Product and Variation adapter roles are explicit and non-canonical.
+- [x] Five controlled global-attribute projections of Variant Rules axes are explicit.
 - [x] Category-versus-attribute decisions are explicit.
 - [x] No global attribute, local attribute, term, category, field, filter, or product has been created.
 - [ ] Target WordPress/WooCommerce versions and importer capabilities are verified for the future execution window.
@@ -163,6 +163,7 @@ Reject or stop when any of the following occurs:
 | Version | Date | Change |
 | --- | --- | --- |
 | 0.1.0 | 2026-07-04 | Initial Sprint 03C Pipe data governance checklist; no implementation or import. |
+| 0.1.1 | 2026-08-03 | Separated canonical Family/Series/Variant Rules approvals from downstream category, attribute, Parent/Variation, public-page and CRM mappings; no gate, Product fact, or runtime approval changed. |
 
 ## PD-02B Minimum-Slice Gate
 

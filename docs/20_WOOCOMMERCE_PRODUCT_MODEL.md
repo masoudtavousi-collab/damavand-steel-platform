@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.2.0
-- **Last Updated:** 2026-07-03
-- **Last Review:** 2026-07-03
+- **Version:** 0.2.1
+- **Last Updated:** 2026-08-03
+- **Last Review:** 2026-08-03
 - **Review Cycle:** On WooCommerce product, variation, SKU, attribute, visibility, price, inquiry, stock, import/export, or Admin-policy change
 - **Lifecycle:** Review
 - **Source of Truth:** [ADR 0001](adr/0001-inquiry-first-commerce.md), [WordPress Enterprise Architecture](06_WORDPRESS_ARCHITECTURE.md#woocommerce-responsibilities), and WP-FC-001/WP-FC-004
@@ -28,14 +28,16 @@ Define how the approved logical product model maps to WooCommerce concepts while
 
 This document defines mapping policy only. It does not create products, fields, settings, templates, buttons, imports, code, database structures, or plugin configuration.
 
+Canonical repository Product truth follows exactly `Catalog → Platform → Family → Series → Variant Rules → derived SKU`. WooCommerce is a downstream operational projection. Variable Parent Product, Parent Product, Variation, Product Family/Group/Type, attributes, Parent IDs, Variation IDs, and derived SKUs are adapter or presentation mappings and never canonical entity identities. Variant Rules alone govern axes, allowed values, and valid tuples.
+
 ## WooCommerce Model Decisions
 
 | ID | Proposed decision | Status |
 | --- | --- | --- |
 | WCM-001 | Variable products are the required governed catalog type; Simple products require a future explicit exception. | Proposed mapping of accepted WP-FC-004 |
-| WCM-002 | Parent products own shared catalog content; variations own configuration-specific data. | Proposed pending Founder approval |
+| WCM-002 | Parent products may carry shared downstream presentation; variations may carry adapter-local configuration fields, while canonical ownership remains upstream. | Proposed pending Founder approval |
 | WCM-003 | Operationally distinct variations require unique SKUs; parent identifiers remain separate from variation SKUs. | Proposed pending Founder approval |
-| WCM-004 | Reusable specifications and variation axes use approved global attributes. | Proposed pending Founder approval |
+| WCM-004 | Reusable WooCommerce attributes project approved specifications and Variant Rules axes; they do not own allowed values or valid tuples. | Proposed pending Founder approval |
 | WCM-005 | Public product output omits pricing and transaction actions and exposes contextual inquiry only. | Required by CP-005, CP-006, and ADR-0001 |
 | WCM-006 | `supply_after_order` availability may accept inquiry without representing stock, backorder purchase, lead time, or supply guarantee. | Proposed pending Founder/Sales approval |
 | WCM-007 | Imports and exports require Admin-reviewable contracts, dry-run validation, stable IDs, and recovery evidence. | Proposed pending Founder approval |
@@ -54,14 +56,14 @@ A product with only one currently valid configuration still follows the Variable
 
 ## Parent Product Rules
 
-A parent product owns:
+A downstream parent product may carry:
 
-- Stable product ID and separate parent reference code when approved.
-- Product Family, Product Group, and Product Type relationships.
+- System-local Product/Parent mapping IDs and a separate adapter reference code when approved.
+- Legacy or downstream Product Family, Product Group, and Product Type mappings to canonical Family/Series references.
 - Shared Persian title, summary, full narrative, approved shared specifications, and inquiry guidance.
-- Approved variation axes and valid-combination policy.
+- Projections of axes, allowed values, and valid tuples governed only by Variant Rules.
 - Shared Media Set and Technical Documents, with variation overrides only when required.
-- Shared SEO reference and canonical ownership.
+- Shared SEO/public-page references and canonical-URL intent mapping, without canonical Product ownership.
 - Related-product relationships with explicit meaning.
 - Public visibility and lifecycle state.
 
@@ -77,8 +79,8 @@ A parent product must not:
 Every variation:
 
 - Belongs to exactly one Variable Parent Product.
-- Uses an approved combination of parent-declared global variation attributes.
-- Has stable internal identity and, when operationally distinct, a unique SKU.
+- Projects exactly one approved Variant Rules tuple through mapped global attributes.
+- Has a system-local Variation mapping ID and, when governed modeling requires it, a derived unique SKU; neither is canonical entity identity.
 - Carries only configuration-specific data such as dimensions, finish, color, stock state, media, documents, external mapping, or inquiry eligibility.
 - Inherits shared content without duplicating it as a second authority.
 - Remains unpublished or unavailable when required values, review, media, documents, or mappings are incomplete.
@@ -88,9 +90,9 @@ Invalid, impossible, duplicate, technically incompatible, or unapproved combinat
 
 ## SKU Policy
 
-- Variation SKU is the operational SKU when a variation is independently referenced, supplied, stocked, quoted, or integrated.
-- Parent reference code identifies the family-level catalog entity and must not collide with variation SKUs.
-- SKU values are stable, unique, case policy-controlled, and never reused for a different entity.
+- Variation SKU is a derived operational output when a mapped variation is independently referenced, supplied, stocked, quoted, or integrated.
+- Parent reference code is a downstream mapping reference to canonical source entities and must not collide with derived variation SKUs.
+- Derived SKU values must follow approved uniqueness and case rules and must not be reused for a different approved source tuple.
 - SKU is not a public URL key, database key, taxonomy term, or translated label.
 - Exact syntax, segment meanings, check rules, legacy mapping, and ERP ownership remain Founder/Operations decisions.
 - SKU changes require impact review for inquiries, exports, documents, media, analytics, CRM, ERP, and CentralSteel mappings.
@@ -98,8 +100,8 @@ Invalid, impossible, duplicate, technically incompatible, or unapproved combinat
 ## Attribute Rules
 
 - Use global WooCommerce attributes for reusable controlled values.
-- An attribute profile defines which attributes apply to each Product Type.
-- Variation axes are a strict subset of applicable global attributes.
+- Canonical Family/Series applicability and Variant Rules define which governed attributes apply; any Product Type profile is a legacy/downstream mapping.
+- Variation axes are governed only by Variant Rules and may be projected through a strict subset of applicable global attributes.
 - Descriptive/filter-only attributes must not generate unnecessary variations.
 - Numeric dimensions retain value, unit, and dimensional context; composite Size is not a replacement for structured values.
 - Local product attributes require an approved exception showing that the value is genuinely product-specific and not reusable.
@@ -122,7 +124,7 @@ The owner and approval authority are TODO (Founder Decision Required). An except
 
 ## Global Attribute Policy
 
-The canonical attributes are governed by [Product Attribute Model](22_PRODUCT_ATTRIBUTE_MODEL.md). Future WooCommerce implementation must:
+Canonical attribute definitions and values are governed by approved repository Product Data sources and [Product Attribute Model](22_PRODUCT_ATTRIBUTE_MODEL.md); Variant Rules govern axis use and valid tuples. Future WooCommerce implementation must:
 
 - Reuse the approved English internal key and Persian label.
 - Preserve one canonical term per concept.
@@ -144,7 +146,7 @@ The canonical attributes are governed by [Product Attribute Model](22_PRODUCT_AT
 | Product lifecycle `archived` | Not operational or public unless a separately approved historical-content policy applies |
 | Stock state `temporarily_unavailable` while lifecycle is `approved` | Visibility and inquiry behavior follow approved stock-state policy; no false availability |
 
-The canonical product states and transitions are defined in [Proposed Product Lifecycle](19_PRODUCT_DATA_MODEL.md#proposed-product-lifecycle). Stock State never changes lifecycle automatically. Search visibility, catalog visibility, direct-link visibility, taxonomy archives, sitemap inclusion, and indexation are separate decisions. Batch 05 does not set WooCommerce visibility options.
+The governed Product lifecycle states and transitions are defined in [Proposed Product Lifecycle](19_PRODUCT_DATA_MODEL.md#proposed-product-lifecycle). Stock State never changes lifecycle automatically. Search visibility, catalog visibility, direct-link visibility, taxonomy archives, sitemap inclusion, and indexation are separate decisions. Batch 05 does not set WooCommerce visibility options.
 
 ## Hidden Price Rules
 
@@ -160,7 +162,7 @@ The product action is contextual inquiry, not purchase.
 
 - Parent pages provide a clear Persian RTL, mobile-first inquiry action.
 - When variation attributes are required, the action passes the selected valid variation or explicitly records unresolved selections.
-- Inquiry context includes stable parent/variation IDs, submission-time labels, selected attributes, quantity/unit, source URL, and approved media/document references when relevant.
+- Inquiry context includes canonical source references plus system-scoped Parent/Variation mapping IDs, submission-time labels, selected attributes, quantity/unit, source URL, and approved media/document references when relevant.
 - The action remains usable for `supply_after_order` without presenting purchase, price, or delivery certainty.
 - Exact Persian button label, placement, sticky mobile behavior, validation messages, and capability owner require UX/Founder approval.
 - No button, form, or plugin is created or selected by this model.
@@ -236,6 +238,7 @@ Review. This model is not approved and does not authorize WooCommerce installati
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2.1 | 2026-08-03 | C1-T06 canonical-owner reconciliation: made WooCommerce a downstream operational projection of the canonical hierarchy and restricted axes/values/tuples to Variant Rules; no Product facts or implementation added. |
 | 0.2.0 | 2026-07-03 | Batch 05B remediation: governed local-attribute exceptions and product-lifecycle/stock visibility separation; documentation only. |
 | 0.1.0 | 2026-07-03 | Initial Batch 05 WooCommerce product mapping policy; documentation only. |
 

@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Lead Enterprise Solution Architect
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-03
-- **Last Review:** 2026-07-03
+- **Version:** 0.1.1
+- **Last Updated:** 2026-08-03
+- **Last Review:** 2026-08-03
 - **Review Cycle:** On capability, plugin, theme package, version, ownership, overlap, replacement, upgrade, risk, or retirement change
 - **Lifecycle:** Review
 - **Source of Truth:** [Technology Stack](05_TECH_STACK.md), [WordPress Architecture](06_WORDPRESS_ARCHITECTURE.md), and [WordPress Solution Blueprint](35_WORDPRESS_BLUEPRINT.md)
@@ -27,6 +27,8 @@ Assign one accountable owner and explicit boundary to every approved component a
 ## Scope and Boundary
 
 This is a responsibility and selection-gate matrix, not an installed-plugin inventory. Only WooCommerce and Elementor Pro are approved named plugins; Blocksy Pro is an approved presentation package spanning the vendor theme and licensed capabilities. Other rows are capability slots with no selected brand. WordPress Core is included for overlap clarity and is not a plugin.
+
+Canonical repository Product truth follows exactly `Catalog → Platform → Family → Series → Variant Rules → derived SKU`. Plugins, WooCommerce Product/Parent/Variation records, attributes, IDs, labels, slugs, URLs, and SKUs are downstream operational or presentation projections. No plugin owns canonical Product truth or may define axes, allowed values, or valid tuples independently of Variant Rules.
 
 ## Plugin Decisions
 
@@ -48,7 +50,7 @@ This is a responsibility and selection-gate matrix, not an installed-plugin inve
 | Component | Type/status | Reason | Authority owner | Configuration owner | Replacement policy | Upgrade policy | Principal risk |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | WordPress Core | Platform, not plugin; approved | CMS, identity, media, content lifecycle, extension interfaces | Founder/architecture | Technical Administrator | Platform replacement requires architecture decision and migration | Coordinated staging/security/compatibility/rollback review | Core/vendor modification, unsupported versions, privilege sprawl |
-| WooCommerce | Approved plugin; not configured | Canonical product/variation/attribute catalog | Founder/product architecture | Product Data Manager plus Technical Administrator | Replacement requires catalog/ID/export/inquiry migration plan | Validate no-price/no-transaction, product data, Blocksy/Elementor, APIs, rollback | Transaction defaults or extensions re-expose price/cart/checkout |
+| WooCommerce | Approved plugin; not configured | Downstream operational Product/Variation/attribute projection mapped to canonical repository sources | Founder/product architecture | Product Data Manager plus Technical Administrator | Replacement requires adapter-ID/export/inquiry mapping migration plan | Validate no-price/no-transaction, Product data, Blocksy/Elementor, APIs, rollback | Authority drift or transaction defaults/extensions re-expose price/cart/checkout |
 | Elementor Pro | Approved plugin; no templates/configuration | Bounded page/landing body composition | Founder/presentation architecture | Content/Presentation Administrator | Preserve canonical content/data and template export/mapping | Validate Blocksy ownership, widgets, responsive/RTL/accessibility/performance, rollback | Lock-in, duplicate templates/tokens, performance, unsupported widgets |
 | Blocksy Pro | Approved vendor theme/package; not configured | Global presentation shell and supported WooCommerce integration | Founder/presentation architecture | Presentation Administrator | No custom/child-theme fork; migration requires shell/template/config inventory | Validate Core/Woo/Elementor, RTL/mobile/accessibility/performance, restore | Ownership overlap, vendor settings drift, child-theme assumption |
 
@@ -68,7 +70,7 @@ No vendor below is selected.
 | Performance/asset optimization | Measured asset optimization without owner overlap | Founder/technical | Technical Administrator | Baseline/compare/rollback every optimization | Duplicate cache/media/CDN responsibility, broken RTL/Elementor behavior |
 | Media optimization | Derivatives, compression and metadata workflow | Founder/media | Media Manager + Technical Administrator | Preserve originals/rights/metadata and reversible derivatives | Data loss, accessibility metadata loss, format incompatibility |
 | Search | Persian-aware catalog/content discovery | Founder/IA/search | Search owner + Technical Administrator | Rebuild/fallback/export; evaluate known queries and privacy | Wrong ranking, stale/private indexing, no-price leakage |
-| Filtering | Canonical taxonomy/attribute filters | Founder/domain/IA | Taxonomy/Product owner + Technical Administrator | Preserve canonical IDs; validate mobile/RTL/query/canonical behavior | Taxonomy drift, invalid combinations, index bloat |
+| Filtering | Downstream filters projected from governed taxonomies and Variant Rules axes | Founder/domain/IA | Taxonomy/Product owner + Technical Administrator | Preserve canonical source references and system-scoped mappings; validate mobile/RTL/query/canonical-URL behavior | Taxonomy drift, inferred invalid tuples, index bloat |
 | Consent/privacy | Consent states and approved script gating | Founder/privacy/legal | Privacy owner + Technical Administrator | Preserve consent evidence/version; safe default on failure | Unapproved legal assumptions, tracking before consent |
 | Analytics | Consent-aware measurement | Founder/analytics/privacy | Analytics owner + Technical Administrator | Tag/event inventory, data retention/export, disable/rollback | Personal-data leakage, duplicate tags, commercial claims without evidence |
 | Import/export | Validated bulk exchange and rollback | Founder/data | Product/Content owner + Technical Administrator | Dry run, stable IDs, validation/error/rollback evidence | Destructive overwrite, duplicates, invalid terms/variations |
@@ -120,6 +122,7 @@ Review. No plugin, theme package, license, provider, version, installation, acti
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.1.1 | 2026-08-03 | C1-T06 canonical-owner reconciliation: made WooCommerce/plugins downstream projections of canonical repository Product sources; no plugin or configuration selected. |
 | 0.1.0 | 2026-07-03 | Initial Batch 08 plugin responsibility matrix; documentation only. |
 
 ## Related Documents

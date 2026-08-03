@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Lead Enterprise Solution Architect
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-03
-- **Last Review:** 2026-07-03
+- **Version:** 0.1.1
+- **Last Updated:** 2026-08-03
+- **Last Review:** 2026-08-03
 - **Review Cycle:** On logical content-type, entity, ownership, lifecycle, visibility, relationship, storage, or extension change
 - **Lifecycle:** Review
 - **Source of Truth:** [WordPress Architecture](06_WORDPRESS_ARCHITECTURE.md), [Entity Relationship Model](30_ENTITY_RELATIONSHIP_MODEL.md), [Content Types](32_CONTENT_TYPES.md), and [WordPress Solution Blueprint](35_WORDPRESS_BLUEPRINT.md)
@@ -27,6 +27,8 @@ Map approved logical content types to native WordPress/WooCommerce structures or
 ## Scope and Boundary
 
 Logical content/entity approval does not imply a CPT. This document identifies native defaults, candidate CPTs, required decisions, ownership, relationships, lifecycle, visibility, and future expansion. It defines no post-type keys, rewrite rules, labels, capabilities, templates, fields, or code.
+
+Canonical repository Product truth follows exactly `Catalog → Platform → Family → Series → Variant Rules → derived SKU`. WordPress/WooCommerce Product, Variable Parent Product, Variation, CPT, taxonomy, label, slug, URL, and system ID constructs are downstream storage, presentation, navigation, or adapter mappings only. They cannot own canonical Product identity, axes, allowed values, or valid tuples.
 
 ## CPT Blueprint Decisions
 
@@ -45,8 +47,8 @@ Logical content/entity approval does not imply a CPT. This document identifies n
 
 | Logical entity/content type | Proposed native owner | CPT status | Rationale/boundary |
 | --- | --- | --- | --- |
-| Product / Variable Parent Product | WooCommerce `product` | No custom CPT | Canonical catalog owner |
-| Variation | WooCommerce product variation primitive | No custom CPT | Child of product parent; not independent content |
+| Product / Variable Parent Product | WooCommerce `product` | No custom CPT | Downstream operational/public-page projection mapped to canonical Family/Series sources; not canonical Product owner |
+| Variation | WooCommerce product variation primitive | No custom CPT | Downstream projection of one approved Variant Rules tuple; system-local child mapping, not canonical identity |
 | Page / Landing / Policy | WordPress Page | No custom CPT by default | Hierarchical editorial content; landing approval remains separate |
 | Article / News / Announcement | WordPress Post or an approved native editorial mapping | No custom CPT by default | Exact shared/separate lifecycle and archive decision pending |
 | Media Asset | WordPress Attachment plus approved media governance | No custom CPT by default | Binary and metadata ownership remain with Media Strategy |
@@ -141,6 +143,7 @@ Review. No CPT, post-type key, rewrite, capability, field group, template, archi
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.1.1 | 2026-08-03 | C1-T06 canonical-owner reconciliation: limited WordPress/WooCommerce Product and Variation structures to downstream projections; no CPT, field, or runtime object created. |
 | 0.1.0 | 2026-07-03 | Initial Batch 08 CPT decision Blueprint; documentation only. |
 
 ## Related Documents

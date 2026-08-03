@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Lead Enterprise Solution Architect
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-03
-- **Last Review:** 2026-07-03
+- **Version:** 0.1.1
+- **Last Updated:** 2026-08-03
+- **Last Review:** 2026-08-03
 - **Review Cycle:** On taxonomy, attribute, term, hierarchy, URL, filtering, SEO, ownership, validation, or integration change
 - **Lifecycle:** Review
 - **Source of Truth:** [Product Taxonomy Model](21_PRODUCT_TAXONOMY_MODEL.md), [Product Attribute Model](22_PRODUCT_ATTRIBUTE_MODEL.md), [Information Architecture](24_INFORMATION_ARCHITECTURE.md), and [URL Architecture](26_URL_ARCHITECTURE.md)
@@ -28,12 +28,14 @@ Define the physical-mapping, ownership, hierarchy, administration, validation, a
 
 The Product Taxonomy and Attribute models remain semantic authorities. This document proposes implementation mappings only. It does not approve vocabulary, labels, keys, slugs, hierarchy, URLs, filters, landing pages, indexation, terms, or registration mechanisms.
 
+Canonical repository Product truth follows exactly `Catalog → Platform → Family → Series → Variant Rules → derived SKU`. Product Family/Group/Type taxonomies, WooCommerce categories/attributes, term IDs, Parent/Variation IDs, labels, slugs, URLs, and SEO landings are downstream navigation, presentation, public-page, intent, or adapter mappings. Variant Rules alone owns axes, allowed values, and valid tuples.
+
 ## Taxonomy Blueprint Decisions
 
 | ID | Proposed decision | Status |
 | --- | --- | --- |
 | TAXBP-001 | Maintain one canonical registry for each concept and prevent category/attribute/tag duplication. | Derived from TAX-001 through TAX-008 |
-| TAXBP-002 | Use WooCommerce global attributes for specification dimensions and variation/filter axes approved by the Attribute Model. | Derived from WCM/ATT rules |
+| TAXBP-002 | Project governed specification dimensions and Variant Rules axes through WooCommerce global attributes when approved; the adapter cannot define values or tuples. | Derived from WCM/ATT rules |
 | TAXBP-003 | Use WooCommerce product categories for the approved hierarchical product browse structure only after exact hierarchy approval. | Proposed pending Founder/domain/SEO approval |
 | TAXBP-004 | Map classification registries to native or plugin-managed taxonomies only when query, relationship, URL, and Admin requirements justify them. | Proposed pending Founder approval |
 | TAXBP-005 | Keep Application and Use Case one logical classification until the governing terminology decision is resolved. | Required by TAX-007 |
@@ -46,11 +48,11 @@ The Product Taxonomy and Attribute models remain semantic authorities. This docu
 
 | Logical registry | Proposed platform mapping | Hierarchy | Variation/filter use | Public archive/SEO |
 | --- | --- | --- | --- | --- |
-| Product Family / Group / Type | WooCommerce product-category hierarchy or approved governed mapping | Pending exact hierarchy | Browse/filter only as approved | Pending canonical/indexation decision |
-| Material | Global WooCommerce attribute and canonical term registry | Flat by default; exceptions require approval | Candidate variation/filter axis | Archive/landing not automatic |
-| Alloy | Global WooCommerce attribute and canonical term registry | Relationship to Material; not an invented tree | Candidate variation/filter axis | Archive/landing not automatic |
-| Finish | Global WooCommerce attribute and canonical term registry | Flat by default | Candidate variation/filter axis | Archive/landing not automatic |
-| Brand | Global attribute or approved Brand taxonomy, one canonical registry | Flat by default | Filtering as approved; variation only if governed | Public Brand landing conditional |
+| Product Family / Group / Type | Legacy/downstream WooCommerce product-category or governed navigation mapping | Pending exact presentation hierarchy | Browse/filter only as approved | Pending canonical-URL/indexation decision; not canonical Product ownership |
+| Material | WooCommerce projection of a governed Material registry | Flat by default; exceptions require approval | Candidate projection only when selected by Variant Rules | Archive/landing not automatic |
+| Alloy | WooCommerce projection of a governed Alloy registry | Relationship to Material; not an invented tree | Candidate projection only when selected by Variant Rules | Archive/landing not automatic |
+| Finish | WooCommerce projection of a governed Finish registry | Flat by default | Candidate projection only when selected by Variant Rules | Archive/landing not automatic |
+| Brand | Global attribute or approved Brand taxonomy projected from one governed registry | Flat by default | Filtering as approved; variation only if selected by Variant Rules | Public Brand landing conditional |
 | Use Case / Application | Approved custom/native taxonomy capability after terminology approval | Pending | Discovery filter only if approved | Curated landing conditional |
 | Industry | Approved custom/native taxonomy capability | Pending | Discovery filter only if approved | Curated landing conditional |
 | Collection | Curated grouping taxonomy only if governance and expiry exist | Pending | Not a product-specification axis | Indexation conditional |
@@ -63,7 +65,7 @@ Exact physical mechanisms remain unapproved.
 ## Hierarchy and Relationships
 
 - Hierarchy exists only where parent/child meaning is stable and approved; facets remain flat unless domain semantics require hierarchy.
-- Material–Alloy, Product–Family/Group/Type, term–landing, term–content, and external-system mappings are typed relationships, not implied by names.
+- Material–Alloy, canonical source–Product Family/Group/Type navigation, term–landing, term–content, and external-system mappings are typed relationships, not implied by names.
 - A term belongs to one canonical registry and may have localized labels/aliases without duplicate identity.
 - Attribute values do not become categories merely to create archives; categories do not become variation axes merely to create filters.
 
@@ -112,6 +114,7 @@ Review. No taxonomy, attribute, term, category, key, slug, hierarchy, filter, ar
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.1.1 | 2026-08-03 | C1-T06 canonical-owner reconciliation: qualified taxonomies and WooCommerce attributes as downstream mappings and reserved axes/values/tuples to Variant Rules; no terms or configuration created. |
 | 0.1.0 | 2026-07-03 | Initial Batch 08 taxonomy implementation Blueprint; documentation only. |
 
 ## Related Documents

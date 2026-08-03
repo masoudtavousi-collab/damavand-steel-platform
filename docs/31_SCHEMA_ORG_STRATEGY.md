@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Lead Enterprise Information Architect
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-03
-- **Last Review:** 2026-07-03
+- **Version:** 0.1.1
+- **Last Updated:** 2026-08-03
+- **Last Review:** 2026-08-03
 - **Review Cycle:** On entity, canonical, content type, Schema.org vocabulary/release, eligibility, search-engine policy, language, media, review, or public-claim change
 - **Lifecycle:** Review
 - **Source of Truth:** [Entity Relationship Model](30_ENTITY_RELATIONSHIP_MODEL.md), [Enterprise Information Architecture](24_INFORMATION_ARCHITECTURE.md), [URL Architecture](26_URL_ARCHITECTURE.md), [SEO Entity Model](34_SEO_ENTITY_MODEL.md), and the official Schema.org vocabulary
@@ -47,7 +47,9 @@ Schema.org vocabulary existence does not mean a Damavand entity exists, is publi
 ## Semantic Graph Principles
 
 - The semantic graph is a projection of the Entity Relationship Model, not a separate business database.
+- Canonical product facts resolve to the Product Repository hierarchy `Catalog → Platform → Family → Series → Variant Rules → SKU`; SKU is derived after governed modeling and is not a canonical entity identity.
 - Canonical entity IDs, URLs, names, language, ownership, lifecycle, and relationships come from approved sources.
+- A canonical public page, URL, search-intent owner, or Schema.org node is a downstream projection and never acquires Product Repository identity or fact authority.
 - A page describes its main entity; supporting entities reuse stable identities.
 - Public semantic fields match visible public content and do not expose protected/internal information.
 - Persian RTL text remains Persian; identifiers and language tags are handled separately.
@@ -79,8 +81,8 @@ Potential type: [LocalBusiness](https://schema.org/LocalBusiness).
 
 Potential type: [Product](https://schema.org/Product).
 
-- The Variable Parent Product is the default semantic product owner because it owns the canonical product URL and shared public facts.
-- Variation semantics require an approved parent/variation mapping, stable IDs, visible selectable values, canonical behavior, and non-duplication review.
+- Schema.org Product on an eligible public product page is a downstream semantic projection of approved Product Repository sources. A Variable Parent Product may provide the default public-page and URL context, but it never owns canonical Product Repository identity or facts.
+- Parent and Variation identifiers are adapter-only. Variation semantics may project only an evidence-backed tuple governed by Variant Rules; axes, values, and tuple validity remain sourced from those rules.
 - Candidate public fields include approved name, description, image, brand, material/attributes, identifier, and relationships only when visible and validated.
 - Offer, AggregateOffer, price, priceCurrency, priceValidUntil, seller-price, cart, checkout, payment, shipping purchase, and public quote semantics are prohibited.
 - Availability semantics require approved public meaning and must not misrepresent `supply_after_order`, inquiry eligibility, lead time, or stock certainty.
@@ -242,6 +244,7 @@ Review. No Schema.org markup, JSON-LD, RDFa, Microdata, HTML, plugin setting, te
 | Version | Date | Change |
 | --- | --- | --- |
 | 0.1.0 | 2026-07-03 | Initial Batch 07 Schema.org semantic strategy; documentation only. |
+| 0.1.1 | 2026-08-03 | Reconciled Schema.org Product as a downstream public-page projection of canonical Product Repository sources; no implementation authorized. |
 
 ## Official Vocabulary References
 

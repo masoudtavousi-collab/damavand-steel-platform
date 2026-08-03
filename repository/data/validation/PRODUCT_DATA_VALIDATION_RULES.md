@@ -8,12 +8,12 @@
 - **Owner:** Founder
 - **Reviewer:** Product Data Owner, Qualified Steel-Domain Reviewer, and WooCommerce Reviewer
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-04
-- **Last Review:** 2026-07-04
+- **Version:** 0.1.1
+- **Last Updated:** 2026-08-03
+- **Last Review:** 2026-08-03
 - **Review Cycle:** On required field, allowed value, slug, naming, SKU, duplicate, relationship, price, import, or approval-gate change
 - **Lifecycle:** Review
-- **Source of Truth:** Sprint 03A product-data contract and approved Product/WooCommerce/Attribute/Inquiry models
+- **Source of Truth:** Canonical Product Repository chain `Catalog → Platform → Family → Series → Variant Rules → derived SKU`; Sprint 03A evidence and downstream WooCommerce/Attribute/Inquiry mappings remain bounded consumers
 - **Dependencies:** [Stainless Steel Pipe Product Family](../products/pipes/PIPE_PRODUCT_FAMILY.md), [Attribute Dictionary](../attributes/ATTRIBUTE_DICTIONARY.md), and [Pipe Variation Matrix](../products/pipes/PIPE_VARIATION_MATRIX.md)
 - **Related Documents:** [Pipe Import Template](../imports/woocommerce/PIPE_IMPORT_TEMPLATE.csv), [Pipe SEO Entity Model](../seo/PIPE_SEO_ENTITY_MODEL.md), [WooCommerce Product Model](../../../docs/20_WOOCOMMERCE_PRODUCT_MODEL.md), and [Inquiry Data Model](../../../docs/23_INQUIRY_DATA_MODEL.md)
 - **Traceability:** PDM-002 through PDM-007, WCM-002 through WCM-008, ATT-002 through ATT-007, INQ-002, CP-005, CP-006, and Sprint 03A
@@ -28,7 +28,7 @@ Define deterministic pre-import rules for Stainless Steel Pipe assets. Passing t
 
 | Outcome | Meaning |
 | --- | --- |
-| `PASS` | Rule satisfied with approved evidence |
+| `PASS` | Rule satisfied with approved evidence; it does not change source authority |
 | `FAIL` | Invalid value/relationship or prohibited exposure; row cannot proceed |
 | `QUARANTINE` | Unknown/unmatched value requires owner/domain review and must not create a term |
 | `TBD-BLOCKED` | Required commercial/governance value is intentionally unresolved; asset may remain in staging but cannot import/publish |
@@ -40,7 +40,7 @@ Define deterministic pre-import rules for Stainless Steel Pipe assets. Passing t
 - `parent_sku`: placeholder permitted only in template; approved final parent reference required before import.
 - `product_type`: exactly `variable`.
 - `parent_name_fa`: non-empty normalized Persian label.
-- `category`: approved canonical Product Family/taxonomy reference.
+- `category`: approved downstream navigation/taxonomy projection resolved from canonical Family/Series references.
 - `material`: approved controlled value.
 - `unit`: exactly `meter` for Sprint 03A.
 - `inquiry_only`: exactly `yes`.
@@ -60,9 +60,11 @@ Define deterministic pre-import rules for Stainless Steel Pipe assets. Passing t
 
 Optional fields remain `TBD` when unresolved: Brand, Country, Weight per Meter, SEO Title, SEO Description, and notes beyond the required staging warning.
 
-## Allowed Values
+## Legacy/Candidate Value Inputs
 
-| Field | Allowed Sprint 03A values |
+The table preserves Sprint 03A candidate evidence for deterministic staging checks. For Product attributes, it does not establish applicability or allowed-value authority: the applicable Variant Rules alone govern applicability, axes, allowed values, and valid tuples. Non-Product control fields such as row role, Inquiry First, and No Public Pricing remain governed by their own recorded constraints.
+
+| Field | Sprint 03A candidate or control input |
 | --- | --- |
 | `product_type` | `variable`, `variation` according to row role |
 | `material` | `stainless-steel` working family value; final terminology approval required |
@@ -77,7 +79,7 @@ Optional fields remain `TBD` when unresolved: Brand, Country, Weight per Meter, 
 | `brand`, `country`, `weight_per_meter` | `TBD` until verified; blocks claim/publication where required |
 | `stock_status` | `TBD` in template; later one approved domain state only |
 
-Unlisted values fail or quarantine. They must not be normalized silently into a new canonical term.
+Unlisted inputs fail or quarantine. They must not be normalized silently into a new canonical term, and a listed candidate must still resolve through the applicable Variant Rules before Product use.
 
 ## Slug Rules
 
@@ -100,8 +102,8 @@ Unlisted values fail or quarantine. They must not be normalized silently into a 
 
 ## SKU Rules
 
-- Parent reference and variation SKU are separate identities.
-- Every operational variation requires one unique stable SKU before import.
+- Parent reference and Variation SKU are separate downstream/derived identifiers; neither is canonical entity identity.
+- Every operational Variation mapping requires one unique stable derived SKU before import.
 - Final syntax and segment semantics remain `TBD`; Sprint 03A does not generate final SKUs.
 - Template placeholders must begin `TBD-` and must fail the production/import gate.
 - SKU is case-policy-controlled ASCII, immutable after integration except through approved migration, and never reused.
@@ -110,23 +112,23 @@ Unlisted values fail or quarantine. They must not be normalized silently into a 
 
 ## Duplicate Prevention
 
-- Parent stable identity, parent reference, canonical slug, and WooCommerce ID must be unique in their own namespaces.
+- Canonical Family/Series/Variant Rule Set references, downstream Parent adapter reference, canonical public-page slug, and WooCommerce ID must be unique in their own namespaces and must not be conflated.
 - Variation SKU must be globally unique under the approved policy.
-- Variation tuple `(parent, grade, finish, diameter_mm, thickness_mm, length_m)` must be unique.
+- A downstream Variation tuple `(parent, grade, finish, diameter_mm, thickness_mm, length_m)` must be unique and resolve to an approved tuple in the applicable Variant Rules.
 - Persian/English label duplication does not establish identity; compare normalized values and aliases.
-- Imports must check existing parent/variation IDs, SKUs, slugs, taxonomy terms, attribute terms, aliases, and previous mappings.
+- Imports must check existing downstream Parent/Variation IDs, derived SKUs, public-page slugs, taxonomy terms, attribute terms, aliases, canonical source references, and previous mappings.
 - Duplicate rows fail; near-duplicates quarantine for review.
 - No import may silently merge, overwrite, or create a suffix to bypass a collision.
 
 ## Parent/Variation Consistency
 
-- Each variation references exactly one existing staged/approved Variable Parent Product.
-- Parent declares every variation axis used by its variations.
-- Variations use only parent-approved controlled values and valid combinations.
-- Shared parent content is not duplicated as variation authority.
-- Variation-specific data does not overwrite parent identity/canonical content.
+- Each downstream Variation mapping references exactly one existing staged/approved Variable Parent Product mapping.
+- Parent reflects every governed axis used by its Variations; the applicable Variant Rules declare those axes.
+- Variations use only controlled values and valid tuples resolved from the applicable Variant Rules; Parent does not approve them.
+- Shared Parent page content is sourced from canonical Repository facts and is not duplicated as Variation authority.
+- Variation-specific adapter data does not overwrite canonical source identity/content or Parent public-page context.
 - All child rows inherit Inquiry First and No Public Pricing.
-- Parent and child categories/material/unit must not conflict.
+- Parent and child downstream category/material/unit projections must not conflict with their shared canonical source references.
 - No orphan variation, empty parent, duplicate tuple, or mixed product family is allowed.
 
 ## No Price Exposure
@@ -155,11 +157,11 @@ Unlisted values fail or quarantine. They must not be normalized silently into a 
 - Create a complete backup and prove isolated restoration.
 - Run a dry-run/preview with no mutation.
 - Record exact source file checksum/version, reviewer, mapping, target, expected changes, and rollback point.
-- Block on placeholder SKUs, `TBD` stock, unapproved canonical slugs, invalid combinations, missing owners, or unresolved errors.
+- Block on placeholder SKUs, `TBD` stock, unapproved canonical public-page slugs, invalid combinations, missing owners, or unresolved errors.
 
 ### After Future Authorized Import
 
-- Reconcile row/product/variation counts and stable IDs.
+- Reconcile row/Product/Variation counts, canonical source references, downstream adapter IDs, and derived SKUs.
 - Validate parent-child relationships, attributes, names, URLs, inquiry context, visibility, and Admin manageability.
 - Run exhaustive no-price/no-transaction checks.
 - Verify Persian RTL/mobile/accessibility/SEO behavior.
@@ -169,7 +171,7 @@ Unlisted values fail or quarantine. They must not be normalized silently into a 
 
 | Gate | Required approval/evidence |
 | --- | --- |
-| Family and hierarchy | Founder + Product Data/domain review |
+| Canonical Family/Series hierarchy and Variant Rules | Founder + Product Data/domain review |
 | Attribute dictionary | Founder + qualified steel-domain review |
 | Valid combinations | Founder + domain + Sales/Operations evidence |
 | SKU policy/final values | Founder + Operations/integration review |
@@ -186,6 +188,7 @@ No gate is satisfied by file creation alone.
 | Version | Date | Change |
 | --- | --- | --- |
 | 0.1.0 | 2026-07-04 | Initial Sprint 03A deterministic product-data validation contract. |
+| 0.1.1 | 2026-08-03 | Rebased identity, hierarchy, applicability, candidate values, axes and tuple validation on canonical Repository/Variant Rules sources and limited Parent/Variation/Woo/slug checks to downstream adapter or public-page namespaces; no validator execution. |
 
 ## Navigation
 

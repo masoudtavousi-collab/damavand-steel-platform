@@ -8,12 +8,12 @@
 - **Owner:** Founder
 - **Reviewer:** Product Data Owner, Enterprise Architect, Qualified Domain Reviewer, SEO Reviewer, CRM Reviewer, Quality Reviewer, and WooCommerce Technical Reviewer
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-04
-- **Last Review:** 2026-07-04
+- **Version:** 1.0.0
+- **Last Updated:** 2026-08-03
+- **Last Review:** 2026-08-03
 - **Review Cycle:** On engine lifecycle, input, output, template, pipeline, validation, approval, or compatibility change
 - **Lifecycle:** Review
-- **Source of Truth:** Approved repository product, taxonomy, attribute, inquiry, SEO, WordPress, WooCommerce, field, plugin, and implementation rules plus the Sprint 03D mandate
+- **Source of Truth:** Approved canonical Product Repository sources plus approved downstream taxonomy, inquiry, SEO, WordPress, WooCommerce, field, plugin, and implementation rules within their recorded authority, and the Sprint 03D mandate
 - **Dependencies:** [Enterprise Product Data Model](../../../docs/19_PRODUCT_DATA_MODEL.md), [WooCommerce Product Model](../../../docs/20_WOOCOMMERCE_PRODUCT_MODEL.md), [Product Taxonomy Model](../../../docs/21_PRODUCT_TAXONOMY_MODEL.md), [Product Attribute Model](../../../docs/22_PRODUCT_ATTRIBUTE_MODEL.md), and [Inquiry Data Model](../../../docs/23_INQUIRY_DATA_MODEL.md)
 - **Related Documents:** [Engine Rules](ENGINE_RULES.md), [Engine Workflow](ENGINE_WORKFLOW.md), [Engine Generation Guide](ENGINE_GENERATION_GUIDE.md), and the six Product Engine templates in this directory
 - **Traceability:** CP-001 through CP-010, PDM-001 through PDM-008, WCM-001 through WCM-008, TAX-001 through TAX-008, ATT-001 through ATT-007, INQ-001 through INQ-008, SEOENT-001 through SEOENT-009, FIELD-001 through FIELD-009, PLUG-001 through PLUG-010, Sprint 03A through Sprint 03D
@@ -22,7 +22,7 @@
 
 ## Purpose
 
-Define one reusable, template-driven Product Engine for every Damavand Steel product family. The engine standardizes how approved family facts become controlled repository assets without redesigning the repository, inventing domain data, or mutating WordPress.
+Define one reusable, template-driven Product Engine for every Damavand Steel canonical Family. The engine standardizes how approved `Catalog → Platform → Family → Series → Variant Rules → derived SKU` references become controlled repository assets without redesigning the repository, inventing domain data, or mutating WordPress.
 
 ## Authority Boundary
 
@@ -43,9 +43,9 @@ Generated family assets never override governing documents. Task text, AI output
 ## Engine Philosophy
 
 - Template First: every new family starts from the controlled templates in this directory.
-- Product Data First: structured identity, taxonomy, attributes, variations, validation, and ownership precede platform configuration.
+- Product Data First: canonical identity, attributes, Variant Rules, validation, and ownership precede downstream taxonomy, Parent/Variation, and platform configuration.
 - Evidence First: unknown values remain `TBD`; no default creates a business or technical claim.
-- Variable Parent Product: the approved parent/variation architecture remains the default governing model; an exception requires an explicit governing decision.
+- Downstream commerce mapping: Variable Parent Product and Variation may be generated only as presentation or adapter mappings of approved canonical sources; they never become a governing hierarchy or fact authority.
 - Inquiry First and No Public Pricing: every generated family inherits inquiry-only and empty/no-price constraints.
 - Global Reuse: reusable specifications use canonical global identities rather than local duplicates or free text.
 - Configuration First and Plugin First: outputs define capability requirements, not custom code or vendor assumptions.
@@ -76,7 +76,7 @@ This registry does not approve names, product structures, categories, attributes
 | --- | --- | --- |
 | Idea | Record a candidate family without creating product facts | Founder confirms review may begin |
 | Intake | Collect authoritative business/domain inputs | Source, owner, scope, unknowns, and evidence recorded |
-| Family Draft | Generate family contract from the Product Family Template | Identity and parent strategy ready for review |
+| Family Draft | Generate the canonical Family/Series source contract plus downstream mappings from the Product Family Template | Source references and mapping boundaries ready for review |
 | Classification Draft | Generate attribute, variation, import, SEO, and validation assets | Every field has one responsibility and every unknown is `TBD` |
 | Specialist Review | Domain, Product Data, SEO, CRM, quality, and technical review | Findings resolved or explicitly blocked |
 | Founder Review | Founder approves or rejects recorded decisions | Dated approval record exists |
@@ -94,13 +94,13 @@ Every generation request requires:
 
 - Approved task scope and intended family name.
 - Founder-confirmed Persian and English working labels.
-- Product Family/Product Group/Product Type evidence or explicit `TBD`.
-- Qualified domain evidence for specifications, units, controlled values, and valid combinations.
+- Approved Catalog, Platform, Family, Series, and Variant Rules references or explicit `TBD`.
+- Qualified domain evidence for specifications, units, controlled values, axes, and valid tuples recorded through Variant Rules.
 - Product Data owner, reviewers, approval authority, version, and source references.
-- Proposed parent/variation structure consistent with governing rules.
+- Proposed legacy Product Family/Group/Type and Parent/Variation mappings, if needed, explicitly downstream of canonical sources.
 - Field inventory and one proposed classification per field.
 - Inquiry context requirements with no transaction/public-price behavior.
-- SEO/search intent evidence, canonical owner proposal, and URL unknowns.
+- SEO/search intent evidence, downstream public page/URL/search-intent owner proposal, and URL unknowns.
 - CRM/integration needs as references only, with privacy/access boundaries.
 - Explicit unknown, excluded, prohibited, and deferred items.
 
@@ -141,8 +141,8 @@ Validation occurs at four layers:
 | Layer | Required checks |
 | --- | --- |
 | Template | Required sections/tokens, template version, no family-specific residue, no duplicate authority |
-| Family contract | Identity, one classification per field, units, allowed values, parent/variation consistency, Persian normalization, duplicates, unknowns |
-| Cross-pipeline | Import/WooCommerce/SEO/CRM mappings consume the same canonical identities without copying authority |
+| Family contract | Catalog/Platform/Family/Series/Variant Rules references, one classification per field, units, allowed values sourced from Variant Rules, downstream mapping consistency, Persian normalization, duplicates, unknowns |
+| Cross-pipeline | Import/WooCommerce/SEO/CRM mappings consume the same canonical source references without copying authority |
 | Repository | Metadata, links, index/navigation, traceability, graph, naming, compatibility, prohibited-data, and no-implementation boundaries |
 
 Any missing source, conflicting authority, invented value, uncontrolled term, duplicate classification, public-price path, transactional path, unapproved commercial claim, or absent Founder gate is a blocking failure.
@@ -152,11 +152,11 @@ Any missing source, conflicting authority, invented value, uncontrolled term, du
 | Gate | Founder decision required |
 | --- | --- |
 | Intake | Family scope, accountable owners, and authority sources |
-| Identity | Persian/English labels, family/group/type placement, stable identifiers policy |
+| Identity | Canonical Catalog/Platform/Family/Series references, labels, and stable identifier policy; legacy Family/Group/Type mappings remain downstream |
 | Classification | Category, global/local/variation attribute, custom field, CRM, SEO, helper, internal, excluded decisions |
-| Domain | Specifications, units, values, terminology, valid combinations, claims, and evidence owners |
+| Domain | Specifications, units, terminology, Variant Rules allowed values/axes/valid tuples, claims, and evidence owners |
 | Experience | Mobile Persian RTL order, filters, tables, inquiry path, accessibility expectations |
-| SEO | Intent, canonical owner, public slug, metadata, indexation, schema, linking |
+| SEO | Public page/URL/search-intent owner, public slug, metadata, indexation, schema, and linking; no repository identity transfer |
 | CRM/Integration | Field ownership, access, consent, retention, references, reconciliation, recovery |
 | Import/Runtime | Exact mapping, versions, staging, backup/restore, dry run, rollback, permissions, release |
 
@@ -178,9 +178,9 @@ The engine creates only the import contract and validation requirements. It does
 
 ## WooCommerce Pipeline
 
-- Map Product Family to one approved category identity.
+- Map canonical Family/Series references to an approved downstream category presentation where authorized.
 - Map reusable specifications to approved global attributes.
-- Map only approved axes to variations under one Variable Parent Product.
+- Map only Variant Rules allowed values, axes, and valid tuples to downstream Variations under a downstream Variable Parent Product presentation.
 - Keep custom, CRM, SEO, helper, and internal fields out of attribute/category authority.
 - Require `inquiry_only=yes` and no public-price target.
 - Block on missing IDs, terms, combinations, runtime capability, Admin manageability, or rollback evidence.
@@ -189,7 +189,7 @@ The pipeline is logical until a separate implementation task verifies exact WooC
 
 ## SEO Pipeline
 
-- Resolve one canonical entity/intent owner.
+- Resolve one downstream public page/URL/search-intent owner without assigning Product Repository identity.
 - Use approved family facts and canonical attribute identities.
 - Keep variations/facets non-canonical and non-indexable by default.
 - Generate no keyword, metadata, FAQ answer, schema, URL, or landing claim without evidence and approval.
@@ -198,7 +198,7 @@ The pipeline is logical until a separate implementation task verifies exact WooC
 
 ## CRM Pipeline
 
-- Product Engine remains product-master authority for approved product facts.
+- Canonical Product Repository sources retain product-fact authority; Product Engine outputs carry references and never become Product master authority.
 - CRM receives stable references and approved snapshots, not copied uncontrolled facts.
 - Inquiry context may include family, parent, variation, selected attributes, source, and permitted customer fields.
 - Internal priority, routing, status, access, consent, retention, and reconciliation require separate approval.
@@ -210,11 +210,16 @@ The pipeline is logical until a separate implementation task verifies exact WooC
 
 Pipe assets remain unchanged by Sprint 03D. Future migration to engine headers/templates, if desired, requires a separate compatibility-preserving task; no rename or rewrite is implied.
 
+## Compatibility and Provenance
+
+Version `1.0.0` is a major generation-contract and semantic change. Its compatibility impact is breaking for every Family with Product Engine outputs generated under 0.x. Before reuse, a separately authorized migration or regeneration task must record the affected-Family/asset inventory, exact engine/template provenance, migration and validation plan, diff review, full validation, and Founder approval. This document performs no migration and approves no generated asset.
+
 ## Change Notes
 
 | Version | Date | Change |
 | --- | --- | --- |
 | 0.1.0 | 2026-07-04 | Initial Sprint 03D Enterprise Product Engine contract; no product/runtime implementation. |
+| 1.0.0 | 2026-08-03 | Major canonical-source reconciliation: Family/Series/Variant Rules govern identity, allowed values, axes, and valid tuples; legacy and commerce constructs are downstream mappings. Existing 0.x generated assets require separately authorized compatibility review or regeneration. |
 
 ## Navigation
 

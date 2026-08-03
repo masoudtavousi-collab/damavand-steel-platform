@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Lead Enterprise Information Architect
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-03
-- **Last Review:** 2026-07-03
+- **Version:** 0.1.1
+- **Last Updated:** 2026-08-03
+- **Last Review:** 2026-08-03
 - **Review Cycle:** On content purpose, audience, field, relationship, SEO, navigation, lifecycle, owner, entity, media, or schema change
 - **Lifecycle:** Review
 - **Source of Truth:** [Enterprise Content Architecture](29_CONTENT_ARCHITECTURE.md), [Entity Relationship Model](30_ENTITY_RELATIONSHIP_MODEL.md), [Enterprise Information Architecture](24_INFORMATION_ARCHITECTURE.md), and [Site Structure](25_SITE_STRUCTURE.md)
@@ -27,6 +27,8 @@ Define every logical content type currently required or explicitly contemplated 
 ## Scope and Boundary
 
 Content types are logical responsibilities, not WordPress post types, WooCommerce product types, taxonomies, database entities, Elementor templates, Blocksy components, Gutenberg blocks, files, or schema markup.
+
+Product content consumes the canonical Product Repository hierarchy `Catalog → Platform → Family → Series → Variant Rules → SKU`; it does not redefine that hierarchy. Catalog through Variant Rules remain the canonical Repository concepts, while SKU is a derived identifier after governed modeling. Product Family/Group/Type labels and Parent/Variable Parent/Variation objects are legacy or downstream page, navigation, content, and commerce projections only.
 
 Conditional types remain unavailable until the Founder approves their business purpose, inventory, owner, lifecycle, public status, and required reviews.
 
@@ -52,7 +54,7 @@ Optional fields remain controlled by type. They cannot be used to bypass product
 
 | Content type | Purpose | Audience | Required fields | Optional fields | Relationships | SEO role | Navigation role | Lifecycle | Owner |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Product | Public/editorial projection of a Variable Parent Product | Product researchers and inquirers | Product ID, approved title/summary, Type, lifecycle/visibility, source owner, inquiry eligibility | Media, documents, related knowledge/products | Parent Product, Variations, taxonomy, attributes, media, inquiry | Canonical product owner when eligible; no Offer/price | Product hierarchy/search/context paths | Product lifecycle plus content approval for narrative | Product owner pending |
+| Product | Public/editorial projection of approved Product Repository sources, optionally rendered through a downstream Variable Parent Product page | Product researchers and inquirers | Content/projection ID, stable Repository source references, approved title/summary, lifecycle/visibility, source owner, inquiry eligibility | Media, documents, related knowledge/products | Downstream Parent Product/Variation mappings, taxonomy, attributes, media, inquiry | Canonical public page/URL owner when eligible; source authority unchanged; no Offer/price | Public product-page/search/context paths | Projection lifecycle plus content approval for narrative | Product content owner pending |
 | Category | Explain and navigate an approved taxonomy term | Browsers by governed classification | Term ID, taxonomy, label, definition, owner, lifecycle, inclusion rule | Introductory content, media, related knowledge | Products, parent/child terms, landing owner | Conditional canonical landing; one intent owner | Category/browse path only when approved | Taxonomy term lifecycle plus content lifecycle | Taxonomy/content owner pending |
 | Landing | Own one approved audience/search/campaign intent | Defined intent audience | ID, intent, audience, owner, source entities, lifecycle, canonical decision, inquiry purpose | Media, campaign dates, related knowledge | Products, categories, knowledge, inquiry | Canonical only after cannibalization review | Not automatically menu-visible | Content lifecycle plus landing start/review/end | Content/SEO owner pending |
 | Knowledge Article | Provide durable educational/explanatory knowledge | Buyers, specifiers, support users, content readers | ID, title, purpose, audience, sources, owner, lifecycle, language | Author, summary, media, related entities | Topics, products, categories, documents, inquiry | Indexable only with unique intent/quality approval | Knowledge Center/topic/search | Content lifecycle | Content/domain owner pending |
@@ -67,16 +69,17 @@ Optional fields remain controlled by type. They cannot be used to bypass product
 | News | Publish time-contextual factual editorial information | Public stakeholders | ID, title, date/context, source, owner, lifecycle, language | Author, media, related entities | Organization, Product/Project/knowledge as applicable | Time-sensitive intent; indexation conditional | News/archive only if approved | Content lifecycle with freshness review | Content owner pending |
 | Announcement | Publish an official time-bounded notice | Affected public/internal audience | ID, title, authority/source, owner, effective period, lifecycle | Media, CTA, related entities | Organization, policy, landing, inquiry/support | Usually temporary; canonical/indexation explicit | Home/support/landing placement during approved period | Content lifecycle with expiry | Founder/content owner pending |
 | Page | Hold stable institutional, contact, support, or informational content not covered by a more specific type | Public site audience | ID, purpose, title, audience, owner, source, lifecycle | Media, sections, related entities | Organization, policies, support, inquiry | Conditional stable intent owner | Site tree/menu/footer as approved | Content lifecycle | Content owner pending |
-| Technical Document | Provide versioned approved technical evidence/download | Product/project/support users with approved access | Document ID, type, title, version, owner/reviewer, access, applicability, lifecycle | Issue date, language, preview, checksum | Products, Variations, Projects, Media | Public document SEO role explicit; protected excluded | Product/support/knowledge links | Technical-document lifecycle | Qualified technical owner pending |
+| Technical Document | Provide versioned approved technical evidence/download | Product/project/support users with approved access | Document ID, type, title, version, owner/reviewer, access, applicability, lifecycle | Issue date, language, preview, checksum | Repository product sources, downstream Product/Variation projections, Projects, Media | Public document SEO role explicit; protected excluded | Product/support/knowledge links | Technical-document lifecycle | Qualified technical owner pending |
 
 ## Content Type Relationships
 
-- Product, Category, Representative, Project, and Media content are projections of canonical entities; their source entities remain authoritative.
+- Product content is a public/editorial projection of canonical Product Repository sources; any Parent Product or Variation association is a downstream mapping, and the source entities remain authoritative.
+- Category, Representative, Project, and Media content are projections of their governed source entities; their source entities remain authoritative.
 - Landing, Knowledge Article, FAQ, Guide, News, Announcement, and Page are editorial entities that reference source entities.
 - Policy may be a public content entity or a repository governance document; each instance declares which lifecycle/authority applies.
 - Decision and Audit are repository-governance content and are not public business-platform types by default.
 - Technical Document has a distinct version/access lifecycle and must not be treated as an ordinary Media file or Knowledge Article.
-- One physical page may present several entities, but one main content purpose and canonical owner must be explicit.
+- One physical page may present several entities, but one main content purpose and, when eligible, one canonical public page/URL owner must be explicit; neither replaces source identity or authority.
 
 ## Required Field Rules
 
@@ -118,6 +121,7 @@ Review. No WordPress post type, WooCommerce setting, taxonomy, field group, page
 | Version | Date | Change |
 | --- | --- | --- |
 | 0.1.0 | 2026-07-03 | Initial Batch 07 logical content-type registry; documentation only. |
+| 0.1.1 | 2026-08-03 | Separated Product Repository source authority from public content/page and Parent/Variation projections under `FD-W2G-001` and `FD-W2G-002`. |
 
 ## Related Documents
 

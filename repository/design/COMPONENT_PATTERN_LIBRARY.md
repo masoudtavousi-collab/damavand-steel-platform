@@ -8,15 +8,15 @@
 - **Owner:** Founder
 - **Reviewer:** Design, UX, Content, Accessibility, SEO, Product Data, Blocksy, Elementor, and Performance Reviewers
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-05
-- **Last Review:** 2026-07-05
+- **Version:** 0.1.1
+- **Last Updated:** 2026-08-03
+- **Last Review:** 2026-08-03
 - **Review Cycle:** On component purpose, content/data contract, token, motion, ownership, accessibility, or platform change
 - **Lifecycle:** Review
 - **Source of Truth:** [Design Manifest](DESIGN_MANIFEST.md), approved content/data authorities, and approved platform ownership
 - **Dependencies:** [Design Manifest](DESIGN_MANIFEST.md), [Content Architecture](../../docs/29_CONTENT_ARCHITECTURE.md), [Blocksy Blueprint](../../docs/36_BLOCKSY_CONFIGURATION.md), and [Elementor Blueprint](../../docs/37_ELEMENTOR_ARCHITECTURE.md)
 - **Related Documents:** [Brand Language](BRAND_LANGUAGE.md), [Motion System](MOTION_SYSTEM.md), [Animation Library](ANIMATION_LIBRARY.md), and [Accessibility Rules](ACCESSIBILITY_RULES.md)
-- **Traceability:** CP-003–CP-007, BLOCKSY-003–BLOCKSY-009, ELEMENTOR-001–ELEMENTOR-009, and Sprint 05A
+- **Traceability:** CP-003–CP-007, `FD-W2G-001`, `FD-W2G-002`, BLOCKSY-003–BLOCKSY-009, ELEMENTOR-001–ELEMENTOR-009, and Sprint 05A
 - **AI Compatibility:** AI-readable pattern contracts; no generated component, page, template, or runtime feature is authorized
 - **Approval:** Pending Founder and specialist review; patterns are conceptual and implementation-neutral
 
@@ -24,11 +24,13 @@
 
 Define reusable component contracts that future WordPress-native presentation may consume without creating Elementor templates, Blocksy configuration, CSS, JavaScript, pages, or content.
 
+Canonical repository Product truth follows exactly `Catalog → Platform → Family → Series → Variant Rules → derived SKU`. WordPress and WooCommerce may consume that truth only as downstream operational or presentation projections with system-local records and mapping IDs. Blocksy and Elementor are presentation-only consumers: they cannot own Product facts, entity identity, Variant Rules, or derived SKU authority.
+
 ## Common Component Rules
 
 Every component requires an approved purpose, owner, source fields/content, lifecycle, states, mobile/RTL behavior, accessibility contract, SEO role, performance budget, motion classification, empty/error fallback, Blocksy/Elementor owner, and retirement path.
 
-- Canonical facts remain in approved WordPress, WooCommerce, Product Data, Content, Inquiry, or SEO sources.
+- Canonical Product facts remain only in approved repository Product Data sources; WordPress/WooCommerce records and component fields are downstream projections. Content, Inquiry, and SEO sources retain authority only within their own governed non-Product concerns.
 - Components do not contain public pricing, cart, checkout, payment, Offer, stock, certification, partner, or performance claims unless an approved source explicitly owns the fact; public pricing remains prohibited in all cases.
 - Blocksy owns the global shell and defaults. Elementor may compose only approved body patterns.
 - Exact visual tokens, copy, layout measurements, and runtime identifiers remain pending approval.
@@ -73,9 +75,9 @@ Every component requires an approved purpose, owner, source fields/content, life
 
 ### Product Card
 
-- **Purpose:** Summarize an approved product entity and lead to canonical detail or inquiry.
-- **Required content:** Approved name, media fallback, selected facts, canonical link, and inquiry action/state.
-- **Ownership:** Product Data/WooCommerce owns facts; Blocksy owns default archive/card presentation.
+- **Purpose:** Summarize an approved downstream Product projection and lead to its canonical public-page URL or inquiry.
+- **Required content:** Approved projected name, media fallback, selected repository-sourced facts, canonical public-page link, and inquiry action/state.
+- **Ownership:** Canonical Product facts remain in repository Product Data; WooCommerce supplies a downstream operational projection, while Blocksy owns only default archive/card presentation and Elementor may compose only an explicitly delegated body pattern.
 - **Motion:** Low-intensity focus/hover/disclosure; no tilt or pointer chase.
 - **Mobile/RTL:** Core facts and inquiry remain visible without hover; mixed-script dimensions are readable.
 - **Constraints:** No public price, cart, checkout, Offer, invented availability, or local duplicate facts.
@@ -147,7 +149,7 @@ Every component requires an approved purpose, owner, source fields/content, life
 
 - **Purpose:** Lead to an approved taxonomy/category landing page.
 - **Required content:** Canonical category name, approved description/media, canonical URL, and optional verified count.
-- **Ownership:** Taxonomy/Product Data owns identity; Blocksy owns default archive presentation.
+- **Ownership:** Governed taxonomy and repository Product Data sources retain their respective identities; WordPress/WooCommerce records are downstream mappings, and Blocksy owns only default archive presentation.
 - **Motion:** Low-intensity state emphasis only.
 - **Mobile/RTL:** Name and destination remain visible without hover.
 - **Constraints:** No duplicate category, invented subcategory, local slug, public price, or empty SEO doorway.
@@ -179,6 +181,7 @@ Applicable components define: default, hover, focus-visible, active/current, sel
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.1.1 | 2026-08-03 | C1-T06 canonical-owner reconciliation under `FD-W2G-001` and `FD-W2G-002`: restricted Product facts to repository sources and qualified WordPress/WooCommerce, Blocksy, Elementor, and components as downstream operational/presentation consumers; no component, page, fact, or runtime object created. |
 | 0.1.0 | 2026-07-05 | Initial conceptual library for 14 required component patterns. |
 
 ## Navigation

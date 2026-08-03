@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Lead Enterprise Information Architect
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-03
-- **Last Review:** 2026-07-03
+- **Version:** 0.1.1
+- **Last Updated:** 2026-08-03
+- **Last Review:** 2026-08-03
 - **Review Cycle:** On content strategy, hierarchy, source, type, block, relationship, owner, lifecycle, validation, approval, localization, or consumer change
 - **Lifecycle:** Review
 - **Source of Truth:** [Core Project Principles](00_PROJECT_BIBLE.md#core-project-principles), [Enterprise Information Architecture](24_INFORMATION_ARCHITECTURE.md), [Enterprise Site Structure](25_SITE_STRUCTURE.md), and the approved-reference product/taxonomy/inquiry models
@@ -27,6 +27,8 @@ Define the permanent logical strategy for creating, owning, relating, reusing, v
 ## Scope and Boundary
 
 This document governs content responsibilities and information flow. It does not create content, pages, posts, products, media, taxonomies, reusable WordPress blocks, Elementor templates, schema markup, workflows, fields, databases, or configuration.
+
+Canonical repository Product truth follows exactly `Catalog → Platform → Family → Series → Variant Rules → derived SKU`. Content may project or explain governed Product facts but cannot own them. Product Family/Group/Type, Parent/Variable Parent/Variation, public pages, URLs, SEO intent, WordPress/WooCommerce IDs, labels, slugs, and derived SKUs remain downstream presentation or adapter mappings; Variant Rules alone governs axes, allowed values, and valid tuples.
 
 Exact content inventory, Persian terminology, editorial roles, service levels, publishing cadence, legal text, topics, and physical platform mappings remain Founder and qualified reviewer decisions.
 
@@ -47,7 +49,7 @@ Exact content inventory, Persian terminology, editorial roles, service levels, p
 
 - Explain the business, products, applications/use cases, industries, knowledge, support, and inquiry paths using governed entities rather than disconnected pages.
 - Publish only information with a named owner, source, audience, lifecycle, access class, and approval evidence.
-- Keep product facts in product authority, taxonomy/attribute definitions in their registries, and editorial explanation in content authority.
+- Keep Product facts in the canonical repository hierarchy, taxonomy/attribute definitions in their governed registries, and editorial explanation in content authority.
 - Use one canonical owner per intent and one canonical source per fact.
 - Design Persian RTL content at mobile scale first; desktop expansion must preserve the same meaning and task completion.
 - Lead users toward contextual inquiry without public price, cart, checkout, payment, or transactional promises.
@@ -74,7 +76,7 @@ Within the public platform, the logical path remains Domain Hub → Canonical En
 
 | Content concern | Canonical owner source | Assignment status |
 | --- | --- | --- |
-| Product and variation facts | Product Data/WooCommerce models | Operational owner pending Founder decision |
+| Product and variation presentation facts | Canonical repository Product Data sources; WooCommerce is a downstream operational projection | Operational projection owner pending Founder decision; canonical ownership is not delegated |
 | Taxonomy and attribute definitions | Taxonomy/Attribute models | Operational owner pending Founder decision |
 | Company identity and policy | Approved business/policy authority | TODO (Founder Decision Required) |
 | Knowledge, guide, FAQ, news, and announcement content | Content governance | TODO (Founder Decision Required) |
@@ -251,6 +253,7 @@ Review. No content, page, post, product description, block, template, workflow, 
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.1.1 | 2026-08-03 | C1-T06 canonical-owner reconciliation: anchored Product facts in the canonical repository hierarchy and qualified content/WooCommerce as downstream projections; no content created. |
 | 0.1.0 | 2026-07-03 | Initial Batch 07 enterprise content architecture; documentation only. |
 
 ## Related Documents

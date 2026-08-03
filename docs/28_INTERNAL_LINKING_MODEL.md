@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Lead Enterprise Information Architect
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-03
-- **Last Review:** 2026-07-03
+- **Version:** 0.1.1
+- **Last Updated:** 2026-08-03
+- **Last Review:** 2026-08-03
 - **Review Cycle:** On canonical owner, site hierarchy, URL, product, taxonomy, knowledge, representative, landing, inquiry, SEO, or content-lifecycle change
 - **Lifecycle:** Review
 - **Source of Truth:** [Enterprise Information Architecture](24_INFORMATION_ARCHITECTURE.md), [Site Structure](25_SITE_STRUCTURE.md), [URL Architecture](26_URL_ARCHITECTURE.md), and [Search and Discovery](27_SEARCH_AND_DISCOVERY.md)
@@ -22,11 +22,13 @@
 
 ## Purpose
 
-Define how canonical products, categories, knowledge, representatives, landings, support, documents, and inquiry paths connect without creating duplicate authority, unsupported relationships, public pricing, or uncontrolled SEO structures.
+Define how canonical Product source references and their approved public-page projections connect to categories, knowledge, representatives, landings, support, documents, and inquiry paths without creating duplicate authority, unsupported relationships, public pricing, or uncontrolled SEO structures.
 
 ## Scope and Boundary
 
 This model defines logical link responsibilities. It does not add links, create content, choose anchor text, set link counts, configure menus/templates/widgets, select a plugin, automate recommendations, or change public URLs.
+
+Product links resolve ultimately to canonical repository identities along `Catalog → Platform → Family → Series → Variant Rules → derived SKU`. Product Family/Group/Type hubs, Variable Parent Product pages, Variation selectors, labels, slugs, URLs, and WooCommerce IDs are navigation, presentation, public-page, SEO-intent, or downstream adapter mappings. Link and canonical-URL ownership never transfers canonical Product truth or permits a downstream system to define axes, allowed values, or valid tuples.
 
 ## Internal Linking Decisions
 
@@ -63,10 +65,10 @@ Internal linking distributes discovery and SEO attention, not source authority.
 
 | Link owner | May authoritatively expose | Must reference rather than duplicate |
 | --- | --- | --- |
-| Product Family/Type hub | Approved membership, navigation context, canonical child links | Product specifications, knowledge narratives, representative claims |
-| Variable Parent Product | Shared product facts, variation context, approved media/documents, inquiry action | Taxonomy definitions, independent knowledge ownership, representative routing |
+| Product Family/Type hub | Downstream approved membership, navigation context, and links to public Product projections | Canonical Product specifications, Variant Rules, knowledge narratives, representative claims |
+| Variable Parent Product public page | Shared downstream Product presentation, mapped variation context, approved media/documents, inquiry action | Canonical Product truth, Variant Rules, taxonomy definitions, independent knowledge ownership, representative routing |
 | Taxonomy/landing owner | Definition, inclusion criteria, canonical member references, unique intent content | Product-master facts and attribute values |
-| Knowledge item | Approved educational narrative and cited context | Canonical product, taxonomy, technical document, and policy facts |
+| Knowledge item | Approved educational narrative and cited context | Canonical Product source references, taxonomy, technical document, and policy facts |
 | Representative profile | Approved public representative identity and explicit scope | Product authority, territory assumptions, routing/workload, customer data |
 | Support item | Approved help/process guidance | Product guarantees, commercial terms, private cases |
 | Inquiry entry | Required guidance and source context | Public price, quote acceptance, transaction state |
@@ -76,8 +78,8 @@ Link prominence, placement, and volume require UX/SEO evidence and do not alter 
 ## Category Linking
 
 - Domain/Product hubs link to approved Product Families and high-value governed context paths.
-- Product Family links to approved Groups/Types and canonical member products.
-- Category/term landings link to canonical products and supporting knowledge whose explicit relationships match inclusion criteria.
+- A downstream Product Family hub links to approved Group/Type navigation mappings and member Product public-page projections whose canonical source references are known.
+- Category/term landings link to approved Product public-page projections and supporting knowledge whose explicit relationships match inclusion criteria.
 - Category cross-links require a named relationship; shared wording is insufficient.
 - Material, Alloy, Finish, Brand, Application/Use Case, Industry, Collection, and SEO Landing views preserve one canonical identity and landing owner.
 - Product Tags do not create authority, primary navigation, filters, or automatic cross-link networks by default.
@@ -85,7 +87,7 @@ Link prominence, placement, and volume require UX/SEO evidence and do not alter 
 
 ## Product Linking
 
-- Product hierarchy, breadcrumbs, and category context link the Variable Parent Product to approved parents.
+- Product hierarchy, breadcrumbs, and category context link the Variable Parent Product public-page projection to approved navigation parents without asserting canonical Product ancestry.
 - Product pages may link to explicit alternatives, accessories, compatible entities, approved documents, knowledge, support, and representative scope.
 - Alternatives, related products, accessories, and compatibility are different directed relationship types.
 - Variation selection remains within parent context by default and does not create a competing canonical link.
@@ -95,7 +97,7 @@ Link prominence, placement, and volume require UX/SEO evidence and do not alter 
 
 ## Knowledge Linking
 
-- Knowledge items link to their governing topics/content types, canonical products, approved taxonomy owners, public documents, support, and contextual inquiry.
+- Knowledge items link to their governing topics/content types, approved Product public-page projections backed by canonical source references, approved taxonomy owners, public documents, support, and contextual inquiry.
 - Product and category pages link back to relevant knowledge only when the relationship and content quality are approved.
 - Technical claims link to approved evidence or source documents; a link is not proof by itself.
 - Articles, FAQs, guide-like pages, and technical documents do not duplicate one another's canonical intent.
@@ -179,6 +181,7 @@ Review. No internal link, anchor, breadcrumb, related-item block, representative
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.1.1 | 2026-08-03 | C1-T06 canonical-owner reconciliation: separated navigation/public-page/URL ownership from canonical Product ownership and qualified Parent/Variation links as downstream mappings; no links created. |
 | 0.1.0 | 2026-07-03 | Initial Batch 06 enterprise internal linking model; documentation only. |
 
 ## Related Documents

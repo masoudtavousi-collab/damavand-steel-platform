@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.3.0
-- **Last Updated:** 2026-07-29
-- **Last Review:** 2026-07-29
+- **Version:** 0.4.1
+- **Last Updated:** 2026-08-03
+- **Last Review:** 2026-08-03
 - **Review Cycle:** On attribute definition, label, key, value, unit, variation, filtering, SEO, Product Type profile, or integration-mapping change
 - **Lifecycle:** Review
 - **Source of Truth:** [Enterprise Product Data Model](19_PRODUCT_DATA_MODEL.md), [WooCommerce Product Model](20_WOOCOMMERCE_PRODUCT_MODEL.md), and [WordPress Enterprise Architecture](06_WORDPRESS_ARCHITECTURE.md#enterprise-product-architecture)
@@ -28,13 +28,15 @@ Define the canonical global attribute registry, Persian labels, English internal
 
 This model defines attribute policy only. It does not create WooCommerce attributes, values, terms, variations, filters, URLs, imports, fields, UI, database schema, or code.
 
+Canonical repository Product truth follows exactly `Catalog → Platform → Family → Series → Variant Rules → derived SKU`. Attribute definitions and controlled values remain governed repository inputs, while Variant Rules alone own axis selection, allowed values per axis, and valid tuples for a Series. Product Type/Profile, WooCommerce global attributes, Parent/Variation records, term IDs, slugs, and SKUs are legacy or downstream adapter/presentation mappings and never canonical Product identities.
+
 ## Attribute Decisions
 
 | ID | Proposed decision | Status |
 | --- | --- | --- |
 | ATT-001 | Reusable product specifications use one canonical global attribute definition and stable English internal key. | Proposed pending Founder approval |
-| ATT-002 | Each Product Type uses an approved attribute profile that separates required, optional, variation, filter, public, and integration uses. | Proposed pending Founder/domain approval |
-| ATT-003 | Allowed values use controlled registries or validated typed values with explicit units; uncontrolled synonyms and mixed units are prohibited. | Proposed pending Founder/domain approval |
+| ATT-002 | Each canonical Family/Series uses approved applicability rules; any Product Type profile is a downstream mapping that separates required, optional, filter, public, and integration uses without owning Variant Rules. | Proposed pending Founder/domain approval |
+| ATT-003 | Governed value registries or validated typed values define eligible inputs; Variant Rules selects allowed values and valid tuples per Series. Uncontrolled synonyms and mixed units are prohibited. | Proposed pending Founder/domain approval |
 | ATT-004 | Variation and filtering are enabled independently and only when they provide valid catalog behavior. | Proposed pending Founder approval |
 | ATT-005 | SEO landings may reference canonical attribute values but must not create duplicate term authority or cannibalizing archives. | Proposed pending Founder/SEO approval |
 | ATT-006 | Attribute registries and value sets remain flat by default; any parent-child value relationship requires an attribute-specific definition and approval. | Proposed pending Founder/domain approval |
@@ -96,13 +98,13 @@ Size ownership and domain review follow the Product Type/attribute accountabilit
 
 ## Attribute Profile Model
 
-Each Product Type receives a profile with these flags per attribute:
+Each canonical Family/Series may have governed applicability expressed through the following fields; any Product Type profile is only a downstream mapping:
 
 | Profile field | Meaning |
 | --- | --- |
 | Applicability | Required, optional, prohibited, or conditional |
 | Public visibility | Public, protected, internal, or integration-only |
-| Variation axis | Allowed or prohibited |
+| Variation axis | Projected from Variant Rules only; no independent profile ownership |
 | Filtering | Allowed or prohibited and filter order |
 | Inquiry capture | Pre-filled, selectable, free requirement, or not used |
 | SEO use | Supporting content, landing owner, non-indexable, or prohibited |
@@ -146,14 +148,14 @@ Units, or commerce fields.
 ## Variation Usage Policy
 
 - An attribute becomes a variation axis only when customers or Sales must distinguish valid supplied configurations.
-- Variation axes must be finite, approved, and compatible with Admin manageability.
+- Variant Rules axes and their allowed values must be finite, approved, and compatible with Admin manageability; downstream profiles cannot add axes or values.
 - Descriptive, legal, safety, origin, warranty, environment, and relationship attributes do not become variation axes without an explicit Founder/domain decision.
-- Valid-combination rules prevent a Cartesian explosion of impossible variations.
+- Variant Rules valid tuples prevent a Cartesian explosion of impossible variations; downstream systems cannot infer additional combinations.
 - Variation labels remain Persian RTL and mobile-usable; internal keys remain stable.
 
 ## Filtering Usage Policy
 
-- Filters use canonical values and approved Product Type applicability.
+- Filters use governed values and approved canonical Family/Series applicability; Product Type is a downstream navigation/adapter mapping only.
 - Empty, single-value, low-value, sensitive, unverified, or misleading filters remain hidden.
 - Numeric filtering is unit-aware and must not compare incompatible units or contexts.
 - Filter state, URLs, canonicals, indexation, performance, and mobile RTL behavior require SEO/UX approval.
@@ -222,6 +224,7 @@ unapproved.
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.4.1 | 2026-08-03 | C1-T06 canonical-owner reconciliation: assigned axes, allowed values, and valid tuples exclusively to Variant Rules and limited Product Type/WooCommerce profiles to downstream mappings; no values added. |
 | 0.4.0 | 2026-08-01 | Added the bounded PD-03A Attribute/Profile override without public, commerce, or runtime authority. |
 | 0.3.0 | 2026-07-29 | Linked the PD-02A synthetic controlled-value/Profile foundation and preserved all canonical registries as empty. |
 | 0.2.0 | 2026-07-03 | Batch 05B remediation: explicit flat-by-default hierarchy policy and derived/non-global Size classification; documentation only. |

@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Lead Enterprise Information Architect
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-03
-- **Last Review:** 2026-07-03
+- **Version:** 0.1.1
+- **Last Updated:** 2026-08-03
+- **Last Review:** 2026-08-03
 - **Review Cycle:** On canonical, slug, path, product, taxonomy, content type, language, redirect, search, filter, representative, landing, or reserved-route change
 - **Lifecycle:** Review
 - **Source of Truth:** [Enterprise Information Architecture](24_INFORMATION_ARCHITECTURE.md), [Site Structure](25_SITE_STRUCTURE.md), [Product Taxonomy Model](21_PRODUCT_TAXONOMY_MODEL.md), and applicable SEO boundaries in [WordPress Enterprise Architecture](06_WORDPRESS_ARCHITECTURE.md#seo-architecture)
@@ -34,10 +34,10 @@ Tokens in braces—such as `{products-root}`—are placeholders, not approved li
 
 | ID | Proposed decision | Status |
 | --- | --- | --- |
-| URL-001 | Give every indexable public information object one canonical URL owned by its canonical entity or landing. | Proposed pending Founder/SEO approval |
+| URL-001 | Give every indexable public information object one canonical public URL owned by its approved page or landing projection; URL ownership never transfers Product Repository identity or source authority. | Proposed pending Founder/SEO approval |
 | URL-002 | Keep stable internal identity independent from URL, slug, navigation placement, label, and external-system ID. | Proposed pending Founder approval |
 | URL-003 | Use stable type-owned namespaces and avoid embedding the full mutable business hierarchy in canonical paths by default. | Proposed pending Founder/SEO approval |
-| URL-004 | Use the Variable Parent Product as the canonical product URL; variation selection is contextual and non-canonical unless a future approved exception defines independent intent. | Proposed pending Founder/domain/SEO approval |
+| URL-004 | Allow a downstream Variable Parent Product page to own the default canonical public product-page URL; downstream Variation selection remains contextual and non-canonical unless a future approved exception defines independent public intent. | Proposed pending Founder/domain/SEO approval |
 | URL-005 | Require one declared script/language policy per public namespace and prohibit uncontrolled mixed-script slugs. | Proposed pending Founder/SEO approval |
 | URL-006 | Keep internal search, filters, sorting, pagination variants, tracking parameters, and temporary states non-canonical and non-indexable unless an explicit SEO matrix approves a specific view. | Proposed pending Founder/SEO approval |
 | URL-007 | Preserve changed/moved public identities through reviewed direct redirects and canonical/link updates; chains, loops, and silent reuse are prohibited. | Proposed pending Founder/SEO approval |
@@ -49,6 +49,7 @@ Tokens in braces—such as `{products-root}`—are placeholders, not approved li
 - Stable across menu changes and routine taxonomy moves.
 - Short enough for mobile sharing and Persian RTL comprehension.
 - One canonical owner per public intent.
+- Public URL ownership is a page/SEO responsibility, not Product Repository identity or authority; the canonical Repository hierarchy remains `Catalog → Platform → Family → Series → Variant Rules → SKU`, with SKU derived after governed modeling.
 - Explicit by information type rather than dependent on hidden implementation storage.
 - Free of price, customer, inquiry-private, session, internal workflow, and infrastructure data.
 - Compatible with future localization and migrations through stable identities and redirects.
@@ -60,7 +61,7 @@ Tokens in braces—such as `{products-root}`—are placeholders, not approved li
 - Duplicate views point to or redirect to the canonical owner according to an approved SEO matrix.
 - Navigation aliases, filters, search results, campaign parameters, print/share views, and language alternates do not create independent canonical authority.
 - A taxonomy term, attribute archive, curated landing, page, and knowledge item targeting the same intent cannot each be canonical.
-- Product canonicals belong to the Variable Parent Product by default; variation state remains context on that owner.
+- The downstream Variable Parent Product page may own the default canonical public product-page URL; downstream Variation state remains context on that page. Neither role owns Product Repository identity or Variant Rules.
 - Discontinued, replaced, merged, moved, translated, and archived content requires an approved keep, replace, redirect, remove, or restrict decision.
 - Canonicals never point to a public-price, cart, checkout, payment, login-protected error, or inaccessible private destination.
 - Canonical behavior and indexability are independent: a valid canonical is not automatic permission to index.
@@ -84,7 +85,7 @@ Proposed logical pattern:
 ```
 
 - `{classification-type}` identifies an approved logical taxonomy, not a plugin or database name.
-- Product Family, Material, Alloy, Application/Use Case, Industry, Finish, Brand, Collection, and other eligible types use distinct owned namespaces only if public landings are approved.
+- Legacy Product Family labels and Material, Alloy, Application/Use Case, Industry, Finish, Brand, Collection, and other eligible classifications use distinct owned namespaces only if public landings and their source mappings are approved.
 - Product Tags are non-indexable and non-landing by default; a tag does not receive canonical public authority automatically.
 - Attribute values do not automatically receive public archives.
 - A category's parent-child navigation may be represented in breadcrumbs without embedding every ancestor in its canonical path.
@@ -100,9 +101,9 @@ Proposed logical pattern:
 /{products-root}/{parent-product-slug}/
 ```
 
-- The Variable Parent Product owns the canonical URL.
-- Product Family, Group, and Type are relationships and navigation context, not required canonical path segments.
-- Variation selection may use a non-canonical, share-safe state representation only after privacy, validation, canonical, caching, analytics, and inquiry-context review.
+- The downstream Variable Parent Product page may own this canonical public URL after approval; it remains a page/commerce projection rather than a Product Repository identity.
+- Product Family, Product Group, and Product Type are legacy navigation/presentation mappings, not canonical Repository layers or required path segments.
+- Downstream Variation selection may use a non-canonical, share-safe state representation only after privacy, validation, canonical, caching, analytics, and inquiry-context review; its selectable structure must trace to governed Variant Rules.
 - SKU and external IDs are not canonical slugs by default.
 - Product replacements and discontinuation follow product lifecycle plus SEO redirect/retention decisions.
 - No product URL exposes public price, quote, cart, checkout, payment, or confidential availability data.
@@ -189,7 +190,7 @@ Literal namespace values and collision checks remain TODO (Founder/SEO/technical
 
 - Public cart, checkout, payment, shipping-purchase, coupon, price-list, or public quote-result destinations.
 - URLs containing public or confidential prices, discount values, customer identifiers, contact data, consent values, inquiry details, CRM/ERP IDs, routing rules, tokens, credentials, or internal statuses.
-- Standalone canonical variation URLs without an approved exception.
+- Standalone canonical public URLs for downstream Variation projections without an approved exception.
 - Duplicate product URLs created by category, language, brand, material, campaign, filter, or menu placement.
 - Mixed-script, uncontrolled transliteration, auto-generated meaningless, date-based product, or raw database-key URLs.
 - Indexable internal-search, sort, filter-combination, session, preview, staging, admin, API, feed, attachment, or error URLs unless a specific governing decision permits the public type.
@@ -211,8 +212,8 @@ All examples are non-literal patterns:
 | Information object | Example pattern | Canonical note |
 | --- | --- | --- |
 | Product hub | `/{products-root}/` | Hub canonical if approved |
-| Variable Parent Product | `/{products-root}/{parent-product-slug}/` | Default product canonical |
-| Product variation context | `/{products-root}/{parent-product-slug}/{selection-state}` | Non-canonical; representation pending |
+| Variable Parent Product page | `/{products-root}/{parent-product-slug}/` | Default canonical public product-page projection; not Repository identity |
+| Downstream Variation context | `/{products-root}/{parent-product-slug}/{selection-state}` | Non-canonical page state; representation pending |
 | Category/term landing | `/{classification-root}/{classification-type}/{term-slug}/` | Only if the term owns an approved public intent |
 | Knowledge item | `/{knowledge-root}/{content-type}/{knowledge-slug}/` | Canonical to the knowledge item |
 | Representative profile | `/{representatives-root}/{representative-slug}/` | Conditional; not approved for publication |
@@ -226,14 +227,14 @@ These examples approve neither English nor Persian literal roots, slugs, paramet
 - Approve, revise, or reject URL-001 through URL-008.
 - Approve Persian versus transliterated/ASCII slug policy by namespace.
 - Approve literal reserved roots, product/category/knowledge/landing patterns, and representative publication.
-- Approve variation-state representation, future-language strategy, and redirect authority.
+- Approve downstream Variation-state representation, future-language strategy, and redirect authority.
 - Assign URL, canonical, redirect, and migration owners.
 
 ## Open Questions
 
 - Which script/language and digit policy applies to each namespace?
 - What literal reserved roots are approved and collision-free?
-- Should any variation own an independent canonical URL?
+- Should any downstream Variation projection own an independent canonical public URL?
 - Which taxonomy and attribute views receive public URLs?
 - Are public representative profiles approved?
 - Which language expansion model is preferred when another language is authorized?
@@ -248,6 +249,7 @@ Review. No literal URL, slug, namespace, permalink setting, redirect, canonical 
 | Version | Date | Change |
 | --- | --- | --- |
 | 0.1.0 | 2026-07-03 | Initial Batch 06 enterprise URL architecture; documentation only. |
+| 0.1.1 | 2026-08-03 | Separated canonical public URL ownership from Product Repository identity under `FD-W2G-001` and `FD-W2G-002`; Parent/Variation remain downstream projections. |
 
 ## Related Documents
 
