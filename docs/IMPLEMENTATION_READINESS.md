@@ -8,8 +8,8 @@
 - **Owner:** Founder
 - **Reviewer:** Build Engineer
 - **Approval Authority:** Founder
-- **Version:** 0.13.0
-- **Last Updated:** 2026-08-02
+- **Version:** 0.14.0
+- **Last Updated:** 2026-08-03
 - **Lifecycle:** Review
 - **Source of Truth:** [Current Project State](CURRENT_PROJECT_STATE.md), current repository evidence, accepted decisions, and execution gates
 - **Dependencies:** [Project Baseline](PROJECT_BASELINE.md), [Execution Gates](EXECUTION_GATES.md), and [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md)
@@ -32,7 +32,7 @@ Wave 2A–2C established platform-independent Product core, Product Attribute, a
 | BP2 data blueprint | Blueprint ready for governed review | PR #11; controlled Pipe blueprint, schema, and offline validator | Not final SKU, import, runtime, WordPress, WooCommerce, or production authority |
 | BP2 administration contract | Approved governance contract; implementation disabled | PR #12, `FD-BP2-ADM-001`, merged PR #18, documentation-only scope, machine-readable contract, closed Draft 2020-12 schema, deterministic offline validator, and positive/negative/adversarial tests | Separate implementation or Product Data authorization remains required; no Admin UI, Product/SKU, runtime, import, WordPress, WooCommerce, or production authority |
 | Cross-domain execution charter | Governance ready; implementation disabled | `FD-GOV-XD-00`, six-task read-only gap analysis, independent QA, stable live-tip resolution, separation of duties, and ordered dependency gates | Satisfied its own scope through PR #20; it grants no implementation authority and PD-01 depends on separate `FD-PD01-001` |
-| Campaign 001 DS program directives | Governance integrated; execution separately gated | Post-PD-03B operational-state reconciliation through PR #26 and main CI `30763959936`; `FD-DS-PROGRAM-001`; DS-PC accepted as `HOW`; DS-SPD accepted as `WHAT`; completed `C1-T04`; merged PR #27, Merge Commit `a48cc9e…`; main CI `30765167988` | Governance evidence is complete. C1-T06 execution, Product/SKU, fourth Pilot, 879-row population, Availability, Master/Golden, WordPress/WooCommerce, import, runtime, deployment, and production remain unauthorized |
+| Campaign 001 governance and canonical ownership | Governance/domain reconciliation complete; execution separately gated | Post-PD-03B reconciliation through PR #26/main CI `30763959936`; DS program integration through `FD-DS-PROGRAM-001`, `C1-T04`, PR #27/main CI `30765167988`; post-PR27 reconciliation through PR #28/main CI `30766701675`; C1-T06 exact 39-path canonical-owner reconciliation through PR #29, Merge Commit `13531830…`, and main CI `30796043918` | Canonical-owner documentation conflict is closed. No Product/SKU, fourth Pilot, 879-row population, Availability, Master/Golden, Knowledge/SEO/WooCommerce implementation, import, runtime, deployment, or production readiness follows |
 | PD-01 Product Data Contract Enablement | Approved synthetic contract foundation; canonical population disabled | `FD-PD01-001`; legal `DRAFT → REVIEW → APPROVED`; `PD01-REVIEW-001` zero findings; PR #21; CI `30390311445` and `30466264564`; exact 30 paths; strict offline boundary | PD-01's original empty-registry boundary is preserved as chronology; later PD-02B/PD-03A approved six definitions, while Product data, Master/Golden, SKU, import, and runtime still require separate approvals |
 | PD-02A Controlled Values and Attribute Profiles | Approved synthetic foundation | `FD-PD02A-001`; legal `DRAFT → REVIEW → APPROVED`; independent PASS; merged PR #22 and successful post-merge validation | Historical PD-02A authorization remains synthetic-only; canonical population requires the separate PD-02B decision |
 | PD-02B Minimum Canonical Slice | APPROVED, merged, and validated on main; repository-only | `FD-PD02B-001`; legal `DRAFT → REVIEW → APPROVED`; exact 57 paths; `PD02B-TECH-REVIEW-001` PASS; closed schemas; offline validators; Material and Grade human-review evidence; hashes and anti-replay; exact 3/2/2/4/1/18/1 counts; merged PR #23; main CI `30482348480` | Integration is complete; no Product/SKU, pilot, Master/Golden, availability, import, runtime, or production authority |
@@ -106,7 +106,6 @@ Repository tests passing cannot satisfy these runtime prerequisites.
 | Inquiry-only commerce proof | Product-level no-price, no-Offer, no-cart, and no-checkout validation |
 | Wave 2A/2B authorization trace | Link authoritative originating records without inferring approval from merges |
 | BP2 administration implementation | Obtain a separate exact-scope Founder decision, data/evidence gate, implementation plan, and tests; lifecycle approval grants no implementation authority |
-| Legacy canonical-owner conflict | Reconcile or explicitly classify Review-state Product/Content/SEO documents that treat a Variable Parent Product as canonical owner before Knowledge, SEO, or Woo mapping approval |
 | Runtime ordering conflict | Founder resolves the G02/G03 credential-containment versus pre-mutation backup/restore order before external access or mutation |
 | Cross-domain roles and tests | Approve a shared separation-of-duties matrix and a Sprint-specific Test Contract before implementation |
 
@@ -121,6 +120,7 @@ operational instructions.
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.14.0 | 2026-08-03 | Recorded post-PR27 reconciliation through PR #28/main CI `30766701675` and completed C1-T06 canonical-owner reconciliation through PR #29/Merge Commit `13531830…`/main CI `30796043918`; closed only the legacy canonical-owner blocker while preserving PD-03B as the latest Product Data integration and all Product/SKU/Availability/Master/Golden/Knowledge/WooCommerce/import/runtime/deployment/production blockers. |
 | 0.13.0 | 2026-08-02 | Recorded completed post-PD-03B reconciliation through PR #26/main CI `30763959936` and completed DS program governance integration through `FD-DS-PROGRAM-001`, `C1-T04`, PR #27, and main CI `30765167988`; preserved PD-03B as the latest Product Data integration and advanced only to preparation/submission of the `C1-T06-CANONICAL-OWNER` approval packet, not execution. |
 | 0.12.0 | 2026-08-02 | Reconciled readiness with merged PR #25 and successful main CI `30698838847`; preserved exactly three approved Pilot records, 879 candidates, missing availability for all 882 rows, false readiness, and all downstream blockers; advanced only to Campaign 001 directive/governance integration planning. |
 | 0.9.0 | 2026-07-29 | Recorded approved PD-01 synthetic contract readiness after legal lifecycle, independent PASS, and repeated CI while preserving all canonical-data and runtime blockers. |
