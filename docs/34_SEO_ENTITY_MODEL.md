@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Lead Enterprise Information Architect
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-03
-- **Last Review:** 2026-07-03
+- **Version:** 0.1.1
+- **Last Updated:** 2026-08-03
+- **Last Review:** 2026-08-03
 - **Review Cycle:** On entity, relationship, canonical, landing, intent, schema, internal link, content, media, search, language, AI/LLM compatibility, or retrieval change
 - **Lifecycle:** Review
 - **Source of Truth:** [Enterprise Information Architecture](24_INFORMATION_ARCHITECTURE.md), [URL Architecture](26_URL_ARCHITECTURE.md), [Search and Discovery](27_SEARCH_AND_DISCOVERY.md), [Internal Linking Model](28_INTERNAL_LINKING_MODEL.md), [Enterprise Content Architecture](29_CONTENT_ARCHITECTURE.md), and [Entity Relationship Model](30_ENTITY_RELATIONSHIP_MODEL.md)
@@ -50,7 +50,7 @@ Entity-first SEO begins with the approved business identity and relationships:
 
 ```text
 Canonical Organization / WebSite
-  -> Canonical Product and Classification Entities
+  -> Canonical Product Repository sources: Catalog / Platform / Family / Series / Variant Rules
   -> Canonical Content, Media, Representative, Project, and Support Entities
   -> One approved page/landing owner per intent
   -> Internal links, breadcrumbs, search, and semantic projections
@@ -66,7 +66,7 @@ The SEO knowledge graph is a public semantic projection of the Entity Relationsh
 | Node family | SEO function | Authority boundary |
 | --- | --- | --- |
 | Organization/WebSite | Root identity and publisher/site relationship | Legal/business identity source |
-| Product | Canonical catalog subject and inquiry destination | Product Data/WooCommerce authority |
+| Product | Public catalog subject and inquiry destination | Canonical Product Repository source; WooCommerce is downstream only |
 | Taxonomy/Attribute entity | Definition, classification, browse/filter context | Taxonomy/Attribute authority |
 | Content | Unique explanatory, support, policy, news, or landing intent | Content owner and approved sources |
 | Representative | Conditional public identity/scope | Representative/privacy governance |
@@ -107,10 +107,12 @@ Approved business/product/taxonomy/content authority
 
 Corrections flow from the source authority outward. Search results, schema output, external snippets, analytics, or AI/LLM responses never write back as fact authority without an approved evidence and review process.
 
+In this model, a canonical owner means the owner of an approved public page, URL, or search intent. It does not mean canonical Product Repository identity: product facts resolve through `Catalog → Platform → Family → Series → Variant Rules → SKU`, and SKU remains a derived identifier.
+
 ## Canonical Ownership
 
-- One canonical URL/entity owner per public entity or unique intent.
-- Product canonicals belong to Variable Parent Product by default; variations remain contextual unless an exception is approved.
+- One canonical public-page/URL owner per public projection or unique intent.
+- A downstream Variable Parent Product may provide the default public product-page, URL, and search-intent context. It never owns Product Repository identity; Parent and Variation IDs remain adapter-only, and variation context must project an evidence-backed tuple from Variant Rules.
 - Category, attribute archive, curated landing, article, FAQ, page, and campaign cannot each own the same intent.
 - Localized expressions share stable entity identity and use approved canonical/alternate relationships.
 - Merges, moves, renames, replacements, suspension, and archival update canonical, redirect, internal-link, schema, search, and retrieval references together.
@@ -134,8 +136,8 @@ Thin, duplicate, filter-generated, keyword-only, unowned, unsupported, expired, 
 | Intent family | Candidate canonical owner | Boundary |
 | --- | --- | --- |
 | Organization/brand identity | Organization/Brand page or approved canonical landing | One identity owner; claims verified |
-| Product discovery | Product Family/Type/category or Product parent | Exact hierarchy/intent approval required |
-| Product specification | Product parent plus governed attributes | Attribute archive not automatic owner |
+| Product discovery | Legacy/downstream Product Family/Type category page or downstream Product parent page | Public page/URL/search-intent approval required; no repository hierarchy authority |
+| Product specification | Downstream Product parent page plus governed attributes | Attribute archive not automatic public page/URL owner |
 | Application/Use Case | Approved taxonomy/landing or knowledge item | One logical classification; suitability evidence required |
 | Industry | Approved Industry landing/content | No unsupported capability claim |
 | Material/Alloy/Finish | Canonical taxonomy/attribute-backed landing | One term identity and one landing owner |
@@ -241,6 +243,7 @@ Review. No keyword map, landing page, canonical tag, indexation, internal link, 
 | Version | Date | Change |
 | --- | --- | --- |
 | 0.1.0 | 2026-07-03 | Initial Batch 07 enterprise SEO entity model; documentation only. |
+| 0.1.1 | 2026-08-03 | Separated public page, URL, and search-intent ownership from canonical Product Repository identity and classified WooCommerce as downstream. |
 
 ## Related Documents
 

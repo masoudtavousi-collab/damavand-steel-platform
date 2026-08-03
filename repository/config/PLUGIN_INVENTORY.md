@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Build Engineer
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-04
-- **Last Review:** 2026-07-04
+- **Version:** 0.1.1
+- **Last Updated:** 2026-08-03
+- **Last Review:** 2026-08-03
 - **Review Cycle:** On approved component, package, version, license, installation, activation, ownership, or compatibility change
 - **Lifecycle:** Review
 - **Source of Truth:** Current `public/wp-content/` inventory and approved component sources observed on 2026-07-04
@@ -24,6 +24,8 @@
 
 Record approved named components, exact observed installation state, missing dependencies, and approval sources without selecting or installing a package.
 
+Canonical repository Product truth follows exactly `Catalog → Platform → Family → Series → Variant Rules → derived SKU`. Any future WooCommerce Product/Parent/Variation, attribute, ID, slug, URL, or SKU is a downstream operational projection or derived mapping only; plugin inventory status cannot establish canonical Product authority or Variant Rules.
+
 ## Evidence Boundary
 
 - WordPress is not installed, so no Admin or WP-CLI plugin inventory exists.
@@ -36,7 +38,7 @@ Record approved named components, exact observed installation state, missing dep
 | Plugin/component | Exact version | Purpose | Repository approval source | Observed status |
 | --- | --- | --- | --- | --- |
 | WordPress Core | Not selected; not installed | CMS, identity, media, content lifecycle, and supported extension foundation | [WordPress Architecture](../../docs/06_WORDPRESS_ARCHITECTURE.md), WP-FC constraints | Blocked: PHP/database/hosting/version/security prerequisites missing |
-| WooCommerce | Not selected; not installed | Canonical product/variation/attribute catalog with Inquiry context | [ADR-0001](../../docs/adr/0001-inquiry-first-commerce.md), [WooCommerce Blueprint](../../docs/38_WOOCOMMERCE_CONFIGURATION.md), [Plugin Matrix](../../docs/44_PLUGIN_RESPONSIBILITY_MATRIX.md) | Blocked: exact version/package/compatibility/rollback absent |
+| WooCommerce | Not selected; not installed | Downstream operational Product/Variation/attribute projection with Inquiry context | [ADR-0001](../../docs/adr/0001-inquiry-first-commerce.md), [WooCommerce Blueprint](../../docs/38_WOOCOMMERCE_CONFIGURATION.md), [Plugin Matrix](../../docs/44_PLUGIN_RESPONSIBILITY_MATRIX.md) | Blocked: exact version/package/compatibility/rollback absent |
 | Blocksy | Not selected; not installed | Vendor-managed global presentation shell | [WordPress Architecture](../../docs/06_WORDPRESS_ARCHITECTURE.md), [Blocksy Blueprint](../../docs/36_BLOCKSY_CONFIGURATION.md), WP-FC-002 | Blocked: exact theme package/version/compatibility absent |
 | Blocksy Pro | Not selected; not installed | Licensed approved presentation capabilities within the Blocksy boundary | [Technology Stack](../../docs/05_TECH_STACK.md), [Blocksy Blueprint](../../docs/36_BLOCKSY_CONFIGURATION.md), [Plugin Matrix](../../docs/44_PLUGIN_RESPONSIBILITY_MATRIX.md) | Blocked: package, version, license source, and runtime absent |
 | Elementor Pro | Not selected; not installed | Bounded page/landing body composition | [WordPress Architecture](../../docs/06_WORDPRESS_ARCHITECTURE.md), [Elementor Blueprint](../../docs/37_ELEMENTOR_ARCHITECTURE.md), [Plugin Matrix](../../docs/44_PLUGIN_RESPONSIBILITY_MATRIX.md), WP-FC-003 | Blocked: package, version, license source, compatibility, and runtime absent |
@@ -91,6 +93,7 @@ No replacement, adjacent plugin, free edition, latest version, or alternate pack
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.1.1 | 2026-08-03 | C1-T06 canonical-owner reconciliation: qualified WooCommerce inventory intent as a downstream operational projection; no installation or activation performed. |
 | 0.1.0 | 2026-07-04 | Initial Sprint 01B observed component inventory; no installation or activation performed. |
 
 ## Navigation

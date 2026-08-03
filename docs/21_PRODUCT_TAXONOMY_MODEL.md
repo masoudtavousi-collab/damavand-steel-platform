@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.2.0
-- **Last Updated:** 2026-07-03
-- **Last Review:** 2026-07-03
+- **Version:** 0.2.1
+- **Last Updated:** 2026-08-03
+- **Last Review:** 2026-08-03
 - **Review Cycle:** On taxonomy purpose, hierarchy, term, slug, overlap, SEO, product, integration, or CentralSteel-mapping change
 - **Lifecycle:** Review
 - **Source of Truth:** [Enterprise Product Data Model](19_PRODUCT_DATA_MODEL.md), [WordPress Enterprise Architecture](06_WORDPRESS_ARCHITECTURE.md#taxonomy-architecture), and governing Founder constraints
@@ -27,6 +27,8 @@ Define taxonomy purpose, ownership, overlap controls, identity, slug, SEO, expan
 ## Scope
 
 This model governs Product Families, Materials, Alloys, Use Cases/Applications, Industries, Finishes, Brands, Collections, Product Tags, SEO Landing classifications, and future CentralSteel mappings. Exact terms, hierarchies, labels, slugs, URLs, indexation, and physical WordPress mechanisms remain unapproved.
+
+Canonical repository Product truth follows exactly `Catalog → Platform → Family → Series → Variant Rules → derived SKU`. The Product Family/Group/Type names in this document are legacy, navigation, presentation, public-page, URL, SEO-intent, or downstream adapter mappings only. Taxonomy labels, term IDs, slugs, WooCommerce IDs, Parent/Variation IDs, and derived SKUs never replace canonical Product entity identity; taxonomy does not own axes, allowed values, or valid tuples.
 
 ## Taxonomy Decisions
 
@@ -45,16 +47,16 @@ This model governs Product Families, Materials, Alloys, Use Cases/Applications, 
 
 | Logical taxonomy | Purpose | Hierarchy | Relationship to attributes | SEO boundary |
 | --- | --- | --- | --- | --- |
-| Product Families | Primary governed catalog structure for related products | Hierarchical; exact levels pending | Family is not a specification attribute | Eligible landing ownership requires SEO approval |
+| Product Families | Legacy/downstream navigation mapping for canonical Family/Series references | Hierarchical presentation only if approved; exact levels pending | Mapping label is not a specification attribute or canonical Family identity | Eligible public-page/landing intent ownership requires SEO approval |
 | Material Categories | Broad navigational material grouping | Hierarchical only when domain structure is approved | Precise Material specification uses canonical Material attribute terms mapped to the category where necessary | Category and attribute archive must not target the same intent |
 | Alloy Categories | Optional navigational alloy grouping when meaningful at category level | Hierarchy requires qualified steel-domain approval | Precise Alloy specification uses canonical Alloy attribute terms | Indexation requires demand and cannibalization review |
 | Use-Case Categories | Approved application/use contexts | Hierarchical only when stable parent-child meaning exists | Installation Type, Environment, and Safety Requirement remain attributes unless an approved taxonomy purpose exists | One landing owner per use-case intent |
 | Industry Categories | Approved industry contexts | Hierarchical only when governance defines scope | Not a substitute for product specifications | One landing owner per industry intent |
 | Finish Categories | Optional navigational surface-finish grouping | Usually shallow; exact structure pending | Precise Finish value remains a canonical attribute | Category/attribute archive duplication prohibited |
 | Brand Categories | Navigational view of one canonical Brand registry | Flat or hierarchical only with approved manufacturer relationships | Brand attribute and Brand landing reference the same canonical identity | One Brand landing owner; no duplicate category/page intent |
-| Collections | Time-bounded curated grouping across approved products or families | Non-hierarchical by default; a hierarchy requires separate approval | References canonical products and terms; never creates specification values | Non-indexable by default; an indexable collection requires unique intent, owner, start/review/end conditions, and SEO approval |
+| Collections | Time-bounded curated grouping across approved public Product projections or Family references | Non-hierarchical by default; a hierarchy requires separate approval | References canonical source identities through mappings; never creates Product or specification values | Non-indexable by default; an indexable collection requires unique intent, owner, start/review/end conditions, and SEO approval |
 | Product Tags | Optional non-hierarchical editorial discovery vocabulary | Non-hierarchical | Must not represent Family, Material, Alloy, Finish, Standard, Compatibility, Application/Use Case, Industry, Brand, or any governed attribute | Non-indexable by default; no automatic archive or landing authority |
-| SEO Landing Categories | Curated search-intent ownership not already served by canonical product/category/content pages | Not a general dumping hierarchy | References canonical taxonomy/attribute combinations without copying terms | Indexable only with unique purpose, content, canonical, and maintenance owner |
+| SEO Landing Categories | Curated search-intent ownership not already served by approved Product/category/content public pages | Not a general dumping hierarchy | References governed taxonomy/attribute combinations without copying terms or Product authority | Indexable only with unique purpose, content, canonical URL, and maintenance owner |
 | CentralSteel Mapping | Future external classification mapping | Mirrors no hierarchy by default | Maps internal IDs to external IDs and versions | Must not create duplicate public landings automatically |
 
 Logical taxonomy names do not approve WooCommerce product categories, custom taxonomies, plugins, or database structures. The physical mechanism for each taxonomy requires a separate configuration decision under Plugin First and Configuration First.
@@ -144,7 +146,7 @@ Thin, empty, duplicate, filter-only, or uncontrolled combination pages must not 
 
 ## Unmanaged Product Sprawl Controls
 
-- A new product must map to an approved Product Family, Product Type, attribute profile, and inquiry path.
+- A new canonical Product source must first resolve through Catalog, Platform, Family, Series, and Variant Rules; any Product Family/Type, taxonomy, public-page, and inquiry mappings are downstream projections.
 - A new taxonomy term requires demonstrated non-duplication and a named owner.
 - One-off labels remain product content until reuse and taxonomy purpose justify governance.
 - Variations represent valid configurations, not marketing synonyms or duplicate products.
@@ -201,6 +203,7 @@ Review. No taxonomy, term, hierarchy, slug, archive, landing page, filter, custo
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2.1 | 2026-08-03 | C1-T06 canonical-owner reconciliation: limited Product Family/Group/Type to downstream navigation/SEO/adapter mappings and preserved canonical Product ownership in the repository hierarchy; no terms or slugs added. |
 | 0.2.0 | 2026-07-03 | Batch 05B remediation: Collections and Product Tags governance plus explicit Application/Use-Case alias boundary; documentation only. |
 | 0.1.0 | 2026-07-03 | Initial Batch 05 product taxonomy governance model; documentation only. |
 

@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Lead Enterprise Solution Architect
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-03
-- **Last Review:** 2026-07-03
+- **Version:** 0.1.1
+- **Last Updated:** 2026-08-03
+- **Last Review:** 2026-08-03
 - **Review Cycle:** On catalog, inquiry, product, stock, variation, attribute, customer, shipping, tax, email, quotation, pricing, or Admin-workflow change
 - **Lifecycle:** Review
 - **Source of Truth:** [Business Rules](03_BUSINESS_RULES.md), [WordPress Architecture](06_WORDPRESS_ARCHITECTURE.md), [Product Data Model](19_PRODUCT_DATA_MODEL.md), [WooCommerce Product Model](20_WOOCOMMERCE_PRODUCT_MODEL.md), and [Inquiry Data Model](23_INQUIRY_DATA_MODEL.md)
@@ -32,8 +32,8 @@ This document covers logical store behavior, catalog, inquiry, transaction bound
 
 | ID | Proposed decision | Status |
 | --- | --- | --- |
-| WCCFG-001 | Operate WooCommerce as the canonical product catalog, not a public transaction store. | Required by ADR-0001 and WP-FC-001 |
-| WCCFG-002 | Use approved Variable Parent Products as the default product structure; exceptions follow WCM-001. | Derived from approved Product/WooCommerce models |
+| WCCFG-001 | Operate WooCommerce as a downstream operational catalog projection, not a Product Repository authority or public transaction store. | Required by ADR-0001 and WP-FC-001; constrained by FD-W2G-001 |
+| WCCFG-002 | Use approved Variable Parent Products as the default downstream presentation structure; exceptions follow WCM-001. | Derived from approved Product/WooCommerce models and constrained by FD-W2G-001 |
 | WCCFG-003 | Prevent all public price, sale price, price range, Offer, cart, checkout, payment, and purchase output. | Required by CP-005, CP-006, and ADR-0001 |
 | WCCFG-004 | Route every eligible product and variation context into the canonical Inquiry workflow. | Required by Inquiry First |
 | WCCFG-005 | Treat cart, checkout, public order, shipping transaction, tax calculation, coupon, and payment capabilities as inactive. | Required by current business boundary |
@@ -48,21 +48,22 @@ This document covers logical store behavior, catalog, inquiry, transaction bound
 ## Store Architecture
 
 ```text
-WooCommerce catalog
-  -> Variable Parent Product
-    -> valid Variation and availability context
+Canonical Product Repository: Catalog → Platform → Family → Series → Variant Rules → derived SKU
+  -> downstream WooCommerce catalog projection
+    -> Variable Parent Product presentation
+      -> mapped Variation and evidence-backed context
       -> contextual Inquiry action
         -> canonical Inquiry lifecycle outside public checkout
 ```
 
-WooCommerce owns catalog records and supported catalog interfaces. Business rules, product taxonomy/values, customer authority, sales qualification, quotation, and external CRM/ERP remain outside its authority unless explicitly mapped later.
+WooCommerce owns only its system-local adapter records and supported catalog interfaces. Product Repository identity, Variant Rules, business rules, product taxonomy/values, customer authority, sales qualification, quotation, and external CRM/ERP remain outside its authority unless explicitly mapped later. WooCommerce IDs, Parent IDs, Variation IDs, labels, slugs, and SKUs never replace canonical repository identity.
 
 ## Catalog Behavior
 
 - Publish only approved lifecycle-eligible products and valid variations.
 - Show approved specifications, media, technical documents, availability wording, and inquiry action.
 - Suppress transactional affordances and price-bearing metadata in every view, search result, feed, API exposure, email, template, schema, cache, and integration.
-- Preserve parent canonical ownership unless a governed variation URL exception is approved.
+- Preserve the approved default public-page and URL context for the downstream parent presentation unless a governed variation URL exception is approved; this does not transfer Product Repository authority.
 - Exact sorting, pagination, comparison, badges, labels, and catalog visibility settings remain unresolved.
 
 ## Inquiry-Only Flow
@@ -87,9 +88,9 @@ Approved domain stock states remain: `in_stock`, `limited`, `supply_after_order`
 
 ## Variation Strategy
 
-- Parent owns shared identity, canonical content, family/type context, and common media/documents.
-- Variation owns valid selectable values, stable identifier/SKU, variation-specific availability, and approved overrides.
-- Only approved attribute combinations exist; no Cartesian generation by default.
+- Parent provides shared downstream presentation, public-page context, and common media/documents sourced from approved repository facts; it does not own canonical Product identity or content truth.
+- A Variation maps one evidence-backed governed tuple and may carry adapter-local identifiers, a derived SKU, variation-specific availability, and approved overrides only when their authoritative sources are present. Parent and Variation IDs are adapter-only.
+- Variation axes, values, and tuple validity resolve from approved Variant Rules. No Cartesian generation is allowed by default.
 - Exact variation axes, limits, default selections, image behavior, and invalid-combination messages remain domain decisions.
 
 ## Attribute Strategy
@@ -154,6 +155,7 @@ Review. No WooCommerce setting, product, variation, attribute, price, stock valu
 | Version | Date | Change |
 | --- | --- | --- |
 | 0.1.0 | 2026-07-03 | Initial Batch 08 WooCommerce configuration Blueprint; documentation only. |
+| 0.1.1 | 2026-08-03 | Reclassified WooCommerce, Variable Parent Products, and Variations as downstream adapter projections sourced from canonical Product Repository rules. |
 
 ## Related Documents
 

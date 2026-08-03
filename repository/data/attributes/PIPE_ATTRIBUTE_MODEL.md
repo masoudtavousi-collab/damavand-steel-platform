@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Product Data Owner, Qualified Steel-Domain Reviewer, SEO Reviewer, and WooCommerce Technical Reviewer
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-04
-- **Last Review:** 2026-07-04
+- **Version:** 0.1.1
+- **Last Updated:** 2026-08-03
+- **Last Review:** 2026-08-03
 - **Review Cycle:** On Pipe attribute, label, slug, scope, variation, filter, product-table, SEO, allowed-value, or validation change
 - **Lifecycle:** Review
 - **Source of Truth:** [Attribute Dictionary](ATTRIBUTE_DICTIONARY.md), [Pipe Variation Matrix](../products/pipes/PIPE_VARIATION_MATRIX.md), and [Product Attribute Model](../../../docs/22_PRODUCT_ATTRIBUTE_MODEL.md)
@@ -22,13 +22,13 @@
 
 ## Purpose
 
-Define the logical WooCommerce attribute profile for Stainless Steel Pipe before any attribute, term, filter, variation, product table, or product is created.
+Define the logical downstream WooCommerce attribute projection for Stainless Steel Pipe before any attribute, term, filter, variation, product table, or product is created.
 
 ## Attribute Policy
 
-- All 14 Pipe product-specification attributes are global. No WooCommerce local attribute is authorized.
-- Grade, Finish, Diameter, Thickness, and Length are the only variation-driving attributes.
-- The five variation attributes are also global; “Variation Attribute” describes use, not local ownership.
+- All 14 Pipe product-specification attributes map to system-local global WooCommerce attributes. No WooCommerce local attribute is authorized, and this mapping does not own canonical Product truth.
+- Grade, Finish, Diameter, Thickness, and Length are downstream projections of the only candidate variation axes recorded for this Pipe profile; canonical axis and tuple authority remains with the applicable Variant Rules.
+- The five variation-attribute mappings are also system-local global attributes; “Variation Attribute” describes downstream use, not canonical ownership.
 - `Yes` for Product table or SEO means eligible after value and publication approval. `TBD` and unverified values never render.
 - Filterable and SEO flags are independent. A filter does not create an indexable archive or landing.
 - Attribute slugs are logical lowercase ASCII identifiers without a runtime `pa_` prefix. Runtime IDs/prefixes remain unconfigured.
@@ -54,7 +54,7 @@ Define the logical WooCommerce attribute profile for Stainless Steel Pipe before
 
 ## Variation Attribute Order
 
-The controlled mobile-first Persian RTL selection order is:
+The controlled mobile-first Persian RTL selection order projected from the applicable Variant Rules is:
 
 1. Grade / گرید
 2. Finish / رنگ و پوشش
@@ -62,7 +62,7 @@ The controlled mobile-first Persian RTL selection order is:
 4. Thickness / ضخامت
 5. Length / طول
 
-No default selection is authorized. Only an approved valid combination may become selectable. The 1,584-value Cartesian candidate space must not be expanded automatically.
+No default selection is authorized. Only a tuple resolved to an approved Variant Rule may become selectable. The 1,584-value Cartesian candidate space must not be expanded automatically.
 
 ## Filter Model
 
@@ -80,7 +80,7 @@ Material, Surface, Unit, Brand, Country, Quality Level, Application, Environment
 
 - Eligible public specifications may appear in one approved Persian RTL product specification table after value verification.
 - Grade, Finish, Diameter, Thickness, and Length display the selected variation values.
-- Material and Unit display shared parent context.
+- Material and Unit display shared downstream Parent page context sourced from the canonical Repository record.
 - Optional attributes render only when a verified non-`TBD` value exists.
 - Table labels use the Persian labels in this model; technical tokens remain stable.
 - Stock, Inquiry Priority, internal notes, SKUs, import helpers, CRM controls, and `public_price` are not attribute-table rows.
@@ -96,7 +96,7 @@ Material, Surface, Unit, Brand, Country, Quality Level, Application, Environment
 
 ## Value and Term Governance
 
-- One canonical global attribute identity and one canonical term/value identity per concept.
+- One system-local WooCommerce global-attribute mapping and one system-local term/value mapping per canonical source concept; these adapter identifiers are not canonical Product identities.
 - No local duplicates, free-text synonyms, mixed Persian/English slug forms, silent term creation, or auto-correction into new values.
 - Persian labels and English internal keys remain separate controlled representations.
 - Dimension values use canonical decimals; units remain explicit context.
@@ -107,7 +107,7 @@ Material, Surface, Unit, Brand, Country, Quality Level, Application, Environment
 
 - Approve all 14 attributes, labels, slugs, scopes, and use flags.
 - Approve Material/Grade/Finish terminology and controlled values.
-- Approve five variation axes, order, and valid-combination dataset.
+- Approve the downstream projection and order of the five candidate axes only after the governing Variant Rules and valid tuples are approved.
 - Approve optional attribute definitions/value registries.
 - Approve filter scope and mobile Persian RTL behavior.
 - Approve product-table disclosure and SEO usage.
@@ -118,6 +118,7 @@ Material, Surface, Unit, Brand, Country, Quality Level, Application, Environment
 | Version | Date | Change |
 | --- | --- | --- |
 | 0.1.0 | 2026-07-04 | Initial Sprint 03C Pipe global attribute profile; no attribute or term implementation. |
+| 0.1.1 | 2026-08-03 | Reclassified WooCommerce attributes, terms, axes, and Parent context as downstream projections of canonical Family/Series/Variant Rules sources; no value, tuple, term, or runtime approval. |
 
 ## PD-02B Profile Reconciliation
 

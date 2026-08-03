@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Product Data Owner and Qualified Steel-Domain Reviewer
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-04
-- **Last Review:** 2026-07-04
+- **Version:** 0.1.1
+- **Last Updated:** 2026-08-03
+- **Last Review:** 2026-08-03
 - **Review Cycle:** On family identity, naming, parent strategy, variation axes, inquiry, SEO, WooCommerce, CRM, or commercial-data change
 - **Lifecycle:** Review
 - **Source of Truth:** Sprint 03A task-defined Stainless Steel Pipe family and approved repository product-data principles
@@ -22,18 +22,21 @@
 
 ## Family Identity
 
+The canonical Repository source follows `Catalog → Platform → Family → Series → Variant Rules → SKU`. Catalog through Variant Rules are canonical concepts; SKU is derived only after governed modeling and is not a canonical entity identity. The legacy and downstream labels in this asset do not replace that hierarchy.
+
 | Field | Value | Status |
 | --- | --- | --- |
-| Product Family | Stainless Steel Pipe | Defined by Sprint 03A |
+| Canonical Family label | Stainless Steel Pipe | PD-02B APPROVED Family context; not Product/SKU/runtime authority |
 | Persian family name | لوله استیل | Defined by Sprint 03A |
 | Stable family ID | `prd:family:a10c6d8ceabc` | PD-02B APPROVED identity; not Product/SKU/runtime authority |
-| Product Group | `TBD` | Must not be invented |
-| Product Type | Stainless Steel Pipe / لوله استیل | Working profile; Founder/domain approval required |
-| Initial Variable Parent Product | Stainless Steel Pipe / لوله استیل | Candidate parent; identity/SKU approval required |
-| Canonical public slug | `TBD` | URL/SEO approval required |
+| Legacy Product Family presentation mapping | Stainless Steel Pipe | Historical Sprint 03A label; downstream mapping only |
+| Legacy Product Group mapping | `TBD` | Must not be invented; not a canonical hierarchy layer |
+| Legacy Product Type mapping | Stainless Steel Pipe / لوله استیل | Working downstream profile; Founder/domain approval required |
+| Downstream initial Variable Parent Product mapping | Stainless Steel Pipe / لوله استیل | Candidate commerce presentation; mapping identity/SKU approval required |
+| Canonical public-page slug | `TBD` | URL/SEO approval required; not Product identity |
 | Lifecycle | Review | Not importable or public |
 
-The Product Family and Variable Parent Product remain separate identities even when their working display names match. A family label must not become a WooCommerce product ID, SKU, taxonomy ID, or URL key.
+The canonical Family and downstream Variable Parent Product mapping remain separate even when their working display names match. A Family label must not become a WooCommerce product ID, SKU, taxonomy ID, or URL key, and a Parent mapping must never own canonical Product truth.
 
 ## Persian and English Naming
 
@@ -41,7 +44,7 @@ The Product Family and Variable Parent Product remain separate identities even w
 | --- | --- | --- | --- |
 | Family display name | لوله استیل | Stainless Steel Pipe | Stable controlled labels; changes require alias/mapping review |
 | Parent display name | لوله استیل | Stainless Steel Pipe | Working parent label; final approval pending |
-| Variation display order | گرید، پرداخت، قطر، ضخامت، طول | Grade, Finish, Diameter, Thickness, Length | Persian RTL presentation; structured fields remain authoritative |
+| Variation display order | گرید، پرداخت، قطر، ضخامت، طول | Grade, Finish, Diameter, Thickness, Length | Persian RTL presentation; canonical Repository structured fields remain authoritative |
 | Unit display | متر | meter | Unit key remains `meter`; quantity policy remains separate |
 
 Persian labels use normalized Persian characters and RTL punctuation. English internal keys remain lowercase ASCII and never replace Persian public labels.
@@ -58,19 +61,20 @@ This asset does not define prices, stock, suppliers, lead times, standards, warr
 
 ## Parent Product Strategy
 
-The initial implementation candidate is one Variable Parent Product representing the shared Stainless Steel Pipe catalog identity.
+The initial downstream implementation candidate is one Variable Parent Product representing a shared Stainless Steel Pipe commerce presentation. It does not represent or own canonical Repository identity.
 
-The parent owns:
+The downstream Parent mapping may own only:
 
-- Persian and English shared names.
-- Product Family/Product Type relationships.
+- Persian and English shared presentation names.
+- Downstream category and legacy Product Family/Product Type mappings.
 - Shared description, inquiry guidance, media, and technical documents when approved.
-- Declared variation axes and valid-combination policy.
-- Canonical SEO ownership and one future approved canonical URL.
+- Declared presentation axes that mirror canonical Variant Rules; the Parent does not define axis or tuple validity.
+- Public-page/search-intent ownership and one future approved canonical URL.
 - Shared no-price and inquiry-only behavior.
 
 The parent does not own:
 
+- Canonical Catalog, Platform, Family, Series, Variant Rules, Product truth, or valid-combination authority.
 - A public price or price range.
 - A public purchasing action.
 - A variation SKU.
@@ -81,7 +85,9 @@ More than one parent may be required if future approved Product Types, use cases
 
 ## Variable Product Strategy
 
-### Approved Sprint 03A Candidate Axes
+### Historical Sprint 03A Candidate Axes
+
+This Review-state table preserves the Sprint 03A candidate vocabulary. It is non-governing where later PD-02B/PD-03A evidence differs. Only canonical Variant Rules may authorize axes and structurally valid tuples; this table and a Variable Parent declaration cannot do so.
 
 | Axis | Source | Variation use | Filter use | Notes |
 | --- | --- | --- | --- | --- |
@@ -98,8 +104,9 @@ Material family, Unit, Brand, Country, Quality Level, Application, Environment, 
 ### Combination Boundary
 
 - The controlled value sets define a candidate space, not verified commercial combinations.
+- Canonical Variant Rules govern permitted axes and structurally valid tuples; the downstream Parent only mirrors an approved projection.
 - No Cartesian product may be imported automatically.
-- Every future variation row requires an approved valid-combination record.
+- Every future Variation row must resolve to an approved tuple in the applicable Variant Rules.
 - Commercial availability remains `TBD` until verified by the approved commercial authority.
 - Duplicate attribute tuples are prohibited.
 - One variation belongs to exactly one parent.
@@ -108,7 +115,7 @@ Material family, Unit, Brand, Country, Quality Level, Application, Environment, 
 
 - `inquiry_only` is `yes` for the parent and every variation.
 - Inquiry action is contextual to the parent and selected variation values.
-- The inquiry line carries stable parent/variation identities, a Persian label snapshot, selected controlled attributes, Unit, requested quantity, and permitted notes.
+- The inquiry line carries stable canonical source references, separate downstream Parent/Variation mapping IDs, an approved derived-SKU snapshot when available, a Persian label snapshot, selected controlled attributes, Unit, requested quantity, and permitted notes.
 - Quantity and commercial requirements remain customer inputs; no automated quotation or price response exists.
 - Inquiry never creates public cart, checkout, payment, order, or public quotation behavior.
 
@@ -132,25 +139,25 @@ Material family, Unit, Brand, Country, Quality Level, Application, Environment, 
 
 ## SEO Role
 
-- The Variable Parent Product is the default canonical product entity.
-- Variation state is contextual and non-canonical unless a later approved exception exists.
+- The Variable Parent Product is the candidate default public product-page and canonical-URL/search-intent owner only; it is not the canonical Repository Product entity or source of Product truth.
+- Variation state is contextual to that downstream public page and has no independent canonical URL unless a later approved exception exists.
 - Grade, Finish, Diameter, Thickness, and Length are supporting facts; no attribute archive becomes indexable automatically.
 - A Product Family/category landing may own family discovery intent only after SEO/Founder approval.
 - No price, Offer, transaction, stock promise, supplier, certification, or unsupported technical claim enters metadata or schema.
-- Canonical slug and indexation remain `TBD`.
+- Canonical public-page slug and indexation remain `TBD`.
 
 ## WooCommerce Mapping
 
 | Logical asset | Future WooCommerce mapping | Current status |
 | --- | --- | --- |
-| Product Family | Approved taxonomy/category mapping | `TBD`; no term created |
-| Variable Parent Product | WooCommerce variable product | Structure defined; no product created |
-| Variation | WooCommerce variation | Valid rows only; no variation created |
+| Legacy Product Family presentation | Downstream taxonomy/category view of the canonical Family | `TBD`; no term created and no canonical identity transferred |
+| Variable Parent Product | Downstream WooCommerce variable-product projection | Structure defined; no product created and no Product truth owned |
+| Variation | Downstream WooCommerce variation mapping of one governed tuple | Valid rows only; no variation created |
 | Grade/Finish/Dimensions | Approved global product attributes | Dictionary defined; no attribute/term created |
 | Inquiry behavior | Approved inquiry capability/context | Mechanism `TBD`; no plugin/configuration selected |
 | Pricing | Empty public price fields and exhaustive output suppression | Enforcement implementation `TBD` |
 | Stock Status | Controlled domain state mapped later | Commercial state `TBD`; no WooCommerce stock setting |
-| SEO | Parent canonical plus approved supporting facts | Slug/index/schema output `TBD` |
+| SEO | Parent public-page/canonical-URL projection plus approved supporting facts | Slug/index/schema output `TBD`; no Repository authority |
 
 The CSV is a staging/import contract, not a direct execution authorization. Exact WooCommerce column mapping, global attribute IDs, term creation, product IDs, images, visibility, and rollback require a later approved import plan.
 
@@ -158,36 +165,36 @@ The CSV is a staging/import contract, not a direct execution authorization. Exac
 
 Future inquiry/CRM handoff may use:
 
-- Stable parent and variation identifiers.
+- Stable canonical source references and separate downstream Parent/Variation mapping identifiers.
 - Approved SKU snapshot when final SKUs exist.
 - Grade, Finish, Diameter, Thickness, Length, Unit, and requested quantity.
 - Source entity/URL and Persian label snapshot.
 - Stock State snapshot as context only.
 - Inquiry Priority only when an approved Sales rule exists.
 
-CRM must not become product-master authority, infer availability, or receive public price data from this asset.
+CRM must not become canonical Product Repository authority, infer availability, or receive public price data from this asset.
 
 ## Known Unknowns
 
-- Stable family, parent, and variation IDs.
-- Final Product Group/Product Type hierarchy.
-- Final parent and variation SKU syntax/values.
+- Stable downstream parent and variation mapping IDs; the PD-02B canonical Family identity is already recorded above.
+- Final legacy Product Group/Product Type and downstream Parent mappings; the canonical Repository hierarchy is not an open question.
+- Final downstream Parent reference and Variation derived-SKU syntax/values.
 - Material-versus-Grade terminology and qualified steel-domain approval.
-- Commercially valid combinations from the candidate matrix.
+- Evidence-backed commercially valid tuples to be governed by the applicable Variant Rules; the candidate matrix is not authority.
 - Stock state, supplier, brand, country, weight per meter, quality level, availability, lead time, and minimum order.
 - Exact standards, tolerances, surface definitions, technical documents, and verified suitability claims.
 - Media, alt text, rights, and variation image rules.
 - WooCommerce attribute/term IDs, import mapping, inquiry mechanism, roles, and rollback.
-- Canonical slug, category ownership, search intent, metadata, schema eligibility, and indexation.
+- Canonical public-page slug, downstream category/public-page ownership, search intent, metadata, schema eligibility, and indexation.
 - CRM/ERP/CentralSteel external mappings.
 
 All commercial unknowns remain `TBD`; none may be converted into a claim during import.
 
 ## Founder Review Gates
 
-- Approve family/parent identity and hierarchy.
+- Approve the downstream Parent mapping and its relationship to the already governed canonical Family/Series; do not reopen the canonical hierarchy.
 - Approve Material/Grade terminology and every controlled value.
-- Approve valid commercial combinations and variation limits.
+- Approve the evidence-backed valid commercial combinations and limits recorded by the governing Variant Rules.
 - Approve SKU policy and generated SKU values in a later sprint.
 - Approve taxonomy, attribute, WooCommerce, inquiry, SEO, CRM, and import mappings.
 - Approve responsible Product Data, domain, Sales, SEO, and technical reviewers.
@@ -198,6 +205,7 @@ All commercial unknowns remain `TBD`; none may be converted into a claim during 
 | Version | Date | Change |
 | --- | --- | --- |
 | 0.1.0 | 2026-07-04 | Initial Sprint 03A Stainless Steel Pipe family asset; no WordPress product or import created. |
+| 0.1.1 | 2026-08-03 | Reconciled Review-state Parent, variation, SEO, and WooCommerce language with `FD-W2G-001`; canonical Family/Series/Variant Rules remain Repository authority and no Product, SKU, mapping, or runtime object was created. |
 
 ## PD-02B Boundary
 

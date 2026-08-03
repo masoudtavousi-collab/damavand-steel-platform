@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Product Data Owner, Repository Guardian, Qualified Domain Reviewer, and Quality Reviewer
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-04
-- **Last Review:** 2026-07-04
+- **Version:** 1.0.0
+- **Last Updated:** 2026-08-03
+- **Last Review:** 2026-08-03
 - **Review Cycle:** On engine/template version, generation sequence, output set, validation, handoff, or compatibility change
 - **Lifecycle:** Review
 - **Source of Truth:** [Enterprise Product Engine](PRODUCT_ENGINE.md), [Engine Rules](ENGINE_RULES.md), and [Engine Workflow](ENGINE_WORKFLOW.md)
@@ -22,7 +22,7 @@
 
 ## Purpose
 
-Explain how to create a complete new Product Family repository set using only the controlled Product Engine templates and approved evidence.
+Explain how to create a complete canonical `Catalog → Platform → Family → Series → Variant Rules → derived SKU` repository set and its downstream mappings using only the controlled Product Engine templates and approved evidence.
 
 ## Preconditions
 
@@ -54,7 +54,7 @@ A future approved family audit completes the review package. Do not create a fam
 
 ## Step 1 — Intake
 
-Record family purpose, Persian/English working labels, scope, exclusions, source documents, owner/reviewers, Product Group/Type evidence, known specifications, inquiry context, known unknowns, and prohibited data.
+Record Family purpose, Persian/English working labels, scope, exclusions, canonical Catalog/Platform/Family/Series/Variant Rules sources, owner/reviewers, optional legacy Product Family/Group/Type mapping evidence, known specifications, inquiry context, known unknowns, and prohibited data.
 
 Do not solve missing information during intake. Write `TBD` and assign a decision/evidence owner.
 
@@ -63,6 +63,7 @@ Do not solve missing information during intake. Write `TBD` and assign a decisio
 After naming review, define:
 
 - Stable family ID/key or `TBD`.
+- Stable Catalog, Platform, Series, and Variant Rule Set references or `TBD`.
 - Lowercase approved family folder name.
 - Generated filenames from Engine Rules.
 - Engine/template provenance metadata.
@@ -72,7 +73,7 @@ Do not derive public slugs or final SKUs from the family key.
 
 ## Step 3 — Generate the Family Contract
 
-Copy the Product Family Template structure. Fill only sourced identity, scope, parent strategy, inquiry, no-price, Mobile First/Persian RTL, WooCommerce summary, SEO, CRM, unknowns, and Founder gates. Replace every unresolved placeholder token with `TBD` before Review.
+Copy the Product Family Template structure. Fill only sourced canonical references, scope, optional downstream Parent/Variation strategy, inquiry, no-price, Mobile First/Persian RTL, WooCommerce summary, SEO, CRM, unknowns, and Founder gates. Replace every unresolved placeholder token with `TBD` before Review.
 
 ## Step 4 — Generate Field Classification and Attributes
 
@@ -80,17 +81,17 @@ Build the complete field inventory from the family/domain sources. For every fie
 
 1. Define stable key, Persian label, meaning, owner, type, unit, values, access, and requiredness.
 2. Assign exactly one primary classification.
-3. Assign public/filter/variation/SEO/CRM/required/Founder-review flags.
+3. Assign public/filter/downstream-variation/SEO/CRM/required/Founder-review flags only after Variant Rules resolution.
 4. Create the global/local attribute registry only from classified attribute fields.
-5. Record value registries and validation; leave unsupported values `TBD`.
+5. Record only allowed values authorized by the referenced Variant Rules; registries provide value identity but not applicability, and unsupported values remain `TBD`.
 
 Do not copy Pipe fields into Profile, Fittings, Glass Hardware, Pool Equipment, Wood, Fasteners, Tools, Accessories, or a future family unless independent evidence defines the same canonical global attribute.
 
 ## Step 5 — Generate the Variation Contract
 
-Reference only fields classified as Variation Attribute. Define axis order, values, units, display, valid-combination evidence, identities, duplicate rules, inquiry/no-price constraints, and Founder gates. Never generate the Cartesian product and never create final SKUs.
+Reference only axes, values, and valid tuples authorized by the canonical Variant Rule Set. Define downstream display/order, adapter IDs, duplicate rules, inquiry/no-price constraints, and Founder gates. Never generate the Cartesian product and never create final SKUs.
 
-If no approved variation evidence exists, keep the axis/combination set `TBD`; do not invent a simple-product exception to the Variable Parent Product rule.
+If no approved Variant Rules evidence exists, keep the downstream axis/tuple mapping `TBD`; do not invent Parent, Variation, or simple-product facts.
 
 ## Step 6 — Generate the Import Contract
 
@@ -98,7 +99,7 @@ Create the logical staging schema and map every source column once. Generate fam
 
 ## Step 7 — Generate the SEO Contract
 
-Define candidate entities, intent, canonical ownership, category/product/attribute boundaries, metadata unknowns, FAQ topics, internal-link relationships, schema eligibility, and no-price restrictions. Keep all unapproved public slugs/content/indexation `TBD`.
+Define candidate downstream entities, intent, public page/URL/search-intent ownership, category/product/attribute presentation boundaries, metadata unknowns, FAQ topics, internal-link relationships, schema eligibility, and no-price restrictions. Keep all unapproved public slugs/content/indexation `TBD`.
 
 ## Step 8 — Generate Validation
 
@@ -110,8 +111,8 @@ Confirm:
 
 - Same family ID/key, labels, owners, engine/template versions, and sources.
 - One primary classification per field.
-- Same category and canonical attribute identities across family/import/SEO/CRM.
-- Same variation axes/values/order/combination references.
+- Same canonical Family/Series/attribute references and downstream category mappings across family/import/SEO/CRM.
+- Same Variant Rules axes/values/valid-tuple references across all downstream projections.
 - Inquiry First and No Public Pricing everywhere.
 - No product fact is owned by SEO, CRM, importer, template, or runtime projection.
 - Links, metadata, traceability, graph, navigation, and compatibility are synchronized.
@@ -134,7 +135,7 @@ When approved inputs or templates change:
 
 ## Family Coverage
 
-The same six-template generation set applies to Pipe, Profile, Fittings, Glass Hardware, Pool Equipment, Wood, Fasteners, Tools, Accessories, and future families. The templates are deliberately domain-neutral; each family supplies its own approved fields, values, axes, categories, SEO intent, and evidence.
+The same six-template generation set applies to Pipe, Profile, Fittings, Glass Hardware, Pool Equipment, Wood, Fasteners, Tools, Accessories, and future Families. The templates are deliberately domain-neutral; each Family supplies approved field definitions while its Variant Rules supply allowed values, axes, and valid tuples; categories and SEO remain downstream projections.
 
 If a family exposes a genuinely reusable concern absent from the engine, stop and submit an Engine change request. Do not redesign locally or add an unowned family document type.
 
@@ -145,10 +146,22 @@ If a family exposes a genuinely reusable concern absent from the engine, stop an
 - [ ] No surviving placeholder token; unknowns are explicit `TBD`.
 - [ ] Every field classified exactly once.
 - [ ] Values/units/combinations have domain evidence.
+- [ ] Allowed values, axes, and valid tuples resolve only from the recorded Variant Rule Set.
 - [ ] Inquiry/no-price/mobile Persian RTL rules preserved.
 - [ ] Import/SEO/CRM projections preserve source authority.
 - [ ] Validation, links, traceability, compatibility, and approvals recorded.
 - [ ] No runtime, product, price, stock, supplier, final-SKU, or import action occurred.
+
+## Compatibility and Provenance
+
+Version `1.0.0` is a major workflow and semantic change. Its compatibility impact is breaking for every Family generated through the 0.x guide. Before reuse, a separately authorized migration or regeneration task must record the affected-Family/asset inventory, exact engine/template provenance, migration and validation plan, diff review, full validation, and Founder approval. This guide does not migrate or approve an existing Family.
+
+## Change Notes
+
+| Version | Date | Change |
+| --- | --- | --- |
+| 0.1.0 | 2026-07-04 | Initial Sprint 03D Product Engine Generation Guide. |
+| 1.0.0 | 2026-08-03 | Major workflow reconciliation to canonical Family/Series/Variant Rules sources for allowed values, axes, and valid tuples, with downstream-only legacy, Parent/Variation, WooCommerce, and SEO mappings. |
 
 ## Navigation
 

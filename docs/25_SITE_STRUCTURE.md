@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Lead Enterprise Information Architect
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-03
-- **Last Review:** 2026-07-03
+- **Version:** 0.1.1
+- **Last Updated:** 2026-08-03
+- **Last Review:** 2026-08-03
 - **Review Cycle:** On site section, navigation, menu, product, taxonomy, knowledge, representative, support, landing, URL, search, or language change
 - **Lifecycle:** Review
 - **Source of Truth:** [Enterprise Information Architecture](24_INFORMATION_ARCHITECTURE.md), [WordPress Enterprise Architecture](06_WORDPRESS_ARCHITECTURE.md), and the Batch 05 product/taxonomy/inquiry reference models
@@ -35,9 +35,9 @@ This structure names logical destinations and relationships, not approved Persia
 | ID | Proposed decision | Status |
 | --- | --- | --- |
 | SITE-001 | Use one public entry structure with governed domain hubs for Products, Knowledge, Support, Company/Trust, Search, and Inquiry; Representative discovery remains conditional. | Proposed pending Founder approval |
-| SITE-002 | Preserve Product Family → Product Group → Product Type → Variable Parent Product hierarchy while allowing shallower navigation views that do not change data authority. | Proposed pending Founder/domain approval |
-| SITE-003 | Use contextual Application/Use Case, Industry, Material, Finish, Brand, Collection, and approved SEO landings only as governed discovery paths to canonical products/content. | Proposed pending Founder/domain/SEO approval |
-| SITE-004 | Keep Knowledge Center organization separate from product taxonomy while connecting knowledge to canonical product and context identities. | Proposed pending Founder/content/SEO approval |
+| SITE-002 | Source product navigation from the canonical Product Repository hierarchy `Catalog → Platform → Family → Series → Variant Rules → SKU` without requiring the site tree to reproduce that hierarchy; SKU remains a derived identifier after governed modeling. | Proposed pending Founder/domain approval |
+| SITE-003 | Use legacy Product Family/Product Group/Product Type labels, Variable Parent Product pages, Variation states, contextual classifications, and approved SEO landings only as governed navigation or public-page projections that do not own Product Repository identity. | Proposed pending Founder/domain/SEO approval |
+| SITE-004 | Keep Knowledge Center organization separate from product taxonomy while connecting knowledge to authoritative Product Repository sources and approved public context projections. | Proposed pending Founder/content/SEO approval |
 | SITE-005 | Make inquiry accessible from relevant destinations without creating cart, checkout, pricing, or transaction navigation. | Required by CP-005, CP-006, and ADR-0001 |
 | SITE-006 | Exclude protected/internal inquiry, Customer, routing, CRM, operational, and document data from the public site tree. | Proposed pending Founder/security/privacy approval |
 | SITE-007 | Treat menu composition as a view of governed information; menus do not become taxonomy, URL, or content authority. | Proposed pending Founder approval |
@@ -49,11 +49,10 @@ Public Platform
 ├── Home [Required]
 ├── Products [Required]
 │   ├── Product Discovery [Required]
-│   ├── Product Families [Required, term values pending]
-│   │   └── Product Group [Conditional per approved family model]
-│   │       └── Product Type [Required within governed hierarchy]
-│   │           └── Variable Parent Product [Canonical product]
-│   │               └── Variation Context [Non-canonical by default]
+│   ├── Family / Series Hubs [Navigation projections; source values pending]
+│   ├── Product Family / Group / Type Views [Conditional legacy navigation mappings]
+│   ├── Variable Parent Product Pages [Downstream public-page/commerce projections]
+│   ├── Variation Context [Downstream selection state; non-canonical page by default]
 │   ├── Application / Use Case [Conditional taxonomy/landing]
 │   ├── Industry [Conditional taxonomy/landing]
 │   ├── Material [Conditional governed landing]
@@ -133,7 +132,7 @@ Footer links must not create orphan campaign pages, duplicate taxonomy archives,
 
 - Mega menus are optional navigation views, not required implementation components.
 - A mega menu is justified only when an approved destination set cannot remain usable in a simpler structure.
-- Product mega-menu content may expose a controlled subset of Product Families and approved context paths; it must not list uncontrolled terms or every variation.
+- Product mega-menu content may expose a controlled subset of Family/Series navigation projections, explicitly mapped legacy Product Family labels, and approved context paths; it must not list uncontrolled terms or every downstream Variation.
 - Knowledge mega-menu content may expose approved content types/topics and featured governed items.
 - Representative entries do not appear unless public status and scope are approved.
 - Mobile uses progressive disclosure with Persian RTL order and accessible focus/touch behavior.
@@ -142,9 +141,10 @@ Footer links must not create orphan campaign pages, duplicate taxonomy archives,
 
 ## Category Navigation
 
-- Product Families provide primary catalog navigation.
-- Product Groups appear only where approved in the Product Data Model.
-- Product Types connect hierarchy to applicable product/attribute profiles.
+- Canonical Family and Series sources may drive primary catalog-navigation projections without making navigation the Product Repository authority.
+- Product Family labels are legacy presentation/navigation mappings to an approved Family source only when the mapping is explicit.
+- Product Group and Product Type are optional legacy navigation mappings, not canonical Repository layers; they appear only when an approved source mapping exists.
+- Variant Rules govern eligible selection structure at the Repository layer; navigation may expose only approved downstream views of that structure.
 - Material, Alloy, Application/Use Case, Industry, Finish, Brand, Collection, Product Tag, and SEO Landing classifications retain Taxonomy Model boundaries.
 - Product Tags are not primary navigation, filters, specifications, or SEO landing authority by default.
 - Collections are temporary curated paths and require owner/duration evidence.
@@ -152,10 +152,10 @@ Footer links must not create orphan campaign pages, duplicate taxonomy archives,
 
 ## Product Navigation
 
-- Breadcrumb/context shows the approved structural path without redefining canonical URLs.
-- Product Family/Group/Type hubs lead to canonical Variable Parent Products.
-- Product pages expose governed variation selection, specifications, documents, related products, knowledge/support context, and inquiry.
-- Variation context does not automatically create a separate menu entry or public canonical page.
+- Breadcrumb/context shows an approved navigation path without redefining Product Repository identity or canonical public URLs.
+- Family/Series hubs and explicitly mapped legacy Product Family/Group/Type views may lead to downstream Variable Parent Product pages without transferring source authority.
+- Product pages expose downstream Variation selection derived from governed Variant Rules, specifications, documents, related products, knowledge/support context, and inquiry.
+- A downstream Variation context does not automatically create a separate menu entry or canonical public page.
 - Alternatives, accessories, compatibility, and related products use explicit relationship types; proximity does not imply compatibility.
 - Stock or lifecycle state does not create public pricing or transaction navigation.
 
@@ -178,8 +178,8 @@ Footer links must not create orphan campaign pages, duplicate taxonomy archives,
 ## Knowledge Center Navigation
 
 - The Knowledge Center is a distinct domain hub with controlled topic and content-type views.
-- Topic paths must not duplicate Product Family or taxonomy authority.
-- Knowledge items link to their canonical product, taxonomy, support, document, and inquiry contexts.
+- Topic paths must not duplicate canonical Family, taxonomy, or explicitly mapped legacy Product Family navigation authority.
+- Knowledge items link to their authoritative Product Repository sources or approved public product-page projections, plus taxonomy, support, document, and inquiry contexts.
 - Featured, latest, popular, and recommended views are presentation/discovery views, not new authority or taxonomy.
 - Exact topics, content types, labels, archive behavior, and editorial cadence remain pending.
 
@@ -252,6 +252,7 @@ Review. No page, menu, route, archive, search view, landing, representative prof
 | Version | Date | Change |
 | --- | --- | --- |
 | 0.1.0 | 2026-07-03 | Initial Batch 06 logical site structure; documentation only. |
+| 0.1.1 | 2026-08-03 | Reconciled product navigation with `FD-W2G-001` and `FD-W2G-002`; legacy hierarchy terms and Parent/Variation views remain downstream projections only. |
 
 ## Related Documents
 

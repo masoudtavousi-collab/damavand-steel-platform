@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-03
-- **Last Review:** 2026-07-03
+- **Version:** 0.1.1
+- **Last Updated:** 2026-08-03
+- **Last Review:** 2026-08-03
 - **Review Cycle:** On WordPress, WooCommerce, product, taxonomy, inquiry, theme, plugin, integration, security, performance, SEO, or Founder-constraint change
 - **Lifecycle:** Review
 - **Source of Truth:** [Core Project Principles](00_PROJECT_BIBLE.md#core-project-principles), [ADR 0001](adr/0001-inquiry-first-commerce.md), and WordPress-specific Founder constraints recorded below
@@ -55,10 +55,10 @@ These constraints are recorded from the explicit Batch 04 Founder directive. The
 
 | ID | Constraint | Decision status | Architectural effect |
 | --- | --- | --- | --- |
-| WP-FC-001 | WooCommerce | Accepted Founder constraint and ADR-0001 alignment | WooCommerce is the product catalog authority within the inquiry-first boundary. |
+| WP-FC-001 | WooCommerce | Accepted Founder constraint and ADR-0001 alignment | WooCommerce is the downstream operational catalog projection within the inquiry-first boundary; it does not own canonical repository Product truth. |
 | WP-FC-002 | Blocksy Pro | Accepted Founder constraint | Blocksy Pro is the vendor-controlled presentation shell; no custom or child theme is authorized. |
 | WP-FC-003 | Elementor Pro | Accepted Founder constraint | Elementor Pro is the controlled visual composition capability within the ownership boundaries below. |
-| WP-FC-004 | Variable Parent Product | Accepted Founder constraint | Product families are represented through variable parent products with approved variations and attributes. |
+| WP-FC-004 | Variable Parent Product | Accepted Founder constraint | Canonical Families may be represented downstream through variable parent products with approved adapter mappings, projections, and attributes. |
 | WP-FC-005 | Founder Admin Manageability | Accepted Founder constraint | Supported WordPress Admin configuration is preferred; the Founder must not be required to program. |
 
 ## Architecture Decision Register
@@ -68,7 +68,7 @@ These constraints are recorded from the explicit Batch 04 Founder directive. The
 | WP-ARC-001 | Use a layered logical architecture with explicit ownership and dependency direction. | Batch 04 objective and Enterprise Architecture | Proposed pending document approval |
 | WP-ARC-002 | Prefer supported Admin configuration and approved plugins before code. | CP-001, CP-002, WP-FC-005 | Accepted constraint; detailed boundary proposed |
 | WP-ARC-003 | Limit WordPress Core to CMS, identity, media, administration, and platform services. | CP-001, CP-002 | Proposed pending document approval |
-| WP-ARC-004 | Use WooCommerce as product catalog authority while checkout, payments, cart, and public pricing remain inactive. | WP-FC-001, CP-005, CP-006, ADR-0001 | Accepted commerce boundary |
+| WP-ARC-004 | Use WooCommerce as the downstream operational catalog projection while checkout, payments, cart, and public pricing remain inactive; canonical repository Product truth remains upstream. | WP-FC-001, CP-005, CP-006, ADR-0001 | Accepted commerce boundary, reconciled with canonical repository ownership |
 | WP-ARC-005 | Assign the global presentation shell to Blocksy Pro without vendor-file, child-theme, or custom-theme modification. | WP-FC-002, CP-007 | Accepted constraint; ownership detail proposed |
 | WP-ARC-006 | Assign controlled page composition to Elementor Pro without overlapping global template ownership. | WP-FC-003, CP-002 | Accepted platform; ownership detail proposed |
 | WP-ARC-007 | Represent configurable products as variable parent products and variations. | WP-FC-004 | Accepted product-model constraint |
@@ -143,17 +143,19 @@ A lower layer cannot override a higher constraint. Presentation and integration 
 
 ## WooCommerce Responsibilities
 
+Canonical repository Product truth follows exactly `Catalog → Platform → Family → Series → Variant Rules → derived SKU`. WooCommerce consumes that chain as a downstream operational projection. Its Product, Variable Parent Product, Variation, taxonomy, attribute, Parent ID, Variation ID, and SKU fields are adapter records or derived outputs; they cannot replace canonical entity identity. Variant Rules alone govern axes, allowed values, and valid tuples.
+
 | Concern | WooCommerce responsibility | Boundary |
 | --- | --- | --- |
-| Products | Canonical catalog records for approved sellable or inquiryable products | Product content must follow approved data and taxonomy rules |
-| Variable parent products | Parent identity, shared content, family context, selectable configuration model | Parent is not a public transaction or price authority |
-| Variations | Approved configuration combinations, variation identity, variation-level SKU and availability where applicable | No invalid or unapproved attribute combinations |
-| Attributes | Global normalized specification vocabulary and variation/filter axes | Exact attribute sets, units, and values require product-data approval |
+| Products | Downstream operational catalog projections for approved inquiryable products | Product records must follow canonical repository data and governed mapping rules |
+| Variable parent products | Adapter-local parent ID, shared presentation, Family/Series mapping context, and selectable configuration projection | Parent is neither a canonical repository identity nor a public transaction or price authority |
+| Variations | Adapter-local projections of approved Variant Rules tuples, Variation IDs, and derived SKU references where applicable | No invalid, inferred, or unapproved tuple; IDs are system-local references |
+| Attributes | Downstream projections of governed specifications and Variant Rules axes | Exact axes, allowed values, units, and valid tuples remain upstream and require product-data approval |
 | Taxonomies | Product categories, tags, attributes, and approved extension taxonomies | No duplicate classification sources or invented term hierarchy |
 | Inventory | Current catalog availability representation and stock-related data when approved | Future ERP authority and synchronization policy remain separate decisions |
 | Inquiry context | Product, variation, quantity, attributes, attachments, and source-page context passed to the Inquiry Layer | WooCommerce does not convert inquiry into checkout or order |
 | Commerce boundary | Catalog browsing, filtering, comparison-ready data, and inquiry initiation | Cart, checkout, payment, shipping purchase flow, and public price output remain inactive |
-| Future pricing compatibility | Stable product and variation identifiers permit a future governed pricing adapter | No pricing engine, price display, or price schema is authorized now |
+| Future pricing compatibility | Stable canonical source references plus system-scoped Product/Variation mapping IDs permit a future governed adapter | No pricing engine, price display, or price schema is authorized now |
 
 WooCommerce data is accessed through supported administration, APIs, and extension interfaces. Direct storage assumptions are prohibited for future integrations.
 
@@ -211,7 +213,7 @@ Plugin count is minimized by ownership clarity, not by combining unrelated respo
 | Header, footer, primary navigation | Blocksy Pro | Elementor must not create competing global shell templates |
 | Global theme and WooCommerce shell | Blocksy Pro | Elementor and plugins must not override the same template responsibility |
 | Standard pages and landing-page body | Elementor Pro within approved templates | Blocksy custom layouts must not duplicate page-body ownership |
-| Product and archive content data | WooCommerce and WordPress | Theme and Elementor do not become data authorities |
+| Product and archive presentation data | WooCommerce and WordPress downstream projections | Theme, Elementor, WordPress, and WooCommerce do not become canonical repository Product authorities |
 | Product and archive presentation | Blocksy Pro by default | Elementor ownership requires a future explicit architecture decision |
 | Global design tokens | One approved Admin-managed design system, coordinated through Blocksy and Elementor | Independent conflicting token sets are prohibited |
 | SEO metadata, canonical, and schema | SEO Layer | Blocksy and Elementor outputs must be disabled or coordinated when duplicative |
@@ -230,16 +232,18 @@ Plugin count is minimized by ownership clarity, not by combining unrelated respo
 
 | Entity or concern | Architectural definition | Ownership and constraints |
 | --- | --- | --- |
-| Variable Parent Product | Canonical family-level catalog entity containing shared description, approved media, documents, and variation axes | WooCommerce; required by WP-FC-004 |
-| Variation | Valid selectable configuration of the parent product | WooCommerce; only approved combinations are published |
-| Product Family | Governed commercial and navigational grouping | Logical model; exact hierarchy and physical mapping require approval |
-| Global Attribute | Reusable normalized specification or selectable axis shared across applicable products | WooCommerce global attributes; no duplicate term set |
+| Catalog / Platform / Family / Series | Canonical repository hierarchy before configuration rules | Repository-governed; labels, slugs, WooCommerce records, and commerce IDs are not canonical identities |
+| Variant Rules | Sole canonical owner of axes, allowed values, and valid tuples for a Series | Repository-governed; no downstream Cartesian inference |
+| Variable Parent Product | Downstream commerce and public-page projection of an approved Family/Series context | WooCommerce adapter; required presentation pattern under WP-FC-004, not canonical repository owner |
+| Variation | Downstream selectable projection of one approved Variant Rules tuple | WooCommerce adapter; only approved tuples may be projected |
+| Product Family / Group / Type | Legacy, navigation, presentation, public-page, URL, SEO-intent, or adapter mapping labels | Never replace canonical Family/Series identity; exact mapping requires approval |
+| Global Attribute | Downstream reusable representation of a governed specification or Variant Rules axis | WooCommerce global attribute projection; no independent value or tuple authority |
 | Material | Controlled product specification and potential variation/filter axis | Canonical vocabulary requires Founder and steel-domain review |
 | Surface Finish | Controlled product specification and potential variation/filter axis | Canonical vocabulary requires domain review |
 | Dimensions | Structured family-specific specifications with controlled units and validation | Do not collapse incompatible dimensional concepts into one free-text field |
 | Shape | Controlled product specification and navigation/filter concept | Canonical vocabulary requires domain review |
 | Standard | Controlled reference to approved technical standard terminology | Exact standards and claims require qualified review |
-| SKU | Stable unique identifier at the variation level when variations are operationally distinct; parent identifier may also exist | Format, ownership, and ERP mapping remain pending decisions |
+| SKU | Derived identifier produced only after governed Product modeling | Not a canonical entity identity; format and external mapping remain pending decisions |
 | Inquiry | Non-transactional request linked to product, variation, attributes, quantity, notes, and source context | Inquiry Layer; no checkout or public pricing |
 | Media | Approved product images and visual assets with accessibility and usage metadata | Media Layer |
 | Downloads and Documents | Approved datasheets, certificates, guides, and supporting files with version and access metadata | Media/Content boundary; document type and access rules pending |
@@ -248,8 +252,8 @@ Plugin count is minimized by ownership clarity, not by combining unrelated respo
 
 ### Product Rules
 
-- The variable parent owns shared narrative and approved common assets; variations own configuration-specific identifiers and data.
-- Variation axes must use approved global attributes when reused across products.
+- A variable parent may carry shared downstream presentation and approved common-asset references; a variation may carry adapter-local configuration fields and mappings. Neither owns canonical repository Product truth.
+- Variation axes, allowed values, and valid tuples come only from Variant Rules; reusable WooCommerce attributes are downstream projections.
 - Exact product families, terms, dimensional models, units, SKU formats, and valid combinations are not invented by this architecture.
 - Product relationships distinguish alternative, related, and compatible meanings before use.
 - Downloads and technical claims require version, owner, review status, and access classification.
@@ -299,7 +303,7 @@ Plugin count is minimized by ownership clarity, not by combining unrelated respo
 
 ### Content Rules
 
-- Product master data remains in WooCommerce; editorial content links to products rather than duplicating product authority.
+- Canonical Product Master Data remains in governed repository sources. WooCommerce consumes a downstream operational projection, and editorial content references canonical sources rather than duplicating Product authority.
 - Page type, URL, template, indexation, owner, reviewer, update cycle, and inquiry goal are explicit.
 - Persian is the Phase 1 content language and all presentation supports RTL.
 - Exact editorial hierarchy, publishing workflow, brand list, industry list, application list, and FAQ content require separate approval.
@@ -432,7 +436,7 @@ No cache plugin is selected. LiteSpeed Cache is prohibited. Performance optimiza
 ### SEO Rules
 
 - Product, variation, taxonomy, filter, pagination, and search indexation require an approved URL and canonical matrix before configuration.
-- WooCommerce provides product facts; the SEO Layer controls public structured output.
+- WooCommerce may provide downstream projected Product facts to the SEO Layer; canonical facts remain governed by the repository hierarchy, and the SEO Layer controls public structured output.
 - Inquiry pages and events use conversion-safe URLs without exposing personal or commercial data.
 - Persian URL and transliteration policy remains a Founder/SEO decision; this architecture does not invent slug language.
 - Future multilingual support uses language-aware canonicals, alternates, sitemaps, redirects, and stable entity IDs after a separate decision.
@@ -479,7 +483,7 @@ All integrations are inactive future ports until separately approved. No provide
 | Extension | Required gate |
 | --- | --- |
 | New plugin | Category ownership, overlap, compatibility, security, support, license, exportability, Admin manageability, rollback, and approval |
-| New product family | Approved data model, parent/variation axes, taxonomy placement, content, media, inquiry context, SEO, and ERP identifiers |
+| New canonical Family | Approved `Catalog → Platform → Family → Series → Variant Rules → derived SKU` model, downstream parent/variation mappings, taxonomy placement, content, media, inquiry context, SEO, and external identifiers |
 | New taxonomy | Purpose, owner, non-duplication proof, hierarchy, terms, URLs, indexation, filtering, integration, and migration review |
 | New workflow | Business decision, states, roles, data, notifications, integration, security, audit, and rollback |
 | New country | Legal, content, units, contact, routing, privacy, SEO, and operational decision |
@@ -533,6 +537,12 @@ The following remain unresolved implementation prerequisites and must not be inf
 ## Implementation Boundary
 
 No implementation is authorized. Approval of this architecture would authorize it as a governing design input only. Installation, configuration, data creation, migration, code, credentials, infrastructure, plugin selection, theme activation, and production change require separate approved tasks and validation.
+
+## Change Notes
+
+| Version | Date | Change |
+| --- | --- | --- |
+| 0.1.1 | 2026-08-03 | C1-T06 canonical-owner reconciliation: qualified WordPress/WooCommerce as downstream projections of `Catalog → Platform → Family → Series → Variant Rules → derived SKU`; no implementation or Product facts added. |
 
 ## References
 

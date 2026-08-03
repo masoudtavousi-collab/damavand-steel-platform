@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Product Data Owner, Quality Reviewer, and WooCommerce Technical Reviewer
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-04
-- **Last Review:** 2026-07-04
+- **Version:** 0.1.1
+- **Last Updated:** 2026-08-03
+- **Last Review:** 2026-08-03
 - **Review Cycle:** Before any mapping approval, dry run, import authorization, or source-file change
 - **Lifecycle:** Review
 - **Source of Truth:** Current Sprint 03A pipe data assets and Sprint 03B mapping assets
@@ -45,7 +45,7 @@ Stop precheck immediately if any of the following is detected:
 - A final required SKU is blank, duplicated, unapproved, or begins with `TBD-`.
 - `stock_status` or another mandatory execution value remains `TBD`.
 - An orphan variation, duplicate tuple, invalid controlled value, or unapproved combination exists.
-- Category, attribute, term, or canonical identifiers would need to be invented or auto-created.
+- Canonical source references, downstream category/attribute/term mappings, adapter IDs, or public-page identifiers would need to be invented or auto-created.
 - Backup, staging, rollback, target capability, permissions, or Founder execution approval is absent.
 - Any plan requires live WordPress mutation before a separately approved execution gate.
 
@@ -80,14 +80,14 @@ Stop precheck immediately if any of the following is detected:
 
 | Check | Hard gate | Evidence | Result |
 | --- | --- | --- | --- |
-| Stable family/parent/variation IDs | Yes | Remain `TBD` | `BLOCKED` |
+| Canonical Family/Series/Variant Rule Set references and downstream Parent/Variation adapter IDs | Yes | Remain `TBD` | `BLOCKED` |
 | Final parent SKU | Yes | Current value begins with `TBD-` | `BLOCKED` |
 | Final variation SKUs | Yes | Current values begin with `TBD-` | `BLOCKED` |
 | SKU uniqueness against external/current systems | Yes | No approved baseline or lookup evidence supplied | `PENDING` |
-| Canonical category/taxonomy mapping | Yes | Runtime destination and term ID remain `TBD` | `BLOCKED` |
+| Downstream category/taxonomy mapping | Yes | Runtime destination and system-local term ID remain `TBD` | `BLOCKED` |
 | Global attribute/term mapping | Yes | Logical dictionary exists; runtime identities/terms do not | `BLOCKED` |
 | Material/Grade/Finish terminology | Yes | Founder and qualified domain approval pending | `BLOCKED` |
-| Canonical slug collision/reservation check | Yes | Canonical slug is `TBD`; no approved namespace evidence | `BLOCKED` |
+| Canonical public-page slug collision/reservation check | Yes | Public-page slug is `TBD`; no approved namespace evidence | `BLOCKED` |
 
 ### Commercial, Inquiry, and Pricing
 
@@ -105,9 +105,9 @@ Stop precheck immediately if any of the following is detected:
 
 | Check | Hard gate | Evidence | Result |
 | --- | --- | --- | --- |
-| Approved canonical slug | Yes | `TBD` on all rows | `BLOCKED` |
+| Approved canonical public-page slug | Yes | `TBD` on all rows | `BLOCKED` |
 | Approved SEO title/description | Publication gate | `TBD` on all rows | `BLOCKED` |
-| Parent canonical ownership rule | Yes | Defined logically in Sprint 03A/Sprint 03B assets | `PASS` |
+| Parent public-page/URL ownership boundary | Yes | Defined as a downstream projection; canonical Product truth remains Repository-owned | `PASS` |
 | No Offer/price schema | Yes | Mapping prohibits price/Offer targets | `PASS` at mapping-contract level |
 
 ### Target, Recovery, and Authorization
@@ -127,10 +127,10 @@ Stop precheck immediately if any of the following is detected:
 
 Before a future dry-run request can be considered, provide and approve:
 
-1. Final family/parent/variation identities and SKU policy/values.
+1. Final canonical Family/Series/Variant Rule Set references, downstream Parent/Variation adapter IDs, and derived-SKU policy/values.
 2. Founder/domain-approved terminology and a valid-combination dataset.
 3. Verified commercial state values and responsible data owner; no inferred stock.
-4. Approved taxonomy/category, global attributes, terms, canonical slug, and SEO metadata.
+4. Approved downstream taxonomy/category, global-attribute and term mappings, canonical public-page slug, and SEO metadata.
 5. Verified inquiry capability and exhaustive no-public-price enforcement design.
 6. Verified target/importer capabilities and an exact reviewed mapping preview.
 7. Isolated staging, backup/restore evidence, rollback criteria, reconciliation expectations, and accountable operator.
@@ -138,11 +138,11 @@ Before a future dry-run request can be considered, provide and approve:
 
 ## Founder Review Checklist
 
-- [ ] Approve family identity and Material/Grade/Finish terminology.
+- [ ] Approve canonical Family/Series/Variant Rules source references, separate downstream adapter IDs, and Material/Grade/Finish terminology.
 - [ ] Approve valid commercial combinations.
 - [ ] Approve final SKU policy and values.
 - [ ] Approve verified commercial-state vocabulary and owners.
-- [ ] Approve taxonomy, attributes, terms, and canonical slug.
+- [ ] Approve downstream taxonomy/attribute/term mappings and the canonical public-page slug.
 - [ ] Approve inquiry and no-price runtime acceptance criteria.
 - [ ] Approve target mapping, staging, backup, rollback, and reconciliation evidence.
 - [ ] Issue separate execution authorization.
@@ -160,6 +160,7 @@ The current files are ready for Founder, domain, Product Data, Sales, SEO, and W
 | Version | Date | Change |
 | --- | --- | --- |
 | 0.1.0 | 2026-07-04 | Initial Sprint 03B non-mutating import precheck; current decision is `NO-GO FOR IMPORT`. |
+| 0.1.1 | 2026-08-03 | Split canonical Family/Series/Variant Rules references from downstream Parent/Variation IDs, mappings and public-page URL ownership; `NO-GO FOR IMPORT` is unchanged. |
 
 ## Navigation
 

@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Lead Enterprise Solution Architect
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-03
-- **Last Review:** 2026-07-03
+- **Version:** 0.1.1
+- **Last Updated:** 2026-08-03
+- **Last Review:** 2026-08-03
 - **Review Cycle:** On entity, field, validation, relationship, Admin, privacy, migration, or source-authority change
 - **Lifecycle:** Review
 - **Source of Truth:** [Product Data Model](19_PRODUCT_DATA_MODEL.md), [Inquiry Data Model](23_INQUIRY_DATA_MODEL.md), [Entity Relationship Model](30_ENTITY_RELATIONSHIP_MODEL.md), and [Content Types](32_CONTENT_TYPES.md)
@@ -27,6 +27,8 @@ Define logical field groups, ownership, validation, administration, relationship
 ## Scope and Boundary
 
 This model describes data contracts, not database schema, meta keys, UI, plugin selection, or field creation. Native WordPress/WooCommerce fields, taxonomies, attributes, relationships, and external authorities are preferred before custom fields.
+
+Canonical repository Product truth follows exactly `Catalog → Platform → Family → Series → Variant Rules → derived SKU`. Product Family/Group/Type, Parent/Variable Parent/Variation, WordPress/WooCommerce IDs, labels, slugs, public pages, and custom fields are downstream mappings or projections only. Custom/native fields cannot define canonical Product identity, axes, allowed values, valid tuples, or SKU authority.
 
 ## Field Decisions
 
@@ -52,7 +54,7 @@ Every approved field definition records: stable logical ID; label; description; 
 | --- | --- | --- | --- | --- |
 | Entity governance | Every managed entity | Stable ID, owner, lifecycle, source, language, access, review | External IDs, replacement | Entity owner; native values preferred |
 | Editorial content | Page, Landing, Knowledge, FAQ, Guide, Policy, News, Announcement | Purpose/type, owner, lifecycle, source, audience | Summary, relationships, review/expiry | Content owner |
-| Product supplemental | Product parent/variation | Only approved PDM fields not native to WooCommerce | Approved technical/document/CRM/ERP references | Product authority; never duplicate native attributes/SKUs |
+| Product supplemental | Downstream Product parent/variation projection | Only approved projected fields not satisfied by the selected adapter | Approved technical/document/CRM/ERP mapping references | Canonical repository Product sources remain authoritative; never duplicate governed values or derived SKUs |
 | Classification term | Approved taxonomy/attribute term | Stable identity, label/key, definition, owner, lifecycle | aliases, external mappings, landing relation | Taxonomy/attribute authority |
 | Media and document | Attachment/Document entity | Media ID, role, rights, access, language, lifecycle, source | caption, alt, derivatives, replacement, relations | Media/document authority |
 | Representative | Conditional Representative entity | Identity/scope/owner/lifecycle/access only after approval | public profile, coverage, relations | Protected by default; Sales/privacy authority |
@@ -63,7 +65,7 @@ Every approved field definition records: stable logical ID; label; description; 
 
 ## Ownership
 
-Field-value ownership follows the source entity: Product/domain owners govern specifications; Taxonomy owners govern terms; Content owners govern editorial fields; Media owners govern rights/access; Sales/privacy owners govern protected Inquiry/Representative data; SEO governs projections, not underlying facts; technical administrators govern configuration but cannot approve values.
+Field-value ownership follows the canonical source entity: repository Product/domain owners govern specifications and Variant Rules; Taxonomy owners govern terms; Content owners govern editorial fields; Media owners govern rights/access; Sales/privacy owners govern protected Inquiry/Representative data; SEO and WordPress/WooCommerce govern projections, not underlying facts; technical administrators govern configuration but cannot approve values.
 
 ## Validation
 
@@ -114,6 +116,7 @@ Review. No ACF, field group, field, meta key, relationship, database schema, val
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.1.1 | 2026-08-03 | C1-T06 canonical-owner reconciliation: limited native/custom Product fields and Parent/Variation IDs to downstream projections of canonical repository sources; no fields created. |
 | 0.1.0 | 2026-07-03 | Initial Batch 08 custom fields model Blueprint; documentation only. |
 
 ## Related Documents

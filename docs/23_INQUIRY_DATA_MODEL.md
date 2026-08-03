@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.2.0
-- **Last Updated:** 2026-07-03
-- **Last Review:** 2026-07-03
+- **Version:** 0.2.1
+- **Last Updated:** 2026-08-03
+- **Last Review:** 2026-08-03
 - **Review Cycle:** On inquiry type, field, consent, status, routing, attachment, notification, anti-spam, CRM, retention, or pricing-boundary change
 - **Lifecycle:** Review
 - **Source of Truth:** CP-005 Inquiry First, CP-006 No Public Pricing, [ADR 0001](adr/0001-inquiry-first-commerce.md), and [WordPress Enterprise Architecture](06_WORDPRESS_ARCHITECTURE.md#inquiry-first-architecture)
@@ -28,12 +28,14 @@ Define the logical inquiry object, sources, types, customer fields, product line
 
 This model defines data and lifecycle policy only. It does not create a form, plugin, database table, WooCommerce setting, UI, notification, CRM integration, API, import, or code.
 
+Product context resolves to canonical repository references along `Catalog → Platform → Family → Series → Variant Rules → derived SKU`. Parent Product, Variable Parent Product, Variation, Product Family/Group/Type, WooCommerce IDs, and SKU values in an Inquiry are downstream adapter references or immutable submission-time snapshots; they do not become canonical Product identities or authorize new axes, allowed values, valid tuples, or availability.
+
 ## Inquiry Decisions
 
 | ID | Proposed decision | Status |
 | --- | --- | --- |
 | INQ-001 | Use one canonical Inquiry object for general, product, multi-product, and project inquiries. | Proposed pending Founder approval |
-| INQ-002 | Store inquiry product lines by stable product/variation IDs plus a submission-time label and attribute snapshot. | Proposed pending Founder approval |
+| INQ-002 | Store canonical source references plus system-scoped Product/Variation adapter IDs, derived SKU when approved, and submission-time label/attribute snapshots. | Proposed pending Founder approval |
 | INQ-003 | Minimize customer data and require one validated contact channel plus consent evidence. | Proposed pending Founder/privacy review |
 | INQ-004 | Separate Inquiry State, Sales Follow-up Status, and CRM Synchronization Status. | Proposed pending Founder/Sales approval |
 | INQ-005 | Route and notify through configurable, auditable rules without exposing unnecessary personal data. | Proposed pending Founder/Sales/security approval |
@@ -50,7 +52,7 @@ This model defines data and lifecycle policy only. It does not create a form, pl
 | Source | Source channel, page, campaign reference when approved, referrer category, language, and device class where consent permits | No uncontrolled tracking or sensitive URL capture |
 | Customer | Minimum approved identity, organization, and contact data | Data minimization, access, retention, and consent apply |
 | Requirements | Free-text requirements plus structured type-specific fields | No price promise or transaction acceptance |
-| Product lines | Parent/variation IDs, SKU snapshot when approved, attributes, quantity/unit, and notes | Stable IDs remain authoritative; labels are submission snapshots |
+| Product lines | Canonical source references, system-scoped Parent/Variation mapping IDs, derived SKU snapshot when approved, attributes, quantity/unit, and notes | Canonical source references retain Product authority; adapter IDs and labels are submission snapshots |
 | Project context | Optional/conditional project name, location, stage, schedule, specifications, and documents | Exact fields and sensitivity require approval |
 | Attachments | Protected file references, metadata, scan/validation state, owner, and retention | Never unrestricted public media |
 | Consent | Privacy/communication consent version, result, timestamp, and source | Legal text and consent categories pending approval |
@@ -66,8 +68,8 @@ This model defines data and lifecycle policy only. It does not create a form, pl
 | Source | Required context | Notes |
 | --- | --- | --- |
 | General website inquiry | Page ID/URL reference and free requirements | No product required |
-| Product inquiry | Parent product ID and selected variation/attributes when applicable | Inquiry action originates from approved catalog context |
-| Multi-product inquiry | One or more inquiry lines or approved structured attachment | Each resolved line uses stable product identity |
+| Product inquiry | Canonical source reference plus Parent mapping ID and selected Variation/attributes when applicable | Inquiry action originates from an approved downstream catalog projection |
+| Multi-product inquiry | One or more inquiry lines or approved structured attachment | Each resolved line retains canonical source references and system-scoped adapter mappings |
 | Project inquiry | Project requirements and optional product lines/documents | Exact project fields pending Sales/domain approval |
 | Representative-assisted | Representative/queue context and consented customer data | Must record actor and avoid impersonating customer submission |
 | Future approved channel | Stable channel ID and ingestion evidence | Email, CRM, API, SMS, or WhatsApp ingestion requires separate approval |
@@ -102,7 +104,7 @@ Used when the requester has a requirement without selecting a catalog product. R
 
 ### Product Inquiry
 
-References one Variable Parent Product and, when selected or required, one Variation. Quantity/unit may be supplied or explicitly recorded as unknown under an approved value policy.
+References one canonical Family/Series context through a Variable Parent Product mapping and, when selected or required, one Variation mapping to an approved Variant Rules tuple. Quantity/unit may be supplied or explicitly recorded as unknown under an approved value policy.
 
 ### Multi-Product Inquiry
 
@@ -127,7 +129,7 @@ Captures broader project requirements, optional product lines, technical documen
 
 ### Conditionally Required Fields
 
-- Product/variation identity for Product Inquiry.
+- Canonical Product source reference plus system-scoped Parent/Variation mapping context for Product Inquiry.
 - At least one inquiry line for Multi-product Inquiry.
 - Project description for Project Inquiry.
 - Quantity and Unit, or an explicit approved `unknown` state, for product lines.
@@ -147,11 +149,12 @@ Exact field labels, validation, legal basis, retention, and whether fields are r
 
 Each line supports:
 
-- Stable parent product ID.
-- Stable variation ID when resolved.
-- Parent reference and variation SKU snapshot when approved.
+- Canonical Catalog/Platform/Family/Series and Variant Rules source references when resolved.
+- System-scoped Parent Product mapping ID.
+- System-scoped Variation mapping ID when resolved.
+- Parent adapter reference and derived variation SKU snapshot when approved.
 - Persian product/variation label snapshot.
-- Selected canonical attributes and submission-time values.
+- Selected governed attributes and submission-time values from an approved Variant Rules tuple.
 - Requested quantity, Unit, or controlled unknown state.
 - Customer notes and alternative/compatibility request without implying a guarantee.
 - Stock-state snapshot for internal context, not a promise.
@@ -204,7 +207,7 @@ CRM synchronization status does not replace Inquiry State or Sales Follow-up Sta
 ## Routing Model
 
 - Routing uses versioned Admin-manageable rules.
-- Inputs may include inquiry type, Product Family, approved location, industry/use case, language, workload, and explicit representative assignment only after those rules are approved.
+- Inputs may include inquiry type, a downstream Product Family mapping to canonical Family/Series, approved location, industry/use case, language, workload, and explicit representative assignment only after those rules are approved.
 - Every assignment records rule version, result, reason, actor, and timestamp.
 - Unmatched, invalid, or unavailable assignments use an approved fallback queue.
 - Manual reassignment records reason and history.
@@ -284,6 +287,7 @@ Review. No inquiry form, object storage, database schema, plugin, notification, 
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2.1 | 2026-08-03 | C1-T06 canonical-owner reconciliation: distinguished canonical Product source references from system-scoped Parent/Variation IDs and immutable Inquiry snapshots; no fields, values, or workflow implementation added. |
 | 0.2.0 | 2026-07-03 | Batch 05B remediation: distinct governed Customer object and identity, duplicate, consent, retention/deletion, and CRM mapping boundaries; documentation only. |
 | 0.1.0 | 2026-07-03 | Initial Batch 05 inquiry data and lifecycle model; documentation only. |
 
