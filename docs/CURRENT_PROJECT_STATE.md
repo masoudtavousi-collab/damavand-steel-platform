@@ -1,15 +1,16 @@
 # Current Project State
 
-- **Current date:** 2026-08-02
+- **Current date:** 2026-08-03
 - **Canonical repository:** `masoudtavousi-collab/damavand-steel-platform`
-- **Reviewed input anchor:** `a48cc9ee6cfc6b5e3abd906f13f05f9751428f94`, merged PR #27 DS program directive integration; successful main CI `30765167988`
+- **Reviewed input anchor:** `13531830ad0c4fa57cf8dcab4c5516f27f64e4ea`, merged PR #29 C1-T06 canonical-owner reconciliation; successful main CI `30796043918`
 - **Live `main` tip:** resolve dynamically from GitHub `refs/heads/main` at task start; do not treat the reviewed input anchor as a permanent live-tip claim
 - **Last completed Product Data integration:** `PD-03B` through merged PR #25 and successful post-merge main CI `30698838847`
-- **Last completed governance reconciliation:** post-PD-03B operational-state reconciliation through merged PR #26 (`90d0aaa207801037c151e204d04bb98ac482e7b5`) and successful main CI `30763959936`
+- **Last completed governance reconciliation:** post-PR27 operational-state reconciliation through merged PR #28 (`c4dbd8d1713a27e2e5185ceee9e64177ff28f7fa`) and successful main CI `30766701675`
 - **Last completed governance integration:** DS program directive integration through `FD-DS-PROGRAM-001`, `C1-T04`, merged PR #27 (`a48cc9ee6cfc6b5e3abd906f13f05f9751428f94`), and successful main CI `30765167988`
+- **Last completed architecture reconciliation:** `C1-T06-CANONICAL-OWNER` through merged PR #29 (`13531830ad0c4fa57cf8dcab4c5516f27f64e4ea`) and successful main CI `30796043918`
 - **Current phase:** Campaign 001 — Project Stabilization & Governance Consolidation
 - **Current authorized branch:** None granted by this state record
-- **Current authorization:** preparing/submitting the `C1-T06-CANONICAL-OWNER` Scope/Approval Packet for Founder approval only; C1-T06 execution, repository mutation, and Git publication are not authorized by this state record
+- **Current authorization:** preparing/submitting the `C1-T03-PLATFORM-EVIDENCE` Scope/Approval Packet for Founder approval only; C1-T03 execution, C1-T07 execution, repository mutation, and Git publication are not authorized by this state record
 - **Merge:** NO-GO without separate Founder authorization
 - **Runtime / WordPress / WooCommerce mutation:** NO-GO
 - **Import / publishing / deployment / product creation / bulk SKU generation:** NO-GO
@@ -48,7 +49,8 @@ This file is the only semantic operational-state pointer. Other documents may pr
 | `PD-02B` Minimum Canonical Slice | `FD-PD02B-001`; `PD02B-TECH-REVIEW-001`; [PD-02B Scope v1.0](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md); exact 57-path allowlist; starting SHA `6ed6fc89e555b1be3a97d7f9c64c9e2b989af1df`; PASS on `f38eb447…`; CI `30479723615` and REVIEW-stage CI `30480571732`; PR #23 | `APPROVED` after legal `DRAFT → REVIEW → APPROVED`; all 31 bounded records are approved; no broader Product/runtime authority |
 | `PD-03A` Pilot Prerequisite Foundation | `FD-PD03A-001`; `PD03A-TECH-REVIEW-001`; [PD-03A Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md); starting SHA `dd4d4e9dde59ce652edb5b99d2df3e84b56b8031`; PASS on `cb6c817…`; DRAFT CI `30696083295`; REVIEW CI `30696444576`; PR #24; main CI `30696801759`; immutable extension; 50 dispatched mutation cases | `APPROVED`, merged by Merge Commit `e72c32bdb041448d34c925c969fe01a2156f9e1d`, and validated on `main`; exact extension records and Length/Metre/Millimetre are approved; PD-02B aggregate registries/hashes remain unchanged; PD-03A itself granted no Pilot/Product/SKU/availability or runtime authority; the separate PD-03B Pilot outcome is recorded below |
 | `PD-03B` Canonical Pilot Records | `FD-PD03B-001`; [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md); starting SHA `e72c32bdb041448d34c925c969fe01a2156f9e1d`; exact 33-path allowlist; 43 mutation cases; `PD03B-TECH-REVIEW-001` PASS on `41849b3…`; DRAFT CI `30698352338`; REVIEW CI `30698582671`; final approval `2026-08-01T11:54:38Z`; merged PR #25; Merge Commit `64511d7caf95d88122847abfef9914e9d0605954`; main CI `30698838847` | `APPROVED`, merged, and validated on `main`; exactly three Pilot records are approved, all availability remains `MISSING_DATA_VALUE`, and every readiness flag remains false. No Product/SKU, 879-row population, Master/Golden, import, or runtime authority |
-| Campaign 001 DS Program Governance Integration | Post-PD-03B state reconciliation through merged PR #26 and main CI `30763959936`; [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md); [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md); `FD-DS-PROGRAM-001`; `C1-T04`; merged PR #27; Merge Commit `a48cc9ee6cfc6b5e3abd906f13f05f9751428f94`; main CI `30765167988` | Governance integration is complete: DS-PC defines `HOW`, DS-SPD defines `WHAT`, and their companion relationship and exact execution gates are accepted evidence. This creates no C1-T06 execution, Product/SKU, fourth Pilot, 879-row population, Availability, Master/Golden, WordPress/WooCommerce, import, runtime, deployment, or production authority |
+| Campaign 001 DS Program Governance Integration | Post-PD-03B state reconciliation through merged PR #26 and main CI `30763959936`; [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md); [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md); `FD-DS-PROGRAM-001`; `C1-T04`; merged PR #27; Merge Commit `a48cc9ee6cfc6b5e3abd906f13f05f9751428f94`; main CI `30765167988`; post-PR27 reconciliation through PR #28 and main CI `30766701675` | Governance integration and its active-state reconciliation are complete: DS-PC defines `HOW`, DS-SPD defines `WHAT`, and their companion relationship and exact execution gates are accepted evidence. This creates no Product/SKU, fourth Pilot, 879-row population, Availability, Master/Golden, WordPress/WooCommerce, import, runtime, deployment, or production authority |
+| `C1-T06` Canonical-Owner Reconciliation | Founder Gate 1 authorization and two explicit Scope Amendments; exact 39-path patch SHA-256 `93f1e6bb1f93faac782a3a17c01166c3e731bcbf4cc8d14c5261f03a60a69434`; two independent zero-finding reviews; merged PR #29; Merge Commit `13531830ad0c4fa57cf8dcab4c5516f27f64e4ea`; main CI `30796043918` | Documentation reconciliation is complete: `Catalog → Platform → Family → Series → Variant Rules → SKU` remains the only canonical Repository hierarchy, and WordPress/WooCommerce Parent/Variation structures remain downstream mappings. No Product/SKU/fact/value/availability, lifecycle promotion, Knowledge/SEO/WooCommerce implementation, import, runtime, deployment, or production authority follows |
 | Atlas planning registry | 173 pending document records across 21 domains | Intake inventory only; no Atlas row is canonical merely because it is registered |
 
 Repository validators are active in CI and unified under `make test`. PR #12 hardening is merged: nested schema objects are closed, JSON Schema Draft 2020-12 is enforced offline, validation output is deterministic, and positive, negative, and adversarial tests are wired into the unified test entry point. `FD-BP2-ADM-001` records the completed legal BP2 lifecycle without implementation authority. `FD-PD01-001` approves a separate synthetic Product Data contract boundary; it is not canonical Product Data.
@@ -133,18 +135,20 @@ A Variable Parent Product is a commerce presentation and never the owner of cano
 - Canonical Product records, Product Attribute definitions, Master Data, Golden package, final SKU/slug policy, content/media rights, and availability evidence remain absent or incomplete.
 - PD-01 permits only the exact synthetic Contract/Schema/Validator/Test and governance allowlist; canonical Product Data, BP2 Administration, Runtime, WordPress/WooCommerce, and Knowledge/Content writes remain blocked.
 - The ordering conflict between credential containment and mandatory pre-mutation backup/restore evidence remains unresolved.
-- Legacy Review-state Product/Content/SEO documents that describe a Variable Parent Product as canonical owner must be reconciled before Knowledge, SEO, or WooCommerce mapping approval.
 - A shared role/separation-of-duties matrix and Sprint-specific Test Contract remain required before implementation.
 - The recovered Claude export and file packages are historical/private evidence only; raw exports, credentials, Mac inventory reports, legacy runtime code, and superseded repository snapshots are prohibited from repository integration.
 
 ## Approved Next Action
 
 The sole next action is: preparing/submitting the
-`C1-T06-CANONICAL-OWNER` Scope/Approval Packet for Founder approval.
+`C1-T03-PLATFORM-EVIDENCE` Scope/Approval Packet for Founder approval.
 
 This authorizes packet preparation and submission only. It does not authorize
-C1-T06 execution, another branch, repository writes, staging, commit, push, PR,
-merge, or branch deletion.
+C1-T03 evidence collection, authenticated access, C1-T07 execution, another
+branch, repository writes, staging, commit, push, PR, merge, or branch deletion.
+
+`C1-T07-PLATFORM-CONTRACTS` remains `NO-GO` until C1-T03 evidence is completed
+under separate authorization and the required authority integration exists.
 
 Do not start PD-04 or Campaign 002; create or populate a Product, SKU, fourth
 Pilot, 879-row set, Availability value, Master Data, or Golden package; perform

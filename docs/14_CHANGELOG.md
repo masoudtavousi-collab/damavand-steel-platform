@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-08-03 — Post-PR29 Operational-State Reconciliation
+
+- Reconciled active state ledgers with the post-PR27 reconciliation through PR
+  #28, Merge Commit `c4dbd8d1713a27e2e5185ceee9e64177ff28f7fa`, and main CI
+  `30766701675`, followed by C1-T06 canonical-owner reconciliation through PR
+  #29, Merge Commit `13531830ad0c4fa57cf8dcab4c5516f27f64e4ea`, and main CI
+  `30796043918`.
+- Closed stale C1-T06 planning/local-candidate claims and `OQ-GOV-028` using
+  the exact 39-path patch hash and its two independent zero-finding reviews.
+- Preserved PD-03B as the latest Product Data integration, exactly three
+  approved Pilots, 879 candidates, missing Availability for all 882 rows, and
+  false downstream readiness.
+- Set only preparation/submission of the `C1-T03-PLATFORM-EVIDENCE`
+  Scope/Approval Packet as the next action. C1-T03 evidence collection and
+  C1-T07 execution remain separately gated.
+- This reconciliation creates no Product/SKU/fact/value/availability,
+  lifecycle promotion, Knowledge/SEO/WooCommerce implementation, import,
+  runtime, deployment, production, Campaign 001 certification, Campaign 002
+  entry, Git publication, merge, or branch-deletion authority.
+
 ## 2026-08-02 — Post-PR27 Operational-State Reconciliation
 
 - Reconciled active operational records after merged PR #26, Merge Commit
@@ -115,8 +135,8 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.12.0
-- **Last Updated:** 2026-08-02
+- **Version:** 0.13.0
+- **Last Updated:** 2026-08-03
 - **Lifecycle:** Review
 - **Source of Truth:** Merged Git history and scoped decision/evidence records
 - **Approval:** Pending Founder review; merged Git history remains evidence
