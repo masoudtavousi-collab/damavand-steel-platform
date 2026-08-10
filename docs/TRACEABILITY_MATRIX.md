@@ -1,5 +1,7 @@
 # Repository Traceability Matrix
 
+> Post-PR32: Telemetry Foundation is completed governance evidence through Merge Commit `0d334a3f4dc0d4f482376a7e43ccb9543c67fbf0`; C1-T03 packet preparation remains separately gated.
+
 ## Document Control
 
 - **Document ID:** `docs/TRACEABILITY_MATRIX.md` (provisional path identifier)

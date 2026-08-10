@@ -1,5 +1,7 @@
 # Damavand Steel Project Baseline
 
+> Post-PR32: Agentic Usage Telemetry Foundation merged as local governance evidence only; no Product, runtime, or successor execution authority follows.
+
 ## Document Control
 
 - **Document ID:** `docs/PROJECT_BASELINE.md`

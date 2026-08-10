@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-08-10 — Post-PR32 State Reconciliation
+
+- Recorded completed Agentic Usage Telemetry Foundation through PR #32, Merge Commit `0d334a3f4dc0d4f482376a7e43ccb9543c67fbf0`, and successful main CI; C1-T03 packet preparation remains the sole Product/Data next action.
+
 ## 2026-08-03 — Post-PR29 Operational-State Reconciliation
 
 - Reconciled active state ledgers with the post-PR27 reconciliation through PR

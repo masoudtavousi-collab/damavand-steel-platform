@@ -8,9 +8,10 @@
 - **Last completed governance reconciliation:** post-PR27 operational-state reconciliation through merged PR #28 (`c4dbd8d1713a27e2e5185ceee9e64177ff28f7fa`) and successful main CI `30766701675`
 - **Last completed governance integration:** DS program directive integration through `FD-DS-PROGRAM-001`, `C1-T04`, merged PR #27 (`a48cc9ee6cfc6b5e3abd906f13f05f9751428f94`), and successful main CI `30765167988`
 - **Last completed architecture reconciliation:** `C1-T06-CANONICAL-OWNER` through merged PR #29 (`13531830ad0c4fa57cf8dcab4c5516f27f64e4ea`) and successful main CI `30796043918`
+- **Last completed governance foundation:** Agentic Usage Telemetry Foundation through PR #32, Merge Commit `0d334a3f4dc0d4f482376a7e43ccb9543c67fbf0`, and successful main CI
 - **Current phase:** Campaign 001 — Project Stabilization & Governance Consolidation
 - **Current authorized branch:** None granted by this state record
-- **Current authorization:** preparing/submitting the `C1-T03-PLATFORM-EVIDENCE` Scope/Approval Packet for Founder approval only; C1-T03 execution, C1-T07 execution, repository mutation, and Git publication are not authorized by this state record. آماده‌سازی G2 Telemetry تنها یک اقدام documentation/governance مستقل است؛ فقط با SHA همین Telemetry Scope Packet و Founder gate جداگانه، resolve read-only main و freeze Execution Packet را انجام می‌دهد؛ Repository branch/mutation، stage/commit/push/PR/merge، external telemetry/API، Runtime و Production را مجاز نمی‌کند.
+- **Current authorization:** preparing/submitting the `C1-T03-PLATFORM-EVIDENCE` Scope/Approval Packet for Founder approval only; C1-T03 execution, C1-T07 execution, repository mutation, and Git publication are not authorized by this state record. Agentic Usage Telemetry Foundation is completed governance evidence only and creates no successor execution authority.
 - **Merge:** NO-GO without separate Founder authorization
 - **Runtime / WordPress / WooCommerce mutation:** NO-GO
 - **Import / publishing / deployment / product creation / bulk SKU generation:** NO-GO
@@ -143,7 +144,7 @@ A Variable Parent Product is a commerce presentation and never the owner of cano
 The primary planned action remains preparing/submitting the
 `C1-T03-PLATFORM-EVIDENCE` Scope/Approval Packet for Founder approval only.
 
-C1‑T03 همچنان **primary planned action** و تنها مسیر Product/Data است و صرفاً packet preparation است؛ Telemetry فقط یک **parallel, bounded preparatory governance action** تا پایان یا STOP G2 است، سپس کنترل خودکار به C1‑T03 برمی‌گردد. ادامهٔ Telemetry به G3 نیازمند بازاولویت‌بندی جداگانه است و هیچ C1‑T03 evidence collection یا اجرای C1‑T07 را مجاز نمی‌کند.
+C1‑T03 همچنان **primary planned action** و تنها مسیر Product/Data است و صرفاً packet preparation است؛ Agentic Usage Telemetry Foundation تکمیل شده و هیچ C1‑T03 evidence collection یا اجرای C1‑T07 را مجاز نمی‌کند.
 
 This authorizes C1-T03 packet preparation and submission only. It does not authorize
 C1-T03 evidence collection, authenticated access, C1-T07 execution, another
