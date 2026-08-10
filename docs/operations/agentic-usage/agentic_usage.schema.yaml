@@ -1,0 +1,121 @@
+schema_version: 1
+contract: agentic_usage_register
+top_level_cycle_keys:
+  - schema_version
+  - cycle_id
+  - usage_snapshots
+  - mission_records
+snapshot_required_keys:
+  - snapshot_id
+  - snapshot_at
+  - weekly_usage_remaining_percent
+  - purchased_credits_remaining
+  - source
+  - reported_by
+  - plan_label
+  - meter_id
+  - usage_window_instance_id
+  - observed_input_local
+  - notes
+metric_keys:
+  - value
+  - observability
+observability_values:
+  - OBSERVED
+  - NOT_OBSERVABLE
+model_observability_values:
+  - OBSERVED
+  - UNKNOWN
+  - NOT_OBSERVABLE
+mission_required_keys:
+  - cycle_id
+  - mission_id
+  - task_id
+  - started_at
+  - finished_at
+  - elapsed_seconds
+  - model_used
+  - model_observability
+  - reasoning_level
+  - reasoning_observability
+  - execution_surface
+  - activity_metrics
+  - task_result
+  - blocker_reason_code
+  - notes
+  - usage_summary
+activity_metric_keys:
+  - files_read
+  - files_changed
+  - commands_run
+  - tests_run
+  - ci_runs
+  - commits_created
+  - prs_created_or_updated
+usage_summary_required_keys:
+  - cycle_id
+  - mission_id
+  - task_id
+  - task_result
+  - elapsed_seconds
+  - activity_metric_refs
+  - test_ci_refs
+  - blocker_reason_code
+  - forecast
+forecast_required_keys:
+  - status
+  - reason_code
+  - source_snapshot_ids
+  - source_cycle_ids
+  - meter_id
+  - usage_window_instance_id
+  - observed_delta_percent
+  - elapsed_days
+  - rate_percent_per_day
+  - uncertainty_code
+task_result_values:
+  - PASS
+  - PARTIAL
+  - BLOCKED
+  - FAIL
+execution_surface_values:
+  - Work
+  - Codex
+  - other
+forecast_status_values:
+  - ESTIMATE
+  - INSUFFICIENT_DATA
+blocker_reason_code_values:
+  - NONE
+  - VALIDATION_FAILED
+  - SCOPE_BLOCKED
+  - DEPENDENCY_UNAVAILABLE
+  - EXTERNAL_APPROVAL_REQUIRED
+forecast_reason_code_values:
+  - FEWER_THAN_TWO_REAL_CYCLES
+  - REGISTER_WIDE_RESOLVER_UNAVAILABLE
+forecast_uncertainty_code_values:
+  - NONE
+  - USER_REPORTED_SNAPSHOT
+  - REGISTER_WIDE_RESOLVER_UNAVAILABLE
+redacted_note_code_values:
+  - FOUNDER_REPORTED
+  - NO_EXTERNAL_CALLS
+  - LOCAL_VALIDATION
+  - APPROVAL_RECORDED
+  - SCOPE_REVIEWED
+  - NO_GIT_MUTATION
+  - BLOCKED_BY_SCOPE
+rules:
+  - Unknown keys are rejected at every contract level.
+  - OBSERVED metric values are non-negative numbers; NOT_OBSERVABLE values are null.
+  - Snapshot timestamps and mission timestamps are RFC3339 UTC.
+  - Each mission belongs to its enclosing cycle and has a unique mission_id.
+  - elapsed_seconds equals finished_at minus started_at.
+  - A PASS mission has blocker_reason_code NONE; all other results require a non-NONE code.
+  - Model and reasoning fields are null unless their observability is OBSERVED.
+  - A rendered usage_summary, including test_ci_refs, is derived from its corresponding mission record.
+  - Notes are null or at most 280 characters of semicolon-separated values from redacted_note_code_values; raw commands, credentials, cookies, sessions, PII, prompts, and sensitive contents are rejected.
+  - blocker_reason_code, forecast.reason_code, and forecast.uncertainty_code use their closed enum sets.
+  - This v1 one-cycle register rejects ESTIMATE fail-closed. A future ESTIMATE requires a separately approved register-wide resolver for real observed snapshots and reproducible arithmetic.
+  - An INSUFFICIENT_DATA forecast contains no estimated values.
