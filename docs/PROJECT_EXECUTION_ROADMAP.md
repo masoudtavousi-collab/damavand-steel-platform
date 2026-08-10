@@ -1,5 +1,7 @@
 # Project Execution Roadmap
 
+> Post-PR32 reconciliation: Telemetry is complete; consult Current Project State for the sole next action, C1-T03 packet preparation only.
+
 ## Current Reconciliation State
 
 This roadmap defines sequence and gates, not mutable operational state. The exact semantic phase, authorization, GO/NO-GO boundary, and next action are maintained only in [Current Project State](CURRENT_PROJECT_STATE.md). The live GitHub `main` SHA is resolved and recorded per Sprint Approval Packet. Repository B remains isolated `QUARANTINED_ARCHITECTURE_RESEARCH`.

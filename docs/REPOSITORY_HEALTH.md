@@ -1,5 +1,7 @@
 # Repository Health
 
+> Post-PR32: Agentic Usage Telemetry Foundation merged with successful main CI; this health evidence grants no runtime or Product authority.
+
 ## Document Control
 
 - **Document ID:** `docs/REPOSITORY_HEALTH.md` (provisional path identifier)

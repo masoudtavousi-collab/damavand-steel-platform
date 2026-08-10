@@ -1,5 +1,7 @@
 # Open Questions
 
+> Post-PR32: Agentic Usage Telemetry Foundation is resolved as a local governance foundation; it does not resolve or authorize C1-T03 execution, C1-T07, Product, or runtime questions.
+
 ## Document Control
 
 - **Document ID:** `docs/18_OPEN_QUESTIONS.md` (provisional path identifier)
