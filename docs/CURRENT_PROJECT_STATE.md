@@ -10,7 +10,7 @@
 - **Last completed architecture reconciliation:** `C1-T06-CANONICAL-OWNER` through merged PR #29 (`13531830ad0c4fa57cf8dcab4c5516f27f64e4ea`) and successful main CI `30796043918`
 - **Current phase:** Campaign 001 — Project Stabilization & Governance Consolidation
 - **Current authorized branch:** None granted by this state record
-- **Current authorization:** preparing/submitting the `C1-T03-PLATFORM-EVIDENCE` Scope/Approval Packet for Founder approval only; C1-T03 execution, C1-T07 execution, repository mutation, and Git publication are not authorized by this state record
+- **Current authorization:** preparing/submitting the `C1-T03-PLATFORM-EVIDENCE` Scope/Approval Packet for Founder approval only; C1-T03 execution, C1-T07 execution, repository mutation, and Git publication are not authorized by this state record. آماده‌سازی G2 Telemetry تنها یک اقدام documentation/governance مستقل است؛ فقط با SHA همین Telemetry Scope Packet و Founder gate جداگانه، resolve read-only main و freeze Execution Packet را انجام می‌دهد؛ Repository branch/mutation، stage/commit/push/PR/merge، external telemetry/API، Runtime و Production را مجاز نمی‌کند.
 - **Merge:** NO-GO without separate Founder authorization
 - **Runtime / WordPress / WooCommerce mutation:** NO-GO
 - **Import / publishing / deployment / product creation / bulk SKU generation:** NO-GO
@@ -140,10 +140,12 @@ A Variable Parent Product is a commerce presentation and never the owner of cano
 
 ## Approved Next Action
 
-The sole next action is: preparing/submitting the
-`C1-T03-PLATFORM-EVIDENCE` Scope/Approval Packet for Founder approval.
+The primary planned action remains preparing/submitting the
+`C1-T03-PLATFORM-EVIDENCE` Scope/Approval Packet for Founder approval only.
 
-This authorizes packet preparation and submission only. It does not authorize
+C1‑T03 همچنان **primary planned action** و تنها مسیر Product/Data است و صرفاً packet preparation است؛ Telemetry فقط یک **parallel, bounded preparatory governance action** تا پایان یا STOP G2 است، سپس کنترل خودکار به C1‑T03 برمی‌گردد. ادامهٔ Telemetry به G3 نیازمند بازاولویت‌بندی جداگانه است و هیچ C1‑T03 evidence collection یا اجرای C1‑T07 را مجاز نمی‌کند.
+
+This authorizes C1-T03 packet preparation and submission only. It does not authorize
 C1-T03 evidence collection, authenticated access, C1-T07 execution, another
 branch, repository writes, staging, commit, push, PR, merge, or branch deletion.
 
