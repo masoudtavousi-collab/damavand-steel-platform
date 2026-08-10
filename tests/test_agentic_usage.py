@@ -105,7 +105,7 @@ class AgenticUsageTests(unittest.TestCase):
 
     def test_uppercase_pii_and_credential_shaped_notes_are_rejected(self) -> None:
         cycle = validator.load_yaml(validator.CYCLE_PATH)
-        for note in ("MASOUD_TAVOUSI", "AKIAIOSFODNN7EXAMPLE"):
+        for note in ("MASOUD_TAVOUSI", "CREDENTIAL_LIKE_PLACEHOLDER"):
             mission = self.valid_mission()
             mission["notes"] = note
             cycle["mission_records"] = [mission]
