@@ -1,0 +1,19 @@
+schema_version: 1
+cycle_id: 2026-c01
+usage_snapshots:
+  - snapshot_id: US-2026-001
+    snapshot_at: "2026-08-09T09:35:00Z"
+    weekly_usage_remaining_percent:
+      value: 100
+      observability: OBSERVED
+    purchased_credits_remaining:
+      value: 0
+      observability: OBSERVED
+    source: "ChatGPT Usage and limits"
+    reported_by: USER_REPORTED
+    plan_label: "ChatGPT Pro 5x"
+    meter_id: weekly-agentic-usage
+    usage_window_instance_id: null
+    observed_input_local: "2026-08-09 13:05 Asia/Tehran"
+    notes: null
+mission_records: []

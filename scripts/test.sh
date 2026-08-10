@@ -107,6 +107,8 @@ pd03b_approval_validator="repository/data/validation/validate_pd03b_approval_evi
 "$python" prototypes/bp1-visible-local/tests/validate_bp1.py
 "$python" scripts/validate_manifest.py
 "$python" scripts/validate_atlas_adoption.py
+"$python" -B scripts/validate_agentic_usage.py
+"$python" -B -m unittest tests/test_agentic_usage.py
 ./scripts/validate.sh
 
 echo "All repository and foundation tests passed."

@@ -19,3 +19,4 @@ Document monitoring, uptime checks, logs, alert routing, cron, queues, backup ve
 - [Deployment](../09_DEPLOYMENT.md)
 - [Security](../10_SECURITY.md)
 - [Environment Matrix](environments.md)
+- [Agentic Usage Register](agentic-usage/README.md)

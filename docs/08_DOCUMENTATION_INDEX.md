@@ -92,6 +92,7 @@ Provide the canonical map of repository documentation without replacing the auth
 | --- | --- | --- | --- |
 | [AI Collaboration Standard](AI_COLLABORATION.md) | Proposed human/AI collaboration governance | Review | Founder |
 | [Repository Metadata Standard](REPOSITORY_METADATA.md) | Proposed metadata and AI-readability standard | Review | Founder |
+| [Agentic Usage Register](operations/agentic-usage/README.md) | Local, documentation-only operational evidence for Mission activity and user-reported Usage snapshots; not billing or external telemetry | Draft | Founder |
 | [Traceability Matrix](TRACEABILITY_MATRIX.md) | Supporting rule and dependency traceability record | Review | Founder |
 | [Repository Reading Order](READING_ORDER.md) | Proposed role-based reading paths | Review | Founder |
 | [Repository Knowledge Graph](KNOWLEDGE_GRAPH.md) | Supporting document-relationship model | Review | Founder |
