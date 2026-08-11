@@ -11,7 +11,7 @@
 - **Last completed governance foundation:** Agentic Usage Telemetry Foundation through PR #32, Merge Commit `0d334a3f4dc0d4f482376a7e43ccb9543c67fbf0`, and successful main CI
 - **Current phase:** Campaign 001 — Project Stabilization & Governance Consolidation
 - **Current authorized branch:** None granted by this state record
-- **Current authorization:** preparing/submitting the `C1-T03-PLATFORM-EVIDENCE` Scope/Approval Packet for Founder approval only; C1-T03 execution, C1-T07 execution, repository mutation, and Git publication are not authorized by this state record. Agentic Usage Telemetry Foundation is completed governance evidence only and creates no successor execution authority.
+- **Current authorization:** external C1-T03 planning artifacts are non-executing audit evidence only. The only C1-T03 action authorized by this state record is preparation and independent review of a self-contained `E1-C R4` Scope/Approval Packet; E1-C execution, E2, Fixture 4 remediation, full-fixture replay, network evidence, C1-T07 execution, and every Repository/Git publication action remain separately gated. Agentic Usage Telemetry Foundation is completed governance evidence only and creates no successor execution authority.
 - **Merge:** NO-GO without separate Founder authorization
 - **Runtime / WordPress / WooCommerce mutation:** NO-GO
 - **Import / publishing / deployment / product creation / bulk SKU generation:** NO-GO
@@ -141,14 +141,18 @@ A Variable Parent Product is a commerce presentation and never the owner of cano
 
 ## Approved Next Action
 
-The primary planned action remains preparing/submitting the
-`C1-T03-PLATFORM-EVIDENCE` Scope/Approval Packet for Founder approval only.
+The primary planned action is preparing and independently reviewing a
+self-contained `C1-T03 E1-C R4` Scope/Approval Packet. External C1-T03
+planning artifacts remain audit evidence, not direct execution authority.
 
-C1‑T03 همچنان **primary planned action** و تنها مسیر Product/Data است و صرفاً packet preparation است؛ Agentic Usage Telemetry Foundation تکمیل شده و هیچ C1‑T03 evidence collection یا اجرای C1‑T07 را مجاز نمی‌کند.
+C1‑T03 همچنان **primary planned action** و تنها مسیر Product/Data است و در این مرحله صرفاً
+به preparation/review of E1-C R4 محدود است؛ Agentic Usage Telemetry Foundation تکمیل شده و
+هیچ C1‑T03 evidence collection یا اجرای C1‑T07 را مجاز نمی‌کند.
 
-This authorizes C1-T03 packet preparation and submission only. It does not authorize
-C1-T03 evidence collection, authenticated access, C1-T07 execution, another
-branch, repository writes, staging, commit, push, PR, merge, or branch deletion.
+This authorizes E1-C R4 packet preparation and review only. It does not authorize
+E1-C execution, E2, Fixture 4 remediation, full-fixture replay, network evidence,
+authenticated access, C1-T07 execution, another branch, repository writes, staging,
+commit, push, PR, merge, or branch deletion.
 
 `C1-T07-PLATFORM-CONTRACTS` remains `NO-GO` until C1-T03 evidence is completed
 under separate authorization and the required authority integration exists.
