@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.8.2
-- **Last Updated:** 2026-07-28
-- **Last Review:** 2026-07-28
+- **Version:** 0.9.0
+- **Last Updated:** 2026-08-16
+- **Last Review:** 2026-08-16
 - **Review Cycle:** On repository path, document index, reading path, or relationship change
 - **Lifecycle:** Draft
 - **Source of Truth:** [Documentation Index](08_DOCUMENTATION_INDEX.md) and current repository paths
@@ -59,7 +59,7 @@ Any later proposal, Product/Knowledge population, runtime work, or repository-se
 | `/prompts` | Versioned prompt materials | [Repository Standards](07_REPOSITORY_GUIDE.md) |
 | `/tests` | Product-foundation fixtures and future QA evidence | [Testing Strategy](13_TESTING_STRATEGY.md) |
 | `/var` | Local runtime placeholders | [Deployment](09_DEPLOYMENT.md) |
-| `/repository/data/contracts`, `/repository/data/schemas`, `/repository/data/registries`, `/repository/data/validation` | Product core, attribute, measurement, BP2, PD-03A prerequisite, and PD-03B Pilot contract/validation ownership | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md), [BP2 Data Administration Scope v1.0](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md), and [PD-03B Scope](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md); exactly three PD-03B Pilot records are lifecycle-gated while Product/SKU, Availability, Master/Golden, Import, and Runtime authority remain absent |
+| `/repository/data/contracts`, `/repository/data/schemas`, `/repository/data/registries`, `/repository/data/validation` | Product core, attribute, measurement, BP2, PD-03 extensions, and C002 contract/validation ownership | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md), [BP2 Data Administration Scope v1.0](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md), [PD-03B Scope](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md), and [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md); exactly three PD-03B Pilot records remain seed evidence and C002 instance registries remain empty while Product/SKU, Availability, Master/Golden, Import, and Runtime authority remain absent |
 | `/repository/data/master-data`, `/repository/data/golden-reference` | Approved future governed Product and Golden data ownership | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md); paths currently absent |
 | `/repository/knowledge` | Approved future canonical Knowledge Repository | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md); path currently absent |
 | `/repository/content` | Approved future governed reusable content | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md); path currently absent |

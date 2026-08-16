@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:damavand-steel:test:nested-permissive",
+  "title": "Nested permissive schema probe",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["nested"],
+  "properties": {
+    "nested": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["value"],
+      "properties": {
+        "value": {"type": "string"}
+      }
+    }
+  }
+}

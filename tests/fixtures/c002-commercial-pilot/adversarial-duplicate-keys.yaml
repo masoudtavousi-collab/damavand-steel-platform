@@ -1,0 +1,7 @@
+registry_id: commercial-pilot-candidates
+registry_id: attacker-controlled
+registry_version: "1.0.0"
+contract_version: "1.0.0"
+data_classification: C002_CONTRACT_FOUNDATION
+boundary: {}
+candidates: []

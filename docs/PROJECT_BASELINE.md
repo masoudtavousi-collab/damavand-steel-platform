@@ -1,6 +1,6 @@
 # Damavand Steel Project Baseline
 
-> Project OS 2.0 is the accepted strategic operating model. Current operation remains inquiry-first with no active public purchase authority; C001 is documentation reconciliation only and grants no successor execution authority.
+> Project OS 2.0 is the accepted strategic operating model. Current operation remains inquiry-first with no active public purchase authority; C002 establishes contract infrastructure and empty instance registries only and grants no successor execution authority.
 
 ## Document Control
 
@@ -10,15 +10,15 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.16.0
+- **Version:** 0.17.0
 - **Last Updated:** 2026-08-16
 - **Last Review:** 2026-08-16
 - **Review Cycle:** On approved decision, completed sprint, repository disposition, readiness, or execution-state change
 - **Lifecycle:** Review
 - **Source of Truth:** Accepted governing sources, recorded Founder decisions, [Current Project State](CURRENT_PROJECT_STATE.md), approved Master Data, and current repository evidence within their declared scope
 - **Dependencies:** [Codex Repository Instructions](../AGENTS.md), [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md), [Current Project State](CURRENT_PROJECT_STATE.md), and [Execution Gates](EXECUTION_GATES.md)
-- **Related Documents:** [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md), [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md), [Founder Decision Log](17_FOUNDER_DECISION_LOG.md), and `GIT-02S Audit`
-- **Traceability:** CP-001 through CP-010; ADR-0001; FD-PILOT-001; FD-BP2-ADM-001; FD-GOV-XD-00; FD-PD01-001; PD01-REVIEW-001; FD-PD02A-001; FD-PD02B-001; FD-PD03A-001; FD-PD03B-001; FD-DS-PROGRAM-001; C1-T04; C1-T06; GIT-02S; PR #1–#29 integration evidence; Wave 2A–2C; FD-K01-001; BP1; BP2; Claude Recovery Audit
+- **Related Documents:** [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md), [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md), [Founder Decision Log](17_FOUNDER_DECISION_LOG.md), [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md), and `GIT-02S Audit`
+- **Traceability:** CP-001 through CP-010; ADR-0001; FD-PILOT-001; FD-BP2-ADM-001; FD-GOV-XD-00; FD-PD01-001; PD01-REVIEW-001; FD-PD02A-001; FD-PD02B-001; FD-PD03A-001; FD-PD03B-001; FD-DS-PROGRAM-001; FD-C000-OS2-001; C002-CONTRACTS-001; C1-T04; C1-T06; GIT-02S; PR #1–#35 integration evidence; Wave 2A–2C; FD-K01-001; BP1; BP2; Claude Recovery Audit
 - **AI Compatibility:** Primary concise entry point; underlying sources control within their recorded authority
 - **Approval:** `GOV-XD-00` scope and stable current-state semantics approved by the Founder on 2026-07-28; recorded Founder decisions remain accepted only within their exact scope
 
@@ -193,7 +193,7 @@ Apply [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md): accepted governin
 
 ## Exact Next Safe Action
 
-Use the **Approved Next Action** in [Current Project State](CURRENT_PROJECT_STATE.md). C001 ends at a validated, independently reviewed pull request and does not authorize merge. `C002` is only the recommended successor candidate and requires a separate Mission.
+Use the **Approved Next Action** in [Current Project State](CURRENT_PROJECT_STATE.md). The C002 contract foundation selects no first Pilot slice and authorizes no Product/SKU/Availability population, merge, Runtime, or successor Mission. Any next action requires a separate Founder/Project Commander packet.
 
 ## Baseline Update Rules
 

@@ -100,6 +100,16 @@ pd03b_approval_validator="repository/data/validation/validate_pd03b_approval_evi
 "$python" "$pd03b_approval_validator"
 "$python" tests/test_pd03b_canonical_pilots.py
 
+c002_candidate_validator="repository/data/validation/validate_commercial_pilot_candidates.py"
+"$python" "$c002_candidate_validator"
+"$python" "$c002_candidate_validator" tests/fixtures/c002-commercial-pilot/valid-synthetic.yaml
+"$python" -B -m unittest tests.test_commercial_pilot_candidates
+
+c002_admin_validator="repository/data/validation/validate_product_administration_policies.py"
+"$python" "$c002_admin_validator"
+"$python" "$c002_admin_validator" tests/fixtures/c002-product-administration/valid-synthetic.yaml --synthetic
+"$python" -B -m unittest tests.test_product_administration_policies
+
 "$python" repository/data/validation/validate_bp2_data_blueprint.py
 "$python" repository/data/validation/validate_bp2_data_administration.py
 "$python" tests/test_bp2_data_administration.py

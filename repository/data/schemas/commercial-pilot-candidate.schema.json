@@ -1,0 +1,658 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:damavand-steel:schema:commercial-pilot-candidate:1.0.0",
+  "title": "C002 Commercial Pilot Candidate intake and Founder evidence packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "registry_id",
+    "registry_version",
+    "contract_version",
+    "data_classification",
+    "boundary",
+    "candidates"
+  ],
+  "properties": {
+    "registry_id": {"const": "commercial-pilot-candidates"},
+    "registry_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "contract_version": {"const": "1.0.0"},
+    "data_classification": {
+      "enum": ["C002_CONTRACT_FOUNDATION", "SYNTHETIC_FIXTURE", "FOUNDER_INTAKE_PROTECTED"]
+    },
+    "boundary": {"$ref": "#/$defs/boundary"},
+    "candidates": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {"$ref": "#/$defs/candidate"}
+    }
+  },
+  "$defs": {
+    "boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_population_authority",
+        "product_population_authority",
+        "sku_assignment_authority",
+        "availability_claim_authority",
+        "runtime_authority",
+        "commerce_activation_authority"
+      ],
+      "properties": {
+        "candidate_population_authority": {"const": false},
+        "product_population_authority": {"const": false},
+        "sku_assignment_authority": {"const": false},
+        "availability_claim_authority": {"const": false},
+        "runtime_authority": {"const": false},
+        "commerce_activation_authority": {"const": false}
+      }
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_id",
+        "record_version",
+        "status",
+        "commercial_scope",
+        "seed_references",
+        "founder_evidence_packet",
+        "readiness",
+        "selection_effects",
+        "provenance"
+      ],
+      "properties": {
+        "candidate_id": {"type": "string", "pattern": "^cpcand:[0-9a-f]{12}$"},
+        "record_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "status": {"const": "CANDIDATE_UNVERIFIED"},
+        "commercial_scope": {"$ref": "#/$defs/commercial_scope"},
+        "seed_references": {
+          "type": "array",
+          "maxItems": 100,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/seed_reference"}
+        },
+        "founder_evidence_packet": {"$ref": "#/$defs/founder_evidence_packet"},
+        "readiness": {"$ref": "#/$defs/readiness"},
+        "selection_effects": {"$ref": "#/$defs/selection_effects"},
+        "provenance": {"$ref": "#/$defs/provenance"}
+      }
+    },
+    "commercial_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "objective",
+        "target_customer_context",
+        "target_channel",
+        "entity_references",
+        "maximum_candidate_count",
+        "maximum_applies_to_this_intake_only",
+        "seed_count_is_scope_ceiling",
+        "selection_may_extend_beyond_seeds",
+        "cartesian_generation_forbidden"
+      ],
+      "properties": {
+        "objective": {"type": "string", "minLength": 1, "maxLength": 500, "pattern": ".*\\S.*"},
+        "target_customer_context": {"type": "string", "minLength": 1, "maxLength": 500, "pattern": ".*\\S.*"},
+        "target_channel": {"type": "string", "minLength": 1, "maxLength": 200, "pattern": ".*\\S.*"},
+        "entity_references": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^prd:(family|series|variant-rule-set):[0-9a-f]{12}$"
+          }
+        },
+        "maximum_candidate_count": {"type": "integer", "minimum": 1, "maximum": 100},
+        "maximum_applies_to_this_intake_only": {"const": true},
+        "seed_count_is_scope_ceiling": {"const": false},
+        "selection_may_extend_beyond_seeds": {"const": true},
+        "cartesian_generation_forbidden": {"const": true}
+      }
+    },
+    "seed_reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pilot_id",
+        "evidence_role",
+        "references_are_identity",
+        "automatically_selected",
+        "limits_candidate_scope"
+      ],
+      "properties": {
+        "pilot_id": {"type": "string", "pattern": "^pilot:[0-9a-f]{12}$"},
+        "evidence_role": {"const": "SEED_REFERENCE_ONLY"},
+        "references_are_identity": {"const": false},
+        "automatically_selected": {"const": false},
+        "limits_candidate_scope": {"const": false}
+      }
+    },
+    "founder_evidence_packet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "packet_id",
+        "evaluation_as_of",
+        "selection_question",
+        "minimum_data_packet",
+        "criteria",
+        "coverage",
+        "decision_state",
+        "decision_reference"
+      ],
+      "properties": {
+        "packet_id": {"type": "string", "pattern": "^cpfep:[0-9a-f]{12}$"},
+        "evaluation_as_of": {"type": "string", "format": "date-time"},
+        "selection_question": {"type": "string", "minLength": 1, "maxLength": 500, "pattern": ".*\\S.*"},
+        "minimum_data_packet": {"$ref": "#/$defs/minimum_data_packet"},
+        "criteria": {
+          "type": "array",
+          "minItems": 9,
+          "maxItems": 9,
+          "prefixItems": [
+            {"$ref": "#/$defs/demand_signal"},
+            {"$ref": "#/$defs/supply_evidence"},
+            {"$ref": "#/$defs/gross_profit_potential"},
+            {"$ref": "#/$defs/repeatability"},
+            {"$ref": "#/$defs/product_data_completeness"},
+            {"$ref": "#/$defs/photo_content_readiness"},
+            {"$ref": "#/$defs/seo_buyer_intent"},
+            {"$ref": "#/$defs/operational_complexity"},
+            {"$ref": "#/$defs/fulfillment_risk"}
+          ],
+          "items": false
+        },
+        "coverage": {"$ref": "#/$defs/coverage"},
+        "decision_state": {"const": "PENDING_FOUNDER_SELECTION"},
+        "decision_reference": {"type": "null"}
+      }
+    },
+    "minimum_data_packet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "packet_state",
+        "bounded_commercial_context",
+        "protected_commercial_evidence",
+        "operations_fulfillment",
+        "parties",
+        "mass",
+        "appearance",
+        "content_photo_rights",
+        "seo",
+        "inventory_harmony",
+        "commerce_intent",
+        "damavand_central_boundary",
+        "information_governance",
+        "conflicts_exclusions_blockers",
+        "owner_role",
+        "reviewer_role"
+      ],
+      "properties": {
+        "packet_state": {"enum": ["INCOMPLETE", "COMPLETE"]},
+        "bounded_commercial_context": {"$ref": "#/$defs/bounded_commercial_context"},
+        "protected_commercial_evidence": {"$ref": "#/$defs/protected_commercial_evidence"},
+        "operations_fulfillment": {"$ref": "#/$defs/operations_fulfillment"},
+        "parties": {"$ref": "#/$defs/parties"},
+        "mass": {"$ref": "#/$defs/mass_context"},
+        "appearance": {"$ref": "#/$defs/appearance_context"},
+        "content_photo_rights": {"$ref": "#/$defs/content_photo_rights"},
+        "seo": {"$ref": "#/$defs/seo_context"},
+        "inventory_harmony": {"$ref": "#/$defs/inventory_harmony_context"},
+        "commerce_intent": {"$ref": "#/$defs/commerce_intent_context"},
+        "damavand_central_boundary": {"$ref": "#/$defs/damavand_central_boundary"},
+        "information_governance": {"$ref": "#/$defs/information_governance"},
+        "conflicts_exclusions_blockers": {"$ref": "#/$defs/conflicts_exclusions_blockers"},
+        "owner_role": {"$ref": "#/$defs/role"},
+        "reviewer_role": {"$ref": "#/$defs/role"}
+      }
+    },
+    "role": {
+      "type": "string",
+      "pattern": "^role:[a-z][a-z0-9-]{2,63}$"
+    },
+    "resolved_or_unresolved_text": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500,
+      "pattern": ".*\\S.*"
+    },
+    "bounded_commercial_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bounded_objective",
+        "intended_use_case",
+        "configuration_requirements",
+        "canonical_references",
+        "proposal_references"
+      ],
+      "properties": {
+        "bounded_objective": {"$ref": "#/$defs/resolved_or_unresolved_text"},
+        "intended_use_case": {"$ref": "#/$defs/resolved_or_unresolved_text"},
+        "configuration_requirements": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/resolved_or_unresolved_text"}
+        },
+        "canonical_references": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^(?:UNRESOLVED|prd:(?:catalog|platform|family|series|variant-rule-set):[0-9a-f]{12})$"
+          }
+        },
+        "proposal_references": {
+          "type": "array",
+          "maxItems": 100,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^(?:UNRESOLVED|proposal:[a-z][a-z0-9-]{2,63}:[0-9a-f]{12})$"
+          }
+        }
+      }
+    },
+    "protected_commercial_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "demand_signal_locator",
+        "supply_evidence_locator",
+        "gross_profit_potential_locator",
+        "gross_profit_fact_source"
+      ],
+      "properties": {
+        "demand_signal_locator": {"$ref": "#/$defs/resolved_or_unresolved_text"},
+        "supply_evidence_locator": {"$ref": "#/$defs/resolved_or_unresolved_text"},
+        "gross_profit_potential_locator": {"$ref": "#/$defs/resolved_or_unresolved_text"},
+        "gross_profit_fact_source": {"const": "FOUNDER_SUPPLIED"}
+      }
+    },
+    "operations_fulfillment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operations_reference", "fulfillment_reference"],
+      "properties": {
+        "operations_reference": {"$ref": "#/$defs/resolved_or_unresolved_text"},
+        "fulfillment_reference": {"$ref": "#/$defs/resolved_or_unresolved_text"}
+      }
+    },
+    "parties": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["manufacturer_reference", "brand_reference", "supplier_reference"],
+      "properties": {
+        "manufacturer_reference": {"$ref": "#/$defs/resolved_or_unresolved_text"},
+        "brand_reference": {"$ref": "#/$defs/resolved_or_unresolved_text"},
+        "supplier_reference": {"$ref": "#/$defs/resolved_or_unresolved_text"}
+      }
+    },
+    "mass_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["method", "unit_reference", "evidence_reference"],
+      "properties": {
+        "method": {"enum": ["MANUFACTURER_STATED", "MEASURED", "CALCULATED", "UNRESOLVED"]},
+        "unit_reference": {"type": "string", "pattern": "^(?:UNRESOLVED|unit:[0-9a-f]{12})$"},
+        "evidence_reference": {"$ref": "#/$defs/resolved_or_unresolved_text"}
+      }
+    },
+    "appearance_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["appearance_system", "electrostatic_reference", "stainless_finish_pvd_separation"],
+      "properties": {
+        "appearance_system": {"enum": ["ELECTROSTATIC", "OTHER_GOVERNED", "NOT_APPLICABLE", "UNRESOLVED"]},
+        "electrostatic_reference": {"$ref": "#/$defs/resolved_or_unresolved_text"},
+        "stainless_finish_pvd_separation": {"enum": ["CONFIRMED", "NOT_APPLICABLE", "UNRESOLVED"]}
+      }
+    },
+    "content_photo_rights": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["photo_readiness_reference", "content_rights_reference"],
+      "properties": {
+        "photo_readiness_reference": {"$ref": "#/$defs/resolved_or_unresolved_text"},
+        "content_rights_reference": {"$ref": "#/$defs/resolved_or_unresolved_text"}
+      }
+    },
+    "seo_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["buyer_intent_reference"],
+      "properties": {
+        "buyer_intent_reference": {"$ref": "#/$defs/resolved_or_unresolved_text"}
+      }
+    },
+    "inventory_harmony_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["need_state", "rule_or_rationale_reference"],
+      "properties": {
+        "need_state": {"enum": ["REQUIRED", "NOT_REQUIRED", "UNRESOLVED"]},
+        "rule_or_rationale_reference": {"$ref": "#/$defs/resolved_or_unresolved_text"}
+      }
+    },
+    "commerce_intent_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["intent", "intent_reference", "activation_authority"],
+      "properties": {
+        "intent": {"enum": ["INQUIRY_ONLY_DEFAULT", "FUTURE_PURCHASE_ELIGIBILITY", "UNRESOLVED"]},
+        "intent_reference": {"$ref": "#/$defs/resolved_or_unresolved_text"},
+        "activation_authority": {"const": false}
+      }
+    },
+    "damavand_central_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["component_owner", "future_solution_owner", "boundary_reference", "central_implementation_authority"],
+      "properties": {
+        "component_owner": {"const": "DAMAVAND"},
+        "future_solution_owner": {"const": "CENTRAL"},
+        "boundary_reference": {"$ref": "#/$defs/resolved_or_unresolved_text"},
+        "central_implementation_authority": {"const": false}
+      }
+    },
+    "information_governance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["confidentiality_classification", "handling_reference"],
+      "properties": {
+        "confidentiality_classification": {"enum": ["PUBLIC", "INTERNAL", "CONFIDENTIAL", "UNRESOLVED"]},
+        "handling_reference": {"$ref": "#/$defs/resolved_or_unresolved_text"}
+      }
+    },
+    "conflicts_exclusions_blockers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["conflicts", "exclusions", "blockers"],
+      "properties": {
+        "conflicts": {"type": "array", "maxItems": 100, "uniqueItems": true, "items": {"$ref": "#/$defs/resolved_or_unresolved_text"}},
+        "exclusions": {"type": "array", "maxItems": 100, "uniqueItems": true, "items": {"$ref": "#/$defs/resolved_or_unresolved_text"}},
+        "blockers": {"type": "array", "maxItems": 100, "uniqueItems": true, "items": {"$ref": "#/$defs/resolved_or_unresolved_text"}}
+      }
+    },
+    "demand_signal": {
+      "allOf": [
+        {"$ref": "#/$defs/criterion"},
+        {"properties": {"criterion_code": {"const": "DEMAND_SIGNAL"}}}
+      ]
+    },
+    "supply_evidence": {
+      "allOf": [
+        {"$ref": "#/$defs/criterion"},
+        {"properties": {"criterion_code": {"const": "SUPPLY_EVIDENCE"}}}
+      ]
+    },
+    "gross_profit_potential": {
+      "allOf": [
+        {"$ref": "#/$defs/criterion"},
+        {"properties": {"criterion_code": {"const": "GROSS_PROFIT_POTENTIAL"}}}
+      ]
+    },
+    "repeatability": {
+      "allOf": [
+        {"$ref": "#/$defs/criterion"},
+        {"properties": {"criterion_code": {"const": "REPEATABILITY"}}}
+      ]
+    },
+    "product_data_completeness": {
+      "allOf": [
+        {"$ref": "#/$defs/criterion"},
+        {"properties": {"criterion_code": {"const": "PRODUCT_DATA_COMPLETENESS"}}}
+      ]
+    },
+    "photo_content_readiness": {
+      "allOf": [
+        {"$ref": "#/$defs/criterion"},
+        {"properties": {"criterion_code": {"const": "PHOTO_CONTENT_READINESS"}}}
+      ]
+    },
+    "seo_buyer_intent": {
+      "allOf": [
+        {"$ref": "#/$defs/criterion"},
+        {"properties": {"criterion_code": {"const": "SEO_BUYER_INTENT"}}}
+      ]
+    },
+    "operational_complexity": {
+      "allOf": [
+        {"$ref": "#/$defs/criterion"},
+        {"properties": {"criterion_code": {"const": "OPERATIONAL_COMPLEXITY"}}}
+      ]
+    },
+    "fulfillment_risk": {
+      "allOf": [
+        {"$ref": "#/$defs/criterion"},
+        {"properties": {"criterion_code": {"const": "FULFILLMENT_RISK"}}}
+      ]
+    },
+    "criterion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["criterion_code", "state", "sources", "review"],
+      "properties": {
+        "criterion_code": {
+          "enum": [
+            "DEMAND_SIGNAL",
+            "SUPPLY_EVIDENCE",
+            "GROSS_PROFIT_POTENTIAL",
+            "REPEATABILITY",
+            "PRODUCT_DATA_COMPLETENESS",
+            "PHOTO_CONTENT_READINESS",
+            "SEO_BUYER_INTENT",
+            "OPERATIONAL_COMPLEXITY",
+            "FULFILLMENT_RISK"
+          ]
+        },
+        "state": {
+          "enum": [
+            "MISSING",
+            "SUBMITTED",
+            "VERIFIED",
+            "CONFLICTING",
+            "EXPIRED",
+            "NOT_APPLICABLE_APPROVED"
+          ]
+        },
+        "sources": {
+          "type": "array",
+          "maxItems": 20,
+          "items": {"$ref": "#/$defs/evidence_source"}
+        },
+        "review": {"$ref": "#/$defs/review"}
+      }
+    },
+    "evidence_source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_source_id",
+        "source_type",
+        "source_reference",
+        "fact_summary",
+        "submitted_by",
+        "submitted_at",
+        "expires_at"
+      ],
+      "properties": {
+        "evidence_source_id": {"type": "string", "pattern": "^cpevd:[0-9a-f]{12}$"},
+        "source_type": {
+          "enum": [
+            "FOUNDER_SUPPLIED",
+            "CUSTOMER_SIGNAL",
+            "SUPPLIER_DOCUMENT",
+            "DOMAIN_REVIEW",
+            "OPERATIONS_EVIDENCE",
+            "CONTENT_AUDIT",
+            "SEO_RESEARCH",
+            "SYNTHETIC_FIXTURE"
+          ]
+        },
+        "source_reference": {"type": "string", "minLength": 1, "maxLength": 500, "pattern": ".*\\S.*"},
+        "fact_summary": {"type": "string", "minLength": 1, "maxLength": 1000, "pattern": ".*\\S.*"},
+        "submitted_by": {"type": "string", "pattern": "^role:[a-z][a-z0-9-]{2,63}$"},
+        "submitted_at": {"type": "string", "format": "date-time"},
+        "expires_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reviewed_by", "reviewed_at", "evidence_reference"],
+      "properties": {
+        "reviewed_by": {
+          "type": ["string", "null"],
+          "pattern": "^role:[a-z][a-z0-9-]{2,63}$"
+        },
+        "reviewed_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "evidence_reference": {
+          "type": ["string", "null"],
+          "minLength": 1,
+          "maxLength": 500
+        }
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "total_count",
+        "resolved_count",
+        "unresolved_criteria",
+        "formula",
+        "weights_used",
+        "thresholds_used"
+      ],
+      "properties": {
+        "total_count": {"const": 9},
+        "resolved_count": {"type": "integer", "minimum": 0, "maximum": 9},
+        "unresolved_criteria": {
+          "type": "array",
+          "maxItems": 9,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "DEMAND_SIGNAL",
+              "SUPPLY_EVIDENCE",
+              "GROSS_PROFIT_POTENTIAL",
+              "REPEATABILITY",
+              "PRODUCT_DATA_COMPLETENESS",
+              "PHOTO_CONTENT_READINESS",
+              "SEO_BUYER_INTENT",
+              "OPERATIONAL_COMPLEXITY",
+              "FULFILLMENT_RISK"
+            ]
+          }
+        },
+        "formula": {"const": "resolved_count/9"},
+        "weights_used": {"const": false},
+        "thresholds_used": {"const": false}
+      }
+    },
+    "readiness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "blockers"],
+      "properties": {
+        "state": {"enum": ["NOT_READY", "FOUNDER_SELECTION_READY"]},
+        "blockers": {
+          "type": "array",
+          "maxItems": 100,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1, "maxLength": 200, "pattern": ".*\\S.*"}
+        }
+      }
+    },
+    "selection_effects": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "founder_selection_recorded",
+        "product_state",
+        "sku_state",
+        "availability_state",
+        "projection_state",
+        "commerce_state",
+        "creates_product",
+        "creates_sku",
+        "asserts_availability",
+        "authorizes_runtime",
+        "authorizes_commerce",
+        "limits_future_scope_to_seed_count"
+      ],
+      "properties": {
+        "founder_selection_recorded": {"const": false},
+        "product_state": {"const": "NOT_CREATED"},
+        "sku_state": {"const": "NOT_ASSIGNED"},
+        "availability_state": {"const": "NOT_ASSERTED"},
+        "projection_state": {"const": "NOT_AUTHORIZED"},
+        "commerce_state": {"const": "INQUIRY_ONLY"},
+        "creates_product": {"const": false},
+        "creates_sku": {"const": false},
+        "asserts_availability": {"const": false},
+        "authorizes_runtime": {"const": false},
+        "authorizes_commerce": {"const": false},
+        "limits_future_scope_to_seed_count": {"const": false}
+      }
+    },
+    "provenance": {
+      "oneOf": [
+        {"$ref": "#/$defs/synthetic_provenance"},
+        {"$ref": "#/$defs/founder_intake_provenance"}
+      ]
+    },
+    "synthetic_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_type",
+        "source_reference",
+        "captured_by",
+        "captured_at",
+        "evidence_status"
+      ],
+      "properties": {
+        "source_type": {"const": "SYNTHETIC_FIXTURE"},
+        "source_reference": {"type": "string", "minLength": 1, "maxLength": 500, "pattern": ".*\\S.*"},
+        "captured_by": {"const": "role:automated-validation"},
+        "captured_at": {"type": "string", "format": "date-time"},
+        "evidence_status": {"const": "SYNTHETIC_TEST_EVIDENCE"}
+      }
+    },
+    "founder_intake_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_type",
+        "source_reference",
+        "captured_by",
+        "captured_at",
+        "evidence_status"
+      ],
+      "properties": {
+        "source_type": {"const": "FOUNDER_EVIDENCE_PACKET"},
+        "source_reference": {"type": "string", "minLength": 1, "maxLength": 500, "pattern": ".*\\S.*"},
+        "captured_by": {"const": "role:founder-or-authorized-steward"},
+        "captured_at": {"type": "string", "format": "date-time"},
+        "evidence_status": {"const": "PROTECTED_FOUNDER_EVIDENCE"}
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+registry_id: c002-product-administration-policies
+registry_version: "1.0.0"
+contract_version: "1.0.0"
+data_classification: C002_POLICY_ONLY
+policies:
+  - policy_id: papolicy:6a1d0c02a001
+    policy_key: product_builder
+    record_kind: PRODUCT_BUILDER
+    canonical_instance_population_allowed: false
+    promotion_requires_separate_authority: true
+    runtime_authority: false
+    status: APPROVED
+    owner: &owner {role: product-data-steward}
+    provenance: &provenance
+      source_type: C002_MISSION_PACKET
+      source_reference: C002
+      captured_by: role:product-data-steward
+      captured_at: "2026-08-16T00:00:00Z"
+      evidence_status: FOUNDER_AUTHORIZED_POLICY_SCOPE
+    record_version: "1.0.0"
+  - policy_id: papolicy:6a1d0c02a002
+    policy_key: controlled_value_proposal
+    record_kind: CONTROLLED_VALUE_PROPOSAL
+    canonical_instance_population_allowed: false
+    promotion_requires_separate_authority: true
+    runtime_authority: false
+    status: APPROVED
+    owner: *owner
+    provenance: *provenance
+    record_version: "1.0.0"
+  - policy_id: papolicy:6a1d0c02a003
+    policy_key: brand_provenance
+    record_kind: BRAND_PROVENANCE
+    canonical_instance_population_allowed: false
+    promotion_requires_separate_authority: true
+    runtime_authority: false
+    status: APPROVED
+    owner: *owner
+    provenance: *provenance
+    record_version: "1.0.0"
+  - policy_id: papolicy:6a1d0c02a004
+    policy_key: mass_provenance
+    record_kind: MASS_PROVENANCE
+    canonical_instance_population_allowed: false
+    promotion_requires_separate_authority: true
+    runtime_authority: false
+    status: APPROVED
+    owner: *owner
+    provenance: *provenance
+    record_version: "1.0.0"
+  - policy_id: papolicy:6a1d0c02a005
+    policy_key: electrostatic_appearance
+    record_kind: ELECTROSTATIC_APPEARANCE
+    canonical_instance_population_allowed: false
+    promotion_requires_separate_authority: true
+    runtime_authority: false
+    status: APPROVED
+    owner: *owner
+    provenance: *provenance
+    record_version: "1.0.0"
+  - policy_id: papolicy:6a1d0c02a006
+    policy_key: commerce_eligibility
+    record_kind: COMMERCE_ELIGIBILITY
+    canonical_instance_population_allowed: false
+    promotion_requires_separate_authority: true
+    runtime_authority: false
+    status: APPROVED
+    owner: *owner
+    provenance: *provenance
+    record_version: "1.0.0"
+  - policy_id: papolicy:6a1d0c02a007
+    policy_key: inventory_harmony
+    record_kind: INVENTORY_HARMONY
+    canonical_instance_population_allowed: false
+    promotion_requires_separate_authority: true
+    runtime_authority: false
+    status: APPROVED
+    owner: *owner
+    provenance: *provenance
+    record_version: "1.0.0"
+  - policy_id: papolicy:6a1d0c02a008
+    policy_key: damavand_central_bom_interface
+    record_kind: DAMAVAND_CENTRAL_BOM_INTERFACE
+    canonical_instance_population_allowed: false
+    promotion_requires_separate_authority: true
+    runtime_authority: false
+    status: APPROVED
+    owner: *owner
+    provenance: *provenance
+    record_version: "1.0.0"
+instances: []
+status: APPROVED
