@@ -65,15 +65,15 @@ Its evidence and findings remain preserved, but C1-T03 is not the active next ac
 
 | Candidate mission | Intended bounded outcome | Entry boundary |
 | --- | --- | --- |
-| `C002 — Commercial Pilot Truth & Product Administration Contracts` | Define a commercially useful bounded slice and future Product Builder/value/provenance contracts | Separate Founder Mission; no Product/SKU/Availability inference |
-| `C003-A — Offline Pilot Projection Package` | Validated offline canonical-to-WP/WC projection package | C002-approved truth slice and validator PASS |
+| `C002 — Commercial Pilot Truth & Product Administration Contracts` | Establish closed candidate-intake/readiness and Product-administration contract foundations; no Pilot slice or Product data is selected/populated | Contract foundation only; first bounded slice remains a separate Founder decision |
+| `C003-A — Offline Pilot Projection Package` | Validated offline canonical-to-WP/WC projection package | Separately approved bounded Product truth slice and validator PASS; C002 alone is insufficient |
 | `C003-B — Manual-First Growth/CRM Loop` | Controlled lead intake, follow-up, outcomes, and safe export path | Ownership, privacy, consent, and field contract approved |
 | `C004 — Non-Production Readiness` | Exact target, least privilege, licenses, backup/restore, and rollback proof | Separate Runtime authority |
 | `C005 — Bounded Staging Pilot` | Inquiry-first staging implementation and QA for the approved slice | C004 readiness plus Security/RTL/Mobile/Accessibility/rollback PASS |
 | `C006 — Pilot Certification / Production Decision` | Evidence package for a Founder GO/NO-GO | No automatic Production authority |
 | `D-series` | Automation of demonstrated processes | Stable metrics, ownership, failure handling, and separate authorization |
 
-These are candidate successors only. C001 starts none of them.
+These are candidate successors only. C002 starts none of them.
 
 ## Product and Commerce Boundaries
 
@@ -81,7 +81,7 @@ These are candidate successors only. C001 starts none of them.
 - The other 879 Pipe combinations remain `CANDIDATE_UNVERIFIED`; Availability remains `MISSING_DATA_VALUE` for all 882 rows.
 - Current operational mode is inquiry-first with no active public purchase authority.
 - The approved target is future per-SKU purchase eligibility under separate Product, commercial, Runtime, Production, and Founder gates.
-- C002 may specify future Product Builder, controlled `+ Add Value`, weight provenance, electrostatic appearance, Commerce Eligibility, Inventory Harmony, and the Damavand/Central BOM boundary. This roadmap does not implement them.
+- C002 specifies the contract boundaries for future Product Builder, controlled `+ Add Value`, mass provenance, electrostatic appearance, Commerce Eligibility, Inventory Harmony, and the Damavand/Central BOM interface. Canonical C002 instance registries remain empty; the roadmap implements none of those capabilities.
 
 ## Legacy Sequence Classification
 

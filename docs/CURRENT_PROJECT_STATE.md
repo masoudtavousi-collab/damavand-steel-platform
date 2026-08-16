@@ -9,9 +9,9 @@
 - **Last completed governance integration:** DS program directive integration through `FD-DS-PROGRAM-001`, `C1-T04`, merged PR #27 (`a48cc9ee6cfc6b5e3abd906f13f05f9751428f94`), and successful main CI `30765167988`
 - **Last completed architecture reconciliation:** `C1-T06-CANONICAL-OWNER` through merged PR #29 (`13531830ad0c4fa57cf8dcab4c5516f27f64e4ea`) and successful main CI `30796043918`
 - **Last completed governance foundation:** Agentic Usage Telemetry Foundation through PR #32, Merge Commit `0d334a3f4dc0d4f482376a7e43ccb9543c67fbf0`, and successful main CI
-- **Current phase:** Project OS 2.0 — Strategic Reconciliation Canonicalized
+- **Current phase:** Project OS 2.0 — C002 Contract Foundation
 - **Current authorized branch:** None granted by this state record
-- **Current authorization:** No successor Mission or implementation is authorized by this state record. C000/Project OS 2.0 is the accepted strategic reconciliation; C1-T03 remains frozen. C002, Product/SKU/Availability mutation, Runtime, WordPress/WooCommerce, public commerce, Staging, Production, C1-T03 repair, Central Steel, n8n, and OpenAI API integration remain separately gated.
+- **Current authorization:** No successor Mission or implementation is authorized by this state record. C000/Project OS 2.0 is the accepted strategic reconciliation; the C002 candidate-intake and Product-administration contract foundation is present when this record is on `main`; C1-T03 remains frozen. Actual Pilot selection, Product/SKU/Availability population, Runtime, WordPress/WooCommerce, public commerce, Staging, Production, C1-T03 repair, Central Steel, n8n, and OpenAI API integration remain separately gated.
 - **Merge:** NO-GO without separate Founder authorization
 - **Runtime / WordPress / WooCommerce mutation:** NO-GO
 - **Import / publishing / deployment / product creation / bulk SKU generation:** NO-GO
@@ -32,6 +32,7 @@ This file is the only semantic operational-state pointer. Other documents may pr
 | Foundation | Evidence | Current meaning |
 | --- | --- | --- |
 | `C000 / Project OS 2.0` strategic reconciliation | Founder + Project Commander C000 and C001 Mission Packets dated 2026-08-16; [C000 Decision Package](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md) | Founder-approved operating model and target architecture. Current operation remains inquiry-first with no active public purchase authority; no Product, Runtime, or successor implementation authority follows |
+| `C002` Commercial Pilot truth and Product administration contracts | Founder + Project Commander C002 Mission Packet; [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md); closed schemas, empty canonical extension registries, deterministic offline validators, and positive/negative/adversarial tests | Defines candidate intake/readiness, the minimum Founder Evidence/Data Packet, future Product Builder/Add Value, Brand/Mass/Appearance provenance, inactive Commerce Eligibility, Inventory Harmony, and the Damavand/Central interface boundary. It selects no Pilot and creates no Product, SKU, Availability, commercial fact, runtime object, or purchase capability |
 | Wave 2A — Product Core | PR #5; `product-core` contract, schema, entity-type/status registries, validator, and fixtures | Platform-independent structural foundation exists; no Product, Golden, SKU, commercial, import, or runtime record was created |
 | Wave 2B — Product Attributes | PR #6; `product-attribute` contract, schema, controlled supporting registries, validator, and fixtures | The original Wave 2B foundation kept the canonical registry empty; later PD-02B and PD-03A approved exactly six definitions—Material, Grade, Finish, Diameter, Thickness, and Length—without approving Product values or runtime use |
 | Wave 2C — Measurements | PR #7; measurement contract/schema, two initially candidate dimensions, four initially candidate units, validator, and fixtures | The original foundation asserted no Product values. PD-03A later approved Length, Metre, and Millimetre; Mass, Kilogram, and Gram remain `CANDIDATE_UNVERIFIED`, and no weight, availability, pricing, or runtime mapping is asserted |
@@ -80,6 +81,11 @@ Repository validators are active in CI and unified under `make test`. PR #12 har
   evidence. A Pilot record is not a Product, SKU, Golden package, import asset,
   runtime object, or availability, and the three records are not the maximum
   ceiling of a future bounded Commercial Fast-Track scope.
+- C002 adds a fail-closed intake/readiness and Product-administration contract
+  foundation. Its canonical instance registries are empty. Synthetic fixtures
+  prove the contracts only; no first Pilot slice, Product, SKU, Availability,
+  Brand/appearance/mass value, Harmony rule, or Commerce Eligibility instance
+  is populated.
 
 ### Knowledge Repository
 
@@ -173,7 +179,7 @@ All existing C1-T03 Scope, Gate 4 output, reviews, consolidation, and 11 finding
 
 No successor Mission is active. Any next program activity requires a separate Founder/Project Commander Mission Packet with a dynamically resolved `main`, exact scope, gates, validation, and stop conditions.
 
-`C002 — Commercial Pilot Truth & Product Administration Contracts` is the recommended successor candidate only. It is not authorized, scheduled, or started by this state record. C1-T03, C1-T07, PD-04/PD-05, Product/SKU/Availability population, WordPress/WooCommerce, Runtime, Staging, Import, Publishing, Deployment, Production, Central Steel, n8n, and OpenAI API integration remain separately gated and `NO-GO`.
+The C002 contract foundation does not select the first Commercial Pilot slice or authorize a successor. C1-T03, C1-T07, PD-04/PD-05, Product/SKU/Availability population, WordPress/WooCommerce, Runtime, Staging, Import, Publishing, Deployment, Production, Central Steel, n8n, and OpenAI API integration remain separately gated and `NO-GO`.
 
 ## Current References
 

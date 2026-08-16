@@ -1,0 +1,196 @@
+contract_id: product-administration-policy
+contract_version: "1.0.0"
+record_kind: c002-product-administration-policy-package
+schema:
+  path: repository/data/schemas/product-administration-policy.schema.json
+  draft: https://json-schema.org/draft/2020-12/schema
+registry:
+  path: repository/data/registries/extensions/c002/product-administration-policies.yaml
+dependencies:
+  product_core: repository/data/contracts/product-core.contract.yaml
+  product_master_data: repository/data/contracts/product-master-data.contract.yaml
+  product_attribute: repository/data/contracts/product-attribute.contract.yaml
+  product_attribute_values: repository/data/contracts/product-attribute-value-registry.contract.yaml
+  measurement: repository/data/contracts/measurement.contract.yaml
+canonical_sources:
+  product_entities: repository/data/registries/product-entities.yaml
+  pd03a_extension: repository/data/registries/extensions/pd03a/pilot-prerequisite.yaml
+  product_attributes: repository/data/registries/product-attributes.yaml
+  controlled_values: repository/data/registries/product-attribute-value-registries.yaml
+  measurement_dimensions: repository/data/registries/measurement-dimensions.yaml
+  attribute_units: repository/data/registries/attribute-units.yaml
+authority:
+  mission_id: C002
+  policy_definition_allowed: true
+  canonical_instance_population_allowed: false
+  product_or_sku_population_allowed: false
+  runtime_authority: false
+exact_policy_scope:
+  policy_count: 8
+  record_kinds:
+    - PRODUCT_BUILDER
+    - CONTROLLED_VALUE_PROPOSAL
+    - BRAND_PROVENANCE
+    - MASS_PROVENANCE
+    - ELECTROSTATIC_APPEARANCE
+    - COMMERCE_ELIGIBILITY
+    - INVENTORY_HARMONY
+    - DAMAVAND_CENTRAL_BOM_INTERFACE
+  canonical_instances: 0
+invariants:
+  product_builder:
+    output_state: DRAFT_CANDIDATE_BUNDLE
+    required_chain: [CATALOG, PLATFORM, FAMILY, SERIES, PROFILE, VARIANT_RULE_SET]
+    canonical_status_required: APPROVED
+    controlled_value_binding_required: [attribute_id, value_registry_id, value_term_id]
+    cartesian_generation_forbidden: true
+    sku_derivation_allowed: false
+    canonical_promotion_allowed: false
+  controlled_value_proposal:
+    lifecycle: [DRAFT, VALIDATE, REVIEW, APPROVED, REJECTED]
+    proposal_types: [GENERIC_CONTROLLED_VALUE, ELECTROSTATIC_APPEARANCE]
+    generic_target_requires: [approved_attribute_id, approved_value_registry_id, exact_attribute_registry_binding]
+    duplicate_detection: [EXACT, NFC_CASEFOLD_TRIM_WITHIN_ALLOWED_SCRIPT]
+    script_policy:
+      value_code: ASCII_LOWER_SNAKE_CASE
+      english_labels_and_aliases: ASCII_LATIN_DIGITS_APPROVED_PUNCTUATION
+      persian_labels_and_aliases: APPROVED_ARABIC_SCRIPT_DIGITS_SPACE_PUNCTUATION
+      mixed_cyrillic_greek_or_unsupported_scripts: REJECT
+      uts39_claimed: false
+    proposal_creates_value_term: false
+    legal_edges: [DRAFT_TO_VALIDATE, VALIDATE_TO_REVIEW, REVIEW_TO_APPROVED, REVIEW_TO_REJECTED]
+    transition_history_and_evidence_required: true
+    transition_timestamps_strictly_increasing: true
+    transition_actor_reviewer_separation_required: true
+    electrostatic_namespace: ELECTROSTATIC
+    electrostatic_proposal_owner: electrostatic-appearance-steward
+    canonical_finish_target_allowed: false
+    pvd_target_allowed: false
+    direct_canonical_registry_mutation_allowed: false
+    approved_proposal_requires_separate_promotion_authority: true
+    normalization: [NFC, CASEFOLD, TRIM]
+  brand_provenance:
+    brand_manufacturer_supplier_origin_are_distinct: true
+    inference_forbidden: true
+    absent_brand_allowed: true
+    applicability_evidence_effective_period_required: true
+    separate_owner_reviewer_required: true
+  mass_provenance:
+    canonical_quantity: MASS
+    subject_applicability_required: true
+    applicability_basis_must_equal_value_basis: true
+    subject_must_resolve_to_approved_canonical_entity: true
+    independent_review_and_effective_period_required: true
+    conflicts_and_supersession_preserved: true
+    conflict_and_supersession_references_must_resolve: true
+    supersession_cycles_forbidden: true
+    noncanonical_mass_record_count_range: [1, 8]
+    unit_must_resolve_to_mass_dimension: true
+    methods: [MANUFACTURER_STATED, MEASURED, CALCULATED]
+    manufacturer_stated_requires: [document_reference, document_revision, source_locator]
+    measured_requires: [procedure_reference, instrument_reference, calibration_reference, sample_reference, measured_at]
+    calculated_requires: [formula_id, formula_version, input_value_unit_provenance_references, rounding_mode, approximate_true]
+    approved_mass_unit_required_for_canonical_value: true
+    current_mass_unit_promotion_allowed: false
+  electrostatic_appearance:
+    semantic_namespace: ELECTROSTATIC
+    explicit_fields: [substrate_reference, material_reference, coating_method, color_reference, texture, sheen]
+    separate_from_stainless_finish: true
+    separate_from_pvd: true
+    technical_claim_inference_forbidden: true
+  commerce_eligibility:
+    scope: PER_SKU_ONLY
+    states:
+      - INQUIRY_ONLY
+      - PURCHASE_CANDIDATE
+      - PURCHASE_ELIGIBLE_INACTIVE
+      - PURCHASE_ENABLED
+      - SUSPENDED
+      - REVOKED
+    default_state: INQUIRY_ONLY
+    legal_transitions:
+      - INQUIRY_ONLY_TO_PURCHASE_CANDIDATE
+      - PURCHASE_CANDIDATE_TO_INQUIRY_ONLY
+      - PURCHASE_CANDIDATE_TO_PURCHASE_ELIGIBLE_INACTIVE
+      - PURCHASE_ELIGIBLE_INACTIVE_TO_INQUIRY_ONLY
+      - PURCHASE_ELIGIBLE_INACTIVE_TO_PURCHASE_ENABLED
+      - PURCHASE_ENABLED_TO_SUSPENDED
+      - SUSPENDED_TO_PURCHASE_ENABLED
+      - INQUIRY_ONLY_TO_REVOKED
+      - PURCHASE_CANDIDATE_TO_REVOKED
+      - PURCHASE_ELIGIBLE_INACTIVE_TO_REVOKED
+      - PURCHASE_ENABLED_TO_REVOKED
+      - SUSPENDED_TO_REVOKED
+    inheritance_forbidden: true
+    evidence_gates:
+      - product
+      - sku
+      - configuration
+      - availability
+      - pricing_authority_boolean_only
+      - fulfillment
+      - inventory
+      - legal_commercial
+      - security_payment
+      - public_presentation
+      - runtime
+      - production
+      - rollback_kill_switch
+      - founder
+    missing_or_expired_evidence_fallback: INQUIRY_ONLY
+    each_gate_requires: [evidence_references, status, validity, reviewer]
+    evidence_chronology: valid_from_lte_reviewed_at_lte_evaluated_at_lte_valid_until
+    separate_activation_authority_required: true
+    activation_allowed: false
+  inventory_harmony:
+    governed_as: COMPATIBILITY_OR_ASSORTMENT
+    exact_positive_component_ratios_required: true
+    component_count_range: [2, 16]
+    arbitrary_component_set_allowed: true
+    named_dimension_predicates_required: true
+    effective_period_and_evaluation_time_required: true
+    separate_owner_reviewer_required: true
+    evidence_entry_requires: [status, reviewer, valid_from, valid_until]
+    evidence_chronology: valid_from_lte_reviewed_at_lte_evaluated_at_lte_valid_until
+    outcomes: [ELIGIBLE, INELIGIBLE, UNDETERMINED]
+    missing_conflicted_or_expired_fallback: UNDETERMINED
+    pricing_effect_forbidden: true
+    stock_or_availability_inference_forbidden: true
+    commerce_eligibility_effect_forbidden: true
+  damavand_central_bom_interface:
+    damavand_owns_component_truth: true
+    central_is_future_read_only_consumer: true
+    central_mutation_allowed: false
+    central_implementation_allowed: false
+validation:
+  offline_only: true
+  network_allowed: false
+  side_effects_allowed: false
+  closed_schema_required: true
+  duplicate_keys_rejected: true
+  non_finite_numbers_rejected: true
+  remote_or_permissive_schema_rejected: true
+  deterministic_sorted_errors: true
+  positive_negative_adversarial_tests_required: true
+prohibited:
+  - product_population
+  - sku_population
+  - availability_claim
+  - stock_claim
+  - price
+  - pricing
+  - margin
+  - discount
+  - coupon
+  - offer
+  - cart
+  - checkout
+  - payment
+  - wordpress
+  - woocommerce
+  - import
+  - publication
+  - runtime
+  - deployment
+  - production
+  - central_steel_implementation

@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.12.0
+- **Version:** 0.13.0
 - **Last Updated:** 2026-08-16
 - **Last Review:** 2026-08-16
 - **Review Cycle:** On navigation or authority change; periodic cadence pending Founder approval
@@ -36,7 +36,7 @@ Every reader starts with:
 
 Readers then follow only the applicable role and Layer 1 route. DS-PC (`HOW`), DS-SPD (`WHAT`), decision logs, roadmap, domain models, and historical evidence are loaded when that route or the active task requires them—not as a universal context dump.
 
-For current work, readers must obtain the exact phase, branch, authorization, pull-request state, GO/NO-GO boundary, and next action from Current Project State. DS-PC (`HOW`) and DS-SPD (`WHAT`) are stable companion governing sources and do not compete with that operational pointer. Their acceptance does not auto-authorize PD-04, Campaign 002, Product/SKU, Golden/Master Data, Runtime, Import, Deployment, Production, or branch deletion. Historical scopes retain their original boundaries. [PD-02B Scope v1.0](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md) remains the immutable APPROVED base. [PD-03A Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md) governs the APPROVED prerequisite extension. [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md) governs only exactly three lifecycle-gated Pilot records and grants no Product/SKU, Availability, Master/Golden, Import, Runtime, Deployment, or Production authority.
+For current work, readers must obtain the exact phase, branch, authorization, pull-request state, GO/NO-GO boundary, and next action from Current Project State. DS-PC (`HOW`) and DS-SPD (`WHAT`) are stable companion governing sources and do not compete with that operational pointer. Their acceptance does not auto-authorize PD-04, Product/SKU, Golden/Master Data, Runtime, Import, Deployment, Production, or branch deletion. Historical scopes retain their original boundaries. [PD-02B Scope v1.0](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md) remains the immutable APPROVED base. [PD-03A Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md) governs the APPROVED prerequisite extension. [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md) governs only exactly three lifecycle-gated Pilot records. [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md) governs only contract infrastructure and empty C002 instance registries. None grants Product/SKU, Availability, Master/Golden, Import, Runtime, Deployment, or Production authority.
 
 ## Founder Reading Path
 
@@ -159,8 +159,10 @@ No product taxonomy or steel terminology may be inferred while the relevant Foun
 11. [PD-01 Product Data Contract Enablement Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md), treated as the approved exact synthetic-only Scope/Approval and Test Contract; it creates no canonical Product Data.
 12. [PD-02A Controlled Values and Attribute Profiles Scope v1.0](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md), treated as the approved synthetic-only Scope/Approval and Test Contract after legal lifecycle and independent PASS; its canonical registries must remain empty.
 13. [PD-02B Minimum Canonical Slice Scope v1.0](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md), treated as the exact APPROVED authority and lifecycle/test/evidence boundary.
-13. [Traceability Matrix](TRACEABILITY_MATRIX.md).
-14. [Batch 05 Audit](AUDIT_REPORT_BATCH05.md), [Batch 05A Audit](AUDIT_REPORT_BATCH05A.md), and [Batch 05B Audit](AUDIT_REPORT_BATCH05B.md).
+14. [PD-03A Pilot Prerequisite Foundation Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md) and [PD-03B Canonical Pilot Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md), treated within their exact immutable extension and seed/reference boundaries.
+15. [C002 Commercial Pilot Truth and Product Administration Contracts v1.0](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md), treated as contract infrastructure with empty canonical instance registries.
+16. [Traceability Matrix](TRACEABILITY_MATRIX.md).
+17. [Batch 05 Audit](AUDIT_REPORT_BATCH05.md), [Batch 05A Audit](AUDIT_REPORT_BATCH05A.md), and [Batch 05B Audit](AUDIT_REPORT_BATCH05B.md).
 
 No product, term, attribute value, variation, inquiry form, setting, import, schema, UI, or implementation may be created from these Review-state models without explicit approval.
 

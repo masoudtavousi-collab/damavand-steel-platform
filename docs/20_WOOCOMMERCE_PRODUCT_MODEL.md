@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.2.1
+- **Version:** 0.3.0
 - **Last Updated:** 2026-08-03
 - **Last Review:** 2026-08-03
 - **Review Cycle:** On WooCommerce product, variation, SKU, attribute, visibility, price, inquiry, stock, import/export, or Admin-policy change
@@ -155,6 +155,25 @@ The governed Product lifecycle states and transitions are defined in [Proposed P
 - No cart, mini-cart, add-to-cart, checkout, payment, or shipping-purchase action.
 - Admin or future integration handling of confidential pricing requires a separate approved security and architecture decision; it is not defined here.
 - Future public or customer-specific pricing requires a superseding Founder decision and ADR-0001 review.
+
+## C002 Commerce Eligibility Boundary
+
+[C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md)
+defines a future per-SKU eligibility state machine while preserving current
+inquiry-only operation. `INQUIRY_ONLY` is the fail-closed default and the only
+effective current state. Catalog, Family, Series, Product, Parent, Variation,
+Pilot, or assortment membership cannot confer or inherit eligibility.
+
+`PURCHASE_CANDIDATE`, `PURCHASE_ELIGIBLE_INACTIVE`, `PURCHASE_ENABLED`,
+`SUSPENDED`, and `REVOKED` are target contract vocabulary only. Effective
+purchase capability requires a separately approved canonical SKU plus current
+Product, Availability, pricing-authority, fulfillment/inventory, legal,
+security, Runtime, Production, rollback, and Founder activation evidence. C002
+creates no eligibility instance and enables no WooCommerce setting or action.
+
+Inventory Harmony is a separate evidence-backed compatibility/assortment
+policy. It never proves stock or Availability, activates Commerce Eligibility,
+or carries price, margin, discount, coupon, cart, or checkout behavior.
 
 ## Inquiry Action Rules
 

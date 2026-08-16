@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-08-16 — C002 Commercial Pilot and Product Administration Contracts
+
+- Added closed, offline-validatable Commercial Pilot candidate-intake/readiness
+  and Product-administration policy packages with empty canonical C002 instance
+  registries and synthetic-only positive/negative/adversarial evidence.
+- Defined the nine evidence criteria and minimum Founder Evidence/Data Packet;
+  the three PD-03B records remain optional non-identifying seed evidence and not
+  a future Fast-Track ceiling.
+- Defined proposal-only Product Builder/Add Value, separated Brand roles, exact
+  Mass provenance methods, distinct Electrostatic Appearance semantics,
+  inquiry-only Commerce Eligibility, Inventory Harmony without pricing, and the
+  Damavand-component/Central-solution interface boundary.
+- Created no Pilot selection, Product, SKU, Availability, commercial fact,
+  canonical value, runtime object, purchase capability, or Central record. Merge
+  and every successor Mission remain separately authorized.
+
 ## 2026-08-16 — C001 Project OS 2.0 Repository Reconciliation
 
 - Added the compact C000/Project OS 2.0 decision package and task-oriented Context Router.

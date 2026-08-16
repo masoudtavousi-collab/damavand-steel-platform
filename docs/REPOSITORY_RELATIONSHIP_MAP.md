@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.9.0
+- **Version:** 1.0.0
 - **Last Updated:** 2026-08-16
 - **Last Review:** 2026-08-16
 - **Review Cycle:** On repository creation, disposition, authority, ownership, namespace, lifecycle, merge, or promotion proposal
@@ -31,6 +31,7 @@ Define the authority, isolation, adoption, and future-promotion boundaries betwe
 | [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md) | Governs program execution method (`HOW`) under `FD-DS-PROGRAM-001`; companion to DS-SPD | Does not replace the sole operational pointer, approve runtime work, or override a more specific accepted decision or gate |
 | [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) | Governs Version 1.0 strategic outcome (`WHAT`) under `FD-DS-PROGRAM-001`; companion to DS-PC | Does not become an execution ticket, domain roadmap, Product/SKU approval, or production authorization |
 | [C000 OS2 Decision Package](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md) | Records `FD-C000-OS2-001`, the Founder-approved Project OS 2.0 reconciliation, Track model, WIP limit, frozen C1-T03 boundary, and successor intent map | Does not authorize a successor mission, Product/SKU/Availability creation, runtime, production, or activation of future purchase eligibility |
+| [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md) | Defines Commercial Pilot candidate intake/readiness and Product-administration policy extensions under `C002-CONTRACTS-001` | Creates no Product/SKU/Availability, commercial fact, canonical value, runtime object, purchase capability, Central implementation, or successor authority |
 | [Context Router](CONTEXT_ROUTER.md) | Routes each task to the smallest authoritative context set | Is navigation only; it cannot create authority, override a governing source, or duplicate mutable state |
 | [Current Project State](CURRENT_PROJECT_STATE.md) | Remains the sole mutable pointer for current phase, exact authorization, branch/PR state, blockers, next action, and GO/NO-GO | Must not be duplicated or inferred from the two stable program documents |
 | `FD-DS-PROGRAM-001` | Records acceptance, roles, hashes, relationship, exclusions, and supersession limits | Does not rewrite `GOV-XD-00`, prior decisions, or repository chronology |

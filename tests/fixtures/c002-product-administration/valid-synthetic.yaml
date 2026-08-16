@@ -1,0 +1,318 @@
+registry_id: c002-product-administration-policies
+registry_version: "1.0.0"
+contract_version: "1.0.0"
+data_classification: SYNTHETIC_FIXTURE
+policies:
+  - &policy1
+    policy_id: papolicy:6a1d0c02a001
+    policy_key: product_builder
+    record_kind: PRODUCT_BUILDER
+    canonical_instance_population_allowed: false
+    promotion_requires_separate_authority: true
+    runtime_authority: false
+    status: APPROVED
+    owner: &owner {role: product-data-steward}
+    provenance: &policy_provenance
+      source_type: C002_MISSION_PACKET
+      source_reference: C002
+      captured_by: role:product-data-steward
+      captured_at: "2026-08-16T00:00:00Z"
+      evidence_status: FOUNDER_AUTHORIZED_POLICY_SCOPE
+    record_version: "1.0.0"
+  - policy_id: papolicy:6a1d0c02a002
+    policy_key: controlled_value_proposal
+    record_kind: CONTROLLED_VALUE_PROPOSAL
+    canonical_instance_population_allowed: false
+    promotion_requires_separate_authority: true
+    runtime_authority: false
+    status: APPROVED
+    owner: *owner
+    provenance: *policy_provenance
+    record_version: "1.0.0"
+  - policy_id: papolicy:6a1d0c02a003
+    policy_key: brand_provenance
+    record_kind: BRAND_PROVENANCE
+    canonical_instance_population_allowed: false
+    promotion_requires_separate_authority: true
+    runtime_authority: false
+    status: APPROVED
+    owner: *owner
+    provenance: *policy_provenance
+    record_version: "1.0.0"
+  - policy_id: papolicy:6a1d0c02a004
+    policy_key: mass_provenance
+    record_kind: MASS_PROVENANCE
+    canonical_instance_population_allowed: false
+    promotion_requires_separate_authority: true
+    runtime_authority: false
+    status: APPROVED
+    owner: *owner
+    provenance: *policy_provenance
+    record_version: "1.0.0"
+  - policy_id: papolicy:6a1d0c02a005
+    policy_key: electrostatic_appearance
+    record_kind: ELECTROSTATIC_APPEARANCE
+    canonical_instance_population_allowed: false
+    promotion_requires_separate_authority: true
+    runtime_authority: false
+    status: APPROVED
+    owner: *owner
+    provenance: *policy_provenance
+    record_version: "1.0.0"
+  - policy_id: papolicy:6a1d0c02a006
+    policy_key: commerce_eligibility
+    record_kind: COMMERCE_ELIGIBILITY
+    canonical_instance_population_allowed: false
+    promotion_requires_separate_authority: true
+    runtime_authority: false
+    status: APPROVED
+    owner: *owner
+    provenance: *policy_provenance
+    record_version: "1.0.0"
+  - policy_id: papolicy:6a1d0c02a007
+    policy_key: inventory_harmony
+    record_kind: INVENTORY_HARMONY
+    canonical_instance_population_allowed: false
+    promotion_requires_separate_authority: true
+    runtime_authority: false
+    status: APPROVED
+    owner: *owner
+    provenance: *policy_provenance
+    record_version: "1.0.0"
+  - policy_id: papolicy:6a1d0c02a008
+    policy_key: damavand_central_bom_interface
+    record_kind: DAMAVAND_CENTRAL_BOM_INTERFACE
+    canonical_instance_population_allowed: false
+    promotion_requires_separate_authority: true
+    runtime_authority: false
+    status: APPROVED
+    owner: *owner
+    provenance: *policy_provenance
+    record_version: "1.0.0"
+instances:
+  - record_kind: PRODUCT_BUILDER
+    record_id: padm:7b2e0c02a001
+    catalog_entity_id: prd:catalog:a3868f6227bb
+    platform_entity_id: prd:platform:603354ec2045
+    family_entity_id: prd:family:a10c6d8ceabc
+    series_entity_id: prd:series:e1657d35ac35
+    profile_id: pprof:4c556c63c1a9
+    variant_rule_set_entity_id: prd:variant-rule-set:eb255662accc
+    controlled_value_selections:
+      - {attribute_id: attr:dbf5365ee1e5, value_registry_id: vreg:302188e2fc8a, value_term_id: vterm:5ff9c0ceca39}
+      - {attribute_id: attr:28565665c910, value_registry_id: vreg:e1b9dd333df8, value_term_id: vterm:a891bfdfdd6b}
+      - {attribute_id: attr:1926e2ad4629, value_registry_id: vreg:3d37a24e09ea, value_term_id: vterm:1df9a5493546}
+    output_state: DRAFT_CANDIDATE_BUNDLE
+    cartesian_generation_forbidden: true
+    sku_derivation_allowed: false
+    canonical_promotion_allowed: false
+    status: CANDIDATE_UNVERIFIED
+    owner: *owner
+    provenance: &synthetic_provenance
+      source_type: SYNTHETIC_FIXTURE
+      source_reference: fixture:c002-product-administration
+      captured_by: role:product-data-steward
+      captured_at: "2026-08-16T00:00:00Z"
+      evidence_status: SYNTHETIC_NO_CLAIM
+    record_version: "1.0.0"
+  - record_kind: CONTROLLED_VALUE_PROPOSAL
+    record_id: padm:7b2e0c02a002
+    proposal_target:
+      target_type: ELECTROSTATIC_APPEARANCE
+      proposal_namespace: ELECTROSTATIC
+      proposal_owner: {role: electrostatic-appearance-steward}
+      finish_attribute_id: null
+      finish_value_registry_id: null
+      pvd_target_reference: null
+    proposal_state: DRAFT
+    transition_history: []
+    validation_evidence_references: []
+    review_evidence_references: []
+    approval_evidence_references: []
+    value_code: synthetic_electrostatic_blue
+    labels: {canonical_en: Synthetic Electrostatic Blue, fa_ir: آبی الکترواستاتیک مصنوعی}
+    aliases: []
+    normalization: [NFC, CASEFOLD, TRIM]
+    duplicate_check_required: true
+    domain_review_required: true
+    direct_canonical_registry_mutation_allowed: false
+    approved_proposal_requires_separate_promotion_authority: true
+    status: CANDIDATE_UNVERIFIED
+    owner: *owner
+    provenance: *synthetic_provenance
+    record_version: "1.0.0"
+  - record_kind: BRAND_PROVENANCE
+    record_id: padm:7b2e0c02a003
+    applicability_scope:
+      entity_type: SERIES
+      entity_reference: prd:series:e1657d35ac35
+    brand_status: MISSING_DATA_VALUE
+    brand_identity_reference: null
+    manufacturer_reference: null
+    supplier_reference: null
+    origin_reference: null
+    relationships_are_distinct: true
+    inference_forbidden: true
+    evidence_references: [synthetic:brand-missingness-evidence]
+    effective_from: "2026-08-16T00:00:00Z"
+    effective_until: null
+    status: CANDIDATE_UNVERIFIED
+    owner: *owner
+    reviewer: &reviewer {role: repository-guardian-independent}
+    provenance: *synthetic_provenance
+    record_version: "1.0.0"
+  - record_kind: MASS_PROVENANCE
+    record_id: padm:7b2e0c02a004
+    subject_reference: prd:series:e1657d35ac35
+    applicability_scope:
+      basis: PER_ITEM
+      description: Synthetic per-item mass-provenance contract exercise only.
+    canonical_quantity: MASS
+    mass_method: CALCULATED
+    value_lexeme: "1.25"
+    unit_id: unit:000000000003
+    basis: PER_ITEM
+    method_evidence:
+      method: CALCULATED
+      formula_id: formula:00000000c002
+      formula_version: "1.0.0"
+      inputs:
+        - input_reference: synthetic:length-input
+          value_lexeme: "6"
+          unit_id: unit:000000000001
+          provenance_reference: synthetic:length-provenance
+        - input_reference: synthetic:section-input
+          value_lexeme: "1.25"
+          unit_id: unit:000000000002
+          provenance_reference: synthetic:section-provenance
+      rounding_mode: HALF_EVEN
+      approximate: true
+    precision: 2
+    rounding_mode: HALF_EVEN
+    effective_from: "2026-08-16T00:00:00Z"
+    effective_until: null
+    reviewed_at: "2026-08-16T00:00:00Z"
+    conflict_references: []
+    supersedes_record_ids: []
+    approved_mass_unit_required_for_canonical_value: true
+    canonical_value_promotion_allowed: false
+    status: CANDIDATE_UNVERIFIED
+    owner: *owner
+    reviewer: *reviewer
+    provenance: *synthetic_provenance
+    record_version: "1.0.0"
+  - record_kind: ELECTROSTATIC_APPEARANCE
+    record_id: padm:7b2e0c02a005
+    appearance_system: ELECTROSTATIC
+    substrate_reference: synthetic:steel-component-substrate
+    material_reference: vterm:5ff9c0ceca39
+    coating_method: ELECTROSTATIC
+    color_reference: synthetic:electrostatic-blue
+    texture: synthetic:smooth
+    sheen: synthetic:matte
+    stainless_finish_reference: null
+    pvd_reference: null
+    semantic_isolation_required: true
+    technical_claim_inference_forbidden: true
+    status: CANDIDATE_UNVERIFIED
+    owner: *owner
+    provenance: *synthetic_provenance
+    record_version: "1.0.0"
+  - record_kind: COMMERCE_ELIGIBILITY
+    record_id: padm:7b2e0c02a006
+    sku_entity_id: prd:sku:00000000c002
+    scope: PER_SKU_ONLY
+    state_model:
+      states: [INQUIRY_ONLY, PURCHASE_CANDIDATE, PURCHASE_ELIGIBLE_INACTIVE, PURCHASE_ENABLED, SUSPENDED, REVOKED]
+      legal_transitions:
+        - {from_state: INQUIRY_ONLY, to_state: PURCHASE_CANDIDATE}
+        - {from_state: PURCHASE_CANDIDATE, to_state: INQUIRY_ONLY}
+        - {from_state: PURCHASE_CANDIDATE, to_state: PURCHASE_ELIGIBLE_INACTIVE}
+        - {from_state: PURCHASE_ELIGIBLE_INACTIVE, to_state: INQUIRY_ONLY}
+        - {from_state: PURCHASE_ELIGIBLE_INACTIVE, to_state: PURCHASE_ENABLED}
+        - {from_state: PURCHASE_ENABLED, to_state: SUSPENDED}
+        - {from_state: SUSPENDED, to_state: PURCHASE_ENABLED}
+        - {from_state: INQUIRY_ONLY, to_state: REVOKED}
+        - {from_state: PURCHASE_CANDIDATE, to_state: REVOKED}
+        - {from_state: PURCHASE_ELIGIBLE_INACTIVE, to_state: REVOKED}
+        - {from_state: PURCHASE_ENABLED, to_state: REVOKED}
+        - {from_state: SUSPENDED, to_state: REVOKED}
+    eligibility_state: INQUIRY_ONLY
+    transition_history: []
+    purchase_enabled: false
+    inheritance_forbidden: true
+    evidence_gates:
+      - {gate_key: product, evidence_references: [], status: MISSING, valid_from: null, valid_until: null, reviewed_by: null, reviewed_at: null}
+      - {gate_key: sku, evidence_references: [], status: MISSING, valid_from: null, valid_until: null, reviewed_by: null, reviewed_at: null}
+      - {gate_key: configuration, evidence_references: [], status: MISSING, valid_from: null, valid_until: null, reviewed_by: null, reviewed_at: null}
+      - {gate_key: availability, evidence_references: [], status: MISSING, valid_from: null, valid_until: null, reviewed_by: null, reviewed_at: null}
+      - {gate_key: pricing_authority_boolean_only, evidence_references: [], status: MISSING, valid_from: null, valid_until: null, reviewed_by: null, reviewed_at: null}
+      - {gate_key: fulfillment, evidence_references: [], status: MISSING, valid_from: null, valid_until: null, reviewed_by: null, reviewed_at: null}
+      - {gate_key: inventory, evidence_references: [], status: MISSING, valid_from: null, valid_until: null, reviewed_by: null, reviewed_at: null}
+      - {gate_key: legal_commercial, evidence_references: [], status: MISSING, valid_from: null, valid_until: null, reviewed_by: null, reviewed_at: null}
+      - {gate_key: security_payment, evidence_references: [], status: MISSING, valid_from: null, valid_until: null, reviewed_by: null, reviewed_at: null}
+      - {gate_key: public_presentation, evidence_references: [], status: MISSING, valid_from: null, valid_until: null, reviewed_by: null, reviewed_at: null}
+      - {gate_key: runtime, evidence_references: [], status: MISSING, valid_from: null, valid_until: null, reviewed_by: null, reviewed_at: null}
+      - {gate_key: production, evidence_references: [], status: MISSING, valid_from: null, valid_until: null, reviewed_by: null, reviewed_at: null}
+      - {gate_key: rollback_kill_switch, evidence_references: [], status: MISSING, valid_from: null, valid_until: null, reviewed_by: null, reviewed_at: null}
+      - {gate_key: founder, evidence_references: [], status: MISSING, valid_from: null, valid_until: null, reviewed_by: null, reviewed_at: null}
+    evaluated_at: "2026-08-16T00:00:00Z"
+    missing_or_expired_evidence_fallback: INQUIRY_ONLY
+    separate_activation_authority_present: false
+    activation_allowed: false
+    status: CANDIDATE_UNVERIFIED
+    owner: *owner
+    provenance: *synthetic_provenance
+    record_version: "1.0.0"
+  - record_kind: INVENTORY_HARMONY
+    record_id: padm:7b2e0c02a007
+    rule_version: "1.0.0"
+    rule_purpose: ASSORTMENT
+    directionality: DIRECTIONAL
+    component_ratios:
+      - {component_reference: prd:sku:00000000c002, quantity_lexeme: "1", unit_id: unit:000000000001}
+      - {component_reference: prd:sku:00000000c003, quantity_lexeme: "1", unit_id: unit:000000000001}
+      - {component_reference: prd:sku:00000000c004, quantity_lexeme: "3", unit_id: unit:000000000001}
+    quantity_basis: PER_SET
+    dimension_predicates:
+      - predicate_key: equal_nominal_length
+        dimension_key: length
+        operator: EXACT
+        component_references: [prd:sku:00000000c002, prd:sku:00000000c003, prd:sku:00000000c004]
+        unit_id: unit:000000000001
+        tolerance_lexeme: "0"
+    evidence_entries:
+      - evidence_reference: synthetic:assortment-review
+        status: PASS
+        reviewer: *reviewer
+        reviewed_at: "2026-08-16T00:00:00Z"
+        valid_from: "2026-08-16T00:00:00Z"
+        valid_until: null
+    effective_from: "2026-08-16T00:00:00Z"
+    effective_until: null
+    evaluated_at: "2026-08-16T00:00:00Z"
+    conflict_references: []
+    outcome: ELIGIBLE
+    pricing_effect_allowed: false
+    stock_or_availability_inference_allowed: false
+    commerce_eligibility_effect_allowed: false
+    status: CANDIDATE_UNVERIFIED
+    owner: *owner
+    reviewer: *reviewer
+    provenance: *synthetic_provenance
+    record_version: "1.0.0"
+  - record_kind: DAMAVAND_CENTRAL_BOM_INTERFACE
+    record_id: padm:7b2e0c02a008
+    damavand_component_sku_reference: prd:sku:00000000c002
+    damavand_component_bom_reference: dbom:00000000c002
+    consumer: CENTRAL_STEEL_FUTURE_SOLUTION
+    interface_mode: VERSIONED_READ_ONLY_REFERENCE
+    damavand_owns_component_truth: true
+    central_may_mutate_damavand_truth: false
+    central_implementation_allowed: false
+    calculator_project_quote_authority: false
+    status: CANDIDATE_UNVERIFIED
+    owner: *owner
+    provenance: *synthetic_provenance
+    record_version: "1.0.0"
+status: APPROVED

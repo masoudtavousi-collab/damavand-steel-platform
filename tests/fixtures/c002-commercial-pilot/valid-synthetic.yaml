@@ -1,0 +1,232 @@
+registry_id: commercial-pilot-candidates
+registry_version: "1.0.0"
+contract_version: "1.0.0"
+data_classification: SYNTHETIC_FIXTURE
+boundary:
+  candidate_population_authority: false
+  product_population_authority: false
+  sku_assignment_authority: false
+  availability_claim_authority: false
+  runtime_authority: false
+  commerce_activation_authority: false
+candidates:
+  - candidate_id: cpcand:000000000001
+    record_version: "1.0.0"
+    status: CANDIDATE_UNVERIFIED
+    commercial_scope:
+      objective: Validate a bounded commercially useful inquiry-first slice.
+      target_customer_context: Synthetic business-customer context for contract validation only.
+      target_channel: SYNTHETIC_INQUIRY
+      entity_references:
+        - prd:series:e1657d35ac35
+      maximum_candidate_count: 12
+      maximum_applies_to_this_intake_only: true
+      seed_count_is_scope_ceiling: false
+      selection_may_extend_beyond_seeds: true
+      cartesian_generation_forbidden: true
+    seed_references:
+      - pilot_id: pilot:b12aa359af76
+        evidence_role: SEED_REFERENCE_ONLY
+        references_are_identity: false
+        automatically_selected: false
+        limits_candidate_scope: false
+      - pilot_id: pilot:8a1546edb732
+        evidence_role: SEED_REFERENCE_ONLY
+        references_are_identity: false
+        automatically_selected: false
+        limits_candidate_scope: false
+    founder_evidence_packet:
+      packet_id: cpfep:000000000001
+      evaluation_as_of: "2000-01-03T00:00:00Z"
+      selection_question: Is this bounded synthetic slice ready for Founder selection review?
+      minimum_data_packet:
+        packet_state: COMPLETE
+        bounded_commercial_context:
+          bounded_objective: Synthetic bounded inquiry-first pilot evaluation.
+          intended_use_case: Validate candidate-selection contracts without commercial activation.
+          configuration_requirements:
+            - Synthetic governed decorative-tube configuration requirement.
+          canonical_references:
+            - prd:series:e1657d35ac35
+          proposal_references: []
+        protected_commercial_evidence:
+          demand_signal_locator: fixture:c002:protected-demand-locator
+          supply_evidence_locator: fixture:c002:protected-supply-locator
+          gross_profit_potential_locator: fixture:c002:founder-protected-profit-locator
+          gross_profit_fact_source: FOUNDER_SUPPLIED
+        operations_fulfillment:
+          operations_reference: fixture:c002:operations-context
+          fulfillment_reference: fixture:c002:fulfillment-context
+        parties:
+          manufacturer_reference: fixture:c002:manufacturer-context
+          brand_reference: NOT_APPLICABLE
+          supplier_reference: fixture:c002:supplier-context
+        mass:
+          method: CALCULATED
+          unit_reference: unit:000000000003
+          evidence_reference: fixture:c002:mass-context
+        appearance:
+          appearance_system: ELECTROSTATIC
+          electrostatic_reference: fixture:c002:electrostatic-appearance-context
+          stainless_finish_pvd_separation: CONFIRMED
+        content_photo_rights:
+          photo_readiness_reference: fixture:c002:photo-readiness
+          content_rights_reference: fixture:c002:content-rights
+        seo:
+          buyer_intent_reference: fixture:c002:seo-buyer-intent
+        inventory_harmony:
+          need_state: NOT_REQUIRED
+          rule_or_rationale_reference: fixture:c002:harmony-not-required-rationale
+        commerce_intent:
+          intent: INQUIRY_ONLY_DEFAULT
+          intent_reference: fixture:c002:commerce-intent
+          activation_authority: false
+        damavand_central_boundary:
+          component_owner: DAMAVAND
+          future_solution_owner: CENTRAL
+          boundary_reference: fixture:c002:damavand-central-boundary
+          central_implementation_authority: false
+        information_governance:
+          confidentiality_classification: INTERNAL
+          handling_reference: fixture:c002:information-handling
+        conflicts_exclusions_blockers:
+          conflicts: []
+          exclusions:
+            - No Product, SKU, Availability, projection, or commerce activation.
+          blockers: []
+        owner_role: role:founder-packet-owner
+        reviewer_role: role:independent-reviewer
+      criteria:
+        - criterion_code: DEMAND_SIGNAL
+          state: VERIFIED
+          sources:
+            - evidence_source_id: cpevd:000000000001
+              source_type: CUSTOMER_SIGNAL
+              source_reference: fixture:c002:demand-signal
+              fact_summary: Synthetic demand signal used only to validate the contract.
+              submitted_by: role:commercial-analyst
+              submitted_at: "2000-01-01T00:00:00Z"
+              expires_at: null
+          review: &verified_review
+            reviewed_by: role:independent-reviewer
+            reviewed_at: "2000-01-02T00:00:00Z"
+            evidence_reference: fixture:c002:independent-review
+        - criterion_code: SUPPLY_EVIDENCE
+          state: VERIFIED
+          sources:
+            - evidence_source_id: cpevd:000000000002
+              source_type: SUPPLIER_DOCUMENT
+              source_reference: fixture:c002:supply-evidence
+              fact_summary: Synthetic supply document reference with no availability assertion.
+              submitted_by: role:supply-reviewer
+              submitted_at: "2000-01-01T00:00:00Z"
+              expires_at: null
+          review: *verified_review
+        - criterion_code: GROSS_PROFIT_POTENTIAL
+          state: VERIFIED
+          sources:
+            - evidence_source_id: cpevd:000000000003
+              source_type: FOUNDER_SUPPLIED
+              source_reference: fixture:c002:founder-commercial-potential
+              fact_summary: Synthetic fixture-only commercial-potential statement with no numeric commercial fact.
+              submitted_by: role:founder
+              submitted_at: "2000-01-01T00:00:00Z"
+              expires_at: null
+          review: *verified_review
+        - criterion_code: REPEATABILITY
+          state: VERIFIED
+          sources:
+            - evidence_source_id: cpevd:000000000004
+              source_type: OPERATIONS_EVIDENCE
+              source_reference: fixture:c002:repeatability
+              fact_summary: Synthetic repeatability evidence used only for validation.
+              submitted_by: role:operations-reviewer
+              submitted_at: "2000-01-01T00:00:00Z"
+              expires_at: null
+          review: *verified_review
+        - criterion_code: PRODUCT_DATA_COMPLETENESS
+          state: VERIFIED
+          sources:
+            - evidence_source_id: cpevd:000000000005
+              source_type: DOMAIN_REVIEW
+              source_reference: fixture:c002:product-data
+              fact_summary: Synthetic product-data completeness review with no Product creation.
+              submitted_by: role:product-data-steward
+              submitted_at: "2000-01-01T00:00:00Z"
+              expires_at: null
+          review: *verified_review
+        - criterion_code: PHOTO_CONTENT_READINESS
+          state: VERIFIED
+          sources:
+            - evidence_source_id: cpevd:000000000006
+              source_type: CONTENT_AUDIT
+              source_reference: fixture:c002:photo-content
+              fact_summary: Synthetic content-readiness audit with no publication authority.
+              submitted_by: role:content-reviewer
+              submitted_at: "2000-01-01T00:00:00Z"
+              expires_at: null
+          review: *verified_review
+        - criterion_code: SEO_BUYER_INTENT
+          state: VERIFIED
+          sources:
+            - evidence_source_id: cpevd:000000000007
+              source_type: SEO_RESEARCH
+              source_reference: fixture:c002:seo-intent
+              fact_summary: Synthetic buyer-intent evidence with no external research claim.
+              submitted_by: role:seo-reviewer
+              submitted_at: "2000-01-01T00:00:00Z"
+              expires_at: null
+          review: *verified_review
+        - criterion_code: OPERATIONAL_COMPLEXITY
+          state: VERIFIED
+          sources:
+            - evidence_source_id: cpevd:000000000008
+              source_type: OPERATIONS_EVIDENCE
+              source_reference: fixture:c002:operational-complexity
+              fact_summary: Synthetic operational-complexity review used only for validation.
+              submitted_by: role:operations-reviewer
+              submitted_at: "2000-01-01T00:00:00Z"
+              expires_at: null
+          review: *verified_review
+        - criterion_code: FULFILLMENT_RISK
+          state: VERIFIED
+          sources:
+            - evidence_source_id: cpevd:000000000009
+              source_type: OPERATIONS_EVIDENCE
+              source_reference: fixture:c002:fulfillment-risk
+              fact_summary: Synthetic fulfillment-risk review with no delivery promise.
+              submitted_by: role:fulfillment-reviewer
+              submitted_at: "2000-01-01T00:00:00Z"
+              expires_at: null
+          review: *verified_review
+      coverage:
+        total_count: 9
+        resolved_count: 9
+        unresolved_criteria: []
+        formula: resolved_count/9
+        weights_used: false
+        thresholds_used: false
+      decision_state: PENDING_FOUNDER_SELECTION
+      decision_reference: null
+    readiness:
+      state: FOUNDER_SELECTION_READY
+      blockers: []
+    selection_effects:
+      founder_selection_recorded: false
+      product_state: NOT_CREATED
+      sku_state: NOT_ASSIGNED
+      availability_state: NOT_ASSERTED
+      projection_state: NOT_AUTHORIZED
+      commerce_state: INQUIRY_ONLY
+      creates_product: false
+      creates_sku: false
+      asserts_availability: false
+      authorizes_runtime: false
+      authorizes_commerce: false
+      limits_future_scope_to_seed_count: false
+    provenance:
+      source_type: SYNTHETIC_FIXTURE
+      source_reference: fixture:c002-commercial-pilot:valid-synthetic
+      captured_by: role:automated-validation
+      captured_at: "2000-01-01T00:00:00Z"
+      evidence_status: SYNTHETIC_TEST_EVIDENCE

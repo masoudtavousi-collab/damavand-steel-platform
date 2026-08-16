@@ -1,0 +1,12 @@
+registry_id: commercial-pilot-candidates
+registry_version: "1.0.0"
+contract_version: "1.0.0"
+data_classification: C002_CONTRACT_FOUNDATION
+boundary:
+  candidate_population_authority: false
+  product_population_authority: false
+  sku_assignment_authority: false
+  availability_claim_authority: false
+  runtime_authority: false
+  commerce_activation_authority: false
+candidates: []

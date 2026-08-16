@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.6.0
+- **Version:** 0.7.0
 - **Last Updated:** 2026-08-16
 - **Last Review:** 2026-08-16
 - **Review Cycle:** On decision classification, status, or authority change
@@ -77,6 +77,7 @@ Every accepted decision must identify:
 | `FD-DS-PROGRAM-001` | Accept [DS-PC-001](DS_PC_001_PROGRAM_CHARTER.md) as the program execution method (`HOW`) and [DS-SPD-001](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) as the Version 1.0 strategic outcome (`WHAT`); preserve Founder final authority; assign ChatGPT the Project Commander / Chief Architect / Product Owner / Repository Governor roles and Codex the operational Program Commander / Build Engine role only inside exact task gates. | [Founder Decision Log](17_FOUNDER_DECISION_LOG.md#ds-program-charter-and-strategic-directive-decision), effective 2026-08-02 | Accepted within exact recorded scope. Does not approve the full Draft Bible/Constitution, supersede CP-001–CP-010 or more specific accepted authority, or authorize PD-04, Campaign 002, Product/SKU, Golden/Master Data, Runtime, Import, Deployment, Production, Git publication, or branch deletion. |
 | `FD-C000-OS2-001` | Accept Project OS 2.0: preserve enterprise truth controls; freeze C1-T03 without repair; operate through Tracks A–D and bounded WIP; approve `Inquiry First by default + future SKU-level purchase eligibility` as target architecture without present activation; and classify the three PD-03B records as seed/reference evidence rather than a future Fast-Track ceiling. | [C000 Decision Package](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md) and [Founder Decision Log](17_FOUNDER_DECISION_LOG.md#c000--project-os-20-strategic-reconciliation-decision), effective 2026-08-16 | Founder-approved strategic decision. No Product/SKU/Availability, price, purchase, Runtime, Production, C1-T03 repair, Central Steel, automation, or successor execution authority. |
 | `C001-OS2-RECON` | Publish the accepted C000 decisions through one bounded docs-only branch and pull request with independent review, local validation, and CI. | C001 Founder + Project Commander Mission Packet dated 2026-08-16 | Git authority is limited to branch/commit/push/one PR and attributable CI fixes. Merge and every successor/runtime/product action remain `NO-GO`. |
+| `C002-CONTRACTS-001` | Establish bounded Commercial Pilot candidate-intake/readiness and Product-administration policy contracts, empty canonical extension registries, deterministic offline validators, and synthetic positive/negative/adversarial tests. | C002 Founder + Project Commander Mission Packet dated 2026-08-16 and [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md) | Approved for the exact branch/commit/push/one-PR mission only. It grants no Pilot selection, Product/SKU/Availability population, commercial fact, purchase activation, runtime, merge, or successor authority. |
 
 ## Architecture Decisions
 

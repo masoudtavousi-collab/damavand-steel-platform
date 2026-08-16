@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.15.0
+- **Version:** 0.16.0
 - **Last Updated:** 2026-08-16
 - **Last Review:** 2026-08-16
 - **Review Cycle:** On document creation, removal, rename, lifecycle, authority, or navigation change
@@ -26,7 +26,7 @@ Provide the canonical map of repository documentation without replacing the auth
 
 ## Current Repository-Control Context
 
-[Current Project State](CURRENT_PROJECT_STATE.md) is the only mutable operational-state pointer. This index records document roles and stable integration history; it does not restate the active branch, pull-request state, or live Git tip. [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md) is the accepted program `HOW`, [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) is the accepted Version 1.0 `WHAT`, and [C000 / Project OS 2.0](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md) is the accepted strategic operating reconciliation. [Context Router](CONTEXT_ROUTER.md) selects the smallest relevant source set without replacing any authority. [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md) governs only three seed/reference Pilot records; they are not Product/SKU/Availability or a future Fast-Track ceiling. C1-T03 is frozen, and Product, Runtime, commerce activation, Production, and successor execution remain separately gated.
+[Current Project State](CURRENT_PROJECT_STATE.md) is the only mutable operational-state pointer. This index records document roles and stable integration history; it does not restate the active branch, pull-request state, or live Git tip. [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md) is the accepted program `HOW`, [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) is the accepted Version 1.0 `WHAT`, and [C000 / Project OS 2.0](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md) is the accepted strategic operating reconciliation. [Context Router](CONTEXT_ROUTER.md) selects the smallest relevant source set without replacing any authority. [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md) governs only three seed/reference Pilot records; they are not Product/SKU/Availability or a future Fast-Track ceiling. [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md) defines contract infrastructure and empty instance registries only. C1-T03 is frozen, and actual Product population, Runtime, commerce activation, Production, and successor execution remain separately gated.
 
 ## Categories and Complete Document Map
 
@@ -109,6 +109,7 @@ Provide the canonical map of repository documentation without replacing the auth
 | [Product Taxonomy Model](21_PRODUCT_TAXONOMY_MODEL.md) | Proposed canonical taxonomy, Collections, Product Tags, Application/Use-Case boundary, slug, overlap, SEO, expansion, and CentralSteel compatibility policy | Review | Founder |
 | [Product Attribute Model](22_PRODUCT_ATTRIBUTE_MODEL.md) | Proposed global attribute labels, keys, values, hierarchy boundary, derived Size, variation, filtering, SEO, and Admin policy | Review | Founder |
 | [Inquiry Data Model](23_INQUIRY_DATA_MODEL.md) | Proposed inquiry and Customer objects, fields, lifecycle boundaries, routing, notifications, anti-spam, and CRM compatibility | Review | Founder |
+| [C002 Commercial Pilot Truth and Product Administration Contracts v1.0](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md) | Founder-authorized bounded contract foundation for candidate intake/readiness, Product administration policy, inactive commerce controls, and deterministic validation; no Product/SKU/Availability population | Review | Founder |
 | [BP2 Data Administration Scope v1.0](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md) | Approved documentation-only administration boundary linked to a machine-readable contract, closed Draft 2020-12 schema, offline validator, lifecycle evidence, and adversarial tests; no implementation authority | Approved | Founder |
 | [PD-01 Product Data Contract Enablement Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md) | Approved exact 30-path Scope/Approval Packet and synthetic Contract/Schema/Validator/Test boundary after legal lifecycle and independent PASS; no canonical population authority | Approved | Founder |
 | [PD-02A Controlled Values and Attribute Profiles Scope v1.0](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md) | Approved exact 38-path synthetic-only Scope/Approval and Test Contract after legal lifecycle and independent PASS; all canonical Attribute, controlled-value, and Profile collections remain empty | Approved | Founder |

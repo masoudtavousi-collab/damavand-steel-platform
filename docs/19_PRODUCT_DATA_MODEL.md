@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.6.0
-- **Last Updated:** 2026-07-29
-- **Last Review:** 2026-07-29
+- **Version:** 0.7.0
+- **Last Updated:** 2026-08-16
+- **Last Review:** 2026-08-16
 - **Review Cycle:** On product hierarchy, entity, ownership, lifecycle, taxonomy, attribute, inquiry, CRM, ERP, or Founder-decision change
 - **Lifecycle:** Review
 - **Source of Truth:** [Core Project Principles](00_PROJECT_BIBLE.md#core-project-principles), [ADR 0001](adr/0001-inquiry-first-commerce.md), and [WordPress Enterprise Architecture](06_WORDPRESS_ARCHITECTURE.md#founder-constraints-and-decision-sources)
@@ -266,6 +266,24 @@ WordPress/WooCommerce, import, runtime, deployment, or production.
 - Free-text duplication is rejected when a controlled value exists.
 - Required fields and valid combinations vary by canonical Series and approved Variant Rules. A downstream Product Type/profile may project those rules but cannot own or invent them.
 - Bulk operations require dry-run, validation report, stable-ID preservation, and approval before mutation.
+
+## Relationship to C002 Contract Foundation
+
+[C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md)
+adds two extensions without changing the owners above:
+
+- a Commercial Pilot candidate-intake/readiness contract whose canonical
+  registry is empty and whose PD-03B references are non-identifying seed
+  evidence; and
+- a Product-administration policy contract for future Product Builder, controlled
+  value proposals, Brand/Mass/Electrostatic provenance, per-SKU Commerce
+  Eligibility, Inventory Harmony, and the Damavand/Central interface.
+
+C002 proposal, readiness, and policy states are orthogonal to Product lifecycle
+and cannot promote Product truth. Pending or approved proposals do not enter a
+canonical selector automatically. Canonical values, Product/SKU identities,
+Availability, commercial facts, Harmony rules, and eligibility instances remain
+unpopulated and separately authorized.
 
 ## Founder Decisions
 
