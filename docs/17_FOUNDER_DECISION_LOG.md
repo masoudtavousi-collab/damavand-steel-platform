@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.17.0
-- **Last Updated:** 2026-08-02
-- **Last Review:** 2026-08-02
+- **Version:** 0.18.0
+- **Last Updated:** 2026-08-16
+- **Last Review:** 2026-08-16
 - **Review Cycle:** On Founder decision creation, resolution, supersession, or dependency change
 - **Lifecycle:** Draft
 - **Source of Truth:** Explicit Founder-decision requirements in controlled source documents; this log is an index only
@@ -60,6 +60,13 @@ Index every repository item explicitly marked as requiring a Founder decision. T
 | ID | Decision | Decision owner / effective date | Approval scope | Evidence | Status / supersession |
 | --- | --- | --- | --- | --- | --- |
 | `FD-DS-PROGRAM-001` | Accept [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md) as the program execution method (`HOW`) and [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) as the Version 1.0 strategic outcome (`WHAT`). The Founder remains final authority. ChatGPT serves as Project Commander, Chief Architect, Product Owner, and Repository Governor. Codex serves as operational Program Commander and Build Engine only inside exact task gates and cannot self-approve or bypass repository, Git, runtime, production, human-review, Founder-review, or branch-deletion gates. | Founder / effective 2026-08-02 | Canonicalize the two complete source texts using only UTF-8 decoding, CRLF/CR and U+2028/U+2029 to LF, and NFC normalization; update only `AGENTS.md`, the two canonical documents, Source of Truth Priority, Decision Log, Founder Decision Log, Repository Relationship Map, Reading Order, Documentation Index, Traceability Matrix, and Changelog. | DS-PC raw SHA-256 `ee750ca9a3ba47f4f48fd906675714922fc7cbe88904d3f580aee734237a0e0c`; normalized SHA-256 `3e6e9c7a827fc4998bb96b343842b84efe80573febf2c688247a98b9f01e44d4`; canonical path `docs/DS_PC_001_PROGRAM_CHARTER.md`. DS-SPD raw SHA-256 `aa10c18ff06b38d0054908e4267848c8f7432e649b32d2de7b4bf0c55015d40c`; normalized SHA-256 `929b96e17207e93c8b3543241c5db361093f1030f31431d3c5960bf4ea010bf6`; canonical path `docs/DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md`. | `APPROVED` within this exact governance-integration scope. DS-PC and DS-SPD are companions and successor program context; neither silently approves the full Draft Project Bible/Constitution, rewrites `GOV-XD-00` history, auto-supersedes domain roadmaps, or overrides CP-001–CP-010, accepted Founder decisions/ADRs, accepted architecture, source priority, or production controls. PD-04, Campaign 002, Product/SKU, Golden/Master Data, Runtime, Import, Deployment, Production, Git publication, merge, and branch deletion require separate authority. Any supersession must be explicit, scoped, and recorded by a later Founder decision. |
+
+## C000 / Project OS 2.0 Strategic Reconciliation Decision
+
+| ID | Decision | Decision owner / effective date | Approval scope | Evidence | Status / supersession |
+| --- | --- | --- | --- | --- | --- |
+| `FD-C000-OS2-001` | Accept Project OS 2.0 using `PRESERVE → RECONCILE → SIMPLIFY → EXTEND`; preserve Repository/Product Data/Taxonomy/Knowledge authority; freeze C1-T03 at its protected architecture boundary with all 11 findings retained; adopt Tracks A–D with WIP focus `1 Commercial + 1 Core + 1 Enabler`; approve `Inquiry First by default + future SKU-level purchase eligibility` as target architecture only; and classify the three PD-03B records as seed/reference evidence, not Product/SKU/Availability or a ceiling on future bounded scope. | Founder + Project Commander / effective 2026-08-16 | Strategic reconciliation and documentation canonicalization only. Future Product Builder, controlled values, weight provenance, electrostatic appearance, Commerce Eligibility, Inventory Harmony, Damavand/Central BOM, Commercial Pilot, Growth/CRM, Runtime, and Automation require separate Missions and gates. | C000 Slack Mission Packet (parent + 3 replies); C001 Slack Mission Packet (parent + 4 replies); [C000 Decision Package](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md); reviewed live-main anchor `dfb5f4f632b0e913c33d303292c320a889a6f63a` | `APPROVED` within exact strategic scope. It grants no Product/SKU/Availability, public pricing/purchase/cart/checkout/payment, Runtime, Staging, Production, C1-T03 repair, Central Steel, n8n/OpenAI, or successor execution authority. |
+| `C001-OS2-RECON` | Execute one bounded docs-only Repository reconciliation branch, commit, push, and pull request; run local validation, independent review, and CI; correct only attributable in-scope findings; stop before merge. | Founder + Project Commander / 2026-08-16 | The two required new documents and named state/baseline/roadmap/decision/navigation/traceability files, plus minimal direct-contradiction corrections in `AGENTS.md` and ADR-0001. | C001 Slack Mission Packet; starting `main` SHA `dfb5f4f632b0e913c33d303292c320a889a6f63a`; branch `codex/c001-os2-repository-reconciliation` | `APPROVED` for branch/commit/push/one PR and attributable CI fixes only. Merge, C002, Product/Runtime/Production, and every explicit C001 NO-GO remain unauthorized. |
 
 ## BP2 Data Administration Lifecycle Decision
 

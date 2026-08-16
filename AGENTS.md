@@ -9,7 +9,9 @@
 
 ## 2. Permanent Business Rules
 
-Preserve Inquiry First, No Public Pricing, Variable Parent Product, Product Data First, Taxonomy First, Knowledge First, Configuration First, Plugin First, Founder Controlled, Mobile First, Persian RTL, Single Source of Truth, documentation before implementation, reversible runtime changes, and Founder approval gates.
+Preserve Inquiry First as the current default, No Public Pricing as current operational behavior, Variable Parent Product as a downstream presentation model, Product Data First, Taxonomy First, Knowledge First, Configuration First, Plugin First, Founder Controlled, Mobile First, Persian RTL, Single Source of Truth, documentation before implementation, reversible runtime changes, and Founder approval gates.
+
+The Founder-approved OS2 target permits future SKU-level purchase eligibility only after separate canonical Product/SKU, evidence, commercial, Runtime, Production, and Founder gates. C000 and C001 enable no public pricing, purchase, cart, checkout, or payment capability.
 
 The accepted Core Project Principles in [Project Bible](docs/00_PROJECT_BIBLE.md#core-project-principles) remain authoritative: CP-001 through CP-010.
 
@@ -94,11 +96,11 @@ Founder-approved product data outranks competitor data. Competitor data may info
 
 Current evidence:
 
-- 3 Pipe combinations are `APPROVED` for the limited Golden Product pilot; 879 remain `CANDIDATE_UNVERIFIED`; market availability is `MISSING_DATA_VALUE` for all 882.
+- 3 Pipe combinations are `APPROVED` as governed PD-03B seed/reference evidence; 879 remain `CANDIDATE_UNVERIFIED`; market availability is `MISSING_DATA_VALUE` for all 882. The three records are not Product, SKU, Availability evidence, import/runtime objects, or a ceiling on a future separately authorized Commercial Fast-Track scope.
 - 18 Founder-approved Fittings family names are recovered; Fittings are `PARTIALLY_MODELED`.
 - Existing Product Engine and Platform documents remain design inputs. Structural contracts and executable validators now exist, but no final Product record set or SKU vocabulary exists.
 - `repository/knowledge/` is the approved future Knowledge location; it does not yet exist. Knowledge implementation depends on stable shared Product identities, and Phase 1 AI remains prohibited.
-- The Golden Parent and exactly three combinations are approved through Founder decisions and governing prose. No canonical machine-readable Golden package exists on `main`; the `GOLD-PIPE-*` identifiers are pilot references, not final commercial SKUs.
+- The Golden Parent and exactly three combinations are approved only as bounded seed/reference evidence through Founder decisions and governing prose. No canonical machine-readable Golden package exists on `main`; the `GOLD-PIPE-*` identifiers are pilot references, not final commercial SKUs.
 - `/Users/masoudtavousi/Desktop/damavand-enterprise-repository` is `QUARANTINED_ARCHITECTURE_RESEARCH`: isolated, unapproved, non-authoritative, not merge-ready, and not implementation-ready.
 - Quality Score: 82/100.
 - Runtime, import, publishing, and bulk SKU generation: **NO-GO**.
@@ -107,7 +109,7 @@ Do not copy mutable current-state facts into this file. Always begin with [Curre
 
 ## 8. Sprint Execution Protocol
 
-1. Read this file, [Current Project State](docs/CURRENT_PROJECT_STATE.md), and [Project Execution Roadmap](docs/PROJECT_EXECUTION_ROADMAP.md).
+1. Read this file, [Current Project State](docs/CURRENT_PROJECT_STATE.md), and the concise [Context Router](docs/CONTEXT_ROUTER.md); then load only the relevant route and [Project Execution Roadmap](docs/PROJECT_EXECUTION_ROADMAP.md) when sequencing is in scope.
 2. Read only directly relevant sources; do not scan the whole repository without need.
 3. Do not recreate architecture. Prefer in-place correction to duplicate V2 files.
 4. Execute one objective; do not expand scope silently or start the next sprint automatically.
@@ -149,6 +151,8 @@ Runtime requires explicit Founder approval, confirmed target environment, verifi
 - [Implementation Readiness](docs/IMPLEMENTATION_READINESS.md)
 - [Execution Gates](docs/EXECUTION_GATES.md)
 - [Current Project State](docs/CURRENT_PROJECT_STATE.md)
+- [C000 / Project OS 2.0 Decision Package](docs/C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md)
+- [Context Router](docs/CONTEXT_ROUTER.md)
 - [Program Charter — HOW](docs/DS_PC_001_PROGRAM_CHARTER.md)
 - [Strategic Program Directive — WHAT](docs/DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md)
 - [Project Execution Roadmap](docs/PROJECT_EXECUTION_ROADMAP.md)
@@ -219,7 +223,7 @@ Passing one gate never passes another.
 - Documentation precedes implementation. A technical implementation must trace to approved architecture, business rules, data, and acceptance criteria.
 - Never overwrite, rename, relocate, truncate, regenerate, or replace a canonical file without explicit Founder approval and a documented relationship to the predecessor.
 - Preserve original dates, decision order, provenance, authorship, approval evidence, dissent, supersession, and historical status. Never backdate or rewrite chronology.
-- Preserve Inquiry First, No Public Pricing, Product Data First, Taxonomy First, Product Repository and Knowledge Repository boundaries, Persian RTL, Mobile First, and Founder control.
+- Preserve Inquiry First as the current default, No Public Pricing as current operational behavior, Product Data First, Taxonomy First, Product Repository and Knowledge Repository boundaries, Persian RTL, Mobile First, and Founder control. The approved future SKU-level purchase-eligibility target remains inactive until every separate Product, commercial, Runtime, Production, and Founder gate passes.
 - Never invent prices, formulas, costs, margins, weights, stock, availability, supplier facts, brands, origins, compatibility, certifications, installation claims, final SKUs, customer facts, access rights, approvals, or runtime evidence.
 - When evidence is absent, use the controlled project status vocabulary or an explicit Open Question. Do not turn a missing value into a plausible answer.
 - Imported Atlas entries remain planning records with `pending` status. Import does not approve their content, architecture, implementation, or runtime use.

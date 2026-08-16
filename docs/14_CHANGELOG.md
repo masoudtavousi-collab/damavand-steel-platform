@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-08-16 — C001 Project OS 2.0 Repository Reconciliation
+
+- Added the compact C000/Project OS 2.0 decision package and task-oriented Context Router.
+- Reconciled current state, baseline, roadmap, decision records, open questions, navigation, and traceability with `FD-C000-OS2-001` while retaining all historical entries as dated evidence.
+- Recorded C1-T03/HF-X0 as frozen at the protected architecture boundary with 11 preserved technical findings (7 Critical and 4 High), no repair cycle, and no downstream authority.
+- Classified the three approved PD-03B records as seed/reference evidence only—not Product, SKU, Availability evidence, runtime objects, or a ceiling on future separately authorized Commercial Fast-Track scope.
+- Preserved current Inquiry-First/no-active-purchase behavior and recorded only the approved future target of SKU-level purchase eligibility behind separate Product, commercial, runtime, production, and Founder gates.
+- This documentation reconciliation creates no Product/SKU/Availability data, pricing, cart, checkout, payment, purchase, WordPress/WooCommerce/runtime mutation, deployment, production, merge, or successor-mission authority.
+
 ## 2026-08-10 — Post-PR32 State Reconciliation
 
 - Recorded completed Agentic Usage Telemetry Foundation through PR #32, Merge Commit `0d334a3f4dc0d4f482376a7e43ccb9543c67fbf0`, and successful main CI; C1-T03 packet preparation remains the sole Product/Data next action.
@@ -139,8 +148,8 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.13.0
-- **Last Updated:** 2026-08-03
+- **Version:** 0.14.0
+- **Last Updated:** 2026-08-16
 - **Lifecycle:** Review
 - **Source of Truth:** Merged Git history and scoped decision/evidence records
 - **Approval:** Pending Founder review; merged Git history remains evidence
