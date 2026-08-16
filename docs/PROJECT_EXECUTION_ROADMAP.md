@@ -1,6 +1,6 @@
 # Project Execution Roadmap
 
-> Post-PR32 reconciliation: Telemetry is complete; consult Current Project State for the sole next action, C1-T03 packet preparation only.
+> Project OS 2.0 roadmap. Consult Current Project State for current authorization; roadmap presence never authorizes execution.
 
 ## Current Reconciliation State
 
@@ -38,100 +38,57 @@ This roadmap defines sequence and gates, not mutable operational state. The exac
 - Workflows remain inactive.
 - `main` is the GitHub default branch and is protected with administrator enforcement, strict required check `repository-validation`, force-push disabled, and deletion disabled.
 
-## Cross-Domain Execution Order
+## Project OS 2.0 Operating Tracks
 
-1. `GOV-XD-00` — stabilize operational-state semantics, dependency order, roles, and approval gates.
-2. `PD-01` — Product Data Contract/Schema/Validator/tests with synthetic fixtures only. **Complete through merged PR #21; canonical population disabled.**
-3. `PD-02A` — controlled-value and standalone Attribute Profile Contract/Schema/Validator/tests with synthetic fixtures and empty canonical registries. **`APPROVED` and integrated through PR #22.**
-4. `PD-02B` — minimum canonical Catalog/Platform/Family scope, Material/Grade definitions, four controlled terms, INTERNAL Profile, 18 labels, and Approval Evidence. **`APPROVED` and integrated through PR #23 after legal lifecycle and independent PASS; no broader authority.**
-5. `PD-03A` — immutable Pilot Prerequisite Foundation: Series, internal Variant Rule identity, four Attributes, Silver appearance term, Series Profile, Length/Metre/Millimetre promotion, and synthetic-only tuple validation. **`APPROVED` and integrated through PR #24; its tuples are not canonical Pilots.**
-6. `PD-03B` — exactly three canonical Pilot records with provenance and explicit status. **`APPROVED` and integrated through PR #25 after legal lifecycle, zero-finding independent PASS, and successful main CI.**
-7. `PD-04` — Golden Repository Package with `import_ready=false` and `runtime_ready=false`.
-8. `PD-05` — commercial evidence plus final SKU/slug policy before any import.
-9. `ADM-0` through `ADM-3` — separate charter, operation contracts, validator/tests, and offline reference engine.
-10. Resolve Runtime `G02/G03` ordering, then prove least-privilege access, backup, and isolated restore.
-11. Establish isolated staging, current baseline, connectivity, compatibility, security, monitoring, and licenses.
-12. `KX-0` hierarchy reconciliation, then Knowledge/Content governance after stable Product identities.
-13. Build the WordPress/WooCommerce adapter manifest and mapping preview offline.
-14. Run the separately authorized staging pilot: one Draft Parent and exactly three Draft Variations.
-15. Perform reconciliation, Inquiry-only QA, and rollback rehearsal in that order.
-16. Complete Founder UX review and bounded pilot fixes.
-17. Complete full Security, Privacy, RTL, Mobile, Accessibility, SEO, Performance, and recovery QA.
-18. Expand one approved family at a time.
-19. Complete Launch Readiness, obtain Production approval, deploy, and observe.
+| Track | Outcome | Source-of-Truth and handoff boundary |
+| --- | --- | --- |
+| `A — Commercial Fast Track` | Bounded inquiry, feedback, and revenue learning before full-catalog completion | Consumes approved Repository data through reversible projections; returns Product/data gaps to B and lead outcomes to C |
+| `B — Core Platform / Truth Engine` | Product Data, taxonomy, Knowledge, evidence, and governed administration | Repository owns Product/Knowledge truth; sends approved bounded slices and canonical IDs to A/C/D |
+| `C — Growth & Revenue` | Existing-customer, referral, SEO, channel, and follow-up learning | Lead/CRM tooling may own lead state only; it never owns Product truth |
+| `D — Automation & Scale` | Automate stable and measured processes | n8n/OpenAI remain non-authoritative and start only after A–C demonstrate repeatability |
 
-The Product Data sequence is serial. Consult [Current Project State](CURRENT_PROJECT_STATE.md#approved-next-action) for the sole current next action and mutable authorization and GO/NO-GO boundary; this sequence document creates no independent authorization and does not restate mutable operational instructions. Runtime evidence planning, Knowledge contracts, an offline Admin engine, and an offline adapter manifest remain subject to their own approvals and the dependencies recorded here. All merges, shared-path changes, imports, runtime steps, and release actions remain serial.
+Default WIP focus is at most:
 
-## Phase 1 — Architecture
+```text
+1 Commercial + 1 Core + 1 Enabler
+```
 
-**Status:** ARCHITECTURE/PROPOSAL COVERAGE EXISTS; GOVERNING APPROVAL / IMPLEMENTATION READINESS NOT GRANTED
+Parallel work is permitted only when source ownership, files, handoffs, gates, and independent validation remain explicit.
 
-## Phase 2 — Governance, Design and Content Systems
+## C1-T03 Disposition
 
-**Status:** PROPOSAL COVERAGE EXISTS / FOUNDER REVIEW REMAINS REQUIRED
+`C1-T03/HF-X0` is frozen at the protected architecture boundary. Gate 3 is complete `48/48`; Projection, Sanitization, and Governance passed; Structural remains blocked by 2 findings and Behavioral by 9 findings, totaling 11 (`7 Critical`, `4 High`). `DESIGN_PASS=false`, `PLANNING_PASSAGE=false`, and no Runtime or Production authority exists.
 
-## Phase 3 — Implementation Assets
+Its evidence and findings remain preserved, but C1-T03 is not the active next action, an automatic successor backlog, or a prerequisite for OS2. No repair or new R-cycle is planned.
 
-**Status:** STRUCTURAL PRODUCT AND DATA-ADMINISTRATION FOUNDATIONS PRESENT; PRODUCT DATA, KNOWLEDGE, AND RUNTIME NOT READY
+## Corrected Successor Map
 
-## Phase 4 — Master Data Reconciliation
+| Candidate mission | Intended bounded outcome | Entry boundary |
+| --- | --- | --- |
+| `C002 — Commercial Pilot Truth & Product Administration Contracts` | Define a commercially useful bounded slice and future Product Builder/value/provenance contracts | Separate Founder Mission; no Product/SKU/Availability inference |
+| `C003-A — Offline Pilot Projection Package` | Validated offline canonical-to-WP/WC projection package | C002-approved truth slice and validator PASS |
+| `C003-B — Manual-First Growth/CRM Loop` | Controlled lead intake, follow-up, outcomes, and safe export path | Ownership, privacy, consent, and field contract approved |
+| `C004 — Non-Production Readiness` | Exact target, least privilege, licenses, backup/restore, and rollback proof | Separate Runtime authority |
+| `C005 — Bounded Staging Pilot` | Inquiry-first staging implementation and QA for the approved slice | C004 readiness plus Security/RTL/Mobile/Accessibility/rollback PASS |
+| `C006 — Pilot Certification / Production Decision` | Evidence package for a Founder GO/NO-GO | No automatic Production authority |
+| `D-series` | Automation of demonstrated processes | Stable metrics, ownership, failure handling, and separate authorization |
 
-**Status:** SPRINT 10R COMPLETE; LIMITED PIPE PILOT DECISION REGISTERED LATER
+These are candidate successors only. C001 starts none of them.
 
-## Phase 5 — Founder Review and Limited Pilot Selection
+## Product and Commerce Boundaries
 
-**Status:** LIMITED PILOT SELECTED; FOUNDER REVIEW AND EVIDENCE COMPLETION CONTINUE
+- The three PD-03B records are approved seed/reference evidence only. They are not Product, SKU, Golden, Availability, import/runtime objects, or a ceiling on the future bounded Fast-Track scope.
+- The other 879 Pipe combinations remain `CANDIDATE_UNVERIFIED`; Availability remains `MISSING_DATA_VALUE` for all 882 rows.
+- Current operational mode is inquiry-first with no active public purchase authority.
+- The approved target is future per-SKU purchase eligibility under separate Product, commercial, Runtime, Production, and Founder gates.
+- C002 may specify future Product Builder, controlled `+ Add Value`, weight provenance, electrostatic appearance, Commerce Eligibility, Inventory Harmony, and the Damavand/Central BOM boundary. This roadmap does not implement them.
 
-Entry: Sprint 10R complete; candidate and approved data separated; provenance present; no speculative availability.
+## Legacy Sequence Classification
 
-Settled scope: Golden Parent `لوله استیل دکوراتیو` and exactly three approved pilot combinations. Their reference identifiers are not final commercial SKUs. The other 879 combinations remain `CANDIDATE_UNVERIFIED`, and market availability remains `MISSING_DATA_VALUE` for all 882 rows.
+`GOV-XD-00`, PD-01, PD-02A, PD-02B, PD-03A, and PD-03B retain their completed bounded evidence. The former automatic chain from C1-T03 through C1-T07, PD-04/PD-05, ADM, Runtime, one three-variation import, and full-catalog expansion is historical planning evidence. It no longer governs the active next action and grants no execution authority.
 
-Remaining exit evidence: final slug/SKU policy where applicable, media and rights, content, availability evidence, exact target, staging, backup/restore, rollback, license/package ownership, and inquiry-only/no-price validation. Pilot selection does not satisfy import or runtime gates.
+Master/Golden packages, Import, Runtime, WordPress/WooCommerce, Staging, Publishing, Deployment, Production, Central Steel, and Automation remain separately gated.
 
-## Phase 6 — Pilot Import Asset Package
+## Current NO-GO
 
-**Status:** HISTORICAL PACKAGE CLAIM ONLY; CANONICAL MACHINE-READABLE PACKAGE ABSENT; IMPORT BLOCKED
-
-Sprint 11 historically reported a Golden package for one Parent Product and three approved variations, but that referenced package is absent from canonical `main`. Current approval exists through Founder decisions and governing prose only. No production import occurred; Import, Runtime, and Publishing remain `NO-GO`.
-
-## Phase 7 — Import Dry Run
-
-**Status:** BLOCKED — dry-run only; no production mutation.
-
-## Phase 8 — Backup and Rollback Gate
-
-**Status:** BLOCKED
-
-Requires verified file/database backups, restore method, rollback owner, and approved target environment.
-
-## Phase 9 — Controlled Draft WordPress Pilot
-
-**Status:** BLOCKED
-
-One draft Parent Product and limited approved variations only; no price, Offer schema, or publishing.
-
-## Phase 10 — Founder UX Review
-
-**Status:** BLOCKED
-
-Review mobile, RTL, Configurator, inquiry, attributes, knowledge cards, media, SEO, performance, and Admin usability.
-
-## Phase 11 — Pilot Fixes
-
-**Status:** BLOCKED
-
-## Phase 12 — Controlled Expansion
-
-Sequence: Pipe → Profile → approved Fittings families → remaining approved families.
-
-## Phase 13 — Launch Readiness
-
-**Status:** BLOCKED
-
-## Phase 14 — Central Steel Reuse
-
-**Status:** FUTURE
-
-## Do Not Yet
-
-Do not add a fourth Pilot or populate Product/Knowledge/879-row/Master Data/Golden/SKU/slug/availability data; add 430, PVD, 3m, or unapproved dimensions/Units; change repository settings; activate workflows; import; implement WordPress; publish; deploy; expose prices/payment/cart/checkout; enable Phase 1 AI; create speculative Fittings data; delete branches; or mutate Central Steel/runtime without separate approval. Consult [Current Project State](CURRENT_PROJECT_STATE.md) for the semantic Git boundary.
+C001 does not authorize Product/Knowledge/879-row/Master Data/Golden/SKU/slug/Availability population; unapproved values or combinations; repository settings; workflows; import; WordPress/WooCommerce; public pricing, Offer schema, cart, checkout, payment, or purchase; Runtime; Staging; Publishing; Deployment; Production; Central Steel; n8n/OpenAI integration; merge; or a successor Mission. Consult [Current Project State](CURRENT_PROJECT_STATE.md) for the semantic boundary.

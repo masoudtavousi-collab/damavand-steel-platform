@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.14.0
-- **Last Updated:** 2026-08-02
-- **Last Review:** 2026-08-02
+- **Version:** 0.15.0
+- **Last Updated:** 2026-08-16
+- **Last Review:** 2026-08-16
 - **Review Cycle:** On document creation, removal, rename, lifecycle, authority, or navigation change
 - **Lifecycle:** Draft
 - **Source of Truth:** Current repository documentation paths plus each document's recorded status and authority
@@ -26,7 +26,7 @@ Provide the canonical map of repository documentation without replacing the auth
 
 ## Current Repository-Control Context
 
-[Current Project State](CURRENT_PROJECT_STATE.md) is the only mutable operational-state pointer. This index records document roles and stable integration history; it does not restate the active branch, pull-request state, or live Git tip. [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md) is the accepted program `HOW` and [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) is the accepted Version 1.0 `WHAT` under `FD-DS-PROGRAM-001`; they are companion governing sources and do not compete with Current Project State. K-01, BP1/BP2, recovery, `GOV-XD-00`, PD-01, PD-02A, approved PD-02B, and approved PD-03A retain their recorded bounded meanings. [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md) governs only the three lifecycle-gated repository Pilot records and grants no Product/SKU, Availability, Master/Golden, Import, or Runtime authority. The directive integration does not authorize PD-04, Campaign 002, Product/SKU, Golden/Master Data, Runtime, Import, Deployment, Production, or branch deletion.
+[Current Project State](CURRENT_PROJECT_STATE.md) is the only mutable operational-state pointer. This index records document roles and stable integration history; it does not restate the active branch, pull-request state, or live Git tip. [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md) is the accepted program `HOW`, [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) is the accepted Version 1.0 `WHAT`, and [C000 / Project OS 2.0](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md) is the accepted strategic operating reconciliation. [Context Router](CONTEXT_ROUTER.md) selects the smallest relevant source set without replacing any authority. [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md) governs only three seed/reference Pilot records; they are not Product/SKU/Availability or a future Fast-Track ceiling. C1-T03 is frozen, and Product, Runtime, commerce activation, Production, and successor execution remain separately gated.
 
 ## Categories and Complete Document Map
 
@@ -36,6 +36,7 @@ Provide the canonical map of repository documentation without replacing the auth
 | --- | --- | --- | --- |
 | [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md) | Accepted governing program execution method (`HOW`); companion to DS-SPD under `FD-DS-PROGRAM-001` | Approved | Founder |
 | [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) | Accepted governing Version 1.0 strategic outcome (`WHAT`); companion to DS-PC under `FD-DS-PROGRAM-001` | Approved | Founder |
+| [C000 / Project OS 2.0 Decision Package](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md) | Founder-approved strategic reconciliation: C1-T03 freeze, Tracks A–D, commerce target, Pilot seed correction, and successor intent boundaries | Review | Founder |
 | [DS-000 Project Bible](00_PROJECT_BIBLE.md) | Project-level governing context; Core Project Principles are Accepted by Founder directive | Draft | Founder |
 | [DS-001 Project Constitution](01_PROJECT_CONSTITUTION.md) | Project governance context | Draft | Founder |
 | [DS-002 Enterprise Architecture](02_ARCHITECTURE.md) | Enterprise architecture authority | Draft | Founder |
@@ -50,13 +51,14 @@ Provide the canonical map of repository documentation without replacing the auth
 | Document | Role | Status | Owner |
 | --- | --- | --- | --- |
 | [Codex Repository Instructions](../AGENTS.md) | Concise Codex behavior, authority, phase, sprint, data, and runtime boundaries | Review | Founder |
+| [Context Router](CONTEXT_ROUTER.md) | Concise progressive-loading route for current authority, domain sources, and historical evidence | Review | Founder |
 | [Project Baseline](PROJECT_BASELINE.md) | Concise current-state entry point for humans and AI; indexes but does not replace governing sources | Review | Founder |
 | [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md) | Canonical Repository A authority and Repository B quarantine/isolation contract | Review | Founder |
 | [Current Project State](CURRENT_PROJECT_STATE.md) | Sole mutable operational pointer for baseline, phase, branch, readiness, blockers, and next action | Evidence | Founder |
 | [PD-03A Pilot Prerequisite Foundation Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md) | Exact immutable-extension scope, lifecycle, evidence, allowlist, Test Contract, and Stop Conditions | Approved | Founder |
 | [PD-03B Canonical Pilot Records Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md) | Exact three-record scope, lifecycle, evidence, 33-path Allowlist, Test Contract, and Stop Conditions | Approved | Founder |
 | [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md) | Proposed archive layers, one-owner rules, status separation, conflict resolution, and Atlas intake policy | Review | Founder |
-| [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md) | Post-Sprint 12A reconciliation, evidence, pilot, dry-run, implementation, and expansion sequence | Review | Founder |
+| [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md) | Project OS 2.0 Tracks A–D, bounded WIP, frozen C1-T03 disposition, candidate-only successor map, and explicit execution gates | Review | Founder |
 | [Codex Sprint Protocol](CODEX_SPRINT_PROTOCOL.md) | Compact bounded sprint protocol | Review | Founder |
 | [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md) | Scope-bound source hierarchy and conflict handling | Review | Founder |
 | Future Reference: Sprint GOV-01 Audit — `docs/AUDIT_REPORT_GOV01.md` (Not yet approved) | Governance creation, conflict, size, link, and boundary evidence | Evidence | Founder |
@@ -562,24 +564,27 @@ The reusable quality gates are maintained outside `docs/` in [Enterprise Quality
 
 ## Reading Order
 
-1. [Current Project State](CURRENT_PROJECT_STATE.md)
-   - Then read [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md) for the accepted program `HOW`.
-   - Then read [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) for the accepted Version 1.0 `WHAT`.
-2. [Project Baseline](PROJECT_BASELINE.md)
-3. [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md)
-4. [Repository Reading Order](READING_ORDER.md)
-5. [Project Bible](00_PROJECT_BIBLE.md)
-6. [Project Constitution](01_PROJECT_CONSTITUTION.md)
-7. [Documentation Index](08_DOCUMENTATION_INDEX.md)
-8. [Glossary](11_GLOSSARY.md)
-9. [Decision Log](10_DECISION_LOG.md)
-10. [Document Lifecycle](12_DOCUMENT_LIFECYCLE.md)
-11. [Repository Health](REPOSITORY_HEALTH.md)
-12. [Git Governance](GIT_GOVERNANCE.md)
-13. [Business Rules](03_BUSINESS_RULES.md)
-14. [Enterprise Architecture](02_ARCHITECTURE.md)
-15. [Technology Stack](05_TECH_STACK.md)
-16. [WordPress Architecture](06_WORDPRESS_ARCHITECTURE.md)
+Use items 1–5 as the entry sequence. The remaining entries preserve the historical full-inventory lookup order; they are not a universal context-loading requirement.
+
+1. [Context Router](CONTEXT_ROUTER.md)
+2. [Current Project State](CURRENT_PROJECT_STATE.md)
+3. [C000 / Project OS 2.0 Decision Package](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md)
+4. [Project Baseline](PROJECT_BASELINE.md)
+5. Follow only the applicable domain route in the Context Router; load DS-PC/DS-SPD, Product, Commerce, Runtime, or history sources when the task requires them.
+6. [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md)
+7. [Repository Reading Order](READING_ORDER.md)
+8. [Project Bible](00_PROJECT_BIBLE.md)
+9. [Project Constitution](01_PROJECT_CONSTITUTION.md)
+10. [Documentation Index](08_DOCUMENTATION_INDEX.md)
+11. [Glossary](11_GLOSSARY.md)
+12. [Decision Log](10_DECISION_LOG.md)
+13. [Document Lifecycle](12_DOCUMENT_LIFECYCLE.md)
+14. [Repository Health](REPOSITORY_HEALTH.md)
+15. [Git Governance](GIT_GOVERNANCE.md)
+16. [Business Rules](03_BUSINESS_RULES.md)
+17. [Enterprise Architecture](02_ARCHITECTURE.md)
+18. [Technology Stack](05_TECH_STACK.md)
+19. [WordPress Architecture](06_WORDPRESS_ARCHITECTURE.md)
 17. [Enterprise Product Data Model](19_PRODUCT_DATA_MODEL.md)
 15. [Product Taxonomy Model](21_PRODUCT_TAXONOMY_MODEL.md)
 16. [Product Attribute Model](22_PRODUCT_ATTRIBUTE_MODEL.md)

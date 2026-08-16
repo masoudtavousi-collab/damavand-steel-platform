@@ -8,14 +8,14 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.11.0
-- **Last Updated:** 2026-08-02
-- **Last Review:** 2026-08-02
+- **Version:** 0.12.0
+- **Last Updated:** 2026-08-16
+- **Last Review:** 2026-08-16
 - **Review Cycle:** On navigation or authority change; periodic cadence pending Founder approval
 - **Lifecycle:** Review
 - **Source of Truth:** [Documentation Index](08_DOCUMENTATION_INDEX.md) and [Navigation Map](09_NAVIGATION_MAP.md)
 - **Dependencies:** [Documentation Index](08_DOCUMENTATION_INDEX.md), [Navigation Map](09_NAVIGATION_MAP.md)
-- **Related Documents:** [AI Collaboration Standard](AI_COLLABORATION.md), [Repository Metadata Standard](REPOSITORY_METADATA.md), [Traceability Matrix](TRACEABILITY_MATRIX.md), [Knowledge Graph](KNOWLEDGE_GRAPH.md), [Git Governance](GIT_GOVERNANCE.md), and [Repository Health](REPOSITORY_HEALTH.md)
+- **Related Documents:** [Context Router](CONTEXT_ROUTER.md), [C000 OS2 Decision Package](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md), [AI Collaboration Standard](AI_COLLABORATION.md), [Repository Metadata Standard](REPOSITORY_METADATA.md), [Traceability Matrix](TRACEABILITY_MATRIX.md), [Knowledge Graph](KNOWLEDGE_GRAPH.md), [Git Governance](GIT_GOVERNANCE.md), and [Repository Health](REPOSITORY_HEALTH.md)
 - **Traceability:** [Repository Traceability Matrix](TRACEABILITY_MATRIX.md), [Decision Log](10_DECISION_LOG.md), and controlled registers
 - **AI Compatibility:** AI-ready after Founder approval
 - **Approval:** Pending Founder approval
@@ -29,21 +29,12 @@ Provide role-specific reading paths so a new human or AI collaborator can unders
 Every reader starts with:
 
 1. [Codex Repository Instructions](../AGENTS.md) for Codex sessions; other roles may use it as a concise boundary summary.
-2. [Current Project State](CURRENT_PROJECT_STATE.md), the only mutable operational-state pointer.
-3. [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md), the accepted program execution method (`HOW`).
-4. [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md), the accepted Version 1.0 strategic outcome (`WHAT`).
+2. [Context Router](CONTEXT_ROUTER.md), which selects the smallest task-specific context set.
+3. [Current Project State](CURRENT_PROJECT_STATE.md), the only mutable operational-state pointer.
+4. [C000 OS2 Decision Package](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md), the accepted Project OS 2.0 strategic reconciliation.
 5. [Project Baseline](PROJECT_BASELINE.md), the concise orientation layer.
-6. [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md), for ownership, status, and archive rules.
-7. [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md) when another repository, Factory, Generator, or cross-repository concept is involved.
-8. [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md).
-9. [Project Bible](00_PROJECT_BIBLE.md), especially the Core Project Principles.
-10. [Project Constitution](01_PROJECT_CONSTITUTION.md).
-11. [Documentation Index](08_DOCUMENTATION_INDEX.md).
-12. [Glossary](11_GLOSSARY.md).
-13. [Decision Log](10_DECISION_LOG.md).
-14. [Founder Decision Log](17_FOUNDER_DECISION_LOG.md) and [Open Questions](18_OPEN_QUESTIONS.md).
 
-Readers then follow the applicable role path.
+Readers then follow only the applicable role and Layer 1 route. DS-PC (`HOW`), DS-SPD (`WHAT`), decision logs, roadmap, domain models, and historical evidence are loaded when that route or the active task requires them—not as a universal context dump.
 
 For current work, readers must obtain the exact phase, branch, authorization, pull-request state, GO/NO-GO boundary, and next action from Current Project State. DS-PC (`HOW`) and DS-SPD (`WHAT`) are stable companion governing sources and do not compete with that operational pointer. Their acceptance does not auto-authorize PD-04, Campaign 002, Product/SKU, Golden/Master Data, Runtime, Import, Deployment, Production, or branch deletion. Historical scopes retain their original boundaries. [PD-02B Scope v1.0](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md) remains the immutable APPROVED base. [PD-03A Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md) governs the APPROVED prerequisite extension. [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md) governs only exactly three lifecycle-gated Pilot records and grants no Product/SKU, Availability, Master/Golden, Import, Runtime, Deployment, or Production authority.
 
@@ -256,6 +247,8 @@ This path documents a proposed route only. It grants no remote, account, credent
 ## References
 
 - [Navigation Map](09_NAVIGATION_MAP.md)
+- [Context Router](CONTEXT_ROUTER.md)
+- [C000 OS2 Decision Package](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md)
 - [Knowledge Graph](KNOWLEDGE_GRAPH.md)
 - [AI Collaboration Standard](AI_COLLABORATION.md)
 - [Enterprise Information Architecture](24_INFORMATION_ARCHITECTURE.md)

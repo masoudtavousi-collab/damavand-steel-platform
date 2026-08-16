@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.5.0
-- **Last Updated:** 2026-08-02
-- **Last Review:** 2026-08-02
+- **Version:** 0.6.0
+- **Last Updated:** 2026-08-16
+- **Last Review:** 2026-08-16
 - **Review Cycle:** On decision classification, status, or authority change
 - **Lifecycle:** Draft
 - **Source of Truth:** Approved governing documents and explicitly accepted decision records; this log is an index only
@@ -75,6 +75,8 @@ Every accepted decision must identify:
 | ID | Decision | Source | Status |
 | --- | --- | --- | --- |
 | `FD-DS-PROGRAM-001` | Accept [DS-PC-001](DS_PC_001_PROGRAM_CHARTER.md) as the program execution method (`HOW`) and [DS-SPD-001](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) as the Version 1.0 strategic outcome (`WHAT`); preserve Founder final authority; assign ChatGPT the Project Commander / Chief Architect / Product Owner / Repository Governor roles and Codex the operational Program Commander / Build Engine role only inside exact task gates. | [Founder Decision Log](17_FOUNDER_DECISION_LOG.md#ds-program-charter-and-strategic-directive-decision), effective 2026-08-02 | Accepted within exact recorded scope. Does not approve the full Draft Bible/Constitution, supersede CP-001–CP-010 or more specific accepted authority, or authorize PD-04, Campaign 002, Product/SKU, Golden/Master Data, Runtime, Import, Deployment, Production, Git publication, or branch deletion. |
+| `FD-C000-OS2-001` | Accept Project OS 2.0: preserve enterprise truth controls; freeze C1-T03 without repair; operate through Tracks A–D and bounded WIP; approve `Inquiry First by default + future SKU-level purchase eligibility` as target architecture without present activation; and classify the three PD-03B records as seed/reference evidence rather than a future Fast-Track ceiling. | [C000 Decision Package](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md) and [Founder Decision Log](17_FOUNDER_DECISION_LOG.md#c000--project-os-20-strategic-reconciliation-decision), effective 2026-08-16 | Founder-approved strategic decision. No Product/SKU/Availability, price, purchase, Runtime, Production, C1-T03 repair, Central Steel, automation, or successor execution authority. |
+| `C001-OS2-RECON` | Publish the accepted C000 decisions through one bounded docs-only branch and pull request with independent review, local validation, and CI. | C001 Founder + Project Commander Mission Packet dated 2026-08-16 | Git authority is limited to branch/commit/push/one PR and attributable CI fixes. Merge and every successor/runtime/product action remain `NO-GO`. |
 
 ## Architecture Decisions
 
@@ -86,8 +88,8 @@ Every accepted decision must identify:
 
 | ID | Decision | Source | Status |
 | --- | --- | --- | --- |
-| ADR-0001 | Inquiry-first commerce; WooCommerce is the product catalog authority; public pricing and direct transactional behavior remain disabled. | [ADR 0001](adr/0001-inquiry-first-commerce.md) | Accepted |
-| FD-PILOT-001 | The Golden Parent is `لوله استیل دکوراتیو`; exactly three Pipe combinations are approved for the limited pilot under reference IDs `GOLD-PIPE-201-51-050-6M`, `GOLD-PIPE-201-38-050-6M`, and `GOLD-PIPE-201-16-035-6M`. These references are not final commercial SKUs. The remaining 879 rows stay `CANDIDATE_UNVERIFIED`; market availability stays `MISSING_DATA_VALUE` for all 882; import, runtime, and publishing remain `NO-GO`. | [Founder Decision Log](17_FOUNDER_DECISION_LOG.md#settled-golden-pipe-pilot-decision) and GIT-02S Founder directive dated 2026-07-14 | Accepted by explicit Founder directive; superseded only by a later explicit Founder decision |
+| ADR-0001 | Inquiry-first/no-public-pricing remains current operational behavior. C1-T06 assigns canonical Product authority to the Repository rather than WooCommerce; C000 adds only a future, independently gated per-SKU eligibility target. | [ADR 0001](adr/0001-inquiry-first-commerce.md) | Accepted for current operation; purchase activation still requires a later superseding activation decision/ADR and all gates |
+| FD-PILOT-001 | The Golden Parent is `لوله استیل دکوراتیو`; exactly three Pipe combinations are approved as seed/reference Pilot evidence under reference IDs `GOLD-PIPE-201-51-050-6M`, `GOLD-PIPE-201-38-050-6M`, and `GOLD-PIPE-201-16-035-6M`. These references are not Product/SKU/Availability and are not the ceiling of a later bounded Commercial Fast Track. The remaining 879 rows stay `CANDIDATE_UNVERIFIED`; market availability stays `MISSING_DATA_VALUE` for all 882; import, runtime, and publishing remain `NO-GO`. | [Founder Decision Log](17_FOUNDER_DECISION_LOG.md#settled-golden-pipe-pilot-decision), `FD-C000-OS2-001`, and GIT-02S Founder directive dated 2026-07-14 | Original evidence approval remains accepted; C000 corrects only future-scope interpretation |
 
 ## Technical Decisions
 

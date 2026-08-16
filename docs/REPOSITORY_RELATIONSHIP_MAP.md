@@ -8,14 +8,14 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.8.0
-- **Last Updated:** 2026-08-02
-- **Last Review:** 2026-08-02
+- **Version:** 0.9.0
+- **Last Updated:** 2026-08-16
+- **Last Review:** 2026-08-16
 - **Review Cycle:** On repository creation, disposition, authority, ownership, namespace, lifecycle, merge, or promotion proposal
 - **Lifecycle:** Review
-- **Source of Truth:** Explicit Founder decisions in the GIT-02S directive dated 2026-07-14, the Class B Wave 1 authorization dated 2026-07-19, verified PR #1–#3 merge state, Founder-approved current Git governance, the Wave 2 pre-implementation decisions dated 2026-07-20, `FD-DS-PROGRAM-001`, and Repository A governance
-- **Dependencies:** [Project Baseline](PROJECT_BASELINE.md), [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md), and [Project Constitution](01_PROJECT_CONSTITUTION.md)
-- **Related Documents:** [Program Charter](DS_PC_001_PROGRAM_CHARTER.md), [Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md), [Git Governance](GIT_GOVERNANCE.md), [AI Collaboration Standard](AI_COLLABORATION.md), and `GIT-02S Audit`
+- **Source of Truth:** Explicit Founder decisions in the GIT-02S directive dated 2026-07-14, the Class B Wave 1 authorization dated 2026-07-19, verified GitHub `main`, Founder-approved current Git governance, the Wave 2 pre-implementation decisions dated 2026-07-20, `FD-DS-PROGRAM-001`, `FD-C000-OS2-001`, and Repository A governance
+- **Dependencies:** [C000 OS2 Decision Package](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md), [Project Baseline](PROJECT_BASELINE.md), [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md), and [Project Constitution](01_PROJECT_CONSTITUTION.md)
+- **Related Documents:** [Context Router](CONTEXT_ROUTER.md), [Program Charter](DS_PC_001_PROGRAM_CHARTER.md), [Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md), [Git Governance](GIT_GOVERNANCE.md), [AI Collaboration Standard](AI_COLLABORATION.md), and `GIT-02S Audit`
 - **Traceability:** GIT-02S Founder decisions 1–3 and 10; CP-001, CP-002, CP-010
 - **AI Compatibility:** Explicit cross-repository authority and isolation contract
 - **Approval:** Repository dispositions accepted by explicit Founder directive; document presentation pending Founder review
@@ -30,6 +30,8 @@ Define the authority, isolation, adoption, and future-promotion boundaries betwe
 | --- | --- | --- |
 | [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md) | Governs program execution method (`HOW`) under `FD-DS-PROGRAM-001`; companion to DS-SPD | Does not replace the sole operational pointer, approve runtime work, or override a more specific accepted decision or gate |
 | [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) | Governs Version 1.0 strategic outcome (`WHAT`) under `FD-DS-PROGRAM-001`; companion to DS-PC | Does not become an execution ticket, domain roadmap, Product/SKU approval, or production authorization |
+| [C000 OS2 Decision Package](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md) | Records `FD-C000-OS2-001`, the Founder-approved Project OS 2.0 reconciliation, Track model, WIP limit, frozen C1-T03 boundary, and successor intent map | Does not authorize a successor mission, Product/SKU/Availability creation, runtime, production, or activation of future purchase eligibility |
+| [Context Router](CONTEXT_ROUTER.md) | Routes each task to the smallest authoritative context set | Is navigation only; it cannot create authority, override a governing source, or duplicate mutable state |
 | [Current Project State](CURRENT_PROJECT_STATE.md) | Remains the sole mutable pointer for current phase, exact authorization, branch/PR state, blockers, next action, and GO/NO-GO | Must not be duplicated or inferred from the two stable program documents |
 | `FD-DS-PROGRAM-001` | Records acceptance, roles, hashes, relationship, exclusions, and supersession limits | Does not rewrite `GOV-XD-00`, prior decisions, or repository chronology |
 
@@ -40,7 +42,8 @@ DS-PC and DS-SPD establish successor program context for future bounded task pac
 | Property | Definition |
 | --- | --- |
 | Canonical name | Damavand Steel Enterprise Product and Knowledge Platform Repository |
-| Path | `/Users/masoudtavousi/Desktop/damavand steel` |
+| Canonical GitHub repository | `masoudtavousi-collab/damavand-steel-platform` on protected `main` |
+| Operational local workspace | `/Users/masoudtavousi/Documents/Codex/damavand-steel-platform`; a clone/worktree is not a separate authority source |
 | Purpose | Govern project architecture, decisions, Product and Knowledge Repositories, Master Data, implementation assets, evidence, and future controlled projections |
 | Authority | Only canonical and authoritative Damavand Steel project repository |
 | Owner / approval authority | Founder |
@@ -150,6 +153,9 @@ No passage of time, new file, Git initialization, architecture review, or AI rec
 ## Current Decision
 
 - Repository A canonical authority: **CONFIRMED**.
+- Project OS 2.0 strategic reconciliation: **FOUNDER-APPROVED** under `FD-C000-OS2-001`; C001 publishes documentation only after its separately authorized Git cycle and merge.
+- C1-T03/HF-X0: **`FROZEN_AT_PROTECTED_ARCHITECTURE_BOUNDARY`**; 11 technical findings remain preserved and blocking, with no repair cycle or downstream authority.
+- The three PD-03B records: **SEED/REFERENCE EVIDENCE ONLY**; they are not Product/SKU/Availability and are not a ceiling on future separately authorized scope.
 - Repository B classification: **`QUARANTINED_ARCHITECTURE_RESEARCH`**.
 - PR #1–#18: **MERGED**; PR #13 and PR #14 preceded the final PR #12 merge, PR #15 reconciled the active governance state afterward, PR #16 hardened BP1 M1 accessibility and local validation, PR #17 reconciled the resulting governance state, PR #18 integrated the BP2 lifecycle approval, and the current shared baseline is maintained in Current Project State.
 - Class B Wave 1 exact-scope Git/documentation integration: **COMPLETE**; its 2026-07-19 authorization remains historical evidence and did not itself authorize merge.

@@ -1,6 +1,6 @@
 # Damavand Steel Project Baseline
 
-> Post-PR32: Agentic Usage Telemetry Foundation merged as local governance evidence only; no Product, runtime, or successor execution authority follows.
+> Project OS 2.0 is the accepted strategic operating model. Current operation remains inquiry-first with no active public purchase authority; C001 is documentation reconciliation only and grants no successor execution authority.
 
 ## Document Control
 
@@ -10,9 +10,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.15.0
-- **Last Updated:** 2026-08-03
-- **Last Review:** 2026-08-03
+- **Version:** 0.16.0
+- **Last Updated:** 2026-08-16
+- **Last Review:** 2026-08-16
 - **Review Cycle:** On approved decision, completed sprint, repository disposition, readiness, or execution-state change
 - **Lifecycle:** Review
 - **Source of Truth:** Accepted governing sources, recorded Founder decisions, [Current Project State](CURRENT_PROJECT_STATE.md), approved Master Data, and current repository evidence within their declared scope
@@ -41,7 +41,8 @@ Damavand Steel is an Enterprise Product and Knowledge Platform. DamavandSteel.co
 
 | Repository | Disposition | Authority |
 | --- | --- | --- |
-| `/Users/masoudtavousi/Desktop/damavand steel` | Canonical Damavand Steel project repository | Sole project repository authority within approved source scopes |
+| `masoudtavousi-collab/damavand-steel-platform` on GitHub | Canonical shared Damavand Steel project repository | Sole shared versioned repository authority within approved source scopes; resolve `main` dynamically |
+| Local clones and worktrees | Operational copies of the canonical GitHub repository | Path-dependent workspaces only; local path does not create repository authority |
 | `/Users/masoudtavousi/Desktop/damavand-enterprise-repository` | `QUARANTINED_ARCHITECTURE_RESEARCH` | Unapproved, unversioned, isolated, non-authoritative, not merge-ready, and not implementation-ready |
 
 Repository B cannot override the Founder, Repository A, CP-001 through CP-010, the source-of-truth hierarchy, or Phase 1 AI boundaries. See the [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md).
@@ -59,6 +60,9 @@ Historical Git authorizations retain their original exact scope and do not becom
 - `FD-DS-PROGRAM-001` and completed `C1-T04` integration establish [DS-PC-001](DS_PC_001_PROGRAM_CHARTER.md) as the accepted execution method (`HOW`) and [DS-SPD-001](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) as the accepted Version 1.0 outcome (`WHAT`). Their companion relationship does not bypass Founder approval, separation of duties, or any execution gate.
 - `C1-T06` completed the documentation-only canonical-owner reconciliation through merged PR #29 and successful main CI `30796043918`; it preserved the canonical Repository hierarchy and classified WordPress/WooCommerce Parent/Variation structures as downstream mappings without creating Product or runtime authority.
 - Inquiry First, No Public Pricing, Variable Parent Product, Product Data First, Taxonomy First, Knowledge First, Configuration First, Plugin First, Mobile First, Persian RTL, Single Source of Truth, and Founder approval gates remain controlling boundaries.
+- Project OS 2.0 is Founder-approved: Tracks A–D govern bounded Commercial Fast Track, Core/Truth, Growth/Revenue, and later Automation work with default WIP focus `1 Commercial + 1 Core + 1 Enabler`.
+- Current operational commerce remains inquiry-first with no active public purchase authority. The approved target is `Inquiry First by default + future SKU-level purchase eligibility`; every future SKU remains fail-closed behind separate Product, commercial, Runtime, Production, and Founder gates.
+- `C1-T03/HF-X0` is frozen at the protected architecture boundary with Gate 3 `48/48`, Projection/Sanitization/Governance PASS, 11 unresolved technical findings (`7 Critical`, `4 High`), `DESIGN_PASS=false`, and `PLANNING_PASSAGE=false`. Its evidence is preserved; repair and new R-cycles are not active work.
 - All runtime [Execution Gates](EXECUTION_GATES.md) remain unpassed. Static documentation validation cannot create runtime readiness.
 
 ## Product and Knowledge Repositories
@@ -73,7 +77,7 @@ Historical Git authorizations retain their original exact scope and do not becom
 | PD-02A Controlled Values and Attribute Profiles | `APPROVED` under `FD-PD02A-001` after legal lifecycle and `PD02A-REVIEW-001` PASS with zero findings; exact 38-path synthetic-only Contract/Schema/Validator/Test foundation integrated by PR #22; canonical Product Attribute, controlled-value, and Profile collections were required to remain empty in that scope |
 | PD-02B Minimum Canonical Slice | `APPROVED` under `FD-PD02B-001` after legal `DRAFT → REVIEW → APPROVED`, `PD02B-TECH-REVIEW-001` PASS, REVIEW-stage CI, merged PR #23, and main CI `30482348480`; exact 57-path repository-only slice; exactly 3 entities, 2 Attributes, 2 Value Registries, 4 Terms, 1 INTERNAL Profile, 18 labels, and 1 Approval Evidence are approved without broader Product/runtime authority |
 | PD-03A Pilot Prerequisite Foundation | `APPROVED` under `FD-PD03A-001` after legal `DRAFT → REVIEW → APPROVED`, zero-finding `PD03A-TECH-REVIEW-001` PASS on `cb6c817…`, merged PR #24, and main CI `30696801759`; immutable extension over the unchanged PD-02B base; exact bounded records plus Length/Metre/Millimetre approved; no Product/SKU/availability or runtime authority |
-| PD-03B Canonical Pilot Records | `APPROVED` under `FD-PD03B-001` after legal lifecycle and zero-finding independent PASS; merged PR #25 and main CI `30698838847`; exactly three stable repository Pilot records only, with historical references non-identifying, Availability `MISSING_DATA_VALUE`, and every readiness flag false; Product/SKU and downstream authority remain absent |
+| PD-03B Canonical Pilot Records | `APPROVED` under `FD-PD03B-001` after legal lifecycle and zero-finding independent PASS; merged PR #25 and main CI `30698838847`; exactly three stable repository Pilot seed/reference records only, with historical references non-identifying, Availability `MISSING_DATA_VALUE`, and every readiness flag false; they are not Product/SKU/downstream authority and are not the maximum future Commercial Fast-Track scope |
 | Knowledge Repository | Architecture proposals exist; `repository/knowledge/` is the approved future location, but machine-readable contracts and content instances do not exist; `NOT_IMPLEMENTATION_READY` |
 | Master Data | No canonical machine-readable package exists on `main`; decision records and governing prose remain the current evidence |
 | Knowledge Cards and Page Builder assets | Referenced historical/future assets are absent from canonical `main`; no implementation-readiness claim is made |
@@ -106,7 +110,7 @@ The approved Golden Parent is `لوله استیل دکوراتیو`. The limite
 | `GOLD-PIPE-201-38-050-6M` | 201 | Silver | 38 mm | 0.50 mm | 6 m | `PIPE-COMB-0016` |
 | `GOLD-PIPE-201-16-035-6M` | 201 | Silver | 16 mm | 0.35 mm | 6 m | `PIPE-COMB-0001` |
 
-These are pilot reference identifiers, not final commercial SKUs. Approval exists through Founder decisions and governing prose. No canonical machine-readable Golden package or Master Data package currently exists on `main`. Brand is approved as absent/hidden and brand-neutral; weight is `DEFERRED` and must not be inferred. Market availability is `MISSING_DATA_VALUE` for all three approved rows and all 879 candidates. Import, Runtime, and Publishing remain `NO-GO`.
+These are seed/reference Pilot identifiers, not final commercial SKUs, Products, Availability evidence, Golden assets, runtime objects, or a ceiling on the future bounded Commercial Fast-Track scope. Approval exists through Founder decisions and governing prose. No canonical machine-readable Golden package or Master Data package currently exists on `main`. Brand is approved as absent/hidden and brand-neutral; weight is `DEFERRED` and must not be inferred. Market availability is `MISSING_DATA_VALUE` for all three approved rows and all 879 candidates. Import, Runtime, and Publishing remain `NO-GO`.
 
 ## WordPress and Runtime Evidence
 
@@ -146,6 +150,7 @@ The operational GO/NO-GO boundary is maintained only in [Current Project State](
 - `main` is the default branch and is protected with the required `repository-validation` check.
 - Wave 1 and Wave 2 discovery are complete. Wave 2A–2C structural foundations are merged without Product Data or runtime authority.
 - The canonical repository hierarchy is `Catalog → Platform → Family → Series → Variant Rules → SKU`; commerce Parent/Variation constructs are downstream mappings.
+- `FD-C000-OS2-001` accepts Project OS 2.0, the C1-T03 frozen disposition, the four-track operating model, the future per-SKU commerce target, and the PD-03B seed/reference correction within their exact non-runtime scope.
 - Canonical Product, Knowledge, content, implementation, Master Data, Golden, validation, schema, contract, and registry path ownership follows the approved `repository/data/**` and `repository/**` model recorded in the Platform Directory Standard.
 - The Golden Parent and three listed Pipe combinations are approved only for the limited pilot.
 - The three pilot references are not final commercial SKUs.
@@ -188,7 +193,7 @@ Apply [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md): accepted governin
 
 ## Exact Next Safe Action
 
-Use the **Approved Next Action** in [Current Project State](CURRENT_PROJECT_STATE.md). This baseline does not duplicate mutable branch, authorization, or execution instructions.
+Use the **Approved Next Action** in [Current Project State](CURRENT_PROJECT_STATE.md). C001 ends at a validated, independently reviewed pull request and does not authorize merge. `C002` is only the recommended successor candidate and requires a separate Mission.
 
 ## Baseline Update Rules
 
@@ -208,6 +213,8 @@ Update this document only when an approved decision, completed sprint, verified 
 
 - [Codex Repository Instructions](../AGENTS.md)
 - [Current Project State](CURRENT_PROJECT_STATE.md)
+- [C000 / Project OS 2.0 Decision Package](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md)
+- [Context Router](CONTEXT_ROUTER.md)
 - [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md)
 - [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md)
 - [Execution Gates](EXECUTION_GATES.md)
