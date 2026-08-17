@@ -1,0 +1,316 @@
+registry_id: c003-r1-checkpoint03-evidence-and-pilot-readiness
+registry_version: "1.0.0"
+data_classification: C003_R1_GOVERNED_EVIDENCE_EXTENSION
+base_c003_pin:
+  record_count: 115
+  contract_semantic_sha256: eff0b6d1546c67c7e5f33f7c39e387bb97fc7398f5190b3c578247db4daf9bf9
+  registry_semantic_sha256: 6531464375953bb117515e4665a679bcf90f15388f0e7513a7268f3787714cf8
+  mutation_allowed: false
+source_manifest:
+  mission:
+    - {source_id: MISSION_PARENT, channel_id: C0BNHRRTE9F, message_ts: "1786996740.153019", source_order: 1, role: MISSION, complete: true}
+    - {source_id: MISSION_SCOPE, channel_id: C0BNHRRTE9F, message_ts: "1786996752.202309", source_order: 2, role: MISSION, complete: true}
+    - {source_id: MISSION_GATES, channel_id: C0BNHRRTE9F, message_ts: "1786996764.447649", source_order: 3, role: MISSION, complete: true}
+  checkpoint03:
+    - {source_id: CHECKPOINT_03_PARENT, channel_id: C0BNHRRTE9F, message_ts: "1786996639.277979", source_order: 1, role: CHECKPOINT_03, complete: true}
+    - {source_id: CHECKPOINT_03_PART_02, channel_id: C0BNHRRTE9F, message_ts: "1786996650.231529", source_order: 2, role: CHECKPOINT_03, complete: true}
+    - {source_id: CHECKPOINT_03_PART_03, channel_id: C0BNHRRTE9F, message_ts: "1786996663.468959", source_order: 3, role: CHECKPOINT_03, complete: true}
+    - {source_id: CHECKPOINT_03_PART_04, channel_id: C0BNHRRTE9F, message_ts: "1786996677.496709", source_order: 4, role: CHECKPOINT_03, complete: true}
+  original_discovery:
+    - {source_id: DISCOVERY_PARENT, channel_id: C0BNHRRTE9F, message_ts: "1786929259.157699", source_order: 1, role: ORIGINAL_DISCOVERY, complete: true}
+    - {source_id: DISCOVERY_PART_01, channel_id: C0BNHRRTE9F, message_ts: "1786929271.724929", source_order: 2, role: ORIGINAL_DISCOVERY, complete: true}
+    - {source_id: DISCOVERY_PART_02, channel_id: C0BNHRRTE9F, message_ts: "1786929285.156489", source_order: 3, role: ORIGINAL_DISCOVERY, complete: true}
+    - {source_id: DISCOVERY_PART_03, channel_id: C0BNHRRTE9F, message_ts: "1786929298.131999", source_order: 4, role: ORIGINAL_DISCOVERY, complete: true}
+    - {source_id: DISCOVERY_PART_04, channel_id: C0BNHRRTE9F, message_ts: "1786929308.929669", source_order: 5, role: ORIGINAL_DISCOVERY, complete: true}
+    - {source_id: DISCOVERY_PART_05, channel_id: C0BNHRRTE9F, message_ts: "1786929322.167819", source_order: 6, role: ORIGINAL_DISCOVERY, complete: true}
+    - {source_id: DISCOVERY_PART_06, channel_id: C0BNHRRTE9F, message_ts: "1786929332.918159", source_order: 7, role: ORIGINAL_DISCOVERY, complete: true}
+    - {source_id: DISCOVERY_PART_07, channel_id: C0BNHRRTE9F, message_ts: "1786961959.781219", source_order: 8, role: ORIGINAL_DISCOVERY, complete: true}
+    - {source_id: DISCOVERY_CHECKPOINT_02, channel_id: C0BNHRRTE9F, message_ts: "1786969560.307449", source_order: 9, role: ORIGINAL_DISCOVERY, complete: true}
+  idea_vault:
+    - {source_id: IDEA_VAULT_PARENT, channel_id: C0BNHRRTE9F, message_ts: "1786970361.696939", source_order: 1, role: IDEA_VAULT, complete: true}
+    - {source_id: IDEA_VAULT_PART_02, channel_id: C0BNHRRTE9F, message_ts: "1786970380.980809", source_order: 2, role: IDEA_VAULT, complete: true}
+    - {source_id: IDEA_VAULT_USAGE, channel_id: C0BNHRRTE9F, message_ts: "1786970396.771679", source_order: 3, role: IDEA_VAULT, complete: true}
+    - {source_id: IDEA_VAULT_CONTINUITY, channel_id: C0BNHRRTE9F, message_ts: "1786981791.500009", source_order: 4, role: IDEA_VAULT, complete: true}
+  all_threads_complete: true
+  pagination_remaining: false
+base_c003_reconciliation:
+  - sequence: 1
+    reconciliation_id: C003R1-REC-001
+    prior_decision_codes: [C003-DISC-010]
+    delta_decision_codes: [C003R1-CP03-018, C003R1-CP03-019, C003R1-CP03-020, C003R1-CP03-021, C003R1-CP03-022, C003R1-CP03-023]
+    relation: EXTENDS
+    result: Checkpoint 03 adds grade/material-specific round-pipe size evidence beyond the earlier general stainless list; overlapping values agree, new values remain evidence only, and no Product value or Availability is promoted.
+    supersedes_prior: false
+    canonical_population: false
+  - sequence: 2
+    reconciliation_id: C003R1-REC-002
+    prior_decision_codes: [C003-DISC-015]
+    delta_decision_codes: [C003R1-CP03-024, C003R1-CP03-025]
+    relation: EXTENDS
+    result: The new stainless thickness bank spans 0.35–2.00 by 0.05; earlier 0.25 and 0.30 starter candidates are neither withdrawn nor silently added to this bank, and membership never proves a tuple.
+    supersedes_prior: false
+    canonical_population: false
+  - sequence: 3
+    reconciliation_id: C003R1-REC-003
+    prior_decision_codes: [C003-DISC-078]
+    delta_decision_codes: [C003R1-CP03-017, C003R1-CP03-026, C003R1-CP03-027, C003R1-CP03-028, C003R1-CP03-029, C003R1-CP03-030, C003R1-CP03-031]
+    relation: RESOLVES_EVIDENCE_ONLY
+    result: Founder identifies 201/51 as the first review target and supplies bounded evidence, but no C002 candidate or Founder selection record is created and exact tuple evidence remains absent.
+    supersedes_prior: false
+    canonical_population: false
+  - sequence: 4
+    reconciliation_id: C003R1-REC-004
+    prior_decision_codes: [C003-DISC-031, C003-DISC-032, C003-DISC-034, C003-DISC-036]
+    delta_decision_codes: [C003R1-CP03-032, C003R1-CP03-033, C003R1-CP03-034, C003R1-CP03-035]
+    relation: REFINES
+    result: Commercial mass remains contextual rather than Variant identity and is refined to append-only batch/transaction observations with explicit operator confirmation; no observation or canonical mass value is populated.
+    supersedes_prior: false
+    canonical_population: false
+  - sequence: 5
+    reconciliation_id: C003R1-REC-005
+    prior_decision_codes: [C003-DISC-071, C003-DISC-072, C003-DISC-095]
+    delta_decision_codes: [C003R1-CP03-009, C003R1-CP03-010, C003R1-CP03-011, C003R1-CP03-012, C003R1-CP03-013, C003R1-CP03-014]
+    relation: REFINES
+    result: Operator final-price, rounding, override, audit and visibility requirements refine the future per-SKU commerce boundary; the numeric examples remain noncurrent and commerce remains INQUIRY_ONLY.
+    supersedes_prior: false
+    canonical_population: false
+  - sequence: 6
+    reconciliation_id: C003R1-REC-006
+    prior_decision_codes: [C003-DISC-061, C003-DISC-079, C003-DISC-080, C003-DISC-084, C003-DISC-085, C003-DISC-086]
+    delta_decision_codes: [C003R1-CP03-001, C003R1-CP03-002, C003R1-CP03-003, C003R1-CP03-004, C003R1-CP03-005, C003R1-CP03-006, C003R1-CP03-007, C003R1-CP03-008, C003R1-CP03-015]
+    relation: REFINES
+    result: Network supply evidence and reduced ordering friction refine future Availability/order policy while preserving no false warehouse claim, no Availability instance and operator-assigned dispatch.
+    supersedes_prior: false
+    canonical_population: false
+  - sequence: 7
+    reconciliation_id: C003R1-REC-007
+    prior_decision_codes: [C003-DISC-082, C003-DISC-083, C003-DISC-087, C003-DISC-091, C003-DISC-092, C003-DISC-093]
+    delta_decision_codes: [C003R1-CP03-044, C003R1-CP03-045, C003R1-CP03-046, C003R1-CP03-047, C003R1-CP03-048, C003R1-CP03-054]
+    relation: REFINES
+    result: Payment/reservation evidence adds order-creation reservation, operator cancellation and adjustment requirements while keeping every payment path inactive and unpopulated.
+    supersedes_prior: false
+    canonical_population: false
+  - sequence: 8
+    reconciliation_id: C003R1-REC-008
+    prior_decision_codes: [C003-DISC-096, C003-DISC-098]
+    delta_decision_codes: [C003R1-CP03-049, C003R1-CP03-050, C003R1-CP03-051, C003R1-CP03-052, C003R1-CP03-053, C003R1-CP03-055]
+    relation: REFINES
+    result: Operator-created orders, mobile identity, later OTP linking, returning-customer context and revision history extend the target workflow without creating customer/order records or Runtime authority.
+    supersedes_prior: false
+    canonical_population: false
+evidence_delta:
+  - sequence: 1
+    evidence_id: c003r1ev:000000000001
+    decision_code: C003R1-CP03-001
+    source_id: CHECKPOINT_03_PARENT
+    source_ts: "1786996639.277979"
+    evidence_classification: FOUNDER_CONFIRMED
+    temporal_role: CURRENT_INTENT
+    ledger_class: FC
+    topic_code: SUPPLY_EVIDENCE
+    domain: SUPPLY
+    canonical_owner: DISCOVERY_BACKLOG_ONLY
+    disposition: FOUNDER_REVIEW_INPUT
+    statement: Supplier telephone or WhatsApp confirmation is accepted operational supply evidence.
+    authority_effects: &no_authority
+      candidate_population: false
+      product_population: false
+      sku_assignment: false
+      availability_or_stock: false
+      current_or_public_price: false
+      commerce_activation: false
+      customer_or_order_population: false
+      payment_activation: false
+      wordpress_woocommerce: false
+      runtime_staging_production: false
+      external_write: false
+  - {sequence: 2, evidence_id: "c003r1ev:000000000002", decision_code: C003R1-CP03-002, source_id: CHECKPOINT_03_PARENT, source_ts: "1786996639.277979", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: SUPPLY_EVIDENCE, domain: SUPPLY, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: EVIDENCE_ONLY, statement: "Supplier confirmation commonly remains useful for about 24–48 hours depending on market velocity; this is not an Availability or stock claim.", authority_effects: *no_authority}
+  - {sequence: 3, evidence_id: "c003r1ev:000000000003", decision_code: C003R1-CP03-003, source_id: CHECKPOINT_03_PARENT, source_ts: "1786996639.277979", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: SUPPLY_EVIDENCE, domain: SUPPLY, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: EVIDENCE_ONLY, statement: "Common goods can usually be sourced through alternate suppliers; the sourcing model is network-based and not dependent on one supplier.", authority_effects: *no_authority}
+  - {sequence: 4, evidence_id: "c003r1ev:000000000004", decision_code: C003R1-CP03-004, source_id: CHECKPOINT_03_PARENT, source_ts: "1786996639.277979", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: AVAILABILITY_SALES_POLICY, domain: COMMERCE, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: FUTURE_CONTRACT_INPUT, statement: "For routinely or assuredly sourceable goods, the desired customer path permits order without same-day supplier inquiry and leaves supply verification to an operator after order.", authority_effects: *no_authority}
+  - {sequence: 5, evidence_id: "c003r1ev:000000000005", decision_code: C003R1-CP03-005, source_id: CHECKPOINT_03_PARENT, source_ts: "1786996639.277979", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: AVAILABILITY_SALES_POLICY, domain: SUPPLY, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: EVIDENCE_ONLY, statement: "Even without own-warehouse stock, routinely sourceable goods should create minimal customer friction because procurement is commonly within one day; no warehouse stock is asserted.", authority_effects: *no_authority}
+  - {sequence: 6, evidence_id: "c003r1ev:000000000006", decision_code: C003R1-CP03-006, source_id: CHECKPOINT_03_PARENT, source_ts: "1786996639.277979", evidence_classification: ARCHITECTURE_PROPOSAL, temporal_role: CURRENT_INTENT, ledger_class: AP, topic_code: AVAILABILITY_SALES_POLICY, domain: COMMERCE, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: GOVERNANCE_GUARDRAIL_ONLY, statement: "Commander proposes separating warehouse-confirmed from market-assured supply internally and using confidence-preserving customer wording such as آماده سفارش rather than falsely claiming موجود در انبار.", authority_effects: *no_authority}
+  - {sequence: 7, evidence_id: "c003r1ev:000000000007", decision_code: C003R1-CP03-007, source_id: CHECKPOINT_03_PARENT, source_ts: "1786996639.277979", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: AVAILABILITY_SALES_POLICY, domain: SUPPLY, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: FUTURE_CONTRACT_INPUT, statement: "Doubtful supply uses confirmation or inquiry, and the operator contacts the customer when the requested quantity is confirmed and ready.", authority_effects: *no_authority}
+  - {sequence: 8, evidence_id: "c003r1ev:000000000008", decision_code: C003R1-CP03-008, source_id: CHECKPOINT_03_PARENT, source_ts: "1786996639.277979", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: AVAILABILITY_SALES_POLICY, domain: ORDER, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: FUTURE_CONTRACT_INPUT, statement: "Final dispatch timing is operator-assigned; no automatic ETA is promised.", authority_effects: *no_authority}
+  - {sequence: 9, evidence_id: "c003r1ev:000000000009", decision_code: C003R1-CP03-009, source_id: CHECKPOINT_03_PARENT, source_ts: "1786996639.277979", evidence_classification: FOUNDER_CONFIRMED, temporal_role: HISTORICAL_EXAMPLE_NONCURRENT, ledger_class: HE, topic_code: PRICING_AUTHORITY, domain: PRICING, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: EVIDENCE_ONLY, statement: "Accepted noncurrent rounding examples are 2,183,740 to 2,184,000 or 2,190,000; the rounding choice is operator decision and neither value is a current or public price fact.", authority_effects: *no_authority}
+  - {sequence: 10, evidence_id: "c003r1ev:00000000000a", decision_code: C003R1-CP03-010, source_id: CHECKPOINT_03_PARENT, source_ts: "1786996639.277979", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: PRICING_AUTHORITY, domain: PRICING, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: FUTURE_CONTRACT_INPUT, statement: "Final selling-price decision belongs to the operator; system calculations may suggest but do not force the final price.", authority_effects: *no_authority}
+  - {sequence: 11, evidence_id: "c003r1ev:00000000000b", decision_code: C003R1-CP03-011, source_id: CHECKPOINT_03_PARENT, source_ts: "1786996639.277979", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: PRICING_AUTHORITY, domain: PRICING, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: FUTURE_CONTRACT_INPUT, statement: "Operator may override a calculated or reference price.", authority_effects: *no_authority}
+  - {sequence: 12, evidence_id: "c003r1ev:00000000000c", decision_code: C003R1-CP03-012, source_id: CHECKPOINT_03_PARENT, source_ts: "1786996639.277979", evidence_classification: ARCHITECTURE_PROPOSAL, temporal_role: CURRENT_INTENT, ledger_class: AP, topic_code: PRICING_AUTHORITY, domain: PRICING, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: FUTURE_CONTRACT_INPUT, statement: "Proposed pricing audit architecture retains reference or previous value, final value, operator, timestamp and governed reason.", authority_effects: *no_authority}
+  - {sequence: 13, evidence_id: "c003r1ev:00000000000d", decision_code: C003R1-CP03-013, source_id: CHECKPOINT_03_PARENT, source_ts: "1786996639.277979", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: PRICING_AUTHORITY, domain: PRICING, canonical_owner: C002_COMMERCE_ELIGIBILITY, disposition: FUTURE_CONTRACT_INPUT, statement: "Price visibility is intended to be independently operator-controlled per eligible product or combination.", authority_effects: *no_authority}
+  - {sequence: 14, evidence_id: "c003r1ev:00000000000e", decision_code: C003R1-CP03-014, source_id: CHECKPOINT_03_PARENT, source_ts: "1786996639.277979", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: PRICING_AUTHORITY, domain: COMMERCE, canonical_owner: C002_COMMERCE_ELIGIBILITY, disposition: FUTURE_CONTRACT_INPUT, statement: "The target rule is visible price implies direct-sale capability while hidden price uses inquiry or contact; this creates no current purchase eligibility or commerce activation.", authority_effects: *no_authority}
+  - {sequence: 15, evidence_id: "c003r1ev:00000000000f", decision_code: C003R1-CP03-015, source_id: CHECKPOINT_03_PARENT, source_ts: "1786996639.277979", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: AVAILABILITY_SALES_POLICY, domain: COMMERCE, canonical_owner: C002_COMMERCE_ELIGIBILITY, disposition: FUTURE_CONTRACT_INPUT, statement: "A future priced and orderable item may still be fulfilled through market supply rather than own warehouse, with operator procurement finalization after order.", authority_effects: *no_authority}
+  - {sequence: 16, evidence_id: "c003r1ev:000000000010", decision_code: C003R1-CP03-016, source_id: CHECKPOINT_03_PARENT, source_ts: "1786996639.277979", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: PRODUCT_SEQUENCE, domain: PRODUCT, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: FOUNDER_REVIEW_INPUT, statement: "Business sequence is PIPE first, PROFILE second and FITTINGS third.", authority_effects: *no_authority}
+  - {sequence: 17, evidence_id: "c003r1ev:000000000011", decision_code: C003R1-CP03-017, source_id: CHECKPOINT_03_PARENT, source_ts: "1786996639.277979", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: PILOT_201_51, domain: PRODUCT, canonical_owner: C002_COMMERCIAL_PILOT_CANDIDATE, disposition: FOUNDER_REVIEW_INPUT, statement: "The first model and Pilot Product Group is stainless round pipe, grade 201, diameter 51 mm, used to stabilize the model before completing remaining pipes.", authority_effects: *no_authority}
+  - {sequence: 18, evidence_id: "c003r1ev:000000000012", decision_code: C003R1-CP03-018, source_id: CHECKPOINT_03_PART_02, source_ts: "1786996650.231529", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: PRODUCT_SIZE_EVIDENCE, domain: PRODUCT, canonical_owner: PRODUCT_HIERARCHY_VARIANT_RULES, disposition: FOUNDER_REVIEW_INPUT, statement: "Stainless 201 round-pipe size evidence in millimetres: 8, 10, 12, 13, 16, 19, 20, 21, 22, 25, 32, 38, 51, 63, 76, 102, 168, 219.", authority_effects: *no_authority}
+  - {sequence: 19, evidence_id: "c003r1ev:000000000013", decision_code: C003R1-CP03-019, source_id: CHECKPOINT_03_PART_02, source_ts: "1786996650.231529", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: PRODUCT_SIZE_EVIDENCE, domain: PRODUCT, canonical_owner: PRODUCT_HIERARCHY_VARIANT_RULES, disposition: FOUNDER_REVIEW_INPUT, statement: "Stainless 304 round-pipe size evidence in millimetres: 5, 6, 8, 10, 12, 13, 14, 16, 18, 19, 20, 22, 25, 28, 32, 35, 38, 51, 63, 76, 102, 168, 219.", authority_effects: *no_authority}
+  - {sequence: 20, evidence_id: "c003r1ev:000000000014", decision_code: C003R1-CP03-020, source_id: CHECKPOINT_03_PART_02, source_ts: "1786996650.231529", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: PRODUCT_SIZE_EVIDENCE, domain: PRODUCT, canonical_owner: PRODUCT_HIERARCHY_VARIANT_RULES, disposition: FOUNDER_REVIEW_INPUT, statement: "Stainless 316 round-pipe size evidence in millimetres: 16, 25, 38, 51, 76.", authority_effects: *no_authority}
+  - {sequence: 21, evidence_id: "c003r1ev:000000000015", decision_code: C003R1-CP03-021, source_id: CHECKPOINT_03_PART_02, source_ts: "1786996650.231529", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: PRODUCT_SIZE_EVIDENCE, domain: PRODUCT, canonical_owner: PRODUCT_HIERARCHY_VARIANT_RULES, disposition: FOUNDER_REVIEW_INPUT, statement: "Aluminum round-pipe size evidence in millimetres: 16, 38, 51.", authority_effects: *no_authority}
+  - {sequence: 22, evidence_id: "c003r1ev:000000000016", decision_code: C003R1-CP03-022, source_id: CHECKPOINT_03_PART_02, source_ts: "1786996650.231529", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: PRODUCT_SIZE_EVIDENCE, domain: PRODUCT, canonical_owner: PRODUCT_HIERARCHY_VARIANT_RULES, disposition: FOUNDER_REVIEW_INPUT, statement: "Electrostatic iron round-pipe size evidence in millimetres is 16, 25, 38, 51; the earlier 511 entry was explicitly corrected to 51.", authority_effects: *no_authority}
+  - {sequence: 23, evidence_id: "c003r1ev:000000000017", decision_code: C003R1-CP03-023, source_id: CHECKPOINT_03_PART_02, source_ts: "1786996650.231529", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: PRODUCT_SIZE_EVIDENCE, domain: PRODUCT, canonical_owner: PRODUCT_HIERARCHY_VARIANT_RULES, disposition: FOUNDER_REVIEW_INPUT, statement: "Founder wording استیل تمام پیچ has size evidence 16, 25, 38, 51 mm; exact taxonomy and technical meaning remain unresolved and no further meaning is inferred.", authority_effects: *no_authority}
+  - {sequence: 24, evidence_id: "c003r1ev:000000000018", decision_code: C003R1-CP03-024, source_id: CHECKPOINT_03_PART_02, source_ts: "1786996650.231529", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: CONTROLLED_VALUE_BANK, domain: PRODUCT_ADMIN, canonical_owner: C002_PRODUCT_BUILDER_ADD_VALUE, disposition: CANDIDATE_VALUE_BANK_ONLY, statement: "Founder wants a stainless-pipe thickness value bank from 0.35 mm through 2.00 mm in 0.05 mm increments; it is recorded as candidate/value-bank evidence and no value is promoted by C003-R1.", authority_effects: *no_authority}
+  - {sequence: 25, evidence_id: "c003r1ev:000000000019", decision_code: C003R1-CP03-025, source_id: CHECKPOINT_03_PART_02, source_ts: "1786996650.231529", evidence_classification: ARCHITECTURE_PROPOSAL, temporal_role: CURRENT_INTENT, ledger_class: AP, topic_code: VALID_COMBINATIONS, domain: PRODUCT_ADMIN, canonical_owner: PRODUCT_HIERARCHY_VARIANT_RULES, disposition: GOVERNANCE_GUARDRAIL_ONLY, statement: "Value-bank membership must not be Cartesian-generated across sizes, grades or brands and does not prove a valid combination.", authority_effects: *no_authority}
+  - {sequence: 26, evidence_id: "c003r1ev:00000000001a", decision_code: C003R1-CP03-026, source_id: CHECKPOINT_03_PART_02, source_ts: "1786996650.231529", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: PILOT_201_51, domain: PRODUCT, canonical_owner: C002_PRODUCT_BUILDER_ADD_VALUE, disposition: FOUNDER_REVIEW_INPUT, statement: "Founder-confirmed 201/51 Pilot thickness evidence in millimetres: 0.45, 0.50, 0.55, 0.60, 0.70, 0.80, 0.90, 1.00, 1.10, 1.20, 1.50, 2.00.", authority_effects: *no_authority}
+  - {sequence: 27, evidence_id: "c003r1ev:00000000001b", decision_code: C003R1-CP03-027, source_id: CHECKPOINT_03_PART_02, source_ts: "1786996650.231529", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: PILOT_201_51, domain: PRODUCT, canonical_owner: C002_BRAND_PROVENANCE, disposition: FOUNDER_REVIEW_INPUT, statement: "Pilot brand evidence includes Sumwin, Sansco, Goldsco, King, StoneLand and SUS.", authority_effects: *no_authority}
+  - {sequence: 28, evidence_id: "c003r1ev:00000000001c", decision_code: C003R1-CP03-028, source_id: CHECKPOINT_03_PART_02, source_ts: "1786996650.231529", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: PILOT_201_51, domain: PRODUCT, canonical_owner: PRODUCT_HIERARCHY_VARIANT_RULES, disposition: FOUNDER_REVIEW_INPUT, statement: "Pilot customer-visible appearance evidence is استیل براق (steel or natural glossy) and طلایی براق (gold glossy).", authority_effects: *no_authority}
+  - {sequence: 29, evidence_id: "c003r1ev:00000000001d", decision_code: C003R1-CP03-029, source_id: CHECKPOINT_03_PART_02, source_ts: "1786996650.231529", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: PILOT_201_51, domain: PRODUCT, canonical_owner: C002_COMMERCIAL_PILOT_CANDIDATE, disposition: FOUNDER_REVIEW_INPUT, statement: "All six Pilot brands may be offered in both confirmed appearances; this relationship alone does not validate any complete commercial tuple.", authority_effects: *no_authority}
+  - {sequence: 30, evidence_id: "c003r1ev:00000000001e", decision_code: C003R1-CP03-030, source_id: CHECKPOINT_03_PART_02, source_ts: "1786996650.231529", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: PILOT_201_51, domain: PRODUCT, canonical_owner: PRODUCT_HIERARCHY_VARIANT_RULES, disposition: FOUNDER_REVIEW_INPUT, statement: "Length evidence is 6 m for steel or natural glossy and 3 m plus 6 m for gold glossy.", authority_effects: *no_authority}
+  - {sequence: 31, evidence_id: "c003r1ev:00000000001f", decision_code: C003R1-CP03-031, source_id: CHECKPOINT_03_PART_02, source_ts: "1786996650.231529", evidence_classification: ARCHITECTURE_PROPOSAL, temporal_role: CURRENT_INTENT, ledger_class: AP, topic_code: VALID_COMBINATIONS, domain: PRODUCT_ADMIN, canonical_owner: PRODUCT_HIERARCHY_VARIANT_RULES, disposition: GOVERNANCE_GUARDRAIL_ONLY, statement: "Do not infer every Brand × Thickness × Appearance × Length tuple from the separate value sets; valid tuples require separate evidence.", authority_effects: *no_authority}
+  - {sequence: 32, evidence_id: "c003r1ev:000000000020", decision_code: C003R1-CP03-032, source_id: CHECKPOINT_03_PART_02, source_ts: "1786996650.231529", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: MASS_SMART_HISTORY, domain: PRODUCT_ADMIN, canonical_owner: C002_MASS_PROVENANCE, disposition: FUTURE_CONTRACT_INPUT, statement: "Operator records commercial mass for the actual incoming batch or load.", authority_effects: *no_authority}
+  - {sequence: 33, evidence_id: "c003r1ev:000000000021", decision_code: C003R1-CP03-033, source_id: CHECKPOINT_03_PART_02, source_ts: "1786996650.231529", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: MASS_SMART_HISTORY, domain: PRODUCT_ADMIN, canonical_owner: C002_MASS_PROVENANCE, disposition: FUTURE_CONTRACT_INPUT, statement: "A later batch of the same apparent variant may have a different mass and prior observations must remain in append-only history rather than be overwritten.", authority_effects: *no_authority}
+  - {sequence: 34, evidence_id: "c003r1ev:000000000022", decision_code: C003R1-CP03-034, source_id: CHECKPOINT_03_PART_02, source_ts: "1786996650.231529", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: MASS_SMART_HISTORY, domain: PRODUCT_ADMIN, canonical_owner: C002_PRODUCT_BUILDER_ADD_VALUE, disposition: FUTURE_CONTRACT_INPUT, statement: "Smart History should suggest the latest context-matched prior mass, but operator must explicitly confirm or change it and the system must not silently promote it as new-batch truth.", authority_effects: *no_authority}
+  - {sequence: 35, evidence_id: "c003r1ev:000000000023", decision_code: C003R1-CP03-035, source_id: CHECKPOINT_03_PART_02, source_ts: "1786996650.231529", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: MASS_SMART_HISTORY, domain: PRICING, canonical_owner: C002_MASS_PROVENANCE, disposition: FUTURE_CONTRACT_INPUT, statement: "A future pricing calculation may use current commercial mass, while final selling price remains operator decision; no price or mass instance is created here.", authority_effects: *no_authority}
+  - {sequence: 36, evidence_id: "c003r1ev:000000000024", decision_code: C003R1-CP03-036, source_id: CHECKPOINT_03_PART_03, source_ts: "1786996663.468959", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: MEDIA_CONTENT, domain: MEDIA, canonical_owner: PRODUCT_CONTENT_FUTURE, disposition: FOUNDER_REVIEW_INPUT, statement: "Initial Product Group media may use one shared hero or product image for all brands and thicknesses.", authority_effects: *no_authority}
+  - {sequence: 37, evidence_id: "c003r1ev:000000000025", decision_code: C003R1-CP03-037, source_id: CHECKPOINT_03_PART_03, source_ts: "1786996663.468959", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: MEDIA_CONTENT, domain: MEDIA, canonical_owner: PRODUCT_CONTENT_FUTURE, disposition: FOUNDER_REVIEW_INPUT, statement: "The shared image should show steel-glossy and gold-glossy pipes together with multiple sizes visible side by side.", authority_effects: *no_authority}
+  - {sequence: 38, evidence_id: "c003r1ev:000000000026", decision_code: C003R1-CP03-038, source_id: CHECKPOINT_03_PART_03, source_ts: "1786996663.468959", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: MEDIA_CONTENT, domain: MEDIA, canonical_owner: PRODUCT_CONTENT_FUTURE, disposition: FOUNDER_REVIEW_INPUT, statement: "The shared image applies across brands and thicknesses at this stage.", authority_effects: *no_authority}
+  - {sequence: 39, evidence_id: "c003r1ev:000000000027", decision_code: C003R1-CP03-039, source_id: CHECKPOINT_03_PART_03, source_ts: "1786996663.468959", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: MEDIA_CONTENT, domain: MEDIA, canonical_owner: PRODUCT_CONTENT_FUTURE, disposition: FOUNDER_REVIEW_INPUT, statement: "Current content direction uses one shared main Product Group description while selected variants change structured specifications rather than requiring unique prose per combination.", authority_effects: *no_authority}
+  - {sequence: 40, evidence_id: "c003r1ev:000000000028", decision_code: C003R1-CP03-040, source_id: CHECKPOINT_03_PART_03, source_ts: "1786996663.468959", evidence_classification: FOUNDER_CONFIRMED, temporal_role: FUTURE_CONCEPT, ledger_class: FCF, topic_code: MEDIA_CONTENT, domain: MEDIA, canonical_owner: PRODUCT_CONTENT_FUTURE, disposition: FUTURE_CONTRACT_INPUT, statement: "Shared content and media are revisable through normal governance if later SEO, UX or product differences justify separation.", authority_effects: *no_authority}
+  - {sequence: 41, evidence_id: "c003r1ev:000000000029", decision_code: C003R1-CP03-041, source_id: CHECKPOINT_03_PART_03, source_ts: "1786996663.468959", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: SUPPLY_EXCEPTIONS, domain: SUPPLY, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: FUTURE_CONTRACT_INPUT, statement: "If ordered quantity cannot ultimately be sourced, operator contacts the customer and reaches agreement case by case.", authority_effects: *no_authority}
+  - {sequence: 42, evidence_id: "c003r1ev:00000000002a", decision_code: C003R1-CP03-042, source_id: CHECKPOINT_03_PART_03, source_ts: "1786996663.468959", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: SUPPLY_EXCEPTIONS, domain: SUPPLY, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: FUTURE_CONTRACT_INPUT, statement: "Acceptable negotiated outcomes include partial fulfillment with later remainder, agreed substitute brand or product, or refund of the unsupplied portion.", authority_effects: *no_authority}
+  - {sequence: 43, evidence_id: "c003r1ev:00000000002b", decision_code: C003R1-CP03-043, source_id: CHECKPOINT_03_PART_03, source_ts: "1786996663.468959", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: SUPPLY_EXCEPTIONS, domain: SUPPLY, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: GOVERNANCE_GUARDRAIL_ONLY, statement: "No substitute is automatic; customer agreement is required.", authority_effects: *no_authority}
+  - {sequence: 44, evidence_id: "c003r1ev:00000000002c", decision_code: C003R1-CP03-044, source_id: CHECKPOINT_03_PART_03, source_ts: "1786996663.468959", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: PAYMENT_RESERVATION, domain: PAYMENT, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: FUTURE_CONTRACT_INPUT, statement: "Target payment paths must accommodate online payment and transfer-style payment including card transfer, SHEBA and SATNA, with receipt and operator verification where applicable; none is activated here.", authority_effects: *no_authority}
+  - {sequence: 45, evidence_id: "c003r1ev:00000000002d", decision_code: C003R1-CP03-045, source_id: CHECKPOINT_03_PART_03, source_ts: "1786996663.468959", evidence_classification: FOUNDER_CONFIRMED, temporal_role: FUTURE_CONCEPT, ledger_class: FCF, topic_code: PAYMENT_RESERVATION, domain: PAYMENT, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: FUTURE_CONTRACT_INPUT, statement: "Architecture should remain extensible for future cheque and installment payment without fundamental redesign; cheque and installment are inactive.", authority_effects: *no_authority}
+  - {sequence: 46, evidence_id: "c003r1ev:00000000002e", decision_code: C003R1-CP03-046, source_id: CHECKPOINT_03_PART_03, source_ts: "1786996663.468959", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: PAYMENT_RESERVATION, domain: PAYMENT, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: FUTURE_CONTRACT_INPUT, statement: "For offline or transfer payment, target reservation begins when the order is created rather than only after receipt upload.", authority_effects: *no_authority}
+  - {sequence: 47, evidence_id: "c003r1ev:00000000002f", decision_code: C003R1-CP03-047, source_id: CHECKPOINT_03_PART_03, source_ts: "1786996663.468959", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: PAYMENT_RESERVATION, domain: PAYMENT, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: FUTURE_CONTRACT_INPUT, statement: "Approximate 24-hour reservation remains a working configurable target, not an active timer.", authority_effects: *no_authority}
+  - {sequence: 48, evidence_id: "c003r1ev:000000000030", decision_code: C003R1-CP03-048, source_id: CHECKPOINT_03_PART_03, source_ts: "1786996663.468959", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: PAYMENT_RESERVATION, domain: PAYMENT, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: FUTURE_CONTRACT_INPUT, statement: "Unpaid orders receive message or operator follow-up; operator performs cancellation and release after unsuccessful follow-up rather than automatic expiry cancellation.", authority_effects: *no_authority}
+  - {sequence: 49, evidence_id: "c003r1ev:000000000031", decision_code: C003R1-CP03-049, source_id: CHECKPOINT_03_PART_03, source_ts: "1786996663.468959", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: ORDER_CRM, domain: ORDER, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: FUTURE_CONTRACT_INPUT, statement: "Telephone and WhatsApp orders should be created by an operator inside the same future WooCommerce/order system so history is centralized; this is a target projection requirement and no WooCommerce mutation is authorized.", authority_effects: *no_authority}
+  - {sequence: 50, evidence_id: "c003r1ev:000000000032", decision_code: C003R1-CP03-050, source_id: CHECKPOINT_03_PART_03, source_ts: "1786996663.468959", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: ORDER_CRM, domain: CRM, canonical_owner: INQUIRY_CUSTOMER_MODEL, disposition: FUTURE_CONTRACT_INPUT, statement: "Customer account is not a blocker for an operator-created order; mobile is initial identity and later OTP should link and show orders for that number.", authority_effects: *no_authority}
+  - {sequence: 51, evidence_id: "c003r1ev:000000000033", decision_code: C003R1-CP03-051, source_id: CHECKPOINT_03_PART_03, source_ts: "1786996663.468959", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: ORDER_CRM, domain: CRM, canonical_owner: INQUIRY_CUSTOMER_MODEL, disposition: FUTURE_CONTRACT_INPUT, statement: "Returning-customer lookup by mobile should show prior context such as name, city, previous addresses and purchase history so known data is not repeatedly requested; no customer record is created here.", authority_effects: *no_authority}
+  - {sequence: 52, evidence_id: "c003r1ev:000000000034", decision_code: C003R1-CP03-052, source_id: CHECKPOINT_03_PART_03, source_ts: "1786996663.468959", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: ORDER_CRM, domain: ORDER, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: FUTURE_CONTRACT_INPUT, statement: "After operator verification, customer-facing status should indicate order confirmed and dispatch time to be announced; operator assigns actual timing and SMS is the target notification channel.", authority_effects: *no_authority}
+  - {sequence: 53, evidence_id: "c003r1ev:000000000035", decision_code: C003R1-CP03-053, source_id: CHECKPOINT_03_PART_03, source_ts: "1786996663.468959", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: ORDER_CRM, domain: ORDER, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: FUTURE_CONTRACT_INPUT, statement: "Operator may edit the same future order after customer discussion, including brand, quantity or price, while preserving auditable prior versions instead of mandatory cancel and recreate.", authority_effects: *no_authority}
+  - {sequence: 54, evidence_id: "c003r1ev:000000000036", decision_code: C003R1-CP03-054, source_id: CHECKPOINT_03_PART_03, source_ts: "1786996663.468959", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: ORDER_CRM, domain: PAYMENT, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: FUTURE_CONTRACT_INPUT, statement: "A future revised order total increase should support collection of only the difference and a decrease should record the refundable amount while preserving original payment and change history.", authority_effects: *no_authority}
+  - {sequence: 55, evidence_id: "c003r1ev:000000000037", decision_code: C003R1-CP03-055, source_id: CHECKPOINT_03_PART_03, source_ts: "1786996663.468959", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: ORDER_CRM, domain: ORDER, canonical_owner: INQUIRY_CUSTOMER_MODEL, disposition: FUTURE_CONTRACT_INPUT, statement: "Separate in-site customer reapproval is not required after an operator-agreed revision, but customer agreement plus operator, time and change history should be recorded.", authority_effects: *no_authority}
+  - {sequence: 56, evidence_id: "c003r1ev:000000000038", decision_code: C003R1-CP03-056, source_id: CHECKPOINT_03_PART_03, source_ts: "1786996663.468959", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: PRODUCT_SEQUENCE, domain: PRODUCT, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: FOUNDER_REVIEW_INPUT, statement: "The 201/51 Pilot stabilizes the model but is not the end of pipe work; PIPE completion precedes PROFILE and then FITTINGS.", authority_effects: *no_authority}
+  - {sequence: 57, evidence_id: "c003r1ev:000000000039", decision_code: C003R1-CP03-057, source_id: CHECKPOINT_03_PART_04, source_ts: "1786996677.496709", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: DISCOVERY_GOVERNANCE, domain: GOVERNANCE, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: GOVERNANCE_GUARDRAIL_ONLY, statement: "Fast-Track core discovery is sufficient for the next governed reconciliation and planning step.", authority_effects: *no_authority}
+  - {sequence: 58, evidence_id: "c003r1ev:00000000003a", decision_code: C003R1-CP03-058, source_id: CHECKPOINT_03_PART_04, source_ts: "1786996677.496709", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: DISCOVERY_GOVERNANCE, domain: GOVERNANCE, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: GOVERNANCE_GUARDRAIL_ONLY, statement: "The program should not exhaust the entire catalog before progressing; remaining facts are collected when each product enters evidence completion.", authority_effects: *no_authority}
+  - {sequence: 59, evidence_id: "c003r1ev:00000000003b", decision_code: C003R1-CP03-059, source_id: CHECKPOINT_03_PART_04, source_ts: "1786996677.496709", evidence_classification: FOUNDER_CONFIRMED, temporal_role: CURRENT_INTENT, ledger_class: FC, topic_code: DISCOVERY_GOVERNANCE, domain: GOVERNANCE, canonical_owner: DISCOVERY_BACKLOG_ONLY, disposition: GOVERNANCE_GUARDRAIL_ONLY, statement: "Founder questioning may pause unless a later authorized Mission exposes a genuinely blocking Founder decision.", authority_effects: *no_authority}
+idea_vault_dispositions:
+  - {sequence: 1, idea_id: C003R1-IDEA-001, idea_source_ts: "1786970361.696939", disposition_source_ts: "1786996752.202309", domain: PRODUCT_ADMIN, idea: "Product Group pages with dependent selectors", disposition: USE_NOW_PLANNING_EVIDENCE_ONLY, canonical_owner: "PRODUCT_HIERARCHY_VARIANT_RULES", implementation_authority: false}
+  - {sequence: 2, idea_id: C003R1-IDEA-002, idea_source_ts: "1786970361.696939", disposition_source_ts: "1786996752.202309", domain: PRODUCT_ADMIN, idea: "Valid Combination Matrix without Cartesian generation", disposition: USE_NOW_PLANNING_EVIDENCE_ONLY, canonical_owner: "PRODUCT_HIERARCHY_VARIANT_RULES", implementation_authority: false}
+  - {sequence: 3, idea_id: C003R1-IDEA-003, idea_source_ts: "1786970361.696939", disposition_source_ts: "1786996752.202309", domain: PRODUCT_ADMIN, idea: "Controlled Add Value", disposition: USE_NOW_PLANNING_EVIDENCE_ONLY, canonical_owner: "C002_PRODUCT_BUILDER_ADD_VALUE", implementation_authority: false}
+  - {sequence: 4, idea_id: C003R1-IDEA-004, idea_source_ts: "1786970361.696939", disposition_source_ts: "1786996752.202309", domain: PRODUCT_ADMIN, idea: "Smart History suggestion without silent truth promotion", disposition: USE_NOW_PLANNING_EVIDENCE_ONLY, canonical_owner: "C002_PRODUCT_BUILDER_ADD_VALUE", implementation_authority: false}
+  - {sequence: 5, idea_id: C003R1-IDEA-005, idea_source_ts: "1786970361.696939", disposition_source_ts: "1786996752.202309", domain: PRICING_COMMERCE, idea: "Flexible pricing modes", disposition: USE_NOW_PLANNING_EVIDENCE_ONLY, canonical_owner: "DISCOVERY_BACKLOG_ONLY", implementation_authority: false}
+  - {sequence: 6, idea_id: C003R1-IDEA-006, idea_source_ts: "1786970361.696939", disposition_source_ts: "1786996752.202309", domain: PRICING_COMMERCE, idea: "Operator override and audit", disposition: USE_NOW_PLANNING_EVIDENCE_ONLY, canonical_owner: "DISCOVERY_BACKLOG_ONLY", implementation_authority: false}
+  - {sequence: 7, idea_id: C003R1-IDEA-007, idea_source_ts: "1786970361.696939", disposition_source_ts: "1786996752.202309", domain: ORDER_PAYMENT_CRM, idea: "Customer mobile identity and history", disposition: USE_NOW_PLANNING_EVIDENCE_ONLY, canonical_owner: "INQUIRY_CUSTOMER_MODEL", implementation_authority: false}
+  - {sequence: 8, idea_id: C003R1-IDEA-008, idea_source_ts: "1786970361.696939", disposition_source_ts: "1786996752.202309", domain: ORDER_PAYMENT_CRM, idea: "Operator-controlled order verification", disposition: USE_NOW_PLANNING_EVIDENCE_ONLY, canonical_owner: "DISCOVERY_BACKLOG_ONLY", implementation_authority: false}
+  - {sequence: 9, idea_id: C003R1-IDEA-009, idea_source_ts: "1786970361.696939", disposition_source_ts: "1786996752.202309", domain: UX_MEDIA, idea: "Shared content and media inheritance", disposition: USE_NOW_PLANNING_EVIDENCE_ONLY, canonical_owner: "PRODUCT_CONTENT_FUTURE", implementation_authority: false}
+  - {sequence: 10, idea_id: C003R1-IDEA-010, idea_source_ts: "1786970361.696939", disposition_source_ts: "1786996752.202309", domain: PRICING_COMMERCE, idea: "Pricing groups", disposition: PLAN_NOW_IMPLEMENT_LATER, canonical_owner: "DISCOVERY_BACKLOG_ONLY", implementation_authority: false}
+  - {sequence: 11, idea_id: C003R1-IDEA-011, idea_source_ts: "1786996663.468959", disposition_source_ts: "1786996752.202309", domain: ORDER_PAYMENT_CRM, idea: "Order and payment adjustment model", disposition: PLAN_NOW_IMPLEMENT_LATER, canonical_owner: "DISCOVERY_BACKLOG_ONLY", implementation_authority: false}
+  - {sequence: 12, idea_id: C003R1-IDEA-012, idea_source_ts: "1786970380.980809", disposition_source_ts: "1786996752.202309", domain: ORDER_PAYMENT_CRM, idea: "Channel-flexible CRM", disposition: PLAN_NOW_IMPLEMENT_LATER, canonical_owner: "INQUIRY_CUSTOMER_MODEL", implementation_authority: false}
+  - {sequence: 13, idea_id: C003R1-IDEA-013, idea_source_ts: "1786996663.468959", disposition_source_ts: "1786996752.202309", domain: ORDER_PAYMENT_CRM, idea: "Future cheque and installment architecture", disposition: PLAN_NOW_IMPLEMENT_LATER, canonical_owner: "DISCOVERY_BACKLOG_ONLY", implementation_authority: false}
+  - {sequence: 14, idea_id: C003R1-IDEA-014, idea_source_ts: "1786970361.696939", disposition_source_ts: "1786996752.202309", domain: ORDER_PAYMENT_CRM, idea: "Customer panel and history", disposition: PLAN_NOW_IMPLEMENT_LATER, canonical_owner: "INQUIRY_CUSTOMER_MODEL", implementation_authority: false}
+  - {sequence: 15, idea_id: C003R1-IDEA-015, idea_source_ts: "1786970361.696939", disposition_source_ts: "1786996752.202309", domain: PRICING_COMMERCE, idea: "FX automation", disposition: DEFER, canonical_owner: "DISCOVERY_BACKLOG_ONLY", implementation_authority: false}
+  - {sequence: 16, idea_id: C003R1-IDEA-016, idea_source_ts: "1786970361.696939", disposition_source_ts: "1786996752.202309", domain: PRICING_COMMERCE, idea: "Damavand Deals", disposition: DEFER, canonical_owner: "DISCOVERY_BACKLOG_ONLY", implementation_authority: false}
+  - {sequence: 17, idea_id: C003R1-IDEA-017, idea_source_ts: "1786970361.696939", disposition_source_ts: "1786996752.202309", domain: ORDER_PAYMENT_CRM, idea: "Loyalty and referral", disposition: DEFER, canonical_owner: "INQUIRY_CUSTOMER_MODEL", implementation_authority: false}
+  - {sequence: 18, idea_id: C003R1-IDEA-018, idea_source_ts: "1786970361.696939", disposition_source_ts: "1786996752.202309", domain: ORDER_PAYMENT_CRM, idea: "Advanced CRM automation", disposition: DEFER, canonical_owner: "INQUIRY_CUSTOMER_MODEL", implementation_authority: false}
+  - {sequence: 19, idea_id: C003R1-IDEA-019, idea_source_ts: "1786970361.696939", disposition_source_ts: "1786996752.202309", domain: PRICING_COMMERCE, idea: "Marketplace and supplier panels", disposition: DEFER, canonical_owner: "DISCOVERY_BACKLOG_ONLY", implementation_authority: false}
+  - {sequence: 20, idea_id: C003R1-IDEA-020, idea_source_ts: "1786970361.696939", disposition_source_ts: "1786996752.202309", domain: ORDER_PAYMENT_CRM, idea: "Nationwide representatives", disposition: DEFER, canonical_owner: "DISCOVERY_BACKLOG_ONLY", implementation_authority: false}
+  - {sequence: 21, idea_id: C003R1-IDEA-021, idea_source_ts: "1786970380.980809", disposition_source_ts: "1786996752.202309", domain: STRATEGY, idea: "Central ecosystem expansion", disposition: DEFER, canonical_owner: "DISCOVERY_BACKLOG_ONLY", implementation_authority: false}
+  - {sequence: 22, idea_id: C003R1-IDEA-022, idea_source_ts: "1786970380.980809", disposition_source_ts: "1786996752.202309", domain: STRATEGY, idea: "AI features", disposition: REJECT_FOR_MISSION, canonical_owner: "DISCOVERY_BACKLOG_ONLY", implementation_authority: false}
+  - {sequence: 23, idea_id: C003R1-IDEA-023, idea_source_ts: "1786970361.696939", disposition_source_ts: "1786996752.202309", domain: PRICING_COMMERCE, idea: "Public marketplace", disposition: REJECT_FOR_MISSION, canonical_owner: "DISCOVERY_BACKLOG_ONLY", implementation_authority: false}
+  - {sequence: 24, idea_id: C003R1-IDEA-024, idea_source_ts: "1786970380.980809", disposition_source_ts: "1786996752.202309", domain: ORDER_PAYMENT_CRM, idea: "Runtime automation", disposition: REJECT_FOR_MISSION, canonical_owner: "DISCOVERY_BACKLOG_ONLY", implementation_authority: false}
+  - {sequence: 25, idea_id: C003R1-IDEA-025, idea_source_ts: "1786996752.202309", disposition_source_ts: "1786996752.202309", domain: PRODUCT_ADMIN, idea: "Broad catalog generation", disposition: REJECT_FOR_MISSION, canonical_owner: "PRODUCT_HIERARCHY_VARIANT_RULES", implementation_authority: false}
+pilot_readiness_packet:
+  packet_id: c003r1pilot:201051000001
+  packet_version: "1.0.0"
+  purpose: FOUNDER_REVIEW_EVIDENCE_PACKET_ONLY
+  canonical_scope_references:
+    family_id: prd:family:a10c6d8ceabc
+    series_id: prd:series:e1657d35ac35
+    variant_rule_set_id: prd:variant-rule-set:eb255662accc
+    product_group_role: PRESENTATION_UX_MAPPING_NOT_CANONICAL_ENTITY
+  presentation_product_group: stainless round pipe
+  grade: "201"
+  diameter_mm: "51"
+  brands: [Sumwin, Sansco, Goldsco, King, StoneLand, SUS]
+  appearances: [STEEL_NATURAL_GLOSSY, GOLD_GLOSSY]
+  length_evidence:
+    STEEL_NATURAL_GLOSSY: ["6.00"]
+    GOLD_GLOSSY: ["3.00", "6.00"]
+  stainless_thickness_value_bank_mm: ["0.35", "0.40", "0.45", "0.50", "0.55", "0.60", "0.65", "0.70", "0.75", "0.80", "0.85", "0.90", "0.95", "1.00", "1.05", "1.10", "1.15", "1.20", "1.25", "1.30", "1.35", "1.40", "1.45", "1.50", "1.55", "1.60", "1.65", "1.70", "1.75", "1.80", "1.85", "1.90", "1.95", "2.00"]
+  founder_confirmed_pilot_thicknesses_mm: ["0.45", "0.50", "0.55", "0.60", "0.70", "0.80", "0.90", "1.00", "1.10", "1.20", "1.50", "2.00"]
+  brand_appearance_relation:
+    all_six_brands_may_be_offered_in_both_appearances: true
+    relationship_is_tuple_validation: false
+    product_or_value_promotion: false
+  combination_evidence:
+    evidence_backed_valid_tuples: []
+    tuple_count: 0
+    unknown_tuple_space_preserved: true
+    cartesian_generation: false
+    value_bank_membership_implies_valid_tuple: false
+  mass_observation_policy:
+    scope: BATCH_OR_TRANSACTION_OBSERVATION
+    observations: []
+    observation_count: 0
+    history_append_only: true
+    operator_confirmation_required: true
+    smart_history_is_suggestion_only: true
+    variant_identity: false
+    canonical_mass_value_created: false
+  media_content_policy:
+    shared_hero_allowed: true
+    shared_across_brands_and_thicknesses: true
+    show_both_appearances_and_multiple_sizes: true
+    shared_main_description: true
+    structured_specs_change_by_selection: true
+    revisable_under_governance: true
+    asset_created: false
+  c002_readiness:
+    criterion_order: [DEMAND_SIGNAL, SUPPLY_EVIDENCE, GROSS_PROFIT_POTENTIAL, REPEATABILITY, PRODUCT_DATA_COMPLETENESS, PHOTO_CONTENT_READINESS, SEO_BUYER_INTENT, OPERATIONAL_COMPLEXITY, FULFILLMENT_RISK]
+    criteria:
+      - {criterion_code: DEMAND_SIGNAL, evidence_state: SUBMITTED, evidence_record_refs: [C003-DISC-011, C003-DISC-017, C003-DISC-018], blocking_gap: "Base discovery records market priority only; no independently reviewed dated demand packet is present.", resolved: false}
+      - {criterion_code: SUPPLY_EVIDENCE, evidence_state: SUBMITTED, evidence_record_refs: [C003R1-CP03-001, C003R1-CP03-002, C003R1-CP03-003], blocking_gap: "No supplier-specific current verification, validity window or independent review is present.", resolved: false}
+      - {criterion_code: GROSS_PROFIT_POTENTIAL, evidence_state: MISSING, evidence_record_refs: [], blocking_gap: "Founder-supplied protected gross-profit evidence is absent.", resolved: false}
+      - {criterion_code: REPEATABILITY, evidence_state: MISSING, evidence_record_refs: [], blocking_gap: "Repeatability evidence has not been submitted or verified for the bounded 201/51 slice.", resolved: false}
+      - {criterion_code: PRODUCT_DATA_COMPLETENESS, evidence_state: SUBMITTED, evidence_record_refs: [C003R1-CP03-026, C003R1-CP03-027, C003R1-CP03-028, C003R1-CP03-030, C003R1-CP03-031], blocking_gap: "Exact evidence-backed Brand × Thickness × Appearance × Length tuples and canonical promotion evidence are absent.", resolved: false}
+      - {criterion_code: PHOTO_CONTENT_READINESS, evidence_state: MISSING, evidence_record_refs: [], blocking_gap: "Founder requirements exist, but actual media asset, rights, review and production-ready content evidence are absent.", resolved: false}
+      - {criterion_code: SEO_BUYER_INTENT, evidence_state: MISSING, evidence_record_refs: [], blocking_gap: "Reviewed SEO and buyer-intent evidence is absent.", resolved: false}
+      - {criterion_code: OPERATIONAL_COMPLEXITY, evidence_state: SUBMITTED, evidence_record_refs: [C003R1-CP03-032, C003R1-CP03-034, C003R1-CP03-041, C003R1-CP03-053], blocking_gap: "Operational workflow evidence is unverified and no runtime contract is authorized.", resolved: false}
+      - {criterion_code: FULFILLMENT_RISK, evidence_state: SUBMITTED, evidence_record_refs: [C003R1-CP03-007, C003R1-CP03-008, C003R1-CP03-041, C003R1-CP03-042, C003R1-CP03-043], blocking_gap: "Fulfillment risk, supplier commitments and exception controls lack independent current verification.", resolved: false}
+    resolved_count: 0
+    unresolved_count: 9
+    coverage: "0/9"
+    founder_review_packet_status: FOUNDER_REVIEW_PACKET_READY
+    c002_selection_readiness: NOT_READY
+    founder_selection_recorded: false
+  missing_evidence:
+    - exact evidence-backed valid commercial tuples
+    - protected Founder gross-profit evidence locator
+    - current supplier-specific evidence with validity and reviewer
+    - independently reviewed demand and repeatability evidence
+    - actual media assets, rights and content review
+    - SEO and buyer-intent evidence
+    - canonical Brand, appearance and thickness value promotion evidence
+    - batch-specific mass observations and provenance
+    - fulfillment risk verification and current exception evidence
+    - Founder selection decision reference
+  selection_effects:
+    candidate_registry_population: false
+    product_state: NOT_CREATED
+    sku_state: NOT_ASSIGNED
+    availability_state: NOT_ASSERTED
+    price_state: NO_CURRENT_OR_PUBLIC_PRICE_FACT
+    commerce_state: INQUIRY_ONLY
+    runtime_state: NONE
+    production_state: NONE
+canonical_owner_reconciliation:
+  - {concept: "Checkpoint 03 evidence ledger", canonical_owner: "DISCOVERY_BACKLOG_ONLY", mission_disposition: EXTEND_EVIDENCE_ONLY, implementation_created: false}
+  - {concept: "Commercial Pilot intake/readiness", canonical_owner: "C002_COMMERCIAL_PILOT_CANDIDATE", mission_disposition: KEEP, implementation_created: false}
+  - {concept: "Pilot Brand evidence and provenance", canonical_owner: "C002_BRAND_PROVENANCE", mission_disposition: KEEP, implementation_created: false}
+  - {concept: "Pilot stainless appearance and length evidence", canonical_owner: "PRODUCT_HIERARCHY_VARIANT_RULES", mission_disposition: EXTEND_EVIDENCE_ONLY, implementation_created: false}
+  - {concept: "Product Group and dependent selectors", canonical_owner: "PRODUCT_HIERARCHY_VARIANT_RULES", mission_disposition: KEEP, implementation_created: false}
+  - {concept: "Thickness and size candidate values", canonical_owner: "C002_PRODUCT_BUILDER_ADD_VALUE", mission_disposition: KEEP, implementation_created: false}
+  - {concept: "Valid combinations", canonical_owner: "PRODUCT_HIERARCHY_VARIANT_RULES", mission_disposition: KEEP, implementation_created: false}
+  - {concept: "Batch commercial mass provenance and observation history", canonical_owner: "C002_MASS_PROVENANCE", mission_disposition: MAP_TO_FUTURE_OWNER, implementation_created: false}
+  - {concept: "Smart History suggestion and operator confirmation", canonical_owner: "C002_PRODUCT_BUILDER_ADD_VALUE", mission_disposition: MAP_TO_FUTURE_OWNER, implementation_created: false}
+  - {concept: "Shared content and media", canonical_owner: "PRODUCT_CONTENT_FUTURE", mission_disposition: MAP_TO_FUTURE_OWNER, implementation_created: false}
+  - {concept: "Supply evidence and market-assured ordering", canonical_owner: "DISCOVERY_BACKLOG_ONLY", mission_disposition: MAP_TO_FUTURE_OWNER, implementation_created: false}
+  - {concept: "Operator price, rounding, override and audit", canonical_owner: "DISCOVERY_BACKLOG_ONLY", mission_disposition: MAP_TO_FUTURE_OWNER, implementation_created: false}
+  - {concept: "Per-SKU purchase eligibility", canonical_owner: "C002_COMMERCE_ELIGIBILITY", mission_disposition: KEEP, implementation_created: false}
+  - {concept: "Order verification, revision and payment adjustment", canonical_owner: "DISCOVERY_BACKLOG_ONLY", mission_disposition: MAP_TO_FUTURE_OWNER, implementation_created: false}
+  - {concept: "Mobile identity, OTP and returning-customer context", canonical_owner: "INQUIRY_CUSTOMER_MODEL", mission_disposition: MAP_TO_FUTURE_OWNER, implementation_created: false}
+  - {concept: "FX automation", canonical_owner: "DISCOVERY_BACKLOG_ONLY", mission_disposition: DEFER, implementation_created: false}
+  - {concept: "Marketplace and supplier panels", canonical_owner: "DISCOVERY_BACKLOG_ONLY", mission_disposition: DEFER, implementation_created: false}
+  - {concept: "AI features", canonical_owner: "DISCOVERY_BACKLOG_ONLY", mission_disposition: REJECT, implementation_created: false}
+  - {concept: "Central ecosystem expansion", canonical_owner: "DISCOVERY_BACKLOG_ONLY", mission_disposition: DEFER, implementation_created: false}
+authority_effects: *no_authority
+status: REVIEWED_EVIDENCE_EXTENSION__NO_CANONICAL_POPULATION

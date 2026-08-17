@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.14.0
-- **Last Updated:** 2026-08-17
-- **Last Review:** 2026-08-17
+- **Version:** 0.15.0
+- **Last Updated:** 2026-08-18
+- **Last Review:** 2026-08-18
 - **Review Cycle:** On navigation or authority change; periodic cadence pending Founder approval
 - **Lifecycle:** Review
 - **Source of Truth:** [Documentation Index](08_DOCUMENTATION_INDEX.md) and [Navigation Map](09_NAVIGATION_MAP.md)
@@ -36,7 +36,7 @@ Every reader starts with:
 
 Readers then follow only the applicable role and Layer 1 route. DS-PC (`HOW`), DS-SPD (`WHAT`), decision logs, roadmap, domain models, and historical evidence are loaded when that route or the active task requires them—not as a universal context dump.
 
-For current work, readers must obtain the exact phase, branch, authorization, pull-request state, GO/NO-GO boundary, and next action from Current Project State. DS-PC (`HOW`) and DS-SPD (`WHAT`) are stable companion governing sources and do not compete with that operational pointer. Their acceptance does not auto-authorize PD-04, Product/SKU, Golden/Master Data, Runtime, Import, Deployment, Production, or branch deletion. Historical scopes retain their original boundaries. [PD-02B Scope v1.0](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md) remains the immutable APPROVED base. [PD-03A Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md) governs the APPROVED prerequisite extension. [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md) governs only exactly three lifecycle-gated Pilot records. [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md) governs only contract infrastructure and empty C002 instance registries. [C003 Discovery Scope](C003_FOUNDER_DISCOVERY_RECONCILIATION_SCOPE_V1.0.md) governs only classified evidence, owner reuse, and inactive backlog/defer mappings. None grants Product/SKU, Availability, current/public pricing, Master/Golden, Import, Runtime, Deployment, or Production authority.
+For current work, readers must obtain the exact phase, branch, authorization, pull-request state, GO/NO-GO boundary, and next action from Current Project State. DS-PC (`HOW`) and DS-SPD (`WHAT`) are stable companion governing sources and do not compete with that operational pointer. Their acceptance does not auto-authorize PD-04, Product/SKU, Golden/Master Data, Runtime, Import, Deployment, Production, or branch deletion. Historical scopes retain their original boundaries. [PD-02B Scope v1.0](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md) remains the immutable APPROVED base. [PD-03A Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md) governs the APPROVED prerequisite extension. [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md) governs only exactly three lifecycle-gated Pilot records. [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md) governs only contract infrastructure and empty C002 instance registries. [C003 Discovery Scope](C003_FOUNDER_DISCOVERY_RECONCILIATION_SCOPE_V1.0.md) governs only classified Session 01 evidence. [C003-R1 Scope](C003_R1_CHECKPOINT03_201_51_PILOT_READINESS_SCOPE_V1.0.md) governs only the Checkpoint 03 versioned evidence delta and a `0/9` Founder-review packet. None grants Product/SKU, Availability, current/public pricing, Master/Golden, Import, Runtime, Deployment, or Production authority.
 
 ## Founder Reading Path
 

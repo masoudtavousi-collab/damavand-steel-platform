@@ -115,6 +115,10 @@ c003_discovery_validator="repository/data/validation/validate_founder_product_co
 "$python" "$c003_discovery_validator" tests/fixtures/c003-founder-discovery/valid-synthetic.yaml --synthetic
 "$python" -B -m unittest tests.test_founder_product_commerce_discovery
 
+c003r1_checkpoint03_validator="repository/data/validation/validate_founder_product_commerce_checkpoint03.py"
+"$python" "$c003r1_checkpoint03_validator"
+"$python" -B -m unittest tests.test_founder_product_commerce_checkpoint03
+
 "$python" repository/data/validation/validate_bp2_data_blueprint.py
 "$python" repository/data/validation/validate_bp2_data_administration.py
 "$python" tests/test_bp2_data_administration.py

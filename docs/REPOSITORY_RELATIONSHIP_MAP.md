@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 1.1.0
-- **Last Updated:** 2026-08-17
-- **Last Review:** 2026-08-17
+- **Version:** 1.2.0
+- **Last Updated:** 2026-08-18
+- **Last Review:** 2026-08-18
 - **Review Cycle:** On repository creation, disposition, authority, ownership, namespace, lifecycle, merge, or promotion proposal
 - **Lifecycle:** Review
 - **Source of Truth:** Explicit Founder decisions in the GIT-02S directive dated 2026-07-14, the Class B Wave 1 authorization dated 2026-07-19, verified GitHub `main`, Founder-approved current Git governance, the Wave 2 pre-implementation decisions dated 2026-07-20, `FD-DS-PROGRAM-001`, `FD-C000-OS2-001`, `FD-C003-DISCOVERY-001`, and Repository A governance
@@ -33,6 +33,7 @@ Define the authority, isolation, adoption, and future-promotion boundaries betwe
 | [C000 OS2 Decision Package](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md) | Records `FD-C000-OS2-001`, the Founder-approved Project OS 2.0 reconciliation, Track model, WIP limit, frozen C1-T03 boundary, and successor intent map | Does not authorize a successor mission, Product/SKU/Availability creation, runtime, production, or activation of future purchase eligibility |
 | [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md) | Defines Commercial Pilot candidate intake/readiness and Product-administration policy extensions under `C002-CONTRACTS-001` | Creates no Product/SKU/Availability, commercial fact, canonical value, runtime object, purchase capability, Central implementation, or successor authority |
 | [C003 Discovery Scope](C003_FOUNDER_DISCOVERY_RECONCILIATION_SCOPE_V1.0.md) | Maps the complete Founder Discovery Session 01 into classified evidence, existing canonical owners, and inactive backlog/defer dispositions under `FD-C003-DISCOVERY-001` | Does not promote evidence into Product/value/tuple/SKU/Availability, create current/public price or stock, activate Runtime, or begin C003-A, C003-B, or another successor |
+| [C003-R1 Scope](C003_R1_CHECKPOINT03_201_51_PILOT_READINESS_SCOPE_V1.0.md) | Extends C003 through an append-only Checkpoint 03 evidence container that reuses existing Product/C002/C003 owners and prepares a fail-closed 201/51 Founder-review packet | Does not mutate the 115-record base, populate C002 candidates, create Product/value/tuple/SKU/Availability/price/customer/order/payment/runtime truth, merge, or start a successor |
 | [Context Router](CONTEXT_ROUTER.md) | Routes each task to the smallest authoritative context set | Is navigation only; it cannot create authority, override a governing source, or duplicate mutable state |
 | [Current Project State](CURRENT_PROJECT_STATE.md) | Remains the sole mutable pointer for current phase, exact authorization, branch/PR state, blockers, next action, and GO/NO-GO | Must not be duplicated or inferred from the two stable program documents |
 | `FD-DS-PROGRAM-001` | Records acceptance, roles, hashes, relationship, exclusions, and supersession limits | Does not rewrite `GOV-XD-00`, prior decisions, or repository chronology |

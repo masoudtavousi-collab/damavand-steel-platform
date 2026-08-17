@@ -1,0 +1,133 @@
+contract_id: founder-product-commerce-checkpoint03
+contract_version: "1.0.0"
+record_kind: c003-r1-checkpoint03-evidence-and-pilot-readiness
+schema:
+  path: repository/data/schemas/founder-product-commerce-checkpoint03.schema.json
+  draft: https://json-schema.org/draft/2020-12/schema
+registry:
+  path: repository/data/registries/extensions/c003r1/checkpoint03-evidence-and-pilot-readiness.yaml
+base_c003:
+  contract_path: repository/data/contracts/founder-product-commerce-discovery.contract.yaml
+  registry_path: repository/data/registries/extensions/c003/founder-product-commerce-discovery-session-01.yaml
+  exact_record_count: 115
+  exact_contract_semantic_sha256: eff0b6d1546c67c7e5f33f7c39e387bb97fc7398f5190b3c578247db4daf9bf9
+  exact_registry_semantic_sha256: 6531464375953bb117515e4665a679bcf90f15388f0e7513a7268f3787714cf8
+  mutation_allowed: false
+extension_rationale:
+  mode: VERSIONED_APPEND_ONLY_EXTENSION
+  reason: The reviewed C003 package has exact count, order and semantic digests; in-place append would rewrite frozen historical evidence.
+  competing_owner_created: false
+dependencies:
+  c002_candidate_contract: repository/data/contracts/commercial-pilot-candidate.contract.yaml
+  c002_candidate_registry: repository/data/registries/extensions/c002/commercial-pilot-candidates.yaml
+  c002_product_administration_contract: repository/data/contracts/product-administration-policy.contract.yaml
+  c002_product_administration_registry: repository/data/registries/extensions/c002/product-administration-policies.yaml
+  product_core: repository/data/contracts/product-core.contract.yaml
+  product_entities: repository/data/registries/product-entities.yaml
+  pd03a_extension: repository/data/registries/extensions/pd03a/pilot-prerequisite.yaml
+  pd03b_seed_evidence: repository/data/registries/extensions/pd03b/canonical-pilots.yaml
+authority:
+  mission_id: C003-R1
+  evidence_reconciliation_allowed: true
+  planning_packet_allowed: true
+  candidate_population_allowed: false
+  product_population_allowed: false
+  sku_assignment_allowed: false
+  availability_or_stock_claim_allowed: false
+  current_or_public_price_fact_allowed: false
+  pricing_engine_activation_allowed: false
+  customer_or_order_population_allowed: false
+  payment_activation_allowed: false
+  wordpress_woocommerce_mutation_allowed: false
+  runtime_staging_production_allowed: false
+  fx_marketplace_ai_allowed: false
+  c003a_c003b_successor_allowed: false
+  external_write_allowed: false
+source_model:
+  mission_message_count: 3
+  checkpoint03_message_count: 4
+  original_discovery_message_count: 9
+  idea_vault_message_count: 4
+  complete_threads_required: true
+base_c003_reconciliation:
+  exact_entry_count: 8
+  allowed_relations: [EXTENDS, REFINES, RESOLVES_EVIDENCE_ONLY, NO_CONFLICT]
+  prior_record_supersession_allowed: false
+  canonical_population_allowed: false
+evidence_delta:
+  exact_record_count: 59
+  classifications:
+    FOUNDER_CONFIRMED: 55
+    FOUNDER_ACCEPTED_CANDIDATE: 0
+    ARCHITECTURE_PROPOSAL: 4
+  temporal_roles:
+    CURRENT_INTENT: 56
+    HISTORICAL_EXAMPLE_NONCURRENT: 1
+    FUTURE_CONCEPT: 2
+  ledger_classes:
+    FC: [FOUNDER_CONFIRMED, CURRENT_INTENT]
+    FAC: [FOUNDER_ACCEPTED_CANDIDATE, CURRENT_INTENT]
+    AP: [ARCHITECTURE_PROPOSAL, CURRENT_INTENT]
+    HE: [FOUNDER_CONFIRMED, HISTORICAL_EXAMPLE_NONCURRENT]
+    FUT: [ARCHITECTURE_PROPOSAL, FUTURE_CONCEPT]
+    FCF: [FOUNDER_CONFIRMED, FUTURE_CONCEPT]
+  exact_source_ranges:
+    - {source_id: CHECKPOINT_03_PARENT, first_record: 1, last_record: 17}
+    - {source_id: CHECKPOINT_03_PART_02, first_record: 18, last_record: 35}
+    - {source_id: CHECKPOINT_03_PART_03, first_record: 36, last_record: 56}
+    - {source_id: CHECKPOINT_03_PART_04, first_record: 57, last_record: 59}
+  exact_ledger_class_order: [FC, FC, FC, FC, FC, AP, FC, FC, HE, FC, FC, AP, FC, FC, FC, FC, FC, FC, FC, FC, FC, FC, FC, FC, AP, FC, FC, FC, FC, FC, AP, FC, FC, FC, FC, FC, FC, FC, FC, FCF, FC, FC, FC, FC, FCF, FC, FC, FC, FC, FC, FC, FC, FC, FC, FC, FC, FC, FC, FC]
+idea_vault_disposition:
+  exact_entry_count: 25
+  exact_counts:
+    USE_NOW_PLANNING_EVIDENCE_ONLY: 9
+    PLAN_NOW_IMPLEMENT_LATER: 5
+    DEFER: 7
+    REJECT_FOR_MISSION: 4
+  implementation_authority_created: false
+pilot_readiness:
+  pilot_key: STAINLESS_ROUND_PIPE__GRADE_201__DIAMETER_51_MM
+  c002_criterion_count: 9
+  c002_exact_criterion_order:
+    - DEMAND_SIGNAL
+    - SUPPLY_EVIDENCE
+    - GROSS_PROFIT_POTENTIAL
+    - REPEATABILITY
+    - PRODUCT_DATA_COMPLETENESS
+    - PHOTO_CONTENT_READINESS
+    - SEO_BUYER_INTENT
+    - OPERATIONAL_COMPLEXITY
+    - FULFILLMENT_RISK
+  founder_review_packet_status: FOUNDER_REVIEW_PACKET_READY
+  c002_selection_readiness: NOT_READY
+  resolved_count: 0
+  unresolved_count: 9
+  canonical_candidate_created: false
+  cartesian_generation_allowed: false
+  evidence_backed_tuple_count: 0
+  mass_is_variant_identity: false
+  mass_observation_count: 0
+  product_group_is_canonical_entity: false
+regression_anchors:
+  c002_candidate_count: 0
+  c002_policy_count: 8
+  c002_policy_instance_count: 0
+  canonical_sku_count: 0
+  pd03b_pilot_count: 3
+  pd03b_availability_status: MISSING_DATA_VALUE
+  commerce_state: INQUIRY_ONLY
+  runtime_authority: NONE
+  production_authority: NONE
+  c1_t03_state: FROZEN_AT_PROTECTED_ARCHITECTURE_BOUNDARY
+validation:
+  offline_only: true
+  network_allowed: false
+  side_effects_allowed: false
+  schema_objects_closed: true
+  local_references_only: true
+  duplicate_keys_rejected: true
+  non_finite_numbers_rejected: true
+  deterministic_sorted_errors: true
+  exact_source_order_required: true
+  path_escape_and_symlink_rejected: true
+  mutation_manifest_dispatch_required: true

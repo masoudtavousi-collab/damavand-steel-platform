@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.8.0
-- **Last Updated:** 2026-08-17
-- **Last Review:** 2026-08-17
+- **Version:** 0.9.0
+- **Last Updated:** 2026-08-18
+- **Last Review:** 2026-08-18
 - **Review Cycle:** On decision classification, status, or authority change
 - **Lifecycle:** Draft
 - **Source of Truth:** Approved governing documents and explicitly accepted decision records; this log is an index only
@@ -79,6 +79,7 @@ Every accepted decision must identify:
 | `C001-OS2-RECON` | Publish the accepted C000 decisions through one bounded docs-only branch and pull request with independent review, local validation, and CI. | C001 Founder + Project Commander Mission Packet dated 2026-08-16 | Git authority is limited to branch/commit/push/one PR and attributable CI fixes. Merge and every successor/runtime/product action remain `NO-GO`. |
 | `C002-CONTRACTS-001` | Establish bounded Commercial Pilot candidate-intake/readiness and Product-administration policy contracts, empty canonical extension registries, deterministic offline validators, and synthetic positive/negative/adversarial tests. | C002 Founder + Project Commander Mission Packet dated 2026-08-16 and [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md) | Approved for the exact branch/commit/push/one-PR mission only. It grants no Pilot selection, Product/SKU/Availability population, commercial fact, purchase activation, runtime, merge, or successor authority. |
 | `FD-C003-DISCOVERY-001` | Integrate the complete Founder Product & Commerce Discovery Session 01 as classified evidence, canonical-owner mappings, and inactive backlog/defer dispositions with deterministic validation. | C003 Founder + Project Commander Mission Packet dated 2026-08-17 and [C003 Discovery Scope](C003_FOUNDER_DISCOVERY_RECONCILIATION_SCOPE_V1.0.md) | Accepted only as Mission and evidence-integration authority. `FOUNDER_CONFIRMED` evidence is not canonical Product truth; candidates and proposals are not promoted; C002 remains zero candidates/eight policies/zero instances; no Product/SKU/Availability, current/public price, runtime, merge, C003-A, C003-B, or successor authority follows. |
+| `FD-C003-R1-CP03-001` | Preserve Checkpoint 03 as a versioned 59-record evidence extension and prepare a fail-closed Founder-review packet for stainless round pipe / grade 201 / diameter 51 mm. | C003-R1 Mission parent `1786996740.153019` plus two replies; Checkpoint 03 parent `1786996639.277979` plus three replies; [C003-R1 Scope](C003_R1_CHECKPOINT03_201_51_PILOT_READINESS_SCOPE_V1.0.md) | Evidence/planning and one-PR authority only. C003 base remains immutable; C002 readiness is `0/9`, candidate registry remains empty, commerce remains `INQUIRY_ONLY`, and no Product/SKU/Availability/current-price/customer/order/payment/runtime, merge or successor authority follows. |
 
 ## Architecture Decisions
 
