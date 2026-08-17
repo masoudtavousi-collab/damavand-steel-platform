@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-08-18 — C003-R1 Checkpoint 03 evidence and 201/51 readiness
+
+- Added a versioned, source-complete 59-record Checkpoint 03 evidence extension while preserving the reviewed 115-record C003 package unchanged.
+- Added a machine-readable and human-readable 201/51 Founder-review packet with exact Pilot evidence, zero inferred tuples, zero mass observations and C002 readiness `0/9` / `NOT_READY`.
+- Classified 25 Mission-relevant Idea dispositions as 9 use-now planning inputs, 5 plan-later items, 7 deferrals and 4 Mission rejections; no idea receives implementation authority.
+- Reused existing Product/C002/C003 canonical owners and preserved C002 at zero candidates/eight policies/zero instances, commerce `INQUIRY_ONLY`, Runtime/Production `NONE`, and frozen C1-T03.
+
 ## 2026-08-17 — C003 Founder Discovery Reconciliation
 
 - Read the complete C003 Mission Packet and Founder Product & Commerce

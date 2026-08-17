@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.17.0
-- **Last Updated:** 2026-08-17
-- **Last Review:** 2026-08-17
+- **Version:** 0.18.0
+- **Last Updated:** 2026-08-18
+- **Last Review:** 2026-08-18
 - **Review Cycle:** On document creation, removal, rename, lifecycle, authority, or navigation change
 - **Lifecycle:** Draft
 - **Source of Truth:** Current repository documentation paths plus each document's recorded status and authority
@@ -111,6 +111,7 @@ Provide the canonical map of repository documentation without replacing the auth
 | [Inquiry Data Model](23_INQUIRY_DATA_MODEL.md) | Proposed inquiry and Customer objects, fields, lifecycle boundaries, routing, notifications, anti-spam, and CRM compatibility | Review | Founder |
 | [C002 Commercial Pilot Truth and Product Administration Contracts v1.0](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md) | Founder-authorized bounded contract foundation for candidate intake/readiness, Product administration policy, inactive commerce controls, and deterministic validation; no Product/SKU/Availability population | Review | Founder |
 | [C003 Founder Discovery Reconciliation and Repository Intake v1.0](C003_FOUNDER_DISCOVERY_RECONCILIATION_SCOPE_V1.0.md) | Founder-authorized evidence intake for complete Session 01 with explicit classification, canonical-owner reuse, inactive backlog/defer dispositions, and no Product/Availability/pricing/runtime promotion | Review | Founder |
+| [C003-R1 Checkpoint 03 and 201/51 Pilot Readiness v1.0](C003_R1_CHECKPOINT03_201_51_PILOT_READINESS_SCOPE_V1.0.md) | Versioned Checkpoint 03 evidence extension and fail-closed Founder-review packet; C002 readiness remains `0/9`, with no candidate/Product/SKU/Availability/pricing/runtime promotion | Review | Founder |
 | [BP2 Data Administration Scope v1.0](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md) | Approved documentation-only administration boundary linked to a machine-readable contract, closed Draft 2020-12 schema, offline validator, lifecycle evidence, and adversarial tests; no implementation authority | Approved | Founder |
 | [PD-01 Product Data Contract Enablement Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md) | Approved exact 30-path Scope/Approval Packet and synthetic Contract/Schema/Validator/Test boundary after legal lifecycle and independent PASS; no canonical population authority | Approved | Founder |
 | [PD-02A Controlled Values and Attribute Profiles Scope v1.0](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md) | Approved exact 38-path synthetic-only Scope/Approval and Test Contract after legal lifecycle and independent PASS; all canonical Attribute, controlled-value, and Profile collections remain empty | Approved | Founder |

@@ -1,6 +1,6 @@
 # Open Questions
 
-> Project OS 2.0 resolves the operating model and future commerce target. C003 preserves classified discovery evidence but activates none of it; C1-T03 is frozen, and Product, eligibility, Runtime, and successor implementation questions remain separately gated.
+> Project OS 2.0 resolves the operating model and future commerce target. C003 and C003-R1 preserve classified discovery evidence but activate none of it; the 201/51 packet remains `0/9` and `NOT_READY`; C1-T03 is frozen, and Product, eligibility, Runtime, and successor implementation questions remain separately gated.
 
 ## Document Control
 
@@ -10,9 +10,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.15.0
-- **Last Updated:** 2026-08-17
-- **Last Review:** 2026-08-17
+- **Version:** 0.16.0
+- **Last Updated:** 2026-08-18
+- **Last Review:** 2026-08-18
 - **Review Cycle:** On question creation, resolution, blocking impact, or source-document change
 - **Lifecycle:** Draft
 - **Source of Truth:** Unresolved questions and placeholders in controlled source documents; this register does not answer them
@@ -124,6 +124,9 @@ The following older documents contained unresolved `TBD.` placeholders. Batch 02
 | OQ-DATA-016 | Which Smart History, confidential pricing-group/manual-override, FX-signal, Deals, Inventory Harmony, Availability, reservation, replenishment, verification, cancellation, and dispatch rules are approved? | `FD-C003-DISCOVERY-001` and [C003 Discovery Scope](C003_FOUNDER_DISCOVERY_RECONCILIATION_SCOPE_V1.0.md) | Open; historical numerics are examples, FX is deferred, Harmony has no stock/pricing/eligibility effect, and commerce remains `INQUIRY_ONLY` |
 | OQ-DATA-017 | Which cutting/remainder, packaging, freight, shipment, OTP, Customer/CRM, segmentation, Loyalty/Referral, payment/document, return/damage, consent, privacy, retention, notification, and audit rules are approved? | C003 discovery registry, [Inquiry Data Model](23_INQUIRY_DATA_MODEL.md), and [C003 Discovery Scope](C003_FOUNDER_DISCOVERY_RECONCILIATION_SCOPE_V1.0.md) | Open; target/backlog only, with no customer, order, payment, service, CRM, notification, or Runtime record created |
 | OQ-DATA-018 | Which future RBAC and legally reviewed tax-extensibility policies are approved, and what evidence would be required to reconsider marketplace compatibility without authorizing a supplier portal? | `FD-C003-DISCOVERY-001`, [User Roles](43_USER_ROLES.md), and [C003 Discovery Scope](C003_FOUNDER_DISCOVERY_RECONCILIATION_SCOPE_V1.0.md) | Deferred; no role/capability, tax rate/calculation, marketplace, supplier portal, or Runtime authority |
+| OQ-DATA-019 | Which exact 201/51 Brand × Thickness × Appearance × Length tuples are supported by independently reviewed evidence? | `FD-C003-R1-CP03-001` and [C003-R1 Scope](C003_R1_CHECKPOINT03_201_51_PILOT_READINESS_SCOPE_V1.0.md) | Open and blocking C002 selection readiness; C003-R1 records zero valid tuples and forbids Cartesian inference |
+| OQ-DATA-020 | What protected gross-profit, demand/repeatability, current supplier, media-rights, SEO and fulfillment-risk evidence resolves the nine C002 criteria? | [C003-R1 Scope](C003_R1_CHECKPOINT03_201_51_PILOT_READINESS_SCOPE_V1.0.md) and C002 candidate contract | Open; current packet is Founder-review-ready but `0/9` and `NOT_READY` for selection |
+| OQ-DATA-021 | What versioned contract owns batch/transaction commercial-mass observations and Smart History without promoting mass to Variant identity or overwriting history? | `FD-C003-R1-CP03-001`, C002 Mass Provenance, and [C003-R1 Scope](C003_R1_CHECKPOINT03_201_51_PILOT_READINESS_SCOPE_V1.0.md) | Open future contract input; zero observations and no canonical mass value exist |
 
 ## Information Architecture Questions
 
