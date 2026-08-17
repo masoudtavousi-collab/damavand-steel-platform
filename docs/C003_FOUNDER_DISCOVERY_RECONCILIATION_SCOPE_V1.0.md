@@ -62,8 +62,8 @@ Every machine-readable record carries a canonical owner and a closed
 Runtime/Production effects are all false; this Scope supplies the explicit
 disposition mapping. A complete source-attribution re-audit of all 115 records
 separates Founder business intent from proposed architecture. Evidence-class
-counts are `FOUNDER_CONFIRMED=70`, `FOUNDER_ACCEPTED_CANDIDATE=3`, and
-`ARCHITECTURE_PROPOSAL=42`; temporal-role counts remain `CURRENT_INTENT=86`,
+counts are `FOUNDER_CONFIRMED=70`, `FOUNDER_ACCEPTED_CANDIDATE=2`, and
+`ARCHITECTURE_PROPOSAL=43`; temporal-role counts remain `CURRENT_INTENT=86`,
 `HISTORICAL_EXAMPLE_NONCURRENT=4`, and `FUTURE_CONCEPT=25`.
 
 ## Canonical Owner Reconciliation

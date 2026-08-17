@@ -62,7 +62,7 @@
         "classification_counts": {
           "type": "object", "additionalProperties": false,
           "required": ["FOUNDER_CONFIRMED", "FOUNDER_ACCEPTED_CANDIDATE", "ARCHITECTURE_PROPOSAL"],
-          "properties": {"FOUNDER_CONFIRMED": {"const": 70}, "FOUNDER_ACCEPTED_CANDIDATE": {"const": 3}, "ARCHITECTURE_PROPOSAL": {"const": 42}}
+          "properties": {"FOUNDER_CONFIRMED": {"const": 70}, "FOUNDER_ACCEPTED_CANDIDATE": {"const": 2}, "ARCHITECTURE_PROPOSAL": {"const": 43}}
         },
         "temporal_role_counts": {
           "type": "object", "additionalProperties": false,

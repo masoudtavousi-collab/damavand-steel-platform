@@ -31,8 +31,8 @@ evidence_model:
   exact_record_count: 115
   classifications:
     FOUNDER_CONFIRMED: 70
-    FOUNDER_ACCEPTED_CANDIDATE: 3
-    ARCHITECTURE_PROPOSAL: 42
+    FOUNDER_ACCEPTED_CANDIDATE: 2
+    ARCHITECTURE_PROPOSAL: 43
   temporal_roles:
     CURRENT_INTENT: 86
     HISTORICAL_EXAMPLE_NONCURRENT: 4
@@ -45,7 +45,7 @@ evidence_model:
     FUT: [ARCHITECTURE_PROPOSAL, FUTURE_CONCEPT]
     FCF: [FOUNDER_CONFIRMED, FUTURE_CONCEPT]
     FACF: [FOUNDER_ACCEPTED_CANDIDATE, FUTURE_CONCEPT]
-  exact_ledger_class_order: [FC, FC, FC, AP, FC, FC, FC, FC, FC, FC, FC, FC, FC, FAC, FAC, AP, FC, FC, FC, FC, FC, FC, FC, AP, FC, FC, HE, AP, FC, FCF, HE, AP, FC, AP, AP, AP, FC, FC, HE, FC, FC, AP, AP, FC, AP, FCF, AP, AP, FC, FCF, AP, FCF, AP, FC, AP, FUT, FC, FC, FC, FCF, FC, AP, AP, AP, AP, AP, AP, FUT, FUT, FUT, FUT, FUT, FUT, FUT, FUT, FUT, FUT, FUT, FC, FC, FC, FC, FC, FC, FC, AP, FC, FC, HE, AP, FC, FC, FACF, FC, FC, FC, FC, FC, FC, FC, FCF, FCF, FC, FCF, AP, FC, FCF, FC, FUT, FC, FCF, FUT, AP, AP, AP]
+  exact_ledger_class_order: [FC, FC, FC, AP, FC, FC, FC, FC, FC, FC, FC, FC, FC, FAC, FAC, AP, FC, FC, FC, FC, FC, FC, FC, AP, FC, FC, HE, AP, FC, FUT, HE, AP, FC, AP, AP, AP, FC, FC, HE, FC, FC, AP, AP, FC, AP, FCF, AP, AP, FC, FCF, AP, FCF, AP, FC, AP, FUT, FC, FC, FC, FCF, FC, AP, AP, AP, AP, AP, AP, FUT, FUT, FUT, FUT, FUT, FUT, FUT, FUT, FUT, FUT, FUT, FC, FC, FC, FC, FC, FC, FC, AP, FC, FC, HE, AP, FC, FC, FCF, FC, FC, FC, FC, FC, FC, FC, FCF, FCF, FC, FCF, AP, FC, FCF, FC, FUT, FC, FCF, FUT, AP, AP, AP]
   source_ranges:
     - {source_id: DISCOVERY_PARENT, first_record: 1, last_record: 4}
     - {source_id: PART_01, first_record: 5, last_record: 24}
