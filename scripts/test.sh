@@ -110,6 +110,11 @@ c002_admin_validator="repository/data/validation/validate_product_administration
 "$python" "$c002_admin_validator" tests/fixtures/c002-product-administration/valid-synthetic.yaml --synthetic
 "$python" -B -m unittest tests.test_product_administration_policies
 
+c003_discovery_validator="repository/data/validation/validate_founder_product_commerce_discovery.py"
+"$python" "$c003_discovery_validator"
+"$python" "$c003_discovery_validator" tests/fixtures/c003-founder-discovery/valid-synthetic.yaml --synthetic
+"$python" -B -m unittest tests.test_founder_product_commerce_discovery
+
 "$python" repository/data/validation/validate_bp2_data_blueprint.py
 "$python" repository/data/validation/validate_bp2_data_administration.py
 "$python" tests/test_bp2_data_administration.py

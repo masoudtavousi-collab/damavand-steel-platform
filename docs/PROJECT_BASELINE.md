@@ -1,6 +1,6 @@
 # Damavand Steel Project Baseline
 
-> Project OS 2.0 is the accepted strategic operating model. Current operation remains inquiry-first with no active public purchase authority; C002 establishes contract infrastructure and empty instance registries only and grants no successor execution authority.
+> Project OS 2.0 is the accepted strategic operating model. Current operation remains inquiry-first with no active public purchase authority; C002 remains an empty-instance contract foundation, and C003 preserves classified discovery evidence without creating Product, Availability, pricing, runtime, or successor authority.
 
 ## Document Control
 
@@ -10,15 +10,15 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.17.0
-- **Last Updated:** 2026-08-16
-- **Last Review:** 2026-08-16
+- **Version:** 0.18.0
+- **Last Updated:** 2026-08-17
+- **Last Review:** 2026-08-17
 - **Review Cycle:** On approved decision, completed sprint, repository disposition, readiness, or execution-state change
 - **Lifecycle:** Review
 - **Source of Truth:** Accepted governing sources, recorded Founder decisions, [Current Project State](CURRENT_PROJECT_STATE.md), approved Master Data, and current repository evidence within their declared scope
 - **Dependencies:** [Codex Repository Instructions](../AGENTS.md), [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md), [Current Project State](CURRENT_PROJECT_STATE.md), and [Execution Gates](EXECUTION_GATES.md)
-- **Related Documents:** [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md), [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md), [Founder Decision Log](17_FOUNDER_DECISION_LOG.md), [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md), and `GIT-02S Audit`
-- **Traceability:** CP-001 through CP-010; ADR-0001; FD-PILOT-001; FD-BP2-ADM-001; FD-GOV-XD-00; FD-PD01-001; PD01-REVIEW-001; FD-PD02A-001; FD-PD02B-001; FD-PD03A-001; FD-PD03B-001; FD-DS-PROGRAM-001; FD-C000-OS2-001; C002-CONTRACTS-001; C1-T04; C1-T06; GIT-02S; PR #1–#35 integration evidence; Wave 2A–2C; FD-K01-001; BP1; BP2; Claude Recovery Audit
+- **Related Documents:** [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md), [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md), [Founder Decision Log](17_FOUNDER_DECISION_LOG.md), [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md), [C003 Discovery Scope](C003_FOUNDER_DISCOVERY_RECONCILIATION_SCOPE_V1.0.md), and `GIT-02S Audit`
+- **Traceability:** CP-001 through CP-010; ADR-0001; FD-PILOT-001; FD-BP2-ADM-001; FD-GOV-XD-00; FD-PD01-001; PD01-REVIEW-001; FD-PD02A-001; FD-PD02B-001; FD-PD03A-001; FD-PD03B-001; FD-DS-PROGRAM-001; FD-C000-OS2-001; C002-CONTRACTS-001; FD-C003-DISCOVERY-001; C1-T04; C1-T06; GIT-02S; PR #1–#36 integration evidence; Wave 2A–2C; FD-K01-001; BP1; BP2; Claude Recovery Audit
 - **AI Compatibility:** Primary concise entry point; underlying sources control within their recorded authority
 - **Approval:** `GOV-XD-00` scope and stable current-state semantics approved by the Founder on 2026-07-28; recorded Founder decisions remain accepted only within their exact scope
 
@@ -51,7 +51,7 @@ Repository B cannot override the Founder, Repository A, CP-001 through CP-010, t
 
 The exact semantic phase, authorization, GO/NO-GO boundary, and next action are maintained only in [Current Project State](CURRENT_PROJECT_STATE.md). The exact live GitHub `main` SHA is resolved dynamically at task dispatch and recorded in that task's Scope/Approval Packet; fixed SHAs in repository prose are dated evidence anchors.
 
-Historical Git authorizations retain their original exact scope and do not become retroactive merge or runtime authority. PR #1–#29 are integration evidence; PR numbering does not represent merge order, and a merge is not a substitute for the originating Founder authorization record or lifecycle approval. PR #13 recovery consolidation and PR #14 post-recovery state preceded the final merge of PR #12; PR #15 then reconciled the active governance state, PR #16 closed the bounded BP1 M1 accessibility and local-validation gaps, PR #17 reconciled the resulting state, PR #18 integrated the reviewed BP2 lifecycle approval, PR #19 closed that integration cycle, PR #20 integrated `GOV-XD-00`, PR #21 integrated PD-01, PR #22 integrated PD-02A, PR #23 integrated PD-02B, PR #24 integrated PD-03A, PR #25 integrated PD-03B, PR #26 reconciled the post-PD-03B operational state, PR #27 integrated the accepted DS program directives, PR #28 reconciled the post-PR27 operational state, and PR #29 integrated the C1-T06 canonical-owner reconciliation. These remain scope-bound repository foundations and records rather than runtime or final-SKU authority.
+Historical Git authorizations retain their original exact scope and do not become retroactive merge or runtime authority. PR #1–#36 are integration evidence; PR numbering does not represent merge order, and a merge is not a substitute for the originating Founder authorization record or lifecycle approval. PR #13 recovery consolidation and PR #14 post-recovery state preceded the final merge of PR #12; PR #15 then reconciled the active governance state, PR #16 closed the bounded BP1 M1 accessibility and local-validation gaps, PR #17 reconciled the resulting state, PR #18 integrated the reviewed BP2 lifecycle approval, PR #19 closed that integration cycle, PR #20 integrated `GOV-XD-00`, PR #21 integrated PD-01, PR #22 integrated PD-02A, PR #23 integrated PD-02B, PR #24 integrated PD-03A, PR #25 integrated PD-03B, PR #26 reconciled the post-PD-03B operational state, PR #27 integrated the accepted DS program directives, PR #28 reconciled the post-PR27 operational state, PR #29 integrated the C1-T06 canonical-owner reconciliation, PR #35 integrated C001, and PR #36 integrated the C002 contract foundation. These remain scope-bound repository foundations and records rather than runtime or final-SKU authority.
 
 ## Architecture and Governance Status
 
@@ -63,6 +63,7 @@ Historical Git authorizations retain their original exact scope and do not becom
 - Project OS 2.0 is Founder-approved: Tracks A–D govern bounded Commercial Fast Track, Core/Truth, Growth/Revenue, and later Automation work with default WIP focus `1 Commercial + 1 Core + 1 Enabler`.
 - Current operational commerce remains inquiry-first with no active public purchase authority. The approved target is `Inquiry First by default + future SKU-level purchase eligibility`; every future SKU remains fail-closed behind separate Product, commercial, Runtime, Production, and Founder gates.
 - `C1-T03/HF-X0` is frozen at the protected architecture boundary with Gate 3 `48/48`, Projection/Sanitization/Governance PASS, 11 unresolved technical findings (`7 Critical`, `4 High`), `DESIGN_PASS=false`, and `PLANNING_PASSAGE=false`. Its evidence is preserved; repair and new R-cycles are not active work.
+- `FD-C003-DISCOVERY-001` authorizes only the bounded intake of the complete Founder Discovery Session 01 as classified evidence and inactive owner/backlog mappings. It preserves C002 with zero Commercial Pilot candidates, eight policy definitions, and zero policy instances; confirmed evidence is not canonical Product truth, accepted candidates are not Availability, and architecture proposals are not implementation authority.
 - All runtime [Execution Gates](EXECUTION_GATES.md) remain unpassed. Static documentation validation cannot create runtime readiness.
 
 ## Product and Knowledge Repositories
@@ -78,6 +79,7 @@ Historical Git authorizations retain their original exact scope and do not becom
 | PD-02B Minimum Canonical Slice | `APPROVED` under `FD-PD02B-001` after legal `DRAFT → REVIEW → APPROVED`, `PD02B-TECH-REVIEW-001` PASS, REVIEW-stage CI, merged PR #23, and main CI `30482348480`; exact 57-path repository-only slice; exactly 3 entities, 2 Attributes, 2 Value Registries, 4 Terms, 1 INTERNAL Profile, 18 labels, and 1 Approval Evidence are approved without broader Product/runtime authority |
 | PD-03A Pilot Prerequisite Foundation | `APPROVED` under `FD-PD03A-001` after legal `DRAFT → REVIEW → APPROVED`, zero-finding `PD03A-TECH-REVIEW-001` PASS on `cb6c817…`, merged PR #24, and main CI `30696801759`; immutable extension over the unchanged PD-02B base; exact bounded records plus Length/Metre/Millimetre approved; no Product/SKU/availability or runtime authority |
 | PD-03B Canonical Pilot Records | `APPROVED` under `FD-PD03B-001` after legal lifecycle and zero-finding independent PASS; merged PR #25 and main CI `30698838847`; exactly three stable repository Pilot seed/reference records only, with historical references non-identifying, Availability `MISSING_DATA_VALUE`, and every readiness flag false; they are not Product/SKU/downstream authority and are not the maximum future Commercial Fast-Track scope |
+| C003 Founder Discovery Reconciliation | Complete Founder Discovery Session 01 plus C003 Mission Packet; [C003 Scope](C003_FOUNDER_DISCOVERY_RECONCILIATION_SCOPE_V1.0.md); classified evidence registry and deterministic validation | Evidence integration only. It creates no Product, controlled value, valid tuple, SKU, Availability, price, stock, customer/order record, runtime object, or automatic successor backlog |
 | Knowledge Repository | Architecture proposals exist; `repository/knowledge/` is the approved future location, but machine-readable contracts and content instances do not exist; `NOT_IMPLEMENTATION_READY` |
 | Master Data | No canonical machine-readable package exists on `main`; decision records and governing prose remain the current evidence |
 | Knowledge Cards and Page Builder assets | Referenced historical/future assets are absent from canonical `main`; no implementation-readiness claim is made |
@@ -193,7 +195,7 @@ Apply [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md): accepted governin
 
 ## Exact Next Safe Action
 
-Use the **Approved Next Action** in [Current Project State](CURRENT_PROJECT_STATE.md). The C002 contract foundation selects no first Pilot slice and authorizes no Product/SKU/Availability population, merge, Runtime, or successor Mission. Any next action requires a separate Founder/Project Commander packet.
+Use the **Approved Next Action** in [Current Project State](CURRENT_PROJECT_STATE.md). C003 preserves discovery evidence but selects no first Pilot slice, activates no backlog item, and starts neither C003-A nor C003-B. Product/SKU/Availability population, merge, Runtime, and any successor Mission require a separate Founder/Project Commander packet.
 
 ## Baseline Update Rules
 
@@ -214,6 +216,7 @@ Update this document only when an approved decision, completed sprint, verified 
 - [Codex Repository Instructions](../AGENTS.md)
 - [Current Project State](CURRENT_PROJECT_STATE.md)
 - [C000 / Project OS 2.0 Decision Package](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md)
+- [C003 Founder Discovery Reconciliation Scope](C003_FOUNDER_DISCOVERY_RECONCILIATION_SCOPE_V1.0.md)
 - [Context Router](CONTEXT_ROUTER.md)
 - [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md)
 - [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md)

@@ -1,0 +1,6 @@
+fixture_id: c003-founder-discovery-valid-synthetic-control
+data_classification: SYNTHETIC_FIXTURE
+subject_path: repository/data/registries/extensions/c003/founder-product-commerce-discovery-session-01.yaml
+expected_record_count: 115
+expected_result: PASS
+authority_effect: NONE

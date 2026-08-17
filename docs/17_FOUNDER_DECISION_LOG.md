@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.19.0
-- **Last Updated:** 2026-08-16
-- **Last Review:** 2026-08-16
+- **Version:** 0.20.0
+- **Last Updated:** 2026-08-17
+- **Last Review:** 2026-08-17
 - **Review Cycle:** On Founder decision creation, resolution, supersession, or dependency change
 - **Lifecycle:** Draft
 - **Source of Truth:** Explicit Founder-decision requirements in controlled source documents; this log is an index only
@@ -73,6 +73,12 @@ Index every repository item explicitly marked as requiring a Founder decision. T
 | ID | Decision | Decision owner / date | Approval scope | Evidence | Status / supersession |
 | --- | --- | --- | --- | --- | --- |
 | `C002-CONTRACTS-001` | Execute a bounded repository contract mission for Commercial Pilot candidate intake/readiness, the minimum Founder Evidence/Data Packet, Product Builder and controlled Add Value policy, Brand/Mass/Electrostatic provenance, inactive per-SKU Commerce Eligibility, Inventory Harmony, and the Damavand/Central interface boundary. | Founder + Project Commander / 2026-08-16 | Contracts, closed schemas, empty canonical C002 extension registries, deterministic offline validators, synthetic tests, bounded documentation, one branch/commit/push/PR, attributable CI fixes, and independent review. | C002 Slack Mission Packet (parent + 4 replies); starting `main` SHA `d603322e238d4cf06070da8fb8096cf7050527c2`; [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md) | `APPROVED` for the exact C002 mission. No first Pilot selection, Product/SKU/Availability/stock claim, commercial fact or pricing, 879-row population, WordPress/WooCommerce, Runtime/Staging/Production, Central implementation, merge, or successor Mission is authorized. |
+
+## C003 Founder Discovery Reconciliation
+
+| ID | Decision | Decision owner / date | Approval scope | Evidence | Status / supersession |
+| --- | --- | --- | --- | --- | --- |
+| `FD-C003-DISCOVERY-001` | Read the complete C003 Mission and Founder Product & Commerce Discovery Session 01 threads, then integrate the discovery as durable classified evidence, owner mappings, inactive backlog/defer dispositions, and deterministic validation. Preserve exactly `FOUNDER_CONFIRMED`, `FOUNDER_ACCEPTED_CANDIDATE`, and `ARCHITECTURE_PROPOSAL` evidence classes plus independent current/historical/future temporal roles without Product or runtime promotion. | Founder + Project Commander / 2026-08-17 | One bounded branch, documentation, evidence contract/schema/registry/validator/tests, necessary navigation/traceability reconciliation, independent review, local validation, commit/push/one non-draft PR, and attributable CI repair. | C003 Slack Mission parent `1786969720.051019` plus two replies; Founder Discovery parent `1786929259.157699` plus all eight replies (`PART 1`–`PART 7` and `CHECKPOINT 02`); starting `main` `b45e1b592213f8d3d98805cef2681be781d8cff8`; branch `codex/c003-founder-discovery-reconciliation`; [C003 Scope](C003_FOUNDER_DISCOVERY_RECONCILIATION_SCOPE_V1.0.md) | `APPROVED` as Mission and evidence-integration authority only. It is not canonical Product/value/tuple/SKU/Availability/price/stock/customer/order approval; C002 remains zero candidates/eight policies/zero instances; Inquiry First remains effective; no WordPress/WooCommerce, Runtime/Staging/Production, FX automation, marketplace, C1-T03 repair, merge, C003-A, C003-B, or successor Mission is authorized. |
 
 ## BP2 Data Administration Lifecycle Decision
 

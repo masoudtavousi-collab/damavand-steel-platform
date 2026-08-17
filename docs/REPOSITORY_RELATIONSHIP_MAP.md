@@ -8,12 +8,12 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 1.0.0
-- **Last Updated:** 2026-08-16
-- **Last Review:** 2026-08-16
+- **Version:** 1.1.0
+- **Last Updated:** 2026-08-17
+- **Last Review:** 2026-08-17
 - **Review Cycle:** On repository creation, disposition, authority, ownership, namespace, lifecycle, merge, or promotion proposal
 - **Lifecycle:** Review
-- **Source of Truth:** Explicit Founder decisions in the GIT-02S directive dated 2026-07-14, the Class B Wave 1 authorization dated 2026-07-19, verified GitHub `main`, Founder-approved current Git governance, the Wave 2 pre-implementation decisions dated 2026-07-20, `FD-DS-PROGRAM-001`, `FD-C000-OS2-001`, and Repository A governance
+- **Source of Truth:** Explicit Founder decisions in the GIT-02S directive dated 2026-07-14, the Class B Wave 1 authorization dated 2026-07-19, verified GitHub `main`, Founder-approved current Git governance, the Wave 2 pre-implementation decisions dated 2026-07-20, `FD-DS-PROGRAM-001`, `FD-C000-OS2-001`, `FD-C003-DISCOVERY-001`, and Repository A governance
 - **Dependencies:** [C000 OS2 Decision Package](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md), [Project Baseline](PROJECT_BASELINE.md), [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md), and [Project Constitution](01_PROJECT_CONSTITUTION.md)
 - **Related Documents:** [Context Router](CONTEXT_ROUTER.md), [Program Charter](DS_PC_001_PROGRAM_CHARTER.md), [Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md), [Git Governance](GIT_GOVERNANCE.md), [AI Collaboration Standard](AI_COLLABORATION.md), and `GIT-02S Audit`
 - **Traceability:** GIT-02S Founder decisions 1–3 and 10; CP-001, CP-002, CP-010
@@ -32,6 +32,7 @@ Define the authority, isolation, adoption, and future-promotion boundaries betwe
 | [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) | Governs Version 1.0 strategic outcome (`WHAT`) under `FD-DS-PROGRAM-001`; companion to DS-PC | Does not become an execution ticket, domain roadmap, Product/SKU approval, or production authorization |
 | [C000 OS2 Decision Package](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md) | Records `FD-C000-OS2-001`, the Founder-approved Project OS 2.0 reconciliation, Track model, WIP limit, frozen C1-T03 boundary, and successor intent map | Does not authorize a successor mission, Product/SKU/Availability creation, runtime, production, or activation of future purchase eligibility |
 | [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md) | Defines Commercial Pilot candidate intake/readiness and Product-administration policy extensions under `C002-CONTRACTS-001` | Creates no Product/SKU/Availability, commercial fact, canonical value, runtime object, purchase capability, Central implementation, or successor authority |
+| [C003 Discovery Scope](C003_FOUNDER_DISCOVERY_RECONCILIATION_SCOPE_V1.0.md) | Maps the complete Founder Discovery Session 01 into classified evidence, existing canonical owners, and inactive backlog/defer dispositions under `FD-C003-DISCOVERY-001` | Does not promote evidence into Product/value/tuple/SKU/Availability, create current/public price or stock, activate Runtime, or begin C003-A, C003-B, or another successor |
 | [Context Router](CONTEXT_ROUTER.md) | Routes each task to the smallest authoritative context set | Is navigation only; it cannot create authority, override a governing source, or duplicate mutable state |
 | [Current Project State](CURRENT_PROJECT_STATE.md) | Remains the sole mutable pointer for current phase, exact authorization, branch/PR state, blockers, next action, and GO/NO-GO | Must not be duplicated or inferred from the two stable program documents |
 | `FD-DS-PROGRAM-001` | Records acceptance, roles, hashes, relationship, exclusions, and supersession limits | Does not rewrite `GOV-XD-00`, prior decisions, or repository chronology |
@@ -157,8 +158,9 @@ No passage of time, new file, Git initialization, architecture review, or AI rec
 - Project OS 2.0 strategic reconciliation: **FOUNDER-APPROVED** under `FD-C000-OS2-001`; C001 publishes documentation only after its separately authorized Git cycle and merge.
 - C1-T03/HF-X0: **`FROZEN_AT_PROTECTED_ARCHITECTURE_BOUNDARY`**; 11 technical findings remain preserved and blocking, with no repair cycle or downstream authority.
 - The three PD-03B records: **SEED/REFERENCE EVIDENCE ONLY**; they are not Product/SKU/Availability and are not a ceiling on future separately authorized scope.
+- C003 Founder Discovery Session 01: **CLASSIFIED EVIDENCE ONLY**; confirmed evidence is not canonical Product truth, accepted candidates are not valid combinations/Availability, proposals are inactive, and historical numerics are examples.
 - Repository B classification: **`QUARANTINED_ARCHITECTURE_RESEARCH`**.
-- PR #1–#18: **MERGED**; PR #13 and PR #14 preceded the final PR #12 merge, PR #15 reconciled the active governance state afterward, PR #16 hardened BP1 M1 accessibility and local validation, PR #17 reconciled the resulting governance state, PR #18 integrated the BP2 lifecycle approval, and the current shared baseline is maintained in Current Project State.
+- PR #1–#36: **INTEGRATION EVIDENCE**; later numbered PRs include C001 through PR #35 and C002 through PR #36, while exact chronology and semantic state remain maintained in Current Project State rather than inferred from numbering.
 - Class B Wave 1 exact-scope Git/documentation integration: **COMPLETE**; its 2026-07-19 authorization remains historical evidence and did not itself authorize merge.
 - Default branch `main` and main protection: **COMPLETE**; strict `repository-validation`, administrator enforcement, force-push prohibition, and deletion prohibition verified.
 - Wave 2 discovery and Wave 2A–2C structural foundations: **COMPLETE**. Product/Knowledge population and Wave 2D: **NO-GO pending separate Founder approval**.
