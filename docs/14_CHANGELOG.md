@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-08-17 — C003 Founder Discovery Reconciliation
+
+- Read the complete C003 Mission Packet and Founder Product & Commerce
+  Discovery Session 01, including every `PART` and `CHECKPOINT 02`, before
+  repository integration.
+- Added a closed, offline-validatable discovery evidence package containing 115
+  classified records: 60 `FOUNDER_CONFIRMED`, 2
+  `FOUNDER_ACCEPTED_CANDIDATE`, and 53 `ARCHITECTURE_PROPOSAL`; independent
+  temporal roles preserve 86 current-intent, 4 historical/noncurrent, and 25
+  future-concept records.
+- Reconciled Product Group/valid combinations, Product Builder/Add Value,
+  Brand/Mass/Appearance, Smart History, pricing, sourcing, Deals/Inventory
+  Harmony, Availability, fulfillment, Customer/CRM/Loyalty, payment/documents,
+  returns, RBAC, and tax to existing owners or explicit inactive backlog/defer
+  dispositions.
+- Preserved historical prices and numeric examples as noncurrent evidence,
+  starter sizes/thicknesses as candidates, `SUPPLIER_STATED` as a proposed
+  Mass Provenance extension requiring separate review, and FX/marketplace as
+  deferred.
+- C002 remains at zero Commercial Pilot candidates, eight policy definitions,
+  and zero policy instances. Current commerce remains `INQUIRY_ONLY`; C1-T03
+  remains frozen; C003 starts neither C003-A nor C003-B.
+- Created no Product, controlled value, valid tuple, SKU, Availability, stock,
+  current/public price, customer/order, WordPress/WooCommerce, Runtime,
+  Production, merge, or successor authority.
+
 ## 2026-08-16 — C002 Commercial Pilot and Product Administration Contracts
 
 - Added closed, offline-validatable Commercial Pilot candidate-intake/readiness

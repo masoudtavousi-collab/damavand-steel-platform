@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://damavandsteel.com/schemas/founder-product-commerce-discovery.schema.json",
+  "title": "C003 Founder Product and Commerce Discovery evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["registry_id", "registry_version", "contract_version", "data_classification", "mission_sources", "discovery_sources", "source_complete", "boundary", "regression_anchors", "evidence_summary", "evidence_records", "status"],
+  "properties": {
+    "registry_id": {"const": "c003-founder-product-commerce-discovery-session-01"},
+    "registry_version": {"const": "1.0.0"},
+    "contract_version": {"const": "1.0.0"},
+    "data_classification": {"enum": ["C003_FOUNDER_DISCOVERY_EVIDENCE", "SYNTHETIC_FIXTURE"]},
+    "mission_sources": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/source"}},
+    "discovery_sources": {"type": "array", "minItems": 9, "maxItems": 9, "items": {"$ref": "#/$defs/source"}},
+    "source_complete": {"const": true},
+    "boundary": {"$ref": "#/$defs/no_authority"},
+    "regression_anchors": {"$ref": "#/$defs/regression_anchors"},
+    "evidence_summary": {"$ref": "#/$defs/evidence_summary"},
+    "evidence_records": {"type": "array", "minItems": 115, "maxItems": 115, "items": {"$ref": "#/$defs/evidence_record"}},
+    "status": {"const": "APPROVED_EVIDENCE_PACKAGE"}
+  },
+  "$defs": {
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_id", "channel_id", "timestamp", "source_order", "source_role", "contributes_new_records"],
+      "properties": {
+        "source_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]{2,31}$"},
+        "channel_id": {"const": "C0BNHRRTE9F"},
+        "timestamp": {"type": "string", "pattern": "^[0-9]{10}\\.[0-9]{6}$"},
+        "source_order": {"type": "integer", "minimum": 1, "maximum": 9},
+        "source_role": {"enum": ["MISSION_PARENT", "MISSION_BOUNDARY", "MISSION_STOP_REPORT", "DISCOVERY_PARENT", "PART_01", "PART_02", "PART_03", "PART_04", "PART_05", "PART_06_CORROBORATION", "PART_07", "CHECKPOINT_02"]},
+        "contributes_new_records": {"type": "boolean"}
+      }
+    },
+    "no_authority": {
+      "type": "object", "additionalProperties": false,
+      "required": ["product_population", "sku_assignment", "availability_claim", "stock_claim", "current_price", "public_price", "pricing_authority", "fx_rate", "commerce_activation", "runtime", "production", "wordpress_woocommerce", "external_write"],
+      "properties": {
+        "product_population": {"const": false}, "sku_assignment": {"const": false},
+        "availability_claim": {"const": false}, "stock_claim": {"const": false},
+        "current_price": {"const": false}, "public_price": {"const": false},
+        "pricing_authority": {"const": false}, "fx_rate": {"const": false},
+        "commerce_activation": {"const": false}, "runtime": {"const": false},
+        "production": {"const": false}, "wordpress_woocommerce": {"const": false},
+        "external_write": {"const": false}
+      }
+    },
+    "regression_anchors": {
+      "type": "object", "additionalProperties": false,
+      "required": ["c002_candidate_count", "c002_policy_count", "c002_policy_instance_count", "pd03b_pilot_count", "pd03b_availability_status", "canonical_sku_count"],
+      "properties": {
+        "c002_candidate_count": {"const": 0}, "c002_policy_count": {"const": 8},
+        "c002_policy_instance_count": {"const": 0}, "pd03b_pilot_count": {"const": 3},
+        "pd03b_availability_status": {"const": "MISSING_DATA_VALUE"}, "canonical_sku_count": {"const": 0}
+      }
+    },
+    "evidence_summary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["record_count", "classification_counts", "temporal_role_counts"],
+      "properties": {
+        "record_count": {"const": 115},
+        "classification_counts": {
+          "type": "object", "additionalProperties": false,
+          "required": ["FOUNDER_CONFIRMED", "FOUNDER_ACCEPTED_CANDIDATE", "ARCHITECTURE_PROPOSAL"],
+          "properties": {"FOUNDER_CONFIRMED": {"const": 60}, "FOUNDER_ACCEPTED_CANDIDATE": {"const": 2}, "ARCHITECTURE_PROPOSAL": {"const": 53}}
+        },
+        "temporal_role_counts": {
+          "type": "object", "additionalProperties": false,
+          "required": ["CURRENT_INTENT", "HISTORICAL_EXAMPLE_NONCURRENT", "FUTURE_CONCEPT"],
+          "properties": {"CURRENT_INTENT": {"const": 86}, "HISTORICAL_EXAMPLE_NONCURRENT": {"const": 4}, "FUTURE_CONCEPT": {"const": 25}}
+        }
+      }
+    },
+    "evidence_record": {
+      "type": "object", "additionalProperties": false,
+      "required": ["evidence_id", "decision_code", "sequence", "source_order", "ledger_class", "evidence_classification", "temporal_role", "topic_code", "canonical_owner", "statement", "source_scope", "protected_source_locator", "authority_effects"],
+      "properties": {
+        "evidence_id": {"type": "string", "pattern": "^fdisc:[0-9a-f]{12}$"},
+        "decision_code": {"type": "string", "pattern": "^C003-DISC-(?:00[1-9]|0[1-9][0-9]|1(?:0[0-9]|1[0-5]))$"},
+        "sequence": {"type": "integer", "minimum": 1, "maximum": 115},
+        "source_order": {"type": "integer", "minimum": 1, "maximum": 9},
+        "ledger_class": {"enum": ["FC", "FAC", "AP", "HE", "FUT"]},
+        "evidence_classification": {"enum": ["FOUNDER_CONFIRMED", "FOUNDER_ACCEPTED_CANDIDATE", "ARCHITECTURE_PROPOSAL"]},
+        "temporal_role": {"enum": ["CURRENT_INTENT", "HISTORICAL_EXAMPLE_NONCURRENT", "FUTURE_CONCEPT"]},
+        "topic_code": {"enum": ["PRODUCT_GROUP", "VALID_COMBINATIONS", "CONTENT_INHERITANCE", "PRODUCT_ADMIN", "BRAND_SOURCE", "DIMENSIONS_GRADE", "APPEARANCE", "CUTTING_LENGTH", "MASS_PROVENANCE", "SMART_HISTORY", "PRICING_FX", "MARKETPLACE_DEALS", "CUSTOMER_CONTEXT", "FULFILLMENT", "AVAILABILITY_RESERVATION", "PAYMENT_DOCUMENTS", "CRM_IDENTITY", "LOYALTY_REFERRAL", "RETURNS_DAMAGE", "RBAC_TAX"]},
+        "canonical_owner": {"enum": ["PRODUCT_HIERARCHY_VARIANT_RULES", "PRODUCT_CONTENT_FUTURE", "C002_PRODUCT_BUILDER_ADD_VALUE", "C002_BRAND_PROVENANCE", "C002_MASS_PROVENANCE", "C002_ELECTROSTATIC_APPEARANCE", "C002_COMMERCE_ELIGIBILITY", "C002_INVENTORY_HARMONY", "INQUIRY_CUSTOMER_MODEL", "DISCOVERY_BACKLOG_ONLY"]},
+        "statement": {"type": "string", "minLength": 8, "maxLength": 240},
+        "source_scope": {"const": "COMPLETE_DISCOVERY_THREAD"},
+        "protected_source_locator": {"type": ["string", "null"], "pattern": "^slack:C0BNHRRTE9F:[0-9]{10}\\.[0-9]{6}:record:039$"},
+        "proposed_extension_state": {"const": "PROPOSED_EXTENSION_REQUIRING_SEPARATE_REVIEW"},
+        "requires_separate_contract_version": {"const": true},
+        "requires_separate_promotion_authority": {"const": true},
+        "authority_effects": {"$ref": "#/$defs/no_authority"}
+      }
+    }
+  }
+}

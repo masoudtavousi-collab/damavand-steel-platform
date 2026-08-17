@@ -1,0 +1,94 @@
+contract_id: founder-product-commerce-discovery
+contract_version: "1.0.0"
+record_kind: c003-founder-product-commerce-discovery-evidence
+schema:
+  path: repository/data/schemas/founder-product-commerce-discovery.schema.json
+  draft: https://json-schema.org/draft/2020-12/schema
+registry:
+  path: repository/data/registries/extensions/c003/founder-product-commerce-discovery-session-01.yaml
+dependencies:
+  product_core: repository/data/contracts/product-core.contract.yaml
+  pd03a_product_extension: repository/data/registries/extensions/pd03a/pilot-prerequisite.yaml
+  pd03b_seed_evidence: repository/data/registries/extensions/pd03b/canonical-pilots.yaml
+  c002_candidate_registry: repository/data/registries/extensions/c002/commercial-pilot-candidates.yaml
+  c002_product_administration: repository/data/registries/extensions/c002/product-administration-policies.yaml
+  c002_product_administration_contract: repository/data/contracts/product-administration-policy.contract.yaml
+authority:
+  mission_id: C003
+  evidence_reconciliation_allowed: true
+  product_population_allowed: false
+  sku_assignment_allowed: false
+  availability_claim_allowed: false
+  stock_claim_allowed: false
+  price_fact_allowed: false
+  fx_rate_allowed: false
+  commerce_activation_allowed: false
+  runtime_allowed: false
+  production_allowed: false
+  wordpress_woocommerce_allowed: false
+  external_write_allowed: false
+evidence_model:
+  exact_record_count: 115
+  classifications:
+    FOUNDER_CONFIRMED: 60
+    FOUNDER_ACCEPTED_CANDIDATE: 2
+    ARCHITECTURE_PROPOSAL: 53
+  temporal_roles:
+    CURRENT_INTENT: 86
+    HISTORICAL_EXAMPLE_NONCURRENT: 4
+    FUTURE_CONCEPT: 25
+  ledger_classes:
+    FC: [FOUNDER_CONFIRMED, CURRENT_INTENT]
+    FAC: [FOUNDER_ACCEPTED_CANDIDATE, CURRENT_INTENT]
+    AP: [ARCHITECTURE_PROPOSAL, CURRENT_INTENT]
+    HE: [FOUNDER_CONFIRMED, HISTORICAL_EXAMPLE_NONCURRENT]
+    FUT: [ARCHITECTURE_PROPOSAL, FUTURE_CONCEPT]
+  exact_ledger_class_order: [FC, FC, FC, AP, FC, FC, FC, FC, FC, FC, FC, FC, FC, FAC, FAC, AP, FC, FC, FC, FC, FC, FC, FC, AP, FC, FC, HE, AP, FC, FUT, HE, AP, FC, AP, AP, AP, FC, FC, HE, FC, FC, AP, AP, FC, AP, FUT, AP, AP, FC, FUT, AP, FUT, AP, FC, AP, FUT, FC, FC, FC, FUT, FC, AP, AP, AP, AP, AP, AP, FUT, FUT, FUT, FUT, FUT, FUT, FUT, FUT, FUT, FUT, FUT, FC, FC, FC, FC, FC, FC, FC, AP, FC, FC, HE, AP, FC, FC, FUT, FC, FC, FC, FC, FC, FC, FC, FUT, FUT, FC, FUT, AP, FC, FUT, FC, FUT, FC, FUT, FUT, AP, AP, AP]
+  source_ranges:
+    - {source_id: DISCOVERY_PARENT, first_record: 1, last_record: 4}
+    - {source_id: PART_01, first_record: 5, last_record: 24}
+    - {source_id: PART_02, first_record: 25, last_record: 43}
+    - {source_id: PART_03, first_record: 44, last_record: 53}
+    - {source_id: PART_04, first_record: 54, last_record: 63}
+    - {source_id: PART_05, first_record: 64, last_record: 78}
+    - {source_id: PART_06, first_record: null, last_record: null}
+    - {source_id: PART_07, first_record: 79, last_record: 86}
+    - {source_id: CHECKPOINT_02, first_record: 87, last_record: 115}
+supplier_stated_boundary:
+  evidence_classification: ARCHITECTURE_PROPOSAL
+  temporal_role: CURRENT_INTENT
+  proposed_extension_state: PROPOSED_EXTENSION_REQUIRING_SEPARATE_REVIEW
+  canonical_c002_method_added: false
+  separate_c002_contract_version_required: true
+  separate_promotion_authority_required: true
+  supplier_claim_is_manufacturer_claim: false
+  canonical_mass_value_created: false
+owner_reconciliation:
+  c002_commerce_eligibility_scope: PER_CANONICAL_SKU_ONLY
+  product_class_inheritance_allowed: false
+  availability_order_owner: DISCOVERY_BACKLOG_ONLY
+  availability_order_record_sequences: [61, 77, 79, 80, 81, 82, 83, 84, 85, 86]
+  future_deals_owner: DISCOVERY_BACKLOG_ONLY
+  future_deal_policy_record_sequences: [88, 90]
+  inventory_harmony_owner: C002_INVENTORY_HARMONY
+  inventory_harmony_evidence_record_sequences: [89]
+  inventory_harmony_pricing_stock_eligibility_effect: false
+regression_anchors:
+  c002_candidate_count: 0
+  c002_policy_count: 8
+  c002_policy_instance_count: 0
+  pd03b_pilot_count: 3
+  pd03b_availability_status: MISSING_DATA_VALUE
+  canonical_sku_count: 0
+validation:
+  offline_only: true
+  network_allowed: false
+  side_effects_allowed: false
+  schema_objects_closed: true
+  local_references_only: true
+  duplicate_keys_rejected: true
+  non_finite_numbers_rejected: true
+  deterministic_sorted_errors: true
+  exact_source_manifest_required: true
+  exact_source_order_required: true
+  protected_price_values_forbidden: true

@@ -32,6 +32,8 @@ This roadmap defines sequence and gates, not mutable operational state. The exac
 - `FD-DS-PROGRAM-001` and `C1-T04` then integrated DS-PC as the accepted program execution method (`HOW`) and DS-SPD as the accepted Version 1.0 strategic outcome (`WHAT`) through PR #27, Merge Commit `a48cc9e…`, and successful main CI `30765167988`; the governance integration is complete and remains scope-bound.
 - PR #28 reconciled the post-PR27 operational state and main CI `30766701675` passed; it advanced only to the separately gated C1-T06 decision path.
 - C1-T06 reconciled the canonical Repository ownership boundary across the exact approved 39-path documentation scope through PR #29, Merge Commit `13531830ad0c4fa57cf8dcab4c5516f27f64e4ea`, and successful main CI `30796043918`; it created no Product/SKU, Product facts or values, lifecycle promotion, Knowledge/SEO/WooCommerce implementation, import, runtime, deployment, or production authority.
+- C001 integrated the C000/OS2 documentation reconciliation through PR #35, and C002 integrated the empty-instance Commercial Pilot and Product Administration contract foundation through PR #36, Merge Commit `b45e1b592213f8d3d98805cef2681be781d8cff8`; neither created Product/SKU/Availability or Runtime authority.
+- `FD-C003-DISCOVERY-001` authorizes the complete Founder Discovery Session 01 to be preserved as classified evidence and inactive owner/backlog mappings. It is evidence integration only and starts neither C003-A nor C003-B.
 - The approved BP2 Data Administration contract remains documentation-only with `implementation_authority: false`; approval derives no Product, Admin UI, runtime, import, publication, deployment, or production authority.
 - The historical Wave 1 branch/commit/push/Draft-PR scope did not authorize merge and remains preserved as chronology. Its later approved merge granted no Wave 2, runtime, or implementation authority.
 - Wave 2A–2C are structural, platform-independent foundations. They created no canonical Product rows, Product Attribute definitions, Master Data, Golden package, WordPress implementation, publication, deployment, or production mutation.
@@ -63,9 +65,10 @@ Its evidence and findings remain preserved, but C1-T03 is not the active next ac
 
 ## Corrected Successor Map
 
-| Candidate mission | Intended bounded outcome | Entry boundary |
+| Mission or candidate | Intended bounded outcome | Entry boundary |
 | --- | --- | --- |
 | `C002 — Commercial Pilot Truth & Product Administration Contracts` | Establish closed candidate-intake/readiness and Product-administration contract foundations; no Pilot slice or Product data is selected/populated | Contract foundation only; first bounded slice remains a separate Founder decision |
+| `C003 — Founder Discovery Reconciliation & Repository Intake` | Preserve complete Session 01 as classified machine-readable evidence, owner mappings, and inactive backlog/defer dispositions | Evidence integration only; no Product/value/tuple/SKU/Availability, pricing, customer/order, Runtime, or successor authority |
 | `C003-A — Offline Pilot Projection Package` | Validated offline canonical-to-WP/WC projection package | Separately approved bounded Product truth slice and validator PASS; C002 alone is insufficient |
 | `C003-B — Manual-First Growth/CRM Loop` | Controlled lead intake, follow-up, outcomes, and safe export path | Ownership, privacy, consent, and field contract approved |
 | `C004 — Non-Production Readiness` | Exact target, least privilege, licenses, backup/restore, and rollback proof | Separate Runtime authority |
@@ -73,7 +76,9 @@ Its evidence and findings remain preserved, but C1-T03 is not the active next ac
 | `C006 — Pilot Certification / Production Decision` | Evidence package for a Founder GO/NO-GO | No automatic Production authority |
 | `D-series` | Automation of demonstrated processes | Stable metrics, ownership, failure handling, and separate authorization |
 
-These are candidate successors only. C002 starts none of them.
+The root `C003` discovery-reconciliation Mission does not rename, start, or
+authorize the candidate `C003-A` or `C003-B` Missions. All candidate successors
+remain separately gated.
 
 ## Product and Commerce Boundaries
 
@@ -82,6 +87,7 @@ These are candidate successors only. C002 starts none of them.
 - Current operational mode is inquiry-first with no active public purchase authority.
 - The approved target is future per-SKU purchase eligibility under separate Product, commercial, Runtime, Production, and Founder gates.
 - C002 specifies the contract boundaries for future Product Builder, controlled `+ Add Value`, mass provenance, electrostatic appearance, Commerce Eligibility, Inventory Harmony, and the Damavand/Central BOM interface. Canonical C002 instance registries remain empty; the roadmap implements none of those capabilities.
+- C003 preserves classified Founder discovery evidence. Confirmed evidence does not become Product truth, accepted starter values remain candidates, architecture proposals remain inactive, and historical numerics remain examples. C002 remains at zero Pilot candidates, eight policy definitions, and zero policy instances.
 
 ## Legacy Sequence Classification
 
@@ -91,4 +97,4 @@ Master/Golden packages, Import, Runtime, WordPress/WooCommerce, Staging, Publish
 
 ## Current NO-GO
 
-C001 does not authorize Product/Knowledge/879-row/Master Data/Golden/SKU/slug/Availability population; unapproved values or combinations; repository settings; workflows; import; WordPress/WooCommerce; public pricing, Offer schema, cart, checkout, payment, or purchase; Runtime; Staging; Publishing; Deployment; Production; Central Steel; n8n/OpenAI integration; merge; or a successor Mission. Consult [Current Project State](CURRENT_PROJECT_STATE.md) for the semantic boundary.
+C003 does not authorize Product/Knowledge/879-row/Master Data/Golden/SKU/slug/Availability population; controlled-value or valid-combination promotion; customer/order population; repository settings; workflows; import; WordPress/WooCommerce; public pricing, Offer schema, cart, checkout, payment, or purchase; Runtime; Staging; Publishing; Deployment; Production; FX automation; marketplace; Central Steel; n8n/OpenAI integration; merge; C003-A; C003-B; or any successor Mission. Consult [Current Project State](CURRENT_PROJECT_STATE.md) for the semantic boundary.
