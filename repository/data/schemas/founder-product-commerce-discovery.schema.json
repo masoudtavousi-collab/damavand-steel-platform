@@ -62,7 +62,7 @@
         "classification_counts": {
           "type": "object", "additionalProperties": false,
           "required": ["FOUNDER_CONFIRMED", "FOUNDER_ACCEPTED_CANDIDATE", "ARCHITECTURE_PROPOSAL"],
-          "properties": {"FOUNDER_CONFIRMED": {"const": 60}, "FOUNDER_ACCEPTED_CANDIDATE": {"const": 2}, "ARCHITECTURE_PROPOSAL": {"const": 53}}
+          "properties": {"FOUNDER_CONFIRMED": {"const": 70}, "FOUNDER_ACCEPTED_CANDIDATE": {"const": 3}, "ARCHITECTURE_PROPOSAL": {"const": 42}}
         },
         "temporal_role_counts": {
           "type": "object", "additionalProperties": false,
@@ -79,7 +79,7 @@
         "decision_code": {"type": "string", "pattern": "^C003-DISC-(?:00[1-9]|0[1-9][0-9]|1(?:0[0-9]|1[0-5]))$"},
         "sequence": {"type": "integer", "minimum": 1, "maximum": 115},
         "source_order": {"type": "integer", "minimum": 1, "maximum": 9},
-        "ledger_class": {"enum": ["FC", "FAC", "AP", "HE", "FUT"]},
+        "ledger_class": {"enum": ["FC", "FAC", "AP", "HE", "FUT", "FCF", "FACF"]},
         "evidence_classification": {"enum": ["FOUNDER_CONFIRMED", "FOUNDER_ACCEPTED_CANDIDATE", "ARCHITECTURE_PROPOSAL"]},
         "temporal_role": {"enum": ["CURRENT_INTENT", "HISTORICAL_EXAMPLE_NONCURRENT", "FUTURE_CONCEPT"]},
         "topic_code": {"enum": ["PRODUCT_GROUP", "VALID_COMBINATIONS", "CONTENT_INHERITANCE", "PRODUCT_ADMIN", "BRAND_SOURCE", "DIMENSIONS_GRADE", "APPEARANCE", "CUTTING_LENGTH", "MASS_PROVENANCE", "SMART_HISTORY", "PRICING_FX", "MARKETPLACE_DEALS", "CUSTOMER_CONTEXT", "FULFILLMENT", "AVAILABILITY_RESERVATION", "PAYMENT_DOCUMENTS", "CRM_IDENTITY", "LOYALTY_REFERRAL", "RETURNS_DAMAGE", "RBAC_TAX"]},

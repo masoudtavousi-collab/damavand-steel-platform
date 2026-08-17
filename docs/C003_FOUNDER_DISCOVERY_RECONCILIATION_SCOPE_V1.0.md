@@ -39,11 +39,17 @@ parallel Product authority.
 
 | Classification | Repository meaning | Promotion boundary |
 | --- | --- | --- |
-| `FOUNDER_CONFIRMED` | Direct business or market evidence stated by the Founder | May be preserved as evidence or a requirement; never automatically creates a Product, value, valid tuple, SKU, Availability, stock, price, or runtime object |
-| `FOUNDER_ACCEPTED_CANDIDATE` | A starter candidate accepted for modeling | Remains candidate-only until the applicable canonical owner, evidence, review, and Founder gates pass |
+| `FOUNDER_CONFIRMED` | Direct business or market evidence, intent, requirement, or future capability explicitly stated or accepted by the Founder | May be preserved as evidence or a requirement; never automatically creates a Product, value, valid tuple, SKU, Availability, stock, price, or runtime object |
+| `FOUNDER_ACCEPTED_CANDIDATE` | A candidate explicitly accepted by the Founder for later modeling or consideration | Remains candidate-only until the applicable canonical owner, evidence, review, and Founder gates pass |
 | `ARCHITECTURE_PROPOSAL` | Design input derived from or supported by discovery | Must carry an explicit owner and disposition; it is not implemented authority |
 
 Temporal meaning is independent of evidence class:
+
+Deferral changes only `temporal_role`. A Founder-originated or
+Founder-explicitly-approved requirement remains `FOUNDER_CONFIRMED` when its
+temporal role is `FUTURE_CONCEPT`; it must not be downgraded to
+`ARCHITECTURE_PROPOSAL` merely because implementation is deferred. Likewise, a
+Founder-accepted future candidate retains `FOUNDER_ACCEPTED_CANDIDATE`.
 
 | Temporal role | Meaning |
 | --- | --- |
@@ -54,9 +60,10 @@ Temporal meaning is independent of evidence class:
 Every machine-readable record carries a canonical owner and a closed
 `authority_effects` object whose Product/SKU/Availability/stock/price/commerce/
 Runtime/Production effects are all false; this Scope supplies the explicit
-disposition mapping. The validated registry contains 115 records: evidence class counts are
-`FOUNDER_CONFIRMED=60`, `FOUNDER_ACCEPTED_CANDIDATE=2`, and
-`ARCHITECTURE_PROPOSAL=53`; temporal-role counts are `CURRENT_INTENT=86`,
+disposition mapping. A complete source-attribution re-audit of all 115 records
+separates Founder business intent from proposed architecture. Evidence-class
+counts are `FOUNDER_CONFIRMED=70`, `FOUNDER_ACCEPTED_CANDIDATE=3`, and
+`ARCHITECTURE_PROPOSAL=42`; temporal-role counts remain `CURRENT_INTENT=86`,
 `HISTORICAL_EXAMPLE_NONCURRENT=4`, and `FUTURE_CONCEPT=25`.
 
 ## Canonical Owner Reconciliation

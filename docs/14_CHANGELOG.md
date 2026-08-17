@@ -6,10 +6,12 @@
   Discovery Session 01, including every `PART` and `CHECKPOINT 02`, before
   repository integration.
 - Added a closed, offline-validatable discovery evidence package containing 115
-  classified records: 60 `FOUNDER_CONFIRMED`, 2
-  `FOUNDER_ACCEPTED_CANDIDATE`, and 53 `ARCHITECTURE_PROPOSAL`; independent
+  classified records. A complete Founder-source attribution audit corrected 11
+  records and produced 70 `FOUNDER_CONFIRMED`, 3
+  `FOUNDER_ACCEPTED_CANDIDATE`, and 42 `ARCHITECTURE_PROPOSAL`; independent
   temporal roles preserve 86 current-intent, 4 historical/noncurrent, and 25
-  future-concept records.
+  future-concept records. Deferred implementation does not downgrade explicit
+  Founder intent or accepted candidates to architecture proposals.
 - Reconciled Product Group/valid combinations, Product Builder/Add Value,
   Brand/Mass/Appearance, Smart History, pricing, sourcing, Deals/Inventory
   Harmony, Availability, fulfillment, Customer/CRM/Loyalty, payment/documents,

@@ -66,6 +66,24 @@ class FounderProductCommerceDiscoveryTests(unittest.TestCase):
             subject.EXPECTED_C002_MASS_METHODS,
         )
 
+    def test_positive_future_role_is_independent_from_founder_classification(self) -> None:
+        records = self.canonical["evidence_records"]
+        founder_future = {30, 46, 50, 52, 60, 101, 102, 104, 107, 111}
+        accepted_candidate_future = {93}
+        for record in records:
+            if record["sequence"] in founder_future:
+                self.assertEqual(record["ledger_class"], "FCF")
+                self.assertEqual(record["evidence_classification"], "FOUNDER_CONFIRMED")
+                self.assertEqual(record["temporal_role"], "FUTURE_CONCEPT")
+            elif record["sequence"] in accepted_candidate_future:
+                self.assertEqual(record["ledger_class"], "FACF")
+                self.assertEqual(record["evidence_classification"], "FOUNDER_ACCEPTED_CANDIDATE")
+                self.assertEqual(record["temporal_role"], "FUTURE_CONCEPT")
+        self.assertIn("freight receipts in their account", records[110]["statement"])
+        self.assertIn("loyalty club", records[100]["statement"])
+        self.assertIn("Points Ledger", records[104]["statement"])
+        self.assertIn("Tuesday special", records[51]["statement"])
+
     def test_positive_protected_price_record_contains_no_amount(self) -> None:
         record = self.canonical["evidence_records"][38]
         self.assertEqual(
@@ -148,12 +166,20 @@ class FounderProductCommerceDiscoveryTests(unittest.TestCase):
             records[60]["canonical_owner"] = "C002_COMMERCE_ELIGIBILITY"
         elif mutation_id == "M26_PRODUCT_CLASS_INHERITANCE":
             records[71]["statement"] = "Direct-purchase eligibility may be inherited from Product class."
+        elif mutation_id == "M27_FOUNDER_FUTURE_DOWNGRADE":
+            records[29]["ledger_class"] = "FUT"
+            records[29]["evidence_classification"] = "ARCHITECTURE_PROPOSAL"
+        elif mutation_id == "M28_CANDIDATE_FUTURE_DOWNGRADE":
+            records[92]["ledger_class"] = "FUT"
+            records[92]["evidence_classification"] = "ARCHITECTURE_PROPOSAL"
+        elif mutation_id == "M29_FOUNDER_FUTURE_LEDGER_MISMATCH":
+            records[100]["ledger_class"] = "FUT"
         else:
             self.fail(f"undispatched mutation: {mutation_id}")
         return self.render(value)
 
     def test_negative_mutation_manifest_is_complete_and_fail_closed(self) -> None:
-        self.assertEqual(len(self.mutations), 26)
+        self.assertEqual(len(self.mutations), 29)
         seen: set[str] = set()
         for mutation in self.mutations:
             mutation_id = mutation["id"]
