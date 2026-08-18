@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.21.0
+- **Version:** 0.22.0
 - **Last Updated:** 2026-08-18
 - **Last Review:** 2026-08-18
 - **Review Cycle:** On document creation, removal, rename, lifecycle, authority, or navigation change
@@ -116,6 +116,8 @@ Provide the canonical map of repository documentation without replacing the auth
 | [C003-R2 201/51 Founder Evidence Completion Packet v1.0](C003_R2_201_51_FOUNDER_EVIDENCE_COMPLETION_PACKET_V1.0.md) | Human-readable three-rule matrix, six-item Founder worksheet, nine-item exact-source missing-evidence register, empty typed Mass/Supply intake templates, and explicit reconciliation of six noncurrent incomplete-context Mass examples | Review | Founder |
 | [C003-R3 201/51 Founder Review Answer Reconciliation Scope v1.0](C003_R3_201_51_FOUNDER_ANSWER_RECONCILIATION_SCOPE_V1.0.md) | Exact Slack-bound reconciliation of all six Founder review items into 216 confirmed-valid evidence positions without canonical tuple promotion; C002 remains `0/9` and Mass/Supply remain empty | Review | Founder |
 | [C004 Competitive Intelligence Scope v1.0](C004_COMPETITIVE_INTELLIGENCE_SCOPE_V1.0.md) | Founder-authorized source, owner, evidence-class, copyright, regression and no-go boundary for the 13-site competitive foundation | Review | Founder |
+| [C005 201/51 Founder Evidence & C002 Readiness Re-evaluation Scope v1.0](C005_201_51_FOUNDER_EVIDENCE_READINESS_REEVALUATION_SCOPE_V1.0.md) | Exact five-source evidence/owner boundary, 17 classified records, all-nine C002 re-evaluation and zero-population/no-go controls | Review | Founder |
+| [C005 201/51 Readiness Re-evaluation Packet v1.0](C005_201_51_READINESS_REEVALUATION_PACKET_V1.0.md) | Human review surface for 8 submitted, 1 missing, 6 separately reviewable and 9 open/blocking criteria with zero resolved readiness | Review | Founder |
 | [Competitive Intelligence Matrix v1.0](COMPETITIVE_INTELLIGENCE_MATRIX_V1.0.md) | Evidence-linked 28-dimension analysis-aid matrix and benchmark leadership map without an aggregate ranking | Evidence | Founder |
 | [Damavand Competitive Advantage Specification v1.0](DAMAVAND_COMPETITIVE_ADVANTAGE_SPECIFICATION_V1.0.md) | Ten original planning advantages with Fast Track/long-term dispositions and no implementation authority | Review | Founder |
 | [Damavand Competitive Anti-Pattern Register v1.0](DAMAVAND_COMPETITIVE_ANTI_PATTERN_REGISTER_V1.0.md) | Copyright-safe competitor-pattern risks and governed prevention rules | Review | Founder |
