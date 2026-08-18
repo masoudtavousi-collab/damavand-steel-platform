@@ -1,5 +1,5 @@
 contract_id: valid-combination-evidence-matrix
-contract_version: "1.0.0"
+contract_version: "1.1.0"
 record_kind: c003-r2-201-51-founder-evidence-completion
 schema:
   path: repository/data/schemas/valid-combination-evidence-matrix.schema.json
@@ -7,8 +7,10 @@ schema:
 registry:
   path: repository/data/registries/extensions/c003r2/201-51-founder-evidence-completion.yaml
 authority:
-  mission_id: C003-R2
+  mission_id: C003-R3
   founder_evidence_completion_allowed: true
+  founder_answer_reconciliation_allowed: true
+  exact_answer_source_only: true
   compressed_review_matrix_allowed: true
   candidate_population_allowed: false
   product_population_allowed: false
@@ -41,11 +43,46 @@ base_pins:
   c002_candidate_registry_semantic_sha256: deb0215d2b5f4b5ec0061f937aec9c3e37cf97c94432a23737bf5756cef9587e
   c002_product_administration_contract_semantic_sha256: 75b608e67b6ca3c870e6bf0b533310fbb131a75fa576a79e75c4a936659c33ff
   c002_product_administration_registry_semantic_sha256: 796d2dfc424a75f998b309f04e88443d0ffb7450bd457bddf86b574535624fe7
+predecessor:
+  mission_id: C003-R2
+  contract_version: "1.0.0"
+  registry_version: "1.0.0"
+  contract_semantic_sha256: f4d9cddaf1ad94ffe2ac863d61ddcd5cb7babc4b85d20b1424fea4697f41c194
+  registry_semantic_sha256: 880afc790a44863ae6a44ba58539b189348d5adb2550fd0d89c63877c78cc24b
+  preserved_registry_subtree_semantic_sha256:
+    authority_effects: e2ed06860c830ea57609c22ec783ce792fde0d23b2b873825236a7a300dc3c5f
+    known_evidence: 19c65df443525d8d2e26a9a1be6ecb47743cfe0f291b760c1e97aa79f5ae8911
+    mass_evidence_intake: 1f0094d84b1241e56ad683a9b920f040f4c84a0723f2d7943071cfa5b15f4a18
+    supply_evidence_intake: 50fc92e6842c109a6fd3cd7a3b1d765d98bac4110f2ce9b257261765c48f3da7
+    selection_effects: 020fb35def02f06adf1429e85590388ab0fb5cebbfbb3b542c07f0f3a40713eb
+  preserved_invariants:
+    - exact Pilot scope and ordered axes
+    - compressed three-rule representation
+    - historical Mass reconciliation
+    - empty Mass and Supply current intakes
+    - C003-R1 and C002 semantic pins
+    - all no-go authority effects
 source_policy:
   c003_r1_is_canonical_evidence_owner: true
   copied_slack_ledger_allowed: false
   exact_c003_r1_record_references_required: true
   public_internet_as_founder_truth_allowed: false
+  founder_answer_source_required: true
+founder_answer_source:
+  channel_id: C0BNHRRTE9F
+  message_ts: "1787053465.802439"
+  source_locator: slack:C0BNHRRTE9F:1787053465.802439
+  author_user_id: U0BNFS43TBL
+  captured_at: "2026-08-18T15:14:25.802439+03:30"
+  reviewer_reference: slack-user:U0BNFS43TBL
+  reviewed_at: "2026-08-18T15:14:25.802439+03:30"
+  chronology_basis: SINGLE_FOUNDER_REVIEW_ANSWER_EVENT
+  evidence_classification: FOUNDER_CONFIRMED
+  temporal_role: CURRENT_INTENT
+  founder_confirmed: true
+  review_status: VERIFIED
+  promotion_effect: false
+  newer_conflicting_evidence_found: false
 pilot_scope:
   key: STAINLESS_ROUND_PIPE__GRADE_201__DIAMETER_51_MM
   brand_count: 6
@@ -63,10 +100,10 @@ matrix_policy:
   exact_compressed_row_count: 3
   expanded_review_universe_count: 216
   default_unproven_state: UNKNOWN
-  confirmed_valid_count: 0
+  confirmed_valid_count: 216
   confirmed_invalid_count: 0
   not_applicable_count: 0
-  unknown_count: 216
+  unknown_count: 0
   inferred_tuple_count: 0
   row_dimensions_required: [brand, thickness, appearance, length]
   rule_overlap_allowed: false
@@ -80,6 +117,10 @@ question_compression:
   unanswered_is_unknown: true
   pattern_or_exception_is_proposal_until_founder_confirmed: true
   answer_capture_authority: false
+  authorized_answer_source_reconciled: true
+  all_review_items_answered_required: true
+  exact_reconciled_answer_mode: ALL_LISTED_CONFIRMED_VALID
+  future_answer_capture_authority: false
   future_answer_semantics:
     UNANSWERED: all listed thicknesses remain UNKNOWN and no evidence binding or state list is allowed
     KEEP_UNKNOWN: all listed thicknesses remain UNKNOWN and a verified Founder evidence binding is required to record the intentional non-resolution
@@ -124,7 +165,7 @@ c002_evidence_source_bindings:
   SUPPLY_EVIDENCE: [C003R1-CP03-001, C003R1-CP03-002, C003R1-CP03-003]
   GROSS_PROFIT_POTENTIAL: []
   REPEATABILITY: []
-  PRODUCT_DATA_COMPLETENESS: [C003R1-CP03-026, C003R1-CP03-027, C003R1-CP03-028, C003R1-CP03-030, C003R1-CP03-031]
+  PRODUCT_DATA_COMPLETENESS: [C003R1-CP03-026, C003R1-CP03-027, C003R1-CP03-028, C003R1-CP03-030, C003R1-CP03-031, C003R3-ANSWER-001]
   PHOTO_CONTENT_READINESS: []
   SEO_BUYER_INTENT: []
   OPERATIONAL_COMPLEXITY: [C003R1-CP03-032, C003R1-CP03-034, C003R1-CP03-041, C003R1-CP03-053]
@@ -136,6 +177,11 @@ c002_readiness:
   unresolved_count: 9
   readiness: NOT_READY
   candidate_registry_count: 0
+  reevaluated_criterion_count: 1
+  reevaluated_criterion: PRODUCT_DATA_COMPLETENESS
+  product_data_completeness_reevaluation: STRENGTHENED_SUBMITTED_STILL_UNRESOLVED
+  canonical_promotion_evidence_required: true
+  independent_c002_review_completed: false
 regression_anchors:
   c003_r1_immutable: true
   c002_candidate_count: 0
