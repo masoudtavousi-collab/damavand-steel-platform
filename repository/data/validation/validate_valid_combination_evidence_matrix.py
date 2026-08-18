@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Offline validator for C003-R2 Founder evidence completion and tuple review planning."""
+"""Offline validator for C003-R3 Founder-answer evidence reconciliation."""
 
 from __future__ import annotations
 
@@ -34,8 +34,10 @@ PRODUCT_ENTITIES_PATH = ROOT / "repository/data/registries/product-entities.yaml
 PD03A_PATH = ROOT / "repository/data/registries/extensions/pd03a/pilot-prerequisite.yaml"
 
 # Pinned only after independent review of the final semantic objects.
-EXPECTED_CONTRACT_DIGEST = "f4d9cddaf1ad94ffe2ac863d61ddcd5cb7babc4b85d20b1424fea4697f41c194"
-EXPECTED_REGISTRY_DIGEST = "880afc790a44863ae6a44ba58539b189348d5adb2550fd0d89c63877c78cc24b"
+EXPECTED_CONTRACT_DIGEST = "f6e9cc81ef18ded5506714d8316835ff0c0919a38af5a1f1508b93b10297f973"
+EXPECTED_REGISTRY_DIGEST = "22bf396a7b92b6fe03bce069e889a87dd063174e0f1b7abfd3e51fc349de8172"
+EXPECTED_R2_CONTRACT_DIGEST = "f4d9cddaf1ad94ffe2ac863d61ddcd5cb7babc4b85d20b1424fea4697f41c194"
+EXPECTED_R2_REGISTRY_DIGEST = "880afc790a44863ae6a44ba58539b189348d5adb2550fd0d89c63877c78cc24b"
 
 EXPECTED_BRANDS = ["Sumwin", "Sansco", "Goldsco", "King", "StoneLand", "SUS"]
 EXPECTED_THICKNESSES = [
@@ -72,12 +74,49 @@ EXPECTED_KNOWN_SOURCES = [
 ]
 EXPECTED_HISTORICAL_MASS = ["3.500", "3.600", "3.620", "3.650", "3.680", "3.700"]
 EXPECTED_C002_MASS_METHODS = ["MANUFACTURER_STATED", "MEASURED", "CALCULATED"]
+EXPECTED_FOUNDER_ANSWER_SOURCE = {
+    "evidence_record_id": "C003R3-ANSWER-001",
+    "channel_id": "C0BNHRRTE9F",
+    "message_ts": "1787053465.802439",
+    "source_locator": "slack:C0BNHRRTE9F:1787053465.802439",
+    "author_user_id": "U0BNFS43TBL",
+    "captured_at": "2026-08-18T15:14:25.802439+03:30",
+    "reviewer_reference": "slack-user:U0BNFS43TBL",
+    "reviewed_at": "2026-08-18T15:14:25.802439+03:30",
+    "chronology_basis": "SINGLE_FOUNDER_REVIEW_ANSWER_EVENT",
+    "evidence_classification": "FOUNDER_CONFIRMED",
+    "temporal_role": "CURRENT_INTENT",
+    "founder_confirmed": True,
+    "review_status": "VERIFIED",
+    "promotion_effect": False,
+    "newer_conflicting_evidence_found": False,
+}
+EXPECTED_ANSWER_EVIDENCE = {
+    key: value
+    for key, value in EXPECTED_FOUNDER_ANSWER_SOURCE.items()
+    if key not in {"evidence_record_id", "newer_conflicting_evidence_found"}
+}
+EXPECTED_PREDECESSOR = {
+    "mission_id": "C003-R2",
+    "contract_version": "1.0.0",
+    "registry_version": "1.0.0",
+    "contract_semantic_sha256": EXPECTED_R2_CONTRACT_DIGEST,
+    "registry_semantic_sha256": EXPECTED_R2_REGISTRY_DIGEST,
+}
+EXPECTED_R2_PRESERVED_SUBTREE_DIGESTS = {
+    "authority_effects": "e2ed06860c830ea57609c22ec783ce792fde0d23b2b873825236a7a300dc3c5f",
+    "known_evidence": "19c65df443525d8d2e26a9a1be6ecb47743cfe0f291b760c1e97aa79f5ae8911",
+    "mass_evidence_intake": "1f0094d84b1241e56ad683a9b920f040f4c84a0723f2d7943071cfa5b15f4a18",
+    "supply_evidence_intake": "50fc92e6842c109a6fd3cd7a3b1d765d98bac4110f2ce9b257261765c48f3da7",
+    "selection_effects": "020fb35def02f06adf1429e85590388ab0fb5cebbfbb3b542c07f0f3a40713eb",
+}
+R3_SOURCE_CODES = {"C003R3-ANSWER-001"}
 EXPECTED_EVIDENCE_REFS = {
     "DEMAND_SIGNAL": ["C003-DISC-011", "C003-DISC-017", "C003-DISC-018"],
     "SUPPLY_EVIDENCE": ["C003R1-CP03-001", "C003R1-CP03-002", "C003R1-CP03-003"],
     "GROSS_PROFIT_POTENTIAL": [],
     "REPEATABILITY": [],
-    "PRODUCT_DATA_COMPLETENESS": ["C003R1-CP03-026", "C003R1-CP03-027", "C003R1-CP03-028", "C003R1-CP03-030", "C003R1-CP03-031"],
+    "PRODUCT_DATA_COMPLETENESS": ["C003R1-CP03-026", "C003R1-CP03-027", "C003R1-CP03-028", "C003R1-CP03-030", "C003R1-CP03-031", "C003R3-ANSWER-001"],
     "PHOTO_CONTENT_READINESS": [],
     "SEO_BUYER_INTENT": [],
     "OPERATIONAL_COMPLEXITY": ["C003R1-CP03-032", "C003R1-CP03-034", "C003R1-CP03-041", "C003R1-CP03-053"],
@@ -356,10 +395,10 @@ def load_validator(
     contract_path: Path = CONTRACT_PATH,
     schema_path: Path = SCHEMA_PATH,
 ) -> tuple[Any, dict[str, Any]]:
-    contract = require_mapping(load_yaml(safe_path(contract_path, "C003-R2 contract")), "C003-R2 contract")
+    contract = require_mapping(load_yaml(safe_path(contract_path, "C003-R3 contract")), "C003-R3 contract")
     if EXPECTED_CONTRACT_DIGEST != "TO_BE_FINALIZED" and semantic_digest(contract) != EXPECTED_CONTRACT_DIGEST:
-        raise ValidationConfigurationError("C003-R2 contract literal policy differs")
-    schema = require_mapping(load_json(safe_path(schema_path, "C003-R2 schema")), "C003-R2 schema")
+        raise ValidationConfigurationError("C003-R3 contract literal policy differs")
+    schema = require_mapping(load_json(safe_path(schema_path, "C003-R3 schema")), "C003-R3 schema")
     schema_issues = audit_schema(schema)
     if schema_issues:
         raise ValidationConfigurationError(schema_issues[0])
@@ -448,7 +487,7 @@ def validate_registry(value: Any, schema_validator: Any, contract: dict[str, Any
         return sorted(set(issues))
 
     if EXPECTED_REGISTRY_DIGEST != "TO_BE_FINALIZED" and semantic_digest(value) != EXPECTED_REGISTRY_DIGEST:
-        add("REGISTRY_DIGEST", "C003-R2 registry differs from the independently reviewed package")
+        add("REGISTRY_DIGEST", "C003-R3 registry differs from the independently reviewed package")
     mass_policy = contract.get("mass_evidence", {})
     if (
         mass_policy.get("canonical_owner") != "C002_MASS_PROVENANCE"
@@ -459,7 +498,11 @@ def validate_registry(value: Any, schema_validator: Any, contract: dict[str, Any
         add("MASS_CONTRACT_OWNER", "R2 Mass intake must reuse the exact C002 owner/method boundary without SUPPLIER_STATED promotion")
 
     mission = value.get("mission", {})
-    if mission.get("starting_main_sha") != "91bddc43fd521a5548910d5087aad2f9d63e06f5" or mission.get("source_verified") is not True:
+    if (
+        mission.get("mission_id") != "C003-R3"
+        or mission.get("starting_main_sha") != "1a100f474defab9abafb081bf845b18c0554a48e"
+        or mission.get("source_verified") is not True
+    ):
         add("MISSION_SOURCE", "Mission source and starting main must be exact")
 
     manifest = value.get("source_manifest", {})
@@ -471,10 +514,53 @@ def validate_registry(value: Any, schema_validator: Any, contract: dict[str, Any
     if actual_threads != EXPECTED_THREADS or any(item.get("complete") is not True for item in threads if isinstance(item, dict)):
         add("SOURCE_MANIFEST", "Checkpoint, Discovery and relevant Idea Vault sources must be exact and complete")
     if manifest.get("copied_slack_ledger") is not False or manifest.get("external_market_research_used") is not False:
-        add("SOURCE_BOUNDARY", "R2 must reuse C003-R1 and must not use external market research as Founder truth")
+        add("SOURCE_BOUNDARY", "R3 must reuse C003-R1 and must not use external market research as Founder truth")
+    if manifest.get("predecessor") != EXPECTED_PREDECESSOR:
+        add("R2_PREDECESSOR_PIN", "C003-R3 must preserve the exact C003-R2 v1.0.0 semantic pins")
+    if manifest.get("founder_answer_source") != EXPECTED_FOUNDER_ANSWER_SOURCE:
+        add("FOUNDER_ANSWER_SOURCE", "Founder answers must bind to the exact Slack source, author, chronology and evidence-only disposition")
+
+    contract_source = contract.get("founder_answer_source")
+    expected_contract_source = {
+        key: value
+        for key, value in EXPECTED_FOUNDER_ANSWER_SOURCE.items()
+        if key != "evidence_record_id"
+    }
+    if contract_source != expected_contract_source:
+        add("CONTRACT_FOUNDER_ANSWER_SOURCE", "contract must pin the exact Founder answer source")
+    predecessor = contract.get("predecessor", {})
+    if any(predecessor.get(key) != expected for key, expected in EXPECTED_PREDECESSOR.items()):
+        add("CONTRACT_R2_PREDECESSOR_PIN", "contract must preserve the exact C003-R2 predecessor pins")
+    if predecessor.get("preserved_registry_subtree_semantic_sha256") != EXPECTED_R2_PRESERVED_SUBTREE_DIGESTS:
+        add("R2_PRESERVED_SUBTREE_PINS", "contract must pin the exact protected C003-R2 subtrees")
 
     packet = value.get("founder_evidence_completion_packet", {})
     known = packet.get("known_evidence", {}) if isinstance(packet, dict) else {}
+    completion = packet.get("completion_effects", {}) if isinstance(packet, dict) else {}
+    if (
+        packet.get("packet_version") != "1.1.0"
+        or packet.get("packet_status") != "FOUNDER_REVIEW_ANSWERS_RECONCILED_EVIDENCE_ONLY"
+        or completion != {
+            "evidence_only": True,
+            "founder_answers_recorded": True,
+            "tuple_state_changed": True,
+            "canonical_population": False,
+        }
+    ):
+        add("COMPLETION_EFFECT", "R3 must record the exact evidence-only Founder-answer reconciliation effect")
+    preserved_subtrees = {
+        "authority_effects": value.get("authority_effects"),
+        "known_evidence": known,
+        "mass_evidence_intake": value.get("mass_evidence_intake"),
+        "supply_evidence_intake": value.get("supply_evidence_intake"),
+        "selection_effects": value.get("selection_effects"),
+    }
+    actual_preserved_digests = {
+        key: semantic_digest(subtree)
+        for key, subtree in preserved_subtrees.items()
+    }
+    if actual_preserved_digests != EXPECTED_R2_PRESERVED_SUBTREE_DIGESTS:
+        add("R2_PRESERVED_SUBTREE_REGRESSION", "protected C003-R2 authority, known-evidence, Mass, Supply and selection subtrees must remain byte-semantically unchanged")
     if known.get("brands") != EXPECTED_BRANDS:
         add("KNOWN_BRANDS", "known Founder brand evidence must remain exact")
     if known.get("thicknesses_mm") != EXPECTED_THICKNESSES:
@@ -525,14 +611,18 @@ def validate_registry(value: Any, schema_validator: Any, contract: dict[str, Any
             add("MATRIX_AXES", f"matrix row {index} must reference exact Brand and Thickness evidence")
         group = (row.get("appearance"), row.get("length_m"))
         row_groups.append(group)
-        if row.get("evidence_state") != "UNKNOWN":
-            add("UNKNOWN_PROMOTION", f"matrix row {index} cannot promote UNKNOWN")
+        if row.get("evidence_state") != "CONFIRMED_VALID":
+            add("MATRIX_RECONCILIATION_STATE", f"matrix row {index} must record the exact Founder-confirmed evidence state")
         if row.get("evidence_source_refs") != EXPECTED_ROW_SOURCES or row.get("guardrail_source_refs") != ["C003R1-CP03-031"]:
             add("MATRIX_SOURCE_BINDING", f"matrix row {index} sources must be exact")
+        if row.get("resolution_evidence_refs") != ["C003R3-ANSWER-001"]:
+            add("MATRIX_RESOLUTION_SOURCE", f"matrix row {index} must bind the exact Founder answer record")
         if not set(row.get("evidence_source_refs", []) + row.get("guardrail_source_refs", [])).issubset(r1_codes):
             add("UNKNOWN_EVIDENCE_REF", f"matrix row {index} contains unknown C003-R1 evidence")
         if row.get("evidence_class") != "FOUNDER_CONFIRMED" or row.get("temporal_role") != "CURRENT_INTENT":
             add("CLASS_TEMPORAL_SEPARATION", f"matrix row {index} must preserve source class and temporal role")
+        if row.get("founder_review_required") is not False:
+            add("MATRIX_REVIEW_STATUS", f"matrix row {index} Founder review must be complete")
         before = len(expanded)
         for brand in brand_values:
             for thickness in thickness_values:
@@ -545,18 +635,18 @@ def validate_registry(value: Any, schema_validator: Any, contract: dict[str, Any
     if row_groups != EXPECTED_GROUPS:
         add("MATRIX_GROUP_ORDER", "compressed matrix appearance-length groups must be exact")
     if len(expanded) != 216:
-        add("UNKNOWN_TUPLE_COUNT", f"compressed UNKNOWN review universe must equal 216, got {len(expanded)}")
+        add("MATRIX_TUPLE_COUNT", f"compressed Founder-confirmed review universe must equal 216, got {len(expanded)}")
     expected_counts = {
         "compressed_row_count": 3,
         "expanded_review_universe_count": 216,
-        "confirmed_valid_count": 0,
+        "confirmed_valid_count": 216,
         "confirmed_invalid_count": 0,
-        "unknown_count": 216,
+        "unknown_count": 0,
         "not_applicable_count": 0,
         "inferred_tuple_count": 0,
     }
     if any(matrix.get(key) != expected for key, expected in expected_counts.items()):
-        add("MATRIX_COUNTS", "matrix counts must preserve 216 UNKNOWN and zero inferred/confirmed tuples")
+        add("MATRIX_COUNTS", "matrix counts must preserve 216 Founder-confirmed valid evidence positions and zero unknown/invalid/not-applicable/inferred positions")
     if matrix.get("cartesian_truth_generation") is not False or matrix.get("persisted_expanded_tuple_rows") is not False:
         add("CARTESIAN_BOUNDARY", "matrix may count UNKNOWN review scope in memory but cannot persist Cartesian truth")
 
@@ -566,12 +656,17 @@ def validate_registry(value: Any, schema_validator: Any, contract: dict[str, Any
         add("QUESTION_COUNT", "question plan must contain exactly six Brand-level review items")
         review_items = review_items if isinstance(review_items, list) else []
     question_ids: list[Any] = []
+    evidence_backed_positions: set[tuple[str, str, str, str]] = set()
     for index, item in enumerate(review_items, start=1):
         if not isinstance(item, dict):
             continue
         question_ids.append(item.get("review_item_id"))
         if item.get("review_item_id") != f"c003r2question:{index:012x}" or item.get("brand") != EXPECTED_BRANDS[index - 1]:
             add("QUESTION_ORDER", f"Founder review item {index} identity/Brand differs")
+        if item.get("founder_review_required") is not False:
+            add("QUESTION_REVIEW_STATUS", f"Founder review item {index} must be complete")
+        if item.get("answer_evidence") != EXPECTED_ANSWER_EVIDENCE:
+            add("QUESTION_EVIDENCE_SOURCE", f"Founder review item {index} must bind the exact Slack answer evidence")
         groups = item.get("groups", [])
         actual_groups = [(group.get("appearance"), group.get("length_m")) for group in groups if isinstance(group, dict)]
         if actual_groups != EXPECTED_GROUPS:
@@ -581,22 +676,35 @@ def validate_registry(value: Any, schema_validator: Any, contract: dict[str, Any
                 continue
             for semantic_issue in validate_answer_semantics(group, item.get("answer_evidence")):
                 issues.append(semantic_issue)
-            if group.get("answer_mode") != "UNANSWERED" or group.get("evidence_state") != "UNKNOWN":
-                add("QUESTION_PREANSWERED", f"Founder review item {index} must remain unanswered/UNKNOWN")
+            if group.get("answer_mode") != "ALL_LISTED_CONFIRMED_VALID" or group.get("evidence_state") != "CONFIRMED_VALID":
+                add("QUESTION_NOT_RECONCILED", f"Founder review item {index} must record ALL_LISTED_CONFIRMED_VALID")
             if (
-                group.get("supported_thicknesses_mm") != []
+                group.get("supported_thicknesses_mm") != EXPECTED_THICKNESSES
                 or group.get("invalid_thicknesses_mm") != []
                 or group.get("not_applicable_thicknesses_mm") != []
                 or group.get("exception_notes") != []
-                or item.get("answer_evidence") is not None
             ):
-                add("QUESTION_PREPOPULATED", f"Founder review item {index} cannot contain inferred answers or exceptions")
+                add("QUESTION_ANSWER_CONTENT", f"Founder review item {index} must use the exact twelve supported Thicknesses and no exceptions")
+            if (
+                item.get("answer_evidence") == EXPECTED_ANSWER_EVIDENCE
+                and group.get("answer_mode") == "ALL_LISTED_CONFIRMED_VALID"
+                and group.get("evidence_state") == "CONFIRMED_VALID"
+            ):
+                for thickness in group.get("supported_thicknesses_mm", []):
+                    evidence_backed_positions.add((str(item.get("brand")), str(thickness), str(group.get("appearance")), str(group.get("length_m"))))
     if len(question_ids) != len(set(question_ids)):
         add("QUESTION_ID_COLLISION", "Founder review item IDs must be unique")
+    if evidence_backed_positions != expanded or len(evidence_backed_positions) != 216:
+        add("QUESTION_MATRIX_COVERAGE", "six exact Founder answers must evidence-bind every one of the 216 compressed matrix positions exactly once")
     if plan.get("founder_review_item_count") != 6 or plan.get("maximum_tuple_resolution_per_answer") != 36 or plan.get("total_tuple_review_universe") != 216:
         add("QUESTION_COMPRESSION", "six answers must cover the 216-tuple review universe at up to 36 per Brand")
-    if plan.get("answer_capture_authority") is not False or plan.get("unanswered_preserves_unknown") is not True:
-        add("QUESTION_AUTHORITY", "worksheet cannot pre-authorize answers and unanswered tuples remain UNKNOWN")
+    if (
+        plan.get("answer_capture_authority") is not False
+        or plan.get("authorized_answer_source_reconciled") is not True
+        or plan.get("future_answer_capture_authority") is not False
+        or plan.get("unanswered_preserves_unknown") is not True
+    ):
+        add("QUESTION_AUTHORITY", "R3 records only the authorized source and grants no future answer-capture authority")
 
     missing = value.get("missing_evidence_register", {})
     missing_items = missing.get("items", []) if isinstance(missing, dict) else []
@@ -613,7 +721,7 @@ def validate_registry(value: Any, schema_validator: Any, contract: dict[str, Any
         if item.get("sequence") != index or item.get("status") != "OPEN_BLOCKING":
             add("MISSING_EVIDENCE_STATUS", f"missing evidence item {index} must remain ordered/open/blocking")
         refs = item.get("evidence_source_refs", [])
-        if not set(refs).issubset(r1_codes | base_codes):
+        if not set(refs).issubset(r1_codes | base_codes | R3_SOURCE_CODES):
             add("MISSING_EVIDENCE_REF", f"missing evidence item {index} contains an unknown source")
         if item.get("evidence_state") == "MISSING" and refs:
             add("MISSING_STATE_REF", f"missing evidence item {index} cannot cite submitted evidence")
@@ -649,9 +757,18 @@ def validate_registry(value: Any, schema_validator: Any, contract: dict[str, Any
     if readiness.get("criterion_order") != EXPECTED_CRITERIA or readiness.get("criterion_states") != EXPECTED_STATES:
         add("READINESS_ORDER", "C002 readiness order/states must remain exact")
     if readiness.get("resolved_count") != 0 or readiness.get("unresolved_count") != 9 or readiness.get("coverage") != "0/9" or readiness.get("readiness") != "NOT_READY":
-        add("READINESS_PROMOTION", "C003-R2 cannot resolve or promote any C002 readiness criterion")
+        add("READINESS_PROMOTION", "C003-R3 cannot resolve or promote C002 readiness from Founder answer capture alone")
     if readiness.get("founder_selection_recorded") is not False:
-        add("FOUNDER_SELECTION", "C003-R2 cannot record Founder Pilot selection")
+        add("FOUNDER_SELECTION", "C003-R3 cannot record Founder Pilot selection")
+    expected_reevaluation = {
+        "reevaluated_criterion_count": 1,
+        "reevaluated_criterion": "PRODUCT_DATA_COMPLETENESS",
+        "product_data_completeness_reevaluation": "STRENGTHENED_SUBMITTED_STILL_UNRESOLVED",
+        "canonical_promotion_evidence_required": True,
+        "independent_c002_review_completed": False,
+    }
+    if any(readiness.get(key) != expected for key, expected in expected_reevaluation.items()):
+        add("PRODUCT_DATA_COMPLETENESS_REEVALUATION", "only Product Data Completeness may be re-evaluated and it must remain submitted/unresolved")
 
     if value.get("selection_effects") != EXPECTED_SELECTION_EFFECTS:
         add("SELECTION_EFFECT", "selection effects must remain fail-closed and inactive")
@@ -668,7 +785,7 @@ def main() -> int:
     args = parser.parse_args()
     try:
         schema_validator, contract = load_validator()
-        registry_path = safe_path(Path(args.registry), "C003-R2 registry")
+        registry_path = safe_path(Path(args.registry), "C003-R3 registry")
         registry = load_yaml(registry_path)
         issues = validate_registry(registry, schema_validator, contract)
     except (ValidationConfigurationError, ValueError, TypeError) as exc:
@@ -677,7 +794,7 @@ def main() -> int:
     if issues:
         print("\n".join(issues), file=sys.stderr)
         return 1
-    print("C003-R2 201/51 Founder evidence completion validation: PASS")
+    print("C003-R3 201/51 Founder answer reconciliation validation: PASS")
     return 0
 
 

@@ -43,8 +43,8 @@ class ValidCombinationEvidenceMatrixTests(unittest.TestCase):
         self.assertEqual(before, MODULE.semantic_digest(MODULE.load_yaml(MODULE.REGISTRY_PATH)))
 
     def test_all_counted_mutations_fail_closed(self):
-        self.assertEqual(len(self.mutations), 52)
-        self.assertEqual(len({case["name"] for case in self.mutations}), 52)
+        self.assertEqual(len(self.mutations), 60)
+        self.assertEqual(len({case["name"] for case in self.mutations}), 60)
         for case in self.mutations:
             with self.subTest(case=case["name"]):
                 value = copy.deepcopy(self.canonical)
@@ -125,7 +125,7 @@ class ValidCombinationEvidenceMatrixTests(unittest.TestCase):
         value["valid_combination_evidence_matrix"]["unknown_count"] = float("nan")
         self.assertIn("NON_FINITE", "\n".join(self.validate(value)))
 
-    def test_compressed_matrix_counts_216_unknown_without_persisted_expansion(self):
+    def test_compressed_matrix_counts_216_founder_confirmed_without_persisted_expansion(self):
         matrix = self.canonical["valid_combination_evidence_matrix"]
         expanded = {
             (brand, thickness, row["appearance"], row["length_m"])
@@ -134,19 +134,35 @@ class ValidCombinationEvidenceMatrixTests(unittest.TestCase):
             for thickness in row["thickness"]["values_mm"]
         }
         self.assertEqual(len(expanded), 216)
-        self.assertEqual(matrix["unknown_count"], 216)
+        self.assertEqual(matrix["confirmed_valid_count"], 216)
+        self.assertEqual(matrix["unknown_count"], 0)
+        self.assertEqual(matrix["confirmed_invalid_count"], 0)
+        self.assertEqual(matrix["not_applicable_count"], 0)
         self.assertEqual(matrix["inferred_tuple_count"], 0)
         self.assertFalse(matrix["persisted_expanded_tuple_rows"])
         self.assertNotIn("expanded_tuples", MODULE.REGISTRY_PATH.read_text(encoding="utf-8"))
 
-    def test_question_plan_is_six_unanswered_brand_items(self):
+    def test_question_plan_is_six_exact_answered_brand_items(self):
         plan = self.canonical["founder_question_compression_plan"]
         self.assertEqual([item["brand"] for item in plan["review_items"]], MODULE.EXPECTED_BRANDS)
         self.assertEqual(len(plan["review_items"]), 6)
         for item in plan["review_items"]:
             self.assertEqual(len(item["groups"]), 3)
-            self.assertTrue(all(group["answer_mode"] == "UNANSWERED" for group in item["groups"]))
-            self.assertTrue(all(group["evidence_state"] == "UNKNOWN" for group in item["groups"]))
+            self.assertFalse(item["founder_review_required"])
+            self.assertEqual(item["answer_evidence"], MODULE.EXPECTED_ANSWER_EVIDENCE)
+            self.assertTrue(all(group["answer_mode"] == "ALL_LISTED_CONFIRMED_VALID" for group in item["groups"]))
+            self.assertTrue(all(group["supported_thicknesses_mm"] == MODULE.EXPECTED_THICKNESSES for group in item["groups"]))
+            self.assertTrue(all(group["invalid_thicknesses_mm"] == [] for group in item["groups"]))
+            self.assertTrue(all(group["not_applicable_thicknesses_mm"] == [] for group in item["groups"]))
+            self.assertTrue(all(group["evidence_state"] == "CONFIRMED_VALID" for group in item["groups"]))
+
+    def test_exact_founder_source_chronology_and_predecessor_are_pinned(self):
+        manifest = self.canonical["source_manifest"]
+        self.assertEqual(manifest["founder_answer_source"], MODULE.EXPECTED_FOUNDER_ANSWER_SOURCE)
+        self.assertEqual(manifest["predecessor"], MODULE.EXPECTED_PREDECESSOR)
+        self.assertEqual(manifest["founder_answer_source"]["captured_at"], manifest["founder_answer_source"]["reviewed_at"])
+        self.assertEqual(self.contract["predecessor"]["contract_semantic_sha256"], MODULE.EXPECTED_R2_CONTRACT_DIGEST)
+        self.assertEqual(self.contract["predecessor"]["registry_semantic_sha256"], MODULE.EXPECTED_R2_REGISTRY_DIGEST)
 
     def test_future_question_semantics_are_total_disjoint_and_evidence_bound(self):
         evidence = {
@@ -290,8 +306,19 @@ class ValidCombinationEvidenceMatrixTests(unittest.TestCase):
         self.assertEqual(pins, expected)
 
     def test_c002_readiness_mass_supply_and_authority_remain_zero(self):
-        self.assertEqual(self.canonical["c002_readiness"]["resolved_count"], 0)
-        self.assertEqual(self.canonical["c002_readiness"]["unresolved_count"], 9)
+        readiness = self.canonical["c002_readiness"]
+        self.assertEqual(readiness["resolved_count"], 0)
+        self.assertEqual(readiness["unresolved_count"], 9)
+        self.assertEqual(readiness["coverage"], "0/9")
+        self.assertEqual(readiness["readiness"], "NOT_READY")
+        self.assertEqual(readiness["reevaluated_criterion"], "PRODUCT_DATA_COMPLETENESS")
+        self.assertEqual(readiness["product_data_completeness_reevaluation"], "STRENGTHENED_SUBMITTED_STILL_UNRESOLVED")
+        self.assertTrue(readiness["canonical_promotion_evidence_required"])
+        self.assertFalse(readiness["independent_c002_review_completed"])
+        product_item = self.canonical["missing_evidence_register"]["items"][4]
+        self.assertEqual(product_item["evidence_state"], "SUBMITTED")
+        self.assertEqual(product_item["status"], "OPEN_BLOCKING")
+        self.assertEqual(product_item["evidence_source_refs"], MODULE.EXPECTED_EVIDENCE_REFS["PRODUCT_DATA_COMPLETENESS"])
         self.assertEqual(self.canonical["mass_evidence_intake"]["observations"], [])
         self.assertEqual(self.canonical["supply_evidence_intake"]["records"], [])
         self.assertTrue(all(value is False for value in self.canonical["authority_effects"].values()))

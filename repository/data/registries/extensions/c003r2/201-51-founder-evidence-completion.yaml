@@ -1,12 +1,12 @@
 registry_id: c003-r2-201-51-founder-evidence-completion
-registry_version: "1.0.0"
-contract_version: "1.0.0"
-data_classification: FOUNDER_EVIDENCE_COMPLETION_PLANNING
+registry_version: "1.1.0"
+contract_version: "1.1.0"
+data_classification: FOUNDER_EVIDENCE_ANSWER_RECONCILIATION
 mission:
-  mission_id: C003-R2
-  title: 201/51 Founder Evidence Completion and Valid Combination Evidence Matrix
-  source_locator: codex-attachment:ee4ae1ce-aedc-434f-a6b3-ca40a8fbf81b/pasted-text.txt
-  starting_main_sha: 91bddc43fd521a5548910d5087aad2f9d63e06f5
+  mission_id: C003-R3
+  title: Founder Review Answer Reconciliation for 201/51 Valid Combination Evidence
+  source_locator: codex-attachment:d5c3d500-fdf3-4858-b4df-068debdc18ce/pasted-text.txt
+  starting_main_sha: 1a100f474defab9abafb081bf845b18c0554a48e
   source_verified: true
 source_manifest:
   canonical_evidence_owner:
@@ -20,6 +20,28 @@ source_manifest:
     - {source_id: IDEA_VAULT_RELEVANT_DOMAINS, channel_id: C0BNHRRTE9F, parent_ts: "1786970361.696939", message_count: 4, complete: true}
   copied_slack_ledger: false
   external_market_research_used: false
+  predecessor:
+    mission_id: C003-R2
+    contract_version: "1.0.0"
+    registry_version: "1.0.0"
+    contract_semantic_sha256: f4d9cddaf1ad94ffe2ac863d61ddcd5cb7babc4b85d20b1424fea4697f41c194
+    registry_semantic_sha256: 880afc790a44863ae6a44ba58539b189348d5adb2550fd0d89c63877c78cc24b
+  founder_answer_source:
+    evidence_record_id: C003R3-ANSWER-001
+    channel_id: C0BNHRRTE9F
+    message_ts: "1787053465.802439"
+    source_locator: slack:C0BNHRRTE9F:1787053465.802439
+    author_user_id: U0BNFS43TBL
+    captured_at: "2026-08-18T15:14:25.802439+03:30"
+    reviewer_reference: slack-user:U0BNFS43TBL
+    reviewed_at: "2026-08-18T15:14:25.802439+03:30"
+    chronology_basis: SINGLE_FOUNDER_REVIEW_ANSWER_EVENT
+    evidence_classification: FOUNDER_CONFIRMED
+    temporal_role: CURRENT_INTENT
+    founder_confirmed: true
+    review_status: VERIFIED
+    promotion_effect: false
+    newer_conflicting_evidence_found: false
 authority_effects: &authority_false
   candidate_population: false
   product_population: false
@@ -40,9 +62,9 @@ authority_effects: &authority_false
   successor_mission: false
 founder_evidence_completion_packet:
   packet_id: c003r2fec:201051000001
-  packet_version: "1.0.0"
-  packet_status: FOUNDER_REVIEW_WORKSHEET_READY
-  purpose: COMPLETE_EXISTING_EVIDENCE_AND_CAPTURE_MISSING_TUPLE_EVIDENCE
+  packet_version: "1.1.0"
+  packet_status: FOUNDER_REVIEW_ANSWERS_RECONCILED_EVIDENCE_ONLY
+  purpose: RECONCILE_VERIFIED_FOUNDER_ANSWERS_WITHOUT_CANONICAL_PROMOTION
   pilot_scope:
     presentation_product_group: stainless round pipe
     product_group_role: PRESENTATION_UX_MAPPING_NOT_CANONICAL_ENTITY
@@ -74,8 +96,8 @@ founder_evidence_completion_packet:
     evidence_source_refs: [C003R1-CP03-017, C003R1-CP03-026, C003R1-CP03-027, C003R1-CP03-028, C003R1-CP03-029, C003R1-CP03-030, C003R1-CP03-032, C003R1-CP03-033, C003R1-CP03-034, C003R1-CP03-036, C003R1-CP03-039]
   completion_effects:
     evidence_only: true
-    founder_answers_recorded: false
-    tuple_state_changed: false
+    founder_answers_recorded: true
+    tuple_state_changed: true
     canonical_population: false
 valid_combination_evidence_matrix:
   matrix_id: c003r2matrix:201051000001
@@ -84,9 +106,9 @@ valid_combination_evidence_matrix:
   default_unproven_state: UNKNOWN
   compressed_row_count: 3
   expanded_review_universe_count: 216
-  confirmed_valid_count: 0
+  confirmed_valid_count: 216
   confirmed_invalid_count: 0
-  unknown_count: 216
+  unknown_count: 0
   not_applicable_count: 0
   inferred_tuple_count: 0
   cartesian_truth_generation: false
@@ -97,37 +119,40 @@ valid_combination_evidence_matrix:
       thickness: {selector: ALL_LISTED_THICKNESSES, values_mm: ["0.45", "0.50", "0.55", "0.60", "0.70", "0.80", "0.90", "1.00", "1.10", "1.20", "1.50", "2.00"]}
       appearance: STEEL_NATURAL_GLOSSY
       length_m: "6.00"
-      evidence_state: UNKNOWN
+      evidence_state: CONFIRMED_VALID
       evidence_source_refs: [C003R1-CP03-026, C003R1-CP03-027, C003R1-CP03-028, C003R1-CP03-029, C003R1-CP03-030]
       guardrail_source_refs: [C003R1-CP03-031]
+      resolution_evidence_refs: [C003R3-ANSWER-001]
       evidence_class: FOUNDER_CONFIRMED
       temporal_role: CURRENT_INTENT
-      founder_review_required: true
-      notes: Source facts establish axes and appearance-length scope only; they do not confirm any complete Brand x Thickness x Appearance x Length tuple.
+      founder_review_required: false
+      notes: The exact Founder answer source confirms every listed Brand and Thickness for steel natural glossy at 6 m as evidence only; canonical promotion remains false.
     - row_id: c003r2row:000000000002
       brand: {selector: ALL_LISTED_BRANDS, values: [Sumwin, Sansco, Goldsco, King, StoneLand, SUS]}
       thickness: {selector: ALL_LISTED_THICKNESSES, values_mm: ["0.45", "0.50", "0.55", "0.60", "0.70", "0.80", "0.90", "1.00", "1.10", "1.20", "1.50", "2.00"]}
       appearance: GOLD_GLOSSY
       length_m: "3.00"
-      evidence_state: UNKNOWN
+      evidence_state: CONFIRMED_VALID
       evidence_source_refs: [C003R1-CP03-026, C003R1-CP03-027, C003R1-CP03-028, C003R1-CP03-029, C003R1-CP03-030]
       guardrail_source_refs: [C003R1-CP03-031]
+      resolution_evidence_refs: [C003R3-ANSWER-001]
       evidence_class: FOUNDER_CONFIRMED
       temporal_role: CURRENT_INTENT
-      founder_review_required: true
-      notes: Gold-glossy 3 m is an appearance-length fact; Brand and Thickness membership for complete commercial tuples remains unknown.
+      founder_review_required: false
+      notes: The exact Founder answer source confirms every listed Brand and Thickness for gold glossy at 3 m as evidence only; canonical promotion remains false.
     - row_id: c003r2row:000000000003
       brand: {selector: ALL_LISTED_BRANDS, values: [Sumwin, Sansco, Goldsco, King, StoneLand, SUS]}
       thickness: {selector: ALL_LISTED_THICKNESSES, values_mm: ["0.45", "0.50", "0.55", "0.60", "0.70", "0.80", "0.90", "1.00", "1.10", "1.20", "1.50", "2.00"]}
       appearance: GOLD_GLOSSY
       length_m: "6.00"
-      evidence_state: UNKNOWN
+      evidence_state: CONFIRMED_VALID
       evidence_source_refs: [C003R1-CP03-026, C003R1-CP03-027, C003R1-CP03-028, C003R1-CP03-029, C003R1-CP03-030]
       guardrail_source_refs: [C003R1-CP03-031]
+      resolution_evidence_refs: [C003R3-ANSWER-001]
       evidence_class: FOUNDER_CONFIRMED
       temporal_role: CURRENT_INTENT
-      founder_review_required: true
-      notes: Gold-glossy 6 m is an appearance-length fact; Brand and Thickness membership for complete commercial tuples remains unknown.
+      founder_review_required: false
+      notes: The exact Founder answer source confirms every listed Brand and Thickness for gold glossy at 6 m as evidence only; canonical promotion remains false.
 founder_question_compression_plan:
   plan_id: c003r2questions:201051000001
   strategy: ONE_BRAND_REVIEW_ITEM_WITH_THREE_APPEARANCE_LENGTH_GROUPS
@@ -135,57 +160,72 @@ founder_question_compression_plan:
   maximum_tuple_resolution_per_answer: 36
   total_tuple_review_universe: 216
   answer_capture_authority: false
+  authorized_answer_source_reconciled: true
+  future_answer_capture_authority: false
   unanswered_preserves_unknown: true
-  instructions: For each Brand, answer each group with ALL_LISTED_CONFIRMED_VALID, EXPLICIT_STATE_SETS, ALL_LISTED_CONFIRMED_INVALID, or KEEP_UNKNOWN; every omitted explicit-set thickness stays UNKNOWN and every recorded answer requires a verified Founder evidence binding. No answer is prefilled.
+  instructions: All six Founder Brand-review items are reconciled from the exact authorized Slack source. Every group uses ALL_LISTED_CONFIRMED_VALID with the exact twelve Thicknesses, no exceptions, and promotion effect false. Future changes require separate authority.
   review_items:
     - review_item_id: c003r2question:000000000001
       brand: Sumwin
-      founder_review_required: true
-      answer_evidence: null
+      founder_review_required: false
+      answer_evidence: &founder_answer
+        source_locator: slack:C0BNHRRTE9F:1787053465.802439
+        channel_id: C0BNHRRTE9F
+        message_ts: "1787053465.802439"
+        author_user_id: U0BNFS43TBL
+        evidence_classification: FOUNDER_CONFIRMED
+        temporal_role: CURRENT_INTENT
+        founder_confirmed: true
+        captured_at: "2026-08-18T15:14:25.802439+03:30"
+        reviewer_reference: slack-user:U0BNFS43TBL
+        reviewed_at: "2026-08-18T15:14:25.802439+03:30"
+        chronology_basis: SINGLE_FOUNDER_REVIEW_ANSWER_EVENT
+        review_status: VERIFIED
+        promotion_effect: false
       groups:
-        - {appearance: STEEL_NATURAL_GLOSSY, length_m: "6.00", answer_mode: UNANSWERED, supported_thicknesses_mm: [], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: UNKNOWN}
-        - {appearance: GOLD_GLOSSY, length_m: "3.00", answer_mode: UNANSWERED, supported_thicknesses_mm: [], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: UNKNOWN}
-        - {appearance: GOLD_GLOSSY, length_m: "6.00", answer_mode: UNANSWERED, supported_thicknesses_mm: [], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: UNKNOWN}
+        - {appearance: STEEL_NATURAL_GLOSSY, length_m: "6.00", answer_mode: ALL_LISTED_CONFIRMED_VALID, supported_thicknesses_mm: ["0.45", "0.50", "0.55", "0.60", "0.70", "0.80", "0.90", "1.00", "1.10", "1.20", "1.50", "2.00"], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: CONFIRMED_VALID}
+        - {appearance: GOLD_GLOSSY, length_m: "3.00", answer_mode: ALL_LISTED_CONFIRMED_VALID, supported_thicknesses_mm: ["0.45", "0.50", "0.55", "0.60", "0.70", "0.80", "0.90", "1.00", "1.10", "1.20", "1.50", "2.00"], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: CONFIRMED_VALID}
+        - {appearance: GOLD_GLOSSY, length_m: "6.00", answer_mode: ALL_LISTED_CONFIRMED_VALID, supported_thicknesses_mm: ["0.45", "0.50", "0.55", "0.60", "0.70", "0.80", "0.90", "1.00", "1.10", "1.20", "1.50", "2.00"], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: CONFIRMED_VALID}
     - review_item_id: c003r2question:000000000002
       brand: Sansco
-      founder_review_required: true
-      answer_evidence: null
+      founder_review_required: false
+      answer_evidence: *founder_answer
       groups:
-        - {appearance: STEEL_NATURAL_GLOSSY, length_m: "6.00", answer_mode: UNANSWERED, supported_thicknesses_mm: [], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: UNKNOWN}
-        - {appearance: GOLD_GLOSSY, length_m: "3.00", answer_mode: UNANSWERED, supported_thicknesses_mm: [], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: UNKNOWN}
-        - {appearance: GOLD_GLOSSY, length_m: "6.00", answer_mode: UNANSWERED, supported_thicknesses_mm: [], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: UNKNOWN}
+        - {appearance: STEEL_NATURAL_GLOSSY, length_m: "6.00", answer_mode: ALL_LISTED_CONFIRMED_VALID, supported_thicknesses_mm: ["0.45", "0.50", "0.55", "0.60", "0.70", "0.80", "0.90", "1.00", "1.10", "1.20", "1.50", "2.00"], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: CONFIRMED_VALID}
+        - {appearance: GOLD_GLOSSY, length_m: "3.00", answer_mode: ALL_LISTED_CONFIRMED_VALID, supported_thicknesses_mm: ["0.45", "0.50", "0.55", "0.60", "0.70", "0.80", "0.90", "1.00", "1.10", "1.20", "1.50", "2.00"], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: CONFIRMED_VALID}
+        - {appearance: GOLD_GLOSSY, length_m: "6.00", answer_mode: ALL_LISTED_CONFIRMED_VALID, supported_thicknesses_mm: ["0.45", "0.50", "0.55", "0.60", "0.70", "0.80", "0.90", "1.00", "1.10", "1.20", "1.50", "2.00"], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: CONFIRMED_VALID}
     - review_item_id: c003r2question:000000000003
       brand: Goldsco
-      founder_review_required: true
-      answer_evidence: null
+      founder_review_required: false
+      answer_evidence: *founder_answer
       groups:
-        - {appearance: STEEL_NATURAL_GLOSSY, length_m: "6.00", answer_mode: UNANSWERED, supported_thicknesses_mm: [], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: UNKNOWN}
-        - {appearance: GOLD_GLOSSY, length_m: "3.00", answer_mode: UNANSWERED, supported_thicknesses_mm: [], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: UNKNOWN}
-        - {appearance: GOLD_GLOSSY, length_m: "6.00", answer_mode: UNANSWERED, supported_thicknesses_mm: [], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: UNKNOWN}
+        - {appearance: STEEL_NATURAL_GLOSSY, length_m: "6.00", answer_mode: ALL_LISTED_CONFIRMED_VALID, supported_thicknesses_mm: ["0.45", "0.50", "0.55", "0.60", "0.70", "0.80", "0.90", "1.00", "1.10", "1.20", "1.50", "2.00"], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: CONFIRMED_VALID}
+        - {appearance: GOLD_GLOSSY, length_m: "3.00", answer_mode: ALL_LISTED_CONFIRMED_VALID, supported_thicknesses_mm: ["0.45", "0.50", "0.55", "0.60", "0.70", "0.80", "0.90", "1.00", "1.10", "1.20", "1.50", "2.00"], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: CONFIRMED_VALID}
+        - {appearance: GOLD_GLOSSY, length_m: "6.00", answer_mode: ALL_LISTED_CONFIRMED_VALID, supported_thicknesses_mm: ["0.45", "0.50", "0.55", "0.60", "0.70", "0.80", "0.90", "1.00", "1.10", "1.20", "1.50", "2.00"], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: CONFIRMED_VALID}
     - review_item_id: c003r2question:000000000004
       brand: King
-      founder_review_required: true
-      answer_evidence: null
+      founder_review_required: false
+      answer_evidence: *founder_answer
       groups:
-        - {appearance: STEEL_NATURAL_GLOSSY, length_m: "6.00", answer_mode: UNANSWERED, supported_thicknesses_mm: [], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: UNKNOWN}
-        - {appearance: GOLD_GLOSSY, length_m: "3.00", answer_mode: UNANSWERED, supported_thicknesses_mm: [], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: UNKNOWN}
-        - {appearance: GOLD_GLOSSY, length_m: "6.00", answer_mode: UNANSWERED, supported_thicknesses_mm: [], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: UNKNOWN}
+        - {appearance: STEEL_NATURAL_GLOSSY, length_m: "6.00", answer_mode: ALL_LISTED_CONFIRMED_VALID, supported_thicknesses_mm: ["0.45", "0.50", "0.55", "0.60", "0.70", "0.80", "0.90", "1.00", "1.10", "1.20", "1.50", "2.00"], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: CONFIRMED_VALID}
+        - {appearance: GOLD_GLOSSY, length_m: "3.00", answer_mode: ALL_LISTED_CONFIRMED_VALID, supported_thicknesses_mm: ["0.45", "0.50", "0.55", "0.60", "0.70", "0.80", "0.90", "1.00", "1.10", "1.20", "1.50", "2.00"], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: CONFIRMED_VALID}
+        - {appearance: GOLD_GLOSSY, length_m: "6.00", answer_mode: ALL_LISTED_CONFIRMED_VALID, supported_thicknesses_mm: ["0.45", "0.50", "0.55", "0.60", "0.70", "0.80", "0.90", "1.00", "1.10", "1.20", "1.50", "2.00"], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: CONFIRMED_VALID}
     - review_item_id: c003r2question:000000000005
       brand: StoneLand
-      founder_review_required: true
-      answer_evidence: null
+      founder_review_required: false
+      answer_evidence: *founder_answer
       groups:
-        - {appearance: STEEL_NATURAL_GLOSSY, length_m: "6.00", answer_mode: UNANSWERED, supported_thicknesses_mm: [], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: UNKNOWN}
-        - {appearance: GOLD_GLOSSY, length_m: "3.00", answer_mode: UNANSWERED, supported_thicknesses_mm: [], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: UNKNOWN}
-        - {appearance: GOLD_GLOSSY, length_m: "6.00", answer_mode: UNANSWERED, supported_thicknesses_mm: [], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: UNKNOWN}
+        - {appearance: STEEL_NATURAL_GLOSSY, length_m: "6.00", answer_mode: ALL_LISTED_CONFIRMED_VALID, supported_thicknesses_mm: ["0.45", "0.50", "0.55", "0.60", "0.70", "0.80", "0.90", "1.00", "1.10", "1.20", "1.50", "2.00"], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: CONFIRMED_VALID}
+        - {appearance: GOLD_GLOSSY, length_m: "3.00", answer_mode: ALL_LISTED_CONFIRMED_VALID, supported_thicknesses_mm: ["0.45", "0.50", "0.55", "0.60", "0.70", "0.80", "0.90", "1.00", "1.10", "1.20", "1.50", "2.00"], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: CONFIRMED_VALID}
+        - {appearance: GOLD_GLOSSY, length_m: "6.00", answer_mode: ALL_LISTED_CONFIRMED_VALID, supported_thicknesses_mm: ["0.45", "0.50", "0.55", "0.60", "0.70", "0.80", "0.90", "1.00", "1.10", "1.20", "1.50", "2.00"], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: CONFIRMED_VALID}
     - review_item_id: c003r2question:000000000006
       brand: SUS
-      founder_review_required: true
-      answer_evidence: null
+      founder_review_required: false
+      answer_evidence: *founder_answer
       groups:
-        - {appearance: STEEL_NATURAL_GLOSSY, length_m: "6.00", answer_mode: UNANSWERED, supported_thicknesses_mm: [], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: UNKNOWN}
-        - {appearance: GOLD_GLOSSY, length_m: "3.00", answer_mode: UNANSWERED, supported_thicknesses_mm: [], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: UNKNOWN}
-        - {appearance: GOLD_GLOSSY, length_m: "6.00", answer_mode: UNANSWERED, supported_thicknesses_mm: [], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: UNKNOWN}
+        - {appearance: STEEL_NATURAL_GLOSSY, length_m: "6.00", answer_mode: ALL_LISTED_CONFIRMED_VALID, supported_thicknesses_mm: ["0.45", "0.50", "0.55", "0.60", "0.70", "0.80", "0.90", "1.00", "1.10", "1.20", "1.50", "2.00"], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: CONFIRMED_VALID}
+        - {appearance: GOLD_GLOSSY, length_m: "3.00", answer_mode: ALL_LISTED_CONFIRMED_VALID, supported_thicknesses_mm: ["0.45", "0.50", "0.55", "0.60", "0.70", "0.80", "0.90", "1.00", "1.10", "1.20", "1.50", "2.00"], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: CONFIRMED_VALID}
+        - {appearance: GOLD_GLOSSY, length_m: "6.00", answer_mode: ALL_LISTED_CONFIRMED_VALID, supported_thicknesses_mm: ["0.45", "0.50", "0.55", "0.60", "0.70", "0.80", "0.90", "1.00", "1.10", "1.20", "1.50", "2.00"], invalid_thicknesses_mm: [], not_applicable_thicknesses_mm: [], exception_notes: [], evidence_state: CONFIRMED_VALID}
 missing_evidence_register:
   register_id: c003r2missing:201051000001
   open_item_count: 9
@@ -194,7 +234,7 @@ missing_evidence_register:
     - {sequence: 2, criterion_code: SUPPLY_EVIDENCE, evidence_state: SUBMITTED, evidence_source_refs: [C003R1-CP03-001, C003R1-CP03-002, C003R1-CP03-003], required_completion: Current supplier-specific confirmation with timestamp validity scope and independent reviewer, status: OPEN_BLOCKING}
     - {sequence: 3, criterion_code: GROSS_PROFIT_POTENTIAL, evidence_state: MISSING, evidence_source_refs: [], required_completion: Protected Founder-supplied gross-profit evidence locator without exposing a value here, status: OPEN_BLOCKING}
     - {sequence: 4, criterion_code: REPEATABILITY, evidence_state: MISSING, evidence_source_refs: [], required_completion: Reviewed repeatability evidence for the bounded 201/51 slice, status: OPEN_BLOCKING}
-    - {sequence: 5, criterion_code: PRODUCT_DATA_COMPLETENESS, evidence_state: SUBMITTED, evidence_source_refs: [C003R1-CP03-026, C003R1-CP03-027, C003R1-CP03-028, C003R1-CP03-030, C003R1-CP03-031], required_completion: Founder-reviewed valid or invalid tuple patterns and separately governed canonical promotion evidence, status: OPEN_BLOCKING}
+    - {sequence: 5, criterion_code: PRODUCT_DATA_COMPLETENESS, evidence_state: SUBMITTED, evidence_source_refs: [C003R1-CP03-026, C003R1-CP03-027, C003R1-CP03-028, C003R1-CP03-030, C003R1-CP03-031, C003R3-ANSWER-001], required_completion: Founder review of all 216 evidence positions is complete; separately governed canonical promotion evidence and independent C002 review remain required, status: OPEN_BLOCKING}
     - {sequence: 6, criterion_code: PHOTO_CONTENT_READINESS, evidence_state: MISSING, evidence_source_refs: [], required_completion: Actual media asset rights review and production-ready content evidence, status: OPEN_BLOCKING}
     - {sequence: 7, criterion_code: SEO_BUYER_INTENT, evidence_state: MISSING, evidence_source_refs: [], required_completion: Reviewed SEO and buyer-intent evidence, status: OPEN_BLOCKING}
     - {sequence: 8, criterion_code: OPERATIONAL_COMPLEXITY, evidence_state: SUBMITTED, evidence_source_refs: [C003R1-CP03-032, C003R1-CP03-034, C003R1-CP03-041, C003R1-CP03-053], required_completion: Independent workflow and exception review without Runtime activation, status: OPEN_BLOCKING}
@@ -227,6 +267,11 @@ c002_readiness:
   coverage: 0/9
   readiness: NOT_READY
   founder_selection_recorded: false
+  reevaluated_criterion_count: 1
+  reevaluated_criterion: PRODUCT_DATA_COMPLETENESS
+  product_data_completeness_reevaluation: STRENGTHENED_SUBMITTED_STILL_UNRESOLVED
+  canonical_promotion_evidence_required: true
+  independent_c002_review_completed: false
 selection_effects:
   candidate_registry_population: false
   product_state: NOT_CREATED

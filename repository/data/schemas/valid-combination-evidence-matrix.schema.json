@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "urn:damavand:valid-combination-evidence-matrix:1.0.0",
-  "title": "C003-R2 201/51 Founder Evidence Completion",
+  "$id": "urn:damavand:valid-combination-evidence-matrix:1.1.0",
+  "title": "C003-R3 201/51 Founder Review Answer Reconciliation",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -13,9 +13,9 @@
   ],
   "properties": {
     "registry_id": {"const": "c003-r2-201-51-founder-evidence-completion"},
-    "registry_version": {"const": "1.0.0"},
-    "contract_version": {"const": "1.0.0"},
-    "data_classification": {"const": "FOUNDER_EVIDENCE_COMPLETION_PLANNING"},
+    "registry_version": {"const": "1.1.0"},
+    "contract_version": {"const": "1.1.0"},
+    "data_classification": {"const": "FOUNDER_EVIDENCE_ANSWER_RECONCILIATION"},
     "mission": {"$ref": "#/$defs/mission"},
     "source_manifest": {"$ref": "#/$defs/sourceManifest"},
     "authority_effects": {"$ref": "#/$defs/authorityEffects"},
@@ -30,7 +30,7 @@
   },
   "$defs": {
     "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
-    "sourceRef": {"type": "string", "pattern": "^(C003R1-CP03-[0-9]{3}|C003-DISC-[0-9]{3})$"},
+    "sourceRef": {"type": "string", "pattern": "^(C003R1-CP03-[0-9]{3}|C003-DISC-[0-9]{3}|C003R3-ANSWER-[0-9]{3})$"},
     "brand": {"enum": ["Sumwin", "Sansco", "Goldsco", "King", "StoneLand", "SUS"]},
     "thickness": {"enum": ["0.45", "0.50", "0.55", "0.60", "0.70", "0.80", "0.90", "1.00", "1.10", "1.20", "1.50", "2.00"]},
     "appearance": {"enum": ["STEEL_NATURAL_GLOSSY", "GOLD_GLOSSY"]},
@@ -64,10 +64,10 @@
       "additionalProperties": false,
       "required": ["mission_id", "title", "source_locator", "starting_main_sha", "source_verified"],
       "properties": {
-        "mission_id": {"const": "C003-R2"},
-        "title": {"const": "201/51 Founder Evidence Completion and Valid Combination Evidence Matrix"},
-        "source_locator": {"const": "codex-attachment:ee4ae1ce-aedc-434f-a6b3-ca40a8fbf81b/pasted-text.txt"},
-        "starting_main_sha": {"const": "91bddc43fd521a5548910d5087aad2f9d63e06f5"},
+        "mission_id": {"const": "C003-R3"},
+        "title": {"const": "Founder Review Answer Reconciliation for 201/51 Valid Combination Evidence"},
+        "source_locator": {"const": "codex-attachment:d5c3d500-fdf3-4858-b4df-068debdc18ce/pasted-text.txt"},
+        "starting_main_sha": {"const": "1a100f474defab9abafb081bf845b18c0554a48e"},
         "source_verified": {"const": true}
       }
     },
@@ -97,12 +97,48 @@
     "sourceManifest": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["canonical_evidence_owner", "verified_threads", "copied_slack_ledger", "external_market_research_used"],
+      "required": ["canonical_evidence_owner", "verified_threads", "copied_slack_ledger", "external_market_research_used", "predecessor", "founder_answer_source"],
       "properties": {
         "canonical_evidence_owner": {"$ref": "#/$defs/canonicalEvidenceOwner"},
         "verified_threads": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"$ref": "#/$defs/thread"}},
         "copied_slack_ledger": {"const": false},
-        "external_market_research_used": {"const": false}
+        "external_market_research_used": {"const": false},
+        "predecessor": {"$ref": "#/$defs/predecessor"},
+        "founder_answer_source": {"$ref": "#/$defs/founderAnswerSource"}
+      }
+    },
+    "predecessor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mission_id", "contract_version", "registry_version", "contract_semantic_sha256", "registry_semantic_sha256"],
+      "properties": {
+        "mission_id": {"const": "C003-R2"},
+        "contract_version": {"const": "1.0.0"},
+        "registry_version": {"const": "1.0.0"},
+        "contract_semantic_sha256": {"const": "f4d9cddaf1ad94ffe2ac863d61ddcd5cb7babc4b85d20b1424fea4697f41c194"},
+        "registry_semantic_sha256": {"const": "880afc790a44863ae6a44ba58539b189348d5adb2550fd0d89c63877c78cc24b"}
+      }
+    },
+    "founderAnswerSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evidence_record_id", "channel_id", "message_ts", "source_locator", "author_user_id", "captured_at", "reviewer_reference", "reviewed_at", "chronology_basis", "evidence_classification", "temporal_role", "founder_confirmed", "review_status", "promotion_effect", "newer_conflicting_evidence_found"],
+      "properties": {
+        "evidence_record_id": {"const": "C003R3-ANSWER-001"},
+        "channel_id": {"const": "C0BNHRRTE9F"},
+        "message_ts": {"const": "1787053465.802439"},
+        "source_locator": {"const": "slack:C0BNHRRTE9F:1787053465.802439"},
+        "author_user_id": {"const": "U0BNFS43TBL"},
+        "captured_at": {"const": "2026-08-18T15:14:25.802439+03:30"},
+        "reviewer_reference": {"const": "slack-user:U0BNFS43TBL"},
+        "reviewed_at": {"const": "2026-08-18T15:14:25.802439+03:30"},
+        "chronology_basis": {"const": "SINGLE_FOUNDER_REVIEW_ANSWER_EVENT"},
+        "evidence_classification": {"const": "FOUNDER_CONFIRMED"},
+        "temporal_role": {"const": "CURRENT_INTENT"},
+        "founder_confirmed": {"const": true},
+        "review_status": {"const": "VERIFIED"},
+        "promotion_effect": {"const": false},
+        "newer_conflicting_evidence_found": {"const": false}
       }
     },
     "scopeReferences": {
@@ -173,8 +209,8 @@
       "required": ["evidence_only", "founder_answers_recorded", "tuple_state_changed", "canonical_population"],
       "properties": {
         "evidence_only": {"const": true},
-        "founder_answers_recorded": {"const": false},
-        "tuple_state_changed": {"const": false},
+        "founder_answers_recorded": {"const": true},
+        "tuple_state_changed": {"const": true},
         "canonical_population": {"const": false}
       }
     },
@@ -184,9 +220,9 @@
       "required": ["packet_id", "packet_version", "packet_status", "purpose", "pilot_scope", "known_evidence", "completion_effects"],
       "properties": {
         "packet_id": {"const": "c003r2fec:201051000001"},
-        "packet_version": {"const": "1.0.0"},
-        "packet_status": {"const": "FOUNDER_REVIEW_WORKSHEET_READY"},
-        "purpose": {"const": "COMPLETE_EXISTING_EVIDENCE_AND_CAPTURE_MISSING_TUPLE_EVIDENCE"},
+        "packet_version": {"const": "1.1.0"},
+        "packet_status": {"const": "FOUNDER_REVIEW_ANSWERS_RECONCILED_EVIDENCE_ONLY"},
+        "purpose": {"const": "RECONCILE_VERIFIED_FOUNDER_ANSWERS_WITHOUT_CANONICAL_PROMOTION"},
         "pilot_scope": {"$ref": "#/$defs/pilotScope"},
         "known_evidence": {"$ref": "#/$defs/knownEvidence"},
         "completion_effects": {"$ref": "#/$defs/completionEffects"}
@@ -213,7 +249,7 @@
     "matrixRow": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["row_id", "brand", "thickness", "appearance", "length_m", "evidence_state", "evidence_source_refs", "guardrail_source_refs", "evidence_class", "temporal_role", "founder_review_required", "notes"],
+      "required": ["row_id", "brand", "thickness", "appearance", "length_m", "evidence_state", "evidence_source_refs", "guardrail_source_refs", "resolution_evidence_refs", "evidence_class", "temporal_role", "founder_review_required", "notes"],
       "properties": {
         "row_id": {"type": "string", "pattern": "^c003r2row:[0-9a-f]{12}$"},
         "brand": {"$ref": "#/$defs/brandSelector"},
@@ -223,9 +259,10 @@
         "evidence_state": {"enum": ["CONFIRMED_VALID", "CONFIRMED_INVALID", "UNKNOWN", "NOT_APPLICABLE"]},
         "evidence_source_refs": {"type": "array", "minItems": 5, "maxItems": 5, "uniqueItems": true, "items": {"$ref": "#/$defs/sourceRef"}},
         "guardrail_source_refs": {"type": "array", "minItems": 1, "maxItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/sourceRef"}},
+        "resolution_evidence_refs": {"const": ["C003R3-ANSWER-001"]},
         "evidence_class": {"const": "FOUNDER_CONFIRMED"},
         "temporal_role": {"const": "CURRENT_INTENT"},
-        "founder_review_required": {"const": true},
+        "founder_review_required": {"const": false},
         "notes": {"type": "string", "minLength": 40, "maxLength": 500}
       }
     },
@@ -240,9 +277,9 @@
         "default_unproven_state": {"const": "UNKNOWN"},
         "compressed_row_count": {"const": 3},
         "expanded_review_universe_count": {"const": 216},
-        "confirmed_valid_count": {"const": 0},
+        "confirmed_valid_count": {"const": 216},
         "confirmed_invalid_count": {"const": 0},
-        "unknown_count": {"const": 216},
+        "unknown_count": {"const": 0},
         "not_applicable_count": {"const": 0},
         "inferred_tuple_count": {"const": 0},
         "cartesian_truth_generation": {"const": false},
@@ -272,23 +309,27 @@
       "properties": {
         "review_item_id": {"type": "string", "pattern": "^c003r2question:[0-9a-f]{12}$"},
         "brand": {"$ref": "#/$defs/brand"},
-        "founder_review_required": {"const": true},
-        "answer_evidence": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/answerEvidence"}]},
+        "founder_review_required": {"const": false},
+        "answer_evidence": {"$ref": "#/$defs/answerEvidence"},
         "groups": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/questionGroup"}}
       }
     },
     "answerEvidence": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["source_locator", "evidence_classification", "temporal_role", "founder_confirmed", "captured_at", "reviewer_reference", "reviewed_at", "review_status", "promotion_effect"],
+      "required": ["source_locator", "channel_id", "message_ts", "author_user_id", "evidence_classification", "temporal_role", "founder_confirmed", "captured_at", "reviewer_reference", "reviewed_at", "chronology_basis", "review_status", "promotion_effect"],
       "properties": {
-        "source_locator": {"type": "string", "minLength": 12, "maxLength": 300},
+        "source_locator": {"const": "slack:C0BNHRRTE9F:1787053465.802439"},
+        "channel_id": {"const": "C0BNHRRTE9F"},
+        "message_ts": {"const": "1787053465.802439"},
+        "author_user_id": {"const": "U0BNFS43TBL"},
         "evidence_classification": {"const": "FOUNDER_CONFIRMED"},
-        "temporal_role": {"enum": ["CURRENT_INTENT", "FUTURE_CONCEPT", "HISTORICAL_EXAMPLE_NONCURRENT"]},
+        "temporal_role": {"const": "CURRENT_INTENT"},
         "founder_confirmed": {"const": true},
-        "captured_at": {"type": "string", "format": "date-time"},
-        "reviewer_reference": {"type": "string", "minLength": 3, "maxLength": 160},
-        "reviewed_at": {"type": "string", "format": "date-time"},
+        "captured_at": {"const": "2026-08-18T15:14:25.802439+03:30"},
+        "reviewer_reference": {"const": "slack-user:U0BNFS43TBL"},
+        "reviewed_at": {"const": "2026-08-18T15:14:25.802439+03:30"},
+        "chronology_basis": {"const": "SINGLE_FOUNDER_REVIEW_ANSWER_EVENT"},
         "review_status": {"const": "VERIFIED"},
         "promotion_effect": {"const": false}
       }
@@ -296,7 +337,7 @@
     "questionPlan": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["plan_id", "strategy", "founder_review_item_count", "maximum_tuple_resolution_per_answer", "total_tuple_review_universe", "answer_capture_authority", "unanswered_preserves_unknown", "instructions", "review_items"],
+      "required": ["plan_id", "strategy", "founder_review_item_count", "maximum_tuple_resolution_per_answer", "total_tuple_review_universe", "answer_capture_authority", "authorized_answer_source_reconciled", "future_answer_capture_authority", "unanswered_preserves_unknown", "instructions", "review_items"],
       "properties": {
         "plan_id": {"const": "c003r2questions:201051000001"},
         "strategy": {"const": "ONE_BRAND_REVIEW_ITEM_WITH_THREE_APPEARANCE_LENGTH_GROUPS"},
@@ -304,6 +345,8 @@
         "maximum_tuple_resolution_per_answer": {"const": 36},
         "total_tuple_review_universe": {"const": 216},
         "answer_capture_authority": {"const": false},
+        "authorized_answer_source_reconciled": {"const": true},
+        "future_answer_capture_authority": {"const": false},
         "unanswered_preserves_unknown": {"const": true},
         "instructions": {"type": "string", "minLength": 80, "maxLength": 800},
         "review_items": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/reviewItem"}}
@@ -454,7 +497,7 @@
     "readiness": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["criterion_order", "criterion_states", "resolved_count", "unresolved_count", "coverage", "readiness", "founder_selection_recorded"],
+      "required": ["criterion_order", "criterion_states", "resolved_count", "unresolved_count", "coverage", "readiness", "founder_selection_recorded", "reevaluated_criterion_count", "reevaluated_criterion", "product_data_completeness_reevaluation", "canonical_promotion_evidence_required", "independent_c002_review_completed"],
       "properties": {
         "criterion_order": {"type": "array", "minItems": 9, "maxItems": 9, "uniqueItems": true, "items": {"$ref": "#/$defs/criterionCode"}},
         "criterion_states": {"type": "array", "minItems": 9, "maxItems": 9, "items": {"enum": ["MISSING", "SUBMITTED"]}},
@@ -462,7 +505,12 @@
         "unresolved_count": {"const": 9},
         "coverage": {"const": "0/9"},
         "readiness": {"const": "NOT_READY"},
-        "founder_selection_recorded": {"const": false}
+        "founder_selection_recorded": {"const": false},
+        "reevaluated_criterion_count": {"const": 1},
+        "reevaluated_criterion": {"const": "PRODUCT_DATA_COMPLETENESS"},
+        "product_data_completeness_reevaluation": {"const": "STRENGTHENED_SUBMITTED_STILL_UNRESOLVED"},
+        "canonical_promotion_evidence_required": {"const": true},
+        "independent_c002_review_completed": {"const": false}
       }
     },
     "selectionEffects": {
