@@ -1,0 +1,295 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://damavandsteel.local/schemas/c005-founder-evidence-readiness.schema.json",
+  "title": "C005 Founder Evidence and C002 Readiness Re-evaluation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "data_classification", "registry_version", "mission_id", "starting_main_sha",
+    "source_manifest", "authority_effects", "owner_reconciliation", "evidence_records",
+    "classification_summary", "c002_readiness_reevaluation", "mass_and_supply_reconciliation",
+    "commercial_requirements_reconciliation", "shortest_remaining_evidence_path", "regression_anchors"
+  ],
+  "properties": {
+    "data_classification": {"const": "C005_FOUNDER_EVIDENCE_READINESS_REEVALUATION"},
+    "registry_version": {"const": "1.0.0"},
+    "mission_id": {"const": "C005"},
+    "starting_main_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "source_manifest": {"$ref": "#/$defs/sourceManifest"},
+    "authority_effects": {"$ref": "#/$defs/authorityEffects"},
+    "owner_reconciliation": {
+      "type": "array", "minItems": 8, "maxItems": 8,
+      "items": {"$ref": "#/$defs/ownerReconciliation"}
+    },
+    "evidence_records": {
+      "type": "array", "minItems": 17, "maxItems": 17,
+      "items": {"$ref": "#/$defs/evidenceRecord"}
+    },
+    "classification_summary": {"$ref": "#/$defs/classificationSummary"},
+    "c002_readiness_reevaluation": {"$ref": "#/$defs/readiness"},
+    "mass_and_supply_reconciliation": {"$ref": "#/$defs/massSupply"},
+    "commercial_requirements_reconciliation": {"$ref": "#/$defs/commercialRequirements"},
+    "shortest_remaining_evidence_path": {
+      "type": "array", "minItems": 6, "maxItems": 6,
+      "items": {"$ref": "#/$defs/evidencePathItem"}
+    },
+    "regression_anchors": {"$ref": "#/$defs/regressionAnchors"}
+  },
+  "$defs": {
+    "nonEmpty": {"type": "string", "minLength": 1, "maxLength": 1200},
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_id", "message_ts", "source_locator", "captured_at", "source_role", "evidence_classification", "temporal_role", "title", "thread_complete", "reply_count"],
+      "properties": {
+        "source_id": {"type": "string", "pattern": "^C005_[A-Z_]+$"},
+        "message_ts": {"type": "string", "pattern": "^[0-9]{10}\\.[0-9]{6}$"},
+        "source_locator": {"type": "string", "pattern": "^slack:C0BNHRRTE9F:[0-9]{10}\\.[0-9]{6}$"},
+        "captured_at": {"type": "string", "format": "date-time"},
+        "source_role": {"enum": ["PLANNING_CHECKPOINT", "FOUNDER_EVIDENCE"]},
+        "evidence_classification": {"enum": ["FOUNDER_CONFIRMED", "ARCHITECTURE_PROPOSAL"]},
+        "temporal_role": {"enum": ["CURRENT_INTENT", "PLANNING_ONLY"]},
+        "title": {"$ref": "#/$defs/nonEmpty"},
+        "thread_complete": {"const": true},
+        "reply_count": {"const": 0}
+      }
+    },
+    "sourceManifest": {
+      "type": "object", "additionalProperties": false,
+      "required": ["channel_id", "founder_user_id", "source_count", "sources"],
+      "properties": {
+        "channel_id": {"const": "C0BNHRRTE9F"},
+        "founder_user_id": {"const": "U0BNFS43TBL"},
+        "source_count": {"const": 5},
+        "sources": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/source"}}
+      }
+    },
+    "authorityEffects": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "evidence_reconciliation", "c002_readiness_reevaluation", "candidate_population", "product_population",
+        "controlled_value_promotion", "valid_tuple_promotion", "sku_assignment", "mass_population", "supply_population",
+        "availability_or_stock_claim", "current_or_public_price", "price_engine", "customer_or_order_population",
+        "vip_or_loyalty_activation", "commerce_activation", "payment_activation", "wordpress_woocommerce_mutation",
+        "hosting_mutation", "content_or_media_publication", "reservation_engine", "quotation_engine",
+        "cutting_service_implementation", "shipping_implementation", "runtime_staging_production", "deployment",
+        "c1_t03_repair", "c003_a_start", "c003_b_start", "merge", "successor_mission"
+      ],
+      "properties": {
+        "evidence_reconciliation": {"const": true},
+        "c002_readiness_reevaluation": {"const": true},
+        "candidate_population": {"const": false},
+        "product_population": {"const": false},
+        "controlled_value_promotion": {"const": false},
+        "valid_tuple_promotion": {"const": false},
+        "sku_assignment": {"const": false},
+        "mass_population": {"const": false},
+        "supply_population": {"const": false},
+        "availability_or_stock_claim": {"const": false},
+        "current_or_public_price": {"const": false},
+        "price_engine": {"const": false},
+        "customer_or_order_population": {"const": false},
+        "vip_or_loyalty_activation": {"const": false},
+        "commerce_activation": {"const": false},
+        "payment_activation": {"const": false},
+        "wordpress_woocommerce_mutation": {"const": false},
+        "hosting_mutation": {"const": false},
+        "content_or_media_publication": {"const": false},
+        "reservation_engine": {"const": false},
+        "quotation_engine": {"const": false},
+        "cutting_service_implementation": {"const": false},
+        "shipping_implementation": {"const": false},
+        "runtime_staging_production": {"const": false},
+        "deployment": {"const": false},
+        "c1_t03_repair": {"const": false},
+        "c003_a_start": {"const": false},
+        "c003_b_start": {"const": false},
+        "merge": {"const": false},
+        "successor_mission": {"const": false}
+      }
+    },
+    "ownerToken": {
+      "enum": [
+        "PRODUCT_HIERARCHY_VARIANT_RULES", "C002_PRODUCT_BUILDER_ADD_VALUE", "C002_MASS_PROVENANCE",
+        "PRODUCT_CONTENT_FUTURE", "INQUIRY_CUSTOMER_MODEL", "C002_COMMERCE_ELIGIBILITY",
+        "C002_INVENTORY_HARMONY", "DISCOVERY_BACKLOG_ONLY"
+      ]
+    },
+    "ownerReconciliation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["concept", "canonical_owner", "c005_effect"],
+      "properties": {
+        "concept": {"$ref": "#/$defs/nonEmpty"},
+        "canonical_owner": {"$ref": "#/$defs/ownerToken"},
+        "c005_effect": {"enum": ["REFERENCE_ONLY", "EVIDENCE_ONLY_NO_METHOD_EXTENSION", "GAP_EVIDENCE_ONLY", "FUTURE_CONTRACT_INPUT_ONLY", "REFERENCE_ONLY_INQUIRY_FIRST", "EVIDENCE_ONLY_NO_RULE"]}
+      }
+    },
+    "evidenceRecord": {
+      "type": "object", "additionalProperties": false,
+      "required": ["evidence_id", "sequence", "source_id", "evidence_classification", "temporal_role", "domain", "canonical_owner", "disposition", "statement", "promotion_effect", "implementation_authority"],
+      "properties": {
+        "evidence_id": {"type": "string", "pattern": "^C005-EVID-[0-9]{3}$"},
+        "sequence": {"type": "integer", "minimum": 1, "maximum": 17},
+        "source_id": {"type": "string", "pattern": "^C005_FOUNDER_EVIDENCE_[A-D]$"},
+        "evidence_classification": {"enum": ["FOUNDER_CONFIRMED", "ARCHITECTURE_PROPOSAL", "EXTERNAL_OBSERVATION"]},
+        "temporal_role": {"enum": ["CURRENT_INTENT", "FUTURE_CAPABILITY", "PLANNING_ONLY", "HISTORICAL_NONCURRENT"]},
+        "domain": {"type": "string", "pattern": "^[A-Z0-9_]+$"},
+        "canonical_owner": {"$ref": "#/$defs/ownerToken"},
+        "disposition": {"enum": ["EVIDENCE_ONLY", "FUTURE_CONTRACT_INPUT", "ARCHITECTURE_PROPOSAL_ONLY"]},
+        "statement": {"$ref": "#/$defs/nonEmpty"},
+        "promotion_effect": {"const": false},
+        "implementation_authority": {"const": false}
+      }
+    },
+    "classificationSummary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total_record_count", "founder_confirmed_count", "architecture_proposal_count", "external_observation_count", "current_intent_count", "future_capability_count", "planning_only_count", "historical_noncurrent_count"],
+      "properties": {
+        "total_record_count": {"const": 17},
+        "founder_confirmed_count": {"const": 14},
+        "architecture_proposal_count": {"const": 3},
+        "external_observation_count": {"const": 0},
+        "current_intent_count": {"const": 13},
+        "future_capability_count": {"const": 1},
+        "planning_only_count": {"const": 3},
+        "historical_noncurrent_count": {"const": 0}
+      }
+    },
+    "criterionCode": {
+      "enum": ["DEMAND_SIGNAL", "SUPPLY_EVIDENCE", "GROSS_PROFIT_POTENTIAL", "REPEATABILITY", "PRODUCT_DATA_COMPLETENESS", "PHOTO_CONTENT_READINESS", "SEO_BUYER_INTENT", "OPERATIONAL_COMPLEXITY", "FULFILLMENT_RISK"]
+    },
+    "readinessCriterion": {
+      "type": "object", "additionalProperties": false,
+      "required": ["sequence", "criterion_code", "previous_state", "evidence_state", "reviewable", "status", "blocking", "promotion_effect", "evidence_record_refs", "gap_record_refs", "supplementary_planning_refs", "component_states", "remaining_requirement"],
+      "properties": {
+        "sequence": {"type": "integer", "minimum": 1, "maximum": 9},
+        "criterion_code": {"$ref": "#/$defs/criterionCode"},
+        "previous_state": {"enum": ["MISSING", "SUBMITTED"]},
+        "evidence_state": {"enum": ["MISSING", "SUBMITTED", "VERIFIED", "CONFLICTING", "EXPIRED", "NOT_APPLICABLE_APPROVED"]},
+        "reviewable": {"type": "boolean"},
+        "status": {"const": "OPEN_BLOCKING"},
+        "blocking": {"const": true},
+        "promotion_effect": {"const": false},
+        "evidence_record_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^(C003-DISC-[0-9]{3}|C003R1-CP03-[0-9]{3}|C003R3-ANSWER-[0-9]{3}|C005-EVID-[0-9]{3})$"}},
+        "gap_record_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^C005-EVID-[0-9]{3}$"}},
+        "supplementary_planning_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^docs/[A-Za-z0-9_.-]+\\.md$"}},
+        "component_states": {"type": "array", "maxItems": 2, "items": {"$ref": "#/$defs/componentState"}},
+        "remaining_requirement": {"$ref": "#/$defs/nonEmpty"}
+      }
+    },
+    "componentState": {
+      "type": "object", "additionalProperties": false,
+      "required": ["component_code", "evidence_state", "evidence_record_refs", "reviewable"],
+      "properties": {
+        "component_code": {"enum": ["PHOTO_ASSET", "TEXT_CONTENT_STRATEGY"]},
+        "evidence_state": {"enum": ["MISSING", "SUBMITTED"]},
+        "evidence_record_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^C005-EVID-[0-9]{3}$"}},
+        "reviewable": {"type": "boolean"}
+      }
+    },
+    "readinessSnapshot": {
+      "type": "object", "additionalProperties": false,
+      "required": ["readiness", "resolved_count", "unresolved_count", "state_vector"],
+      "properties": {
+        "readiness": {"const": "NOT_READY"},
+        "resolved_count": {"const": 0},
+        "unresolved_count": {"const": 9},
+        "state_vector": {
+          "type": "array", "minItems": 9, "maxItems": 9,
+          "items": {"enum": ["MISSING", "SUBMITTED"]}
+        }
+      }
+    },
+    "readinessTotals": {
+      "type": "object", "additionalProperties": false,
+      "required": ["criterion_count", "verified_count", "submitted_count", "missing_count", "reviewable_count", "resolved_count", "unresolved_count", "open_blocking_count"],
+      "properties": {
+        "criterion_count": {"const": 9},
+        "verified_count": {"const": 0},
+        "submitted_count": {"const": 8},
+        "missing_count": {"const": 1},
+        "reviewable_count": {"const": 6},
+        "resolved_count": {"const": 0},
+        "unresolved_count": {"const": 9},
+        "open_blocking_count": {"const": 9}
+      }
+    },
+    "readiness": {
+      "type": "object", "additionalProperties": false,
+      "required": ["previous", "criteria", "totals", "readiness", "candidate_registry_count"],
+      "properties": {
+        "previous": {"$ref": "#/$defs/readinessSnapshot"},
+        "criteria": {"type": "array", "minItems": 9, "maxItems": 9, "items": {"$ref": "#/$defs/readinessCriterion"}},
+        "totals": {"$ref": "#/$defs/readinessTotals"},
+        "readiness": {"const": "NOT_READY"},
+        "candidate_registry_count": {"const": 0}
+      }
+    },
+    "massSupply": {
+      "type": "object", "additionalProperties": false,
+      "required": ["canonical_mass_owner", "current_numeric_mass_observation_count", "current_supply_intake_record_count", "mass_lifecycle_states", "allowed_transition", "supplier_statement_is_source_channel_only", "approved_c002_mass_methods", "supplier_stated_method_extension_allowed", "operator_promotion_required", "automatic_mass_switch_allowed", "no_numeric_mass_value_recorded", "supply_business_intent_creates_availability"],
+      "properties": {
+        "canonical_mass_owner": {"const": "C002_MASS_PROVENANCE"},
+        "current_numeric_mass_observation_count": {"const": 0},
+        "current_supply_intake_record_count": {"const": 0},
+        "mass_lifecycle_states": {"const": ["CURRENT", "NEXT_PENDING", "HISTORICAL"]},
+        "allowed_transition": {"const": "NEXT_PENDING_TO_CURRENT_BY_OPERATOR_AND_PRIOR_CURRENT_TO_HISTORICAL"},
+        "supplier_statement_is_source_channel_only": {"const": true},
+        "approved_c002_mass_methods": {"const": ["MANUFACTURER_STATED", "MEASURED", "CALCULATED"]},
+        "supplier_stated_method_extension_allowed": {"const": false},
+        "operator_promotion_required": {"const": true},
+        "automatic_mass_switch_allowed": {"const": false},
+        "no_numeric_mass_value_recorded": {"const": true},
+        "supply_business_intent_creates_availability": {"const": false}
+      }
+    },
+    "commercialRequirements": {
+      "type": "object", "additionalProperties": false,
+      "required": ["pricing_requirement_record_count", "vip_loyalty_requirement_record_count", "order_fulfillment_requirement_record_count", "current_price_value_count", "customer_object_count", "order_object_count", "active_vip_entitlement_count", "active_loyalty_ledger_count", "price_engine_created", "implementation_created"],
+      "properties": {
+        "pricing_requirement_record_count": {"const": 3},
+        "vip_loyalty_requirement_record_count": {"const": 2},
+        "order_fulfillment_requirement_record_count": {"const": 3},
+        "current_price_value_count": {"const": 0},
+        "customer_object_count": {"const": 0},
+        "order_object_count": {"const": 0},
+        "active_vip_entitlement_count": {"const": 0},
+        "active_loyalty_ledger_count": {"const": 0},
+        "price_engine_created": {"const": false},
+        "implementation_created": {"const": false}
+      }
+    },
+    "evidencePathItem": {
+      "type": "object", "additionalProperties": false,
+      "required": ["priority", "evidence_action", "criteria_unblocked_for_review", "blocking_impact", "evidence_cost", "founder_effort", "estimated_time", "dependencies", "authority_created"],
+      "properties": {
+        "priority": {"type": "integer", "minimum": 1, "maximum": 6},
+        "evidence_action": {"$ref": "#/$defs/nonEmpty"},
+        "criteria_unblocked_for_review": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/criterionCode"}},
+        "blocking_impact": {"enum": ["SIX_CRITERIA", "TWO_CRITERIA", "ONE_CRITERION", "CONDITIONAL", "NON_CRITERION_FUTURE_INPUT"]},
+        "evidence_cost": {"enum": ["LOW", "MEDIUM", "HIGH"]},
+        "founder_effort": {"enum": ["NONE", "LOW", "MEDIUM", "HIGH"]},
+        "estimated_time": {"enum": ["SHORT", "MEDIUM", "LONG"]},
+        "dependencies": {"type": "array", "uniqueItems": true, "maxItems": 4, "items": {"$ref": "#/$defs/nonEmpty"}},
+        "authority_created": {"const": false}
+      }
+    },
+    "regressionAnchors": {
+      "type": "object", "additionalProperties": false,
+      "required": ["c002_candidate_count", "c002_policy_count", "c002_policy_instance_count", "c003_r3_confirmed_valid_evidence_count", "canonical_product_count", "canonical_sku_count", "current_numeric_mass_observation_count", "current_supply_intake_record_count", "commerce_state", "runtime_authority", "production_authority", "c1_t03_state"],
+      "properties": {
+        "c002_candidate_count": {"const": 0},
+        "c002_policy_count": {"const": 8},
+        "c002_policy_instance_count": {"const": 0},
+        "c003_r3_confirmed_valid_evidence_count": {"const": 216},
+        "canonical_product_count": {"const": 0},
+        "canonical_sku_count": {"const": 0},
+        "current_numeric_mass_observation_count": {"const": 0},
+        "current_supply_intake_record_count": {"const": 0},
+        "commerce_state": {"const": "INQUIRY_ONLY"},
+        "runtime_authority": {"const": "NONE"},
+        "production_authority": {"const": "NONE"},
+        "c1_t03_state": {"const": "FROZEN_AT_PROTECTED_ARCHITECTURE_BOUNDARY"}
+      }
+    }
+  }
+}

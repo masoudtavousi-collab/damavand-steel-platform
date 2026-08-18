@@ -1,0 +1,178 @@
+contract_id: c005-founder-evidence-readiness
+contract_version: "1.0.0"
+record_kind: c005-201-51-founder-evidence-readiness
+schema:
+  path: repository/data/schemas/c005-founder-evidence-readiness.schema.json
+  draft: https://json-schema.org/draft/2020-12/schema
+registry:
+  path: repository/data/registries/extensions/c005/201-51-founder-evidence-readiness.yaml
+authority:
+  mission_id: C005
+  founder_evidence_reconciliation_allowed: true
+  c002_readiness_reevaluation_allowed: true
+  repository_docs_contract_schema_validator_test_work_allowed: true
+  branch_commit_push_pr_allowed: true
+  candidate_population_allowed: false
+  product_population_allowed: false
+  controlled_value_promotion_allowed: false
+  valid_tuple_promotion_allowed: false
+  sku_assignment_allowed: false
+  mass_population_allowed: false
+  supply_population_allowed: false
+  availability_or_stock_claim_allowed: false
+  current_or_public_price_allowed: false
+  price_engine_allowed: false
+  customer_or_order_population_allowed: false
+  vip_or_loyalty_activation_allowed: false
+  commerce_activation_allowed: false
+  payment_activation_allowed: false
+  wordpress_woocommerce_mutation_allowed: false
+  hosting_mutation_allowed: false
+  content_or_media_publication_allowed: false
+  reservation_engine_allowed: false
+  quotation_engine_allowed: false
+  cutting_service_implementation_allowed: false
+  shipping_implementation_allowed: false
+  runtime_staging_production_allowed: false
+  deployment_allowed: false
+  c1_t03_repair_allowed: false
+  c003_a_start_allowed: false
+  c003_b_start_allowed: false
+  merge_allowed: false
+  successor_mission_allowed: false
+dependencies:
+  c003_base_contract: repository/data/contracts/founder-product-commerce-discovery.contract.yaml
+  c003_base_registry: repository/data/registries/extensions/c003/founder-product-commerce-discovery-session-01.yaml
+  c003_r1_contract: repository/data/contracts/founder-product-commerce-checkpoint03.contract.yaml
+  c003_r1_registry: repository/data/registries/extensions/c003r1/checkpoint03-evidence-and-pilot-readiness.yaml
+  c002_candidate_contract: repository/data/contracts/commercial-pilot-candidate.contract.yaml
+  c002_candidate_registry: repository/data/registries/extensions/c002/commercial-pilot-candidates.yaml
+  c002_product_administration_contract: repository/data/contracts/product-administration-policy.contract.yaml
+  c002_product_administration_registry: repository/data/registries/extensions/c002/product-administration-policies.yaml
+  c003_r3_contract: repository/data/contracts/valid-combination-evidence-matrix.contract.yaml
+  c003_r3_registry: repository/data/registries/extensions/c003r2/201-51-founder-evidence-completion.yaml
+  c004_contract: repository/data/contracts/competitive-intelligence.contract.yaml
+  c004_advantage_registry: repository/data/registries/extensions/c004/damavand-advantages.yaml
+base_pins:
+  c003_base_contract_semantic_sha256: eff0b6d1546c67c7e5f33f7c39e387bb97fc7398f5190b3c578247db4daf9bf9
+  c003_base_registry_semantic_sha256: 6531464375953bb117515e4665a679bcf90f15388f0e7513a7268f3787714cf8
+  c003_r1_contract_semantic_sha256: 2a3a5dca032ad2327e1f6ac491a7d1741d574310c889edad64bef85367e4557b
+  c003_r1_registry_semantic_sha256: a6c4a3181db06c1292232a1a8f725a5e5be998a064075910a3da65e7a3d04a75
+  c002_candidate_contract_semantic_sha256: 923731cb080b0ecc05abb21b1189bfdd0df94297780cce364bb791479f7f47e3
+  c002_candidate_registry_semantic_sha256: deb0215d2b5f4b5ec0061f937aec9c3e37cf97c94432a23737bf5756cef9587e
+  c002_product_administration_contract_semantic_sha256: 75b608e67b6ca3c870e6bf0b533310fbb131a75fa576a79e75c4a936659c33ff
+  c002_product_administration_registry_semantic_sha256: 796d2dfc424a75f998b309f04e88443d0ffb7450bd457bddf86b574535624fe7
+  c003_r3_contract_semantic_sha256: f6e9cc81ef18ded5506714d8316835ff0c0919a38af5a1f1508b93b10297f973
+  c003_r3_registry_semantic_sha256: 22bf396a7b92b6fe03bce069e889a87dd063174e0f1b7abfd3e51fc349de8172
+  c004_contract_semantic_sha256: e4652271d81587d78b8d1fadf6395ef13ca87d7bae7450db346a25e62c7feacc
+  c004_advantage_registry_semantic_sha256: eb14e53a04f60250b3125dc3d0422a62e53a0d01fb3f15741182f4a04327c8c1
+source_policy:
+  slack_channel_id: C0BNHRRTE9F
+  founder_user_id: U0BNFS43TBL
+  planning_checkpoint_ts: "1787080262.415499"
+  exact_founder_evidence_message_ts:
+    - "1787056479.144299"
+    - "1787080149.589239"
+    - "1787080165.322449"
+    - "1787080178.569909"
+  complete_thread_required: true
+  reply_count_per_source: 0
+  copied_product_or_commercial_truth_allowed: false
+  external_observation_can_verify_c002_criterion: false
+evidence_policy:
+  classifications: [FOUNDER_CONFIRMED, ARCHITECTURE_PROPOSAL, EXTERNAL_OBSERVATION]
+  temporal_roles: [CURRENT_INTENT, FUTURE_CAPABILITY, PLANNING_ONLY, HISTORICAL_NONCURRENT]
+  dispositions: [EVIDENCE_ONLY, FUTURE_CONTRACT_INPUT, ARCHITECTURE_PROPOSAL_ONLY]
+  canonical_owner_tokens:
+    - PRODUCT_HIERARCHY_VARIANT_RULES
+    - C002_PRODUCT_BUILDER_ADD_VALUE
+    - C002_MASS_PROVENANCE
+    - PRODUCT_CONTENT_FUTURE
+    - INQUIRY_CUSTOMER_MODEL
+    - C002_COMMERCE_ELIGIBILITY
+    - C002_INVENTORY_HARMONY
+    - DISCOVERY_BACKLOG_ONLY
+  exact_record_count: 17
+  classification_counts:
+    FOUNDER_CONFIRMED: 14
+    ARCHITECTURE_PROPOSAL: 3
+    EXTERNAL_OBSERVATION: 0
+  temporal_counts:
+    CURRENT_INTENT: 13
+    FUTURE_CAPABILITY: 1
+    PLANNING_ONLY: 3
+    HISTORICAL_NONCURRENT: 0
+c002_readiness_policy:
+  criterion_order:
+    - DEMAND_SIGNAL
+    - SUPPLY_EVIDENCE
+    - GROSS_PROFIT_POTENTIAL
+    - REPEATABILITY
+    - PRODUCT_DATA_COMPLETENESS
+    - PHOTO_CONTENT_READINESS
+    - SEO_BUYER_INTENT
+    - OPERATIONAL_COMPLEXITY
+    - FULFILLMENT_RISK
+  canonical_evidence_states: [MISSING, SUBMITTED, VERIFIED, CONFLICTING, EXPIRED, NOT_APPLICABLE_APPROVED]
+  resolved_states: [VERIFIED, NOT_APPLICABLE_APPROVED]
+  blocking_status: OPEN_BLOCKING
+  reviewable_is_separate_planning_view: true
+  reviewable_is_c002_evidence_state: false
+  exact_previous_state_vector: [SUBMITTED, SUBMITTED, MISSING, MISSING, SUBMITTED, MISSING, MISSING, SUBMITTED, SUBMITTED]
+  exact_new_state_vector: [SUBMITTED, SUBMITTED, SUBMITTED, SUBMITTED, SUBMITTED, MISSING, SUBMITTED, SUBMITTED, SUBMITTED]
+  exact_reviewable_vector: [true, false, true, true, true, false, true, true, false]
+  photo_content_components:
+    PHOTO_ASSET: {evidence_state: MISSING, reviewable: false}
+    TEXT_CONTENT_STRATEGY: {evidence_state: SUBMITTED, reviewable: true}
+  supplementary_planning_basis:
+    SEO_BUYER_INTENT: [docs/201_51_PILOT_COMPETITIVE_EXPERIENCE_BLUEPRINT_V1.0.md]
+  exact_totals:
+    criterion_count: 9
+    verified_count: 0
+    submitted_count: 8
+    missing_count: 1
+    reviewable_count: 6
+    resolved_count: 0
+    unresolved_count: 9
+    open_blocking_count: 9
+  readiness: NOT_READY
+  candidate_registry_count: 0
+mass_policy:
+  canonical_owner: C002_MASS_PROVENANCE
+  current_numeric_observation_count: 0
+  supply_intake_record_count: 0
+  approved_c002_methods: [MANUFACTURER_STATED, MEASURED, CALCULATED]
+  supplier_statement_is_source_channel_only: true
+  supplier_stated_method_extension_allowed: false
+  lifecycle_states: [CURRENT, NEXT_PENDING, HISTORICAL]
+  allowed_transition: NEXT_PENDING_TO_CURRENT_BY_OPERATOR_AND_PRIOR_CURRENT_TO_HISTORICAL
+  automatic_mass_switch_allowed: false
+  operator_promotion_required: true
+  no_numeric_mass_value_in_c005: true
+commercial_evidence_policy:
+  pricing_requirement_evidence_only: true
+  current_price_value_allowed: false
+  hard_minimum_margin_inference_allowed: false
+  vip_loyalty_requirement_evidence_only: true
+  vip_loyalty_activation_allowed: false
+  order_fulfillment_requirement_evidence_only: true
+  customer_or_order_object_allowed: false
+  consumption_pattern_is_bundle_or_sku_rule: false
+  typical_sourcing_is_availability_or_stock_guarantee: false
+media_policy:
+  photo_content_state: MISSING
+  internet_or_competitor_media_is_production_safe_by_default: false
+  ownership_or_license_evidence_required: true
+validation:
+  offline_only: true
+  network_allowed: false
+  side_effects_allowed: false
+  closed_schema_required: true
+  local_refs_only: true
+  duplicate_keys_rejected: true
+  non_finite_numbers_rejected: true
+  deterministic_sorted_errors: true
+  path_escape_symlink_and_byte_cap_enforced: true
+  exact_order_and_counts_required: true
+  semantic_digest_pinning_required: true
+  mutation_manifest_dispatch_required: true

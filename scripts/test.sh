@@ -127,6 +127,10 @@ c004_competitive_intelligence_validator="repository/data/validation/validate_com
 "$python" "$c004_competitive_intelligence_validator"
 "$python" -B -m unittest tests.test_competitive_intelligence
 
+c005_founder_evidence_readiness_validator="repository/data/validation/validate_c005_founder_evidence_readiness.py"
+"$python" "$c005_founder_evidence_readiness_validator"
+"$python" -B -m unittest tests.test_c005_founder_evidence_readiness
+
 "$python" repository/data/validation/validate_bp2_data_blueprint.py
 "$python" repository/data/validation/validate_bp2_data_administration.py
 "$python" tests/test_bp2_data_administration.py
