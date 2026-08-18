@@ -202,5 +202,9 @@
   {
     "id": "M51_AVAILABILITY_FOUNDER_ESCALATION",
     "expected_code": "ADVANTAGE_DISPOSITION"
+  },
+  {
+    "id": "M52_AVAILABILITY_ABSOLUTE_STOCK_BAN",
+    "expected_code": "ANTI_PATTERN_AVAILABILITY_RULE"
   }
 ]

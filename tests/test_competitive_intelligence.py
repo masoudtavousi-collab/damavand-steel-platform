@@ -185,11 +185,12 @@ class CompetitiveIntelligenceTests(unittest.TestCase):
         elif mutation_id == "M49_DIRECT_FOUNDER_TEMPORAL": next(item for item in aa[2]["evidence_basis"] if item["reference"].startswith("slack:"))["temporal_role"] = "HISTORICAL_EXAMPLE_NONCURRENT"
         elif mutation_id == "M50_WAREHOUSE_OWNERSHIP_CLAIM": aa[3]["evidence_basis"][2]["claim"] = "Damavand does not own a warehouse."
         elif mutation_id == "M51_AVAILABILITY_FOUNDER_ESCALATION": aa[3]["recommended_status"] = "NEEDS_FOUNDER_DECISION"
+        elif mutation_id == "M52_AVAILABILITY_ABSOLUTE_STOCK_BAN": next(item for item in ap if item["anti_pattern_id"] == "canti:00000000000a")["damavand_prevention_rule"] = "Never claim stock."
         else: self.fail(f"undispatched mutation: {mutation_id}")
         return self.render(competitors, scores, advantages)
 
     def test_negative_mutation_manifest_is_complete_and_fail_closed(self) -> None:
-        self.assertEqual(len(self.mutations), 51)
+        self.assertEqual(len(self.mutations), 52)
         seen: set[str] = set()
         for mutation in self.mutations:
             mutation_id = mutation["id"]

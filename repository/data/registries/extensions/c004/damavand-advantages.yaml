@@ -264,7 +264,7 @@ anti_patterns:
     observed_problem: "Exact stock or availability language appears without inspectable provenance."
     architectural_risk: "Presentation can outrun inventory and supply evidence."
     ux_business_impact: "Broken promises and operational escalation."
-    damavand_prevention_rule: "Never claim stock; preserve internal supply-state distinctions and operator verification."
+    damavand_prevention_rule: "Never infer stock; require evidence, validity and operator verification."
   - anti_pattern_id: "canti:00000000000b"
     competitor_example: "Competitor descriptions and branded media"
     evidence_refs: ["cobs:00000000000c"]

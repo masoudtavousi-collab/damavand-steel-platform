@@ -41,7 +41,7 @@ CURRENT_STATE_PATH = ROOT / "docs/CURRENT_PROJECT_STATE.md"
 EXPECTED_CONTRACT_DIGEST = "e4652271d81587d78b8d1fadf6395ef13ca87d7bae7450db346a25e62c7feacc"
 EXPECTED_COMPETITOR_DIGEST = "c64f79d966f0006d2c3e438d707d834bd1b9cbb74841689d9a489c405ce54309"
 EXPECTED_SCORE_DIGEST = "85f66a2baeb54ab28d4c49cffc17dcd5bf73c866381c4e57171b7c094b982207"
-EXPECTED_ADVANTAGE_DIGEST = "378a49e8e89e57f49bab35ed83a469c45d7d44ddb768a22a966e4a0e23471de3"
+EXPECTED_ADVANTAGE_DIGEST = "eb14e53a04f60250b3125dc3d0422a62e53a0d01fb3f15741182f4a04327c8c1"
 EXPECTED_COMPETITOR_SCHEMA_DIGEST = "9082845a7ab29dbe3be70423a8980342d773eeec67e62c7edd5f8842e189d2fd"
 EXPECTED_SCORE_SCHEMA_DIGEST = "acc95bf3b0317061d4ca0968ff6acf063456e6ded54a2dc689e4ca93f5a0d1a8"
 EXPECTED_ADVANTAGE_SCHEMA_DIGEST = "d684d135f3a02a0110991bda923fce9d251311792886ae8765f8e6beb97483be"
@@ -91,6 +91,7 @@ EXPECTED_DIRECT_FOUNDER_SOURCE = {
     "temporal_role": "CURRENT_INTENT",
     "authority_effect": "EVIDENCE_ONLY",
 }
+EXPECTED_AP10_RULE = "Never infer stock; require evidence, validity and operator verification."
 
 EXPECTED_FALSE_AUTHORITY_KEYS = {
     "product_population_allowed", "sku_population_allowed", "availability_population_allowed",
@@ -422,6 +423,8 @@ def validate_package(competitors: Any, scores: Any, advantages: Any, validators:
             continue
         if set(anti_pattern.get("evidence_refs", [])) - set(observations):
             add("ANTI_PATTERN_EVIDENCE", f"anti-pattern {anti_pattern.get('anti_pattern_id')} must cite existing observations")
+        if anti_pattern.get("anti_pattern_id") == "canti:00000000000a" and anti_pattern.get("damavand_prevention_rule") != EXPECTED_AP10_RULE:
+            add("ANTI_PATTERN_AVAILABILITY_RULE", "AP-10 must prohibit inference and require valid evidence rather than prohibit evidenced Availability")
     leadership = advantages.get("leadership_map", [])
     domains = [item.get("domain") for item in leadership if isinstance(item, dict)]
     if len(domains) != len(set(domains)):
