@@ -78,7 +78,7 @@ instantiates nor approves that path.
 | Product Builder / controlled values | C002 Product Administration | No instance or value population |
 | Brand / Mass / Appearance | C002 provenance policies | No truth promotion |
 | Commerce eligibility | C002 per-SKU fail-closed policy | Remains inactive and `INQUIRY_ONLY` |
-| Related-product evidence | Product `Related To` + C002 Inventory Harmony | Historical 51:38:16 evidence remains non-mandatory and non-pricing |
+| Related-product evidence | Product `Related To` + C002 Inventory Harmony | Current Founder evidence for 51:38:16 remains evidence-only, non-mandatory and non-pricing |
 | Search and discovery | `27_SEARCH_AND_DISCOVERY.md` | Planning input only |
 | SEO entity ownership | `34_SEO_ENTITY_MODEL.md` | Planning input; no publishing |
 | Mobile / RTL | `AGENTS.md` and existing UX constraints | Canonical constraint, no UI implementation |
@@ -125,9 +125,11 @@ The advantage registry uses three non-interchangeable classes:
 
 External evidence cannot become Founder truth. Founder truth cannot be expanded
 into a mechanism not contained in its source. An architecture proposal cannot
-become implementation authority. The known `51 + 38 + 16` and approximate
-`1 : 1 : 3` relationship remains historical, non-current context and never a
-mandatory bundle, stock, price or compatibility rule.
+become implementation authority. Exact Founder source
+`C0BNHRRTE9F / 1787056479.144299` preserves the `51 + 38 + 16` and approximate
+`1 : 1 : 3` relationship as `FOUNDER_CONFIRMED / CURRENT_INTENT / EVIDENCE ONLY`.
+It never becomes Product relationship truth, a Variant Rule, mandatory bundle,
+quantity rule, SKU, Availability, stock, price or automatic cross-sell.
 
 ## 7. Planning outputs
 
@@ -151,7 +153,10 @@ Machine outputs:
 `USE_NOW` means adopt the principle in current planning, not implement it. The
 Fast Track view is limited to low-regret decisions that reduce discovery/inquiry
 friction while preserving canonical owners. High-dependency capabilities are
-`PLAN_NOW_IMPLEMENT_LATER`, `DEFER` or `NEEDS_FOUNDER_DECISION`.
+`PLAN_NOW_IMPLEMENT_LATER`, `DEFER` or `NEEDS_FOUNDER_DECISION`. Advantage D is
+`USE_NOW` because the Availability trust/separation business principle is already
+Founder-confirmed; freshness, expiry, source confidence, owner mechanics and
+Runtime projection remain separately gated.
 
 No AI capability belongs to Phase 1. Calculator, CRM automation, personalization,
 automatic cross-selling and supplier automation remain non-implemented.

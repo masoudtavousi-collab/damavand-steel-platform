@@ -190,5 +190,17 @@
   {
     "id": "M48_PARTIAL_HIGH_CONFIDENCE",
     "expected_code": "PARTIAL_SCORE"
+  },
+  {
+    "id": "M49_DIRECT_FOUNDER_TEMPORAL",
+    "expected_code": "ADVANTAGE_FOUNDER_TEMPORAL"
+  },
+  {
+    "id": "M50_WAREHOUSE_OWNERSHIP_CLAIM",
+    "expected_code": "WAREHOUSE_OWNERSHIP_CLAIM"
+  },
+  {
+    "id": "M51_AVAILABILITY_FOUNDER_ESCALATION",
+    "expected_code": "ADVANTAGE_DISPOSITION"
   }
 ]

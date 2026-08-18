@@ -20,7 +20,8 @@
       "properties": {
         "evidence_classification": {"enum": ["EXTERNAL_OBSERVATION", "FOUNDER_CONFIRMED", "ARCHITECTURE_PROPOSAL"]},
         "reference": {"type": "string", "minLength": 4, "maxLength": 240},
-        "claim": {"type": "string", "minLength": 4, "maxLength": 300}
+        "claim": {"type": "string", "minLength": 4, "maxLength": 300},
+        "temporal_role": {"enum": ["CURRENT_INTENT", "FUTURE_CONCEPT", "HISTORICAL_EXAMPLE_NONCURRENT", "OBSERVED_AT_CAPTURE", "PLANNING_ONLY"]}
       }
     },
     "advantage": {

@@ -54,6 +54,20 @@ evidence:
   copied_descriptions_allowed: false
   copied_images_allowed: false
   copied_tables_allowed: false
+founder_source_bindings:
+  canonical_availability_refs:
+    - C003-DISC-079
+    - C003-DISC-080
+    - C003-DISC-084
+    - C003-DISC-085
+    - C003R1-CP03-005
+  direct_slack_sources:
+    - reference: slack:C0BNHRRTE9F:1787056479.144299
+      channel_id: C0BNHRRTE9F
+      message_ts: "1787056479.144299"
+      evidence_classification: FOUNDER_CONFIRMED
+      temporal_role: CURRENT_INTENT
+      authority_effect: EVIDENCE_ONLY
 competitor_set:
   exact_count: 13
   tier_counts:

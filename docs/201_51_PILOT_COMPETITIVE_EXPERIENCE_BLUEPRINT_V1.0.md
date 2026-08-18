@@ -83,7 +83,8 @@ Candidate Knowledge links, each with its own canonical intent owner:
 
 ### Related 38 / 16 context
 
-The historical `51 + 38 + 16` example can trigger a neutral question such as
+The Founder-confirmed current-intent `51 + 38 + 16` consumption evidence can
+trigger a neutral question such as
 “Are you planning a railing system that also uses smaller components?” It cannot
 preselect quantities, assert compatibility, claim stock, calculate price or add a
 bundle. Future suggestions require Product relationships, Inventory Harmony,

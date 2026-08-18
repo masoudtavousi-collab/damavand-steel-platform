@@ -27,7 +27,7 @@ means implement, publish, activate commerce or bypass a later Mission gate.
 | A | Unified Product Family UX | `USE_NOW` | High | Medium | Guided evidence-backed selection without page explosion |
 | B | Context-Aware Commercial State | `PLAN_NOW_IMPLEMENT_LATER` | Medium | High | One coherent context while truth domains remain separate |
 | C | System Selling | `PLAN_NOW_IMPLEMENT_LATER` | Medium | High | Application-aware related products and assisted ordering |
-| D | Availability Trust Model | `NEEDS_FOUNDER_DECISION` | Medium | High | Useful supply communication without false stock claims |
+| D | Availability Trust Model | `USE_NOW` | High | High | Adopt the Founder-confirmed trust/separation principle; implementation remains gated |
 | E | Operator-Controlled Commercial Layer | `USE_NOW` | High | Medium | Preserve operator authority and auditability |
 | F | Data-Rich but Simple UX | `USE_NOW` | High | Medium | Deep information with progressive disclosure |
 | G | Product + Knowledge Architecture | `USE_NOW` | High | Medium | Serve commercial and informational intent without duplication |
@@ -35,8 +35,8 @@ means implement, publish, activate commerce or bypass a later Mission gate.
 | I | Mobile-First Persian RTL Commerce | `USE_NOW` | High | Medium | Fast industrial selection on the primary device context |
 | J | Product Calculator Platform | `PLAN_NOW_IMPLEMENT_LATER` | Medium | High | Future weight, branch, usage and project decision support |
 
-Counts: `USE_NOW=6`, `PLAN_NOW_IMPLEMENT_LATER=3`, `DEFER=0`,
-`REJECT=0`, `NEEDS_FOUNDER_DECISION=1`.
+Counts: `USE_NOW=7`, `PLAN_NOW_IMPLEMENT_LATER=3`, `DEFER=0`,
+`REJECT=0`, `NEEDS_FOUNDER_DECISION=0`.
 
 ## 3. Advantage contracts
 
@@ -73,28 +73,45 @@ invented value. C004 creates no projection and no active state.
 
 ### C. System Selling — PLAN NOW, IMPLEMENT LATER
 
-The historical `51 + 38 + 16` and approximate `1 : 1 : 3` example can inform
-questions for related-product, project-calculator and assisted-order design. It is
-not a current recipe, mandatory bundle, stock claim, price formula or universal
+Exact Founder source `C0BNHRRTE9F / 1787056479.144299` preserves
+`FOUNDER_CONFIRMED / CURRENT_INTENT / EVIDENCE ONLY`: 201/51 is recurring/core;
+51, 38 and 16 are usually high-demand complementary railing sizes; and an
+approximate `1 : 1 : 3` consumption pattern is common. This may inform future
+related-product, project-calculator and assisted-order questions. It is not
+Product relationship truth, a Variant Rule, bundle, quantity rule, SKU,
+Availability, stock, price formula, automatic cross-sell or universal
 compatibility rule.
 
 Future suggestions must resolve through Product `Related To`, C002 Inventory
 Harmony, evidence dates and operator review. Suggestions never auto-add items or
 enable commerce.
 
-### D. Availability Trust Model — NEEDS FOUNDER DECISION
+### D. Availability Trust Model — USE NOW
 
 The market repeatedly shows false, stale or contradictory stock presentation.
-Founder evidence confirms that Damavand does not own a warehouse while some goods
-are routinely sourceable. C004 evaluates, but does not approve, an internal split:
+Founder evidence already confirms the customer-facing business model:
+
+- `موجود` without publishing exact inventory quantity;
+- `قابل تأمین سریع` for routinely sourceable goods, subject to operator finalization;
+- `نیازمند استعلام` when supply needs confirmation;
+- `فعلاً ناموجود` when temporarily not orderable.
+
+Normal fulfillment may come from own stock for the item and/or the supplier
+network. A routinely sourceable item may remain orderable when own stock for that
+item is absent. Operator verifies/finalizes supply, and C004 makes no categorical
+warehouse-ownership assertion.
+
+The trust/separation principle is therefore `USE_NOW` in planning. This does not
+create Availability. Future implementation still requires a separately governed
+Availability owner and resolution of:
 
 - warehouse-confirmed;
 - market-assured;
 - verification-required.
 
-The customer vocabulary, expiry, evidence standard and escalation behavior need a
-protected Founder decision and a future Availability owner. Nothing here creates
-stock or Availability.
+Evidence freshness, expiry, source confidence, owner mechanics, escalation and
+Runtime projection remain independently gated. Nothing here creates stock,
+Availability or a customer shipping promise.
 
 ### E. Operator-Controlled Commercial Layer — USE NOW
 

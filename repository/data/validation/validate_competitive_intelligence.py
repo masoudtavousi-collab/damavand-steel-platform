@@ -38,13 +38,13 @@ PRODUCT_ENTITIES_PATH = ROOT / "repository/data/registries/product-entities.yaml
 PD03A_PATH = ROOT / "repository/data/registries/extensions/pd03a/pilot-prerequisite.yaml"
 CURRENT_STATE_PATH = ROOT / "docs/CURRENT_PROJECT_STATE.md"
 
-EXPECTED_CONTRACT_DIGEST = "1d920e30a076767e3c30e576fa653cfe01e9769c712b34d5c2488c556b2b83d1"
+EXPECTED_CONTRACT_DIGEST = "e4652271d81587d78b8d1fadf6395ef13ca87d7bae7450db346a25e62c7feacc"
 EXPECTED_COMPETITOR_DIGEST = "c64f79d966f0006d2c3e438d707d834bd1b9cbb74841689d9a489c405ce54309"
 EXPECTED_SCORE_DIGEST = "85f66a2baeb54ab28d4c49cffc17dcd5bf73c866381c4e57171b7c094b982207"
-EXPECTED_ADVANTAGE_DIGEST = "14f5cf1baae795f017d6a33360a78c3659030c6846cb9295bc3fa8c10aca867e"
+EXPECTED_ADVANTAGE_DIGEST = "378a49e8e89e57f49bab35ed83a469c45d7d44ddb768a22a966e4a0e23471de3"
 EXPECTED_COMPETITOR_SCHEMA_DIGEST = "9082845a7ab29dbe3be70423a8980342d773eeec67e62c7edd5f8842e189d2fd"
 EXPECTED_SCORE_SCHEMA_DIGEST = "acc95bf3b0317061d4ca0968ff6acf063456e6ded54a2dc689e4ca93f5a0d1a8"
-EXPECTED_ADVANTAGE_SCHEMA_DIGEST = "1ff79810acc5bbb84375b1c42ef7fa9a926de04663f931412194ff8036c365a7"
+EXPECTED_ADVANTAGE_SCHEMA_DIGEST = "d684d135f3a02a0110991bda923fce9d251311792886ae8765f8e6beb97483be"
 
 EXPECTED_COMPETITORS = [
     ("Steel Majlesi", "https://steelmajlesi.com/", "TIER_1"),
@@ -79,6 +79,18 @@ EXPECTED_ADVANTAGES = [
     "DATA_RICH_SIMPLE_UX", "PRODUCT_KNOWLEDGE_ARCHITECTURE", "TECHNICAL_CONTENT_AUTHORITY",
     "MOBILE_FIRST_PERSIAN_RTL_COMMERCE", "PRODUCT_CALCULATOR_PLATFORM",
 ]
+
+EXPECTED_AVAILABILITY_FOUNDER_REFS = [
+    "C003-DISC-079", "C003-DISC-080", "C003-DISC-084", "C003-DISC-085", "C003R1-CP03-005",
+]
+EXPECTED_DIRECT_FOUNDER_SOURCE = {
+    "reference": "slack:C0BNHRRTE9F:1787056479.144299",
+    "channel_id": "C0BNHRRTE9F",
+    "message_ts": "1787056479.144299",
+    "evidence_classification": "FOUNDER_CONFIRMED",
+    "temporal_role": "CURRENT_INTENT",
+    "authority_effect": "EVIDENCE_ONLY",
+}
 
 EXPECTED_FALSE_AUTHORITY_KEYS = {
     "product_population_allowed", "sku_population_allowed", "availability_population_allowed",
@@ -212,6 +224,9 @@ def validate_package(competitors: Any, scores: Any, advantages: Any, validators:
             add("CONTRACT_AUTHORITY", f"authority {key} must remain false")
     if authority.get("research_reconciliation_allowed") is not True or authority.get("architecture_planning_allowed") is not True:
         add("CONTRACT_SCOPE", "research reconciliation and architecture planning must be the only enabled mission capabilities")
+    founder_bindings = contract.get("founder_source_bindings", {})
+    if founder_bindings.get("canonical_availability_refs") != EXPECTED_AVAILABILITY_FOUNDER_REFS or founder_bindings.get("direct_slack_sources") != [EXPECTED_DIRECT_FOUNDER_SOURCE]:
+        add("FOUNDER_SOURCE_BINDING", "Founder source bindings must match the reviewed Availability and 51:38:16 evidence")
     if not _all_false(competitors.get("authority_effects")):
         add("REGISTRY_AUTHORITY", "competitor registry authority effects must all be false")
     if advantages.get("implementation_authority") is not False:
@@ -330,10 +345,18 @@ def validate_package(competitors: Any, scores: Any, advantages: Any, validators:
 
     advantage_records = advantages.get("advantages", [])
     founder_evidence = _load_founder_evidence()
+    direct_founder_sources = {
+        item.get("reference"): item
+        for item in founder_bindings.get("direct_slack_sources", [])
+        if isinstance(item, dict) and item.get("reference")
+    }
     if [item.get("advantage_code") for item in advantage_records if isinstance(item, dict)] != list("ABCDEFGHIJ"):
         add("ADVANTAGE_ORDER", "advantages A-J must be present in exact order")
     if [str(item.get("title", "")).upper().replace(" ", "_") for item in advantage_records if isinstance(item, dict)] != EXPECTED_ADVANTAGES:
         add("ADVANTAGE_SET", "the exact ten Mission advantages must be represented")
+    status_counts = Counter(item.get("recommended_status") for item in advantage_records if isinstance(item, dict))
+    if status_counts != Counter({"USE_NOW": 7, "PLAN_NOW_IMPLEMENT_LATER": 3}):
+        add("ADVANTAGE_DISPOSITION", "advantage dispositions must remain exactly 7 USE_NOW and 3 PLAN_NOW_IMPLEMENT_LATER")
     advantage_ids: list[Any] = []
     for index, advantage in enumerate(advantage_records, start=1):
         if not isinstance(advantage, dict):
@@ -350,12 +373,46 @@ def validate_package(competitors: Any, scores: Any, advantages: Any, validators:
                 add("ADVANTAGE_EXTERNAL_EVIDENCE", f"advantage {index} has unresolved external observation")
             if kind == "FOUNDER_CONFIRMED":
                 source = founder_evidence.get(reference)
-                if source is None or source.get("evidence_classification") != "FOUNDER_CONFIRMED":
-                    add("ADVANTAGE_FOUNDER_EVIDENCE", f"advantage {index} Founder evidence must resolve to canonical FOUNDER_CONFIRMED C003 evidence")
+                direct_source = direct_founder_sources.get(reference)
+                if source is not None and source.get("evidence_classification") == "FOUNDER_CONFIRMED":
+                    pass
+                elif direct_source is not None and direct_source.get("evidence_classification") == "FOUNDER_CONFIRMED":
+                    if basis.get("temporal_role") != direct_source.get("temporal_role") or direct_source.get("authority_effect") != "EVIDENCE_ONLY":
+                        add("ADVANTAGE_FOUNDER_TEMPORAL", f"advantage {index} direct Founder evidence must preserve temporal role and evidence-only authority")
+                else:
+                    add("ADVANTAGE_FOUNDER_EVIDENCE", f"advantage {index} Founder evidence must resolve to canonical C003 evidence or the exact reviewed Slack source")
             if kind == "ARCHITECTURE_PROPOSAL" and not (reference.startswith("C004-") or reference.startswith("slack:")):
                 add("ADVANTAGE_PROPOSAL_EVIDENCE", f"advantage {index} proposal basis must remain visibly non-Founder authority")
     if len(set(advantage_ids)) != 10:
         add("DUPLICATE_ADVANTAGE", "exactly ten unique advantage IDs are required")
+    advantage_by_code = {
+        item.get("advantage_code"): item for item in advantage_records if isinstance(item, dict)
+    }
+    system_selling_basis = [
+        item for item in advantage_by_code.get("C", {}).get("evidence_basis", []) if isinstance(item, dict)
+    ]
+    direct_system_source = next(
+        (item for item in system_selling_basis if item.get("reference") == EXPECTED_DIRECT_FOUNDER_SOURCE["reference"]),
+        None,
+    )
+    if direct_system_source is None or direct_system_source.get("evidence_classification") != "FOUNDER_CONFIRMED" or direct_system_source.get("temporal_role") != "CURRENT_INTENT":
+        add("CURRENT_INTENT_SOURCE_BINDING", "System Selling must preserve the exact Founder-confirmed current-intent 51:38:16 source")
+    availability_basis = [
+        item for item in advantage_by_code.get("D", {}).get("evidence_basis", []) if isinstance(item, dict)
+    ]
+    availability_founder_refs = {
+        str(item.get("reference")) for item in availability_basis if item.get("evidence_classification") == "FOUNDER_CONFIRMED"
+    }
+    expected_availability_refs = set(EXPECTED_AVAILABILITY_FOUNDER_REFS) | {EXPECTED_DIRECT_FOUNDER_SOURCE["reference"]}
+    if availability_founder_refs != expected_availability_refs or advantage_by_code.get("D", {}).get("recommended_status") != "USE_NOW":
+        add("AVAILABILITY_FOUNDER_RECONCILIATION", "Availability must retain its exact Founder sources and USE_NOW planning disposition")
+    warehouse_claims = [
+        str(basis.get("claim", "")).casefold()
+        for advantage in advantage_records if isinstance(advantage, dict)
+        for basis in advantage.get("evidence_basis", []) if isinstance(basis, dict)
+    ]
+    if any("does not own a warehouse" in claim or "has no own warehouse" in claim for claim in warehouse_claims):
+        add("WAREHOUSE_OWNERSHIP_CLAIM", "C004 must not infer Damavand warehouse ownership or non-ownership")
 
     anti_patterns = advantages.get("anti_patterns", [])
     if len(anti_patterns) < 10 or len({item.get("anti_pattern_id") for item in anti_patterns if isinstance(item, dict)}) != len(anti_patterns):

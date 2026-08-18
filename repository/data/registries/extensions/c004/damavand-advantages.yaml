@@ -48,7 +48,7 @@ advantages:
     evidence_basis:
       - {evidence_classification: EXTERNAL_OBSERVATION, reference: "cobs:000000000012", claim: "Kia links products to installation and related component context."}
       - {evidence_classification: EXTERNAL_OBSERVATION, reference: "cobs:00000000002e", claim: "SteelParto exposes a related-product graph in its public store API."}
-      - {evidence_classification: FOUNDER_CONFIRMED, reference: "C003-DISC-089", claim: "Founder history records a non-current 51, 38 and 16 relationship example."}
+      - {evidence_classification: FOUNDER_CONFIRMED, reference: "slack:C0BNHRRTE9F:1787056479.144299", claim: "Founder-confirmed current intent records recurring 201/51 demand and a common complementary 51:38:16 consumption pattern of approximately 1:1:3; evidence only, never a bundle or SKU rule.", temporal_role: CURRENT_INTENT}
       - {evidence_classification: ARCHITECTURE_PROPOSAL, reference: "C004-ADV-C", claim: "C004 proposes governed suggestions, not mandatory bundles."}
     customer_value: HIGH
     business_value: HIGH
@@ -57,7 +57,7 @@ advantages:
     architectural_dependencies: ["Product Related To relation", "C002 Inventory Harmony", "Future project calculator", "Operator review"]
     fast_track_value: MEDIUM
     long_term_value: HIGH
-    risk: "Historical ratios could be misread as stock, price, compatibility or mandatory quantities."
+    risk: "Current-intent consumption evidence could be misread as stock, price, compatibility or mandatory quantities."
     recommended_status: PLAN_NOW_IMPLEMENT_LATER
     implementation_authority: false
   - advantage_id: "cadv:000000000004"
@@ -66,8 +66,13 @@ advantages:
     domain: "Availability and trust"
     evidence_basis:
       - {evidence_classification: EXTERNAL_OBSERVATION, reference: "cobs:000000000030", claim: "A public competitor surface shows why stock, text, price and purchasability must agree."}
-      - {evidence_classification: FOUNDER_CONFIRMED, reference: "C003R1-CP03-005", claim: "Damavand has no own warehouse while some supply is routinely sourceable."}
-      - {evidence_classification: ARCHITECTURE_PROPOSAL, reference: "C004-ADV-D", claim: "C004 evaluates internal warehouse-confirmed, market-assured and verification-required states."}
+      - {evidence_classification: FOUNDER_CONFIRMED, reference: "C003-DISC-079", claim: "Founder-confirmed customer states are موجود، قابل تأمین سریع، نیازمند استعلام and فعلاً ناموجود; exact inventory quantity stays nonpublic."}
+      - {evidence_classification: FOUNDER_CONFIRMED, reference: "C003-DISC-080", claim: "Common sizes can often be sourced faster than special items, but no fixed public ETA may be inferred."}
+      - {evidence_classification: FOUNDER_CONFIRMED, reference: "C003-DISC-084", claim: "Internal replenishment capability is not a customer shipping promise."}
+      - {evidence_classification: FOUNDER_CONFIRMED, reference: "C003R1-CP03-005", claim: "Routine network sourcing may keep an item orderable when own stock for that item is absent; operator finalizes supply and no warehouse stock is falsely asserted."}
+      - {evidence_classification: FOUNDER_CONFIRMED, reference: "C003-DISC-085", claim: "Operator assigns and communicates actual dispatch timing after verification; no automatic ETA is promised."}
+      - {evidence_classification: FOUNDER_CONFIRMED, reference: "slack:C0BNHRRTE9F:1787056479.144299", claim: "Founder-confirmed continuity evidence says typical combined fulfillment may come from own item stock and/or the supplier network without creating a stock guarantee.", temporal_role: CURRENT_INTENT}
+      - {evidence_classification: ARCHITECTURE_PROPOSAL, reference: "C004-ADV-D", claim: "Future evidence freshness, expiry, source confidence, owner mechanics and runtime projection remain separately gated."}
     customer_value: HIGH
     business_value: HIGH
     revenue_impact: HIGH
@@ -75,8 +80,8 @@ advantages:
     architectural_dependencies: ["Future Availability policy", "Supply evidence", "Operator verification", "Per-SKU Commerce Eligibility"]
     fast_track_value: MEDIUM
     long_term_value: HIGH
-    risk: "Customer wording could overstate stock or create anxiety without a Founder-approved trust contract."
-    recommended_status: NEEDS_FOUNDER_DECISION
+    risk: "Implementation mechanics could overstate stock unless freshness, expiry, source confidence and projection remain fail-closed under a future Availability owner."
+    recommended_status: USE_NOW
     implementation_authority: false
   - advantage_id: "cadv:000000000005"
     advantage_code: E

@@ -27,7 +27,7 @@ planning to canonical Damavand owners and require separate implementation gates.
 
 - Do not create one page per thickness, brand or finish only because a competitor does.
 - Do not embed temporary commercial values in Product truth.
-- Do not turn the historical `51 : 38 : 16` context into a bundle or quantity rule.
+- Do not turn the Founder-confirmed current-intent `51 : 38 : 16` consumption evidence into Product truth, a bundle, quantity rule, stock claim or automatic cross-sell.
 - Do not expose controlled-value proposals as selectable values.
 - Do not treat a competitor's price, stock, warehouse label or delivery claim as Damavand evidence.
 - Do not use an empty cart, checkout or account shell to imply a capability.

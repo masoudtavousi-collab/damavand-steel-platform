@@ -66,10 +66,18 @@ class CompetitiveIntelligenceTests(unittest.TestCase):
 
     def test_positive_advantage_dispositions_and_class_separation(self) -> None:
         counts = Counter(item["recommended_status"] for item in self.advantages["advantages"])
-        self.assertEqual(counts, Counter({"USE_NOW": 6, "PLAN_NOW_IMPLEMENT_LATER": 3, "NEEDS_FOUNDER_DECISION": 1}))
+        self.assertEqual(counts, Counter({"USE_NOW": 7, "PLAN_NOW_IMPLEMENT_LATER": 3}))
         classes = {basis["evidence_classification"] for item in self.advantages["advantages"] for basis in item["evidence_basis"]}
         self.assertEqual(classes, {"EXTERNAL_OBSERVATION", "FOUNDER_CONFIRMED", "ARCHITECTURE_PROPOSAL"})
         self.assertTrue(all(item["implementation_authority"] is False for item in self.advantages["advantages"]))
+        advantage_c = next(item for item in self.advantages["advantages"] if item["advantage_code"] == "C")
+        current_source = next(item for item in advantage_c["evidence_basis"] if item["reference"] == "slack:C0BNHRRTE9F:1787056479.144299")
+        self.assertEqual((current_source["evidence_classification"], current_source["temporal_role"]), ("FOUNDER_CONFIRMED", "CURRENT_INTENT"))
+        advantage_d = next(item for item in self.advantages["advantages"] if item["advantage_code"] == "D")
+        self.assertEqual(advantage_d["recommended_status"], "USE_NOW")
+        claims = " ".join(basis["claim"] for item in self.advantages["advantages"] for basis in item["evidence_basis"]).casefold()
+        self.assertNotIn("does not own a warehouse", claims)
+        self.assertNotIn("has no own warehouse", claims)
 
     def test_positive_exact_authority_map(self) -> None:
         authority = self.contract["authority"]
@@ -174,11 +182,14 @@ class CompetitiveIntelligenceTests(unittest.TestCase):
         elif mutation_id == "M46_PARTIAL_SUPPORTED_LEADER": next(item for item in leaders if item["competitor_id"] == "comp:000000000006")["status"] = "SUPPORTED_LEADER"
         elif mutation_id == "M47_STALE_CURRENT_REFERENCE": ss[0]["evidence_status"] = "STALE"; ss[0]["confidence"] = "LOW"
         elif mutation_id == "M48_PARTIAL_HIGH_CONFIDENCE": ss[0]["confidence"] = "HIGH"
+        elif mutation_id == "M49_DIRECT_FOUNDER_TEMPORAL": next(item for item in aa[2]["evidence_basis"] if item["reference"].startswith("slack:"))["temporal_role"] = "HISTORICAL_EXAMPLE_NONCURRENT"
+        elif mutation_id == "M50_WAREHOUSE_OWNERSHIP_CLAIM": aa[3]["evidence_basis"][2]["claim"] = "Damavand does not own a warehouse."
+        elif mutation_id == "M51_AVAILABILITY_FOUNDER_ESCALATION": aa[3]["recommended_status"] = "NEEDS_FOUNDER_DECISION"
         else: self.fail(f"undispatched mutation: {mutation_id}")
         return self.render(competitors, scores, advantages)
 
     def test_negative_mutation_manifest_is_complete_and_fail_closed(self) -> None:
-        self.assertEqual(len(self.mutations), 48)
+        self.assertEqual(len(self.mutations), 51)
         seen: set[str] = set()
         for mutation in self.mutations:
             mutation_id = mutation["id"]

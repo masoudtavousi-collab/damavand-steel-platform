@@ -5,9 +5,18 @@
 - Added a Founder-source-bound scope, 13-competitor observation registry, exact
   28-dimension/364-record non-aggregate score matrix and evidence-bounded
   leadership map.
-- Added ten original Damavand planning advantages (`6 USE_NOW`,
-  `3 PLAN_NOW_IMPLEMENT_LATER`, `1 NEEDS_FOUNDER_DECISION`), 12 anti-patterns and
+- Added ten original Damavand planning advantages (`7 USE_NOW`,
+  `3 PLAN_NOW_IMPLEMENT_LATER`, `0 NEEDS_FOUNDER_DECISION`), 12 anti-patterns and
   a Mobile First Persian RTL 201/51 experience plus SEO blueprint.
+- Corrected C004 against complete Founder Availability evidence: the four
+  customer-facing states and trust/separation principle are already confirmed,
+  while freshness, expiry, source confidence, owner mechanics and Runtime
+  projection remain separately gated. No warehouse ownership/non-ownership is
+  inferred.
+- Bound System Selling to exact source `C0BNHRRTE9F / 1787056479.144299` as
+  `FOUNDER_CONFIRMED / CURRENT_INTENT / EVIDENCE ONLY`; the 51:38:16 pattern
+  remains noncanonical and cannot create a bundle, quantity, Product, SKU,
+  Availability, stock, price or automatic cross-sell rule.
 - Added three closed Draft 2020-12 schemas, offline deterministic validation and
   mutation/adversarial tests; competitor evidence stays supplementary and
   copyright-safe.
