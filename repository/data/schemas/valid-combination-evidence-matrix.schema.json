@@ -1,0 +1,484 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:damavand:valid-combination-evidence-matrix:1.0.0",
+  "title": "C003-R2 201/51 Founder Evidence Completion",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "registry_id", "registry_version", "contract_version", "data_classification",
+    "mission", "source_manifest", "authority_effects", "founder_evidence_completion_packet",
+    "valid_combination_evidence_matrix", "founder_question_compression_plan",
+    "missing_evidence_register", "mass_evidence_intake", "supply_evidence_intake",
+    "c002_readiness", "selection_effects"
+  ],
+  "properties": {
+    "registry_id": {"const": "c003-r2-201-51-founder-evidence-completion"},
+    "registry_version": {"const": "1.0.0"},
+    "contract_version": {"const": "1.0.0"},
+    "data_classification": {"const": "FOUNDER_EVIDENCE_COMPLETION_PLANNING"},
+    "mission": {"$ref": "#/$defs/mission"},
+    "source_manifest": {"$ref": "#/$defs/sourceManifest"},
+    "authority_effects": {"$ref": "#/$defs/authorityEffects"},
+    "founder_evidence_completion_packet": {"$ref": "#/$defs/completionPacket"},
+    "valid_combination_evidence_matrix": {"$ref": "#/$defs/matrix"},
+    "founder_question_compression_plan": {"$ref": "#/$defs/questionPlan"},
+    "missing_evidence_register": {"$ref": "#/$defs/missingRegister"},
+    "mass_evidence_intake": {"$ref": "#/$defs/massIntake"},
+    "supply_evidence_intake": {"$ref": "#/$defs/supplyIntake"},
+    "c002_readiness": {"$ref": "#/$defs/readiness"},
+    "selection_effects": {"$ref": "#/$defs/selectionEffects"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "sourceRef": {"type": "string", "pattern": "^(C003R1-CP03-[0-9]{3}|C003-DISC-[0-9]{3})$"},
+    "brand": {"enum": ["Sumwin", "Sansco", "Goldsco", "King", "StoneLand", "SUS"]},
+    "thickness": {"enum": ["0.45", "0.50", "0.55", "0.60", "0.70", "0.80", "0.90", "1.00", "1.10", "1.20", "1.50", "2.00"]},
+    "appearance": {"enum": ["STEEL_NATURAL_GLOSSY", "GOLD_GLOSSY"]},
+    "criterionCode": {"enum": ["DEMAND_SIGNAL", "SUPPLY_EVIDENCE", "GROSS_PROFIT_POTENTIAL", "REPEATABILITY", "PRODUCT_DATA_COMPLETENESS", "PHOTO_CONTENT_READINESS", "SEO_BUYER_INTENT", "OPERATIONAL_COMPLEXITY", "FULFILLMENT_RISK"]},
+    "authorityEffects": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate_population", "product_population", "controlled_value_promotion", "valid_tuple_promotion", "sku_assignment", "availability_or_stock_claim", "current_or_public_price", "commerce_activation", "payment_activation", "wordpress_woocommerce_mutation", "runtime_staging_production", "deployment", "c1_t03_repair", "c003_a_start", "c003_b_start", "merge", "successor_mission"],
+      "properties": {
+        "candidate_population": {"const": false},
+        "product_population": {"const": false},
+        "controlled_value_promotion": {"const": false},
+        "valid_tuple_promotion": {"const": false},
+        "sku_assignment": {"const": false},
+        "availability_or_stock_claim": {"const": false},
+        "current_or_public_price": {"const": false},
+        "commerce_activation": {"const": false},
+        "payment_activation": {"const": false},
+        "wordpress_woocommerce_mutation": {"const": false},
+        "runtime_staging_production": {"const": false},
+        "deployment": {"const": false},
+        "c1_t03_repair": {"const": false},
+        "c003_a_start": {"const": false},
+        "c003_b_start": {"const": false},
+        "merge": {"const": false},
+        "successor_mission": {"const": false}
+      }
+    },
+    "mission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mission_id", "title", "source_locator", "starting_main_sha", "source_verified"],
+      "properties": {
+        "mission_id": {"const": "C003-R2"},
+        "title": {"const": "201/51 Founder Evidence Completion and Valid Combination Evidence Matrix"},
+        "source_locator": {"const": "codex-attachment:ee4ae1ce-aedc-434f-a6b3-ca40a8fbf81b/pasted-text.txt"},
+        "starting_main_sha": {"const": "91bddc43fd521a5548910d5087aad2f9d63e06f5"},
+        "source_verified": {"const": true}
+      }
+    },
+    "canonicalEvidenceOwner": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contract", "registry", "contract_semantic_sha256", "registry_semantic_sha256"],
+      "properties": {
+        "contract": {"const": "repository/data/contracts/founder-product-commerce-checkpoint03.contract.yaml"},
+        "registry": {"const": "repository/data/registries/extensions/c003r1/checkpoint03-evidence-and-pilot-readiness.yaml"},
+        "contract_semantic_sha256": {"$ref": "#/$defs/sha256"},
+        "registry_semantic_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "thread": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "channel_id", "parent_ts", "message_count", "complete"],
+      "properties": {
+        "source_id": {"enum": ["CHECKPOINT_03", "FOUNDER_DISCOVERY_SESSION_01", "IDEA_VAULT_RELEVANT_DOMAINS"]},
+        "channel_id": {"const": "C0BNHRRTE9F"},
+        "parent_ts": {"type": "string", "pattern": "^[0-9]{10}\\.[0-9]{6}$"},
+        "message_count": {"type": "integer", "minimum": 4, "maximum": 9},
+        "complete": {"const": true}
+      }
+    },
+    "sourceManifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["canonical_evidence_owner", "verified_threads", "copied_slack_ledger", "external_market_research_used"],
+      "properties": {
+        "canonical_evidence_owner": {"$ref": "#/$defs/canonicalEvidenceOwner"},
+        "verified_threads": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"$ref": "#/$defs/thread"}},
+        "copied_slack_ledger": {"const": false},
+        "external_market_research_used": {"const": false}
+      }
+    },
+    "scopeReferences": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["family_id", "series_id", "variant_rule_set_id"],
+      "properties": {
+        "family_id": {"const": "prd:family:a10c6d8ceabc"},
+        "series_id": {"const": "prd:series:e1657d35ac35"},
+        "variant_rule_set_id": {"const": "prd:variant-rule-set:eb255662accc"}
+      }
+    },
+    "pilotScope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["presentation_product_group", "product_group_role", "grade", "diameter_mm", "canonical_scope_references"],
+      "properties": {
+        "presentation_product_group": {"const": "stainless round pipe"},
+        "product_group_role": {"const": "PRESENTATION_UX_MAPPING_NOT_CANONICAL_ENTITY"},
+        "grade": {"const": "201"},
+        "diameter_mm": {"const": "51"},
+        "canonical_scope_references": {"$ref": "#/$defs/scopeReferences"}
+      }
+    },
+    "appearanceLengths": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["appearance", "lengths_m"],
+      "properties": {
+        "appearance": {"$ref": "#/$defs/appearance"},
+        "lengths_m": {"type": "array", "minItems": 1, "maxItems": 2, "uniqueItems": true, "items": {"enum": ["3.00", "6.00"]}}
+      }
+    },
+    "knownEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["brands", "thicknesses_mm", "appearances", "appearance_lengths", "all_six_brands_may_be_offered_in_both_appearances", "brand_appearance_claim_proves_complete_tuple", "mass_is_batch_or_transaction_specific", "historical_mass_examples", "one_shared_image_acceptable_at_this_stage", "shared_main_description_acceptable_at_this_stage", "evidence_source_refs"],
+      "properties": {
+        "brands": {"type": "array", "minItems": 6, "maxItems": 6, "uniqueItems": true, "items": {"$ref": "#/$defs/brand"}},
+        "thicknesses_mm": {"type": "array", "minItems": 12, "maxItems": 12, "uniqueItems": true, "items": {"$ref": "#/$defs/thickness"}},
+        "appearances": {"type": "array", "minItems": 2, "maxItems": 2, "uniqueItems": true, "items": {"$ref": "#/$defs/appearance"}},
+        "appearance_lengths": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/appearanceLengths"}},
+        "all_six_brands_may_be_offered_in_both_appearances": {"const": true},
+        "brand_appearance_claim_proves_complete_tuple": {"const": false},
+        "mass_is_batch_or_transaction_specific": {"const": true},
+        "historical_mass_examples": {"$ref": "#/$defs/historicalMassExamples"},
+        "one_shared_image_acceptable_at_this_stage": {"const": true},
+        "shared_main_description_acceptable_at_this_stage": {"const": true},
+        "evidence_source_refs": {"type": "array", "minItems": 11, "maxItems": 11, "uniqueItems": true, "items": {"$ref": "#/$defs/sourceRef"}}
+      }
+    },
+    "historicalMassExamples": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_ref", "values_kg", "evidence_class", "temporal_role", "current_intake_observation", "exclusion_reason"],
+      "properties": {
+        "source_ref": {"const": "C003-DISC-031"},
+        "values_kg": {"const": ["3.500", "3.600", "3.620", "3.650", "3.680", "3.700"]},
+        "evidence_class": {"const": "FOUNDER_CONFIRMED"},
+        "temporal_role": {"const": "HISTORICAL_EXAMPLE_NONCURRENT"},
+        "current_intake_observation": {"const": false},
+        "exclusion_reason": {"type": "string", "minLength": 80, "maxLength": 500}
+      }
+    },
+    "completionEffects": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evidence_only", "founder_answers_recorded", "tuple_state_changed", "canonical_population"],
+      "properties": {
+        "evidence_only": {"const": true},
+        "founder_answers_recorded": {"const": false},
+        "tuple_state_changed": {"const": false},
+        "canonical_population": {"const": false}
+      }
+    },
+    "completionPacket": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["packet_id", "packet_version", "packet_status", "purpose", "pilot_scope", "known_evidence", "completion_effects"],
+      "properties": {
+        "packet_id": {"const": "c003r2fec:201051000001"},
+        "packet_version": {"const": "1.0.0"},
+        "packet_status": {"const": "FOUNDER_REVIEW_WORKSHEET_READY"},
+        "purpose": {"const": "COMPLETE_EXISTING_EVIDENCE_AND_CAPTURE_MISSING_TUPLE_EVIDENCE"},
+        "pilot_scope": {"$ref": "#/$defs/pilotScope"},
+        "known_evidence": {"$ref": "#/$defs/knownEvidence"},
+        "completion_effects": {"$ref": "#/$defs/completionEffects"}
+      }
+    },
+    "brandSelector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["selector", "values"],
+      "properties": {
+        "selector": {"const": "ALL_LISTED_BRANDS"},
+        "values": {"type": "array", "minItems": 6, "maxItems": 6, "uniqueItems": true, "items": {"$ref": "#/$defs/brand"}}
+      }
+    },
+    "thicknessSelector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["selector", "values_mm"],
+      "properties": {
+        "selector": {"const": "ALL_LISTED_THICKNESSES"},
+        "values_mm": {"type": "array", "minItems": 12, "maxItems": 12, "uniqueItems": true, "items": {"$ref": "#/$defs/thickness"}}
+      }
+    },
+    "matrixRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["row_id", "brand", "thickness", "appearance", "length_m", "evidence_state", "evidence_source_refs", "guardrail_source_refs", "evidence_class", "temporal_role", "founder_review_required", "notes"],
+      "properties": {
+        "row_id": {"type": "string", "pattern": "^c003r2row:[0-9a-f]{12}$"},
+        "brand": {"$ref": "#/$defs/brandSelector"},
+        "thickness": {"$ref": "#/$defs/thicknessSelector"},
+        "appearance": {"$ref": "#/$defs/appearance"},
+        "length_m": {"enum": ["3.00", "6.00"]},
+        "evidence_state": {"enum": ["CONFIRMED_VALID", "CONFIRMED_INVALID", "UNKNOWN", "NOT_APPLICABLE"]},
+        "evidence_source_refs": {"type": "array", "minItems": 5, "maxItems": 5, "uniqueItems": true, "items": {"$ref": "#/$defs/sourceRef"}},
+        "guardrail_source_refs": {"type": "array", "minItems": 1, "maxItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/sourceRef"}},
+        "evidence_class": {"const": "FOUNDER_CONFIRMED"},
+        "temporal_role": {"const": "CURRENT_INTENT"},
+        "founder_review_required": {"const": true},
+        "notes": {"type": "string", "minLength": 40, "maxLength": 500}
+      }
+    },
+    "matrix": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["matrix_id", "representation", "states", "default_unproven_state", "compressed_row_count", "expanded_review_universe_count", "confirmed_valid_count", "confirmed_invalid_count", "unknown_count", "not_applicable_count", "inferred_tuple_count", "cartesian_truth_generation", "persisted_expanded_tuple_rows", "rows"],
+      "properties": {
+        "matrix_id": {"const": "c003r2matrix:201051000001"},
+        "representation": {"const": "COMPRESSED_RULES_NOT_PERSISTED_CARTESIAN_ROWS"},
+        "states": {"const": ["CONFIRMED_VALID", "CONFIRMED_INVALID", "UNKNOWN", "NOT_APPLICABLE"]},
+        "default_unproven_state": {"const": "UNKNOWN"},
+        "compressed_row_count": {"const": 3},
+        "expanded_review_universe_count": {"const": 216},
+        "confirmed_valid_count": {"const": 0},
+        "confirmed_invalid_count": {"const": 0},
+        "unknown_count": {"const": 216},
+        "not_applicable_count": {"const": 0},
+        "inferred_tuple_count": {"const": 0},
+        "cartesian_truth_generation": {"const": false},
+        "persisted_expanded_tuple_rows": {"const": false},
+        "rows": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/matrixRow"}}
+      }
+    },
+    "questionGroup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["appearance", "length_m", "answer_mode", "supported_thicknesses_mm", "invalid_thicknesses_mm", "not_applicable_thicknesses_mm", "exception_notes", "evidence_state"],
+      "properties": {
+        "appearance": {"$ref": "#/$defs/appearance"},
+        "length_m": {"enum": ["3.00", "6.00"]},
+        "answer_mode": {"enum": ["UNANSWERED", "ALL_LISTED_CONFIRMED_VALID", "EXPLICIT_STATE_SETS", "ALL_LISTED_CONFIRMED_INVALID", "KEEP_UNKNOWN"]},
+        "supported_thicknesses_mm": {"type": "array", "maxItems": 12, "uniqueItems": true, "items": {"$ref": "#/$defs/thickness"}},
+        "invalid_thicknesses_mm": {"type": "array", "maxItems": 12, "uniqueItems": true, "items": {"$ref": "#/$defs/thickness"}},
+        "not_applicable_thicknesses_mm": {"type": "array", "maxItems": 12, "uniqueItems": true, "items": {"$ref": "#/$defs/thickness"}},
+        "exception_notes": {"type": "array", "maxItems": 12, "uniqueItems": true, "items": {"type": "string", "minLength": 1, "maxLength": 240}},
+        "evidence_state": {"enum": ["CONFIRMED_VALID", "CONFIRMED_INVALID", "UNKNOWN", "NOT_APPLICABLE"]}
+      }
+    },
+    "reviewItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["review_item_id", "brand", "founder_review_required", "answer_evidence", "groups"],
+      "properties": {
+        "review_item_id": {"type": "string", "pattern": "^c003r2question:[0-9a-f]{12}$"},
+        "brand": {"$ref": "#/$defs/brand"},
+        "founder_review_required": {"const": true},
+        "answer_evidence": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/answerEvidence"}]},
+        "groups": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/questionGroup"}}
+      }
+    },
+    "answerEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_locator", "evidence_classification", "temporal_role", "founder_confirmed", "captured_at", "reviewer_reference", "reviewed_at", "review_status", "promotion_effect"],
+      "properties": {
+        "source_locator": {"type": "string", "minLength": 12, "maxLength": 300},
+        "evidence_classification": {"const": "FOUNDER_CONFIRMED"},
+        "temporal_role": {"enum": ["CURRENT_INTENT", "FUTURE_CONCEPT", "HISTORICAL_EXAMPLE_NONCURRENT"]},
+        "founder_confirmed": {"const": true},
+        "captured_at": {"type": "string", "format": "date-time"},
+        "reviewer_reference": {"type": "string", "minLength": 3, "maxLength": 160},
+        "reviewed_at": {"type": "string", "format": "date-time"},
+        "review_status": {"const": "VERIFIED"},
+        "promotion_effect": {"const": false}
+      }
+    },
+    "questionPlan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["plan_id", "strategy", "founder_review_item_count", "maximum_tuple_resolution_per_answer", "total_tuple_review_universe", "answer_capture_authority", "unanswered_preserves_unknown", "instructions", "review_items"],
+      "properties": {
+        "plan_id": {"const": "c003r2questions:201051000001"},
+        "strategy": {"const": "ONE_BRAND_REVIEW_ITEM_WITH_THREE_APPEARANCE_LENGTH_GROUPS"},
+        "founder_review_item_count": {"const": 6},
+        "maximum_tuple_resolution_per_answer": {"const": 36},
+        "total_tuple_review_universe": {"const": 216},
+        "answer_capture_authority": {"const": false},
+        "unanswered_preserves_unknown": {"const": true},
+        "instructions": {"type": "string", "minLength": 80, "maxLength": 800},
+        "review_items": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/reviewItem"}}
+      }
+    },
+    "missingItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sequence", "criterion_code", "evidence_state", "evidence_source_refs", "required_completion", "status"],
+      "properties": {
+        "sequence": {"type": "integer", "minimum": 1, "maximum": 9},
+        "criterion_code": {"$ref": "#/$defs/criterionCode"},
+        "evidence_state": {"enum": ["MISSING", "SUBMITTED"]},
+        "evidence_source_refs": {"type": "array", "maxItems": 8, "uniqueItems": true, "items": {"$ref": "#/$defs/sourceRef"}},
+        "required_completion": {"type": "string", "minLength": 25, "maxLength": 500},
+        "status": {"const": "OPEN_BLOCKING"}
+      }
+    },
+    "missingRegister": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["register_id", "open_item_count", "items"],
+      "properties": {
+        "register_id": {"const": "c003r2missing:201051000001"},
+        "open_item_count": {"const": 9},
+        "items": {"type": "array", "minItems": 9, "maxItems": 9, "items": {"$ref": "#/$defs/missingItem"}}
+      }
+    },
+    "nullableBrand": {"oneOf": [{"$ref": "#/$defs/brand"}, {"type": "null"}]},
+    "nullableThickness": {"oneOf": [{"$ref": "#/$defs/thickness"}, {"type": "null"}]},
+    "nullableAppearance": {"oneOf": [{"$ref": "#/$defs/appearance"}, {"type": "null"}]},
+    "nullableLength": {"oneOf": [{"enum": ["3.00", "6.00"]}, {"type": "null"}]},
+    "massVariantContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pilot_key", "grade", "diameter_mm", "brand", "thickness_mm", "appearance", "length_m", "missing_context_fields"],
+      "properties": {
+        "pilot_key": {"const": "STAINLESS_ROUND_PIPE__GRADE_201__DIAMETER_51_MM"},
+        "grade": {"oneOf": [{"const": "201"}, {"type": "null"}]},
+        "diameter_mm": {"oneOf": [{"const": "51"}, {"type": "null"}]},
+        "brand": {"$ref": "#/$defs/nullableBrand"},
+        "thickness_mm": {"$ref": "#/$defs/nullableThickness"},
+        "appearance": {"$ref": "#/$defs/nullableAppearance"},
+        "length_m": {"$ref": "#/$defs/nullableLength"},
+        "missing_context_fields": {"type": "array", "maxItems": 6, "uniqueItems": true, "items": {"enum": ["grade", "diameter_mm", "brand", "thickness_mm", "appearance", "length_m"]}}
+      }
+    },
+    "massObservation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["observation_id", "variant_context", "observed_mass_decimal", "unit_reference", "unit_status_at_capture", "batch_or_load_date", "supplier_or_source", "operator_reference", "source_channel", "proposed_c002_mass_method", "c002_method_validation_state", "supplier_stated_method_allowed", "source_locator", "previous_observation_reference", "current_suggestion", "confirmed_by_operator", "canonical_or_variant_effect"],
+      "properties": {
+        "observation_id": {"type": "string", "pattern": "^c003r2mass:[0-9a-f]{12}$"},
+        "variant_context": {"$ref": "#/$defs/massVariantContext"},
+        "observed_mass_decimal": {"type": "string", "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{3,6}$"},
+        "unit_reference": {"const": "unit:000000000003"},
+        "unit_status_at_capture": {"const": "CANDIDATE_UNVERIFIED"},
+        "batch_or_load_date": {"oneOf": [{"type": "string", "format": "date"}, {"type": "null"}]},
+        "supplier_or_source": {"oneOf": [{"type": "string", "minLength": 3, "maxLength": 200}, {"type": "null"}]},
+        "operator_reference": {"oneOf": [{"type": "string", "minLength": 3, "maxLength": 160}, {"type": "null"}]},
+        "source_channel": {"enum": ["PRODUCT_LABEL", "MANUFACTURER_DOCUMENT", "SUPPLIER_COMMUNICATION", "MEASUREMENT_RECORD", "CALCULATION_RECORD", "TRANSACTION_RECORD", "HISTORICAL_FOUNDER_EXAMPLE"]},
+        "proposed_c002_mass_method": {"oneOf": [{"enum": ["MANUFACTURER_STATED", "MEASURED", "CALCULATED"]}, {"type": "null"}]},
+        "c002_method_validation_state": {"const": "UNVALIDATED_C002_INTAKE_ONLY"},
+        "supplier_stated_method_allowed": {"const": false},
+        "source_locator": {"type": "string", "minLength": 8, "maxLength": 300},
+        "previous_observation_reference": {"oneOf": [{"type": "string", "pattern": "^c003r2mass:[0-9a-f]{12}$"}, {"type": "null"}]},
+        "current_suggestion": {"type": "boolean"},
+        "confirmed_by_operator": {"type": "boolean"},
+        "canonical_or_variant_effect": {"const": false}
+      }
+    },
+    "massIntake": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["structure_status", "population_authority", "historical_example_refs_excluded_from_current_intake", "required_fields", "observations", "mass_observation_count", "history_append_only", "smart_history_suggestion_only", "confirmed_by_operator_required", "variant_identity", "canonical_mass_value_created"],
+      "properties": {
+        "structure_status": {"const": "PREPARED_EMPTY"},
+        "population_authority": {"const": false},
+        "historical_example_refs_excluded_from_current_intake": {"const": ["C003-DISC-031"]},
+        "required_fields": {"const": ["observation_id", "variant_context", "observed_mass_decimal", "unit_reference", "unit_status_at_capture", "batch_or_load_date", "supplier_or_source", "operator_reference", "source_channel", "proposed_c002_mass_method", "c002_method_validation_state", "supplier_stated_method_allowed", "source_locator", "previous_observation_reference", "current_suggestion", "confirmed_by_operator", "canonical_or_variant_effect"]},
+        "observations": {"type": "array", "maxItems": 256, "items": {"$ref": "#/$defs/massObservation"}},
+        "mass_observation_count": {"const": 0},
+        "history_append_only": {"const": true},
+        "smart_history_suggestion_only": {"const": true},
+        "confirmed_by_operator_required": {"const": true},
+        "variant_identity": {"const": false},
+        "canonical_mass_value_created": {"const": false}
+      }
+    },
+    "exactSupplyTuple": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["brand", "thickness_mm", "appearance", "length_m"],
+      "properties": {
+        "brand": {"$ref": "#/$defs/brand"},
+        "thickness_mm": {"$ref": "#/$defs/thickness"},
+        "appearance": {"$ref": "#/$defs/appearance"},
+        "length_m": {"enum": ["3.00", "6.00"]}
+      }
+    },
+    "supplyTupleScope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["representation", "tuples", "omitted_tuple_state", "cartesian_generation_allowed"],
+      "properties": {
+        "representation": {"const": "EXACT_TUPLE_LIST"},
+        "tuples": {"type": "array", "minItems": 1, "maxItems": 216, "uniqueItems": true, "items": {"$ref": "#/$defs/exactSupplyTuple"}},
+        "omitted_tuple_state": {"const": "UNKNOWN"},
+        "cartesian_generation_allowed": {"const": false}
+      }
+    },
+    "supplyEvidenceRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["supply_evidence_id", "supplier_or_source", "confirmation_channel", "confirmation_timestamp", "valid_from", "valid_until", "tuple_scope", "evidence_source_locator", "evidence_classification", "temporal_role", "reviewer_reference", "reviewed_at", "evidence_status", "availability_effect", "stock_effect"],
+      "properties": {
+        "supply_evidence_id": {"type": "string", "pattern": "^c003r2supply:[0-9a-f]{12}$"},
+        "supplier_or_source": {"type": "string", "minLength": 3, "maxLength": 200},
+        "confirmation_channel": {"enum": ["TELEPHONE", "WHATSAPP", "EMAIL", "DOCUMENT", "OTHER_GOVERNED_CHANNEL"]},
+        "confirmation_timestamp": {"type": "string", "format": "date-time"},
+        "valid_from": {"type": "string", "format": "date-time"},
+        "valid_until": {"type": "string", "format": "date-time"},
+        "tuple_scope": {"$ref": "#/$defs/supplyTupleScope"},
+        "evidence_source_locator": {"type": "string", "minLength": 8, "maxLength": 300},
+        "evidence_classification": {"enum": ["SUPPLIER_DOCUMENT", "OPERATIONS_EVIDENCE"]},
+        "temporal_role": {"enum": ["CURRENT_OBSERVATION", "HISTORICAL_NONCURRENT"]},
+        "reviewer_reference": {"type": "string", "minLength": 3, "maxLength": 160},
+        "reviewed_at": {"type": "string", "format": "date-time"},
+        "evidence_status": {"enum": ["SUBMITTED", "VERIFIED", "EXPIRED", "CONFLICTING", "REJECTED"]},
+        "availability_effect": {"const": false},
+        "stock_effect": {"const": false}
+      }
+    },
+    "supplyIntake": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["structure_status", "population_authority", "required_fields", "records", "supply_evidence_record_count", "creates_availability", "creates_stock_claim"],
+      "properties": {
+        "structure_status": {"const": "PREPARED_EMPTY"},
+        "population_authority": {"const": false},
+        "required_fields": {"const": ["supply_evidence_id", "supplier_or_source", "confirmation_channel", "confirmation_timestamp", "valid_from", "valid_until", "tuple_scope", "evidence_source_locator", "evidence_classification", "temporal_role", "reviewer_reference", "reviewed_at", "evidence_status", "availability_effect", "stock_effect"]},
+        "records": {"type": "array", "maxItems": 256, "items": {"$ref": "#/$defs/supplyEvidenceRecord"}},
+        "supply_evidence_record_count": {"const": 0},
+        "creates_availability": {"const": false},
+        "creates_stock_claim": {"const": false}
+      }
+    },
+    "readiness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["criterion_order", "criterion_states", "resolved_count", "unresolved_count", "coverage", "readiness", "founder_selection_recorded"],
+      "properties": {
+        "criterion_order": {"type": "array", "minItems": 9, "maxItems": 9, "uniqueItems": true, "items": {"$ref": "#/$defs/criterionCode"}},
+        "criterion_states": {"type": "array", "minItems": 9, "maxItems": 9, "items": {"enum": ["MISSING", "SUBMITTED"]}},
+        "resolved_count": {"const": 0},
+        "unresolved_count": {"const": 9},
+        "coverage": {"const": "0/9"},
+        "readiness": {"const": "NOT_READY"},
+        "founder_selection_recorded": {"const": false}
+      }
+    },
+    "selectionEffects": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate_registry_population", "product_state", "sku_state", "availability_state", "price_state", "commerce_state", "runtime_state", "production_state"],
+      "properties": {
+        "candidate_registry_population": {"const": false},
+        "product_state": {"const": "NOT_CREATED"},
+        "sku_state": {"const": "NOT_ASSIGNED"},
+        "availability_state": {"const": "NOT_ASSERTED"},
+        "price_state": {"const": "NO_CURRENT_OR_PUBLIC_PRICE_FACT"},
+        "commerce_state": {"const": "INQUIRY_ONLY"},
+        "runtime_state": {"const": "NONE"},
+        "production_state": {"const": "NONE"}
+      }
+    }
+  }
+}

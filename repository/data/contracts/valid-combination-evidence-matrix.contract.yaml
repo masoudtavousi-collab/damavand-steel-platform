@@ -1,0 +1,159 @@
+contract_id: valid-combination-evidence-matrix
+contract_version: "1.0.0"
+record_kind: c003-r2-201-51-founder-evidence-completion
+schema:
+  path: repository/data/schemas/valid-combination-evidence-matrix.schema.json
+  draft: https://json-schema.org/draft/2020-12/schema
+registry:
+  path: repository/data/registries/extensions/c003r2/201-51-founder-evidence-completion.yaml
+authority:
+  mission_id: C003-R2
+  founder_evidence_completion_allowed: true
+  compressed_review_matrix_allowed: true
+  candidate_population_allowed: false
+  product_population_allowed: false
+  controlled_value_promotion_allowed: false
+  valid_tuple_promotion_allowed: false
+  sku_assignment_allowed: false
+  availability_or_stock_claim_allowed: false
+  current_or_public_price_allowed: false
+  commerce_activation_allowed: false
+  payment_activation_allowed: false
+  wordpress_woocommerce_mutation_allowed: false
+  runtime_staging_production_allowed: false
+  deployment_allowed: false
+  c1_t03_repair_allowed: false
+  c003_a_start_allowed: false
+  c003_b_start_allowed: false
+  merge_allowed: false
+  successor_mission_allowed: false
+dependencies:
+  c003_r1_contract: repository/data/contracts/founder-product-commerce-checkpoint03.contract.yaml
+  c003_r1_registry: repository/data/registries/extensions/c003r1/checkpoint03-evidence-and-pilot-readiness.yaml
+  c002_candidate_contract: repository/data/contracts/commercial-pilot-candidate.contract.yaml
+  c002_candidate_registry: repository/data/registries/extensions/c002/commercial-pilot-candidates.yaml
+  c002_product_administration_contract: repository/data/contracts/product-administration-policy.contract.yaml
+  c002_product_administration_registry: repository/data/registries/extensions/c002/product-administration-policies.yaml
+base_pins:
+  c003_r1_contract_semantic_sha256: 2a3a5dca032ad2327e1f6ac491a7d1741d574310c889edad64bef85367e4557b
+  c003_r1_registry_semantic_sha256: a6c4a3181db06c1292232a1a8f725a5e5be998a064075910a3da65e7a3d04a75
+  c002_candidate_contract_semantic_sha256: 923731cb080b0ecc05abb21b1189bfdd0df94297780cce364bb791479f7f47e3
+  c002_candidate_registry_semantic_sha256: deb0215d2b5f4b5ec0061f937aec9c3e37cf97c94432a23737bf5756cef9587e
+  c002_product_administration_contract_semantic_sha256: 75b608e67b6ca3c870e6bf0b533310fbb131a75fa576a79e75c4a936659c33ff
+  c002_product_administration_registry_semantic_sha256: 796d2dfc424a75f998b309f04e88443d0ffb7450bd457bddf86b574535624fe7
+source_policy:
+  c003_r1_is_canonical_evidence_owner: true
+  copied_slack_ledger_allowed: false
+  exact_c003_r1_record_references_required: true
+  public_internet_as_founder_truth_allowed: false
+pilot_scope:
+  key: STAINLESS_ROUND_PIPE__GRADE_201__DIAMETER_51_MM
+  brand_count: 6
+  thickness_count: 12
+  appearance_length_group_count: 3
+  brand_names: [Sumwin, Sansco, Goldsco, King, StoneLand, SUS]
+  thicknesses_mm: ["0.45", "0.50", "0.55", "0.60", "0.70", "0.80", "0.90", "1.00", "1.10", "1.20", "1.50", "2.00"]
+  appearance_length_groups:
+    - {appearance: STEEL_NATURAL_GLOSSY, length_m: "6.00"}
+    - {appearance: GOLD_GLOSSY, length_m: "3.00"}
+    - {appearance: GOLD_GLOSSY, length_m: "6.00"}
+matrix_policy:
+  states: [CONFIRMED_VALID, CONFIRMED_INVALID, UNKNOWN, NOT_APPLICABLE]
+  representation: COMPRESSED_RULES_NOT_PERSISTED_CARTESIAN_ROWS
+  exact_compressed_row_count: 3
+  expanded_review_universe_count: 216
+  default_unproven_state: UNKNOWN
+  confirmed_valid_count: 0
+  confirmed_invalid_count: 0
+  not_applicable_count: 0
+  unknown_count: 216
+  inferred_tuple_count: 0
+  row_dimensions_required: [brand, thickness, appearance, length]
+  rule_overlap_allowed: false
+  expansion_is_truth_generation: false
+  in_memory_count_validation_only: true
+question_compression:
+  strategy: ONE_BRAND_REVIEW_ITEM_WITH_THREE_APPEARANCE_LENGTH_GROUPS
+  exact_founder_review_item_count: 6
+  maximum_tuple_resolution_per_answer: 36
+  answer_modes: [UNANSWERED, ALL_LISTED_CONFIRMED_VALID, EXPLICIT_STATE_SETS, ALL_LISTED_CONFIRMED_INVALID, KEEP_UNKNOWN]
+  unanswered_is_unknown: true
+  pattern_or_exception_is_proposal_until_founder_confirmed: true
+  answer_capture_authority: false
+  future_answer_semantics:
+    UNANSWERED: all listed thicknesses remain UNKNOWN and no evidence binding or state list is allowed
+    KEEP_UNKNOWN: all listed thicknesses remain UNKNOWN and a verified Founder evidence binding is required to record the intentional non-resolution
+    ALL_LISTED_CONFIRMED_VALID: every listed thickness becomes CONFIRMED_VALID; invalid and not-applicable sets must be empty
+    ALL_LISTED_CONFIRMED_INVALID: every listed thickness becomes CONFIRMED_INVALID; valid and not-applicable sets must be empty
+    EXPLICIT_STATE_SETS: listed thicknesses may be assigned to pairwise-disjoint valid, invalid and not-applicable sets; every omitted thickness remains UNKNOWN
+  confirmed_resolution_requires_verified_founder_binding: true
+  overlapping_state_sets_allowed: false
+  omitted_explicit_thickness_becomes: UNKNOWN
+mass_evidence:
+  observation_count: 0
+  typed_closed_observation_schema_required: true
+  current_population_authority: false
+  canonical_owner: C002_MASS_PROVENANCE
+  approved_c002_methods: [MANUFACTURER_STATED, MEASURED, CALCULATED]
+  source_channel_is_not_mass_method: true
+  supplier_stated_method_allowed: false
+  method_mapping_state: UNVALIDATED_C002_INTAKE_ONLY
+  historical_example_source_ref: C003-DISC-031
+  historical_example_values_kg: ["3.500", "3.600", "3.620", "3.650", "3.680", "3.700"]
+  historical_example_is_current_observation: false
+  historical_example_exclusion_reason: exact Grade Thickness Appearance Length batch load date supplier and operator attribution is absent
+  variant_identity: false
+  history_append_only: true
+  operator_confirmation_required: true
+  smart_history_suggestion_only: true
+  canonical_mass_population_allowed: false
+supply_evidence:
+  intake_record_count: 0
+  typed_closed_record_schema_required: true
+  current_population_authority: false
+  scope_representation: EXACT_TUPLE_LIST_ONLY
+  cartesian_scope_generation_allowed: false
+  omitted_tuple_state: UNKNOWN
+  protected_source_locator_required: true
+  source_classification_temporal_and_review_binding_required: true
+  creates_availability: false
+  warehouse_stock_inference_allowed: false
+  expired_evidence_is_current_allowed: false
+c002_evidence_source_bindings:
+  DEMAND_SIGNAL: [C003-DISC-011, C003-DISC-017, C003-DISC-018]
+  SUPPLY_EVIDENCE: [C003R1-CP03-001, C003R1-CP03-002, C003R1-CP03-003]
+  GROSS_PROFIT_POTENTIAL: []
+  REPEATABILITY: []
+  PRODUCT_DATA_COMPLETENESS: [C003R1-CP03-026, C003R1-CP03-027, C003R1-CP03-028, C003R1-CP03-030, C003R1-CP03-031]
+  PHOTO_CONTENT_READINESS: []
+  SEO_BUYER_INTENT: []
+  OPERATIONAL_COMPLEXITY: [C003R1-CP03-032, C003R1-CP03-034, C003R1-CP03-041, C003R1-CP03-053]
+  FULFILLMENT_RISK: [C003R1-CP03-007, C003R1-CP03-008, C003R1-CP03-041, C003R1-CP03-042, C003R1-CP03-043]
+c002_readiness:
+  criterion_count: 9
+  criterion_order: [DEMAND_SIGNAL, SUPPLY_EVIDENCE, GROSS_PROFIT_POTENTIAL, REPEATABILITY, PRODUCT_DATA_COMPLETENESS, PHOTO_CONTENT_READINESS, SEO_BUYER_INTENT, OPERATIONAL_COMPLEXITY, FULFILLMENT_RISK]
+  resolved_count: 0
+  unresolved_count: 9
+  readiness: NOT_READY
+  candidate_registry_count: 0
+regression_anchors:
+  c003_r1_immutable: true
+  c002_candidate_count: 0
+  c002_policy_count: 8
+  c002_policy_instance_count: 0
+  canonical_sku_count: 0
+  commerce_state: INQUIRY_ONLY
+  runtime_authority: NONE
+  production_authority: NONE
+validation:
+  offline_only: true
+  network_allowed: false
+  side_effects_allowed: false
+  closed_schema_required: true
+  local_refs_only: true
+  duplicate_keys_rejected: true
+  non_finite_numbers_rejected: true
+  deterministic_sorted_errors: true
+  path_escape_and_symlink_rejected: true
+  exact_order_required: true
+  mutation_manifest_dispatch_required: true

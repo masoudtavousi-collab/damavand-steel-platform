@@ -119,6 +119,10 @@ c003r1_checkpoint03_validator="repository/data/validation/validate_founder_produ
 "$python" "$c003r1_checkpoint03_validator"
 "$python" -B -m unittest tests.test_founder_product_commerce_checkpoint03
 
+c003r2_evidence_completion_validator="repository/data/validation/validate_valid_combination_evidence_matrix.py"
+"$python" "$c003r2_evidence_completion_validator"
+"$python" -B -m unittest tests.test_valid_combination_evidence_matrix
+
 "$python" repository/data/validation/validate_bp2_data_blueprint.py
 "$python" repository/data/validation/validate_bp2_data_administration.py
 "$python" tests/test_bp2_data_administration.py
