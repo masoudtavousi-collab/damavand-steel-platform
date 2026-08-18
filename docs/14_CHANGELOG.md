@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-08-18 — C004 Competitive Intelligence and Damavand advantage foundation
+
+- Added a Founder-source-bound scope, 13-competitor observation registry, exact
+  28-dimension/364-record non-aggregate score matrix and evidence-bounded
+  leadership map.
+- Added ten original Damavand planning advantages (`6 USE_NOW`,
+  `3 PLAN_NOW_IMPLEMENT_LATER`, `1 NEEDS_FOUNDER_DECISION`), 12 anti-patterns and
+  a Mobile First Persian RTL 201/51 experience plus SEO blueprint.
+- Added three closed Draft 2020-12 schemas, offline deterministic validation and
+  mutation/adversarial tests; competitor evidence stays supplementary and
+  copyright-safe.
+- Reconciled the C004 identity with the old deferred roadmap label only. No
+  Product/SKU/Availability/price, SEO publishing, WordPress/WooCommerce, Runtime,
+  deployment, production, merge or successor authority was created; C002 remains
+  `0/9`, commerce remains `INQUIRY_ONLY`, C003 is unchanged and C1-T03 is frozen.
+
 ## 2026-08-18 — C003-R3 201/51 Founder review-answer reconciliation
 
 - Bound all six completed Founder Brand-review answers to exact Slack source `C0BNHRRTE9F / 1787053465.802439`, its author and its source-event chronology.
@@ -214,7 +230,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.14.0
+- **Version:** 0.15.0
 - **Last Updated:** 2026-08-16
 - **Lifecycle:** Review
 - **Source of Truth:** Merged Git history and scoped decision/evidence records

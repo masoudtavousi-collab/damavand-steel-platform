@@ -71,14 +71,18 @@ Its evidence and findings remain preserved, but C1-T03 is not the active next ac
 | `C003 — Founder Discovery Reconciliation & Repository Intake` | Preserve complete Session 01 as classified machine-readable evidence, owner mappings, and inactive backlog/defer dispositions | Evidence integration only; no Product/value/tuple/SKU/Availability, pricing, customer/order, Runtime, or successor authority |
 | `C003-A — Offline Pilot Projection Package` | Validated offline canonical-to-WP/WC projection package | Separately approved bounded Product truth slice and validator PASS; C002 alone is insufficient |
 | `C003-B — Manual-First Growth/CRM Loop` | Controlled lead intake, follow-up, outcomes, and safe export path | Ownership, privacy, consent, and field contract approved |
-| `C004 — Non-Production Readiness` | Exact target, least privilege, licenses, backup/restore, and rollback proof | Separate Runtime authority |
-| `C005 — Bounded Staging Pilot` | Inquiry-first staging implementation and QA for the approved slice | C004 readiness plus Security/RTL/Mobile/Accessibility/rollback PASS |
+| `C004 — Competitive Intelligence & Damavand Competitive Advantage Foundation` | Governed public-market observations, non-aggregate benchmark matrix, original advantage/anti-pattern planning and 201/51 experience/SEO blueprint | Research/planning only; no Product, SEO publishing, commerce or Runtime authority |
+| `C005 — Bounded Staging Pilot` | Inquiry-first staging implementation and QA for the approved slice | A separately authorized non-production-readiness gate plus Security/RTL/Mobile/Accessibility/rollback PASS |
 | `C006 — Pilot Certification / Production Decision` | Evidence package for a Founder GO/NO-GO | No automatic Production authority |
 | `D-series` | Automation of demonstrated processes | Stable metrics, ownership, failure handling, and separate authorization |
 
 The root `C003` discovery-reconciliation Mission does not rename, start, or
 authorize the candidate `C003-A` or `C003-B` Missions. All candidate successors
 remain separately gated.
+
+The current Founder-authorized C004 supersedes only the old recommended/deferred
+label `C004 — Non-Production Readiness`. That readiness work was never started and
+receives no replacement mission ID or authority from this roadmap correction.
 
 ## Product and Commerce Boundaries
 
@@ -97,4 +101,4 @@ Master/Golden packages, Import, Runtime, WordPress/WooCommerce, Staging, Publish
 
 ## Current NO-GO
 
-C003 does not authorize Product/Knowledge/879-row/Master Data/Golden/SKU/slug/Availability population; controlled-value or valid-combination promotion; customer/order population; repository settings; workflows; import; WordPress/WooCommerce; public pricing, Offer schema, cart, checkout, payment, or purchase; Runtime; Staging; Publishing; Deployment; Production; FX automation; marketplace; Central Steel; n8n/OpenAI integration; merge; C003-A; C003-B; or any successor Mission. Consult [Current Project State](CURRENT_PROJECT_STATE.md) for the semantic boundary.
+C004 adds only competitive evidence and planning. It does not authorize Product/Knowledge/879-row/Master Data/Golden/SKU/slug/Availability population; controlled-value or valid-combination promotion; customer/order population; repository settings; workflows; import; WordPress/WooCommerce; SEO publishing; public pricing, Offer schema, cart, checkout, payment, or purchase; Runtime; Staging; Publishing; Deployment; Production; FX automation; marketplace; Central Steel; n8n/OpenAI integration; merge; C003-A; C003-B; or any successor Mission. Consult [Current Project State](CURRENT_PROJECT_STATE.md) for the semantic boundary.

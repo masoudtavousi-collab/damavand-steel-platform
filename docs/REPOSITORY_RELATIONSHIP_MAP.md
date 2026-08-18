@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 1.4.0
+- **Version:** 1.5.0
 - **Last Updated:** 2026-08-18
 - **Last Review:** 2026-08-18
 - **Review Cycle:** On repository creation, disposition, authority, ownership, namespace, lifecycle, merge, or promotion proposal
@@ -36,6 +36,7 @@ Define the authority, isolation, adoption, and future-promotion boundaries betwe
 | [C003-R1 Scope](C003_R1_CHECKPOINT03_201_51_PILOT_READINESS_SCOPE_V1.0.md) | Extends C003 through an append-only Checkpoint 03 evidence container that reuses existing Product/C002/C003 owners and prepares a fail-closed 201/51 Founder-review packet | Does not mutate the 115-record base, populate C002 candidates, create Product/value/tuple/SKU/Availability/price/customer/order/payment/runtime truth, merge, or start a successor |
 | [C003-R2 Scope](C003_R2_201_51_FOUNDER_EVIDENCE_COMPLETION_SCOPE_V1.0.md) and [Founder Packet](C003_R2_201_51_FOUNDER_EVIDENCE_COMPLETION_PACKET_V1.0.md) | Reuses immutable C003-R1 evidence to expose three compressed `UNKNOWN` rules, six unanswered Brand review items, nine blocking evidence gaps, empty typed Mass/Supply intake structures, and six explicitly noncurrent incomplete-context Mass examples | Does not copy the Slack ledger, infer or promote tuples, resolve C002 readiness, populate Product/SKU/Availability/price/current-Mass/Supply facts, activate Runtime, merge, or start a successor |
 | [C003-R3 Scope](C003_R3_201_51_FOUNDER_ANSWER_RECONCILIATION_SCOPE_V1.0.md) | Reconciles the exact Founder Slack answer into the existing C003-R2 compressed owner: six answered Brand items, 216 confirmed-valid evidence positions, zero unknown and zero inferred positions | Evidence-only; does not promote canonical tuples, resolve Product Data Completeness or C002 readiness, populate Mass/Supply/Product/SKU/Availability/price, activate Runtime, merge, or start a successor |
+| [C004 Scope](C004_COMPETITIVE_INTELLIGENCE_SCOPE_V1.0.md), [Competitive Matrix](COMPETITIVE_INTELLIGENCE_MATRIX_V1.0.md), [Advantage Specification](DAMAVAND_COMPETITIVE_ADVANTAGE_SPECIFICATION_V1.0.md), [Anti-Pattern Register](DAMAVAND_COMPETITIVE_ANTI_PATTERN_REGISTER_V1.0.md), and [201/51 Blueprint](201_51_PILOT_COMPETITIVE_EXPERIENCE_BLUEPRINT_V1.0.md) | Adds a bounded supplementary-evidence layer over public competitor surfaces, with 13 identities, 28 score dimensions, original Damavand planning dispositions and a Pilot/SEO blueprint | References canonical Product, Variant Rules, C002/C003, Search/SEO and Commerce owners; creates no parallel truth, Product/SKU/Availability/price/commerce/SEO publication/Runtime authority or successor |
 | [Context Router](CONTEXT_ROUTER.md) | Routes each task to the smallest authoritative context set | Is navigation only; it cannot create authority, override a governing source, or duplicate mutable state |
 | [Current Project State](CURRENT_PROJECT_STATE.md) | Remains the sole mutable pointer for current phase, exact authorization, branch/PR state, blockers, next action, and GO/NO-GO | Must not be duplicated or inferred from the two stable program documents |
 | `FD-DS-PROGRAM-001` | Records acceptance, roles, hashes, relationship, exclusions, and supersession limits | Does not rewrite `GOV-XD-00`, prior decisions, or repository chronology |

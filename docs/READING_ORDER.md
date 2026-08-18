@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.17.0
+- **Version:** 0.18.0
 - **Last Updated:** 2026-08-18
 - **Last Review:** 2026-08-18
 - **Review Cycle:** On navigation or authority change; periodic cadence pending Founder approval
@@ -165,10 +165,24 @@ No product taxonomy or steel terminology may be inferred while the relevant Foun
 17. [C003-R1 Checkpoint 03 Scope v1.0](C003_R1_CHECKPOINT03_201_51_PILOT_READINESS_SCOPE_V1.0.md), treated as immutable evidence/readiness input with zero valid tuples and `0/9` readiness.
 18. [C003-R2 Scope](C003_R2_201_51_FOUNDER_EVIDENCE_COMPLETION_SCOPE_V1.0.md) and [Founder Packet](C003_R2_201_51_FOUNDER_EVIDENCE_COMPLETION_PACKET_V1.0.md), treated as the predecessor evidence-only review surface.
 19. [C003-R3 Scope](C003_R3_201_51_FOUNDER_ANSWER_RECONCILIATION_SCOPE_V1.0.md), treated as exact Founder-answer evidence reconciliation with no canonical promotion and unchanged C002 `0/9` readiness.
-20. [Traceability Matrix](TRACEABILITY_MATRIX.md).
-21. [Batch 05 Audit](AUDIT_REPORT_BATCH05.md), [Batch 05A Audit](AUDIT_REPORT_BATCH05A.md), and [Batch 05B Audit](AUDIT_REPORT_BATCH05B.md).
+20. [C004 Competitive Intelligence Scope](C004_COMPETITIVE_INTELLIGENCE_SCOPE_V1.0.md), [Competitive Matrix](COMPETITIVE_INTELLIGENCE_MATRIX_V1.0.md), [Damavand Advantage Specification](DAMAVAND_COMPETITIVE_ADVANTAGE_SPECIFICATION_V1.0.md), [Anti-Pattern Register](DAMAVAND_COMPETITIVE_ANTI_PATTERN_REGISTER_V1.0.md), and [201/51 Competitive Experience Blueprint](201_51_PILOT_COMPETITIVE_EXPERIENCE_BLUEPRINT_V1.0.md), treated only as supplementary external evidence and architecture planning with no Product/SEO/commerce/runtime authority.
+21. [Traceability Matrix](TRACEABILITY_MATRIX.md).
+22. [Batch 05 Audit](AUDIT_REPORT_BATCH05.md), [Batch 05A Audit](AUDIT_REPORT_BATCH05A.md), and [Batch 05B Audit](AUDIT_REPORT_BATCH05B.md).
 
 No product, term, attribute value, variation, inquiry form, setting, import, schema, UI, or implementation may be created from these Review-state models without explicit approval.
+
+## Competitive Intelligence Reading Path
+
+1. Universal Entry Sequence.
+2. [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md) for the supplementary-evidence boundary.
+3. [C004 Competitive Intelligence Scope](C004_COMPETITIVE_INTELLIGENCE_SCOPE_V1.0.md) for authority, source, owner and copyright rules.
+4. [Competitive Intelligence Matrix](COMPETITIVE_INTELLIGENCE_MATRIX_V1.0.md) for dated observations, score limitations and leadership hypotheses.
+5. [Damavand Competitive Advantage Specification](DAMAVAND_COMPETITIVE_ADVANTAGE_SPECIFICATION_V1.0.md) and [Anti-Pattern Register](DAMAVAND_COMPETITIVE_ANTI_PATTERN_REGISTER_V1.0.md) for original dispositions.
+6. [201/51 Competitive Experience Blueprint](201_51_PILOT_COMPETITIVE_EXPERIENCE_BLUEPRINT_V1.0.md) for the bounded Mobile RTL and SEO planning application.
+7. Return to the canonical Product, Search/SEO, Commerce and C002/C003 owners before proposing any downstream change.
+
+Competitor evidence never overrides Product specifications, taxonomy, valid
+combinations, Availability, price, commerce, SEO ownership or Runtime state.
 
 ## Information Architecture Reading Path
 
