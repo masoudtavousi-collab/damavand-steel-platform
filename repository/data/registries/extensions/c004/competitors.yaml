@@ -1,0 +1,1048 @@
+data_classification: C004_COMPETITOR_OBSERVATIONS
+registry_version: "1.0.0"
+mission_id: C004
+observed_at: "2026-08-18"
+authority_effects:
+  product_population: false
+  sku_population: false
+  availability_population: false
+  current_or_public_price: false
+  commerce_activation: false
+  runtime: false
+  wordpress_woocommerce_mutation: false
+  deployment: false
+  production: false
+  successor_mission: false
+competitors:
+  - competitor_id: "comp:000000000001"
+    competitor_name: "Steel Majlesi"
+    domain: "https://steelmajlesi.com/"
+    competitor_tier: TIER_1
+    verification_status: VERIFIED
+    confidence: HIGH
+    evidence_classification: EXTERNAL_OBSERVATION
+    observations:
+      - observation_id: "cobs:000000000001"
+        competitor_id: "comp:000000000001"
+        competitor_name: "Steel Majlesi"
+        domain: "https://steelmajlesi.com/"
+        competitor_tier: TIER_1
+        observed_capability: "Extremely broad stainless and adjacent hierarchy with deep size, grade and fittings routes"
+        observation_domain: TAXONOMY
+        score_dimensions: [TAXONOMY_BREADTH, TAXONOMY_CLARITY, PRODUCT_DISCOVERY, NAVIGATION_SIMPLICITY, FITTINGS_CATALOG_DEPTH]
+        evidence_locator: "https://steelmajlesi.com/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Validates breadth leadership while exposing mega-menu risk"
+        notes: "Public navigation structure and category presence only."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:000000000002"
+        competitor_id: "comp:000000000001"
+        competitor_name: "Steel Majlesi"
+        domain: "https://steelmajlesi.com/"
+        competitor_tier: TIER_1
+        observed_capability: "Search, sorting and filters for category, alloy, availability and price on the 201/51 route"
+        observation_domain: FILTERING
+        score_dimensions: [PRODUCT_DISCOVERY, SEARCH_CAPABILITY, FILTERING_CAPABILITY, PRICING_UX]
+        evidence_locator: "https://steelmajlesi.com/product-category/9000083/9000074/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Shows practical discovery controls for a core Pilot-like route"
+        notes: "Filter and control presence abstracted; no table or content copied."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:000000000003"
+        competitor_id: "comp:000000000001"
+        competitor_name: "Steel Majlesi"
+        domain: "https://steelmajlesi.com/"
+        competitor_tier: TIER_1
+        observed_capability: "Product page exposes grade, diameter, thickness, brand, public commercial state and related products"
+        observation_domain: PRODUCT_DATA
+        score_dimensions: [PRODUCT_DATA_RICHNESS, PRODUCT_PAGE_QUALITY, PRICING_UX, AVAILABILITY_COMMUNICATION, CHECKOUT_COMMERCE_FLOW, TRUST_CREDIBILITY, RELATED_PRODUCT_SELLING]
+        evidence_locator: "https://steelmajlesi.com/product/lole1905201/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Demonstrates dense commercial context and the risk of mixing product and commercial truth"
+        notes: "No price amount, stock count or description was retained."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:000000000004"
+        competitor_id: "comp:000000000001"
+        competitor_name: "Steel Majlesi"
+        domain: "https://steelmajlesi.com/"
+        competitor_tier: TIER_1
+        observed_capability: "Persian RTL, responsive viewport, canonical and structured-data declarations are present"
+        observation_domain: RTL
+        score_dimensions: [SEO_ARCHITECTURE]
+        evidence_locator: "https://steelmajlesi.com/"
+        observation_date: "2026-08-18"
+        evidence_status: PARTIALLY_VERIFIED
+        confidence: MEDIUM
+        strategic_relevance: "Confirms declarations only; it does not prove mobile task usability"
+        notes: "No interactive mobile test was performed."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+    patterns:
+      - pattern_id: "cpat:000000000001"
+        observation_refs: ["cobs:000000000001", "cobs:000000000002", "cobs:000000000003", "cobs:000000000004"]
+        pattern: "Evidence-backed catalog depth"
+        classification: ADOPT_PRINCIPLE
+        rationale: "Retain breadth through governed data, not through a customer-facing mega-menu."
+      - pattern_id: "cpat:000000000002"
+        observation_refs: ["cobs:000000000001", "cobs:000000000002", "cobs:000000000003", "cobs:000000000004"]
+        pattern: "Very deep navigation and page-per-combination proliferation"
+        classification: AVOID
+        rationale: "Breadth should not create overload or fragmented Product truth."
+      - pattern_id: "cpat:000000000003"
+        observation_refs: ["cobs:000000000001", "cobs:000000000002", "cobs:000000000003", "cobs:000000000004"]
+        pattern: "Search, filters and related-product affordances"
+        classification: ADAPT
+        rationale: "Use only with canonical valid-combination and relationship owners."
+  - competitor_id: "comp:000000000002"
+    competitor_name: "Atropat"
+    domain: "https://atropatco.ir/"
+    competitor_tier: TIER_1
+    verification_status: VERIFIED
+    confidence: HIGH
+    evidence_classification: EXTERNAL_OBSERVATION
+    observations:
+      - observation_id: "cobs:000000000005"
+        competitor_id: "comp:000000000002"
+        competitor_name: "Atropat"
+        domain: "https://atropatco.ir/"
+        competitor_tier: TIER_1
+        observed_capability: "Direct homepage routes to pipe, profile, fittings, pool products and shop with search"
+        observation_domain: NAVIGATION
+        score_dimensions: [TAXONOMY_BREADTH, TAXONOMY_CLARITY, PRODUCT_DISCOVERY, NAVIGATION_SIMPLICITY, SEARCH_CAPABILITY]
+        evidence_locator: "https://atropatco.ir/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Supports the low-friction navigation hypothesis"
+        notes: "Only route and control presence was retained."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:000000000006"
+        competitor_id: "comp:000000000002"
+        competitor_name: "Atropat"
+        domain: "https://atropatco.ir/"
+        competitor_tier: TIER_1
+        observed_capability: "Browseable commercial catalog with visible product actions"
+        observation_domain: PRODUCT_DISCOVERY
+        score_dimensions: [PRODUCT_DISCOVERY, PRICING_UX, CHECKOUT_COMMERCE_FLOW]
+        evidence_locator: "https://atropatco.ir/products/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Shows a compact path from category to commercial item"
+        notes: "No price or product prose was copied."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:000000000007"
+        competitor_id: "comp:000000000002"
+        competitor_name: "Atropat"
+        domain: "https://atropatco.ir/"
+        competitor_tier: TIER_1
+        observed_capability: "A 51 mm family page exposes alloy, thickness and brand selection with contextual guidance"
+        observation_domain: VARIANT_SELECTION
+        score_dimensions: [VARIANT_SELECTION_UX, PRODUCT_PAGE_QUALITY, PRODUCT_DATA_RICHNESS, TECHNICAL_CONTENT, PRICING_UX, CHECKOUT_COMMERCE_FLOW]
+        evidence_locator: "https://atropatco.ir/product/%D9%84%D9%88%D9%84%D9%87-%D8%A7%D8%B3%D8%AA%DB%8C%D9%84-51-2/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Useful precedent for guided family selection"
+        notes: "Observed controls do not prove canonical valid-combination enforcement."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:000000000008"
+        competitor_id: "comp:000000000002"
+        competitor_name: "Atropat"
+        domain: "https://atropatco.ir/"
+        competitor_tier: TIER_1
+        observed_capability: "Fittings category groups practical railing and installation component families"
+        observation_domain: FITTINGS_DEPTH
+        score_dimensions: [FITTINGS_CATALOG_DEPTH]
+        evidence_locator: "https://atropatco.ir/product-category/%DB%8C%D8%B1%D8%A7%D9%82-%D8%A7%D8%B3%D8%AA%DB%8C%D9%84/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Provides application vocabulary for related-product discovery"
+        notes: "Taxonomy presence only; no descriptions copied."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+    patterns:
+      - pattern_id: "cpat:000000000004"
+        observation_refs: ["cobs:000000000005", "cobs:000000000006", "cobs:000000000007", "cobs:000000000008"]
+        pattern: "Direct commercial shortcuts"
+        classification: ADOPT_PRINCIPLE
+        rationale: "Expose common customer paths without traversing the full taxonomy."
+      - pattern_id: "cpat:000000000005"
+        observation_refs: ["cobs:000000000005", "cobs:000000000006", "cobs:000000000007", "cobs:000000000008"]
+        pattern: "Family-level selectors"
+        classification: ADAPT
+        rationale: "Rebuild against canonical Product hierarchy and Variant Rules."
+      - pattern_id: "cpat:000000000006"
+        observation_refs: ["cobs:000000000005", "cobs:000000000006", "cobs:000000000007", "cobs:000000000008"]
+        pattern: "Duplicated or surprising taxonomy links"
+        classification: AVOID
+        rationale: "Navigation aliases must resolve to one governed intent owner."
+  - competitor_id: "comp:000000000003"
+    competitor_name: "SteelRokh"
+    domain: "https://steelrokh.com/"
+    competitor_tier: TIER_1
+    verification_status: VERIFIED
+    confidence: HIGH
+    evidence_classification: EXTERNAL_OBSERVATION
+    observations:
+      - observation_id: "cobs:000000000009"
+        competitor_id: "comp:000000000003"
+        competitor_name: "SteelRokh"
+        domain: "https://steelrokh.com/"
+        competitor_tier: TIER_1
+        observed_capability: "Homepage connects commercial categories, quote flow, knowledge, calculator and trust surfaces"
+        observation_domain: PRODUCT_DISCOVERY
+        score_dimensions: [TAXONOMY_BREADTH, PRODUCT_DISCOVERY, INQUIRY_UX, TECHNICAL_CONTENT, EDUCATIONAL_CONTENT_DEPTH, TRUST_CREDIBILITY, CALCULATOR_TOOLING]
+        evidence_locator: "https://steelrokh.com/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Validates a Product plus Knowledge ecosystem"
+        notes: "Feature presence only."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:00000000000a"
+        competitor_id: "comp:000000000003"
+        competitor_name: "SteelRokh"
+        domain: "https://steelrokh.com/"
+        competitor_tier: TIER_1
+        observed_capability: "Pipe category uses dated field-rich commercial rows with alloy, size, thickness, finish, dimensions, length, mass and commercial fields"
+        observation_domain: PRODUCT_DATA
+        score_dimensions: [PRODUCT_DATA_RICHNESS, DATA_CONSISTENCY, PRICING_UX, CRAWLABLE_COMMERCIAL_DATA]
+        evidence_locator: "https://steelrokh.com/product-category/%D9%84%D9%88%D9%84%D9%87-%D8%A7%D8%B3%D8%AA%DB%8C%D9%84/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Strongest observed structured Product Data and crawlable commercial-table precedent"
+        notes: "No row or price value was copied."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:00000000000b"
+        competitor_id: "comp:000000000003"
+        competitor_name: "SteelRokh"
+        domain: "https://steelrokh.com/"
+        competitor_tier: TIER_1
+        observed_capability: "Multi-section weight and price calculator accepts material and quantity context"
+        observation_domain: CALCULATORS
+        score_dimensions: [CALCULATOR_TOOLING]
+        evidence_locator: "https://steelrokh.com/%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D9%87-%D9%88%D8%B2%D9%86%DB%8C/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Supports a future governed calculator platform"
+        notes: "No formula, copy or implementation was imported."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:00000000000c"
+        competitor_id: "comp:000000000003"
+        competitor_name: "SteelRokh"
+        domain: "https://steelrokh.com/"
+        competitor_tier: TIER_1
+        observed_capability: "Technical articles and category guidance connect knowledge to commercial routes"
+        observation_domain: TECHNICAL_KNOWLEDGE
+        score_dimensions: [TECHNICAL_CONTENT, SEO_ARCHITECTURE, EDUCATIONAL_CONTENT_DEPTH, INTERNAL_LINKING]
+        evidence_locator: "https://steelrokh.com/mechanica-properties-of-stainless-steel-alloys/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Supports separate but linked Product and Knowledge intent owners"
+        notes: "Topic presence and linkage only."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+    patterns:
+      - pattern_id: "cpat:000000000007"
+        observation_refs: ["cobs:000000000009", "cobs:00000000000a", "cobs:00000000000b", "cobs:00000000000c"]
+        pattern: "Normalized field-rich commercial data with update context"
+        classification: ADOPT_PRINCIPLE
+        rationale: "Preserve data depth while keeping Product, price and Availability truths separate."
+      - pattern_id: "cpat:000000000008"
+        observation_refs: ["cobs:000000000009", "cobs:00000000000a", "cobs:00000000000b", "cobs:00000000000c"]
+        pattern: "Knowledge center and calculator adjacent to commerce"
+        classification: ADAPT
+        rationale: "Plan separate canonical knowledge and tool owners before implementation."
+      - pattern_id: "cpat:000000000009"
+        observation_refs: ["cobs:000000000009", "cobs:00000000000a", "cobs:00000000000b", "cobs:00000000000c"]
+        pattern: "Dense table as the primary mobile interaction"
+        classification: AVOID
+        rationale: "Use progressive disclosure and a guided family selector."
+  - competitor_id: "comp:000000000004"
+    competitor_name: "Steel Sheet"
+    domain: "https://steel-sheet.ir/"
+    competitor_tier: TIER_1
+    verification_status: VERIFIED
+    confidence: HIGH
+    evidence_classification: EXTERNAL_OBSERVATION
+    observations:
+      - observation_id: "cobs:00000000000d"
+        competitor_id: "comp:000000000004"
+        competitor_name: "Steel Sheet"
+        domain: "https://steel-sheet.ir/"
+        competitor_tier: TIER_1
+        observed_capability: "Shop exposes a large catalog dominated by practical railing-fittings families"
+        observation_domain: FITTINGS_DEPTH
+        score_dimensions: [TAXONOMY_BREADTH, PRODUCT_DISCOVERY, FITTINGS_CATALOG_DEPTH, PRICING_UX]
+        evidence_locator: "https://steel-sheet.ir/shop/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Validates fittings-depth benchmark status"
+        notes: "Counts and family presence were abstracted; no catalog table copied."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:00000000000e"
+        competitor_id: "comp:000000000004"
+        competitor_name: "Steel Sheet"
+        domain: "https://steel-sheet.ir/"
+        competitor_tier: TIER_1
+        observed_capability: "Cart-led lead capture is followed by sales callback and consultation"
+        observation_domain: INQUIRY
+        score_dimensions: [INQUIRY_UX, OPERATOR_SALES_ASSIST_MODEL, CHECKOUT_COMMERCE_FLOW]
+        evidence_locator: "https://steel-sheet.ir/shop/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Provides an inquiry-first human-assist precedent"
+        notes: "No form was submitted."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:00000000000f"
+        competitor_id: "comp:000000000004"
+        competitor_name: "Steel Sheet"
+        domain: "https://steel-sheet.ir/"
+        competitor_tier: TIER_1
+        observed_capability: "Public surface includes unfinished descriptions and zero-price product states"
+        observation_domain: PRODUCT_DATA
+        score_dimensions: [PRODUCT_PAGE_QUALITY, DATA_CONSISTENCY, PRICING_UX]
+        evidence_locator: "https://steel-sheet.ir/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Direct anti-pattern evidence for publication gating"
+        notes: "No competitor text or price amount was retained."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+    patterns:
+      - pattern_id: "cpat:00000000000a"
+        observation_refs: ["cobs:00000000000d", "cobs:00000000000e", "cobs:00000000000f"]
+        pattern: "Application-oriented fittings coverage"
+        classification: ADOPT_PRINCIPLE
+        rationale: "Use governed component relationships and terminology."
+      - pattern_id: "cpat:00000000000b"
+        observation_refs: ["cobs:00000000000d", "cobs:00000000000e", "cobs:00000000000f"]
+        pattern: "Cart-to-human callback"
+        classification: ADAPT
+        rationale: "Retain inquiry-first semantics without a misleading checkout shell."
+      - pattern_id: "cpat:00000000000c"
+        observation_refs: ["cobs:00000000000d", "cobs:00000000000e", "cobs:00000000000f"]
+        pattern: "Thin pages, unfinished content and zero-price states"
+        classification: AVOID
+        rationale: "Fail publication when content or commercial state is incomplete."
+  - competitor_id: "comp:000000000005"
+    competitor_name: "Kia Steel"
+    domain: "https://kiasteel.com/"
+    competitor_tier: TIER_1
+    verification_status: VERIFIED
+    confidence: HIGH
+    evidence_classification: EXTERNAL_OBSERVATION
+    observations:
+      - observation_id: "cobs:000000000010"
+        competitor_id: "comp:000000000005"
+        competitor_name: "Kia Steel"
+        domain: "https://kiasteel.com/"
+        competitor_tier: TIER_1
+        observed_capability: "Shop exposes search, filters, quick view and variable-product actions across a fittings-heavy catalog"
+        observation_domain: PRODUCT_DISCOVERY
+        score_dimensions: [PRODUCT_DISCOVERY, SEARCH_CAPABILITY, FILTERING_CAPABILITY, VARIANT_SELECTION_UX, PRICING_UX, CHECKOUT_COMMERCE_FLOW]
+        evidence_locator: "https://kiasteel.com/shop/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Supports fittings and variable-selection precedent"
+        notes: "Control presence only."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:000000000011"
+        competitor_id: "comp:000000000005"
+        competitor_name: "Kia Steel"
+        domain: "https://kiasteel.com/"
+        competitor_tier: TIER_1
+        observed_capability: "Pipe family exposes size, grade, color, thickness and origin attributes with inquiry pricing"
+        observation_domain: VARIANT_SELECTION
+        score_dimensions: [PRODUCT_DATA_RICHNESS, VARIANT_SELECTION_UX, INQUIRY_UX]
+        evidence_locator: "https://kiasteel.com/product/%D9%84%D9%88%D9%84%D9%87-%D8%A7%D8%B3%D8%AA%DB%8C%D9%84/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Shows useful attribute vocabulary but not evidence-backed tuple enforcement"
+        notes: "No attribute values are promoted into Damavand truth."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:000000000012"
+        competitor_id: "comp:000000000005"
+        competitor_name: "Kia Steel"
+        domain: "https://kiasteel.com/"
+        competitor_tier: TIER_1
+        observed_capability: "Fittings page links installation context, component families and related products"
+        observation_domain: RELATED_PRODUCTS
+        score_dimensions: [RELATED_PRODUCT_SELLING, FITTINGS_CATALOG_DEPTH, TECHNICAL_CONTENT]
+        evidence_locator: "https://kiasteel.com/product/%D8%A2%D8%B3%D8%A7%D9%86%D8%B3%D9%88%D8%B1%DB%8C/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Supports system-selling and knowledge-link planning"
+        notes: "No description was copied."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+    patterns:
+      - pattern_id: "cpat:00000000000d"
+        observation_refs: ["cobs:000000000010", "cobs:000000000011", "cobs:000000000012"]
+        pattern: "Practical fittings relationships and variable affordance"
+        classification: ADAPT
+        rationale: "Bind every option and relationship to canonical evidence."
+      - pattern_id: "cpat:00000000000e"
+        observation_refs: ["cobs:000000000010", "cobs:000000000011", "cobs:000000000012"]
+        pattern: "Long educational copy embedded in commercial pages"
+        classification: AVOID
+        rationale: "Separate Knowledge intent from Product intent and link them."
+      - pattern_id: "cpat:00000000000f"
+        observation_refs: ["cobs:000000000010", "cobs:000000000011", "cobs:000000000012"]
+        pattern: "Mixed zero, range and inquiry price semantics"
+        classification: AVOID
+        rationale: "Use one explicit fail-closed commercial-state contract."
+  - competitor_id: "comp:000000000006"
+    competitor_name: "Sam Steel Shop"
+    domain: "https://shop.sam-steel.ir/"
+    competitor_tier: TIER_1
+    verification_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_classification: EXTERNAL_OBSERVATION
+    observations:
+      - observation_id: "cobs:000000000013"
+        competitor_id: "comp:000000000006"
+        competitor_name: "Sam Steel Shop"
+        domain: "https://shop.sam-steel.ir/"
+        competitor_tier: TIER_1
+        observed_capability: "201 category exposes search, sorting, compare, wishlist, quick view, cart and variation controls"
+        observation_domain: VARIANT_SELECTION
+        score_dimensions: [PRODUCT_DISCOVERY, SEARCH_CAPABILITY, VARIANT_SELECTION_UX, CHECKOUT_COMMERCE_FLOW]
+        evidence_locator: "https://shop.sam-steel.ir/product-category/steelpipe/loole201/"
+        observation_date: "2026-08-18"
+        evidence_status: PARTIALLY_VERIFIED
+        confidence: MEDIUM
+        strategic_relevance: "Validates a public WooCommerce variable-product precedent"
+        notes: "Access repeatability is limited by anti-bot behavior."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:000000000014"
+        competitor_id: "comp:000000000006"
+        competitor_name: "Sam Steel Shop"
+        domain: "https://shop.sam-steel.ir/"
+        competitor_tier: TIER_1
+        observed_capability: "Decorative pipe page exposes grade, seam, size, thickness, length and weight/tolerance guidance"
+        observation_domain: PRODUCT_DATA
+        score_dimensions: [PRODUCT_DATA_RICHNESS, PRODUCT_PAGE_QUALITY, PRICING_UX, VARIANT_SELECTION_UX]
+        evidence_locator: "https://shop.sam-steel.ir/product/%D9%84%D9%88%D9%84%D9%87-%D8%A7%D8%B3%D8%AA%DB%8C%D9%84-10-%D9%85%DB%8C%D9%84-%D8%B6%D8%AE%D8%A7%D9%85%D8%AA-1-%D9%85%DB%8C%D9%84/"
+        observation_date: "2026-08-18"
+        evidence_status: PARTIALLY_VERIFIED
+        confidence: MEDIUM
+        strategic_relevance: "Shows valuable unit and tolerance context"
+        notes: "No product prose or values were copied."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:000000000015"
+        competitor_id: "comp:000000000006"
+        competitor_name: "Sam Steel Shop"
+        domain: "https://shop.sam-steel.ir/"
+        competitor_tier: TIER_1
+        observed_capability: "Industrial pipe page exposes schedule, alloy, seam, branch context and shipment guidance"
+        observation_domain: TRUST
+        score_dimensions: [PRODUCT_DATA_RICHNESS, TECHNICAL_CONTENT, TRUST_CREDIBILITY, OPERATOR_SALES_ASSIST_MODEL]
+        evidence_locator: "https://shop.sam-steel.ir/product/%D9%84%D9%88%D9%84%D9%87-%D8%A7%D8%B3%D8%AA%DB%8C%D9%84-4-%D8%A7%DB%8C%D9%86%DA%86-%D8%B1%D8%AF%D9%87-10-%D8%B6%D8%AE%D8%A7%D9%85%D8%AA-3-%D9%85%DB%8C%D9%84/"
+        observation_date: "2026-08-18"
+        evidence_status: PARTIALLY_VERIFIED
+        confidence: MEDIUM
+        strategic_relevance: "Supports customer-facing fulfillment context"
+        notes: "Claims were not transactionally verified."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+    patterns:
+      - pattern_id: "cpat:000000000010"
+        observation_refs: ["cobs:000000000013", "cobs:000000000014", "cobs:000000000015"]
+        pattern: "Family-level variant and tolerance context"
+        classification: ADAPT
+        rationale: "Reconcile with canonical units and valid tuples."
+      - pattern_id: "cpat:000000000011"
+        observation_refs: ["cobs:000000000013", "cobs:000000000014", "cobs:000000000015"]
+        pattern: "Page-per-size plus broad variations"
+        classification: AVOID
+        rationale: "Do not duplicate the same variant domain across fragmented pages."
+      - pattern_id: "cpat:000000000012"
+        observation_refs: ["cobs:000000000013", "cobs:000000000014", "cobs:000000000015"]
+        pattern: "Shipping and receipt context"
+        classification: ADAPT
+        rationale: "Expose only evidence-backed fulfillment state."
+  - competitor_id: "comp:000000000007"
+    competitor_name: "Ahan1"
+    domain: "https://ahan1.com/"
+    competitor_tier: TIER_2
+    verification_status: VERIFIED
+    confidence: HIGH
+    evidence_classification: EXTERNAL_OBSERVATION
+    observations:
+      - observation_id: "cobs:000000000016"
+        competitor_id: "comp:000000000007"
+        competitor_name: "Ahan1"
+        domain: "https://ahan1.com/"
+        competitor_tier: TIER_2
+        observed_capability: "Broad taxonomy, navigation, search, trust and visible commerce routes"
+        observation_domain: TAXONOMY
+        score_dimensions: [TAXONOMY_BREADTH, PRODUCT_DISCOVERY, NAVIGATION_SIMPLICITY, SEARCH_CAPABILITY, TRUST_CREDIBILITY, CHECKOUT_COMMERCE_FLOW]
+        evidence_locator: "https://ahan1.com/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Supports a large-market breadth benchmark"
+        notes: "Structure only."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:000000000017"
+        competitor_id: "comp:000000000007"
+        competitor_name: "Ahan1"
+        domain: "https://ahan1.com/"
+        competitor_tier: TIER_2
+        observed_capability: "Stainless-pipe page exposes filters, weight tooling and detailed dated commercial rows"
+        observation_domain: SEO
+        score_dimensions: [PRODUCT_DATA_RICHNESS, DATA_CONSISTENCY, FILTERING_CAPABILITY, PRICING_UX, CRAWLABLE_COMMERCIAL_DATA, CALCULATOR_TOOLING]
+        evidence_locator: "https://ahan1.com/Category/pipe/steel-pipe/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Validates Tier-2 leadership for crawlable commercial data"
+        notes: "No row, price or prose copied."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:000000000018"
+        competitor_id: "comp:000000000007"
+        competitor_name: "Ahan1"
+        domain: "https://ahan1.com/"
+        competitor_tier: TIER_2
+        observed_capability: "Stainless-sheet route filters by commercial and Product dimensions and exposes calculator context"
+        observation_domain: FILTERING
+        score_dimensions: [PRODUCT_DATA_RICHNESS, FILTERING_CAPABILITY, CALCULATOR_TOOLING]
+        evidence_locator: "https://ahan1.com/Category/sheet/stainless-steel-sheet/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Shows strong faceted discovery"
+        notes: "No value is promoted into Damavand owners."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:000000000019"
+        competitor_id: "comp:000000000007"
+        competitor_name: "Ahan1"
+        domain: "https://ahan1.com/"
+        competitor_tier: TIER_2
+        observed_capability: "Sitemap exposes a large crawlable product and category surface"
+        observation_domain: SEO
+        score_dimensions: [SEO_ARCHITECTURE, CRAWLABLE_COMMERCIAL_DATA]
+        evidence_locator: "https://ahan1.com/sitemap_index.xml"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Supports SEO breadth while signaling fragmentation risk"
+        notes: "Only sitemap structure observed."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+    patterns:
+      - pattern_id: "cpat:000000000013"
+        observation_refs: ["cobs:000000000016", "cobs:000000000017", "cobs:000000000018", "cobs:000000000019"]
+        pattern: "Crawlable commercial tables and filters"
+        classification: ADOPT_PRINCIPLE
+        rationale: "Project governed facts into crawlable surfaces without creating duplicate truth."
+      - pattern_id: "cpat:000000000014"
+        observation_refs: ["cobs:000000000016", "cobs:000000000017", "cobs:000000000018", "cobs:000000000019"]
+        pattern: "Calculator near selection"
+        classification: ADAPT
+        rationale: "Keep as a separately governed future tool."
+      - pattern_id: "cpat:000000000015"
+        observation_refs: ["cobs:000000000016", "cobs:000000000017", "cobs:000000000018", "cobs:000000000019"]
+        pattern: "Mega-menu and arbitrary page explosion"
+        classification: AVOID
+        rationale: "Constrain crawlable pages to unique intent and evidence."
+  - competitor_id: "comp:000000000008"
+    competitor_name: "MarkazeAhan"
+    domain: "https://www.markazeahan.com/"
+    competitor_tier: TIER_2
+    verification_status: VERIFIED
+    confidence: HIGH
+    evidence_classification: EXTERNAL_OBSERVATION
+    observations:
+      - observation_id: "cobs:00000000001a"
+        competitor_id: "comp:000000000008"
+        competitor_name: "MarkazeAhan"
+        domain: "https://www.markazeahan.com/"
+        competitor_tier: TIER_2
+        observed_capability: "Homepage shows search, current commercial tables, inquiry routes, trust and named sales specialists"
+        observation_domain: INQUIRY
+        score_dimensions: [SEARCH_CAPABILITY, PRICING_UX, INQUIRY_UX, TRUST_CREDIBILITY, OPERATOR_SALES_ASSIST_MODEL]
+        evidence_locator: "https://www.markazeahan.com/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Strong operator and specialist-routing precedent"
+        notes: "No inquiry submitted."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:00000000001b"
+        competitor_id: "comp:000000000008"
+        competitor_name: "MarkazeAhan"
+        domain: "https://www.markazeahan.com/"
+        competitor_tier: TIER_2
+        observed_capability: "Stainless-sheet route compares dimensions, thickness, alloy, form, location and commercial state"
+        observation_domain: PRODUCT_DATA
+        score_dimensions: [PRODUCT_DATA_RICHNESS, DATA_CONSISTENCY, PRICING_UX, CRAWLABLE_COMMERCIAL_DATA]
+        evidence_locator: "https://www.markazeahan.com/product-category/steel-plate-price/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Supports structured comparison planning"
+        notes: "No table or price copied."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:00000000001c"
+        competitor_id: "comp:000000000008"
+        competitor_name: "MarkazeAhan"
+        domain: "https://www.markazeahan.com/"
+        competitor_tier: TIER_2
+        observed_capability: "Category route combines product filtering, calculator access and multi-source comparison"
+        observation_domain: FILTERING
+        score_dimensions: [PRODUCT_DISCOVERY, FILTERING_CAPABILITY, CALCULATOR_TOOLING]
+        evidence_locator: "https://www.markazeahan.com/product-category/%D9%BE%D8%B1%D9%88%D9%81%DB%8C%D9%84-%D8%B3%D8%A7%D8%AE%D8%AA%D9%85%D8%A7%D9%86%DB%8C/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Shows assisted comparison and discovery"
+        notes: "No current Damavand commercial truth inferred."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:00000000001d"
+        competitor_id: "comp:000000000008"
+        competitor_name: "MarkazeAhan"
+        domain: "https://www.markazeahan.com/"
+        competitor_tier: TIER_2
+        observed_capability: "Sitemap separates posts, services, company, products, videos and geography"
+        observation_domain: SEO
+        score_dimensions: [SEO_ARCHITECTURE, CRAWLABLE_COMMERCIAL_DATA]
+        evidence_locator: "https://www.markazeahan.com/sitemap_index.xml"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Supports intent separation but raises duplication risk"
+        notes: "Sitemap organization only."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+    patterns:
+      - pattern_id: "cpat:000000000016"
+        observation_refs: ["cobs:00000000001a", "cobs:00000000001b", "cobs:00000000001c", "cobs:00000000001d"]
+        pattern: "Named specialist routing and fast callback"
+        classification: ADOPT_PRINCIPLE
+        rationale: "Make operator ownership visible without implying automated CRM."
+      - pattern_id: "cpat:000000000017"
+        observation_refs: ["cobs:00000000001a", "cobs:00000000001b", "cobs:00000000001c", "cobs:00000000001d"]
+        pattern: "Source or location comparison"
+        classification: ADAPT
+        rationale: "Separate Product, supply and commercial evidence."
+      - pattern_id: "cpat:000000000018"
+        observation_refs: ["cobs:00000000001a", "cobs:00000000001b", "cobs:00000000001c", "cobs:00000000001d"]
+        pattern: "Large geographic and content page surface"
+        classification: WATCH
+        rationale: "Require intent ownership and cannibalization controls."
+  - competitor_id: "comp:000000000009"
+    competitor_name: "Pivan"
+    domain: "https://pivan.co/"
+    competitor_tier: TIER_2
+    verification_status: VERIFIED
+    confidence: HIGH
+    evidence_classification: EXTERNAL_OBSERVATION
+    observations:
+      - observation_id: "cobs:00000000001e"
+        competitor_id: "comp:000000000009"
+        competitor_name: "Pivan"
+        domain: "https://pivan.co/"
+        competitor_tier: TIER_2
+        observed_capability: "Dual product and industry taxonomy with commercial tables and specialist teams"
+        observation_domain: PRODUCT_DISCOVERY
+        score_dimensions: [TAXONOMY_BREADTH, TAXONOMY_CLARITY, PRODUCT_DISCOVERY, NAVIGATION_SIMPLICITY, PRICING_UX, INQUIRY_UX, TRUST_CREDIBILITY, OPERATOR_SALES_ASSIST_MODEL]
+        evidence_locator: "https://pivan.co/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Strong intent-based entry-path precedent"
+        notes: "No commercial values copied."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:00000000001f"
+        competitor_id: "comp:000000000009"
+        competitor_name: "Pivan"
+        domain: "https://pivan.co/"
+        competitor_tier: TIER_2
+        observed_capability: "Calculator hub covers multiple steel sections"
+        observation_domain: CALCULATORS
+        score_dimensions: [CALCULATOR_TOOLING]
+        evidence_locator: "https://pivan.co/weight-table/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Validates the value of a central calculator platform"
+        notes: "No formula or implementation imported."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:000000000020"
+        competitor_id: "comp:000000000009"
+        competitor_name: "Pivan"
+        domain: "https://pivan.co/"
+        competitor_tier: TIER_2
+        observed_capability: "Stainless-sheet calculator connects technical and commercial explanation"
+        observation_domain: TECHNICAL_KNOWLEDGE
+        score_dimensions: [TECHNICAL_CONTENT, EDUCATIONAL_CONTENT_DEPTH, INTERNAL_LINKING]
+        evidence_locator: "https://pivan.co/weight-table/steel-sheet-weight-table/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Supports Knowledge-to-Product linking"
+        notes: "No prose copied."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:000000000021"
+        competitor_id: "comp:000000000009"
+        competitor_name: "Pivan"
+        domain: "https://pivan.co/"
+        competitor_tier: TIER_2
+        observed_capability: "Sitemap separates products, brands, knowledge, services and tools"
+        observation_domain: SEO
+        score_dimensions: [SEO_ARCHITECTURE, CRAWLABLE_COMMERCIAL_DATA, INTERNAL_LINKING]
+        evidence_locator: "https://pivan.co/sitemap_index.xml"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Supports distinct intent owners and crawlability"
+        notes: "Only public structure observed."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+    patterns:
+      - pattern_id: "cpat:000000000019"
+        observation_refs: ["cobs:00000000001e", "cobs:00000000001f", "cobs:000000000020", "cobs:000000000021"]
+        pattern: "Product plus industry entry paths"
+        classification: ADAPT
+        rationale: "Use governed audience and application relationships."
+      - pattern_id: "cpat:00000000001a"
+        observation_refs: ["cobs:00000000001e", "cobs:00000000001f", "cobs:000000000020", "cobs:000000000021"]
+        pattern: "Specialist team routing"
+        classification: ADOPT_PRINCIPLE
+        rationale: "Keep a visible human-assist path."
+      - pattern_id: "cpat:00000000001b"
+        observation_refs: ["cobs:00000000001e", "cobs:00000000001f", "cobs:000000000020", "cobs:000000000021"]
+        pattern: "Broad unrelated catalog expansion"
+        classification: NOT_RELEVANT
+        rationale: "Damavand should retain industrial-stainless focus."
+  - competitor_id: "comp:00000000000a"
+    competitor_name: "Iromart"
+    domain: "https://iromart.com/"
+    competitor_tier: TIER_2
+    verification_status: PARTIALLY_VERIFIED
+    confidence: LOW
+    evidence_classification: EXTERNAL_OBSERVATION
+    observations:
+      - observation_id: "cobs:000000000022"
+        competitor_id: "comp:00000000000a"
+        competitor_name: "Iromart"
+        domain: "https://iromart.com/"
+        competitor_tier: TIER_2
+        observed_capability: "Current root resolves to a suspended-account page"
+        observation_domain: PERFORMANCE_PATTERN
+        score_dimensions: [TRUST_CREDIBILITY]
+        evidence_locator: "https://iromart.com/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Makes the site ineligible for current benchmark leadership"
+        notes: "Current access failure only."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:000000000023"
+        competitor_id: "comp:00000000000a"
+        competitor_name: "Iromart"
+        domain: "https://iromart.com/"
+        competitor_tier: TIER_2
+        observed_capability: "Historical product route previously exposed structured rows and assisted order stages"
+        observation_domain: PRODUCT_DATA
+        score_dimensions: [PRODUCT_DATA_RICHNESS, PRICING_UX, INQUIRY_UX, OPERATOR_SALES_ASSIST_MODEL]
+        evidence_locator: "https://iromart.com/profile/16/"
+        observation_date: "2026-08-18"
+        evidence_status: STALE
+        confidence: LOW
+        strategic_relevance: "Historical reference only; not a current capability claim"
+        notes: "No historical row or value copied."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:000000000024"
+        competitor_id: "comp:00000000000a"
+        competitor_name: "Iromart"
+        domain: "https://iromart.com/"
+        competitor_tier: TIER_2
+        observed_capability: "Historical pipe route previously exposed taxonomy and sales-process content"
+        observation_domain: NAVIGATION
+        score_dimensions: [TAXONOMY_BREADTH, TAXONOMY_CLARITY, NAVIGATION_SIMPLICITY, INQUIRY_UX]
+        evidence_locator: "https://iromart.com/pipe/"
+        observation_date: "2026-08-18"
+        evidence_status: STALE
+        confidence: LOW
+        strategic_relevance: "May inform watch items only"
+        notes: "Current site unavailability prevents validation."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+    patterns:
+      - pattern_id: "cpat:00000000001c"
+        observation_refs: ["cobs:000000000022", "cobs:000000000023", "cobs:000000000024"]
+        pattern: "Historical assisted-order stage clarity"
+        classification: WATCH
+        rationale: "Revalidate the principle through current sources before adoption."
+      - pattern_id: "cpat:00000000001d"
+        observation_refs: ["cobs:000000000022", "cobs:000000000023", "cobs:000000000024"]
+        pattern: "Historical dense tables and filtering"
+        classification: WATCH
+        rationale: "Stale evidence cannot drive current leadership."
+      - pattern_id: "cpat:00000000001e"
+        observation_refs: ["cobs:000000000022", "cobs:000000000023", "cobs:000000000024"]
+        pattern: "Suspended public surface and operational fragility"
+        classification: AVOID
+        rationale: "Avoid single-surface hosting/account failure without controlled continuity."
+  - competitor_id: "comp:00000000000b"
+    competitor_name: "SteelRonic"
+    domain: "https://steelronic.com/"
+    competitor_tier: TIER_2
+    verification_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_classification: EXTERNAL_OBSERVATION
+    observations:
+      - observation_id: "cobs:000000000025"
+        competitor_id: "comp:00000000000b"
+        competitor_name: "SteelRonic"
+        domain: "https://steelronic.com/"
+        competitor_tier: TIER_2
+        observed_capability: "Compact stainless taxonomy with search and an account/cart shell"
+        observation_domain: NAVIGATION
+        score_dimensions: [TAXONOMY_CLARITY, PRODUCT_DISCOVERY, NAVIGATION_SIMPLICITY, SEARCH_CAPABILITY]
+        evidence_locator: "https://steelronic.com/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Shows focused navigation while commerce remains unproven"
+        notes: "No transaction was attempted."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:000000000026"
+        competitor_id: "comp:00000000000b"
+        competitor_name: "SteelRonic"
+        domain: "https://steelronic.com/"
+        competitor_tier: TIER_2
+        observed_capability: "Pipe category connects grade, size and thickness context with specialist consultation"
+        observation_domain: TECHNICAL_KNOWLEDGE
+        score_dimensions: [PRODUCT_DATA_RICHNESS, TECHNICAL_CONTENT, EDUCATIONAL_CONTENT_DEPTH, INQUIRY_UX, OPERATOR_SALES_ASSIST_MODEL]
+        evidence_locator: "https://steelronic.com/product-category/steel-pipe/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Supports focused stainless guidance"
+        notes: "Structured commercial completeness is limited."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:000000000027"
+        competitor_id: "comp:00000000000b"
+        competitor_name: "SteelRonic"
+        domain: "https://steelronic.com/"
+        competitor_tier: TIER_2
+        observed_capability: "Alloy-aware multi-section weight and price calculator is public"
+        observation_domain: CALCULATORS
+        score_dimensions: [CALCULATOR_TOOLING]
+        evidence_locator: "https://steelronic.com/steel-calculator/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Useful future calculator precedent"
+        notes: "No formulas or values copied."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:000000000028"
+        competitor_id: "comp:00000000000b"
+        competitor_name: "SteelRonic"
+        domain: "https://steelronic.com/"
+        competitor_tier: TIER_2
+        observed_capability: "Focused stainless education and comparison library is available"
+        observation_domain: CONTENT
+        score_dimensions: [TECHNICAL_CONTENT, SEO_ARCHITECTURE, EDUCATIONAL_CONTENT_DEPTH, INTERNAL_LINKING]
+        evidence_locator: "https://steelronic.com/articles/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Supports Knowledge intent architecture"
+        notes: "Topic presence only."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+    patterns:
+      - pattern_id: "cpat:00000000001f"
+        observation_refs: ["cobs:000000000025", "cobs:000000000026", "cobs:000000000027", "cobs:000000000028"]
+        pattern: "Compact grade-based stainless IA"
+        classification: ADAPT
+        rationale: "Retain focus while using canonical hierarchy."
+      - pattern_id: "cpat:000000000020"
+        observation_refs: ["cobs:000000000025", "cobs:000000000026", "cobs:000000000027", "cobs:000000000028"]
+        pattern: "Metallurgy-led consultation"
+        classification: ADOPT_PRINCIPLE
+        rationale: "Expose expert help at decision points."
+      - pattern_id: "cpat:000000000021"
+        observation_refs: ["cobs:000000000025", "cobs:000000000026", "cobs:000000000027", "cobs:000000000028"]
+        pattern: "Empty commercial tables and unproven commerce shell"
+        classification: AVOID
+        rationale: "Do not surface inactive controls as commercial capability."
+  - competitor_id: "comp:00000000000c"
+    competitor_name: "Saba Profile"
+    domain: "https://sabaprofile.com/"
+    competitor_tier: TIER_2
+    verification_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_classification: EXTERNAL_OBSERVATION
+    observations:
+      - observation_id: "cobs:000000000029"
+        competitor_id: "comp:00000000000c"
+        competitor_name: "Saba Profile"
+        domain: "https://sabaprofile.com/"
+        competitor_tier: TIER_2
+        observed_capability: "Broad taxonomy integrates processing services, calculators, inquiry and trust claims"
+        observation_domain: PRODUCT_DISCOVERY
+        score_dimensions: [TAXONOMY_BREADTH, PRODUCT_DISCOVERY, INQUIRY_UX, TRUST_CREDIBILITY, OPERATOR_SALES_ASSIST_MODEL]
+        evidence_locator: "https://sabaprofile.com/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Strong product-plus-service precedent"
+        notes: "Claims were not independently verified."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:00000000002a"
+        competitor_id: "comp:00000000000c"
+        competitor_name: "Saba Profile"
+        domain: "https://sabaprofile.com/"
+        competitor_tier: TIER_2
+        observed_capability: "Stainless-pipe route exposes dimensions, thickness, mass, location and commercial fields with freshness caveats"
+        observation_domain: PRODUCT_DATA
+        score_dimensions: [PRODUCT_DATA_RICHNESS, DATA_CONSISTENCY, PRICING_UX, AVAILABILITY_COMMUNICATION]
+        evidence_locator: "https://sabaprofile.com/%D9%84%D9%88%D9%84%D9%87-%D8%A7%D8%B3%D8%AA%DB%8C%D9%84-%D8%AF%DA%A9%D9%88%D8%B1%D8%A7%D8%AA%DB%8C%D9%88/"
+        observation_date: "2026-08-18"
+        evidence_status: PARTIALLY_VERIFIED
+        confidence: MEDIUM
+        strategic_relevance: "Supports field design while demonstrating stale-price risk"
+        notes: "No values or prose copied."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:00000000002b"
+        competitor_id: "comp:00000000000c"
+        competitor_name: "Saba Profile"
+        domain: "https://sabaprofile.com/"
+        competitor_tier: TIER_2
+        observed_capability: "Weight calculation tools for pipe and profile are public"
+        observation_domain: CALCULATORS
+        score_dimensions: [CALCULATOR_TOOLING]
+        evidence_locator: "https://sabaprofile.com/%D9%BE%D9%86%D9%84-%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D8%A7%D8%AA%DB%8C-%D9%88%D8%B2%D9%86/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Supports future governed calculation"
+        notes: "No formula imported."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:00000000002c"
+        competitor_id: "comp:00000000000c"
+        competitor_name: "Saba Profile"
+        domain: "https://sabaprofile.com/"
+        competitor_tier: TIER_2
+        observed_capability: "Cut-planning calculator supports preprocessing decisions"
+        observation_domain: CALCULATORS
+        score_dimensions: [CALCULATOR_TOOLING, TECHNICAL_CONTENT]
+        evidence_locator: "https://sabaprofile.com/%D9%BE%D9%86%D9%84-%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D8%A7%D8%AA%DB%8C-%D8%A8%D8%B1%D8%B4/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Strong industrial service/tool precedent"
+        notes: "No implementation copied."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+    patterns:
+      - pattern_id: "cpat:000000000022"
+        observation_refs: ["cobs:000000000029", "cobs:00000000002a", "cobs:00000000002b", "cobs:00000000002c"]
+        pattern: "Processing-service integration and cut tooling"
+        classification: ADOPT_PRINCIPLE
+        rationale: "Plan service context without asserting capability not owned by Damavand."
+      - pattern_id: "cpat:000000000023"
+        observation_refs: ["cobs:000000000029", "cobs:00000000002a", "cobs:00000000002b", "cobs:00000000002c"]
+        pattern: "Weight and commercial field presence"
+        classification: ADAPT
+        rationale: "Keep Product, Mass, supply and price evidence separate."
+      - pattern_id: "cpat:000000000024"
+        observation_refs: ["cobs:000000000029", "cobs:00000000002a", "cobs:00000000002b", "cobs:00000000002c"]
+        pattern: "Old price, warehouse labels and repetitive long pages"
+        classification: AVOID
+        rationale: "Require freshness, source binding and unique intent ownership."
+  - competitor_id: "comp:00000000000d"
+    competitor_name: "SteelParto"
+    domain: "https://steelparto.com/"
+    competitor_tier: TIER_3
+    verification_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_classification: EXTERNAL_OBSERVATION
+    observations:
+      - observation_id: "cobs:00000000002d"
+        competitor_id: "comp:00000000000d"
+        competitor_name: "SteelParto"
+        domain: "https://steelparto.com/"
+        competitor_tier: TIER_3
+        observed_capability: "Live root exposes Persian RTL, responsive declarations, search and structured-data markup"
+        observation_domain: RTL
+        score_dimensions: [SEARCH_CAPABILITY, SEO_ARCHITECTURE]
+        evidence_locator: "https://steelparto.com/"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Confirms a live adjacent surface but not mobile usability"
+        notes: "Declarations only."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:00000000002e"
+        competitor_id: "comp:00000000000d"
+        competitor_name: "SteelParto"
+        domain: "https://steelparto.com/"
+        competitor_tier: TIER_3
+        observed_capability: "Woo Store API exposes products, variable attributes and related-product links"
+        observation_domain: VARIANT_SELECTION
+        score_dimensions: [PRODUCT_DATA_RICHNESS, RELATED_PRODUCT_SELLING, FITTINGS_CATALOG_DEPTH, CRAWLABLE_COMMERCIAL_DATA]
+        evidence_locator: "https://steelparto.com/wp-json/wc/store/v1/products?per_page=5"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Relevant adjacent variable-product and fittings graph precedent"
+        notes: "Publicly machine-readable, but the response is x-robots-tag: noindex; this does not establish search indexability or SEO leadership. No images, descriptions or values copied."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:00000000002f"
+        competitor_id: "comp:00000000000d"
+        competitor_name: "SteelParto"
+        domain: "https://steelparto.com/"
+        competitor_tier: TIER_3
+        observed_capability: "Public Woo product-category endpoint exposes an adjacent fittings taxonomy"
+        observation_domain: FITTINGS_DEPTH
+        score_dimensions: [TAXONOMY_BREADTH, FITTINGS_CATALOG_DEPTH]
+        evidence_locator: "https://steelparto.com/wp-json/wc/store/v1/products/categories?per_page=100"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Supports Tier-3 fittings relevance"
+        notes: "Category identity and hierarchy only; no descriptions, counts or branded assets were copied."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+      - observation_id: "cobs:000000000030"
+        competitor_id: "comp:00000000000d"
+        competitor_name: "SteelParto"
+        domain: "https://steelparto.com/"
+        competitor_tier: TIER_3
+        observed_capability: "Sample public API state combines conflicting stock text/boolean, zero price and non-purchasable state"
+        observation_domain: PRODUCT_DATA
+        score_dimensions: [DATA_CONSISTENCY, PRICING_UX, AVAILABILITY_COMMUNICATION, CHECKOUT_COMMERCE_FLOW]
+        evidence_locator: "https://steelparto.com/wp-json/wc/store/v1/products?per_page=5"
+        observation_date: "2026-08-18"
+        evidence_status: VERIFIED
+        confidence: HIGH
+        strategic_relevance: "Direct commercial-state anti-pattern evidence"
+        notes: "No current price or stock amount retained."
+        copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+    patterns:
+      - pattern_id: "cpat:000000000025"
+        observation_refs: ["cobs:00000000002d", "cobs:00000000002e", "cobs:00000000002f", "cobs:000000000030"]
+        pattern: "Fittings depth and related-product graph"
+        classification: ADOPT_PRINCIPLE
+        rationale: "Use governed relationships, never copied catalog content."
+      - pattern_id: "cpat:000000000026"
+        observation_refs: ["cobs:00000000002d", "cobs:00000000002e", "cobs:00000000002f", "cobs:000000000030"]
+        pattern: "Variable-product selectors"
+        classification: ADAPT
+        rationale: "Constrain options through Variant Rules and explicit commercial state."
+      - pattern_id: "cpat:000000000027"
+        observation_refs: ["cobs:00000000002d", "cobs:00000000002e", "cobs:00000000002f", "cobs:000000000030"]
+        pattern: "Contradictory stock and zero-price commerce state"
+        classification: AVOID
+        rationale: "Fail closed when Availability, price and purchasability disagree."

@@ -1,0 +1,3314 @@
+data_classification: C004_COMPETITIVE_CAPABILITY_SCORES
+registry_version: "1.0.0"
+mission_id: C004
+scale:
+  minimum: 0
+  maximum: 5
+  interpretation: ANALYSIS_AID_NOT_SCIENTIFIC_TRUTH
+aggregate_ranking: false
+dimensions:
+  - {dimension_code: TAXONOMY_BREADTH, label: "Taxonomy breadth"}
+  - {dimension_code: TAXONOMY_CLARITY, label: "Taxonomy clarity"}
+  - {dimension_code: PRODUCT_DATA_RICHNESS, label: "Product Data richness"}
+  - {dimension_code: DATA_CONSISTENCY, label: "Data consistency"}
+  - {dimension_code: PRODUCT_DISCOVERY, label: "Product discovery"}
+  - {dimension_code: NAVIGATION_SIMPLICITY, label: "Navigation simplicity"}
+  - {dimension_code: SEARCH_CAPABILITY, label: "Search capability"}
+  - {dimension_code: FILTERING_CAPABILITY, label: "Filtering capability"}
+  - {dimension_code: VARIANT_SELECTION_UX, label: "Variant-selection UX"}
+  - {dimension_code: PRODUCT_PAGE_QUALITY, label: "Product-page quality"}
+  - {dimension_code: MOBILE_UX, label: "Mobile UX"}
+  - {dimension_code: PERSIAN_RTL_QUALITY, label: "Persian RTL quality"}
+  - {dimension_code: PRICING_UX, label: "Pricing UX"}
+  - {dimension_code: INQUIRY_UX, label: "Inquiry UX"}
+  - {dimension_code: AVAILABILITY_COMMUNICATION, label: "Availability communication"}
+  - {dimension_code: CHECKOUT_COMMERCE_FLOW, label: "Checkout / commerce flow"}
+  - {dimension_code: TECHNICAL_CONTENT, label: "Technical content"}
+  - {dimension_code: SEO_ARCHITECTURE, label: "SEO architecture"}
+  - {dimension_code: CRAWLABLE_COMMERCIAL_DATA, label: "Crawlable commercial data"}
+  - {dimension_code: EDUCATIONAL_CONTENT_DEPTH, label: "Educational content depth"}
+  - {dimension_code: INTERNAL_LINKING, label: "Internal linking"}
+  - {dimension_code: TRUST_CREDIBILITY, label: "Trust / credibility"}
+  - {dimension_code: FITTINGS_CATALOG_DEPTH, label: "Fittings / catalog depth"}
+  - {dimension_code: CALCULATOR_TOOLING, label: "Calculator / tooling"}
+  - {dimension_code: RELATED_PRODUCT_SELLING, label: "Related-product selling"}
+  - {dimension_code: OPERATOR_SALES_ASSIST_MODEL, label: "Operator / sales-assist model"}
+  - {dimension_code: CRM_VISIBLE_BEHAVIOR, label: "CRM-visible behavior"}
+  - {dimension_code: MAINTAINABILITY_FRAGMENTATION_RISK, label: "Maintainability / apparent fragmentation resistance"}
+scores:
+  - score_id: "cscore:000000000001"
+    competitor_id: "comp:000000000001"
+    dimension_code: TAXONOMY_BREADTH
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000001"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:000000000001 (Extremely broad stainless and adjacent hierarchy with deep size, grade and fittings routes); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000002"
+    competitor_id: "comp:000000000001"
+    dimension_code: TAXONOMY_CLARITY
+    score: 2
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000001"]
+    rationale: "Analysis-aid score 2/5 is bounded to cobs:000000000001 (Extremely broad stainless and adjacent hierarchy with deep size, grade and fittings routes); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000003"
+    competitor_id: "comp:000000000001"
+    dimension_code: PRODUCT_DATA_RICHNESS
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000003"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:000000000003 (Product page exposes grade, diameter, thickness, brand, public commercial state and related products); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000004"
+    competitor_id: "comp:000000000001"
+    dimension_code: DATA_CONSISTENCY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000001"]
+    rationale: "No scoped observation directly supports Data consistency for Steel Majlesi; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000005"
+    competitor_id: "comp:000000000001"
+    dimension_code: PRODUCT_DISCOVERY
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000001", "cobs:000000000002"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000001 (Extremely broad stainless and adjacent hierarchy with deep size, grade and fittings routes); cobs:000000000002 (Search, sorting and filters for category, alloy, availability and price on the 201/51 route); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000006"
+    competitor_id: "comp:000000000001"
+    dimension_code: NAVIGATION_SIMPLICITY
+    score: 2
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000001"]
+    rationale: "Analysis-aid score 2/5 is bounded to cobs:000000000001 (Extremely broad stainless and adjacent hierarchy with deep size, grade and fittings routes); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000007"
+    competitor_id: "comp:000000000001"
+    dimension_code: SEARCH_CAPABILITY
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000002"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000002 (Search, sorting and filters for category, alloy, availability and price on the 201/51 route); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000008"
+    competitor_id: "comp:000000000001"
+    dimension_code: FILTERING_CAPABILITY
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000002"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000002 (Search, sorting and filters for category, alloy, availability and price on the 201/51 route); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000009"
+    competitor_id: "comp:000000000001"
+    dimension_code: VARIANT_SELECTION_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000001"]
+    rationale: "No scoped observation directly supports Variant-selection UX for Steel Majlesi; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000000a"
+    competitor_id: "comp:000000000001"
+    dimension_code: PRODUCT_PAGE_QUALITY
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000003"]
+    rationale: "Analysis-aid score 4/5 is bounded to the visible commercial shell/CTA in cobs:000000000003; checkout completion was not tested and no transaction capability is inferred."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000000b"
+    competitor_id: "comp:000000000001"
+    dimension_code: MOBILE_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000001"]
+    rationale: "No scoped observation directly supports Mobile UX for Steel Majlesi; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000000c"
+    competitor_id: "comp:000000000001"
+    dimension_code: PERSIAN_RTL_QUALITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000004"]
+    rationale: "RTL declarations were observed, but no scoped task-based rendering review supports Persian RTL quality; null prevents a quality inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000000d"
+    competitor_id: "comp:000000000001"
+    dimension_code: PRICING_UX
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000002", "cobs:000000000003"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000002 (Search, sorting and filters for category, alloy, availability and price on the 201/51 route); cobs:000000000003 (Product page exposes grade, diameter, thickness, brand, public commercial state and related products); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000000e"
+    competitor_id: "comp:000000000001"
+    dimension_code: INQUIRY_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000001"]
+    rationale: "No scoped observation directly supports Inquiry UX for Steel Majlesi; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000000f"
+    competitor_id: "comp:000000000001"
+    dimension_code: AVAILABILITY_COMMUNICATION
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000003"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:000000000003 (Product page exposes grade, diameter, thickness, brand, public commercial state and related products); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000010"
+    competitor_id: "comp:000000000001"
+    dimension_code: CHECKOUT_COMMERCE_FLOW
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000003"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000003 (Product page exposes grade, diameter, thickness, brand, public commercial state and related products); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000011"
+    competitor_id: "comp:000000000001"
+    dimension_code: TECHNICAL_CONTENT
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000001"]
+    rationale: "No scoped observation directly supports Technical content for Steel Majlesi; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000012"
+    competitor_id: "comp:000000000001"
+    dimension_code: SEO_ARCHITECTURE
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000004"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000004 (Persian RTL, responsive viewport, canonical and structured-data declarations are present); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000013"
+    competitor_id: "comp:000000000001"
+    dimension_code: CRAWLABLE_COMMERCIAL_DATA
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000001"]
+    rationale: "No scoped observation directly supports Crawlable commercial data for Steel Majlesi; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000014"
+    competitor_id: "comp:000000000001"
+    dimension_code: EDUCATIONAL_CONTENT_DEPTH
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000001"]
+    rationale: "No scoped observation directly supports Educational content depth for Steel Majlesi; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000015"
+    competitor_id: "comp:000000000001"
+    dimension_code: INTERNAL_LINKING
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000001"]
+    rationale: "No scoped observation directly supports Internal linking for Steel Majlesi; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000016"
+    competitor_id: "comp:000000000001"
+    dimension_code: TRUST_CREDIBILITY
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000003"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:000000000003 (Product page exposes grade, diameter, thickness, brand, public commercial state and related products); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000017"
+    competitor_id: "comp:000000000001"
+    dimension_code: FITTINGS_CATALOG_DEPTH
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000001"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000001 (Extremely broad stainless and adjacent hierarchy with deep size, grade and fittings routes); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000018"
+    competitor_id: "comp:000000000001"
+    dimension_code: CALCULATOR_TOOLING
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000001"]
+    rationale: "No scoped observation directly supports Calculator / tooling for Steel Majlesi; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000019"
+    competitor_id: "comp:000000000001"
+    dimension_code: RELATED_PRODUCT_SELLING
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000003"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000003 (Product page exposes grade, diameter, thickness, brand, public commercial state and related products); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000001a"
+    competitor_id: "comp:000000000001"
+    dimension_code: OPERATOR_SALES_ASSIST_MODEL
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000001"]
+    rationale: "No scoped observation directly supports Operator / sales-assist model for Steel Majlesi; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000001b"
+    competitor_id: "comp:000000000001"
+    dimension_code: CRM_VISIBLE_BEHAVIOR
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000001"]
+    rationale: "No scoped observation directly supports CRM-visible behavior for Steel Majlesi; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000001c"
+    competitor_id: "comp:000000000001"
+    dimension_code: MAINTAINABILITY_FRAGMENTATION_RISK
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000001"]
+    rationale: "No scoped observation directly supports Maintainability / apparent fragmentation resistance for Steel Majlesi; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000001d"
+    competitor_id: "comp:000000000002"
+    dimension_code: TAXONOMY_BREADTH
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000005"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000005 (Direct homepage routes to pipe, profile, fittings, pool products and shop with search); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000001e"
+    competitor_id: "comp:000000000002"
+    dimension_code: TAXONOMY_CLARITY
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000005"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:000000000005 (Direct homepage routes to pipe, profile, fittings, pool products and shop with search); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000001f"
+    competitor_id: "comp:000000000002"
+    dimension_code: PRODUCT_DATA_RICHNESS
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000007"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:000000000007 (A 51 mm family page exposes alloy, thickness and brand selection with contextual guidance); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000020"
+    competitor_id: "comp:000000000002"
+    dimension_code: DATA_CONSISTENCY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000005"]
+    rationale: "No scoped observation directly supports Data consistency for Atropat; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000021"
+    competitor_id: "comp:000000000002"
+    dimension_code: PRODUCT_DISCOVERY
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000005", "cobs:000000000006"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000005 (Direct homepage routes to pipe, profile, fittings, pool products and shop with search); cobs:000000000006 (Browseable commercial catalog with visible product actions); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000022"
+    competitor_id: "comp:000000000002"
+    dimension_code: NAVIGATION_SIMPLICITY
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000005"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000005 (Direct homepage routes to pipe, profile, fittings, pool products and shop with search); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000023"
+    competitor_id: "comp:000000000002"
+    dimension_code: SEARCH_CAPABILITY
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000005"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000005 (Direct homepage routes to pipe, profile, fittings, pool products and shop with search); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000024"
+    competitor_id: "comp:000000000002"
+    dimension_code: FILTERING_CAPABILITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000005"]
+    rationale: "No scoped observation directly supports Filtering capability for Atropat; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000025"
+    competitor_id: "comp:000000000002"
+    dimension_code: VARIANT_SELECTION_UX
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000007"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000007 (A 51 mm family page exposes alloy, thickness and brand selection with contextual guidance); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000026"
+    competitor_id: "comp:000000000002"
+    dimension_code: PRODUCT_PAGE_QUALITY
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000007"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000007 (A 51 mm family page exposes alloy, thickness and brand selection with contextual guidance); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000027"
+    competitor_id: "comp:000000000002"
+    dimension_code: MOBILE_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000005"]
+    rationale: "No scoped observation directly supports Mobile UX for Atropat; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000028"
+    competitor_id: "comp:000000000002"
+    dimension_code: PERSIAN_RTL_QUALITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000005"]
+    rationale: "No scoped observation directly supports Persian RTL quality for Atropat; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000029"
+    competitor_id: "comp:000000000002"
+    dimension_code: PRICING_UX
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000006", "cobs:000000000007"]
+    rationale: "Analysis-aid score 4/5 is bounded to visible commercial actions in cobs:000000000006 and contextual selection in cobs:000000000007; checkout completion was not tested."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000002a"
+    competitor_id: "comp:000000000002"
+    dimension_code: INQUIRY_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000005"]
+    rationale: "No scoped observation directly supports Inquiry UX for Atropat; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000002b"
+    competitor_id: "comp:000000000002"
+    dimension_code: AVAILABILITY_COMMUNICATION
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000005"]
+    rationale: "No scoped observation directly supports Availability communication for Atropat; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000002c"
+    competitor_id: "comp:000000000002"
+    dimension_code: CHECKOUT_COMMERCE_FLOW
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000006", "cobs:000000000007"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000006 (Browseable commercial catalog with visible product actions); cobs:000000000007 (A 51 mm family page exposes alloy, thickness and brand selection with contextual guidance); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000002d"
+    competitor_id: "comp:000000000002"
+    dimension_code: TECHNICAL_CONTENT
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000007"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:000000000007 (A 51 mm family page exposes alloy, thickness and brand selection with contextual guidance); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000002e"
+    competitor_id: "comp:000000000002"
+    dimension_code: SEO_ARCHITECTURE
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000005"]
+    rationale: "No scoped observation directly supports SEO architecture for Atropat; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000002f"
+    competitor_id: "comp:000000000002"
+    dimension_code: CRAWLABLE_COMMERCIAL_DATA
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000005"]
+    rationale: "No scoped observation directly supports Crawlable commercial data for Atropat; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000030"
+    competitor_id: "comp:000000000002"
+    dimension_code: EDUCATIONAL_CONTENT_DEPTH
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000005"]
+    rationale: "No scoped observation directly supports Educational content depth for Atropat; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000031"
+    competitor_id: "comp:000000000002"
+    dimension_code: INTERNAL_LINKING
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000005"]
+    rationale: "No scoped observation directly supports Internal linking for Atropat; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000032"
+    competitor_id: "comp:000000000002"
+    dimension_code: TRUST_CREDIBILITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000005"]
+    rationale: "No scoped observation directly supports Trust / credibility for Atropat; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000033"
+    competitor_id: "comp:000000000002"
+    dimension_code: FITTINGS_CATALOG_DEPTH
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000008"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000008 (Fittings category groups practical railing and installation component families); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000034"
+    competitor_id: "comp:000000000002"
+    dimension_code: CALCULATOR_TOOLING
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000005"]
+    rationale: "No scoped observation directly supports Calculator / tooling for Atropat; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000035"
+    competitor_id: "comp:000000000002"
+    dimension_code: RELATED_PRODUCT_SELLING
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000005"]
+    rationale: "No scoped observation directly supports Related-product selling for Atropat; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000036"
+    competitor_id: "comp:000000000002"
+    dimension_code: OPERATOR_SALES_ASSIST_MODEL
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000005"]
+    rationale: "No scoped observation directly supports Operator / sales-assist model for Atropat; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000037"
+    competitor_id: "comp:000000000002"
+    dimension_code: CRM_VISIBLE_BEHAVIOR
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000005"]
+    rationale: "No scoped observation directly supports CRM-visible behavior for Atropat; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000038"
+    competitor_id: "comp:000000000002"
+    dimension_code: MAINTAINABILITY_FRAGMENTATION_RISK
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000005"]
+    rationale: "No scoped observation directly supports Maintainability / apparent fragmentation resistance for Atropat; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000039"
+    competitor_id: "comp:000000000003"
+    dimension_code: TAXONOMY_BREADTH
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000009"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000009 (Homepage connects commercial categories, quote flow, knowledge, calculator and trust surfaces); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000003a"
+    competitor_id: "comp:000000000003"
+    dimension_code: TAXONOMY_CLARITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000009"]
+    rationale: "No scoped observation directly supports Taxonomy clarity for SteelRokh; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000003b"
+    competitor_id: "comp:000000000003"
+    dimension_code: PRODUCT_DATA_RICHNESS
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000000a"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:00000000000a (Pipe category uses dated field-rich commercial rows with alloy, size, thickness, finish, dimensions, length, mass and commercial fields); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000003c"
+    competitor_id: "comp:000000000003"
+    dimension_code: DATA_CONSISTENCY
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000000a"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:00000000000a (Pipe category uses dated field-rich commercial rows with alloy, size, thickness, finish, dimensions, length, mass and commercial fields); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000003d"
+    competitor_id: "comp:000000000003"
+    dimension_code: PRODUCT_DISCOVERY
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000009"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000009 (Homepage connects commercial categories, quote flow, knowledge, calculator and trust surfaces); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000003e"
+    competitor_id: "comp:000000000003"
+    dimension_code: NAVIGATION_SIMPLICITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000009"]
+    rationale: "No scoped observation directly supports Navigation simplicity for SteelRokh; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000003f"
+    competitor_id: "comp:000000000003"
+    dimension_code: SEARCH_CAPABILITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000009"]
+    rationale: "No scoped observation directly supports Search capability for SteelRokh; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000040"
+    competitor_id: "comp:000000000003"
+    dimension_code: FILTERING_CAPABILITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000009"]
+    rationale: "No scoped observation directly supports Filtering capability for SteelRokh; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000041"
+    competitor_id: "comp:000000000003"
+    dimension_code: VARIANT_SELECTION_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000009"]
+    rationale: "No scoped observation directly supports Variant-selection UX for SteelRokh; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000042"
+    competitor_id: "comp:000000000003"
+    dimension_code: PRODUCT_PAGE_QUALITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000009"]
+    rationale: "No scoped observation directly supports Product-page quality for SteelRokh; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000043"
+    competitor_id: "comp:000000000003"
+    dimension_code: MOBILE_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000009"]
+    rationale: "No scoped observation directly supports Mobile UX for SteelRokh; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000044"
+    competitor_id: "comp:000000000003"
+    dimension_code: PERSIAN_RTL_QUALITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000009"]
+    rationale: "No scoped observation directly supports Persian RTL quality for SteelRokh; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000045"
+    competitor_id: "comp:000000000003"
+    dimension_code: PRICING_UX
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000000a"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:00000000000a (Pipe category uses dated field-rich commercial rows with alloy, size, thickness, finish, dimensions, length, mass and commercial fields); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000046"
+    competitor_id: "comp:000000000003"
+    dimension_code: INQUIRY_UX
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000009"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:000000000009 (Homepage connects commercial categories, quote flow, knowledge, calculator and trust surfaces); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000047"
+    competitor_id: "comp:000000000003"
+    dimension_code: AVAILABILITY_COMMUNICATION
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000009"]
+    rationale: "No scoped observation directly supports Availability communication for SteelRokh; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000048"
+    competitor_id: "comp:000000000003"
+    dimension_code: CHECKOUT_COMMERCE_FLOW
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000009"]
+    rationale: "No scoped observation directly supports Checkout / commerce flow for SteelRokh; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000049"
+    competitor_id: "comp:000000000003"
+    dimension_code: TECHNICAL_CONTENT
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000009", "cobs:00000000000c"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:000000000009 (Homepage connects commercial categories, quote flow, knowledge, calculator and trust surfaces); cobs:00000000000c (Technical articles and category guidance connect knowledge to commercial routes); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000004a"
+    competitor_id: "comp:000000000003"
+    dimension_code: SEO_ARCHITECTURE
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000000c"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:00000000000c (Technical articles and category guidance connect knowledge to commercial routes); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000004b"
+    competitor_id: "comp:000000000003"
+    dimension_code: CRAWLABLE_COMMERCIAL_DATA
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000000a"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:00000000000a (Pipe category uses dated field-rich commercial rows with alloy, size, thickness, finish, dimensions, length, mass and commercial fields); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000004c"
+    competitor_id: "comp:000000000003"
+    dimension_code: EDUCATIONAL_CONTENT_DEPTH
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000009", "cobs:00000000000c"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:000000000009 (Homepage connects commercial categories, quote flow, knowledge, calculator and trust surfaces); cobs:00000000000c (Technical articles and category guidance connect knowledge to commercial routes); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000004d"
+    competitor_id: "comp:000000000003"
+    dimension_code: INTERNAL_LINKING
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000000c"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:00000000000c (Technical articles and category guidance connect knowledge to commercial routes); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000004e"
+    competitor_id: "comp:000000000003"
+    dimension_code: TRUST_CREDIBILITY
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000009"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:000000000009 (Homepage connects commercial categories, quote flow, knowledge, calculator and trust surfaces); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000004f"
+    competitor_id: "comp:000000000003"
+    dimension_code: FITTINGS_CATALOG_DEPTH
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000009"]
+    rationale: "No scoped observation directly supports Fittings / catalog depth for SteelRokh; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000050"
+    competitor_id: "comp:000000000003"
+    dimension_code: CALCULATOR_TOOLING
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000009", "cobs:00000000000b"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:000000000009 (Homepage connects commercial categories, quote flow, knowledge, calculator and trust surfaces); cobs:00000000000b (Multi-section weight and price calculator accepts material and quantity context); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000051"
+    competitor_id: "comp:000000000003"
+    dimension_code: RELATED_PRODUCT_SELLING
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000009"]
+    rationale: "No scoped observation directly supports Related-product selling for SteelRokh; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000052"
+    competitor_id: "comp:000000000003"
+    dimension_code: OPERATOR_SALES_ASSIST_MODEL
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000009"]
+    rationale: "No scoped observation directly supports Operator / sales-assist model for SteelRokh; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000053"
+    competitor_id: "comp:000000000003"
+    dimension_code: CRM_VISIBLE_BEHAVIOR
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000009"]
+    rationale: "No scoped observation directly supports CRM-visible behavior for SteelRokh; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000054"
+    competitor_id: "comp:000000000003"
+    dimension_code: MAINTAINABILITY_FRAGMENTATION_RISK
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000009"]
+    rationale: "No scoped observation directly supports Maintainability / apparent fragmentation resistance for SteelRokh; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000055"
+    competitor_id: "comp:000000000004"
+    dimension_code: TAXONOMY_BREADTH
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000000d"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:00000000000d (Shop exposes a large catalog dominated by practical railing-fittings families); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000056"
+    competitor_id: "comp:000000000004"
+    dimension_code: TAXONOMY_CLARITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000000d"]
+    rationale: "No scoped observation directly supports Taxonomy clarity for Steel Sheet; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000057"
+    competitor_id: "comp:000000000004"
+    dimension_code: PRODUCT_DATA_RICHNESS
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000000d"]
+    rationale: "No scoped observation directly supports Product Data richness for Steel Sheet; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000058"
+    competitor_id: "comp:000000000004"
+    dimension_code: DATA_CONSISTENCY
+    score: 2
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000000f"]
+    rationale: "Analysis-aid score 2/5 is bounded to cobs:00000000000f (Public surface includes unfinished descriptions and zero-price product states); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000059"
+    competitor_id: "comp:000000000004"
+    dimension_code: PRODUCT_DISCOVERY
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000000d"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:00000000000d (Shop exposes a large catalog dominated by practical railing-fittings families); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000005a"
+    competitor_id: "comp:000000000004"
+    dimension_code: NAVIGATION_SIMPLICITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000000d"]
+    rationale: "No scoped observation directly supports Navigation simplicity for Steel Sheet; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000005b"
+    competitor_id: "comp:000000000004"
+    dimension_code: SEARCH_CAPABILITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000000d"]
+    rationale: "No scoped observation directly supports Search capability for Steel Sheet; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000005c"
+    competitor_id: "comp:000000000004"
+    dimension_code: FILTERING_CAPABILITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000000d"]
+    rationale: "No scoped observation directly supports Filtering capability for Steel Sheet; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000005d"
+    competitor_id: "comp:000000000004"
+    dimension_code: VARIANT_SELECTION_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000000d"]
+    rationale: "No scoped observation directly supports Variant-selection UX for Steel Sheet; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000005e"
+    competitor_id: "comp:000000000004"
+    dimension_code: PRODUCT_PAGE_QUALITY
+    score: 2
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000000f"]
+    rationale: "Analysis-aid score 2/5 is bounded to cobs:00000000000f (Public surface includes unfinished descriptions and zero-price product states); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000005f"
+    competitor_id: "comp:000000000004"
+    dimension_code: MOBILE_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000000d"]
+    rationale: "No scoped observation directly supports Mobile UX for Steel Sheet; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000060"
+    competitor_id: "comp:000000000004"
+    dimension_code: PERSIAN_RTL_QUALITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000000d"]
+    rationale: "No scoped observation directly supports Persian RTL quality for Steel Sheet; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000061"
+    competitor_id: "comp:000000000004"
+    dimension_code: PRICING_UX
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000000d", "cobs:00000000000f"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:00000000000d (Shop exposes a large catalog dominated by practical railing-fittings families); cobs:00000000000f (Public surface includes unfinished descriptions and zero-price product states); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000062"
+    competitor_id: "comp:000000000004"
+    dimension_code: INQUIRY_UX
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000000e"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:00000000000e (Cart-led lead capture is followed by sales callback and consultation); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000063"
+    competitor_id: "comp:000000000004"
+    dimension_code: AVAILABILITY_COMMUNICATION
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000000d"]
+    rationale: "No scoped observation directly supports Availability communication for Steel Sheet; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000064"
+    competitor_id: "comp:000000000004"
+    dimension_code: CHECKOUT_COMMERCE_FLOW
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000000e"]
+    rationale: "Analysis-aid score 3/5 is bounded to the cart-led lead-capture shell in cobs:00000000000e; checkout completion was not tested and the observed flow remains consultative."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000065"
+    competitor_id: "comp:000000000004"
+    dimension_code: TECHNICAL_CONTENT
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000000d"]
+    rationale: "No scoped observation directly supports Technical content for Steel Sheet; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000066"
+    competitor_id: "comp:000000000004"
+    dimension_code: SEO_ARCHITECTURE
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000000d"]
+    rationale: "No scoped observation directly supports SEO architecture for Steel Sheet; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000067"
+    competitor_id: "comp:000000000004"
+    dimension_code: CRAWLABLE_COMMERCIAL_DATA
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000000d"]
+    rationale: "No scoped observation directly supports Crawlable commercial data for Steel Sheet; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000068"
+    competitor_id: "comp:000000000004"
+    dimension_code: EDUCATIONAL_CONTENT_DEPTH
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000000d"]
+    rationale: "No scoped observation directly supports Educational content depth for Steel Sheet; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000069"
+    competitor_id: "comp:000000000004"
+    dimension_code: INTERNAL_LINKING
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000000d"]
+    rationale: "No scoped observation directly supports Internal linking for Steel Sheet; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000006a"
+    competitor_id: "comp:000000000004"
+    dimension_code: TRUST_CREDIBILITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000000d"]
+    rationale: "No scoped observation directly supports Trust / credibility for Steel Sheet; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000006b"
+    competitor_id: "comp:000000000004"
+    dimension_code: FITTINGS_CATALOG_DEPTH
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000000d"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:00000000000d (Shop exposes a large catalog dominated by practical railing-fittings families); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000006c"
+    competitor_id: "comp:000000000004"
+    dimension_code: CALCULATOR_TOOLING
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000000d"]
+    rationale: "No scoped observation directly supports Calculator / tooling for Steel Sheet; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000006d"
+    competitor_id: "comp:000000000004"
+    dimension_code: RELATED_PRODUCT_SELLING
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000000d"]
+    rationale: "No scoped observation directly supports Related-product selling for Steel Sheet; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000006e"
+    competitor_id: "comp:000000000004"
+    dimension_code: OPERATOR_SALES_ASSIST_MODEL
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000000e"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:00000000000e (Cart-led lead capture is followed by sales callback and consultation); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000006f"
+    competitor_id: "comp:000000000004"
+    dimension_code: CRM_VISIBLE_BEHAVIOR
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000000d"]
+    rationale: "No scoped observation directly supports CRM-visible behavior for Steel Sheet; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000070"
+    competitor_id: "comp:000000000004"
+    dimension_code: MAINTAINABILITY_FRAGMENTATION_RISK
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000000d"]
+    rationale: "No scoped observation directly supports Maintainability / apparent fragmentation resistance for Steel Sheet; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000071"
+    competitor_id: "comp:000000000005"
+    dimension_code: TAXONOMY_BREADTH
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000010"]
+    rationale: "No scoped observation directly supports Taxonomy breadth for Kia Steel; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000072"
+    competitor_id: "comp:000000000005"
+    dimension_code: TAXONOMY_CLARITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000010"]
+    rationale: "No scoped observation directly supports Taxonomy clarity for Kia Steel; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000073"
+    competitor_id: "comp:000000000005"
+    dimension_code: PRODUCT_DATA_RICHNESS
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000011"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:000000000011 (Pipe family exposes size, grade, color, thickness and origin attributes with inquiry pricing); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000074"
+    competitor_id: "comp:000000000005"
+    dimension_code: DATA_CONSISTENCY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000010"]
+    rationale: "No scoped observation directly supports Data consistency for Kia Steel; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000075"
+    competitor_id: "comp:000000000005"
+    dimension_code: PRODUCT_DISCOVERY
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000010"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000010 (Shop exposes search, filters, quick view and variable-product actions across a fittings-heavy catalog); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000076"
+    competitor_id: "comp:000000000005"
+    dimension_code: NAVIGATION_SIMPLICITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000010"]
+    rationale: "No scoped observation directly supports Navigation simplicity for Kia Steel; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000077"
+    competitor_id: "comp:000000000005"
+    dimension_code: SEARCH_CAPABILITY
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000010"]
+    rationale: "Analysis-aid score 3/5 is bounded to visible shop actions in cobs:000000000010; checkout completion was not tested and no transaction completion is inferred."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000078"
+    competitor_id: "comp:000000000005"
+    dimension_code: FILTERING_CAPABILITY
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000010"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:000000000010 (Shop exposes search, filters, quick view and variable-product actions across a fittings-heavy catalog); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000079"
+    competitor_id: "comp:000000000005"
+    dimension_code: VARIANT_SELECTION_UX
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000010", "cobs:000000000011"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000010 (Shop exposes search, filters, quick view and variable-product actions across a fittings-heavy catalog); cobs:000000000011 (Pipe family exposes size, grade, color, thickness and origin attributes with inquiry pricing); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000007a"
+    competitor_id: "comp:000000000005"
+    dimension_code: PRODUCT_PAGE_QUALITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000010"]
+    rationale: "No scoped observation directly supports Product-page quality for Kia Steel; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000007b"
+    competitor_id: "comp:000000000005"
+    dimension_code: MOBILE_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000010"]
+    rationale: "No scoped observation directly supports Mobile UX for Kia Steel; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000007c"
+    competitor_id: "comp:000000000005"
+    dimension_code: PERSIAN_RTL_QUALITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000010"]
+    rationale: "No scoped observation directly supports Persian RTL quality for Kia Steel; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000007d"
+    competitor_id: "comp:000000000005"
+    dimension_code: PRICING_UX
+    score: 2
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000010"]
+    rationale: "Analysis-aid score 2/5 is bounded to cobs:000000000010 (Shop exposes search, filters, quick view and variable-product actions across a fittings-heavy catalog); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000007e"
+    competitor_id: "comp:000000000005"
+    dimension_code: INQUIRY_UX
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000011"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:000000000011 (Pipe family exposes size, grade, color, thickness and origin attributes with inquiry pricing); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000007f"
+    competitor_id: "comp:000000000005"
+    dimension_code: AVAILABILITY_COMMUNICATION
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000010"]
+    rationale: "No scoped observation directly supports Availability communication for Kia Steel; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000080"
+    competitor_id: "comp:000000000005"
+    dimension_code: CHECKOUT_COMMERCE_FLOW
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000010"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:000000000010 (Shop exposes search, filters, quick view and variable-product actions across a fittings-heavy catalog); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000081"
+    competitor_id: "comp:000000000005"
+    dimension_code: TECHNICAL_CONTENT
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000012"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000012 (Fittings page links installation context, component families and related products); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000082"
+    competitor_id: "comp:000000000005"
+    dimension_code: SEO_ARCHITECTURE
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000010"]
+    rationale: "No scoped observation directly supports SEO architecture for Kia Steel; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000083"
+    competitor_id: "comp:000000000005"
+    dimension_code: CRAWLABLE_COMMERCIAL_DATA
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000010"]
+    rationale: "No scoped observation directly supports Crawlable commercial data for Kia Steel; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000084"
+    competitor_id: "comp:000000000005"
+    dimension_code: EDUCATIONAL_CONTENT_DEPTH
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000010"]
+    rationale: "No scoped observation directly supports Educational content depth for Kia Steel; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000085"
+    competitor_id: "comp:000000000005"
+    dimension_code: INTERNAL_LINKING
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000010"]
+    rationale: "No scoped observation directly supports Internal linking for Kia Steel; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000086"
+    competitor_id: "comp:000000000005"
+    dimension_code: TRUST_CREDIBILITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000010"]
+    rationale: "No scoped observation directly supports Trust / credibility for Kia Steel; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000087"
+    competitor_id: "comp:000000000005"
+    dimension_code: FITTINGS_CATALOG_DEPTH
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000012"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:000000000012 (Fittings page links installation context, component families and related products); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000088"
+    competitor_id: "comp:000000000005"
+    dimension_code: CALCULATOR_TOOLING
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000010"]
+    rationale: "No scoped observation directly supports Calculator / tooling for Kia Steel; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000089"
+    competitor_id: "comp:000000000005"
+    dimension_code: RELATED_PRODUCT_SELLING
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000012"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000012 (Fittings page links installation context, component families and related products); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000008a"
+    competitor_id: "comp:000000000005"
+    dimension_code: OPERATOR_SALES_ASSIST_MODEL
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000010"]
+    rationale: "No scoped observation directly supports Operator / sales-assist model for Kia Steel; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000008b"
+    competitor_id: "comp:000000000005"
+    dimension_code: CRM_VISIBLE_BEHAVIOR
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000010"]
+    rationale: "No scoped observation directly supports CRM-visible behavior for Kia Steel; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000008c"
+    competitor_id: "comp:000000000005"
+    dimension_code: MAINTAINABILITY_FRAGMENTATION_RISK
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000010"]
+    rationale: "No scoped observation directly supports Maintainability / apparent fragmentation resistance for Kia Steel; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000008d"
+    competitor_id: "comp:000000000006"
+    dimension_code: TAXONOMY_BREADTH
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000013"]
+    rationale: "No scoped observation directly supports Taxonomy breadth for Sam Steel Shop; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000008e"
+    competitor_id: "comp:000000000006"
+    dimension_code: TAXONOMY_CLARITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000013"]
+    rationale: "No scoped observation directly supports Taxonomy clarity for Sam Steel Shop; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000008f"
+    competitor_id: "comp:000000000006"
+    dimension_code: PRODUCT_DATA_RICHNESS
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000014", "cobs:000000000015"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000014 (Decorative pipe page exposes grade, seam, size, thickness, length and weight/tolerance guidance); cobs:000000000015 (Industrial pipe page exposes schedule, alloy, seam, branch context and shipment guidance); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000090"
+    competitor_id: "comp:000000000006"
+    dimension_code: DATA_CONSISTENCY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000013"]
+    rationale: "No scoped observation directly supports Data consistency for Sam Steel Shop; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000091"
+    competitor_id: "comp:000000000006"
+    dimension_code: PRODUCT_DISCOVERY
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000013"]
+    rationale: "Analysis-aid score 4/5 is bounded to the visible Woo commerce shell in cobs:000000000013; checkout completion was not tested and current access repeatability is limited."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000092"
+    competitor_id: "comp:000000000006"
+    dimension_code: NAVIGATION_SIMPLICITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000013"]
+    rationale: "No scoped observation directly supports Navigation simplicity for Sam Steel Shop; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000093"
+    competitor_id: "comp:000000000006"
+    dimension_code: SEARCH_CAPABILITY
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000013"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:000000000013 (201 category exposes search, sorting, compare, wishlist, quick view, cart and variation controls); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000094"
+    competitor_id: "comp:000000000006"
+    dimension_code: FILTERING_CAPABILITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000013"]
+    rationale: "No scoped observation directly supports Filtering capability for Sam Steel Shop; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000095"
+    competitor_id: "comp:000000000006"
+    dimension_code: VARIANT_SELECTION_UX
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000013", "cobs:000000000014"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000013 (201 category exposes search, sorting, compare, wishlist, quick view, cart and variation controls); cobs:000000000014 (Decorative pipe page exposes grade, seam, size, thickness, length and weight/tolerance guidance); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000096"
+    competitor_id: "comp:000000000006"
+    dimension_code: PRODUCT_PAGE_QUALITY
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000014"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000014 (Decorative pipe page exposes grade, seam, size, thickness, length and weight/tolerance guidance); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000097"
+    competitor_id: "comp:000000000006"
+    dimension_code: MOBILE_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000013"]
+    rationale: "No scoped observation directly supports Mobile UX for Sam Steel Shop; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000098"
+    competitor_id: "comp:000000000006"
+    dimension_code: PERSIAN_RTL_QUALITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000013"]
+    rationale: "No scoped observation directly supports Persian RTL quality for Sam Steel Shop; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000099"
+    competitor_id: "comp:000000000006"
+    dimension_code: PRICING_UX
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000014"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:000000000014 (Decorative pipe page exposes grade, seam, size, thickness, length and weight/tolerance guidance); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000009a"
+    competitor_id: "comp:000000000006"
+    dimension_code: INQUIRY_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000013"]
+    rationale: "No scoped observation directly supports Inquiry UX for Sam Steel Shop; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000009b"
+    competitor_id: "comp:000000000006"
+    dimension_code: AVAILABILITY_COMMUNICATION
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000013"]
+    rationale: "No scoped observation directly supports Availability communication for Sam Steel Shop; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000009c"
+    competitor_id: "comp:000000000006"
+    dimension_code: CHECKOUT_COMMERCE_FLOW
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000013"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000013 (201 category exposes search, sorting, compare, wishlist, quick view, cart and variation controls); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000009d"
+    competitor_id: "comp:000000000006"
+    dimension_code: TECHNICAL_CONTENT
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000015"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:000000000015 (Industrial pipe page exposes schedule, alloy, seam, branch context and shipment guidance); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000009e"
+    competitor_id: "comp:000000000006"
+    dimension_code: SEO_ARCHITECTURE
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000013"]
+    rationale: "No scoped observation directly supports SEO architecture for Sam Steel Shop; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000009f"
+    competitor_id: "comp:000000000006"
+    dimension_code: CRAWLABLE_COMMERCIAL_DATA
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000013"]
+    rationale: "No scoped observation directly supports Crawlable commercial data for Sam Steel Shop; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000a0"
+    competitor_id: "comp:000000000006"
+    dimension_code: EDUCATIONAL_CONTENT_DEPTH
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000013"]
+    rationale: "No scoped observation directly supports Educational content depth for Sam Steel Shop; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000a1"
+    competitor_id: "comp:000000000006"
+    dimension_code: INTERNAL_LINKING
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000013"]
+    rationale: "No scoped observation directly supports Internal linking for Sam Steel Shop; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000a2"
+    competitor_id: "comp:000000000006"
+    dimension_code: TRUST_CREDIBILITY
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000015"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000015 (Industrial pipe page exposes schedule, alloy, seam, branch context and shipment guidance); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000a3"
+    competitor_id: "comp:000000000006"
+    dimension_code: FITTINGS_CATALOG_DEPTH
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000013"]
+    rationale: "No scoped observation directly supports Fittings / catalog depth for Sam Steel Shop; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000a4"
+    competitor_id: "comp:000000000006"
+    dimension_code: CALCULATOR_TOOLING
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000013"]
+    rationale: "No scoped observation directly supports Calculator / tooling for Sam Steel Shop; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000a5"
+    competitor_id: "comp:000000000006"
+    dimension_code: RELATED_PRODUCT_SELLING
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000013"]
+    rationale: "No scoped observation directly supports Related-product selling for Sam Steel Shop; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000a6"
+    competitor_id: "comp:000000000006"
+    dimension_code: OPERATOR_SALES_ASSIST_MODEL
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000015"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:000000000015 (Industrial pipe page exposes schedule, alloy, seam, branch context and shipment guidance); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000a7"
+    competitor_id: "comp:000000000006"
+    dimension_code: CRM_VISIBLE_BEHAVIOR
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000013"]
+    rationale: "No scoped observation directly supports CRM-visible behavior for Sam Steel Shop; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000a8"
+    competitor_id: "comp:000000000006"
+    dimension_code: MAINTAINABILITY_FRAGMENTATION_RISK
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000013"]
+    rationale: "No scoped observation directly supports Maintainability / apparent fragmentation resistance for Sam Steel Shop; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000a9"
+    competitor_id: "comp:000000000007"
+    dimension_code: TAXONOMY_BREADTH
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000016"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:000000000016 (Broad taxonomy, navigation, search, trust and visible commerce routes); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000aa"
+    competitor_id: "comp:000000000007"
+    dimension_code: TAXONOMY_CLARITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000016"]
+    rationale: "No scoped observation directly supports Taxonomy clarity for Ahan1; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000ab"
+    competitor_id: "comp:000000000007"
+    dimension_code: PRODUCT_DATA_RICHNESS
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000017", "cobs:000000000018"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:000000000017 (Stainless-pipe page exposes filters, weight tooling and detailed dated commercial rows); cobs:000000000018 (Stainless-sheet route filters by commercial and Product dimensions and exposes calculator context); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000ac"
+    competitor_id: "comp:000000000007"
+    dimension_code: DATA_CONSISTENCY
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000017"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:000000000017 (Stainless-pipe page exposes filters, weight tooling and detailed dated commercial rows); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000ad"
+    competitor_id: "comp:000000000007"
+    dimension_code: PRODUCT_DISCOVERY
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000016"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000016 (Broad taxonomy, navigation, search, trust and visible commerce routes); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000ae"
+    competitor_id: "comp:000000000007"
+    dimension_code: NAVIGATION_SIMPLICITY
+    score: 2
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000016"]
+    rationale: "Analysis-aid score 2/5 is bounded to cobs:000000000016 (Broad taxonomy, navigation, search, trust and visible commerce routes); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000af"
+    competitor_id: "comp:000000000007"
+    dimension_code: SEARCH_CAPABILITY
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000016"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000016 (Broad taxonomy, navigation, search, trust and visible commerce routes); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000b0"
+    competitor_id: "comp:000000000007"
+    dimension_code: FILTERING_CAPABILITY
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000017", "cobs:000000000018"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:000000000017 (Stainless-pipe page exposes filters, weight tooling and detailed dated commercial rows); cobs:000000000018 (Stainless-sheet route filters by commercial and Product dimensions and exposes calculator context); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000b1"
+    competitor_id: "comp:000000000007"
+    dimension_code: VARIANT_SELECTION_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000016"]
+    rationale: "No scoped observation directly supports Variant-selection UX for Ahan1; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000b2"
+    competitor_id: "comp:000000000007"
+    dimension_code: PRODUCT_PAGE_QUALITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000016"]
+    rationale: "No scoped observation directly supports Product-page quality for Ahan1; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000b3"
+    competitor_id: "comp:000000000007"
+    dimension_code: MOBILE_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000016"]
+    rationale: "No scoped observation directly supports Mobile UX for Ahan1; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000b4"
+    competitor_id: "comp:000000000007"
+    dimension_code: PERSIAN_RTL_QUALITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000016"]
+    rationale: "No scoped observation directly supports Persian RTL quality for Ahan1; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000b5"
+    competitor_id: "comp:000000000007"
+    dimension_code: PRICING_UX
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000017"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000017 (Stainless-pipe page exposes filters, weight tooling and detailed dated commercial rows); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000b6"
+    competitor_id: "comp:000000000007"
+    dimension_code: INQUIRY_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000016"]
+    rationale: "No scoped observation directly supports Inquiry UX for Ahan1; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000b7"
+    competitor_id: "comp:000000000007"
+    dimension_code: AVAILABILITY_COMMUNICATION
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000016"]
+    rationale: "No scoped observation directly supports Availability communication for Ahan1; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000b8"
+    competitor_id: "comp:000000000007"
+    dimension_code: CHECKOUT_COMMERCE_FLOW
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000016"]
+    rationale: "Analysis-aid score 3/5 is bounded to visible commerce routes in cobs:000000000016; checkout completion was not tested and no transactional authority is inferred."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000b9"
+    competitor_id: "comp:000000000007"
+    dimension_code: TECHNICAL_CONTENT
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000016"]
+    rationale: "No scoped observation directly supports Technical content for Ahan1; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000ba"
+    competitor_id: "comp:000000000007"
+    dimension_code: SEO_ARCHITECTURE
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000019"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:000000000019 (Sitemap exposes a large crawlable product and category surface); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000bb"
+    competitor_id: "comp:000000000007"
+    dimension_code: CRAWLABLE_COMMERCIAL_DATA
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000017", "cobs:000000000019"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:000000000017 (Stainless-pipe page exposes filters, weight tooling and detailed dated commercial rows); cobs:000000000019 (Sitemap exposes a large crawlable product and category surface); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000bc"
+    competitor_id: "comp:000000000007"
+    dimension_code: EDUCATIONAL_CONTENT_DEPTH
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000016"]
+    rationale: "No scoped observation directly supports Educational content depth for Ahan1; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000bd"
+    competitor_id: "comp:000000000007"
+    dimension_code: INTERNAL_LINKING
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000016"]
+    rationale: "No scoped observation directly supports Internal linking for Ahan1; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000be"
+    competitor_id: "comp:000000000007"
+    dimension_code: TRUST_CREDIBILITY
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000016"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000016 (Broad taxonomy, navigation, search, trust and visible commerce routes); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000bf"
+    competitor_id: "comp:000000000007"
+    dimension_code: FITTINGS_CATALOG_DEPTH
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000016"]
+    rationale: "No scoped observation directly supports Fittings / catalog depth for Ahan1; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000c0"
+    competitor_id: "comp:000000000007"
+    dimension_code: CALCULATOR_TOOLING
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000017", "cobs:000000000018"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000017 (Stainless-pipe page exposes filters, weight tooling and detailed dated commercial rows); cobs:000000000018 (Stainless-sheet route filters by commercial and Product dimensions and exposes calculator context); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000c1"
+    competitor_id: "comp:000000000007"
+    dimension_code: RELATED_PRODUCT_SELLING
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000016"]
+    rationale: "No scoped observation directly supports Related-product selling for Ahan1; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000c2"
+    competitor_id: "comp:000000000007"
+    dimension_code: OPERATOR_SALES_ASSIST_MODEL
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000016"]
+    rationale: "No scoped observation directly supports Operator / sales-assist model for Ahan1; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000c3"
+    competitor_id: "comp:000000000007"
+    dimension_code: CRM_VISIBLE_BEHAVIOR
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000016"]
+    rationale: "No scoped observation directly supports CRM-visible behavior for Ahan1; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000c4"
+    competitor_id: "comp:000000000007"
+    dimension_code: MAINTAINABILITY_FRAGMENTATION_RISK
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000016"]
+    rationale: "No scoped observation directly supports Maintainability / apparent fragmentation resistance for Ahan1; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000c5"
+    competitor_id: "comp:000000000008"
+    dimension_code: TAXONOMY_BREADTH
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001a"]
+    rationale: "No scoped observation directly supports Taxonomy breadth for MarkazeAhan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000c6"
+    competitor_id: "comp:000000000008"
+    dimension_code: TAXONOMY_CLARITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001a"]
+    rationale: "No scoped observation directly supports Taxonomy clarity for MarkazeAhan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000c7"
+    competitor_id: "comp:000000000008"
+    dimension_code: PRODUCT_DATA_RICHNESS
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000001b"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:00000000001b (Stainless-sheet route compares dimensions, thickness, alloy, form, location and commercial state); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000c8"
+    competitor_id: "comp:000000000008"
+    dimension_code: DATA_CONSISTENCY
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000001b"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:00000000001b (Stainless-sheet route compares dimensions, thickness, alloy, form, location and commercial state); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000c9"
+    competitor_id: "comp:000000000008"
+    dimension_code: PRODUCT_DISCOVERY
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000001c"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:00000000001c (Category route combines product filtering, calculator access and multi-source comparison); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000ca"
+    competitor_id: "comp:000000000008"
+    dimension_code: NAVIGATION_SIMPLICITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001a"]
+    rationale: "No scoped observation directly supports Navigation simplicity for MarkazeAhan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000cb"
+    competitor_id: "comp:000000000008"
+    dimension_code: SEARCH_CAPABILITY
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000001a"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:00000000001a (Homepage shows search, current commercial tables, inquiry routes, trust and named sales specialists); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000cc"
+    competitor_id: "comp:000000000008"
+    dimension_code: FILTERING_CAPABILITY
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000001c"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:00000000001c (Category route combines product filtering, calculator access and multi-source comparison); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000cd"
+    competitor_id: "comp:000000000008"
+    dimension_code: VARIANT_SELECTION_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001a"]
+    rationale: "No scoped observation directly supports Variant-selection UX for MarkazeAhan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000ce"
+    competitor_id: "comp:000000000008"
+    dimension_code: PRODUCT_PAGE_QUALITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001a"]
+    rationale: "No scoped observation directly supports Product-page quality for MarkazeAhan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000cf"
+    competitor_id: "comp:000000000008"
+    dimension_code: MOBILE_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001a"]
+    rationale: "No scoped observation directly supports Mobile UX for MarkazeAhan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000d0"
+    competitor_id: "comp:000000000008"
+    dimension_code: PERSIAN_RTL_QUALITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001a"]
+    rationale: "No scoped observation directly supports Persian RTL quality for MarkazeAhan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000d1"
+    competitor_id: "comp:000000000008"
+    dimension_code: PRICING_UX
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000001a", "cobs:00000000001b"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:00000000001a (Homepage shows search, current commercial tables, inquiry routes, trust and named sales specialists); cobs:00000000001b (Stainless-sheet route compares dimensions, thickness, alloy, form, location and commercial state); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000d2"
+    competitor_id: "comp:000000000008"
+    dimension_code: INQUIRY_UX
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000001a"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:00000000001a (Homepage shows search, current commercial tables, inquiry routes, trust and named sales specialists); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000d3"
+    competitor_id: "comp:000000000008"
+    dimension_code: AVAILABILITY_COMMUNICATION
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001a"]
+    rationale: "No scoped observation directly supports Availability communication for MarkazeAhan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000d4"
+    competitor_id: "comp:000000000008"
+    dimension_code: CHECKOUT_COMMERCE_FLOW
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001a"]
+    rationale: "No scoped observation directly supports Checkout / commerce flow for MarkazeAhan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000d5"
+    competitor_id: "comp:000000000008"
+    dimension_code: TECHNICAL_CONTENT
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001a"]
+    rationale: "No scoped observation directly supports Technical content for MarkazeAhan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000d6"
+    competitor_id: "comp:000000000008"
+    dimension_code: SEO_ARCHITECTURE
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000001d"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:00000000001d (Sitemap separates posts, services, company, products, videos and geography); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000d7"
+    competitor_id: "comp:000000000008"
+    dimension_code: CRAWLABLE_COMMERCIAL_DATA
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000001b", "cobs:00000000001d"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:00000000001b (Stainless-sheet route compares dimensions, thickness, alloy, form, location and commercial state); cobs:00000000001d (Sitemap separates posts, services, company, products, videos and geography); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000d8"
+    competitor_id: "comp:000000000008"
+    dimension_code: EDUCATIONAL_CONTENT_DEPTH
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001a"]
+    rationale: "No scoped observation directly supports Educational content depth for MarkazeAhan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000d9"
+    competitor_id: "comp:000000000008"
+    dimension_code: INTERNAL_LINKING
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001a"]
+    rationale: "No scoped observation directly supports Internal linking for MarkazeAhan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000da"
+    competitor_id: "comp:000000000008"
+    dimension_code: TRUST_CREDIBILITY
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000001a"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:00000000001a (Homepage shows search, current commercial tables, inquiry routes, trust and named sales specialists); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000db"
+    competitor_id: "comp:000000000008"
+    dimension_code: FITTINGS_CATALOG_DEPTH
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001a"]
+    rationale: "No scoped observation directly supports Fittings / catalog depth for MarkazeAhan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000dc"
+    competitor_id: "comp:000000000008"
+    dimension_code: CALCULATOR_TOOLING
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000001c"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:00000000001c (Category route combines product filtering, calculator access and multi-source comparison); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000dd"
+    competitor_id: "comp:000000000008"
+    dimension_code: RELATED_PRODUCT_SELLING
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001a"]
+    rationale: "No scoped observation directly supports Related-product selling for MarkazeAhan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000de"
+    competitor_id: "comp:000000000008"
+    dimension_code: OPERATOR_SALES_ASSIST_MODEL
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000001a"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:00000000001a (Homepage shows search, current commercial tables, inquiry routes, trust and named sales specialists); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000df"
+    competitor_id: "comp:000000000008"
+    dimension_code: CRM_VISIBLE_BEHAVIOR
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001a"]
+    rationale: "No scoped observation directly supports CRM-visible behavior for MarkazeAhan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000e0"
+    competitor_id: "comp:000000000008"
+    dimension_code: MAINTAINABILITY_FRAGMENTATION_RISK
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001a"]
+    rationale: "No scoped observation directly supports Maintainability / apparent fragmentation resistance for MarkazeAhan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000e1"
+    competitor_id: "comp:000000000009"
+    dimension_code: TAXONOMY_BREADTH
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000001e"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:00000000001e (Dual product and industry taxonomy with commercial tables and specialist teams); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000e2"
+    competitor_id: "comp:000000000009"
+    dimension_code: TAXONOMY_CLARITY
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000001e"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:00000000001e (Dual product and industry taxonomy with commercial tables and specialist teams); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000e3"
+    competitor_id: "comp:000000000009"
+    dimension_code: PRODUCT_DATA_RICHNESS
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001e"]
+    rationale: "No scoped observation directly supports Product Data richness for Pivan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000e4"
+    competitor_id: "comp:000000000009"
+    dimension_code: DATA_CONSISTENCY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001e"]
+    rationale: "No scoped observation directly supports Data consistency for Pivan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000e5"
+    competitor_id: "comp:000000000009"
+    dimension_code: PRODUCT_DISCOVERY
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000001e"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:00000000001e (Dual product and industry taxonomy with commercial tables and specialist teams); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000e6"
+    competitor_id: "comp:000000000009"
+    dimension_code: NAVIGATION_SIMPLICITY
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000001e"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:00000000001e (Dual product and industry taxonomy with commercial tables and specialist teams); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000e7"
+    competitor_id: "comp:000000000009"
+    dimension_code: SEARCH_CAPABILITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001e"]
+    rationale: "No scoped observation directly supports Search capability for Pivan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000e8"
+    competitor_id: "comp:000000000009"
+    dimension_code: FILTERING_CAPABILITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001e"]
+    rationale: "No scoped observation directly supports Filtering capability for Pivan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000e9"
+    competitor_id: "comp:000000000009"
+    dimension_code: VARIANT_SELECTION_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001e"]
+    rationale: "No scoped observation directly supports Variant-selection UX for Pivan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000ea"
+    competitor_id: "comp:000000000009"
+    dimension_code: PRODUCT_PAGE_QUALITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001e"]
+    rationale: "No scoped observation directly supports Product-page quality for Pivan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000eb"
+    competitor_id: "comp:000000000009"
+    dimension_code: MOBILE_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001e"]
+    rationale: "No scoped observation directly supports Mobile UX for Pivan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000ec"
+    competitor_id: "comp:000000000009"
+    dimension_code: PERSIAN_RTL_QUALITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001e"]
+    rationale: "No scoped observation directly supports Persian RTL quality for Pivan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000ed"
+    competitor_id: "comp:000000000009"
+    dimension_code: PRICING_UX
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000001e"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:00000000001e (Dual product and industry taxonomy with commercial tables and specialist teams); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000ee"
+    competitor_id: "comp:000000000009"
+    dimension_code: INQUIRY_UX
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000001e"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:00000000001e (Dual product and industry taxonomy with commercial tables and specialist teams); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000ef"
+    competitor_id: "comp:000000000009"
+    dimension_code: AVAILABILITY_COMMUNICATION
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001e"]
+    rationale: "No scoped observation directly supports Availability communication for Pivan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000f0"
+    competitor_id: "comp:000000000009"
+    dimension_code: CHECKOUT_COMMERCE_FLOW
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001e"]
+    rationale: "No scoped observation directly supports Checkout / commerce flow for Pivan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000f1"
+    competitor_id: "comp:000000000009"
+    dimension_code: TECHNICAL_CONTENT
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000020"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000020 (Stainless-sheet calculator connects technical and commercial explanation); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000f2"
+    competitor_id: "comp:000000000009"
+    dimension_code: SEO_ARCHITECTURE
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000021"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:000000000021 (Sitemap separates products, brands, knowledge, services and tools); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000f3"
+    competitor_id: "comp:000000000009"
+    dimension_code: CRAWLABLE_COMMERCIAL_DATA
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000021"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:000000000021 (Sitemap separates products, brands, knowledge, services and tools); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000f4"
+    competitor_id: "comp:000000000009"
+    dimension_code: EDUCATIONAL_CONTENT_DEPTH
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000020"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:000000000020 (Stainless-sheet calculator connects technical and commercial explanation); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000f5"
+    competitor_id: "comp:000000000009"
+    dimension_code: INTERNAL_LINKING
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000020", "cobs:000000000021"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000020 (Stainless-sheet calculator connects technical and commercial explanation); cobs:000000000021 (Sitemap separates products, brands, knowledge, services and tools); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000f6"
+    competitor_id: "comp:000000000009"
+    dimension_code: TRUST_CREDIBILITY
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000001e"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:00000000001e (Dual product and industry taxonomy with commercial tables and specialist teams); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000f7"
+    competitor_id: "comp:000000000009"
+    dimension_code: FITTINGS_CATALOG_DEPTH
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001e"]
+    rationale: "No scoped observation directly supports Fittings / catalog depth for Pivan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000f8"
+    competitor_id: "comp:000000000009"
+    dimension_code: CALCULATOR_TOOLING
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000001f"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:00000000001f (Calculator hub covers multiple steel sections); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000f9"
+    competitor_id: "comp:000000000009"
+    dimension_code: RELATED_PRODUCT_SELLING
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001e"]
+    rationale: "No scoped observation directly supports Related-product selling for Pivan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000fa"
+    competitor_id: "comp:000000000009"
+    dimension_code: OPERATOR_SALES_ASSIST_MODEL
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000001e"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:00000000001e (Dual product and industry taxonomy with commercial tables and specialist teams); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000fb"
+    competitor_id: "comp:000000000009"
+    dimension_code: CRM_VISIBLE_BEHAVIOR
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001e"]
+    rationale: "No scoped observation directly supports CRM-visible behavior for Pivan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000fc"
+    competitor_id: "comp:000000000009"
+    dimension_code: MAINTAINABILITY_FRAGMENTATION_RISK
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000001e"]
+    rationale: "No scoped observation directly supports Maintainability / apparent fragmentation resistance for Pivan; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000fd"
+    competitor_id: "comp:00000000000a"
+    dimension_code: TAXONOMY_BREADTH
+    score: 4
+    evidence_status: STALE
+    confidence: LOW
+    evidence_refs: ["cobs:000000000024"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000024 (Historical pipe route previously exposed taxonomy and sales-process content); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000fe"
+    competitor_id: "comp:00000000000a"
+    dimension_code: TAXONOMY_CLARITY
+    score: 3
+    evidence_status: STALE
+    confidence: LOW
+    evidence_refs: ["cobs:000000000024"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:000000000024 (Historical pipe route previously exposed taxonomy and sales-process content); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:0000000000ff"
+    competitor_id: "comp:00000000000a"
+    dimension_code: PRODUCT_DATA_RICHNESS
+    score: 4
+    evidence_status: STALE
+    confidence: LOW
+    evidence_refs: ["cobs:000000000023"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000023 (Historical product route previously exposed structured rows and assisted order stages); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000100"
+    competitor_id: "comp:00000000000a"
+    dimension_code: DATA_CONSISTENCY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000022"]
+    rationale: "No scoped observation directly supports Data consistency for Iromart; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000101"
+    competitor_id: "comp:00000000000a"
+    dimension_code: PRODUCT_DISCOVERY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000022"]
+    rationale: "No scoped observation directly supports Product discovery for Iromart; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000102"
+    competitor_id: "comp:00000000000a"
+    dimension_code: NAVIGATION_SIMPLICITY
+    score: 3
+    evidence_status: STALE
+    confidence: LOW
+    evidence_refs: ["cobs:000000000024"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:000000000024 (Historical pipe route previously exposed taxonomy and sales-process content); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000103"
+    competitor_id: "comp:00000000000a"
+    dimension_code: SEARCH_CAPABILITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000022"]
+    rationale: "No scoped observation directly supports Search capability for Iromart; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000104"
+    competitor_id: "comp:00000000000a"
+    dimension_code: FILTERING_CAPABILITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000022"]
+    rationale: "No scoped observation directly supports Filtering capability for Iromart; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000105"
+    competitor_id: "comp:00000000000a"
+    dimension_code: VARIANT_SELECTION_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000022"]
+    rationale: "No scoped observation directly supports Variant-selection UX for Iromart; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000106"
+    competitor_id: "comp:00000000000a"
+    dimension_code: PRODUCT_PAGE_QUALITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000022"]
+    rationale: "No scoped observation directly supports Product-page quality for Iromart; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000107"
+    competitor_id: "comp:00000000000a"
+    dimension_code: MOBILE_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000022"]
+    rationale: "No scoped observation directly supports Mobile UX for Iromart; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000108"
+    competitor_id: "comp:00000000000a"
+    dimension_code: PERSIAN_RTL_QUALITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000022"]
+    rationale: "No scoped observation directly supports Persian RTL quality for Iromart; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000109"
+    competitor_id: "comp:00000000000a"
+    dimension_code: PRICING_UX
+    score: 3
+    evidence_status: STALE
+    confidence: LOW
+    evidence_refs: ["cobs:000000000023"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:000000000023 (Historical product route previously exposed structured rows and assisted order stages); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000010a"
+    competitor_id: "comp:00000000000a"
+    dimension_code: INQUIRY_UX
+    score: 4
+    evidence_status: STALE
+    confidence: LOW
+    evidence_refs: ["cobs:000000000023", "cobs:000000000024"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000023 (Historical product route previously exposed structured rows and assisted order stages); cobs:000000000024 (Historical pipe route previously exposed taxonomy and sales-process content); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000010b"
+    competitor_id: "comp:00000000000a"
+    dimension_code: AVAILABILITY_COMMUNICATION
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000022"]
+    rationale: "No scoped observation directly supports Availability communication for Iromart; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000010c"
+    competitor_id: "comp:00000000000a"
+    dimension_code: CHECKOUT_COMMERCE_FLOW
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000022"]
+    rationale: "No scoped observation directly supports Checkout / commerce flow for Iromart; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000010d"
+    competitor_id: "comp:00000000000a"
+    dimension_code: TECHNICAL_CONTENT
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000022"]
+    rationale: "No scoped observation directly supports Technical content for Iromart; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000010e"
+    competitor_id: "comp:00000000000a"
+    dimension_code: SEO_ARCHITECTURE
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000022"]
+    rationale: "No scoped observation directly supports SEO architecture for Iromart; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000010f"
+    competitor_id: "comp:00000000000a"
+    dimension_code: CRAWLABLE_COMMERCIAL_DATA
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000022"]
+    rationale: "No scoped observation directly supports Crawlable commercial data for Iromart; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000110"
+    competitor_id: "comp:00000000000a"
+    dimension_code: EDUCATIONAL_CONTENT_DEPTH
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000022"]
+    rationale: "No scoped observation directly supports Educational content depth for Iromart; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000111"
+    competitor_id: "comp:00000000000a"
+    dimension_code: INTERNAL_LINKING
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000022"]
+    rationale: "No scoped observation directly supports Internal linking for Iromart; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000112"
+    competitor_id: "comp:00000000000a"
+    dimension_code: TRUST_CREDIBILITY
+    score: 0
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000022"]
+    rationale: "Analysis-aid score 0/5 is bounded to the current suspended public root in cobs:000000000022; it addresses public trust only and does not infer backend maintainability."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000113"
+    competitor_id: "comp:00000000000a"
+    dimension_code: FITTINGS_CATALOG_DEPTH
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000022"]
+    rationale: "No scoped observation directly supports Fittings / catalog depth for Iromart; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000114"
+    competitor_id: "comp:00000000000a"
+    dimension_code: CALCULATOR_TOOLING
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000022"]
+    rationale: "No scoped observation directly supports Calculator / tooling for Iromart; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000115"
+    competitor_id: "comp:00000000000a"
+    dimension_code: RELATED_PRODUCT_SELLING
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000022"]
+    rationale: "No scoped observation directly supports Related-product selling for Iromart; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000116"
+    competitor_id: "comp:00000000000a"
+    dimension_code: OPERATOR_SALES_ASSIST_MODEL
+    score: 4
+    evidence_status: STALE
+    confidence: LOW
+    evidence_refs: ["cobs:000000000023"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000023 (Historical product route previously exposed structured rows and assisted order stages); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000117"
+    competitor_id: "comp:00000000000a"
+    dimension_code: CRM_VISIBLE_BEHAVIOR
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000022"]
+    rationale: "No scoped observation directly supports CRM-visible behavior for Iromart; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000118"
+    competitor_id: "comp:00000000000a"
+    dimension_code: MAINTAINABILITY_FRAGMENTATION_RISK
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000022"]
+    rationale: "A suspended public root does not prove backend maintainability or fragmentation quality; null prevents an internal-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000119"
+    competitor_id: "comp:00000000000b"
+    dimension_code: TAXONOMY_BREADTH
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000025"]
+    rationale: "No scoped observation directly supports Taxonomy breadth for SteelRonic; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000011a"
+    competitor_id: "comp:00000000000b"
+    dimension_code: TAXONOMY_CLARITY
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000025"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000025 (Compact stainless taxonomy with search and an account/cart shell); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000011b"
+    competitor_id: "comp:00000000000b"
+    dimension_code: PRODUCT_DATA_RICHNESS
+    score: 2
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000026"]
+    rationale: "Analysis-aid score 2/5 is bounded to cobs:000000000026 (Pipe category connects grade, size and thickness context with specialist consultation); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000011c"
+    competitor_id: "comp:00000000000b"
+    dimension_code: DATA_CONSISTENCY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000025"]
+    rationale: "No scoped observation directly supports Data consistency for SteelRonic; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000011d"
+    competitor_id: "comp:00000000000b"
+    dimension_code: PRODUCT_DISCOVERY
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000025"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:000000000025 (Compact stainless taxonomy with search and an account/cart shell); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000011e"
+    competitor_id: "comp:00000000000b"
+    dimension_code: NAVIGATION_SIMPLICITY
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000025"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000025 (Compact stainless taxonomy with search and an account/cart shell); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000011f"
+    competitor_id: "comp:00000000000b"
+    dimension_code: SEARCH_CAPABILITY
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000025"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000025 (Compact stainless taxonomy with search and an account/cart shell); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000120"
+    competitor_id: "comp:00000000000b"
+    dimension_code: FILTERING_CAPABILITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000025"]
+    rationale: "No scoped observation directly supports Filtering capability for SteelRonic; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000121"
+    competitor_id: "comp:00000000000b"
+    dimension_code: VARIANT_SELECTION_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000025"]
+    rationale: "No scoped observation directly supports Variant-selection UX for SteelRonic; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000122"
+    competitor_id: "comp:00000000000b"
+    dimension_code: PRODUCT_PAGE_QUALITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000025"]
+    rationale: "No scoped observation directly supports Product-page quality for SteelRonic; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000123"
+    competitor_id: "comp:00000000000b"
+    dimension_code: MOBILE_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000025"]
+    rationale: "No scoped observation directly supports Mobile UX for SteelRonic; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000124"
+    competitor_id: "comp:00000000000b"
+    dimension_code: PERSIAN_RTL_QUALITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000025"]
+    rationale: "No scoped task-based rendering review supports Persian RTL quality for SteelRonic; null prevents a quality inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000125"
+    competitor_id: "comp:00000000000b"
+    dimension_code: PRICING_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000025"]
+    rationale: "No scoped observation directly supports Pricing UX for SteelRonic; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000126"
+    competitor_id: "comp:00000000000b"
+    dimension_code: INQUIRY_UX
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000026"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000026 (Pipe category connects grade, size and thickness context with specialist consultation); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000127"
+    competitor_id: "comp:00000000000b"
+    dimension_code: AVAILABILITY_COMMUNICATION
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000025"]
+    rationale: "No scoped observation directly supports Availability communication for SteelRonic; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000128"
+    competitor_id: "comp:00000000000b"
+    dimension_code: CHECKOUT_COMMERCE_FLOW
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000025"]
+    rationale: "No scoped observation directly supports Checkout / commerce flow for SteelRonic; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000129"
+    competitor_id: "comp:00000000000b"
+    dimension_code: TECHNICAL_CONTENT
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000026", "cobs:000000000028"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:000000000026 (Pipe category connects grade, size and thickness context with specialist consultation); cobs:000000000028 (Focused stainless education and comparison library is available); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000012a"
+    competitor_id: "comp:00000000000b"
+    dimension_code: SEO_ARCHITECTURE
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000028"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:000000000028 (Focused stainless education and comparison library is available); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000012b"
+    competitor_id: "comp:00000000000b"
+    dimension_code: CRAWLABLE_COMMERCIAL_DATA
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000025"]
+    rationale: "No scoped observation directly supports Crawlable commercial data for SteelRonic; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000012c"
+    competitor_id: "comp:00000000000b"
+    dimension_code: EDUCATIONAL_CONTENT_DEPTH
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000026", "cobs:000000000028"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:000000000026 (Pipe category connects grade, size and thickness context with specialist consultation); cobs:000000000028 (Focused stainless education and comparison library is available); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000012d"
+    competitor_id: "comp:00000000000b"
+    dimension_code: INTERNAL_LINKING
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000028"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000028 (Focused stainless education and comparison library is available); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000012e"
+    competitor_id: "comp:00000000000b"
+    dimension_code: TRUST_CREDIBILITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000025"]
+    rationale: "No scoped observation directly supports Trust / credibility for SteelRonic; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000012f"
+    competitor_id: "comp:00000000000b"
+    dimension_code: FITTINGS_CATALOG_DEPTH
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000025"]
+    rationale: "No scoped observation directly supports Fittings / catalog depth for SteelRonic; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000130"
+    competitor_id: "comp:00000000000b"
+    dimension_code: CALCULATOR_TOOLING
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000027"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:000000000027 (Alloy-aware multi-section weight and price calculator is public); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000131"
+    competitor_id: "comp:00000000000b"
+    dimension_code: RELATED_PRODUCT_SELLING
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000025"]
+    rationale: "No scoped observation directly supports Related-product selling for SteelRonic; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000132"
+    competitor_id: "comp:00000000000b"
+    dimension_code: OPERATOR_SALES_ASSIST_MODEL
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000026"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000026 (Pipe category connects grade, size and thickness context with specialist consultation); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000133"
+    competitor_id: "comp:00000000000b"
+    dimension_code: CRM_VISIBLE_BEHAVIOR
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000025"]
+    rationale: "No scoped observation directly supports CRM-visible behavior for SteelRonic; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000134"
+    competitor_id: "comp:00000000000b"
+    dimension_code: MAINTAINABILITY_FRAGMENTATION_RISK
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000025"]
+    rationale: "No scoped observation directly supports Maintainability / apparent fragmentation resistance for SteelRonic; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000135"
+    competitor_id: "comp:00000000000c"
+    dimension_code: TAXONOMY_BREADTH
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000029"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000029 (Broad taxonomy integrates processing services, calculators, inquiry and trust claims); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000136"
+    competitor_id: "comp:00000000000c"
+    dimension_code: TAXONOMY_CLARITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000029"]
+    rationale: "No scoped observation directly supports Taxonomy clarity for Saba Profile; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000137"
+    competitor_id: "comp:00000000000c"
+    dimension_code: PRODUCT_DATA_RICHNESS
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000002a"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:00000000002a (Stainless-pipe route exposes dimensions, thickness, mass, location and commercial fields with freshness caveats); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000138"
+    competitor_id: "comp:00000000000c"
+    dimension_code: DATA_CONSISTENCY
+    score: 2
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000002a"]
+    rationale: "Analysis-aid score 2/5 is bounded to cobs:00000000002a (Stainless-pipe route exposes dimensions, thickness, mass, location and commercial fields with freshness caveats); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000139"
+    competitor_id: "comp:00000000000c"
+    dimension_code: PRODUCT_DISCOVERY
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000029"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:000000000029 (Broad taxonomy integrates processing services, calculators, inquiry and trust claims); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000013a"
+    competitor_id: "comp:00000000000c"
+    dimension_code: NAVIGATION_SIMPLICITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000029"]
+    rationale: "No scoped observation directly supports Navigation simplicity for Saba Profile; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000013b"
+    competitor_id: "comp:00000000000c"
+    dimension_code: SEARCH_CAPABILITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000029"]
+    rationale: "No scoped observation directly supports Search capability for Saba Profile; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000013c"
+    competitor_id: "comp:00000000000c"
+    dimension_code: FILTERING_CAPABILITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000029"]
+    rationale: "No scoped observation directly supports Filtering capability for Saba Profile; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000013d"
+    competitor_id: "comp:00000000000c"
+    dimension_code: VARIANT_SELECTION_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000029"]
+    rationale: "No scoped observation directly supports Variant-selection UX for Saba Profile; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000013e"
+    competitor_id: "comp:00000000000c"
+    dimension_code: PRODUCT_PAGE_QUALITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000029"]
+    rationale: "No scoped observation directly supports Product-page quality for Saba Profile; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000013f"
+    competitor_id: "comp:00000000000c"
+    dimension_code: MOBILE_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000029"]
+    rationale: "No scoped observation directly supports Mobile UX for Saba Profile; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000140"
+    competitor_id: "comp:00000000000c"
+    dimension_code: PERSIAN_RTL_QUALITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000029"]
+    rationale: "No scoped observation directly supports Persian RTL quality for Saba Profile; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000141"
+    competitor_id: "comp:00000000000c"
+    dimension_code: PRICING_UX
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000002a"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:00000000002a (Stainless-pipe route exposes dimensions, thickness, mass, location and commercial fields with freshness caveats); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000142"
+    competitor_id: "comp:00000000000c"
+    dimension_code: INQUIRY_UX
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000029"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:000000000029 (Broad taxonomy integrates processing services, calculators, inquiry and trust claims); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000143"
+    competitor_id: "comp:00000000000c"
+    dimension_code: AVAILABILITY_COMMUNICATION
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000002a"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:00000000002a (Stainless-pipe route exposes dimensions, thickness, mass, location and commercial fields with freshness caveats); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000144"
+    competitor_id: "comp:00000000000c"
+    dimension_code: CHECKOUT_COMMERCE_FLOW
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000029"]
+    rationale: "No scoped observation directly supports Checkout / commerce flow for Saba Profile; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000145"
+    competitor_id: "comp:00000000000c"
+    dimension_code: TECHNICAL_CONTENT
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000002c"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:00000000002c (Cut-planning calculator supports preprocessing decisions); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000146"
+    competitor_id: "comp:00000000000c"
+    dimension_code: SEO_ARCHITECTURE
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000029"]
+    rationale: "No scoped observation directly supports SEO architecture for Saba Profile; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000147"
+    competitor_id: "comp:00000000000c"
+    dimension_code: CRAWLABLE_COMMERCIAL_DATA
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000029"]
+    rationale: "No scoped observation directly supports Crawlable commercial data for Saba Profile; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000148"
+    competitor_id: "comp:00000000000c"
+    dimension_code: EDUCATIONAL_CONTENT_DEPTH
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000029"]
+    rationale: "No scoped observation directly supports Educational content depth for Saba Profile; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000149"
+    competitor_id: "comp:00000000000c"
+    dimension_code: INTERNAL_LINKING
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000029"]
+    rationale: "No scoped observation directly supports Internal linking for Saba Profile; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000014a"
+    competitor_id: "comp:00000000000c"
+    dimension_code: TRUST_CREDIBILITY
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000029"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:000000000029 (Broad taxonomy integrates processing services, calculators, inquiry and trust claims); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000014b"
+    competitor_id: "comp:00000000000c"
+    dimension_code: FITTINGS_CATALOG_DEPTH
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000029"]
+    rationale: "No scoped observation directly supports Fittings / catalog depth for Saba Profile; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000014c"
+    competitor_id: "comp:00000000000c"
+    dimension_code: CALCULATOR_TOOLING
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000002b", "cobs:00000000002c"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:00000000002b (Weight calculation tools for pipe and profile are public); cobs:00000000002c (Cut-planning calculator supports preprocessing decisions); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000014d"
+    competitor_id: "comp:00000000000c"
+    dimension_code: RELATED_PRODUCT_SELLING
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000029"]
+    rationale: "No scoped observation directly supports Related-product selling for Saba Profile; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000014e"
+    competitor_id: "comp:00000000000c"
+    dimension_code: OPERATOR_SALES_ASSIST_MODEL
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000029"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:000000000029 (Broad taxonomy integrates processing services, calculators, inquiry and trust claims); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000014f"
+    competitor_id: "comp:00000000000c"
+    dimension_code: CRM_VISIBLE_BEHAVIOR
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000029"]
+    rationale: "No scoped observation directly supports CRM-visible behavior for Saba Profile; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000150"
+    competitor_id: "comp:00000000000c"
+    dimension_code: MAINTAINABILITY_FRAGMENTATION_RISK
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:000000000029"]
+    rationale: "No scoped observation directly supports Maintainability / apparent fragmentation resistance for Saba Profile; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000151"
+    competitor_id: "comp:00000000000d"
+    dimension_code: TAXONOMY_BREADTH
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000002f"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:00000000002f (Public Woo product-category endpoint exposes an adjacent fittings taxonomy); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000152"
+    competitor_id: "comp:00000000000d"
+    dimension_code: TAXONOMY_CLARITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000002d"]
+    rationale: "No scoped observation directly supports Taxonomy clarity for SteelParto; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000153"
+    competitor_id: "comp:00000000000d"
+    dimension_code: PRODUCT_DATA_RICHNESS
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000002e"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:00000000002e (Woo Store API exposes products, variable attributes and related-product links); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000154"
+    competitor_id: "comp:00000000000d"
+    dimension_code: DATA_CONSISTENCY
+    score: 1
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000030"]
+    rationale: "Analysis-aid score 1/5 is bounded to cobs:000000000030 (Sample public API state combines conflicting stock text/boolean, zero price and non-purchasable state); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000155"
+    competitor_id: "comp:00000000000d"
+    dimension_code: PRODUCT_DISCOVERY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000002d"]
+    rationale: "No scoped observation directly supports Product discovery for SteelParto; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000156"
+    competitor_id: "comp:00000000000d"
+    dimension_code: NAVIGATION_SIMPLICITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000002d"]
+    rationale: "No scoped observation directly supports Navigation simplicity for SteelParto; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000157"
+    competitor_id: "comp:00000000000d"
+    dimension_code: SEARCH_CAPABILITY
+    score: 3
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000002d"]
+    rationale: "Analysis-aid score 3/5 is bounded to cobs:00000000002d (Live root exposes Persian RTL, responsive declarations, search and structured-data markup); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000158"
+    competitor_id: "comp:00000000000d"
+    dimension_code: FILTERING_CAPABILITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000002d"]
+    rationale: "No scoped observation directly supports Filtering capability for SteelParto; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000159"
+    competitor_id: "comp:00000000000d"
+    dimension_code: VARIANT_SELECTION_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000002e"]
+    rationale: "The public API exposes a variable data model, but no scoped product-page interaction supports Variant selection UX; null prevents a UI-quality inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000015a"
+    competitor_id: "comp:00000000000d"
+    dimension_code: PRODUCT_PAGE_QUALITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000002d"]
+    rationale: "No scoped observation directly supports Product-page quality for SteelParto; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000015b"
+    competitor_id: "comp:00000000000d"
+    dimension_code: MOBILE_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000002d"]
+    rationale: "No scoped observation directly supports Mobile UX for SteelParto; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000015c"
+    competitor_id: "comp:00000000000d"
+    dimension_code: PERSIAN_RTL_QUALITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000002d"]
+    rationale: "RTL declarations were observed, but no scoped task-based rendering review supports Persian RTL quality; null prevents a quality inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000015d"
+    competitor_id: "comp:00000000000d"
+    dimension_code: PRICING_UX
+    score: 1
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000030"]
+    rationale: "Analysis-aid score 1/5 is bounded to cobs:000000000030 (Sample public API state combines conflicting stock text/boolean, zero price and non-purchasable state); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000015e"
+    competitor_id: "comp:00000000000d"
+    dimension_code: INQUIRY_UX
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000002d"]
+    rationale: "No scoped observation directly supports Inquiry UX for SteelParto; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000015f"
+    competitor_id: "comp:00000000000d"
+    dimension_code: AVAILABILITY_COMMUNICATION
+    score: 1
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000030"]
+    rationale: "Analysis-aid score 1/5 is bounded to cobs:000000000030 (Sample public API state combines conflicting stock text/boolean, zero price and non-purchasable state); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000160"
+    competitor_id: "comp:00000000000d"
+    dimension_code: CHECKOUT_COMMERCE_FLOW
+    score: 2
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:000000000030"]
+    rationale: "Analysis-aid score 2/5 is bounded to the contradictory public API commerce state in cobs:000000000030; checkout completion was not tested and the record is an anti-pattern signal."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000161"
+    competitor_id: "comp:00000000000d"
+    dimension_code: TECHNICAL_CONTENT
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000002d"]
+    rationale: "No scoped observation directly supports Technical content for SteelParto; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000162"
+    competitor_id: "comp:00000000000d"
+    dimension_code: SEO_ARCHITECTURE
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000002d"]
+    rationale: "Analysis-aid score 4/5 is bounded only to root-page structured-data markup in cobs:00000000002d; the noindex Store API is excluded from SEO evidence and this is not a scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000163"
+    competitor_id: "comp:00000000000d"
+    dimension_code: CRAWLABLE_COMMERCIAL_DATA
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000002e"]
+    rationale: "Analysis-aid score 4/5 is bounded to the machine-readable product data in cobs:00000000002e; the endpoint is noindex and does not prove public SEO indexability."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000164"
+    competitor_id: "comp:00000000000d"
+    dimension_code: EDUCATIONAL_CONTENT_DEPTH
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000002d"]
+    rationale: "No scoped observation directly supports Educational content depth for SteelParto; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000165"
+    competitor_id: "comp:00000000000d"
+    dimension_code: INTERNAL_LINKING
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000002d"]
+    rationale: "No scoped observation directly supports Internal linking for SteelParto; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000166"
+    competitor_id: "comp:00000000000d"
+    dimension_code: TRUST_CREDIBILITY
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000002d"]
+    rationale: "No scoped observation directly supports Trust / credibility for SteelParto; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000167"
+    competitor_id: "comp:00000000000d"
+    dimension_code: FITTINGS_CATALOG_DEPTH
+    score: 5
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000002e", "cobs:00000000002f"]
+    rationale: "Analysis-aid score 5/5 is bounded to cobs:00000000002e (Woo Store API exposes products, variable attributes and related-product links); cobs:00000000002f (Public Woo product-category endpoint exposes an adjacent fittings taxonomy); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000168"
+    competitor_id: "comp:00000000000d"
+    dimension_code: CALCULATOR_TOOLING
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000002d"]
+    rationale: "No scoped observation directly supports Calculator / tooling for SteelParto; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:000000000169"
+    competitor_id: "comp:00000000000d"
+    dimension_code: RELATED_PRODUCT_SELLING
+    score: 4
+    evidence_status: PARTIALLY_VERIFIED
+    confidence: MEDIUM
+    evidence_refs: ["cobs:00000000002e"]
+    rationale: "Analysis-aid score 4/5 is bounded to cobs:00000000002e (Woo Store API exposes products, variable attributes and related-product links); it is not an internal-capability or scientific-ranking claim."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000016a"
+    competitor_id: "comp:00000000000d"
+    dimension_code: OPERATOR_SALES_ASSIST_MODEL
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000002d"]
+    rationale: "No scoped observation directly supports Operator / sales-assist model for SteelParto; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000016b"
+    competitor_id: "comp:00000000000d"
+    dimension_code: CRM_VISIBLE_BEHAVIOR
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000002d"]
+    rationale: "No scoped observation directly supports CRM-visible behavior for SteelParto; null prevents an absence or backend-capability inference."
+    observed_at: "2026-08-18"
+  - score_id: "cscore:00000000016c"
+    competitor_id: "comp:00000000000d"
+    dimension_code: MAINTAINABILITY_FRAGMENTATION_RISK
+    score: null
+    evidence_status: UNVERIFIED
+    confidence: LOW
+    evidence_refs: ["cobs:00000000002d"]
+    rationale: "No scoped observation supports backend maintainability or fragmentation quality for SteelParto; null prevents inference from tool access or spot latency."
+    observed_at: "2026-08-18"

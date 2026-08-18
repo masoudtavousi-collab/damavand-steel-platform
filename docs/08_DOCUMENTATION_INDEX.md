@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.20.0
+- **Version:** 0.21.0
 - **Last Updated:** 2026-08-18
 - **Last Review:** 2026-08-18
 - **Review Cycle:** On document creation, removal, rename, lifecycle, authority, or navigation change
@@ -115,6 +115,11 @@ Provide the canonical map of repository documentation without replacing the auth
 | [C003-R2 201/51 Founder Evidence Completion Scope v1.0](C003_R2_201_51_FOUNDER_EVIDENCE_COMPLETION_SCOPE_V1.0.md) | Founder-authorized evidence-completion and compressed valid-combination review boundary; 216 tuples remain `UNKNOWN`, C002 remains `0/9`, and no Product/SKU/Availability/runtime promotion occurs | Review | Founder |
 | [C003-R2 201/51 Founder Evidence Completion Packet v1.0](C003_R2_201_51_FOUNDER_EVIDENCE_COMPLETION_PACKET_V1.0.md) | Human-readable three-rule matrix, six-item Founder worksheet, nine-item exact-source missing-evidence register, empty typed Mass/Supply intake templates, and explicit reconciliation of six noncurrent incomplete-context Mass examples | Review | Founder |
 | [C003-R3 201/51 Founder Review Answer Reconciliation Scope v1.0](C003_R3_201_51_FOUNDER_ANSWER_RECONCILIATION_SCOPE_V1.0.md) | Exact Slack-bound reconciliation of all six Founder review items into 216 confirmed-valid evidence positions without canonical tuple promotion; C002 remains `0/9` and Mass/Supply remain empty | Review | Founder |
+| [C004 Competitive Intelligence Scope v1.0](C004_COMPETITIVE_INTELLIGENCE_SCOPE_V1.0.md) | Founder-authorized source, owner, evidence-class, copyright, regression and no-go boundary for the 13-site competitive foundation | Review | Founder |
+| [Competitive Intelligence Matrix v1.0](COMPETITIVE_INTELLIGENCE_MATRIX_V1.0.md) | Evidence-linked 28-dimension analysis-aid matrix and benchmark leadership map without an aggregate ranking | Evidence | Founder |
+| [Damavand Competitive Advantage Specification v1.0](DAMAVAND_COMPETITIVE_ADVANTAGE_SPECIFICATION_V1.0.md) | Ten original planning advantages with Fast Track/long-term dispositions and no implementation authority | Review | Founder |
+| [Damavand Competitive Anti-Pattern Register v1.0](DAMAVAND_COMPETITIVE_ANTI_PATTERN_REGISTER_V1.0.md) | Copyright-safe competitor-pattern risks and governed prevention rules | Review | Founder |
+| [201/51 Pilot Competitive Experience Blueprint v1.0](201_51_PILOT_COMPETITIVE_EXPERIENCE_BLUEPRINT_V1.0.md) | Mobile RTL inquiry-first selection and SEO architecture blueprint; no Product/tuple/commerce/runtime implementation | Review | Founder |
 | [BP2 Data Administration Scope v1.0](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md) | Approved documentation-only administration boundary linked to a machine-readable contract, closed Draft 2020-12 schema, offline validator, lifecycle evidence, and adversarial tests; no implementation authority | Approved | Founder |
 | [PD-01 Product Data Contract Enablement Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md) | Approved exact 30-path Scope/Approval Packet and synthetic Contract/Schema/Validator/Test boundary after legal lifecycle and independent PASS; no canonical population authority | Approved | Founder |
 | [PD-02A Controlled Values and Attribute Profiles Scope v1.0](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md) | Approved exact 38-path synthetic-only Scope/Approval and Test Contract after legal lifecycle and independent PASS; all canonical Attribute, controlled-value, and Profile collections remain empty | Approved | Founder |

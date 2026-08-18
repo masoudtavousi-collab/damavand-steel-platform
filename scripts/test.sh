@@ -123,6 +123,10 @@ c003r2_evidence_completion_validator="repository/data/validation/validate_valid_
 "$python" "$c003r2_evidence_completion_validator"
 "$python" -B -m unittest tests.test_valid_combination_evidence_matrix
 
+c004_competitive_intelligence_validator="repository/data/validation/validate_competitive_intelligence.py"
+"$python" "$c004_competitive_intelligence_validator"
+"$python" -B -m unittest tests.test_competitive_intelligence
+
 "$python" repository/data/validation/validate_bp2_data_blueprint.py
 "$python" repository/data/validation/validate_bp2_data_administration.py
 "$python" tests/test_bp2_data_administration.py

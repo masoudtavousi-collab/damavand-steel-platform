@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:damavand:c004:competitive-score:1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["data_classification", "registry_version", "mission_id", "scale", "aggregate_ranking", "dimensions", "scores"],
+  "properties": {
+    "data_classification": {"const": "C004_COMPETITIVE_CAPABILITY_SCORES"},
+    "registry_version": {"const": "1.0.0"},
+    "mission_id": {"const": "C004"},
+    "scale": {"type": "object", "additionalProperties": false, "required": ["minimum", "maximum", "interpretation"], "properties": {"minimum": {"const": 0}, "maximum": {"const": 5}, "interpretation": {"const": "ANALYSIS_AID_NOT_SCIENTIFIC_TRUTH"}}},
+    "aggregate_ranking": {"const": false},
+    "dimensions": {"type": "array", "minItems": 28, "maxItems": 28, "uniqueItems": true, "items": {"$ref": "#/$defs/dimension"}},
+    "scores": {"type": "array", "minItems": 364, "maxItems": 364, "items": {"$ref": "#/$defs/score"}}
+  },
+  "$defs": {
+    "dimension": {
+      "type": "object", "additionalProperties": false,
+      "required": ["dimension_code", "label"],
+      "properties": {"dimension_code": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]{3,63}$"}, "label": {"type": "string", "minLength": 3, "maxLength": 100}}
+    },
+    "score": {
+      "type": "object", "additionalProperties": false,
+      "required": ["score_id", "competitor_id", "dimension_code", "score", "evidence_status", "confidence", "evidence_refs", "rationale", "observed_at"],
+      "properties": {
+        "score_id": {"type": "string", "pattern": "^cscore:[0-9a-f]{12}$"},
+        "competitor_id": {"type": "string", "pattern": "^comp:[0-9a-f]{12}$"},
+        "dimension_code": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]{3,63}$"},
+        "score": {"type": ["integer", "null"], "minimum": 0, "maximum": 5},
+        "evidence_status": {"enum": ["VERIFIED", "PARTIALLY_VERIFIED", "UNVERIFIED", "STALE", "NOT_APPLICABLE"]},
+        "confidence": {"enum": ["HIGH", "MEDIUM", "LOW"]},
+        "evidence_refs": {"type": "array", "minItems": 1, "maxItems": 8, "uniqueItems": true, "items": {"type": "string", "pattern": "^cobs:[0-9a-f]{12}$"}},
+        "rationale": {"type": "string", "minLength": 8, "maxLength": 400},
+        "observed_at": {"type": "string", "format": "date"}
+      }
+    }
+  }
+}

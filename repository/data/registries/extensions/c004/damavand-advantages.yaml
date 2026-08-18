@@ -1,0 +1,332 @@
+data_classification: C004_DAMAVAND_ADVANTAGE_PLANNING
+registry_version: "1.0.0"
+mission_id: C004
+implementation_authority: false
+advantages:
+  - advantage_id: "cadv:000000000001"
+    advantage_code: A
+    title: "UNIFIED PRODUCT FAMILY UX"
+    domain: "Product UX"
+    evidence_basis:
+      - {evidence_classification: EXTERNAL_OBSERVATION, reference: "cobs:000000000007", claim: "Atropat exposes family-level alloy, thickness and brand selection."}
+      - {evidence_classification: EXTERNAL_OBSERVATION, reference: "cobs:000000000013", claim: "Sam Steel exposes a public variable-product precedent."}
+      - {evidence_classification: FOUNDER_CONFIRMED, reference: "C003-DISC-002", claim: "Founder evidence requires dependent selectors constrained by evidence-backed combinations."}
+      - {evidence_classification: ARCHITECTURE_PROPOSAL, reference: "C004-ADV-A", claim: "C004 proposes a unified family experience over canonical Variant Rules."}
+    customer_value: HIGH
+    business_value: HIGH
+    revenue_impact: HIGH
+    implementation_complexity: MEDIUM
+    architectural_dependencies: ["Canonical Product hierarchy", "Variant Rules", "C002 Product Builder", "Mobile RTL UX"]
+    fast_track_value: HIGH
+    long_term_value: HIGH
+    risk: "Selector order or labels could be mistaken for Product truth if not owner-bound."
+    recommended_status: USE_NOW
+    implementation_authority: false
+  - advantage_id: "cadv:000000000002"
+    advantage_code: B
+    title: "CONTEXT AWARE COMMERCIAL STATE"
+    domain: "Commerce planning"
+    evidence_basis:
+      - {evidence_classification: EXTERNAL_OBSERVATION, reference: "cobs:00000000000a", claim: "SteelRokh demonstrates dense Product and commercial context in one surface."}
+      - {evidence_classification: EXTERNAL_OBSERVATION, reference: "cobs:000000000030", claim: "SteelParto demonstrates the risk of contradictory commercial states."}
+      - {evidence_classification: FOUNDER_CONFIRMED, reference: "C003R1-CP03-005", claim: "Founder evidence distinguishes routine sourcing from a warehouse stock claim."}
+      - {evidence_classification: ARCHITECTURE_PROPOSAL, reference: "C004-ADV-B", claim: "C004 proposes a selected-context projection with truth-domain separation."}
+    customer_value: HIGH
+    business_value: HIGH
+    revenue_impact: HIGH
+    implementation_complexity: HIGH
+    architectural_dependencies: ["Product truth", "Mass provenance", "Future Availability owner", "Commerce Eligibility", "Operator authority"]
+    fast_track_value: MEDIUM
+    long_term_value: HIGH
+    risk: "Premature projection could create false Availability, price or purchasability."
+    recommended_status: PLAN_NOW_IMPLEMENT_LATER
+    implementation_authority: false
+  - advantage_id: "cadv:000000000003"
+    advantage_code: C
+    title: "SYSTEM SELLING"
+    domain: "Related products and assisted selling"
+    evidence_basis:
+      - {evidence_classification: EXTERNAL_OBSERVATION, reference: "cobs:000000000012", claim: "Kia links products to installation and related component context."}
+      - {evidence_classification: EXTERNAL_OBSERVATION, reference: "cobs:00000000002e", claim: "SteelParto exposes a related-product graph in its public store API."}
+      - {evidence_classification: FOUNDER_CONFIRMED, reference: "slack:C0BNHRRTE9F:1787056479.144299", claim: "Founder-confirmed current intent records recurring 201/51 demand and a common complementary 51:38:16 consumption pattern of approximately 1:1:3; evidence only, never a bundle or SKU rule.", temporal_role: CURRENT_INTENT}
+      - {evidence_classification: ARCHITECTURE_PROPOSAL, reference: "C004-ADV-C", claim: "C004 proposes governed suggestions, not mandatory bundles."}
+    customer_value: HIGH
+    business_value: HIGH
+    revenue_impact: UNPROVEN
+    implementation_complexity: HIGH
+    architectural_dependencies: ["Product Related To relation", "C002 Inventory Harmony", "Future project calculator", "Operator review"]
+    fast_track_value: MEDIUM
+    long_term_value: HIGH
+    risk: "Current-intent consumption evidence could be misread as stock, price, compatibility or mandatory quantities."
+    recommended_status: PLAN_NOW_IMPLEMENT_LATER
+    implementation_authority: false
+  - advantage_id: "cadv:000000000004"
+    advantage_code: D
+    title: "AVAILABILITY TRUST MODEL"
+    domain: "Availability and trust"
+    evidence_basis:
+      - {evidence_classification: EXTERNAL_OBSERVATION, reference: "cobs:000000000030", claim: "A public competitor surface shows why stock, text, price and purchasability must agree."}
+      - {evidence_classification: FOUNDER_CONFIRMED, reference: "C003-DISC-079", claim: "Founder-confirmed customer states are موجود، قابل تأمین سریع، نیازمند استعلام and فعلاً ناموجود; exact inventory quantity stays nonpublic."}
+      - {evidence_classification: FOUNDER_CONFIRMED, reference: "C003-DISC-080", claim: "Common sizes can often be sourced faster than special items, but no fixed public ETA may be inferred."}
+      - {evidence_classification: FOUNDER_CONFIRMED, reference: "C003-DISC-084", claim: "Internal replenishment capability is not a customer shipping promise."}
+      - {evidence_classification: FOUNDER_CONFIRMED, reference: "C003R1-CP03-005", claim: "Routine network sourcing may keep an item orderable when own stock for that item is absent; operator finalizes supply and no warehouse stock is falsely asserted."}
+      - {evidence_classification: FOUNDER_CONFIRMED, reference: "C003-DISC-085", claim: "Operator assigns and communicates actual dispatch timing after verification; no automatic ETA is promised."}
+      - {evidence_classification: FOUNDER_CONFIRMED, reference: "slack:C0BNHRRTE9F:1787056479.144299", claim: "Founder-confirmed continuity evidence says typical combined fulfillment may come from own item stock and/or the supplier network without creating a stock guarantee.", temporal_role: CURRENT_INTENT}
+      - {evidence_classification: ARCHITECTURE_PROPOSAL, reference: "C004-ADV-D", claim: "Future evidence freshness, expiry, source confidence, owner mechanics and runtime projection remain separately gated."}
+    customer_value: HIGH
+    business_value: HIGH
+    revenue_impact: HIGH
+    implementation_complexity: HIGH
+    architectural_dependencies: ["Future Availability policy", "Supply evidence", "Operator verification", "Per-SKU Commerce Eligibility"]
+    fast_track_value: MEDIUM
+    long_term_value: HIGH
+    risk: "Implementation mechanics could overstate stock unless freshness, expiry, source confidence and projection remain fail-closed under a future Availability owner."
+    recommended_status: USE_NOW
+    implementation_authority: false
+  - advantage_id: "cadv:000000000005"
+    advantage_code: E
+    title: "OPERATOR CONTROLLED COMMERCIAL LAYER"
+    domain: "Commerce governance"
+    evidence_basis:
+      - {evidence_classification: EXTERNAL_OBSERVATION, reference: "cobs:00000000001a", claim: "MarkazeAhan visibly routes customers to named specialist sales assistance."}
+      - {evidence_classification: EXTERNAL_OBSERVATION, reference: "cobs:00000000000e", claim: "Steel Sheet uses a human callback after cart-like lead capture."}
+      - {evidence_classification: FOUNDER_CONFIRMED, reference: "C003-DISC-061", claim: "Founder intent keeps order progression subject to operator approval."}
+      - {evidence_classification: ARCHITECTURE_PROPOSAL, reference: "C004-ADV-E", claim: "C004 preserves operator control outside canonical Product truth."}
+    customer_value: HIGH
+    business_value: HIGH
+    revenue_impact: HIGH
+    implementation_complexity: MEDIUM
+    architectural_dependencies: ["Inquiry data model", "Audit trail", "Future Price policy", "Order verification"]
+    fast_track_value: HIGH
+    long_term_value: HIGH
+    risk: "A UI shortcut could accidentally imply autonomous price, payment or order authority."
+    recommended_status: USE_NOW
+    implementation_authority: false
+  - advantage_id: "cadv:000000000006"
+    advantage_code: F
+    title: "DATA RICH SIMPLE UX"
+    domain: "Experience architecture"
+    evidence_basis:
+      - {evidence_classification: EXTERNAL_OBSERVATION, reference: "cobs:00000000000a", claim: "SteelRokh validates deep structured field presentation."}
+      - {evidence_classification: EXTERNAL_OBSERVATION, reference: "cobs:000000000001", claim: "Steel Majlesi validates breadth while exposing navigation overload."}
+      - {evidence_classification: EXTERNAL_OBSERVATION, reference: "cobs:000000000005", claim: "Atropat validates direct primary routes."}
+      - {evidence_classification: ARCHITECTURE_PROPOSAL, reference: "C004-ADV-F", claim: "C004 combines data depth, catalog breadth and direct navigation through progressive disclosure."}
+    customer_value: HIGH
+    business_value: HIGH
+    revenue_impact: HIGH
+    implementation_complexity: MEDIUM
+    architectural_dependencies: ["Canonical Product Data", "Intent-based navigation", "Progressive disclosure", "Mobile RTL"]
+    fast_track_value: HIGH
+    long_term_value: HIGH
+    risk: "Simplification can hide critical technical context; richness can recreate overload."
+    recommended_status: USE_NOW
+    implementation_authority: false
+  - advantage_id: "cadv:000000000007"
+    advantage_code: G
+    title: "PRODUCT KNOWLEDGE ARCHITECTURE"
+    domain: "SEO and content architecture"
+    evidence_basis:
+      - {evidence_classification: EXTERNAL_OBSERVATION, reference: "cobs:00000000000c", claim: "SteelRokh connects technical knowledge with commercial categories."}
+      - {evidence_classification: EXTERNAL_OBSERVATION, reference: "cobs:000000000020", claim: "Pivan connects calculator and technical explanation to commercial intent."}
+      - {evidence_classification: ARCHITECTURE_PROPOSAL, reference: "C004-ADV-G", claim: "C004 proposes distinct Product and Knowledge intent owners with governed links."}
+    customer_value: HIGH
+    business_value: HIGH
+    revenue_impact: HIGH
+    implementation_complexity: MEDIUM
+    architectural_dependencies: ["SEO Entity Model", "Knowledge owners", "Canonical Product pages", "Internal-link governance"]
+    fast_track_value: HIGH
+    long_term_value: HIGH
+    risk: "Duplicate or mixed-intent pages could create cannibalization and thin content."
+    recommended_status: USE_NOW
+    implementation_authority: false
+  - advantage_id: "cadv:000000000008"
+    advantage_code: H
+    title: "TECHNICAL CONTENT AUTHORITY"
+    domain: "Content governance"
+    evidence_basis:
+      - {evidence_classification: EXTERNAL_OBSERVATION, reference: "cobs:00000000000c", claim: "Competitor technical content reveals topics and market language."}
+      - {evidence_classification: EXTERNAL_OBSERVATION, reference: "cobs:000000000026", claim: "SteelRonic exposes grade-aware consultation and learning context."}
+      - {evidence_classification: ARCHITECTURE_PROPOSAL, reference: "C004-ADV-H", claim: "C004 requires authoritative sources, structured research and Founder review for business knowledge."}
+    customer_value: HIGH
+    business_value: HIGH
+    revenue_impact: MEDIUM
+    implementation_complexity: MEDIUM
+    architectural_dependencies: ["Knowledge source policy", "Technical review", "Founder business review", "Copyright boundary"]
+    fast_track_value: HIGH
+    long_term_value: HIGH
+    risk: "Competitor topic discovery could drift into copied or technically unsupported content."
+    recommended_status: USE_NOW
+    implementation_authority: false
+  - advantage_id: "cadv:000000000009"
+    advantage_code: I
+    title: "MOBILE FIRST PERSIAN RTL COMMERCE"
+    domain: "Mobile and RTL"
+    evidence_basis:
+      - {evidence_classification: EXTERNAL_OBSERVATION, reference: "cobs:000000000004", claim: "Competitor markup confirms basic RTL and responsive declarations without proving usability."}
+      - {evidence_classification: EXTERNAL_OBSERVATION, reference: "cobs:00000000002d", claim: "SteelParto similarly exposes responsive RTL declarations only."}
+      - {evidence_classification: ARCHITECTURE_PROPOSAL, reference: "C004-ADV-I", claim: "C004 applies the canonical Mobile First and Persian RTL constraint to industrial selection."}
+    customer_value: HIGH
+    business_value: HIGH
+    revenue_impact: HIGH
+    implementation_complexity: MEDIUM
+    architectural_dependencies: ["AGENTS Mobile First constraint", "Persian RTL", "Progressive selector", "Performance budget"]
+    fast_track_value: HIGH
+    long_term_value: HIGH
+    risk: "Desktop-derived mega-menu and table patterns can fail on mobile despite responsive declarations."
+    recommended_status: USE_NOW
+    implementation_authority: false
+  - advantage_id: "cadv:00000000000a"
+    advantage_code: J
+    title: "PRODUCT CALCULATOR PLATFORM"
+    domain: "Tools and calculators"
+    evidence_basis:
+      - {evidence_classification: EXTERNAL_OBSERVATION, reference: "cobs:00000000000b", claim: "SteelRokh exposes a multi-section weight and price calculator."}
+      - {evidence_classification: EXTERNAL_OBSERVATION, reference: "cobs:00000000001f", claim: "Pivan exposes a central calculator hub."}
+      - {evidence_classification: EXTERNAL_OBSERVATION, reference: "cobs:00000000002c", claim: "Saba exposes cut-planning tooling."}
+      - {evidence_classification: ARCHITECTURE_PROPOSAL, reference: "C004-ADV-J", claim: "C004 proposes future weight, branch, component and project tools under separate authority."}
+    customer_value: HIGH
+    business_value: HIGH
+    revenue_impact: HIGH
+    implementation_complexity: HIGH
+    architectural_dependencies: ["Approved measurements", "Mass provenance", "Canonical valid tuples", "Future Central BOM interface", "Separate calculation authority"]
+    fast_track_value: MEDIUM
+    long_term_value: HIGH
+    risk: "A calculator can fabricate Product, Mass, price or engineering truth if inputs and ownership are not governed."
+    recommended_status: PLAN_NOW_IMPLEMENT_LATER
+    implementation_authority: false
+anti_patterns:
+  - anti_pattern_id: "canti:000000000001"
+    competitor_example: "Steel Majlesi and other broad catalogs"
+    evidence_refs: ["cobs:000000000001"]
+    observed_problem: "Customer navigation exposes very deep taxonomies at once."
+    architectural_risk: "Customer-facing menus become a parallel hierarchy and pages fragment."
+    ux_business_impact: "High cognitive load, poor mobile discovery and maintenance cost."
+    damavand_prevention_rule: "Keep canonical breadth in data; expose task-oriented progressive routes."
+  - anti_pattern_id: "canti:000000000002"
+    competitor_example: "Multiple competitor page-per-combination models"
+    evidence_refs: ["cobs:000000000001", "cobs:000000000013"]
+    observed_problem: "Each arbitrary combination receives a separate thin commercial page."
+    architectural_risk: "Product truth and SEO intent duplicate across URLs."
+    ux_business_impact: "Cannibalization, stale pages and inconsistent updates."
+    damavand_prevention_rule: "Create only evidence-backed intent owners and keep variants under one governed family."
+  - anti_pattern_id: "canti:000000000003"
+    competitor_example: "Steel Sheet placeholder surfaces"
+    evidence_refs: ["cobs:00000000000f"]
+    observed_problem: "Incomplete descriptions and zero-price states reach the public catalog."
+    architectural_risk: "Publication becomes decoupled from completeness and commercial state."
+    ux_business_impact: "Trust loss and misleading purchase cues."
+    damavand_prevention_rule: "Fail publication unless content and commercial-state gates pass."
+  - anti_pattern_id: "canti:000000000004"
+    competitor_example: "SteelParto public store state"
+    evidence_refs: ["cobs:000000000030"]
+    observed_problem: "Stock boolean, stock text, price and purchasability disagree."
+    architectural_risk: "Commercial truth fields diverge across projections."
+    ux_business_impact: "Customers receive contradictory promises."
+    damavand_prevention_rule: "Project one fail-closed state assembled from separately governed truth domains."
+  - anti_pattern_id: "canti:000000000005"
+    competitor_example: "Saba Profile and broad marketplaces"
+    evidence_refs: ["cobs:00000000002a"]
+    observed_problem: "Old commercial values or warehouse-like labels remain visible."
+    architectural_risk: "Stale evidence is treated as current Availability or price."
+    ux_business_impact: "False urgency, bad quotes and reputational risk."
+    damavand_prevention_rule: "Require source, observed-at, validity and operator verification for every commercial claim."
+  - anti_pattern_id: "canti:000000000006"
+    competitor_example: "Kia Steel and Sam Steel mixed states"
+    evidence_refs: ["cobs:000000000011", "cobs:000000000014"]
+    observed_problem: "Range, zero, inquiry and cart semantics coexist without an explicit state model."
+    architectural_risk: "UI controls imply authority that the underlying data does not have."
+    ux_business_impact: "Dead ends and accidental checkout expectations."
+    damavand_prevention_rule: "Use explicit inquiry-first and future per-SKU eligibility states."
+  - anti_pattern_id: "canti:000000000007"
+    competitor_example: "SteelRokh dense tables"
+    evidence_refs: ["cobs:00000000000a"]
+    observed_problem: "Very dense tables become the primary selection interface."
+    architectural_risk: "Desktop information architecture is projected directly to mobile."
+    ux_business_impact: "Slow scanning and error-prone selection."
+    damavand_prevention_rule: "Preserve depth behind progressive family selection and accessible detail views."
+  - anti_pattern_id: "canti:000000000008"
+    competitor_example: "Competitor technical and commercial pages"
+    evidence_refs: ["cobs:00000000000c", "cobs:000000000012"]
+    observed_problem: "Long repeated educational text is embedded in many Product pages."
+    architectural_risk: "Knowledge and Product intent owners collapse."
+    ux_business_impact: "Duplication, stale content and keyword cannibalization."
+    damavand_prevention_rule: "Own knowledge once and connect it to commercial pages with governed links."
+  - anti_pattern_id: "canti:000000000009"
+    competitor_example: "Generic WooCommerce variable catalogs"
+    evidence_refs: ["cobs:000000000007", "cobs:000000000013"]
+    observed_problem: "Variation controls may expose unsupported combinations."
+    architectural_risk: "Runtime options become an uncontrolled substitute for Variant Rules."
+    ux_business_impact: "Impossible orders and admin sprawl."
+    damavand_prevention_rule: "Generate selectable states only from evidence-backed Variant Rules."
+  - anti_pattern_id: "canti:00000000000a"
+    competitor_example: "Public competitor stock patterns"
+    evidence_refs: ["cobs:000000000003", "cobs:00000000002a", "cobs:000000000030"]
+    observed_problem: "Exact stock or availability language appears without inspectable provenance."
+    architectural_risk: "Presentation can outrun inventory and supply evidence."
+    ux_business_impact: "Broken promises and operational escalation."
+    damavand_prevention_rule: "Never infer stock; require evidence, validity and operator verification."
+  - anti_pattern_id: "canti:00000000000b"
+    competitor_example: "Competitor descriptions and branded media"
+    evidence_refs: ["cobs:00000000000c"]
+    observed_problem: "Market research can tempt direct reuse of prose, tables or images."
+    architectural_risk: "Copyright and source provenance are lost."
+    ux_business_impact: "Legal risk and undifferentiated content."
+    damavand_prevention_rule: "Capture only abstract structures and create original, authoritative Damavand content."
+  - anti_pattern_id: "canti:00000000000c"
+    competitor_example: "Broad desktop-first mega-menus"
+    evidence_refs: ["cobs:000000000001", "cobs:000000000016"]
+    observed_problem: "All categories and options are exposed before customer context is known."
+    architectural_risk: "Navigation ignores the canonical dependency order."
+    ux_business_impact: "Mobile overload and abandoned discovery."
+    damavand_prevention_rule: "Ask only the next valid question in a Mobile First Persian RTL flow."
+leadership_map:
+  - domain: "TAXONOMY_BREADTH"
+    competitor_id: "comp:000000000001"
+    evidence_refs: ["cobs:000000000001"]
+    status: SUPPORTED_LEADER
+    rationale: "Steel Majlesi has the strongest directly observed Tier-1 breadth; this is not an overall ranking."
+  - domain: "LOW_FRICTION_NAVIGATION"
+    competitor_id: "comp:000000000002"
+    evidence_refs: ["cobs:000000000005"]
+    status: CANDIDATE_LEADER
+    rationale: "Atropat exposes the most direct primary routes in the scoped Tier-1 set."
+  - domain: "STRUCTURED_PRODUCT_DATA"
+    competitor_id: "comp:000000000003"
+    evidence_refs: ["cobs:00000000000a"]
+    status: SUPPORTED_LEADER
+    rationale: "SteelRokh has the strongest field-rich public commercial-table evidence."
+  - domain: "FITTINGS_DEPTH"
+    competitor_id: "comp:000000000004"
+    evidence_refs: ["cobs:00000000000d"]
+    status: SUPPORTED_LEADER
+    rationale: "Steel Sheet has the deepest directly observed fittings-dominant catalog in Tier 1."
+  - domain: "VARIANT_SELECTION"
+    competitor_id: "comp:000000000005"
+    evidence_refs: ["cobs:000000000011"]
+    status: CANDIDATE_LEADER
+    rationale: "Kia exposes broad variable attributes, but valid-combination enforcement was not verified."
+  - domain: "WOOCOMMERCE_VARIABLE_PRECEDENT"
+    competitor_id: "comp:000000000006"
+    evidence_refs: ["cobs:000000000013", "cobs:000000000014"]
+    status: CANDIDATE_LEADER
+    rationale: "Sam Steel provides the clearest scoped Woo variable-product precedent, but limited current access repeatability prevents supported-leader status."
+  - domain: "CRAWLABLE_COMMERCIAL_DATA"
+    competitor_id: "comp:000000000007"
+    evidence_refs: ["cobs:000000000017", "cobs:000000000019"]
+    status: CANDIDATE_LEADER
+    rationale: "Ahan1 combines commercial rows, filters and a large crawlable surface."
+  - domain: "OPERATOR_SALES_ASSIST"
+    competitor_id: "comp:000000000008"
+    evidence_refs: ["cobs:00000000001a"]
+    status: CANDIDATE_LEADER
+    rationale: "MarkazeAhan most visibly routes customers to named specialist assistance."
+  - domain: "CALCULATOR_PLATFORM"
+    competitor_id: null
+    evidence_refs: ["cobs:00000000000b", "cobs:00000000001f", "cobs:00000000002b", "cobs:00000000002c"]
+    status: NO_RELIABLE_LEADER
+    rationale: "Several sites expose useful calculator patterns; no single current leader is justified across weight, commercial and cutting needs."
+  - domain: "TECHNICAL_CONTENT"
+    competitor_id: "comp:000000000003"
+    evidence_refs: ["cobs:00000000000c"]
+    status: CANDIDATE_LEADER
+    rationale: "SteelRokh most clearly connects technical knowledge and commercial categories in this bounded review."
