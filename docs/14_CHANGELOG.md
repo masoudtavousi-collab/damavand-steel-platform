@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-08-18 — C003-R2 201/51 Founder evidence completion
+
+- Added a pinned evidence-completion packet that reuses C003-R1 rather than copying its Slack ledger.
+- Added three compressed matrix rows representing 216 `UNKNOWN` review tuples, with zero inferred/confirmed tuples and no persisted Cartesian expansion.
+- Added six unanswered Brand-level Founder review items with total fail-closed answer semantics, a nine-item exact-source blocking evidence register, and empty typed Mass/Supply intake structures while preserving C002 readiness `0/9`.
+- Reconciled six historical, noncurrent Sumwin/51 Mass examples as incomplete-context evidence without assigning them to the bounded Pilot or creating a current observation.
+- Added closed-schema offline validation and 52 negative/adversarial mutations plus direct depth/byte/duplicate-JSON coverage; all Product/SKU/Availability/price/payment/WordPress/Runtime/deployment/merge/successor boundaries remain `NO-GO`.
+
 ## 2026-08-18 — C003-R1 Checkpoint 03 evidence and 201/51 readiness
 
 - Added a versioned, source-complete 59-record Checkpoint 03 evidence extension while preserving the reviewed 115-record C003 package unchanged.

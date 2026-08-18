@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.15.0
+- **Version:** 0.16.0
 - **Last Updated:** 2026-08-18
 - **Last Review:** 2026-08-18
 - **Review Cycle:** On navigation or authority change; periodic cadence pending Founder approval
@@ -36,7 +36,7 @@ Every reader starts with:
 
 Readers then follow only the applicable role and Layer 1 route. DS-PC (`HOW`), DS-SPD (`WHAT`), decision logs, roadmap, domain models, and historical evidence are loaded when that route or the active task requires them—not as a universal context dump.
 
-For current work, readers must obtain the exact phase, branch, authorization, pull-request state, GO/NO-GO boundary, and next action from Current Project State. DS-PC (`HOW`) and DS-SPD (`WHAT`) are stable companion governing sources and do not compete with that operational pointer. Their acceptance does not auto-authorize PD-04, Product/SKU, Golden/Master Data, Runtime, Import, Deployment, Production, or branch deletion. Historical scopes retain their original boundaries. [PD-02B Scope v1.0](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md) remains the immutable APPROVED base. [PD-03A Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md) governs the APPROVED prerequisite extension. [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md) governs only exactly three lifecycle-gated Pilot records. [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md) governs only contract infrastructure and empty C002 instance registries. [C003 Discovery Scope](C003_FOUNDER_DISCOVERY_RECONCILIATION_SCOPE_V1.0.md) governs only classified Session 01 evidence. [C003-R1 Scope](C003_R1_CHECKPOINT03_201_51_PILOT_READINESS_SCOPE_V1.0.md) governs only the Checkpoint 03 versioned evidence delta and a `0/9` Founder-review packet. None grants Product/SKU, Availability, current/public pricing, Master/Golden, Import, Runtime, Deployment, or Production authority.
+For current work, readers must obtain the exact phase, branch, authorization, pull-request state, GO/NO-GO boundary, and next action from Current Project State. DS-PC (`HOW`) and DS-SPD (`WHAT`) are stable companion governing sources and do not compete with that operational pointer. Their acceptance does not auto-authorize PD-04, Product/SKU, Golden/Master Data, Runtime, Import, Deployment, Production, or branch deletion. Historical scopes retain their original boundaries. [PD-02B Scope v1.0](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md) remains the immutable APPROVED base. [PD-03A Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md) governs the APPROVED prerequisite extension. [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md) governs only exactly three lifecycle-gated Pilot records. [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md) governs only contract infrastructure and empty C002 instance registries. [C003 Discovery Scope](C003_FOUNDER_DISCOVERY_RECONCILIATION_SCOPE_V1.0.md) governs only classified Session 01 evidence. [C003-R1 Scope](C003_R1_CHECKPOINT03_201_51_PILOT_READINESS_SCOPE_V1.0.md) governs only the Checkpoint 03 versioned evidence delta and a `0/9` Founder-review packet. [C003-R2 Scope](C003_R2_201_51_FOUNDER_EVIDENCE_COMPLETION_SCOPE_V1.0.md) and [Founder Packet](C003_R2_201_51_FOUNDER_EVIDENCE_COMPLETION_PACKET_V1.0.md) govern only the compressed `UNKNOWN` tuple-review surface, unanswered worksheet, empty typed current Mass/Supply intake, six explicitly noncurrent incomplete-context Mass examples, and unchanged `0/9` readiness. None grants Product/SKU, Availability, current/public pricing, Master/Golden, Import, Runtime, Deployment, or Production authority.
 
 ## Founder Reading Path
 
@@ -162,8 +162,10 @@ No product taxonomy or steel terminology may be inferred while the relevant Foun
 14. [PD-03A Pilot Prerequisite Foundation Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md) and [PD-03B Canonical Pilot Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md), treated within their exact immutable extension and seed/reference boundaries.
 15. [C002 Commercial Pilot Truth and Product Administration Contracts v1.0](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md), treated as contract infrastructure with empty canonical instance registries.
 16. [C003 Founder Discovery Reconciliation and Repository Intake v1.0](C003_FOUNDER_DISCOVERY_RECONCILIATION_SCOPE_V1.0.md), treated as classified evidence and inactive owner/backlog mapping rather than Product, value, tuple, SKU, Availability, price, stock, customer/order, or runtime truth.
-17. [Traceability Matrix](TRACEABILITY_MATRIX.md).
-18. [Batch 05 Audit](AUDIT_REPORT_BATCH05.md), [Batch 05A Audit](AUDIT_REPORT_BATCH05A.md), and [Batch 05B Audit](AUDIT_REPORT_BATCH05B.md).
+17. [C003-R1 Checkpoint 03 Scope v1.0](C003_R1_CHECKPOINT03_201_51_PILOT_READINESS_SCOPE_V1.0.md), treated as immutable evidence/readiness input with zero valid tuples and `0/9` readiness.
+18. [C003-R2 Scope](C003_R2_201_51_FOUNDER_EVIDENCE_COMPLETION_SCOPE_V1.0.md) and [Founder Packet](C003_R2_201_51_FOUNDER_EVIDENCE_COMPLETION_PACKET_V1.0.md), treated as an unanswered, evidence-only review worksheet.
+19. [Traceability Matrix](TRACEABILITY_MATRIX.md).
+20. [Batch 05 Audit](AUDIT_REPORT_BATCH05.md), [Batch 05A Audit](AUDIT_REPORT_BATCH05A.md), and [Batch 05B Audit](AUDIT_REPORT_BATCH05B.md).
 
 No product, term, attribute value, variation, inquiry form, setting, import, schema, UI, or implementation may be created from these Review-state models without explicit approval.
 

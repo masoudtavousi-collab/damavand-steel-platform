@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.18.0
+- **Version:** 0.19.0
 - **Last Updated:** 2026-08-18
 - **Last Review:** 2026-08-18
 - **Review Cycle:** On document creation, removal, rename, lifecycle, authority, or navigation change
@@ -112,6 +112,8 @@ Provide the canonical map of repository documentation without replacing the auth
 | [C002 Commercial Pilot Truth and Product Administration Contracts v1.0](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md) | Founder-authorized bounded contract foundation for candidate intake/readiness, Product administration policy, inactive commerce controls, and deterministic validation; no Product/SKU/Availability population | Review | Founder |
 | [C003 Founder Discovery Reconciliation and Repository Intake v1.0](C003_FOUNDER_DISCOVERY_RECONCILIATION_SCOPE_V1.0.md) | Founder-authorized evidence intake for complete Session 01 with explicit classification, canonical-owner reuse, inactive backlog/defer dispositions, and no Product/Availability/pricing/runtime promotion | Review | Founder |
 | [C003-R1 Checkpoint 03 and 201/51 Pilot Readiness v1.0](C003_R1_CHECKPOINT03_201_51_PILOT_READINESS_SCOPE_V1.0.md) | Versioned Checkpoint 03 evidence extension and fail-closed Founder-review packet; C002 readiness remains `0/9`, with no candidate/Product/SKU/Availability/pricing/runtime promotion | Review | Founder |
+| [C003-R2 201/51 Founder Evidence Completion Scope v1.0](C003_R2_201_51_FOUNDER_EVIDENCE_COMPLETION_SCOPE_V1.0.md) | Founder-authorized evidence-completion and compressed valid-combination review boundary; 216 tuples remain `UNKNOWN`, C002 remains `0/9`, and no Product/SKU/Availability/runtime promotion occurs | Review | Founder |
+| [C003-R2 201/51 Founder Evidence Completion Packet v1.0](C003_R2_201_51_FOUNDER_EVIDENCE_COMPLETION_PACKET_V1.0.md) | Human-readable three-rule matrix, six-item Founder worksheet, nine-item exact-source missing-evidence register, empty typed Mass/Supply intake templates, and explicit reconciliation of six noncurrent incomplete-context Mass examples | Review | Founder |
 | [BP2 Data Administration Scope v1.0](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md) | Approved documentation-only administration boundary linked to a machine-readable contract, closed Draft 2020-12 schema, offline validator, lifecycle evidence, and adversarial tests; no implementation authority | Approved | Founder |
 | [PD-01 Product Data Contract Enablement Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md) | Approved exact 30-path Scope/Approval Packet and synthetic Contract/Schema/Validator/Test boundary after legal lifecycle and independent PASS; no canonical population authority | Approved | Founder |
 | [PD-02A Controlled Values and Attribute Profiles Scope v1.0](PD02A_CONTROLLED_VALUES_ATTRIBUTE_PROFILES_SCOPE_V1.0.md) | Approved exact 38-path synthetic-only Scope/Approval and Test Contract after legal lifecycle and independent PASS; all canonical Attribute, controlled-value, and Profile collections remain empty | Approved | Founder |
