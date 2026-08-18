@@ -1,0 +1,194 @@
+[
+  {
+    "id": "M01_COMPETITOR_MISSING",
+    "expected_code": "COMPETITOR_SET"
+  },
+  {
+    "id": "M02_TIER_COUNT",
+    "expected_code": "TIER_COUNTS"
+  },
+  {
+    "id": "M03_VERIFIED_LOW_CONFIDENCE",
+    "expected_code": "UNSUPPORTED_VERIFIED"
+  },
+  {
+    "id": "M04_DUPLICATE_OBSERVATION",
+    "expected_code": "DUPLICATE_OBSERVATION"
+  },
+  {
+    "id": "M05_COPYRIGHT_CAPTURE",
+    "expected_code": "SCHEMA_COMPETITOR"
+  },
+  {
+    "id": "M06_COMPETITOR_AUTHORITY",
+    "expected_code": "REGISTRY_AUTHORITY"
+  },
+  {
+    "id": "M07_COMPETITOR_ADDITIONAL_PROPERTY",
+    "expected_code": "SCHEMA_COMPETITOR"
+  },
+  {
+    "id": "M08_PATTERN_CROSS_REFERENCE",
+    "expected_code": "PATTERN_REFERENCE"
+  },
+  {
+    "id": "M09_COMPETITOR_ID_ORDER",
+    "expected_code": "COMPETITOR_ID"
+  },
+  {
+    "id": "M10_SCORE_MISSING",
+    "expected_code": "SCORE_COUNT"
+  },
+  {
+    "id": "M11_DIMENSION_ORDER",
+    "expected_code": "DIMENSION_ORDER"
+  },
+  {
+    "id": "M12_SCORE_RANGE",
+    "expected_code": "SCHEMA_SCORE"
+  },
+  {
+    "id": "M13_NULL_PARTIAL",
+    "expected_code": "NULL_SCORE_STATUS"
+  },
+  {
+    "id": "M14_NUMERIC_UNVERIFIED",
+    "expected_code": "NUMERIC_SCORE_STATUS"
+  },
+  {
+    "id": "M15_EMPTY_RATIONALE",
+    "expected_code": "SCHEMA_SCORE"
+  },
+  {
+    "id": "M16_UNKNOWN_EVIDENCE",
+    "expected_code": "SCORE_EVIDENCE"
+  },
+  {
+    "id": "M17_CROSS_COMPETITOR_EVIDENCE",
+    "expected_code": "SCORE_EVIDENCE"
+  },
+  {
+    "id": "M18_AGGREGATE_RANKING",
+    "expected_code": "AGGREGATE_RANKING"
+  },
+  {
+    "id": "M19_SCORE_ORDER",
+    "expected_code": "SCORE_ORDER"
+  },
+  {
+    "id": "M20_DUPLICATE_SCORE_ID",
+    "expected_code": "DUPLICATE_SCORE"
+  },
+  {
+    "id": "M21_ADVANTAGE_CODE_ORDER",
+    "expected_code": "ADVANTAGE_ORDER"
+  },
+  {
+    "id": "M22_ADVANTAGE_SET",
+    "expected_code": "ADVANTAGE_SET"
+  },
+  {
+    "id": "M23_FOUNDER_REFERENCE",
+    "expected_code": "ADVANTAGE_FOUNDER_EVIDENCE"
+  },
+  {
+    "id": "M24_EXTERNAL_REFERENCE",
+    "expected_code": "ADVANTAGE_EXTERNAL_EVIDENCE"
+  },
+  {
+    "id": "M25_IMPLEMENTATION_AUTHORITY",
+    "expected_code": "ADVANTAGE_AUTHORITY"
+  },
+  {
+    "id": "M26_ANTI_PATTERN_COUNT",
+    "expected_code": "ANTI_PATTERN_SET"
+  },
+  {
+    "id": "M27_DUPLICATE_ANTI_PATTERN",
+    "expected_code": "ANTI_PATTERN_SET"
+  },
+  {
+    "id": "M28_STALE_LEADER",
+    "expected_code": "STALE_OR_UNVERIFIED_LEADER"
+  },
+  {
+    "id": "M29_LEADER_CROSS_REFERENCE",
+    "expected_code": "LEADER_EVIDENCE"
+  },
+  {
+    "id": "M30_ADVANTAGE_ADDITIONAL_PROPERTY",
+    "expected_code": "SCHEMA_ADVANTAGE"
+  },
+  {
+    "id": "M31_PATTERN_ID_DUPLICATE",
+    "expected_code": "DUPLICATE_PATTERN"
+  },
+  {
+    "id": "M32_SCORE_PAIR_DUPLICATE",
+    "expected_code": "SCORE_ORDER"
+  },
+  {
+    "id": "M33_OBSERVATION_IDENTITY",
+    "expected_code": "OBSERVATION_IDENTITY"
+  },
+  {
+    "id": "M34_OBSERVATION_DIMENSION",
+    "expected_code": "OBSERVATION_DIMENSION"
+  },
+  {
+    "id": "M35_SCORE_DIMENSION_EVIDENCE",
+    "expected_code": "SCORE_DIMENSION_EVIDENCE"
+  },
+  {
+    "id": "M36_NUMERIC_VERIFIED",
+    "expected_code": "NUMERIC_SCORE_STATUS"
+  },
+  {
+    "id": "M37_SCORE_OBSERVED_AT",
+    "expected_code": "SCORE_OBSERVED_AT"
+  },
+  {
+    "id": "M38_NULL_STATUS",
+    "expected_code": "NULL_SCORE_STATUS"
+  },
+  {
+    "id": "M39_COMPETITOR_SUMMARY",
+    "expected_code": "COMPETITOR_SUMMARY"
+  },
+  {
+    "id": "M40_FAKE_FOUNDER_REFERENCE",
+    "expected_code": "ADVANTAGE_FOUNDER_EVIDENCE"
+  },
+  {
+    "id": "M41_PROPOSAL_AS_FOUNDER",
+    "expected_code": "ADVANTAGE_FOUNDER_EVIDENCE"
+  },
+  {
+    "id": "M42_SUPPORTED_LEADER_NULL",
+    "expected_code": "LEADER_STATUS"
+  },
+  {
+    "id": "M43_NO_LEADER_UNKNOWN_REFERENCE",
+    "expected_code": "LEADER_EVIDENCE"
+  },
+  {
+    "id": "M44_DUPLICATE_LEADER_DOMAIN",
+    "expected_code": "LEADER_DOMAIN"
+  },
+  {
+    "id": "M45_ANTI_UNKNOWN_REFERENCE",
+    "expected_code": "ANTI_PATTERN_EVIDENCE"
+  },
+  {
+    "id": "M46_PARTIAL_SUPPORTED_LEADER",
+    "expected_code": "SUPPORTED_LEADER_EVIDENCE"
+  },
+  {
+    "id": "M47_STALE_CURRENT_REFERENCE",
+    "expected_code": "STALE_SCORE"
+  },
+  {
+    "id": "M48_PARTIAL_HIGH_CONFIDENCE",
+    "expected_code": "PARTIAL_SCORE"
+  }
+]

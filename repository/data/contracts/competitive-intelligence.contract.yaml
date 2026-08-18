@@ -1,0 +1,135 @@
+contract_id: c004-competitive-intelligence
+contract_version: "1.0.0"
+record_kind: governed-competitive-intelligence-foundation
+schemas:
+  competitor: repository/data/schemas/competitive-competitor.schema.json
+  score: repository/data/schemas/competitive-score.schema.json
+  advantage: repository/data/schemas/competitive-advantage.schema.json
+registries:
+  competitors: repository/data/registries/extensions/c004/competitors.yaml
+  scores: repository/data/registries/extensions/c004/capability-scores.yaml
+  advantages: repository/data/registries/extensions/c004/damavand-advantages.yaml
+authority:
+  mission_id: C004
+  research_reconciliation_allowed: true
+  architecture_planning_allowed: true
+  product_population_allowed: false
+  sku_population_allowed: false
+  availability_population_allowed: false
+  current_or_public_price_allowed: false
+  commerce_activation_allowed: false
+  checkout_activation_allowed: false
+  payment_activation_allowed: false
+  wordpress_woocommerce_mutation_allowed: false
+  hosting_mutation_allowed: false
+  seo_page_publishing_allowed: false
+  content_import_allowed: false
+  competitor_image_download_or_reuse_allowed: false
+  runtime_allowed: false
+  staging_allowed: false
+  deployment_allowed: false
+  production_allowed: false
+  c1_t03_reopen_allowed: false
+  c003_a_start_allowed: false
+  c003_b_start_allowed: false
+  successor_mission_allowed: false
+  merge_allowed: false
+evidence:
+  classifications:
+    - EXTERNAL_OBSERVATION
+    - FOUNDER_CONFIRMED
+    - ARCHITECTURE_PROPOSAL
+  statuses:
+    - VERIFIED
+    - PARTIALLY_VERIFIED
+    - UNVERIFIED
+    - STALE
+    - NOT_APPLICABLE
+  confidence:
+    - HIGH
+    - MEDIUM
+    - LOW
+  copyright_capture: ABSTRACTED_FEATURE_PRESENCE_ONLY
+  copied_prose_allowed: false
+  copied_descriptions_allowed: false
+  copied_images_allowed: false
+  copied_tables_allowed: false
+competitor_set:
+  exact_count: 13
+  tier_counts:
+    TIER_1: 6
+    TIER_2: 6
+    TIER_3: 1
+score_model:
+  scale_min: 0
+  scale_max: 5
+  numeric_score_requires_explicit_dimension_support: true
+  numeric_score_is_interpretive_and_never_fully_verified: true
+  null_score_requires_unverified_low: true
+  aggregate_ranking_allowed: false
+  exact_dimension_order:
+    - TAXONOMY_BREADTH
+    - TAXONOMY_CLARITY
+    - PRODUCT_DATA_RICHNESS
+    - DATA_CONSISTENCY
+    - PRODUCT_DISCOVERY
+    - NAVIGATION_SIMPLICITY
+    - SEARCH_CAPABILITY
+    - FILTERING_CAPABILITY
+    - VARIANT_SELECTION_UX
+    - PRODUCT_PAGE_QUALITY
+    - MOBILE_UX
+    - PERSIAN_RTL_QUALITY
+    - PRICING_UX
+    - INQUIRY_UX
+    - AVAILABILITY_COMMUNICATION
+    - CHECKOUT_COMMERCE_FLOW
+    - TECHNICAL_CONTENT
+    - SEO_ARCHITECTURE
+    - CRAWLABLE_COMMERCIAL_DATA
+    - EDUCATIONAL_CONTENT_DEPTH
+    - INTERNAL_LINKING
+    - TRUST_CREDIBILITY
+    - FITTINGS_CATALOG_DEPTH
+    - CALCULATOR_TOOLING
+    - RELATED_PRODUCT_SELLING
+    - OPERATOR_SALES_ASSIST_MODEL
+    - CRM_VISIBLE_BEHAVIOR
+    - MAINTAINABILITY_FRAGMENTATION_RISK
+  exact_score_record_count: 364
+pattern_dispositions:
+  - ADOPT_PRINCIPLE
+  - ADAPT
+  - WATCH
+  - AVOID
+  - NOT_RELEVANT
+advantage_model:
+  exact_advantage_count: 10
+  statuses:
+    - USE_NOW
+    - PLAN_NOW_IMPLEMENT_LATER
+    - DEFER
+    - REJECT
+    - NEEDS_FOUNDER_DECISION
+  status_means_planning_disposition_only: true
+  implementation_authority_created: false
+regression_anchors:
+  c002_candidate_count: 0
+  c002_policy_count: 8
+  c002_policy_instance_count: 0
+  c003_product_data_completeness_state: SUBMITTED
+  c003_product_data_completeness_disposition: OPEN_BLOCKING
+  c002_readiness_resolved_count: 0
+  c002_readiness_required_count: 9
+  canonical_sku_count: 0
+  commerce_state: INQUIRY_ONLY
+  c1_t03_state: FROZEN_AT_PROTECTED_ARCHITECTURE_BOUNDARY
+validation:
+  offline_only: true
+  schema_objects_closed: true
+  local_references_only: true
+  duplicate_keys_rejected: true
+  non_finite_numbers_rejected: true
+  deterministic_sorted_errors: true
+  safe_paths_only: true
+  input_byte_cap: 2097152

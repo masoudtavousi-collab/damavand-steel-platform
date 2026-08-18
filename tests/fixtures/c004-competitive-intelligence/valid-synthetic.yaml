@@ -1,0 +1,10 @@
+data_classification: SYNTHETIC_FIXTURE
+subject_paths:
+  competitors: repository/data/registries/extensions/c004/competitors.yaml
+  scores: repository/data/registries/extensions/c004/capability-scores.yaml
+  advantages: repository/data/registries/extensions/c004/damavand-advantages.yaml
+expected:
+  competitor_count: 13
+  score_count: 364
+  advantage_count: 10
+  authority_effects: false

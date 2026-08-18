@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:damavand:c004:competitive-advantage:1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["data_classification", "registry_version", "mission_id", "implementation_authority", "advantages", "anti_patterns", "leadership_map"],
+  "properties": {
+    "data_classification": {"const": "C004_DAMAVAND_ADVANTAGE_PLANNING"},
+    "registry_version": {"const": "1.0.0"},
+    "mission_id": {"const": "C004"},
+    "implementation_authority": {"const": false},
+    "advantages": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"$ref": "#/$defs/advantage"}},
+    "anti_patterns": {"type": "array", "minItems": 10, "maxItems": 16, "items": {"$ref": "#/$defs/antiPattern"}},
+    "leadership_map": {"type": "array", "minItems": 1, "maxItems": 16, "items": {"$ref": "#/$defs/leader"}}
+  },
+  "$defs": {
+    "basis": {
+      "type": "object", "additionalProperties": false,
+      "required": ["evidence_classification", "reference", "claim"],
+      "properties": {
+        "evidence_classification": {"enum": ["EXTERNAL_OBSERVATION", "FOUNDER_CONFIRMED", "ARCHITECTURE_PROPOSAL"]},
+        "reference": {"type": "string", "minLength": 4, "maxLength": 240},
+        "claim": {"type": "string", "minLength": 4, "maxLength": 300}
+      }
+    },
+    "advantage": {
+      "type": "object", "additionalProperties": false,
+      "required": ["advantage_id", "advantage_code", "title", "domain", "evidence_basis", "customer_value", "business_value", "revenue_impact", "implementation_complexity", "architectural_dependencies", "fast_track_value", "long_term_value", "risk", "recommended_status", "implementation_authority"],
+      "properties": {
+        "advantage_id": {"type": "string", "pattern": "^cadv:[0-9a-f]{12}$"},
+        "advantage_code": {"enum": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]},
+        "title": {"type": "string", "minLength": 4, "maxLength": 120},
+        "domain": {"type": "string", "minLength": 3, "maxLength": 100},
+        "evidence_basis": {"type": "array", "minItems": 1, "maxItems": 12, "items": {"$ref": "#/$defs/basis"}},
+        "customer_value": {"enum": ["LOW", "MEDIUM", "HIGH"]},
+        "business_value": {"enum": ["LOW", "MEDIUM", "HIGH"]},
+        "revenue_impact": {"enum": ["LOW", "MEDIUM", "HIGH", "UNPROVEN"]},
+        "implementation_complexity": {"enum": ["LOW", "MEDIUM", "HIGH"]},
+        "architectural_dependencies": {"type": "array", "minItems": 1, "maxItems": 12, "items": {"type": "string", "minLength": 3, "maxLength": 120}},
+        "fast_track_value": {"enum": ["LOW", "MEDIUM", "HIGH"]},
+        "long_term_value": {"enum": ["LOW", "MEDIUM", "HIGH"]},
+        "risk": {"type": "string", "minLength": 4, "maxLength": 300},
+        "recommended_status": {"enum": ["USE_NOW", "PLAN_NOW_IMPLEMENT_LATER", "DEFER", "REJECT", "NEEDS_FOUNDER_DECISION"]},
+        "implementation_authority": {"const": false}
+      }
+    },
+    "antiPattern": {
+      "type": "object", "additionalProperties": false,
+      "required": ["anti_pattern_id", "competitor_example", "evidence_refs", "observed_problem", "architectural_risk", "ux_business_impact", "damavand_prevention_rule"],
+      "properties": {
+        "anti_pattern_id": {"type": "string", "pattern": "^canti:[0-9a-f]{12}$"},
+        "competitor_example": {"type": "string", "minLength": 3, "maxLength": 160},
+        "evidence_refs": {"type": "array", "minItems": 1, "maxItems": 8, "uniqueItems": true, "items": {"type": "string", "pattern": "^cobs:[0-9a-f]{12}$"}},
+        "observed_problem": {"type": "string", "minLength": 4, "maxLength": 300},
+        "architectural_risk": {"type": "string", "minLength": 4, "maxLength": 300},
+        "ux_business_impact": {"type": "string", "minLength": 4, "maxLength": 300},
+        "damavand_prevention_rule": {"type": "string", "minLength": 4, "maxLength": 320}
+      }
+    },
+    "leader": {
+      "type": "object", "additionalProperties": false,
+      "required": ["domain", "competitor_id", "evidence_refs", "status", "rationale"],
+      "properties": {
+        "domain": {"type": "string", "minLength": 3, "maxLength": 100},
+        "competitor_id": {"type": ["string", "null"], "pattern": "^comp:[0-9a-f]{12}$"},
+        "evidence_refs": {"type": "array", "minItems": 1, "maxItems": 8, "uniqueItems": true, "items": {"type": "string", "pattern": "^cobs:[0-9a-f]{12}$"}},
+        "status": {"enum": ["SUPPORTED_LEADER", "CANDIDATE_LEADER", "NO_RELIABLE_LEADER"]},
+        "rationale": {"type": "string", "minLength": 4, "maxLength": 400}
+      }
+    }
+  }
+}
