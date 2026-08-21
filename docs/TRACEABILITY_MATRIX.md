@@ -1,6 +1,6 @@
 # Repository Traceability Matrix
 
-> Project OS 2.0: C005 reconciles exact Founder evidence and re-evaluates all nine C002 criteria without changing C002 `0/9 / NOT_READY`, `INQUIRY_ONLY`, frozen C1-T03/HF-X0, or any Product/runtime/production/successor authority.
+> Project OS 2.0: C006 reconciles Product Data semantics and Product Experience projection architecture without changing C002 `0/9 / NOT_READY`, `INQUIRY_ONLY`, frozen C1-T03/HF-X0, or any Product/runtime/production/successor authority.
 
 ## Document Control
 
@@ -10,9 +10,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.24.0
-- **Last Updated:** 2026-08-18
-- **Last Review:** 2026-08-18
+- **Version:** 0.25.0
+- **Last Updated:** 2026-08-21
+- **Last Review:** 2026-08-21
 - **Review Cycle:** On governing-rule or dependency change; periodic cadence pending Founder approval
 - **Lifecycle:** Review
 - **Source of Truth:** [Core Project Principles](00_PROJECT_BIBLE.md#core-project-principles), approved governing documents, and accepted ADRs; this matrix is a supporting view
@@ -54,6 +54,10 @@ Provide a single navigational view from governing rules through business, archit
 | `C005-C002-READINESS` | [C005 Readiness Packet](C005_201_51_READINESS_REEVALUATION_PACKET_V1.0.md), C002 nine-criterion contract and C005 exact-source matrix | Strengthened Demand, Gross Profit, Repeatability, Product Data, SEO/Buyer and Operational evidence; exact source/gap bindings | Re-evaluates all nine criteria to `8 SUBMITTED / 1 MISSING / 6 REVIEWABLE / 9 OPEN_BLOCKING / 0 VERIFIED`; Reviewable remains a separate planning view | C002 remains `0/9 / NOT_READY`, candidate registry empty and Founder selection absent |
 | `C005-MASS-COMMERCIAL-BOUNDARY` | C005 Mass/Supply and Pricing/VIP/Order reconciliation records | Exact Founder business requirements plus immutable C002 Mass methods and C003 evidence | Preserves CURRENT/NEXT_PENDING/HISTORICAL intent and future contract inputs while keeping numeric Mass, Supply, Price, Customer, Order, active VIP and Loyalty counts at zero | No `SUPPLIER_STATED` method promotion, Availability/stock assertion, price engine, Customer/Order object or activation |
 | `C005-NO-GO-VALIDATION` | C005 closed contract/schema/registry, offline validator, counted mutations/adversarial fixtures and unified `make test` | Exact source/order/state/totals, dependency pins and all-false authority map | Fails closed on false verification, wrong criterion refs, media-rights promotion, Mass/Supply/commercial population, unsafe schema/path/input or authority drift | No Product/SKU/Availability/price/payment/reservation/quotation/cutting/shipping/content publication/hosting/WP/WC/Runtime/deploy/C1 repair/C003-A/B/merge/successor |
+| `C006-SOURCE-OWNER-GATE` | [C006 Scope](C006_PRODUCT_DATA_SEMANTIC_PRODUCT_EXPERIENCE_ARCHITECTURE_SCOPE_V1.0.md), complete orchestration and Pipe/Interaction Slack sources, starting `main` `ea616b08ef2f4012afd011684dfe4e5c98cd8fcf` | Reuses canonical Product/Attribute/Measurement, C002–C005, Media, Knowledge, Inquiry and WooCommerce projection owners; materializes Product Experience only as architecture orchestration | No owner transfer, Product/tuple/value population, Runtime or Production authority |
+| `C006-SEMANTIC-RECONCILIATION` | Product/Attribute/Pipe model documents and C006 closed policy registry | Finish/Color/Appearance/Coating separation; nominal Diameter vs sourced OD vs calculated nominal ID; Family-specific selector axes; Brand/Mass/Service/dynamic-commercial boundaries | Architecture policy only; immutable PD03A values and canonical registries remain unchanged |
+| `C006-EXPERIENCE-PROJECTION` | [Product Experience Engine](../repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md), component/media/SEO/WooCommerce projection documents | Dependent valid-combination selection, reversible context, media fallback, non-indexed selector state and contextual Inquiry CTA | WooCommerce remains downstream adapter; no media/content/SEO page/runtime object is created |
+| `C006-NO-GO-VALIDATION` | C006 contract, closed schema, empty-instance architecture registry, deterministic offline validator and counted mutation/adversarial tests | Exact source/order/owner/authority/dependency pins and semantic adversaries | No Product/SKU/Mass/Availability/Price/Media/Knowledge/customer/order/WP/WC/Runtime/import/publish/deploy/merge/successor authority |
 | `DS-PROGRAM-001` | [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md), [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md), and `FD-DS-PROGRAM-001` | Founder instruction effective 2026-08-02; raw and normalized SHA-256 evidence; exact eleven-path governance allowlist | Establishes DS-PC as `HOW` and DS-SPD as `WHAT`; preserves Founder final authority, ChatGPT program/architecture/product/repository command, Codex operational Program Commander/Build Engine responsibility inside exact gates, Current Project State as sole mutable pointer, and all existing separation-of-duties and supersession controls | Governance integration only; no PD-04, Campaign 002, Product/SKU, Golden/Master Data, Runtime, Import, Deployment, Production, Git publication, merge, or branch deletion authority |
 | `POST12-MAIN` | PR #13, PR #14, PR #12, and PR #15–#29 integration history | GitHub merge evidence and [Current Project State](CURRENT_PROJECT_STATE.md) | Records the actual order: recovery consolidation, post-recovery state, BP2 hardening, governance reconciliation, BP1 M1 hardening, post-PR16 reconciliation, BP2 lifecycle approval, post-PR18 reconciliation, `GOV-XD-00`, PD-01, PD-02A, PD-02B, PD-03A, PD-03B, post-PD-03B state reconciliation, DS program directive integration, post-PR27 state reconciliation, then C1-T06 canonical-owner reconciliation | Repository evidence only |
 | `C1-T01-STATE` | Post-PD-03B operational-state reconciliation | Founder-approved exact-scope packet; merged PR #25; Merge Commit `64511d7caf95d88122847abfef9914e9d0605954`; successful main CI `30698838847` | Closes stale PD-03B conditional-integration and branch-state claims; preserves exactly 3 approved Pilots, 879 candidates, missing availability for all 882 rows, and false readiness; sets only Campaign 001 directive/governance integration planning as next action | Documentation reconciliation only; no directive integration, product/runtime mutation, Git publication, merge, or branch deletion authority |
@@ -1173,6 +1177,7 @@ Wave 1 is complete. Its merges created no runtime, WordPress, Product Repository
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.25.0 | 2026-08-21 | Added C006 exact source/owner, semantic, Product Experience projection and fail-closed validation traceability while preserving zero Product/commercial/runtime population and all prior Mission owners. |
 | 0.24.0 | 2026-08-18 | Added C005 exact Founder-evidence/owner reconciliation and all-nine C002 readiness re-evaluation: 8 submitted, 1 missing, 6 separately reviewable, 9 open/blocking, zero verified/resolved, zero current Mass/Supply and no promotion/implementation authority. |
 | 0.23.0 | 2026-08-18 | Added C004 supplementary competitive evidence, 364 non-aggregate scores, ten original planning advantages, anti-patterns and the 201/51 Mobile RTL/SEO blueprint while preserving every Product/commerce/runtime No-Go. |
 | 0.22.0 | 2026-08-18 | Added C003-R3 exact Slack-bound reconciliation of six Founder answers into 216 confirmed-valid evidence positions, zero inference, unresolved Product Data Completeness and unchanged C002 `0/9`, Mass/Supply and no-promotion boundaries. |

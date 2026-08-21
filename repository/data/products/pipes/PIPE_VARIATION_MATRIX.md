@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Product Data Owner and Qualified Steel-Domain Reviewer
 - **Approval Authority:** Founder
-- **Version:** 0.2.0
-- **Last Updated:** 2026-07-20
-- **Last Review:** 2026-07-20
+- **Version:** 0.3.0
+- **Last Updated:** 2026-08-21
+- **Last Review:** 2026-08-21
 - **Review Cycle:** On controlled value, variation axis, valid combination, commercial availability, unit, label, or import change
 - **Lifecycle:** Review
 - **Source of Truth:** Sprint 03A supplied Grade/Finish/Dimension values and [Attribute Dictionary](../../attributes/ATTRIBUTE_DICTIONARY.md)
@@ -29,6 +29,17 @@ Preserve the Sprint 03A theoretical candidate value sets and combination control
 This file is not Golden authority, availability evidence, approved Master Data, import authority, SKU authority, or runtime authority. Its thickness set and theoretical 1,584 Cartesian tuples do not override the Founder-approved three-combination pilot or the separate 882-row governed decision scope.
 
 The approved Parent is `لوله استیل دکوراتیو`, with exactly these decision references: `GOLD-PIPE-201-51-050-6M` / `PIPE-COMB-0023`, `GOLD-PIPE-201-38-050-6M` / `PIPE-COMB-0016`, and `GOLD-PIPE-201-16-035-6M` / `PIPE-COMB-0001`. These are pilot references only, not final commercial SKUs. No Golden or Master Data records are created by this clarification.
+
+## C006 Interpretation Boundary
+
+The following tables remain immutable Sprint 03A candidate evidence, not a
+current universal selector contract. An approved Family configuration and its
+Variant Rules must define the actual axes, dependency order, allowed values,
+and valid tuples. The legacy `finish` column is only a bounded appearance token:
+Finish, Color, Appearance, and Coating Method are separate canonical concepts.
+Likewise, `diameter_mm` is nominal/market Diameter; it is not measured OD or
+calculated ID. This clarification creates no Product, SKU, Mass, Availability,
+Price, import, or runtime records.
 
 ## Normalization Decision
 
@@ -50,7 +61,7 @@ This working normalization requires Founder and qualified steel-domain approval 
 | 3 | `316` | گرید ۳۱۶ | Not established by this scaffold |
 | 4 | `430` | گرید ۴۳۰ | Not established by this scaffold |
 
-### Finish
+### Legacy Appearance/Finish Token
 
 | Order | Stored value | English display | Persian display | Commercial availability |
 | --- | --- | --- | --- | --- |
@@ -58,7 +69,7 @@ This working normalization requires Founder and qualified steel-domain approval 
 | 2 | `gold-pvd` | Gold PVD | طلایی PVD | Not established by this scaffold |
 | 3 | `black-pvd` | Black PVD | مشکی PVD | Not established by this scaffold |
 
-### Diameter
+### Nominal/Market Diameter
 
 | Unit | Allowed numeric values | Commercial availability |
 | --- | --- | --- |
@@ -103,12 +114,12 @@ This calculation is a historical validation warning, not the current governed de
 ## Valid-Combination Rules
 
 - A future approved-combination table is required before import.
-- Every tuple must use exactly one value from each variation axis.
+- Every tuple must use exactly one value from each axis configured by the applicable Family/Variant Rules; the five legacy columns below do not impose a universal axis set.
 - Duplicate tuples under the same parent are rejected.
 - Technically invalid, commercially unverified, unsupported, or incomplete tuples are rejected or held in staging.
 - Missing commercial-availability evidence blocks publication and import as an available product.
 - Brand, Country, supplier, weight per meter, Quality Level, stock quantity, lead time, and price are never derived from the tuple.
-- Grade/Finish/Dimension changes create a different variation identity; they do not silently overwrite an existing variation.
+- A change to any configured identity-driving selection creates a different variation identity; it must not silently overwrite an existing variation.
 - A valid tuple still requires a canonical stable identity, approved Variant Rules, evidence, lifecycle approval, and inquiry eligibility. Any SKU is derived only after governed modeling and separate SKU-policy approval.
 
 ## Variation Display Pattern
@@ -154,6 +165,7 @@ Sample identifiers are not SKUs, product IDs, or commercial records.
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.3.0 | 2026-08-21 | C006 architecture-only clarification marked this matrix as a legacy Family-bounded selector example, separated appearance semantics, and defined `diameter_mm` as nominal/market Diameter; no population or runtime authority. |
 | 0.2.0 | 2026-07-20 | Classified the matrix as a legacy theoretical candidate scaffold and separated it from Golden, 882-row Master Data, availability, SKU, import, and runtime authority. |
 | 0.1.0 | 2026-07-04 | Initial Sprint 03A candidate variation matrix; commercial validity remains TBD. |
 

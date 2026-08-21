@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 1.6.0
-- **Last Updated:** 2026-08-18
-- **Last Review:** 2026-08-18
+- **Version:** 1.7.0
+- **Last Updated:** 2026-08-21
+- **Last Review:** 2026-08-21
 - **Review Cycle:** On repository creation, disposition, authority, ownership, namespace, lifecycle, merge, or promotion proposal
 - **Lifecycle:** Review
 - **Source of Truth:** Explicit Founder decisions in the GIT-02S directive dated 2026-07-14, the Class B Wave 1 authorization dated 2026-07-19, verified GitHub `main`, Founder-approved current Git governance, the Wave 2 pre-implementation decisions dated 2026-07-20, `FD-DS-PROGRAM-001`, `FD-C000-OS2-001`, `FD-C003-DISCOVERY-001`, and Repository A governance
@@ -38,6 +38,7 @@ Define the authority, isolation, adoption, and future-promotion boundaries betwe
 | [C003-R3 Scope](C003_R3_201_51_FOUNDER_ANSWER_RECONCILIATION_SCOPE_V1.0.md) | Reconciles the exact Founder Slack answer into the existing C003-R2 compressed owner: six answered Brand items, 216 confirmed-valid evidence positions, zero unknown and zero inferred positions | Evidence-only; does not promote canonical tuples, resolve Product Data Completeness or C002 readiness, populate Mass/Supply/Product/SKU/Availability/price, activate Runtime, merge, or start a successor |
 | [C004 Scope](C004_COMPETITIVE_INTELLIGENCE_SCOPE_V1.0.md), [Competitive Matrix](COMPETITIVE_INTELLIGENCE_MATRIX_V1.0.md), [Advantage Specification](DAMAVAND_COMPETITIVE_ADVANTAGE_SPECIFICATION_V1.0.md), [Anti-Pattern Register](DAMAVAND_COMPETITIVE_ANTI_PATTERN_REGISTER_V1.0.md), and [201/51 Blueprint](201_51_PILOT_COMPETITIVE_EXPERIENCE_BLUEPRINT_V1.0.md) | Adds a bounded supplementary-evidence layer over public competitor surfaces, with 13 identities, 28 score dimensions, original Damavand planning dispositions and a Pilot/SEO blueprint | References canonical Product, Variant Rules, C002/C003, Search/SEO and Commerce owners; creates no parallel truth, Product/SKU/Availability/price/commerce/SEO publication/Runtime authority or successor |
 | [C005 Scope](C005_201_51_FOUNDER_EVIDENCE_READINESS_REEVALUATION_SCOPE_V1.0.md) and [Readiness Packet](C005_201_51_READINESS_REEVALUATION_PACKET_V1.0.md) | Adds one evidence/readiness extension over exact Founder sources while reusing immutable C002/C003/C004 owners; all nine C002 criteria are re-evaluated as 8 submitted, 1 missing, 6 separately reviewable and zero resolved | Does not mutate C002/C003/C004 owners, select/populate a candidate, create Product/tuple/Mass/Supply/Availability/price/customer/order/VIP/Loyalty/runtime truth, merge, or start a successor |
+| [C006 Scope](C006_PRODUCT_DATA_SEMANTIC_PRODUCT_EXPERIENCE_ARCHITECTURE_SCOPE_V1.0.md) and [Product Experience Engine](../repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md) | Reconciles Pipe semantics and provides one architecture-only orchestration owner over canonical Product, Variant Rules, Measurement, Media, Knowledge, Inquiry and WooCommerce projection boundaries | Does not duplicate domain truth, populate Product/value/tuple/SKU/Mass/Availability/Price/Media/Knowledge, mutate WordPress/WooCommerce/Runtime, merge, or start a successor |
 | [Context Router](CONTEXT_ROUTER.md) | Routes each task to the smallest authoritative context set | Is navigation only; it cannot create authority, override a governing source, or duplicate mutable state |
 | [Current Project State](CURRENT_PROJECT_STATE.md) | Remains the sole mutable pointer for current phase, exact authorization, branch/PR state, blockers, next action, and GO/NO-GO | Must not be duplicated or inferred from the two stable program documents |
 | `FD-DS-PROGRAM-001` | Records acceptance, roles, hashes, relationship, exclusions, and supersession limits | Does not rewrite `GOV-XD-00`, prior decisions, or repository chronology |

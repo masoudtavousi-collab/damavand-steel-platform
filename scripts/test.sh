@@ -131,6 +131,10 @@ c005_founder_evidence_readiness_validator="repository/data/validation/validate_c
 "$python" "$c005_founder_evidence_readiness_validator"
 "$python" -B -m unittest tests.test_c005_founder_evidence_readiness
 
+c006_pipe_product_experience_architecture_validator="repository/data/validation/validate_pipe_product_experience_architecture.py"
+"$python" "$c006_pipe_product_experience_architecture_validator"
+"$python" -B -m unittest tests.test_pipe_product_experience_architecture
+
 "$python" repository/data/validation/validate_bp2_data_blueprint.py
 "$python" repository/data/validation/validate_bp2_data_administration.py
 "$python" tests/test_bp2_data_administration.py

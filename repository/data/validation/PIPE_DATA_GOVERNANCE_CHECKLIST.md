@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Product Data Owner, Qualified Steel-Domain Reviewer, SEO Reviewer, CRM Reviewer, Quality Reviewer, and WooCommerce Technical Reviewer
 - **Approval Authority:** Founder
-- **Version:** 0.1.1
-- **Last Updated:** 2026-08-03
-- **Last Review:** 2026-08-03
+- **Version:** 0.2.0
+- **Last Updated:** 2026-08-21
+- **Last Review:** 2026-08-21
 - **Review Cycle:** Before classification approval, import readiness review, or any Pipe data/model change
 - **Lifecycle:** Review
 - **Source of Truth:** Current Sprint 03A through Sprint 03C Pipe data, mapping, classification, category, attribute, and validation assets
@@ -36,8 +36,8 @@ Provide the mandatory human-review and rejection gates for Pipe classification, 
 
 - [ ] Approve the canonical Pipe Family/Series source references separately from any legacy Product Family/category downstream identity, Persian/English display names, and scope.
 - [ ] Approve or revise every classification marked Founder review required.
-- [ ] Approve Material/Grade/Finish terminology.
-- [ ] Approve the downstream selection projection and order of the five axes only after the governing Variant Rules are approved.
+- [ ] Approve Material/Grade terminology and separate Finish, Color, Appearance, and Coating Method definitions; preserve PD-03A `finish=Silver` only as a bounded legacy appearance designation.
+- [ ] Approve each Family-configured selector axis, dependency, order, value set, and valid tuple only after the governing Variant Rules are approved; do not hard-code one five-axis sequence.
 - [ ] Approve the valid commercial-combination evidence in the applicable Variant Rules; this checklist does not originate tuple validity.
 - [ ] Approve the downstream category parent/root placement and public-page slug policy.
 - [ ] Approve Custom Field, CRM, SEO, filter, and product-table boundaries.
@@ -48,14 +48,16 @@ Provide the mandatory human-review and rejection gates for Pipe classification, 
 
 - [x] All 14 product-specification attributes are assigned one system-local downstream global-attribute mapping; none is canonical Product identity.
 - [x] No local attribute is proposed for a reusable specification.
-- [x] Grade, Finish, Diameter, Thickness, and Length are the only downstream variation-attribute projections in this profile; Variant Rules govern the axes.
+- [x] The five Sprint 03A columns are preserved as a legacy profile only; current downstream selector projections are Family-configured and governed by Variant Rules.
 - [x] Controlled candidate values match the Sprint 03A matrix.
 - [ ] Founder/domain reviewer approves every attribute name, Persian label, slug, definition, and scope.
 - [ ] Founder/domain reviewer approves every allowed value and alias.
-- [ ] Dimension units, precision, tolerance, and display rules are approved.
-- [ ] Surface-versus-Finish and Material-versus-Grade definitions are approved.
+- [ ] Nominal/market Diameter, evidence-backed OD, calculated/labeled ID, thickness, length, units, precision, tolerance, and display rules are approved.
+- [ ] Surface, Finish, Color, Appearance, Coating Method, Material, and Grade definitions are separate and approved.
 - [ ] Optional Brand, Country, Quality Level, Application, Environment, and Installation Use registries are approved.
 - [ ] Runtime global attribute and term identities/mappings are approved.
+- [ ] Brand is selection-capable only when canonical identity/provenance and Family rules permit it.
+- [ ] Application/suitability is governed as Knowledge; cutting/packaging/shipping as services; Mass/Availability/Pricing as dynamic commercial data with source and freshness.
 
 ## Category Approval Checklist
 
@@ -141,7 +143,7 @@ Reject or stop when any of the following occurs:
 
 - A field has no primary classification or more than one primary classification.
 - A reusable specification is implemented as a local duplicate, category duplicate, tag, or free text.
-- Grade, Finish, Diameter, Thickness, or Length contains an uncontrolled value or an unapproved combination.
+- Any Family-configured selector contains an uncontrolled value, violates dependency order, or forms an unapproved tuple.
 - The 1,584 theoretical candidate tuples are treated as approved/available products.
 - A required value is blank, `TBD`, inferred, defaulted, or silently corrected for execution.
 - A price, stock promise, supplier, origin, certification, warranty, safety, suitability, or availability claim lacks approved evidence.
@@ -162,6 +164,7 @@ Reject or stop when any of the following occurs:
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2.0 | 2026-08-21 | C006 architecture-only checks added for Family-configured selectors, appearance and dimension separation, conditional Brand, and Knowledge/service/dynamic-commercial boundaries; no population, import, or runtime authority. |
 | 0.1.0 | 2026-07-04 | Initial Sprint 03C Pipe data governance checklist; no implementation or import. |
 | 0.1.1 | 2026-08-03 | Separated canonical Family/Series/Variant Rules approvals from downstream category, attribute, Parent/Variation, public-page and CRM mappings; no gate, Product fact, or runtime approval changed. |
 

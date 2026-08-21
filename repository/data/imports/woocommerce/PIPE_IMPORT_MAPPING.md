@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Product Data Owner and WooCommerce Technical Reviewer
 - **Approval Authority:** Founder
-- **Version:** 0.1.1
-- **Last Updated:** 2026-08-03
-- **Last Review:** 2026-08-03
+- **Version:** 0.2.0
+- **Last Updated:** 2026-08-21
+- **Last Review:** 2026-08-21
 - **Review Cycle:** On CSV contract, product mapping, target importer, validation, or execution-gate change
 - **Lifecycle:** Review
 - **Source of Truth:** [Pipe Import Template](PIPE_IMPORT_TEMPLATE.csv), [Pipe WooCommerce Mapping](../../products/pipes/PIPE_WOOCOMMERCE_MAPPING.md), and approved repository product-data models
@@ -25,6 +25,20 @@
 Define how each of the 23 staging CSV columns may be transformed into a future downstream WooCommerce import payload while preserving canonical Repository authority, Inquiry First, No Public Pricing, Variable Parent Product presentation mappings, controlled attributes, and all unresolved `TBD` gates.
 
 The canonical source chain is `Catalog → Platform → Family → Series → Variant Rules → derived SKU`. Parent/Variation rows and IDs are downstream adapter mappings only. Their axes and tuple validity must reflect the applicable Variant Rules and cannot originate in this import contract.
+
+## C006 Legacy-Column Boundary
+
+The 23 columns below are a historical staging shape, not a universal current
+Product contract. Before any future mapping, approved Family configuration and
+Variant Rules must identify the selector axes, dependency order, values, and
+valid tuples. The `finish` column preserves a bounded appearance designation
+(including immutable PD-03A `finish=Silver`) and cannot collapse Finish, Color,
+Appearance, or Coating Method. `diameter_mm` is nominal/market Diameter, not OD
+or calculated ID. Brand may be selected only with canonical provenance and
+Family rules. Application/suitability is Knowledge; fulfilment options are
+services; Mass, Availability, lead time, and Pricing are dynamic commercial
+data. This mapping creates no Product, SKU, Mass, Availability, Price, import,
+WooCommerce configuration, or runtime authority.
 
 ## Mapping Status Vocabulary
 
@@ -50,8 +64,8 @@ No status authorizes execution. Exact target importer columns must be verified a
 | 6 | `category` | All | Approved downstream product-category relationship | `REFERENCE` | Resolve the approved system-local navigation term mapped from canonical Family/Series references; do not create from arbitrary row text | `TBD`, missing/duplicate term, unapproved taxonomy mapping, or mixed family |
 | 7 | `material` | All | Global Material attribute | `REFERENCE` | Controlled working value `stainless-steel`; parent/shared consistency required | Terminology not approved or runtime term unresolved |
 | 8 | `grade` | Variation; Parent reflection | Global Grade attribute | `REFERENCE` | One of `201`, `304`, `316`, `430`; reflect the governed axis on the Parent mapping only after resolution to Variant Rules | Parent placeholder unresolved, invalid value, missing term, or invalid combination |
-| 9 | `finish` | Variation; Parent reflection | Global Finish attribute | `REFERENCE` | One of `silver`, `gold-pvd`, `black-pvd`; reflect the governed axis on the Parent mapping only after resolution to Variant Rules | Parent placeholder unresolved, invalid value, missing term, or invalid combination |
-| 10 | `diameter_mm` | Variation; Parent reflection | Global Diameter attribute | `TRANSFORM` | Parse canonical decimal; unit context is mm; reflect the governed axis on the Parent mapping | Invalid value/format, missing term, or invalid combination |
+| 9 | `finish` | Legacy variation; Parent reflection | Bounded Appearance mapping only after canonical reconciliation | `REFERENCE` | One of the historical tokens `silver`, `gold-pvd`, `black-pvd`; never infer Finish, Color, or Coating Method | Parent placeholder unresolved, semantic mapping absent, invalid value, missing term, or invalid combination |
+| 10 | `diameter_mm` | Legacy variation; Parent reflection | Nominal/market Diameter attribute | `TRANSFORM` | Parse canonical decimal with mm unit context; never map as OD or calculated ID | Invalid value/format, missing term, or invalid combination |
 | 11 | `thickness_mm` | Variation; Parent reflection | Global Thickness attribute | `TRANSFORM` | Parse canonical decimal without trailing display unit; reflect the governed axis on the Parent mapping | Invalid value/format, missing term, or invalid combination |
 | 12 | `length_m` | Variation; Parent reflection | Global Length attribute | `TRANSFORM` | Parse `3` or `6`; unit context is metre; reflect the governed axis on the Parent mapping | Invalid value/format, missing term, or invalid combination |
 | 13 | `unit` | All | Shared Unit reference attribute | `MAP` | Exactly `meter` and consistent across parent/children | Blank or any other value |
@@ -81,8 +95,8 @@ No status authorizes execution. Exact target importer columns must be verified a
 - `product_type` must equal `variation`.
 - `parent_sku` must resolve to exactly one downstream Parent mapping row.
 - `variation_sku` must be a unique approved derived value and is not canonical entity identity.
-- Grade, Finish, Diameter, Thickness, and Length must each contain one allowed canonical value.
-- The tuple `(parent_sku, grade, finish, diameter_mm, thickness_mm, length_m)` must be unique and resolve to an approved tuple in the applicable Variant Rules.
+- Every axis configured for the Family must contain one approved canonical value; the legacy Grade/Finish/Diameter/Thickness/Length columns do not impose a universal axis set.
+- The configured selector tuple must be unique and resolve to an approved tuple in the applicable Variant Rules; the legacy six-column key is only a staging compatibility check.
 - Canonical Family/Series references, downstream category mapping, Material, Unit, inquiry-only state, and no-price behavior must not conflict with the Parent projection.
 - `stock_status=TBD` remains a hard blocker and must not be converted to a WooCommerce state.
 
@@ -95,7 +109,7 @@ No status authorizes execution. Exact target importer columns must be verified a
 | Internal keys/slugs | Lowercase ASCII; stable allowed tokens; no mixed Persian/English slug form |
 | Decimal dimensions | Dot decimal, no grouping separator, no embedded unit, exact allowed-value comparison after canonical parsing |
 | Grade | Stable ASCII technical token; no translation or numeric coercion that changes identity |
-| Finish | Exact lowercase controlled token |
+| Legacy `finish` | Exact lowercase bounded appearance token; semantic mapping is mandatory before any downstream projection |
 | Boolean policy | Exact lowercase `yes` for `inquiry_only` |
 | Price | Empty only; trimming must not conceal a sentinel/value |
 | Placeholder | Any required `TBD` or `TBD-*` remains unresolved and blocks execution |
@@ -150,6 +164,7 @@ The rows demonstrate shape only. They must not be treated as a commercial catalo
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2.0 | 2026-08-21 | C006 architecture-only reconciliation marked the 23-column contract as legacy staging, required Family-configured selectors, and separated appearance, dimensional, Knowledge, service, and dynamic-commercial semantics; no import or runtime authority. |
 | 0.1.0 | 2026-07-04 | Initial Sprint 03B field-level staging-to-WooCommerce mapping; no import executed. |
 | 0.1.1 | 2026-08-03 | Reclassified Parent/Variation rows, IDs, axes, tuples, category and SEO fields as downstream mappings from canonical Repository and Variant Rules sources; no import or runtime authorization. |
 

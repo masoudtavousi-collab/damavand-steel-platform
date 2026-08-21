@@ -8,8 +8,8 @@
 - **Owner:** Founder
 - **Reviewer:** Product Data Owner, Qualified Steel-Domain Reviewer, SEO Reviewer, and WooCommerce Technical Reviewer
 - **Approval Authority:** Founder
-- **Version:** 0.1.1
-- **Last Updated:** 2026-08-03
+- **Version:** 0.2.0
+- **Last Updated:** 2026-08-21
 - **Last Review:** 2026-08-03
 - **Review Cycle:** On Pipe attribute, label, slug, scope, variation, filter, product-table, SEO, allowed-value, or validation change
 - **Lifecycle:** Review
@@ -33,28 +33,45 @@ Define the logical downstream WooCommerce attribute projection for Stainless Ste
 - Filterable and SEO flags are independent. A filter does not create an indexable archive or landing.
 - Attribute slugs are logical lowercase ASCII identifiers without a runtime `pa_` prefix. Runtime IDs/prefixes remain unconfigured.
 
+## C006 Selector and Semantic Boundary
+
+The current Pipe experience architecture uses a Family-configured dependent
+selector. Selector order is projection policy, not an Attribute or Variant Rule,
+and no fixed order in this historical profile applies universally. Every option
+must resolve to the applicable Variant Rules; `UNKNOWN`, `INCOMPATIBLE`, and
+`NEEDS_VERIFICATION` are distinct and none means out of stock.
+
+Finish, Color, Appearance, and Coating Method remain separate. The historical
+`finish`/`Silver` pair is preserved only as the immutable PD-03A INTERNAL
+appearance designation. Diameter is nominal/market Diameter unless separate
+evidence establishes OD; calculated ID is formula-bound and must not be labeled
+measured. Brand may become selectable only after canonical identity/provenance
+and Variant Rule evidence. Application guidance belongs to Knowledge; cutting
+and shipping are services; Mass, Availability, and Pricing are dynamic
+commercial concerns outside this attribute model.
+
 ## Pipe Attribute Registry
 
 | Attribute name | Persian label | Slug | Global/local | Variations | Filtering | Product table | SEO | Allowed values | Validation rule | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Material | آلیاژ | `material` | Global | No | No | Yes | Yes | Working value `stainless-steel` | Exact controlled identity; Founder/domain terminology approval required | Keep distinct from Grade and broader Material category authority |
 | Grade | گرید | `grade` | Global | Yes | Yes | Yes | Yes | `201`, `304`, `316`, `430` | Exact ASCII token from controlled set and approved valid combination | Technical designation; supplied as “Materials” in Sprint 03A but normalized to Grade pending approval |
-| Finish | رنگ و پوشش | `finish` | Global | Yes | Yes | Yes | Yes | `silver`, `gold-pvd`, `black-pvd` | Exact controlled token and approved valid combination | Must not silently merge Surface, color, coating, or quality concepts |
-| Diameter | قطر | `diameter` | Global | Yes | Yes | Yes | Yes | `16`, `19`, `22`, `25`, `32`, `38`, `42`, `51`, `63`, `76`, `102` mm | Canonical decimal, allowed set, explicit mm display context, approved valid combination | Store numeric value without embedded unit text |
+| Finish (legacy appearance designation) | رنگ و پوشش | `finish` | Global | Conditional | Conditional | Conditional | Conditional | Historical candidate values only; PD-03A approves only `Silver` internally | Exact governed reference and approved valid combination | Never merge Finish, Color, Appearance, coating method, PVD, or quality |
+| Diameter | قطر اسمی / بازاری | `diameter` | Global | Conditional | Conditional | Conditional | Conditional | Historical nominal candidate values in mm | Canonical decimal, explicit nominal context, approved valid combination | Never treat nominal Diameter as measured OD by default |
 | Thickness | ضخامت | `thickness` | Global | Yes | Yes | Yes | Yes | `0.6`, `0.8`, `1`, `1.2`, `1.5`, `2` mm | Canonical decimal, allowed set, explicit mm display context, approved valid combination | Tolerance remains `TBD` |
 | Length | طول | `length` | Global | Yes | Yes | Yes | Yes | `3`, `6` m | Canonical decimal, allowed set, explicit metre display context, approved valid combination | Fixed lengths only in current candidate profile |
 | Surface | سطح | `surface` | Global | No | No | Yes | No | `TBD` | Reject until controlled definition, values, and Finish relationship are approved | Optional; no free text or variation use |
 | Unit | واحد | `unit` | Global | No | No | Yes | No | `meter` | Exact token `meter`; consistent on parent and variations | Reference attribute; not a standalone filter or axis |
-| Brand | برند | `brand` | Global | No | No | Yes | No | `TBD` | Verified canonical brand identity only; reject supplier/manufacturer inference | No brand category or landing without separate approval |
+| Brand | برند | `brand` | Global | Conditional | Conditional | Yes | No | `TBD` | Verified canonical Brand identity, C002 provenance, and Variant Rule binding | No supplier/manufacturer inference or Brand value creation |
 | Country | کشور سازنده | `country` | Global | No | No | Yes | No | `TBD` | Verified manufacturing-origin registry; reject shipping-origin substitution | Exact source and definition required |
 | Quality Level | سطح کیفیت | `quality-level` | Global | No | No | Yes | No | `TBD` | Controlled definition/evidence required; reject implied grade, certification, warranty, or origin | Optional; not a commercial quality claim by label alone |
-| Application | کاربرد | `application` | Global | No | No | Yes | Yes | `TBD` | Controlled evidence-backed values and one canonical intent owner required | Not a Pipe category; suitability claims require review |
+| Application | کاربرد | `application` | Knowledge relationship only | No | No | Conditional | Yes | `TBD` | Governed use-context and authoritative Knowledge evidence required | Not Product identity, an Attribute axis, or a Pipe category |
 | Environment | محیط استفاده | `environment` | Global | No | No | Yes | No | `TBD` | Controlled evidence-backed values; reject unsupported suitability/safety claims | Not a variation axis |
 | Installation Use | نوع مصرف | `installation-use` | Global | No | No | Yes | No | `TBD` | Controlled values and definition required; reject unverified instructions | Not a variation axis or category |
 
-## Variation Attribute Order
+## Legacy Variation Attribute Order
 
-The controlled mobile-first Persian RTL selection order projected from the applicable Variant Rules is:
+The historical Sprint 03C projection order was:
 
 1. Grade / گرید
 2. Finish / رنگ و پوشش
@@ -62,7 +79,11 @@ The controlled mobile-first Persian RTL selection order projected from the appli
 4. Thickness / ضخامت
 5. Length / طول
 
-No default selection is authorized. Only a tuple resolved to an approved Variant Rule may become selectable. The 1,584-value Cartesian candidate space must not be expanded automatically.
+This list is not a universal or current hard-coded selector. C006 permits a
+Family-configured sequence such as Grade → Brand → nominal Diameter → Thickness
+→ Appearance/Finish → Length, but only the governing Variant Rules may supply
+axes, values, and valid combinations. No default selection is authorized, and
+the 1,584-value Cartesian candidate space must not be expanded automatically.
 
 ## Filter Model
 
@@ -117,6 +138,7 @@ Material, Surface, Unit, Brand, Country, Quality Level, Application, Environment
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2.0 | 2026-08-21 | C006 architecture-only reconciliation replaced universal selector ordering with Family configuration; separated Finish/Color/Appearance/Coating, nominal Diameter/OD/calculated ID, Brand provenance, Knowledge, services, and dynamic commercial context without creating data or runtime mappings. |
 | 0.1.0 | 2026-07-04 | Initial Sprint 03C Pipe global attribute profile; no attribute or term implementation. |
 | 0.1.1 | 2026-08-03 | Reclassified WooCommerce attributes, terms, axes, and Parent context as downstream projections of canonical Family/Series/Variant Rules sources; no value, tuple, term, or runtime approval. |
 

@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** SEO Reviewer, Product Data Owner, and Qualified Steel-Domain Reviewer
 - **Approval Authority:** Founder
-- **Version:** 0.1.1
-- **Last Updated:** 2026-08-03
-- **Last Review:** 2026-08-03
+- **Version:** 0.2.0
+- **Last Updated:** 2026-08-21
+- **Last Review:** 2026-08-21
 - **Review Cycle:** On entity identity, search intent, canonical, indexation, attribute use, FAQ, schema, internal linking, or public-data boundary change
 - **Lifecycle:** Review
 - **Source of Truth:** [Enterprise SEO Entity Model](../../../docs/34_SEO_ENTITY_MODEL.md), [URL Architecture](../../../docs/26_URL_ARCHITECTURE.md), and [Stainless Steel Pipe Product Family](../products/pipes/PIPE_PRODUCT_FAMILY.md)
@@ -39,16 +39,29 @@ The canonical Repository source follows `Catalog → Platform → Family → Ser
 
 The family, category landing, Variable Parent Product, attribute archives, and knowledge content must not compete for the same search intent.
 
+## C006 Search Projection Boundary
+
+Search and schema may consume only approved projections of canonical facts.
+Family-configured selector states, dependency URLs, filters, and combinations are
+non-indexable/non-canonical by default and never create one page per tuple.
+Finish, Color, Appearance, and Coating Method must remain distinct in content;
+legacy PD-03A `finish=Silver` is only a bounded appearance designation.
+Nominal Diameter must not be presented as measured OD or calculated ID, and any
+derived value must be labeled. Application/suitability belongs to reviewed
+Knowledge; fulfilment services and dynamic Mass/Availability/Pricing require
+their own evidence and eligibility. No metadata, schema, URL, Product, data
+population, or runtime output is authorized by this clarification.
+
 ## Search Intent
 
 | Intent class | Candidate public page/intent owner | Boundary |
 | --- | --- | --- |
 | Family discovery | Approved downstream Family/category landing projection | Exact landing/URL/indexation `TBD`; no Repository identity ownership |
-| Product specification | Variable Parent Product page | Grade/Finish/Dimensions are projected from approved sources; variation URLs are not canonical by default |
+| Product specification | Variable Parent Product page | Family-configured selectors are projected from approved sources; dependent states and variation URLs are not canonical by default |
 | Grade comparison | Approved knowledge/FAQ content or parent guidance | No unsupported metallurgy/suitability claim |
-| Finish selection | Parent or approved explanatory content | Finish/color/coating distinctions require domain evidence |
-| Dimension discovery | Parent plus structured attributes | Filter combinations are non-canonical by default |
-| Application/use | Approved Application taxonomy/landing or knowledge content | Suitability evidence and one canonical public page/intent owner required |
+| Appearance selection | Parent or approved explanatory content | Finish, Color, Appearance, and Coating Method distinctions require domain evidence |
+| Dimension discovery | Parent plus structured attributes | Nominal Diameter, OD and derived ID must be distinguished; filter combinations are non-canonical by default |
+| Application/use | Approved knowledge content | Suitability evidence and one canonical public page/intent owner required; Product identity is not implied |
 | Commercial intent | Contextual inquiry destination | No public price, quote result, cart, checkout, or payment intent |
 
 Keywords, search volume, ranking opportunity, content owner, and landing assignments remain `TBD`.
@@ -76,8 +89,8 @@ Keywords, search volume, ranking opportunity, content owner, and landing assignm
 | --- | --- | --- |
 | Material | Supporting fact and possible approved material intent | `TBD`; not automatic |
 | Grade | Supporting specification and possible approved comparison intent | `TBD`; not automatic |
-| Finish | Supporting specification and possible approved finish intent | `TBD`; not automatic |
-| Diameter | Structured specification/filter context | No by default |
+| Finish / Color / Appearance / Coating Method | Separate supporting facts and possible approved explanatory intent | `TBD`; not automatic |
+| Nominal Diameter / OD / calculated ID | Distinct structured specification or derived context | No by default |
 | Thickness | Structured specification/filter context | No by default |
 | Length | Structured specification/filter context | No by default |
 | Application | Supporting relationship after verified suitability | `TBD`; one canonical public page/intent owner required |
@@ -154,6 +167,7 @@ No schema output is implemented. Stock/availability schema is prohibited until p
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2.0 | 2026-08-21 | C006 architecture-only reconciliation made dependent selector states non-indexable by default and separated appearance, dimension, Knowledge, service, and dynamic-commercial semantics; no SEO or runtime output. |
 | 0.1.0 | 2026-07-04 | Initial Sprint 03A SEO entity model for Stainless Steel Pipe. |
 | 0.1.1 | 2026-08-03 | Separated canonical Repository identity from downstream page, URL, search-intent, Schema.org, and Variable Parent projections under `FD-W2G-001`; no URL, SEO fact, Product, mapping, schema output, or runtime object was created. |
 

@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Product Data Owner, Qualified Steel-Domain Reviewer, SEO Reviewer, and WooCommerce Technical Reviewer
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-04
-- **Last Review:** 2026-07-04
+- **Version:** 0.2.0
+- **Last Updated:** 2026-08-21
+- **Last Review:** 2026-08-21
 - **Review Cycle:** On Pipe family identity, hierarchy, name, slug, URL, SEO, linking, category, or overlap decision
 - **Lifecycle:** Review
 - **Source of Truth:** [Pipe Product Family](../products/pipes/PIPE_PRODUCT_FAMILY.md), [Product Taxonomy Model](../../../docs/21_PRODUCT_TAXONOMY_MODEL.md), and [URL Architecture](../../../docs/26_URL_ARCHITECTURE.md)
@@ -23,6 +23,16 @@
 ## Purpose
 
 Define the minimal Pipe Product Family category model without converting technical specifications, commercial fields, SEO projections, or CRM data into categories.
+
+## C006 Category Boundary
+
+Family-configured selector axes and dependent states never become categories by
+default. Finish, Color, Appearance, and Coating Method remain distinct;
+nominal/market Diameter is separate from evidence-backed OD and calculated ID;
+Brand requires canonical provenance. Application/suitability belongs to
+Knowledge, cutting/packaging/shipping to services, and Mass, Availability, lead
+time, and Pricing to dynamic commercial context. None of these distinctions
+creates a term, landing, Product, SKU, commercial record, or runtime behavior.
 
 ## Main Category
 
@@ -49,17 +59,17 @@ No Pipe subcategory is approved in Sprint 03C.
 | Proposed source concept | Subcategory decision | Reason |
 | --- | --- | --- |
 | Grade | Do not create | Controlled global variation attribute |
-| Finish | Do not create | Controlled global variation attribute; prevents finish-category/filter duplication |
-| Diameter | Do not create | Typed global variation attribute |
+| Finish / Color / Appearance / Coating Method | Do not create | Separate controlled concepts; prevents appearance-category/filter duplication |
+| Nominal Diameter / OD / calculated ID | Do not create | Separate typed technical roles, not hierarchy |
 | Thickness | Do not create | Typed global variation attribute |
 | Length | Do not create | Typed global variation attribute |
 | Material | Do not create | Global attribute in this Pipe profile; broader Material-category hierarchy remains unapproved |
-| Brand | Do not create | Canonical global Brand identity; no verified values supplied |
+| Brand | Do not create | Canonical Brand identity requires verified provenance and Family rules; no verified values supplied |
 | Country | Do not create | Verified origin specification, not family hierarchy |
-| Application | Do not create | Global attribute in this Pipe profile; Use Case taxonomy terms remain unapproved |
+| Application | Do not create | Governed Knowledge relationship; a future use-case landing requires separate intent authority |
 | Environment | Do not create | Evidence-backed specification, not family hierarchy |
 | Installation Use | Do not create | Evidence-backed specification, not family hierarchy |
-| Stock/Inquiry/SEO values | Do not create | Internal behavior, commercial state, or projection—not product hierarchy |
+| Mass/Availability/Pricing/Inquiry/SEO values | Do not create | Dynamic commercial data, internal behavior, or projection—not product hierarchy |
 
 Future subcategories require a separate Founder-approved hierarchy decision with purpose, non-overlap, terms, owner, URL, SEO, migration, and Admin evidence. Absence of subcategories is intentional and prevents unsupported hierarchy invention.
 
@@ -139,6 +149,7 @@ The broader enterprise taxonomy model may later authorize a mapped Material, Bra
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2.0 | 2026-08-21 | C006 architecture-only clarification separated Product selectors, technical derivations, Knowledge, services, and dynamic commercial facts from category hierarchy; no term, population, or runtime change. |
 | 0.1.0 | 2026-07-04 | Initial Sprint 03C minimal Pipe category model; no category implementation. |
 
 ## Navigation

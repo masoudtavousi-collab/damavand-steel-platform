@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.7.0
-- **Last Updated:** 2026-08-16
-- **Last Review:** 2026-08-16
+- **Version:** 0.8.0
+- **Last Updated:** 2026-08-21
+- **Last Review:** 2026-08-21
 - **Review Cycle:** On product hierarchy, entity, ownership, lifecycle, taxonomy, attribute, inquiry, CRM, ERP, or Founder-decision change
 - **Lifecycle:** Review
 - **Source of Truth:** [Core Project Principles](00_PROJECT_BIBLE.md#core-project-principles), [ADR 0001](adr/0001-inquiry-first-commerce.md), and [WordPress Enterprise Architecture](06_WORDPRESS_ARCHITECTURE.md#founder-constraints-and-decision-sources)
@@ -37,6 +37,30 @@ This model defines product data concepts only. It does not define database table
 - Mobile First and Persian RTL govern labels, editing, filtering, and public presentation.
 - WordPress Admin must remain manageable for the non-programmer Founder.
 - No Custom Theme, Gravity Forms, LiteSpeed Cache, or Phase 1 AI capability may be introduced.
+
+## C006 Semantic Separation
+
+C006 classifies every Pipe field into exactly one primary truth class before any
+customer-facing composition:
+
+- `CANONICAL_SELECTION`: relatively stable Product/Variant selection data;
+- `DERIVED_TECHNICAL`: formula-bound output whose inputs and calculation status
+  are explicit;
+- `DYNAMIC_COMMERCIAL`: current Mass, Availability/supply evidence, or pricing
+  context owned outside Product identity;
+- `KNOWLEDGE_CONTENT`: application guidance, suitability limitations, and
+  educational explanation;
+- `SERVICE_FULFILLMENT`: cutting, packaging, shipping, and related service state;
+- `OPERATOR_INTERNAL`: supplier/source, load/batch, provenance, activation, and
+  audit context.
+
+The public experience may compose these classes, but no Product record, Profile,
+Variant Rule, downstream Parent, or WooCommerce Variation may flatten them into
+one mutable owner. Brand, manufacturer, supplier, and origin remain distinct.
+Finish, Color, Appearance, and Coating Method also remain distinct. The immutable
+PD-03A `finish=Silver` fact is only a bounded internal appearance designation; it
+does not establish a general Finish, Color, coating, PVD, or surface-quality
+taxonomy.
 
 ## Data Model Decisions
 
@@ -92,16 +116,20 @@ This mapping supports WooCommerce and other presentation surfaces only. It may b
 | Attribute | Controlled property used for specification, variation, filtering, integration, or presentation | Defined by the Product Attribute Model; free-text use requires explicit exception |
 | Material | Canonical material classification applicable to product specification and discovery | References one controlled Material term; does not duplicate Material Category authority |
 | Alloy | Canonical alloy designation or family within an approved Material context | Requires qualified technical review and stable mapping; no alloy values are approved here |
-| Finish | Controlled surface-finish specification | Uses the canonical Finish registry; exact terms require domain review |
-| Color | Controlled appearance value only where meaningful and approved | Must not substitute for Finish or coating specification |
+| Finish | Controlled surface-condition or surface-finish specification | Must not substitute for Color, Appearance, coating method, PVD, or the bounded PD-03A appearance designation |
+| Color | Controlled color value only where meaningful and approved | Must not imply Finish, Appearance, coating method, quality, or technical performance |
+| Appearance | Customer-visible appearance context composed from separately governed evidence | May reference Color, Finish, sheen, or texture, but does not merge their identities or create a coating claim |
+| Coating Method | Evidence-backed process or treatment classification | PVD and electrostatic coating remain distinct namespaces and neither is inferred from Color or Appearance |
 | Size | Human-facing composite size representation derived from structured dimensions where possible | Must not be the sole source when Diameter, Thickness, Length, or other dimensions apply |
-| Diameter | Structured dimensional value with unit and dimensional context | Numeric/value policy and applicable product types require approval |
+| Nominal/Market Diameter | Commercial selection dimension with unit and declared nominal context | Must not be treated automatically as measured outside diameter |
+| Outside Diameter (OD) | Evidence-backed technical dimension | Requires an explicit evidence kind, source, unit, precision, and review before use |
+| Inside Diameter (ID) | Measured evidence or an explicitly calculated nominal value | A calculated value uses `OD - 2 × Thickness`, identifies its inputs/formula/rounding, and is never presented as measured truth |
 | Thickness | Structured dimensional value with unit and tolerance context when applicable | Numeric/value policy and applicable product types require approval |
 | Length | Structured dimensional value with unit and supply-form context | Numeric/value policy and applicable product types require approval |
 | Unit | Controlled unit of measure associated with a value, quantity, stock representation, or inquiry line | Unit vocabulary and conversion authority require approval; labels are not conversion logic |
 | Brand | Canonical brand/manufacturer identity when approved for catalog use | Uses one Brand registry shared with taxonomy and SEO landing references |
 | Quality Level | Controlled commercial or quality classification with an explicit definition and reviewer | Must not imply an unverified standard, grade, certification, or warranty |
-| Stock State | Governed availability representation independent of public pricing | Uses the proposed stock-state policy below; no delivery promise is implied |
+| Availability Projection | Governed, evidence-bound customer representation independent of Product identity and public pricing | Uses the C006 reconciliation below; no exact quantity, delivery promise, or inferred warehouse claim is implied |
 | Inquiry State | Governed lifecycle of a non-transactional request | Defined by the Inquiry Data Model; not a WooCommerce order status |
 | Media Set | Governed collection of product images and visual assets | Has owner, rights, accessibility metadata, role, order, and parent/variation applicability |
 | Technical Documents | Versioned datasheets, certificates, drawings, guides, or approved technical files | Has document type, version, owner, review status, access class, and product relationship |
@@ -156,11 +184,16 @@ Product lifecycle is independent of the document lifecycle in [Document Lifecycl
 
 Every transition records the prior state, next state, reason, actor, approval source, and timestamp. Restoration always returns a product to `review`; it never restores public visibility automatically. Exact transition owners, required evidence, public behavior, and whether all states are needed remain Founder/Product/Sales/SEO decisions.
 
-Stock State describes availability and does not change product lifecycle automatically. Inquiry State describes a request and must never be used as product lifecycle.
+Availability describes a separate dynamic commercial concern and does not change
+Product lifecycle automatically. Inquiry State describes a request and must never
+be used as Product lifecycle or Availability evidence.
 
-## Proposed Stock State Model
+## Availability Reconciliation
 
-| Internal state | Meaning | Public/inquiry boundary |
+The earlier Batch-05 internal names below remain proposal history only. They are
+not a current Availability vocabulary and cannot be projected directly.
+
+| Legacy proposed internal state | Meaning | Public/inquiry boundary |
 | --- | --- | --- |
 | `in_stock` | Availability is currently represented as available by the approved catalog authority | May permit inquiry; no price or delivery promise |
 | `limited` | Availability is constrained or requires confirmation | Inquiry remains available with confirmation language |
@@ -168,7 +201,14 @@ Stock State describes availability and does not change product lifecycle automat
 | `temporarily_unavailable` | Currently unavailable for supply inquiry unless Sales authorizes an exception | Public inquiry behavior requires approved policy |
 | `discontinued` | No longer actively supplied | Hidden or informational behavior and alternatives require approval |
 
-These are proposed internal states. Persian labels, WooCommerce mapping, visibility, inventory source, and transition authority require Founder and Sales/Operations approval.
+The Founder-confirmed customer-facing intent is separately expressed as `موجود`,
+`قابل تأمین سریع`, `نیازمند استعلام`, and `فعلاً ناموجود`. A future projection
+must bind one of those states to valid, non-expired evidence and applicable
+operator verification while preserving warehouse-confirmed, market-assured, and
+verification-required distinctions. Missing, conflicted, or expired evidence is
+verification-required; it is not out of stock. C006 creates no Availability
+record, stock quantity, supplier commitment, ETA, WooCommerce stock setting, or
+runtime authority.
 
 ## Proposed Inquiry State Reference
 
@@ -330,6 +370,7 @@ design, import, or runtime implementation.
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.8.0 | 2026-08-21 | C006 architecture-only reconciliation separated canonical selection, derived technical, dynamic commercial, Knowledge, service, and operator concerns; distinguished Finish/Color/Appearance/Coating and nominal diameter/OD/calculated ID; and aligned Availability intent without creating data or runtime authority. |
 | 0.7.0 | 2026-08-01 | Added the exact PD-03A immutable prerequisite and synthetic-only Pilot boundary. |
 | 0.6.0 | 2026-07-29 | Linked the synthetic-only PD-02A controlled-value/Profile foundation and preserved the empty canonical registries and PD-02B decision boundary. |
 | 0.5.0 | 2026-07-29 | Recorded approved PD-01 synthetic Contract subset after legal lifecycle and independent PASS without promoting canonical Product data. |

@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Lead Enterprise Information Architect
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-03
-- **Last Review:** 2026-07-03
+- **Version:** 0.1.1
+- **Last Updated:** 2026-08-21
+- **Last Review:** 2026-08-21
 - **Review Cycle:** On media type, identity, naming, organization, rights, accessibility, product photography, rendition, PDF, download, localization, storage, or CDN change
 - **Lifecycle:** Review
 - **Source of Truth:** [Enterprise Content Architecture](29_CONTENT_ARCHITECTURE.md), [Entity Relationship Model](30_ENTITY_RELATIONSHIP_MODEL.md), [Enterprise Product Data Model](19_PRODUCT_DATA_MODEL.md#media-set-model), and [Content Types](32_CONTENT_TYPES.md)
@@ -126,6 +126,23 @@ Each approved product photograph identifies:
 
 Primary/gallery images must not imply a configuration, finish, included accessory, certification, stock, installation, location, brand, or availability that is not approved for the linked entity.
 
+## Product Experience Inheritance and Overrides
+
+Media inheritance is an applicability decision, not a storage shortcut. A future
+Product experience resolves media in this order:
+
+1. exact eligible Variant override;
+2. eligible Appearance/Finish override;
+3. Family asset only when it is explicitly accurate for the selected context;
+4. governed placeholder or no media.
+
+Every candidate asset must have current rights, access, lifecycle, localization,
+accessibility, and applicability evidence. A Family asset must not be inherited
+when the selected Appearance or Finish materially differs. Missing, conflicting,
+expired, restricted, or unreviewed evidence fails closed and never permits a
+visually plausible substitute. Media applicability does not establish Product,
+compatibility, stock, Availability, price, or included-accessory truth.
+
 ## Icons
 
 - Icons express a single approved concept and use a controlled library, stable asset ID, name, owner, source/license, viewBox/dimensions when relevant, and accessibility role.
@@ -240,6 +257,7 @@ Review. No media asset, filename change, folder, upload, image derivative, WebP 
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.1.1 | 2026-08-21 | C006 architecture-only reconciliation: defined deterministic Product-experience media inheritance and fail-closed false-image prevention; no media asset or publication created. |
 | 0.1.0 | 2026-07-03 | Initial Batch 07 enterprise media strategy; documentation only. |
 
 ## Related Documents
@@ -249,6 +267,7 @@ Review. No media asset, filename change, folder, upload, image derivative, WebP 
 - [Schema.org Strategy](31_SCHEMA_ORG_STRATEGY.md)
 - [Content Types](32_CONTENT_TYPES.md)
 - [SEO Entity Model](34_SEO_ENTITY_MODEL.md)
+- [Product Experience Engine](../repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md)
 
 ## Traceability
 

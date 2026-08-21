@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.19.0
-- **Last Updated:** 2026-08-18
-- **Last Review:** 2026-08-18
+- **Version:** 0.20.0
+- **Last Updated:** 2026-08-21
+- **Last Review:** 2026-08-21
 - **Review Cycle:** On navigation or authority change; periodic cadence pending Founder approval
 - **Lifecycle:** Review
 - **Source of Truth:** [Documentation Index](08_DOCUMENTATION_INDEX.md) and [Navigation Map](09_NAVIGATION_MAP.md)
@@ -35,6 +35,8 @@ Every reader starts with:
 5. [Project Baseline](PROJECT_BASELINE.md), the concise orientation layer.
 
 Readers then follow only the applicable role and Layer 1 route. DS-PC (`HOW`), DS-SPD (`WHAT`), decision logs, roadmap, domain models, and historical evidence are loaded when that route or the active task requires them—not as a universal context dump.
+
+For C006 Product Data semantic or Product Experience work, read [C006 Scope](C006_PRODUCT_DATA_SEMANTIC_PRODUCT_EXPERIENCE_ARCHITECTURE_SCOPE_V1.0.md), then the canonical Product/Attribute/Measurement owners and [Product Experience Engine](../repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md). The latter is an architecture-only orchestration owner and does not replace Product, Knowledge, Media, Commerce or Inquiry truth.
 
 For current work, readers must obtain the exact phase, branch, authorization, pull-request state, GO/NO-GO boundary, and next action from Current Project State. DS-PC (`HOW`) and DS-SPD (`WHAT`) are stable companion governing sources and do not compete with that operational pointer. Their acceptance does not auto-authorize PD-04, Product/SKU, Golden/Master Data, Runtime, Import, Deployment, Production, or branch deletion. Historical scopes retain their original boundaries. [PD-02B Scope v1.0](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md) remains the immutable APPROVED base. [PD-03A Scope v1.0](PD03A_PILOT_PREREQUISITE_FOUNDATION_SCOPE_V1.0.md) governs the APPROVED prerequisite extension. [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md) governs only exactly three lifecycle-gated Pilot records. [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md) governs only contract infrastructure and empty C002 instance registries. [C003 Discovery Scope](C003_FOUNDER_DISCOVERY_RECONCILIATION_SCOPE_V1.0.md) governs only classified Session 01 evidence. [C003-R1 Scope](C003_R1_CHECKPOINT03_201_51_PILOT_READINESS_SCOPE_V1.0.md) governs only the Checkpoint 03 versioned evidence delta and a `0/9` Founder-review packet. [C003-R2 Scope](C003_R2_201_51_FOUNDER_EVIDENCE_COMPLETION_SCOPE_V1.0.md) preserves the predecessor compressed worksheet, and the [C003-R3 Scope](C003_R3_201_51_FOUNDER_ANSWER_RECONCILIATION_SCOPE_V1.0.md) governs only the exact Slack-bound reconciliation of its six answers into 216 evidence positions. [C005 Scope](C005_201_51_FOUNDER_EVIDENCE_READINESS_REEVALUATION_SCOPE_V1.0.md) and its [Readiness Packet](C005_201_51_READINESS_REEVALUATION_PACKET_V1.0.md) reconcile later Founder evidence and re-evaluate all nine criteria without verification or selection. Mass/Supply stay empty and C002 stays `0/9`; none grants Product/SKU, Availability, current/public pricing, Master/Golden, Import, Runtime, Deployment, or Production authority.
 
@@ -167,8 +169,9 @@ No product taxonomy or steel terminology may be inferred while the relevant Foun
 19. [C003-R3 Scope](C003_R3_201_51_FOUNDER_ANSWER_RECONCILIATION_SCOPE_V1.0.md), treated as exact Founder-answer evidence reconciliation with no canonical promotion and unchanged C002 `0/9` readiness.
 20. [C004 Competitive Intelligence Scope](C004_COMPETITIVE_INTELLIGENCE_SCOPE_V1.0.md), [Competitive Matrix](COMPETITIVE_INTELLIGENCE_MATRIX_V1.0.md), [Damavand Advantage Specification](DAMAVAND_COMPETITIVE_ADVANTAGE_SPECIFICATION_V1.0.md), [Anti-Pattern Register](DAMAVAND_COMPETITIVE_ANTI_PATTERN_REGISTER_V1.0.md), and [201/51 Competitive Experience Blueprint](201_51_PILOT_COMPETITIVE_EXPERIENCE_BLUEPRINT_V1.0.md), treated only as supplementary external evidence and architecture planning with no Product/SEO/commerce/runtime authority.
 21. [C005 Founder Evidence & C002 Readiness Re-evaluation Scope](C005_201_51_FOUNDER_EVIDENCE_READINESS_REEVALUATION_SCOPE_V1.0.md) and [Readiness Packet](C005_201_51_READINESS_REEVALUATION_PACKET_V1.0.md), treated as evidence/readiness reconciliation only: 8 submitted, 1 missing, 6 separately reviewable, 9 open/blocking and zero resolved.
-22. [Traceability Matrix](TRACEABILITY_MATRIX.md).
-23. [Batch 05 Audit](AUDIT_REPORT_BATCH05.md), [Batch 05A Audit](AUDIT_REPORT_BATCH05A.md), and [Batch 05B Audit](AUDIT_REPORT_BATCH05B.md).
+22. [C006 Product Data Semantic & Product Experience Architecture Scope](C006_PRODUCT_DATA_SEMANTIC_PRODUCT_EXPERIENCE_ARCHITECTURE_SCOPE_V1.0.md) and [Product Experience Engine](../repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md), treated as architecture-only semantic/projection reconciliation with no Product/value/tuple/SKU/commercial/runtime population.
+23. [Traceability Matrix](TRACEABILITY_MATRIX.md).
+24. [Batch 05 Audit](AUDIT_REPORT_BATCH05.md), [Batch 05A Audit](AUDIT_REPORT_BATCH05A.md), and [Batch 05B Audit](AUDIT_REPORT_BATCH05B.md).
 
 No product, term, attribute value, variation, inquiry form, setting, import, schema, UI, or implementation may be created from these Review-state models without explicit approval.
 

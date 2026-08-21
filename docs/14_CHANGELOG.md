@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-08-21 — C006 Product Data semantic and Product Experience architecture reconciliation
+
+- Reconciled Pipe Product semantics across canonical, derived, dynamic-commercial,
+  Knowledge, Service, operator and presentation truth without changing approved
+  Product, Attribute, value, tuple or SKU records.
+- Separated Finish, Color, Appearance and Coating Method; nominal Diameter,
+  sourced OD and calculated nominal ID; Product attributes, Service choices and
+  dynamic Mass/Availability/Pricing facts.
+- Materialized the reserved Product Experience owner as architecture only and
+  defined Family-specific dependent selection, media/knowledge projection,
+  non-indexed selector state and contextual Inquiry CTA boundaries.
+- Added a closed machine-readable policy/interface package, deterministic offline
+  validation and the required semantic/adversarial mutation matrix.
+- Retired only the old never-started deferred `C006 — Pilot Certification /
+  Production Decision` label. No Product population, WordPress/WooCommerce or
+  Runtime mutation, import, publishing, deployment, production, merge or
+  successor authority was created.
+
 ## 2026-08-18 — C005 201/51 Founder evidence and C002 readiness re-evaluation
 
 - Verified the complete C005 planning checkpoint and four complete Founder-evidence Slack parents against live `main` `ebe105279eea04bb0ed880c8a32750ddef3eb9dd`.

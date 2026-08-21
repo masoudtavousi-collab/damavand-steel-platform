@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Lead Enterprise Solution Architect
 - **Approval Authority:** Founder
-- **Version:** 0.1.0
-- **Last Updated:** 2026-07-03
-- **Last Review:** 2026-07-03
+- **Version:** 0.1.1
+- **Last Updated:** 2026-08-21
+- **Last Review:** 2026-08-21
 - **Review Cycle:** On approved architecture, platform boundary, responsibility, deployment, extension, or upgrade-policy change
 - **Lifecycle:** Review
 - **Source of Truth:** [Project Constitution](01_PROJECT_CONSTITUTION.md), [Enterprise Architecture](02_ARCHITECTURE.md), [Business Rules](03_BUSINESS_RULES.md), [Technology Stack](05_TECH_STACK.md), and [WordPress Architecture](06_WORDPRESS_ARCHITECTURE.md)
@@ -34,7 +34,7 @@ This Blueprint defines logical layers, component ownership, configuration owners
 | --- | --- | --- |
 | WPBP-001 | Preserve one-way authority from approved business and architecture rules into platform configuration and generated presentation. | Proposed pending Founder approval |
 | WPBP-002 | Assign one primary owner to each platform concern and prohibit overlapping template, data, schema, inquiry, and optimization ownership. | Proposed pending Founder approval |
-| WPBP-003 | Keep WordPress Core as the CMS and identity foundation, WooCommerce as catalog authority, Blocksy Pro as presentation shell, and Elementor Pro as bounded content composer. | Derived from WordPress Architecture; pending Blueprint approval |
+| WPBP-003 | Keep WordPress Core as the CMS and identity foundation, WooCommerce as a downstream catalog adapter/projection, Blocksy Pro as presentation shell, and Elementor Pro as bounded content composer. | Derived from WordPress Architecture and canonical Product-owner reconciliation; pending Blueprint approval |
 | WPBP-004 | Keep public commerce inquiry-only: no public prices, cart, checkout, payment, shipping transaction, or price-bearing structured data. | Required by CP-005, CP-006, and ADR-0001 |
 | WPBP-005 | Use supported Admin configuration and approved plugins before custom development; direct core, vendor, theme, or database modification is prohibited. | Required by CP-001, CP-002, and CP-007 |
 | WPBP-006 | Preserve Persian RTL and Mobile First behavior in every presentation, workflow, administration, and validation boundary. | Required by CP-003 and CP-004 |
@@ -61,7 +61,7 @@ The Blueprint is an allocation contract, not a build specification. Unresolved l
 | --- | --- | --- | --- |
 | Presentation | Global shell, responsive/RTL rendering, approved page composition | Blocksy Pro; Elementor Pro within delegated content areas | No data or business-rule authority |
 | Application | CMS workflows, identity, roles, publishing, inquiry orchestration | WordPress Core plus approved capabilities | No direct-sale workflow or invented domain rules |
-| Commerce | Product parents, variations, attributes, catalog availability, inquiry context | WooCommerce | No public pricing or transaction flow |
+| Commerce | Downstream Product parents, variations, attributes, catalog projections, and inquiry context | WooCommerce adapter | No canonical Product authority, public pricing, or transaction flow |
 | Content | Pages, knowledge, governed entities, reusable content and media relationships | WordPress Core plus approved content capability | Logical type does not automatically require a CPT |
 | Data | Canonical records, stable identifiers, metadata, relationships, lifecycle, exchange | Source owner defined by approved models | Supported APIs only; no direct database dependency |
 | Infrastructure | Hosting, delivery, cache, backups, mail, security, observability, deployment | Approved external/platform owners | Provider and configuration remain unselected where unresolved |
@@ -70,7 +70,7 @@ The Blueprint is an allocation contract, not a build specification. Unresolved l
 
 - Blocksy Pro owns the vendor-maintained theme foundation, header, footer, primary navigation, global shell, default archive/single layouts, responsive behavior, and supported WooCommerce presentation.
 - Elementor Pro owns approved page and landing body composition and explicitly delegated reusable content-area templates.
-- WordPress/WooCommerce remain authorities for rendered content and catalog data.
+- WordPress/WooCommerce own supported system-local records and rendered presentation only; canonical Product and Variant Rules authority remains upstream.
 - The SEO capability owns canonical, metadata, breadcrumb, sitemap, and structured-data output after a single-owner decision.
 - A custom or child theme, copied vendor template, production CSS/JavaScript/PHP, and overlapping global templates are outside this Blueprint.
 
@@ -83,7 +83,7 @@ The Blueprint is an allocation contract, not a build specification. Unresolved l
 
 ## Commerce Layer
 
-- WooCommerce stores the approved catalog, Variable Parent Products, variations, global attributes, variation SKUs, and catalog availability.
+- WooCommerce stores approved downstream projections of Variable Parent Products, variations, global attributes, derived variation SKUs, and separately governed catalog Availability mappings.
 - Public catalog journeys terminate in contextual inquiry, not purchase.
 - Product facts flow from the Product Data, Taxonomy, and Attribute models; WooCommerce does not invent values or hierarchies.
 - Future private pricing, quotation, ERP, CRM, or CentralSteel behavior requires a separate approved boundary and must not silently activate public commerce.
@@ -110,7 +110,7 @@ Infrastructure capabilities include environment isolation, TLS, secrets, outboun
 
 | Capability | Blueprint owner | Current state | Detailed source |
 | --- | --- | --- | --- |
-| Catalog | WooCommerce | Approved platform component; not configured by this batch | [WooCommerce Configuration](38_WOOCOMMERCE_CONFIGURATION.md) |
+| Catalog projection | WooCommerce | Approved downstream platform component; not configured by this batch | [WooCommerce Configuration](38_WOOCOMMERCE_CONFIGURATION.md) |
 | Presentation shell | Blocksy Pro vendor theme/package | Approved platform component; not configured by this batch | [Blocksy Configuration](36_BLOCKSY_CONFIGURATION.md) |
 | Visual composition | Elementor Pro | Approved platform component; no templates built | [Elementor Architecture](37_ELEMENTOR_ARCHITECTURE.md) |
 | Inquiry, SEO/schema, security, backup, mail, cache/performance, search/filter, media, consent, analytics, redirects, import/export, and integrations | One approved owner per capability | Brand and package unresolved unless already governed | [Plugin Responsibility Matrix](44_PLUGIN_RESPONSIBILITY_MATRIX.md) |
@@ -178,6 +178,7 @@ Review. No WordPress, WooCommerce, Blocksy, Elementor, plugin, template, content
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.1.1 | 2026-08-21 | C006 architecture-only reconciliation: corrected WooCommerce from catalog authority to downstream adapter/projection and preserved upstream Product/Variant Rules ownership; no configuration changed. |
 | 0.1.0 | 2026-07-03 | Initial Batch 08 enterprise WordPress solution Blueprint; documentation only. |
 
 ## Related Documents
@@ -186,6 +187,7 @@ Review. No WordPress, WooCommerce, Blocksy, Elementor, plugin, template, content
 - [Information Architecture](24_INFORMATION_ARCHITECTURE.md)
 - [Content Architecture](29_CONTENT_ARCHITECTURE.md)
 - [Plugin Responsibility Matrix](44_PLUGIN_RESPONSIBILITY_MATRIX.md)
+- [Product Experience Engine](../repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md)
 
 ## Traceability
 

@@ -8,8 +8,8 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.3.0
-- **Last Updated:** 2026-08-03
+- **Version:** 0.4.0
+- **Last Updated:** 2026-08-21
 - **Last Review:** 2026-08-03
 - **Review Cycle:** On WooCommerce product, variation, SKU, attribute, visibility, price, inquiry, stock, import/export, or Admin-policy change
 - **Lifecycle:** Review
@@ -29,6 +29,30 @@ Define how the approved logical product model maps to WooCommerce concepts while
 This document defines mapping policy only. It does not create products, fields, settings, templates, buttons, imports, code, database structures, or plugin configuration.
 
 Canonical repository Product truth follows exactly `Catalog → Platform → Family → Series → Variant Rules → derived SKU`. WooCommerce is a downstream operational projection. Variable Parent Product, Parent Product, Variation, Product Family/Group/Type, attributes, Parent IDs, Variation IDs, and derived SKUs are adapter or presentation mappings and never canonical entity identities. Variant Rules alone govern axes, allowed values, and valid tuples.
+
+## C006 Product-Experience Projection Boundary
+
+A downstream Product page may compose a dependent selector, live summary,
+technical details, dynamic commercial context, media/content inheritance, and an
+Inquiry CTA. Composition never transfers ownership to WooCommerce.
+
+- Selector order is configured per canonical Family/Series projection; no global
+  Grade/Brand/Diameter/Thickness/Appearance/Length sequence is hard-coded.
+- Every selectable option resolves through the applicable Variant Rules. A
+  Profile, WooCommerce attribute, Parent, or Variation cannot add an axis, value,
+  or tuple.
+- Finish, Color, Appearance, and Coating Method remain separate. PD-03A
+  `finish=Silver` remains only a bounded internal appearance designation.
+- Brand becomes selectable only after canonical Brand identity/provenance and
+  applicable Variant Rule evidence exist.
+- Nominal/market Diameter is not measured OD. Calculated ID is explicitly
+  formula-bound and cannot be presented as measured evidence.
+- Current Mass, Availability/supply evidence, and pricing/inquiry state remain
+  dynamic references outside Product identity.
+- Applications/guidance belong to Knowledge; cutting and shipping belong to
+  service/fulfillment. Neither becomes a Product attribute or Variation axis.
+- Current CTA remains Inquiry/operator verification. No selector state, missing
+  evidence, or WooCommerce capability authorizes purchase, Cart, or Checkout.
 
 ## WooCommerce Model Decisions
 
@@ -257,6 +281,7 @@ Review. This model is not approved and does not authorize WooCommerce installati
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.4.0 | 2026-08-21 | Added the C006 architecture-only dependent-selector and projection boundary, including semantic separation, Family-configurable order, derived-dimension labeling, Inquiry-only behavior, and zero Product/runtime population. |
 | 0.2.1 | 2026-08-03 | C1-T06 canonical-owner reconciliation: made WooCommerce a downstream operational projection of the canonical hierarchy and restricted axes/values/tuples to Variant Rules; no Product facts or implementation added. |
 | 0.2.0 | 2026-07-03 | Batch 05B remediation: governed local-attribute exceptions and product-lifecycle/stock visibility separation; documentation only. |
 | 0.1.0 | 2026-07-03 | Initial Batch 05 WooCommerce product mapping policy; documentation only. |
