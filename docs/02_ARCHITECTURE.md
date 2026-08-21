@@ -97,7 +97,8 @@ Founder
 The repository preserves approved architecture and canonical Product truth
 according to each source's recorded lifecycle and authority. The Product hierarchy
 remains `Catalog → Platform → Family → Series → Variant Rules → SKU`.
-WordPress and WooCommerce are downstream projections; Product Experience is an
+WordPress and WooCommerce are downstream adapter, projection, and execution layers
+with zero implicit Product or Commerce authority; Product Experience is an
 architecture/orchestration boundary; Knowledge, Media, Service, dynamic Mass,
 Availability, and Price retain separate owners. Current commerce remains
 `INQUIRY_ONLY`, and Runtime/Production authority remains `NONE`.
@@ -105,8 +106,11 @@ Availability, and Price retain separate owners. Current commerce remains
 ## Definitions
 
 - **Canonical layer:** approved repository truth and its governed lifecycle.
-- **Projection:** a read-only, source-bound representation that cannot write back
-  or become the canonical owner.
+- **Projection:** a source-bound representation of upstream canonical truth. It
+  cannot write back to, redefine, or become the owner of that upstream truth. A
+  downstream system may own separately contracted operational state only when an
+  explicit future contract defines the domain, direction, validation, lifecycle,
+  conflict owner, and reconciliation.
 - **Dynamic commercial truth:** time-sensitive Mass, Availability, supply, or
   Price evidence governed outside Product identity.
 - **Architecture-only owner:** a policy/interface owner that may coordinate
@@ -119,7 +123,11 @@ Availability, and Price retain separate owners. Current commerce remains
 - Canonical domain owners govern identity, lifecycle, provenance, and promotion.
 - Architecture owners define interfaces and separation without copying domain
   truth.
-- Projection owners consume approved source references and prohibit writeback.
+- Projection owners prohibit unauthorized writeback into upstream canonical
+  truth; they do not prohibit independently governed downstream operational state.
+- WordPress and WooCommerce are downstream adapter, projection, and execution
+  layers with zero implicit Product or Commerce authority. This boundary grants no
+  current Runtime or future-contract authority.
 - Security, QA, and Repository Governance verify gates before implementation.
 - The Founder approves protected architecture changes and any Runtime/Production
   transition.

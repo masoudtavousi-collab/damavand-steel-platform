@@ -42,9 +42,15 @@ Founder
 
 ## Security Baseline
 
-- Secrets, credentials, protected Founder evidence, customer data, supplier facts,
-  and internal inventory quantities must not enter public documentation, logs,
-  fixtures, SEO, Media, or general content.
+- Secrets and credentials never enter repository documents, logs, fixtures, or
+  public output.
+- PII, protected Founder evidence, supplier-confidential facts, and internal
+  inventory data never enter public output or unprotected logs or fixtures.
+- Operational logs and test fixtures require minimization, redaction, access
+  controls, retention boundaries, and synthetic data wherever possible.
+- Exact Runtime logging, retention, and access policy remains
+  `MISSING_AUTHORITY_INPUT`; no period, role, provider, or compliance claim is
+  inferred here.
 - Access is least-privilege, time/scope-bound, reviewable, revocable, and separated
   from approval. Repository settings, workflows, and branch protection require
   separate authority.
@@ -59,7 +65,9 @@ credential/access model; and environment-specific threat, backup, restore, and
 monitoring evidence. It is missing because C007 grants no access or Runtime
 authority. Affected domain/document: Security and future operational controls. Safe
 behavior without it: expose no protected data, grant no access, and keep runtime
-security decisions unimplemented.
+security decisions unimplemented. In this rule, expose means public or repository
+exposure; it does not silently prohibit a future explicitly governed, minimized,
+access-controlled operational audit record.
 
 Original `Placeholder Sections` disposition: `RESOLVED_FROM_CANONICAL_EVIDENCE`;
 operational security inputs remain separately gated.

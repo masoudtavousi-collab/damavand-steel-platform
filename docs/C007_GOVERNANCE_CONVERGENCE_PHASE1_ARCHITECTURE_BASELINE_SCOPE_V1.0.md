@@ -199,13 +199,21 @@ Results are recorded only after the stable integrated tree is tested:
   changes, legacy top-level TODOs, stale active-C006 patterns, broken links, or diff
   hygiene findings.
 - **Full repository validation:** PASS — `make validate`, `make test`, manifest
-  (5,044 Markdown links/anchors), Atlas adoption, agentic-usage validator and unit
+  (5,045 Markdown links/anchors), Atlas adoption, agentic-usage validator and unit
   tests all passed in the repository environment; zero manifest mismatch,
   duplicate/cycle, secret, active-workflow, network-policy, publishing, or
   deployment violations.
-- **Independent review:** PASS — three read-only reviews of the integrated diff;
-  material findings `0`, non-material findings `0` after bounded corrections and
-  frozen-tree replay.
+- **Project Commander review:** `RETURN_WITH_FINDINGS` — two material findings
+  (post-Merge current-state self-staleness and projection-authority semantics) and
+  one non-material bounded security wording/policy finding were returned to the
+  existing branch and PR #44.
+- **Bounded repair:** complete — Current State and Navigation are post-Merge-safe;
+  projection and downstream operational-state authority are separated; Security
+  distinguishes secrets, protected/unprotected outputs, controlled logs, and
+  synthetic fixtures without inventing Runtime policy.
+- **Post-repair independent review:** PASS — three read-only replays of the repaired
+  integrated diff found material findings `0` and unresolved non-material findings
+  `0`; all three Project Commander findings are resolved.
 - **CI:** external post-push gate. No branch-document PASS is claimed before the
   one authorized non-draft PR exists; actual CI evidence belongs in the Final
   Return Contract and cannot authorize Merge.
