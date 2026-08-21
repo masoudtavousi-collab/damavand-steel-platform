@@ -8,8 +8,8 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.4.1
-- **Last Updated:** 2026-08-03
+- **Version:** 0.5.0
+- **Last Updated:** 2026-08-21
 - **Last Review:** 2026-08-03
 - **Review Cycle:** On attribute definition, label, key, value, unit, variation, filtering, SEO, Product Type profile, or integration-mapping change
 - **Lifecycle:** Review
@@ -29,6 +29,26 @@ Define the canonical global attribute registry, Persian labels, English internal
 This model defines attribute policy only. It does not create WooCommerce attributes, values, terms, variations, filters, URLs, imports, fields, UI, database schema, or code.
 
 Canonical repository Product truth follows exactly `Catalog → Platform → Family → Series → Variant Rules → derived SKU`. Attribute definitions and controlled values remain governed repository inputs, while Variant Rules alone own axis selection, allowed values per axis, and valid tuples for a Series. Product Type/Profile, WooCommerce global attributes, Parent/Variation records, term IDs, slugs, and SKUs are legacy or downstream adapter/presentation mappings and never canonical Product identities.
+
+## C006 Attribute Semantic Boundary
+
+Attribute identity does not imply Product applicability, selector use, evidence
+kind, or public display. For Pipe architecture:
+
+- `Finish` is a surface-condition specification;
+- `Color` is a color value;
+- `Appearance` is a separately governed visible context that may reference Color,
+  Finish, sheen, or texture without merging them;
+- `Coating Method` is an evidence-backed process classification; PVD and
+  electrostatic coating remain separate namespaces;
+- nominal/market Diameter, evidence-backed OD, and calculated/measured ID are
+  distinct semantic roles;
+- Application knowledge, cutting/shipping services, current Mass, Availability,
+  and Pricing are not Product attributes or immutable Variant identity.
+
+The approved PD-03A key `finish` and value `Silver` remain unchanged as historical
+bounded facts. C006 interprets that exact pair only as an INTERNAL appearance
+designation and does not generalize it into the new roles above.
 
 ## Attribute Decisions
 
@@ -63,9 +83,11 @@ The Persian labels below are proposed working labels, not approved steel termino
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Material | جنس | `material` | Controlled domain-reviewed material registry; synonyms map to one term | Global product attribute for applicable Product Types | Eligible only through one approved Material landing owner | Yes when material changes the offered configuration | Yes for applicable families | Do not create free-text material or duplicate Material Category identity |
 | Alloy | آلیاژ | `alloy` | Controlled designation/family registry linked to compatible Material context | Global attribute; exact designation rules pending | Index only with unique approved intent and technical accuracy | Yes when alloy is a selectable supplied configuration | Yes when values are meaningful to users | Qualified technical review required; preserve exact approved notation |
-| Finish | پرداخت سطح | `surface_finish` | Controlled finish registry with definitions and synonyms | Global attribute | Landing/archive only after cannibalization review | Yes when finish changes the supplied variation | Yes for applicable products | Do not mix finish, color, coating, or quality terminology |
-| Color | رنگ | `color` | Controlled color registry only for products where color is meaningful | Global attribute for applicable profiles | Normally supporting metadata; landing requires approval | Conditional when color is a selectable supplied configuration | Conditional | Do not infer technical finish or coating from color alone |
-| Diameter | قطر | `diameter` | Validated numeric value plus approved unit, precision, and range per Product Type | Global typed/controlled attribute as supported by approved implementation | Supporting specification; indexable archive requires explicit approval | Yes for products configured by diameter | Yes with unit-aware display | Never store unit inconsistently inside and outside the value |
+| Finish | پرداخت سطح | `surface_finish` | Controlled surface-condition registry with definitions and synonyms | Global attribute | Landing/archive only after cannibalization review | Conditional only when Variant Rules bind it | Conditional | Do not mix Finish with Color, Appearance, coating method, PVD, or quality terminology |
+| Color | رنگ | `color` | Controlled color registry only for products where color is meaningful | Global attribute for applicable profiles | Normally supporting metadata; landing requires approval | Conditional only when Variant Rules bind it | Conditional | Do not infer technical Finish, Appearance, or coating method from Color alone |
+| Appearance | ظاهر | `appearance` | Separate governed visible-context relationship; no values are approved here | Future approved projection/attribute mechanism | Supporting only unless separate intent approval exists | Conditional only when Variant Rules bind it | Conditional | May reference Color/Finish/sheen/texture without becoming their owner |
+| Coating Method | روش پوشش | `coating_method` | Evidence-backed process registry; no values are approved here | Future approved attribute/reference mechanism | Not indexable by default | Conditional only with explicit Product/domain approval | Conditional | PVD and electrostatic coating remain distinct and are never inferred from Appearance |
+| Nominal/Market Diameter | قطر اسمی / بازاری | `diameter` | Validated numeric value plus unit and explicit nominal context | Global typed/controlled attribute as supported by approved implementation | Supporting specification; indexable archive requires explicit approval | Conditional only when Variant Rules bind it | Yes with unit-aware display | Never treat nominal Diameter as measured OD by default |
 | Thickness | ضخامت | `thickness` | Validated numeric value plus approved unit, precision, and range | Global typed/controlled attribute | Supporting specification; no automatic landing | Yes where thickness defines a supplied configuration | Yes for applicable products | Product Type defines dimensional meaning and tolerance context |
 | Length | طول | `length` | Validated numeric or approved controlled supply-length value plus unit | Global typed/controlled attribute | Supporting specification; no automatic landing | Conditional when length is a selectable configuration | Conditional | Distinguish fixed, standard, cut, range, and unknown only after approval |
 | Unit | واحد | `unit` | Approved unit registry with dimension, symbol, precision, and conversion authority | Global reference used with dimensions, quantities, and integrations | Not an independent SEO landing | No as a standalone variation axis | No as a standalone filter unless explicitly justified | Unit conversion is not label substitution and requires approved rules |
@@ -224,6 +246,7 @@ unapproved.
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.5.0 | 2026-08-21 | C006 architecture-only reconciliation separated Finish, Color, Appearance, and Coating Method; distinguished nominal Diameter from evidence-backed OD and calculated ID; and kept dynamic commercial, Knowledge, and service data outside Product attributes. |
 | 0.4.1 | 2026-08-03 | C1-T06 canonical-owner reconciliation: assigned axes, allowed values, and valid tuples exclusively to Variant Rules and limited Product Type/WooCommerce profiles to downstream mappings; no values added. |
 | 0.4.0 | 2026-08-01 | Added the bounded PD-03A Attribute/Profile override without public, commerce, or runtime authority. |
 | 0.3.0 | 2026-07-29 | Linked the PD-02A synthetic controlled-value/Profile foundation and preserved all canonical registries as empty. |

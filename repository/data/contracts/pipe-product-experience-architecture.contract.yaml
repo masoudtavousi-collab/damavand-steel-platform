@@ -1,0 +1,206 @@
+contract_id: pipe-product-experience-architecture
+contract_version: "1.0.0"
+record_kind: c006-pipe-product-experience-architecture
+schema:
+  path: repository/data/schemas/pipe-product-experience-architecture.schema.json
+  draft: https://json-schema.org/draft/2020-12/schema
+registry:
+  path: repository/data/registries/extensions/c006/pipe-product-experience-architecture.yaml
+mission:
+  mission_id: C006
+  starting_main_sha: ea616b08ef2f4012afd011684dfe4e5c98cd8fcf
+  architecture_only: true
+  implementation_ready_does_not_mean_runtime_ready: true
+  old_deferred_c006_label_superseded_only: true
+  pilot_certification_or_production_authority_created: false
+dependencies:
+  product_core_contract: repository/data/contracts/product-core.contract.yaml
+  product_entities_registry: repository/data/registries/product-entities.yaml
+  product_attribute_contract: repository/data/contracts/product-attribute.contract.yaml
+  product_attribute_registry: repository/data/registries/product-attributes.yaml
+  measurement_contract: repository/data/contracts/measurement.contract.yaml
+  measurement_dimensions_registry: repository/data/registries/measurement-dimensions.yaml
+  measurement_units_registry: repository/data/registries/attribute-units.yaml
+  c002_product_administration_contract: repository/data/contracts/product-administration-policy.contract.yaml
+  c002_product_administration_registry: repository/data/registries/extensions/c002/product-administration-policies.yaml
+  c002_candidate_contract: repository/data/contracts/commercial-pilot-candidate.contract.yaml
+  c002_candidate_registry: repository/data/registries/extensions/c002/commercial-pilot-candidates.yaml
+  c003_r3_contract: repository/data/contracts/valid-combination-evidence-matrix.contract.yaml
+  c003_r3_registry: repository/data/registries/extensions/c003r2/201-51-founder-evidence-completion.yaml
+  c004_contract: repository/data/contracts/competitive-intelligence.contract.yaml
+  c004_advantage_registry: repository/data/registries/extensions/c004/damavand-advantages.yaml
+  c005_contract: repository/data/contracts/c005-founder-evidence-readiness.contract.yaml
+  c005_registry: repository/data/registries/extensions/c005/201-51-founder-evidence-readiness.yaml
+base_pins:
+  product_core_contract_semantic_sha256: 4f297d98e0864fbfad6f872ac75c873f26a8d059bd57ea282b4af892d0e9a5d9
+  product_entities_registry_semantic_sha256: 69ca32a8a0bb5958f8442ab3aaf812fc7e25eb4b89c20ab6d7f7f16bf75c4fca
+  product_attribute_contract_semantic_sha256: 0fb6c5daa015f4e145c306dddbbe4002a88f6e3cf24f0b1e296f1a59856c7b4b
+  product_attribute_registry_semantic_sha256: 2bd6c0fde7610512a49822d374556d1b5767505024668b488d87cfb663c9c2d0
+  measurement_contract_semantic_sha256: fc01eb3e439a652ed3dda46f52cd9f67257bf8fd6ec38add12e1cfa705847eff
+  measurement_dimensions_registry_semantic_sha256: f7bb8c336e04ee2a70c69d777f65ef4cb3a5c1d8497ea2c554488463433a8111
+  measurement_units_registry_semantic_sha256: 03bd869157a17344a3858692d7bf8af37fbcbc5474c4073dbbdbe60fe4e549ca
+  c002_product_administration_contract_semantic_sha256: 75b608e67b6ca3c870e6bf0b533310fbb131a75fa576a79e75c4a936659c33ff
+  c002_product_administration_registry_semantic_sha256: 796d2dfc424a75f998b309f04e88443d0ffb7450bd457bddf86b574535624fe7
+  c002_candidate_contract_semantic_sha256: 923731cb080b0ecc05abb21b1189bfdd0df94297780cce364bb791479f7f47e3
+  c002_candidate_registry_semantic_sha256: deb0215d2b5f4b5ec0061f937aec9c3e37cf97c94432a23737bf5756cef9587e
+  c003_r3_contract_semantic_sha256: f6e9cc81ef18ded5506714d8316835ff0c0919a38af5a1f1508b93b10297f973
+  c003_r3_registry_semantic_sha256: 22bf396a7b92b6fe03bce069e889a87dd063174e0f1b7abfd3e51fc349de8172
+  c004_contract_semantic_sha256: e4652271d81587d78b8d1fadf6395ef13ca87d7bae7450db346a25e62c7feacc
+  c004_advantage_registry_semantic_sha256: eb14e53a04f60250b3125dc3d0422a62e53a0d01fb3f15741182f4a04327c8c1
+  c005_contract_semantic_sha256: e10707317a3a7c455e3205fed0e058d61c616fd2db126c4862c7f318757e03fa
+  c005_registry_semantic_sha256: 553da985f1a4e655ff34b0d85cc56bb078365c4cd3ec86f3e270e8cadf416e8b
+source_policy:
+  channel_id: C0BNHRRTE9F
+  founder_user_id: U0BNFS43TBL
+  exact_message_timestamps:
+    - "1787086720.993949"
+    - "1787086738.441119"
+    - "1787086759.886949"
+    - "1787084095.125229"
+    - "1787084980.103649"
+  exact_parent_reply_counts:
+    "1787086720.993949": 2
+    "1787084095.125229": 1
+  complete_threads_required: true
+  planning_direction_does_not_populate_truth: true
+authority:
+  semantic_reconciliation_allowed: true
+  projection_architecture_allowed: true
+  owner_interface_definition_allowed: true
+  documentation_contract_schema_validator_test_allowed: true
+  branch_commit_push_non_draft_pr_allowed: true
+  attributable_ci_repair_allowed: true
+  product_population_allowed: false
+  product_value_population_allowed: false
+  variant_population_allowed: false
+  valid_tuple_promotion_allowed: false
+  sku_population_allowed: false
+  mass_observation_population_allowed: false
+  mass_promotion_allowed: false
+  supply_population_allowed: false
+  availability_population_allowed: false
+  stock_or_supplier_truth_allowed: false
+  current_or_public_price_allowed: false
+  pricing_activation_allowed: false
+  media_asset_population_allowed: false
+  knowledge_content_population_allowed: false
+  seo_page_creation_allowed: false
+  customer_crm_order_quote_population_allowed: false
+  cart_checkout_payment_allowed: false
+  public_pricing_allowed: false
+  wordpress_woocommerce_mutation_allowed: false
+  import_publication_allowed: false
+  runtime_staging_production_allowed: false
+  deployment_allowed: false
+  competitor_asset_reuse_allowed: false
+  c1_t03_repair_allowed: false
+  merge_allowed: false
+  branch_deletion_allowed: false
+  successor_mission_allowed: false
+owner_policy:
+  architecture_is_truth_owner: false
+  projections_are_read_only: true
+  projection_writeback_allowed: false
+  authority_transfer_allowed: false
+  each_domain_requires_one_binding: true
+  future_gated_owner_is_not_implementation_authority: true
+  required_owner_domains:
+    - PRODUCT_IDENTITY
+    - ATTRIBUTE_DEFINITION
+    - VARIANT_RULE_SET
+    - MEASUREMENT
+    - BRAND_IDENTITY
+    - C002_BRAND_PROVENANCE
+    - MASS
+    - AVAILABILITY
+    - PRICING_AUTHORITY
+    - CUSTOMER_ORDER_UNIT_POLICY
+    - PRICING_BASIS_POLICY
+    - MEDIA
+    - KNOWLEDGE
+    - SERVICE_POLICY
+    - INQUIRY_CONTEXT
+    - SEO_INTENT
+    - WOOCOMMERCE
+  brand_identity_and_provenance_separate: true
+  service_policy_and_inquiry_context_separate: true
+  customer_order_unit_pricing_authority_and_pricing_basis_separate: true
+semantic_policy:
+  data_classes:
+    - CANONICAL_SELECTION
+    - DERIVED_TECHNICAL
+    - DYNAMIC_COMMERCIAL
+    - KNOWLEDGE_CONTENT
+    - SERVICE_FULFILLMENT
+    - OPERATOR_INTERNAL
+  finish_color_appearance_coating_collapse_allowed: false
+  brand_supplier_or_manufacturer_inference_allowed: false
+  nominal_size_and_outside_diameter_are_identical_by_default: false
+  derived_inside_diameter_is_measured_evidence: false
+  inside_diameter_formula: inside_diameter = outside_diameter - (2 * thickness)
+  inside_diameter_classification: CALCULATED_NOMINAL
+  product_identity_contains_mass_availability_or_price: false
+  order_unit_and_pricing_basis_are_same_concept: false
+variant_policy:
+  owner: VARIANT_RULE_SET
+  configurable_selector_order_per_family: true
+  global_hardcoded_selector_order_allowed: false
+  evidence_backed_valid_combination_required: true
+  cartesian_generation_allowed: false
+  combination_states: [UNKNOWN, INCOMPATIBLE, NEEDS_VERIFICATION, CONFIRMED_VALID]
+  availability_is_separate_from_combination_state: true
+  unknown_means_out_of_stock: false
+mass_policy:
+  owner: C002_MASS_PROVENANCE
+  lifecycle_states: [CURRENT, NEXT_PENDING, HISTORICAL]
+  promotion_requires_operator: true
+  allowed_transition: NEXT_PENDING_TO_CURRENT_AND_PRIOR_CURRENT_TO_HISTORICAL
+  automatic_promotion_allowed: false
+  numeric_mass_value_count: 0
+  product_identity_field_allowed: false
+availability_policy:
+  owner: FUTURE_AVAILABILITY_EVIDENCE_CONTRACT
+  states: [UNKNOWN, AVAILABLE, RAPIDLY_SOURCEABLE, INQUIRY_REQUIRED, CURRENTLY_UNAVAILABLE]
+  available_requires_current_governed_evidence: true
+  supplier_habit_is_availability_evidence: false
+  exact_inventory_quantity_public: false
+media_knowledge_policy:
+  media_precedence: [VARIANT_OVERRIDE, APPEARANCE_OR_FINISH_OVERRIDE, FAMILY_DEFAULT]
+  false_visual_inheritance_allowed: false
+  rights_safe_evidence_required: true
+  competitor_asset_reuse_allowed: false
+  knowledge_precedence: [FAMILY_CORE, GRADE_EXTENSION, BRAND_EXTENSION, VARIANT_EXTENSION]
+  knowledge_creates_product_truth: false
+projection_policy:
+  selector_state_indexed_by_default: false
+  page_per_tuple_allowed: false
+  unique_search_intent_and_original_content_required: true
+  woocommerce_is_canonical_owner: false
+  current_ctas: [INQUIRY, OPERATOR_VERIFICATION]
+  purchase_cta_allowed_now: false
+  future_purchase_requires_separate_commerce_eligibility: true
+  selected_context_handoff_exact: true
+commercial_owner_policy:
+  price_owner: PRICING_AUTHORITY
+  customer_order_unit_owner: CUSTOMER_ORDER_UNIT_POLICY
+  pricing_basis_owner: PRICING_BASIS_POLICY
+  owners_are_future_gated: true
+service_policy:
+  owner: SERVICE_POLICY
+  owner_is_future_gated: true
+  inquiry_context_is_not_service_policy_owner: true
+validation:
+  offline_only: true
+  network_allowed: false
+  side_effects_allowed: false
+  closed_schema_required: true
+  local_refs_only: true
+  duplicate_keys_rejected: true
+  non_finite_numbers_rejected: true
+  deterministic_sorted_errors: true
+  path_escape_symlink_and_byte_cap_enforced: true
+  input_depth_cap: 100
+  input_node_cap: 50000
+  exact_order_counts_and_bindings_required: true
+  semantic_digest_pinning_required: true
+  mutation_manifest_dispatch_required: true

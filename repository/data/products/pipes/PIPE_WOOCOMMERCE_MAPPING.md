@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Product Data Owner and WooCommerce Technical Reviewer
 - **Approval Authority:** Founder
-- **Version:** 0.1.1
-- **Last Updated:** 2026-08-03
-- **Last Review:** 2026-08-03
+- **Version:** 0.2.0
+- **Last Updated:** 2026-08-21
+- **Last Review:** 2026-08-21
 - **Review Cycle:** On pipe product model, attribute contract, import mapping, inquiry behavior, or target WooCommerce capability change
 - **Lifecycle:** Review
 - **Source of Truth:** Approved repository product and WooCommerce models plus the Sprint 03A Stainless Steel Pipe data contract
@@ -33,6 +33,20 @@ Map the approved Stainless Steel Pipe product-data contract to future WooCommerc
 - Configuration First and Plugin First remain mandatory. No custom theme or custom business implementation is authorized here.
 - Any unresolved hard gate keeps the entire import at `NO-GO`.
 
+## C006 Projection Contract
+
+WooCommerce may only project selectors supplied by approved Family
+configuration and Variant Rules; it must not hard-code one universal Pipe order
+or infer a Cartesian product. Finish, Color, Appearance, and Coating Method are
+separate concepts, and the PD-03A `finish=Silver` value remains only a bounded
+legacy appearance designation. Diameter means nominal/market Diameter; OD is a
+separate evidence-backed fact and ID is calculated and labeled derived. Brand is
+projected only when canonical provenance and Family rules permit it.
+Application/suitability content is a governed Knowledge relationship;
+cutting/packaging/shipping are services; Mass, Availability, lead time, and
+Pricing remain dynamic projections. This section authorizes no object, term,
+Product, SKU, commercial data, import, plugin, or runtime change.
+
 ## Entity Mapping
 
 | Product-data entity | Future WooCommerce concept | Ownership | Mapping rule | Current state |
@@ -42,8 +56,8 @@ Map the approved Stainless Steel Pipe product-data contract to future WooCommerc
 | Variation | Product variation | WooCommerce adapter | Belongs to exactly one parent and maps one tuple permitted by canonical Variant Rules and separate commercial evidence | Candidate rows only; commercial validity `TBD` |
 | Material | Shared global attribute | Attribute dictionary | Working value `stainless-steel`; non-variation attribute | Terminology approval pending |
 | Grade | Shared global attribute | Attribute dictionary | Variation axis using only `201`, `304`, `316`, `430` | Candidate values; no terms created |
-| Finish | Shared global attribute | Attribute dictionary | Variation axis using only `silver`, `gold-pvd`, `black-pvd` | Candidate values; no terms created |
-| Diameter | Shared global attribute | Attribute dictionary | Variation axis; numeric millimetre values from the matrix | Candidate values; no terms created |
+| Legacy appearance/finish token | Downstream attribute projection only after canonical mapping | Attribute dictionary | Preserves `silver`, `gold-pvd`, `black-pvd` as historical values without collapsing Finish/Color/Appearance/Coating | Candidate values; no terms created |
+| Nominal/market Diameter | Shared global attribute | Attribute dictionary | Family-configured axis; numeric millimetre values are nominal, not OD/ID | Candidate values; no terms created |
 | Thickness | Shared global attribute | Attribute dictionary | Variation axis; numeric millimetre values from the matrix | Candidate values; no terms created |
 | Length | Shared global attribute | Attribute dictionary | Variation axis; numeric metre values `3` or `6` | Candidate values; no terms created |
 | Unit | Shared reference attribute | Attribute dictionary | Fixed value `meter`; not a variation axis | Defined in data contract only |
@@ -57,7 +71,7 @@ The future parent record must:
 - Use the row role `variable`.
 - Resolve to one approved downstream parent mapping ID and one approved operational parent SKU before execution; neither is a canonical entity identity.
 - Own the Persian presentation name, approved category view, Material/Unit display, shared content, and projected axes; it does not own their canonical source definitions.
-- Mirror Grade, Finish, Diameter, Thickness, and Length as variation-capable global attributes only when canonical Variant Rules and their runtime identities/terms are separately approved.
+- Mirror only the Family-configured selector axes and dependency order after canonical Variant Rules and runtime identities/terms are separately approved.
 - Preserve `inquiry_only=yes` and an empty public price.
 - Expose no cart, checkout, payment, public quotation, price range, or stock promise.
 - Own an approved canonical public-page URL only after URL and SEO review; URL ownership does not transfer Product truth.
@@ -158,6 +172,7 @@ This sequence describes dependencies only. It does not authorize or execute any 
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2.0 | 2026-08-21 | C006 architecture-only reconciliation made the downstream selector Family-configured, separated appearance and dimensional semantics, and excluded Knowledge, service, and dynamic commercial data from Product identity; no WooCommerce or runtime mutation. |
 | 0.1.0 | 2026-07-04 | Initial Sprint 03B logical WooCommerce mapping; no configuration or import executed. |
 | 0.1.1 | 2026-08-03 | Reclassified every Parent, Variation, taxonomy, SKU, SEO, and WooCommerce reference as a downstream projection of canonical Family/Series/Variant Rules; no object, term, mapping, import, or runtime change was created. |
 

@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Product Data Owner, Qualified Steel-Domain Reviewer, and WooCommerce Reviewer
 - **Approval Authority:** Founder
-- **Version:** 0.1.1
-- **Last Updated:** 2026-08-03
-- **Last Review:** 2026-08-03
+- **Version:** 0.2.0
+- **Last Updated:** 2026-08-21
+- **Last Review:** 2026-08-21
 - **Review Cycle:** On required field, allowed value, slug, naming, SKU, duplicate, relationship, price, import, or approval-gate change
 - **Lifecycle:** Review
 - **Source of Truth:** Canonical Product Repository chain `Catalog → Platform → Family → Series → Variant Rules → derived SKU`; Sprint 03A evidence and downstream WooCommerce/Attribute/Inquiry mappings remain bounded consumers
@@ -23,6 +23,27 @@
 ## Purpose
 
 Define deterministic pre-import rules for Stainless Steel Pipe assets. Passing these rules means a dataset is structurally reviewable; it does not authorize WordPress import or publication.
+
+## C006 Architecture Validation Overlay
+
+The required-field lists below validate the legacy staging shape only. A current
+dataset must additionally fail closed unless the applicable Family configuration
+and Variant Rules identify the selector axes, dependency order, allowed values,
+and valid tuples; validators must not hard-code the Sprint 03A five-axis order.
+
+- Treat legacy `finish` values, including immutable PD-03A `finish=Silver`, as
+  bounded appearance designations. Never equate Finish, Color, Appearance, or
+  Coating Method without an explicit canonical mapping.
+- Treat `diameter_mm` as nominal/market Diameter. OD requires its own source and
+  measurement/standard semantics; ID must be calculated from validated inputs,
+  carry formula/version provenance, and be labeled derived.
+- Permit Brand as a selector only with canonical identity/provenance and Family
+  rules. Keep application/suitability in Knowledge relationships, fulfilment
+  options in service data, and Mass/Availability/Pricing in dynamic commercial
+  lifecycles with evidence and freshness.
+
+This overlay defines architecture checks only; no validator execution, data
+population, import, Product/SKU, commercial claim, or runtime authority exists.
 
 ## Validation Outcomes
 
@@ -69,8 +90,8 @@ The table preserves Sprint 03A candidate evidence for deterministic staging chec
 | `product_type` | `variable`, `variation` according to row role |
 | `material` | `stainless-steel` working family value; final terminology approval required |
 | `grade` | `201`, `304`, `316`, `430` |
-| `finish` | `silver`, `gold-pvd`, `black-pvd` |
-| `diameter_mm` | `16`, `19`, `22`, `25`, `32`, `38`, `42`, `51`, `63`, `76`, `102` |
+| `finish` | Legacy appearance candidates `silver`, `gold-pvd`, `black-pvd`; not a general Finish/Color/Coating vocabulary |
+| `diameter_mm` | Legacy nominal/market Diameter candidates `16`, `19`, `22`, `25`, `32`, `38`, `42`, `51`, `63`, `76`, `102`; not OD/ID |
 | `thickness_mm` | `0.6`, `0.8`, `1`, `1.2`, `1.5`, `2` |
 | `length_m` | `3`, `6` |
 | `unit` | `meter` |
@@ -187,6 +208,7 @@ No gate is satisfied by file creation alone.
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2.0 | 2026-08-21 | C006 architecture-only validation overlay requires Family-configured dependent selectors, separate appearance/dimension semantics, and distinct Knowledge, service, and dynamic-commercial lifecycles; no executable validator or runtime change. |
 | 0.1.0 | 2026-07-04 | Initial Sprint 03A deterministic product-data validation contract. |
 | 0.1.1 | 2026-08-03 | Rebased identity, hierarchy, applicability, candidate values, axes and tuple validation on canonical Repository/Variant Rules sources and limited Parent/Variation/Woo/slug checks to downstream adapter or public-page namespaces; no validator execution. |
 

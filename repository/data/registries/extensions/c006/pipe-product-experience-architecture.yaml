@@ -1,0 +1,356 @@
+data_classification: C006_ARCHITECTURE_ONLY
+registry_version: "1.0.0"
+contract_version: "1.0.0"
+mission_id: C006
+starting_main_sha: ea616b08ef2f4012afd011684dfe4e5c98cd8fcf
+truth_class_vocabulary: [CANONICAL_SELECTION, DERIVED_TECHNICAL, DYNAMIC_COMMERCIAL, KNOWLEDGE_CONTENT, SERVICE_FULFILLMENT, OPERATOR_INTERNAL]
+source_manifest:
+  channel_id: C0BNHRRTE9F
+  author_user_id: U0BNFS43TBL
+  source_count: 5
+  complete_threads_verified: true
+  sources:
+    - source_id: C006_MOP_PARENT
+      sequence: 1
+      message_ts: "1787086720.993949"
+      parent_ts: "1787086720.993949"
+      message_role: THREAD_PARENT
+      title: C006 MASTER ORCHESTRATION PLAN — SINGLE-PROMPT CODEX EXECUTION — 2026-08-18
+      captured_at: "2026-08-19T00:28:40+03:30"
+      thread_complete: true
+      parent_reply_count: 2
+      authority_role: FOUNDER_ACCEPTED_PLANNING_DIRECTION
+      promotion_effect: false
+    - source_id: C006_MOP_PART_2
+      sequence: 2
+      message_ts: "1787086738.441119"
+      parent_ts: "1787086720.993949"
+      message_role: THREAD_REPLY
+      title: C006-MOP-01 — PART 2 — AGENT TOPOLOGY & REASONING BUDGET
+      captured_at: "2026-08-19T00:28:58+03:30"
+      thread_complete: true
+      parent_reply_count: null
+      authority_role: FOUNDER_ACCEPTED_PLANNING_DIRECTION
+      promotion_effect: false
+    - source_id: C006_MOP_PART_3
+      sequence: 3
+      message_ts: "1787086759.886949"
+      parent_ts: "1787086720.993949"
+      message_role: THREAD_REPLY
+      title: C006-MOP-01 — PART 3 — INTERNAL EPICS, QUALITY GATES & FINAL HANDOFF
+      captured_at: "2026-08-19T00:29:19+03:30"
+      thread_complete: true
+      parent_reply_count: null
+      authority_role: FOUNDER_ACCEPTED_PLANNING_DIRECTION
+      promotion_effect: false
+    - source_id: C006_PIPE_INFORMATION_MODEL
+      sequence: 4
+      message_ts: "1787084095.125229"
+      parent_ts: "1787084095.125229"
+      message_role: THREAD_PARENT
+      title: PRODUCT DATA ENHANCEMENT CHECKPOINT — PIPE INFORMATION MODEL — 2026-08-18
+      captured_at: "2026-08-18T23:44:55+03:30"
+      thread_complete: true
+      parent_reply_count: 1
+      authority_role: FOUNDER_ACCEPTED_PLANNING_DIRECTION
+      promotion_effect: false
+    - source_id: C006_PRODUCT_PAGE_ADDENDUM_A
+      sequence: 5
+      message_ts: "1787084980.103649"
+      parent_ts: "1787084095.125229"
+      message_role: THREAD_REPLY
+      title: PRODUCT PAGE INTERACTION MODEL — ADDENDUM A — 2026-08-18
+      captured_at: "2026-08-18T23:59:40+03:30"
+      thread_complete: true
+      parent_reply_count: null
+      authority_role: FOUNDER_ACCEPTED_PLANNING_DIRECTION
+      promotion_effect: false
+authority_effects:
+  semantic_reconciliation: true
+  projection_architecture: true
+  owner_interface_definition: true
+  documentation_contract_schema_validator_test: true
+  branch_commit_push_non_draft_pr: true
+  attributable_ci_repair: true
+  product_population: false
+  product_value_population: false
+  variant_population: false
+  valid_tuple_promotion: false
+  sku_population: false
+  mass_observation_population: false
+  mass_promotion: false
+  supply_population: false
+  availability_population: false
+  stock_or_supplier_truth: false
+  current_or_public_price: false
+  pricing_activation: false
+  media_asset_population: false
+  knowledge_content_population: false
+  seo_page_creation: false
+  customer_crm_order_quote_population: false
+  cart_checkout_payment: false
+  public_pricing: false
+  wordpress_woocommerce_mutation: false
+  import_publication: false
+  runtime_staging_production: false
+  deployment: false
+  competitor_asset_reuse: false
+  c1_t03_repair: false
+  merge: false
+  branch_deletion: false
+  successor_mission: false
+owner_bindings:
+  - domain: PRODUCT_IDENTITY
+    sequence: 1
+    canonical_owner: PRODUCT_CORE
+    owner_kind: EXISTING_CANONICAL_OWNER
+    c006_role: READ_ONLY_INTERFACE
+    writeback_allowed: false
+    authority_transfer: false
+  - domain: ATTRIBUTE_DEFINITION
+    sequence: 2
+    canonical_owner: PRODUCT_ATTRIBUTE
+    owner_kind: EXISTING_CANONICAL_OWNER
+    c006_role: READ_ONLY_INTERFACE
+    writeback_allowed: false
+    authority_transfer: false
+  - domain: VARIANT_RULE_SET
+    sequence: 3
+    canonical_owner: VARIANT_RULE_SET
+    owner_kind: EXISTING_CANONICAL_OWNER
+    c006_role: READ_ONLY_INTERFACE
+    writeback_allowed: false
+    authority_transfer: false
+  - domain: MEASUREMENT
+    sequence: 4
+    canonical_owner: MEASUREMENT_FOUNDATION
+    owner_kind: EXISTING_CANONICAL_OWNER
+    c006_role: READ_ONLY_INTERFACE
+    writeback_allowed: false
+    authority_transfer: false
+  - domain: BRAND_IDENTITY
+    sequence: 5
+    canonical_owner: BRAND_IDENTITY
+    owner_kind: FUTURE_GATED_OWNER
+    c006_role: BOUNDARY_ONLY
+    writeback_allowed: false
+    authority_transfer: false
+  - domain: C002_BRAND_PROVENANCE
+    sequence: 6
+    canonical_owner: C002_BRAND_PROVENANCE
+    owner_kind: EXISTING_POLICY_OWNER
+    c006_role: READ_ONLY_INTERFACE
+    writeback_allowed: false
+    authority_transfer: false
+  - domain: MASS
+    sequence: 7
+    canonical_owner: C002_MASS_PROVENANCE
+    owner_kind: EXISTING_POLICY_OWNER
+    c006_role: READ_ONLY_INTERFACE
+    writeback_allowed: false
+    authority_transfer: false
+  - domain: AVAILABILITY
+    sequence: 8
+    canonical_owner: FUTURE_AVAILABILITY_EVIDENCE_CONTRACT
+    owner_kind: FUTURE_GATED_OWNER
+    c006_role: BOUNDARY_ONLY
+    writeback_allowed: false
+    authority_transfer: false
+  - domain: PRICING_AUTHORITY
+    sequence: 9
+    canonical_owner: PRICING_AUTHORITY
+    owner_kind: FUTURE_GATED_OWNER
+    c006_role: BOUNDARY_ONLY
+    writeback_allowed: false
+    authority_transfer: false
+  - domain: CUSTOMER_ORDER_UNIT_POLICY
+    sequence: 10
+    canonical_owner: CUSTOMER_ORDER_UNIT_POLICY
+    owner_kind: FUTURE_GATED_OWNER
+    c006_role: BOUNDARY_ONLY
+    writeback_allowed: false
+    authority_transfer: false
+  - domain: PRICING_BASIS_POLICY
+    sequence: 11
+    canonical_owner: PRICING_BASIS_POLICY
+    owner_kind: FUTURE_GATED_OWNER
+    c006_role: BOUNDARY_ONLY
+    writeback_allowed: false
+    authority_transfer: false
+  - domain: MEDIA
+    sequence: 12
+    canonical_owner: FUTURE_MEDIA_REPOSITORY
+    owner_kind: FUTURE_GATED_OWNER
+    c006_role: BOUNDARY_ONLY
+    writeback_allowed: false
+    authority_transfer: false
+  - domain: KNOWLEDGE
+    sequence: 13
+    canonical_owner: FUTURE_KNOWLEDGE_REPOSITORY
+    owner_kind: FUTURE_GATED_OWNER
+    c006_role: BOUNDARY_ONLY
+    writeback_allowed: false
+    authority_transfer: false
+  - domain: SERVICE_POLICY
+    sequence: 14
+    canonical_owner: SERVICE_POLICY
+    owner_kind: FUTURE_GATED_OWNER
+    c006_role: BOUNDARY_ONLY
+    writeback_allowed: false
+    authority_transfer: false
+  - domain: INQUIRY_CONTEXT
+    sequence: 15
+    canonical_owner: INQUIRY_DATA_MODEL
+    owner_kind: EXISTING_ARCHITECTURE_OWNER
+    c006_role: READ_ONLY_PROJECTION
+    writeback_allowed: false
+    authority_transfer: false
+  - domain: SEO_INTENT
+    sequence: 16
+    canonical_owner: SEO_INTENT_OWNER
+    owner_kind: EXISTING_ARCHITECTURE_OWNER
+    c006_role: READ_ONLY_PROJECTION
+    writeback_allowed: false
+    authority_transfer: false
+  - domain: WOOCOMMERCE
+    sequence: 17
+    canonical_owner: WOOCOMMERCE_ADAPTER
+    owner_kind: PROJECTION_ONLY
+    c006_role: READ_ONLY_PROJECTION
+    writeback_allowed: false
+    authority_transfer: false
+semantic_fields:
+  - {field_id: C006-FIELD-001, sequence: 1, field_key: product_family_type, data_class: CANONICAL_SELECTION, owner_domain: PRODUCT_IDENTITY, evidence_mode: CANONICAL_REFERENCE, selector_eligible: false, immutable_product_identity: true}
+  - {field_id: C006-FIELD-002, sequence: 2, field_key: grade_alloy, data_class: CANONICAL_SELECTION, owner_domain: ATTRIBUTE_DEFINITION, evidence_mode: CANONICAL_REFERENCE, selector_eligible: true, immutable_product_identity: true}
+  - {field_id: C006-FIELD-003, sequence: 3, field_key: brand, data_class: CANONICAL_SELECTION, owner_domain: BRAND_IDENTITY, provenance_owner_domain: C002_BRAND_PROVENANCE, evidence_mode: VERIFIED_PROVENANCE, selector_eligible: true, immutable_product_identity: true}
+  - {field_id: C006-FIELD-004, sequence: 4, field_key: market_nominal_size, data_class: CANONICAL_SELECTION, owner_domain: ATTRIBUTE_DEFINITION, evidence_mode: CANONICAL_REFERENCE, selector_eligible: true, immutable_product_identity: true}
+  - {field_id: C006-FIELD-005, sequence: 5, field_key: outside_diameter, data_class: CANONICAL_SELECTION, owner_domain: MEASUREMENT, evidence_mode: MEASURED_OR_MANUFACTURER_EVIDENCE, selector_eligible: false, immutable_product_identity: true}
+  - {field_id: C006-FIELD-006, sequence: 6, field_key: inside_diameter, data_class: DERIVED_TECHNICAL, owner_domain: MEASUREMENT, evidence_mode: CALCULATED_NOMINAL, selector_eligible: false, immutable_product_identity: false}
+  - {field_id: C006-FIELD-007, sequence: 7, field_key: thickness, data_class: CANONICAL_SELECTION, owner_domain: ATTRIBUTE_DEFINITION, evidence_mode: CANONICAL_REFERENCE, selector_eligible: true, immutable_product_identity: true}
+  - {field_id: C006-FIELD-008, sequence: 8, field_key: finish, data_class: CANONICAL_SELECTION, owner_domain: ATTRIBUTE_DEFINITION, evidence_mode: CANONICAL_REFERENCE, selector_eligible: true, immutable_product_identity: true}
+  - {field_id: C006-FIELD-009, sequence: 9, field_key: color, data_class: CANONICAL_SELECTION, owner_domain: ATTRIBUTE_DEFINITION, evidence_mode: CANONICAL_REFERENCE, selector_eligible: true, immutable_product_identity: true}
+  - {field_id: C006-FIELD-010, sequence: 10, field_key: appearance, data_class: CANONICAL_SELECTION, owner_domain: ATTRIBUTE_DEFINITION, evidence_mode: CANONICAL_REFERENCE, selector_eligible: true, immutable_product_identity: true}
+  - {field_id: C006-FIELD-011, sequence: 11, field_key: coating_method, data_class: CANONICAL_SELECTION, owner_domain: ATTRIBUTE_DEFINITION, evidence_mode: CANONICAL_REFERENCE, selector_eligible: true, immutable_product_identity: true}
+  - {field_id: C006-FIELD-012, sequence: 12, field_key: length, data_class: CANONICAL_SELECTION, owner_domain: ATTRIBUTE_DEFINITION, evidence_mode: CANONICAL_REFERENCE, selector_eligible: true, immutable_product_identity: true}
+  - {field_id: C006-FIELD-013, sequence: 13, field_key: production_seam_method, data_class: CANONICAL_SELECTION, owner_domain: ATTRIBUTE_DEFINITION, evidence_mode: QUALIFIED_TECHNICAL_EVIDENCE, selector_eligible: false, immutable_product_identity: true}
+  - {field_id: C006-FIELD-014, sequence: 14, field_key: material_manufacturing_standard, data_class: CANONICAL_SELECTION, owner_domain: ATTRIBUTE_DEFINITION, evidence_mode: QUALIFIED_TECHNICAL_EVIDENCE, selector_eligible: false, immutable_product_identity: true}
+  - {field_id: C006-FIELD-015, sequence: 15, field_key: tolerance, data_class: CANONICAL_SELECTION, owner_domain: MEASUREMENT, evidence_mode: QUALIFIED_TECHNICAL_EVIDENCE, selector_eligible: false, immutable_product_identity: true}
+  - {field_id: C006-FIELD-016, sequence: 16, field_key: current_branch_mass, data_class: DYNAMIC_COMMERCIAL, owner_domain: MASS, evidence_mode: CURRENT_GOVERNED_EVIDENCE, selector_eligible: false, immutable_product_identity: false}
+  - {field_id: C006-FIELD-017, sequence: 17, field_key: availability, data_class: DYNAMIC_COMMERCIAL, owner_domain: AVAILABILITY, evidence_mode: CURRENT_GOVERNED_EVIDENCE, selector_eligible: false, immutable_product_identity: false}
+  - {field_id: C006-FIELD-018, sequence: 18, field_key: price, data_class: DYNAMIC_COMMERCIAL, owner_domain: PRICING_AUTHORITY, evidence_mode: AUTHORIZED_COMMERCIAL_STATE, selector_eligible: false, immutable_product_identity: false}
+  - {field_id: C006-FIELD-019, sequence: 19, field_key: customer_order_unit, data_class: DYNAMIC_COMMERCIAL, owner_domain: CUSTOMER_ORDER_UNIT_POLICY, evidence_mode: AUTHORIZED_COMMERCIAL_STATE, selector_eligible: false, immutable_product_identity: false}
+  - {field_id: C006-FIELD-020, sequence: 20, field_key: pricing_basis, data_class: DYNAMIC_COMMERCIAL, owner_domain: PRICING_BASIS_POLICY, evidence_mode: AUTHORIZED_COMMERCIAL_STATE, selector_eligible: false, immutable_product_identity: false}
+  - {field_id: C006-FIELD-021, sequence: 21, field_key: applications_guidance, data_class: KNOWLEDGE_CONTENT, owner_domain: KNOWLEDGE, evidence_mode: REVIEWED_KNOWLEDGE, selector_eligible: false, immutable_product_identity: false}
+  - {field_id: C006-FIELD-022, sequence: 22, field_key: cutting, data_class: SERVICE_FULFILLMENT, owner_domain: SERVICE_POLICY, evidence_mode: AUTHORIZED_SERVICE_POLICY, selector_eligible: false, immutable_product_identity: false}
+  - {field_id: C006-FIELD-023, sequence: 23, field_key: shipping_handling, data_class: SERVICE_FULFILLMENT, owner_domain: SERVICE_POLICY, evidence_mode: AUTHORIZED_SERVICE_POLICY, selector_eligible: false, immutable_product_identity: false}
+derivation_rules:
+  - derivation_id: C006-DERIVE-001
+    output_field: inside_diameter
+    input_fields: [outside_diameter, thickness]
+    formula: inside_diameter = outside_diameter - (2 * thickness)
+    classification: CALCULATED_NOMINAL
+    measured_evidence: false
+    unit_compatibility_required: true
+    nonnegative_result_required: true
+variant_resolution:
+  owner: VARIANT_RULE_SET
+  selector_order_scope: PER_PRODUCT_FAMILY
+  globally_hardcoded_order: false
+  evidence_backed_valid_combination_required: true
+  cartesian_generation: false
+  combination_states: [UNKNOWN, INCOMPATIBLE, NEEDS_VERIFICATION, CONFIRMED_VALID]
+  availability_is_separate: true
+  unknown_means_out_of_stock: false
+  unsupported_option_selectable: false
+  selected_context_visible: true
+  selection_reversible: true
+  reset_supported: true
+mass_lifecycle:
+  owner: C002_MASS_PROVENANCE
+  states: [CURRENT, NEXT_PENDING, HISTORICAL]
+  promotion_actor: OPERATOR
+  allowed_transition: NEXT_PENDING_TO_CURRENT_AND_PRIOR_CURRENT_TO_HISTORICAL
+  automatic_promotion: false
+  numeric_observation_count: 0
+  embedded_in_product_identity: false
+availability_boundary:
+  owner: FUTURE_AVAILABILITY_EVIDENCE_CONTRACT
+  states: [UNKNOWN, AVAILABLE, RAPIDLY_SOURCEABLE, INQUIRY_REQUIRED, CURRENTLY_UNAVAILABLE]
+  available_requires_current_governed_evidence: true
+  supplier_habit_inference: false
+  missing_evidence_means_out_of_stock: false
+  exact_inventory_quantity_public: false
+pricing_boundary:
+  price_owner: PRICING_AUTHORITY
+  customer_order_unit_owner: CUSTOMER_ORDER_UNIT_POLICY
+  pricing_basis_owner: PRICING_BASIS_POLICY
+  current_price_value_count: 0
+  product_truth_field: false
+  customer_order_unit_and_pricing_basis_distinct: true
+  public_pricing_enabled: false
+media_knowledge:
+  media_precedence: [VARIANT_OVERRIDE, APPEARANCE_OR_FINISH_OVERRIDE, FAMILY_DEFAULT]
+  selected_visual_mismatch_blocks_inheritance: true
+  false_visual_inheritance_allowed: false
+  rights_safe_evidence_required: true
+  competitor_asset_reuse: false
+  knowledge_precedence: [FAMILY_CORE, GRADE_EXTENSION, BRAND_EXTENSION, VARIANT_EXTENSION]
+  knowledge_creates_product_truth: false
+product_experience:
+  flow: [CANONICAL_PRODUCT_FAMILY, DEPENDENT_VARIANT_SELECTOR, VALID_COMBINATION_ENGINE, LIVE_PRODUCT_SUMMARY, DYNAMIC_TECHNICAL_DATA, DYNAMIC_COMMERCIAL_CONTEXT, MEDIA_CONTENT_INHERITANCE, CTA_BY_COMMERCE_ELIGIBILITY]
+  mobile_first: true
+  persian_rtl: true
+  progressive_disclosure: true
+  primary_summary_compact: true
+  technical_details_expandable: true
+  operator_handoff_preserves_exact_selected_context: true
+seo_projection:
+  selector_state_indexed_by_default: false
+  query_state_indexed_by_default: false
+  page_per_tuple: false
+  unique_search_intent_required: true
+  original_useful_content_required: true
+  anti_cannibalization_review_required: true
+  one_canonical_commercial_owner_per_intent: true
+woocommerce_projection:
+  owner: WOOCOMMERCE_ADAPTER
+  canonical_product_truth_owner: false
+  canonical_commerce_authority: false
+  variation_is_canonical_product_truth: false
+  writeback_to_repository_truth: false
+cta_boundary:
+  commerce_state: INQUIRY_ONLY
+  current_ctas: [INQUIRY, OPERATOR_VERIFICATION]
+  purchase_cta_enabled: false
+  cart_enabled: false
+  checkout_enabled: false
+  payment_enabled: false
+  future_purchase_requires_separate_commerce_eligibility: true
+service_boundary:
+  owner: SERVICE_POLICY
+  services: [CUTTING_AVAILABILITY, CUTTING_CHARGE, SHIPPING_HANDLING]
+  product_attribute: false
+  immutable_product_identity: false
+  implementation_created: false
+regression_anchors:
+  c002_candidate_count: 0
+  c002_policy_count: 8
+  c002_policy_instance_count: 0
+  c002_mass_methods: [MANUFACTURER_STATED, MEASURED, CALCULATED]
+  c003_r3_confirmed_evidence_positions: 216
+  c003_r3_persisted_cartesian_rows: false
+  c004_competitor_count: 13
+  c004_score_count: 364
+  c004_advantage_counts: {USE_NOW: 7, PLAN_NOW_IMPLEMENT_LATER: 3}
+  c005_evidence_count: 17
+  c005_readiness: {SUBMITTED: 8, MISSING: 1, REVIEWABLE: 6, OPEN_BLOCKING: 9, VERIFIED: 0, RESOLVED: 0, REQUIRED: 9, STATE: NOT_READY}
+  canonical_product_entity_count: 3
+  canonical_sku_count: 0
+  approved_attribute_count: 6
+  numeric_mass_count: 0
+  supply_count: 0
+  current_price_count: 0
+  c1_t03_state: FROZEN_AT_PROTECTED_ARCHITECTURE_BOUNDARY
+  commerce_state: INQUIRY_ONLY
+  runtime_authority: NONE
+  production_authority: NONE

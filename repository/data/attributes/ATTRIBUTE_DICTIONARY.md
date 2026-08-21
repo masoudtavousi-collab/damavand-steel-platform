@@ -8,8 +8,8 @@
 - **Owner:** Founder
 - **Reviewer:** Product Data Owner and Qualified Steel-Domain Reviewer
 - **Approval Authority:** Founder
-- **Version:** 0.1.1
-- **Last Updated:** 2026-08-03
+- **Version:** 0.2.0
+- **Last Updated:** 2026-08-21
 - **Last Review:** 2026-08-03
 - **Review Cycle:** On attribute name, label, slug, type, candidate use flag, registry input, Family/Series scope, Variant Rules resolution, CRM/SEO mapping, or validation change
 - **Lifecycle:** Review
@@ -33,6 +33,27 @@ Define a controlled identity and candidate-evidence dictionary for the Stainless
 - WooCommerce use, filtering, variation, SEO, and CRM columns are candidate downstream projections only. They create no Product, SKU, availability, public claim, or runtime approval.
 - The immutable PD-02B and PD-03A facts and exact overrides recorded below remain unchanged and are not generalized into broader Sprint 03A applicability.
 
+## C006 Semantic Reconciliation
+
+The table below preserves Sprint 03A candidate vocabulary, but C006 establishes
+the following architecture-only interpretation for every later consumer:
+
+- the legacy `finish` row and PD-03A `finish=Silver` are a bounded appearance
+  designation, not a general Finish/Color/coating taxonomy;
+- Finish, Color, Appearance, and Coating Method are separate concepts; PVD and
+  electrostatic coating remain separate namespaces;
+- `diameter` is nominal/market Diameter unless separately sourced as measured OD;
+  calculated ID requires evidence-backed OD and Thickness and is labeled
+  calculated/nominal, never measured;
+- Brand may participate in a Family selector only after canonical identity,
+  provenance, applicable Variant Rules, and valid-combination evidence exist;
+- Application is Knowledge/use-context input, not immutable Product identity;
+- cutting, packaging, and shipping are services; current Mass, Availability, and
+  Pricing are dynamic commercial data. None is an attribute axis.
+
+No new Attribute, controlled value, Product, tuple, Mass, Availability, Price, or
+runtime mapping is created by this reconciliation.
+
 ## Flag Semantics
 
 - `Yes` records a legacy Sprint 03A candidate for that downstream use; it does not establish applicability or axis authority.
@@ -47,16 +68,16 @@ Define a controlled identity and candidate-evidence dictionary for the Stainless
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Material | آلیاژ | `material` | Controlled term | Global shared specification | No | No | Yes | Yes | Yes | Family identity indicates Stainless Steel; supplied codes 201/304/316/430 are stored under Grade. Persian label conflicts with the existing Material/Alloy distinction and requires Founder/domain confirmation. |
 | Grade | گرید | `grade` | Controlled technical code | Global attribute | Yes | Yes | Yes | Yes | Yes | Sprint 03A candidate registry values: `201`, `304`, `316`, `430`; applicability and allowed-value status require resolution from the applicable Variant Rules. |
-| Finish | رنگ و پوشش | `finish` | Controlled term | Global attribute | Yes | Yes | Yes | Yes | Yes | Sprint 03A candidate registry values: `silver`, `gold-pvd`, `black-pvd`; applicability and allowed-value status require resolution from the applicable Variant Rules. |
-| Diameter | قطر | `diameter` | Decimal number, mm context | Global typed/controlled attribute | Yes | Yes | Yes | Yes | Yes | Candidate mm registry inputs are copied from the legacy Pipe Variation Matrix; applicable Variant Rules alone authorize values and axes. Store numeric value without duplicating unit text. |
+| Finish (legacy bounded appearance designation) | رنگ و پوشش | `finish` | Controlled term | Legacy global-attribute candidate | Yes | Yes | Yes | Yes | Yes | Sprint 03A candidate values are historical inputs only. PD-03A approves only `Silver` as an INTERNAL appearance designation; this row must not collapse Finish, Color, Appearance, PVD, or coating method. |
+| Diameter | قطر اسمی / بازاری | `diameter` | Decimal number, mm context | Global typed/controlled attribute | Yes | Yes | Yes | Yes | Yes | Candidate values are nominal/market Diameter unless separate OD evidence says otherwise. Applicable Variant Rules alone authorize values and axes. |
 | Thickness | ضخامت | `thickness` | Decimal number, mm context | Global typed/controlled attribute | Yes | Yes | Yes | Yes | Yes | Candidate mm registry inputs are copied from the legacy Pipe Variation Matrix; applicable Variant Rules alone authorize values and axes. Tolerance remains `TBD`. |
 | Length | طول | `length` | Decimal number, m context | Global typed/controlled attribute | Yes | Yes | Yes | Yes | Yes | Sprint 03A candidate registry values: `3`, `6`; applicable Variant Rules alone authorize values and axes. Display may append `m`; stored value remains numeric. |
 | Surface | سطح | `surface` | Controlled term | Global descriptive attribute | No | No | No | Yes | No | Exact surface definitions and relationship to Finish remain `TBD`; no free-text claims. |
 | Unit | واحد | `unit` | Controlled enum | Global reference attribute | No | No | No | Yes | Yes | Sprint 03A candidate registry value: `meter`; not a variation axis or standalone filter, and not applicable without Variant Rules resolution. |
-| Brand | برند | `brand` | Controlled relationship/term | Global attribute or approved brand mechanism | No | No | No | Yes | No | Value is `TBD`; do not invent manufacturer/supplier identity or duplicate Brand taxonomy authority. |
+| Brand | برند | `brand` | Controlled relationship/term | Global attribute or approved brand mechanism | Conditional | Conditional | No | Yes | No | Value is `TBD`; selector use requires canonical identity, C002 provenance, and Variant Rule binding. Do not infer Brand from manufacturer or supplier. |
 | Country | کشور سازنده | `country` | Controlled term | Global descriptive attribute | No | No | No | Yes | No | Value is `TBD`; requires verified legal/operational source and must distinguish manufacturing origin from shipping origin. |
 | Quality Level | سطح کیفیت | `quality-level` | Controlled enum | Global descriptive attribute | No | No | No | Yes | No | Value set is `TBD`; must not imply grade, certification, standard, warranty, or origin. |
-| Application | کاربرد | `application` | Controlled relationship/term | Global descriptive attribute | No | No | Yes | Yes | No | Value set and taxonomy authority are `TBD`; SEO use requires one canonical intent owner and suitability evidence. |
+| Application | کاربرد | `application` | Governed Knowledge/use-context relationship | No Product-attribute authority | No | No | Yes | Yes | No | Value set and taxonomy authority are `TBD`; application guidance is Knowledge, not Product identity or a Variant axis. |
 | Environment | محیط استفاده | `environment` | Controlled term | Global descriptive attribute | No | No | No | Yes | No | Value set is `TBD`; no suitability or safety claim without technical evidence. |
 | Installation Use | نوع مصرف | `installation-use` | Controlled term | Global descriptive attribute | No | No | No | Yes | No | Value set is `TBD`; keep distinct from installation instructions and Application taxonomy. |
 | Stock Status | وضعیت تأمین | `stock-status` | Controlled enum | Variation operational metadata; future Woo mapping | No | No | No | Yes | Yes | Commercial availability is `TBD`; no public stock, backorder, lead-time, or supply promise. |
@@ -101,6 +122,7 @@ The values below are preserved exactly as Sprint 03A candidate evidence. They ar
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2.0 | 2026-08-21 | Added the C006 architecture-only semantic overlay for legacy Finish/appearance, nominal Diameter versus OD/calculated ID, conditional Brand selection, and Product/Knowledge/service/dynamic-commercial separation; no canonical records changed. |
 | 0.1.0 | 2026-07-04 | Initial Sprint 03A attribute dictionary for Stainless Steel Pipe. |
 | 0.1.1 | 2026-08-03 | Classified Sprint 03A tables, values, and axes as legacy/candidate registry inputs; applicability, allowed values, axes, and valid tuples now resolve only from applicable Variant Rules. PD-02B and PD-03A facts and overrides remain unchanged; no Product, SKU, availability, or runtime approval. |
 

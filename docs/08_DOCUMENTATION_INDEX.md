@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.22.0
-- **Last Updated:** 2026-08-18
-- **Last Review:** 2026-08-18
+- **Version:** 0.23.0
+- **Last Updated:** 2026-08-21
+- **Last Review:** 2026-08-21
 - **Review Cycle:** On document creation, removal, rename, lifecycle, authority, or navigation change
 - **Lifecycle:** Draft
 - **Source of Truth:** Current repository documentation paths plus each document's recorded status and authority
@@ -26,7 +26,7 @@ Provide the canonical map of repository documentation without replacing the auth
 
 ## Current Repository-Control Context
 
-[Current Project State](CURRENT_PROJECT_STATE.md) is the only mutable operational-state pointer. This index records document roles and stable integration history; it does not restate the active branch, pull-request state, or live Git tip. [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md) is the accepted program `HOW`, [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) is the accepted Version 1.0 `WHAT`, and [C000 / Project OS 2.0](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md) is the accepted strategic operating reconciliation. [Context Router](CONTEXT_ROUTER.md) selects the smallest relevant source set without replacing any authority. [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md) governs only three seed/reference Pilot records; they are not Product/SKU/Availability or a future Fast-Track ceiling. [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md) defines contract infrastructure and empty instance registries only. [C003 Discovery Scope](C003_FOUNDER_DISCOVERY_RECONCILIATION_SCOPE_V1.0.md) preserves classified Founder evidence and inactive owner/backlog mappings only. C1-T03 is frozen, and actual Product population, Runtime, commerce activation, Production, C003-A, C003-B, and successor execution remain separately gated.
+[Current Project State](CURRENT_PROJECT_STATE.md) is the only mutable operational-state pointer. This index records document roles and stable integration history; it does not restate the active branch, pull-request state, or live Git tip. [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md) is the accepted program `HOW`, [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) is the accepted Version 1.0 `WHAT`, and [C000 / Project OS 2.0](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md) is the accepted strategic operating reconciliation. [Context Router](CONTEXT_ROUTER.md) selects the smallest relevant source set without replacing any authority. [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md) governs only three seed/reference Pilot records; they are not Product/SKU/Availability or a future Fast-Track ceiling. [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md) defines contract infrastructure and empty instance registries only. [C003 Discovery Scope](C003_FOUNDER_DISCOVERY_RECONCILIATION_SCOPE_V1.0.md) preserves classified Founder evidence and inactive owner/backlog mappings only. [C006 Scope](C006_PRODUCT_DATA_SEMANTIC_PRODUCT_EXPERIENCE_ARCHITECTURE_SCOPE_V1.0.md) governs semantic and Product Experience architecture only; it creates no Product, commercial or Runtime truth. C1-T03 is frozen, and actual Product population, Runtime, commerce activation, Production, C003-A, C003-B, and successor execution remain separately gated.
 
 ## Categories and Complete Document Map
 
@@ -118,6 +118,7 @@ Provide the canonical map of repository documentation without replacing the auth
 | [C004 Competitive Intelligence Scope v1.0](C004_COMPETITIVE_INTELLIGENCE_SCOPE_V1.0.md) | Founder-authorized source, owner, evidence-class, copyright, regression and no-go boundary for the 13-site competitive foundation | Review | Founder |
 | [C005 201/51 Founder Evidence & C002 Readiness Re-evaluation Scope v1.0](C005_201_51_FOUNDER_EVIDENCE_READINESS_REEVALUATION_SCOPE_V1.0.md) | Exact five-source evidence/owner boundary, 17 classified records, all-nine C002 re-evaluation and zero-population/no-go controls | Review | Founder |
 | [C005 201/51 Readiness Re-evaluation Packet v1.0](C005_201_51_READINESS_REEVALUATION_PACKET_V1.0.md) | Human review surface for 8 submitted, 1 missing, 6 separately reviewable and 9 open/blocking criteria with zero resolved readiness | Review | Founder |
+| [C006 Product Data Semantic & Product Experience Architecture Scope v1.0](C006_PRODUCT_DATA_SEMANTIC_PRODUCT_EXPERIENCE_ARCHITECTURE_SCOPE_V1.0.md) | Founder-authorized semantic and projection reconciliation with closed policy/interface validation and zero canonical population/runtime authority | Review | Founder |
 | [Competitive Intelligence Matrix v1.0](COMPETITIVE_INTELLIGENCE_MATRIX_V1.0.md) | Evidence-linked 28-dimension analysis-aid matrix and benchmark leadership map without an aggregate ranking | Evidence | Founder |
 | [Damavand Competitive Advantage Specification v1.0](DAMAVAND_COMPETITIVE_ADVANTAGE_SPECIFICATION_V1.0.md) | Ten original planning advantages with Fast Track/long-term dispositions and no implementation authority | Review | Founder |
 | [Damavand Competitive Anti-Pattern Register v1.0](DAMAVAND_COMPETITIVE_ANTI_PATTERN_REGISTER_V1.0.md) | Copyright-safe competitor-pattern risks and governed prevention rules | Review | Founder |
@@ -372,7 +373,7 @@ The Sprint 08A Enterprise Platform Blueprint set under `repository/enterprise-pl
 | Future Reference: Product Repository Architecture — `repository/enterprise-platform/02_PRODUCT_REPOSITORY_ARCHITECTURE.md` (Not yet approved) | Catalog → Platform → Family → Series → Variant Rules → SKU architecture and Variable Parent Product boundary | Review | Founder |
 | Future Reference: Knowledge Repository Architecture — `repository/enterprise-platform/03_KNOWLEDGE_REPOSITORY_ARCHITECTURE.md` (Not yet approved) | Material, Alloy, Family, Brand, Installation, Maintenance, FAQ/Customer, AI-readiness, and SEO knowledge domains | Review | Founder |
 | Future Reference: Product Configurator Engine — `repository/enterprise-platform/04_PRODUCT_CONFIGURATOR_ENGINE.md` (Not yet approved) | Primary, Secondary, and Commercial Variant blueprint with no public pricing or runtime logic | Review | Founder |
-| Future Reference: Product Experience Engine — `repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md` (Not yet approved) | Selection → Education → Recommendation → Assembly → Calculation → Inquiry journey blueprint | Review | Founder |
+| [Product Experience Engine](../repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md) | C006 architecture-only owner for dependent selection, context summary, media/knowledge projection, SEO state and Inquiry CTA boundaries; no runtime implementation | Review | Founder |
 | Future Reference: Guided Selection Engine — `repository/enterprise-platform/06_GUIDED_SELECTION_ENGINE.md` (Not yet approved) | Environment, project type, usage, budget, alloy, thickness, and brand guidance model | Review | Founder |
 | Future Reference: Assembly Engine — `repository/enterprise-platform/07_ASSEMBLY_ENGINE.md` (Not yet approved) | Internal component, installation item, companion product, compatibility, and inquiry package blueprint | Review | Founder |
 | Future Reference: Market Intelligence Repository — `repository/enterprise-platform/08_MARKET_INTELLIGENCE_REPOSITORY.md` (Not yet approved) | Installer preference, best-selling observation, common mistake, and recommendation evidence repository | Review | Founder |

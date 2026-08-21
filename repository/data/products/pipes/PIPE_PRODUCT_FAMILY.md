@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Product Data Owner and Qualified Steel-Domain Reviewer
 - **Approval Authority:** Founder
-- **Version:** 0.1.1
-- **Last Updated:** 2026-08-03
-- **Last Review:** 2026-08-03
+- **Version:** 0.2.0
+- **Last Updated:** 2026-08-21
+- **Last Review:** 2026-08-21
 - **Review Cycle:** On family identity, naming, parent strategy, variation axes, inquiry, SEO, WooCommerce, CRM, or commercial-data change
 - **Lifecycle:** Review
 - **Source of Truth:** Sprint 03A task-defined Stainless Steel Pipe family and approved repository product-data principles
@@ -44,7 +44,7 @@ The canonical Family and downstream Variable Parent Product mapping remain separ
 | --- | --- | --- | --- |
 | Family display name | لوله استیل | Stainless Steel Pipe | Stable controlled labels; changes require alias/mapping review |
 | Parent display name | لوله استیل | Stainless Steel Pipe | Working parent label; final approval pending |
-| Variation display order | گرید، پرداخت، قطر، ضخامت، طول | Grade, Finish, Diameter, Thickness, Length | Persian RTL presentation; canonical Repository structured fields remain authoritative |
+| Legacy variation display order | گرید، پرداخت، قطر، ضخامت، طول | Grade, Finish, Diameter, Thickness, Length | Historical Sprint 03A presentation only; the current selector is configured by Family/Variant Rules and is not universal |
 | Unit display | متر | meter | Unit key remains `meter`; quantity policy remains separate |
 
 Persian labels use normalized Persian characters and RTL punctuation. English internal keys remain lowercase ASCII and never replace Persian public labels.
@@ -58,6 +58,26 @@ Persian labels use normalized Persian characters and RTL punctuation. English in
 - Keep routine future administration manageable through controlled attributes rather than duplicated free text.
 
 This asset does not define prices, stock, suppliers, lead times, standards, warranties, final SKUs, or commercial availability.
+
+## C006 Product-Experience Boundary
+
+This architecture-only reconciliation does not create Product, SKU, Mass,
+Availability, Price, WooCommerce, or runtime records. Each Family must obtain its
+selector axes, order, dependencies, values, and valid tuples from approved
+Family configuration and Variant Rules; no universal selector is hard-coded.
+
+- Finish is surface-treatment state, Color is visual color, Appearance is the
+  observed/presented look, and Coating Method is the evidence-backed process.
+  They are separate concepts. The immutable PD-03A `finish=Silver` fact is kept
+  only as a bounded internal appearance designation, not generalized Finish.
+- Diameter selection means nominal/market Diameter. Outside Diameter is a
+  separate measured or standard-bound fact; Inside Diameter is calculated from
+  validated OD and wall thickness and must be labeled derived.
+- Brand is selectable only where approved Family rules and canonical
+  manufacturer/brand provenance make it identity-relevant.
+- Application and suitability belong to governed Knowledge relationships;
+  cutting, packaging, and shipping belong to service/fulfilment; Mass,
+  Availability, lead time, and Pricing remain dynamic commercial projections.
 
 ## Parent Product Strategy
 
@@ -92,14 +112,14 @@ This Review-state table preserves the Sprint 03A candidate vocabulary. It is non
 | Axis | Source | Variation use | Filter use | Notes |
 | --- | --- | --- | --- | --- |
 | Grade | Controlled values `201`, `304`, `316`, `430` | Yes | Yes | Sprint wording calls these Materials; canonical storage uses Grade to avoid duplicating Material authority |
-| Finish | Silver, Gold PVD, Black PVD | Yes | Yes | Color/coating/finish terminology requires domain confirmation |
-| Diameter | 16–102 mm controlled set | Yes | Yes | Numeric value stored separately from `mm` context |
+| Legacy appearance/finish token | Silver, Gold PVD, Black PVD | Historical candidate | Historical candidate | The values are preserved; canonical Finish, Color, Appearance, and Coating Method must be modeled separately |
+| Nominal/market Diameter | 16–102 mm controlled set | Historical candidate | Historical candidate | Numeric value is nominal, with unit stored separately; it is not OD or calculated ID |
 | Thickness | 0.6–2 mm controlled set | Yes | Yes | Numeric value stored separately from `mm` context |
 | Length | 3 m, 6 m | Yes | Yes | Numeric value stored separately from meter unit |
 
 ### Non-Axes
 
-Material family, Unit, Brand, Country, Quality Level, Application, Environment, Installation Use, Stock Status, Inquiry Priority, and Surface do not create variations in Sprint 03A.
+Material family, Unit, Country, Quality Level, Application, Environment, Installation Use, Stock Status, Inquiry Priority, and Surface do not create variations in Sprint 03A. Brand is not a universal axis; a future Family may expose it only under approved provenance and Variant Rules.
 
 ### Combination Boundary
 
@@ -129,7 +149,7 @@ Material family, Unit, Brand, Country, Quality Level, Application, Environment, 
 
 ## UX Behavior
 
-- Mobile First selection order: Grade → Finish → Diameter → Thickness → Length.
+- Mobile First selection follows the applicable Family/Variant Rules dependency graph and configured order. `Grade → Finish → Diameter → Thickness → Length` is a legacy Sprint 03A example, not a universal sequence.
 - Persian RTL labels appear before optional English technical tokens.
 - Numeric dimensions display explicit units and never rely on column position alone.
 - Invalid or unavailable combinations are not selectable or published.
@@ -141,7 +161,7 @@ Material family, Unit, Brand, Country, Quality Level, Application, Environment, 
 
 - The Variable Parent Product is the candidate default public product-page and canonical-URL/search-intent owner only; it is not the canonical Repository Product entity or source of Product truth.
 - Variation state is contextual to that downstream public page and has no independent canonical URL unless a later approved exception exists.
-- Grade, Finish, Diameter, Thickness, and Length are supporting facts; no attribute archive becomes indexable automatically.
+- Configured selection facts are supporting facts; no selector, dependent state, filter, or attribute archive becomes indexable automatically.
 - A Product Family/category landing may own family discovery intent only after SEO/Founder approval.
 - No price, Offer, transaction, stock promise, supplier, certification, or unsupported technical claim enters metadata or schema.
 - Canonical public-page slug and indexation remain `TBD`.
@@ -153,7 +173,7 @@ Material family, Unit, Brand, Country, Quality Level, Application, Environment, 
 | Legacy Product Family presentation | Downstream taxonomy/category view of the canonical Family | `TBD`; no term created and no canonical identity transferred |
 | Variable Parent Product | Downstream WooCommerce variable-product projection | Structure defined; no product created and no Product truth owned |
 | Variation | Downstream WooCommerce variation mapping of one governed tuple | Valid rows only; no variation created |
-| Grade/Finish/Dimensions | Approved global product attributes | Dictionary defined; no attribute/term created |
+| Configured Product selectors | Approved downstream attribute projections of Family/Variant Rules | Semantic boundary defined; no attribute/term created |
 | Inquiry behavior | Approved inquiry capability/context | Mechanism `TBD`; no plugin/configuration selected |
 | Pricing | Empty public price fields and exhaustive output suppression | Enforcement implementation `TBD` |
 | Stock Status | Controlled domain state mapped later | Commercial state `TBD`; no WooCommerce stock setting |
@@ -167,7 +187,7 @@ Future inquiry/CRM handoff may use:
 
 - Stable canonical source references and separate downstream Parent/Variation mapping identifiers.
 - Approved SKU snapshot when final SKUs exist.
-- Grade, Finish, Diameter, Thickness, Length, Unit, and requested quantity.
+- The approved Family-configured selection snapshot, Unit, and requested quantity.
 - Source entity/URL and Persian label snapshot.
 - Stock State snapshot as context only.
 - Inquiry Priority only when an approved Sales rule exists.
@@ -204,6 +224,7 @@ All commercial unknowns remain `TBD`; none may be converted into a claim during 
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2.0 | 2026-08-21 | C006 architecture-only reconciliation made selector order Family-configured, separated appearance semantics and dimensional roles, and kept Knowledge, service, and dynamic commercial facts outside Product identity; no population or runtime authority. |
 | 0.1.0 | 2026-07-04 | Initial Sprint 03A Stainless Steel Pipe family asset; no WordPress product or import created. |
 | 0.1.1 | 2026-08-03 | Reconciled Review-state Parent, variation, SEO, and WooCommerce language with `FD-W2G-001`; canonical Family/Series/Variant Rules remain Repository authority and no Product, SKU, mapping, or runtime object was created. |
 

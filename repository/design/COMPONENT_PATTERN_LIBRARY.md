@@ -8,13 +8,13 @@
 - **Owner:** Founder
 - **Reviewer:** Design, UX, Content, Accessibility, SEO, Product Data, Blocksy, Elementor, and Performance Reviewers
 - **Approval Authority:** Founder
-- **Version:** 0.1.1
-- **Last Updated:** 2026-08-03
-- **Last Review:** 2026-08-03
+- **Version:** 0.2.0
+- **Last Updated:** 2026-08-21
+- **Last Review:** 2026-08-21
 - **Review Cycle:** On component purpose, content/data contract, token, motion, ownership, accessibility, or platform change
 - **Lifecycle:** Review
 - **Source of Truth:** [Design Manifest](DESIGN_MANIFEST.md), approved content/data authorities, and approved platform ownership
-- **Dependencies:** [Design Manifest](DESIGN_MANIFEST.md), [Content Architecture](../../docs/29_CONTENT_ARCHITECTURE.md), [Blocksy Blueprint](../../docs/36_BLOCKSY_CONFIGURATION.md), and [Elementor Blueprint](../../docs/37_ELEMENTOR_ARCHITECTURE.md)
+- **Dependencies:** [Design Manifest](DESIGN_MANIFEST.md), [Product Experience Engine](../enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md), [Content Architecture](../../docs/29_CONTENT_ARCHITECTURE.md), [Blocksy Blueprint](../../docs/36_BLOCKSY_CONFIGURATION.md), and [Elementor Blueprint](../../docs/37_ELEMENTOR_ARCHITECTURE.md)
 - **Related Documents:** [Brand Language](BRAND_LANGUAGE.md), [Motion System](MOTION_SYSTEM.md), [Animation Library](ANIMATION_LIBRARY.md), and [Accessibility Rules](ACCESSIBILITY_RULES.md)
 - **Traceability:** CP-003–CP-007, `FD-W2G-001`, `FD-W2G-002`, BLOCKSY-003–BLOCKSY-009, ELEMENTOR-001–ELEMENTOR-009, and Sprint 05A
 - **AI Compatibility:** AI-readable pattern contracts; no generated component, page, template, or runtime feature is authorized
@@ -82,14 +82,41 @@ Every component requires an approved purpose, owner, source fields/content, life
 - **Mobile/RTL:** Core facts and inquiry remain visible without hover; mixed-script dimensions are readable.
 - **Constraints:** No public price, cart, checkout, Offer, invented availability, or local duplicate facts.
 
+### Dependent Variant Selector
+
+- **Purpose:** Ask only the next Family-configured question and expose only options permitted by governed Variant Rules.
+- **Required content:** Current question, governed options, explicit selected/disabled/unknown/verification states, visible selected context, and back/change/reset controls.
+- **Ownership:** Variant Rules owns axes, values, constraints, and valid tuples; the Product Experience Engine owns presentation sequence only.
+- **Motion:** Short state feedback only; content and option availability never depend on animation.
+- **Mobile/RTL:** One primary question per step, logical Persian RTL DOM/focus order, touch-safe controls, BiDi-safe technical values, and no horizontal trap.
+- **Constraints:** No universal hard-coded order, Cartesian options, inferred compatibility, unsupported option, hover-only state, or Availability inference.
+
+### Selected Product Summary
+
+- **Purpose:** Keep the current governed selection visible and provide a compact live summary before Inquiry handoff.
+- **Required content:** Canonical source context, selected attributes, independent combination-resolution state, and separately labeled technical/commercial projections when authorized.
+- **Ownership:** Each source domain retains authority; the component composes read-only projections and stores no facts.
+- **Motion:** Immediate update with optional restrained transition; assistive output announces material changes once.
+- **Mobile/RTL:** Compact primary summary with accessible disclosure for technical detail; selected values remain changeable without restarting the journey.
+- **Constraints:** No derived-as-measured value, unknown-as-out-of-stock, stale commercial fact, flattened ownership, public price, or purchase implication.
+
+### Product Media and Knowledge Region
+
+- **Purpose:** Present media and educational references that are explicitly applicable to the selected context.
+- **Required content:** Eligible media reference or governed placeholder, applicability/rights/access state, and approved public Knowledge references when available.
+- **Ownership:** Media and Knowledge/Content owners retain truth; Product Experience applies their inheritance and override rules.
+- **Motion:** Static first; gallery behavior requires separate accessibility and performance review.
+- **Mobile/RTL:** Preserve focal context, captions, alt text, reading order, and accessible disclosure on narrow viewports.
+- **Constraints:** No false Family-image inheritance across materially different Appearance/Finish, unapproved competitor asset, invented Knowledge, protected item, or media-derived Availability claim.
+
 ### Inquiry Card
 
 - **Purpose:** Explain and initiate the correct inquiry route with preserved context.
-- **Required content:** Inquiry type/purpose, required-context summary, explicit action, privacy/support cues where approved.
+- **Required content:** Inquiry type/purpose, exact governed selection or explicit unresolved state, required-context summary, explicit action, and privacy/support cues where approved.
 - **Ownership:** Inquiry model/capability owns workflow; presentation only renders approved states.
 - **Motion:** Minimal focus, validation, progress, and outcome feedback.
 - **Mobile/RTL:** One clear action, stable input/label alignment, no overlay dependency.
-- **Constraints:** No price promise, guaranteed response time, unapproved fields, or decorative ambient motion.
+- **Constraints:** No inherited purchase eligibility, checkout imitation, price promise, guaranteed response time, unapproved fields, or decorative ambient motion.
 
 ### Brand Logo Loop
 
@@ -167,6 +194,10 @@ Every component requires an approved purpose, owner, source fields/content, life
 
 Applicable components define: default, hover, focus-visible, active/current, selected, loading, disabled, empty, error, success, reduced-motion, offline/dependency-failure, and archived/unavailable states. Only states relevant to the component may be implemented; absent states are documented rather than improvised.
 
+For Product selection, combination resolution and Availability are separate state
+axes. A valid selection does not prove Availability; missing Availability evidence
+does not make a combination incompatible or out of stock.
+
 ## Future Acceptance Checklist
 
 - Canonical content/data and owner identified.
@@ -181,6 +212,7 @@ Applicable components define: default, hover, focus-visible, active/current, sel
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2.0 | 2026-08-21 | C006 architecture-only reconciliation: added dependent selector, selected summary, Media/Knowledge applicability, separate combination/Availability state, and Inquiry handoff contracts; no component or Runtime behavior created. |
 | 0.1.1 | 2026-08-03 | C1-T06 canonical-owner reconciliation under `FD-W2G-001` and `FD-W2G-002`: restricted Product facts to repository sources and qualified WordPress/WooCommerce, Blocksy, Elementor, and components as downstream operational/presentation consumers; no component, page, fact, or runtime object created. |
 | 0.1.0 | 2026-07-05 | Initial conceptual library for 14 required component patterns. |
 
@@ -191,3 +223,4 @@ Applicable components define: default, hover, focus-visible, active/current, sel
 - [Motion System](MOTION_SYSTEM.md)
 - [ReactBits Inspiration Mapping](REACTBITS_INSPIRATION_MAPPING.md)
 - [Animation Library](ANIMATION_LIBRARY.md)
+- [Product Experience Engine](../enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md)

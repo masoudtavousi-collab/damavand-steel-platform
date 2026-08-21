@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Product Data Owner, Qualified Steel-Domain Reviewer, SEO Reviewer, CRM Reviewer, and WooCommerce Technical Reviewer
 - **Approval Authority:** Founder
-- **Version:** 0.1.1
-- **Last Updated:** 2026-08-03
-- **Last Review:** 2026-08-03
+- **Version:** 0.2.0
+- **Last Updated:** 2026-08-21
+- **Last Review:** 2026-08-21
 - **Review Cycle:** On field, classification, display, filter, variation, SEO, CRM, requiredness, or source-contract change
 - **Lifecycle:** Review
 - **Source of Truth:** Sprint 03A/03B Pipe data contracts and the approved Product Taxonomy, Product Attribute, SEO Entity, Custom Fields, and Inquiry models
@@ -34,6 +34,19 @@ Assign one primary downstream classification to every Pipe field currently defin
 - WooCommerce Variation Attributes in this model are reusable system-local projections of axes governed by Variant Rules. They must not be implemented as local attributes and cannot define axis or tuple validity.
 - No field is classified as WooCommerce Local Attribute. Reusable governed specifications use canonical Repository concepts and at most one downstream WooCommerce mapping per concept.
 
+## C006 Classification Overlay
+
+The 29 rows below preserve the Sprint 03A/03B staging contract and do not create
+canonical Product fields. For current architecture, Finish, Color, Appearance,
+and Coating Method are separate; the `finish` staging column is a bounded legacy
+appearance designation. `diameter_mm` is nominal/market Diameter, while OD is an
+evidence-backed technical fact and ID is calculated and labeled derived. Actual
+selector axes and their order come from Family configuration and Variant Rules.
+Brand is selectable only under canonical provenance and Family rules.
+Application/suitability is primarily Knowledge, cutting/packaging/shipping are
+services, and Mass/Availability/Pricing are dynamic commercial data. No row in
+this legacy classification authorizes population, import, or runtime behavior.
+
 ## Field Classification Matrix
 
 | # | Field name | Persian label | Final classification | Reason | Public display | Filterable | Variation-driving | SEO use | CRM use | Required | Founder review required |
@@ -46,19 +59,19 @@ Assign one primary downstream classification to every Pipe field currently defin
 | 6 | `category` | دسته‌بندی محصول | WooCommerce Category | Downstream navigation/category projection mapped from canonical Family/Series sources; not a specification or canonical hierarchy | Yes | Yes | No | Yes | Yes | Yes | Yes |
 | 7 | `material` | آلیاژ | WooCommerce Global Attribute | Reusable family material context; working value is `stainless-steel` | Yes | No | No | Yes | Yes | Yes | Yes |
 | 8 | `grade` | گرید | WooCommerce Variation Attribute | Downstream projection of a controlled technical designation and an axis governed by Variant Rules | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
-| 9 | `finish` | رنگ و پوشش | WooCommerce Variation Attribute | Downstream projection of a controlled finish/coating selection and an axis governed by Variant Rules | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
-| 10 | `diameter_mm` | قطر (میلی‌متر) | WooCommerce Variation Attribute | Downstream projection of a controlled unit-aware dimension and an axis governed by Variant Rules | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
+| 9 | `finish` | نمای ظاهری موروثی | WooCommerce Variation Attribute | Legacy downstream appearance token and Sprint 03A axis; any current mapping must keep Finish, Color, Appearance, and Coating Method separate and be governed by Variant Rules | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
+| 10 | `diameter_mm` | قطر اسمی/بازاری (میلی‌متر) | WooCommerce Variation Attribute | Legacy downstream nominal/market Diameter axis; never evidence for OD or calculated ID | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 | 11 | `thickness_mm` | ضخامت (میلی‌متر) | WooCommerce Variation Attribute | Downstream projection of a controlled unit-aware dimension and an axis governed by Variant Rules | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 | 12 | `length_m` | طول (متر) | WooCommerce Variation Attribute | Downstream projection of a controlled unit-aware supply length and an axis governed by Variant Rules | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 | 13 | `surface` | سطح | WooCommerce Global Attribute | Reusable specification distinct from Finish; values remain `TBD` | Yes | No | No | No | Yes | No | Yes |
 | 14 | `unit` | واحد | WooCommerce Global Attribute | Controlled shared reference value `meter`; not a variation/filter axis | Yes | No | No | No | Yes | Yes | No |
-| 15 | `brand` | برند | WooCommerce Global Attribute | Reusable canonical brand identity if later verified | Yes | No | No | No | Yes | No | Yes |
+| 15 | `brand` | برند | WooCommerce Global Attribute | Reusable canonical brand identity only with verified provenance; this legacy profile is non-variation, while another Family may govern Brand as an axis | Yes | No | No | No | Yes | No | Yes |
 | 16 | `country` | کشور سازنده | WooCommerce Global Attribute | Reusable verified manufacturing-origin fact, distinct from shipping origin | Yes | No | No | No | Yes | No | Yes |
 | 17 | `quality_level` | سطح کیفیت | WooCommerce Global Attribute | Reusable controlled specification only after evidence and definition exist | Yes | No | No | No | Yes | No | Yes |
-| 18 | `application` | کاربرد | WooCommerce Global Attribute | Reusable product-use classification; not a category in the Pipe family model | Yes | No | No | Yes | Yes | No | Yes |
+| 18 | `application` | کاربرد | WooCommerce Global Attribute | Legacy adapter slot for a governed Product-to-Knowledge relationship; suitability is not Product identity | Yes | No | No | Yes | Yes | No | Yes |
 | 19 | `environment` | محیط استفاده | WooCommerce Global Attribute | Reusable evidence-backed use-environment specification | Yes | No | No | No | Yes | No | Yes |
 | 20 | `installation_use` | نوع مصرف | WooCommerce Global Attribute | Reusable controlled consumption/installation-use specification | Yes | No | No | No | Yes | No | Yes |
-| 21 | `weight_per_meter` | وزن هر متر | Custom Field | Typed technical value not represented by a Pipe taxonomy or variation axis | No | No | No | No | Yes | No | Yes |
+| 21 | `weight_per_meter` | جرم هر متر | Custom Field | Legacy adapter candidate only; current Mass requires source, method, lifecycle and freshness and is not Product identity | No | No | No | No | Yes | No | Yes |
 | 22 | `stock_status` | وضعیت تأمین | Hidden/Internal Only | Protected commercial state; required for an execution-ready row but `TBD` must not become a public stock promise | No | No | No | No | Yes | Yes | Yes |
 | 23 | `inquiry_priority` | اولویت استعلام | Internal CRM Field | Internal Sales/CRM routing concern, never product taxonomy or public ranking | No | No | No | No | Yes | No | Yes |
 | 24 | `inquiry_only` | فقط استعلام | Custom Field | Product-level behavior flag required to enforce Inquiry First; physical mechanism remains unselected | No | No | No | No | Yes | Yes | No |
@@ -112,6 +125,7 @@ Only `weight_per_meter` and `inquiry_only` receive the logical Custom Field clas
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2.0 | 2026-08-21 | Added the C006 architecture-only overlay for separate appearance concepts, nominal Diameter versus OD/derived ID, Family-configured selectors, conditional Brand, Knowledge/service boundaries, and dynamic Mass/Availability/Pricing; no population or runtime change. |
 | 0.1.0 | 2026-07-04 | Initial Sprint 03C classification of all 29 Pipe fields; no WordPress implementation or import. |
 | 0.1.1 | 2026-08-03 | Reclassified WooCommerce categories, attributes, Parent/Variation references, derived SKUs and SEO fields as downstream projections of canonical Repository and Variant Rules sources; no implementation or data approval. |
 
