@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.21.0
-- **Last Updated:** 2026-08-18
-- **Last Review:** 2026-08-18
+- **Version:** 0.22.0
+- **Last Updated:** 2026-08-21
+- **Last Review:** 2026-08-21
 - **Review Cycle:** On Founder decision creation, resolution, supersession, or dependency change
 - **Lifecycle:** Draft
 - **Source of Truth:** Explicit Founder-decision requirements in controlled source documents; this log is an index only
@@ -67,6 +67,12 @@ Index every repository item explicitly marked as requiring a Founder decision. T
 | --- | --- | --- | --- | --- | --- |
 | `FD-C000-OS2-001` | Accept Project OS 2.0 using `PRESERVE → RECONCILE → SIMPLIFY → EXTEND`; preserve Repository/Product Data/Taxonomy/Knowledge authority; freeze C1-T03 at its protected architecture boundary with all 11 findings retained; adopt Tracks A–D with WIP focus `1 Commercial + 1 Core + 1 Enabler`; approve `Inquiry First by default + future SKU-level purchase eligibility` as target architecture only; and classify the three PD-03B records as seed/reference evidence, not Product/SKU/Availability or a ceiling on future bounded scope. | Founder + Project Commander / effective 2026-08-16 | Strategic reconciliation and documentation canonicalization only. Future Product Builder, controlled values, weight provenance, electrostatic appearance, Commerce Eligibility, Inventory Harmony, Damavand/Central BOM, Commercial Pilot, Growth/CRM, Runtime, and Automation require separate Missions and gates. | C000 Slack Mission Packet (parent + 3 replies); C001 Slack Mission Packet (parent + 4 replies); [C000 Decision Package](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md); reviewed live-main anchor `dfb5f4f632b0e913c33d303292c320a889a6f63a` | `APPROVED` within exact strategic scope. It grants no Product/SKU/Availability, public pricing/purchase/cart/checkout/payment, Runtime, Staging, Production, C1-T03 repair, Central Steel, n8n/OpenAI, or successor execution authority. |
 | `C001-OS2-RECON` | Execute one bounded docs-only Repository reconciliation branch, commit, push, and pull request; run local validation, independent review, and CI; correct only attributable in-scope findings; stop before merge. | Founder + Project Commander / 2026-08-16 | The two required new documents and named state/baseline/roadmap/decision/navigation/traceability files, plus minimal direct-contradiction corrections in `AGENTS.md` and ADR-0001. | C001 Slack Mission Packet; starting `main` SHA `dfb5f4f632b0e913c33d303292c320a889a6f63a`; branch `codex/c001-os2-repository-reconciliation` | `APPROVED` for branch/commit/push/one PR and attributable CI fixes only. Merge, C002, Product/Runtime/Production, and every explicit C001 NO-GO remain unauthorized. |
+
+## C007 Governance Convergence Execution Authorization
+
+| ID | Decision | Decision owner / date | Approval scope | Evidence | Status / supersession |
+| --- | --- | --- | --- | --- | --- |
+| `DS-P1-M1-PACKET-01` | Execute C007 Governance Convergence & Phase-1 Architecture Baseline from Packet Version 1.0 and the seven checksum-verified extracted files. | Founder / 2026-08-21 | Exact one-file creation, 14 mandatory documentation changes, condition-triggered supporting-index changes, bounded branch/commits/push, one non-draft PR, independent review, and attributable CI repair. | Slack parent `C0BNHRRTE9F / 1787310403.761439`; ZIP-container waiver addendum `1787311265.681929`; [C007 Scope](C007_GOVERNANCE_CONVERGENCE_PHASE1_ARCHITECTURE_BASELINE_SCOPE_V1.0.md) | `APPROVED` for this exact Mission only. The waiver applies only to ZIP presence/hash. It does not approve the Draft owner documents or authorize Product/Data/commercial truth, WordPress/WooCommerce/Runtime/Staging/Production, Merge, whole-P1, M3, P2–P5, branch deletion, or any successor Mission. |
 
 ## C002 Commercial Pilot Truth and Product Administration Contracts
 

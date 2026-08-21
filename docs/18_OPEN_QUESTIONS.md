@@ -10,9 +10,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.16.0
-- **Last Updated:** 2026-08-18
-- **Last Review:** 2026-08-18
+- **Version:** 0.17.0
+- **Last Updated:** 2026-08-21
+- **Last Review:** 2026-08-21
 - **Review Cycle:** On question creation, resolution, blocking impact, or source-document change
 - **Lifecycle:** Draft
 - **Source of Truth:** Unresolved questions and placeholders in controlled source documents; this register does not answer them
@@ -35,27 +35,29 @@ Historical Git authorizations retain their original scope and chronology. Semant
 | ID | Question source | Current content | Status |
 | --- | --- | --- | --- |
 | OQ-001 | [DS-000 Open Questions](00_PROJECT_BIBLE.md#open-questions) | TODO (Founder Decision Required) | Open |
-| OQ-002 | [DS-001 Open Questions](01_PROJECT_CONSTITUTION.md#open-questions) | TODO (Founder Decision Required) | Open |
-| OQ-003 | [DS-002 Open Questions](02_ARCHITECTURE.md#open-questions) | TODO (Founder Decision Required) | Open |
-| OQ-004 | [DS-003 Open Questions](03_BUSINESS_RULES.md#open-questions) | TODO (Founder Decision Required) | Open |
+| OQ-002 | [DS-001 Open Questions](01_PROJECT_CONSTITUTION.md#open-questions) | `MISSING_AUTHORITY_INPUT`: explicit Founder approval/revision/rejection of the Draft Constitution; accepted authorities remain safe | Structured / Open |
+| OQ-003 | [DS-002 Open Questions](02_ARCHITECTURE.md#open-questions) | `MISSING_AUTHORITY_INPUT`: approval of proposed Review-state architecture, accountable owners and any Runtime target; accepted boundaries remain safe | Structured / Open |
+| OQ-004 | [DS-003 Open Questions](03_BUSINESS_RULES.md#open-questions) | `MISSING_AUTHORITY_INPUT`: separately governed Product, Availability, Price, fulfillment and activation decisions; inquiry-only mode remains safe | Structured / Open |
 | OQ-005 | [DS-004 Open Questions](05_TECH_STACK.md#open-questions) | TODO (Founder Decision Required) | Open |
 | OQ-006 | [DS-005 Open Questions](07_REPOSITORY_GUIDE.md#open-questions) | TODO (Founder Decision Required) | Open |
 
 ## Normalized Placeholder Register
 
-The following older documents contained unresolved `TBD.` placeholders. Batch 02 normalized them to Founder-decision placeholders without answering them.
+The following older documents contained unresolved `TBD.` placeholders. C007
+reconciles only the rows supported by named canonical evidence, preserves exact
+missing inputs, and grants no whole-document lifecycle approval.
 
 | ID | Document | Unresolved fields | Status |
 | --- | --- | --- | --- |
-| OQ-007 | [Product Data Strategy](04_PRODUCT_DATA_STRATEGY.md) | Purpose, Scope, Placeholder Sections | Open |
+| OQ-007 | [Product Data Strategy](04_PRODUCT_DATA_STRATEGY.md) | Purpose, Scope and baseline resolved from canonical Product/C006 owners; exact Product/Variant promotion input remains explicit | C007 disposition recorded; document remains Draft |
 | OQ-008 | [WordPress Architecture](06_WORDPRESS_ARCHITECTURE.md) | Purpose, Scope, Placeholder Sections | Resolved by Batch 04; detailed implementation prerequisites remain open below |
 | OQ-009 | [Development Workflow](08_DEVELOPMENT_WORKFLOW.md) | Purpose, Scope, Placeholder Sections | Open |
-| OQ-010 | [Deployment](09_DEPLOYMENT.md) | Purpose, Scope, Placeholder Sections | Open |
-| OQ-011 | [Security](10_SECURITY.md) | Purpose, Scope, Placeholder Sections | Open |
-| OQ-012 | [SEO Strategy](11_SEO_STRATEGY.md) | Purpose, Scope, Placeholder Sections | Open |
-| OQ-013 | [UX Principles](12_UX_PRINCIPLES.md) | Purpose, Scope, Placeholder Sections | Open |
-| OQ-014 | [Testing Strategy](13_TESTING_STRATEGY.md) | Purpose, Scope, Placeholder Sections | Open |
-| OQ-015 | [Changelog](14_CHANGELOG.md) | Purpose, Scope, Placeholder Sections | Open |
+| OQ-010 | [Deployment](09_DEPLOYMENT.md) | Purpose, Scope and gate baseline resolved; environment/access/recovery/release inputs remain explicit | C007 disposition recorded; document remains Draft |
+| OQ-011 | [Security](10_SECURITY.md) | Purpose, Scope and security baseline resolved; named owners, retention, access and runtime evidence remain explicit | C007 disposition recorded; document remains Draft |
+| OQ-012 | [SEO Strategy](11_SEO_STRATEGY.md) | Purpose, Scope and entity/indexability baseline resolved; intent, landing, content/schema and publication inputs remain explicit | C007 disposition recorded; document remains Draft |
+| OQ-013 | [UX Principles](12_UX_PRINCIPLES.md) | Purpose, Scope and Mobile/RTL/accessibility baseline resolved; journey research and measurable acceptance inputs remain explicit | C007 disposition recorded; document remains Draft |
+| OQ-014 | [Testing Strategy](13_TESTING_STRATEGY.md) | Purpose, Scope and test-layer baseline resolved; named roles, environments, UAT and release thresholds remain explicit | C007 disposition recorded; document remains Draft |
+| OQ-015 | [Changelog](14_CHANGELOG.md) | Existing historical-evidence role and populated chronology provide purpose/scope evidence | Resolved as register drift; document remains Review |
 
 ## Governance Questions
 
@@ -114,7 +116,7 @@ The following older documents contained unresolved `TBD.` placeholders. Batch 02
 | OQ-DATA-006 | Which plugin capabilities and supported versions can implement the models through Admin configuration? | [WooCommerce Product Model](20_WOOCOMMERCE_PRODUCT_MODEL.md#admin-manageability-constraints) | Open; no plugin selected |
 | OQ-DATA-007 | Which data fields and systems will become authoritative when ERP, CRM, or CentralSteel integrations are approved? | [Enterprise Product Data Model](19_PRODUCT_DATA_MODEL.md#crm-and-future-erp-compatibility) | Open; integrations not authorized |
 | OQ-DATA-008 | Which product lifecycle transitions, owners, evidence, public behaviors, restoration rules, and archival rules are approved? | [Proposed Product Lifecycle](19_PRODUCT_DATA_MODEL.md#proposed-product-lifecycle) | Open |
-| OQ-DATA-009 | Will the Draft Product Data Strategy be completed, superseded, deprecated, or archived? | [Product Data Strategy Relationship](19_PRODUCT_DATA_MODEL.md#relationship-to-product-data-strategy) | Open; FD-PDS-01 through FD-PDS-03 remain pending |
+| OQ-DATA-009 | Will the Draft Product Data Strategy be completed, superseded, deprecated, or archived? | [Product Data Strategy](04_PRODUCT_DATA_STRATEGY.md), [Product Data Strategy Relationship](19_PRODUCT_DATA_MODEL.md#relationship-to-product-data-strategy), and [C007 Scope](C007_GOVERNANCE_CONVERGENCE_PHASE1_ARCHITECTURE_BASELINE_SCOPE_V1.0.md) | Partially resolved by C007: purpose, scope and strategy baseline are evidence-bound; document remains Draft and Product/Variant promotion plus final lifecycle approval remain open |
 | OQ-DATA-010 | What Contract/Schema/Validator/Test boundary enables Product Data without creating canonical rows? | `FD-PD01-001`, `PD01-REVIEW-001`, and [PD-01 Scope v1.0](PD01_PRODUCT_DATA_CONTRACT_SCOPE_V1.0.md) | Resolved and `APPROVED` for PD-01 on 2026-07-29: synthetic fixtures only, closed Draft 2020-12 validation, explicit profiles/assignments/combinations, all readiness flags false, and canonical registry empty |
 | OQ-DATA-011 | Which real Product Attribute definitions, Profiles, values, and controlled terms may enter the canonical registries? | `FD-PD02B-001` and [PD-02B Scope](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md) | Resolved only for the exact APPROVED minimum slice: Material, Grade, `stainless_steel`, `201`, `304`, `316`, and one INTERNAL Family Profile; all other data remains out of scope |
 | OQ-DATA-012 | Which stable Catalog/Platform/Family scope identity, terminology, Product Data owner, and qualified reviewers are approved for the minimum canonical Profile? | `FD-PD02B-001`, Material/Grade human reviews, and [PD-02B Scope](PD02B_MINIMUM_CANONICAL_SLICE_SCOPE_V1.0.md) | Resolved for the exact PD-02B scope after independent technical PASS and final Founder lifecycle approval |

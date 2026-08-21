@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.9.0
-- **Last Updated:** 2026-08-16
-- **Last Review:** 2026-08-16
+- **Version:** 0.10.0
+- **Last Updated:** 2026-08-21
+- **Last Review:** 2026-08-21
 - **Review Cycle:** On repository path, document index, reading path, or relationship change
 - **Lifecycle:** Draft
 - **Source of Truth:** [Documentation Index](08_DOCUMENTATION_INDEX.md) and current repository paths
@@ -30,20 +30,21 @@ Define repository navigation and reading paths without changing directory owners
 
 1. [Codex Repository Instructions](../AGENTS.md)
 2. [Current Project State](CURRENT_PROJECT_STATE.md)
-3. [Project Baseline](PROJECT_BASELINE.md)
-4. [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md)
-5. [Repository Reading Order](READING_ORDER.md)
-6. [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md)
-7. [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md)
-8. [Codex Sprint Protocol](CODEX_SPRINT_PROTOCOL.md)
-9. [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md)
-10. [Founder Decision Log](17_FOUNDER_DECISION_LOG.md)
+3. [C007 Governance Convergence Scope](C007_GOVERNANCE_CONVERGENCE_PHASE1_ARCHITECTURE_BASELINE_SCOPE_V1.0.md)
+4. [Project Baseline](PROJECT_BASELINE.md)
+5. [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md)
+6. [Repository Reading Order](READING_ORDER.md)
+7. [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md)
+8. [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md)
+9. [Codex Sprint Protocol](CODEX_SPRINT_PROTOCOL.md)
+10. [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md)
+11. [Founder Decision Log](17_FOUNDER_DECISION_LOG.md)
 
 This path is governance and Founder-review only. Completed integrations retain their recorded bounded meanings. For the active branch, exact authorization, pull-request state, GO/NO-GO boundary, and next action, follow [Current Project State](CURRENT_PROJECT_STATE.md). The [Claude Recovery Audit](AUDIT_REPORT_CLAUDE_RECOVERY_2026-07-26.md) is evidence, not an operational-state owner.
 
 ### Completed Git Integration Path and Current Boundary
 
-Historical baseline → PR #1–#4 governance integration → PR #5 Wave 2A Product Core → PR #6 Wave 2B Product Attributes → PR #7 Wave 2C Measurements → PR #9 K-01 integration → PR #8 Build Phase 1 implementation roadmap → PR #10 BP1 local prototype → PR #11 BP2 data blueprint → PR #13 Claude recovery consolidation → PR #14 post-recovery current state → PR #12 BP2 Data Administration hardening → PR #15 post-PR12 governance reconciliation → PR #16 BP1 M1 accessibility and local-validation hardening → PR #17 post-PR16 governance reconciliation → current operational state in [Current Project State](CURRENT_PROJECT_STATE.md).
+Historical baseline → PR #1–#4 governance integration → PR #5 Wave 2A Product Core → PR #6 Wave 2B Product Attributes → PR #7 Wave 2C Measurements → PR #9 K-01 integration → PR #8 Build Phase 1 implementation roadmap → PR #10 BP1 local prototype → PR #11 BP2 data blueprint → PR #13 Claude recovery consolidation → PR #14 post-recovery current state → PR #12 BP2 Data Administration hardening → PR #15 post-PR12 governance reconciliation → PR #16 BP1 M1 accessibility and local-validation hardening → PR #17 post-PR16 governance reconciliation → later bounded integrations through merged C006 PR #43 → C007 governance-convergence review → current operational state in [Current Project State](CURRENT_PROJECT_STATE.md).
 
 Any later proposal, Product/Knowledge population, runtime work, or repository-settings change remains separately governed. This navigation path grants no execution authority.
 

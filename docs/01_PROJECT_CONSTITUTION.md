@@ -82,11 +82,15 @@ Historical, Superseded, Deprecated, Archived, and Cancelled records provide cont
 
 ## Scope
 
-TODO (Founder Decision Required)
+This Draft Constitution summarizes the authority hierarchy, change controls,
+separation of duties, evidence discipline, and fail-closed conflict handling that
+already govern the repository. It does not replace the Project Bible, accepted
+Founder decisions, domain owners, or Mission-specific approval packets.
 
 ## Audience
 
-TODO (Founder Decision Required)
+Founder, Project Commander, Repository Guardian, domain reviewers, independent
+QA/security reviewers, and agents preparing or reviewing bounded repository work.
 
 ## Status
 
@@ -106,15 +110,15 @@ Founder
 
 ## Version
 
-0.1.0
+0.2.0
 
 ## Last Updated
 
-2026-07-03
+2026-08-21
 
 ## Last Review
 
-2026-07-03
+2026-08-21
 
 ## Related Documents
 
@@ -122,37 +126,80 @@ Founder
 - [Documentation Index](08_DOCUMENTATION_INDEX.md)
 - [Document Lifecycle](12_DOCUMENT_LIFECYCLE.md)
 - [Review Process](15_REVIEW_PROCESS.md)
+- [C007 Governance Convergence Scope](C007_GOVERNANCE_CONVERGENCE_PHASE1_ARCHITECTURE_BASELINE_SCOPE_V1.0.md)
 
 ## Overview
 
-This section will provide the approved overview for this document.
-
-TODO (Founder Decision Required)
+Repository work is governed by explicit authority, bounded scope, traceable
+evidence, separation of duties, and fail-closed validation. Planning, Draft,
+Review, audit, Slack context, date, or implementation convenience does not create
+mutation or approval authority. The current semantic state is owned by
+[Current Project State](CURRENT_PROJECT_STATE.md); each Mission resolves the live
+Git state dynamically.
 
 ## Definitions
 
-TODO (Founder Decision Required)
+- **Canonical owner:** the approved source responsible for a domain's governing
+  truth; a reference or projection does not transfer that authority.
+- **Execution authority:** a recorded, scope-bound authorization to mutate the
+  repository or another governed system.
+- **Evidence:** source material whose class, scope, time, and provenance determine
+  what it may support.
+- **NO-GO:** an explicit denial that remains effective until separately superseded
+  by equal or higher authority.
+- **Semantic state:** the current phase, gates, authorization, and next action,
+  independent from an ordinary Git-tip change.
 
 ## Responsibilities
 
-TODO (Founder Decision Required)
+- The Founder approves protected business decisions and any authority expansion.
+- The Project Commander bounds Missions and enforces stop conditions.
+- The Repository Guardian protects source hierarchy, owner boundaries, and scope.
+- Domain reviewers validate claims in their accountable domains.
+- Independent reviewers inspect the integrated diff and evidence rather than agent
+  summaries.
+- Executors change only authorized paths, validate proportionately, and stop at
+  the stated terminal condition.
 
 ## Decisions
 
-TODO (Founder Decision Required)
+The ten Core Project Principles, accepted ADRs, recorded Founder decisions, and
+approved Mission packets apply only within their recorded scope. Repository First,
+Documentation Before Implementation, Product Data First, Taxonomy First,
+Knowledge First, Plugin First, Configuration First, and Founder Controlled remain
+the Phase-1 governance baseline. C007 records no new business or architecture
+decision and does not promote this Draft document.
 
 ## Constraints
 
-TODO (Founder Decision Required)
+- Historical context is not live state; a newer date is not higher authority.
+- A top-level summary must link to, not duplicate, its canonical domain owner.
+- Missing evidence is not negative evidence and `UNKNOWN` is not unavailable.
+- Review, validation, CI success, or a clean PR does not authorize Merge or a
+  successor Mission.
+- Product, commercial, Runtime, Staging, Production, deployment, and publication
+  changes require their own explicit gates.
 
 ## Open Questions
 
-TODO (Founder Decision Required)
+`MISSING_AUTHORITY_INPUT` — exact input: Founder approval, revision, or rejection
+of this Draft Constitution as a governing controlled document. It is missing
+because the C007 authorization permits bounded convergence and review, not
+lifecycle approval. Affected domain/document: DS-001 governance lifecycle. Safe
+behavior without it: keep status `Draft`, preserve existing accepted authorities,
+and require Mission-specific approval for every mutation.
 
 ## Founder Decisions
 
-TODO (Founder Decision Required)
+Founder decisions are recorded in the [Founder Decision Log](17_FOUNDER_DECISION_LOG.md)
+with durable locators and bounded effects. The C007 authorization permits this
+documentation reconciliation only; it is not blanket approval of pending entries
+and creates no Product, commercial, Runtime, Merge, or successor authority.
 
 ## Future Improvements
 
-TODO (Founder Decision Required)
+`NOT_APPLICABLE_WITH_EVIDENCE` — this top-level owner does not schedule future
+work. [Current Project State](CURRENT_PROJECT_STATE.md) owns the active semantic
+state and [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md) owns sequenced
+planning. Evidence: the C007 packet authorizes no successor Mission. Any later
+constitutional proposal requires its own bounded authority.

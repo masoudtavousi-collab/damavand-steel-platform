@@ -34,6 +34,7 @@ This roadmap defines sequence and gates, not mutable operational state. The exac
 - C1-T06 reconciled the canonical Repository ownership boundary across the exact approved 39-path documentation scope through PR #29, Merge Commit `13531830ad0c4fa57cf8dcab4c5516f27f64e4ea`, and successful main CI `30796043918`; it created no Product/SKU, Product facts or values, lifecycle promotion, Knowledge/SEO/WooCommerce implementation, import, runtime, deployment, or production authority.
 - C001 integrated the C000/OS2 documentation reconciliation through PR #35, and C002 integrated the empty-instance Commercial Pilot and Product Administration contract foundation through PR #36, Merge Commit `b45e1b592213f8d3d98805cef2681be781d8cff8`; neither created Product/SKU/Availability or Runtime authority.
 - `FD-C003-DISCOVERY-001` authorizes the complete Founder Discovery Session 01 to be preserved as classified evidence and inactive owner/backlog mappings. It is evidence integration only and starts neither C003-A nor C003-B.
+- PR #43 merged C006 at `97f6e84431727c2ed32624af439295f9d9436396`; C006 is completed/archive-only and grants no Product, Runtime or Production authority.
 - The approved BP2 Data Administration contract remains documentation-only with `implementation_authority: false`; approval derives no Product, Admin UI, runtime, import, publication, deployment, or production authority.
 - The historical Wave 1 branch/commit/push/Draft-PR scope did not authorize merge and remains preserved as chronology. Its later approved merge granted no Wave 2, runtime, or implementation authority.
 - Wave 2A–2C are structural, platform-independent foundations. They created no canonical Product rows, Product Attribute definitions, Master Data, Golden package, WordPress implementation, publication, deployment, or production mutation.
@@ -74,6 +75,7 @@ Its evidence and findings remain preserved, but C1-T03 is not the active next ac
 | `C004 — Competitive Intelligence & Damavand Competitive Advantage Foundation` | Governed public-market observations, non-aggregate benchmark matrix, original advantage/anti-pattern planning and 201/51 experience/SEO blueprint | Research/planning only; no Product, SEO publishing, commerce or Runtime authority |
 | `C005 — 201/51 Founder Evidence Reconciliation & C002 Readiness Re-evaluation` | Reconcile exact later Founder evidence and re-evaluate all nine C002 criteria without selection, population or implementation | Evidence-only mission; result remains `0/9 / NOT_READY`, with 8 submitted, 1 missing, 6 separately reviewable and all 9 open/blocking |
 | `C006 — Product Data Semantic & Product Experience Architecture Reconciliation` | Reconcile Pipe semantics and Product Experience projection contracts without canonical population | Architecture/policy only; no Product, Runtime, WordPress/WooCommerce mutation or Production authority |
+| `C007 — Governance Convergence & Phase-1 Architecture Baseline` | Replace generic top-level placeholders with evidence-bound summaries and reconcile post-C006 governance pointers | Documentation/governance review only; one non-draft PR, no lifecycle promotion, Merge, Runtime or successor authority |
 | `D-series` | Automation of demonstrated processes | Stable metrics, ownership, failure handling, and separate authorization |
 
 The root `C003` discovery-reconciliation Mission does not rename, start, or
@@ -89,12 +91,16 @@ label `C005 — Bounded Staging Pilot`. That staging work was never started and
 receives no replacement mission ID, Runtime, Staging or deployment authority from
 this roadmap correction.
 
-The current Founder-authorized C006 amendment supersedes only the old
+The completed Founder-authorized C006 amendment supersedes only the old
 recommended/deferred label `C006 — Pilot Certification / Production Decision`.
 That certification work was never started, receives no replacement mission ID,
 and gains no Pilot, Runtime, Production or deployment authority from this
-roadmap correction. The historical C000 package remains unchanged as dated
-context.
+roadmap correction. C006 is now completed/archive-only through PR #43. The
+historical C000 package remains unchanged as dated context.
+
+C007 is the bounded Campaign M2 governance-convergence outcome only. Its presence
+does not activate the complete Phase-1 Campaign, M3 or any later P1 Mission, or
+P2–P5. Any later work requires a separate Founder / Project Commander packet.
 
 ## Product and Commerce Boundaries
 
@@ -113,4 +119,4 @@ Master/Golden packages, Import, Runtime, WordPress/WooCommerce, Staging, Publish
 
 ## Current NO-GO
 
-C006 adds only semantic, architecture and projection reconciliation. It does not authorize Product/Knowledge/879-row/Master Data/Golden/SKU/slug/Availability population; controlled-value or valid-combination promotion; Mass/Supply, price, customer/order or VIP/Loyalty population; reservation, quotation, cutting or shipping implementation; content/media publication; hosting mutation; repository settings; workflows; import; WordPress/WooCommerce mutation; SEO publishing; public pricing, Offer schema, cart, checkout, payment, or purchase; Runtime; Staging; Publishing; Deployment; Production; FX automation; marketplace; Central Steel; n8n/OpenAI integration; C1-T03 repair; merge; C003-A; C003-B; or any successor Mission. Consult [Current Project State](CURRENT_PROJECT_STATE.md) for the semantic boundary.
+C007 adds only top-level governance/documentation convergence. It does not authorize Product/Knowledge/879-row/Master Data/Golden/SKU/slug/Availability population; controlled-value or valid-combination promotion; Mass/Supply, price, customer/order or VIP/Loyalty population; reservation, quotation, cutting or shipping implementation; content/media publication; hosting mutation; repository settings; workflows; import; WordPress/WooCommerce mutation; SEO publishing; public pricing, Offer schema, cart, checkout, payment, or purchase; Runtime; Staging; Publishing; Deployment; Production; FX automation; marketplace; Central Steel; n8n/OpenAI integration; C1-T03 repair; merge; C003-A; C003-B; M3; or any successor Mission. Consult [Current Project State](CURRENT_PROJECT_STATE.md) for the semantic boundary.
