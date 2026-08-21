@@ -22,7 +22,8 @@
 - **Current authorized branch:** `NONE`
 - **Current repository mutation authority:** `NONE`
 - **Current authorization:** No active Mission. C007 authority ends at its separately authorized Merge and creates no M3, successor, Product/Data/commercial, WordPress/WooCommerce, Runtime, Staging, or Production authority. Commerce stays `INQUIRY_ONLY`, C002 stays `0/9 / NOT_READY`, Runtime/Production authority stays `NONE`, and C1-T03 stays frozen.
-- **Merge:** PR #44 Merge remains a separate Founder / Project Commander decision until actually performed; this file does not authorize it
+- **C007 integration:** If this state is present on `main`, PR #44 has been merged through a separate Founder / Project Commander decision. This document did not authorize that Merge.
+- **Additional Merge authority:** `NONE`. This completed baseline authorizes no additional Merge, branch, repository mutation, or successor Mission.
 - **Runtime / WordPress / WooCommerce mutation:** NO-GO
 - **Import / publishing / deployment / product creation / bulk SKU generation:** NO-GO
 
@@ -232,9 +233,9 @@ All existing C1-T03 Scope, Gate 4 output, reviews, consolidation, and 11 finding
 
 ## Approved Next Action
 
-No repository mutation or successor Mission is approved. C007 completion is the stop boundary after its separately authorized Merge; preserve the converged baseline and require a new exact Founder / Project Commander authorization before any later repository action. The whole P1 Campaign, M3 and every later P1 Mission, P2, P3, P4, and P5 remain `NOT STARTED`.
+C007 is completed/archive-only when this document is present on `main`. No active Mission exists. No repository mutation or additional Merge is authorized. Preserve the converged baseline; the whole P1 Campaign, M3 and every later P1 Mission, P2, P3, P4, and P5 remain `NOT STARTED` and require a new exact Founder / Project Commander authorization before any later repository action.
 
-C007 converges top-level Draft owner summaries and governance pointers only. It does not select or populate a C002 candidate, promote a Product/value/Variant Rule/tuple/SKU/Mass/Availability/Price fact, create Media/Knowledge truth, activate commerce, or configure WordPress/WooCommerce/Runtime. C1-T03, C1-T07, PD-04/PD-05, Product/SKU/Availability population, pricing or commerce activation, WordPress/WooCommerce mutation, Runtime, Staging, Import, Publishing, Deployment, Production, Central Steel, n8n, OpenAI API integration, Merge and every successor Mission remain separately gated and `NO-GO`.
+C007 converges top-level Draft owner summaries and governance pointers only. It does not select or populate a C002 candidate, promote a Product/value/Variant Rule/tuple/SKU/Mass/Availability/Price fact, create Media/Knowledge truth, activate commerce, or configure WordPress/WooCommerce/Runtime. C1-T03, C1-T07, PD-04/PD-05, Product/SKU/Availability population, pricing or commerce activation, WordPress/WooCommerce mutation, Runtime, Staging, Import, Publishing, Deployment, Production, Central Steel, n8n, and OpenAI API integration remain separately gated and `NO-GO`. No additional Merge, repository mutation, or successor Mission is authorized by this completed baseline.
 
 ## Current References
 

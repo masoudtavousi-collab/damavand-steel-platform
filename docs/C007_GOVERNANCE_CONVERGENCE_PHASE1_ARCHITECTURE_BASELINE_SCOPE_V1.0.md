@@ -214,6 +214,17 @@ Results are recorded only after the stable integrated tree is tested:
 - **Post-repair independent review:** PASS — three read-only replays of the repaired
   integrated diff found material findings `0` and unresolved non-material findings
   `0`; all three Project Commander findings are resolved.
+- **Commander second independent review:** `RETURN_WITH_FINDINGS` — one material
+  residual post-Merge Merge-status self-staleness finding. The Projection and
+  Security repairs remain resolved and were not reopened.
+- **Final bounded repair:** complete — Current State now treats presence on `main`
+  as evidence that PR #44 was integrated through a separate decision, grants
+  additional Merge authority `NONE`, and aligns Approved Next Action and Changelog
+  with the completed/archive-only state. Repair paths are Current Project State,
+  Changelog, and this C007 Scope record only.
+- **Final post-repair independent review:** PASS — read-only integrated-diff replay
+  found material findings `0` and unresolved non-material findings `0`; the second
+  Commander review finding is resolved without reopening Projection or Security.
 - **CI:** external post-push gate. No branch-document PASS is claimed before the
   one authorized non-draft PR exists; actual CI evidence belongs in the Final
   Return Contract and cannot authorize Merge.
