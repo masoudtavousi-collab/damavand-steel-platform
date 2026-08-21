@@ -37,11 +37,16 @@ This section does not create product structure, taxonomy, WooCommerce configurat
 
 ## Scope
 
-TODO (Founder Decision Required)
+This Draft document summarizes the accepted cross-domain business constraints that
+govern Phase 1 and links detailed Product, inquiry, commerce, content, and
+operational rules to their canonical owners. It creates no new commercial policy,
+Product record, customer rule, or Runtime behavior.
 
 ## Audience
 
-TODO (Founder Decision Required)
+Founder, Project Commander, Sales and domain reviewers, Repository Guardian,
+Product/commerce planners, implementation teams, and independent QA/security
+reviewers.
 
 ## Status
 
@@ -61,15 +66,15 @@ Founder
 
 ## Version
 
-0.1.0
+0.2.0
 
 ## Last Updated
 
-2026-07-03
+2026-08-21
 
 ## Last Review
 
-2026-07-03
+2026-08-21
 
 ## Related Documents
 
@@ -78,37 +83,77 @@ Founder
 - [ADR 0001: Inquiry-first commerce](adr/0001-inquiry-first-commerce.md)
 - [Founder Decision Log](17_FOUNDER_DECISION_LOG.md)
 - [Open Questions](18_OPEN_QUESTIONS.md)
+- [C002 Commercial Pilot and Product Administration Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md)
+- [C007 Governance Convergence Scope](C007_GOVERNANCE_CONVERGENCE_PHASE1_ARCHITECTURE_BASELINE_SCOPE_V1.0.md)
 
 ## Overview
 
-This section will provide the approved overview for this document.
-
-TODO (Founder Decision Required)
+Phase-1 customer interaction is inquiry-first and has no active public purchase
+authority. Public Price, Offer schema, Cart, Checkout, Payment, and unsupported
+Availability/stock claims remain disabled. Product, supplier, Mass, Availability,
+Price, customer, inquiry, quote, reservation, order, and payment facts remain
+separate and evidence-bound. The approved target of future per-SKU eligibility is
+inactive and requires separate gates.
 
 ## Definitions
 
-TODO (Founder Decision Required)
+- **Inquiry First:** the current public commercial path ends in governed inquiry
+  and operator follow-up, not checkout.
+- **No Public Pricing:** no public price or Price/Offer structured data is active.
+- **Commerce eligibility:** a future per-canonical-SKU, fail-closed state; Family,
+  Series, Pilot, or Product existence does not confer it.
+- **Availability:** a provenance- and validity-bound state, never inferred from
+  Product existence, supplier habit, or missing evidence.
+- **Founder-confirmed evidence:** bounded business evidence, not automatic Product
+  or Runtime truth.
 
 ## Responsibilities
 
-TODO (Founder Decision Required)
+- Canonical owners validate Product and commercial evidence separately.
+- Operators verify supply and handle inquiry/quotation transitions where
+  applicable.
+- Domain and legal/commercial reviewers validate policies before activation.
+- Security/privacy reviewers govern protected customer and operational data.
+- The Founder retains approval of protected commercial decisions and activation.
 
 ## Decisions
 
-TODO (Founder Decision Required)
+Current operation remains `INQUIRY_ONLY`. Exact inventory quantity is not public;
+Availability may be projected only from valid evidence and applicable operator
+verification. The three PD-03B records remain seed/reference evidence, not Product,
+SKU, Availability, or a ceiling on future scope. C002 readiness remains fail-closed
+and no C007 text changes those machine states.
 
 ## Constraints
 
-TODO (Founder Decision Required)
+- Do not infer Product, compatibility, stock, Availability, Price, discount,
+  purchase eligibility, or fulfillment from planning evidence.
+- Do not turn historical examples or demand patterns into bundles, quantity rules,
+  Product relationships, or automatic cross-sell.
+- Do not expose protected evidence, customer data, supplier facts, or internal
+  inventory quantities.
+- No commercial activation follows from documentation, review, CI, or Merge.
 
 ## Open Questions
 
-TODO (Founder Decision Required)
+`MISSING_AUTHORITY_INPUT` — exact input: separately governed decisions and evidence
+for the first bounded Product/Variant promotion, Availability mechanics, Price
+authority, fulfillment, legal/commercial gates, and any per-SKU purchase activation.
+It is missing because C002 remains `0/9 / NOT_READY` and C007 cannot decide those
+business matters. Affected domain/document: DS-003 and linked Product/commerce
+owners. Safe behavior without it: keep inquiry-only operation and all activation
+gates closed.
 
 ## Founder Decisions
 
-TODO (Founder Decision Required)
+Recorded Founder decisions and evidence are indexed in the
+[Founder Decision Log](17_FOUNDER_DECISION_LOG.md). Evidence retains its original
+classification and temporal role; C007 does not convert planning or evidence into
+an approved business rule.
 
 ## Future Improvements
 
-TODO (Founder Decision Required)
+`NOT_APPLICABLE_WITH_EVIDENCE` — future business-rule sequencing is owned by
+[Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md). Evidence: the C007
+authorization denies M3 and every successor Mission. No future policy, activation,
+or backlog authority is inferred here.

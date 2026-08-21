@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-08-21 — C007 Governance Convergence & Phase-1 Architecture Baseline
+
+- Added the bounded [C007 Scope](C007_GOVERNANCE_CONVERGENCE_PHASE1_ARCHITECTURE_BASELINE_SCOPE_V1.0.md) with exact Founder authorization, source/owner inventory, path classification, 48-slot disposition, validation, independent-review and stop boundaries.
+- Recorded C006/PR #43 as completed/archive-only and reconciled Current State, Roadmap, Traceability, Index and Navigation for the bounded C007 review.
+- Replaced the 48 legacy top-level placeholders with 42 evidence-supported summaries, 3 structured missing-input dispositions and 3 not-applicable-with-evidence dispositions while preserving every document's Draft lifecycle and downstream canonical owners.
+- Preserved explicit unresolved Product, commercial, security, SEO, UX, deployment, testing and Runtime inputs without creating a Founder business decision.
+- Repaired PR #44 after Project Commander review: Current State and Navigation now resolve to a post-Merge stop with no active Mission or branch; Projection forbids upstream truth writeback without banning separately contracted downstream operational state; and Security distinguishes secrets from protected, minimized, redacted, access-controlled logs and synthetic fixtures while leaving exact Runtime policy unresolved.
+- This branch-level change required a separate Founder / Project Commander Merge decision. Presence of this entry on `main` records that integration but grants no additional Merge, repository-mutation, whole-P1, M3, or successor authority and creates no Product/Data/commercial truth or WordPress/WooCommerce/Runtime/Staging/Production mutation.
+
 ## 2026-08-21 — C006 Product Data semantic and Product Experience architecture reconciliation
 
 - Reconciled Pipe Product semantics across canonical, derived, dynamic-commercial,
@@ -265,8 +274,8 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.15.0
-- **Last Updated:** 2026-08-16
+- **Version:** 0.16.0
+- **Last Updated:** 2026-08-21
 - **Lifecycle:** Review
 - **Source of Truth:** Merged Git history and scoped decision/evidence records
 - **Approval:** Pending Founder review; merged Git history remains evidence

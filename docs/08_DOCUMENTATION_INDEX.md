@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.23.0
+- **Version:** 0.24.0
 - **Last Updated:** 2026-08-21
 - **Last Review:** 2026-08-21
 - **Review Cycle:** On document creation, removal, rename, lifecycle, authority, or navigation change
@@ -26,7 +26,7 @@ Provide the canonical map of repository documentation without replacing the auth
 
 ## Current Repository-Control Context
 
-[Current Project State](CURRENT_PROJECT_STATE.md) is the only mutable operational-state pointer. This index records document roles and stable integration history; it does not restate the active branch, pull-request state, or live Git tip. [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md) is the accepted program `HOW`, [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) is the accepted Version 1.0 `WHAT`, and [C000 / Project OS 2.0](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md) is the accepted strategic operating reconciliation. [Context Router](CONTEXT_ROUTER.md) selects the smallest relevant source set without replacing any authority. [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md) governs only three seed/reference Pilot records; they are not Product/SKU/Availability or a future Fast-Track ceiling. [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md) defines contract infrastructure and empty instance registries only. [C003 Discovery Scope](C003_FOUNDER_DISCOVERY_RECONCILIATION_SCOPE_V1.0.md) preserves classified Founder evidence and inactive owner/backlog mappings only. [C006 Scope](C006_PRODUCT_DATA_SEMANTIC_PRODUCT_EXPERIENCE_ARCHITECTURE_SCOPE_V1.0.md) governs semantic and Product Experience architecture only; it creates no Product, commercial or Runtime truth. C1-T03 is frozen, and actual Product population, Runtime, commerce activation, Production, C003-A, C003-B, and successor execution remain separately gated.
+[Current Project State](CURRENT_PROJECT_STATE.md) is the only mutable operational-state pointer. This index records document roles and stable integration history; it does not restate the active branch, pull-request state, or live Git tip. [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md) is the accepted program `HOW`, [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) is the accepted Version 1.0 `WHAT`, and [C000 / Project OS 2.0](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md) is the accepted strategic operating reconciliation. [Context Router](CONTEXT_ROUTER.md) selects the smallest relevant source set without replacing any authority. [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md) governs only three seed/reference Pilot records; they are not Product/SKU/Availability or a future Fast-Track ceiling. [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md) defines contract infrastructure and empty instance registries only. [C003 Discovery Scope](C003_FOUNDER_DISCOVERY_RECONCILIATION_SCOPE_V1.0.md) preserves classified Founder evidence and inactive owner/backlog mappings only. [C006 Scope](C006_PRODUCT_DATA_SEMANTIC_PRODUCT_EXPERIENCE_ARCHITECTURE_SCOPE_V1.0.md) is completed/archive-only architecture evidence. [C007 Scope](C007_GOVERNANCE_CONVERGENCE_PHASE1_ARCHITECTURE_BASELINE_SCOPE_V1.0.md) governs the bounded top-level convergence review and creates no Product, commercial or Runtime truth. C1-T03 is frozen, and actual Product population, Runtime, commerce activation, Production, M3, P2–P5, C003-A, C003-B, and successor execution remain separately gated.
 
 ## Categories and Complete Document Map
 
@@ -38,10 +38,10 @@ Provide the canonical map of repository documentation without replacing the auth
 | [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) | Accepted governing Version 1.0 strategic outcome (`WHAT`); companion to DS-PC under `FD-DS-PROGRAM-001` | Approved | Founder |
 | [C000 / Project OS 2.0 Decision Package](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md) | Founder-approved strategic reconciliation: C1-T03 freeze, Tracks A–D, commerce target, Pilot seed correction, and successor intent boundaries | Review | Founder |
 | [DS-000 Project Bible](00_PROJECT_BIBLE.md) | Project-level governing context; Core Project Principles are Accepted by Founder directive | Draft | Founder |
-| [DS-001 Project Constitution](01_PROJECT_CONSTITUTION.md) | Project governance context | Draft | Founder |
-| [DS-002 Enterprise Architecture](02_ARCHITECTURE.md) | Enterprise architecture authority | Draft | Founder |
-| [DS-003 Business Rules](03_BUSINESS_RULES.md) | Business-rule authority | Draft | Founder |
-| [Product Data Strategy](04_PRODUCT_DATA_STRATEGY.md) | Product-data decision placeholder | Draft | Founder |
+| [DS-001 Project Constitution](01_PROJECT_CONSTITUTION.md) | Bounded top-level governance and authority-chain summary; detailed owners remain canonical | Draft | Founder |
+| [DS-002 Enterprise Architecture](02_ARCHITECTURE.md) | Bounded top-level architecture and owner-boundary summary; no implementation authority | Draft | Founder |
+| [DS-003 Business Rules](03_BUSINESS_RULES.md) | Bounded top-level business-rule summary; unresolved protected decisions remain explicit | Draft | Founder |
+| [Product Data Strategy](04_PRODUCT_DATA_STRATEGY.md) | Product Data ownership, lifecycle, provenance and promotion boundary; no population | Draft | Founder |
 | [DS-004 Technology Stack](05_TECH_STACK.md) | Technology decision authority | Draft | Founder |
 | [WordPress Enterprise Architecture](06_WORDPRESS_ARCHITECTURE.md) | Proposed governing WordPress, WooCommerce, Blocksy, Elementor, product, inquiry, and integration architecture | Review | Founder |
 | [DS-005 Repository Standards](07_REPOSITORY_GUIDE.md) | Repository standards authority | Draft | Founder |
@@ -61,6 +61,7 @@ Provide the canonical map of repository documentation without replacing the auth
 | [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md) | Project OS 2.0 Tracks A–D, bounded WIP, frozen C1-T03 disposition, candidate-only successor map, and explicit execution gates | Review | Founder |
 | [Codex Sprint Protocol](CODEX_SPRINT_PROTOCOL.md) | Compact bounded sprint protocol | Review | Founder |
 | [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md) | Scope-bound source hierarchy and conflict handling | Review | Founder |
+| [C007 Governance Convergence Scope v1.0](C007_GOVERNANCE_CONVERGENCE_PHASE1_ARCHITECTURE_BASELINE_SCOPE_V1.0.md) | Exact authorization, source/owner archaeology, 48-slot disposition, allowlist, validation and PR/stop evidence for bounded top-level convergence | Review | Founder |
 | Future Reference: Sprint GOV-01 Audit — `docs/AUDIT_REPORT_GOV01.md` (Not yet approved) | Governance creation, conflict, size, link, and boundary evidence | Evidence | Founder |
 | [Documentation Index](08_DOCUMENTATION_INDEX.md) | Canonical document map | Draft | Founder |
 | [Navigation Map](09_NAVIGATION_MAP.md) | Repository and reading-path navigation | Draft | Founder |
@@ -80,12 +81,12 @@ Provide the canonical map of repository documentation without replacing the auth
 | Document | Role | Status | Owner |
 | --- | --- | --- | --- |
 | [Development Workflow](08_DEVELOPMENT_WORKFLOW.md) | Development workflow placeholder | Draft | Founder |
-| [Deployment](09_DEPLOYMENT.md) | Deployment authority placeholder | Draft | Founder |
-| [Security](10_SECURITY.md) | Security authority placeholder | Draft | Founder |
-| [SEO Strategy](11_SEO_STRATEGY.md) | SEO authority placeholder | Draft | Founder |
-| [UX Principles](12_UX_PRINCIPLES.md) | UX authority placeholder | Draft | Founder |
-| [Testing Strategy](13_TESTING_STRATEGY.md) | Testing authority placeholder | Draft | Founder |
-| [Changelog](14_CHANGELOG.md) | Project change record placeholder | Draft | Founder |
+| [Deployment](09_DEPLOYMENT.md) | Planning/evidence gate summary; no environment or release authority | Draft | Founder |
+| [Security](10_SECURITY.md) | Security/privacy/access/recovery principle and gate summary; no credentials or configuration | Draft | Founder |
+| [SEO Strategy](11_SEO_STRATEGY.md) | Entity/intent/indexability strategy boundary; no page, schema or publication authority | Draft | Founder |
+| [UX Principles](12_UX_PRINCIPLES.md) | Mobile Persian RTL/accessibility and safe Product Experience principles; no UI implementation | Draft | Founder |
+| [Testing Strategy](13_TESTING_STRATEGY.md) | Repository, domain, security, UX and future Runtime test-layer/gate summary | Draft | Founder |
+| [Changelog](14_CHANGELOG.md) | Historical project-change evidence index; not approval or release authority | Review | Founder |
 | [Getting Started](GETTING_STARTED.md) | Contributor setup guide | Draft | Founder |
 
 ### Repository Intelligence and AI Collaboration
@@ -118,7 +119,7 @@ Provide the canonical map of repository documentation without replacing the auth
 | [C004 Competitive Intelligence Scope v1.0](C004_COMPETITIVE_INTELLIGENCE_SCOPE_V1.0.md) | Founder-authorized source, owner, evidence-class, copyright, regression and no-go boundary for the 13-site competitive foundation | Review | Founder |
 | [C005 201/51 Founder Evidence & C002 Readiness Re-evaluation Scope v1.0](C005_201_51_FOUNDER_EVIDENCE_READINESS_REEVALUATION_SCOPE_V1.0.md) | Exact five-source evidence/owner boundary, 17 classified records, all-nine C002 re-evaluation and zero-population/no-go controls | Review | Founder |
 | [C005 201/51 Readiness Re-evaluation Packet v1.0](C005_201_51_READINESS_REEVALUATION_PACKET_V1.0.md) | Human review surface for 8 submitted, 1 missing, 6 separately reviewable and 9 open/blocking criteria with zero resolved readiness | Review | Founder |
-| [C006 Product Data Semantic & Product Experience Architecture Scope v1.0](C006_PRODUCT_DATA_SEMANTIC_PRODUCT_EXPERIENCE_ARCHITECTURE_SCOPE_V1.0.md) | Founder-authorized semantic and projection reconciliation with closed policy/interface validation and zero canonical population/runtime authority | Review | Founder |
+| [C006 Product Data Semantic & Product Experience Architecture Scope v1.0](C006_PRODUCT_DATA_SEMANTIC_PRODUCT_EXPERIENCE_ARCHITECTURE_SCOPE_V1.0.md) | Completed/archive-only PR #43 semantic and projection reconciliation with closed policy/interface validation and zero canonical population/runtime authority | Review | Founder |
 | [Competitive Intelligence Matrix v1.0](COMPETITIVE_INTELLIGENCE_MATRIX_V1.0.md) | Evidence-linked 28-dimension analysis-aid matrix and benchmark leadership map without an aggregate ranking | Evidence | Founder |
 | [Damavand Competitive Advantage Specification v1.0](DAMAVAND_COMPETITIVE_ADVANTAGE_SPECIFICATION_V1.0.md) | Ten original planning advantages with Fast Track/long-term dispositions and no implementation authority | Review | Founder |
 | [Damavand Competitive Anti-Pattern Register v1.0](DAMAVAND_COMPETITIVE_ANTI_PATTERN_REGISTER_V1.0.md) | Copyright-safe competitor-pattern risks and governed prevention rules | Review | Founder |
