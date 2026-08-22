@@ -135,6 +135,11 @@ c006_pipe_product_experience_architecture_validator="repository/data/validation/
 "$python" "$c006_pipe_product_experience_architecture_validator"
 "$python" -B -m unittest tests.test_pipe_product_experience_architecture
 
+c008_c002_readiness_evidence_closure_validator="repository/data/validation/validate_c008_c002_readiness_evidence_closure.py"
+"$python" "$c008_c002_readiness_evidence_closure_validator"
+"$python" "$c008_c002_readiness_evidence_closure_validator" tests/fixtures/c008-c002-readiness-evidence-closure/valid-synthetic.yaml --synthetic
+"$python" -B -m unittest tests.test_c008_c002_readiness_evidence_closure
+
 "$python" repository/data/validation/validate_bp2_data_blueprint.py
 "$python" repository/data/validation/validate_bp2_data_administration.py
 "$python" tests/test_bp2_data_administration.py

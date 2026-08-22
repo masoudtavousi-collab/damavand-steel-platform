@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.10.0
-- **Last Updated:** 2026-08-21
-- **Last Review:** 2026-08-21
+- **Version:** 0.11.0
+- **Last Updated:** 2026-08-22
+- **Last Review:** 2026-08-22
 - **Review Cycle:** On repository path, document index, reading path, or relationship change
 - **Lifecycle:** Draft
 - **Source of Truth:** [Documentation Index](08_DOCUMENTATION_INDEX.md) and current repository paths
@@ -43,7 +43,7 @@ This path is governance and Founder-review only. Completed integrations retain t
 
 ### Completed Git Integration Path and Current Boundary
 
-Historical baseline → PR #1–#4 governance integration → PR #5 Wave 2A Product Core → PR #6 Wave 2B Product Attributes → PR #7 Wave 2C Measurements → PR #9 K-01 integration → PR #8 Build Phase 1 implementation roadmap → PR #10 BP1 local prototype → PR #11 BP2 data blueprint → PR #13 Claude recovery consolidation → PR #14 post-recovery current state → PR #12 BP2 Data Administration hardening → PR #15 post-PR12 governance reconciliation → PR #16 BP1 M1 accessibility and local-validation hardening → PR #17 post-PR16 governance reconciliation → later bounded integrations through merged C006 PR #43 → [C007 bounded governance-convergence integration](C007_GOVERNANCE_CONVERGENCE_PHASE1_ARCHITECTURE_BASELINE_SCOPE_V1.0.md) through PR #44, effective on `main` only after separately authorized Merge → current operational state in [Current Project State](CURRENT_PROJECT_STATE.md).
+Historical baseline → PR #1–#4 governance integration → PR #5 Wave 2A Product Core → PR #6 Wave 2B Product Attributes → PR #7 Wave 2C Measurements → PR #9 K-01 integration → PR #8 Build Phase 1 implementation roadmap → PR #10 BP1 local prototype → PR #11 BP2 data blueprint → PR #13 Claude recovery consolidation → PR #14 post-recovery current state → PR #12 BP2 Data Administration hardening → PR #15 post-PR12 governance reconciliation → PR #16 BP1 M1 accessibility and local-validation hardening → PR #17 post-PR16 governance reconciliation → later bounded integrations through merged C006 PR #43 → [C007 bounded governance-convergence integration](C007_GOVERNANCE_CONVERGENCE_PHASE1_ARCHITECTURE_BASELINE_SCOPE_V1.0.md) through PR #44 → [C008 bounded readiness-evidence closure](C008_C002_READINESS_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md), effective on `main` only after a separately authorized Merge → current operational state in [Current Project State](CURRENT_PROJECT_STATE.md).
 
 Any later proposal, Product/Knowledge population, runtime work, or repository-settings change remains separately governed. This navigation path grants no execution authority.
 
@@ -59,12 +59,18 @@ Any later proposal, Product/Knowledge population, runtime work, or repository-se
 | `/prompts` | Versioned prompt materials | [Repository Standards](07_REPOSITORY_GUIDE.md) |
 | `/tests` | Product-foundation fixtures and future QA evidence | [Testing Strategy](13_TESTING_STRATEGY.md) |
 | `/var` | Local runtime placeholders | [Deployment](09_DEPLOYMENT.md) |
-| `/repository/data/contracts`, `/repository/data/schemas`, `/repository/data/registries`, `/repository/data/validation` | Product core, attribute, measurement, BP2, PD-03 extensions, and C002 contract/validation ownership | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md), [BP2 Data Administration Scope v1.0](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md), [PD-03B Scope](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md), and [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md); exactly three PD-03B Pilot records remain seed evidence and C002 instance registries remain empty while Product/SKU, Availability, Master/Golden, Import, and Runtime authority remain absent |
+| `/repository/data/contracts`, `/repository/data/schemas`, `/repository/data/registries`, `/repository/data/validation` | Product core, attribute, measurement, BP2, PD-03, C002 contract/validation and bounded C008 evidence-extension ownership | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md), [BP2 Data Administration Scope v1.0](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md), [PD-03B Scope](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md), [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md), and [C008 machine registry](../repository/data/registries/extensions/c008/201-51-readiness-evidence-closure.yaml); C008 records `4/9 / NOT_READY`, exactly three PD-03B Pilot records remain seed evidence, and C002 instance registries remain empty while Product/SKU, Availability, Master/Golden, Import, Runtime and M4 authority remain absent |
 | `/repository/data/master-data`, `/repository/data/golden-reference` | Approved future governed Product and Golden data ownership | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md); paths currently absent |
 | `/repository/knowledge` | Approved future canonical Knowledge Repository | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md); path currently absent |
 | `/repository/content` | Approved future governed reusable content | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md); path currently absent |
 | `/repository/implementation-assets` | Approved future derived implementation/adapters | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md); path currently absent |
 | `/repository/wordpress` | WordPress/WooCommerce adapters only | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md); no canonical Product/Knowledge ownership |
+
+### C008 Readiness Evidence Path
+
+[C008 Scope](C008_C002_READINESS_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md) → [C008 Evidence Review Packet](C008_C002_READINESS_EVIDENCE_REVIEW_PACKET_V1.0.md) → [C008 machine registry](../repository/data/registries/extensions/c008/201-51-readiness-evidence-closure.yaml) → G1 `4/9 / NOT_READY` → [Current Project State](CURRENT_PROJECT_STATE.md).
+
+This path is evidence/review only. It preserves candidate count zero, five unresolved criteria, `FOUNDER_SELECTION_READY=FALSE`, `M4_CANDIDATE=NONE`, and creates no Product, tuple, SKU, Availability, Price, media-rights, supplier-commitment, Runtime, Merge or successor authority.
 
 ## Cross-Reference Rules
 
@@ -324,6 +330,8 @@ Founder, New Developer, AI, Auditor, SEO, WordPress Engineer, and Content Team p
 ## Navigation
 
 - [Documentation Index](08_DOCUMENTATION_INDEX.md)
+- [C008 C002 Readiness / Real-world Evidence Closure Scope](C008_C002_READINESS_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md)
+- [C008 C002 Readiness Evidence Review Packet](C008_C002_READINESS_EVIDENCE_REVIEW_PACKET_V1.0.md)
 - [Project Baseline](PROJECT_BASELINE.md)
 - [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md)
 - [Glossary](11_GLOSSARY.md)

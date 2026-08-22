@@ -1,0 +1,197 @@
+contract_id: c008-c002-readiness-evidence-closure
+contract_version: "1.0.0"
+record_kind: c008-201-51-readiness-evidence-closure
+schema:
+  path: repository/data/schemas/c008-c002-readiness-evidence-closure.schema.json
+  draft: https://json-schema.org/draft/2020-12/schema
+registry:
+  path: repository/data/registries/extensions/c008/201-51-readiness-evidence-closure.yaml
+authority:
+  mission_id: C008
+  packet_id: DS-P1-M3-PACKET-01
+  packet_version: "1.0"
+  evidence_intake_and_normalization_allowed: true
+  independent_c002_review_allowed: true
+  g1_decision_surface_allowed: true
+  repository_docs_contract_schema_validator_test_work_allowed: true
+  branch_commit_push_pr_allowed: true
+  candidate_population_allowed: false
+  product_population_allowed: false
+  controlled_value_promotion_allowed: false
+  valid_tuple_promotion_allowed: false
+  sku_assignment_allowed: false
+  mass_population_allowed: false
+  supply_truth_population_allowed: false
+  availability_or_stock_claim_allowed: false
+  price_or_pricing_authority_allowed: false
+  commerce_eligibility_population_allowed: false
+  customer_lead_order_payment_population_allowed: false
+  media_publication_allowed: false
+  seo_publication_allowed: false
+  wordpress_woocommerce_mutation_allowed: false
+  runtime_staging_production_allowed: false
+  deployment_import_hosting_database_allowed: false
+  workflow_secret_repository_settings_mutation_allowed: false
+  m4_start_allowed: false
+  successor_mission_allowed: false
+  auto_merge_allowed: false
+  merge_allowed: false
+dependencies:
+  c002_candidate_contract: repository/data/contracts/commercial-pilot-candidate.contract.yaml
+  c002_candidate_schema: repository/data/schemas/commercial-pilot-candidate.schema.json
+  c002_candidate_registry: repository/data/registries/extensions/c002/commercial-pilot-candidates.yaml
+  c002_product_administration_contract: repository/data/contracts/product-administration-policy.contract.yaml
+  c002_product_administration_schema: repository/data/schemas/product-administration-policy.schema.json
+  c002_product_administration_registry: repository/data/registries/extensions/c002/product-administration-policies.yaml
+  c005_contract: repository/data/contracts/c005-founder-evidence-readiness.contract.yaml
+  c005_schema: repository/data/schemas/c005-founder-evidence-readiness.schema.json
+  c005_registry: repository/data/registries/extensions/c005/201-51-founder-evidence-readiness.yaml
+base_pins:
+  c002_candidate_contract_semantic_sha256: 923731cb080b0ecc05abb21b1189bfdd0df94297780cce364bb791479f7f47e3
+  c002_candidate_schema_semantic_sha256: 1e1b1977f369ab7e5961d4e69111682d1117bc6eeedf666a9e568f0115952741
+  c002_candidate_registry_semantic_sha256: deb0215d2b5f4b5ec0061f937aec9c3e37cf97c94432a23737bf5756cef9587e
+  c002_product_administration_contract_semantic_sha256: 75b608e67b6ca3c870e6bf0b533310fbb131a75fa576a79e75c4a936659c33ff
+  c002_product_administration_schema_semantic_sha256: a24d0e5118c371078cad05f20952ca6d27f95e11a9d37cc1b91f0ea6e9a368ac
+  c002_product_administration_registry_semantic_sha256: 796d2dfc424a75f998b309f04e88443d0ffb7450bd457bddf86b574535624fe7
+  c005_contract_semantic_sha256: e10707317a3a7c455e3205fed0e058d61c616fd2db126c4862c7f318757e03fa
+  c005_schema_semantic_sha256: 77e392a4d0f39dc3bb8851837e5b49ffb62e302de0c262055d351821549a3bb4
+  c005_registry_semantic_sha256: 553da985f1a4e655ff34b0d85cc56bb078365c4cd3ec86f3e270e8cadf416e8b
+source_policy:
+  slack_channel_id: C0BNHRRTE9F
+  founder_user_id: U0BNFS43TBL
+  execution_authorization_parent_ts: "1787343117.499159"
+  packet_reply_ts: "1787343126.534289"
+  slack_file_id: F0BRTDC1LH3
+  packet_zip_sha256: 4298addbde0c12cc6f4c4653ab5a33b3f6f17c69c485dd01a7581c98981591e5
+  complete_thread_required: true
+  exact_reply_count: 1
+  packet_internal_manifest_required: true
+  packet_planning_status_is_superseded_only_by_exact_execution_authorization: true
+  public_research_is_supplementary_only: true
+  public_research_can_prove_query_volume_or_buyer_demand: false
+  public_research_requires_prior_insufficiency_review: true
+  conditional_public_research_triggered: false
+  public_research_record_count: 0
+evidence_policy:
+  exact_evidence_count: 9
+  evidence_classes:
+    - REPOSITORY_CANONICAL_EVIDENCE
+    - FOUNDER_CONFIRMED_EVIDENCE
+    - SUPPLIER_SPECIFIC_EVIDENCE
+    - RIGHTS_SAFE_MEDIA_EVIDENCE
+    - PUBLIC_RESEARCH_EVIDENCE
+    - PROTECTED_COMMERCIAL_EVIDENCE
+    - MISSING_EVIDENCE
+    - CONFLICTING_EVIDENCE
+  temporal_roles: [CURRENT_REVIEW, CURRENT_GAP, CURRENT_PUBLIC_OBSERVATION]
+  confidentiality_classes: [PUBLIC, INTERNAL, PROTECTED_LOCATOR_ONLY]
+  every_item_requires_source_scope_owner_reviewer_freshness_claim_limits: true
+  reviewer_must_be_independent: true
+  supported_claim_omission_does_not_imply_support: true
+  conflicting_or_expired_evidence_cannot_verify: true
+  protected_values_must_not_be_copied: true
+  supplier_evidence_can_imply_stock_availability_price_or_guaranteed_lead_time: false
+  media_editing_can_create_rights: false
+c002_readiness_policy:
+  criterion_order:
+    - DEMAND_SIGNAL
+    - SUPPLY_EVIDENCE
+    - GROSS_PROFIT_POTENTIAL
+    - REPEATABILITY
+    - PRODUCT_DATA_COMPLETENESS
+    - PHOTO_CONTENT_READINESS
+    - SEO_BUYER_INTENT
+    - OPERATIONAL_COMPLEXITY
+    - FULFILLMENT_RISK
+  six_immediate_review_order:
+    - DEMAND_SIGNAL
+    - GROSS_PROFIT_POTENTIAL
+    - REPEATABILITY
+    - PRODUCT_DATA_COMPLETENESS
+    - SEO_BUYER_INTENT
+    - OPERATIONAL_COMPLEXITY
+  terminal_states:
+    - VERIFIED
+    - NOT_APPLICABLE_APPROVED
+    - SUBMITTED_REVIEW_INCOMPLETE
+    - MISSING_EVIDENCE
+    - CONFLICTING_EVIDENCE
+    - EXPIRED_OR_STALE_EVIDENCE
+  terminal_to_c002_state:
+    VERIFIED: VERIFIED
+    NOT_APPLICABLE_APPROVED: NOT_APPLICABLE_APPROVED
+    SUBMITTED_REVIEW_INCOMPLETE: SUBMITTED
+    MISSING_EVIDENCE: MISSING
+    CONFLICTING_EVIDENCE: CONFLICTING
+    EXPIRED_OR_STALE_EVIDENCE: EXPIRED
+  resolved_terminal_states: [VERIFIED, NOT_APPLICABLE_APPROVED]
+  exact_terminal_vector:
+    - VERIFIED
+    - SUBMITTED_REVIEW_INCOMPLETE
+    - VERIFIED
+    - VERIFIED
+    - SUBMITTED_REVIEW_INCOMPLETE
+    - MISSING_EVIDENCE
+    - SUBMITTED_REVIEW_INCOMPLETE
+    - VERIFIED
+    - SUBMITTED_REVIEW_INCOMPLETE
+  exact_totals:
+    criterion_count: 9
+    verified_count: 4
+    not_applicable_approved_count: 0
+    submitted_review_incomplete_count: 4
+    missing_evidence_count: 1
+    conflicting_evidence_count: 0
+    expired_or_stale_evidence_count: 0
+    resolved_count: 4
+    unresolved_count: 5
+    open_blocking_count: 5
+  weighted_scoring_allowed: false
+  readiness: NOT_READY
+  founder_selection_ready: false
+  candidate_registry_count: 0
+g1_policy:
+  decision_surface_only: true
+  recommendation_is_selection: false
+  exact_result: HOLD_NOT_READY_4_OF_9
+  exact_m4_candidate: null
+  founder_decision_required: HOLD_M4_AND_REQUEST_REMAINING_REAL_WORLD_EVIDENCE
+  m4_authorized: false
+regression_anchors:
+  c002_candidate_count: 0
+  c002_policy_count: 8
+  c002_policy_instance_count: 0
+  c005_source_count: 5
+  c005_evidence_record_count: 17
+  c005_submitted_count: 8
+  c005_missing_count: 1
+  c005_reviewable_count: 6
+  c005_resolved_count: 0
+  c005_open_blocking_count: 9
+  c003_r3_confirmed_valid_evidence_count: 216
+  canonical_product_entity_count: 3
+  canonical_sku_count: 0
+  current_numeric_mass_observation_count: 0
+  current_supply_intake_record_count: 0
+  current_price_value_count: 0
+  customer_object_count: 0
+  order_object_count: 0
+  active_vip_entitlement_count: 0
+  active_loyalty_ledger_count: 0
+  commerce_state: INQUIRY_ONLY
+  runtime_authority: NONE
+  production_authority: NONE
+  c1_t03_state: FROZEN_AT_PROTECTED_ARCHITECTURE_BOUNDARY
+validation:
+  offline_only: true
+  network_allowed: false
+  side_effects_allowed: false
+  closed_schema_required: true
+  local_refs_only: true
+  duplicate_keys_rejected: true
+  non_finite_numbers_rejected: true
+  deterministic_sorted_errors: true
+  path_escape_symlink_and_byte_cap_enforced: true
+  exact_order_counts_and_bindings_required: true
+  semantic_digest_pinning_required: true
+  mutation_manifest_dispatch_required: true
