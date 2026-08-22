@@ -107,7 +107,7 @@ C008-R1 creates no candidate, Product, controlled value, valid tuple, Variant Ru
 - exact 22-path allowlist and protected-owner regression: `PASS` — the final repair changes 15 authorized paths; `scripts/test.sh` correctly returns to its pinned strict invocation and therefore has no final diff
 - independent pre-pin integrated-diff review: `PASS` — 0 material / 0 non-material findings
 - final pinned status-record replay: `PASS` — 0 material / 0 non-material findings
-- exact-head CI: `PENDING`
+- exact-head CI: `PASS` — PR #46 run `32572715565`, check `repository-validation`, head `4f63dc6cc7a96539c1a8feeabc30a8e2cd846530`
 
 ## Stop boundary
 

@@ -61,6 +61,6 @@ Return the one rights-safe media packet above through a durable, attributable ch
 - Local/focused/unified validation: `PASS` — four semantic digests pinned; 14 focused tests; 85/85 mutations; full repository suite PASS
 - Independent pre-pin integrated review: `PASS` — 0 material / 0 non-material findings
 - Final pinned status-record replay: `PASS` — 0 material / 0 non-material findings
-- Exact-head CI: `PENDING`
+- Exact-head CI: `PASS` — PR #46 run `32572715565`, check `repository-validation`, head `4f63dc6cc7a96539c1a8feeabc30a8e2cd846530`
 - Merge: `NOT AUTHORIZED`
 - Final stop: `DO_NOT_MERGE / WAIT_FOR_FOUNDER_PROJECT_COMMANDER_REVIEW`
