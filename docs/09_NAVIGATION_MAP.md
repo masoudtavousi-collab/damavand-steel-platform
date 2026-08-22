@@ -8,7 +8,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.11.0
+- **Version:** 0.12.0
 - **Last Updated:** 2026-08-22
 - **Last Review:** 2026-08-22
 - **Review Cycle:** On repository path, document index, reading path, or relationship change
@@ -43,7 +43,7 @@ This path is governance and Founder-review only. Completed integrations retain t
 
 ### Completed Git Integration Path and Current Boundary
 
-Historical baseline → PR #1–#4 governance integration → PR #5 Wave 2A Product Core → PR #6 Wave 2B Product Attributes → PR #7 Wave 2C Measurements → PR #9 K-01 integration → PR #8 Build Phase 1 implementation roadmap → PR #10 BP1 local prototype → PR #11 BP2 data blueprint → PR #13 Claude recovery consolidation → PR #14 post-recovery current state → PR #12 BP2 Data Administration hardening → PR #15 post-PR12 governance reconciliation → PR #16 BP1 M1 accessibility and local-validation hardening → PR #17 post-PR16 governance reconciliation → later bounded integrations through merged C006 PR #43 → [C007 bounded governance-convergence integration](C007_GOVERNANCE_CONVERGENCE_PHASE1_ARCHITECTURE_BASELINE_SCOPE_V1.0.md) through PR #44 → [C008 bounded readiness-evidence closure](C008_C002_READINESS_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md), effective on `main` only after a separately authorized Merge → current operational state in [Current Project State](CURRENT_PROJECT_STATE.md).
+Historical baseline → PR #1–#4 governance integration → PR #5 Wave 2A Product Core → PR #6 Wave 2B Product Attributes → PR #7 Wave 2C Measurements → PR #9 K-01 integration → PR #8 Build Phase 1 implementation roadmap → PR #10 BP1 local prototype → PR #11 BP2 data blueprint → PR #13 Claude recovery consolidation → PR #14 post-recovery current state → PR #12 BP2 Data Administration hardening → PR #15 post-PR12 governance reconciliation → PR #16 BP1 M1 accessibility and local-validation hardening → PR #17 post-PR16 governance reconciliation → later bounded integrations through merged C006 PR #43 → [C007 bounded governance-convergence integration](C007_GOVERNANCE_CONVERGENCE_PHASE1_ARCHITECTURE_BASELINE_SCOPE_V1.0.md) through PR #44 → [C008 bounded readiness-evidence closure](C008_C002_READINESS_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md) through merged PR #45 → [C008-R1 delta-only re-review](C008_R1_C002_REMAINING_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md), whose presence on `main` records only a separately authorized integration and completed/archive-only result → current operational state in [Current Project State](CURRENT_PROJECT_STATE.md).
 
 Any later proposal, Product/Knowledge population, runtime work, or repository-settings change remains separately governed. This navigation path grants no execution authority.
 
@@ -71,6 +71,12 @@ Any later proposal, Product/Knowledge population, runtime work, or repository-se
 [C008 Scope](C008_C002_READINESS_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md) → [C008 Evidence Review Packet](C008_C002_READINESS_EVIDENCE_REVIEW_PACKET_V1.0.md) → [C008 machine registry](../repository/data/registries/extensions/c008/201-51-readiness-evidence-closure.yaml) → repaired G1 `6/9 / NOT_READY` → [Current Project State](CURRENT_PROJECT_STATE.md).
 
 This path is evidence/review only. It preserves candidate count zero, three unresolved external criteria, `FOUNDER_SELECTION_READY=FALSE`, `M4_CANDIDATE=NONE`, and creates no Product, tuple, SKU, Availability, Price, media-rights, supplier-commitment, Runtime, Merge or successor authority.
+
+### C008-R1 Remaining-Evidence Path
+
+[C008-R1 Scope](C008_R1_C002_REMAINING_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md) → [C008-R1 Evidence Review Packet](C008_R1_C002_REMAINING_REAL_WORLD_EVIDENCE_REVIEW_PACKET_V1.0.md) → [C008-R1 delta registry](../repository/data/registries/extensions/c008r1/201-51-remaining-real-world-evidence-closure.yaml) → zero new evidence / unchanged G1 `6/9 / NOT_READY` → [Current Project State](CURRENT_PROJECT_STATE.md).
+
+This route requests attributable evidence only. It creates no supplier commitment, media right, Product/commercial truth, C009, M4, Merge, Runtime or successor authority.
 
 ## Cross-Reference Rules
 

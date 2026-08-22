@@ -1,0 +1,267 @@
+data_classification: C008_R1_REMAINING_REAL_WORLD_EVIDENCE_CLOSURE
+fixture_mode: CANONICAL
+registry_version: "1.0.0"
+mission_id: C008-R1
+packet:
+  packet_id: DS-P1-M3-C008-R1-PACKET-01
+  packet_version: "1.0"
+  slack_channel_id: C0BNHRRTE9F
+  authorization_parent_ts: "1787390606.427149"
+  packet_reply_ts: "1787390614.653749"
+  slack_file_id: F0BRVVCN9C5
+  packet_zip_sha256: b6f134d78fd309e16ea9fcda22180b235a7a82580b304deeaf6a6b0d4a49715f
+  packet_document_sha256: f3ae526f4034bd4cc381100472f9eb54e21dec097cefbaeb24b35274dd2364a1
+  checklist_sha256: d1e1396f09e28a556c8dfe06df53198f79a68a9461d5e12c490147916d981a1c
+  readme_sha256: cee437b6367850e1ddfa14a55cfd423884e673c6572dc09fb2b2738c0d13e73c
+  manifest_sha256: c63b35b91848199719215cb2f545c02100665fc262fe3fcbbb68941c606baac1
+  thread_complete: true
+  reply_count: 1
+starting_main_sha: fbe3d9eb78566dc7b006fc43b0939d124a81cec6
+evaluation_as_of: "2026-08-22T12:59:07+03:30"
+authority_effects:
+  evidence_intake_and_normalization: true
+  blocker_review: true
+  founder_evidence_request_packet: true
+  g1_decision_surface: true
+  candidate_population: false
+  product_population: false
+  controlled_value_promotion: false
+  valid_tuple_promotion: false
+  sku_assignment: false
+  mass_population: false
+  supply_truth_population: false
+  availability_or_stock_claim: false
+  price_or_pricing_authority: false
+  commerce_eligibility_population: false
+  customer_lead_order_payment_population: false
+  media_asset_or_rights_population: false
+  media_publication: false
+  wordpress_woocommerce_mutation: false
+  runtime_staging_production: false
+  deployment_import_hosting_database: false
+  workflow_secret_repository_settings_mutation: false
+  c009_or_m4_start: false
+  successor_mission: false
+  auto_merge: false
+  merge: false
+predecessor:
+  mission_id: C008
+  pr_number: 45
+  merge_sha: fbe3d9eb78566dc7b006fc43b0939d124a81cec6
+  contract_path: repository/data/contracts/c008-c002-readiness-evidence-closure.contract.yaml
+  schema_path: repository/data/schemas/c008-c002-readiness-evidence-closure.schema.json
+  registry_path: repository/data/registries/extensions/c008/201-51-readiness-evidence-closure.yaml
+  contract_semantic_sha256: bf450358e11c82df7ae41a7777bd2889f2c4b7cffe64a5f2ee21f3303cbd2f5c
+  schema_semantic_sha256: 82f8dbfb93233b6d40603a56bdb7661ee4d477003ba13b97c59d80bb0c8a27af
+  registry_semantic_sha256: bd06e76da52750b9b54c09ccba88421ae82778dce84a4afa15475a88297081d9
+  resolved_count: 6
+  readiness: NOT_READY
+  founder_selection_ready: false
+  candidate_registry_count: 0
+source_manifest:
+  source_count: 2
+  sources:
+    - source_id: C008R1-SOURCE-001
+      source_role: EXECUTION_AUTHORIZATION
+      source_locator: slack:C0BNHRRTE9F:1787390606.427149
+      captured_at: "2026-08-22T12:53:26.427149+03:30"
+      title: DS-P1-M3-C008-R1-PACKET-01 — FOUNDER EXECUTION AUTHORIZATION — C008-R1 — 2026-08-22
+      author_id: U0BNFS43TBL
+      thread_complete: true
+    - source_id: C008R1-SOURCE-002
+      source_role: PACKET
+      source_locator: slack-file:F0BRVVCN9C5:sha256:b6f134d78fd309e16ea9fcda22180b235a7a82580b304deeaf6a6b0d4a49715f
+      captured_at: "2026-08-22T12:53:34.653749+03:30"
+      title: DAMAVAND_C008_R1_REMAINING_EVIDENCE_CLOSURE_FOUNDER_REVIEW_v1.0.zip
+      author_id: U0BNFS43TBL
+      thread_complete: true
+evidence_intake:
+  searched_at: "2026-08-22T12:59:07+03:30"
+  search_scope:
+    - Complete C008-R1 authorization parent and one reply.
+    - Verified five-member Packet ZIP and internal SHA-256 manifest.
+    - Targeted public-channel search for C008-R1 supplier-specific, fulfillment and rights-safe media evidence.
+    - Immutable C008 predecessor evidence and three unresolved blocker records.
+  new_evidence_items_total: 0
+  admitted_count: 0
+  rejected_count: 0
+  protected_count: 0
+  conflicting_count: 0
+  stale_count: 0
+  by_class:
+    SUPPLIER_SPECIFIC_EVIDENCE: 0
+    RIGHTS_SAFE_MEDIA_EVIDENCE: 0
+    PROTECTED_COMMERCIAL_EVIDENCE: 0
+    CONFLICTING_EVIDENCE: 0
+    EXPIRED_OR_STALE_EVIDENCE: 0
+  admitted_evidence_items: []
+  finding: NO_NEW_ADMISSIBLE_REAL_WORLD_EVIDENCE
+blocker_reviews:
+  - sequence: 1
+    criterion_code: SUPPLY_EVIDENCE
+    lane: LANE_A_SUPPLY
+    prior_terminal_state: SUBMITTED_REVIEW_INCOMPLETE
+    final_terminal_state: SUBMITTED_REVIEW_INCOMPLETE
+    c002_mapped_state: SUBMITTED
+    disposition: NO_NEW_ADMISSIBLE_EVIDENCE
+    inherited_evidence_ref: C008-EVID-002
+    new_evidence_item_ids: []
+    missing_fields:
+      - Supplier identity or protected durable locator.
+      - Supplier, manufacturer and brand role separation.
+      - Exact bounded 201/51 configuration scope.
+      - Capture timestamp and source type.
+      - Validity window or re-verification rule.
+      - Confirmed claims and explicit non-claims.
+      - Independent reviewer and confidentiality classification.
+    owner: C002_READINESS_EVIDENCE_OWNER
+    reviewer: INDEPENDENT_C008_R1_REVIEWER
+    reviewed_at: "2026-08-22T12:59:07+03:30"
+    confidentiality: INTERNAL
+    supported_claims: []
+    unsupported_claims:
+      - No current stock quantity, Availability, guaranteed supply, Price, permanent supplier relationship or Product truth is established.
+      - General supplier-network sourcing intent does not establish a current supplier-specific commitment.
+    conflicts: []
+    remaining_requirement: Provide one recent source-bound supplier-specific record covering the exact bounded subject and every missing field.
+    safe_behavior: Preserve submitted general intent as non-verifying evidence and infer no Supply truth.
+    resolved: false
+    blocking: true
+    promotion_effect: false
+    implementation_authority: false
+  - sequence: 2
+    criterion_code: PHOTO_CONTENT_READINESS
+    lane: LANE_C_RIGHTS_SAFE_MEDIA
+    prior_terminal_state: MISSING_EVIDENCE
+    final_terminal_state: MISSING_EVIDENCE
+    c002_mapped_state: MISSING
+    disposition: NO_NEW_ADMISSIBLE_EVIDENCE
+    inherited_evidence_ref: C008-EVID-006
+    new_evidence_item_ids: []
+    missing_fields:
+      - Asset owner or protected durable source locator.
+      - Rights basis and permitted commercial-use scope.
+      - Exact Product, Family and Appearance applicability.
+      - Source or capture date and visual-truth limits.
+      - Accessibility metadata requirement.
+      - Production-ready derivative status and independent reviewer.
+    owner: C002_READINESS_EVIDENCE_OWNER
+    reviewer: INDEPENDENT_C008_R1_REVIEWER
+    reviewed_at: "2026-08-22T12:59:07+03:30"
+    confidentiality: INTERNAL
+    supported_claims: []
+    unsupported_claims:
+      - No owned, commissioned, licensed or permission-bound production-ready 201/51 media is established.
+      - Editing competitor or Internet media does not create commercial rights.
+    conflicts: []
+    remaining_requirement: Provide Damavand-owned original media or an explicit durable commercial-use permission packet with every missing field.
+    safe_behavior: Keep Photo Content Readiness missing and copy, transform, publish or claim rights to no competitor or Internet asset.
+    resolved: false
+    blocking: true
+    promotion_effect: false
+    implementation_authority: false
+  - sequence: 3
+    criterion_code: FULFILLMENT_RISK
+    lane: LANE_B_FULFILLMENT
+    prior_terminal_state: SUBMITTED_REVIEW_INCOMPLETE
+    final_terminal_state: SUBMITTED_REVIEW_INCOMPLETE
+    c002_mapped_state: SUBMITTED
+    disposition: NO_NEW_ADMISSIBLE_EVIDENCE
+    inherited_evidence_ref: C008-EVID-009
+    new_evidence_item_ids: []
+    missing_fields:
+      - Supplier identity or protected durable locator.
+      - Exact bounded fulfillment subject and evidenced normal expectation.
+      - Exceptions and failure cases.
+      - Validity window and re-verification condition.
+      - Confirmed and non-confirmed claims.
+      - Independent reviewer and confidentiality classification.
+    owner: C002_READINESS_EVIDENCE_OWNER
+    reviewer: INDEPENDENT_C008_R1_REVIEWER
+    reviewed_at: "2026-08-22T12:59:07+03:30"
+    confidentiality: INTERNAL
+    supported_claims: []
+    unsupported_claims:
+      - No guaranteed ETA, permanent SLA, guaranteed stock, shipping promise, Availability or Price is established.
+      - General same-day or next-day intent does not establish current supplier-specific fulfillment performance.
+    conflicts: []
+    remaining_requirement: Provide current supplier-specific fulfillment timing, scope, exceptions and validity evidence with every missing field.
+    safe_behavior: Preserve submitted general fulfillment context as non-verifying evidence and make no customer promise.
+    resolved: false
+    blocking: true
+    promotion_effect: false
+    implementation_authority: false
+readiness_result:
+  criterion_count: 9
+  verified_count: 6
+  not_applicable_approved_count: 0
+  submitted_review_incomplete_count: 2
+  missing_evidence_count: 1
+  conflicting_evidence_count: 0
+  expired_or_stale_evidence_count: 0
+  resolved_count: 6
+  unresolved_count: 3
+  open_blocking_count: 3
+  readiness: NOT_READY
+  founder_selection_ready: false
+  candidate_registry_count: 0
+  reopened_verified_criteria_count: 0
+founder_evidence_requests:
+  request_count: 2
+  requests:
+    - request_id: C008R1-REQUEST-001
+      request_type: SUPPLIER_SUPPLY_FULFILLMENT_PACKET
+      criteria: [SUPPLY_EVIDENCE, FULFILLMENT_RISK]
+      required_fields:
+        - Supplier identity or protected durable locator and separated supplier, manufacturer and brand roles.
+        - Exact 201/51 configuration scope, capture timestamp, evidence type and validity or re-verification rule.
+        - Actually evidenced normal fulfillment expectation plus exceptions and failure cases.
+        - Confirmed claims, explicit non-claims, owner, independent reviewer and confidentiality.
+      acceptable_sources:
+        - Recent supplier chat, email or SMS with a durable protected locator.
+        - Recent invoice or purchase document with sensitive values redacted.
+        - Dated supplier sheet or written supplier confirmation.
+        - Dated documented phone-call note only if permitted by live C002 evidence rules.
+      redaction_allowed: true
+      review_effect: EVIDENCE_REVIEW_ONLY_NO_AUTOMATIC_VERIFICATION
+    - request_id: C008R1-REQUEST-002
+      request_type: RIGHTS_SAFE_MEDIA_PACKET
+      criteria: [PHOTO_CONTENT_READINESS]
+      required_fields:
+        - Asset owner/source, rights basis and exact permitted commercial-use scope.
+        - Exact Product, Family and Appearance applicability plus source or capture date.
+        - Visual-truth limits, accessibility metadata requirement and production-ready derivative status.
+        - Independent reviewer.
+      acceptable_sources:
+        - Damavand-owned original 201/51 photography.
+        - Commissioned media with durable commercial rights.
+        - Supplier or manufacturer assets with explicit written permission for Damavand commercial website use.
+      redaction_allowed: true
+      review_effect: EVIDENCE_REVIEW_ONLY_NO_AUTOMATIC_VERIFICATION
+  request_is_founder_decision: false
+g1_decision_surface:
+  result: HOLD_NOT_READY_6_OF_9
+  resolved_criteria_count: 6
+  unresolved_criteria: [SUPPLY_EVIDENCE, PHOTO_CONTENT_READINESS, FULFILLMENT_RISK]
+  real_world_evidence_required: true
+  founder_selection_ready: false
+  m4_promotion_candidate: null
+  recommendation_is_selection: false
+  founder_business_decision_required: false
+  founder_evidence_input_required: true
+  c009_authorized: false
+  m4_authorized: false
+regression_snapshot:
+  c002_candidate_count: 0
+  c008_resolved_count: 6
+  c008_unresolved_count: 3
+  c008_readiness: NOT_READY
+  c008_founder_selection_ready: false
+  canonical_product_entity_count: 3
+  canonical_sku_count: 0
+  current_numeric_mass_observation_count: 0
+  current_supply_intake_record_count: 0
+  current_price_value_count: 0
+  commerce_state: INQUIRY_ONLY
+  runtime_authority: NONE
+  production_authority: NONE

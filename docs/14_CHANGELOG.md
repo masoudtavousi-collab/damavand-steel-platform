@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-08-22 — C008-R1 remaining real-world evidence closure
+
+- Added the bounded [C008-R1 Scope](C008_R1_C002_REMAINING_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md), [Evidence Review Packet](C008_R1_C002_REMAINING_REAL_WORLD_EVIDENCE_REVIEW_PACKET_V1.0.md), and delta-only [machine registry](../repository/data/registries/extensions/c008r1/201-51-remaining-real-world-evidence-closure.yaml) under Packet `DS-P1-M3-C008-R1-PACKET-01` Version 1.0 and exact Founder authorization.
+- Verified the C008 PR #45 merge predecessor and pinned immutable C002/C008 owners. Targeted re-review found zero new admissible Supplier, Fulfillment, protected, conflicting, stale, or rights-safe Media items.
+- Preserved Supply and Fulfillment as `SUBMITTED_REVIEW_INCOMPLETE`, Photo/Content as `MISSING_EVIDENCE`, candidate count zero, and G1 `6/9 / NOT_READY`; prepared two exact Founder evidence-input requests without inventing a new business decision.
+- Added a closed delta contract/schema/registry, deterministic offline validator, canonical-distinct synthetic fixture and 69 counted registry mutations plus contract adversaries, including exact source/text anti-laundering pins. Pinned focused validation, 14 tests, full `make validate`/`make test`, 173/173 manifest, 173-row/21-domain Atlas, 5,101-link and agentic checks passed; independent integrated review returned 0 material / 0 non-material findings. Exact-head CI and PR evidence remain external post-push gates.
+- Created no candidate, Product/value/tuple/SKU/Mass/Supply truth/Availability/Price/media right, commerce/runtime object, C009, M4, Merge or successor authority.
+
 ## 2026-08-22 — C008 C002 readiness / real-world evidence closure
 
 - Added the bounded [C008 Scope](C008_C002_READINESS_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md), [Evidence Review Packet](C008_C002_READINESS_EVIDENCE_REVIEW_PACKET_V1.0.md), and [closed machine registry](../repository/data/registries/extensions/c008/201-51-readiness-evidence-closure.yaml) under exact Packet `DS-P1-M3-PACKET-01` Version 1.0 and Founder authorization.
@@ -283,7 +291,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.17.0
+- **Version:** 0.18.0
 - **Last Updated:** 2026-08-22
 - **Lifecycle:** Review
 - **Source of Truth:** Merged Git history and scoped decision/evidence records
