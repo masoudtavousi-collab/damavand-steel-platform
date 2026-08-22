@@ -72,8 +72,8 @@ class C008C002ReadinessEvidenceClosureTests(unittest.TestCase):
         self.assertEqual(self.validate(copy.deepcopy(self.synthetic), synthetic_mode=True), [])
 
     def test_all_counted_mutations_fail_closed_with_specific_codes(self):
-        self.assertEqual(len(self.mutations), 66)
-        self.assertEqual(len({case["name"] for case in self.mutations}), 66)
+        self.assertEqual(len(self.mutations), 76)
+        self.assertEqual(len({case["name"] for case in self.mutations}), 76)
         for case in self.mutations:
             with self.subTest(case=case["name"]):
                 value = copy.deepcopy(self.canonical)
@@ -143,7 +143,8 @@ class C008C002ReadinessEvidenceClosureTests(unittest.TestCase):
         self.assertEqual(self.canonical["packet"]["packet_id"], "DS-P1-M3-PACKET-01")
         self.assertEqual(self.canonical["packet"]["packet_version"], "1.0")
         self.assertEqual(self.canonical["packet"]["packet_zip_sha256"], "4298addbde0c12cc6f4c4653ab5a33b3f6f17c69c485dd01a7581c98981591e5")
-        self.assertEqual([item["source_id"] for item in self.canonical["source_manifest"]["sources"]], [f"C008-SOURCE-{index:03d}" for index in range(1, 3)])
+        self.assertEqual([item["source_id"] for item in self.canonical["source_manifest"]["sources"]], [f"C008-SOURCE-{index:03d}" for index in range(1, 9)])
+        self.assertEqual(self.canonical["source_manifest"]["source_count"], 8)
 
     def test_six_immediate_reviews_and_all_nine_terminal_states_are_exact(self):
         reviews = self.canonical["criterion_reviews"]
@@ -155,21 +156,28 @@ class C008C002ReadinessEvidenceClosureTests(unittest.TestCase):
 
     def test_g1_is_hold_not_ready_and_never_selection_or_m4_authority(self):
         g1 = self.canonical["g1_decision_surface"]
-        self.assertEqual(g1["result"], "HOLD_NOT_READY_4_OF_9")
+        self.assertEqual(g1["result"], "HOLD_NOT_READY_6_OF_9")
         self.assertFalse(g1["founder_selection_ready"])
         self.assertIsNone(g1["m4_promotion_candidate"])
         self.assertFalse(g1["recommendation_is_selection"])
         self.assertFalse(g1["m4_authorized"])
 
-    def test_missing_supply_fulfillment_media_and_seo_research_gate_fail_closed(self):
+    def test_true_external_blockers_and_repaired_product_seo_results_are_exact(self):
         by_code = {item["criterion_code"]: item for item in self.canonical["criterion_reviews"]}
         self.assertEqual(by_code["SUPPLY_EVIDENCE"]["terminal_state"], "SUBMITTED_REVIEW_INCOMPLETE")
         self.assertEqual(by_code["FULFILLMENT_RISK"]["terminal_state"], "SUBMITTED_REVIEW_INCOMPLETE")
         self.assertEqual(by_code["PHOTO_CONTENT_READINESS"]["terminal_state"], "MISSING_EVIDENCE")
-        self.assertEqual(by_code["SEO_BUYER_INTENT"]["terminal_state"], "SUBMITTED_REVIEW_INCOMPLETE")
+        self.assertEqual(by_code["PRODUCT_DATA_COMPLETENESS"]["terminal_state"], "VERIFIED")
+        self.assertEqual(by_code["SEO_BUYER_INTENT"]["terminal_state"], "VERIFIED")
+        self.assertFalse(by_code["PRODUCT_DATA_COMPLETENESS"]["promotion_effect"])
         seo = self.canonical["evidence_items"][6]
-        self.assertEqual(seo["evidence_class"], "REPOSITORY_CANONICAL_EVIDENCE")
-        self.assertIn("prerequisite insufficiency trigger", " ".join(seo["unsupported_claims"]))
+        self.assertEqual(seo["evidence_class"], "PUBLIC_RESEARCH_EVIDENCE")
+        lane = self.canonical["lane_d_closure"]
+        self.assertLess(lane["trigger"]["reviewed_at"], lane["research"]["captured_at"])
+        self.assertLess(lane["research"]["captured_at"], lane["final_review"]["reviewed_at"])
+        self.assertEqual(lane["research"]["public_research_record_count"], 6)
+        self.assertFalse(lane["research"]["price_research"])
+        self.assertFalse(lane["research"]["availability_research"])
 
     def test_dependency_pins_and_predecessor_owners_fail_closed(self):
         contract = copy.deepcopy(self.loaded_contract)
@@ -192,7 +200,7 @@ class C008C002ReadinessEvidenceClosureTests(unittest.TestCase):
         rendered = "\n".join(MODULE.validate_registry(copy.deepcopy(self.canonical), self.schema_validator, contract))
         self.assertIn("CONTRACT_G1", rendered)
         contract = copy.deepcopy(self.loaded_contract)
-        contract["source_policy"]["conditional_public_research_triggered"] = True
+        contract["source_policy"]["conditional_public_research_triggered"] = False
         rendered = "\n".join(MODULE.validate_registry(copy.deepcopy(self.canonical), self.schema_validator, contract))
         self.assertIn("CONTRACT_SOURCE_POLICY", rendered)
 

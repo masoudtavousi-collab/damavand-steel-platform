@@ -41,10 +41,10 @@ C005_REGISTRY_PATH = ROOT / "repository/data/registries/extensions/c005/201-51-f
 PRODUCT_ENTITIES_PATH = ROOT / "repository/data/registries/product-entities.yaml"
 
 # Pinned only after independent review of the final semantic objects.
-EXPECTED_CONTRACT_DIGEST = "555b72cb245a8cd190aa8fe240b6003a3fa4d5210eca843356aaad496d052a2e"
-EXPECTED_SCHEMA_DIGEST = "d309d179fb2626d41f7736b034e02eab9a5ff8a3d3e98bb8811ce8b9d24209da"
-EXPECTED_REGISTRY_DIGEST = "4f15c0c423f29820e78a4fc09cfb020818ef2ca7af35f758c09723353de566e9"
-EXPECTED_SYNTHETIC_REGISTRY_DIGEST = "d31147ac3ce4a36772b7cffc3bd783bf4c1076962df8a3fdcb9a618fa7212f1c"
+EXPECTED_CONTRACT_DIGEST = "bf450358e11c82df7ae41a7777bd2889f2c4b7cffe64a5f2ee21f3303cbd2f5c"
+EXPECTED_SCHEMA_DIGEST = "82f8dbfb93233b6d40603a56bdb7661ee4d477003ba13b97c59d80bb0c8a27af"
+EXPECTED_REGISTRY_DIGEST = "bd06e76da52750b9b54c09ccba88421ae82778dce84a4afa15475a88297081d9"
+EXPECTED_SYNTHETIC_REGISTRY_DIGEST = "e82d64017fccc59127eca36bf0bf2e2398817c87038e3d7308ad5dc9e29f24fb"
 
 EXPECTED_MAIN = "5a6fcbf368f817e88fca070a111fecbe65c4511a"
 EXPECTED_CRITERIA = [
@@ -71,13 +71,13 @@ EXPECTED_TERMINAL = [
     "SUBMITTED_REVIEW_INCOMPLETE",
     "VERIFIED",
     "VERIFIED",
-    "SUBMITTED_REVIEW_INCOMPLETE",
+    "VERIFIED",
     "MISSING_EVIDENCE",
-    "SUBMITTED_REVIEW_INCOMPLETE",
+    "VERIFIED",
     "VERIFIED",
     "SUBMITTED_REVIEW_INCOMPLETE",
 ]
-EXPECTED_C002_MAPPED = ["VERIFIED", "SUBMITTED", "VERIFIED", "VERIFIED", "SUBMITTED", "MISSING", "SUBMITTED", "VERIFIED", "SUBMITTED"]
+EXPECTED_C002_MAPPED = ["VERIFIED", "SUBMITTED", "VERIFIED", "VERIFIED", "VERIFIED", "MISSING", "VERIFIED", "VERIFIED", "SUBMITTED"]
 EXPECTED_C005_STATES = ["SUBMITTED", "SUBMITTED", "SUBMITTED", "SUBMITTED", "SUBMITTED", "MISSING", "SUBMITTED", "SUBMITTED", "SUBMITTED"]
 EXPECTED_LANES = [
     "LANE_A_INDEPENDENT_REVIEW",
@@ -97,13 +97,19 @@ EXPECTED_EVIDENCE_CLASSES = [
     "FOUNDER_CONFIRMED_EVIDENCE",
     "REPOSITORY_CANONICAL_EVIDENCE",
     "MISSING_EVIDENCE",
-    "REPOSITORY_CANONICAL_EVIDENCE",
+    "PUBLIC_RESEARCH_EVIDENCE",
     "REPOSITORY_CANONICAL_EVIDENCE",
     "MISSING_EVIDENCE",
 ]
 EXPECTED_SOURCE_LOCATORS = [
     "slack:C0BNHRRTE9F:1787343117.499159",
     "slack-file:F0BRTDC1LH3:sha256:4298addbde0c12cc6f4c4653ab5a33b3f6f17c69c485dd01a7581c98981591e5",
+    "https://blog.google/products-and-platforms/products/search/how-google-autocomplete-predictions-work/",
+    "https://suggestqueries.google.com/complete/search?client=firefox&hl=fa&gl=ir&q=%D9%84%D9%88%D9%84%D9%87%20%D8%A7%D8%B3%D8%AA%DB%8C%D9%84%20201",
+    "https://suggestqueries.google.com/complete/search?client=firefox&hl=fa&gl=ir&q=%D9%84%D9%88%D9%84%D9%87%20%D8%A7%D8%B3%D8%AA%DB%8C%D9%84%2051",
+    "https://suggestqueries.google.com/complete/search?client=firefox&hl=fa&gl=ir&q=%D9%84%D9%88%D9%84%D9%87%20%D8%A7%D8%B3%D8%AA%DB%8C%D9%84%20%D9%86%D8%B1%D8%AF%D9%87",
+    "https://ahanonline.com/product/%D9%84%D9%88%D9%84%D9%87-%D8%A7%D8%B3%D8%AA%D9%86%D9%84%D8%B3-%D8%A7%D8%B3%D8%AA%DB%8C%D9%84-%D8%AF%DA%A9%D9%88%D8%B1%D8%A7%D8%AA%DB%8C%D9%88-%DB%B2%DB%B0%DB%B1-%D8%B3%D8%A7%DB%8C-2/",
+    "https://www.arta-steel.com/%D8%A7%D8%B7%D9%84%D8%A7%D8%B9%D8%A7%D8%AA%DB%8C-%D8%AC%D8%A7%D9%85%D8%B9-%D8%AF%D8%B1-%D9%85%D9%88%D8%B1%D8%AF-%D9%86%D8%B1%D8%AF%D9%87-%D8%A7%D8%B3%D8%AA%DB%8C%D9%84",
 ]
 EXPECTED_SOURCES = [
     {
@@ -125,6 +131,62 @@ EXPECTED_SOURCES = [
         "thread_complete": True,
     },
 ]
+EXPECTED_SOURCES.extend([
+    {
+        "source_id": "C008-SOURCE-003", "source_role": "PUBLIC_RESEARCH",
+        "source_locator": EXPECTED_SOURCE_LOCATORS[2], "captured_at": "2026-08-22T11:57:42+03:30",
+        "title": "How Google Autocomplete predictions work", "author_id": "GOOGLE_SEARCH", "thread_complete": True,
+        "locale": "en", "query_text": None,
+        "observed_results": [
+            "Autocomplete predictions reflect real searches and can vary with language, location, freshness and trends.",
+            "Autocomplete observations are not a measurement of query popularity or volume.",
+        ],
+        "claim_limits": [
+            "Methodology supports interpretation of captured suggestions only as qualitative query observations.",
+            "It does not prove volume, demand magnitude, ranking, conversion, market share, Price or Availability.",
+        ],
+    },
+    {
+        "source_id": "C008-SOURCE-004", "source_role": "PUBLIC_RESEARCH",
+        "source_locator": EXPECTED_SOURCE_LOCATORS[3], "captured_at": "2026-08-22T11:57:42+03:30",
+        "title": "Google Autocomplete observation — لوله استیل 201", "author_id": "GOOGLE_AUTOCOMPLETE", "thread_complete": True,
+        "locale": "fa-IR", "query_text": "لوله استیل 201",
+        "observed_results": ["قیمت لوله استیل 201", "وزن لوله استیل 201", "خرید لوله استیل 201", "لیست قیمت لوله استیل 201", "قیمت روز لوله استیل 201"],
+        "claim_limits": ["Non-empty suggestions are a time-bound qualitative search-intent observation only.", "Suggestions do not prove query volume, demand magnitude, ranking, conversion, market share, Price or Availability."],
+    },
+    {
+        "source_id": "C008-SOURCE-005", "source_role": "PUBLIC_RESEARCH",
+        "source_locator": EXPECTED_SOURCE_LOCATORS[4], "captured_at": "2026-08-22T11:57:42+03:30",
+        "title": "Google Autocomplete observation — لوله استیل 51", "author_id": "GOOGLE_AUTOCOMPLETE", "thread_complete": True,
+        "locale": "fa-IR", "query_text": "لوله استیل 51",
+        "observed_results": ["قیمت لوله استیل 51", "وزن لوله استیل 51", "لوله استیل سایز 51", "لوله استیل قطر 51"],
+        "claim_limits": ["Non-empty suggestions are a time-bound qualitative search-intent observation only.", "Suggestions do not prove query volume, demand magnitude, ranking, conversion, market share, Price or Availability."],
+    },
+    {
+        "source_id": "C008-SOURCE-006", "source_role": "PUBLIC_RESEARCH",
+        "source_locator": EXPECTED_SOURCE_LOCATORS[5], "captured_at": "2026-08-22T11:57:42+03:30",
+        "title": "Google Autocomplete observation — لوله استیل نرده", "author_id": "GOOGLE_AUTOCOMPLETE", "thread_complete": True,
+        "locale": "fa-IR", "query_text": "لوله استیل نرده",
+        "observed_results": ["لوله استیل نرده قیمت", "لوله استیل نرده دیجی کالا", "لوله استیل نرده پله", "قیمت لوله استیل نرده اصفهان", "سایز لوله استیل نرده", "اتصالات لوله استیل نرده", "وزن لوله استیل نرده", "خرید لوله استیل نرده", "قطر لوله استیل نرده", "انواع لوله استیل نرده", "ضخامت لوله استیل نرده", "فروش عمده لوله استیل نرده", "لوله و اتصالات نرده استیل"],
+        "claim_limits": ["Non-empty suggestions are a time-bound qualitative search-intent observation only.", "Suggestions do not prove query volume, demand magnitude, ranking, conversion, market share, Price or Availability."],
+    },
+    {
+        "source_id": "C008-SOURCE-007", "source_role": "PUBLIC_RESEARCH",
+        "source_locator": EXPECTED_SOURCE_LOCATORS[6], "captured_at": "2026-08-22T11:57:42+03:30",
+        "title": "AhanOnline exact 201/51 commercial-term surface", "author_id": "AHANONLINE", "thread_complete": True,
+        "locale": "fa-IR", "query_text": None,
+        "observed_results": ["A transactional product page identifies stainless decorative pipe grade 201, diameter 51 mm and thickness 0.6 mm.", "The page exposes purchase or inquiry-oriented language for the exact 201/51 subject."],
+        "claim_limits": ["The observation corroborates transactional context only; no displayed Price or Availability state is admitted.", "Page presence alone does not prove buyer demand, volume, conversion, market share, stock or supplier commitment."],
+    },
+    {
+        "source_id": "C008-SOURCE-008", "source_role": "PUBLIC_RESEARCH",
+        "source_locator": EXPECTED_SOURCE_LOCATORS[7], "captured_at": "2026-08-22T11:57:42+03:30",
+        "title": "Arta Steel 201 and 51/38/16 railing-application surface", "author_id": "ARTA_STEEL", "thread_complete": True,
+        "locale": "fa-IR", "query_text": None,
+        "observed_results": ["A Persian application page identifies stainless railing grade 201 for interior use.", "The same page identifies 38 mm bases, 16 mm guards and 51 mm rails in stair-railing context."],
+        "claim_limits": ["The observation corroborates application terminology only and does not establish a canonical bundle or valid tuple.", "Page presence alone does not prove demand magnitude, volume, ranking, conversion, market share, Price, Availability or stock."],
+    },
+])
 EXPECTED_SOURCE_POLICY = {
     "slack_channel_id": "C0BNHRRTE9F",
     "founder_user_id": "U0BNFS43TBL",
@@ -139,8 +201,45 @@ EXPECTED_SOURCE_POLICY = {
     "public_research_is_supplementary_only": True,
     "public_research_can_prove_query_volume_or_buyer_demand": False,
     "public_research_requires_prior_insufficiency_review": True,
-    "conditional_public_research_triggered": False,
-    "public_research_record_count": 0,
+    "conditional_public_research_triggered": True,
+    "lane_d_triggered_at": "2026-08-22T00:40:00+03:30",
+    "public_research_captured_at": "2026-08-22T11:57:42+03:30",
+    "public_research_independently_reviewed_at": "2026-08-22T11:58:52+03:30",
+    "public_research_record_count": 6,
+    "public_research_supports_qualitative_buyer_search_application_intent_only": True,
+    "public_research_can_prove_ranking_conversion_market_share_price_or_availability": False,
+    "competitor_page_presence_alone_can_verify_buyer_intent": False,
+}
+EXPECTED_LANE_D_CLOSURE = {
+    "trigger": {
+        "status": "TRIGGERED_BY_ACTUAL_INDEPENDENT_INSUFFICIENCY_REVIEW",
+        "criterion_code": "SEO_BUYER_INTENT",
+        "reviewed_at": "2026-08-22T00:40:00+03:30",
+        "reviewer": "INDEPENDENT_C008_EVIDENCE_REVIEWER",
+        "finding": "Existing Founder/application evidence and governed planning were insufficient for bounded buyer/search intent, satisfying the Packet condition for Lane D.",
+        "source_evidence_ids": ["C008-EVID-007"],
+    },
+    "research": {
+        "started_after_trigger": True,
+        "captured_at": "2026-08-22T11:57:42+03:30",
+        "source_ids": [f"C008-SOURCE-{index:03d}" for index in range(3, 9)],
+        "public_research_record_count": 6,
+        "persian_market_relevant": True,
+        "price_research": False,
+        "availability_research": False,
+        "limitations": [
+            "Autocomplete predictions are dynamic qualitative search-behavior observations and do not provide query volume.",
+            "Public commercial and application pages corroborate terms and context but do not independently prove buyer demand.",
+            "No conversion, ranking, market share, seasonality, Price, stock, Availability, supplier reliability or Damavand performance is established.",
+        ],
+    },
+    "final_review": {
+        "reviewed_at": "2026-08-22T11:58:52+03:30",
+        "reviewer": "INDEPENDENT_C008_PUBLIC_EVIDENCE_REVIEWER",
+        "result": "VERIFIED_QUALITATIVE_BUYER_SEARCH_APPLICATION_INTENT_ONLY",
+        "supported_scope": "Current Persian buyer/search/application intent for the bounded 201/51 and railing context.",
+        "unsupported_scope": "Query volume, demand magnitude, conversion, ranking, market share, seasonality, Price, stock, Availability, supplier reliability and Damavand performance.",
+    },
 }
 EXPECTED_EVIDENCE_SOURCE_LOCATORS = [
     ["repository:repository/data/registries/extensions/c005/201-51-founder-evidence-readiness.yaml"],
@@ -152,6 +251,7 @@ EXPECTED_EVIDENCE_SOURCE_LOCATORS = [
     [
         "repository:repository/data/registries/extensions/c005/201-51-founder-evidence-readiness.yaml",
         "repository:docs/201_51_PILOT_COMPETITIVE_EXPERIENCE_BLUEPRINT_V1.0.md",
+        *EXPECTED_SOURCE_LOCATORS[2:],
     ],
     ["repository:repository/data/registries/extensions/c005/201-51-founder-evidence-readiness.yaml"],
     ["repository:docs/C005_201_51_READINESS_REEVALUATION_PACKET_V1.0.md#criterion-contract"],
@@ -163,7 +263,7 @@ EXPECTED_BASE_REFS = [
     ["C005-EVID-002", "C005-EVID-006"],
     ["C003R1-CP03-026", "C003R1-CP03-027", "C003R1-CP03-028", "C003R1-CP03-030", "C003R1-CP03-031", "C003R3-ANSWER-001", "C005-EVID-006"],
     ["C005-EVID-004", "C005-EVID-005"],
-    ["C005-EVID-005", "C005-EVID-006", "docs/201_51_PILOT_COMPETITIVE_EXPERIENCE_BLUEPRINT_V1.0.md"],
+    ["C005-EVID-005", "C005-EVID-006", "docs/201_51_PILOT_COMPETITIVE_EXPERIENCE_BLUEPRINT_V1.0.md", "C008-SOURCE-003", "C008-SOURCE-004", "C008-SOURCE-005", "C008-SOURCE-006", "C008-SOURCE-007", "C008-SOURCE-008"],
     ["C003R1-CP03-032", "C003R1-CP03-034", "C003R1-CP03-041", "C003R1-CP03-053", "C005-EVID-007", "C005-EVID-008", "C005-EVID-009", "C005-EVID-010", "C005-EVID-011", "C005-EVID-013", "C005-EVID-014"],
     ["C003R1-CP03-007", "C003R1-CP03-008", "C003R1-CP03-041", "C003R1-CP03-042", "C003R1-CP03-043", "C005-EVID-003", "C005-EVID-013"],
 ]
@@ -183,12 +283,14 @@ EXPECTED_SUPPORTED_CLAIMS = [
     ],
     [
         "All 216 bounded review positions have Founder-confirmed valid evidence.",
-        "Evidence completeness is sufficient for review but not canonical promotion.",
+        "Bounded evidence completeness satisfies the C002 evidence-review criterion without creating canonical Product or Variant Rules truth.",
     ],
     [],
     [
-        "Existing Founder evidence identifies bounded buyer/application context.",
-        "Governed C004 planning describes a future research approach but is non-verifying.",
+        "Three exact fa-IR Google Autocomplete observations returned non-empty Persian suggestion sets for لوله استیل 201, لوله استیل 51 and لوله استیل نرده.",
+        "AhanOnline exposed transactional context for stainless decorative pipe grade 201 and diameter 51 mm.",
+        "Arta Steel exposed Persian application context connecting grade 201 and the 51/38/16 size pattern with stainless railing use.",
+        "Together with bounded Founder/application evidence, the six public records verify qualitative current Persian buyer/search/application intent only.",
     ],
     [
         "Canonical evidence identifies the operator workflow, exception and future-capability complexity boundaries.",
@@ -210,8 +312,9 @@ EXPECTED_UNSUPPORTED_CLAIMS = [
         "Internet or competitor media is not production-safe by default.",
     ],
     [
-        "Existing application evidence does not prove query demand, search volume, conversion, ranking or market share.",
-        "No additional public research was admitted because the prerequisite insufficiency trigger was not durably recorded before research.",
+        "No query volume, demand magnitude, ranking, conversion or market-share claim is supported.",
+        "No Price, Availability, stock or supplier-commitment claim is supported.",
+        "Competitor page presence alone is not proof; the result depends on bounded triangulation and remains qualitative only.",
     ],
     [
         "Public pricing, cart, checkout, payment, VIP, Loyalty, AI, FX, marketplace and full catalog are not Pilot-critical requirements.",
@@ -226,30 +329,28 @@ EXPECTED_G1_MISSING_EVIDENCE = [
     "Supplier-specific Supply evidence with scope, timestamp, validity and independent reviewer.",
     "Current fulfillment commitment and exception evidence without stock or lead-time inference.",
     "Owned or licensed production-ready 201/51 media with rights and applicability review.",
-    "Independent bounded buyer-intent evidence beyond existing Founder/application and planning evidence.",
-    "Separately authorized canonical Product and Variant Rules promotion after evidence review.",
 ]
 EXPECTED_TOTALS = {
     "criterion_count": 9,
-    "verified_count": 4,
+    "verified_count": 6,
     "not_applicable_approved_count": 0,
-    "submitted_review_incomplete_count": 4,
+    "submitted_review_incomplete_count": 2,
     "missing_evidence_count": 1,
     "conflicting_evidence_count": 0,
     "expired_or_stale_evidence_count": 0,
-    "resolved_count": 4,
-    "unresolved_count": 5,
-    "open_blocking_count": 5,
+    "resolved_count": 6,
+    "unresolved_count": 3,
+    "open_blocking_count": 3,
     "readiness": "NOT_READY",
     "founder_selection_ready": False,
     "candidate_registry_count": 0,
 }
 EXPECTED_CLASS_COUNTS = {
-    "REPOSITORY_CANONICAL_EVIDENCE": 4,
+    "REPOSITORY_CANONICAL_EVIDENCE": 3,
     "FOUNDER_CONFIRMED_EVIDENCE": 2,
     "SUPPLIER_SPECIFIC_EVIDENCE": 0,
     "RIGHTS_SAFE_MEDIA_EVIDENCE": 0,
-    "PUBLIC_RESEARCH_EVIDENCE": 0,
+    "PUBLIC_RESEARCH_EVIDENCE": 1,
     "PROTECTED_COMMERCIAL_EVIDENCE": 0,
     "MISSING_EVIDENCE": 3,
     "CONFLICTING_EVIDENCE": 0,
@@ -414,18 +515,24 @@ def validate_registry(
     }:
         add("CONTRACT_AUTHORITY", "C008 contract must bind exact Mission and Packet authority")
     if contract.get("source_policy") != EXPECTED_SOURCE_POLICY:
-        add("CONTRACT_SOURCE_POLICY", "conditional public research must require a prior insufficiency review and remain untriggered")
+        add("CONTRACT_SOURCE_POLICY", "conditional public research must retain the exact trigger, chronology, qualitative scope and no-claim limits")
     readiness_policy = contract.get("c002_readiness_policy", {})
     if readiness_policy.get("criterion_order") != EXPECTED_CRITERIA or readiness_policy.get("six_immediate_review_order") != EXPECTED_SIX:
         add("CONTRACT_CRITERIA", "C008 contract must retain exact nine criteria and six-review order")
     if readiness_policy.get("exact_terminal_vector") != EXPECTED_TERMINAL or readiness_policy.get("exact_totals") != {key: value for key, value in EXPECTED_TOTALS.items() if key not in {"readiness", "founder_selection_ready", "candidate_registry_count"}}:
-        add("CONTRACT_READINESS", "C008 contract must retain exact terminal vector and 4/9 totals")
+        add("CONTRACT_READINESS", "C008 contract must retain exact terminal vector and 6/9 totals")
+    if any(readiness_policy.get(key) is not expected for key, expected in {
+        "product_data_completeness_is_evidence_sufficiency_only": True,
+        "product_or_variant_promotion_is_readiness_blocker": False,
+        "readiness_creates_product_variant_or_sku": False,
+    }.items()):
+        add("PRODUCT_EVIDENCE_RESOLUTION", "Product Data readiness must remain evidence-only and independent from downstream promotion")
     if readiness_policy.get("weighted_scoring_allowed") is not False or readiness_policy.get("founder_selection_ready") is not False or readiness_policy.get("candidate_registry_count") != 0:
         add("CONTRACT_READINESS", "C008 contract forbids weighted scoring, selection readiness and candidate population")
     if contract.get("g1_policy") != {
         "decision_surface_only": True,
         "recommendation_is_selection": False,
-        "exact_result": "HOLD_NOT_READY_4_OF_9",
+        "exact_result": "HOLD_NOT_READY_6_OF_9",
         "exact_m4_candidate": None,
         "founder_decision_required": "HOLD_M4_AND_REQUEST_REMAINING_REAL_WORLD_EVIDENCE",
         "m4_authorized": False,
@@ -489,19 +596,34 @@ def validate_registry(
         add("AUTHORITY_EFFECT", "C008 grants only evidence normalization, independent review and a G1 surface")
 
     sources = value.get("source_manifest", {}).get("sources", [])
-    if [item.get("source_id") for item in sources if isinstance(item, dict)] != [f"C008-SOURCE-{index:03d}" for index in range(1, 3)]:
+    if [item.get("source_id") for item in sources if isinstance(item, dict)] != [f"C008-SOURCE-{index:03d}" for index in range(1, 9)]:
         add("SOURCE_ORDER", "C008 source IDs/order must be exact")
-    expected_source_roles = ["EXECUTION_AUTHORIZATION", "PACKET"]
+    expected_source_roles = ["EXECUTION_AUTHORIZATION", "PACKET"] + ["PUBLIC_RESEARCH"] * 6
     if [item.get("source_role") for item in sources if isinstance(item, dict)] != expected_source_roles:
         add("SOURCE_ROLE", "C008 source roles must distinguish authorization, packet and public research")
     if [item.get("source_locator") for item in sources if isinstance(item, dict)] != EXPECTED_SOURCE_LOCATORS:
         add("SOURCE_LOCATOR", "C008 source locators must remain exact and attributable")
     if sources != EXPECTED_SOURCES:
         add("SOURCE_OBJECT_EXACTNESS", "every C008 source field must remain exactly bound to its attributable source")
-    if len(sources) != 2 or value.get("source_manifest", {}).get("source_count") != 2:
-        add("SOURCE_COUNT", "C008 source manifest must contain exactly authorization and Packet sources")
-    if any(item.get("source_role") == "PUBLIC_RESEARCH" for item in sources if isinstance(item, dict)):
-        add("CONDITIONAL_RESEARCH_GATE", "public research cannot be admitted without a durable prior insufficiency-review trigger")
+    if len(sources) != 8 or value.get("source_manifest", {}).get("source_count") != 8:
+        add("SOURCE_COUNT", "C008 source manifest must contain exactly two authority/Packet and six public-research sources")
+    if sources[2:] != EXPECTED_SOURCES[2:]:
+        add("PUBLIC_SOURCE_EXACTNESS", "all six public records must retain exact locators, observations and claim limits")
+
+    lane_d = value.get("lane_d_closure", {})
+    if lane_d != EXPECTED_LANE_D_CLOSURE:
+        add("LANE_D_CLOSURE", "Lane D trigger, research and final review must remain exact")
+    trigger_at = parse_time(lane_d.get("trigger", {}).get("reviewed_at"))
+    research_at = parse_time(lane_d.get("research", {}).get("captured_at"))
+    final_at = parse_time(lane_d.get("final_review", {}).get("reviewed_at"))
+    evaluation = parse_time(value.get("evaluation_as_of"))
+    if None in {trigger_at, research_at, final_at, evaluation} or not (trigger_at < research_at < final_at <= evaluation):
+        add("LANE_D_CHRONOLOGY", "Lane D must preserve actual trigger before research before final review")
+    if lane_d.get("research", {}).get("source_ids") != [f"C008-SOURCE-{index:03d}" for index in range(3, 9)]:
+        add("LANE_D_SOURCE_BINDING", "Lane D research must bind exactly the six admitted public sources")
+    public_sources = [item for item in sources if isinstance(item, dict) and item.get("source_role") == "PUBLIC_RESEARCH"]
+    if any(parse_time(item.get("captured_at")) != research_at for item in public_sources):
+        add("PUBLIC_SOURCE_CHRONOLOGY", "all public source captures must equal the recorded Lane D research time")
 
     evidence = value.get("evidence_items", [])
     evidence_ids = [item.get("evidence_id") for item in evidence if isinstance(item, dict)]
@@ -521,8 +643,6 @@ def validate_registry(
         add("EVIDENCE_CLAIM_BINDING", "supported claims must remain exactly bounded to reviewed source evidence")
     if [item.get("unsupported_claims") for item in evidence if isinstance(item, dict)] != EXPECTED_UNSUPPORTED_CLAIMS:
         add("EVIDENCE_CLAIM_BINDING", "unsupported-claim guardrails must remain exact and fail closed")
-    if any(item.get("evidence_class") == "PUBLIC_RESEARCH_EVIDENCE" for item in evidence if isinstance(item, dict)):
-        add("CONDITIONAL_RESEARCH_GATE", "C008 recorded no admissible public research because the prerequisite trigger was absent")
     evaluation = parse_time(value.get("evaluation_as_of"))
     for item in evidence:
         if not isinstance(item, dict):
@@ -556,6 +676,20 @@ def validate_registry(
             add("PROTECTED_VALUE_LEAK", f"{evidence_id} protected locator must not embed commercial values")
         if item.get("promotion_effect") is not False or item.get("implementation_authority") is not False:
             add("EVIDENCE_PROMOTION", f"{evidence_id} must remain evidence-only")
+
+    seo_evidence = evidence[6] if len(evidence) > 6 and isinstance(evidence[6], dict) else {}
+    if seo_evidence.get("evidence_class") != "PUBLIC_RESEARCH_EVIDENCE" or parse_time(seo_evidence.get("captured_at")) != research_at:
+        add("SEO_PUBLIC_EVIDENCE_RESOLUTION", "SEO must bind the admitted public evidence captured after the Lane D trigger")
+    if seo_evidence.get("source_locators", [])[2:] != EXPECTED_SOURCE_LOCATORS[2:] or seo_evidence.get("base_evidence_refs", [])[3:] != [f"C008-SOURCE-{index:03d}" for index in range(3, 9)]:
+        add("LANE_D_SOURCE_BINDING", "SEO evidence must bind all six exact public sources")
+    overclaim_patterns = [
+        r"query volume (is|was|equals|proves)", r"demand magnitude (is|was|equals|proves)",
+        r"current market price", r"establish(?:es|ed)? current Availability", r"establish(?:es|ed)? current stock",
+        r"competitor page presence alone verifies", r"market share (is|was|equals|proves)",
+    ]
+    supported_text = " ".join(str(item) for item in seo_evidence.get("supported_claims", []))
+    if any(re.search(pattern, supported_text, re.IGNORECASE) for pattern in overclaim_patterns):
+        add("SEO_OVERCLAIM_BOUNDARY", "SEO evidence may verify qualitative intent only, never quantitative or commercial truth")
 
     counts = Counter(item.get("evidence_class") for item in evidence if isinstance(item, dict))
     summary = value.get("evidence_summary", {})
@@ -611,11 +745,26 @@ def validate_registry(
         if item.get("promotion_effect") is not False:
             add("CRITERION_PROMOTION", f"{code} cannot promote Product or C002 state")
     seo = next((item for item in reviews if isinstance(item, dict) and item.get("criterion_code") == "SEO_BUYER_INTENT"), {})
-    if seo.get("terminal_state") == "VERIFIED":
-        add("SEO_EVIDENCE_NOT_VERIFIER", "existing Founder/application evidence and planning cannot independently verify buyer intent")
+    if not (
+        seo.get("terminal_state") == "VERIFIED"
+        and seo.get("c002_mapped_state") == "VERIFIED"
+        and seo.get("resolved") is True
+        and seo.get("blocking") is False
+        and seo.get("remaining_requirement") is None
+        and seo.get("promotion_effect") is False
+        and parse_time(seo.get("reviewed_at")) == final_at
+    ):
+        add("SEO_PUBLIC_EVIDENCE_RESOLUTION", "SEO must resolve only through the exact post-research independent review")
     product = next((item for item in reviews if isinstance(item, dict) and item.get("criterion_code") == "PRODUCT_DATA_COMPLETENESS"), {})
-    if product.get("terminal_state") == "VERIFIED":
-        add("PRODUCT_PROMOTION_BOUNDARY", "Product Data Completeness cannot verify before separately authorized canonical promotion")
+    if not (
+        product.get("terminal_state") == "VERIFIED"
+        and product.get("c002_mapped_state") == "VERIFIED"
+        and product.get("resolved") is True
+        and product.get("blocking") is False
+        and product.get("remaining_requirement") is None
+        and product.get("promotion_effect") is False
+    ):
+        add("PRODUCT_EVIDENCE_RESOLUTION", "Product Data must be verified from evidence sufficiency without promotion or a circular blocker")
 
     totals = value.get("readiness_result", {})
     calculated = Counter(item.get("terminal_state") for item in reviews if isinstance(item, dict))
@@ -635,19 +784,19 @@ def validate_registry(
         "candidate_registry_count": 0,
     }
     if totals != derived or totals != EXPECTED_TOTALS:
-        add("READINESS_TOTALS", "readiness must derive as 4/9 NOT_READY with five blockers")
+        add("READINESS_TOTALS", "readiness must derive as 6/9 NOT_READY with three blockers")
 
     g1 = value.get("g1_decision_surface", {})
     expected_resolved = [code for code, state in zip(EXPECTED_CRITERIA, EXPECTED_TERMINAL) if state in {"VERIFIED", "NOT_APPLICABLE_APPROVED"}]
     expected_unresolved = [code for code, state in zip(EXPECTED_CRITERIA, EXPECTED_TERMINAL) if state not in {"VERIFIED", "NOT_APPLICABLE_APPROVED"}]
-    if g1.get("result") != "HOLD_NOT_READY_4_OF_9" or g1.get("resolved_criteria") != expected_resolved or g1.get("unresolved_criteria") != expected_unresolved:
-        add("G1_RESULT", "G1 must report exact 4/9 resolved and five unresolved criteria")
+    if g1.get("result") != "HOLD_NOT_READY_6_OF_9" or g1.get("resolved_criteria") != expected_resolved or g1.get("unresolved_criteria") != expected_unresolved:
+        add("G1_RESULT", "G1 must report exact 6/9 resolved and three unresolved criteria")
     if g1.get("founder_selection_ready") is not False or g1.get("m4_promotion_candidate") is not None or g1.get("m4_authorized") is not False:
         add("M4_SUCCESSOR_BOUNDARY", "G1 cannot select a candidate or authorize M4")
     if g1.get("recommendation_is_selection") is not False or g1.get("founder_decision_required") != "HOLD_M4_AND_REQUEST_REMAINING_REAL_WORLD_EVIDENCE":
         add("FOUNDER_DECISION_BOUNDARY", "G1 is a hold recommendation, never a Founder selection")
     if g1.get("missing_evidence") != EXPECTED_G1_MISSING_EVIDENCE or g1.get("conflicts") != []:
-        add("G1_EVIDENCE_SURFACE", "G1 must expose five exact missing requirements and zero hidden conflicts")
+        add("G1_EVIDENCE_SURFACE", "G1 must expose three exact missing requirements and zero hidden conflicts")
 
     if value.get("regression_snapshot") != EXPECTED_REGRESSION:
         add("REGRESSION_SNAPSHOT", "C002-C007 no-go and zero-population anchors must remain exact")

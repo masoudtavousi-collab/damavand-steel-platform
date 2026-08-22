@@ -1,68 +1,833 @@
 [
-  {"name":"mission_anchor","path":["starting_main_sha"],"operation":"replace","value":"0000000000000000000000000000000000000000","expected":"MISSION_ANCHOR"},
-  {"name":"authorization_packet_id","path":["packet","packet_id"],"operation":"replace","value":"DS-P1-M4-PACKET-01","expected":"AUTHORIZATION_SOURCE"},
-  {"name":"authorization_parent","path":["packet","authorization_parent_ts"],"operation":"replace","value":"1787343117.000000","expected":"AUTHORIZATION_SOURCE"},
-  {"name":"authorization_hash","path":["packet","packet_zip_sha256"],"operation":"replace","value":"0000000000000000000000000000000000000000000000000000000000000000","expected":"AUTHORIZATION_SOURCE"},
-  {"name":"authority_product","path":["authority_effects","product_population"],"operation":"replace","value":true,"expected":"AUTHORITY_EFFECT"},
-  {"name":"authority_availability","path":["authority_effects","availability_or_stock_claim"],"operation":"replace","value":true,"expected":"AUTHORITY_EFFECT"},
-  {"name":"authority_price","path":["authority_effects","price_or_pricing_authority"],"operation":"replace","value":true,"expected":"AUTHORITY_EFFECT"},
-  {"name":"authority_runtime","path":["authority_effects","runtime_staging_production"],"operation":"replace","value":true,"expected":"AUTHORITY_EFFECT"},
-  {"name":"authority_m4","path":["authority_effects","m4_start"],"operation":"replace","value":true,"expected":"AUTHORITY_EFFECT"},
-  {"name":"authority_merge","path":["authority_effects","merge"],"operation":"replace","value":true,"expected":"AUTHORITY_EFFECT"},
-  {"name":"source_order","path":["source_manifest","sources",0,"source_id"],"operation":"replace","value":"C008-SOURCE-004","expected":"SOURCE_ORDER"},
-  {"name":"source_role","path":["source_manifest","sources",1,"source_role"],"operation":"replace","value":"EXECUTION_AUTHORIZATION","expected":"SOURCE_ROLE"},
-  {"name":"source_count","path":["source_manifest","source_count"],"operation":"replace","value":3,"expected":"SOURCE_COUNT"},
-  {"name":"evidence_id","path":["evidence_items",0,"evidence_id"],"operation":"replace","value":"C008-EVID-009","expected":"EVIDENCE_ORDER"},
-  {"name":"evidence_sequence","path":["evidence_items",1,"sequence"],"operation":"replace","value":9,"expected":"EVIDENCE_SEQUENCE"},
-  {"name":"evidence_criterion","path":["evidence_items",0,"criterion_code"],"operation":"replace","value":"SUPPLY_EVIDENCE","expected":"EVIDENCE_CRITERION_BINDING"},
-  {"name":"evidence_class","path":["evidence_items",6,"evidence_class"],"operation":"replace","value":"SUPPLIER_SPECIFIC_EVIDENCE","expected":"EVIDENCE_CLASS"},
-  {"name":"missing_supports_claim","path":["evidence_items",1,"supported_claims"],"operation":"append","value":"Unsupported supplier promise","expected":"MISSING_EVIDENCE_SEMANTICS"},
-  {"name":"missing_freshness_current","path":["evidence_items",5,"freshness_status"],"operation":"replace","value":"CURRENT","expected":"MISSING_EVIDENCE_SEMANTICS"},
-  {"name":"expired_public_source","path":["evidence_items",6,"valid_until"],"operation":"replace","value":"2026-08-21T00:00:00+03:30","expected":"FRESHNESS_FAIL_CLOSED"},
-  {"name":"future_capture","path":["evidence_items",0,"captured_at"],"operation":"replace","value":"2027-01-01T00:00:00+03:30","expected":"EVIDENCE_TIME"},
-  {"name":"evidence_conflict","path":["evidence_items",0,"conflicts"],"operation":"append","value":"C008-CONFLICT-001","expected":"CONFLICT_FAIL_CLOSED"},
-  {"name":"reviewer_owner_same","path":["evidence_items",0,"reviewer"],"operation":"replace","value":"C002_EVIDENCE_INTAKE","expected":"REVIEW_INDEPENDENCE"},
-  {"name":"protected_without_locator","path":["evidence_items",2,"evidence_class"],"operation":"replace","value":"PROTECTED_COMMERCIAL_EVIDENCE","expected":"PROTECTED_LOCATOR_BOUNDARY"},
-  {"name":"evidence_promotion","path":["evidence_items",0,"promotion_effect"],"operation":"replace","value":true,"expected":"EVIDENCE_PROMOTION"},
-  {"name":"class_summary","path":["evidence_summary","by_class","PUBLIC_RESEARCH_EVIDENCE"],"operation":"replace","value":2,"expected":"EVIDENCE_SUMMARY"},
-  {"name":"criterion_order","path":["criterion_reviews",0,"criterion_code"],"operation":"replace","value":"SUPPLY_EVIDENCE","expected":"CRITERION_ORDER"},
-  {"name":"criterion_sequence","path":["criterion_reviews",0,"sequence"],"operation":"replace","value":2,"expected":"CRITERION_SEQUENCE"},
-  {"name":"terminal_vector","path":["criterion_reviews",0,"terminal_state"],"operation":"replace","value":"SUBMITTED_REVIEW_INCOMPLETE","expected":"TERMINAL_STATE_VECTOR"},
-  {"name":"mapped_state","path":["criterion_reviews",0,"c002_mapped_state"],"operation":"replace","value":"SUBMITTED","expected":"C002_STATE_MAPPING"},
-  {"name":"c005_state","path":["criterion_reviews",5,"c005_state"],"operation":"replace","value":"SUBMITTED","expected":"C005_STATE_BINDING"},
-  {"name":"review_lane","path":["criterion_reviews",6,"review_lane"],"operation":"replace","value":"LANE_A_INDEPENDENT_REVIEW","expected":"REVIEW_LANE"},
-  {"name":"resolved_flag","path":["criterion_reviews",0,"resolved"],"operation":"replace","value":false,"expected":"RESOLUTION_SEMANTICS"},
-  {"name":"blocking_flag","path":["criterion_reviews",1,"blocking"],"operation":"replace","value":false,"expected":"RESOLUTION_SEMANTICS"},
-  {"name":"resolved_requirement","path":["criterion_reviews",0,"remaining_requirement"],"operation":"replace","value":"invented blocker","expected":"RESOLUTION_REQUIREMENT"},
-  {"name":"unresolved_requirement_missing","path":["criterion_reviews",1,"remaining_requirement"],"operation":"replace","value":null,"expected":"UNRESOLVED_REQUIREMENT"},
-  {"name":"unknown_evidence_ref","path":["criterion_reviews",0,"evidence_ids",0],"operation":"replace","value":"C008-EVID-099","expected":"REVIEW_EVIDENCE_REF"},
-  {"name":"seo_false_verification","path":["criterion_reviews",6,"terminal_state"],"operation":"replace","value":"VERIFIED","expected":"SEO_EVIDENCE_NOT_VERIFIER"},
-  {"name":"product_false_verification","path":["criterion_reviews",4,"terminal_state"],"operation":"replace","value":"VERIFIED","expected":"PRODUCT_PROMOTION_BOUNDARY"},
-  {"name":"readiness_total","path":["readiness_result","resolved_count"],"operation":"replace","value":5,"expected":"READINESS_TOTALS"},
-  {"name":"candidate_population","path":["readiness_result","candidate_registry_count"],"operation":"replace","value":1,"expected":"READINESS_TOTALS"},
-  {"name":"g1_result","path":["g1_decision_surface","result"],"operation":"replace","value":"READY_9_OF_9","expected":"G1_RESULT"},
-  {"name":"g1_m4_candidate","path":["g1_decision_surface","m4_promotion_candidate"],"operation":"replace","value":"201/51","expected":"M4_SUCCESSOR_BOUNDARY"},
-  {"name":"g1_m4_authorized","path":["g1_decision_surface","m4_authorized"],"operation":"replace","value":true,"expected":"M4_SUCCESSOR_BOUNDARY"},
-  {"name":"g1_selection","path":["g1_decision_surface","recommendation_is_selection"],"operation":"replace","value":true,"expected":"FOUNDER_DECISION_BOUNDARY"},
-  {"name":"g1_missing_hidden","path":["g1_decision_surface","missing_evidence"],"operation":"replace","value":[],"expected":"G1_EVIDENCE_SURFACE"},
-  {"name":"regression_anchor","path":["regression_snapshot","c002_candidate_count"],"operation":"replace","value":1,"expected":"REGRESSION_SNAPSHOT"},
-  {"name":"commerce_regression","path":["regression_snapshot","commerce_state"],"operation":"replace","value":"PURCHASE_ENABLED","expected":"REGRESSION_SNAPSHOT"},
-  {"name":"forbidden_weighted_score","path":["readiness_result","weighted_score"],"operation":"add","value":88,"expected":"FORBIDDEN_KEY"},
-  {"name":"forbidden_product_population","path":["products"],"operation":"add","value":[],"expected":"FORBIDDEN_KEY"},
-  {"name":"wrong_source_locator","path":["source_manifest","sources",1,"source_locator"],"operation":"replace","value":"https://example.com/unsupported","expected":"SOURCE_LOCATOR"},
-  {"name":"wrong_evidence_source","path":["evidence_items",0,"source_locators",0],"operation":"replace","value":"repository:wrong-owner","expected":"EVIDENCE_SOURCE_BINDING"},
-  {"name":"wrong_evidence_base_ref","path":["evidence_items",0,"base_evidence_refs",0],"operation":"replace","value":"C003-DISC-010","expected":"EVIDENCE_BASE_BINDING"},
-  {"name":"wrong_review_base_ref","path":["criterion_reviews",0,"base_evidence_refs",0],"operation":"replace","value":"C003-DISC-010","expected":"REVIEW_BASE_BINDING"},
-  {"name":"source_title_changed","path":["source_manifest","sources",0,"title"],"operation":"replace","value":"Altered authorization title","expected":"SOURCE_OBJECT_EXACTNESS"},
-  {"name":"source_author_changed","path":["source_manifest","sources",1,"author_id"],"operation":"replace","value":"U0INVALIDAUTHOR","expected":"SOURCE_OBJECT_EXACTNESS"},
-  {"name":"source_captured_at_changed","path":["source_manifest","sources",1,"captured_at"],"operation":"replace","value":"2026-08-22T00:29:00+03:30","expected":"SOURCE_OBJECT_EXACTNESS"},
-  {"name":"source_thread_incomplete","path":["source_manifest","sources",0,"thread_complete"],"operation":"replace","value":false,"expected":"SOURCE_OBJECT_EXACTNESS"},
-  {"name":"seo_claim_inflated","path":["evidence_items",6,"supported_claims"],"operation":"append","value":"Public pages prove buyer demand and query volume.","expected":"EVIDENCE_CLAIM_BINDING"},
-  {"name":"seo_guardrail_weakened","path":["evidence_items",6,"unsupported_claims"],"operation":"replace","value":["Public pages may establish buyer demand."],"expected":"EVIDENCE_CLAIM_BINDING"},
-  {"name":"supply_guardrail_reversed","path":["evidence_items",1,"unsupported_claims"],"operation":"replace","value":["General sourcing history establishes current stock and Availability."],"expected":"EVIDENCE_CLAIM_BINDING"},
-  {"name":"nonprotected_locator_added","path":["evidence_items",0,"protected_locator"],"operation":"replace","value":"protected-evidence:opaque/record-1","expected":"PROTECTED_LOCATOR_BOUNDARY"},
-  {"name":"protected_value_embedded","path":["evidence_items",0,"protected_locator"],"operation":"replace","value":"cost=secret margin=secret","expected":"PROTECTED_VALUE_LEAK"},
-  {"name":"public_research_without_trigger","path":["evidence_items",6,"evidence_class"],"operation":"replace","value":"PUBLIC_RESEARCH_EVIDENCE","expected":"CONDITIONAL_RESEARCH_GATE"},
-  {"name":"g1_missing_text_weakened","path":["g1_decision_surface","missing_evidence"],"operation":"replace","value":["x","y","z","a","b"],"expected":"G1_EVIDENCE_SURFACE"},
-  {"name":"canonical_fixture_mode_flipped","path":["fixture_mode"],"operation":"replace","value":"SYNTHETIC","expected":"FIXTURE_MODE"}
+  {
+    "name": "mission_anchor",
+    "path": [
+      "starting_main_sha"
+    ],
+    "operation": "replace",
+    "value": "0000000000000000000000000000000000000000",
+    "expected": "MISSION_ANCHOR"
+  },
+  {
+    "name": "authorization_packet_id",
+    "path": [
+      "packet",
+      "packet_id"
+    ],
+    "operation": "replace",
+    "value": "DS-P1-M4-PACKET-01",
+    "expected": "AUTHORIZATION_SOURCE"
+  },
+  {
+    "name": "authorization_parent",
+    "path": [
+      "packet",
+      "authorization_parent_ts"
+    ],
+    "operation": "replace",
+    "value": "1787343117.000000",
+    "expected": "AUTHORIZATION_SOURCE"
+  },
+  {
+    "name": "authorization_hash",
+    "path": [
+      "packet",
+      "packet_zip_sha256"
+    ],
+    "operation": "replace",
+    "value": "0000000000000000000000000000000000000000000000000000000000000000",
+    "expected": "AUTHORIZATION_SOURCE"
+  },
+  {
+    "name": "authority_product",
+    "path": [
+      "authority_effects",
+      "product_population"
+    ],
+    "operation": "replace",
+    "value": true,
+    "expected": "AUTHORITY_EFFECT"
+  },
+  {
+    "name": "authority_availability",
+    "path": [
+      "authority_effects",
+      "availability_or_stock_claim"
+    ],
+    "operation": "replace",
+    "value": true,
+    "expected": "AUTHORITY_EFFECT"
+  },
+  {
+    "name": "authority_price",
+    "path": [
+      "authority_effects",
+      "price_or_pricing_authority"
+    ],
+    "operation": "replace",
+    "value": true,
+    "expected": "AUTHORITY_EFFECT"
+  },
+  {
+    "name": "authority_runtime",
+    "path": [
+      "authority_effects",
+      "runtime_staging_production"
+    ],
+    "operation": "replace",
+    "value": true,
+    "expected": "AUTHORITY_EFFECT"
+  },
+  {
+    "name": "authority_m4",
+    "path": [
+      "authority_effects",
+      "m4_start"
+    ],
+    "operation": "replace",
+    "value": true,
+    "expected": "AUTHORITY_EFFECT"
+  },
+  {
+    "name": "authority_merge",
+    "path": [
+      "authority_effects",
+      "merge"
+    ],
+    "operation": "replace",
+    "value": true,
+    "expected": "AUTHORITY_EFFECT"
+  },
+  {
+    "name": "source_order",
+    "path": [
+      "source_manifest",
+      "sources",
+      0,
+      "source_id"
+    ],
+    "operation": "replace",
+    "value": "C008-SOURCE-008",
+    "expected": "SOURCE_ORDER"
+  },
+  {
+    "name": "source_role",
+    "path": [
+      "source_manifest",
+      "sources",
+      1,
+      "source_role"
+    ],
+    "operation": "replace",
+    "value": "EXECUTION_AUTHORIZATION",
+    "expected": "SOURCE_ROLE"
+  },
+  {
+    "name": "source_count",
+    "path": [
+      "source_manifest",
+      "source_count"
+    ],
+    "operation": "replace",
+    "value": 3,
+    "expected": "SOURCE_COUNT"
+  },
+  {
+    "name": "evidence_id",
+    "path": [
+      "evidence_items",
+      0,
+      "evidence_id"
+    ],
+    "operation": "replace",
+    "value": "C008-EVID-009",
+    "expected": "EVIDENCE_ORDER"
+  },
+  {
+    "name": "evidence_sequence",
+    "path": [
+      "evidence_items",
+      1,
+      "sequence"
+    ],
+    "operation": "replace",
+    "value": 9,
+    "expected": "EVIDENCE_SEQUENCE"
+  },
+  {
+    "name": "evidence_criterion",
+    "path": [
+      "evidence_items",
+      0,
+      "criterion_code"
+    ],
+    "operation": "replace",
+    "value": "SUPPLY_EVIDENCE",
+    "expected": "EVIDENCE_CRITERION_BINDING"
+  },
+  {
+    "name": "evidence_class",
+    "path": [
+      "evidence_items",
+      6,
+      "evidence_class"
+    ],
+    "operation": "replace",
+    "value": "SUPPLIER_SPECIFIC_EVIDENCE",
+    "expected": "EVIDENCE_CLASS"
+  },
+  {
+    "name": "missing_supports_claim",
+    "path": [
+      "evidence_items",
+      1,
+      "supported_claims"
+    ],
+    "operation": "append",
+    "value": "Unsupported supplier promise",
+    "expected": "MISSING_EVIDENCE_SEMANTICS"
+  },
+  {
+    "name": "missing_freshness_current",
+    "path": [
+      "evidence_items",
+      5,
+      "freshness_status"
+    ],
+    "operation": "replace",
+    "value": "CURRENT",
+    "expected": "MISSING_EVIDENCE_SEMANTICS"
+  },
+  {
+    "name": "expired_public_source",
+    "path": [
+      "evidence_items",
+      6,
+      "valid_until"
+    ],
+    "operation": "replace",
+    "value": "2026-08-21T00:00:00+03:30",
+    "expected": "FRESHNESS_FAIL_CLOSED"
+  },
+  {
+    "name": "future_capture",
+    "path": [
+      "evidence_items",
+      0,
+      "captured_at"
+    ],
+    "operation": "replace",
+    "value": "2027-01-01T00:00:00+03:30",
+    "expected": "EVIDENCE_TIME"
+  },
+  {
+    "name": "evidence_conflict",
+    "path": [
+      "evidence_items",
+      0,
+      "conflicts"
+    ],
+    "operation": "append",
+    "value": "C008-CONFLICT-001",
+    "expected": "CONFLICT_FAIL_CLOSED"
+  },
+  {
+    "name": "reviewer_owner_same",
+    "path": [
+      "evidence_items",
+      0,
+      "reviewer"
+    ],
+    "operation": "replace",
+    "value": "C002_EVIDENCE_INTAKE",
+    "expected": "REVIEW_INDEPENDENCE"
+  },
+  {
+    "name": "protected_without_locator",
+    "path": [
+      "evidence_items",
+      2,
+      "evidence_class"
+    ],
+    "operation": "replace",
+    "value": "PROTECTED_COMMERCIAL_EVIDENCE",
+    "expected": "PROTECTED_LOCATOR_BOUNDARY"
+  },
+  {
+    "name": "evidence_promotion",
+    "path": [
+      "evidence_items",
+      0,
+      "promotion_effect"
+    ],
+    "operation": "replace",
+    "value": true,
+    "expected": "EVIDENCE_PROMOTION"
+  },
+  {
+    "name": "class_summary",
+    "path": [
+      "evidence_summary",
+      "by_class",
+      "PUBLIC_RESEARCH_EVIDENCE"
+    ],
+    "operation": "replace",
+    "value": 2,
+    "expected": "EVIDENCE_SUMMARY"
+  },
+  {
+    "name": "criterion_order",
+    "path": [
+      "criterion_reviews",
+      0,
+      "criterion_code"
+    ],
+    "operation": "replace",
+    "value": "SUPPLY_EVIDENCE",
+    "expected": "CRITERION_ORDER"
+  },
+  {
+    "name": "criterion_sequence",
+    "path": [
+      "criterion_reviews",
+      0,
+      "sequence"
+    ],
+    "operation": "replace",
+    "value": 2,
+    "expected": "CRITERION_SEQUENCE"
+  },
+  {
+    "name": "terminal_vector",
+    "path": [
+      "criterion_reviews",
+      0,
+      "terminal_state"
+    ],
+    "operation": "replace",
+    "value": "SUBMITTED_REVIEW_INCOMPLETE",
+    "expected": "TERMINAL_STATE_VECTOR"
+  },
+  {
+    "name": "mapped_state",
+    "path": [
+      "criterion_reviews",
+      0,
+      "c002_mapped_state"
+    ],
+    "operation": "replace",
+    "value": "SUBMITTED",
+    "expected": "C002_STATE_MAPPING"
+  },
+  {
+    "name": "c005_state",
+    "path": [
+      "criterion_reviews",
+      5,
+      "c005_state"
+    ],
+    "operation": "replace",
+    "value": "SUBMITTED",
+    "expected": "C005_STATE_BINDING"
+  },
+  {
+    "name": "review_lane",
+    "path": [
+      "criterion_reviews",
+      6,
+      "review_lane"
+    ],
+    "operation": "replace",
+    "value": "LANE_A_INDEPENDENT_REVIEW",
+    "expected": "REVIEW_LANE"
+  },
+  {
+    "name": "resolved_flag",
+    "path": [
+      "criterion_reviews",
+      0,
+      "resolved"
+    ],
+    "operation": "replace",
+    "value": false,
+    "expected": "RESOLUTION_SEMANTICS"
+  },
+  {
+    "name": "blocking_flag",
+    "path": [
+      "criterion_reviews",
+      1,
+      "blocking"
+    ],
+    "operation": "replace",
+    "value": false,
+    "expected": "RESOLUTION_SEMANTICS"
+  },
+  {
+    "name": "resolved_requirement",
+    "path": [
+      "criterion_reviews",
+      0,
+      "remaining_requirement"
+    ],
+    "operation": "replace",
+    "value": "invented blocker",
+    "expected": "RESOLUTION_REQUIREMENT"
+  },
+  {
+    "name": "unresolved_requirement_missing",
+    "path": [
+      "criterion_reviews",
+      1,
+      "remaining_requirement"
+    ],
+    "operation": "replace",
+    "value": null,
+    "expected": "UNRESOLVED_REQUIREMENT"
+  },
+  {
+    "name": "unknown_evidence_ref",
+    "path": [
+      "criterion_reviews",
+      0,
+      "evidence_ids",
+      0
+    ],
+    "operation": "replace",
+    "value": "C008-EVID-099",
+    "expected": "REVIEW_EVIDENCE_REF"
+  },
+  {
+    "name": "seo_false_downgrade",
+    "path": [
+      "criterion_reviews",
+      6,
+      "terminal_state"
+    ],
+    "operation": "replace",
+    "value": "SUBMITTED_REVIEW_INCOMPLETE",
+    "expected": "SEO_PUBLIC_EVIDENCE_RESOLUTION"
+  },
+  {
+    "name": "product_circular_dependency_downgrade",
+    "path": [
+      "criterion_reviews",
+      4,
+      "terminal_state"
+    ],
+    "operation": "replace",
+    "value": "SUBMITTED_REVIEW_INCOMPLETE",
+    "expected": "PRODUCT_EVIDENCE_RESOLUTION"
+  },
+  {
+    "name": "readiness_total",
+    "path": [
+      "readiness_result",
+      "resolved_count"
+    ],
+    "operation": "replace",
+    "value": 5,
+    "expected": "READINESS_TOTALS"
+  },
+  {
+    "name": "candidate_population",
+    "path": [
+      "readiness_result",
+      "candidate_registry_count"
+    ],
+    "operation": "replace",
+    "value": 1,
+    "expected": "READINESS_TOTALS"
+  },
+  {
+    "name": "g1_result",
+    "path": [
+      "g1_decision_surface",
+      "result"
+    ],
+    "operation": "replace",
+    "value": "READY_9_OF_9",
+    "expected": "G1_RESULT"
+  },
+  {
+    "name": "g1_m4_candidate",
+    "path": [
+      "g1_decision_surface",
+      "m4_promotion_candidate"
+    ],
+    "operation": "replace",
+    "value": "201/51",
+    "expected": "M4_SUCCESSOR_BOUNDARY"
+  },
+  {
+    "name": "g1_m4_authorized",
+    "path": [
+      "g1_decision_surface",
+      "m4_authorized"
+    ],
+    "operation": "replace",
+    "value": true,
+    "expected": "M4_SUCCESSOR_BOUNDARY"
+  },
+  {
+    "name": "g1_selection",
+    "path": [
+      "g1_decision_surface",
+      "recommendation_is_selection"
+    ],
+    "operation": "replace",
+    "value": true,
+    "expected": "FOUNDER_DECISION_BOUNDARY"
+  },
+  {
+    "name": "g1_missing_hidden",
+    "path": [
+      "g1_decision_surface",
+      "missing_evidence"
+    ],
+    "operation": "replace",
+    "value": [],
+    "expected": "G1_EVIDENCE_SURFACE"
+  },
+  {
+    "name": "regression_anchor",
+    "path": [
+      "regression_snapshot",
+      "c002_candidate_count"
+    ],
+    "operation": "replace",
+    "value": 1,
+    "expected": "REGRESSION_SNAPSHOT"
+  },
+  {
+    "name": "commerce_regression",
+    "path": [
+      "regression_snapshot",
+      "commerce_state"
+    ],
+    "operation": "replace",
+    "value": "PURCHASE_ENABLED",
+    "expected": "REGRESSION_SNAPSHOT"
+  },
+  {
+    "name": "forbidden_weighted_score",
+    "path": [
+      "readiness_result",
+      "weighted_score"
+    ],
+    "operation": "add",
+    "value": 88,
+    "expected": "FORBIDDEN_KEY"
+  },
+  {
+    "name": "forbidden_product_population",
+    "path": [
+      "products"
+    ],
+    "operation": "add",
+    "value": [],
+    "expected": "FORBIDDEN_KEY"
+  },
+  {
+    "name": "wrong_source_locator",
+    "path": [
+      "source_manifest",
+      "sources",
+      1,
+      "source_locator"
+    ],
+    "operation": "replace",
+    "value": "https://example.com/unsupported",
+    "expected": "SOURCE_LOCATOR"
+  },
+  {
+    "name": "wrong_evidence_source",
+    "path": [
+      "evidence_items",
+      0,
+      "source_locators",
+      0
+    ],
+    "operation": "replace",
+    "value": "repository:wrong-owner",
+    "expected": "EVIDENCE_SOURCE_BINDING"
+  },
+  {
+    "name": "wrong_evidence_base_ref",
+    "path": [
+      "evidence_items",
+      0,
+      "base_evidence_refs",
+      0
+    ],
+    "operation": "replace",
+    "value": "C003-DISC-010",
+    "expected": "EVIDENCE_BASE_BINDING"
+  },
+  {
+    "name": "wrong_review_base_ref",
+    "path": [
+      "criterion_reviews",
+      0,
+      "base_evidence_refs",
+      0
+    ],
+    "operation": "replace",
+    "value": "C003-DISC-010",
+    "expected": "REVIEW_BASE_BINDING"
+  },
+  {
+    "name": "source_title_changed",
+    "path": [
+      "source_manifest",
+      "sources",
+      0,
+      "title"
+    ],
+    "operation": "replace",
+    "value": "Altered authorization title",
+    "expected": "SOURCE_OBJECT_EXACTNESS"
+  },
+  {
+    "name": "source_author_changed",
+    "path": [
+      "source_manifest",
+      "sources",
+      1,
+      "author_id"
+    ],
+    "operation": "replace",
+    "value": "U0INVALIDAUTHOR",
+    "expected": "SOURCE_OBJECT_EXACTNESS"
+  },
+  {
+    "name": "source_captured_at_changed",
+    "path": [
+      "source_manifest",
+      "sources",
+      1,
+      "captured_at"
+    ],
+    "operation": "replace",
+    "value": "2026-08-22T00:29:00+03:30",
+    "expected": "SOURCE_OBJECT_EXACTNESS"
+  },
+  {
+    "name": "source_thread_incomplete",
+    "path": [
+      "source_manifest",
+      "sources",
+      0,
+      "thread_complete"
+    ],
+    "operation": "replace",
+    "value": false,
+    "expected": "SOURCE_OBJECT_EXACTNESS"
+  },
+  {
+    "name": "seo_claim_inflated",
+    "path": [
+      "evidence_items",
+      6,
+      "supported_claims"
+    ],
+    "operation": "append",
+    "value": "Public pages prove buyer demand and query volume.",
+    "expected": "EVIDENCE_CLAIM_BINDING"
+  },
+  {
+    "name": "seo_guardrail_weakened",
+    "path": [
+      "evidence_items",
+      6,
+      "unsupported_claims"
+    ],
+    "operation": "replace",
+    "value": [
+      "Public pages may establish buyer demand."
+    ],
+    "expected": "EVIDENCE_CLAIM_BINDING"
+  },
+  {
+    "name": "supply_guardrail_reversed",
+    "path": [
+      "evidence_items",
+      1,
+      "unsupported_claims"
+    ],
+    "operation": "replace",
+    "value": [
+      "General sourcing history establishes current stock and Availability."
+    ],
+    "expected": "EVIDENCE_CLAIM_BINDING"
+  },
+  {
+    "name": "nonprotected_locator_added",
+    "path": [
+      "evidence_items",
+      0,
+      "protected_locator"
+    ],
+    "operation": "replace",
+    "value": "protected-evidence:opaque/record-1",
+    "expected": "PROTECTED_LOCATOR_BOUNDARY"
+  },
+  {
+    "name": "protected_value_embedded",
+    "path": [
+      "evidence_items",
+      0,
+      "protected_locator"
+    ],
+    "operation": "replace",
+    "value": "cost=secret margin=secret",
+    "expected": "PROTECTED_VALUE_LEAK"
+  },
+  {
+    "name": "lane_d_trigger_reversed",
+    "path": [
+      "lane_d_closure",
+      "trigger",
+      "status"
+    ],
+    "operation": "replace",
+    "value": "NOT_TRIGGERED",
+    "expected": "LANE_D_CLOSURE"
+  },
+  {
+    "name": "g1_missing_text_weakened",
+    "path": [
+      "g1_decision_surface",
+      "missing_evidence"
+    ],
+    "operation": "replace",
+    "value": [
+      "x",
+      "y",
+      "z"
+    ],
+    "expected": "G1_EVIDENCE_SURFACE"
+  },
+  {
+    "name": "canonical_fixture_mode_flipped",
+    "path": [
+      "fixture_mode"
+    ],
+    "operation": "replace",
+    "value": "SYNTHETIC",
+    "expected": "FIXTURE_MODE"
+  },
+  {
+    "name": "lane_d_trigger_after_research",
+    "path": [
+      "lane_d_closure",
+      "trigger",
+      "reviewed_at"
+    ],
+    "operation": "replace",
+    "value": "2026-08-22T11:58:00+03:30",
+    "expected": "LANE_D_CHRONOLOGY"
+  },
+  {
+    "name": "lane_d_research_before_trigger",
+    "path": [
+      "lane_d_closure",
+      "research",
+      "captured_at"
+    ],
+    "operation": "replace",
+    "value": "2026-08-22T00:39:00+03:30",
+    "expected": "LANE_D_CHRONOLOGY"
+  },
+  {
+    "name": "lane_d_final_before_research",
+    "path": [
+      "lane_d_closure",
+      "final_review",
+      "reviewed_at"
+    ],
+    "operation": "replace",
+    "value": "2026-08-22T11:50:00+03:30",
+    "expected": "LANE_D_CHRONOLOGY"
+  },
+  {
+    "name": "lane_d_source_set_incomplete",
+    "path": [
+      "lane_d_closure",
+      "research",
+      "source_ids",
+      5
+    ],
+    "operation": "delete",
+    "expected": "LANE_D_SOURCE_BINDING"
+  },
+  {
+    "name": "public_source_capture_drift",
+    "path": [
+      "source_manifest",
+      "sources",
+      2,
+      "captured_at"
+    ],
+    "operation": "replace",
+    "value": "2026-08-22T11:57:43+03:30",
+    "expected": "PUBLIC_SOURCE_CHRONOLOGY"
+  },
+  {
+    "name": "query_exact_result_changed",
+    "path": [
+      "source_manifest",
+      "sources",
+      3,
+      "observed_results",
+      0
+    ],
+    "operation": "replace",
+    "value": "لوله استیل 304",
+    "expected": "PUBLIC_SOURCE_EXACTNESS"
+  },
+  {
+    "name": "seo_overclaims_price",
+    "path": [
+      "evidence_items",
+      6,
+      "supported_claims"
+    ],
+    "operation": "append",
+    "value": "AhanOnline establishes a current market price.",
+    "expected": "SEO_OVERCLAIM_BOUNDARY"
+  },
+  {
+    "name": "seo_overclaims_availability",
+    "path": [
+      "evidence_items",
+      6,
+      "supported_claims"
+    ],
+    "operation": "append",
+    "value": "The public pages establish current Availability and stock.",
+    "expected": "SEO_OVERCLAIM_BOUNDARY"
+  },
+  {
+    "name": "product_promotion_requirement_reintroduced",
+    "path": [
+      "criterion_reviews",
+      4,
+      "remaining_requirement"
+    ],
+    "operation": "replace",
+    "value": "Canonical Product promotion required.",
+    "expected": "PRODUCT_EVIDENCE_RESOLUTION"
+  },
+  {
+    "name": "seo_competitor_presence_alone",
+    "path": [
+      "evidence_items",
+      6,
+      "supported_claims"
+    ],
+    "operation": "append",
+    "value": "Competitor page presence alone verifies buyer intent.",
+    "expected": "SEO_OVERCLAIM_BOUNDARY"
+  }
 ]

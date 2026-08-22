@@ -14,6 +14,7 @@
     "evaluation_as_of",
     "authority_effects",
     "source_manifest",
+    "lane_d_closure",
     "evidence_items",
     "evidence_summary",
     "criterion_reviews",
@@ -31,6 +32,7 @@
     "evaluation_as_of": {"type": "string", "format": "date-time"},
     "authority_effects": {"$ref": "#/$defs/authorityEffects"},
     "source_manifest": {"$ref": "#/$defs/sourceManifest"},
+    "lane_d_closure": {"$ref": "#/$defs/laneDClosure"},
     "evidence_items": {
       "type": "array",
       "minItems": 9,
@@ -169,11 +171,11 @@
       "additionalProperties": false,
       "required": ["source_count", "sources"],
       "properties": {
-        "source_count": {"const": 2},
+        "source_count": {"const": 8},
         "sources": {
           "type": "array",
-          "minItems": 2,
-          "maxItems": 2,
+          "minItems": 8,
+          "maxItems": 8,
           "items": {"$ref": "#/$defs/source"}
         }
       }
@@ -183,13 +185,64 @@
       "additionalProperties": false,
       "required": ["source_id", "source_role", "source_locator", "captured_at", "title", "author_id", "thread_complete"],
       "properties": {
-        "source_id": {"pattern": "^C008-SOURCE-00[1-4]$"},
+        "source_id": {"pattern": "^C008-SOURCE-00[1-8]$"},
         "source_role": {"enum": ["EXECUTION_AUTHORIZATION", "PACKET", "PUBLIC_RESEARCH"]},
         "source_locator": {"$ref": "#/$defs/nonEmptyString"},
         "captured_at": {"type": "string", "format": "date-time"},
         "title": {"$ref": "#/$defs/nonEmptyString"},
         "author_id": {"$ref": "#/$defs/nonEmptyString"},
-        "thread_complete": {"type": "boolean"}
+        "thread_complete": {"type": "boolean"},
+        "locale": {"type": ["string", "null"], "minLength": 2},
+        "query_text": {"type": ["string", "null"], "minLength": 1},
+        "observed_results": {"$ref": "#/$defs/stringArray"},
+        "claim_limits": {"$ref": "#/$defs/stringArray"}
+      }
+    },
+    "laneDClosure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["trigger", "research", "final_review"],
+      "properties": {
+        "trigger": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "criterion_code", "reviewed_at", "reviewer", "finding", "source_evidence_ids"],
+          "properties": {
+            "status": {"const": "TRIGGERED_BY_ACTUAL_INDEPENDENT_INSUFFICIENCY_REVIEW"},
+            "criterion_code": {"const": "SEO_BUYER_INTENT"},
+            "reviewed_at": {"const": "2026-08-22T00:40:00+03:30"},
+            "reviewer": {"const": "INDEPENDENT_C008_EVIDENCE_REVIEWER"},
+            "finding": {"$ref": "#/$defs/nonEmptyString"},
+            "source_evidence_ids": {"type": "array", "const": ["C008-EVID-007"]}
+          }
+        },
+        "research": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["started_after_trigger", "captured_at", "source_ids", "public_research_record_count", "persian_market_relevant", "price_research", "availability_research", "limitations"],
+          "properties": {
+            "started_after_trigger": {"const": true},
+            "captured_at": {"const": "2026-08-22T11:57:42+03:30"},
+            "source_ids": {"type": "array", "const": ["C008-SOURCE-003", "C008-SOURCE-004", "C008-SOURCE-005", "C008-SOURCE-006", "C008-SOURCE-007", "C008-SOURCE-008"]},
+            "public_research_record_count": {"const": 6},
+            "persian_market_relevant": {"const": true},
+            "price_research": {"const": false},
+            "availability_research": {"const": false},
+            "limitations": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/nonEmptyString"}, "uniqueItems": true}
+          }
+        },
+        "final_review": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["reviewed_at", "reviewer", "result", "supported_scope", "unsupported_scope"],
+          "properties": {
+            "reviewed_at": {"const": "2026-08-22T11:58:52+03:30"},
+            "reviewer": {"const": "INDEPENDENT_C008_PUBLIC_EVIDENCE_REVIEWER"},
+            "result": {"const": "VERIFIED_QUALITATIVE_BUYER_SEARCH_APPLICATION_INTENT_ONLY"},
+            "supported_scope": {"$ref": "#/$defs/nonEmptyString"},
+            "unsupported_scope": {"$ref": "#/$defs/nonEmptyString"}
+          }
+        }
       }
     },
     "evidenceItem": {
@@ -288,11 +341,11 @@
             "CONFLICTING_EVIDENCE"
           ],
           "properties": {
-            "REPOSITORY_CANONICAL_EVIDENCE": {"const": 4},
+            "REPOSITORY_CANONICAL_EVIDENCE": {"const": 3},
             "FOUNDER_CONFIRMED_EVIDENCE": {"const": 2},
             "SUPPLIER_SPECIFIC_EVIDENCE": {"const": 0},
             "RIGHTS_SAFE_MEDIA_EVIDENCE": {"const": 0},
-            "PUBLIC_RESEARCH_EVIDENCE": {"const": 0},
+            "PUBLIC_RESEARCH_EVIDENCE": {"const": 1},
             "PROTECTED_COMMERCIAL_EVIDENCE": {"const": 0},
             "MISSING_EVIDENCE": {"const": 3},
             "CONFLICTING_EVIDENCE": {"const": 0}
@@ -365,15 +418,15 @@
       ],
       "properties": {
         "criterion_count": {"const": 9},
-        "verified_count": {"const": 4},
+        "verified_count": {"const": 6},
         "not_applicable_approved_count": {"const": 0},
-        "submitted_review_incomplete_count": {"const": 4},
+        "submitted_review_incomplete_count": {"const": 2},
         "missing_evidence_count": {"const": 1},
         "conflicting_evidence_count": {"const": 0},
         "expired_or_stale_evidence_count": {"const": 0},
-        "resolved_count": {"const": 4},
-        "unresolved_count": {"const": 5},
-        "open_blocking_count": {"const": 5},
+        "resolved_count": {"const": 6},
+        "unresolved_count": {"const": 3},
+        "open_blocking_count": {"const": 3},
         "readiness": {"const": "NOT_READY"},
         "founder_selection_ready": {"const": false},
         "candidate_registry_count": {"const": 0}
@@ -395,7 +448,7 @@
         "m4_authorized"
       ],
       "properties": {
-        "result": {"const": "HOLD_NOT_READY_4_OF_9"},
+        "result": {"const": "HOLD_NOT_READY_6_OF_9"},
         "resolved_criteria": {"$ref": "#/$defs/stringArray"},
         "unresolved_criteria": {"$ref": "#/$defs/stringArray"},
         "missing_evidence": {"$ref": "#/$defs/stringArray"},

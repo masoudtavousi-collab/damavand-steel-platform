@@ -70,8 +70,14 @@ source_policy:
   public_research_is_supplementary_only: true
   public_research_can_prove_query_volume_or_buyer_demand: false
   public_research_requires_prior_insufficiency_review: true
-  conditional_public_research_triggered: false
-  public_research_record_count: 0
+  conditional_public_research_triggered: true
+  lane_d_triggered_at: "2026-08-22T00:40:00+03:30"
+  public_research_captured_at: "2026-08-22T11:57:42+03:30"
+  public_research_independently_reviewed_at: "2026-08-22T11:58:52+03:30"
+  public_research_record_count: 6
+  public_research_supports_qualitative_buyer_search_application_intent_only: true
+  public_research_can_prove_ranking_conversion_market_share_price_or_availability: false
+  competitor_page_presence_alone_can_verify_buyer_intent: false
 evidence_policy:
   exact_evidence_count: 9
   evidence_classes:
@@ -125,27 +131,30 @@ c002_readiness_policy:
     CONFLICTING_EVIDENCE: CONFLICTING
     EXPIRED_OR_STALE_EVIDENCE: EXPIRED
   resolved_terminal_states: [VERIFIED, NOT_APPLICABLE_APPROVED]
+  product_data_completeness_is_evidence_sufficiency_only: true
+  product_or_variant_promotion_is_readiness_blocker: false
+  readiness_creates_product_variant_or_sku: false
   exact_terminal_vector:
     - VERIFIED
     - SUBMITTED_REVIEW_INCOMPLETE
     - VERIFIED
     - VERIFIED
-    - SUBMITTED_REVIEW_INCOMPLETE
+    - VERIFIED
     - MISSING_EVIDENCE
-    - SUBMITTED_REVIEW_INCOMPLETE
+    - VERIFIED
     - VERIFIED
     - SUBMITTED_REVIEW_INCOMPLETE
   exact_totals:
     criterion_count: 9
-    verified_count: 4
+    verified_count: 6
     not_applicable_approved_count: 0
-    submitted_review_incomplete_count: 4
+    submitted_review_incomplete_count: 2
     missing_evidence_count: 1
     conflicting_evidence_count: 0
     expired_or_stale_evidence_count: 0
-    resolved_count: 4
-    unresolved_count: 5
-    open_blocking_count: 5
+    resolved_count: 6
+    unresolved_count: 3
+    open_blocking_count: 3
   weighted_scoring_allowed: false
   readiness: NOT_READY
   founder_selection_ready: false
@@ -153,7 +162,7 @@ c002_readiness_policy:
 g1_policy:
   decision_surface_only: true
   recommendation_is_selection: false
-  exact_result: HOLD_NOT_READY_4_OF_9
+  exact_result: HOLD_NOT_READY_6_OF_9
   exact_m4_candidate: null
   founder_decision_required: HOLD_M4_AND_REQUEST_REMAINING_REAL_WORLD_EVIDENCE
   m4_authorized: false

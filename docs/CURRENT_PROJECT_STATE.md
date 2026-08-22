@@ -18,11 +18,11 @@
 - **Last completed Founder evidence/readiness reconciliation:** `C005` through merged PR #42 and Merge Commit `ea616b08ef2f4012afd011684dfe4e5c98cd8fcf`
 - **Last completed Product Data semantic/Product Experience architecture reconciliation:** `C006` through merged PR #43 and Merge Commit `97f6e84431727c2ed32624af439295f9d9436396`
 - **Latest completed governance convergence:** `C007` Governance Convergence & Phase-1 Architecture Baseline through PR #44, effective on `main` only after separately authorized Merge
-- **Latest bounded readiness-evidence closure:** `C008` C002 Readiness / Real-world Evidence Closure; effective on `main` only after a separately authorized Merge, with G1 `4/9 / NOT_READY`
+- **Latest bounded readiness-evidence closure:** `C008` C002 Readiness / Real-world Evidence Closure; effective on `main` only after a separately authorized Merge, with repaired G1 `6/9 / NOT_READY`
 - **Current phase:** Project OS 2.0 — C008 completed/archive-only when this state is present on `main`; no successor Mission is active
 - **Current authorized branch:** `NONE`
 - **Current repository mutation authority:** `NONE`
-- **Current authorization:** No active Mission when this state is present on `main`. The bounded C008 execution authority ends at `STOP` before any Merge and creates no M4, successor, Product/Data/commercial, WordPress/WooCommerce, Runtime, Staging, or Production authority. Commerce stays `INQUIRY_ONLY`, the C002 candidate registry stays empty, readiness is `4/9 / NOT_READY`, Runtime/Production authority stays `NONE`, and C1-T03 stays frozen.
+- **Current authorization:** No active Mission when this state is present on `main`. The bounded C008 execution authority ends at `STOP` before any Merge and creates no M4, successor, Product/Data/commercial, WordPress/WooCommerce, Runtime, Staging, or Production authority. Commerce stays `INQUIRY_ONLY`, the C002 candidate registry stays empty, readiness is `6/9 / NOT_READY`, Runtime/Production authority stays `NONE`, and C1-T03 stays frozen.
 - **C007 integration:** If this state is present on `main`, PR #44 has been merged through a separate Founder / Project Commander decision. This document did not authorize that Merge.
 - **C008 main-effect boundary:** This branch content claims no C008 PR or Merge. Only if it later reaches `main` through a separate Founder / Project Commander Merge decision do the completed/archive-only semantics in this document take effect; this document does not authorize that action.
 - **Additional Merge authority:** `NONE`. This completed/archive-only C008 state authorizes no additional Merge, branch, repository mutation, M4, or successor Mission.
@@ -54,7 +54,7 @@ This file is the only semantic operational-state pointer. Other documents may pr
 | `C005` 201/51 Founder Evidence & C002 Readiness Re-evaluation | Exact planning checkpoint `C0BNHRRTE9F / 1787080262.415499`; four complete Founder-evidence parents `1787056479.144299`, `1787080149.589239`, `1787080165.322449`, `1787080178.569909`; [C005 Scope](C005_201_51_FOUNDER_EVIDENCE_READINESS_REEVALUATION_SCOPE_V1.0.md); [Readiness Packet](C005_201_51_READINESS_REEVALUATION_PACKET_V1.0.md); closed schema, offline validator and adversarial tests | Adds 17 classified evidence records and re-evaluates all nine criteria: 8 `SUBMITTED`, 1 `MISSING`, 6 separately reviewable, all 9 `OPEN_BLOCKING`, 0 resolved. C002 remains `0/9 / NOT_READY`; current Mass/Supply are zero; price/customer/order/VIP/Loyalty objects are zero; every Product/commerce/runtime/merge/successor authority remains false |
 | `C006` Product Data Semantic & Product Experience Architecture Reconciliation | Complete C006 orchestration and Pipe/Interaction Slack sources; [C006 Scope](C006_PRODUCT_DATA_SEMANTIC_PRODUCT_EXPERIENCE_ARCHITECTURE_SCOPE_V1.0.md); reserved Product Experience owner; closed architecture contract/schema/registry, offline validator and adversarial tests; merged PR #43 and Merge Commit `97f6e84431727c2ed32624af439295f9d9436396` | Completed/archive-only predecessor. Separates canonical, derived, dynamic, Knowledge, Service and operator truth; closes selector/media/SEO/CTA projection rules without Product/value/tuple/SKU/Mass/Availability/Price/media/content/runtime population |
 | `C007` Governance Convergence & Phase-1 Architecture Baseline | Founder authorization `C0BNHRRTE9F / 1787310403.761439`; addendum `1787311265.681929`; [C007 Scope](C007_GOVERNANCE_CONVERGENCE_PHASE1_ARCHITECTURE_BASELINE_SCOPE_V1.0.md); PR #44 review surface | Completed/archive-only when this state is present on `main`. Converges top-level Draft owner summaries and governance pointers without approving their lifecycle or creating Product, commercial, Runtime, Merge or successor authority |
-| `C008` C002 Readiness / Real-world Evidence Closure | Founder authorization `C0BNHRRTE9F / 1787343117.499159`; Packet `DS-P1-M3-PACKET-01` Version 1.0; [C008 Scope](C008_C002_READINESS_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md); [C008 Evidence Review Packet](C008_C002_READINESS_EVIDENCE_REVIEW_PACKET_V1.0.md); [C008 machine registry](../repository/data/registries/extensions/c008/201-51-readiness-evidence-closure.yaml) | Completed/archive-only when this state is present on `main`. Independently reviews the six C005 reviewable criteria, classifies all nine as 4 `VERIFIED`, 4 `SUBMITTED_REVIEW_INCOMPLETE`, 1 `MISSING_EVIDENCE`, and returns G1 `4/9 / NOT_READY`; candidate count stays zero, `FOUNDER_SELECTION_READY=FALSE`, `M4_CANDIDATE=NONE`, and no Product, commercial, Runtime, Merge or successor authority follows |
+| `C008` C002 Readiness / Real-world Evidence Closure | Founder authorization `C0BNHRRTE9F / 1787343117.499159`; Packet `DS-P1-M3-PACKET-01` Version 1.0; [C008 Scope](C008_C002_READINESS_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md); [C008 Evidence Review Packet](C008_C002_READINESS_EVIDENCE_REVIEW_PACKET_V1.0.md); [C008 machine registry](../repository/data/registries/extensions/c008/201-51-readiness-evidence-closure.yaml) | Completed/archive-only when this state is present on `main`. Independently reviews all nine criteria, verifies Product Data as evidence sufficiency without promotion, records and executes the conditional Lane D research, and classifies all nine as 6 `VERIFIED`, 2 `SUBMITTED_REVIEW_INCOMPLETE`, 1 `MISSING_EVIDENCE`; G1 is `6/9 / NOT_READY`. Candidate count stays zero, `FOUNDER_SELECTION_READY=FALSE`, `M4_CANDIDATE=NONE`, and no Product, commercial, Runtime, Merge or successor authority follows |
 | Wave 2A — Product Core | PR #5; `product-core` contract, schema, entity-type/status registries, validator, and fixtures | Platform-independent structural foundation exists; no Product, Golden, SKU, commercial, import, or runtime record was created |
 | Wave 2B — Product Attributes | PR #6; `product-attribute` contract, schema, controlled supporting registries, validator, and fixtures | The original Wave 2B foundation kept the canonical registry empty; later PD-02B and PD-03A approved exactly six definitions—Material, Grade, Finish, Diameter, Thickness, and Length—without approving Product values or runtime use |
 | Wave 2C — Measurements | PR #7; measurement contract/schema, two initially candidate dimensions, four initially candidate units, validator, and fixtures | The original foundation asserted no Product values. PD-03A later approved Length, Metre, and Millimetre; Mass, Kilogram, and Gram remain `CANDIDATE_UNVERIFIED`, and no weight, availability, pricing, or runtime mapping is asserted |
@@ -146,11 +146,13 @@ Repository validators are active in CI and unified under `make test`. PR #12 har
   No Product/value/SKU/Mass/Availability/Price/Media/Knowledge instance or
   WordPress/WooCommerce/Runtime object is created.
 - C008 independently reviews the six C005 reviewable criteria and normalizes all
-  nine terminal states. Demand Signal, Gross Profit Potential, Repeatability and
-  Operational Complexity are `VERIFIED`; Supply Evidence, Product Data
-  Completeness, SEO/Buyer Intent and Fulfillment Risk remain
+  nine terminal states. Demand Signal, Gross Profit Potential, Repeatability,
+  Product Data Completeness, SEO/Buyer Intent and Operational Complexity are
+  `VERIFIED`; Supply Evidence and Fulfillment Risk remain
   `SUBMITTED_REVIEW_INCOMPLETE`; Photo/Content remains `MISSING_EVIDENCE`.
-  Readiness is therefore `4/9 / NOT_READY`, the C002 candidate count remains
+  Product Data verification is evidence sufficiency only and Lane D verifies
+  qualitative Persian buyer/search/application intent only. Readiness is
+  therefore `6/9 / NOT_READY`, the C002 candidate count remains
   `0`, Founder selection is not ready, and no M4 candidate or authority exists.
 
 ### Knowledge Repository
@@ -227,7 +229,7 @@ All existing C1-T03 Scope, Gate 4 output, reviews, consolidation, and 11 finding
 
 ## Current Blockers
 
-- C008 leaves five exact C002 readiness blockers: supplier-specific Supply evidence; separately authorized canonical Product/Variant promotion evidence; an owned/licensed production-ready media and rights packet; independently reviewable bounded buyer/search-intent evidence; and supplier-specific Fulfillment validity/exception evidence.
+- C008 leaves three exact external C002 readiness blockers: supplier-specific Supply evidence; an owned/licensed production-ready media and rights packet; and supplier-specific Fulfillment validity/exception evidence. Canonical Product/Variant promotion remains separately gated downstream and is not a readiness-evidence blocker; Lane D buyer/search intent is verified only within its qualitative non-price/non-Availability limits.
 - Final Product records, Product Attribute definitions, SKU vocabulary, approved commercial combinations, and availability evidence are incomplete.
 - Media files, rights, final content, relations, and compatibility remain incomplete.
 - Authenticated WordPress/cPanel evidence, isolated staging, verified backup/restore, rollback ownership, and exact target approval are absent.
@@ -244,7 +246,7 @@ All existing C1-T03 Scope, Gate 4 output, reviews, consolidation, and 11 finding
 
 ## Approved Next Action
 
-C008 is completed/archive-only when this document is present on `main`. No active Mission exists. No repository mutation or additional Merge is authorized. Preserve G1 `4/9 / NOT_READY` and collect no further evidence through repository mutation without a new exact Founder / Project Commander authorization. M4, every later P1 Mission, P2, P3, P4, and P5 remain `NOT STARTED`.
+C008 is completed/archive-only when this document is present on `main`. No active Mission exists. No repository mutation or additional Merge is authorized. Preserve G1 `6/9 / NOT_READY` and collect no further evidence through repository mutation without a new exact Founder / Project Commander authorization. M4, every later P1 Mission, P2, P3, P4, and P5 remain `NOT STARTED`.
 
 C008 creates an evidence/review extension only. It does not select or populate a C002 candidate, promote a Product/value/Variant Rule/tuple/SKU/Mass/Availability/Price fact, create a supplier commitment or media right, activate commerce, or configure WordPress/WooCommerce/Runtime. C1-T03, C1-T07, PD-04/PD-05, Product/SKU/Availability population, pricing or commerce activation, WordPress/WooCommerce mutation, Runtime, Staging, Import, Publishing, Deployment, Production, Central Steel, n8n, OpenAI API integration and M4 remain separately gated and `NO-GO`. No additional Merge, repository mutation, or successor Mission is authorized by this completed/archive-only state.
 
