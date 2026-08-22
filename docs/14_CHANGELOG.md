@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-08-22 — C008-R1 remaining real-world evidence closure
+
+- Added the bounded [C008-R1 Scope](C008_R1_C002_REMAINING_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md), [Evidence Review Packet](C008_R1_C002_REMAINING_REAL_WORLD_EVIDENCE_REVIEW_PACKET_V1.0.md), and delta-only [machine registry](../repository/data/registries/extensions/c008r1/201-51-remaining-real-world-evidence-closure.yaml) under original Founder authorization `C0BNHRRTE9F / 1787390606.427149`, Packet reply `1787390614.653749`, later scope refinement `C0BNHRRTE9F / 1787397116.963919`, and Fast-Track parent `1787397760.694619`.
+- Verified the C008 PR #45 merge predecessor and pinned immutable C002/C008 owners. Targeted re-review found zero new admissible Supplier, Fulfillment, protected, conflicting, stale, or rights-safe Media items.
+- Preserved Supply and Fulfillment as `SUBMITTED_REVIEW_INCOMPLETE`, Photo/Content as `MISSING_EVIDENCE`, candidate count zero, and G1 `6/9 / NOT_READY`; supplier intake is deferred, not waived or verified, and the sole active Founder evidence input is rights-safe media.
+- The later refinement supersedes only current collection timing/request handling; it does not alter immutable C002 state, readiness, or any C009/M4/runtime/Merge authority.
+- Repair validation, independent pre-pin review, and final pinned status-record replay passed with all four semantic digests pinned, 14 focused tests, 85/85 mutations, full `make test`, 173/173 manifest documents, 173 Atlas rows / 21 domains, 15/15 agentic tests, 5,101 links/anchors, and zero material/non-material findings. PR #46 CI run `32572715565` passed `repository-validation` on exact head `4f63dc6cc7a96539c1a8feeabc30a8e2cd846530`.
+- Created no candidate, Product/value/tuple/SKU/Mass/Supply truth/Availability/Price/media right, commerce/runtime object, C009, M4, Merge or successor authority.
+
 ## 2026-08-22 — C008 C002 readiness / real-world evidence closure
 
 - Added the bounded [C008 Scope](C008_C002_READINESS_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md), [Evidence Review Packet](C008_C002_READINESS_EVIDENCE_REVIEW_PACKET_V1.0.md), and [closed machine registry](../repository/data/registries/extensions/c008/201-51-readiness-evidence-closure.yaml) under exact Packet `DS-P1-M3-PACKET-01` Version 1.0 and Founder authorization.
@@ -283,7 +292,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.17.0
+- **Version:** 0.18.0
 - **Last Updated:** 2026-08-22
 - **Lifecycle:** Review
 - **Source of Truth:** Merged Git history and scoped decision/evidence records

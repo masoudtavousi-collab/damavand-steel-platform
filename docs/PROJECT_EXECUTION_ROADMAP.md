@@ -36,6 +36,7 @@ This roadmap defines sequence and gates, not mutable operational state. The exac
 - `FD-C003-DISCOVERY-001` authorizes the complete Founder Discovery Session 01 to be preserved as classified evidence and inactive owner/backlog mappings. It is evidence integration only and starts neither C003-A nor C003-B.
 - PR #43 merged C006 at `97f6e84431727c2ed32624af439295f9d9436396`; C006 is completed/archive-only and grants no Product, Runtime or Production authority.
 - PR #44 merged C007 at `5a6fcbf368f817e88fca070a111fecbe65c4511a`; C007 is completed/archive-only and is the reviewed input anchor for the separately authorized bounded C008/M3 evidence-closure Mission.
+- PR #45 merged C008 at `fbe3d9eb78566dc7b006fc43b0939d124a81cec6`; C008 is completed/archive-only at `6/9 / NOT_READY` and is the exact predecessor for the separately authorized delta-only C008-R1 re-review.
 - The approved BP2 Data Administration contract remains documentation-only with `implementation_authority: false`; approval derives no Product, Admin UI, runtime, import, publication, deployment, or production authority.
 - The historical Wave 1 branch/commit/push/Draft-PR scope did not authorize merge and remains preserved as chronology. Its later approved merge granted no Wave 2, runtime, or implementation authority.
 - Wave 2A–2C are structural, platform-independent foundations. They created no canonical Product rows, Product Attribute definitions, Master Data, Golden package, WordPress implementation, publication, deployment, or production mutation.
@@ -78,6 +79,7 @@ Its evidence and findings remain preserved, but C1-T03 is not the active next ac
 | `C006 — Product Data Semantic & Product Experience Architecture Reconciliation` | Reconcile Pipe semantics and Product Experience projection contracts without canonical population | Architecture/policy only; no Product, Runtime, WordPress/WooCommerce mutation or Production authority |
 | `C007 — Governance Convergence & Phase-1 Architecture Baseline` | Replace generic top-level placeholders with evidence-bound summaries and reconcile post-C006 governance pointers | Documentation/governance review only; one non-draft PR, no lifecycle promotion, Merge, Runtime or successor authority |
 | `C008 — C002 Readiness / Real-world Evidence Closure` | Independently review the C005 evidence queue, classify all nine criteria, run conditional Lane D only after the actual insufficiency trigger, close or explicitly preserve Supply/Fulfillment/Media gaps, and produce the [G1 review packet](C008_C002_READINESS_EVIDENCE_REVIEW_PACKET_V1.0.md) | [C008 Scope](C008_C002_READINESS_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md) and [machine registry](../repository/data/registries/extensions/c008/201-51-readiness-evidence-closure.yaml); repaired outcome `6/9 / NOT_READY`, candidate count `0`, three external blockers, `FOUNDER_SELECTION_READY=FALSE`, no M4 candidate or authority. Product Data verification is evidence sufficiency only and creates no promotion |
+| `C008-R1 — Remaining Real-World Evidence Closure` | Preserve the three C008 blockers without revisiting verified criteria; supplier intake is a typed deferred placeholder and rights-safe production media is the sole active evidence request | [C008-R1 Scope](C008_R1_C002_REMAINING_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md) and [delta registry](../repository/data/registries/extensions/c008r1/201-51-remaining-real-world-evidence-closure.yaml); the exact three blockers remain open and G1 stays `6/9 / NOT_READY`. Deferral is neither waiver nor verification; no C009, M4, Product/runtime or launch-gate authority follows |
 | `D-series` | Automation of demonstrated processes | Stable metrics, ownership, failure handling, and separate authorization |
 
 The root `C003` discovery-reconciliation Mission does not rename, start, or
@@ -100,11 +102,11 @@ and gains no Pilot, Runtime, Production or deployment authority from this
 roadmap correction. C006 is now completed/archive-only through PR #43. The
 historical C000 package remains unchanged as dated context.
 
-C008 is the bounded Campaign M3 evidence-closure outcome only when its patch is
-present on `main`. Fast-Track changes calendar parallelism, never evidence or
-authority semantics. Its presence does not activate the complete Phase-1
-Campaign, M4 or any later P1 Mission, or P2–P5. Any later work requires a
-separate Founder / Project Commander packet.
+C008-R1 is a bounded delta-only re-review over completed C008. Its presence on
+`main` records zero new admissible evidence and preserves the three true external
+blockers; it does not activate the complete Phase-1 Campaign, C009, M4, any later
+P1 Mission, or P2–P5. Any later work requires a separate Founder / Project
+Commander packet and the missing attributable evidence.
 
 ## Product and Commerce Boundaries
 
@@ -123,4 +125,4 @@ Master/Golden packages, Import, Runtime, WordPress/WooCommerce, Staging, Publish
 
 ## Current NO-GO
 
-C008 adds only a bounded C002 readiness evidence/review extension. It does not authorize Product/Knowledge/879-row/Master Data/Golden/SKU/slug/Availability population; controlled-value or valid-combination promotion; Mass/Supply-object, price, customer/order or VIP/Loyalty population; supplier commitment; media-rights inference or content/media publication; reservation, quotation, cutting or shipping implementation; hosting mutation; repository settings; workflows; import; WordPress/WooCommerce mutation; SEO publishing; public pricing, Offer schema, cart, checkout, payment, or purchase; Runtime; Staging; Publishing; Deployment; Production; FX automation; marketplace; Central Steel; n8n/OpenAI integration; C1-T03 repair; merge; C003-A; C003-B; M4; or any successor Mission. Consult [Current Project State](CURRENT_PROJECT_STATE.md) for the semantic boundary.
+C008-R1 adds only a delta-only C002 readiness evidence/review extension. It does not authorize Product/Knowledge/879-row/Master Data/Golden/SKU/slug/Availability population; controlled-value or valid-combination promotion; Mass/Supply-object, price, customer/order or VIP/Loyalty population; supplier commitment; media-rights inference or content/media publication; reservation, quotation, cutting or shipping implementation; hosting mutation; repository settings; workflows; import; WordPress/WooCommerce mutation; SEO publishing; public pricing, Offer schema, cart, checkout, payment, or purchase; Runtime; Staging; Publishing; Deployment; Production; FX automation; marketplace; Central Steel; n8n/OpenAI integration; C1-T03 repair; merge; C003-A; C003-B; C009; M4; or any successor Mission. Consult [Current Project State](CURRENT_PROJECT_STATE.md) for the semantic boundary.
