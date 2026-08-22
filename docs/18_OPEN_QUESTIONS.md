@@ -1,6 +1,6 @@
 # Open Questions
 
-> Project OS 2.0 resolves the operating model and future commerce target. C003 and C003-R1 preserve classified discovery evidence but activate none of it; C008-R1 re-review admits zero new evidence and preserves G1 `6/9 / NOT_READY` with candidate count zero; C1-T03 is frozen, and Product, eligibility, Runtime, C009, M4, and successor implementation questions remain separately gated.
+> Project OS 2.0 resolves the operating model and future commerce target. C003 and C003-R1 preserve classified discovery evidence but activate none of it; C008-R1 re-review admits zero new evidence and preserves G1 `6/9 / NOT_READY` with candidate count zero. C008-FT1 later creates only a separate false sibling gate with eight unmet launch prerequisites; C1-T03 is frozen, and Product, eligibility, Runtime, C009, M4, and successor implementation questions remain separately gated.
 
 ## Document Control
 
@@ -10,9 +10,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.19.0
-- **Last Updated:** 2026-08-22
-- **Last Review:** 2026-08-22
+- **Version:** 0.20.0
+- **Last Updated:** 2026-08-23
+- **Last Review:** 2026-08-23
 - **Review Cycle:** On question creation, resolution, blocking impact, or source-document change
 - **Lifecycle:** Draft
 - **Source of Truth:** Unresolved questions and placeholders in controlled source documents; this register does not answer them
@@ -28,7 +28,7 @@ Collect unresolved questions and unclassified placeholders without answering the
 
 ## Current Repository-Control Resolution Boundary
 
-Historical Git authorizations retain their original scope and chronology. Semantic state, current authorization, and the next action are maintained only in [Current Project State](CURRENT_PROJECT_STATE.md); this register creates no execution authority. `FD-C000-OS2-001` settles the OS2 operating model, future per-SKU target architecture, PD-03B seed/reference classification, and C1-T03 freeze. `FD-C003-DISCOVERY-001` preserves complete Session 01 as classified evidence and owner/backlog dispositions only. C008-R1 re-reviewed only the three C008 external blockers, admitted zero new evidence, and preserved G1 `6/9 / NOT_READY`; it selects no candidate and creates no Product, commercial, Runtime, C009 or M4 authority. Originating authorization references for Wave 2A and Wave 2B remain to be linked; merge history is not a substitute.
+Historical Git authorizations retain their original scope and chronology. Semantic state, current authorization, and the next action are maintained only in [Current Project State](CURRENT_PROJECT_STATE.md); this register creates no execution authority. `FD-C000-OS2-001` settles the OS2 operating model, future per-SKU target architecture, PD-03B seed/reference classification, and C1-T03 freeze. `FD-C003-DISCOVERY-001` preserves complete Session 01 as classified evidence and owner/backlog dispositions only. C008-R1 re-reviewed only the three C008 external blockers, admitted zero new evidence, and preserved G1 `6/9 / NOT_READY`. C008-FT1 is a later sibling governance gate, not a C002 transition: it stays `FALSE`, selects no candidate and creates no Product, commercial, Runtime, C009 or M4 authority. Originating authorization references for Wave 2A and Wave 2B remain to be linked; merge history is not a substitute.
 
 ## Explicit Open-Question Sections
 
@@ -127,7 +127,7 @@ missing inputs, and grants no whole-document lifecycle approval.
 | OQ-DATA-017 | Which cutting/remainder, packaging, freight, shipment, OTP, Customer/CRM, segmentation, Loyalty/Referral, payment/document, return/damage, consent, privacy, retention, notification, and audit rules are approved? | C003 discovery registry, [Inquiry Data Model](23_INQUIRY_DATA_MODEL.md), and [C003 Discovery Scope](C003_FOUNDER_DISCOVERY_RECONCILIATION_SCOPE_V1.0.md) | Open; target/backlog only, with no customer, order, payment, service, CRM, notification, or Runtime record created |
 | OQ-DATA-018 | Which future RBAC and legally reviewed tax-extensibility policies are approved, and what evidence would be required to reconsider marketplace compatibility without authorizing a supplier portal? | `FD-C003-DISCOVERY-001`, [User Roles](43_USER_ROLES.md), and [C003 Discovery Scope](C003_FOUNDER_DISCOVERY_RECONCILIATION_SCOPE_V1.0.md) | Deferred; no role/capability, tax rate/calculation, marketplace, supplier portal, or Runtime authority |
 | OQ-DATA-019 | Which exact 201/51 Brand × Thickness × Appearance × Length tuples are supported by independently reviewed evidence? | `FD-C003-R1-CP03-001` and [C003-R1 Scope](C003_R1_CHECKPOINT03_201_51_PILOT_READINESS_SCOPE_V1.0.md) | Open and blocking C002 selection readiness; C003-R1 records zero valid tuples and forbids Cartesian inference |
-| OQ-DATA-020 | What protected gross-profit, demand/repeatability, current supplier, media-rights, SEO and fulfillment-risk evidence resolves the nine C002 criteria? | [C008 Scope](C008_C002_READINESS_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md), [C008 Evidence Review Packet](C008_C002_READINESS_EVIDENCE_REVIEW_PACKET_V1.0.md), [C008-R1 Scope](C008_R1_C002_REMAINING_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md), [C008-R1 Evidence Review Packet](C008_R1_C002_REMAINING_REAL_WORLD_EVIDENCE_REVIEW_PACKET_V1.0.md), [C008-R1 delta registry](../repository/data/registries/extensions/c008r1/201-51-remaining-real-world-evidence-closure.yaml), and C002 candidate contract | C008-R1 preserves `6/9 / NOT_READY`: Supply/Fulfillment remain submitted/incomplete and their typed intake is deferred—not waived or verified—until later exact authority; Photo/Content remains missing and its rights-safe media request is the sole active Founder evidence input. No Product promotion, C009/M4 authority, or readiness transition follows. |
+| OQ-DATA-020 | What protected gross-profit, demand/repeatability, current supplier, media-rights, SEO and fulfillment-risk evidence resolves the nine C002 criteria? | [C008 Scope](C008_C002_READINESS_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md), [C008 Evidence Review Packet](C008_C002_READINESS_EVIDENCE_REVIEW_PACKET_V1.0.md), [C008-R1 Scope](C008_R1_C002_REMAINING_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md), [C008-R1 Evidence Review Packet](C008_R1_C002_REMAINING_REAL_WORLD_EVIDENCE_REVIEW_PACKET_V1.0.md), [C008-R1 delta registry](../repository/data/registries/extensions/c008r1/201-51-remaining-real-world-evidence-closure.yaml), [C008-FT1 Amendment](C008_FT1_FAST_TRACK_INQUIRY_LAUNCH_GOVERNANCE_AMENDMENT_V1.0.md), and C002 candidate contract | C008-R1 preserves `6/9 / NOT_READY`: Supply/Fulfillment remain submitted/incomplete and their typed intake is deferred—not waived or verified—until later exact authority; Photo/Content remains missing and its rights-safe media request remains a real gate. C008-FT1 does not resolve or waive these C002 states; it creates a separate `FALSE` sibling launch gate whose eight blockers include canonical Product promotion and rights-safe media. No Product promotion, C009/M4 authority, readiness transition or launch follows. |
 | OQ-DATA-021 | What versioned contract owns batch/transaction commercial-mass observations and Smart History without promoting mass to Variant identity or overwriting history? | `FD-C003-R1-CP03-001`, C002 Mass Provenance, and [C003-R1 Scope](C003_R1_CHECKPOINT03_201_51_PILOT_READINESS_SCOPE_V1.0.md) | Open future contract input; zero observations and no canonical mass value exist |
 
 ## Information Architecture Questions

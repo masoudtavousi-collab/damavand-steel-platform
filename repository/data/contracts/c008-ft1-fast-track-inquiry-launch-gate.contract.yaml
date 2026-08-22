@@ -1,0 +1,136 @@
+contract_id: c008-ft1-fast-track-inquiry-launch-gate
+contract_version: "1.0.0"
+record_kind: c008ft1-fast-track-inquiry-launch-gate
+schema:
+  path: repository/data/schemas/c008-ft1-fast-track-inquiry-launch-gate.schema.json
+  draft: https://json-schema.org/draft/2020-12/schema
+registry:
+  path: repository/data/registries/extensions/c008ft1/fast-track-inquiry-launch-gate.yaml
+authority:
+  mission_id: C008-FT1
+  governance_model_creation_allowed: true
+  repository_docs_contract_schema_registry_validator_test_work_allowed: true
+  branch_commit_push_pr_allowed: true
+  c002_state_mutation_allowed: false
+  candidate_population_allowed: false
+  product_population_allowed: false
+  controlled_value_promotion_allowed: false
+  valid_tuple_promotion_allowed: false
+  sku_assignment_allowed: false
+  supply_or_fulfillment_truth_population_allowed: false
+  media_asset_or_rights_population_allowed: false
+  availability_stock_price_eta_sla_claim_allowed: false
+  commerce_eligibility_activation_allowed: false
+  wordpress_woocommerce_mutation_allowed: false
+  runtime_mutation_allowed: false
+  staging_mutation_allowed: false
+  production_mutation_allowed: false
+  publication_allowed: false
+  c009_or_m4_start_allowed: false
+  successor_mission_allowed: false
+  auto_merge_allowed: false
+  merge_allowed: false
+dependencies:
+  c002_candidate_contract: repository/data/contracts/commercial-pilot-candidate.contract.yaml
+  c002_candidate_schema: repository/data/schemas/commercial-pilot-candidate.schema.json
+  c002_candidate_registry: repository/data/registries/extensions/c002/commercial-pilot-candidates.yaml
+  c006_contract: repository/data/contracts/pipe-product-experience-architecture.contract.yaml
+  c006_schema: repository/data/schemas/pipe-product-experience-architecture.schema.json
+  c006_registry: repository/data/registries/extensions/c006/pipe-product-experience-architecture.yaml
+  c008_contract: repository/data/contracts/c008-c002-readiness-evidence-closure.contract.yaml
+  c008_schema: repository/data/schemas/c008-c002-readiness-evidence-closure.schema.json
+  c008_registry: repository/data/registries/extensions/c008/201-51-readiness-evidence-closure.yaml
+  c008_r1_contract: repository/data/contracts/c008-r1-remaining-real-world-evidence-closure.contract.yaml
+  c008_r1_schema: repository/data/schemas/c008-r1-remaining-real-world-evidence-closure.schema.json
+  c008_r1_registry: repository/data/registries/extensions/c008r1/201-51-remaining-real-world-evidence-closure.yaml
+base_pins:
+  c002_candidate_contract_semantic_sha256: 923731cb080b0ecc05abb21b1189bfdd0df94297780cce364bb791479f7f47e3
+  c002_candidate_schema_semantic_sha256: 1e1b1977f369ab7e5961d4e69111682d1117bc6eeedf666a9e568f0115952741
+  c002_candidate_registry_semantic_sha256: deb0215d2b5f4b5ec0061f937aec9c3e37cf97c94432a23737bf5756cef9587e
+  c006_contract_semantic_sha256: 131b2c79a3d017c65bac896e95e7a638164a77b821546e5217266f6d3829dcc0
+  c006_schema_semantic_sha256: 9a9009c4431c097c062dcef81fad03fae51784ff466bb8cc5db6ed14237f79e3
+  c006_registry_semantic_sha256: 5b5510af1b521daa7b2539007cab0681885f2bbc3eff4a75dde67cb38857ad8b
+  c008_contract_semantic_sha256: bf450358e11c82df7ae41a7777bd2889f2c4b7cffe64a5f2ee21f3303cbd2f5c
+  c008_schema_semantic_sha256: 82f8dbfb93233b6d40603a56bdb7661ee4d477003ba13b97c59d80bb0c8a27af
+  c008_registry_semantic_sha256: bd06e76da52750b9b54c09ccba88421ae82778dce84a4afa15475a88297081d9
+  c008_r1_contract_semantic_sha256: da5a70f0e7330df8afab52e931f664bda453266740646a4d4183d25370ea75d7
+  c008_r1_schema_semantic_sha256: fea342c3210dca9e5c2e98030bf8b5e64464cdd550cbb3b5675109c49673b904
+  c008_r1_registry_semantic_sha256: 9dcf2cc7cc10ab01a9b97ab40ac896debd12e6f25ad5b7e700921a6c782fb87b
+source_policy:
+  slack_channel_id: C0BNHRRTE9F
+  founder_user_id: U0BNFS43TBL
+  direction_parent_ts: "1787398697.475999"
+  direction_parent_title: FOUNDER DECISION — FIRST COMMERCIAL SLICE — 2026-08-22
+  authorization_ts: "1787435678.814589"
+  authorization_reply_index: 17
+  exact_thread_reply_count: 17
+  authorization_title: FOUNDER / PROJECT COMMANDER EXECUTION AUTHORIZATION — C008-FT1 FAST-TRACK INQUIRY LAUNCH GOVERNANCE AMENDMENT — 2026-08-23
+  execution_command_sha256: 87dbebf5b77f57fc24e1dc9ad9ced7d5725d4bba32112ebdb335adfc67e8a9ed
+  authorized_starting_main: 324fc66e5ae1c7c4062a36c9deb84dc769352e1e
+  predecessor_merge_commit: 324fc66e5ae1c7c4062a36c9deb84dc769352e1e
+  predecessor_post_merge_ci_run: 32600651309
+  predecessor_post_merge_ci_result: PASS
+  authorized_branch: codex/c008-ft1-fast-track-inquiry-launch-governance
+  exact_source_count: 3
+  complete_source_required: true
+gate_policy:
+  gate_id: FAST_TRACK_INQUIRY_LAUNCH_ELIGIBLE
+  gate_kind: SIBLING_GOVERNANCE_GATE
+  initial_state: false
+  aggregate_rule: ALL_12_PREREQUISITES_MET
+  prerequisite_count: 12
+  met_count: 4
+  unmet_count: 8
+  merge_does_not_enable_gate: true
+  gate_does_not_authorize_runtime_staging_production_or_publication: true
+  c002_is_not_input_alias_or_output: true
+  c009_and_m4_remain_separately_authorized: true
+c002_separation_policy:
+  readiness: NOT_READY
+  resolved_count: 6
+  unresolved_count: 3
+  founder_selection_ready: false
+  candidate_registry_count: 0
+  supply_evidence: SUBMITTED_REVIEW_INCOMPLETE
+  photo_content_readiness: MISSING_EVIDENCE
+  fulfillment_risk: SUBMITTED_REVIEW_INCOMPLETE
+  reinterpretation_or_mutation_allowed: false
+supply_fulfillment_policy:
+  intake_status: DEFERRED_TO_BE_COMPLETED_LATER
+  deferred_is_waiver: false
+  deferred_is_verified: false
+  deferred_is_not_applicable: false
+  deferred_is_resolved: false
+  planning_may_continue_only_under_inquiry_first_no_public_commitment: true
+  public_price_stock_availability_eta_sla_or_delivery_guarantee_allowed: false
+media_policy:
+  rights_safe_media_state: MISSING_EVIDENCE
+  media_readiness_inference_allowed: false
+  publication_without_rights_safe_media_allowed: false
+commercial_direction_policy:
+  classification: FOUNDER_APPROVED_BUSINESS_DIRECTION_NOT_CANONICAL_PRODUCT_TRUTH
+  product_direction: Decorative Stainless Steel Pipe
+  material: Stainless Steel
+  grade: "201"
+  primary_diameter: 51 mm
+  commerce_state: INQUIRY_ONLY
+  creates_product_variant_value_tuple_or_sku: false
+selector_policy:
+  selector_order_is_family_dependent: true
+  global_selector_order_hardcoding_allowed: false
+  finish_and_color_may_be_fused: false
+  brand_may_be_inferred: false
+  valid_combination_contract_is_valid_tuple: false
+validation:
+  offline_only: true
+  network_allowed: false
+  side_effects_allowed: false
+  closed_schema_required: true
+  local_refs_only: true
+  duplicate_keys_rejected: true
+  non_finite_numbers_rejected: true
+  deterministic_sorted_errors: true
+  path_escape_symlink_and_byte_cap_enforced: true
+  exact_order_counts_and_bindings_required: true
+  semantic_digest_pinning_required: true
+  mutation_manifest_dispatch_required: true
