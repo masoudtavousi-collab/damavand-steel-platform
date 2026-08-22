@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-08-22 — C008 C002 readiness / real-world evidence closure
+
+- Added the bounded [C008 Scope](C008_C002_READINESS_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md), [Evidence Review Packet](C008_C002_READINESS_EVIDENCE_REVIEW_PACKET_V1.0.md), and [closed machine registry](../repository/data/registries/extensions/c008/201-51-readiness-evidence-closure.yaml) under exact Packet `DS-P1-M3-PACKET-01` Version 1.0 and Founder authorization.
+- Independently reviewed the C005 evidence queue and, after bounded Commander repair, classified all nine as 6 `VERIFIED`, 2 `SUBMITTED_REVIEW_INCOMPLETE`, and 1 `MISSING_EVIDENCE`; G1 is `6/9 / NOT_READY` with three external blockers.
+- Preserved C002 candidate count `0`, `FOUNDER_SELECTION_READY=FALSE`, `M4_CANDIDATE=NONE`, immutable C002/C005 owners, `INQUIRY_ONLY`, and every Product/tuple/SKU/Availability/Price/commerce/runtime no-go.
+- Repaired the two Commander findings without widening authority: Product Data Completeness is `VERIFIED` from 216/216 reviewed Founder-evidence positions because C002 readiness is evidence sufficiency, while canonical Product/Variant promotion remains separately gated; the actual `00:40` SEO insufficiency review triggers later bounded Persian public research and independent review, verifying only qualitative buyer/search/application intent.
+- No supplier commitment, Availability, guaranteed lead time, media right, confidential commercial value, quantitative demand, search volume, ranking, conversion, market share, Price, Product promotion, canonical tuple or competitor asset was inferred or created.
+- Repaired-tree focused validation passed with 14 tests and 76/76 mutations; `make validate`, full `make test`, 173/173 manifest, 173-row/21-domain Atlas, 5,077-link, agentic, regression and exact 22-path checks passed; two independent read-only reviews returned zero material and zero non-material findings. Exact-head CI remains the external post-push gate. No second PR or Merge is claimed by this entry, and auto-merge, Merge, M4 and successor execution remain false.
+
 ## 2026-08-21 — C007 Governance Convergence & Phase-1 Architecture Baseline
 
 - Added the bounded [C007 Scope](C007_GOVERNANCE_CONVERGENCE_PHASE1_ARCHITECTURE_BASELINE_SCOPE_V1.0.md) with exact Founder authorization, source/owner inventory, path classification, 48-slot disposition, validation, independent-review and stop boundaries.
@@ -274,8 +283,8 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.16.0
-- **Last Updated:** 2026-08-21
+- **Version:** 0.17.0
+- **Last Updated:** 2026-08-22
 - **Lifecycle:** Review
 - **Source of Truth:** Merged Git history and scoped decision/evidence records
 - **Approval:** Pending Founder review; merged Git history remains evidence

@@ -1,6 +1,6 @@
 # Repository Traceability Matrix
 
-> Project OS 2.0: C006 is completed/archive-only through PR #43. C007 performs bounded top-level governance convergence without changing C002 `0/9 / NOT_READY`, `INQUIRY_ONLY`, frozen C1-T03/HF-X0, or any Product/runtime/production/successor authority.
+> Project OS 2.0: C007 is completed/archive-only through PR #44. C008 performs bounded C002 readiness evidence closure and returns repaired G1 `6/9 / NOT_READY` without populating a candidate or creating Product/runtime/production/M4/successor authority.
 
 ## Document Control
 
@@ -10,9 +10,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.26.0
-- **Last Updated:** 2026-08-21
-- **Last Review:** 2026-08-21
+- **Version:** 0.27.0
+- **Last Updated:** 2026-08-22
+- **Last Review:** 2026-08-22
 - **Review Cycle:** On governing-rule or dependency change; periodic cadence pending Founder approval
 - **Lifecycle:** Review
 - **Source of Truth:** [Core Project Principles](00_PROJECT_BIBLE.md#core-project-principles), approved governing documents, and accepted ADRs; this matrix is a supporting view
@@ -63,6 +63,10 @@ Provide a single navigational view from governing rules through business, archit
 | `C007-OWNER-TODO` | Nine Draft top-level owner documents, C006/domain owners, Founder Decision Log and Open Questions | Disposes 48 legacy placeholders as 42 evidence-resolved, 3 missing-input and 3 not-applicable-with-evidence; preserves lifecycle and canonical owners | No fabricated Founder decision, document approval, duplicate owner or truth promotion |
 | `C007-STATE-NAV` | Current State, Roadmap, Index, Navigation, Traceability and Changelog | Records C006 completed/archive-only and C007 bounded review state; registers the new scope | Does not activate the whole P1 Campaign, M3 or P2–P5 |
 | `C007-VALIDATION-STOP` | Repository validation, exact allowlist, protected-path review, independent integrated-diff review and PR CI | Requires zero legacy TODOs, stale C006 claims, scope violations, material findings and CI failures | Passing evidence authorizes neither Merge, branch deletion nor successor execution |
+| `C008-AUTH-OWNER-GATE` | Founder Slack `C0BNHRRTE9F / 1787343117.499159`, Packet `DS-P1-M3-PACKET-01` Version 1.0, [C008 Scope](C008_C002_READINESS_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md), C002/C005 owners and starting `main` `5a6fcbf368f817e88fca070a111fecbe65c4511a` | Exact C008 evidence normalization/review, closed extension package and G1 surface; C002 candidate registry and C005 predecessor remain immutable | Bounded Mission only; no Product/tuple/SKU/Availability/Price/commerce/Runtime/M4/Merge/successor authority |
+| `C008-NINE-CRITERION-REVIEW` | [C008 Evidence Review Packet](C008_C002_READINESS_EVIDENCE_REVIEW_PACKET_V1.0.md) and [C008 machine registry](../repository/data/registries/extensions/c008/201-51-readiness-evidence-closure.yaml) | Product Data is reviewed for evidence sufficiency without promotion; the actual SEO insufficiency review triggers bounded Persian research and a later independent review; Supply/Fulfillment/Media remain explicit gaps | Exact repaired terminal vector `6 VERIFIED / 2 SUBMITTED_REVIEW_INCOMPLETE / 1 MISSING_EVIDENCE`; three external blockers; candidate count remains `0` |
+| `C008-G1-STOP` | All-nine normalized outcome, remaining-evidence path and Founder Gate G1 | Exact repaired readiness `6/9 / NOT_READY`; `FOUNDER_SELECTION_READY=FALSE`; `M4_CANDIDATE=NONE` | Recommendation is not selection; Product/Variant promotion is not a readiness blocker and remains separately unauthorized; M4 and every successor remain `NO-GO` |
+| `C008-VALIDATION-STOP` | Closed schema, deterministic validator, focused fixtures/tests, exact allowlist, links, regression, independent integrated review and exact-head CI | Repaired-tree focused validation (14 tests / 76 mutations), `make validate`, full `make test`, 173/173 manifest, 173-row/21-domain Atlas, 5,077-link and agentic checks passed; two independent reviews returned 0 material / 0 non-material findings; exact-head CI remains `PENDING` until the bounded repair is pushed | No PR duplication, Merge, auto-merge or successor is claimed or authorized by this row |
 | `DS-PROGRAM-001` | [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md), [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md), and `FD-DS-PROGRAM-001` | Founder instruction effective 2026-08-02; raw and normalized SHA-256 evidence; exact eleven-path governance allowlist | Establishes DS-PC as `HOW` and DS-SPD as `WHAT`; preserves Founder final authority, ChatGPT program/architecture/product/repository command, Codex operational Program Commander/Build Engine responsibility inside exact gates, Current Project State as sole mutable pointer, and all existing separation-of-duties and supersession controls | Governance integration only; no PD-04, Campaign 002, Product/SKU, Golden/Master Data, Runtime, Import, Deployment, Production, Git publication, merge, or branch deletion authority |
 | `POST12-MAIN` | PR #13, PR #14, PR #12, and PR #15–#29 integration history | GitHub merge evidence and [Current Project State](CURRENT_PROJECT_STATE.md) | Records the actual order: recovery consolidation, post-recovery state, BP2 hardening, governance reconciliation, BP1 M1 hardening, post-PR16 reconciliation, BP2 lifecycle approval, post-PR18 reconciliation, `GOV-XD-00`, PD-01, PD-02A, PD-02B, PD-03A, PD-03B, post-PD-03B state reconciliation, DS program directive integration, post-PR27 state reconciliation, then C1-T06 canonical-owner reconciliation | Repository evidence only |
 | `C1-T01-STATE` | Post-PD-03B operational-state reconciliation | Founder-approved exact-scope packet; merged PR #25; Merge Commit `64511d7caf95d88122847abfef9914e9d0605954`; successful main CI `30698838847` | Closes stale PD-03B conditional-integration and branch-state claims; preserves exactly 3 approved Pilots, 879 candidates, missing availability for all 882 rows, and false readiness; sets only Campaign 001 directive/governance integration planning as next action | Documentation reconciliation only; no directive integration, product/runtime mutation, Git publication, merge, or branch deletion authority |
@@ -1182,6 +1186,7 @@ Wave 1 is complete. Its merges created no runtime, WordPress, Product Repository
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.27.0 | 2026-08-22 | Added C008 exact authority/owner and all-nine evidence review, then recorded the bounded Commander repair: Product Data verified for evidence sufficiency without promotion, actual Lane D trigger/research/review chronology, repaired G1 `6/9 / NOT_READY`, candidate count zero, three external blockers, repaired-tree validation and independent review PASS with exact-head CI pending, and every Product/runtime/M4/Merge/successor no-go. |
 | 0.26.0 | 2026-08-21 | Added C006 PR #43 completion and bounded C007 authorization, owner/TODO disposition, state/navigation convergence, validation and no-go traceability without lifecycle promotion or Product/runtime/successor authority. |
 | 0.25.0 | 2026-08-21 | Added C006 exact source/owner, semantic, Product Experience projection and fail-closed validation traceability while preserving zero Product/commercial/runtime population and all prior Mission owners. |
 | 0.24.0 | 2026-08-18 | Added C005 exact Founder-evidence/owner reconciliation and all-nine C002 readiness re-evaluation: 8 submitted, 1 missing, 6 separately reviewable, 9 open/blocking, zero verified/resolved, zero current Mass/Supply and no promotion/implementation authority. |
