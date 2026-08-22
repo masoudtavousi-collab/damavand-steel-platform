@@ -1,0 +1,227 @@
+registry_id: c008ft1:fast-track-inquiry-launch-gate
+registry_version: "1.0.0"
+mission_id: C008-FT1
+fixture_mode: CANONICAL
+authorized_starting_main: 324fc66e5ae1c7c4062a36c9deb84dc769352e1e
+evaluation_as_of: "2026-08-23T01:31:56+03:30"
+source:
+  source_id: C008FT1-SOURCE-001
+  source_class: FOUNDER_EXECUTION_AUTHORIZATION
+  bound_source_count: 3
+  locator: slack:C0BNHRRTE9F:1787435678.814589
+  channel_id: C0BNHRRTE9F
+  message_ts: "1787435678.814589"
+  thread_parent_ts: "1787398697.475999"
+  direction_parent_title: FOUNDER DECISION — FIRST COMMERCIAL SLICE — 2026-08-22
+  direction_parent_authored_at: "2026-08-22T15:08:17+03:30"
+  direction_parent_author_id: U0BNFS43TBL
+  author_id: U0BNFS43TBL
+  title: FOUNDER / PROJECT COMMANDER EXECUTION AUTHORIZATION — C008-FT1 FAST-TRACK INQUIRY LAUNCH GOVERNANCE AMENDMENT — 2026-08-23
+  authored_at: "2026-08-23T01:24:38+03:30"
+  thread_complete: true
+  reply_count: 17
+  reply_index: 17
+  execution_command_sha256: 87dbebf5b77f57fc24e1dc9ad9ced7d5725d4bba32112ebdb335adfc67e8a9ed
+  execution_command_role: CURRENT_FOUNDER_TASK_INSTRUCTION
+  authorized_branch: codex/c008-ft1-fast-track-inquiry-launch-governance
+predecessor:
+  mission: C008-R1
+  status: COMPLETED_ARCHIVE_ONLY
+  merge_commit: 324fc66e5ae1c7c4062a36c9deb84dc769352e1e
+  post_merge_ci_run: 32600651309
+  post_merge_ci_result: PASS
+  tree_integrated: true
+gate:
+  gate_id: FAST_TRACK_INQUIRY_LAUNCH_ELIGIBLE
+  gate_kind: SIBLING_GOVERNANCE_GATE
+  eligible: false
+  aggregate_rule: ALL_12_PREREQUISITES_MET
+  prerequisite_count: 12
+  met_count: 4
+  unmet_count: 8
+  merge_does_not_enable_gate: true
+  blockers:
+    - CANONICAL_PRODUCT_PROMOTION_COMPLETE
+    - RIGHTS_SAFE_MEDIA_READY
+    - INQUIRY_CRM_FLOW_READY
+    - SECURITY_PRIVACY_GATE_READY
+    - SEO_INDEXING_GATE_READY
+    - MOBILE_PERFORMANCE_GATE_READY
+    - STAGING_ACCEPTANCE_PASS
+    - PRODUCTION_FOUNDER_GO
+  prerequisites:
+    - id: PREDECESSOR_GOVERNANCE_INTEGRATED
+      state: MET
+      met: true
+      evidence_class: MERGED_GOVERNANCE_EVIDENCE
+      owner: C008_R1
+      source_refs: [git:main:324fc66e5ae1c7c4062a36c9deb84dc769352e1e, ci:32600651309]
+      fail_closed_reason: null
+    - id: FAST_TRACK_SLICE_FOUNDER_DIRECTION_EXISTS
+      state: MET
+      met: true
+      evidence_class: FOUNDER_DIRECTION
+      owner: FOUNDER
+      source_refs: [slack:C0BNHRRTE9F:1787398697.475999, slack:C0BNHRRTE9F:1787435678.814589]
+      fail_closed_reason: null
+    - id: CANONICAL_PRODUCT_PROMOTION_COMPLETE
+      state: NOT_AUTHORIZED
+      met: false
+      evidence_class: FUTURE_AUTHORIZATION_REQUIRED
+      owner: PRODUCT_CORE
+      source_refs: [repository:AGENTS.md:enterprise-product-architecture]
+      fail_closed_reason: No canonical Product, Variant Rule, valid tuple or SKU promotion is authorized or complete.
+    - id: VALID_COMBINATION_CONTRACT_READY
+      state: MET
+      met: true
+      evidence_class: ARCHITECTURE_CONTRACT
+      owner: VARIANT_RULE_SET
+      source_refs: [repository:data:contracts:pipe-product-experience-architecture]
+      fail_closed_reason: null
+    - id: RIGHTS_SAFE_MEDIA_READY
+      state: MISSING_EVIDENCE
+      met: false
+      evidence_class: MISSING_EVIDENCE
+      owner: FUTURE_MEDIA_REPOSITORY
+      source_refs: [registry:C008-R1:RIGHTS_SAFE_MEDIA_PACKET_ONLY]
+      fail_closed_reason: No owned, licensed or permission-bound production media has been admitted and independently reviewed.
+    - id: INQUIRY_ONLY_COMMERCE_BOUNDARY_READY
+      state: MET
+      met: true
+      evidence_class: GOVERNANCE_POLICY
+      owner: INQUIRY_DATA_MODEL
+      source_refs: [repository:docs:adr:0001-inquiry-first-commerce]
+      fail_closed_reason: null
+    - id: INQUIRY_CRM_FLOW_READY
+      state: NOT_AUTHORIZED
+      met: false
+      evidence_class: FUTURE_AUTHORIZATION_REQUIRED
+      owner: INQUIRY_DATA_MODEL
+      source_refs: [repository:docs:42_INQUIRY_WORKFLOW]
+      fail_closed_reason: No approved or configured inquiry form, consent, routing, CRM or operational workflow exists.
+    - id: SECURITY_PRIVACY_GATE_READY
+      state: NOT_AUTHORIZED
+      met: false
+      evidence_class: FUTURE_AUTHORIZATION_REQUIRED
+      owner: SECURITY_PRIVACY
+      source_refs: [repository:docs:10_SECURITY]
+      fail_closed_reason: Security and privacy acceptance for a public inquiry flow is not authorized or complete.
+    - id: SEO_INDEXING_GATE_READY
+      state: NOT_AUTHORIZED
+      met: false
+      evidence_class: FUTURE_AUTHORIZATION_REQUIRED
+      owner: SEO_INTENT_OWNER
+      source_refs: [repository:docs:34_SEO_ENTITY_MODEL]
+      fail_closed_reason: No public URL, indexing, entity or Schema implementation is authorized or accepted.
+    - id: MOBILE_PERFORMANCE_GATE_READY
+      state: NOT_AUTHORIZED
+      met: false
+      evidence_class: FUTURE_AUTHORIZATION_REQUIRED
+      owner: PRODUCT_EXPERIENCE_ENGINE
+      source_refs: [repository:enterprise-platform:05_PRODUCT_EXPERIENCE_ENGINE]
+      fail_closed_reason: Mobile RTL accessibility and performance acceptance has not been executed on an authorized implementation.
+    - id: STAGING_ACCEPTANCE_PASS
+      state: NOT_AUTHORIZED
+      met: false
+      evidence_class: FUTURE_AUTHORIZATION_REQUIRED
+      owner: RELEASE_GOVERNANCE
+      source_refs: [authority:C008-FT1:no-staging]
+      fail_closed_reason: Staging mutation and acceptance are not authorized.
+    - id: PRODUCTION_FOUNDER_GO
+      state: NOT_AUTHORIZED
+      met: false
+      evidence_class: FUTURE_AUTHORIZATION_REQUIRED
+      owner: FOUNDER
+      source_refs: [authority:C008-FT1:no-production]
+      fail_closed_reason: No Founder Production GO exists.
+c002_snapshot:
+  relationship: INDEPENDENT_SIBLING_NOT_ALIAS
+  readiness: NOT_READY
+  resolved_count: 6
+  unresolved_count: 3
+  founder_selection_ready: false
+  candidate_registry_count: 0
+  supply_evidence: SUBMITTED_REVIEW_INCOMPLETE
+  photo_content_readiness: MISSING_EVIDENCE
+  fulfillment_risk: SUBMITTED_REVIEW_INCOMPLETE
+  state_mutation_effect: false
+supply_fulfillment_deferral:
+  intake_status: DEFERRED_TO_BE_COMPLETED_LATER
+  deferred_is_waiver: false
+  deferred_is_verified: false
+  deferred_is_not_applicable: false
+  deferred_is_resolved: false
+  planning_may_continue_only_under_inquiry_first_no_public_commitment: true
+  public_safe_wording_fa: پس از استعلام بررسی می‌شود
+  price_claim_allowed: false
+  stock_claim_allowed: false
+  availability_claim_allowed: false
+  eta_or_sla_claim_allowed: false
+  delivery_guarantee_allowed: false
+  supplier_commitment_claim_allowed: false
+media_boundary:
+  photo_content_readiness: MISSING_EVIDENCE
+  rights_safe_media_required: true
+  owned_media_created: false
+  licensed_media_created: false
+  supplier_permission_created: false
+  publication_right_created: false
+  publication_allowed: false
+commercial_direction:
+  classification: FOUNDER_APPROVED_BUSINESS_DIRECTION_NOT_CANONICAL_PRODUCT_TRUTH
+  product_direction: Decorative Stainless Steel Pipe
+  material: Stainless Steel
+  grade: "201"
+  primary_diameter: 51 mm
+  commerce_state: INQUIRY_ONLY
+  public_price: false
+  public_stock_or_availability: false
+  public_eta_or_sla: false
+  creates_canonical_product_truth: false
+  creates_product_variant_value_tuple_or_sku: false
+selector_boundaries:
+  selector_order_is_family_dependent: true
+  global_selector_order_hardcoded: false
+  finish_and_color_fused: false
+  brand_inferred: false
+  valid_combination_contract_is_valid_tuple: false
+  selectable_values_created: false
+authority_effects:
+  governance_model_creation: true
+  repository_docs_contract_schema_registry_validator_tests: true
+  branch_commit_push_pr: true
+  c002_state_mutation: false
+  candidate_population: false
+  product_population: false
+  controlled_value_promotion: false
+  valid_tuple_promotion: false
+  sku_assignment: false
+  supply_or_fulfillment_truth_population: false
+  media_asset_or_rights_population: false
+  price_stock_availability_eta_sla_claim: false
+  commerce_eligibility_activation: false
+  wordpress_woocommerce_mutation: false
+  runtime_mutation: false
+  staging_mutation: false
+  production_mutation: false
+  publication: false
+  c009_or_m4_start: false
+  successor_mission: false
+  auto_merge: false
+  merge: false
+regression_anchors:
+  c002_resolved_count: 6
+  c002_unresolved_count: 3
+  c002_readiness: NOT_READY
+  c002_founder_selection_ready: false
+  c002_candidate_count: 0
+  canonical_product_entity_count: 3
+  canonical_sku_count: 0
+  current_supply_intake_record_count: 0
+  current_price_value_count: 0
+  commerce_state: INQUIRY_ONLY
+  runtime_authority: NONE
+  staging_authority: NONE
+  production_authority: NONE
+  c009_authorized: false
+  m4_authorized: false

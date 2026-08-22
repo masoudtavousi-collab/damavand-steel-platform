@@ -1,0 +1,234 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:damavand:c008-ft1-fast-track-inquiry-launch-gate:1.0.0",
+  "title": "C008-FT1 Fast-Track Inquiry launch sibling governance gate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["registry_id", "registry_version", "mission_id", "fixture_mode", "authorized_starting_main", "evaluation_as_of", "source", "predecessor", "gate", "c002_snapshot", "supply_fulfillment_deferral", "media_boundary", "commercial_direction", "selector_boundaries", "authority_effects", "regression_anchors"],
+  "properties": {
+    "registry_id": {"type": "string", "pattern": "^c008ft1:fast-track-inquiry-launch-gate(?::synthetic)?$"},
+    "registry_version": {"const": "1.0.0"},
+    "mission_id": {"const": "C008-FT1"},
+    "fixture_mode": {"enum": ["CANONICAL", "SYNTHETIC"]},
+    "authorized_starting_main": {"$ref": "#/$defs/sha256"},
+    "evaluation_as_of": {"$ref": "#/$defs/timestamp"},
+    "source": {"$ref": "#/$defs/source"},
+    "predecessor": {"$ref": "#/$defs/predecessor"},
+    "gate": {"$ref": "#/$defs/gate"},
+    "c002_snapshot": {"$ref": "#/$defs/c002Snapshot"},
+    "supply_fulfillment_deferral": {"$ref": "#/$defs/supplyDeferral"},
+    "media_boundary": {"$ref": "#/$defs/mediaBoundary"},
+    "commercial_direction": {"$ref": "#/$defs/commercialDirection"},
+    "selector_boundaries": {"$ref": "#/$defs/selectorBoundaries"},
+    "authority_effects": {"$ref": "#/$defs/authorityEffects"},
+    "regression_anchors": {"$ref": "#/$defs/regressionAnchors"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "timestamp": {"type": "string", "pattern": "^20[0-9]{2}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(?:\\.[0-9]+)?[+-][0-9]{2}:[0-9]{2}$"},
+    "nonempty": {"type": "string", "minLength": 1},
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "source_class", "bound_source_count", "locator", "channel_id", "message_ts", "thread_parent_ts", "direction_parent_title", "direction_parent_authored_at", "direction_parent_author_id", "author_id", "title", "authored_at", "thread_complete", "reply_count", "reply_index", "execution_command_sha256", "execution_command_role", "authorized_branch"],
+      "properties": {
+        "source_id": {"const": "C008FT1-SOURCE-001"},
+        "source_class": {"const": "FOUNDER_EXECUTION_AUTHORIZATION"},
+        "bound_source_count": {"const": 3},
+        "locator": {"const": "slack:C0BNHRRTE9F:1787435678.814589"},
+        "channel_id": {"const": "C0BNHRRTE9F"},
+        "message_ts": {"const": "1787435678.814589"},
+        "thread_parent_ts": {"const": "1787398697.475999"},
+        "direction_parent_title": {"const": "FOUNDER DECISION — FIRST COMMERCIAL SLICE — 2026-08-22"},
+        "direction_parent_authored_at": {"const": "2026-08-22T15:08:17+03:30"},
+        "direction_parent_author_id": {"const": "U0BNFS43TBL"},
+        "author_id": {"const": "U0BNFS43TBL"},
+        "title": {"$ref": "#/$defs/nonempty"},
+        "authored_at": {"$ref": "#/$defs/timestamp"},
+        "thread_complete": {"const": true},
+        "reply_count": {"const": 17},
+        "reply_index": {"const": 17},
+        "execution_command_sha256": {"const": "87dbebf5b77f57fc24e1dc9ad9ced7d5725d4bba32112ebdb335adfc67e8a9ed"},
+        "execution_command_role": {"const": "CURRENT_FOUNDER_TASK_INSTRUCTION"},
+        "authorized_branch": {"const": "codex/c008-ft1-fast-track-inquiry-launch-governance"}
+      }
+    },
+    "predecessor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mission", "status", "merge_commit", "post_merge_ci_run", "post_merge_ci_result", "tree_integrated"],
+      "properties": {
+        "mission": {"const": "C008-R1"},
+        "status": {"const": "COMPLETED_ARCHIVE_ONLY"},
+        "merge_commit": {"$ref": "#/$defs/sha256"},
+        "post_merge_ci_run": {"type": "integer", "minimum": 1},
+        "post_merge_ci_result": {"const": "PASS"},
+        "tree_integrated": {"const": true}
+      }
+    },
+    "prerequisite": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "state", "met", "evidence_class", "owner", "source_refs", "fail_closed_reason"],
+      "properties": {
+        "id": {"enum": ["PREDECESSOR_GOVERNANCE_INTEGRATED", "FAST_TRACK_SLICE_FOUNDER_DIRECTION_EXISTS", "CANONICAL_PRODUCT_PROMOTION_COMPLETE", "VALID_COMBINATION_CONTRACT_READY", "RIGHTS_SAFE_MEDIA_READY", "INQUIRY_ONLY_COMMERCE_BOUNDARY_READY", "INQUIRY_CRM_FLOW_READY", "SECURITY_PRIVACY_GATE_READY", "SEO_INDEXING_GATE_READY", "MOBILE_PERFORMANCE_GATE_READY", "STAGING_ACCEPTANCE_PASS", "PRODUCTION_FOUNDER_GO"]},
+        "state": {"enum": ["MET", "MISSING_EVIDENCE", "NOT_AUTHORIZED"]},
+        "met": {"type": "boolean"},
+        "evidence_class": {"enum": ["MERGED_GOVERNANCE_EVIDENCE", "FOUNDER_DIRECTION", "ARCHITECTURE_CONTRACT", "GOVERNANCE_POLICY", "MISSING_EVIDENCE", "FUTURE_AUTHORIZATION_REQUIRED"]},
+        "owner": {"type": "string", "pattern": "^[A-Z0-9_]+$"},
+        "source_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/nonempty"}},
+        "fail_closed_reason": {"type": ["string", "null"], "minLength": 1}
+      }
+    },
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gate_id", "gate_kind", "eligible", "aggregate_rule", "prerequisite_count", "met_count", "unmet_count", "merge_does_not_enable_gate", "blockers", "prerequisites"],
+      "properties": {
+        "gate_id": {"const": "FAST_TRACK_INQUIRY_LAUNCH_ELIGIBLE"},
+        "gate_kind": {"const": "SIBLING_GOVERNANCE_GATE"},
+        "eligible": {"const": false},
+        "aggregate_rule": {"const": "ALL_12_PREREQUISITES_MET"},
+        "prerequisite_count": {"const": 12},
+        "met_count": {"const": 4},
+        "unmet_count": {"const": 8},
+        "merge_does_not_enable_gate": {"const": true},
+        "blockers": {"type": "array", "minItems": 8, "maxItems": 8, "uniqueItems": true, "items": {"type": "string"}},
+        "prerequisites": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"$ref": "#/$defs/prerequisite"}}
+      }
+    },
+    "c002Snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["relationship", "readiness", "resolved_count", "unresolved_count", "founder_selection_ready", "candidate_registry_count", "supply_evidence", "photo_content_readiness", "fulfillment_risk", "state_mutation_effect"],
+      "properties": {
+        "relationship": {"const": "INDEPENDENT_SIBLING_NOT_ALIAS"},
+        "readiness": {"const": "NOT_READY"},
+        "resolved_count": {"const": 6},
+        "unresolved_count": {"const": 3},
+        "founder_selection_ready": {"const": false},
+        "candidate_registry_count": {"const": 0},
+        "supply_evidence": {"const": "SUBMITTED_REVIEW_INCOMPLETE"},
+        "photo_content_readiness": {"const": "MISSING_EVIDENCE"},
+        "fulfillment_risk": {"const": "SUBMITTED_REVIEW_INCOMPLETE"},
+        "state_mutation_effect": {"const": false}
+      }
+    },
+    "supplyDeferral": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["intake_status", "deferred_is_waiver", "deferred_is_verified", "deferred_is_not_applicable", "deferred_is_resolved", "planning_may_continue_only_under_inquiry_first_no_public_commitment", "public_safe_wording_fa", "price_claim_allowed", "stock_claim_allowed", "availability_claim_allowed", "eta_or_sla_claim_allowed", "delivery_guarantee_allowed", "supplier_commitment_claim_allowed"],
+      "properties": {
+        "intake_status": {"const": "DEFERRED_TO_BE_COMPLETED_LATER"},
+        "deferred_is_waiver": {"const": false},
+        "deferred_is_verified": {"const": false},
+        "deferred_is_not_applicable": {"const": false},
+        "deferred_is_resolved": {"const": false},
+        "planning_may_continue_only_under_inquiry_first_no_public_commitment": {"const": true},
+        "public_safe_wording_fa": {"const": "پس از استعلام بررسی می‌شود"},
+        "price_claim_allowed": {"const": false},
+        "stock_claim_allowed": {"const": false},
+        "availability_claim_allowed": {"const": false},
+        "eta_or_sla_claim_allowed": {"const": false},
+        "delivery_guarantee_allowed": {"const": false},
+        "supplier_commitment_claim_allowed": {"const": false}
+      }
+    },
+    "mediaBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["photo_content_readiness", "rights_safe_media_required", "owned_media_created", "licensed_media_created", "supplier_permission_created", "publication_right_created", "publication_allowed"],
+      "properties": {
+        "photo_content_readiness": {"const": "MISSING_EVIDENCE"},
+        "rights_safe_media_required": {"const": true},
+        "owned_media_created": {"const": false},
+        "licensed_media_created": {"const": false},
+        "supplier_permission_created": {"const": false},
+        "publication_right_created": {"const": false},
+        "publication_allowed": {"const": false}
+      }
+    },
+    "commercialDirection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classification", "product_direction", "material", "grade", "primary_diameter", "commerce_state", "public_price", "public_stock_or_availability", "public_eta_or_sla", "creates_canonical_product_truth", "creates_product_variant_value_tuple_or_sku"],
+      "properties": {
+        "classification": {"const": "FOUNDER_APPROVED_BUSINESS_DIRECTION_NOT_CANONICAL_PRODUCT_TRUTH"},
+        "product_direction": {"const": "Decorative Stainless Steel Pipe"},
+        "material": {"const": "Stainless Steel"},
+        "grade": {"const": "201"},
+        "primary_diameter": {"const": "51 mm"},
+        "commerce_state": {"const": "INQUIRY_ONLY"},
+        "public_price": {"const": false},
+        "public_stock_or_availability": {"const": false},
+        "public_eta_or_sla": {"const": false},
+        "creates_canonical_product_truth": {"const": false},
+        "creates_product_variant_value_tuple_or_sku": {"const": false}
+      }
+    },
+    "selectorBoundaries": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["selector_order_is_family_dependent", "global_selector_order_hardcoded", "finish_and_color_fused", "brand_inferred", "valid_combination_contract_is_valid_tuple", "selectable_values_created"],
+      "properties": {
+        "selector_order_is_family_dependent": {"const": true},
+        "global_selector_order_hardcoded": {"const": false},
+        "finish_and_color_fused": {"const": false},
+        "brand_inferred": {"const": false},
+        "valid_combination_contract_is_valid_tuple": {"const": false},
+        "selectable_values_created": {"const": false}
+      }
+    },
+    "authorityEffects": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["governance_model_creation", "repository_docs_contract_schema_registry_validator_tests", "branch_commit_push_pr", "c002_state_mutation", "candidate_population", "product_population", "controlled_value_promotion", "valid_tuple_promotion", "sku_assignment", "supply_or_fulfillment_truth_population", "media_asset_or_rights_population", "price_stock_availability_eta_sla_claim", "commerce_eligibility_activation", "wordpress_woocommerce_mutation", "runtime_mutation", "staging_mutation", "production_mutation", "publication", "c009_or_m4_start", "successor_mission", "auto_merge", "merge"],
+      "properties": {
+        "governance_model_creation": {"const": true},
+        "repository_docs_contract_schema_registry_validator_tests": {"const": true},
+        "branch_commit_push_pr": {"const": true},
+        "c002_state_mutation": {"const": false},
+        "candidate_population": {"const": false},
+        "product_population": {"const": false},
+        "controlled_value_promotion": {"const": false},
+        "valid_tuple_promotion": {"const": false},
+        "sku_assignment": {"const": false},
+        "supply_or_fulfillment_truth_population": {"const": false},
+        "media_asset_or_rights_population": {"const": false},
+        "price_stock_availability_eta_sla_claim": {"const": false},
+        "commerce_eligibility_activation": {"const": false},
+        "wordpress_woocommerce_mutation": {"const": false},
+        "runtime_mutation": {"const": false},
+        "staging_mutation": {"const": false},
+        "production_mutation": {"const": false},
+        "publication": {"const": false},
+        "c009_or_m4_start": {"const": false},
+        "successor_mission": {"const": false},
+        "auto_merge": {"const": false},
+        "merge": {"const": false}
+      }
+    },
+    "regressionAnchors": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["c002_resolved_count", "c002_unresolved_count", "c002_readiness", "c002_founder_selection_ready", "c002_candidate_count", "canonical_product_entity_count", "canonical_sku_count", "current_supply_intake_record_count", "current_price_value_count", "commerce_state", "runtime_authority", "staging_authority", "production_authority", "c009_authorized", "m4_authorized"],
+      "properties": {
+        "c002_resolved_count": {"const": 6},
+        "c002_unresolved_count": {"const": 3},
+        "c002_readiness": {"const": "NOT_READY"},
+        "c002_founder_selection_ready": {"const": false},
+        "c002_candidate_count": {"const": 0},
+        "canonical_product_entity_count": {"const": 3},
+        "canonical_sku_count": {"const": 0},
+        "current_supply_intake_record_count": {"const": 0},
+        "current_price_value_count": {"const": 0},
+        "commerce_state": {"const": "INQUIRY_ONLY"},
+        "runtime_authority": {"const": "NONE"},
+        "staging_authority": {"const": "NONE"},
+        "production_authority": {"const": "NONE"},
+        "c009_authorized": {"const": false},
+        "m4_authorized": {"const": false}
+      }
+    }
+  }
+}

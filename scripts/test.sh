@@ -145,6 +145,11 @@ c008_r1_remaining_real_world_evidence_closure_validator="repository/data/validat
 "$python" "$c008_r1_remaining_real_world_evidence_closure_validator" --registry tests/fixtures/c008-r1-remaining-real-world-evidence-closure/valid-synthetic.yaml --synthetic
 "$python" -B -m unittest tests.test_c008_r1_remaining_real_world_evidence_closure
 
+c008_ft1_fast_track_inquiry_launch_gate_validator="repository/data/validation/validate_c008_ft1_fast_track_inquiry_launch_gate.py"
+"$python" "$c008_ft1_fast_track_inquiry_launch_gate_validator"
+"$python" "$c008_ft1_fast_track_inquiry_launch_gate_validator" --registry tests/fixtures/c008-ft1-fast-track-inquiry-launch-gate/valid-synthetic.yaml --synthetic
+"$python" -B -m unittest tests.test_c008_ft1_fast_track_inquiry_launch_gate
+
 "$python" repository/data/validation/validate_bp2_data_blueprint.py
 "$python" repository/data/validation/validate_bp2_data_administration.py
 "$python" tests/test_bp2_data_administration.py

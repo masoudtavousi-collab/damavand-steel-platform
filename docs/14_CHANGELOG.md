@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-08-23 — C008-FT1 Fast-Track Inquiry launch governance amendment
+
+- Added the bounded [C008-FT1 Amendment](C008_FT1_FAST_TRACK_INQUIRY_LAUNCH_GOVERNANCE_AMENDMENT_V1.0.md) and closed [sibling gate registry](../repository/data/registries/extensions/c008ft1/fast-track-inquiry-launch-gate.yaml) under Founder direction parent `C0BNHRRTE9F / 1787398697.475999`, execution authorization reply 17/17 `1787435678.814589`, current command SHA `87dbebf5…a9ed`, starting main `324fc66e5ae1c7c4062a36c9deb84dc769352e1e`, merged C008-R1 predecessor and post-merge CI `32600651309 = PASS`.
+- Created `FAST_TRACK_INQUIRY_LAUNCH_ELIGIBLE` only as a separate fail-closed governance gate. Its canonical state is `FALSE`: exactly 4 of 12 prerequisites are met and eight remain explicit blockers. Merge does not enable the gate.
+- Preserved C002 `6/9 / NOT_READY`, `FOUNDER_SELECTION_READY=FALSE`, candidate count zero, Supply/Fulfillment submitted/incomplete, Photo/Content missing, supplier intake deferred—not waived or verified—and public commerce `INQUIRY_ONLY` with no Price, Stock, Availability, ETA, SLA or supplier commitment claim.
+- Preserved the Founder 201/51 commercial direction only as business direction, not canonical Product/Family/value/Variant Rule/tuple/SKU truth. Family-dependent selector ownership, Finish/Color separation and no Brand inference remain intact.
+- Four semantic digests are pinned; canonical and synthetic validation, 14 focused tests / 66 mutations, `make validate`, full `make test`, 173/173 manifest documents, 173 Atlas rows / 21 domains, 15/15 agentic tests, 5,114 links/anchors, exact allowlist and protected-owner checks passed. Three final pinned-tree read-only reviews returned 0 material / 0 non-material findings; PR and exact-head CI remain `PENDING` until actually completed. This entry creates no Product, media-right, WordPress/WooCommerce, Runtime, Staging, Production, publication, C009/M4, Merge or successor authority.
+
 ## 2026-08-22 — C008-R1 remaining real-world evidence closure
 
 - Added the bounded [C008-R1 Scope](C008_R1_C002_REMAINING_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md), [Evidence Review Packet](C008_R1_C002_REMAINING_REAL_WORLD_EVIDENCE_REVIEW_PACKET_V1.0.md), and delta-only [machine registry](../repository/data/registries/extensions/c008r1/201-51-remaining-real-world-evidence-closure.yaml) under original Founder authorization `C0BNHRRTE9F / 1787390606.427149`, Packet reply `1787390614.653749`, later scope refinement `C0BNHRRTE9F / 1787397116.963919`, and Fast-Track parent `1787397760.694619`.
@@ -292,8 +300,8 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.18.0
-- **Last Updated:** 2026-08-22
+- **Version:** 0.19.0
+- **Last Updated:** 2026-08-23
 - **Lifecycle:** Review
 - **Source of Truth:** Merged Git history and scoped decision/evidence records
 - **Approval:** Pending Founder review; merged Git history remains evidence
