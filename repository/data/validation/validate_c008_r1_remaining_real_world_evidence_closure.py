@@ -35,21 +35,10 @@ C008_SCHEMA_PATH = ROOT / "repository/data/schemas/c008-c002-readiness-evidence-
 C008_REGISTRY_PATH = ROOT / "repository/data/registries/extensions/c008/201-51-readiness-evidence-closure.yaml"
 
 # Replaced only after a stable-tree independent review.
-EXPECTED_CONTRACT_DIGEST = "a95adb501f5441b3a1657a43a6355518706f7da0ff3ae6af867c50316cb7401c"
-EXPECTED_SCHEMA_DIGEST = "25543ea5c5237ef3eb002f33b1fd5c0744684b93859718dab3fb974836efcef9"
-EXPECTED_REGISTRY_DIGEST = "7643ae4b868d1ea04e8c239cbf2a4a2a8900be32713c0218a507ca241dd9c5de"
-EXPECTED_SYNTHETIC_REGISTRY_DIGEST = "e721a12836503f7f11487a3c7f86a78d892da55311afdb483632fe82fb0629d2"
-EXPECTED_SOURCE_MANIFEST_DIGEST = "ecaddd36da0055f6bc8922c938393ad2130d0b8276e7d3d8650d27a5ce9b87e5"
-EXPECTED_SEARCH_SCOPE_DIGEST = "7b9a9e922eb35cb63b04304d72148dcb6964643b864e07d8de2ea25a09f47e73"
-EXPECTED_BLOCKER_DIGESTS = [
-    "ed4b52202ef1afa295b1f959896e269b0c88db121d9cf7a48e45338360022313",
-    "eec55bae55f9197f450cea9978d86c3fa3c07124340abab9363340e5e57b93cb",
-    "b139de0d4e32087b925bca53e20c2b904374e6541e45c93ff19c3cc5328baed9",
-]
-EXPECTED_REQUEST_DIGESTS = [
-    "dabe8800d0d982b7b1e796f0a08ecf11d3d5699c5cf2368c8b942bb837ad9b52",
-    "1cc91e8f67e00117dacb5a7c2111120e8cfc26d9ec5dbb5aa944774aaa335344",
-]
+EXPECTED_CONTRACT_DIGEST = "da5a70f0e7330df8afab52e931f664bda453266740646a4d4183d25370ea75d7"
+EXPECTED_SCHEMA_DIGEST = "fea342c3210dca9e5c2e98030bf8b5e64464cdd550cbb3b5675109c49673b904"
+EXPECTED_REGISTRY_DIGEST = "9dcf2cc7cc10ab01a9b97ab40ac896debd12e6f25ad5b7e700921a6c782fb87b"
+EXPECTED_SYNTHETIC_REGISTRY_DIGEST = "52546d09bd2c08312d50e0a5232a89f1873c1c3e85e7567c0e248138af0180bd"
 
 EXPECTED_MAIN = "fbe3d9eb78566dc7b006fc43b0939d124a81cec6"
 EXPECTED_BLOCKERS = ["SUPPLY_EVIDENCE", "PHOTO_CONTENT_READINESS", "FULFILLMENT_RISK"]
@@ -83,6 +72,10 @@ EXPECTED_G1 = {
     "recommendation_is_selection": False,
     "founder_business_decision_required": False,
     "founder_evidence_input_required": True,
+    "active_founder_evidence_input": "RIGHTS_SAFE_MEDIA_PACKET_ONLY",
+    "supplier_supply_fulfillment_intake_status": "DEFERRED_TO_BE_COMPLETED_LATER",
+    "deferred_is_waiver": False,
+    "deferred_is_verification": False,
     "c009_authorized": False,
     "m4_authorized": False,
 }
@@ -93,6 +86,13 @@ EXPECTED_PINS = {
     "c008_contract_semantic_sha256": "bf450358e11c82df7ae41a7777bd2889f2c4b7cffe64a5f2ee21f3303cbd2f5c",
     "c008_schema_semantic_sha256": "82f8dbfb93233b6d40603a56bdb7661ee4d477003ba13b97c59d80bb0c8a27af",
     "c008_registry_semantic_sha256": "bd06e76da52750b9b54c09ccba88421ae82778dce84a4afa15475a88297081d9",
+}
+EXPECTED_SCHEMA_BINDING = {
+    "path": "repository/data/schemas/c008-r1-remaining-real-world-evidence-closure.schema.json",
+    "draft": "https://json-schema.org/draft/2020-12/schema",
+}
+EXPECTED_REGISTRY_BINDING = {
+    "path": "repository/data/registries/extensions/c008r1/201-51-remaining-real-world-evidence-closure.yaml",
 }
 EXPECTED_CONTRACT_AUTHORITY = {
     "mission_id": "C008-R1", "packet_id": "DS-P1-M3-C008-R1-PACKET-01", "packet_version": "1.0",
@@ -115,9 +115,13 @@ EXPECTED_SOURCE_POLICY = {
     "execution_authorization_parent_ts": "1787390606.427149", "packet_reply_ts": "1787390614.653749",
     "slack_file_id": "F0BRVVCN9C5",
     "packet_zip_sha256": "b6f134d78fd309e16ea9fcda22180b235a7a82580b304deeaf6a6b0d4a49715f",
-    "complete_thread_required": True, "exact_reply_count": 1, "packet_internal_manifest_required": True,
+    "complete_thread_required": True, "exact_reply_count": 2, "scope_refinement_reply_ts": "1787397116.963919", "fast_track_program_parent_ts": "1787397760.694619", "packet_internal_manifest_required": True,
     "packet_planning_status_is_superseded_only_by_exact_execution_authorization": True,
     "public_channel_evidence_search_required": True, "public_channel_evidence_search_found_new_items": False,
+    "exact_source_count": 4,
+    "source_chronology": ["1787390606.427149", "1787390614.653749", "1787397116.963919", "1787397760.694619"],
+    "source_classes": ["ORIGINAL_EXECUTION_AUTHORIZATION", "PACKET_REPLY", "FOUNDER_SCOPE_REFINEMENT", "FAST_TRACK_PROGRAM_AUTHORIZATION"],
+    "all_sources_author": "U0BNFS43TBL",
 }
 EXPECTED_EVIDENCE_POLICY = {
     "exact_new_evidence_item_count": 0, "exact_blocker_count": 3, "blocker_order": EXPECTED_BLOCKERS,
@@ -140,15 +144,61 @@ EXPECTED_READINESS_POLICY = {
 EXPECTED_G1_POLICY = {
     "decision_surface_only": True, "exact_result": "HOLD_NOT_READY_6_OF_9",
     "recommendation_is_selection": False, "exact_m4_candidate": None,
-    "founder_decision_required": "PROVIDE_SOURCE_BOUND_SUPPLY_FULFILLMENT_AND_RIGHTS_SAFE_MEDIA_EVIDENCE",
+    "founder_business_decision_required": False, "active_founder_evidence_input": "RIGHTS_SAFE_MEDIA_PACKET_ONLY",
+    "supplier_supply_fulfillment_intake_status": "DEFERRED_TO_BE_COMPLETED_LATER",
+    "deferred_is_waiver": False, "deferred_is_verification": False,
     "c009_authorized": False, "m4_authorized": False,
 }
 EXPECTED_REQUEST_POLICY = {
-    "request_count": 2,
-    "request_order": ["SUPPLIER_SUPPLY_FULFILLMENT_PACKET", "RIGHTS_SAFE_MEDIA_PACKET"],
+    "request_count": 1,
+    "request_order": ["RIGHTS_SAFE_MEDIA_PACKET"],
     "request_is_founder_decision": False, "sensitive_values_may_be_redacted": True,
     "locator_and_scope_must_remain_reviewable": True,
 }
+EXPECTED_SUPPLIER_DEFERRED_INTAKE_POLICY = {
+    "collection_status": "DEFERRED_TO_BE_COMPLETED_LATER", "collection_required_now": False,
+    "deferred_is_waiver": False, "deferred_is_evidence": False, "deferred_is_verification": False,
+    "telephone_process_is_founder_intent_only": True, "telephone_process_is_evidence": False,
+    "telephone_process_is_verification": False,
+    "future_field_ids": ["supplier_identity_or_protected_durable_locator", "supplier_manufacturer_brand_role_separation", "bounded_subject_scope", "capture_timestamp_and_evidence_type", "validity_or_reverification", "fulfillment_expectation_exceptions_and_failures", "claims_and_non_claims", "owner_reviewer_and_confidentiality"],
+}
+EXPECTED_VALIDATION_POLICY = {"offline_only": True, "network_allowed": False, "side_effects_allowed": False, "closed_schema_required": True, "local_refs_only": True, "duplicate_keys_rejected": True, "non_finite_numbers_rejected": True, "deterministic_sorted_errors": True, "path_escape_symlink_and_byte_cap_enforced": True, "exact_order_counts_and_bindings_required": True, "semantic_digest_pinning_required": True, "mutation_manifest_dispatch_required": True}
+EXPECTED_SOURCE_CHRONOLOGY = ["1787390606.427149", "1787390614.653749", "1787397116.963919", "1787397760.694619"]
+EXPECTED_SEARCH_SCOPE = [
+    "Complete C008-R1 authorization parent and its two replies, including the Founder supplier-deferral refinement.",
+    "Verified five-member Packet ZIP and internal SHA-256 manifest.",
+    "Complete Fast-Track program parent, bound as scope authority only and not as a launch-gate or successor authorization.",
+    "Targeted public-channel search for C008-R1 supplier-specific, fulfillment and rights-safe media evidence.",
+    "Immutable C008 predecessor evidence and three unresolved blocker records.",
+]
+EXPECTED_SOURCE_BINDINGS = {
+    "original_execution_authorization": "C008R1-SOURCE-001", "packet_reply": "C008R1-SOURCE-002",
+    "founder_scope_refinement": "C008R1-SOURCE-003", "fast_track_program_authorization": "C008R1-SOURCE-004",
+}
+EXPECTED_SOURCES = [
+    ("C008R1-SOURCE-001", "ORIGINAL_EXECUTION_AUTHORIZATION", "slack:C0BNHRRTE9F:1787390606.427149", "2026-08-22T12:53:26.427149+03:30", "DS-P1-M3-C008-R1-PACKET-01 — FOUNDER EXECUTION AUTHORIZATION — C008-R1 — 2026-08-22", "U0BNFS43TBL", True, 2),
+    ("C008R1-SOURCE-002", "PACKET_REPLY", "slack:C0BNHRRTE9F:1787390614.653749", "2026-08-22T12:53:34.653749+03:30", "Authoritative C008-R1 Packet v1.0 for the Founder-authorized bounded execution", "U0BNFS43TBL", True, 2),
+    ("C008R1-SOURCE-003", "FOUNDER_SCOPE_REFINEMENT", "slack:C0BNHRRTE9F:1787397116.963919", "2026-08-22T14:41:56.963919+03:30", "FOUNDER SCOPE REFINEMENT — C008-R1 SUPPLY/FULFILLMENT — 2026-08-22", "U0BNFS43TBL", True, 2),
+    ("C008R1-SOURCE-004", "FAST_TRACK_PROGRAM_AUTHORIZATION", "slack:C0BNHRRTE9F:1787397760.694619", "2026-08-22T14:52:40.694619+03:30", "DS-P1 FAST-TRACK MULTI-AGENT CONTINUOUS PROGRAM — FOUNDER AUTHORIZATION — 2026-08-22", "U0BNFS43TBL", True, 0),
+]
+EXPECTED_SUPPLIER_DEFERRED_INTAKE = {
+    "collection_status": "DEFERRED_TO_BE_COMPLETED_LATER", "collection_required_now": False,
+    "deferred_is_waiver": False, "deferred_is_evidence": False, "deferred_is_verification": False,
+    "telephone_process": {"recorded_as_founder_intent_only": True, "is_evidence": False, "is_verification": False, "establishes_supplier_or_commercial_claim": False},
+    "future_field_contract": {"contract_state": "PLACEHOLDER_ONLY", "fields": EXPECTED_SUPPLIER_DEFERRED_INTAKE_POLICY["future_field_ids"]},
+}
+EXPECTED_MEDIA_REQUEST = {
+    "request_id": "C008R1-REQUEST-002", "request_type": "RIGHTS_SAFE_MEDIA_PACKET", "criteria": ["PHOTO_CONTENT_READINESS"],
+    "required_fields": ["Asset owner/source, rights basis and exact permitted commercial-use scope.", "Exact Product, Family and Appearance applicability plus source or capture date.", "Visual-truth limits, accessibility metadata requirement and production-ready derivative status.", "Independent reviewer."],
+    "acceptable_sources": ["Damavand-owned original 201/51 photography.", "Commissioned media with durable commercial rights.", "Supplier or manufacturer assets with explicit written permission for Damavand commercial website use."],
+    "redaction_allowed": True, "review_effect": "EVIDENCE_REVIEW_ONLY_NO_AUTOMATIC_VERIFICATION",
+}
+EXPECTED_CANONICAL_RECONCILED_AT = "2026-08-22T15:30:03+03:30"
+EXPECTED_SYNTHETIC_RECONCILED_AT = "2026-08-22T15:35:03+03:30"
+EXPECTED_BLOCKER_DIGESTS = ["d0816a9f93b9a72b4b666a27054728f98dcbbcc4cc58d9aa5de81275ee485724", "e79802aaac6006061de3a61c483b3e57e8f855f48f4e9716e9c72ff45482a9c4", "344502d750f44d420282036df0f77bfe75a76e7cd75179b145392a4446680379"]
+EXPECTED_SYNTHETIC_BLOCKER_DIGESTS = ["057caa63a47eaa1e618b2bec48b2644aeb5b0e65befb5f12336ab02e453ec792", "2a7cf8b1146500d44ffcf82028495795f38be310e97303324ff5faaf72edb696", "f5a299a16faadadff05686f40c492bef19586ca0c75aa33a45ae1ee0a52ff4d2"]
+EXPECTED_CONTRACT_KEYS = {"contract_id", "contract_version", "record_kind", "schema", "registry", "authority", "dependencies", "base_pins", "source_policy", "evidence_policy", "readiness_policy", "g1_policy", "founder_request_policy", "supplier_deferred_intake_policy", "regression_anchors", "validation"}
+EXPECTED_DEPENDENCIES = {"c002_candidate_contract": "repository/data/contracts/commercial-pilot-candidate.contract.yaml", "c002_candidate_schema": "repository/data/schemas/commercial-pilot-candidate.schema.json", "c002_candidate_registry": "repository/data/registries/extensions/c002/commercial-pilot-candidates.yaml", "c008_contract": "repository/data/contracts/c008-c002-readiness-evidence-closure.contract.yaml", "c008_schema": "repository/data/schemas/c008-c002-readiness-evidence-closure.schema.json", "c008_registry": "repository/data/registries/extensions/c008/201-51-readiness-evidence-closure.yaml"}
 PIN_PATHS = {
     "c002_candidate_contract_semantic_sha256": C002_CONTRACT_PATH,
     "c002_candidate_schema_semantic_sha256": C002_SCHEMA_PATH,
@@ -250,17 +300,33 @@ def validate_registry(
         "checklist_sha256": "d1e1396f09e28a556c8dfe06df53198f79a68a9461d5e12c490147916d981a1c",
         "readme_sha256": "cee437b6367850e1ddfa14a55cfd423884e673c6572dc09fb2b2738c0d13e73c",
         "manifest_sha256": "c63b35b91848199719215cb2f545c02100665fc262fe3fcbbb68941c606baac1",
-        "thread_complete": True, "reply_count": 1,
+        "scope_refinement_reply_ts": "1787397116.963919", "fast_track_program_parent_ts": "1787397760.694619",
+        "thread_complete": True, "reply_count": 2,
     }
     if packet != expected_packet:
         add("PACKET_EXACTNESS", "Packet/Slack/hash binding differs")
 
     source_manifest = value.get("source_manifest", {})
-    source_ids = [item.get("source_id") for item in source_manifest.get("sources", []) if isinstance(item, dict)]
-    if source_manifest.get("source_count") != 2 or source_ids != ["C008R1-SOURCE-001", "C008R1-SOURCE-002"]:
-        add("SOURCE_MANIFEST", "exact two-source authorization/Packet manifest required")
-    if semantic_digest(source_manifest) != EXPECTED_SOURCE_MANIFEST_DIGEST:
-        add("SOURCE_MANIFEST_EXACTNESS", "source roles, locators, timestamps, titles, authors or completeness differ")
+    source_rows = source_manifest.get("sources", []) if isinstance(source_manifest, dict) else []
+    source_tuples = [
+        (item.get("source_id"), item.get("source_class"), item.get("source_locator"), item.get("captured_at"), item.get("title"), item.get("author_id"), item.get("thread_complete"), item.get("thread_reply_count"))
+        for item in source_rows if isinstance(item, dict)
+    ]
+    if source_manifest.get("source_count") != 4 or source_tuples != EXPECTED_SOURCES:
+        add("SOURCE_MANIFEST", "exact four-source authorization/refinement manifest required")
+    if source_manifest.get("chronology") != EXPECTED_SOURCE_CHRONOLOGY or source_manifest.get("source_bindings") != EXPECTED_SOURCE_BINDINGS:
+        add("SOURCE_CHRONOLOGY_BINDING", "source chronology or role binding differs")
+
+    expected_reconciled_at = EXPECTED_SYNTHETIC_RECONCILED_AT if synthetic_mode else EXPECTED_CANONICAL_RECONCILED_AT
+    expected_deferred_intake = {"reconciled_at": expected_reconciled_at, **EXPECTED_SUPPLIER_DEFERRED_INTAKE}
+    if value.get("supplier_deferred_intake") != expected_deferred_intake:
+        add("SUPPLIER_DEFERRAL_BOUNDARY", "supplier deferral must remain typed, future-only, non-evidence, non-verification and non-waiver")
+    if value.get("evaluation_as_of") != expected_reconciled_at or value.get("evidence_intake", {}).get("searched_at") != expected_reconciled_at:
+        add("RECONCILIATION_CHRONOLOGY", "evaluation and evidence-intake reconciliation time must be exact")
+    if any(item.get("captured_at", "") >= expected_reconciled_at for item in source_rows if isinstance(item, dict)):
+        add("RECONCILIATION_CHRONOLOGY", "every authority source must precede reconciliation")
+    if any(item.get("captured_at", "") >= str(value.get("supplier_deferred_intake", {}).get("reconciled_at", "")) for item in source_rows if isinstance(item, dict)):
+        add("RECONCILIATION_CHRONOLOGY", "supplier-deferral reconciliation must follow every authority source")
 
     auth = value.get("authority_effects", {})
     if any(auth.get(key) is not True for key in ALLOWED_TRUE_AUTHORITY) or any(
@@ -278,7 +344,7 @@ def validate_registry(
         "EXPIRED_OR_STALE_EVIDENCE": 0,
     } or intake.get("finding") != "NO_NEW_ADMISSIBLE_REAL_WORLD_EVIDENCE":
         add("ZERO_EVIDENCE_COUNTS", "class counts/finding must remain exact and zero")
-    if semantic_digest(intake.get("search_scope")) != EXPECTED_SEARCH_SCOPE_DIGEST:
+    if intake.get("search_scope") != EXPECTED_SEARCH_SCOPE:
         add("SEARCH_SCOPE_EXACTNESS", "evidence-search scope cannot add claims or omit required source coverage")
 
     reviews = value.get("blocker_reviews", [])
@@ -310,8 +376,19 @@ def validate_registry(
                 add("BLOCKER_PROMOTION", f"{item.get('criterion_code')} cannot grant promotion/implementation")
             if item.get("disposition") != "NO_NEW_ADMISSIBLE_EVIDENCE":
                 add("BLOCKER_DISPOSITION", f"{item.get('criterion_code')} disposition differs")
-        if [semantic_digest(item) for item in reviews] != EXPECTED_BLOCKER_DIGESTS:
-            add("BLOCKER_TEXT_EXACTNESS", "blocker gaps, non-claims, requirements or safe behavior differ")
+        for item in reviews:
+            text = " ".join(str(item.get(key, "")) for key in ("remaining_requirement", "safe_behavior", "unsupported_claims"))
+            if item.get("criterion_code") in {"SUPPLY_EVIDENCE", "FULFILLMENT_RISK"} and ("neither a waiver nor verification" not in text):
+                add("SUPPLIER_DEFERRAL_LAUNDERING", f"{item.get('criterion_code')} must state that deferral is neither waiver nor verification")
+            if item.get("criterion_code") == "FULFILLMENT_RISK" and "makes no customer promise" not in str(item.get("safe_behavior")):
+                add("SUPPLIER_DEFERRAL_LAUNDERING", "FULFILLMENT_RISK must preserve the no-customer-promise boundary")
+            if item.get("criterion_code") in {"SUPPLY_EVIDENCE", "FULFILLMENT_RISK"} and "later separately authorized supplier intake/review" not in str(item.get("remaining_requirement")):
+                add("SUPPLIER_DEFERRAL_LAUNDERING", f"{item.get('criterion_code')} must preserve the later-authority requirement")
+            if item.get("reviewed_at") != expected_reconciled_at or item.get("reviewed_at", "") <= max(source.get("captured_at", "") for source in source_rows):
+                add("RECONCILIATION_CHRONOLOGY", f"{item.get('criterion_code')} review time must be exact and after every source")
+        expected_blocker_digests = EXPECTED_SYNTHETIC_BLOCKER_DIGESTS if synthetic_mode else EXPECTED_BLOCKER_DIGESTS
+        if [semantic_digest(item) for item in reviews] != expected_blocker_digests:
+            add("BLOCKER_ROW_EXACTNESS", "all three complete blocker rows must remain exact")
 
     if value.get("readiness_result") != EXPECTED_TOTALS:
         add("READINESS_RESULT", "C002 readiness must remain exact 6/9 NOT_READY")
@@ -321,16 +398,13 @@ def validate_registry(
     requests = value.get("founder_evidence_requests", {})
     request_rows = requests.get("requests", []) if isinstance(requests, dict) else []
     request_bindings = [(item.get("request_id"), item.get("request_type"), item.get("criteria")) for item in request_rows]
-    expected_request_bindings = [
-        ("C008R1-REQUEST-001", "SUPPLIER_SUPPLY_FULFILLMENT_PACKET", ["SUPPLY_EVIDENCE", "FULFILLMENT_RISK"]),
-        ("C008R1-REQUEST-002", "RIGHTS_SAFE_MEDIA_PACKET", ["PHOTO_CONTENT_READINESS"]),
-    ]
-    if requests.get("request_count") != 2 or request_bindings != expected_request_bindings:
-        add("FOUNDER_REQUESTS", "exact two evidence requests required")
+    expected_request_bindings = [("C008R1-REQUEST-002", "RIGHTS_SAFE_MEDIA_PACKET", ["PHOTO_CONTENT_READINESS"])]
+    if requests.get("request_count") != 1 or request_bindings != expected_request_bindings:
+        add("FOUNDER_REQUESTS", "exact one active rights-safe-media evidence request required")
     if requests.get("request_is_founder_decision") is not False:
         add("FOUNDER_DECISION_BOUNDARY", "evidence request must not be recast as a business decision")
-    if [semantic_digest(item) for item in request_rows] != EXPECTED_REQUEST_DIGESTS:
-        add("FOUNDER_REQUEST_TEXT_EXACTNESS", "required fields, acceptable sources, redaction or review effect differ")
+    if request_rows != [EXPECTED_MEDIA_REQUEST]:
+        add("FOUNDER_REQUEST_TEXT_EXACTNESS", "rights-safe-media request must preserve fields and acceptable sources")
 
     expected_regression = contract.get("regression_anchors")
     if value.get("regression_snapshot") != expected_regression:
@@ -352,6 +426,18 @@ def validate_registry(
         add("CONTRACT_G1_POLICY", "contract G1/evidence-input boundary differs")
     if contract.get("founder_request_policy") != EXPECTED_REQUEST_POLICY:
         add("CONTRACT_REQUEST_POLICY", "contract request order/decision boundary differs")
+    if contract.get("supplier_deferred_intake_policy") != EXPECTED_SUPPLIER_DEFERRED_INTAKE_POLICY:
+        add("CONTRACT_SUPPLIER_DEFERRAL_POLICY", "contract supplier deferral policy differs")
+    if contract.get("validation") != EXPECTED_VALIDATION_POLICY:
+        add("CONTRACT_VALIDATION_POLICY", "contract validation policy differs")
+    if set(contract) != EXPECTED_CONTRACT_KEYS or contract.get("contract_id") != "c008-r1-remaining-real-world-evidence-closure" or contract.get("contract_version") != "1.0.0" or contract.get("record_kind") != "c008r1-remaining-real-world-evidence-closure":
+        add("CONTRACT_EXACTNESS", "contract identity or top-level key set differs")
+    if contract.get("schema") != EXPECTED_SCHEMA_BINDING:
+        add("CONTRACT_EXACTNESS", "contract schema binding differs")
+    if contract.get("registry") != EXPECTED_REGISTRY_BINDING:
+        add("CONTRACT_EXACTNESS", "contract registry binding differs")
+    if contract.get("dependencies") != EXPECTED_DEPENDENCIES:
+        add("CONTRACT_EXACTNESS", "contract dependencies differ")
     validate_dependency_pins(add, contract)
 
     return sorted(set(issues))

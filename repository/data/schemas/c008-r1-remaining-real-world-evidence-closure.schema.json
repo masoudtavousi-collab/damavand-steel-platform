@@ -15,6 +15,7 @@
     "authority_effects",
     "predecessor",
     "source_manifest",
+    "supplier_deferred_intake",
     "evidence_intake",
     "blocker_reviews",
     "readiness_result",
@@ -33,6 +34,7 @@
     "authority_effects": {"$ref": "#/$defs/authorityEffects"},
     "predecessor": {"$ref": "#/$defs/predecessor"},
     "source_manifest": {"$ref": "#/$defs/sourceManifest"},
+    "supplier_deferred_intake": {"$ref": "#/$defs/supplierDeferredIntake"},
     "evidence_intake": {"$ref": "#/$defs/evidenceIntake"},
     "blocker_reviews": {
       "type": "array",
@@ -68,6 +70,8 @@
         "checklist_sha256",
         "readme_sha256",
         "manifest_sha256",
+        "scope_refinement_reply_ts",
+        "fast_track_program_parent_ts",
         "thread_complete",
         "reply_count"
       ],
@@ -83,8 +87,10 @@
         "checklist_sha256": {"const": "d1e1396f09e28a556c8dfe06df53198f79a68a9461d5e12c490147916d981a1c"},
         "readme_sha256": {"const": "cee437b6367850e1ddfa14a55cfd423884e673c6572dc09fb2b2738c0d13e73c"},
         "manifest_sha256": {"const": "c63b35b91848199719215cb2f545c02100665fc262fe3fcbbb68941c606baac1"},
+        "scope_refinement_reply_ts": {"const": "1787397116.963919"},
+        "fast_track_program_parent_ts": {"const": "1787397760.694619"},
         "thread_complete": {"const": true},
-        "reply_count": {"const": 1}
+        "reply_count": {"const": 2}
       }
     },
     "authorityEffects": {
@@ -182,13 +188,25 @@
     "sourceManifest": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["source_count", "sources"],
+      "required": ["source_count", "chronology", "source_bindings", "sources"],
       "properties": {
-        "source_count": {"const": 2},
+        "source_count": {"const": 4},
+        "chronology": {"const": ["1787390606.427149", "1787390614.653749", "1787397116.963919", "1787397760.694619"]},
+        "source_bindings": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["original_execution_authorization", "packet_reply", "founder_scope_refinement", "fast_track_program_authorization"],
+          "properties": {
+            "original_execution_authorization": {"const": "C008R1-SOURCE-001"},
+            "packet_reply": {"const": "C008R1-SOURCE-002"},
+            "founder_scope_refinement": {"const": "C008R1-SOURCE-003"},
+            "fast_track_program_authorization": {"const": "C008R1-SOURCE-004"}
+          }
+        },
         "sources": {
           "type": "array",
-          "minItems": 2,
-          "maxItems": 2,
+          "minItems": 4,
+          "maxItems": 4,
           "items": {"$ref": "#/$defs/source"}
         }
       }
@@ -196,15 +214,39 @@
     "source": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["source_id", "source_role", "source_locator", "captured_at", "title", "author_id", "thread_complete"],
+      "required": ["source_id", "source_class", "source_locator", "captured_at", "title", "author_id", "thread_complete", "thread_reply_count"],
       "properties": {
-        "source_id": {"pattern": "^C008R1-SOURCE-00[1-2]$"},
-        "source_role": {"enum": ["EXECUTION_AUTHORIZATION", "PACKET"]},
+        "source_id": {"pattern": "^C008R1-SOURCE-00[1-4]$"},
+        "source_class": {"enum": ["ORIGINAL_EXECUTION_AUTHORIZATION", "PACKET_REPLY", "FOUNDER_SCOPE_REFINEMENT", "FAST_TRACK_PROGRAM_AUTHORIZATION"]},
         "source_locator": {"$ref": "#/$defs/nonEmptyString"},
         "captured_at": {"type": "string", "format": "date-time"},
         "title": {"$ref": "#/$defs/nonEmptyString"},
         "author_id": {"const": "U0BNFS43TBL"},
-        "thread_complete": {"const": true}
+        "thread_complete": {"const": true},
+        "thread_reply_count": {"enum": [0, 2]}
+      }
+    },
+    "supplierDeferredIntake": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reconciled_at", "collection_status", "collection_required_now", "deferred_is_waiver", "deferred_is_evidence", "deferred_is_verification", "telephone_process", "future_field_contract"],
+      "properties": {
+        "reconciled_at": {"type": "string", "format": "date-time"},
+        "collection_status": {"const": "DEFERRED_TO_BE_COMPLETED_LATER"},
+        "collection_required_now": {"const": false},
+        "deferred_is_waiver": {"const": false},
+        "deferred_is_evidence": {"const": false},
+        "deferred_is_verification": {"const": false},
+        "telephone_process": {
+          "type": "object", "additionalProperties": false,
+          "required": ["recorded_as_founder_intent_only", "is_evidence", "is_verification", "establishes_supplier_or_commercial_claim"],
+          "properties": {"recorded_as_founder_intent_only": {"const": true}, "is_evidence": {"const": false}, "is_verification": {"const": false}, "establishes_supplier_or_commercial_claim": {"const": false}}
+        },
+        "future_field_contract": {
+          "type": "object", "additionalProperties": false,
+          "required": ["contract_state", "fields"],
+          "properties": {"contract_state": {"const": "PLACEHOLDER_ONLY"}, "fields": {"const": ["supplier_identity_or_protected_durable_locator", "supplier_manufacturer_brand_role_separation", "bounded_subject_scope", "capture_timestamp_and_evidence_type", "validity_or_reverification", "fulfillment_expectation_exceptions_and_failures", "claims_and_non_claims", "owner_reviewer_and_confidentiality"]}}
+        }
       }
     },
     "evidenceIntake": {
@@ -354,11 +396,11 @@
       "additionalProperties": false,
       "required": ["request_count", "requests", "request_is_founder_decision"],
       "properties": {
-        "request_count": {"const": 2},
+        "request_count": {"const": 1},
         "requests": {
           "type": "array",
-          "minItems": 2,
-          "maxItems": 2,
+          "minItems": 1,
+          "maxItems": 1,
           "items": {"$ref": "#/$defs/founderEvidenceRequest"}
         },
         "request_is_founder_decision": {"const": false}
@@ -369,9 +411,9 @@
       "additionalProperties": false,
       "required": ["request_id", "request_type", "criteria", "required_fields", "acceptable_sources", "redaction_allowed", "review_effect"],
       "properties": {
-        "request_id": {"pattern": "^C008R1-REQUEST-00[1-2]$"},
-        "request_type": {"enum": ["SUPPLIER_SUPPLY_FULFILLMENT_PACKET", "RIGHTS_SAFE_MEDIA_PACKET"]},
-        "criteria": {"type": "array", "minItems": 1, "items": {"enum": ["SUPPLY_EVIDENCE", "PHOTO_CONTENT_READINESS", "FULFILLMENT_RISK"]}, "uniqueItems": true},
+        "request_id": {"const": "C008R1-REQUEST-002"},
+        "request_type": {"const": "RIGHTS_SAFE_MEDIA_PACKET"},
+        "criteria": {"const": ["PHOTO_CONTENT_READINESS"]},
         "required_fields": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/nonEmptyString"}, "uniqueItems": true},
         "acceptable_sources": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/nonEmptyString"}, "uniqueItems": true},
         "redaction_allowed": {"const": true},
@@ -381,7 +423,7 @@
     "g1DecisionSurface": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["result", "resolved_criteria_count", "unresolved_criteria", "real_world_evidence_required", "founder_selection_ready", "m4_promotion_candidate", "recommendation_is_selection", "founder_business_decision_required", "founder_evidence_input_required", "c009_authorized", "m4_authorized"],
+      "required": ["result", "resolved_criteria_count", "unresolved_criteria", "real_world_evidence_required", "founder_selection_ready", "m4_promotion_candidate", "recommendation_is_selection", "founder_business_decision_required", "founder_evidence_input_required", "active_founder_evidence_input", "supplier_supply_fulfillment_intake_status", "deferred_is_waiver", "deferred_is_verification", "c009_authorized", "m4_authorized"],
       "properties": {
         "result": {"const": "HOLD_NOT_READY_6_OF_9"},
         "resolved_criteria_count": {"const": 6},
@@ -392,6 +434,10 @@
         "recommendation_is_selection": {"const": false},
         "founder_business_decision_required": {"const": false},
         "founder_evidence_input_required": {"const": true},
+        "active_founder_evidence_input": {"const": "RIGHTS_SAFE_MEDIA_PACKET_ONLY"},
+        "supplier_supply_fulfillment_intake_status": {"const": "DEFERRED_TO_BE_COMPLETED_LATER"},
+        "deferred_is_waiver": {"const": false},
+        "deferred_is_verification": {"const": false},
         "c009_authorized": {"const": false},
         "m4_authorized": {"const": false}
       }

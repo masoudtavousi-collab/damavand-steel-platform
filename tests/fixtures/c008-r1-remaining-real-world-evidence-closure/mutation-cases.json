@@ -176,7 +176,7 @@
       "new_evidence_items_total"
     ],
     "operation": "replace",
-    "value": 1,
+    "value": 2,
     "expected": "ZERO_EVIDENCE_INTAKE"
   },
   {
@@ -546,7 +546,7 @@
       "request_count"
     ],
     "operation": "replace",
-    "value": 1,
+    "value": 2,
     "expected": "FOUNDER_REQUESTS"
   },
   {
@@ -597,7 +597,7 @@
       "request_type"
     ],
     "operation": "replace",
-    "value": "RIGHTS_SAFE_MEDIA_PACKET",
+    "value": "SUPPLIER_SUPPLY_FULFILLMENT_PACKET",
     "expected": "FOUNDER_REQUESTS"
   },
   {
@@ -605,7 +605,7 @@
     "path": [
       "founder_evidence_requests",
       "requests",
-      1,
+      0,
       "criteria"
     ],
     "operation": "replace",
@@ -619,28 +619,28 @@
     "path": ["source_manifest", "sources", 0, "source_locator"],
     "operation": "replace",
     "value": "slack:C0BNHRRTE9F:0000000000.000000",
-    "expected": "SOURCE_MANIFEST_EXACTNESS"
+    "expected": "SOURCE_MANIFEST"
   },
   {
     "name": "source_role_swap",
-    "path": ["source_manifest", "sources", 0, "source_role"],
+    "path": ["source_manifest", "sources", 0, "source_class"],
     "operation": "replace",
-    "value": "PACKET",
-    "expected": "SOURCE_MANIFEST_EXACTNESS"
+    "value": "PACKET_REPLY",
+    "expected": "SOURCE_MANIFEST"
   },
   {
-    "name": "source_title_authority_laundering",
-    "path": ["source_manifest", "sources", 0, "title"],
+    "name": "source_chronology_laundering",
+    "path": ["source_manifest", "chronology", 2],
     "operation": "replace",
-    "value": "Founder selected M4",
-    "expected": "SOURCE_MANIFEST_EXACTNESS"
+    "value": "1787390600.000000",
+    "expected": "SOURCE_CHRONOLOGY_BINDING"
   },
   {
-    "name": "source_timestamp_drift",
-    "path": ["source_manifest", "sources", 1, "captured_at"],
+    "name": "source_binding_drift",
+    "path": ["source_manifest", "source_bindings", "founder_scope_refinement"],
     "operation": "replace",
-    "value": "2026-08-22T12:53:35.653749+03:30",
-    "expected": "SOURCE_MANIFEST_EXACTNESS"
+    "value": "C008R1-SOURCE-004",
+    "expected": "SOURCE_CHRONOLOGY_BINDING"
   },
   {
     "name": "search_scope_stock_inference",
@@ -654,34 +654,116 @@
     "path": ["blocker_reviews", 0, "unsupported_claims"],
     "operation": "replace",
     "value": [],
-    "expected": "BLOCKER_TEXT_EXACTNESS"
+    "expected": "SCHEMA"
   },
   {
     "name": "fulfillment_requirement_weakened",
     "path": ["blocker_reviews", 2, "remaining_requirement"],
     "operation": "replace",
     "value": "Provide evidence.",
-    "expected": "BLOCKER_TEXT_EXACTNESS"
+    "expected": "SUPPLIER_DEFERRAL_LAUNDERING"
   },
   {
     "name": "fulfillment_safe_behavior_inference",
     "path": ["blocker_reviews", 2, "safe_behavior"],
     "operation": "replace",
     "value": "Infer shipping and customer Price.",
-    "expected": "BLOCKER_TEXT_EXACTNESS"
+    "expected": "SUPPLIER_DEFERRAL_LAUNDERING"
   },
   {
     "name": "media_required_fields_reduced",
-    "path": ["founder_evidence_requests", "requests", 1, "required_fields"],
+    "path": ["founder_evidence_requests", "requests", 0, "required_fields"],
     "operation": "replace",
     "value": ["Asset owner/source."],
     "expected": "FOUNDER_REQUEST_TEXT_EXACTNESS"
   },
   {
     "name": "competitor_media_accepted",
-    "path": ["founder_evidence_requests", "requests", 1, "acceptable_sources"],
+    "path": ["founder_evidence_requests", "requests", 0, "acceptable_sources"],
     "operation": "append",
     "value": "Edited competitor imagery.",
     "expected": "FOUNDER_REQUEST_TEXT_EXACTNESS"
-  }
+  },
+  {
+    "name": "supplier_deferral_becomes_waiver",
+    "path": ["supplier_deferred_intake", "deferred_is_waiver"],
+    "operation": "replace",
+    "value": true,
+    "expected": "SUPPLIER_DEFERRAL_BOUNDARY"
+  },
+  {
+    "name": "supplier_deferral_becomes_evidence",
+    "path": ["supplier_deferred_intake", "deferred_is_evidence"],
+    "operation": "replace",
+    "value": true,
+    "expected": "SUPPLIER_DEFERRAL_BOUNDARY"
+  },
+  {
+    "name": "supplier_deferral_becomes_verification",
+    "path": ["supplier_deferred_intake", "deferred_is_verification"],
+    "operation": "replace",
+    "value": true,
+    "expected": "SUPPLIER_DEFERRAL_BOUNDARY"
+  },
+  {
+    "name": "supplier_collection_required_now",
+    "path": ["supplier_deferred_intake", "collection_required_now"],
+    "operation": "replace",
+    "value": true,
+    "expected": "SUPPLIER_DEFERRAL_BOUNDARY"
+  },
+  {
+    "name": "telephone_process_laundered_to_evidence",
+    "path": ["supplier_deferred_intake", "telephone_process", "is_evidence"],
+    "operation": "replace",
+    "value": true,
+    "expected": "SUPPLIER_DEFERRAL_BOUNDARY"
+  },
+  {
+    "name": "telephone_process_laundered_to_verification",
+    "path": ["supplier_deferred_intake", "telephone_process", "is_verification"],
+    "operation": "replace",
+    "value": true,
+    "expected": "SUPPLIER_DEFERRAL_BOUNDARY"
+  },
+  {
+    "name": "supplier_field_contract_reduced",
+    "path": ["supplier_deferred_intake", "future_field_contract", "fields"],
+    "operation": "replace",
+    "value": ["supplier_identity_or_protected_durable_locator"],
+    "expected": "SUPPLIER_DEFERRAL_BOUNDARY"
+  },
+  {
+    "name": "supplier_request_reactivated",
+    "path": ["founder_evidence_requests", "request_count"],
+    "operation": "replace",
+    "value": 2,
+    "expected": "FOUNDER_REQUESTS"
+  },
+  {
+    "name": "extra_fast_track_gate_forbidden",
+    "path": ["FAST_TRACK_INQUIRY_LAUNCH_ELIGIBLE"],
+    "operation": "add",
+    "value": true,
+    "expected": "SCHEMA"
+  },
+  {
+    "name": "reconciliation_before_source_forbidden",
+    "path": ["supplier_deferred_intake", "reconciled_at"],
+    "operation": "replace",
+    "value": "2026-08-22T12:00:00+03:30",
+    "expected": "RECONCILIATION_CHRONOLOGY"
+  },
+  {
+    "name": "source_title_drift",
+    "path": ["source_manifest", "sources", 2, "title"],
+    "operation": "replace",
+    "value": "Supplier verified",
+    "expected": "SOURCE_MANIFEST"
+  },
+  {"name":"blocker_reviewed_at_drift","path":["blocker_reviews",0,"reviewed_at"],"operation":"replace","value":"2026-08-22T15:29:03+03:30","expected":"RECONCILIATION_CHRONOLOGY"},
+  {"name":"supply_missing_fields_claim_creep","path":["blocker_reviews",0,"missing_fields"],"operation":"append","value":"Supplier confirms stock.","expected":"BLOCKER_ROW_EXACTNESS"},
+  {"name":"media_remaining_requirement_none","path":["blocker_reviews",1,"remaining_requirement"],"operation":"replace","value":null,"expected":"MISSING_REQUIREMENT"},
+  {"name":"media_safe_behavior_publish","path":["blocker_reviews",1,"safe_behavior"],"operation":"replace","value":"Publish immediately.","expected":"BLOCKER_ROW_EXACTNESS"},
+  {"name":"media_nonclaim_inverted","path":["blocker_reviews",1,"unsupported_claims",0],"operation":"replace","value":"Owned media is established.","expected":"BLOCKER_ROW_EXACTNESS"}
 ]

@@ -4,7 +4,7 @@
 
 - **Mission:** `C008-R1 — Remaining Real-World Evidence Closure`
 - **Packet:** `DS-P1-M3-C008-R1-PACKET-01`, Version `1.0`
-- **Founder authorization:** Slack `C0BNHRRTE9F / 1787390606.427149`; Packet reply `1787390614.653749`; Founder `U0BNFS43TBL`; complete parent plus one reply
+- **Bound authority chronology:** Slack `C0BNHRRTE9F / 1787390606.427149` original execution authorization; Packet reply `1787390614.653749`; Founder scope refinement `1787397116.963919`; Fast-Track program parent `1787397760.694619`; Founder `U0BNFS43TBL`. The original thread is complete with two replies; the Fast-Track parent is complete with zero replies.
 - **Packet file:** `F0BRVVCN9C5`, `DAMAVAND_C008_R1_REMAINING_EVIDENCE_CLOSURE_FOUNDER_REVIEW_v1.0.zip`
 - **ZIP SHA-256:** `b6f134d78fd309e16ea9fcda22180b235a7a82580b304deeaf6a6b0d4a49715f`
 - **Packet document SHA-256:** `f3ae526f4034bd4cc381100472f9eb54e21dec097cefbaeb24b35274dd2364a1`
@@ -43,13 +43,13 @@ The machine contract pins the C002 and C008 semantic objects. Any predecessor dr
 
 ### Lane A — Supply
 
-Verification requires a recent, source-bound supplier-specific record with supplier identity or a protected durable locator; supplier/manufacturer/Brand role separation; exact bounded 201/51 scope; timestamp and evidence type; validity or re-verification rule; confirmed claims and explicit non-claims; owner; independent reviewer; and confidentiality.
+Supplier identity/details and supplier-specific evidence collection are not required now. The future intake contract remains typed and deferred: when a later separately authorized collection/review action exists, it must require a supplier identity or protected durable locator, supplier/manufacturer/Brand role separation, exact bounded 201/51 scope, timestamp and evidence type, validity or re-verification rule, confirmed claims/non-claims, owner, independent reviewer, and confidentiality.
 
 General sourcing-network intent does not establish current stock, Availability, guaranteed supply, Price, a permanent supplier relationship, or Product truth.
 
 ### Lane B — Fulfillment
 
-Verification requires current supplier-specific evidence for the bounded subject, normal expectation only where actually evidenced, exceptions and failure cases, validity window, re-verification condition, confirmed/non-confirmed claims, owner, independent reviewer, and confidentiality.
+The same deferred intake contract will later require current supplier-specific evidence for the bounded subject, normal expectation only where actually evidenced, exceptions and failure cases, validity window, re-verification condition, confirmed/non-confirmed claims, owner, independent reviewer, and confidentiality.
 
 No guaranteed ETA, permanent SLA, guaranteed stock, shipping promise, Availability, or Price is inferred.
 
@@ -61,12 +61,11 @@ Editing competitor or random Internet media creates no commercial rights. No ext
 
 ## Founder evidence requests
 
-This Mission creates **no new Founder business decision**. It prepares two evidence-input requests:
+This refinement records the current Founder telephone process as process intent only: it is neither supplier evidence nor verification, and it cannot establish supplier identity, stock, Availability, ETA/SLA, Price, commitment, or Supply/Fulfillment truth. Supplier collection is `DEFERRED_TO_BE_COMPLETED_LATER`, not waived.
 
-1. `C008R1-REQUEST-001` — one source-bound Supplier Supply/Fulfillment packet covering both supplier-specific blockers. Sensitive price, cost, margin, and negotiation values may be redacted while durable provenance, scope, time, validity, claims/non-claims, and reviewer evidence remain inspectable.
-2. `C008R1-REQUEST-002` — one rights-safe production-media packet with durable ownership/permission evidence and exact applicability.
+There is exactly one active Founder evidence-input request: `C008R1-REQUEST-002` — one rights-safe production-media packet with durable ownership/permission evidence and exact applicability. Media rights remains a separate active Founder evidence input.
 
-Providing evidence does not automatically verify a criterion. Independent review remains required.
+Future supplier intake or provided media does not automatically verify a criterion. Independent review remains required.
 
 ## Exact write scope
 
@@ -100,14 +99,14 @@ C008-R1 creates no candidate, Product, controlled value, valid tuple, Variant Ru
 
 ## Validation and review record
 
-- Focused canonical and synthetic validation: `PASS` with four exact semantic pins
-- Focused tests / mutation dispatch: `PASS` — 14 tests and 69/69 registry mutations plus contract adversaries
+- Focused canonical and distinct synthetic validation: `PASS` with all four semantic digests pinned
+- Focused tests / mutation dispatch: `PASS` — 14 tests and 85/85 unique mutations
 - `git diff --check`: `PASS`
-- `make validate`: `PASS`
-- full `make test`: `PASS` — all repository and foundation tests
-- manifest / Atlas / agentic usage / links: `PASS` — 173/173 documents, 173 Atlas rows / 21 domains, 15 agentic tests, 5,101 local links/anchors, zero policy errors
-- exact 22-path allowlist and protected-owner regression: `PASS`
-- independent integrated-diff review: `PASS` — 0 material / 0 non-material findings
+- `make validate` / full `make test`: `PASS`
+- manifest / Atlas / agentic usage / links: `PASS` — 173/173 documents, 173 rows / 21 domains, 15/15 agentic tests, and 5,101 links/anchors
+- exact 22-path allowlist and protected-owner regression: `PASS` — the final repair changes 15 authorized paths; `scripts/test.sh` correctly returns to its pinned strict invocation and therefore has no final diff
+- independent pre-pin integrated-diff review: `PASS` — 0 material / 0 non-material findings
+- final pinned status-record replay: `PASS` — 0 material / 0 non-material findings
 - exact-head CI: `PENDING`
 
 ## Stop boundary

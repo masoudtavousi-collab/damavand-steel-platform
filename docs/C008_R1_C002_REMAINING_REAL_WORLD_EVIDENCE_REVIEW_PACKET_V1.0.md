@@ -3,7 +3,7 @@
 ## Decision surface
 
 - **Packet:** `DS-P1-M3-C008-R1-PACKET-01`, Version `1.0`
-- **Authority:** Slack `C0BNHRRTE9F / 1787390606.427149`, Packet reply `1787390614.653749`
+- **Authority chronology:** Slack `C0BNHRRTE9F / 1787390606.427149`, Packet reply `1787390614.653749`, Founder scope refinement `1787397116.963919`, and Fast-Track parent `1787397760.694619`; all are bound to Founder `U0BNFS43TBL`.
 - **Reviewed predecessor:** C008 PR #45 / Merge `fbe3d9eb78566dc7b006fc43b0939d124a81cec6`
 - **Machine source:** [`C008-R1 registry`](../repository/data/registries/extensions/c008r1/201-51-remaining-real-world-evidence-closure.yaml)
 - **Purpose:** evidence collection and independent re-review only
@@ -20,26 +20,13 @@
 
 `NEW_EVIDENCE_ITEMS_TOTAL=0`. All class, admitted, rejected, protected, conflicting, and stale counts are zero.
 
-## Founder evidence input A — Supplier Supply/Fulfillment packet
+## Deferred supplier intake placeholder — not an active evidence request
 
-One packet may serve both Supply and Fulfillment only when every record is source-bound and each claim is scoped independently.
+Supplier identity/details and supplier-specific evidence collection are `NOT_REQUIRED_NOW` and `DEFERRED_TO_BE_COMPLETED_LATER`. This is not a waiver, evidence, verification, or a C002 resolution. The typed future field contract preserves the supplier/protected-locator, role-separation, bounded-scope, timestamp/type, validity/re-verification, fulfillment-exception, claims/non-claims, owner/reviewer, and confidentiality fields for a later separately authorized action.
 
-Required fields:
+The telephone process is recorded only as current Founder process intent. It does not establish any supplier fact, stock, Availability, ETA/SLA, Price, commercial commitment, or Supply/Fulfillment verification.
 
-- supplier identity or protected durable locator;
-- supplier/manufacturer/Brand role separation;
-- exact bounded 201/51 subject/configuration;
-- capture timestamp and evidence type;
-- validity window or re-verification rule;
-- actually evidenced normal fulfillment expectation, exceptions, and failure cases;
-- confirmed claims and explicit non-claims;
-- owner, independent reviewer, and confidentiality.
-
-Acceptable sources include a recent durable supplier chat/email/SMS locator, redacted recent invoice or purchase document, dated supplier sheet/written confirmation, or a dated documented phone note only if permitted by the live C002 evidence contract.
-
-Sensitive supplier pricing, cost, margins, private terms, and negotiation content may be redacted. Redaction must not remove provenance, scope, time, validity, claims/non-claims, or reviewer evidence.
-
-## Founder evidence input B — Rights-safe media packet
+## Active Founder evidence input — Rights-safe media packet
 
 Provide one of:
 
@@ -67,12 +54,13 @@ This packet is not a selection decision and cannot be used to bypass independent
 
 ## Next prerequisite
 
-Return the two evidence packets above through durable, attributable channels. Re-run only the three blocker reviews under a separately authorized action. Do not start C009 or M4 unless a later exact authority exists after a defensible all-nine readiness result and Founder selection decision.
+Return the one rights-safe media packet above through a durable, attributable channel. Supplier intake remains deferred until a later exact authority. Re-run only the three blocker reviews under a separately authorized action. Do not start C009 or M4 unless a later exact authority exists after a defensible all-nine readiness result and Founder selection decision.
 
 ## Status
 
-- Local/focused/unified validation: `PASS` — pinned canonical/synthetic validation, 14 tests, 69/69 registry mutations, full repository suite, 173/173 manifest, 173-row/21-domain Atlas, 5,101 links/anchors
-- Independent integrated review: `PASS` — 0 material / 0 non-material findings
+- Local/focused/unified validation: `PASS` — four semantic digests pinned; 14 focused tests; 85/85 mutations; full repository suite PASS
+- Independent pre-pin integrated review: `PASS` — 0 material / 0 non-material findings
+- Final pinned status-record replay: `PASS` — 0 material / 0 non-material findings
 - Exact-head CI: `PENDING`
 - Merge: `NOT AUTHORIZED`
 - Final stop: `DO_NOT_MERGE / WAIT_FOR_FOUNDER_PROJECT_COMMANDER_REVIEW`

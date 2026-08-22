@@ -60,8 +60,8 @@ class C008R1RemainingRealWorldEvidenceClosureTests(unittest.TestCase):
         self.assertIn("FIXTURE_MODE", "\n".join(self.validate(copy.deepcopy(self.canonical), synthetic_mode=True)))
 
     def test_all_counted_mutations_dispatch_and_fail_closed(self):
-        self.assertEqual(len(self.mutations), 69)
-        self.assertEqual(len({item["name"] for item in self.mutations}), 69)
+        self.assertEqual(len(self.mutations), 85)
+        self.assertEqual(len({item["name"] for item in self.mutations}), 85)
         for case in self.mutations:
             with self.subTest(case=case["name"]):
                 value = copy.deepcopy(self.canonical)
@@ -134,7 +134,8 @@ class C008R1RemainingRealWorldEvidenceClosureTests(unittest.TestCase):
 
     def test_founder_input_is_evidence_not_business_decision(self):
         requests = self.canonical["founder_evidence_requests"]
-        self.assertEqual(requests["request_count"], 2)
+        self.assertEqual(requests["request_count"], 1)
+        self.assertEqual(requests["requests"][0]["request_type"], "RIGHTS_SAFE_MEDIA_PACKET")
         self.assertFalse(requests["request_is_founder_decision"])
         self.assertFalse(self.canonical["g1_decision_surface"]["founder_business_decision_required"])
         self.assertTrue(self.canonical["g1_decision_surface"]["founder_evidence_input_required"])
@@ -178,8 +179,26 @@ class C008R1RemainingRealWorldEvidenceClosureTests(unittest.TestCase):
         contract["g1_policy"]["founder_decision_required"] = "START_M4"
         self.assertIn("CONTRACT_G1_POLICY", "\n".join(self.validate(copy.deepcopy(self.canonical), contract=contract)))
         contract = copy.deepcopy(self.loaded_contract)
-        contract["founder_request_policy"]["request_order"].reverse()
+        contract["founder_request_policy"]["request_order"].append("SUPPLIER_SUPPLY_FULFILLMENT_PACKET")
         self.assertIn("CONTRACT_REQUEST_POLICY", "\n".join(self.validate(copy.deepcopy(self.canonical), contract=contract)))
+        contract = copy.deepcopy(self.loaded_contract)
+        contract["validation"]["network_allowed"] = True
+        self.assertIn("CONTRACT_VALIDATION_POLICY", "\n".join(self.validate(copy.deepcopy(self.canonical), contract=contract)))
+        contract = copy.deepcopy(self.loaded_contract)
+        contract["contract_id"] = "wrong"
+        self.assertIn("CONTRACT_EXACTNESS", "\n".join(self.validate(copy.deepcopy(self.canonical), contract=contract)))
+        contract = copy.deepcopy(self.loaded_contract)
+        contract["dependencies"]["c008_registry"] = "redirect.yaml"
+        self.assertIn("CONTRACT_EXACTNESS", "\n".join(self.validate(copy.deepcopy(self.canonical), contract=contract)))
+        contract = copy.deepcopy(self.loaded_contract)
+        contract["schema"]["path"] = "redirect-schema.json"
+        self.assertIn("CONTRACT_EXACTNESS", "\n".join(self.validate(copy.deepcopy(self.canonical), contract=contract)))
+        contract = copy.deepcopy(self.loaded_contract)
+        contract["schema"]["draft"] = "https://json-schema.org/draft/2019-09/schema"
+        self.assertIn("CONTRACT_EXACTNESS", "\n".join(self.validate(copy.deepcopy(self.canonical), contract=contract)))
+        contract = copy.deepcopy(self.loaded_contract)
+        contract["registry"]["path"] = "redirect-registry.yaml"
+        self.assertIn("CONTRACT_EXACTNESS", "\n".join(self.validate(copy.deepcopy(self.canonical), contract=contract)))
 
     def test_semantic_digests_fail_closed_and_are_eventually_pinned(self):
         if "TO_BE_FINALIZED" in ORIGINAL_DIGESTS:

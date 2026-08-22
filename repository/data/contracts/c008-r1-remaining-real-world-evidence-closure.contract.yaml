@@ -59,11 +59,17 @@ source_policy:
   slack_file_id: F0BRVVCN9C5
   packet_zip_sha256: b6f134d78fd309e16ea9fcda22180b235a7a82580b304deeaf6a6b0d4a49715f
   complete_thread_required: true
-  exact_reply_count: 1
+  exact_reply_count: 2
+  scope_refinement_reply_ts: "1787397116.963919"
+  fast_track_program_parent_ts: "1787397760.694619"
   packet_internal_manifest_required: true
   packet_planning_status_is_superseded_only_by_exact_execution_authorization: true
   public_channel_evidence_search_required: true
   public_channel_evidence_search_found_new_items: false
+  exact_source_count: 4
+  source_chronology: ["1787390606.427149", "1787390614.653749", "1787397116.963919", "1787397760.694619"]
+  source_classes: [ORIGINAL_EXECUTION_AUTHORIZATION, PACKET_REPLY, FOUNDER_SCOPE_REFINEMENT, FAST_TRACK_PROGRAM_AUTHORIZATION]
+  all_sources_author: U0BNFS43TBL
 evidence_policy:
   exact_new_evidence_item_count: 0
   exact_blocker_count: 3
@@ -103,15 +109,29 @@ g1_policy:
   exact_result: HOLD_NOT_READY_6_OF_9
   recommendation_is_selection: false
   exact_m4_candidate: null
-  founder_decision_required: PROVIDE_SOURCE_BOUND_SUPPLY_FULFILLMENT_AND_RIGHTS_SAFE_MEDIA_EVIDENCE
+  founder_business_decision_required: false
+  active_founder_evidence_input: RIGHTS_SAFE_MEDIA_PACKET_ONLY
+  supplier_supply_fulfillment_intake_status: DEFERRED_TO_BE_COMPLETED_LATER
+  deferred_is_waiver: false
+  deferred_is_verification: false
   c009_authorized: false
   m4_authorized: false
 founder_request_policy:
-  request_count: 2
-  request_order: [SUPPLIER_SUPPLY_FULFILLMENT_PACKET, RIGHTS_SAFE_MEDIA_PACKET]
+  request_count: 1
+  request_order: [RIGHTS_SAFE_MEDIA_PACKET]
   request_is_founder_decision: false
   sensitive_values_may_be_redacted: true
   locator_and_scope_must_remain_reviewable: true
+supplier_deferred_intake_policy:
+  collection_status: DEFERRED_TO_BE_COMPLETED_LATER
+  collection_required_now: false
+  deferred_is_waiver: false
+  deferred_is_evidence: false
+  deferred_is_verification: false
+  telephone_process_is_founder_intent_only: true
+  telephone_process_is_evidence: false
+  telephone_process_is_verification: false
+  future_field_ids: [supplier_identity_or_protected_durable_locator, supplier_manufacturer_brand_role_separation, bounded_subject_scope, capture_timestamp_and_evidence_type, validity_or_reverification, fulfillment_expectation_exceptions_and_failures, claims_and_non_claims, owner_reviewer_and_confidentiality]
 regression_anchors:
   c002_candidate_count: 0
   c008_resolved_count: 6
