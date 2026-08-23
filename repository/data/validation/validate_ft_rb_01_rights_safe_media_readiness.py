@@ -285,9 +285,11 @@ def schema_issues(schema: Any) -> list[str]:
     return []
 
 def changed_paths() -> list[str]:
+    mission_base = "a6fa08ba8bda06fba4e92aa58945fd01c7497dcf"
+    committed = subprocess.run(["git","diff","--name-only",f"{mission_base}...HEAD"], cwd=ROOT, check=True, capture_output=True, text=True).stdout.splitlines()
     changed = subprocess.run(["git","diff","--name-only","HEAD"], cwd=ROOT, check=True, capture_output=True, text=True).stdout.splitlines()
     untracked = subprocess.run(["git","ls-files","--others","--exclude-standard"], cwd=ROOT, check=True, capture_output=True, text=True).stdout.splitlines()
-    return sorted(set(changed + untracked))
+    return sorted(set(committed + changed + untracked))
 
 def archaeology_issues(root: Path = ROOT) -> list[str]:
     issues: list[str] = []

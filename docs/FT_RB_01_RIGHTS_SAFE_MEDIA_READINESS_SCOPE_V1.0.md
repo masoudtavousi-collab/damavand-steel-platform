@@ -133,5 +133,10 @@ media packet through a durable, attributable channel.
   manifest documents, 173 Atlas rows / 21 domains, 5,136 links/anchors,
   agentic validator + 15 tests, zero secrets/workflow/network violations).
 - Final independent pinned-tree reviews: `PASS`, 0 material / 0 non-material.
-- Exact-head CI, PR, and Merge: `PENDING`.
+- Initial exact-head CI run `32649601476` on `4cc4ad4c…bfd3f`: `FAIL` because
+  the allowlist check inspected only an uncommitted working-tree delta, which is
+  empty in a clean CI checkout. The bounded repair compares the immutable mission
+  base to `HEAD` plus any local delta; no business or evidence semantic changed.
+- New exact-head CI: `PENDING`; PR #51 remains open; Merge is `PENDING` and
+  unauthorized.
 - Merge is not authorized by this package.
