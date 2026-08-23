@@ -1,0 +1,150 @@
+contract_id: c009-first-commercial-slice-canonical-leaf-promotion
+contract_version: "1.0.0"
+record_kind: canonical-product-leaf-promotion-extension
+schema:
+  path: repository/data/schemas/c009-first-commercial-slice-canonical-leaf-promotion.schema.json
+  draft: https://json-schema.org/draft/2020-12/schema
+registry:
+  path: repository/data/registries/extensions/c009/201-51-canonical-leaf-promotion.yaml
+authority:
+  mission_id: C009
+  one_canonical_combination_promotion_allowed: true
+  one_canonical_sku_leaf_promotion_allowed: true
+  exact_pilot_binding_allowed: true
+  package_docs_validator_tests_allowed: true
+  branch_commit_push_one_pr_allowed: true
+  existing_product_core_owner_mutation_allowed: false
+  additional_combination_or_leaf_allowed: false
+  product_entity_type_invention_allowed: false
+  product_family_or_series_rename_allowed: false
+  controlled_value_or_unit_creation_allowed: false
+  other_pilot_or_candidate_promotion_allowed: false
+  cartesian_generation_allowed: false
+  brand_or_color_promotion_allowed: false
+  mass_population_allowed: false
+  availability_stock_price_eta_sla_supplier_claim_allowed: false
+  c002_mutation_allowed: false
+  c008_ft1_mutation_or_reevaluation_allowed: false
+  commerce_eligibility_activation_allowed: false
+  wordpress_woocommerce_mutation_allowed: false
+  runtime_staging_production_mutation_allowed: false
+  import_deployment_publication_allowed: false
+  auto_merge_or_merge_allowed: false
+  branch_deletion_allowed: false
+  successor_mission_allowed: false
+source_policy:
+  repository: masoudtavousi-collab/damavand-steel-platform
+  slack_channel_id: C0BNHRRTE9F
+  founder_user_id: U0BNFS43TBL
+  direction_parent_ts: "1787398697.475999"
+  direction_parent_title: FOUNDER DECISION — FIRST COMMERCIAL SLICE — 2026-08-22
+  direction_thread_reply_count: 21
+  authorization_ts: "1787440938.184179"
+  authorization_reply_index: 21
+  authorization_direct_thread_reply_count: 0
+  authorization_title: FOUNDER / PROJECT COMMANDER EXECUTION AUTHORIZATION — C009 FIRST COMMERCIAL SLICE CANONICAL LEAF PROMOTION — 2026-08-23
+  execution_command_sha256: 0e0a03ae9f445e6d42c6a45284b2869b007fcd709eb1e442ce30bf1cd4205f16
+  authorized_starting_main: f226381622e94a1d0b2d598f5ed933bde37bd7df
+  predecessor_post_merge_ci_run: 32604542391
+  predecessor_post_merge_ci_result: PASS
+  authorized_branch: codex/c009-first-commercial-slice-canonical-leaf-promotion
+  exact_source_count: 3
+promotion_policy:
+  hierarchy_model:
+    - CATALOG
+    - PLATFORM
+    - FAMILY
+    - SERIES
+    - VARIANT_RULE_SET
+    - SKU
+  product_entity_type_exists: false
+  target_pilot_id: pilot:f5922666261e
+  target_family_id: prd:family:a10c6d8ceabc
+  target_family_label: Stainless Steel Pipe
+  target_series_id: prd:series:e1657d35ac35
+  target_series_label: لوله استیل دکوراتیو
+  target_variant_rule_set_id: prd:variant-rule-set:eb255662accc
+  target_profile_id: pprof:4c556c63c1a9
+  exact_combination_count: 1
+  exact_leaf_count: 1
+  product_identity_semantic_owner: PRODUCT_CORE
+  combination_validity_semantic_owner: VARIANT_RULE_SET
+  pilot_evidence_semantic_owner: PD03B_CANONICAL_PILOT
+  c009_role: PERSISTENCE_AND_IMMUTABLE_BINDING_EXTENSION_ONLY
+  authority_transfer: false
+  approved_does_not_imply_import_publication_or_runtime: true
+  availability_remains_missing_data_value: true
+  commercial_sku_created: false
+stable_identity_policy:
+  allocation: CSPRNG_12_HEX_WITH_GLOBAL_COLLISION_CHECK
+  label_slug_wordpress_woocommerce_or_commercial_sku_derived: false
+  cross_namespace_suffix_collision_forbidden: true
+  historical_reference_reuse_forbidden: true
+validation:
+  offline_only: true
+  network_allowed: false
+  side_effects_allowed: false
+  closed_schema_required: true
+  local_refs_only: true
+  duplicate_yaml_and_json_keys_rejected: true
+  non_finite_numbers_rejected: true
+  deterministic_sorted_errors: true
+  path_escape_symlink_byte_depth_node_caps_enforced: true
+  exact_order_counts_and_bindings_required: true
+  predecessor_semantic_pins_required: true
+  semantic_digest_pinning_required: true
+  mutation_manifest_dispatch_required: true
+dependencies:
+  product_core_contract: repository/data/contracts/product-core.contract.yaml
+  product_core_schema: repository/data/schemas/product-core.schema.json
+  product_entities_registry: repository/data/registries/product-entities.yaml
+  product_entity_types_registry: repository/data/registries/product-entity-types.yaml
+  product_statuses_registry: repository/data/registries/product-statuses.yaml
+  pd03a_contract: repository/data/contracts/pd03a-pilot-prerequisite.contract.yaml
+  pd03a_schema: repository/data/schemas/pd03a-pilot-prerequisite.schema.json
+  pd03a_registry: repository/data/registries/extensions/pd03a/pilot-prerequisite.yaml
+  pd03b_contract: repository/data/contracts/pd03b-canonical-pilot.contract.yaml
+  pd03b_schema: repository/data/schemas/pd03b-canonical-pilot.schema.json
+  pd03b_registry: repository/data/registries/extensions/pd03b/canonical-pilots.yaml
+  c002_contract: repository/data/contracts/commercial-pilot-candidate.contract.yaml
+  c002_schema: repository/data/schemas/commercial-pilot-candidate.schema.json
+  c002_registry: repository/data/registries/extensions/c002/commercial-pilot-candidates.yaml
+  c006_contract: repository/data/contracts/pipe-product-experience-architecture.contract.yaml
+  c006_schema: repository/data/schemas/pipe-product-experience-architecture.schema.json
+  c006_registry: repository/data/registries/extensions/c006/pipe-product-experience-architecture.yaml
+  c008_contract: repository/data/contracts/c008-c002-readiness-evidence-closure.contract.yaml
+  c008_schema: repository/data/schemas/c008-c002-readiness-evidence-closure.schema.json
+  c008_registry: repository/data/registries/extensions/c008/201-51-readiness-evidence-closure.yaml
+  c008_r1_contract: repository/data/contracts/c008-r1-remaining-real-world-evidence-closure.contract.yaml
+  c008_r1_schema: repository/data/schemas/c008-r1-remaining-real-world-evidence-closure.schema.json
+  c008_r1_registry: repository/data/registries/extensions/c008r1/201-51-remaining-real-world-evidence-closure.yaml
+  c008_ft1_contract: repository/data/contracts/c008-ft1-fast-track-inquiry-launch-gate.contract.yaml
+  c008_ft1_schema: repository/data/schemas/c008-ft1-fast-track-inquiry-launch-gate.schema.json
+  c008_ft1_registry: repository/data/registries/extensions/c008ft1/fast-track-inquiry-launch-gate.yaml
+dependency_pins:
+  product_core_contract: 4f297d98e0864fbfad6f872ac75c873f26a8d059bd57ea282b4af892d0e9a5d9
+  product_core_schema: 1a4ae6ee76089b2ca82e2ecf1753577f0f6c0e558b631ed16238ec24773931da
+  product_entities_registry: 69ca32a8a0bb5958f8442ab3aaf812fc7e25eb4b89c20ab6d7f7f16bf75c4fca
+  product_entity_types_registry: 14ebf20c0c6ed5fe0d7ae9e80b3bf3e822edc9c9ace9df97ae409a7126ae74e1
+  product_statuses_registry: bba27ebfa858f5bb29ed0005107d420a0ed004a15b0098bc99d55e1098083b0a
+  pd03a_contract: eeb45b9171d118e763678f85521749f1d256150e369fe1df910ed9479260f48b
+  pd03a_schema: cdbd6176ac890c3f54bc3ea2add6d8661d709c85e566456f3565ab221eff001e
+  pd03a_registry: c6ec36726a2417b153836d3c3f2503e993bf7a4d14d84e55ac27b83281492a3b
+  pd03b_contract: 1d711b2467550ab57153e82a5555863d0bfe2a6aeee469a0f4b18162f990be3a
+  pd03b_schema: 27ab146e3a93cf102ec7fe2c73c9923dbc20437c731823fdb36e5d650d70638d
+  pd03b_registry: ca46b8ec00a4dadfcfc281d52eadf7946609aa21223668d742bcb950f4e7fdac
+  c002_contract: 923731cb080b0ecc05abb21b1189bfdd0df94297780cce364bb791479f7f47e3
+  c002_schema: 1e1b1977f369ab7e5961d4e69111682d1117bc6eeedf666a9e568f0115952741
+  c002_registry: deb0215d2b5f4b5ec0061f937aec9c3e37cf97c94432a23737bf5756cef9587e
+  c006_contract: 131b2c79a3d017c65bac896e95e7a638164a77b821546e5217266f6d3829dcc0
+  c006_schema: 9a9009c4431c097c062dcef81fad03fae51784ff466bb8cc5db6ed14237f79e3
+  c006_registry: 5b5510af1b521daa7b2539007cab0681885f2bbc3eff4a75dde67cb38857ad8b
+  c008_contract: bf450358e11c82df7ae41a7777bd2889f2c4b7cffe64a5f2ee21f3303cbd2f5c
+  c008_schema: 82f8dbfb93233b6d40603a56bdb7661ee4d477003ba13b97c59d80bb0c8a27af
+  c008_registry: bd06e76da52750b9b54c09ccba88421ae82778dce84a4afa15475a88297081d9
+  c008_r1_contract: da5a70f0e7330df8afab52e931f664bda453266740646a4d4183d25370ea75d7
+  c008_r1_schema: fea342c3210dca9e5c2e98030bf8b5e64464cdd550cbb3b5675109c49673b904
+  c008_r1_registry: 9dcf2cc7cc10ab01a9b97ab40ac896debd12e6f25ad5b7e700921a6c782fb87b
+  c008_ft1_contract: 4c940eed75fe433bc8adbc85cb45954068b233cc1de6d80b40bc28eb71466fb5
+  c008_ft1_schema: 8eb3c93a37932e6676e8a3d1c22e0c35d3f6a4d0f47f7467ea718f466ceabd80
+  c008_ft1_registry: 799dad2f7fdf9f6ffb5a9fe37c707f222f6f92f1cc6b1e251bd3f366dd2e9cf3

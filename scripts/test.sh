@@ -150,6 +150,11 @@ c008_ft1_fast_track_inquiry_launch_gate_validator="repository/data/validation/va
 "$python" "$c008_ft1_fast_track_inquiry_launch_gate_validator" --registry tests/fixtures/c008-ft1-fast-track-inquiry-launch-gate/valid-synthetic.yaml --synthetic
 "$python" -B -m unittest tests.test_c008_ft1_fast_track_inquiry_launch_gate
 
+c009_first_commercial_slice_validator="repository/data/validation/validate_c009_first_commercial_slice_canonical_leaf_promotion.py"
+"$python" "$c009_first_commercial_slice_validator"
+"$python" "$c009_first_commercial_slice_validator" --registry tests/fixtures/c009-first-commercial-slice-canonical-leaf-promotion/valid-synthetic.yaml --synthetic
+"$python" -B -m unittest tests.test_c009_first_commercial_slice_canonical_leaf_promotion
+
 "$python" repository/data/validation/validate_bp2_data_blueprint.py
 "$python" repository/data/validation/validate_bp2_data_administration.py
 "$python" tests/test_bp2_data_administration.py

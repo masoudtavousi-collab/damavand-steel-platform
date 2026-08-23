@@ -82,6 +82,7 @@ Its evidence and findings remain preserved, but C1-T03 is not the active next ac
 | `C008 — C002 Readiness / Real-world Evidence Closure` | Independently review the C005 evidence queue, classify all nine criteria, run conditional Lane D only after the actual insufficiency trigger, close or explicitly preserve Supply/Fulfillment/Media gaps, and produce the [G1 review packet](C008_C002_READINESS_EVIDENCE_REVIEW_PACKET_V1.0.md) | [C008 Scope](C008_C002_READINESS_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md) and [machine registry](../repository/data/registries/extensions/c008/201-51-readiness-evidence-closure.yaml); repaired outcome `6/9 / NOT_READY`, candidate count `0`, three external blockers, `FOUNDER_SELECTION_READY=FALSE`, no M4 candidate or authority. Product Data verification is evidence sufficiency only and creates no promotion |
 | `C008-R1 — Remaining Real-World Evidence Closure` | Preserve the three C008 blockers without revisiting verified criteria; supplier intake is a typed deferred placeholder and rights-safe production media is the sole active evidence request | [C008-R1 Scope](C008_R1_C002_REMAINING_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md) and [delta registry](../repository/data/registries/extensions/c008r1/201-51-remaining-real-world-evidence-closure.yaml); the exact three blockers remain open and G1 stays `6/9 / NOT_READY`. Deferral is neither waiver nor verification; no C009, M4, Product/runtime or launch-gate authority follows |
 | `C008-FT1 — Fast-Track Inquiry Launch Governance Amendment` | Create a separate fail-closed sibling gate for the bounded Inquiry-Only launch path without altering C002 | [C008-FT1 Amendment](C008_FT1_FAST_TRACK_INQUIRY_LAUNCH_GOVERNANCE_AMENDMENT_V1.0.md) and [sibling gate registry](../repository/data/registries/extensions/c008ft1/fast-track-inquiry-launch-gate.yaml); current result is `FALSE` with `4/12` prerequisites met and eight explicit blockers. C002 remains `6/9 / NOT_READY`; no Product, runtime, Staging, Production, C009/M4 or launch authority follows |
+| `C009 — First Commercial Slice Canonical Leaf Promotion` | Promote only `pilot:f5922666261e` into one explicit evidence-backed combination and one internal canonical SKU leaf under the existing Variant Rule Set | [C009 Scope](C009_FIRST_COMMERCIAL_SLICE_CANONICAL_LEAF_PROMOTION_SCOPE_V1.0.md) and [canonical extension](../repository/data/registries/extensions/c009/201-51-canonical-leaf-promotion.yaml); Product Core and all predecessor owners remain immutable. C002 remains `6/9 / NOT_READY`; Availability remains `MISSING_DATA_VALUE`; C008-FT1 remains `FALSE / 4 of 12` and is not re-evaluated. No commercial, Runtime, publication, Merge, M4 or successor authority follows |
 | `D-series` | Automation of demonstrated processes | Stable metrics, ownership, failure handling, and separate authorization |
 
 The root `C003` discovery-reconciliation Mission does not rename, start, or
@@ -116,6 +117,12 @@ is initially and currently `FALSE`; Merge, CI, documentation completion or the
 Founder business direction alone cannot enable it. Canonical Product promotion,
 rights-safe media, inquiry/CRM, security/privacy, SEO/indexing, mobile/performance,
 Staging acceptance and Founder Production GO remain independent prerequisites.
+
+C009 is a separately authorized, one-leaf canonical extension. It closes only
+the exact internal combination/SKU identity for the 201/Silver/51/0.50/6m
+Pilot. It does not change C002 readiness, create Availability or commercial
+truth, re-evaluate C008-FT1, enable launch, or authorize M4. Further Product,
+combination, selector, media, Runtime or successor work remains separately gated.
 
 ## Product and Commerce Boundaries
 
