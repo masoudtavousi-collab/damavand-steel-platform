@@ -201,7 +201,10 @@ class RightsSafeMediaReadinessTests(unittest.TestCase):
         mode, paths = MODULE.git_context()
         self.assertEqual("repair", mode)
         self.assertEqual(MODULE.REPAIR_ALLOWLIST, paths)
-        self.assertEqual([], MODULE.repair_shape_issues())
+        if MODULE.base_available(MODULE.REPAIR_BASE):
+            self.assertEqual([], MODULE.repair_shape_issues())
+        else:
+            self.assertEqual([], MODULE.repair_committed_shape_issues())
         self.assertEqual(MODULE.ALLOWLIST, self.contract["validation"]["exact_changed_paths"])
         self.assertEqual(MODULE.ALLOWLIST, self.canonical["exact_changed_paths"])
         runner = (ROOT / "scripts/test.sh").read_text(encoding="utf-8")
@@ -413,7 +416,7 @@ class RightsSafeMediaReadinessTests(unittest.TestCase):
 
     def test_23_excluded_full_tree_manifest_exact_and_adversarial(self):
         raw = subprocess.run(
-            ["git", "ls-tree", "-rz", "--full-tree", MODULE.REPAIR_BASE],
+            ["git", "ls-tree", "-rz", "--full-tree", "HEAD"],
             cwd=ROOT,
             check=True,
             capture_output=True,
@@ -423,7 +426,18 @@ class RightsSafeMediaReadinessTests(unittest.TestCase):
         self.assertEqual(MODULE.REPAIR_BASE_RETAINED_TREE_ENTRIES, retained)
         self.assertEqual(MODULE.REPAIR_BASE_TOTAL_TREE_ENTRIES, total)
         for path, blob in MODULE.REPAIR_BASE_BLOBS.items():
-            self.assertEqual(("100644", "blob", blob), entries[path])
+            self.assertEqual(("100644", "blob"), entries[path][:2])
+            self.assertNotEqual(blob, entries[path][2])
+        if MODULE.base_available(MODULE.REPAIR_BASE):
+            base_raw = subprocess.run(
+                ["git", "ls-tree", "-rz", "--full-tree", MODULE.REPAIR_BASE],
+                cwd=ROOT,
+                check=True,
+                capture_output=True,
+            ).stdout
+            _, _, _, base_entries = MODULE.parse_tree_manifest(base_raw, MODULE.REPAIR_ALLOWLIST)
+            for path, blob in MODULE.REPAIR_BASE_BLOBS.items():
+                self.assertEqual(("100644", "blob", blob), base_entries[path])
         with self.assertRaises(ValueError):
             MODULE.parse_tree_manifest(raw, list(reversed(MODULE.REPAIR_ALLOWLIST)))
         for malformed in [raw[:-1], raw + b"\0", b"bad\0"]:
