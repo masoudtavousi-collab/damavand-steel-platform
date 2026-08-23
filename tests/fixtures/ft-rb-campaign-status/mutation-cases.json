@@ -1,0 +1,21 @@
+[
+  {"name":"mission","path":["mission_id"],"value":"FT-RB-99","code":"REGISTRY_EXACTNESS"},
+  {"name":"source","path":["source","reply_count"],"value":1,"code":"SOURCE_EXACTNESS"},
+  {"name":"main","path":["authorized_starting_main"],"value":"0000000000000000000000000000000000000000","code":"REGISTRY_EXACTNESS"},
+  {"name":"count","path":["effective_gate","met_count"],"value":6,"code":"GATE_AGGREGATION"},
+  {"name":"blocker","path":["effective_gate","blockers",0],"value":"X","code":"GATE_AGGREGATION"},
+  {"name":"transition","path":["effective_gate","transition_recorded"],"value":true,"code":"GATE_AGGREGATION"},
+  {"name":"c002","path":["predecessors","c002_readiness"],"value":"9/9 / READY","code":"PREDECESSOR_REGRESSION"},
+  {"name":"supply","path":["predecessors","supply_evidence"],"value":"VERIFIED","code":"PREDECESSOR_REGRESSION"},
+  {"name":"runtime","path":["no_claim_boundaries","runtime_mutation"],"value":true,"code":"NO_GO_BOUNDARY"},
+  {"name":"merge","path":["no_claim_boundaries","merge_performed"],"value":true,"code":"NO_GO_BOUNDARY"},
+  {"name":"order","path":["lanes",0,"mission"],"value":"FT-RB-02","code":"LANE_ORDER"},
+  {"name":"status","path":["lanes",0,"status"],"value":"IN_PROGRESS","code":"LANE_EXACTNESS"},
+  {"name":"pr","path":["lanes",0,"pr"],"value":50,"code":"SCHEMA_VALIDATION"},
+  {"name":"classification","path":["lanes",0,"readiness_classification"],"value":"NOT_REVIEWED","code":"LANE_EXACTNESS"},
+  {"name":"gate-state","path":["lanes",5,"gate_state"],"value":"UNMET","code":"LANE_EXACTNESS"},
+  {"name":"workflow-status","path":["lanes",0,"workflow_status"],"value":"IN_PROGRESS","code":"LANE_EXACTNESS"},
+  {"name":"production-go-owner","path":["blocker_statuses",6,"owner"],"value":"RELEASE_GOVERNANCE","code":"BLOCKER_STATUS_EXACTNESS"},
+  {"name":"allowlist","path":["allowlist",0],"value":"README.md","code":"ALLOWLIST"},
+  {"name":"controls","path":["campaign_controls","maximum_active_wip"],"value":4,"code":"CAMPAIGN_CONTROLS"}
+]

@@ -1,5 +1,11 @@
 # Open Questions
 
+## Fast-Track Remaining Blockers
+
+| ID | Question | Related document | Status |
+| --- | --- | --- | --- |
+| OQ-FTRB-001 | Which external rights-safe media evidence, environment evidence, legal/privacy decisions, and Staging authorization inputs are supplied for the first canonical slice? | [FT-RB-00 Campaign Status](FT_RB_00_FAST_TRACK_REMAINING_BLOCKERS_CAMPAIGN_STATUS_V1.0.md) | Open; the campaign router records these as fail-closed external inputs and creates no evidence, Runtime, Staging, or Production fact. |
+
 > Project OS 2.0 resolves the operating model and future commerce target. C008-R1 preserves G1 `6/9 / NOT_READY`; C008-FT1 preserves the historical false `4/12` sibling-gate record. C009 resolves one exact internal combination/SKU leaf, and C009-FT2 consumes that integrated evidence to record the effective gate as `FALSE / 5 of 12`. Availability, commercial SKU policy, broader Product scope, Runtime, M4 and successor implementation remain separately gated.
 
 ## Document Control

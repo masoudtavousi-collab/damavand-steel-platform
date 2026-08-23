@@ -160,6 +160,11 @@ c009_ft2_gate_reevaluation_validator="repository/data/validation/validate_c009_f
 "$python" "$c009_ft2_gate_reevaluation_validator" --registry tests/fixtures/c009-ft2-post-c009-fast-track-gate-reevaluation/valid-synthetic.yaml --synthetic
 "$python" -B -m unittest tests.test_c009_ft2_post_c009_fast_track_gate_reevaluation
 
+ft_rb_campaign_status_validator="repository/data/validation/validate_ft_rb_campaign_status.py"
+"$python" "$ft_rb_campaign_status_validator"
+"$python" "$ft_rb_campaign_status_validator" --registry tests/fixtures/ft-rb-campaign-status/valid-synthetic.yaml --synthetic
+"$python" -B -m unittest tests.test_ft_rb_campaign_status
+
 "$python" repository/data/validation/validate_bp2_data_blueprint.py
 "$python" repository/data/validation/validate_bp2_data_administration.py
 "$python" tests/test_bp2_data_administration.py
