@@ -4,6 +4,7 @@ import copy
 import importlib.util
 import json
 import os
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -151,6 +152,20 @@ class RightsSafeMediaReadinessTests(unittest.TestCase):
         runner = (ROOT / "scripts/test.sh").read_text(encoding="utf-8")
         self.assertEqual(1, runner.count('ft_rb_01_media_validator="repository/data/validation/validate_ft_rb_01_rights_safe_media_readiness.py"'))
         self.assertEqual(1, runner.count('ft_rb_campaign_status_validator="repository/data/validation/validate_ft_rb_campaign_status.py"'))
+        base = "a6fa08ba8bda06fba4e92aa58945fd01c7497dcf"
+        head = "1" * 40
+        event = {"pull_request":{"changed_files":14,"base":{"sha":base},"head":{"sha":head}}}
+        self.assertTrue(MODULE.ci_event_matches_allowlist(event, head, []))
+        self.assertTrue(MODULE.ci_event_matches_allowlist(event, "2" * 40, [base, head]))
+        raw = f"tree {'3' * 40}\nparent {base}\nparent {head}\nauthor A <a@example.invalid> 0 +0000\n\nmerge\n"
+        self.assertEqual([base, head], MODULE.parse_raw_commit_parents(raw))
+        with self.assertRaises(ValueError):
+            MODULE.parse_raw_commit_parents("parent not-an-oid\n\n")
+        event["pull_request"]["changed_files"] = 15
+        self.assertFalse(MODULE.ci_event_matches_allowlist(event, head, []))
+        base_available = subprocess.run(["git","cat-file","-e",base], cwd=ROOT, capture_output=True).returncode == 0
+        if base_available:
+            self.assertEqual([], MODULE.base_shape_issues())
 
     def test_10_live_archaeology_is_exact_and_temp_symlink_fails(self):
         self.assertEqual([], MODULE.archaeology_issues())

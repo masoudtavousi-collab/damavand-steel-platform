@@ -6,6 +6,7 @@ import argparse
 import hashlib
 import json
 import math
+import os
 import socket
 import subprocess
 from pathlib import Path
@@ -38,6 +39,8 @@ ALLOWLIST = [
     "tests/fixtures/ft-rb-01-rights-safe-media-readiness/valid-synthetic.yaml",
     "tests/test_ft_rb_01_rights_safe_media_readiness.py",
 ]
+BASE_SCRIPT_BLOB = "9bc85e57c4eabfb4ba3ee29bcf8fb7b680f13c66"
+BASE_ABSENT_PATHS = [path for path in ALLOWLIST if path != "scripts/test.sh"]
 DEPENDENCIES = {
     "c002_contract": "repository/data/contracts/commercial-pilot-candidate.contract.yaml",
     "c002_schema": "repository/data/schemas/commercial-pilot-candidate.schema.json",
@@ -284,11 +287,76 @@ def schema_issues(schema: Any) -> list[str]:
         return [f"SCHEMA_META:{type(exc).__name__}"]
     return []
 
+def ci_event_matches_allowlist(event: Any, checkout_oid: str, parent_oids: list[str]) -> bool:
+    if not isinstance(event, dict) or not isinstance(event.get("pull_request"), dict):
+        return False
+    pull = event["pull_request"]
+    event_base = pull.get("base", {}).get("sha") if isinstance(pull.get("base"), dict) else None
+    event_head = pull.get("head", {}).get("sha") if isinstance(pull.get("head"), dict) else None
+    checkout_relation = checkout_oid == event_head or {event_base, event_head}.issubset(set(parent_oids))
+    return (
+        pull.get("changed_files") == len(ALLOWLIST)
+        and event_base == "a6fa08ba8bda06fba4e92aa58945fd01c7497dcf"
+        and isinstance(event_head, str) and len(event_head) == 40
+        and checkout_relation
+    )
+
+def parse_raw_commit_parents(raw: str) -> list[str]:
+    parents: list[str] = []
+    for line in raw.splitlines():
+        if not line:
+            break
+        if line.startswith("parent "):
+            oid = line[7:]
+            if len(oid) != 40 or any(char not in "0123456789abcdef" for char in oid):
+                raise ValueError("malformed parent object ID")
+            parents.append(oid)
+            if len(parents) > 2:
+                raise ValueError("unexpected parent count")
+    return parents
+
+def raw_commit_parents(commit: str = "HEAD") -> list[str]:
+    result = subprocess.run(["git","cat-file","-p",commit], cwd=ROOT, check=True, capture_output=True, text=True)
+    if len(result.stdout.encode("utf-8")) > MAX_BYTES:
+        raise ValueError("commit object byte cap exceeded")
+    return parse_raw_commit_parents(result.stdout)
+
+def base_shape_issues() -> list[str]:
+    base = "a6fa08ba8bda06fba4e92aa58945fd01c7497dcf"
+    issues: list[str] = []
+    script = subprocess.run(["git","rev-parse",f"{base}:scripts/test.sh"], cwd=ROOT, capture_output=True, text=True)
+    if script.returncode or script.stdout.strip() != BASE_SCRIPT_BLOB:
+        issues.append("BASE_SHAPE:script")
+    for path in BASE_ABSENT_PATHS:
+        probe = subprocess.run(["git","cat-file","-e",f"{base}:{path}"], cwd=ROOT, capture_output=True)
+        if probe.returncode == 0:
+            issues.append(f"BASE_SHAPE:unexpected:{path}")
+    return sorted(issues)
+
 def changed_paths() -> list[str]:
     mission_base = "a6fa08ba8bda06fba4e92aa58945fd01c7497dcf"
-    committed = subprocess.run(["git","diff","--name-only",f"{mission_base}...HEAD"], cwd=ROOT, check=True, capture_output=True, text=True).stdout.splitlines()
+    history = subprocess.run(["git","diff","--name-only",f"{mission_base}...HEAD"], cwd=ROOT, capture_output=True, text=True)
     changed = subprocess.run(["git","diff","--name-only","HEAD"], cwd=ROOT, check=True, capture_output=True, text=True).stdout.splitlines()
     untracked = subprocess.run(["git","ls-files","--others","--exclude-standard"], cwd=ROOT, check=True, capture_output=True, text=True).stdout.splitlines()
+    if history.returncode == 0:
+        if base_shape_issues():
+            raise RuntimeError("immutable mission-base path shape mismatch")
+        committed = history.stdout.splitlines()
+    else:
+        if os.environ.get("CI") != "true" or changed or untracked:
+            raise RuntimeError("mission-base history unavailable outside a clean CI checkout")
+        event_path = Path(os.environ.get("GITHUB_EVENT_PATH", ""))
+        if not event_path.is_file() or event_path.is_symlink() or event_path.stat().st_size > MAX_BYTES:
+            raise RuntimeError("trusted pull-request event metadata unavailable")
+        event = json.loads(event_path.read_text(encoding="utf-8"), object_pairs_hook=_json_pairs)
+        checkout_oid = subprocess.run(["git","rev-parse","HEAD"], cwd=ROOT, check=True, capture_output=True, text=True).stdout.strip()
+        if not ci_event_matches_allowlist(event, checkout_oid, raw_commit_parents()):
+            raise RuntimeError("pull-request event base/head/count mismatch")
+        if any(not (ROOT / path).is_file() or (ROOT / path).is_symlink() for path in ALLOWLIST):
+            raise RuntimeError("authorized path missing or symlinked in CI checkout")
+        if git_blob_oid(ROOT / "scripts/test.sh") == BASE_SCRIPT_BLOB:
+            raise RuntimeError("condition-bound runner path did not change from immutable base")
+        committed = ALLOWLIST
     return sorted(set(committed + changed + untracked))
 
 def archaeology_issues(root: Path = ROOT) -> list[str]:

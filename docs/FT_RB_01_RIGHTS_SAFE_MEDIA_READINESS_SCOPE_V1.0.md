@@ -137,6 +137,18 @@ media packet through a durable, attributable channel.
   the allowlist check inspected only an uncommitted working-tree delta, which is
   empty in a clean CI checkout. The bounded repair compares the immutable mission
   base to `HEAD` plus any local delta; no business or evidence semantic changed.
+- Second exact-head CI run `32650079060` on `792d1430…679ab`: `FAIL` because
+  the shallow CI checkout did not contain the mission-base commit object. The
+  bounded fallback now requires a clean CI checkout plus trusted pull-request
+  event metadata with the exact base SHA, head SHA, and 14-file count, and it
+  accepts either a direct head checkout or GitHub's synthetic merge checkout only
+  when its parents include the exact event base and head. The immutable base
+  binds 13 lane paths as absent and `scripts/test.sh` at blob
+  `9bc85e57…13c66`; CI requires all 13 current paths plus a changed runner blob,
+  so the exact 14-file event count leaves no slot for an unauthorized path. Every
+  path must be regular and non-symlink. Local/full-history validation still
+  compares the mission base to `HEAD` directly. No business or evidence semantic
+  changed.
 - New exact-head CI: `PENDING`; PR #51 remains open; Merge is `PENDING` and
   unauthorized.
 - Merge is not authorized by this package.
