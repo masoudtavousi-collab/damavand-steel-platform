@@ -1,0 +1,115 @@
+contract_id: ft-rb-01-rights-safe-media-readiness
+contract_version: "1.0.0"
+record_kind: rights-safe-media-readiness
+schema:
+  path: repository/data/schemas/ft-rb-01-rights-safe-media-readiness.schema.json
+  draft: https://json-schema.org/draft/2020-12/schema
+registry:
+  path: repository/data/registries/extensions/ftrb01/rights-safe-media-readiness.yaml
+authority:
+  mission_id: FT-RB-01
+  repository_archaeology_intake_checklist_validator_test_allowed: true
+  asset_or_right_creation_allowed: false
+  media_publication_allowed: false
+  product_combination_sku_mutation_allowed: false
+  price_stock_availability_eta_sla_claim_allowed: false
+  runtime_staging_production_mutation_allowed: false
+  merge_or_successor_mission_allowed: false
+dependencies:
+  c002_contract: repository/data/contracts/commercial-pilot-candidate.contract.yaml
+  c002_schema: repository/data/schemas/commercial-pilot-candidate.schema.json
+  c002_registry: repository/data/registries/extensions/c002/commercial-pilot-candidates.yaml
+  c006_contract: repository/data/contracts/pipe-product-experience-architecture.contract.yaml
+  c006_schema: repository/data/schemas/pipe-product-experience-architecture.schema.json
+  c006_registry: repository/data/registries/extensions/c006/pipe-product-experience-architecture.yaml
+  c008_contract: repository/data/contracts/c008-c002-readiness-evidence-closure.contract.yaml
+  c008_schema: repository/data/schemas/c008-c002-readiness-evidence-closure.schema.json
+  c008_registry: repository/data/registries/extensions/c008/201-51-readiness-evidence-closure.yaml
+  c008_r1_contract: repository/data/contracts/c008-r1-remaining-real-world-evidence-closure.contract.yaml
+  c008_r1_schema: repository/data/schemas/c008-r1-remaining-real-world-evidence-closure.schema.json
+  c008_r1_registry: repository/data/registries/extensions/c008r1/201-51-remaining-real-world-evidence-closure.yaml
+  c008_ft1_contract: repository/data/contracts/c008-ft1-fast-track-inquiry-launch-gate.contract.yaml
+  c008_ft1_schema: repository/data/schemas/c008-ft1-fast-track-inquiry-launch-gate.schema.json
+  c008_ft1_registry: repository/data/registries/extensions/c008ft1/fast-track-inquiry-launch-gate.yaml
+  c009_contract: repository/data/contracts/c009-first-commercial-slice-canonical-leaf-promotion.contract.yaml
+  c009_schema: repository/data/schemas/c009-first-commercial-slice-canonical-leaf-promotion.schema.json
+  c009_registry: repository/data/registries/extensions/c009/201-51-canonical-leaf-promotion.yaml
+  c009_ft2_contract: repository/data/contracts/c009-ft2-post-c009-fast-track-gate-reevaluation.contract.yaml
+  c009_ft2_schema: repository/data/schemas/c009-ft2-post-c009-fast-track-gate-reevaluation.schema.json
+  c009_ft2_registry: repository/data/registries/extensions/c009ft2/post-c009-fast-track-gate-reevaluation.yaml
+  ft_rb_00_contract: repository/data/contracts/ft-rb-campaign-status.contract.yaml
+  ft_rb_00_schema: repository/data/schemas/ft-rb-campaign-status.schema.json
+  ft_rb_00_registry: repository/data/registries/extensions/ftrb/campaign-status.yaml
+dependency_pins:
+  c002_contract: 923731cb080b0ecc05abb21b1189bfdd0df94297780cce364bb791479f7f47e3
+  c002_schema: 1e1b1977f369ab7e5961d4e69111682d1117bc6eeedf666a9e568f0115952741
+  c002_registry: deb0215d2b5f4b5ec0061f937aec9c3e37cf97c94432a23737bf5756cef9587e
+  c006_contract: 131b2c79a3d017c65bac896e95e7a638164a77b821546e5217266f6d3829dcc0
+  c006_schema: 9a9009c4431c097c062dcef81fad03fae51784ff466bb8cc5db6ed14237f79e3
+  c006_registry: 5b5510af1b521daa7b2539007cab0681885f2bbc3eff4a75dde67cb38857ad8b
+  c008_contract: bf450358e11c82df7ae41a7777bd2889f2c4b7cffe64a5f2ee21f3303cbd2f5c
+  c008_schema: 82f8dbfb93233b6d40603a56bdb7661ee4d477003ba13b97c59d80bb0c8a27af
+  c008_registry: bd06e76da52750b9b54c09ccba88421ae82778dce84a4afa15475a88297081d9
+  c008_r1_contract: da5a70f0e7330df8afab52e931f664bda453266740646a4d4183d25370ea75d7
+  c008_r1_schema: fea342c3210dca9e5c2e98030bf8b5e64464cdd550cbb3b5675109c49673b904
+  c008_r1_registry: 9dcf2cc7cc10ab01a9b97ab40ac896debd12e6f25ad5b7e700921a6c782fb87b
+  c008_ft1_contract: 4c940eed75fe433bc8adbc85cb45954068b233cc1de6d80b40bc28eb71466fb5
+  c008_ft1_schema: 8eb3c93a37932e6676e8a3d1c22e0c35d3f6a4d0f47f7467ea718f466ceabd80
+  c008_ft1_registry: 799dad2f7fdf9f6ffb5a9fe37c707f222f6f92f1cc6b1e251bd3f366dd2e9cf3
+  c009_contract: a1179a6ef97735431f89ef075e7d40c9dd6973b5eacbeca6599d9666bc7674d3
+  c009_schema: aea8a6dd7b521a83576bbd00ce686d3bc2477552bc4a2f3642a80b648b6e31e2
+  c009_registry: 1b50d28ddded3a818afb82d19759713bd6c2f2b058b4020510d8b5f74a7f6a3f
+  c009_ft2_contract: 0200e474df33fcd8b74308c678107d53dbc9f9999b84fa753db97fc1f1ced5e8
+  c009_ft2_schema: 558153f5f3bba6206215be46454f6add6c8fdabc414b0105c141327a12903e82
+  c009_ft2_registry: 51d9298e2e63b44986a921d72eabc069db5b46dfda0c614ee70d4d7e2e434d08
+  ft_rb_00_contract: 0abac587eff448770493e9afd9dc908503f40f519525b160b8e30d1cb0f59aca
+  ft_rb_00_schema: 9ccc2f734ca766a52a10811d1b03c2c78cf1f1c0c8db525477ec16727bf86a0d
+  ft_rb_00_registry: 242df96bf329950e80830a90b1e5a5cd202b89418113347fbbf705b69c8419b1
+source_policy:
+  slack_channel_id: C0BNHRRTE9F
+  founder_user_id: U0BNFS43TBL
+  campaign_authorization_ts: "1787485976.633809"
+  campaign_authorization_thread_complete: true
+  campaign_authorization_reply_count: 0
+  fast_track_parent_ts: "1787398697.475999"
+  execution_command_sha256: f49f01222adc1b1389e61a99f1a07db13c07d01b2d36522a2469975a2015f839
+  command_hash_bound_by_slack: false
+  campaign_authorized_starting_main: 310d0ac3f6f9da67a975a32beb0b55361aa176d5
+  mission_base_main: a6fa08ba8bda06fba4e92aa58945fd01c7497dcf
+  router_merge_authorization_ts: "1787491529.752109"
+  router_post_main_ci_run: 32642489715
+  router_post_main_ci_result: PASS
+  contextual_founder_media_direction_ts: "1787400933.711809"
+owner_policy:
+  media_owner: FUTURE_MEDIA_REPOSITORY
+  product_truth_owner: PRODUCT_CORE
+  protected_predecessor_owners_immutable: true
+  c009_identity_validated_from_owner_not_persisted_here: true
+  append_only_lane_evidence_package: true
+validation:
+  exact_changed_path_count: 14
+  exact_changed_paths:
+    - docs/FT_RB_01_RIGHTS_SAFE_MEDIA_READINESS_SCOPE_V1.0.md
+    - repository/data/contracts/ft-rb-01-rights-safe-media-readiness.contract.yaml
+    - repository/data/registries/extensions/ftrb01/rights-safe-media-readiness.yaml
+    - repository/data/schemas/ft-rb-01-rights-safe-media-readiness.schema.json
+    - repository/data/validation/validate_ft_rb_01_rights_safe_media_readiness.py
+    - scripts/test.sh
+    - tests/fixtures/ft-rb-01-rights-safe-media-readiness/README.md
+    - tests/fixtures/ft-rb-01-rights-safe-media-readiness/adversarial-duplicate-keys.json
+    - tests/fixtures/ft-rb-01-rights-safe-media-readiness/adversarial-duplicate-keys.yaml
+    - tests/fixtures/ft-rb-01-rights-safe-media-readiness/adversarial-permissive-schema.json
+    - tests/fixtures/ft-rb-01-rights-safe-media-readiness/adversarial-remote-ref-schema.json
+    - tests/fixtures/ft-rb-01-rights-safe-media-readiness/mutation-cases.json
+    - tests/fixtures/ft-rb-01-rights-safe-media-readiness/valid-synthetic.yaml
+    - tests/test_ft_rb_01_rights_safe_media_readiness.py
+  offline_only: true
+  side_effects_allowed: false
+  closed_schema_required: true
+  local_refs_only: true
+  duplicate_keys_rejected: true
+  non_finite_numbers_rejected: true
+  path_caps_enforced: true
+  deterministic_sorted_errors: true
+  dependency_pins_required: true
+  semantic_digest_pinning_required: true
