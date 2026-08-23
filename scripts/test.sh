@@ -155,6 +155,11 @@ c009_first_commercial_slice_validator="repository/data/validation/validate_c009_
 "$python" "$c009_first_commercial_slice_validator" --registry tests/fixtures/c009-first-commercial-slice-canonical-leaf-promotion/valid-synthetic.yaml --synthetic
 "$python" -B -m unittest tests.test_c009_first_commercial_slice_canonical_leaf_promotion
 
+c009_ft2_gate_reevaluation_validator="repository/data/validation/validate_c009_ft2_post_c009_fast_track_gate_reevaluation.py"
+"$python" "$c009_ft2_gate_reevaluation_validator"
+"$python" "$c009_ft2_gate_reevaluation_validator" --registry tests/fixtures/c009-ft2-post-c009-fast-track-gate-reevaluation/valid-synthetic.yaml --synthetic
+"$python" -B -m unittest tests.test_c009_ft2_post_c009_fast_track_gate_reevaluation
+
 "$python" repository/data/validation/validate_bp2_data_blueprint.py
 "$python" repository/data/validation/validate_bp2_data_administration.py
 "$python" tests/test_bp2_data_administration.py

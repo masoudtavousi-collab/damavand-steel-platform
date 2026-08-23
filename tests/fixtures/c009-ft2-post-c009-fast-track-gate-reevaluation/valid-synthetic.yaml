@@ -1,0 +1,185 @@
+registry_id: c009ft2:post-c009-fast-track-gate-reevaluation
+registry_version: "1.0.0"
+mission_id: C009-FT2
+fixture_mode: SYNTHETIC
+authorized_starting_main: 432a72ee0a22069dc33cc4cbb2a5b78e63705b74
+evaluation_as_of: "2026-08-23T13:25:29+03:30"
+source:
+  source_id: C009FT2-SOURCE-001
+  source_class: FOUNDER_EXECUTION_AUTHORIZATION
+  bound_source_count: 2
+  locator: slack:C0BNHRRTE9F:1787478181.812239
+  channel_id: C0BNHRRTE9F
+  message_ts: "1787478181.812239"
+  author_id: U0BNFS43TBL
+  title: FOUNDER / PROJECT COMMANDER EXECUTION AUTHORIZATION — POST-C009 FAST-TRACK GATE RE-EVALUATION — 2026-08-23
+  authored_at: "2026-08-23T13:13:01.812239+03:30"
+  thread_complete: true
+  reply_count: 0
+  execution_command_sha256: 243e330b51b7e89cc0a4b5faadafa880c4cf5a0376eb190644c7950e90bb46fd
+  execution_command_role: CURRENT_FOUNDER_TASK_INSTRUCTION
+  authorized_branch: codex/c009-ft2-post-c009-fast-track-gate-reevaluation
+owner_model:
+  model: APPEND_ONLY_POST_C009_GATE_REEVALUATION_DELTA
+  historical_gate_owner: C008_FT1_FAST_TRACK_GATE
+  product_identity_owner: PRODUCT_CORE
+  combination_validity_owner: VARIANT_RULE_SET
+  pilot_evidence_owner: PD03B_CANONICAL_PILOT
+  c009_role: PERSISTENCE_AND_IMMUTABLE_BINDING_EXTENSION_ONLY
+  c009_ft2_role: EFFECTIVE_GATE_STATE_DELTA_ONLY
+  c008_ft1_owner_mutated: false
+  c009_owner_mutated: false
+  authority_transfer: false
+predecessors:
+  c008_ft1:
+    status: COMPLETED_ARCHIVE_ONLY
+    gate_id: FAST_TRACK_INQUIRY_LAUNCH_ELIGIBLE
+    gate_state: false
+    met_count: 4
+    unmet_count: 8
+    total_prerequisites: 12
+    changed_prerequisite_previous_state: NOT_AUTHORIZED
+    historical_record_immutable: true
+  c009:
+    status: COMPLETED_ARCHIVE_ONLY
+    merge_commit: 432a72ee0a22069dc33cc4cbb2a5b78e63705b74
+    post_merge_ci_run: 32631411970
+    post_merge_ci_result: PASS
+    tree_integrated: true
+    target_pilot_id: pilot:f5922666261e
+    canonical_combination_id: pcomb:829e387ccdcb
+    canonical_leaf_id: prd:sku:66ebd0510693
+c009_evidence:
+  evidence_class: INTEGRATED_CANONICAL_PRODUCT_PROMOTION
+  evidence_refs:
+    - git:main:432a72ee0a22069dc33cc4cbb2a5b78e63705b74
+    - ci:32631411970
+    - registry:c009:pilot:f5922666261e
+    - registry:c009:pcomb:829e387ccdcb
+    - registry:c009:prd:sku:66ebd0510693
+  target_pilot_id: pilot:f5922666261e
+  canonical_combination_id: pcomb:829e387ccdcb
+  canonical_leaf_id: prd:sku:66ebd0510693
+  material: Stainless Steel
+  grade: "201"
+  finish: Silver
+  diameter: 51 mm
+  thickness: 0.50 mm
+  length: 6 m
+  availability: MISSING_DATA_VALUE
+  brand: ABSENT_NOT_PROMOTED
+  color: ABSENT_NOT_PROMOTED
+  price: ABSENT
+  stock: ABSENT
+  eta_sla: ABSENT
+  supplier_truth: ABSENT
+  additional_product_combination_or_sku_created: false
+  runtime_or_publication_created: false
+transition:
+  changed_prerequisites_count: 1
+  prerequisite_id: CANONICAL_PRODUCT_PROMOTION_COMPLETE
+  previous:
+    state: NOT_AUTHORIZED
+    met: false
+    evidence_class: FUTURE_AUTHORIZATION_REQUIRED
+    owner: PRODUCT_CORE
+  effective:
+    state: MET
+    met: true
+    evidence_class: INTEGRATED_CANONICAL_PRODUCT_PROMOTION
+    owner: PRODUCT_CORE
+  evidence_refs:
+    - git:main:432a72ee0a22069dc33cc4cbb2a5b78e63705b74
+    - ci:32631411970
+    - registry:c009:pilot:f5922666261e
+    - registry:c009:pcomb:829e387ccdcb
+    - registry:c009:prd:sku:66ebd0510693
+  promotion_effect: false
+effective_gate:
+  gate_id: FAST_TRACK_INQUIRY_LAUNCH_ELIGIBLE
+  gate_kind: SIBLING_GOVERNANCE_GATE
+  eligible: false
+  aggregate_rule: ALL_12_PREREQUISITES_MET
+  prerequisite_count: 12
+  met_count: 5
+  unmet_count: 7
+  blockers:
+    - RIGHTS_SAFE_MEDIA_READY
+    - INQUIRY_CRM_FLOW_READY
+    - SECURITY_PRIVACY_GATE_READY
+    - SEO_INDEXING_GATE_READY
+    - MOBILE_PERFORMANCE_GATE_READY
+    - STAGING_ACCEPTANCE_PASS
+    - PRODUCTION_FOUNDER_GO
+  all_other_prerequisites_unchanged: true
+  launch_authority_created: false
+c002_snapshot:
+  relationship: INDEPENDENT_SIBLING_NOT_ALIAS
+  readiness: NOT_READY
+  resolved_count: 6
+  unresolved_count: 3
+  founder_selection_ready: false
+  candidate_registry_count: 0
+  supply_evidence: SUBMITTED_REVIEW_INCOMPLETE
+  photo_content_readiness: MISSING_EVIDENCE
+  fulfillment_risk: SUBMITTED_REVIEW_INCOMPLETE
+  state_mutation_effect: false
+no_claim_boundaries:
+  availability: MISSING_DATA_VALUE
+  brand: ABSENT_NOT_PROMOTED
+  color: ABSENT_NOT_PROMOTED
+  price: ABSENT
+  stock: ABSENT
+  eta_sla: ABSENT
+  supplier_truth: ABSENT
+  rights_safe_media_ready: false
+  inquiry_crm_flow_ready: false
+  security_privacy_gate_ready: false
+  seo_indexing_gate_ready: false
+  mobile_performance_gate_ready: false
+  staging_acceptance_pass: false
+  production_founder_go: false
+authority_effects:
+  gate_reevaluation_delta_recorded: true
+  exact_single_prerequisite_transition_recorded: true
+  docs_contract_schema_registry_validator_tests: true
+  branch_commit_push_one_pr: true
+  c008_ft1_owner_mutation: false
+  c009_owner_mutation: false
+  authority_transfer: false
+  second_prerequisite_transition: false
+  gate_true_or_launch_authority: false
+  c002_mutation: false
+  candidate_population: false
+  additional_product_combination_or_sku_population: false
+  brand_color_or_mass_population: false
+  availability_price_stock_eta_sla_supplier_claim: false
+  media_right_or_asset_creation: false
+  inquiry_crm_security_seo_performance_implementation: false
+  wordpress_woocommerce_mutation: false
+  runtime_mutation: false
+  staging_mutation: false
+  production_mutation: false
+  deployment_or_publication: false
+  m4_or_successor_mission: false
+  auto_merge_or_merge: false
+  branch_deletion: false
+regression_anchors:
+  c008_ft1_historical_gate_state: false
+  c008_ft1_historical_met_count: 4
+  c008_ft1_historical_unmet_count: 8
+  c009_combination_count: 1
+  c009_leaf_count: 1
+  effective_gate_state: false
+  effective_met_count: 5
+  effective_unmet_count: 7
+  c002_resolved_count: 6
+  c002_unresolved_count: 3
+  c002_readiness: NOT_READY
+  c002_candidate_count: 0
+  commerce_state: INQUIRY_ONLY
+  runtime_state: NONE
+  staging_state: NONE
+  production_state: NONE
+  m4_authorized: false
+  successor_mission_started: false

@@ -1,0 +1,776 @@
+[
+  {
+    "name": "registry_id_drift",
+    "path": [
+      "registry_id"
+    ],
+    "operation": "replace",
+    "expected": "REGISTRY_EXACTNESS",
+    "value": "wrong"
+  },
+  {
+    "name": "mission_id_drift",
+    "path": [
+      "mission_id"
+    ],
+    "operation": "replace",
+    "expected": "REGISTRY_EXACTNESS",
+    "value": "C010"
+  },
+  {
+    "name": "start_sha_drift",
+    "path": [
+      "authorized_starting_main"
+    ],
+    "operation": "replace",
+    "expected": "REGISTRY_EXACTNESS",
+    "value": "0000000000000000000000000000000000000000"
+  },
+  {
+    "name": "evaluation_time_drift",
+    "path": [
+      "evaluation_as_of"
+    ],
+    "operation": "replace",
+    "expected": "CHRONOLOGY",
+    "value": "2099-01-01T00:00:00+03:30"
+  },
+  {
+    "name": "source_id_drift",
+    "path": [
+      "source",
+      "source_id"
+    ],
+    "operation": "replace",
+    "expected": "SOURCE_EXACTNESS",
+    "value": "WRONG"
+  },
+  {
+    "name": "source_locator_drift",
+    "path": [
+      "source",
+      "locator"
+    ],
+    "operation": "replace",
+    "expected": "SOURCE_EXACTNESS",
+    "value": "slack:C0BNHRRTE9F:0"
+  },
+  {
+    "name": "source_ts_drift",
+    "path": [
+      "source",
+      "message_ts"
+    ],
+    "operation": "replace",
+    "expected": "SOURCE_EXACTNESS",
+    "value": "0.000000"
+  },
+  {
+    "name": "source_author_drift",
+    "path": [
+      "source",
+      "author_id"
+    ],
+    "operation": "replace",
+    "expected": "SOURCE_EXACTNESS",
+    "value": "U000"
+  },
+  {
+    "name": "source_title_drift",
+    "path": [
+      "source",
+      "title"
+    ],
+    "operation": "replace",
+    "expected": "SOURCE_EXACTNESS",
+    "value": "Wrong title"
+  },
+  {
+    "name": "source_command_hash_drift",
+    "path": [
+      "source",
+      "execution_command_sha256"
+    ],
+    "operation": "replace",
+    "expected": "SOURCE_EXACTNESS",
+    "value": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  {
+    "name": "source_count_drift",
+    "path": [
+      "source",
+      "bound_source_count"
+    ],
+    "operation": "replace",
+    "expected": "SOURCE_EXACTNESS",
+    "value": 3
+  },
+  {
+    "name": "owner_model_drift",
+    "path": [
+      "owner_model",
+      "model"
+    ],
+    "operation": "replace",
+    "expected": "OWNER_MODEL",
+    "value": "DIRECT_MUTATION"
+  },
+  {
+    "name": "historical_owner_drift",
+    "path": [
+      "owner_model",
+      "historical_gate_owner"
+    ],
+    "operation": "replace",
+    "expected": "OWNER_MODEL",
+    "value": "C009_FT2"
+  },
+  {
+    "name": "product_owner_drift",
+    "path": [
+      "owner_model",
+      "product_identity_owner"
+    ],
+    "operation": "replace",
+    "expected": "OWNER_MODEL",
+    "value": "C009_FT2"
+  },
+  {
+    "name": "c008_owner_mutated",
+    "path": [
+      "owner_model",
+      "c008_ft1_owner_mutated"
+    ],
+    "operation": "replace",
+    "expected": "OWNER_MODEL",
+    "value": true
+  },
+  {
+    "name": "c009_owner_mutated",
+    "path": [
+      "owner_model",
+      "c009_owner_mutated"
+    ],
+    "operation": "replace",
+    "expected": "OWNER_MODEL",
+    "value": true
+  },
+  {
+    "name": "authority_transfer",
+    "path": [
+      "owner_model",
+      "authority_transfer"
+    ],
+    "operation": "replace",
+    "expected": "OWNER_MODEL",
+    "value": true
+  },
+  {
+    "name": "ft1_status_drift",
+    "path": [
+      "predecessors",
+      "c008_ft1",
+      "status"
+    ],
+    "operation": "replace",
+    "expected": "PREDECESSOR_EXACTNESS",
+    "value": "ACTIVE"
+  },
+  {
+    "name": "ft1_gate_true",
+    "path": [
+      "predecessors",
+      "c008_ft1",
+      "gate_state"
+    ],
+    "operation": "replace",
+    "expected": "PREDECESSOR_EXACTNESS",
+    "value": true
+  },
+  {
+    "name": "ft1_met_count_drift",
+    "path": [
+      "predecessors",
+      "c008_ft1",
+      "met_count"
+    ],
+    "operation": "replace",
+    "expected": "PREDECESSOR_EXACTNESS",
+    "value": 5
+  },
+  {
+    "name": "c009_status_drift",
+    "path": [
+      "predecessors",
+      "c009",
+      "status"
+    ],
+    "operation": "replace",
+    "expected": "PREDECESSOR_EXACTNESS",
+    "value": "ACTIVE"
+  },
+  {
+    "name": "c009_merge_drift",
+    "path": [
+      "predecessors",
+      "c009",
+      "merge_commit"
+    ],
+    "operation": "replace",
+    "expected": "PREDECESSOR_EXACTNESS",
+    "value": "0000000000000000000000000000000000000000"
+  },
+  {
+    "name": "c009_ci_run_drift",
+    "path": [
+      "predecessors",
+      "c009",
+      "post_merge_ci_run"
+    ],
+    "operation": "replace",
+    "expected": "PREDECESSOR_EXACTNESS",
+    "value": 1
+  },
+  {
+    "name": "c009_ci_result_drift",
+    "path": [
+      "predecessors",
+      "c009",
+      "post_merge_ci_result"
+    ],
+    "operation": "replace",
+    "expected": "PREDECESSOR_EXACTNESS",
+    "value": "FAIL"
+  },
+  {
+    "name": "c009_not_integrated",
+    "path": [
+      "predecessors",
+      "c009",
+      "tree_integrated"
+    ],
+    "operation": "replace",
+    "expected": "PREDECESSOR_EXACTNESS",
+    "value": false
+  },
+  {
+    "name": "predecessor_pilot_drift",
+    "path": [
+      "predecessors",
+      "c009",
+      "target_pilot_id"
+    ],
+    "operation": "replace",
+    "expected": "PREDECESSOR_EXACTNESS",
+    "value": "pilot:000000000000"
+  },
+  {
+    "name": "predecessor_combination_drift",
+    "path": [
+      "predecessors",
+      "c009",
+      "canonical_combination_id"
+    ],
+    "operation": "replace",
+    "expected": "PREDECESSOR_EXACTNESS",
+    "value": "pcomb:000000000000"
+  },
+  {
+    "name": "predecessor_leaf_drift",
+    "path": [
+      "predecessors",
+      "c009",
+      "canonical_leaf_id"
+    ],
+    "operation": "replace",
+    "expected": "PREDECESSOR_EXACTNESS",
+    "value": "prd:sku:000000000000"
+  },
+  {
+    "name": "evidence_class_drift",
+    "path": [
+      "c009_evidence",
+      "evidence_class"
+    ],
+    "operation": "replace",
+    "expected": "C009_EVIDENCE",
+    "value": "CONVERSATIONAL"
+  },
+  {
+    "name": "evidence_merge_ref_drift",
+    "path": [
+      "c009_evidence",
+      "evidence_refs",
+      0
+    ],
+    "operation": "replace",
+    "expected": "C009_EVIDENCE",
+    "value": "git:main:wrong"
+  },
+  {
+    "name": "evidence_pilot_drift",
+    "path": [
+      "c009_evidence",
+      "target_pilot_id"
+    ],
+    "operation": "replace",
+    "expected": "C009_EVIDENCE",
+    "value": "pilot:000000000000"
+  },
+  {
+    "name": "evidence_combination_drift",
+    "path": [
+      "c009_evidence",
+      "canonical_combination_id"
+    ],
+    "operation": "replace",
+    "expected": "C009_EVIDENCE",
+    "value": "pcomb:000000000000"
+  },
+  {
+    "name": "evidence_leaf_drift",
+    "path": [
+      "c009_evidence",
+      "canonical_leaf_id"
+    ],
+    "operation": "replace",
+    "expected": "C009_EVIDENCE",
+    "value": "prd:sku:000000000000"
+  },
+  {
+    "name": "evidence_material_drift",
+    "path": [
+      "c009_evidence",
+      "material"
+    ],
+    "operation": "replace",
+    "expected": "C009_EVIDENCE",
+    "value": "Carbon Steel"
+  },
+  {
+    "name": "availability_inference",
+    "path": [
+      "c009_evidence",
+      "availability"
+    ],
+    "operation": "replace",
+    "expected": "C009_EVIDENCE",
+    "value": "AVAILABLE"
+  },
+  {
+    "name": "price_inference",
+    "path": [
+      "c009_evidence",
+      "price"
+    ],
+    "operation": "replace",
+    "expected": "C009_EVIDENCE",
+    "value": "100"
+  },
+  {
+    "name": "stock_inference",
+    "path": [
+      "c009_evidence",
+      "stock"
+    ],
+    "operation": "replace",
+    "expected": "C009_EVIDENCE",
+    "value": "IN_STOCK"
+  },
+  {
+    "name": "supplier_inference",
+    "path": [
+      "c009_evidence",
+      "supplier_truth"
+    ],
+    "operation": "replace",
+    "expected": "C009_EVIDENCE",
+    "value": "GUARANTEED"
+  },
+  {
+    "name": "additional_product_created",
+    "path": [
+      "c009_evidence",
+      "additional_product_combination_or_sku_created"
+    ],
+    "operation": "replace",
+    "expected": "C009_EVIDENCE",
+    "value": true
+  },
+  {
+    "name": "runtime_created",
+    "path": [
+      "c009_evidence",
+      "runtime_or_publication_created"
+    ],
+    "operation": "replace",
+    "expected": "C009_EVIDENCE",
+    "value": true
+  },
+  {
+    "name": "two_transitions",
+    "path": [
+      "transition",
+      "changed_prerequisites_count"
+    ],
+    "operation": "replace",
+    "expected": "SINGLE_TRANSITION",
+    "value": 2
+  },
+  {
+    "name": "wrong_transition_id",
+    "path": [
+      "transition",
+      "prerequisite_id"
+    ],
+    "operation": "replace",
+    "expected": "SINGLE_TRANSITION",
+    "value": "RIGHTS_SAFE_MEDIA_READY"
+  },
+  {
+    "name": "previous_state_laundered",
+    "path": [
+      "transition",
+      "previous",
+      "state"
+    ],
+    "operation": "replace",
+    "expected": "SINGLE_TRANSITION",
+    "value": "MET"
+  },
+  {
+    "name": "previous_met_true",
+    "path": [
+      "transition",
+      "previous",
+      "met"
+    ],
+    "operation": "replace",
+    "expected": "SINGLE_TRANSITION",
+    "value": true
+  },
+  {
+    "name": "effective_state_unmet",
+    "path": [
+      "transition",
+      "effective",
+      "state"
+    ],
+    "operation": "replace",
+    "expected": "SINGLE_TRANSITION",
+    "value": "NOT_AUTHORIZED"
+  },
+  {
+    "name": "effective_met_false",
+    "path": [
+      "transition",
+      "effective",
+      "met"
+    ],
+    "operation": "replace",
+    "expected": "SINGLE_TRANSITION",
+    "value": false
+  },
+  {
+    "name": "transition_evidence_drift",
+    "path": [
+      "transition",
+      "evidence_refs",
+      1
+    ],
+    "operation": "replace",
+    "expected": "SINGLE_TRANSITION",
+    "value": "ci:1"
+  },
+  {
+    "name": "promotion_effect_true",
+    "path": [
+      "transition",
+      "promotion_effect"
+    ],
+    "operation": "replace",
+    "expected": "SINGLE_TRANSITION",
+    "value": true
+  },
+  {
+    "name": "gate_true",
+    "path": [
+      "effective_gate",
+      "eligible"
+    ],
+    "operation": "replace",
+    "expected": "GATE_AGGREGATION",
+    "value": true
+  },
+  {
+    "name": "gate_met_count_six",
+    "path": [
+      "effective_gate",
+      "met_count"
+    ],
+    "operation": "replace",
+    "expected": "GATE_AGGREGATION",
+    "value": 6
+  },
+  {
+    "name": "gate_unmet_count_six",
+    "path": [
+      "effective_gate",
+      "unmet_count"
+    ],
+    "operation": "replace",
+    "expected": "GATE_AGGREGATION",
+    "value": 6
+  },
+  {
+    "name": "gate_total_eleven",
+    "path": [
+      "effective_gate",
+      "prerequisite_count"
+    ],
+    "operation": "replace",
+    "expected": "GATE_AGGREGATION",
+    "value": 11
+  },
+  {
+    "name": "blocker_removed",
+    "path": [
+      "effective_gate",
+      "blockers",
+      6
+    ],
+    "operation": "delete",
+    "expected": "GATE_AGGREGATION"
+  },
+  {
+    "name": "blocker_replaced",
+    "path": [
+      "effective_gate",
+      "blockers",
+      0
+    ],
+    "operation": "replace",
+    "expected": "GATE_AGGREGATION",
+    "value": "CANONICAL_PRODUCT_PROMOTION_COMPLETE"
+  },
+  {
+    "name": "other_prerequisites_changed",
+    "path": [
+      "effective_gate",
+      "all_other_prerequisites_unchanged"
+    ],
+    "operation": "replace",
+    "expected": "GATE_AGGREGATION",
+    "value": false
+  },
+  {
+    "name": "launch_authority_created",
+    "path": [
+      "effective_gate",
+      "launch_authority_created"
+    ],
+    "operation": "replace",
+    "expected": "GATE_AGGREGATION",
+    "value": true
+  },
+  {
+    "name": "c002_ready",
+    "path": [
+      "c002_snapshot",
+      "readiness"
+    ],
+    "operation": "replace",
+    "expected": "C002_REGRESSION",
+    "value": "READY"
+  },
+  {
+    "name": "founder_selection_ready",
+    "path": [
+      "c002_snapshot",
+      "founder_selection_ready"
+    ],
+    "operation": "replace",
+    "expected": "C002_REGRESSION",
+    "value": true
+  },
+  {
+    "name": "candidate_populated",
+    "path": [
+      "c002_snapshot",
+      "candidate_registry_count"
+    ],
+    "operation": "replace",
+    "expected": "C002_REGRESSION",
+    "value": 1
+  },
+  {
+    "name": "supply_force_verified",
+    "path": [
+      "c002_snapshot",
+      "supply_evidence"
+    ],
+    "operation": "replace",
+    "expected": "C002_REGRESSION",
+    "value": "VERIFIED"
+  },
+  {
+    "name": "photo_force_verified",
+    "path": [
+      "c002_snapshot",
+      "photo_content_readiness"
+    ],
+    "operation": "replace",
+    "expected": "C002_REGRESSION",
+    "value": "VERIFIED"
+  },
+  {
+    "name": "fulfillment_force_verified",
+    "path": [
+      "c002_snapshot",
+      "fulfillment_risk"
+    ],
+    "operation": "replace",
+    "expected": "C002_REGRESSION",
+    "value": "VERIFIED"
+  },
+  {
+    "name": "media_false_met",
+    "path": [
+      "no_claim_boundaries",
+      "rights_safe_media_ready"
+    ],
+    "operation": "replace",
+    "expected": "NO_CLAIM_BOUNDARY",
+    "value": true
+  },
+  {
+    "name": "seo_false_met",
+    "path": [
+      "no_claim_boundaries",
+      "seo_indexing_gate_ready"
+    ],
+    "operation": "replace",
+    "expected": "NO_CLAIM_BOUNDARY",
+    "value": true
+  },
+  {
+    "name": "production_false_go",
+    "path": [
+      "no_claim_boundaries",
+      "production_founder_go"
+    ],
+    "operation": "replace",
+    "expected": "NO_CLAIM_BOUNDARY",
+    "value": true
+  },
+  {
+    "name": "c008_owner_authority",
+    "path": [
+      "authority_effects",
+      "c008_ft1_owner_mutation"
+    ],
+    "operation": "replace",
+    "expected": "AUTHORITY_BOUNDARY",
+    "value": true
+  },
+  {
+    "name": "second_transition_authority",
+    "path": [
+      "authority_effects",
+      "second_prerequisite_transition"
+    ],
+    "operation": "replace",
+    "expected": "AUTHORITY_BOUNDARY",
+    "value": true
+  },
+  {
+    "name": "m4_authority",
+    "path": [
+      "authority_effects",
+      "m4_or_successor_mission"
+    ],
+    "operation": "replace",
+    "expected": "AUTHORITY_BOUNDARY",
+    "value": true
+  },
+  {
+    "name": "runtime_authority",
+    "path": [
+      "authority_effects",
+      "runtime_mutation"
+    ],
+    "operation": "replace",
+    "expected": "AUTHORITY_BOUNDARY",
+    "value": true
+  },
+  {
+    "name": "staging_authority",
+    "path": [
+      "authority_effects",
+      "staging_mutation"
+    ],
+    "operation": "replace",
+    "expected": "AUTHORITY_BOUNDARY",
+    "value": true
+  },
+  {
+    "name": "production_authority",
+    "path": [
+      "authority_effects",
+      "production_mutation"
+    ],
+    "operation": "replace",
+    "expected": "AUTHORITY_BOUNDARY",
+    "value": true
+  },
+  {
+    "name": "merge_authority",
+    "path": [
+      "authority_effects",
+      "auto_merge_or_merge"
+    ],
+    "operation": "replace",
+    "expected": "AUTHORITY_BOUNDARY",
+    "value": true
+  },
+  {
+    "name": "regression_met_count_drift",
+    "path": [
+      "regression_anchors",
+      "effective_met_count"
+    ],
+    "operation": "replace",
+    "expected": "REGRESSION_ANCHOR",
+    "value": 4
+  },
+  {
+    "name": "regression_candidate_drift",
+    "path": [
+      "regression_anchors",
+      "c002_candidate_count"
+    ],
+    "operation": "replace",
+    "expected": "REGRESSION_ANCHOR",
+    "value": 1
+  },
+  {
+    "name": "regression_m4_true",
+    "path": [
+      "regression_anchors",
+      "m4_authorized"
+    ],
+    "operation": "replace",
+    "expected": "REGRESSION_ANCHOR",
+    "value": true
+  },
+  {
+    "name": "regression_successor_true",
+    "path": [
+      "regression_anchors",
+      "successor_mission_started"
+    ],
+    "operation": "replace",
+    "expected": "REGRESSION_ANCHOR",
+    "value": true
+  }
+]

@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-08-23 — C009-FT2 post-C009 Fast-Track gate re-evaluation
+
+- Added the bounded [C009-FT2 Scope](C009_FT2_POST_C009_FAST_TRACK_GATE_REEVALUATION_V1.0.md) and append-only [gate delta](../repository/data/registries/extensions/c009ft2/post-c009-fast-track-gate-reevaluation.yaml) under exact Founder authorization `C0BNHRRTE9F / 1787478181.812239`, command SHA `243e330b…46fd`, starting main/C009 Merge Commit `432a72ee0a22069dc33cc4cbb2a5b78e63705b74` and post-merge CI `32631411970 = PASS`.
+- Owner archaeology preserves the complete C008-FT1 and C009 packages unchanged. C009-FT2 records only an append-only effective-state delta: `CANONICAL_PRODUCT_PROMOTION_COMPLETE` changes from `NOT_AUTHORIZED / unmet` to `MET`, bound to the exact Pilot, combination and leaf.
+- The effective sibling gate remains `FALSE`, recomputed from historical `4/12` to `5/12`; exactly seven blockers remain: rights-safe media, inquiry/CRM, security/privacy, SEO/indexing, mobile/performance, Staging acceptance and Founder Production GO.
+- C002 remains `6/9 / NOT_READY`, `FOUNDER_SELECTION_READY=FALSE`, candidate count zero, Supply/Fulfillment submitted/incomplete and Photo/Content missing. No Availability, Price, Stock, ETA/SLA, supplier, media-right, commercial, Runtime, M4, Merge or successor truth/authority is created.
+- Four semantic digests are pinned; strict canonical/synthetic validation, 15 focused tests, 76/76 named mutations, `make validate`, full `make test`, 173/173 manifest documents, 173 Atlas rows / 21 domains, 15/15 agentic tests and 5,132 links/anchors passed. Independent pre-pin and final pinned-tree reviews returned `0 material / 0 non-material`; exact-head CI remains `PENDING`. This history entry grants no Merge, auto-merge, branch deletion or successor authority.
+
 ## 2026-08-23 — C009 first commercial slice canonical leaf promotion
 
 - Added the bounded [C009 Scope](C009_FIRST_COMMERCIAL_SLICE_CANONICAL_LEAF_PROMOTION_SCOPE_V1.0.md) and [canonical extension](../repository/data/registries/extensions/c009/201-51-canonical-leaf-promotion.yaml) under Founder direction `C0BNHRRTE9F / 1787398697.475999`, exact execution authorization `1787440938.184179`, command SHA `0e0a03ae…0f16`, starting main `f226381622e94a1d0b2d598f5ed933bde37bd7df` and post-merge CI `32604542391 = PASS`.
