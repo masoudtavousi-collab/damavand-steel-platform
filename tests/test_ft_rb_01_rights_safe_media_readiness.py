@@ -460,8 +460,10 @@ class RightsSafeMediaReadinessTests(unittest.TestCase):
         with self.assertRaises(AssertionError):
             assert_context_tree("ambiguous", [], raw)
         if mode == "integrated":
-            successor_entry = b"100644 blob " + (b"f" * 40) + b"\tzz-successor-proof.txt\0"
-            successor_raw = raw + successor_entry
+            successor_entry = b"100644 blob " + (b"f" * 40) + b"\tzz-successor-proof.txt"
+            successor_records = raw[:-1].split(b"\0") + [successor_entry]
+            successor_records.sort(key=lambda record: record.split(b"\t", 1)[1])
+            successor_raw = b"\0".join(successor_records) + b"\0"
             successor_digest, successor_retained, successor_total, _ = assert_context_tree(mode, paths, successor_raw)
             self.assertNotEqual(digest, successor_digest)
             self.assertEqual(retained + 1, successor_retained)
