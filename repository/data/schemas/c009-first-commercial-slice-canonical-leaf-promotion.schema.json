@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:damavand:c009-first-commercial-slice-canonical-leaf-promotion:1.0.0",
+  "title": "C009 exact canonical combination and SKU leaf promotion extension",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "registry_id", "registry_version", "mission_id", "fixture_mode", "data_classification",
+    "authorized_starting_main", "evaluation_as_of", "source", "predecessor", "owner_archaeology",
+    "promotion", "commercial_boundaries", "c002_snapshot", "c008_ft1_snapshot",
+    "authority_effects", "regression_anchors"
+  ],
+  "properties": {
+    "registry_id": {"type": "string", "pattern": "^c009:201-51-canonical-leaf-promotion(?::synthetic)?$"},
+    "registry_version": {"const": "1.0.0"},
+    "mission_id": {"const": "C009"},
+    "fixture_mode": {"enum": ["CANONICAL", "SYNTHETIC"]},
+    "data_classification": {"enum": ["CANONICAL_C009_EXACT_SLICE_EXTENSION", "SYNTHETIC_VALIDATION_ONLY"]},
+    "authorized_starting_main": {"$ref": "#/$defs/gitSha"},
+    "evaluation_as_of": {"$ref": "#/$defs/timestamp"},
+    "source": {"$ref": "#/$defs/source"},
+    "predecessor": {"$ref": "#/$defs/predecessor"},
+    "owner_archaeology": {"$ref": "#/$defs/ownerArchaeology"},
+    "promotion": {"$ref": "#/$defs/promotion"},
+    "commercial_boundaries": {"$ref": "#/$defs/commercialBoundaries"},
+    "c002_snapshot": {"$ref": "#/$defs/c002Snapshot"},
+    "c008_ft1_snapshot": {"$ref": "#/$defs/c008Ft1Snapshot"},
+    "authority_effects": {"$ref": "#/$defs/authorityEffects"},
+    "regression_anchors": {"$ref": "#/$defs/regressionAnchors"}
+  },
+  "$defs": {
+    "gitSha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "timestamp": {"type": "string", "pattern": "^20[0-9]{2}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(?:\\.[0-9]+)?[+-][0-9]{2}:[0-9]{2}$"},
+    "nonempty": {"type": "string", "minLength": 1, "pattern": ".*\\S.*"},
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_id", "source_class", "bound_source_count", "channel_id", "direction_parent_locator", "direction_parent_ts", "direction_parent_title", "direction_parent_authored_at", "direction_thread_complete", "direction_thread_reply_count", "authorization_locator", "authorization_ts", "authorization_title", "authorization_authored_at", "authorization_author_id", "authorization_reply_index", "authorization_direct_thread_complete", "authorization_direct_thread_reply_count", "execution_command_sha256", "execution_command_role", "authorized_branch"],
+      "properties": {
+        "source_id": {"const": "C009-SOURCE-001"}, "source_class": {"const": "FOUNDER_EXECUTION_AUTHORIZATION"},
+        "bound_source_count": {"const": 3}, "channel_id": {"const": "C0BNHRRTE9F"},
+        "direction_parent_locator": {"const": "slack:C0BNHRRTE9F:1787398697.475999"},
+        "direction_parent_ts": {"const": "1787398697.475999"}, "direction_parent_title": {"$ref": "#/$defs/nonempty"},
+        "direction_parent_authored_at": {"$ref": "#/$defs/timestamp"}, "direction_thread_complete": {"const": true},
+        "direction_thread_reply_count": {"const": 21}, "authorization_locator": {"const": "slack:C0BNHRRTE9F:1787440938.184179"},
+        "authorization_ts": {"const": "1787440938.184179"}, "authorization_title": {"$ref": "#/$defs/nonempty"},
+        "authorization_authored_at": {"$ref": "#/$defs/timestamp"}, "authorization_author_id": {"const": "U0BNFS43TBL"},
+        "authorization_reply_index": {"const": 21}, "authorization_direct_thread_complete": {"const": true},
+        "authorization_direct_thread_reply_count": {"const": 0}, "execution_command_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "execution_command_role": {"const": "CURRENT_FOUNDER_TASK_INSTRUCTION"},
+        "authorized_branch": {"const": "codex/c009-first-commercial-slice-canonical-leaf-promotion"}
+      }
+    },
+    "predecessor": {
+      "type": "object", "additionalProperties": false,
+      "required": ["mission", "status", "merge_commit", "post_merge_ci_run", "post_merge_ci_result", "tree_integrated"],
+      "properties": {
+        "mission": {"const": "C008-FT1"}, "status": {"const": "COMPLETED_ARCHIVE_ONLY"},
+        "merge_commit": {"$ref": "#/$defs/gitSha"}, "post_merge_ci_run": {"type": "integer", "minimum": 1},
+        "post_merge_ci_result": {"const": "PASS"}, "tree_integrated": {"const": true}
+      }
+    },
+    "ownerArchaeology": {
+      "type": "object", "additionalProperties": false,
+      "required": ["canonical_hierarchy_model", "product_entity_type_exists", "product_identity_semantic_owner", "combination_validity_semantic_owner", "pilot_evidence_semantic_owner", "persistence_binding_extension", "persistence_binding_extension_path", "authority_transfer", "existing_product_core_registry_mutated", "product_master_data_is_synthetic_only", "pd03a_and_pd03b_are_immutable_evidence_dependencies", "explicit_canonical_combination_required", "stable_id_allocation", "collision_check_result"],
+      "properties": {
+        "canonical_hierarchy_model": {"type": "array", "prefixItems": [{"const": "CATALOG"}, {"const": "PLATFORM"}, {"const": "FAMILY"}, {"const": "SERIES"}, {"const": "VARIANT_RULE_SET"}, {"const": "SKU"}], "items": false, "minItems": 6, "maxItems": 6},
+        "product_entity_type_exists": {"const": false},
+        "product_identity_semantic_owner": {"const": "PRODUCT_CORE"},
+        "combination_validity_semantic_owner": {"const": "VARIANT_RULE_SET"},
+        "pilot_evidence_semantic_owner": {"const": "PD03B_CANONICAL_PILOT"},
+        "persistence_binding_extension": {"const": "C009_CANONICAL_PROMOTION_EXTENSION"},
+        "persistence_binding_extension_path": {"const": "repository/data/registries/extensions/c009/201-51-canonical-leaf-promotion.yaml"},
+        "authority_transfer": {"const": false},
+        "existing_product_core_registry_mutated": {"const": false}, "product_master_data_is_synthetic_only": {"const": true},
+        "pd03a_and_pd03b_are_immutable_evidence_dependencies": {"const": true}, "explicit_canonical_combination_required": {"const": true},
+        "stable_id_allocation": {"const": "CSPRNG_12_HEX_WITH_GLOBAL_COLLISION_CHECK"}, "collision_check_result": {"const": "PASS_NO_COLLISION"}
+      }
+    },
+    "entityAnchor": {
+      "type": "object", "additionalProperties": false,
+      "required": ["entity_id", "canonical_label", "status"],
+      "properties": {"entity_id": {"type": "string", "pattern": "^prd:(family|series):[0-9a-f]{12}$"}, "parent_entity_id": {"type": "string", "pattern": "^prd:family:[0-9a-f]{12}$"}, "canonical_label": {"$ref": "#/$defs/nonempty"}, "status": {"const": "APPROVED"}}
+    },
+    "variantRuleSet": {
+      "type": "object", "additionalProperties": false,
+      "required": ["entity_id", "parent_entity_id", "profile_id", "status", "cartesian_generation_forbidden"],
+      "properties": {"entity_id": {"type": "string", "pattern": "^prd:variant-rule-set:[0-9a-f]{12}$"}, "parent_entity_id": {"type": "string", "pattern": "^prd:series:[0-9a-f]{12}$"}, "profile_id": {"type": "string", "pattern": "^pprof:[0-9a-f]{12}$"}, "status": {"const": "APPROVED"}, "cartesian_generation_forbidden": {"const": true}}
+    },
+    "material": {
+      "type": "object", "additionalProperties": false,
+      "required": ["attribute_id", "term_id", "canonical_label", "fixed_non_axis"],
+      "properties": {"attribute_id": {"type": "string", "pattern": "^attr:[0-9a-f]{12}$"}, "term_id": {"type": "string", "pattern": "^vterm:[0-9a-f]{12}$"}, "canonical_label": {"$ref": "#/$defs/nonempty"}, "fixed_non_axis": {"const": true}}
+    },
+    "axis": {
+      "type": "object", "additionalProperties": false,
+      "required": ["attribute_key", "attribute_id", "term_id", "canonical_value", "unit_id"],
+      "properties": {"attribute_key": {"enum": ["grade", "finish", "diameter", "thickness", "length"]}, "attribute_id": {"type": "string", "pattern": "^attr:[0-9a-f]{12}$"}, "term_id": {"type": ["string", "null"], "pattern": "^vterm:[0-9a-f]{12}$"}, "canonical_value": {"$ref": "#/$defs/nonempty"}, "unit_id": {"type": ["string", "null"], "pattern": "^unit:[0-9]{12}$"}}
+    },
+    "availabilityReference": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_pilot_id", "state", "stored_as_leaf_fact", "availability_claim_created"],
+      "properties": {"source_pilot_id": {"const": "pilot:f5922666261e"}, "state": {"const": "MISSING_DATA_VALUE"}, "stored_as_leaf_fact": {"const": false}, "availability_claim_created": {"const": false}}
+    },
+    "historicalReferences": {
+      "type": "object", "additionalProperties": false,
+      "required": ["golden_reference", "source_row_reference", "references_are_identity"],
+      "properties": {"golden_reference": {"const": "GOLD-PIPE-201-51-050-6M"}, "source_row_reference": {"const": "PIPE-COMB-0023"}, "references_are_identity": {"const": false}}
+    },
+    "canonicalCombination": {
+      "type": "object", "additionalProperties": false,
+      "required": ["combination_id", "status", "source_pilot_id", "variant_rule_set_entity_id", "profile_id", "material", "axes", "availability_reference", "brand", "color", "mass", "historical_references", "cartesian_generated", "sibling_combinations_created"],
+      "properties": {
+        "combination_id": {"type": "string", "pattern": "^pcomb:[0-9a-f]{12}$"}, "status": {"const": "APPROVED"},
+        "source_pilot_id": {"const": "pilot:f5922666261e"}, "variant_rule_set_entity_id": {"const": "prd:variant-rule-set:eb255662accc"},
+        "profile_id": {"const": "pprof:4c556c63c1a9"}, "material": {"$ref": "#/$defs/material"},
+        "axes": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/axis"}},
+        "availability_reference": {"$ref": "#/$defs/availabilityReference"}, "brand": {"type": "null"}, "color": {"type": "null"}, "mass": {"type": "null"},
+        "historical_references": {"$ref": "#/$defs/historicalReferences"}, "cartesian_generated": {"const": false}, "sibling_combinations_created": {"const": 0}
+      }
+    },
+    "owner": {"type": "object", "additionalProperties": false, "required": ["role"], "properties": {"role": {"const": "product-data-steward"}}},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_type", "source_reference", "captured_by", "captured_at", "evidence_status"],
+      "properties": {"source_type": {"const": "FOUNDER_EXECUTION_AUTHORIZATION"}, "source_reference": {"const": "slack:C0BNHRRTE9F:1787440938.184179"}, "captured_by": {"const": "role:product-data-steward"}, "captured_at": {"$ref": "#/$defs/timestamp"}, "evidence_status": {"const": "FOUNDER_AUTHORIZED_CANONICAL_LEAF"}}
+    },
+    "skuEntity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["contract_version", "entity_id", "entity_type", "parent_entity_id", "parent_entity_type", "canonical_label", "status", "owner", "provenance", "record_version"],
+      "properties": {"contract_version": {"const": "1.0.0"}, "entity_id": {"type": "string", "pattern": "^prd:sku:[0-9a-f]{12}$"}, "entity_type": {"const": "SKU"}, "parent_entity_id": {"const": "prd:variant-rule-set:eb255662accc"}, "parent_entity_type": {"const": "VARIANT_RULE_SET"}, "canonical_label": {"$ref": "#/$defs/nonempty"}, "status": {"const": "APPROVED"}, "owner": {"$ref": "#/$defs/owner"}, "provenance": {"$ref": "#/$defs/provenance"}, "record_version": {"const": "1.0.0"}}
+    },
+    "canonicalLeaf": {
+      "type": "object", "additionalProperties": false,
+      "required": ["entity", "source_pilot_id", "canonical_combination_id", "public_commercial_sku_code", "availability_fact_created", "import_ready", "publication_ready", "runtime_ready"],
+      "properties": {"entity": {"$ref": "#/$defs/skuEntity"}, "source_pilot_id": {"const": "pilot:f5922666261e"}, "canonical_combination_id": {"type": "string", "pattern": "^pcomb:[0-9a-f]{12}$"}, "public_commercial_sku_code": {"type": "null"}, "availability_fact_created": {"const": false}, "import_ready": {"const": false}, "publication_ready": {"const": false}, "runtime_ready": {"const": false}}
+    },
+    "immutableBinding": {
+      "type": "object", "additionalProperties": false,
+      "required": ["pilot_id", "combination_id", "sku_entity_id", "exact_one_to_one", "immutable"],
+      "properties": {"pilot_id": {"const": "pilot:f5922666261e"}, "combination_id": {"type": "string", "pattern": "^pcomb:[0-9a-f]{12}$"}, "sku_entity_id": {"type": "string", "pattern": "^prd:sku:[0-9a-f]{12}$"}, "exact_one_to_one": {"const": true}, "immutable": {"const": true}}
+    },
+    "promotionSummary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["canonical_combination_count", "canonical_leaf_count", "promoted_leaf_count", "other_pilots_promoted", "candidate_rows_promoted", "cartesian_generation", "product_entity_type_created", "existing_canonical_owner_records_changed"],
+      "properties": {"canonical_combination_count": {"const": 1}, "canonical_leaf_count": {"const": 1}, "promoted_leaf_count": {"const": 1}, "other_pilots_promoted": {"const": 0}, "candidate_rows_promoted": {"const": 0}, "cartesian_generation": {"const": false}, "product_entity_type_created": {"const": "SKU"}, "existing_canonical_owner_records_changed": {"const": 0}}
+    },
+    "promotion": {
+      "type": "object", "additionalProperties": false,
+      "required": ["target_pilot_id", "family", "series", "variant_rule_set", "canonical_combination", "canonical_leaf", "immutable_binding", "promotion_summary"],
+      "properties": {"target_pilot_id": {"const": "pilot:f5922666261e"}, "family": {"$ref": "#/$defs/entityAnchor"}, "series": {"$ref": "#/$defs/entityAnchor"}, "variant_rule_set": {"$ref": "#/$defs/variantRuleSet"}, "canonical_combination": {"$ref": "#/$defs/canonicalCombination"}, "canonical_leaf": {"$ref": "#/$defs/canonicalLeaf"}, "immutable_binding": {"$ref": "#/$defs/immutableBinding"}, "promotion_summary": {"$ref": "#/$defs/promotionSummary"}}
+    },
+    "commercialBoundaries": {
+      "type": "object", "additionalProperties": false,
+      "required": ["brand", "color", "availability", "price", "stock", "eta_sla", "supplier_truth", "mass", "inquiry_only", "approved_status_does_not_imply_import_publication_or_runtime"],
+      "properties": {"brand": {"const": "ABSENT_NOT_PROMOTED"}, "color": {"const": "ABSENT_NOT_PROMOTED"}, "availability": {"const": "MISSING_DATA_VALUE"}, "price": {"const": "ABSENT"}, "stock": {"const": "ABSENT"}, "eta_sla": {"const": "ABSENT"}, "supplier_truth": {"const": "ABSENT"}, "mass": {"const": "ABSENT"}, "inquiry_only": {"const": true}, "approved_status_does_not_imply_import_publication_or_runtime": {"const": true}}
+    },
+    "c002Snapshot": {
+      "type": "object", "additionalProperties": false,
+      "required": ["readiness", "resolved_count", "unresolved_count", "founder_selection_ready", "candidate_registry_count", "supply_evidence", "photo_content_readiness", "fulfillment_risk", "mutation_effect"],
+      "properties": {"readiness": {"const": "NOT_READY"}, "resolved_count": {"const": 6}, "unresolved_count": {"const": 3}, "founder_selection_ready": {"const": false}, "candidate_registry_count": {"const": 0}, "supply_evidence": {"const": "SUBMITTED_REVIEW_INCOMPLETE"}, "photo_content_readiness": {"const": "MISSING_EVIDENCE"}, "fulfillment_risk": {"const": "SUBMITTED_REVIEW_INCOMPLETE"}, "mutation_effect": {"const": false}}
+    },
+    "c008Ft1Snapshot": {
+      "type": "object", "additionalProperties": false,
+      "required": ["gate_id", "gate_state", "met_count", "prerequisite_count", "canonical_product_promotion_prerequisite_state", "gate_reevaluated", "owner_mutated"],
+      "properties": {"gate_id": {"const": "FAST_TRACK_INQUIRY_LAUNCH_ELIGIBLE"}, "gate_state": {"const": false}, "met_count": {"const": 4}, "prerequisite_count": {"const": 12}, "canonical_product_promotion_prerequisite_state": {"const": "NOT_AUTHORIZED"}, "gate_reevaluated": {"const": false}, "owner_mutated": {"const": false}}
+    },
+    "authorityEffects": {
+      "type": "object", "additionalProperties": false,
+      "required": ["one_canonical_combination_promoted", "one_canonical_sku_leaf_promoted", "exact_pilot_binding_created", "package_docs_validator_tests_created", "branch_commit_push_one_pr", "product_core_base_mutation", "additional_product_or_sku_population", "additional_combination_population", "controlled_value_or_unit_population", "c002_mutation", "c008_ft1_mutation_or_gate_reevaluation", "commerce_eligibility_activation", "availability_stock_price_eta_sla_supplier_claim", "wordpress_woocommerce_mutation", "runtime_staging_production_mutation", "import_deployment_publication", "auto_merge_or_merge", "branch_deletion", "successor_mission"],
+      "properties": {"one_canonical_combination_promoted": {"const": true}, "one_canonical_sku_leaf_promoted": {"const": true}, "exact_pilot_binding_created": {"const": true}, "package_docs_validator_tests_created": {"const": true}, "branch_commit_push_one_pr": {"const": true}, "product_core_base_mutation": {"const": false}, "additional_product_or_sku_population": {"const": false}, "additional_combination_population": {"const": false}, "controlled_value_or_unit_population": {"const": false}, "c002_mutation": {"const": false}, "c008_ft1_mutation_or_gate_reevaluation": {"const": false}, "commerce_eligibility_activation": {"const": false}, "availability_stock_price_eta_sla_supplier_claim": {"const": false}, "wordpress_woocommerce_mutation": {"const": false}, "runtime_staging_production_mutation": {"const": false}, "import_deployment_publication": {"const": false}, "auto_merge_or_merge": {"const": false}, "branch_deletion": {"const": false}, "successor_mission": {"const": false}}
+    },
+    "regressionAnchors": {
+      "type": "object", "additionalProperties": false,
+      "required": ["base_product_entity_count", "base_canonical_sku_count", "pd03a_extension_entity_count", "pd03b_pilot_count", "c009_canonical_combination_count", "c009_canonical_leaf_count", "total_governed_hierarchy_sku_count_after_c009", "c002_candidate_count", "c002_readiness", "c002_resolved_count", "c008_ft1_gate_state", "c008_ft1_met_count", "commerce_state", "runtime_state", "production_state"],
+      "properties": {"base_product_entity_count": {"const": 3}, "base_canonical_sku_count": {"const": 0}, "pd03a_extension_entity_count": {"const": 2}, "pd03b_pilot_count": {"const": 3}, "c009_canonical_combination_count": {"const": 1}, "c009_canonical_leaf_count": {"const": 1}, "total_governed_hierarchy_sku_count_after_c009": {"const": 1}, "c002_candidate_count": {"const": 0}, "c002_readiness": {"const": "NOT_READY"}, "c002_resolved_count": {"const": 6}, "c008_ft1_gate_state": {"const": false}, "c008_ft1_met_count": {"const": 4}, "commerce_state": {"const": "INQUIRY_ONLY"}, "runtime_state": {"const": "NONE"}, "production_state": {"const": "NONE"}}
+    }
+  }
+}

@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-08-23 — C009 first commercial slice canonical leaf promotion
+
+- Added the bounded [C009 Scope](C009_FIRST_COMMERCIAL_SLICE_CANONICAL_LEAF_PROMOTION_SCOPE_V1.0.md) and [canonical extension](../repository/data/registries/extensions/c009/201-51-canonical-leaf-promotion.yaml) under Founder direction `C0BNHRRTE9F / 1787398697.475999`, exact execution authorization `1787440938.184179`, command SHA `0e0a03ae…0f16`, starting main `f226381622e94a1d0b2d598f5ed933bde37bd7df` and post-merge CI `32604542391 = PASS`.
+- Owner archaeology preserved Product Core and all PD-03A/PD-03B predecessors unchanged. The new extension persists and immutably binds exactly one evidence-backed combination `pcomb:829e387ccdcb` and one approved internal SKU leaf `prd:sku:66ebd0510693`, bound only to `pilot:f5922666261e`; Product identity remains owned by Product Core, combination validity by the Variant Rule Set, Pilot evidence by PD-03B, and no authority is transferred.
+- Promoted only Stainless Steel / 201 / Silver / 51 mm / 0.50 mm / 6 m. Availability remains `MISSING_DATA_VALUE` evidence only; Brand, Color, Mass, Price, Stock, ETA/SLA, supplier truth and public commercial SKU remain absent. No other Pilot, candidate row, sibling size or Cartesian tuple was promoted.
+- Preserved C002 `6/9 / NOT_READY`, `FOUNDER_SELECTION_READY=FALSE`, candidate count zero and all three external blockers. Preserved the byte-unchanged C008-FT1 owner at `FALSE / 4 of 12`; C009 does not re-evaluate its Product-promotion prerequisite.
+- Added a closed local-only schema, deterministic offline validator, distinct synthetic fixture and 81 named mutation adversaries, including semantic-owner-transfer, empty/non-assertive/applicator schema, coordinated-identity, claim-creep and chronology rejection. All four semantic digests are pinned; strict canonical/synthetic validation, 15 focused tests, 81/81 mutations, `make validate`, full `make test`, 173/173 manifest documents, 173 Atlas rows / 21 domains, 15/15 agentic tests and 5,119 links/anchors passed. Two independent final pinned-tree replays returned `0 material / 0 non-material`; PR and exact-head CI remain `PENDING` until actually completed.
+- Created no import, publication, commerce activation, WordPress/WooCommerce, Runtime, Staging, Production, Merge, branch deletion, M4 or successor authority.
+
 ## 2026-08-23 — C008-FT1 Fast-Track Inquiry launch governance amendment
 
 - Added the bounded [C008-FT1 Amendment](C008_FT1_FAST_TRACK_INQUIRY_LAUNCH_GOVERNANCE_AMENDMENT_V1.0.md) and closed [sibling gate registry](../repository/data/registries/extensions/c008ft1/fast-track-inquiry-launch-gate.yaml) under Founder direction parent `C0BNHRRTE9F / 1787398697.475999`, execution authorization reply 17/17 `1787435678.814589`, current command SHA `87dbebf5…a9ed`, starting main `324fc66e5ae1c7c4062a36c9deb84dc769352e1e`, merged C008-R1 predecessor and post-merge CI `32600651309 = PASS`.

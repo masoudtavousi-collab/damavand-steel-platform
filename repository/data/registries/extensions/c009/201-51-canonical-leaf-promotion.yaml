@@ -1,0 +1,230 @@
+registry_id: c009:201-51-canonical-leaf-promotion
+registry_version: "1.0.0"
+mission_id: C009
+fixture_mode: CANONICAL
+data_classification: CANONICAL_C009_EXACT_SLICE_EXTENSION
+authorized_starting_main: f226381622e94a1d0b2d598f5ed933bde37bd7df
+evaluation_as_of: "2026-08-23T03:05:01+03:30"
+source:
+  source_id: C009-SOURCE-001
+  source_class: FOUNDER_EXECUTION_AUTHORIZATION
+  bound_source_count: 3
+  channel_id: C0BNHRRTE9F
+  direction_parent_locator: slack:C0BNHRRTE9F:1787398697.475999
+  direction_parent_ts: "1787398697.475999"
+  direction_parent_title: FOUNDER DECISION — FIRST COMMERCIAL SLICE — 2026-08-22
+  direction_parent_authored_at: "2026-08-22T15:08:17.475999+03:30"
+  direction_thread_complete: true
+  direction_thread_reply_count: 21
+  authorization_locator: slack:C0BNHRRTE9F:1787440938.184179
+  authorization_ts: "1787440938.184179"
+  authorization_title: FOUNDER / PROJECT COMMANDER EXECUTION AUTHORIZATION — C009 FIRST COMMERCIAL SLICE CANONICAL LEAF PROMOTION — 2026-08-23
+  authorization_authored_at: "2026-08-23T02:52:18.184179+03:30"
+  authorization_author_id: U0BNFS43TBL
+  authorization_reply_index: 21
+  authorization_direct_thread_complete: true
+  authorization_direct_thread_reply_count: 0
+  execution_command_sha256: 0e0a03ae9f445e6d42c6a45284b2869b007fcd709eb1e442ce30bf1cd4205f16
+  execution_command_role: CURRENT_FOUNDER_TASK_INSTRUCTION
+  authorized_branch: codex/c009-first-commercial-slice-canonical-leaf-promotion
+predecessor:
+  mission: C008-FT1
+  status: COMPLETED_ARCHIVE_ONLY
+  merge_commit: f226381622e94a1d0b2d598f5ed933bde37bd7df
+  post_merge_ci_run: 32604542391
+  post_merge_ci_result: PASS
+  tree_integrated: true
+owner_archaeology:
+  canonical_hierarchy_model:
+    - CATALOG
+    - PLATFORM
+    - FAMILY
+    - SERIES
+    - VARIANT_RULE_SET
+    - SKU
+  product_entity_type_exists: false
+  product_identity_semantic_owner: PRODUCT_CORE
+  combination_validity_semantic_owner: VARIANT_RULE_SET
+  pilot_evidence_semantic_owner: PD03B_CANONICAL_PILOT
+  persistence_binding_extension: C009_CANONICAL_PROMOTION_EXTENSION
+  persistence_binding_extension_path: repository/data/registries/extensions/c009/201-51-canonical-leaf-promotion.yaml
+  authority_transfer: false
+  existing_product_core_registry_mutated: false
+  product_master_data_is_synthetic_only: true
+  pd03a_and_pd03b_are_immutable_evidence_dependencies: true
+  explicit_canonical_combination_required: true
+  stable_id_allocation: CSPRNG_12_HEX_WITH_GLOBAL_COLLISION_CHECK
+  collision_check_result: PASS_NO_COLLISION
+promotion:
+  target_pilot_id: pilot:f5922666261e
+  family:
+    entity_id: prd:family:a10c6d8ceabc
+    canonical_label: Stainless Steel Pipe
+    status: APPROVED
+  series:
+    entity_id: prd:series:e1657d35ac35
+    parent_entity_id: prd:family:a10c6d8ceabc
+    canonical_label: لوله استیل دکوراتیو
+    status: APPROVED
+  variant_rule_set:
+    entity_id: prd:variant-rule-set:eb255662accc
+    parent_entity_id: prd:series:e1657d35ac35
+    profile_id: pprof:4c556c63c1a9
+    status: APPROVED
+    cartesian_generation_forbidden: true
+  canonical_combination:
+    combination_id: pcomb:829e387ccdcb
+    status: APPROVED
+    source_pilot_id: pilot:f5922666261e
+    variant_rule_set_entity_id: prd:variant-rule-set:eb255662accc
+    profile_id: pprof:4c556c63c1a9
+    material:
+      attribute_id: attr:dbf5365ee1e5
+      term_id: vterm:5ff9c0ceca39
+      canonical_label: Stainless Steel
+      fixed_non_axis: true
+    axes:
+      - attribute_key: grade
+        attribute_id: attr:28565665c910
+        term_id: vterm:a891bfdfdd6b
+        canonical_value: "201"
+        unit_id: null
+      - attribute_key: finish
+        attribute_id: attr:1926e2ad4629
+        term_id: vterm:1df9a5493546
+        canonical_value: Silver
+        unit_id: null
+      - attribute_key: diameter
+        attribute_id: attr:252ab175be12
+        term_id: null
+        canonical_value: "51"
+        unit_id: unit:000000000002
+      - attribute_key: thickness
+        attribute_id: attr:d1890e85f84c
+        term_id: null
+        canonical_value: "0.50"
+        unit_id: unit:000000000002
+      - attribute_key: length
+        attribute_id: attr:d782d47eae7f
+        term_id: null
+        canonical_value: "6"
+        unit_id: unit:000000000001
+    availability_reference:
+      source_pilot_id: pilot:f5922666261e
+      state: MISSING_DATA_VALUE
+      stored_as_leaf_fact: false
+      availability_claim_created: false
+    brand: null
+    color: null
+    mass: null
+    historical_references:
+      golden_reference: GOLD-PIPE-201-51-050-6M
+      source_row_reference: PIPE-COMB-0023
+      references_are_identity: false
+    cartesian_generated: false
+    sibling_combinations_created: 0
+  canonical_leaf:
+    entity:
+      contract_version: "1.0.0"
+      entity_id: prd:sku:66ebd0510693
+      entity_type: SKU
+      parent_entity_id: prd:variant-rule-set:eb255662accc
+      parent_entity_type: VARIANT_RULE_SET
+      canonical_label: Stainless Steel Pipe 201 / Silver / 51 mm / 0.50 mm / 6 m
+      status: APPROVED
+      owner:
+        role: product-data-steward
+      provenance:
+        source_type: FOUNDER_EXECUTION_AUTHORIZATION
+        source_reference: slack:C0BNHRRTE9F:1787440938.184179
+        captured_by: role:product-data-steward
+        captured_at: "2026-08-23T02:52:18.184179+03:30"
+        evidence_status: FOUNDER_AUTHORIZED_CANONICAL_LEAF
+      record_version: "1.0.0"
+    source_pilot_id: pilot:f5922666261e
+    canonical_combination_id: pcomb:829e387ccdcb
+    public_commercial_sku_code: null
+    availability_fact_created: false
+    import_ready: false
+    publication_ready: false
+    runtime_ready: false
+  immutable_binding:
+    pilot_id: pilot:f5922666261e
+    combination_id: pcomb:829e387ccdcb
+    sku_entity_id: prd:sku:66ebd0510693
+    exact_one_to_one: true
+    immutable: true
+  promotion_summary:
+    canonical_combination_count: 1
+    canonical_leaf_count: 1
+    promoted_leaf_count: 1
+    other_pilots_promoted: 0
+    candidate_rows_promoted: 0
+    cartesian_generation: false
+    product_entity_type_created: SKU
+    existing_canonical_owner_records_changed: 0
+commercial_boundaries:
+  brand: ABSENT_NOT_PROMOTED
+  color: ABSENT_NOT_PROMOTED
+  availability: MISSING_DATA_VALUE
+  price: ABSENT
+  stock: ABSENT
+  eta_sla: ABSENT
+  supplier_truth: ABSENT
+  mass: ABSENT
+  inquiry_only: true
+  approved_status_does_not_imply_import_publication_or_runtime: true
+c002_snapshot:
+  readiness: NOT_READY
+  resolved_count: 6
+  unresolved_count: 3
+  founder_selection_ready: false
+  candidate_registry_count: 0
+  supply_evidence: SUBMITTED_REVIEW_INCOMPLETE
+  photo_content_readiness: MISSING_EVIDENCE
+  fulfillment_risk: SUBMITTED_REVIEW_INCOMPLETE
+  mutation_effect: false
+c008_ft1_snapshot:
+  gate_id: FAST_TRACK_INQUIRY_LAUNCH_ELIGIBLE
+  gate_state: false
+  met_count: 4
+  prerequisite_count: 12
+  canonical_product_promotion_prerequisite_state: NOT_AUTHORIZED
+  gate_reevaluated: false
+  owner_mutated: false
+authority_effects:
+  one_canonical_combination_promoted: true
+  one_canonical_sku_leaf_promoted: true
+  exact_pilot_binding_created: true
+  package_docs_validator_tests_created: true
+  branch_commit_push_one_pr: true
+  product_core_base_mutation: false
+  additional_product_or_sku_population: false
+  additional_combination_population: false
+  controlled_value_or_unit_population: false
+  c002_mutation: false
+  c008_ft1_mutation_or_gate_reevaluation: false
+  commerce_eligibility_activation: false
+  availability_stock_price_eta_sla_supplier_claim: false
+  wordpress_woocommerce_mutation: false
+  runtime_staging_production_mutation: false
+  import_deployment_publication: false
+  auto_merge_or_merge: false
+  branch_deletion: false
+  successor_mission: false
+regression_anchors:
+  base_product_entity_count: 3
+  base_canonical_sku_count: 0
+  pd03a_extension_entity_count: 2
+  pd03b_pilot_count: 3
+  c009_canonical_combination_count: 1
+  c009_canonical_leaf_count: 1
+  total_governed_hierarchy_sku_count_after_c009: 1
+  c002_candidate_count: 0
+  c002_readiness: NOT_READY
+  c002_resolved_count: 6
+  c008_ft1_gate_state: false
+  c008_ft1_met_count: 4
+  commerce_state: INQUIRY_ONLY
+  runtime_state: NONE
+  production_state: NONE
