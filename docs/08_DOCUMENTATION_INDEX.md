@@ -1,5 +1,9 @@
 # Documentation Index
 
+## Current Campaign Routing
+
+- [FT-RB-00 Fast-Track Remaining Blockers Campaign Status](FT_RB_00_FAST_TRACK_REMAINING_BLOCKERS_CAMPAIGN_STATUS_V1.0.md) — conditional-on-main machine/human campaign router; it does not start a lane or grant Runtime, Staging, Production, publication, Merge, or successor authority.
+
 ## Document Control
 
 - **Document ID:** `docs/08_DOCUMENTATION_INDEX.md` (provisional path identifier)

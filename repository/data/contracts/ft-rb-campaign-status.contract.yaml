@@ -1,0 +1,86 @@
+contract_id: ft-rb-campaign-status
+contract_version: "1.0.0"
+record_kind: fast-track-remaining-blockers-campaign-status
+schema:
+  path: repository/data/schemas/ft-rb-campaign-status.schema.json
+  draft: https://json-schema.org/draft/2020-12/schema
+registry:
+  path: repository/data/registries/extensions/ftrb/campaign-status.yaml
+authority:
+  mission_id: FT-RB-00
+  campaign_status_router_allowed: true
+  documentation_contract_schema_registry_validator_test_allowed: true
+  branch_commit_push_one_pr_allowed: true
+  lane_execution_claim_allowed: false
+  gate_transition_allowed: false
+  c002_mutation_allowed: false
+  product_combination_sku_mutation_allowed: false
+  price_stock_availability_eta_sla_claim_allowed: false
+  media_asset_or_right_creation_allowed: false
+  runtime_staging_production_mutation_allowed: false
+  deployment_publication_merge_auto_merge_branch_deletion_allowed: false
+dependencies:
+  c006_contract: repository/data/contracts/pipe-product-experience-architecture.contract.yaml
+  c006_schema: repository/data/schemas/pipe-product-experience-architecture.schema.json
+  c006_registry: repository/data/registries/extensions/c006/pipe-product-experience-architecture.yaml
+  c002_contract: repository/data/contracts/commercial-pilot-candidate.contract.yaml
+  c008_contract: repository/data/contracts/c008-c002-readiness-evidence-closure.contract.yaml
+  c008_r1_contract: repository/data/contracts/c008-r1-remaining-real-world-evidence-closure.contract.yaml
+  c008_ft1_contract: repository/data/contracts/c008-ft1-fast-track-inquiry-launch-gate.contract.yaml
+  c009_contract: repository/data/contracts/c009-first-commercial-slice-canonical-leaf-promotion.contract.yaml
+  c009_ft2_contract: repository/data/contracts/c009-ft2-post-c009-fast-track-gate-reevaluation.contract.yaml
+dependency_pins:
+  c006_contract: 131b2c79a3d017c65bac896e95e7a638164a77b821546e5217266f6d3829dcc0
+  c006_schema: 9a9009c4431c097c062dcef81fad03fae51784ff466bb8cc5db6ed14237f79e3
+  c006_registry: 5b5510af1b521daa7b2539007cab0681885f2bbc3eff4a75dde67cb38857ad8b
+  c002_contract: 923731cb080b0ecc05abb21b1189bfdd0df94297780cce364bb791479f7f47e3
+  c008_contract: bf450358e11c82df7ae41a7777bd2889f2c4b7cffe64a5f2ee21f3303cbd2f5c
+  c008_r1_contract: da5a70f0e7330df8afab52e931f664bda453266740646a4d4183d25370ea75d7
+  c008_ft1_contract: 4c940eed75fe433bc8adbc85cb45954068b233cc1de6d80b40bc28eb71466fb5
+  c009_contract: a1179a6ef97735431f89ef075e7d40c9dd6973b5eacbeca6599d9666bc7674d3
+  c009_ft2_contract: 0200e474df33fcd8b74308c678107d53dbc9f9999b84fa753db97fc1f1ced5e8
+source_policy:
+  repository: masoudtavousi-collab/damavand-steel-platform
+  slack_channel_id: C0BNHRRTE9F
+  founder_user_id: U0BNFS43TBL
+  campaign_authorization_ts: "1787485976.633809"
+  campaign_authorization_thread_complete: true
+  campaign_authorization_reply_count: 0
+  fast_track_parent_ts: "1787398697.475999"
+  execution_command_sha256: f49f01222adc1b1389e61a99f1a07db13c07d01b2d36522a2469975a2015f839
+  execution_command_role: CURRENT_FOUNDER_TASK_INSTRUCTION
+  command_hash_bound_by_slack: false
+  authorized_starting_main: 310d0ac3f6f9da67a975a32beb0b55361aa176d5
+  predecessor_post_merge_ci_run: 32637163057
+  predecessor_post_merge_ci_result: PASS
+owner_policy:
+  model: APPEND_ONLY_CAMPAIGN_STATUS_ROUTER
+  historical_c008_ft1_owner_immutable: true
+  c009_ft2_effective_delta_immutable: true
+  campaign_router_creates_gate_authority: false
+  baseline_immutable: true
+  lane_local_deltas_append_only: true
+  effective_resolution_requires_integrated_evidence: true
+  lane_status_is_not_gate_transition: true
+  readiness_classification_is_not_gate_met: true
+  product_truth_owner: PRODUCT_CORE
+  media_owner: FUTURE_MEDIA_REPOSITORY
+  inquiry_context_owner: INQUIRY_DATA_MODEL
+  seo_intent_owner: SEO_INTENT_OWNER
+  woocommerce_owner: WOOCOMMERCE_ADAPTER
+validation:
+  offline_only: true
+  network_allowed: false
+  side_effects_allowed: false
+  closed_schema_required: true
+  local_refs_only: true
+  duplicate_yaml_and_json_keys_rejected: true
+  non_finite_numbers_rejected: true
+  deterministic_sorted_errors: true
+  path_escape_symlink_byte_depth_node_caps_enforced: true
+  exact_order_counts_dependencies_statuses_and_no_go_required: true
+  exact_allowlist_and_dag_required: true
+  no_stacking_wip_and_pre_merge_stop_required: true
+  predecessor_semantic_pins_required: true
+  semantic_digest_pinning_required: true
+  mutation_manifest_dispatch_required: true

@@ -10,7 +10,7 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.32.0
+- **Version:** 0.33.0
 - **Last Updated:** 2026-08-23
 - **Last Review:** 2026-08-23
 - **Review Cycle:** On governing-rule or dependency change; periodic cadence pending Founder approval
@@ -1200,10 +1200,18 @@ Wave 1 is complete. Its merges created no runtime, WordPress, Product Repository
 | `PD03B-REVIEW` | `PD03B-TECH-REVIEW-001` attempts 1–2 | Independent read-only review of exact SHA, CI, records, contracts, schemas, validators, tests, Allowlist, hashes, and boundaries | Attempt 1 `REWORK` (High 1 / Medium 1); attempt 2 `PASS` with zero findings; 43/43 mutations executed | Founder authority completed `REVIEW → APPROVED`; Git integration then completed through PR #25, Merge Commit `64511d7…`, and main CI `30698838847` |
 | `PD03B-TEST` | Closed schemas, offline validators, fixture boundary, 43-case mutation manifest, and `tests/test_pd03b_canonical_pilots.py` | Positive, negative, adversarial, lifecycle, identity, reference, availability, readiness, and schema boundaries | Every counted mutation must dispatch and fail closed | Passing tests cannot promote lifecycle status |
 
+## FT-RB Campaign Router Traceability
+
+| Trace ID | Asset or decision | Authority input | Reconciled outcome | Boundary |
+| --- | --- | --- | --- | --- |
+| `FTRB-00-AUTH` | [FT-RB-00 Campaign Status](FT_RB_00_FAST_TRACK_REMAINING_BLOCKERS_CAMPAIGN_STATUS_V1.0.md) and machine registry | Founder campaign authorization `C0BNHRRTE9F / 1787485976.633809`, Fast-Track parent `1787398697.475999`, and separately recorded current-instruction SHA-256 | Conditional-on-main machine/human board for FT-RB-01 through FT-RB-08; exact effective gate remains `FALSE / 5 of 12` | No lane start, gate transition, Product/commercial fact, Runtime, Staging, Production, publication, Merge, or successor authority |
+| `FTRB-00-VALIDATION-STOP` | Four pinned semantic digests, strict canonical/distinct-synthetic validation, 12 focused tests / 19 mutations, exact 20-path allowlist, full repository validation and protected-owner regressions | `make validate`, full `make test`, 173 manifest documents, 173 Atlas rows / 21 domains, 5,136 links/anchors and agentic validation / 15 tests passed; independent pre-pin and final pinned-tree reviews each returned `0 material / 0 non-material`; exact-head CI remains pending | Technical consistency creates no lane start, gate transition, Merge, Runtime, Staging, Production, publication or successor authority |
+
 ## Change Notes
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.33.0 | 2026-08-23 | Added FT-RB-00 conditional campaign-router traceability, immutable baseline/lane-local delta boundary, exact 20-path allowlist, 8-mission DAG, seven preserved blockers and pre-Merge/runtime/staging/production no-go. |
 | 0.32.0 | 2026-08-23 | Added C009-FT2 exact authority, append-only owner model, one evidence-bound Product-prerequisite transition, effective `FALSE / 5 of 12` gate, seven blockers, C002/no-claim preservation, exact allowlist, fail-closed validation and no-Merge/no-successor stop. |
 | 0.31.0 | 2026-08-23 | Added C009 exact Founder authority, immutable owner archaeology, one canonical `pcomb:` plus one internal SKU leaf, exact 201/Silver/51/0.50/6m lineage, stable-ID/collision controls, C002 and C008-FT1 regression boundaries, closed validation package and no-Merge/no-successor stop. |
 | 0.30.0 | 2026-08-23 | Added C008-FT1 exact Founder authority, integrated C008-R1 predecessor, separate false sibling gate, ordered `4 MET / 8 UNMET` prerequisite result, immutable C002 `6/9 / NOT_READY` separation, supplier/media/Product/selector no-go boundaries and pending validation/review/CI stop evidence. |

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-08-23 — FT-RB-00 campaign-status router candidate
+
+- Added a conditional-on-main, append-only machine/human router for the seven remaining Fast-Track blockers.
+- Preserved the effective sibling gate as `FALSE / 5 of 12`; no lane start, prerequisite transition, Product/commercial fact, Runtime, Staging, Production, publication, Merge, or successor authority is claimed.
+- Pinned four semantic digests after zero-finding independent pre-pin and final pinned-tree reviews; strict canonical/synthetic validation, 12 focused tests / 19 named mutations, `make validate`, full `make test`, 173 manifest documents, 173 Atlas rows / 21 domains, 5,136 links/anchors, agentic validation / 15 tests and protected C009 collision regression passed. Exact-head CI remains `PENDING` until independently evidenced.
+
 ## 2026-08-23 — C009-FT2 post-C009 Fast-Track gate re-evaluation
 
 - Added the bounded [C009-FT2 Scope](C009_FT2_POST_C009_FAST_TRACK_GATE_REEVALUATION_V1.0.md) and append-only [gate delta](../repository/data/registries/extensions/c009ft2/post-c009-fast-track-gate-reevaluation.yaml) under exact Founder authorization `C0BNHRRTE9F / 1787478181.812239`, command SHA `243e330b…46fd`, starting main/C009 Merge Commit `432a72ee0a22069dc33cc4cbb2a5b78e63705b74` and post-merge CI `32631411970 = PASS`.
