@@ -165,6 +165,12 @@ ft_rb_campaign_status_validator="repository/data/validation/validate_ft_rb_campa
 "$python" "$ft_rb_campaign_status_validator" --registry tests/fixtures/ft-rb-campaign-status/valid-synthetic.yaml --synthetic
 "$python" -B -m unittest tests.test_ft_rb_campaign_status
 
+# FT-RB-01 strict pinned validation and focused/adversarial dispatch.
+ft_rb_01_media_validator="repository/data/validation/validate_ft_rb_01_rights_safe_media_readiness.py"
+"$python" "$ft_rb_01_media_validator"
+"$python" "$ft_rb_01_media_validator" --registry tests/fixtures/ft-rb-01-rights-safe-media-readiness/valid-synthetic.yaml --synthetic
+"$python" -B -m unittest tests.test_ft_rb_01_rights_safe_media_readiness
+
 "$python" repository/data/validation/validate_bp2_data_blueprint.py
 "$python" repository/data/validation/validate_bp2_data_administration.py
 "$python" tests/test_bp2_data_administration.py

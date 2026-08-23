@@ -1,0 +1,210 @@
+registry_id: ftrb01:rights-safe-media-readiness
+registry_version: "1.0.0"
+mission_id: FT-RB-01
+fixture_mode: CANONICAL
+fixture_identity: CANONICAL_FTRB01_MEDIA
+campaign_authorized_starting_main: 310d0ac3f6f9da67a975a32beb0b55361aa176d5
+mission_base_main: a6fa08ba8bda06fba4e92aa58945fd01c7497dcf
+status_as_of: "2026-08-23T17:00:00+03:30"
+source:
+  source_id: FTRB01-SOURCE-001
+  locator: slack:C0BNHRRTE9F:1787485976.633809
+  author_id: U0BNFS43TBL
+  thread_complete: true
+  reply_count: 0
+  parent_ts: "1787398697.475999"
+  command_sha256: f49f01222adc1b1389e61a99f1a07db13c07d01b2d36522a2469975a2015f839
+  command_hash_bound_by_slack: false
+exact_changed_paths:
+  - docs/FT_RB_01_RIGHTS_SAFE_MEDIA_READINESS_SCOPE_V1.0.md
+  - repository/data/contracts/ft-rb-01-rights-safe-media-readiness.contract.yaml
+  - repository/data/registries/extensions/ftrb01/rights-safe-media-readiness.yaml
+  - repository/data/schemas/ft-rb-01-rights-safe-media-readiness.schema.json
+  - repository/data/validation/validate_ft_rb_01_rights_safe_media_readiness.py
+  - scripts/test.sh
+  - tests/fixtures/ft-rb-01-rights-safe-media-readiness/README.md
+  - tests/fixtures/ft-rb-01-rights-safe-media-readiness/adversarial-duplicate-keys.json
+  - tests/fixtures/ft-rb-01-rights-safe-media-readiness/adversarial-duplicate-keys.yaml
+  - tests/fixtures/ft-rb-01-rights-safe-media-readiness/adversarial-permissive-schema.json
+  - tests/fixtures/ft-rb-01-rights-safe-media-readiness/adversarial-remote-ref-schema.json
+  - tests/fixtures/ft-rb-01-rights-safe-media-readiness/mutation-cases.json
+  - tests/fixtures/ft-rb-01-rights-safe-media-readiness/valid-synthetic.yaml
+  - tests/test_ft_rb_01_rights_safe_media_readiness.py
+predecessors:
+  c002_readiness: 6/9 / NOT_READY
+  founder_selection_ready: false
+  candidate_count: 0
+  supply_evidence: SUBMITTED_REVIEW_INCOMPLETE
+  photo_content_readiness: MISSING_EVIDENCE
+  fulfillment_risk: SUBMITTED_REVIEW_INCOMPLETE
+  ft_rb_00_router: INTEGRATED_ARCHIVE_ONLY
+  c009_owner_reference: repository/data/registries/extensions/c009/201-51-canonical-leaf-promotion.yaml
+repository_archaeology:
+  scope:
+    - assets/**
+    - repository/assets/**
+    - public/wp-content/uploads/**
+    - repository/content
+    - repository/knowledge
+    - repository/implementation-assets
+  asset_record_count: 0
+  rights_evidence_count: 0
+  publication_eligible_count: 0
+  result: NO_ADMISSIBLE_RIGHTS_SAFE_ASSET
+  tree_manifest:
+    - {path: assets, git_tree_oid: e6b345856a8c7df305ebfcb96efd7319ec7862e6, tracked_file_count: 6, media_asset_count: 0, state: PLACEHOLDER_ONLY}
+    - {path: assets/images, git_tree_oid: f4497262ed0c58bc08a892aeaf67df6803afd737, tracked_file_count: 2, media_asset_count: 0, state: PLACEHOLDER_ONLY}
+    - {path: assets/images/source, git_tree_oid: e4b69924ca8a57ac596c60062b2cfed530b15167, tracked_file_count: 1, media_asset_count: 0, state: PLACEHOLDER_ONLY}
+    - {path: assets/images/optimized, git_tree_oid: 5bfad2b3f8e483b6b173d8aaff19597e84626f15, tracked_file_count: 1, media_asset_count: 0, state: PLACEHOLDER_ONLY}
+    - {path: repository/assets, git_tree_oid: 5bfad2b3f8e483b6b173d8aaff19597e84626f15, tracked_file_count: 1, media_asset_count: 0, state: PLACEHOLDER_ONLY}
+    - {path: public/wp-content/uploads, git_tree_oid: 5bfad2b3f8e483b6b173d8aaff19597e84626f15, tracked_file_count: 1, media_asset_count: 0, state: PLACEHOLDER_ONLY}
+    - {path: repository/content, git_tree_oid: null, tracked_file_count: 0, media_asset_count: 0, state: ABSENT}
+    - {path: repository/knowledge, git_tree_oid: null, tracked_file_count: 0, media_asset_count: 0, state: ABSENT}
+    - {path: repository/implementation-assets, git_tree_oid: null, tracked_file_count: 0, media_asset_count: 0, state: ABSENT}
+  file_manifest:
+    - {path: assets/README.md, git_blob_oid: 0368fdb1bf625f75aca249ec629688ac2b94044b, classification: PLACEHOLDER_NOT_ASSET}
+    - {path: assets/brand/README.md, git_blob_oid: 0ccf467022fb6fdc2edb2b8d409104cbc0ddbe2d, classification: PLACEHOLDER_NOT_ASSET}
+    - {path: assets/documents/README.md, git_blob_oid: ab0e95dd59cacda676acf94ad08e01ef2ef7f5b7, classification: PLACEHOLDER_NOT_ASSET}
+    - {path: assets/fonts/README.md, git_blob_oid: 6cb28293ccd62a14dd3d828e16060fab0ca33096, classification: PLACEHOLDER_NOT_ASSET}
+    - {path: assets/images/optimized/.gitkeep, git_blob_oid: 8b137891791fe96927ad78e64b0aad7bded08bdc, classification: PLACEHOLDER_NOT_ASSET}
+    - {path: assets/images/source/README.md, git_blob_oid: abbe7f9585ffdf8c73408bfb49a6daa8f01ac66b, classification: PLACEHOLDER_NOT_ASSET}
+    - {path: public/wp-content/uploads/.gitkeep, git_blob_oid: 8b137891791fe96927ad78e64b0aad7bded08bdc, classification: PLACEHOLDER_NOT_ASSET}
+    - {path: repository/assets/.gitkeep, git_blob_oid: 8b137891791fe96927ad78e64b0aad7bded08bdc, classification: PLACEHOLDER_NOT_ASSET}
+readiness_dimensions:
+  - {dimension: asset_exists, current_state: MISSING, evidence_refs: [], eligible: false}
+  - {dimension: technical_quality, current_state: NOT_REVIEWED, evidence_refs: [], eligible: false}
+  - {dimension: ownership_source, current_state: MISSING, evidence_refs: [], eligible: false}
+  - {dimension: usage_right, current_state: MISSING, evidence_refs: [], eligible: false}
+  - {dimension: modification_right, current_state: MISSING, evidence_refs: [], eligible: false}
+  - {dimension: publication_right, current_state: MISSING, evidence_refs: [], eligible: false}
+  - {dimension: product_binding, current_state: MISSING, evidence_refs: [], eligible: false}
+  - {dimension: image_to_product_truth, current_state: NOT_REVIEWED, evidence_refs: [], eligible: false}
+  - {dimension: rights_evidence, current_state: MISSING, evidence_refs: [], eligible: false}
+  - {dimension: review_status, current_state: NOT_REVIEWED, evidence_refs: [], eligible: false}
+  - {dimension: publication_eligibility, current_state: "FALSE", evidence_refs: [], eligible: false}
+intake_contract:
+  intake_state: AWAITING_EXTERNAL_EVIDENCE
+  required_fields:
+    - asset_external_reference
+    - asset_type_and_role
+    - master_file_locator_and_sha256
+    - mime_type_and_byte_size
+    - dimensions_orientation_color_profile
+    - creator_and_asset_owner
+    - rights_holder
+    - rights_basis_license_or_permission
+    - rights_evidence_durable_locator
+    - commercial_website_use_allowed
+    - usage_modification_publication_rights
+    - territory_channel_use_constraints
+    - valid_from_and_expiry_or_perpetual
+    - attribution_restrictions_and_revocation
+    - source_or_capture_date
+    - original_master_and_derivative_relationship
+    - checksum_integrity_and_replacement_history
+    - access_class_and_confidentiality
+    - product_family_appearance_applicability
+    - related_entity_references
+    - exact_or_representative_and_visual_truth_limits
+    - language_locale_and_embedded_text
+    - caption_alt_and_transcript_state
+    - accessibility_review
+    - production_ready_derivative_status
+    - lifecycle_state_review_trigger_and_version
+    - retention_and_deletion_authority
+    - evidence_owner
+    - independent_reviewer_and_reviewed_at
+    - publication_context_and_eligibility
+  acceptable_source_classes:
+    - DAMAVAND_OWNED_ORIGINAL_201_51
+    - COMMISSIONED_DURABLE_COMMERCIAL_RIGHTS
+    - SUPPLIER_MANUFACTURER_EXPLICIT_WRITTEN_DAMAVAND_COMMERCIAL_SITE_PERMISSION
+  redaction_allowed: true
+  verification_effect: EVIDENCE_REVIEW_ONLY_NO_AUTOMATIC_VERIFICATION
+  evidence_owner_must_differ_from_reviewer: true
+  reject_if_any_state: [MISSING, CONFLICTING, EXPIRED, RESTRICTED, UNREVIEWED]
+  acceptance_rule: ALL_FIELDS_CURRENT_CONSISTENT_AND_INDEPENDENTLY_REVIEWED
+naming_specification:
+  policy_state: REVIEW_PENDING_FOUNDER_APPROVAL
+  filename_is_not_identity: true
+  public_safe_only: true
+  forbidden_content: [PII, CONFIDENTIAL, PRICE, TEMPORARY, PRESENTATION_ONLY]
+  logical_pattern: "{entity-type}-{stable-public-safe-reference}-{asset-role}-{view-or-sequence}-{locale}-{revision}.{extension}"
+  logical_pattern_approved_for_use: false
+  literal_vocabulary_approved: false
+  maximum_length_approved: false
+  namespace_and_collision_policy_approved: false
+  migration_behavior_approved: false
+  rename_folder_format_dimension_optimization_approved: false
+  asset_id_minted: false
+owner_lifecycle:
+  allowed_states: [received, rights_review, content_review, approved, published, restricted, expired, archived]
+  state_rules:
+    - {state: received, public_use_allowed: false, meaning: INTAKE_ONLY}
+    - {state: rights_review, public_use_allowed: false, meaning: RIGHTS_REVIEW_IN_PROGRESS}
+    - {state: content_review, public_use_allowed: false, meaning: APPLICABILITY_ACCESSIBILITY_TECHNICAL_REVIEW}
+    - {state: approved, public_use_allowed: false, meaning: CONTEXT_SPECIFIC_APPROVAL_PENDING_SEPARATE_PUBLICATION}
+    - {state: published, public_use_allowed: true, meaning: SEPARATELY_AUTHORIZED_APPROVED_CONTEXT_ONLY}
+    - {state: restricted, public_use_allowed: false, meaning: PUBLIC_USE_PROHIBITED}
+    - {state: expired, public_use_allowed: false, meaning: PUBLIC_USE_PROHIBITED}
+    - {state: archived, public_use_allowed: false, meaning: INTERNAL_OR_PROTECTED_ONLY}
+  direct_received_to_approved_or_published_allowed: false
+  automatic_transition_allowed: false
+  records: []
+  progression_performed: false
+publication_checklist:
+  required_checks:
+    - asset_exists_and_integrity_valid
+    - technical_quality_pass
+    - ownership_and_source_verified
+    - current_usage_modification_publication_rights_verified
+    - rights_expiry_and_restrictions_valid
+    - public_access_class_approved
+    - exact_product_family_appearance_applicability_verified
+    - visual_truth_limits_reviewed
+    - localization_and_embedded_text_reviewed
+    - accessibility_metadata_ready
+    - production_derivative_and_master_integrity_verified
+    - evidence_owner_differs_from_independent_reviewer
+    - independent_review_pass
+    - context_specific_publication_approval
+  all_checks_passed: false
+  publication_authorized: false
+lane_status:
+  repository_package_state: REPOSITORY_READY
+  workflow_status: BLOCKED_EXTERNAL_INPUT
+  readiness_classification: BLOCKED_EXTERNAL_EVIDENCE
+  prerequisite: UNMET
+  founder_action_required: PROVIDE_RIGHTS_SAFE_MEDIA_PACKET
+gate_snapshot:
+  eligible: false
+  met_count: 5
+  unmet_count: 7
+  total: 12
+  transition_recorded: false
+no_claim_boundaries:
+  commerce_state: INQUIRY_ONLY
+  availability: MISSING_DATA_VALUE
+  brand: ABSENT_NOT_PROMOTED
+  color: ABSENT_NOT_PROMOTED
+  price: ABSENT
+  stock: ABSENT
+  eta_sla: ABSENT
+  supplier_truth: ABSENT
+  asset_or_right_created: false
+  asset_creation_upload_copy_transform_optimize_derivative_or_naming: false
+  competitor_or_internet_media_reuse: false
+  generated_or_synthetic_media: false
+  publication: false
+  product_combination_sku_mutation: false
+  c002_mutation: false
+  gate_transition: false
+  wordpress_woocommerce: false
+  runtime: false
+  staging: false
+  production: false
+  deploy: false
+  merge: false
+  auto_merge: false
+  branch_deletion: false
+  m4_or_successor_mission: false
