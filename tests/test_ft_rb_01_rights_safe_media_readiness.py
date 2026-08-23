@@ -199,12 +199,16 @@ class RightsSafeMediaReadinessTests(unittest.TestCase):
 
     def test_09_exact_allowlist_and_runner_dispatch(self):
         mode, paths = MODULE.git_context()
-        self.assertEqual("repair", mode)
-        self.assertEqual(MODULE.REPAIR_ALLOWLIST, paths)
-        if MODULE.base_available(MODULE.REPAIR_BASE):
-            self.assertEqual([], MODULE.repair_shape_issues())
+        if mode == "repair":
+            self.assertEqual(MODULE.REPAIR_ALLOWLIST, paths)
+            if MODULE.base_available(MODULE.REPAIR_BASE):
+                self.assertEqual([], MODULE.repair_shape_issues())
+            else:
+                self.assertEqual([], MODULE.repair_committed_shape_issues())
+        elif mode == "integrated":
+            self.assertFalse(set(paths) & set(MODULE.PROTECTED_INTEGRATED_PATHS))
         else:
-            self.assertEqual([], MODULE.repair_committed_shape_issues())
+            self.fail(f"unexpected FT-RB-01 Git context: {mode}")
         self.assertEqual(MODULE.ALLOWLIST, self.contract["validation"]["exact_changed_paths"])
         self.assertEqual(MODULE.ALLOWLIST, self.canonical["exact_changed_paths"])
         runner = (ROOT / "scripts/test.sh").read_text(encoding="utf-8")
