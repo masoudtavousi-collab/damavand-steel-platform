@@ -1,0 +1,274 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://damavandsteel.com/schemas/c009-ft2-post-c009-fast-track-gate-reevaluation.schema.json",
+  "title": "C009-FT2 post-C009 Fast-Track gate re-evaluation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["registry_id", "registry_version", "mission_id", "fixture_mode", "authorized_starting_main", "evaluation_as_of", "source", "owner_model", "predecessors", "c009_evidence", "transition", "effective_gate", "c002_snapshot", "no_claim_boundaries", "authority_effects", "regression_anchors"],
+  "properties": {
+    "registry_id": {"const": "c009ft2:post-c009-fast-track-gate-reevaluation"},
+    "registry_version": {"const": "1.0.0"},
+    "mission_id": {"const": "C009-FT2"},
+    "fixture_mode": {"enum": ["CANONICAL", "SYNTHETIC"]},
+    "authorized_starting_main": {"const": "432a72ee0a22069dc33cc4cbb2a5b78e63705b74"},
+    "evaluation_as_of": {"type": "string", "minLength": 1},
+    "source": {"$ref": "#/$defs/source"},
+    "owner_model": {"$ref": "#/$defs/ownerModel"},
+    "predecessors": {"$ref": "#/$defs/predecessors"},
+    "c009_evidence": {"$ref": "#/$defs/evidence"},
+    "transition": {"$ref": "#/$defs/transition"},
+    "effective_gate": {"$ref": "#/$defs/gate"},
+    "c002_snapshot": {"$ref": "#/$defs/c002"},
+    "no_claim_boundaries": {"$ref": "#/$defs/noClaims"},
+    "authority_effects": {"$ref": "#/$defs/authority"},
+    "regression_anchors": {"$ref": "#/$defs/regression"}
+  },
+  "$defs": {
+    "ownerModel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["model", "historical_gate_owner", "product_identity_owner", "combination_validity_owner", "pilot_evidence_owner", "c009_role", "c009_ft2_role", "c008_ft1_owner_mutated", "c009_owner_mutated", "authority_transfer"],
+      "properties": {
+        "model": {"const": "APPEND_ONLY_POST_C009_GATE_REEVALUATION_DELTA"},
+        "historical_gate_owner": {"const": "C008_FT1_FAST_TRACK_GATE"},
+        "product_identity_owner": {"const": "PRODUCT_CORE"},
+        "combination_validity_owner": {"const": "VARIANT_RULE_SET"},
+        "pilot_evidence_owner": {"const": "PD03B_CANONICAL_PILOT"},
+        "c009_role": {"const": "PERSISTENCE_AND_IMMUTABLE_BINDING_EXTENSION_ONLY"},
+        "c009_ft2_role": {"const": "EFFECTIVE_GATE_STATE_DELTA_ONLY"},
+        "c008_ft1_owner_mutated": {"const": false},
+        "c009_owner_mutated": {"const": false},
+        "authority_transfer": {"const": false}
+      }
+    },
+    "c008ft1Predecessor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "gate_id", "gate_state", "met_count", "unmet_count", "total_prerequisites", "changed_prerequisite_previous_state", "historical_record_immutable"],
+      "properties": {
+        "status": {"const": "COMPLETED_ARCHIVE_ONLY"},
+        "gate_id": {"const": "FAST_TRACK_INQUIRY_LAUNCH_ELIGIBLE"},
+        "gate_state": {"const": false},
+        "met_count": {"const": 4},
+        "unmet_count": {"const": 8},
+        "total_prerequisites": {"const": 12},
+        "changed_prerequisite_previous_state": {"const": "NOT_AUTHORIZED"},
+        "historical_record_immutable": {"const": true}
+      }
+    },
+    "c009Predecessor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "merge_commit", "post_merge_ci_run", "post_merge_ci_result", "tree_integrated", "target_pilot_id", "canonical_combination_id", "canonical_leaf_id"],
+      "properties": {
+        "status": {"const": "COMPLETED_ARCHIVE_ONLY"},
+        "merge_commit": {"const": "432a72ee0a22069dc33cc4cbb2a5b78e63705b74"},
+        "post_merge_ci_run": {"const": 32631411970},
+        "post_merge_ci_result": {"const": "PASS"},
+        "tree_integrated": {"const": true},
+        "target_pilot_id": {"const": "pilot:f5922666261e"},
+        "canonical_combination_id": {"const": "pcomb:829e387ccdcb"},
+        "canonical_leaf_id": {"const": "prd:sku:66ebd0510693"}
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "source_class", "bound_source_count", "locator", "channel_id", "message_ts", "author_id", "title", "authored_at", "thread_complete", "reply_count", "execution_command_sha256", "execution_command_role", "authorized_branch"],
+      "properties": {
+        "source_id": {"const": "C009FT2-SOURCE-001"},
+        "source_class": {"const": "FOUNDER_EXECUTION_AUTHORIZATION"},
+        "bound_source_count": {"const": 2},
+        "locator": {"type": "string", "minLength": 1},
+        "channel_id": {"const": "C0BNHRRTE9F"},
+        "message_ts": {"const": "1787478181.812239"},
+        "author_id": {"const": "U0BNFS43TBL"},
+        "title": {"type": "string", "minLength": 1},
+        "authored_at": {"type": "string", "minLength": 1},
+        "thread_complete": {"const": true},
+        "reply_count": {"const": 0},
+        "execution_command_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "execution_command_role": {"const": "CURRENT_FOUNDER_TASK_INSTRUCTION"},
+        "authorized_branch": {"const": "codex/c009-ft2-post-c009-fast-track-gate-reevaluation"}
+      }
+    },
+    "predecessors": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["c008_ft1", "c009"],
+      "properties": {
+        "c008_ft1": {"$ref": "#/$defs/c008ft1Predecessor"},
+        "c009": {"$ref": "#/$defs/c009Predecessor"}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evidence_class", "evidence_refs", "target_pilot_id", "canonical_combination_id", "canonical_leaf_id", "material", "grade", "finish", "diameter", "thickness", "length", "availability", "brand", "color", "price", "stock", "eta_sla", "supplier_truth", "additional_product_combination_or_sku_created", "runtime_or_publication_created"],
+      "properties": {
+        "evidence_class": {"const": "INTEGRATED_CANONICAL_PRODUCT_PROMOTION"},
+        "evidence_refs": {"$ref": "#/$defs/evidenceRefs"},
+        "target_pilot_id": {"const": "pilot:f5922666261e"},
+        "canonical_combination_id": {"const": "pcomb:829e387ccdcb"},
+        "canonical_leaf_id": {"const": "prd:sku:66ebd0510693"},
+        "material": {"const": "Stainless Steel"},
+        "grade": {"const": "201"},
+        "finish": {"const": "Silver"},
+        "diameter": {"const": "51 mm"},
+        "thickness": {"const": "0.50 mm"},
+        "length": {"const": "6 m"},
+        "availability": {"const": "MISSING_DATA_VALUE"},
+        "brand": {"const": "ABSENT_NOT_PROMOTED"},
+        "color": {"const": "ABSENT_NOT_PROMOTED"},
+        "price": {"const": "ABSENT"},
+        "stock": {"const": "ABSENT"},
+        "eta_sla": {"const": "ABSENT"},
+        "supplier_truth": {"const": "ABSENT"},
+        "additional_product_combination_or_sku_created": {"const": false},
+        "runtime_or_publication_created": {"const": false}
+      }
+    },
+    "state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "met", "evidence_class", "owner"],
+      "properties": {
+        "state": {"enum": ["NOT_AUTHORIZED", "MET"]},
+        "met": {"type": "boolean"},
+        "evidence_class": {"enum": ["FUTURE_AUTHORIZATION_REQUIRED", "INTEGRATED_CANONICAL_PRODUCT_PROMOTION"]},
+        "owner": {"const": "PRODUCT_CORE"}
+      }
+    },
+    "transition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["changed_prerequisites_count", "prerequisite_id", "previous", "effective", "evidence_refs", "promotion_effect"],
+      "properties": {
+        "changed_prerequisites_count": {"const": 1},
+        "prerequisite_id": {"const": "CANONICAL_PRODUCT_PROMOTION_COMPLETE"},
+        "previous": {"$ref": "#/$defs/state"},
+        "effective": {"$ref": "#/$defs/state"},
+        "evidence_refs": {"$ref": "#/$defs/evidenceRefs"},
+        "promotion_effect": {"const": false}
+      }
+    },
+    "evidenceRefs": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gate_id", "gate_kind", "eligible", "aggregate_rule", "prerequisite_count", "met_count", "unmet_count", "blockers", "all_other_prerequisites_unchanged", "launch_authority_created"],
+      "properties": {
+        "gate_id": {"const": "FAST_TRACK_INQUIRY_LAUNCH_ELIGIBLE"},
+        "gate_kind": {"const": "SIBLING_GOVERNANCE_GATE"},
+        "eligible": {"const": false},
+        "aggregate_rule": {"const": "ALL_12_PREREQUISITES_MET"},
+        "prerequisite_count": {"const": 12},
+        "met_count": {"const": 5},
+        "unmet_count": {"const": 7},
+        "blockers": {"type": "array", "minItems": 7, "maxItems": 7, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "all_other_prerequisites_unchanged": {"const": true},
+        "launch_authority_created": {"const": false}
+      }
+    },
+    "c002": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["relationship", "readiness", "resolved_count", "unresolved_count", "founder_selection_ready", "candidate_registry_count", "supply_evidence", "photo_content_readiness", "fulfillment_risk", "state_mutation_effect"],
+      "properties": {
+        "relationship": {"const": "INDEPENDENT_SIBLING_NOT_ALIAS"},
+        "readiness": {"const": "NOT_READY"},
+        "resolved_count": {"const": 6},
+        "unresolved_count": {"const": 3},
+        "founder_selection_ready": {"const": false},
+        "candidate_registry_count": {"const": 0},
+        "supply_evidence": {"const": "SUBMITTED_REVIEW_INCOMPLETE"},
+        "photo_content_readiness": {"const": "MISSING_EVIDENCE"},
+        "fulfillment_risk": {"const": "SUBMITTED_REVIEW_INCOMPLETE"},
+        "state_mutation_effect": {"const": false}
+      }
+    },
+    "noClaims": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["availability", "brand", "color", "price", "stock", "eta_sla", "supplier_truth", "rights_safe_media_ready", "inquiry_crm_flow_ready", "security_privacy_gate_ready", "seo_indexing_gate_ready", "mobile_performance_gate_ready", "staging_acceptance_pass", "production_founder_go"],
+      "properties": {
+        "availability": {"const": "MISSING_DATA_VALUE"},
+        "brand": {"const": "ABSENT_NOT_PROMOTED"},
+        "color": {"const": "ABSENT_NOT_PROMOTED"},
+        "price": {"const": "ABSENT"},
+        "stock": {"const": "ABSENT"},
+        "eta_sla": {"const": "ABSENT"},
+        "supplier_truth": {"const": "ABSENT"},
+        "rights_safe_media_ready": {"const": false},
+        "inquiry_crm_flow_ready": {"const": false},
+        "security_privacy_gate_ready": {"const": false},
+        "seo_indexing_gate_ready": {"const": false},
+        "mobile_performance_gate_ready": {"const": false},
+        "staging_acceptance_pass": {"const": false},
+        "production_founder_go": {"const": false}
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gate_reevaluation_delta_recorded", "exact_single_prerequisite_transition_recorded", "docs_contract_schema_registry_validator_tests", "branch_commit_push_one_pr", "c008_ft1_owner_mutation", "c009_owner_mutation", "authority_transfer", "second_prerequisite_transition", "gate_true_or_launch_authority", "c002_mutation", "candidate_population", "additional_product_combination_or_sku_population", "brand_color_or_mass_population", "availability_price_stock_eta_sla_supplier_claim", "media_right_or_asset_creation", "inquiry_crm_security_seo_performance_implementation", "wordpress_woocommerce_mutation", "runtime_mutation", "staging_mutation", "production_mutation", "deployment_or_publication", "m4_or_successor_mission", "auto_merge_or_merge", "branch_deletion"],
+      "properties": {
+        "gate_reevaluation_delta_recorded": {"const": true},
+        "exact_single_prerequisite_transition_recorded": {"const": true},
+        "docs_contract_schema_registry_validator_tests": {"const": true},
+        "branch_commit_push_one_pr": {"const": true},
+        "c008_ft1_owner_mutation": {"const": false},
+        "c009_owner_mutation": {"const": false},
+        "authority_transfer": {"const": false},
+        "second_prerequisite_transition": {"const": false},
+        "gate_true_or_launch_authority": {"const": false},
+        "c002_mutation": {"const": false},
+        "candidate_population": {"const": false},
+        "additional_product_combination_or_sku_population": {"const": false},
+        "brand_color_or_mass_population": {"const": false},
+        "availability_price_stock_eta_sla_supplier_claim": {"const": false},
+        "media_right_or_asset_creation": {"const": false},
+        "inquiry_crm_security_seo_performance_implementation": {"const": false},
+        "wordpress_woocommerce_mutation": {"const": false},
+        "runtime_mutation": {"const": false},
+        "staging_mutation": {"const": false},
+        "production_mutation": {"const": false},
+        "deployment_or_publication": {"const": false},
+        "m4_or_successor_mission": {"const": false},
+        "auto_merge_or_merge": {"const": false},
+        "branch_deletion": {"const": false}
+      }
+    },
+    "regression": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["c008_ft1_historical_gate_state", "c008_ft1_historical_met_count", "c008_ft1_historical_unmet_count", "c009_combination_count", "c009_leaf_count", "effective_gate_state", "effective_met_count", "effective_unmet_count", "c002_resolved_count", "c002_unresolved_count", "c002_readiness", "c002_candidate_count", "commerce_state", "runtime_state", "staging_state", "production_state", "m4_authorized", "successor_mission_started"],
+      "properties": {
+        "c008_ft1_historical_gate_state": {"const": false},
+        "c008_ft1_historical_met_count": {"const": 4},
+        "c008_ft1_historical_unmet_count": {"const": 8},
+        "c009_combination_count": {"const": 1},
+        "c009_leaf_count": {"const": 1},
+        "effective_gate_state": {"const": false},
+        "effective_met_count": {"const": 5},
+        "effective_unmet_count": {"const": 7},
+        "c002_resolved_count": {"const": 6},
+        "c002_unresolved_count": {"const": 3},
+        "c002_readiness": {"const": "NOT_READY"},
+        "c002_candidate_count": {"const": 0},
+        "commerce_state": {"const": "INQUIRY_ONLY"},
+        "runtime_state": {"const": "NONE"},
+        "staging_state": {"const": "NONE"},
+        "production_state": {"const": "NONE"},
+        "m4_authorized": {"const": false},
+        "successor_mission_started": {"const": false}
+      }
+    }
+  }
+}

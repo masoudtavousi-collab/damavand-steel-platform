@@ -1,0 +1,123 @@
+contract_id: c009-ft2-post-c009-fast-track-gate-reevaluation
+contract_version: "1.0.0"
+record_kind: c009ft2-post-c009-fast-track-gate-reevaluation
+schema:
+  path: repository/data/schemas/c009-ft2-post-c009-fast-track-gate-reevaluation.schema.json
+  draft: https://json-schema.org/draft/2020-12/schema
+registry:
+  path: repository/data/registries/extensions/c009ft2/post-c009-fast-track-gate-reevaluation.yaml
+authority:
+  mission_id: C009-FT2
+  append_only_gate_reevaluation_delta_allowed: true
+  exact_single_prerequisite_transition_allowed: true
+  docs_contract_schema_registry_validator_tests_allowed: true
+  branch_commit_push_one_pr_allowed: true
+  c008_ft1_owner_mutation_allowed: false
+  c009_owner_mutation_allowed: false
+  authority_transfer_allowed: false
+  second_prerequisite_transition_allowed: false
+  gate_true_or_launch_authority_allowed: false
+  c002_mutation_allowed: false
+  candidate_population_allowed: false
+  additional_product_combination_or_sku_population_allowed: false
+  brand_color_or_mass_population_allowed: false
+  availability_price_stock_eta_sla_supplier_claim_allowed: false
+  media_right_or_asset_creation_allowed: false
+  inquiry_crm_security_seo_performance_implementation_allowed: false
+  wordpress_woocommerce_mutation_allowed: false
+  runtime_staging_production_mutation_allowed: false
+  deployment_or_publication_allowed: false
+  m4_or_successor_mission_allowed: false
+  auto_merge_or_merge_allowed: false
+  branch_deletion_allowed: false
+dependencies:
+  c002_contract: repository/data/contracts/commercial-pilot-candidate.contract.yaml
+  c002_schema: repository/data/schemas/commercial-pilot-candidate.schema.json
+  c002_registry: repository/data/registries/extensions/c002/commercial-pilot-candidates.yaml
+  c008_ft1_contract: repository/data/contracts/c008-ft1-fast-track-inquiry-launch-gate.contract.yaml
+  c008_ft1_schema: repository/data/schemas/c008-ft1-fast-track-inquiry-launch-gate.schema.json
+  c008_ft1_registry: repository/data/registries/extensions/c008ft1/fast-track-inquiry-launch-gate.yaml
+  c009_contract: repository/data/contracts/c009-first-commercial-slice-canonical-leaf-promotion.contract.yaml
+  c009_schema: repository/data/schemas/c009-first-commercial-slice-canonical-leaf-promotion.schema.json
+  c009_registry: repository/data/registries/extensions/c009/201-51-canonical-leaf-promotion.yaml
+dependency_pins:
+  c002_contract: 923731cb080b0ecc05abb21b1189bfdd0df94297780cce364bb791479f7f47e3
+  c002_schema: 1e1b1977f369ab7e5961d4e69111682d1117bc6eeedf666a9e568f0115952741
+  c002_registry: deb0215d2b5f4b5ec0061f937aec9c3e37cf97c94432a23737bf5756cef9587e
+  c008_ft1_contract: 4c940eed75fe433bc8adbc85cb45954068b233cc1de6d80b40bc28eb71466fb5
+  c008_ft1_schema: 8eb3c93a37932e6676e8a3d1c22e0c35d3f6a4d0f47f7467ea718f466ceabd80
+  c008_ft1_registry: 799dad2f7fdf9f6ffb5a9fe37c707f222f6f92f1cc6b1e251bd3f366dd2e9cf3
+  c009_contract: a1179a6ef97735431f89ef075e7d40c9dd6973b5eacbeca6599d9666bc7674d3
+  c009_schema: aea8a6dd7b521a83576bbd00ce686d3bc2477552bc4a2f3642a80b648b6e31e2
+  c009_registry: 1b50d28ddded3a818afb82d19759713bd6c2f2b058b4020510d8b5f74a7f6a3f
+source_policy:
+  repository: masoudtavousi-collab/damavand-steel-platform
+  slack_channel_id: C0BNHRRTE9F
+  founder_user_id: U0BNFS43TBL
+  authorization_ts: "1787478181.812239"
+  authorization_title: FOUNDER / PROJECT COMMANDER EXECUTION AUTHORIZATION — POST-C009 FAST-TRACK GATE RE-EVALUATION — 2026-08-23
+  authorization_thread_reply_count: 0
+  execution_command_sha256: 243e330b51b7e89cc0a4b5faadafa880c4cf5a0376eb190644c7950e90bb46fd
+  authorized_starting_main: 432a72ee0a22069dc33cc4cbb2a5b78e63705b74
+  predecessor_post_merge_ci_run: 32631411970
+  predecessor_post_merge_ci_result: PASS
+  authorized_branch: codex/c009-ft2-post-c009-fast-track-gate-reevaluation
+  exact_source_count: 2
+owner_policy:
+  model: APPEND_ONLY_POST_C009_GATE_REEVALUATION_DELTA
+  historical_gate_owner: C008_FT1_FAST_TRACK_GATE
+  product_identity_owner: PRODUCT_CORE
+  combination_validity_owner: VARIANT_RULE_SET
+  pilot_evidence_owner: PD03B_CANONICAL_PILOT
+  c009_role: PERSISTENCE_AND_IMMUTABLE_BINDING_EXTENSION_ONLY
+  c009_ft2_role: EFFECTIVE_GATE_STATE_DELTA_ONLY
+  c008_ft1_historical_truth_immutable: true
+  c009_truth_immutable: true
+  authority_transfer: false
+transition_policy:
+  gate_id: FAST_TRACK_INQUIRY_LAUNCH_ELIGIBLE
+  baseline_met_count: 4
+  baseline_unmet_count: 8
+  total_prerequisites: 12
+  changed_prerequisites_count: 1
+  changed_prerequisite_id: CANONICAL_PRODUCT_PROMOTION_COMPLETE
+  previous_state: NOT_AUTHORIZED
+  new_state: MET
+  effective_gate_state: false
+  effective_met_count: 5
+  effective_unmet_count: 7
+  exact_evidence_binding_required: true
+  all_other_prerequisites_unchanged: true
+c002_policy:
+  readiness: NOT_READY
+  resolved_count: 6
+  unresolved_count: 3
+  founder_selection_ready: false
+  candidate_count: 0
+  supply_evidence: SUBMITTED_REVIEW_INCOMPLETE
+  photo_content_readiness: MISSING_EVIDENCE
+  fulfillment_risk: SUBMITTED_REVIEW_INCOMPLETE
+  mutation_allowed: false
+no_claim_policy:
+  availability: MISSING_DATA_VALUE
+  brand: ABSENT_NOT_PROMOTED
+  color: ABSENT_NOT_PROMOTED
+  price: ABSENT
+  stock: ABSENT
+  eta_sla: ABSENT
+  supplier_truth: ABSENT
+  gate_reevaluation_creates_commercial_or_runtime_truth: false
+validation:
+  offline_only: true
+  network_allowed: false
+  side_effects_allowed: false
+  closed_schema_required: true
+  local_refs_only: true
+  duplicate_yaml_and_json_keys_rejected: true
+  non_finite_numbers_rejected: true
+  deterministic_sorted_errors: true
+  path_escape_symlink_byte_depth_node_caps_enforced: true
+  exact_order_counts_and_bindings_required: true
+  predecessor_semantic_pins_required: true
+  semantic_digest_pinning_required: true
+  mutation_manifest_dispatch_required: true
