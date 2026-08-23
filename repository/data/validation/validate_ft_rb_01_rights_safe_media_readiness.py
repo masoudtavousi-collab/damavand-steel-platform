@@ -41,6 +41,27 @@ ALLOWLIST = [
 ]
 BASE_SCRIPT_BLOB = "9bc85e57c4eabfb4ba3ee29bcf8fb7b680f13c66"
 BASE_ABSENT_PATHS = [path for path in ALLOWLIST if path != "scripts/test.sh"]
+REPOSITORY_FULL_NAME = "masoudtavousi-collab/damavand-steel-platform"
+MAIN_REF = "refs/heads/main"
+ORIGINAL_MISSION_BASE = "a6fa08ba8bda06fba4e92aa58945fd01c7497dcf"
+ORIGINAL_PR_HEAD = "5612e82ba2b20f2e349d0d59f8226285b8a6e8af"
+ORIGINAL_MERGE_SHA = "fcfa6d97f21b644977706435a2df436e4223a968"
+ORIGINAL_BRANCH = "codex/ft-rb-01-rights-safe-media-readiness"
+REPAIR_BASE = ORIGINAL_MERGE_SHA
+REPAIR_BRANCH = "codex/ft-rb-01-post-merge-ci-repair"
+REPAIR_ALLOWLIST = [
+    "repository/data/validation/validate_ft_rb_01_rights_safe_media_readiness.py",
+    "tests/test_ft_rb_01_rights_safe_media_readiness.py",
+]
+REPAIR_BASE_BLOBS = {
+    REPAIR_ALLOWLIST[0]: "f2c778f8b055b8f4eabc47b4ab57109e7f1ccdf3",
+    REPAIR_ALLOWLIST[1]: "a0a40318e125e938dea96845398b325f239e9e57",
+}
+REPAIR_BASE_EXCLUDED_TREE_DIGEST = "8e619ba33900225c05630806813851c9804f5c5b6f6a204a131d29b072c1920b"
+REPAIR_BASE_RETAINED_TREE_ENTRIES = 644
+REPAIR_BASE_TOTAL_TREE_ENTRIES = 646
+PROTECTED_INTEGRATED_PATHS = sorted(set(BASE_ABSENT_PATHS))
+MAX_PUSH_COMMITS = 20
 DEPENDENCIES = {
     "c002_contract": "repository/data/contracts/commercial-pilot-candidate.contract.yaml",
     "c002_schema": "repository/data/schemas/commercial-pilot-candidate.schema.json",
@@ -287,77 +308,400 @@ def schema_issues(schema: Any) -> list[str]:
         return [f"SCHEMA_META:{type(exc).__name__}"]
     return []
 
-def ci_event_matches_allowlist(event: Any, checkout_oid: str, parent_oids: list[str]) -> bool:
-    if not isinstance(event, dict) or not isinstance(event.get("pull_request"), dict):
-        return False
-    pull = event["pull_request"]
-    event_base = pull.get("base", {}).get("sha") if isinstance(pull.get("base"), dict) else None
-    event_head = pull.get("head", {}).get("sha") if isinstance(pull.get("head"), dict) else None
-    checkout_relation = checkout_oid == event_head or {event_base, event_head}.issubset(set(parent_oids))
-    return (
-        pull.get("changed_files") == len(ALLOWLIST)
-        and event_base == "a6fa08ba8bda06fba4e92aa58945fd01c7497dcf"
-        and isinstance(event_head, str) and len(event_head) == 40
-        and checkout_relation
-    )
+def is_oid(value: Any) -> bool:
+    return isinstance(value, str) and len(value) == 40 and all(char in "0123456789abcdef" for char in value)
 
-def parse_raw_commit_parents(raw: str) -> list[str]:
+def safe_repo_path(value: Any) -> str:
+    if not isinstance(value, str) or not value or value.startswith("/") or "\\" in value:
+        raise ValueError("unsafe repository path")
+    parts = value.split("/")
+    if any(part in {"", ".", ".."} for part in parts):
+        raise ValueError("unsafe repository path")
+    return value
+
+def load_ci_event(path: Path) -> Any:
+    if not path.is_absolute() or not path.is_file() or path.is_symlink():
+        raise ValueError("event file is not a regular absolute path")
+    if any(parent.is_symlink() for parent in path.parents if parent.exists()):
+        raise ValueError("event path has a symlink ancestor")
+    if path.stat().st_size > MAX_BYTES:
+        raise ValueError("event byte cap exceeded")
+    value = json.loads(
+        path.read_text(encoding="utf-8"),
+        object_pairs_hook=_json_pairs,
+        parse_constant=lambda token: (_ for _ in ()).throw(ValueError(f"nonfinite JSON number: {token}")),
+    )
+    bounded(value)
+    return value
+
+def repository_matches(event: Any) -> bool:
+    repository = event.get("repository") if isinstance(event, dict) else None
+    return isinstance(repository, dict) and repository.get("full_name") == REPOSITORY_FULL_NAME
+
+def checkout_matches(event_base: str, event_head: str, checkout_oid: str, parent_oids: list[str]) -> bool:
+    return checkout_oid == event_head or parent_oids == [event_base, event_head]
+
+def pull_request_event_context(event: Any, checkout_oid: str, parent_oids: list[str]) -> tuple[str, list[str]]:
+    if not repository_matches(event) or not isinstance(event.get("pull_request"), dict):
+        raise RuntimeError("pull-request repository or payload mismatch")
+    pull = event["pull_request"]
+    base = pull.get("base")
+    head = pull.get("head")
+    if not isinstance(base, dict) or not isinstance(head, dict):
+        raise RuntimeError("pull-request base/head metadata missing")
+    base_repo = base.get("repo")
+    head_repo = head.get("repo")
+    if (
+        not isinstance(base_repo, dict)
+        or not isinstance(head_repo, dict)
+        or base_repo.get("full_name") != REPOSITORY_FULL_NAME
+        or head_repo.get("full_name") != REPOSITORY_FULL_NAME
+    ):
+        raise RuntimeError("pull-request base/head repository mismatch")
+    event_base, event_head = base.get("sha"), head.get("sha")
+    base_ref, head_ref = base.get("ref"), head.get("ref")
+    if base_ref != "main" or not is_oid(event_base) or not is_oid(event_head):
+        raise RuntimeError("pull-request base/head metadata invalid")
+    if not checkout_matches(event_base, event_head, checkout_oid, parent_oids):
+        raise RuntimeError("pull-request checkout relation mismatch")
+    changed_files = pull.get("changed_files")
+    if event_base == REPAIR_BASE and head_ref != REPAIR_BRANCH:
+        raise RuntimeError("repair pull-request head branch mismatch")
+    if event_base == ORIGINAL_MISSION_BASE and head_ref != ORIGINAL_BRANCH:
+        raise RuntimeError("original pull-request head branch mismatch")
+    if head_ref == REPAIR_BRANCH:
+        if event_base != REPAIR_BASE or changed_files != len(REPAIR_ALLOWLIST):
+            raise RuntimeError("repair pull-request base/count mismatch")
+        return "repair", list(REPAIR_ALLOWLIST)
+    if head_ref == ORIGINAL_BRANCH:
+        if event_base != ORIGINAL_MISSION_BASE or changed_files != len(ALLOWLIST):
+            raise RuntimeError("original pull-request base/count mismatch")
+        return "original", list(ALLOWLIST)
+    if not isinstance(head_ref, str) or not head_ref or not isinstance(changed_files, int) or changed_files < 1:
+        raise RuntimeError("successor pull-request metadata invalid")
+    return "integrated", []
+
+def parse_raw_commit(raw: str) -> tuple[str, list[str]]:
+    headers = raw.split("\n\n", 1)[0].splitlines()
+    if not headers or not headers[0].startswith("tree "):
+        raise ValueError("tree object ID must be the first commit header")
+    tree_oid = headers[0][5:]
+    if not is_oid(tree_oid):
+        raise ValueError("malformed tree object ID")
     parents: list[str] = []
-    for line in raw.splitlines():
-        if not line:
-            break
+    parent_headers_open = True
+    for line in headers[1:]:
         if line.startswith("parent "):
+            if not parent_headers_open:
+                raise ValueError("parent object ID appears after another commit header")
             oid = line[7:]
-            if len(oid) != 40 or any(char not in "0123456789abcdef" for char in oid):
+            if not is_oid(oid):
                 raise ValueError("malformed parent object ID")
             parents.append(oid)
             if len(parents) > 2:
                 raise ValueError("unexpected parent count")
-    return parents
+        else:
+            parent_headers_open = False
+            if line.startswith("tree "):
+                raise ValueError("duplicate tree object ID")
+    return tree_oid, parents
 
-def raw_commit_parents(commit: str = "HEAD") -> list[str]:
+def parse_raw_commit_parents(raw: str) -> list[str]:
+    return parse_raw_commit(raw)[1]
+
+def raw_commit(commit: str = "HEAD") -> tuple[str, list[str]]:
     result = subprocess.run(["git","cat-file","-p",commit], cwd=ROOT, check=True, capture_output=True, text=True)
     if len(result.stdout.encode("utf-8")) > MAX_BYTES:
         raise ValueError("commit object byte cap exceeded")
-    return parse_raw_commit_parents(result.stdout)
+    return parse_raw_commit(result.stdout)
+
+def raw_commit_parents(commit: str = "HEAD") -> list[str]:
+    return raw_commit(commit)[1]
 
 def base_shape_issues() -> list[str]:
-    base = "a6fa08ba8bda06fba4e92aa58945fd01c7497dcf"
     issues: list[str] = []
-    script = subprocess.run(["git","rev-parse",f"{base}:scripts/test.sh"], cwd=ROOT, capture_output=True, text=True)
+    script = subprocess.run(["git","rev-parse",f"{ORIGINAL_MISSION_BASE}:scripts/test.sh"], cwd=ROOT, capture_output=True, text=True)
     if script.returncode or script.stdout.strip() != BASE_SCRIPT_BLOB:
         issues.append("BASE_SHAPE:script")
     for path in BASE_ABSENT_PATHS:
-        probe = subprocess.run(["git","cat-file","-e",f"{base}:{path}"], cwd=ROOT, capture_output=True)
+        probe = subprocess.run(["git","cat-file","-e",f"{ORIGINAL_MISSION_BASE}:{path}"], cwd=ROOT, capture_output=True)
         if probe.returncode == 0:
             issues.append(f"BASE_SHAPE:unexpected:{path}")
     return sorted(issues)
 
-def changed_paths() -> list[str]:
-    mission_base = "a6fa08ba8bda06fba4e92aa58945fd01c7497dcf"
-    history = subprocess.run(["git","diff","--name-only",f"{mission_base}...HEAD"], cwd=ROOT, capture_output=True, text=True)
-    changed = subprocess.run(["git","diff","--name-only","HEAD"], cwd=ROOT, check=True, capture_output=True, text=True).stdout.splitlines()
-    untracked = subprocess.run(["git","ls-files","--others","--exclude-standard"], cwd=ROOT, check=True, capture_output=True, text=True).stdout.splitlines()
-    if history.returncode == 0:
+def regular_path_issues(paths: list[str], root: Path = ROOT) -> list[str]:
+    issues: list[str] = []
+    for relative in paths:
+        candidate = root / safe_repo_path(relative)
+        if candidate.is_symlink() or any(parent.is_symlink() for parent in candidate.parents if parent.exists()):
+            issues.append(f"PATH_SHAPE:symlink:{relative}")
+        elif not candidate.is_file():
+            issues.append(f"PATH_SHAPE:missing:{relative}")
+    return sorted(issues)
+
+def parse_tree_manifest(raw: bytes, excluded_paths: list[str]) -> tuple[str, int, int, dict[str, tuple[str, str, str]]]:
+    if len(raw) > MAX_BYTES:
+        raise ValueError("tree manifest byte cap exceeded")
+    if excluded_paths != REPAIR_ALLOWLIST or len(excluded_paths) != len(set(excluded_paths)):
+        raise ValueError("tree manifest exclusion set mismatch")
+    if not raw or not raw.endswith(b"\0") or b"\0\0" in raw:
+        raise ValueError("tree manifest NUL framing invalid")
+    excluded = set(excluded_paths)
+    retained: list[bytes] = []
+    entries: dict[str, tuple[str, str, str]] = {}
+    previous: bytes | None = None
+    total = 0
+    for record in raw[:-1].split(b"\0"):
+        total += 1
+        if b"\t" not in record:
+            raise ValueError("malformed tree manifest record")
+        metadata, raw_path = record.split(b"\t", 1)
+        parts = metadata.split(b" ")
+        if len(parts) != 3:
+            raise ValueError("malformed tree manifest metadata")
+        mode, object_type, raw_oid = (part.decode("ascii", errors="strict") for part in parts)
+        if mode not in {"100644", "100755", "120000", "160000"}:
+            raise ValueError("unsupported tree entry mode")
+        if object_type not in {"blob", "commit"} or not is_oid(raw_oid):
+            raise ValueError("malformed tree entry identity")
+        path = safe_repo_path(raw_path.decode("utf-8", errors="strict"))
+        if previous is not None and raw_path <= previous:
+            raise ValueError("tree manifest paths not strictly increasing")
+        previous = raw_path
+        if path in entries:
+            raise ValueError("duplicate tree manifest path")
+        entries[path] = (mode, object_type, raw_oid)
+        if path not in excluded:
+            retained.append(record + b"\0")
+    digest_value = hashlib.sha256(b"".join(retained)).hexdigest()
+    return digest_value, len(retained), total, entries
+
+def tree_manifest(commit: str = "HEAD") -> tuple[str, int, int, dict[str, tuple[str, str, str]]]:
+    result = subprocess.run(["git", "ls-tree", "-rz", "--full-tree", commit], cwd=ROOT, check=True, capture_output=True)
+    return parse_tree_manifest(result.stdout, REPAIR_ALLOWLIST)
+
+def repair_excluded_tree_issues(*, require_changed_entries: bool) -> list[str]:
+    issues: list[str] = []
+    try:
+        digest_value, retained_count, total_count, entries = tree_manifest()
+    except Exception as exc:
+        return [f"REPAIR_TREE_PROOF:{type(exc).__name__}"]
+    if digest_value != REPAIR_BASE_EXCLUDED_TREE_DIGEST:
+        issues.append("REPAIR_TREE_PROOF:digest")
+    if retained_count != REPAIR_BASE_RETAINED_TREE_ENTRIES or total_count != REPAIR_BASE_TOTAL_TREE_ENTRIES:
+        issues.append("REPAIR_TREE_PROOF:count")
+    for path, base_blob in REPAIR_BASE_BLOBS.items():
+        entry = entries.get(path)
+        if entry is None or entry[0] != "100644" or entry[1] != "blob":
+            issues.append(f"REPAIR_TREE_PROOF:entry:{path}")
+        elif require_changed_entries and entry[2] == base_blob:
+            issues.append(f"REPAIR_TREE_PROOF:unchanged:{path}")
+    return sorted(issues)
+
+def repair_current_shape_issues() -> list[str]:
+    issues = regular_path_issues(REPAIR_ALLOWLIST)
+    for path, expected_blob in REPAIR_BASE_BLOBS.items():
+        index = subprocess.run(["git", "ls-files", "-s", "--", path], cwd=ROOT, capture_output=True, text=True)
+        lines = index.stdout.splitlines()
+        fields = lines[0].split(maxsplit=3) if len(lines) == 1 else []
+        if index.returncode or len(fields) != 4 or fields[0] != "100644" or not is_oid(fields[1]) or fields[2] != "0" or fields[3] != path:
+            issues.append(f"REPAIR_CURRENT_MODE:{path}")
+        if not any(issue.endswith(f":{path}") for issue in issues) and git_blob_oid(ROOT / path) == expected_blob:
+            issues.append(f"REPAIR_PATH_UNCHANGED:{path}")
+    return sorted(set(issues))
+
+def repair_base_shape_issues() -> list[str]:
+    issues: list[str] = []
+    for path, expected_blob in REPAIR_BASE_BLOBS.items():
+        base = subprocess.run(["git", "rev-parse", f"{REPAIR_BASE}:{path}"], cwd=ROOT, capture_output=True, text=True)
+        if base.returncode or base.stdout.strip() != expected_blob:
+            issues.append(f"REPAIR_BASE_SHAPE:{path}")
+    return sorted(issues)
+
+def repair_shape_issues() -> list[str]:
+    return sorted(set(repair_base_shape_issues() + repair_current_shape_issues() + repair_excluded_tree_issues(require_changed_entries=False)))
+
+def repair_committed_shape_issues() -> list[str]:
+    return sorted(set(regular_path_issues(REPAIR_ALLOWLIST) + repair_excluded_tree_issues(require_changed_entries=True)))
+
+def commit_path_categories(commit: Any) -> tuple[set[str], set[str], set[str]]:
+    if not isinstance(commit, dict):
+        raise RuntimeError("push commit metadata invalid")
+    categories: list[set[str]] = []
+    seen: set[str] = set()
+    for key in ("added", "modified", "removed"):
+        values = commit.get(key)
+        if not isinstance(values, list):
+            raise RuntimeError(f"push commit {key} paths missing")
+        current: set[str] = set()
+        for value in values:
+            path = safe_repo_path(value)
+            if path in current or path in seen:
+                raise RuntimeError("duplicate or overlapping push path")
+            current.add(path)
+            seen.add(path)
+        categories.append(current)
+    return categories[0], categories[1], categories[2]
+
+def optional_commit_path_categories(commit: Any) -> tuple[set[str], set[str], set[str]] | None:
+    if not isinstance(commit, dict):
+        raise RuntimeError("push commit metadata invalid")
+    present = [key in commit for key in ("added", "modified", "removed")]
+    if any(present) and not all(present):
+        raise RuntimeError("partial push path metadata rejected")
+    return commit_path_categories(commit) if all(present) else None
+
+def push_event_context(
+    event: Any,
+    checkout_oid: str,
+    tree_oid: str,
+    parent_oids: list[str],
+) -> tuple[str, list[str]]:
+    if not repository_matches(event) or event.get("ref") != MAIN_REF:
+        raise RuntimeError("push repository/ref mismatch")
+    before, after = event.get("before"), event.get("after")
+    if not is_oid(before) or not is_oid(after) or after != checkout_oid:
+        raise RuntimeError("push before/after/checkout mismatch")
+    if event.get("created") is not False or event.get("deleted") is not False or event.get("forced") is not False:
+        raise RuntimeError("created/deleted/forced push rejected")
+    if not parent_oids or len(parent_oids) > 2 or parent_oids[0] != before:
+        raise RuntimeError("push parent relation mismatch")
+    commits = event.get("commits")
+    if (
+        not isinstance(commits, list)
+        or not commits
+        or len(commits) > MAX_PUSH_COMMITS
+    ):
+        raise RuntimeError("push commit list missing, truncated, or inconsistent")
+    head_commit = event.get("head_commit")
+    if not isinstance(head_commit, dict) or head_commit.get("id") != after or head_commit.get("tree_id") != tree_oid:
+        raise RuntimeError("push head commit identity mismatch")
+    path_metadata_present: bool | None = None
+    added: set[str] = set()
+    modified: set[str] = set()
+    removed: set[str] = set()
+    commit_ids: set[str] = set()
+    for commit in commits:
+        if not isinstance(commit, dict) or not is_oid(commit.get("id")) or not isinstance(commit.get("distinct"), bool):
+            raise RuntimeError("push commit identity/distinctness mismatch")
+        if commit["id"] in commit_ids:
+            raise RuntimeError("duplicate push commit identity")
+        commit_ids.add(commit["id"])
+        if not is_oid(commit.get("tree_id")):
+            raise RuntimeError("push commit tree identity missing")
+        categories = optional_commit_path_categories(commit)
+        if path_metadata_present is None:
+            path_metadata_present = categories is not None
+        elif path_metadata_present != (categories is not None):
+            raise RuntimeError("inconsistent push path metadata presence")
+        if categories is not None:
+            current_added, current_modified, current_removed = categories
+            added |= current_added
+            modified |= current_modified
+            removed |= current_removed
+    if commits[-1].get("id") != after or commits[-1].get("tree_id") != tree_oid:
+        raise RuntimeError("terminal push commit mismatch")
+    head_categories = optional_commit_path_categories(head_commit)
+    terminal_categories = optional_commit_path_categories(commits[-1])
+    if (head_categories is None) != (terminal_categories is None) or head_categories != terminal_categories:
+        raise RuntimeError("head commit path metadata mismatch")
+    paths = sorted(added | modified | removed)
+    if before == REPAIR_BASE:
+        if len(commits) < 2 or len(parent_oids) != 2 or parent_oids[1] not in commit_ids:
+            raise RuntimeError("repair integration merge/source-parent proof mismatch")
+        if path_metadata_present and (added or removed or modified != set(REPAIR_ALLOWLIST)):
+            raise RuntimeError("repair integration changed-path mismatch")
+        if head_categories is not None and (head_categories[0] or head_categories[2] or head_categories[1] != set(REPAIR_ALLOWLIST)):
+            raise RuntimeError("repair merge-commit changed-path mismatch")
+        return "repair", list(REPAIR_ALLOWLIST)
+    if before == ORIGINAL_MISSION_BASE and after == ORIGINAL_MERGE_SHA:
+        if parent_oids != [ORIGINAL_MISSION_BASE, ORIGINAL_PR_HEAD]:
+            raise RuntimeError("original integration parent mismatch")
+        if path_metadata_present and (added != set(BASE_ABSENT_PATHS) or modified != {"scripts/test.sh"} or removed):
+            raise RuntimeError("original integration changed-path mismatch")
+        return "original", list(ALLOWLIST)
+    if path_metadata_present and set(PROTECTED_INTEGRATED_PATHS) & set(paths):
+        raise RuntimeError("future push mutates protected FT-RB-01 lane paths")
+    return "integrated", paths
+
+def base_available(oid: str) -> bool:
+    return subprocess.run(["git", "cat-file", "-e", f"{oid}^{{commit}}"], cwd=ROOT, capture_output=True).returncode == 0
+
+def current_branch() -> str:
+    result = subprocess.run(["git", "symbolic-ref", "--quiet", "--short", "HEAD"], cwd=ROOT, capture_output=True, text=True)
+    return result.stdout.strip() if result.returncode == 0 else ""
+
+def working_delta() -> tuple[list[str], list[str]]:
+    changed = subprocess.run(["git", "diff", "--name-only", "HEAD"], cwd=ROOT, check=True, capture_output=True, text=True).stdout.splitlines()
+    untracked = subprocess.run(["git", "ls-files", "--others", "--exclude-standard"], cwd=ROOT, check=True, capture_output=True, text=True).stdout.splitlines()
+    return changed, untracked
+
+def head_oid() -> str:
+    return subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, check=True, capture_output=True, text=True).stdout.strip()
+
+def ci_context(
+    event_name: str | None,
+    event: Any,
+    checkout_oid: str,
+    tree_oid: str,
+    parent_oids: list[str],
+    changed: list[str],
+    untracked: list[str],
+) -> tuple[str, list[str]]:
+    if changed or untracked:
+        raise RuntimeError("CI context must be an exact clean checkout")
+    if event_name == "pull_request":
+        mode, paths = pull_request_event_context(event, checkout_oid, parent_oids)
+        if mode == "repair" and repair_committed_shape_issues():
+            raise RuntimeError("repair pull-request tree/path proof mismatch")
+        if mode == "original":
+            if regular_path_issues(ALLOWLIST) or git_blob_oid(ROOT / "scripts/test.sh") == BASE_SCRIPT_BLOB:
+                raise RuntimeError("original pull-request path shape mismatch")
+        return mode, paths
+    if event_name == "push":
+        mode, paths = push_event_context(event, checkout_oid, tree_oid, parent_oids)
+        if mode == "repair" and repair_committed_shape_issues():
+            raise RuntimeError("repair push tree/path proof mismatch")
+        return mode, paths
+    raise RuntimeError("unsupported GitHub Actions event")
+
+def local_context(branch: str, changed: list[str], untracked: list[str]) -> tuple[str, list[str]]:
+    if branch == REPAIR_BRANCH:
+        if not base_available(REPAIR_BASE):
+            raise RuntimeError("repair base unavailable outside CI")
+        if repair_shape_issues():
+            raise RuntimeError("repair base/current path shape mismatch")
+        committed = subprocess.run(["git", "diff", "--name-only", f"{REPAIR_BASE}...HEAD"], cwd=ROOT, check=True, capture_output=True, text=True).stdout.splitlines()
+        return "repair", sorted(set(committed + changed + untracked))
+    if branch == ORIGINAL_BRANCH:
+        if not base_available(ORIGINAL_MISSION_BASE):
+            raise RuntimeError("original mission base unavailable outside CI")
         if base_shape_issues():
-            raise RuntimeError("immutable mission-base path shape mismatch")
-        committed = history.stdout.splitlines()
-    else:
-        if os.environ.get("CI") != "true" or changed or untracked:
-            raise RuntimeError("mission-base history unavailable outside a clean CI checkout")
+            raise RuntimeError("immutable original mission-base path shape mismatch")
+        committed = subprocess.run(["git", "diff", "--name-only", f"{ORIGINAL_MISSION_BASE}...HEAD"], cwd=ROOT, check=True, capture_output=True, text=True).stdout.splitlines()
+        return "original", sorted(set(committed + changed + untracked))
+    if not base_available(ORIGINAL_MISSION_BASE) and not base_available(REPAIR_BASE):
+        raise RuntimeError("mission history unavailable outside CI")
+    paths = sorted(set(changed + untracked))
+    if set(paths) & set(PROTECTED_INTEGRATED_PATHS):
+        raise RuntimeError("local integrated context mutates protected FT-RB-01 lane paths")
+    return "integrated", paths
+
+def git_context() -> tuple[str, list[str]]:
+    changed, untracked = working_delta()
+    if os.environ.get("CI") == "true" or os.environ.get("GITHUB_ACTIONS") == "true":
+        if os.environ.get("CI") != "true" or os.environ.get("GITHUB_ACTIONS") != "true" or changed or untracked:
+            raise RuntimeError("CI context must be an exact clean GitHub Actions checkout")
+        event_name = os.environ.get("GITHUB_EVENT_NAME")
         event_path = Path(os.environ.get("GITHUB_EVENT_PATH", ""))
-        if not event_path.is_file() or event_path.is_symlink() or event_path.stat().st_size > MAX_BYTES:
-            raise RuntimeError("trusted pull-request event metadata unavailable")
-        event = json.loads(event_path.read_text(encoding="utf-8"), object_pairs_hook=_json_pairs)
-        checkout_oid = subprocess.run(["git","rev-parse","HEAD"], cwd=ROOT, check=True, capture_output=True, text=True).stdout.strip()
-        if not ci_event_matches_allowlist(event, checkout_oid, raw_commit_parents()):
-            raise RuntimeError("pull-request event base/head/count mismatch")
-        if any(not (ROOT / path).is_file() or (ROOT / path).is_symlink() for path in ALLOWLIST):
-            raise RuntimeError("authorized path missing or symlinked in CI checkout")
-        if git_blob_oid(ROOT / "scripts/test.sh") == BASE_SCRIPT_BLOB:
-            raise RuntimeError("condition-bound runner path did not change from immutable base")
-        committed = ALLOWLIST
-    return sorted(set(committed + changed + untracked))
+        event = load_ci_event(event_path)
+        checkout_oid = head_oid()
+        tree_oid, parent_oids = raw_commit()
+        return ci_context(event_name, event, checkout_oid, tree_oid, parent_oids, changed, untracked)
+    return local_context(current_branch(), changed, untracked)
+
+def changed_paths() -> list[str]:
+    return git_context()[1]
 
 def archaeology_issues(root: Path = ROOT) -> list[str]:
     issues: list[str] = []
@@ -437,8 +781,12 @@ def validate(contract: Any, schema: Any, registry: Any, *, synthetic: bool, allo
             issues.append(f"SCHEMA_VALIDATION_EXCEPTION:{type(exc).__name__}")
     if check_worktree:
         try:
-            if changed_paths() != ALLOWLIST:
+            mode, paths = git_context()
+            expected = ALLOWLIST if mode == "original" else REPAIR_ALLOWLIST if mode == "repair" else None
+            if expected is not None and paths != expected:
                 issues.append("ALLOWLIST_ACTUAL_DIFF")
+            if mode == "integrated" and set(paths) & set(PROTECTED_INTEGRATED_PATHS):
+                issues.append("ALLOWLIST_PROTECTED_INTEGRATED_PATH")
         except Exception as exc:
             issues.append(f"ALLOWLIST_ACTUAL_DIFF:{type(exc).__name__}")
         issues.extend(archaeology_issues())
