@@ -1,0 +1,613 @@
+registry_id: ftrb02:inquiry-crm-flow-readiness
+registry_version: 1.0.0
+mission_id: FT-RB-02
+fixture_mode: SYNTHETIC
+fixture_identity: SYNTHETIC_FTRB02_INQUIRY_CRM
+campaign_authorized_starting_main: 310d0ac3f6f9da67a975a32beb0b55361aa176d5
+mission_base_main: 5f452703dd35e1fee050f09529a0de379767e2bb
+status_as_of: '2026-08-24T00:15:01+03:30'
+source:
+  source_id: FTRB02-SOURCE-001
+  locator: slack:C0BNHRRTE9F:1787485976.633809
+  author_id: U0BNFS43TBL
+  thread_complete: true
+  reply_count: 0
+  parent_ts: '1787398697.475999'
+  command_sha256: f49f01222adc1b1389e61a99f1a07db13c07d01b2d36522a2469975a2015f839
+  command_hash_bound_by_slack: false
+source_policy:
+  execution_authority_ts: '1787485976.633809'
+  payload_business_authority_ts: '1787398832.469889'
+  launch_content_direction_ts: '1787400933.711809'
+  workflow_supply_authority_ts: '1787401091.613509'
+  analytics_authority_ts: '1787401125.584279'
+  controlling_privacy_requiredness_authority_ts: '1787401309.508679'
+  founder_user_id: U0BNFS43TBL
+  fast_track_parent_ts: '1787398697.475999'
+  semantic_sources:
+  - locator: slack:C0BNHRRTE9F:1787398832.469889
+    author_id: U0BNFS43TBL
+    parent_ts: '1787398697.475999'
+    thread_complete: true
+    reply_count: 0
+    property_scope: PAYLOAD_BUSINESS_EXCEPT_EXPLICIT_LATER_OVERRIDES
+  - locator: slack:C0BNHRRTE9F:1787400933.711809
+    author_id: U0BNFS43TBL
+    parent_ts: '1787398697.475999'
+    thread_complete: true
+    reply_count: 0
+    property_scope: LAUNCH_CONTENT_VISIBILITY_EXCEPT_PRIVACY_REFINEMENT
+  - locator: slack:C0BNHRRTE9F:1787401091.613509
+    author_id: U0BNFS43TBL
+    parent_ts: '1787398697.475999'
+    thread_complete: true
+    reply_count: 0
+    property_scope: LEAD_OPERATOR_WORKFLOW_NONCANONICAL_SUPPLY_CHECK_AND_RESPONSE_SAFETY
+  - locator: slack:C0BNHRRTE9F:1787401125.584279
+    author_id: U0BNFS43TBL
+    parent_ts: '1787398697.475999'
+    thread_complete: true
+    reply_count: 0
+    property_scope: ANALYTICS_EVENTS_KPIS_CADENCE_AND_COMMERCIAL_FUNNEL_AUTHORITY_BOUNDARY
+  - locator: slack:C0BNHRRTE9F:1787401309.508679
+    author_id: U0BNFS43TBL
+    parent_ts: '1787398697.475999'
+    thread_complete: true
+    reply_count: 0
+    property_scope: PRIVACY_MINIMIZATION_CONSENT_FORM_SECURITY_AND_STAGING_ACCEPTANCE_REQUIREMENTS
+  property_precedence:
+    city_requiredness:
+    - PRIVACY_MINIMIZATION_1787401309_508679
+    - PAYLOAD_BUSINESS_1787398832_469889
+    - CONTENT_VISIBILITY_1787400933_711809
+    inquiry_payload: PAYLOAD_BUSINESS_1787398832_469889_EXCEPT_EXPLICIT_LATER_OVERRIDE
+    lead_and_supply_workflow: WORKFLOW_SUPPLY_1787401091_613509
+    analytics_boundary: ANALYTICS_1787401125_584279
+    privacy_consent_form_security_and_staging: PRIVACY_SECURITY_1787401309_508679
+    privacy_field_controls:
+      name_requiredness: PRIVACY_SECURITY_1787401309_508679
+      mobile_requiredness: PRIVACY_SECURITY_1787401309_508679
+      city_optional_conditional: PRIVACY_SECURITY_1787401309_508679
+      quantity_optional: PRIVACY_SECURITY_1787401309_508679
+      notes_optional: PRIVACY_SECURITY_1787401309_508679
+      product_context_system_attached: PRIVACY_SECURITY_1787401309_508679
+      consent_and_transparency: PRIVACY_SECURITY_1787401309_508679
+      form_security_and_submission_behavior: PRIVACY_SECURITY_1787401309_508679
+      privacy_page_minimum: PRIVACY_SECURITY_1787401309_508679
+      staging_acceptance_gate: PRIVACY_SECURITY_1787401309_508679
+    content_visibility: CONTENT_1787400933_711809_EXCEPT_PRIVACY_REFINEMENT
+  execution_authority_sets_field_semantics: false
+  later_same_founder_same_scope_more_specific_controls: true
+  procedural_restart_evidence:
+    single_file_repair_authority_ts: "1787515209.992049"
+    merge_and_resume_authority_ts: "1787517433.749679"
+    predecessor_pr: 53
+    predecessor_authorized_head: 396a623df8b5ffc31c70e36598d285c1c4697ace
+    predecessor_merge_sha: 5f452703dd35e1fee050f09529a0de379767e2bb
+    post_merge_ci_run: 32665124526
+    post_merge_ci_sha: 5f452703dd35e1fee050f09529a0de379767e2bb
+    post_merge_ci_result: PASS
+    sets_field_semantics: false
+exact_changed_paths:
+- docs/FT_RB_02_INQUIRY_CRM_FLOW_READINESS_SCOPE_V1.0.md
+- repository/data/contracts/ft-rb-02-inquiry-crm-flow-readiness.contract.yaml
+- repository/data/registries/extensions/ftrb02/inquiry-crm-flow-readiness.yaml
+- repository/data/schemas/ft-rb-02-inquiry-crm-flow-readiness.schema.json
+- repository/data/validation/validate_ft_rb_02_inquiry_crm_flow_readiness.py
+- scripts/test.sh
+- tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/README.md
+- tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/adversarial-duplicate-keys.json
+- tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/adversarial-duplicate-keys.yaml
+- tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/adversarial-permissive-schema.json
+- tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/adversarial-remote-ref-schema.json
+- tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/mutation-cases.json
+- tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/valid-synthetic.yaml
+- tests/test_ft_rb_02_inquiry_crm_flow_readiness.py
+owner_model:
+  inquiry_semantic_owner: INQUIRY_DATA_MODEL
+  inquiry_lifecycle_owner: INQUIRY_WORKFLOW
+  lead_record_owner: GOVERNED_INQUIRY_LEAD_RECORD
+  crm_integration_owner: FUTURE_CRM_INTEGRATION_UNSELECTED
+  product_truth_owner: PRODUCT_CORE
+  price_truth_owner: SEPARATE_PRIVATE_COMMERCIAL_CONTEXT
+  supply_truth_owner: SUPPLY_OWNER_UNRESOLVED
+  customer_identity_owner: AUTHORITY_PENDING_NO_RECORD
+  authority_transfer: false
+canonical_slice_binding:
+  owner_path: repository/data/registries/extensions/c009/201-51-canonical-leaf-promotion.yaml
+  binding_mode: DYNAMIC_OWNER_REFERENCE_ONLY
+  product_identifiers_persisted_here: false
+  product_context_capture: SYSTEM_AUTO_ATTACHED_READ_ONLY
+readiness:
+  repository_package_state: REPOSITORY_READY
+  workflow_status: BLOCKED_EXTERNAL_INPUT
+  readiness_classification: REPOSITORY_READY
+  implementation_configuration_state: MISSING_AUTHORITY_INPUT
+  runtime_implementation_state: NOT_IMPLEMENTED
+  staging_end_to_end_state: NOT_RUN
+  prerequisite: INQUIRY_CRM_FLOW_READY
+  prerequisite_state: UNMET
+  gate_transition: NONE
+customer_form:
+  presentation_policy:
+    state: REPOSITORY_REQUIREMENT_ONLY
+    implementation_state: NOT_IMPLEMENTED
+    minimal: true
+    mobile_first: true
+    persian_rtl: true
+    safe_public_copy_requirement: AVAILABILITY_AND_PRICE_ARE_REVIEWED_AFTER_INQUIRY
+    public_commercial_claim_created: false
+  fields:
+  - field_id: name
+    capture: CUSTOMER_ENTERED
+    requiredness: REQUIRED
+    data_class: PII
+    authority_ts: '1787401309.508679'
+  - field_id: mobile
+    capture: CUSTOMER_ENTERED
+    requiredness: REQUIRED
+    data_class: PII
+    iranian_normalization_validation_required: true
+    exact_algorithm_state: MISSING_AUTHORITY_INPUT
+    authority_ts: '1787401309.508679'
+  - field_id: inquiry_type
+    capture: CUSTOMER_ENTERED
+    requiredness: REQUIRED
+    values:
+    - PRICE
+    - STOCK_CHECK
+    - CONSULTATION
+    intent_only: true
+    runtime_label_mapping_state: MISSING_AUTHORITY_INPUT
+    authority_ts: '1787398832.469889'
+  - field_id: city
+    capture: CUSTOMER_ENTERED
+    requiredness: OPTIONAL_CONDITIONAL
+    visibility: MAY_BE_REQUESTED
+    condition: OPERATIONALLY_USEFUL_AND_APPROVED
+    condition_criteria_state: NOT_DEFINED_DO_NOT_INVENT
+    unconditional_requirement: false
+    absence_blocks_submission: false
+    customer_provided_only: true
+    routing_or_supply_inference_authority: false
+    authority_ts: '1787401309.508679'
+  - field_id: quantity_or_approximate_need
+    capture: CUSTOMER_ENTERED
+    requiredness: OPTIONAL
+    unknown_allowed: true
+    unit_may_be_guessed: false
+    authority_ts: '1787401309.508679'
+  - field_id: notes
+    capture: CUSTOMER_ENTERED
+    requiredness: OPTIONAL
+    untrusted_text: true
+    authority_ts: '1787401309.508679'
+  - field_id: product_context
+    capture: SYSTEM_AUTO_ATTACHED
+    requiredness: REQUIRED_SYSTEM_CONTEXT
+    customer_reentry: false
+    future_role_fields:
+    - product_family
+    - material
+    - grade
+    - diameter
+    - brand
+    - thickness
+    - finish_or_color
+    - length
+    - canonical_product_reference_when_available
+    - canonical_variant_reference_when_available
+    - source_page_path
+    value_population_performed: false
+    absent_or_deferred_values_may_be_inferred: false
+    authority_ts: '1787401309.508679'
+city_reconciliation:
+  payload_source_ts: '1787398832.469889'
+  payload_value: REQUIRED
+  content_source_ts: '1787400933.711809'
+  content_value: VISIBLE
+  privacy_source_ts: '1787401309.508679'
+  privacy_value: OPTIONAL_CONDITIONAL
+  effective_value: OPTIONAL_CONDITIONAL
+  unconditional_required: false
+  operational_usefulness_evidenced: false
+  source_rule: LATER_SAME_FOUNDER_SAME_SCOPE_MORE_SPECIFIC_PRIVACY_CONTROL
+future_payload_contract:
+  record_creation_performed: false
+  future_fields:
+  - field_id: inquiry_id
+    owner: INQUIRY_DATA_MODEL
+    current_state: NOT_MINTED
+  - field_id: created_at
+    owner: INQUIRY_DATA_MODEL
+    current_state: NOT_CAPTURED
+  - field_id: source_channel
+    owner: INQUIRY_DATA_MODEL
+    future_constant: website
+  - field_id: source_page_path
+    owner: INQUIRY_DATA_MODEL
+    capture_rule: PATH_ONLY_NO_QUERY_FRAGMENT_OR_PII
+  - field_id: consent_privacy_state
+    owner: PRIVACY_AUTHORITY_PENDING
+    current_state: MISSING_AUTHORITY_INPUT
+  - field_id: payload_schema_version_reference
+    owner: INQUIRY_DATA_MODEL
+    current_state: MISSING_AUTHORITY_INPUT
+  - field_id: consent_policy_version_reference
+    owner: PRIVACY_AUTHORITY_PENDING
+    current_state: MISSING_AUTHORITY_INPUT
+  - field_id: consent_timestamp
+    owner: INQUIRY_DATA_MODEL
+    current_state: NOT_CAPTURED
+  - field_id: minimized_customer_contact
+    owner: INQUIRY_DATA_MODEL
+    current_state: NO_RECORD
+  - field_id: immutable_product_selection_snapshot
+    owner: PRODUCT_CORE_DYNAMIC_REFERENCE
+    current_state: NO_RECORD
+  - field_id: inquiry_intent
+    owner: INQUIRY_DATA_MODEL
+    current_state: NO_RECORD
+  - field_id: optional_quantity
+    owner: INQUIRY_DATA_MODEL
+    current_state: NO_RECORD
+    unit_may_be_guessed: false
+  - field_id: optional_quantity_unit
+    owner: INQUIRY_DATA_MODEL
+    current_state: NO_RECORD
+    unknown_unit_must_remain_unknown: true
+  - field_id: optional_notes
+    owner: INQUIRY_DATA_MODEL
+    current_state: NO_RECORD
+  - field_id: operator_workflow
+    owner: INQUIRY_WORKFLOW
+    current_state: NOT_IMPLEMENTED
+    future_required_roles:
+    - contact_history
+    - contact_attempts_and_results
+    - customer_provided_corrections
+    - requested_quantity
+    - requested_unit
+    - intended_use_when_operationally_useful
+    - current_state
+    - owner_reference
+    - assignee_reference
+    - fallback_queue_reference
+    - routing_reference
+    - escalation_reference
+    - reopen_authority_reference
+    - next_action
+    - quote_handoff_status
+    - supplied_city_when_customer_provided
+    unresolved_role_values_state: MISSING_AUTHORITY_INPUT
+  each_field_owner_separate_and_no_authority_transfer: true
+inquiry_record_policy:
+  record_creation_performed: false
+  inquiry_or_customer_id_minted: false
+  inquiry_is_quote_reservation_order_or_payment: false
+  source_page_capture: PATH_REFERENCE_ONLY_NO_QUERY_FRAGMENT_OR_PII
+  customer_snapshot_required_if_later_implemented: true
+  product_snapshot_required_if_later_implemented: true
+  immutable_transition_audit_fields:
+  - previous_state
+  - new_state
+  - actor_reference
+  - timestamp
+  - reason_reference
+  attachments: DISABLED_NOT_AUTHORIZED
+state_planes:
+  inquiry_lifecycle:
+    owner: INQUIRY_WORKFLOW
+    implementation_state: NOT_IMPLEMENTED
+    repository_workflow_direction: FOUNDER_APPROVED
+    operational_transition_configuration_state: MISSING_AUTHORITY_INPUT
+  lead_stage:
+    owner: GOVERNED_INQUIRY_LEAD_RECORD
+    implementation_state: NOT_IMPLEMENTED
+    automatic_transitions: false
+  crm_synchronization:
+    owner: FUTURE_CRM_INTEGRATION_UNSELECTED
+    implementation_state: NOT_CONFIGURED
+    provider_selected: false
+  customer_identity:
+    owner: AUTHORITY_PENDING_NO_RECORD
+    implementation_state: NOT_IMPLEMENTED
+    automatic_merge: false
+  quotation:
+    owner: SEPARATE_PRIVATE_COMMERCIAL_CONTEXT
+    implementation_state: NOT_AUTHORIZED
+lead_stage_vocabulary:
+  state: REPOSITORY_REQUIREMENT_ONLY
+  repository_workflow_direction: FOUNDER_APPROVED
+  ordered_prefix:
+  - NEW
+  - CONTACTED
+  - QUALIFIED
+  - SUPPLY_CHECK
+  - QUOTE_PREPARED
+  terminal_outcomes:
+  - WON
+  - LOST
+  - CLOSED
+  operational_transition_configuration_state: MISSING_AUTHORITY_INPUT
+  implementation_state: NOT_IMPLEMENTED
+  automatic_transition: false
+  quote_prepared_creates_quote_or_value: false
+  lost_closed_reason_vocabulary_state: MISSING_AUTHORITY_INPUT
+  public_response_sla_created: false
+  missed_lead_visibility_required: true
+  contacted_requirements:
+    contact_attempt_and_result_recorded: true
+    customer_provided_corrections_only: true
+  qualified_requirements:
+    intended_use_only_when_operationally_useful: true
+    invalid_configuration_rule: RECORD_UNRESOLVED_AND_REQUEST_CLARIFICATION_NEVER_FABRICATE
+    requested_quantity_and_unit_recorded_when_provided: true
+    unit_may_be_guessed: false
+  terminal_meanings:
+    WON: CUSTOMER_ACCEPTED_COMMERCIAL_OFFER_FUTURE_ORDER_PROCESS_ONLY
+    LOST: COMMERCIAL_OPPORTUNITY_LOST_REASON_WHERE_USEFUL
+    CLOSED: DUPLICATE_INVALID_SPAM_UNREACHABLE_OR_INTENTIONALLY_CLOSED_WITHOUT_SALE
+  supplier_detail_collection: DEFERRED_NOT_IN_FIRST_SLICE
+  response_time_measurement: CREATED_AT_TO_FIRST_REAL_OPERATOR_ACTION_REQUIREMENT_ONLY_NOT_PUBLIC_SLA
+  minimum_operator_screen_roles:
+  - customer_and_contact
+  - source
+  - selected_product_configuration
+  - requested_quantity
+  - requested_unit
+  - city_when_customer_provided
+  - notes_when_customer_provided
+  - lifecycle_state
+  - timestamps
+  - contact_history
+  - current_next_action
+  - quote_handoff_status
+  stage_meanings:
+    NEW:
+      meaning: WEBSITE_INQUIRY_ONLY_NOT_QUOTE_RESERVATION_ORDER_OR_PAYMENT
+      original_payload_roles_preserved:
+      - customer_submitted_fields
+      - source
+      - product_context
+      - created_at
+      - consent_state
+    SUPPLY_CHECK:
+      meaning: MANUAL_CHECK_BEFORE_ANY_COMMERCIAL_COMMITMENT
+      inferred_internal_or_public_stock_availability_eta_sla_permanent_supply: PROHIBITED
+      canonical_product_or_supply_truth_effect: false
+    QUOTE_PREPARED:
+      meaning: CURRENT_COMMERCIAL_INPUTS_AND_TERMS_AVAILABLE_FOR_SEPARATE_QUOTE_PROCESS
+      price_validity_delivery_and_terms: QUOTE_ONLY
+      projected_into_product_or_availability: false
+      quote_or_value_created_here: false
+  response_priority:
+    requirement: ACKNOWLEDGE_AND_CONTACT_NEW_REAL_LEADS_QUICKLY_DURING_OPERATING_HOURS
+    operating_hours_state: MISSING_AUTHORITY_INPUT
+    public_sla_created: false
+  workflow_source_allowed_metrics:
+  - inquiry_count
+  - valid_leads
+  - contacted_leads
+  - qualified_leads
+  - quotes
+  - won
+  - lost
+  - first_response_time
+  - lifecycle_conversions
+supply_check_policy:
+  states:
+  - CHECK_REQUIRED
+  - CHECKED_CAN_PROCEED
+  - CHECKED_CANNOT_PROCEED
+  internal_operational_context_only: true
+  evidence_reviewer_timestamp_required: true
+  canonical_or_public_availability_effect: false
+  stock_eta_sla_supplier_truth_effect: false
+deduplication_delivery:
+  matching_creates_review_candidates_only: true
+  automatic_merge_prohibited_identifiers:
+  - name
+  - mobile
+  - email
+  - organization
+  - cookie
+  - device
+  - shared_identifier
+  idempotency_and_replay_control_required: true
+  exact_idempotency_algorithm_state: MISSING_AUTHORITY_INPUT
+  safe_retry_required: true
+  failure_must_not_silently_lose_allowed_fields: true
+  export_requires_explicit_field_allowlist_role_purpose_approval_audit: true
+consent_privacy:
+  owner: SECURITY_PRIVACY
+  state: REPOSITORY_REQUIREMENT_ONLY
+  implementation_state: NOT_IMPLEMENTED
+  inquiry_processing_disclosure_required: true
+  exact_approved_text_version_legal_basis_state: MISSING_AUTHORITY_INPUT
+  marketing_consent: SEPARATE_OPTIONAL_UNPRECHECKED
+  retention_deletion_anonymization_correction_state: MISSING_AUTHORITY_INPUT
+  pii_in_url_log_analytics_fixture: PROHIBITED
+  privacy_page_link_required: true
+  privacy_page_minimum_content_state: REPOSITORY_REQUIREMENT_ONLY_EXTERNAL_INPUTS_MISSING
+  privacy_page_minimum_roles:
+  - data_categories
+  - collection_purpose
+  - contact_and_inquiry_processing_use
+  - basic_retention_principle
+  - operational_access_roles
+  - correction_and_removal_request_path
+form_security_requirements:
+  owner: SECURITY_PRIVACY
+  state: REPOSITORY_REQUIREMENT_ONLY
+  implementation_state: NOT_IMPLEMENTED
+  verification_state: NOT_VERIFIED
+  https_required: true
+  server_side_validation_authoritative: true
+  client_validation_convenience_only: true
+  csrf_or_nonce_required: true
+  low_friction_rate_limit_and_antispam_required: true
+  visible_captcha_only_if_abuse_requires: true
+  all_input_untrusted_and_output_escaped: true
+  secrets_tokens_stack_traces_in_public_errors: PROHIBITED
+  duplicate_submit_suppression_required: true
+  success_means_inquiry_accepted_only: true
+  safe_retry_and_contact_fallback_required: true
+  staging_verification_state: NOT_RUN
+  malformed_or_empty_required_field_rejection_required: true
+  clear_persian_rtl_error_messages_required: true
+  safe_entered_value_preservation_on_failure_required: true
+  clear_success_confirmation_required: true
+  customer_safe_reference_if_supported: REQUIREMENT_ONLY_NOT_INTERNAL_CRM_ID
+  public_client_internal_crm_id_supplier_private_price_availability_evidence_operator_notes: PROHIBITED
+  public_trust_prohibitions:
+    unsupported_badges: PROHIBITED
+    fake_compliance_logos: PROHIBITED
+    fake_guarantees: PROHIBITED
+    one_hundred_percent_secure_claim: PROHIBITED
+    fabricated_certifications: PROHIBITED
+  staging_public_launch_gate:
+    owner: SECURITY_PRIVACY
+    state: NOT_RUN
+    verification_requirements:
+    - HTTPS
+    - SERVER_VALIDATION
+    - ANTI_SPAM
+    - ERROR_HANDLING
+    - PRIVACY_DISCLOSURE
+    - SAFE_CRM_HANDOFF
+    public_go_live_allowed: false
+    security_privacy_gate_ready: false
+analytics_boundary:
+  state: REPOSITORY_REQUIREMENT_ONLY
+  implementation_state: NOT_IMPLEMENTED
+  configuration_state: MISSING_AUTHORITY_INPUT
+  events_emitted: false
+  core_event_vocabulary:
+  - page_view
+  - product_family_view
+  - product_201_51_view
+  - variant_selector_interaction
+  - valid_variant_completed
+  - inquiry_cta_click
+  - inquiry_form_start
+  - inquiry_submit_success
+  - call_cta_click
+  - contacted
+  - qualified
+  - supply_check_started
+  - quote_prepared
+  - won
+  - lost
+  - closed
+  primary_kpi_vocabulary:
+  - Product page → Inquiry CTA rate
+  - Inquiry form start → submit completion rate
+  - Product page → submitted inquiry conversion rate
+  - Inquiry → Contacted rate
+  - Contacted → Qualified rate
+  - Qualified → Quote Prepared rate
+  - Quote Prepared → Won rate
+  - Median response time from NEW → CONTACTED
+  - Lead source / landing page contribution
+  - Mobile vs desktop conversion
+  secondary_diagnostic_vocabulary:
+  - Variant selector completion/drop-off
+  - CTA location performance (hero / sticky mobile / inline)
+  - 404 incidence
+  - Top exit pages
+  - Form validation failures
+  - Contact CTA usage
+  non_success_alone_metrics:
+  - raw pageviews
+  - session count
+  - time-on-site
+  - bounce rate
+  - impressions without downstream inquiry value
+  minimum_payload_roles:
+  - timestamp
+  - anonymous_or_session_identifier
+  - page_or_template_identifier
+  - product_family_or_bounded_product_context
+  - selected_valid_variant_identifiers_when_applicable
+  - cta_or_source_position
+  - device_class
+  - referrer_source_or_utm_if_available
+  - generated_lead_id_only_after_successful_submit
+  privacy_conditional_payload_roles:
+  - anonymous_or_session_identifier
+  - device_class
+  - referrer_source_or_utm_if_available
+  review_cadence:
+    first_launch_week: DAILY_OPERATIONAL_CHECK
+    stabilization: WEEKLY_FUNNEL_REVIEW
+    later: MONTHLY_TREND_REVIEW
+  phase_1_success_criterion:
+    state: REPOSITORY_REQUIREMENT_ONLY
+    traffic_volume_alone_is_success: false
+    measurable_path:
+    - visitor
+    - valid_product_context
+    - inquiry
+    - qualified_lead
+    - quote
+    - outcome
+    result_observed: false
+  non_pii_event_references_only: true
+  commercial_funnel_truth_owner: GOVERNED_INQUIRY_LEAD_RECORD_ONLY
+  analytics_owns_policy_product_or_commercial_truth: false
+  sensitive_pii_when_lead_id_suffices: PROHIBITED
+  fabricated_benchmark_revenue_or_conversion_result: PROHIBITED
+  raw_name_mobile_city_notes_consent_internal_or_supplier_data: PROHIBITED
+  raw_or_query_url: PROHIBITED
+missing_authority_inputs:
+- APPROVED_PRIVACY_CONSENT_PERSIAN_TEXT_VERSION_AND_LEGAL_BASIS
+- RETENTION_DELETION_ANONYMIZATION_CORRECTION_AND_ACCESS_POLICY
+- IRANIAN_MOBILE_ACCEPTED_FORMATS_AND_NORMALIZATION
+- NAMED_OPERATIONAL_OWNER_ASSIGNEES_FALLBACK_ROUTING_ESCALATION_REOPEN_AUTHORITY
+- ROLE_OBJECT_FIELD_EXPORT_PERMISSION_MATRIX
+- LOST_CLOSED_REASON_VOCABULARY
+- NOTIFICATION_RECIPIENTS_TEMPLATES_AND_MINIMIZED_PAYLOAD
+- CRM_FORM_SMTP_ANTISPAM_ANALYTICS_PROVIDER_VERSION_LICENSE_PROVENANCE
+- ENDPOINT_AND_SECRET_REFERENCE_MODEL
+- FIELD_MAPPING_RETRY_AND_RECONCILIATION
+- DEDUPE_IDEMPOTENCY_AND_RATE_THRESHOLDS
+- SECURITY_AND_PRIVACY_ACCEPTANCE
+- RUNTIME_TARGET_AND_CONFIGURATION
+- OBSERVED_STAGING_END_TO_END_EVIDENCE
+no_claim_boundaries:
+  inquiry_customer_or_crm_record_population: false
+  product_combination_sku_brand_color_mass_mutation: false
+  availability_price_stock_eta_sla_supplier_truth: false
+  quote_reservation_order_payment_creation: false
+  crm_form_smtp_analytics_provider_selection: false
+  endpoint_credential_or_secret_value: false
+  wordpress_woocommerce_mutation: false
+  runtime: false
+  staging: false
+  production: false
+  deployment_or_publication: false
+  gate_transition: false
+  merge_or_auto_merge: false
+  branch_deletion: false
+  m4_or_successor_mission: false
+gate_snapshot:
+  eligible: false
+  met_count: 5
+  unmet_count: 7
+  total: 12
+  blockers:
+  - RIGHTS_SAFE_MEDIA_READY
+  - INQUIRY_CRM_FLOW_READY
+  - SECURITY_PRIVACY_GATE_READY
+  - SEO_INDEXING_GATE_READY
+  - MOBILE_PERFORMANCE_GATE_READY
+  - STAGING_ACCEPTANCE_PASS
+  - PRODUCTION_FOUNDER_GO
+c002_snapshot:
+  readiness: 6/9 / NOT_READY
+  founder_selection_ready: false
+  candidate_count: 0
+  supply_evidence: SUBMITTED_REVIEW_INCOMPLETE
+  photo_content_readiness: MISSING_EVIDENCE
+  fulfillment_risk: SUBMITTED_REVIEW_INCOMPLETE
