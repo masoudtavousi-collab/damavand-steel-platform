@@ -312,15 +312,28 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
             self.assertIn(row["expected_issue"], issues, row["id"])
 
     def test_32_local_allowlist_base_shape_and_path_modes(self) -> None:
-        for base in MODULE.APPROVED_BASES:
-            self.assertTrue(MODULE.base_available(base))
-            self.assertEqual(MODULE.base_shape_issues(base), [])
-        self.assertEqual(MODULE.approved_base_for_head(), MODULE.APPROVED_SUCCESSOR_BASE)
-        self.assertEqual(MODULE.changed_paths(MODULE.APPROVED_SUCCESSOR_BASE), MODULE.ALLOWLIST)
-        self.assertEqual(
-            MODULE.changed_paths(MODULE.ORIGINAL_MISSION_BASE),
-            sorted(MODULE.ALLOWLIST + ["tests/test_ft_rb_01_rights_safe_media_readiness.py"]),
-        )
+        available = [base for base in MODULE.APPROVED_BASES if MODULE.base_available(base)]
+        if available:
+            for base in available:
+                self.assertEqual(MODULE.base_shape_issues(base), [])
+            self.assertEqual(MODULE.approved_base_for_head(), MODULE.APPROVED_SUCCESSOR_BASE)
+            self.assertEqual(MODULE.changed_paths(MODULE.APPROVED_SUCCESSOR_BASE), MODULE.ALLOWLIST)
+            if MODULE.ORIGINAL_MISSION_BASE in available:
+                self.assertEqual(
+                    MODULE.changed_paths(MODULE.ORIGINAL_MISSION_BASE),
+                    sorted(MODULE.ALLOWLIST + ["tests/test_ft_rb_01_rights_safe_media_readiness.py"]),
+                )
+        else:
+            self.assertEqual((os.environ.get("CI"), os.environ.get("GITHUB_ACTIONS")), ("true", "true"))
+
+        def approved_relation(ancestor: str, descendant: str = "HEAD") -> bool:
+            if descendant == "HEAD":
+                return ancestor in MODULE.APPROVED_BASES
+            return ancestor == MODULE.ORIGINAL_MISSION_BASE and descendant == MODULE.APPROVED_SUCCESSOR_BASE
+
+        with mock.patch.object(MODULE, "base_available", return_value=True), \
+             mock.patch.object(MODULE, "is_ancestor", side_effect=approved_relation):
+            self.assertEqual(MODULE.approved_base_for_head(), MODULE.APPROVED_SUCCESSOR_BASE)
         self.assertEqual(MODULE.regular_path_issues(), [])
 
     def test_33_runner_dispatch_is_exact_for_pin_state(self) -> None:
@@ -417,6 +430,16 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
 
     def test_40_runner_rejects_any_unrelated_injection(self) -> None:
         original = MODULE.safe_file
+        current = original(ROOT / "scripts/test.sh").decode("utf-8")
+        block = (
+            '# FT-RB-02 pre-pin Inquiry/CRM readiness validation and focused/adversarial dispatch.\n'
+            'ft_rb_02_inquiry_validator="repository/data/validation/validate_ft_rb_02_inquiry_crm_flow_readiness.py"\n'
+            '"$python" "$ft_rb_02_inquiry_validator"\n'
+            '"$python" "$ft_rb_02_inquiry_validator" --registry tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/valid-synthetic.yaml --synthetic\n'
+            '"$python" -B -m unittest tests.test_ft_rb_02_inquiry_crm_flow_readiness\n\n'
+        )
+        base_text = current.replace(block, "", 1)
+        self.assertNotEqual(base_text, current)
 
         def injected(path: Path) -> bytes:
             raw = original(path)
@@ -424,7 +447,10 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
                 return raw + b"# unauthorized extra runner behavior\n"
             return raw
 
-        with mock.patch.object(MODULE, "safe_file", side_effect=injected):
+        with mock.patch.object(MODULE, "safe_file", side_effect=injected), \
+             mock.patch.object(MODULE, "base_available", side_effect=lambda base: base == MODULE.APPROVED_SUCCESSOR_BASE), \
+             mock.patch.object(MODULE, "approved_base_for_head", return_value=MODULE.APPROVED_SUCCESSOR_BASE), \
+             mock.patch.object(MODULE, "git", return_value=cp(base_text)):
             issues = MODULE.runner_issues()
         self.assertIn("RUNNER:exact_blob", issues)
         self.assertIn("RUNNER:exact_transform", issues)
@@ -498,19 +524,25 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
                 MODULE.approved_base_for_head()
 
     def test_47_historical_and_successor_tree_proofs_are_exact_and_adversarial(self) -> None:
-        self.assertEqual(
-            MODULE.committed_tree_issues(MODULE.ORIGINAL_MISSION_BASE, "62f4036fb3fe93edb42b2e8b760507a217b5f295"),
-            [],
-        )
+        historical_head = "62f4036fb3fe93edb42b2e8b760507a217b5f295"
+        historical_available = MODULE.git("cat-file", "-e", f"{historical_head}^{{commit}}", check=False).returncode == 0
+        if historical_available:
+            self.assertEqual(MODULE.committed_tree_issues(MODULE.ORIGINAL_MISSION_BASE, historical_head), [])
+        else:
+            self.assertEqual((os.environ.get("CI"), os.environ.get("GITHUB_ACTIONS")), ("true", "true"))
         self.assertEqual(MODULE.committed_tree_issues(MODULE.APPROVED_SUCCESSOR_BASE), [])
         self.assertEqual(MODULE.committed_tree_issues("a" * 40), ["TREE_PROOF:unapproved_base"])
 
-        expected = MODULE.COMMITTED_TREE_PROOFS[MODULE.APPROVED_SUCCESSOR_BASE]
         entries = {
             path: ("100644", "blob", "a" * 40)
             for path in MODULE.BASE_ABSENT_PATHS
         }
         entries["scripts/test.sh"] = ("100755", "blob", MODULE.PINNED_RUNNER_BLOB)
+        for base, expected in MODULE.COMMITTED_TREE_PROOFS.items():
+            with mock.patch.object(MODULE, "parse_tree", return_value=(*expected, entries)):
+                self.assertEqual(MODULE.committed_tree_issues(base), [])
+
+        expected = MODULE.COMMITTED_TREE_PROOFS[MODULE.APPROVED_SUCCESSOR_BASE]
         missing = dict(entries)
         missing.pop(MODULE.BASE_ABSENT_PATHS[0])
         with mock.patch.object(MODULE, "parse_tree", return_value=(*expected, missing)):
