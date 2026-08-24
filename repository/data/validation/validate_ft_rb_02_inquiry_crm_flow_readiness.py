@@ -74,9 +74,9 @@ PROTECTED_BLOBS = {
     "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/adversarial-remote-ref-schema.json": "a8b538a1eba45260615f6401a54e4c107228b9df",
     "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/mutation-cases.json": "2628100b11263ea2e562ed730aedaa8324f191ee",
     "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/valid-synthetic.yaml": "47b4731a9033eff56caaa74f561f29e0c1e200b5",
-    "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py": "2dc17615baeb31930944f741d621e2bb629fdd3b",
+    "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py": "7fadd2be25edb0ff3a9d60af9fd432620fa3982a",
 }
-VALIDATOR_NORMALIZED_SHA256 = "f41075c10b4ec9386b99822854440ec25c1a8d165403405420fec20b61ecb8a8"
+VALIDATOR_NORMALIZED_SHA256 = "75001121188141ad2a6fdb0114bfee2e6cf5bdeff35bb113fb5560d16c16b790"
 RUNNER_SLOT_START = '"$python" -B -m unittest tests.test_ft_rb_02_inquiry_crm_flow_readiness\n\n'
 RUNNER_SLOT_END = '"$python" repository/data/validation/validate_bp2_data_blueprint.py\n'
 RUNNER_PREFIX_SHA256 = "2bde612096f850be1625d79b494fc5137b6589bf0740d2fc33037983a91b1352"
@@ -552,6 +552,11 @@ def protected_entry_issues(
     validator_source: bytes,
 ) -> list[str]:
     issues: list[str] = []
+    runner = entries.get("scripts/test.sh")
+    if runner is None:
+        issues.append("PROTECTED_RUNNER:missing")
+    elif runner[0] != "100755" or runner[1] != "blob":
+        issues.append("PROTECTED_RUNNER:shape")
     validator_path = "repository/data/validation/validate_ft_rb_02_inquiry_crm_flow_readiness.py"
     for path in PROTECTED_PATHS:
         entry = entries.get(path)

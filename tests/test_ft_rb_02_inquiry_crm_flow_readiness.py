@@ -698,6 +698,12 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
             f"PROTECTED_ARTIFACT:shape:{MODULE.PROTECTED_PATHS[1]}",
             MODULE.protected_entry_issues(linked, validator),
         )
+        non_executable_runner = dict(entries)
+        non_executable_runner["scripts/test.sh"] = ("100644", "blob", "a" * 40)
+        self.assertIn("PROTECTED_RUNNER:shape", MODULE.protected_entry_issues(non_executable_runner, validator))
+        missing_runner = dict(entries)
+        missing_runner.pop("scripts/test.sh")
+        self.assertIn("PROTECTED_RUNNER:missing", MODULE.protected_entry_issues(missing_runner, validator))
 
     def test_53_generic_runner_allows_only_bounded_successor_insertion(self) -> None:
         original = MODULE.safe_file
