@@ -48,15 +48,47 @@ REPAIR_BASE = "1fa127859655f8027aaea9dc84db7b109cc5949d"
 REPAIR_BRANCH = "codex/ft-rb-02-generic-successor-context-repair"
 POST_MERGE_REPAIR_BASE = "bcbc67cbdcb2cbb0757155bb97db0c4acd87d3c7"
 POST_MERGE_REPAIR_BRANCH = "codex/ft-rb-02-post-merge-push-context-repair"
+PATH_PROOF_REPAIR_BASE = "ddea2ffbf209681e7903d76316958f20fb61382f"
+PATH_PROOF_REPAIR_BRANCH = "codex/ft-rb-02-post-merge-push-path-proof-repair"
 AUTHORIZED_REPAIR_CONTEXTS = {
     REPAIR_BASE: REPAIR_BRANCH,
     POST_MERGE_REPAIR_BASE: POST_MERGE_REPAIR_BRANCH,
+    PATH_PROOF_REPAIR_BASE: PATH_PROOF_REPAIR_BRANCH,
 }
 REPAIR_BASES_BY_BRANCH = {branch: base for base, branch in AUTHORIZED_REPAIR_CONTEXTS.items()}
 REPAIR_ALLOWLIST = [
     "repository/data/validation/validate_ft_rb_02_inquiry_crm_flow_readiness.py",
     "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py",
 ]
+REPAIR_TREE_PROOFS = {
+    REPAIR_BASE: (
+        "cd207364c54d1af3c1d475a1fed60d1c0720edde27b8210b47a388847279ba64",
+        657,
+        659,
+        {
+            REPAIR_ALLOWLIST[0]: "574faaafcfd78599b9f33de95e8e49a8f4920025",
+            REPAIR_ALLOWLIST[1]: "b3db92d5b5ee5e92e32e14d48fd7925cbec3aebc",
+        },
+    ),
+    POST_MERGE_REPAIR_BASE: (
+        "cd207364c54d1af3c1d475a1fed60d1c0720edde27b8210b47a388847279ba64",
+        657,
+        659,
+        {
+            REPAIR_ALLOWLIST[0]: "a64d61a72a044f70628ebea4eaa929016b2f3869",
+            REPAIR_ALLOWLIST[1]: "2a455da06fea28de2d11340d6afcdd8b546f6e02",
+        },
+    ),
+    PATH_PROOF_REPAIR_BASE: (
+        "cd207364c54d1af3c1d475a1fed60d1c0720edde27b8210b47a388847279ba64",
+        657,
+        659,
+        {
+            REPAIR_ALLOWLIST[0]: "f74ffcc993f1c502a95331a9cd7268ce700a4828",
+            REPAIR_ALLOWLIST[1]: "062d1af57d57dde6c5d96226901dc4c0365f3174",
+        },
+    ),
+}
 HISTORICAL_CONTEXT = "HISTORICAL_FT_RB_02"
 REPAIR_CONTEXT = "AUTHORIZED_GENERIC_SUCCESSOR_REPAIR"
 SUCCESSOR_CONTEXT = "GENERIC_SUCCESSOR"
@@ -81,9 +113,9 @@ PROTECTED_BLOBS = {
     "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/adversarial-remote-ref-schema.json": "a8b538a1eba45260615f6401a54e4c107228b9df",
     "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/mutation-cases.json": "2628100b11263ea2e562ed730aedaa8324f191ee",
     "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/valid-synthetic.yaml": "47b4731a9033eff56caaa74f561f29e0c1e200b5",
-    "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py": "062d1af57d57dde6c5d96226901dc4c0365f3174",
+    "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py": "064ed8cfca43397d203132699da230a709c80a3d",
 }
-VALIDATOR_NORMALIZED_SHA256 = "812f4cedc8818b01489f4b1e80242c0fa39d66dff3b1d64815407f9394454668"
+VALIDATOR_NORMALIZED_SHA256 = "7ca1d93886a19b464deb0cfe91a299af004ca82c6854e2c68368c36d9070bc63"
 RUNNER_SLOT_START = '"$python" -B -m unittest tests.test_ft_rb_02_inquiry_crm_flow_readiness\n\n'
 RUNNER_SLOT_END = '"$python" repository/data/validation/validate_bp2_data_blueprint.py\n'
 RUNNER_PREFIX_SHA256 = "2bde612096f850be1625d79b494fc5137b6589bf0740d2fc33037983a91b1352"
@@ -516,10 +548,13 @@ def base_shape_issues(base: str) -> list[str]:
     return sorted(issues)
 
 
-def parse_tree(raw: bytes) -> tuple[str, int, int, dict[str, tuple[str, str, str]]]:
+def parse_tree(
+    raw: bytes,
+    excluded_paths: set[str] | None = None,
+) -> tuple[str, int, int, dict[str, tuple[str, str, str]]]:
     if len(raw) > MAX_BYTES or not raw.endswith(b"\0"):
         raise ValueError("tree framing or byte cap")
-    excluded = set(ALLOWLIST)
+    excluded = set(ALLOWLIST) if excluded_paths is None else excluded_paths
     entries: dict[str, tuple[str, str, str]] = {}
     retained: list[bytes] = []
     previous: bytes | None = None
@@ -637,6 +672,37 @@ def committed_tree_issues(base: str, commit: str = "HEAD") -> list[str]:
     return sorted(issues)
 
 
+def repair_delta_issues(base: str, commit: str = "HEAD") -> list[str]:
+    expected = REPAIR_TREE_PROOFS.get(base)
+    if expected is None:
+        return ["REPAIR_TREE_PROOF:unapproved_base"]
+    try:
+        result = subprocess.run(
+            ["git", "ls-tree", "-rz", "--full-tree", commit],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+        )
+        retained_digest, retained_count, total_count, entries = parse_tree(
+            result.stdout,
+            set(REPAIR_ALLOWLIST),
+        )
+    except Exception as exc:
+        return [f"REPAIR_TREE_PROOF:{type(exc).__name__}"]
+    issues: list[str] = []
+    if (retained_digest, retained_count, total_count) != expected[:3]:
+        issues.append("REPAIR_TREE_PROOF:digest_or_count")
+    for path, base_oid in expected[3].items():
+        entry = entries.get(path)
+        if entry is None:
+            issues.append(f"REPAIR_TREE_PROOF:missing:{path}")
+        elif entry[0] != "100644" or entry[1] != "blob":
+            issues.append(f"REPAIR_TREE_PROOF:shape:{path}")
+        elif entry[2] == base_oid:
+            issues.append(f"REPAIR_TREE_PROOF:unchanged:{path}")
+    return sorted(issues)
+
+
 def regular_path_issues() -> list[str]:
     issues: list[str] = []
     for path in ALLOWLIST:
@@ -671,7 +737,6 @@ def valid_merge_push_relation(
     commits: list[dict[str, Any]],
     ids: list[str],
     tree_oid: str,
-    path_metadata_presence: bool | None,
 ) -> bool:
     if (
         not is_oid(before)
@@ -684,11 +749,7 @@ def valid_merge_push_relation(
     ):
         return False
     if len(commits) == 1:
-        return (
-            ids == [after]
-            and commits[0].get("tree_id") == tree_oid
-            and path_metadata_presence is True
-        )
+        return ids == [after] and commits[0].get("tree_id") == tree_oid
     return True
 
 
@@ -762,6 +823,7 @@ def ci_context_issues() -> list[str]:
             elif context == REPAIR_CONTEXT:
                 if type(changed_files) is not int or changed_files != len(REPAIR_ALLOWLIST):
                     raise RuntimeError("repair pull exactness")
+                issues.extend(repair_delta_issues(base_sha))
                 issues.extend(committed_tree_issues(APPROVED_SUCCESSOR_BASE))
                 issues.extend(successor_protected_issues())
                 issues.extend(regular_path_issues())
@@ -809,28 +871,26 @@ def ci_context_issues() -> list[str]:
             if len(set(ids)) != len(ids) or ids[-1] != after or commits[-1].get("tree_id") != tree_oid:
                 raise RuntimeError("push relations")
             if before in APPROVED_BASES:
-                if not valid_merge_push_relation(before, after, parents, commits, ids, tree_oid, path_metadata_presence):
+                if not valid_merge_push_relation(before, after, parents, commits, ids, tree_oid):
                     raise RuntimeError("integration source relation")
                 if path_metadata_presence and (added != set(BASE_ABSENT_PATHS) or modified != {"scripts/test.sh"} or removed):
                     raise RuntimeError("integration path metadata")
                 issues.extend(committed_tree_issues(before))
             elif before in AUTHORIZED_REPAIR_CONTEXTS:
-                if not valid_merge_push_relation(before, after, parents, commits, ids, tree_oid, path_metadata_presence):
+                if not valid_merge_push_relation(before, after, parents, commits, ids, tree_oid):
                     raise RuntimeError("repair integration source relation")
-                if not path_metadata_presence or added or modified != set(REPAIR_ALLOWLIST) or removed:
+                if path_metadata_presence and (added or modified != set(REPAIR_ALLOWLIST) or removed):
                     raise RuntimeError("repair integration path metadata")
+                issues.extend(repair_delta_issues(before))
                 issues.extend(committed_tree_issues(APPROVED_SUCCESSOR_BASE))
                 issues.extend(successor_protected_issues())
                 issues.extend(regular_path_issues())
             else:
                 direct = parents == [before] and ids == [after] and commits[0].get("distinct") is True
-                merged = valid_merge_push_relation(before, after, parents, commits, ids, tree_oid, path_metadata_presence)
+                merged = valid_merge_push_relation(before, after, parents, commits, ids, tree_oid)
                 if not (direct or merged):
                     raise RuntimeError("future integration parent relation")
-                if not path_metadata_presence:
-                    raise RuntimeError("future path metadata missing")
-                touched = added | modified | removed
-                if touched & set(PROTECTED_PATHS):
+                if path_metadata_presence and (added | modified | removed) & set(PROTECTED_PATHS):
                     raise RuntimeError("future protected path metadata")
                 issues.extend(successor_protected_issues())
                 issues.extend(regular_path_issues())
@@ -863,6 +923,8 @@ def git_context_issues() -> list[str]:
         repair_base = REPAIR_BASES_BY_BRANCH.get(current_branch())
         if repair_base is None or diff_paths(repair_base) != REPAIR_ALLOWLIST:
             issues.append("REPAIR_ALLOWLIST_ACTUAL_DIFF")
+        if repair_base is not None:
+            issues.extend(repair_delta_issues(repair_base))
         issues.extend(committed_tree_issues(APPROVED_SUCCESSOR_BASE))
         issues.extend(successor_protected_issues())
     else:
