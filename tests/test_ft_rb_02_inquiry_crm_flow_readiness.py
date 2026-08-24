@@ -317,12 +317,28 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
             for base in available:
                 self.assertEqual(MODULE.base_shape_issues(base), [])
             self.assertEqual(MODULE.approved_base_for_head(), MODULE.APPROVED_SUCCESSOR_BASE)
-            self.assertEqual(MODULE.changed_paths(MODULE.APPROVED_SUCCESSOR_BASE), MODULE.ALLOWLIST)
+            historical_head = "e929e99066baebb5d3d7eb23e469e0e23213ab26"
+            historical_paths = sorted(
+                line
+                for line in MODULE.git(
+                    "diff",
+                    "--name-only",
+                    f"{MODULE.APPROVED_SUCCESSOR_BASE}...{historical_head}",
+                ).stdout.splitlines()
+                if line
+            )
+            self.assertEqual(historical_paths, MODULE.ALLOWLIST)
             if MODULE.ORIGINAL_MISSION_BASE in available:
-                self.assertEqual(
-                    MODULE.changed_paths(MODULE.ORIGINAL_MISSION_BASE),
-                    sorted(MODULE.ALLOWLIST + ["tests/test_ft_rb_01_rights_safe_media_readiness.py"]),
+                original_paths = sorted(
+                    line
+                    for line in MODULE.git(
+                        "diff",
+                        "--name-only",
+                        f"{MODULE.ORIGINAL_MISSION_BASE}...{historical_head}",
+                    ).stdout.splitlines()
+                    if line
                 )
+                self.assertEqual(original_paths, sorted(MODULE.ALLOWLIST + ["tests/test_ft_rb_01_rights_safe_media_readiness.py"]))
         else:
             self.assertEqual((os.environ.get("CI"), os.environ.get("GITHUB_ACTIONS")), ("true", "true"))
 
@@ -335,6 +351,39 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
              mock.patch.object(MODULE, "is_ancestor", side_effect=approved_relation):
             self.assertEqual(MODULE.approved_base_for_head(), MODULE.APPROVED_SUCCESSOR_BASE)
         self.assertEqual(MODULE.regular_path_issues(), [])
+
+        common = [
+            mock.patch.object(MODULE, "clean_checkout", return_value=True),
+            mock.patch.object(MODULE, "regular_path_issues", return_value=[]),
+        ]
+        with common[0], common[1], \
+             mock.patch.object(MODULE, "local_context", return_value=MODULE.HISTORICAL_CONTEXT), \
+             mock.patch.object(MODULE, "approved_base_for_head", return_value=MODULE.APPROVED_SUCCESSOR_BASE), \
+             mock.patch.object(MODULE, "base_shape_issues", return_value=[]), \
+             mock.patch.object(MODULE, "changed_paths", return_value=MODULE.ALLOWLIST):
+            self.assertEqual(MODULE.git_context_issues(), [])
+        with mock.patch.object(MODULE, "clean_checkout", return_value=True), \
+             mock.patch.object(MODULE, "regular_path_issues", return_value=[]), \
+             mock.patch.object(MODULE, "local_context", return_value=MODULE.REPAIR_CONTEXT), \
+             mock.patch.object(MODULE, "current_branch", return_value=MODULE.PATH_PROOF_REPAIR_BRANCH), \
+             mock.patch.object(MODULE, "diff_paths", return_value=MODULE.REPAIR_ALLOWLIST), \
+             mock.patch.object(MODULE, "repair_delta_issues", return_value=[]), \
+             mock.patch.object(MODULE, "committed_tree_issues", return_value=[]), \
+             mock.patch.object(MODULE, "successor_protected_issues", return_value=[]):
+            self.assertEqual(MODULE.git_context_issues(), [])
+        with mock.patch.object(MODULE, "clean_checkout", return_value=True), \
+             mock.patch.object(MODULE, "regular_path_issues", return_value=[]), \
+             mock.patch.object(MODULE, "local_context", return_value=MODULE.SUCCESSOR_CONTEXT), \
+             mock.patch.object(MODULE, "successor_protected_issues", return_value=[]):
+            self.assertEqual(MODULE.git_context_issues(), [])
+        with mock.patch.object(MODULE, "clean_checkout", return_value=True), \
+             mock.patch.object(MODULE, "regular_path_issues", return_value=[]), \
+             mock.patch.object(MODULE, "local_context", return_value=MODULE.SUCCESSOR_CONTEXT), \
+             mock.patch.object(MODULE, "successor_protected_issues", return_value=["PROTECTED_ARTIFACT:attack"]):
+            self.assertEqual(MODULE.git_context_issues(), ["PROTECTED_ARTIFACT:attack"])
+        with mock.patch.object(MODULE, "clean_checkout", return_value=True), \
+             mock.patch.object(MODULE, "local_context", side_effect=RuntimeError("ambiguous successor")):
+            self.assertEqual(MODULE.git_context_issues(), ["GIT_CONTEXT:RuntimeError"])
 
     def test_33_runner_dispatch_is_exact_for_pin_state(self) -> None:
         self.assertEqual(MODULE.runner_issues(), [])
@@ -512,10 +561,41 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
         self.assertEqual(MODULE.PROVISIONAL_RUNNER_BLOB, "db7cfa5f44072e43cb7fb0cf8b55d9c0ffa68c91")
         self.assertEqual(MODULE.PINNED_RUNNER_BLOB, "f8ebec998a8fb21e2468e5f5a762a8c122a4af46")
         text = (ROOT / "scripts/test.sh").read_text(encoding="utf-8")
-        pinned = text.replace(" --allow-unpinned", "")
-        raw = pinned.encode()
+        prefix, remainder = text.split(MODULE.RUNNER_SLOT_START, 1)
+        _, suffix = remainder.split(MODULE.RUNNER_SLOT_END, 1)
+        historical = prefix + MODULE.RUNNER_SLOT_START + MODULE.RUNNER_SLOT_END + suffix
+        raw = historical.encode()
         expected = __import__("hashlib").sha1(f"blob {len(raw)}\0".encode() + raw).hexdigest()
         self.assertEqual(expected, MODULE.PINNED_RUNNER_BLOB)
+
+        original = MODULE.safe_file
+
+        def check(candidate: str, context: str) -> list[str]:
+            def supplied(path: Path) -> bytes:
+                if path == ROOT / "scripts/test.sh":
+                    return candidate.encode("utf-8")
+                return original(path)
+
+            with mock.patch.object(MODULE, "safe_file", side_effect=supplied), \
+                 mock.patch.object(MODULE, "base_available", return_value=False):
+                return MODULE.runner_issues(context)
+
+        self.assertEqual(check(historical, MODULE.HISTORICAL_CONTEXT), [])
+        self.assertEqual(check(text, MODULE.SUCCESSOR_CONTEXT), [])
+        legitimate = text.replace(
+            MODULE.RUNNER_SLOT_START,
+            MODULE.RUNNER_SLOT_START + 'future_validator="repository/data/validation/validate_repository_index.py"\n"$python" "$future_validator"\n\n',
+            1,
+        )
+        self.assertEqual(check(legitimate, MODULE.SUCCESSOR_CONTEXT), [])
+        duplicate = text.replace(
+            MODULE.RUNNER_SLOT_START,
+            MODULE.RUNNER_SLOT_START + 'ft_rb_02_inquiry_validator="duplicate"\n\n',
+            1,
+        )
+        self.assertIn("RUNNER:successor_insertion", check(duplicate, MODULE.SUCCESSOR_CONTEXT))
+        self.assertIn("RUNNER:successor_prefix", check("# changed\n" + text, MODULE.SUCCESSOR_CONTEXT))
+        self.assertIn("RUNNER:successor_suffix", check(text + "# changed\n", MODULE.SUCCESSOR_CONTEXT))
 
     def test_45_coordinated_contract_schema_registry_weakening_rejected(self) -> None:
         contract, schema, registry = documents()
