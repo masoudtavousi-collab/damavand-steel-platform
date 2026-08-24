@@ -125,9 +125,9 @@ PROTECTED_BLOBS = {
     "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/adversarial-remote-ref-schema.json": "a8b538a1eba45260615f6401a54e4c107228b9df",
     "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/mutation-cases.json": "2628100b11263ea2e562ed730aedaa8324f191ee",
     "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/valid-synthetic.yaml": "47b4731a9033eff56caaa74f561f29e0c1e200b5",
-    "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py": "85c2501c3e8241e6b9849f5652d27bd9db8f225b",
+    "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py": "035137902e4f8db199981673ba7817a1daa69a9f",
 }
-VALIDATOR_NORMALIZED_SHA256 = "08b82106b935eabb01213f2fb6547212c16a6278e823e7b91b838fd6d4bbe68a"
+VALIDATOR_NORMALIZED_SHA256 = "a9bb05287a5329f83b5a1c7ce4f218139859121ca1c5e1b4e288ff6623d69d4b"
 RUNNER_SLOT_START = '"$python" -B -m unittest tests.test_ft_rb_02_inquiry_crm_flow_readiness\n\n'
 RUNNER_SLOT_END = '"$python" repository/data/validation/validate_bp2_data_blueprint.py\n'
 RUNNER_PREFIX_SHA256 = "2bde612096f850be1625d79b494fc5137b6589bf0740d2fc33037983a91b1352"
