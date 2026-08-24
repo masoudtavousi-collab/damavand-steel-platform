@@ -359,7 +359,20 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
         repo = {"full_name": MODULE.REPOSITORY_FULL_NAME}
         return {"repository": repo, "pull_request": {"changed_files": count, "base": {"sha": base, "ref": "main", "repo": repo}, "head": {"sha": head, "ref": branch, "repo": repo}}}
 
-    def _run_ci(self, event_name: str, event: dict, checkout: str, parents: list[str], *, tree: str = "d" * 40, clean: bool = True) -> list[str]:
+    def _run_ci(
+        self,
+        event_name: str,
+        event: dict,
+        checkout: str,
+        parents: list[str],
+        *,
+        tree: str = "d" * 40,
+        clean: bool = True,
+        tree_issues: list[str] | None = None,
+        protected_issues: list[str] | None = None,
+        direct_base_available: bool = True,
+        direct_ancestor: bool = True,
+    ) -> list[str]:
         def fake_git(*args: str, **_kwargs: object) -> subprocess.CompletedProcess[str]:
             if args == ("rev-parse", "HEAD"):
                 return cp(checkout + "\n")
@@ -369,7 +382,10 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
              mock.patch.object(MODULE, "load_event", return_value=event), \
              mock.patch.object(MODULE, "git", side_effect=fake_git), \
              mock.patch.object(MODULE, "raw_commit", return_value=(tree, parents)), \
-             mock.patch.object(MODULE, "committed_tree_issues", return_value=[]), \
+             mock.patch.object(MODULE, "committed_tree_issues", return_value=tree_issues or []), \
+             mock.patch.object(MODULE, "successor_protected_issues", return_value=protected_issues or []), \
+             mock.patch.object(MODULE, "commit_available", return_value=direct_base_available), \
+             mock.patch.object(MODULE, "is_ancestor", return_value=direct_ancestor), \
              mock.patch.object(MODULE, "regular_path_issues", return_value=[]):
             return MODULE.ci_context_issues()
 
@@ -391,7 +407,8 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
             self.assertEqual(self._run_ci("push", event, merge, [base, source], tree=tree), [])
         before, later = "1" * 40, "2" * 40
         future = {"repository": repo, "ref": "refs/heads/main", "before": before, "after": later, "created": False, "deleted": False, "forced": False,
-                  "commits": [{"id": later, "tree_id": tree, "distinct": True}], "head_commit": {"id": later, "tree_id": tree}}
+                  "commits": [{"id": later, "tree_id": tree, "distinct": True, "added": ["repository-index.txt"], "modified": [], "removed": []}],
+                  "head_commit": {"id": later, "tree_id": tree}}
         self.assertEqual(self._run_ci("push", future, later, [before], tree=tree), [])
 
     def test_38_ci_event_scope_adversaries_fail(self) -> None:
@@ -451,7 +468,7 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
              mock.patch.object(MODULE, "base_available", side_effect=lambda base: base == MODULE.APPROVED_SUCCESSOR_BASE), \
              mock.patch.object(MODULE, "approved_base_for_head", return_value=MODULE.APPROVED_SUCCESSOR_BASE), \
              mock.patch.object(MODULE, "git", return_value=cp(base_text)):
-            issues = MODULE.runner_issues()
+            issues = MODULE.runner_issues(MODULE.HISTORICAL_CONTEXT)
         self.assertIn("RUNNER:exact_blob", issues)
         self.assertIn("RUNNER:exact_transform", issues)
 
@@ -616,6 +633,179 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
         self.assertEqual(registry["c002_snapshot"]["readiness"], "6/9 / NOT_READY")
         self.assertFalse(registry["future_payload_contract"]["record_creation_performed"])
         self.assertTrue(all(value is False for value in registry["no_claim_boundaries"].values()))
+
+    def test_51_context_classifier_is_generic_and_fail_closed(self) -> None:
+        for base in MODULE.APPROVED_BASES:
+            self.assertEqual(MODULE.classify_pr_context(base, MODULE.BRANCH), MODULE.HISTORICAL_CONTEXT)
+        self.assertEqual(MODULE.classify_pr_context(MODULE.REPAIR_BASE, MODULE.REPAIR_BRANCH), MODULE.REPAIR_CONTEXT)
+        generic_pairs = [
+            ("a" * 40, "codex/repository-index-refresh"),
+            ("b" * 40, "automation/quality-ledger-update"),
+        ]
+        for base, branch in generic_pairs:
+            self.assertNotIn(base, MODULE.APPROVED_BASES + (MODULE.REPAIR_BASE,))
+            self.assertEqual(MODULE.classify_pr_context(base, branch), MODULE.SUCCESSOR_CONTEXT)
+        ambiguous = [
+            (MODULE.APPROVED_SUCCESSOR_BASE, "codex/repository-index-refresh"),
+            ("a" * 40, MODULE.BRANCH),
+            (MODULE.REPAIR_BASE, "codex/repository-index-refresh"),
+            ("a" * 40, MODULE.REPAIR_BRANCH),
+            ("not-an-oid", "codex/repository-index-refresh"),
+            ("a" * 40, ""),
+        ]
+        for base, branch in ambiguous:
+            with self.assertRaises(RuntimeError):
+                MODULE.classify_pr_context(base, branch)
+        source = VALIDATOR_PATH.read_text(encoding="utf-8") + Path(__file__).read_text(encoding="utf-8")
+        self.assertNotIn("ft-rb-" + "03", source.lower())
+        self.assertNotIn("ft_rb_" + "03", source.lower())
+
+    def test_52_generic_successor_protected_artifacts_are_exact(self) -> None:
+        raw = subprocess.run(
+            ["git", "ls-tree", "-rz", "--full-tree", "HEAD"],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+        ).stdout
+        _, _, _, entries = MODULE.parse_tree(raw)
+        validator = VALIDATOR_PATH.read_bytes()
+        self.assertEqual(MODULE.protected_entry_issues(entries, validator), [])
+
+        for path in (
+            "repository/data/contracts/ft-rb-02-inquiry-crm-flow-readiness.contract.yaml",
+            "repository/data/schemas/ft-rb-02-inquiry-crm-flow-readiness.schema.json",
+            "repository/data/registries/extensions/ftrb02/inquiry-crm-flow-readiness.yaml",
+            "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py",
+        ):
+            attacked = dict(entries)
+            attacked[path] = ("100644", "blob", "a" * 40)
+            self.assertIn(f"PROTECTED_ARTIFACT:content:{path}", MODULE.protected_entry_issues(attacked, validator))
+
+        validator_path = "repository/data/validation/validate_ft_rb_02_inquiry_crm_flow_readiness.py"
+        self.assertIn(
+            f"PROTECTED_ARTIFACT:content:{validator_path}",
+            MODULE.protected_entry_issues(entries, validator + b"\n# changed\n"),
+        )
+        missing = dict(entries)
+        missing.pop(MODULE.PROTECTED_PATHS[0])
+        self.assertIn(
+            f"PROTECTED_ARTIFACT:missing:{MODULE.PROTECTED_PATHS[0]}",
+            MODULE.protected_entry_issues(missing, validator),
+        )
+        linked = dict(entries)
+        linked[MODULE.PROTECTED_PATHS[1]] = ("120000", "blob", "a" * 40)
+        self.assertIn(
+            f"PROTECTED_ARTIFACT:shape:{MODULE.PROTECTED_PATHS[1]}",
+            MODULE.protected_entry_issues(linked, validator),
+        )
+
+    def test_53_generic_runner_allows_only_bounded_successor_insertion(self) -> None:
+        original = MODULE.safe_file
+        current = original(ROOT / "scripts/test.sh").decode("utf-8")
+
+        def check(text: str) -> list[str]:
+            def supplied(path: Path) -> bytes:
+                if path == ROOT / "scripts/test.sh":
+                    return text.encode("utf-8")
+                return original(path)
+
+            with mock.patch.object(MODULE, "safe_file", side_effect=supplied):
+                return MODULE.runner_issues(MODULE.SUCCESSOR_CONTEXT)
+
+        insertions = [
+            'future_validator="repository/data/validation/validate_repository_index.py"\n"$python" "$future_validator"\n\n',
+            '"$python" -B -m unittest tests.test_quality_ledger\n\n',
+        ]
+        for insertion in insertions:
+            candidate = current.replace(MODULE.RUNNER_SLOT_START, MODULE.RUNNER_SLOT_START + insertion, 1)
+            self.assertEqual(check(candidate), [])
+        self.assertTrue(check(current.replace("ft_rb_02_inquiry_validator=", "changed_ft_rb_02_inquiry_validator=", 1)))
+        self.assertIn("RUNNER:successor_prefix", check("# changed\n" + current))
+        self.assertIn("RUNNER:successor_suffix", check(current + "# changed\n"))
+        duplicate = current.replace(
+            MODULE.RUNNER_SLOT_START,
+            MODULE.RUNNER_SLOT_START + 'ft_rb_02_inquiry_validator="duplicate"\n\n',
+            1,
+        )
+        self.assertIn("RUNNER:successor_insertion", check(duplicate))
+
+    def test_54_repair_and_two_independent_generic_prs_pass(self) -> None:
+        repair_head, repair_merge = "c" * 40, "d" * 40
+        repair = self._pr_event(MODULE.REPAIR_BASE, repair_head, MODULE.REPAIR_BRANCH, len(MODULE.REPAIR_ALLOWLIST))
+        self.assertEqual(self._run_ci("pull_request", repair, repair_head, []), [])
+        self.assertEqual(self._run_ci("pull_request", repair, repair_merge, [MODULE.REPAIR_BASE, repair_head]), [])
+
+        generic = [
+            ("a" * 40, "b" * 40, "codex/repository-index-refresh", 3),
+            ("e" * 40, "f" * 40, "automation/quality-ledger-update", 7),
+        ]
+        for base, head, branch, count in generic:
+            event = self._pr_event(base, head, branch, count)
+            self.assertEqual(self._run_ci("pull_request", event, head, []), [])
+            merge = "9" * 40
+            self.assertEqual(self._run_ci("pull_request", event, merge, [base, head]), [])
+        first = self._pr_event(*generic[0])
+        self.assertTrue(self._run_ci("pull_request", first, generic[0][1], [], protected_issues=["PROTECTED_ARTIFACT:attack"]))
+        self.assertTrue(self._run_ci("pull_request", first, generic[0][1], [], direct_base_available=False))
+        self.assertTrue(self._run_ci("pull_request", first, generic[0][1], [], direct_ancestor=False))
+
+    def test_55_generic_push_metadata_and_protected_paths_fail_closed(self) -> None:
+        before, after, tree = "1" * 40, "2" * 40, "3" * 40
+        repo = {"full_name": MODULE.REPOSITORY_FULL_NAME}
+
+        def event_for(path: str) -> dict:
+            return {
+                "repository": repo,
+                "ref": "refs/heads/main",
+                "before": before,
+                "after": after,
+                "created": False,
+                "deleted": False,
+                "forced": False,
+                "commits": [
+                    {"id": after, "tree_id": tree, "distinct": True, "added": [path], "modified": [], "removed": []},
+                ],
+                "head_commit": {"id": after, "tree_id": tree},
+            }
+
+        clean = event_for("repository-index.txt")
+        self.assertEqual(self._run_ci("push", clean, after, [before], tree=tree), [])
+        for protected in (
+            "repository/data/contracts/ft-rb-02-inquiry-crm-flow-readiness.contract.yaml",
+            "repository/data/schemas/ft-rb-02-inquiry-crm-flow-readiness.schema.json",
+            "repository/data/registries/extensions/ftrb02/inquiry-crm-flow-readiness.yaml",
+            "repository/data/validation/validate_ft_rb_02_inquiry_crm_flow_readiness.py",
+            "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py",
+        ):
+            self.assertTrue(self._run_ci("push", event_for(protected), after, [before], tree=tree))
+        missing = event_for("repository-index.txt")
+        for key in ("added", "modified", "removed"):
+            missing["commits"][0].pop(key)
+        self.assertTrue(self._run_ci("push", missing, after, [before], tree=tree))
+        self.assertTrue(self._run_ci("push", clean, after, ["4" * 40], tree=tree))
+        self.assertTrue(self._run_ci("push", clean, after, [before], tree=tree, protected_issues=["PROTECTED_ARTIFACT:attack"]))
+
+    def test_56_repair_scope_and_generic_local_dispatch_are_bounded(self) -> None:
+        with mock.patch.object(MODULE, "current_branch", return_value=MODULE.REPAIR_BRANCH), \
+             mock.patch.object(MODULE, "commit_available", return_value=True), \
+             mock.patch.object(MODULE, "is_ancestor", return_value=True):
+            self.assertEqual(MODULE.local_context(), MODULE.REPAIR_CONTEXT)
+        with mock.patch.object(MODULE, "current_branch", return_value="codex/repository-index-refresh"), \
+             mock.patch.object(MODULE, "commit_available", return_value=True), \
+             mock.patch.object(MODULE, "is_ancestor", return_value=True):
+            self.assertEqual(MODULE.local_context(), MODULE.SUCCESSOR_CONTEXT)
+        with mock.patch.object(MODULE, "clean_checkout", return_value=True), \
+             mock.patch.object(MODULE, "local_context", return_value=MODULE.REPAIR_CONTEXT), \
+             mock.patch.object(MODULE, "diff_paths", return_value=list(MODULE.REPAIR_ALLOWLIST)), \
+             mock.patch.object(MODULE, "committed_tree_issues", return_value=[]), \
+             mock.patch.object(MODULE, "successor_protected_issues", return_value=[]), \
+             mock.patch.object(MODULE, "regular_path_issues", return_value=[]):
+            self.assertEqual(MODULE.git_context_issues(), [])
+        with mock.patch.object(MODULE, "clean_checkout", return_value=True), \
+             mock.patch.object(MODULE, "local_context", return_value=MODULE.SUCCESSOR_CONTEXT), \
+             mock.patch.object(MODULE, "successor_protected_issues", return_value=[]), \
+             mock.patch.object(MODULE, "regular_path_issues", return_value=[]):
+            self.assertEqual(MODULE.git_context_issues(), [])
 
 
 if __name__ == "__main__":

@@ -44,6 +44,15 @@ ORIGINAL_MISSION_BASE = "5f452703dd35e1fee050f09529a0de379767e2bb"
 APPROVED_SUCCESSOR_BASE = "ff3077cd7041f7bed2f74d6ba2f8e685031eb5b0"
 APPROVED_BASES = (ORIGINAL_MISSION_BASE, APPROVED_SUCCESSOR_BASE)
 BRANCH = "codex/ft-rb-02-inquiry-crm-flow-readiness"
+REPAIR_BASE = "1fa127859655f8027aaea9dc84db7b109cc5949d"
+REPAIR_BRANCH = "codex/ft-rb-02-generic-successor-context-repair"
+REPAIR_ALLOWLIST = [
+    "repository/data/validation/validate_ft_rb_02_inquiry_crm_flow_readiness.py",
+    "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py",
+]
+HISTORICAL_CONTEXT = "HISTORICAL_FT_RB_02"
+REPAIR_CONTEXT = "AUTHORIZED_GENERIC_SUCCESSOR_REPAIR"
+SUCCESSOR_CONTEXT = "GENERIC_SUCCESSOR"
 REPOSITORY_FULL_NAME = "masoudtavousi-collab/damavand-steel-platform"
 BASE_SCRIPT_BLOBS = {base: "943b67e977dbe8975e226fb28858d2ec3a38ea03" for base in APPROVED_BASES}
 BASE_TOTAL_TREE_ENTRIES = {base: 646 for base in APPROVED_BASES}
@@ -52,6 +61,26 @@ COMMITTED_TREE_PROOFS = {
     APPROVED_SUCCESSOR_BASE: ("de41ae50a3382212805cd25b8d9874414256558bbfb42dcd5ca6d8437928dad0", 645, 659),
 }
 BASE_ABSENT_PATHS = [path for path in ALLOWLIST if path != "scripts/test.sh"]
+PROTECTED_PATHS = tuple(BASE_ABSENT_PATHS)
+PROTECTED_BLOBS = {
+    "docs/FT_RB_02_INQUIRY_CRM_FLOW_READINESS_SCOPE_V1.0.md": "e5e08084cfedcb39f17b0386fbf52f3ba66a09de",
+    "repository/data/contracts/ft-rb-02-inquiry-crm-flow-readiness.contract.yaml": "e2a05a17cd6b01b2ad315f73bdfaa3993d8ab35e",
+    "repository/data/registries/extensions/ftrb02/inquiry-crm-flow-readiness.yaml": "0f6c4448d1750e7a5cc8a751af7fa0a8e23ddc2d",
+    "repository/data/schemas/ft-rb-02-inquiry-crm-flow-readiness.schema.json": "68cdd525eda91f2679939eb4567c821c3e73109f",
+    "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/README.md": "dd9ce2e4872d1f75b7b596cb3e8db6a9fb579b70",
+    "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/adversarial-duplicate-keys.json": "bd682cb4cdc902e9982d01e03a6221a620c5513e",
+    "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/adversarial-duplicate-keys.yaml": "bde3c9f488a32ad164c95e7886afbe81d09f9ce9",
+    "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/adversarial-permissive-schema.json": "818d3efd200ee6aaf9fcd861d2561160c2623735",
+    "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/adversarial-remote-ref-schema.json": "a8b538a1eba45260615f6401a54e4c107228b9df",
+    "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/mutation-cases.json": "2628100b11263ea2e562ed730aedaa8324f191ee",
+    "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/valid-synthetic.yaml": "47b4731a9033eff56caaa74f561f29e0c1e200b5",
+    "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py": "2dc17615baeb31930944f741d621e2bb629fdd3b",
+}
+VALIDATOR_NORMALIZED_SHA256 = "f41075c10b4ec9386b99822854440ec25c1a8d165403405420fec20b61ecb8a8"
+RUNNER_SLOT_START = '"$python" -B -m unittest tests.test_ft_rb_02_inquiry_crm_flow_readiness\n\n'
+RUNNER_SLOT_END = '"$python" repository/data/validation/validate_bp2_data_blueprint.py\n'
+RUNNER_PREFIX_SHA256 = "2bde612096f850be1625d79b494fc5137b6589bf0740d2fc33037983a91b1352"
+RUNNER_SUFFIX_SHA256 = "a67683da6c19a59206d2db2074d3af98b539af48aebe1875cc861a0c0a75279a"
 MAX_PUSH_COMMITS = 20
 
 DEPENDENCIES = {
@@ -372,9 +401,9 @@ def git(*args: str, check: bool = True) -> subprocess.CompletedProcess[str]:
     return subprocess.run(["git", *args], cwd=ROOT, check=check, capture_output=True, text=True)
 
 
-def changed_paths(base: str) -> list[str]:
-    if base not in APPROVED_BASES:
-        raise ValueError("unapproved FT-RB-02 base")
+def diff_paths(base: str) -> list[str]:
+    if not is_oid(base):
+        raise ValueError("invalid diff base")
     paths: set[str] = set()
     for args in (("diff", "--name-only", f"{base}...HEAD"), ("diff", "--name-only", "HEAD"), ("ls-files", "--others", "--exclude-standard")):
         result = git(*args)
@@ -382,12 +411,74 @@ def changed_paths(base: str) -> list[str]:
     return sorted(paths)
 
 
+def changed_paths(base: str) -> list[str]:
+    if base not in APPROVED_BASES:
+        raise ValueError("unapproved FT-RB-02 base")
+    return diff_paths(base)
+
+
+def commit_available(commit: str) -> bool:
+    return is_oid(commit) and git("cat-file", "-e", f"{commit}^{{commit}}", check=False).returncode == 0
+
+
 def base_available(base: str) -> bool:
-    return base in APPROVED_BASES and git("cat-file", "-e", f"{base}^{{commit}}", check=False).returncode == 0
+    return base in APPROVED_BASES and commit_available(base)
 
 
 def is_ancestor(ancestor: str, descendant: str = "HEAD") -> bool:
     return git("merge-base", "--is-ancestor", ancestor, descendant, check=False).returncode == 0
+
+
+def current_branch() -> str:
+    result = git("symbolic-ref", "--quiet", "--short", "HEAD", check=False)
+    if result.returncode:
+        raise RuntimeError("detached or ambiguous branch")
+    branch = result.stdout.strip()
+    if not valid_branch_ref(branch):
+        raise RuntimeError("malformed branch")
+    return branch
+
+
+def valid_branch_ref(value: Any) -> bool:
+    return (
+        isinstance(value, str)
+        and 0 < len(value) <= 255
+        and value != "HEAD"
+        and re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._/-]*", value) is not None
+        and ".." not in value
+        and "@{" not in value
+        and not value.endswith(("/", ".", ".lock"))
+    )
+
+
+def classify_pr_context(base_sha: Any, head_ref: Any) -> str:
+    if not is_oid(base_sha) or not valid_branch_ref(head_ref):
+        raise RuntimeError("malformed mission context")
+    historical_base = base_sha in APPROVED_BASES
+    historical_branch = head_ref == BRANCH
+    if historical_base != historical_branch:
+        raise RuntimeError("ambiguous historical context")
+    if historical_base:
+        return HISTORICAL_CONTEXT
+    repair_base = base_sha == REPAIR_BASE
+    repair_branch = head_ref == REPAIR_BRANCH
+    if repair_base != repair_branch:
+        raise RuntimeError("ambiguous repair context")
+    return REPAIR_CONTEXT if repair_base else SUCCESSOR_CONTEXT
+
+
+def local_context() -> str:
+    branch = current_branch()
+    if branch == BRANCH:
+        approved_base_for_head()
+        return HISTORICAL_CONTEXT
+    if branch == REPAIR_BRANCH:
+        if not commit_available(REPAIR_BASE) or not is_ancestor(REPAIR_BASE):
+            raise RuntimeError("invalid repair ancestry")
+        return REPAIR_CONTEXT
+    if not commit_available(REPAIR_BASE) or not is_ancestor(REPAIR_BASE):
+        raise RuntimeError("successor predates integrated FT-RB-02")
+    return SUCCESSOR_CONTEXT
 
 
 def approved_base_for_head(head: str = "HEAD") -> str:
@@ -444,6 +535,71 @@ def parse_tree(raw: bytes) -> tuple[str, int, int, dict[str, tuple[str, str, str
     return hashlib.sha256(b"".join(retained)).hexdigest(), len(retained), len(entries), entries
 
 
+def normalized_validator_digest(raw: bytes) -> str:
+    normalized, replacements = re.subn(
+        rb'(?m)^VALIDATOR_NORMALIZED_SHA256 = "[^"\r\n]*"$',
+        b'VALIDATOR_NORMALIZED_SHA256 = "<NORMALIZED>"',
+        raw,
+        count=1,
+    )
+    if replacements != 1:
+        raise ValueError("validator self-pin shape")
+    return hashlib.sha256(normalized).hexdigest()
+
+
+def protected_entry_issues(
+    entries: dict[str, tuple[str, str, str]],
+    validator_source: bytes,
+) -> list[str]:
+    issues: list[str] = []
+    validator_path = "repository/data/validation/validate_ft_rb_02_inquiry_crm_flow_readiness.py"
+    for path in PROTECTED_PATHS:
+        entry = entries.get(path)
+        if entry is None:
+            issues.append(f"PROTECTED_ARTIFACT:missing:{path}")
+            continue
+        if entry[0] != "100644" or entry[1] != "blob":
+            issues.append(f"PROTECTED_ARTIFACT:shape:{path}")
+            continue
+        if path == validator_path:
+            try:
+                actual = normalized_validator_digest(validator_source)
+            except Exception as exc:
+                issues.append(f"PROTECTED_ARTIFACT:validator:{type(exc).__name__}")
+                continue
+            if VALIDATOR_NORMALIZED_SHA256 == "TO_BE_FINALIZED" or actual != VALIDATOR_NORMALIZED_SHA256:
+                issues.append("PROTECTED_ARTIFACT:content:" + path)
+        else:
+            expected = PROTECTED_BLOBS.get(path)
+            if expected in {None, "TO_BE_FINALIZED"} or entry[2] != expected:
+                issues.append(f"PROTECTED_ARTIFACT:content:{path}")
+    return sorted(issues)
+
+
+def successor_protected_issues(commit: str = "HEAD") -> list[str]:
+    try:
+        result = subprocess.run(
+            ["git", "ls-tree", "-rz", "--full-tree", commit],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+        )
+        _, _, _, entries = parse_tree(result.stdout)
+        validator_path = "repository/data/validation/validate_ft_rb_02_inquiry_crm_flow_readiness.py"
+        validator_entry = entries.get(validator_path)
+        if validator_entry is None or validator_entry[1] != "blob" or not is_oid(validator_entry[2]):
+            return [f"PROTECTED_ARTIFACT:missing:{validator_path}"]
+        validator = subprocess.run(
+            ["git", "cat-file", "blob", validator_entry[2]],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+        ).stdout
+        return protected_entry_issues(entries, validator)
+    except Exception as exc:
+        return [f"PROTECTED_ARTIFACT:{type(exc).__name__}"]
+
+
 def committed_tree_issues(base: str, commit: str = "HEAD") -> list[str]:
     expected = COMMITTED_TREE_PROOFS.get(base)
     if expected is None:
@@ -495,6 +651,36 @@ def clean_checkout() -> bool:
     return not git("status", "--porcelain").stdout.strip()
 
 
+def ci_event_context() -> str:
+    event = load_event()
+    if not repository_matches(event):
+        raise RuntimeError("repository")
+    event_name = os.environ.get("GITHUB_EVENT_NAME")
+    if event_name == "pull_request":
+        pull = event.get("pull_request")
+        if not isinstance(pull, dict) or not isinstance(pull.get("base"), dict) or not isinstance(pull.get("head"), dict):
+            raise RuntimeError("pull payload")
+        return classify_pr_context(pull["base"].get("sha"), pull["head"].get("ref"))
+    if event_name == "push":
+        before = event.get("before")
+        if not is_oid(before):
+            raise RuntimeError("push base")
+        if before in APPROVED_BASES:
+            return HISTORICAL_CONTEXT
+        if before == REPAIR_BASE:
+            return REPAIR_CONTEXT
+        return SUCCESSOR_CONTEXT
+    raise RuntimeError("event type")
+
+
+def execution_context() -> str:
+    if os.environ.get("CI") == "true" or os.environ.get("GITHUB_ACTIONS") == "true":
+        if os.environ.get("CI") != "true" or os.environ.get("GITHUB_ACTIONS") != "true":
+            raise RuntimeError("partial CI environment")
+        return ci_event_context()
+    return local_context()
+
+
 def ci_context_issues() -> list[str]:
     issues: list[str] = []
     if os.environ.get("CI") != "true" or os.environ.get("GITHUB_ACTIONS") != "true" or not clean_checkout():
@@ -517,16 +703,31 @@ def ci_context_issues() -> list[str]:
                 if not isinstance(side.get("repo"), dict) or side["repo"].get("full_name") != REPOSITORY_FULL_NAME:
                     raise RuntimeError("fork")
             base_sha, head_sha = base.get("sha"), head.get("sha")
-            if base.get("ref") != "main" or not is_oid(base_sha) or not is_oid(head_sha) or not (checkout == head_sha or parents == [base_sha, head_sha]):
+            context = classify_pr_context(base_sha, head.get("ref"))
+            synthetic_merge = parents == [base_sha, head_sha]
+            direct_head = checkout == head_sha
+            if (
+                base.get("ref") != "main"
+                or not is_oid(head_sha)
+                or not (direct_head or synthetic_merge)
+                or (direct_head and context != HISTORICAL_CONTEXT and (not commit_available(base_sha) or not is_ancestor(base_sha, checkout)))
+            ):
                 raise RuntimeError("pull checkout")
-            mission_context = head.get("ref") == BRANCH or base_sha in APPROVED_BASES
-            if mission_context:
-                if head.get("ref") != BRANCH or base_sha not in APPROVED_BASES or pull.get("changed_files") != len(ALLOWLIST):
+            changed_files = pull.get("changed_files")
+            if context == HISTORICAL_CONTEXT:
+                if type(changed_files) is not int or changed_files != len(ALLOWLIST):
                     raise RuntimeError("pull exactness")
                 issues.extend(committed_tree_issues(base_sha))
+            elif context == REPAIR_CONTEXT:
+                if type(changed_files) is not int or changed_files != len(REPAIR_ALLOWLIST):
+                    raise RuntimeError("repair pull exactness")
+                issues.extend(committed_tree_issues(APPROVED_SUCCESSOR_BASE))
+                issues.extend(successor_protected_issues())
+                issues.extend(regular_path_issues())
             else:
-                if not isinstance(head.get("ref"), str) or not head["ref"] or not isinstance(pull.get("changed_files"), int) or pull["changed_files"] < 1:
+                if type(changed_files) is not int or changed_files < 1:
                     raise RuntimeError("future pull metadata")
+                issues.extend(successor_protected_issues())
                 issues.extend(regular_path_issues())
         elif event_name == "push":
             before, after = event.get("before"), event.get("after")
@@ -572,9 +773,25 @@ def ci_context_issues() -> list[str]:
                 if path_metadata_presence and (added != set(BASE_ABSENT_PATHS) or modified != {"scripts/test.sh"} or removed):
                     raise RuntimeError("integration path metadata")
                 issues.extend(committed_tree_issues(before))
+            elif before == REPAIR_BASE:
+                if len(commits) < 2 or len(parents) != 2 or parents[0] != before or parents[1] not in ids:
+                    raise RuntimeError("repair integration source relation")
+                if not path_metadata_presence or added or modified != set(REPAIR_ALLOWLIST) or removed:
+                    raise RuntimeError("repair integration path metadata")
+                issues.extend(committed_tree_issues(APPROVED_SUCCESSOR_BASE))
+                issues.extend(successor_protected_issues())
+                issues.extend(regular_path_issues())
             else:
-                if not parents or parents[0] != before:
+                direct = parents == [before]
+                merged = len(parents) == 2 and parents[0] == before and parents[1] in ids
+                if not (direct or merged):
                     raise RuntimeError("future integration parent relation")
+                if not path_metadata_presence:
+                    raise RuntimeError("future path metadata missing")
+                touched = added | modified | removed
+                if touched & set(PROTECTED_PATHS):
+                    raise RuntimeError("future protected path metadata")
+                issues.extend(successor_protected_issues())
                 issues.extend(regular_path_issues())
         else:
             raise RuntimeError("event type")
@@ -586,17 +803,32 @@ def ci_context_issues() -> list[str]:
 def git_context_issues() -> list[str]:
     if os.environ.get("CI") == "true" or os.environ.get("GITHUB_ACTIONS") == "true":
         return ci_context_issues()
+    if not clean_checkout():
+        return ["GIT_CONTEXT:dirty_checkout"]
     try:
-        base = approved_base_for_head()
+        context = local_context()
     except Exception as exc:
         return [f"GIT_CONTEXT:{type(exc).__name__}"]
-    issues = base_shape_issues(base) + regular_path_issues()
-    if changed_paths(base) != ALLOWLIST:
-        issues.append("ALLOWLIST_ACTUAL_DIFF")
+    issues = regular_path_issues()
+    if context == HISTORICAL_CONTEXT:
+        try:
+            base = approved_base_for_head()
+            issues.extend(base_shape_issues(base))
+            if changed_paths(base) != ALLOWLIST:
+                issues.append("ALLOWLIST_ACTUAL_DIFF")
+        except Exception as exc:
+            issues.append(f"GIT_CONTEXT:{type(exc).__name__}")
+    elif context == REPAIR_CONTEXT:
+        if diff_paths(REPAIR_BASE) != REPAIR_ALLOWLIST:
+            issues.append("REPAIR_ALLOWLIST_ACTUAL_DIFF")
+        issues.extend(committed_tree_issues(APPROVED_SUCCESSOR_BASE))
+        issues.extend(successor_protected_issues())
+    else:
+        issues.extend(successor_protected_issues())
     return sorted(set(issues))
 
 
-def runner_issues() -> list[str]:
+def runner_issues(context: str | None = None) -> list[str]:
     try:
         text = safe_file(ROOT / "scripts/test.sh").decode("utf-8")
     except Exception as exc:
@@ -611,28 +843,48 @@ def runner_issues() -> list[str]:
     ]
     runner_lines = text.splitlines()
     issues = [f"RUNNER:dispatch:{line}" for line in required if runner_lines.count(line) != 1]
-    expected_blob = PROVISIONAL_RUNNER_BLOB if provisional else PINNED_RUNNER_BLOB
-    if expected_blob in {"TO_BE_RECOMPUTED", "TO_BE_FINALIZED"} or git_blob_oid(ROOT / "scripts/test.sh") != expected_blob:
-        issues.append("RUNNER:exact_blob")
-    available_bases = [base for base in APPROVED_BASES if base_available(base)]
-    context_base: str | None = None
-    if available_bases:
+    if context is None:
         try:
-            context_base = approved_base_for_head()
+            context = execution_context()
         except Exception as exc:
-            issues.append(f"RUNNER:base_context:{type(exc).__name__}")
-    if context_base is not None:
-        base = git("show", f"{context_base}:scripts/test.sh", check=False)
-        anchor = '"$python" -B -m unittest tests.test_ft_rb_01_rights_safe_media_readiness\n\n'
-        block = (
-            '# FT-RB-02 pre-pin Inquiry/CRM readiness validation and focused/adversarial dispatch.\n'
-            'ft_rb_02_inquiry_validator="repository/data/validation/validate_ft_rb_02_inquiry_crm_flow_readiness.py"\n'
-            f'"$python" "$ft_rb_02_inquiry_validator"{suffix}\n'
-            f'"$python" "$ft_rb_02_inquiry_validator" --registry tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/valid-synthetic.yaml --synthetic{suffix}\n'
-            '"$python" -B -m unittest tests.test_ft_rb_02_inquiry_crm_flow_readiness\n\n'
-        )
-        if base.returncode or base.stdout.count(anchor) != 1 or text != base.stdout.replace(anchor, anchor + block, 1):
-            issues.append("RUNNER:exact_transform")
+            issues.append(f"RUNNER:context:{type(exc).__name__}")
+    if context in {HISTORICAL_CONTEXT, REPAIR_CONTEXT}:
+        expected_blob = PROVISIONAL_RUNNER_BLOB if provisional else PINNED_RUNNER_BLOB
+        if expected_blob in {"TO_BE_RECOMPUTED", "TO_BE_FINALIZED"} or git_blob_oid(ROOT / "scripts/test.sh") != expected_blob:
+            issues.append("RUNNER:exact_blob")
+        available_bases = [base for base in APPROVED_BASES if base_available(base)]
+        context_base: str | None = None
+        if available_bases:
+            try:
+                context_base = approved_base_for_head()
+            except Exception as exc:
+                issues.append(f"RUNNER:base_context:{type(exc).__name__}")
+        if context_base is not None:
+            base = git("show", f"{context_base}:scripts/test.sh", check=False)
+            anchor = '"$python" -B -m unittest tests.test_ft_rb_01_rights_safe_media_readiness\n\n'
+            block = (
+                '# FT-RB-02 pre-pin Inquiry/CRM readiness validation and focused/adversarial dispatch.\n'
+                'ft_rb_02_inquiry_validator="repository/data/validation/validate_ft_rb_02_inquiry_crm_flow_readiness.py"\n'
+                f'"$python" "$ft_rb_02_inquiry_validator"{suffix}\n'
+                f'"$python" "$ft_rb_02_inquiry_validator" --registry tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/valid-synthetic.yaml --synthetic{suffix}\n'
+                '"$python" -B -m unittest tests.test_ft_rb_02_inquiry_crm_flow_readiness\n\n'
+            )
+            if base.returncode or base.stdout.count(anchor) != 1 or text != base.stdout.replace(anchor, anchor + block, 1):
+                issues.append("RUNNER:exact_transform")
+    elif context == SUCCESSOR_CONTEXT:
+        if text.count(RUNNER_SLOT_START) != 1 or text.count(RUNNER_SLOT_END) != 1:
+            issues.append("RUNNER:successor_slot")
+        else:
+            prefix, remainder = text.split(RUNNER_SLOT_START, 1)
+            inserted, suffix_text = remainder.split(RUNNER_SLOT_END, 1)
+            if hashlib.sha256((prefix + RUNNER_SLOT_START).encode()).hexdigest() != RUNNER_PREFIX_SHA256:
+                issues.append("RUNNER:successor_prefix")
+            if hashlib.sha256((RUNNER_SLOT_END + suffix_text).encode()).hexdigest() != RUNNER_SUFFIX_SHA256:
+                issues.append("RUNNER:successor_suffix")
+            if inserted and (not inserted.endswith("\n\n") or "ft_rb_02_inquiry_validator" in inserted or "tests.test_ft_rb_02_inquiry_crm_flow_readiness" in inserted):
+                issues.append("RUNNER:successor_insertion")
+    else:
+        issues.append("RUNNER:invalid_context")
     if not provisional and "--allow-unpinned" in "\n".join(line for line in text.splitlines() if "ft_rb_02_inquiry_validator" in line):
         issues.append("RUNNER:allow_unpinned")
     return sorted(issues)
