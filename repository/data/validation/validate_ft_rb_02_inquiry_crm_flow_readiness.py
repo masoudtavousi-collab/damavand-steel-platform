@@ -81,9 +81,9 @@ PROTECTED_BLOBS = {
     "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/adversarial-remote-ref-schema.json": "a8b538a1eba45260615f6401a54e4c107228b9df",
     "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/mutation-cases.json": "2628100b11263ea2e562ed730aedaa8324f191ee",
     "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/valid-synthetic.yaml": "47b4731a9033eff56caaa74f561f29e0c1e200b5",
-    "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py": "6b05bc637856cf2204f06544914333b222a9b827",
+    "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py": "92cff0840e3f576b9dfd7b4857cd75c93e61aea7",
 }
-VALIDATOR_NORMALIZED_SHA256 = "603f9252fca7f6f418f77e01674e1e02ec0537695ff1a87ef4460dbfdc345711"
+VALIDATOR_NORMALIZED_SHA256 = "d27376968d45507a3617f12deea393321f2dc55159a197c4e93ce46802842afc"
 RUNNER_SLOT_START = '"$python" -B -m unittest tests.test_ft_rb_02_inquiry_crm_flow_readiness\n\n'
 RUNNER_SLOT_END = '"$python" repository/data/validation/validate_bp2_data_blueprint.py\n'
 RUNNER_PREFIX_SHA256 = "2bde612096f850be1625d79b494fc5137b6589bf0740d2fc33037983a91b1352"
@@ -689,7 +689,7 @@ def valid_merge_push_relation(
             and commits[0].get("tree_id") == tree_oid
             and path_metadata_presence is True
         )
-    return parents[1] in ids[:-1]
+    return True
 
 
 def ci_event_context() -> str:

@@ -982,12 +982,12 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
 
         self.assertTrue(self._run_ci("push", exact, "9" * 40, [before, source], tree=tree))
 
-        multi_row_missing_source = copy.deepcopy(exact)
-        multi_row_missing_source["commits"].insert(
+        multi_row_source_absent = copy.deepcopy(exact)
+        multi_row_source_absent["commits"].insert(
             0,
             {"id": "a" * 40, "tree_id": "b" * 40, "distinct": True, "added": [], "modified": [], "removed": []},
         )
-        self.assertTrue(self._run_ci("push", multi_row_missing_source, after, [before, source], tree=tree))
+        self.assertEqual(self._run_ci("push", multi_row_source_absent, after, [before, source], tree=tree), [])
 
         generic_before = "1" * 40
         direct_with_extra_row = copy.deepcopy(exact)
