@@ -365,7 +365,7 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
         with mock.patch.object(MODULE, "clean_checkout", return_value=True), \
              mock.patch.object(MODULE, "regular_path_issues", return_value=[]), \
              mock.patch.object(MODULE, "local_context", return_value=MODULE.REPAIR_CONTEXT), \
-             mock.patch.object(MODULE, "current_branch", return_value=MODULE.PATH_PROOF_REPAIR_BRANCH), \
+             mock.patch.object(MODULE, "current_branch", return_value=MODULE.SUCCESSOR_TEST_PIN_CONTEXT_REPAIR_BRANCH), \
              mock.patch.object(MODULE, "diff_paths", return_value=MODULE.REPAIR_ALLOWLIST), \
              mock.patch.object(MODULE, "repair_delta_issues", return_value=[]), \
              mock.patch.object(MODULE, "committed_tree_issues", return_value=[]), \
@@ -567,6 +567,14 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
         raw = historical.encode()
         expected = __import__("hashlib").sha1(f"blob {len(raw)}\0".encode() + raw).hexdigest()
         self.assertEqual(expected, MODULE.PINNED_RUNNER_BLOB)
+        self.assertEqual(
+            MODULE.PROTECTED_BLOBS["tests/test_ft_rb_02_inquiry_crm_flow_readiness.py"],
+            MODULE.git_blob_oid(Path(__file__)),
+        )
+        self.assertEqual(
+            MODULE.normalized_validator_digest(VALIDATOR_PATH.read_bytes()),
+            MODULE.VALIDATOR_NORMALIZED_SHA256,
+        )
 
         original = MODULE.safe_file
 
@@ -897,14 +905,14 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
         with mock.patch.dict(os.environ, {"CI": "false", "GITHUB_ACTIONS": "false"}, clear=False), \
              mock.patch.object(MODULE, "clean_checkout", return_value=True), \
              mock.patch.object(MODULE, "local_context", return_value=MODULE.REPAIR_CONTEXT), \
-             mock.patch.object(MODULE, "current_branch", return_value=MODULE.PATH_PROOF_REPAIR_BRANCH), \
+             mock.patch.object(MODULE, "current_branch", return_value=MODULE.SUCCESSOR_TEST_PIN_CONTEXT_REPAIR_BRANCH), \
              mock.patch.object(MODULE, "diff_paths", diff_paths), \
              mock.patch.object(MODULE, "repair_delta_issues", return_value=[]), \
              mock.patch.object(MODULE, "committed_tree_issues", return_value=[]), \
              mock.patch.object(MODULE, "successor_protected_issues", return_value=[]), \
              mock.patch.object(MODULE, "regular_path_issues", return_value=[]):
             self.assertEqual(MODULE.git_context_issues(), [])
-        diff_paths.assert_called_once_with(MODULE.PATH_PROOF_REPAIR_BASE)
+        diff_paths.assert_called_once_with(MODULE.SUCCESSOR_TEST_PIN_CONTEXT_REPAIR_BASE)
         with mock.patch.dict(os.environ, {"CI": "false", "GITHUB_ACTIONS": "false"}, clear=False), \
              mock.patch.object(MODULE, "clean_checkout", return_value=True), \
              mock.patch.object(MODULE, "local_context", return_value=MODULE.SUCCESSOR_CONTEXT), \
@@ -1148,7 +1156,7 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
         self.assertTrue(self._run_ci("push", direct_with_extra_row, after, [generic_before], tree=tree))
 
     def test_59_repair_tree_delta_proof_is_exact_and_depth_one_safe(self) -> None:
-        self.assertEqual(MODULE.repair_delta_issues(MODULE.PATH_PROOF_REPAIR_BASE), [])
+        self.assertEqual(MODULE.repair_delta_issues(MODULE.SUCCESSOR_TEST_PIN_CONTEXT_REPAIR_BASE), [])
         self.assertEqual(MODULE.repair_delta_issues("a" * 40), ["REPAIR_TREE_PROOF:unapproved_base"])
 
         expected_base_blobs = {
@@ -1163,6 +1171,10 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
             MODULE.PATH_PROOF_REPAIR_BASE: (
                 "f74ffcc993f1c502a95331a9cd7268ce700a4828",
                 "062d1af57d57dde6c5d96226901dc4c0365f3174",
+            ),
+            MODULE.SUCCESSOR_TEST_PIN_CONTEXT_REPAIR_BASE: (
+                "70843873bf68ae4700c56a4c05f458be1120647a",
+                "064ed8cfca43397d203132699da230a709c80a3d",
             ),
         }
         self.assertEqual(set(MODULE.REPAIR_TREE_PROOFS), set(MODULE.AUTHORIZED_REPAIR_CONTEXTS))
@@ -1188,7 +1200,7 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
         ).stdout
         completed = subprocess.CompletedProcess(["git"], 0, stdout=current_raw, stderr=b"")
         with mock.patch.object(MODULE.subprocess, "run", return_value=completed) as shallow_run:
-            self.assertEqual(MODULE.repair_delta_issues(MODULE.PATH_PROOF_REPAIR_BASE), [])
+            self.assertEqual(MODULE.repair_delta_issues(MODULE.SUCCESSOR_TEST_PIN_CONTEXT_REPAIR_BASE), [])
         shallow_run.assert_called_once_with(
             ["git", "ls-tree", "-rz", "--full-tree", "HEAD"],
             cwd=ROOT,
@@ -1196,28 +1208,28 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
             capture_output=True,
         )
 
-        expected = MODULE.REPAIR_TREE_PROOFS[MODULE.PATH_PROOF_REPAIR_BASE]
+        expected = MODULE.REPAIR_TREE_PROOFS[MODULE.SUCCESSOR_TEST_PIN_CONTEXT_REPAIR_BASE]
         current_entries = MODULE.parse_tree(current_raw, set(MODULE.REPAIR_ALLOWLIST))[3]
         unchanged = dict(current_entries)
         unchanged[MODULE.REPAIR_ALLOWLIST[0]] = ("100644", "blob", expected[3][MODULE.REPAIR_ALLOWLIST[0]])
         with mock.patch.object(MODULE, "parse_tree", return_value=(*expected[:3], unchanged)):
             self.assertIn(
                 f"REPAIR_TREE_PROOF:unchanged:{MODULE.REPAIR_ALLOWLIST[0]}",
-                MODULE.repair_delta_issues(MODULE.PATH_PROOF_REPAIR_BASE),
+                MODULE.repair_delta_issues(MODULE.SUCCESSOR_TEST_PIN_CONTEXT_REPAIR_BASE),
             )
         missing = dict(current_entries)
         missing.pop(MODULE.REPAIR_ALLOWLIST[1])
         with mock.patch.object(MODULE, "parse_tree", return_value=(*expected[:3], missing)):
             self.assertIn(
                 f"REPAIR_TREE_PROOF:missing:{MODULE.REPAIR_ALLOWLIST[1]}",
-                MODULE.repair_delta_issues(MODULE.PATH_PROOF_REPAIR_BASE),
+                MODULE.repair_delta_issues(MODULE.SUCCESSOR_TEST_PIN_CONTEXT_REPAIR_BASE),
             )
         linked = dict(current_entries)
         linked[MODULE.REPAIR_ALLOWLIST[1]] = ("120000", "blob", "a" * 40)
         with mock.patch.object(MODULE, "parse_tree", return_value=(*expected[:3], linked)):
             self.assertIn(
                 f"REPAIR_TREE_PROOF:shape:{MODULE.REPAIR_ALLOWLIST[1]}",
-                MODULE.repair_delta_issues(MODULE.PATH_PROOF_REPAIR_BASE),
+                MODULE.repair_delta_issues(MODULE.SUCCESSOR_TEST_PIN_CONTEXT_REPAIR_BASE),
             )
         with mock.patch.object(
             MODULE,
@@ -1226,7 +1238,7 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
         ):
             self.assertIn(
                 "REPAIR_TREE_PROOF:digest_or_count",
-                MODULE.repair_delta_issues(MODULE.PATH_PROOF_REPAIR_BASE),
+                MODULE.repair_delta_issues(MODULE.SUCCESSOR_TEST_PIN_CONTEXT_REPAIR_BASE),
             )
 
     def test_60_actions_push_without_paths_uses_real_tree_proof_stack(self) -> None:
@@ -1266,6 +1278,79 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
             side_effect=AssertionError("parent ancestry access is forbidden"),
         ):
             self.assertEqual(MODULE.ci_context_issues(), [])
+
+    def test_61_successor_test_pin_context_is_single_use_and_two_path_exact(self) -> None:
+        base = MODULE.SUCCESSOR_TEST_PIN_CONTEXT_REPAIR_BASE
+        branch = MODULE.SUCCESSOR_TEST_PIN_CONTEXT_REPAIR_BRANCH
+        head, merge = "8" * 40, "9" * 40
+        self.assertEqual(MODULE.classify_pr_context(base, branch), MODULE.REPAIR_CONTEXT)
+        for wrong_base, wrong_branch in (("a" * 40, branch), (base, "codex/unapproved-repair")):
+            with self.subTest(base=wrong_base, branch=wrong_branch), self.assertRaises(RuntimeError):
+                MODULE.classify_pr_context(wrong_base, wrong_branch)
+
+        exact = self._pr_event(base, head, branch, len(MODULE.REPAIR_ALLOWLIST))
+        self.assertEqual(self._run_ci("pull_request", exact, head, []), [])
+        self.assertEqual(self._run_ci("pull_request", exact, merge, [base, head]), [])
+        third_path = copy.deepcopy(exact)
+        third_path["pull_request"]["changed_files"] += 1
+        self.assertTrue(self._run_ci("pull_request", third_path, head, []))
+
+        for realized in (
+            [MODULE.REPAIR_ALLOWLIST[0]],
+            [MODULE.REPAIR_ALLOWLIST[1]],
+            MODULE.REPAIR_ALLOWLIST + ["scripts/test.sh"],
+            MODULE.REPAIR_ALLOWLIST + ["repository/data/contracts/ft-rb-02-inquiry-crm-flow-readiness.contract.yaml"],
+        ):
+            with self.subTest(realized=realized), \
+                 mock.patch.dict(os.environ, {"CI": "false", "GITHUB_ACTIONS": "false"}, clear=False), \
+                 mock.patch.object(MODULE, "clean_checkout", return_value=True), \
+                 mock.patch.object(MODULE, "local_context", return_value=MODULE.REPAIR_CONTEXT), \
+                 mock.patch.object(MODULE, "current_branch", return_value=branch), \
+                 mock.patch.object(MODULE, "diff_paths", return_value=realized), \
+                 mock.patch.object(MODULE, "repair_delta_issues", return_value=[]), \
+                 mock.patch.object(MODULE, "committed_tree_issues", return_value=[]), \
+                 mock.patch.object(MODULE, "successor_protected_issues", return_value=[]), \
+                 mock.patch.object(MODULE, "regular_path_issues", return_value=[]):
+                self.assertIn("REPAIR_ALLOWLIST_ACTUAL_DIFF", MODULE.git_context_issues())
+
+        raw = subprocess.run(
+            ["git", "ls-tree", "-rz", "--full-tree", "HEAD"],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+        ).stdout
+        _, _, _, entries = MODULE.parse_tree(raw, set(MODULE.REPAIR_ALLOWLIST))
+        expected = MODULE.REPAIR_TREE_PROOFS[base]
+        for path in MODULE.REPAIR_ALLOWLIST:
+            missing = dict(entries)
+            missing.pop(path)
+            with self.subTest(path=path, attack="missing"), \
+                 mock.patch.object(MODULE, "parse_tree", return_value=(*expected[:3], missing)):
+                self.assertIn(f"REPAIR_TREE_PROOF:missing:{path}", MODULE.repair_delta_issues(base))
+            for mode in ("120000", "100755"):
+                changed_mode = dict(entries)
+                changed_mode[path] = (mode, "blob", "a" * 40)
+                with self.subTest(path=path, attack=f"mode-{mode}"), \
+                     mock.patch.object(MODULE, "parse_tree", return_value=(*expected[:3], changed_mode)):
+                    self.assertIn(f"REPAIR_TREE_PROOF:shape:{path}", MODULE.repair_delta_issues(base))
+            unchanged = dict(entries)
+            unchanged[path] = ("100644", "blob", expected[3][path])
+            with self.subTest(path=path, attack="one-file"), \
+                 mock.patch.object(MODULE, "parse_tree", return_value=(*expected[:3], unchanged)):
+                self.assertIn(f"REPAIR_TREE_PROOF:unchanged:{path}", MODULE.repair_delta_issues(base))
+
+        protected_entries = MODULE.parse_tree(raw)[3]
+        validator = VALIDATOR_PATH.read_bytes()
+        wrong_test = dict(protected_entries)
+        wrong_test["tests/test_ft_rb_02_inquiry_crm_flow_readiness.py"] = ("100644", "blob", "a" * 40)
+        self.assertIn(
+            "PROTECTED_ARTIFACT:content:tests/test_ft_rb_02_inquiry_crm_flow_readiness.py",
+            MODULE.protected_entry_issues(wrong_test, validator),
+        )
+        self.assertIn(
+            "PROTECTED_ARTIFACT:content:repository/data/validation/validate_ft_rb_02_inquiry_crm_flow_readiness.py",
+            MODULE.protected_entry_issues(protected_entries, validator + b"\n# tamper\n"),
+        )
 
 
 if __name__ == "__main__":
