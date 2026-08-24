@@ -40,14 +40,17 @@ ALLOWLIST = [
     "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/valid-synthetic.yaml",
     "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py",
 ]
-BASE = "5f452703dd35e1fee050f09529a0de379767e2bb"
+ORIGINAL_MISSION_BASE = "5f452703dd35e1fee050f09529a0de379767e2bb"
+APPROVED_SUCCESSOR_BASE = "ff3077cd7041f7bed2f74d6ba2f8e685031eb5b0"
+APPROVED_BASES = (ORIGINAL_MISSION_BASE, APPROVED_SUCCESSOR_BASE)
 BRANCH = "codex/ft-rb-02-inquiry-crm-flow-readiness"
 REPOSITORY_FULL_NAME = "masoudtavousi-collab/damavand-steel-platform"
-BASE_SCRIPT_BLOB = "943b67e977dbe8975e226fb28858d2ec3a38ea03"
-BASE_TOTAL_TREE_ENTRIES = 646
-COMMITTED_TOTAL_TREE_ENTRIES = 659
-RETAINED_TREE_ENTRIES = 645
-RETAINED_TREE_DIGEST = "9f316afa552bf84d930f2cadb85ec7fb9c5d0e02e5bee77c8b2c7927a937c2bb"
+BASE_SCRIPT_BLOBS = {base: "943b67e977dbe8975e226fb28858d2ec3a38ea03" for base in APPROVED_BASES}
+BASE_TOTAL_TREE_ENTRIES = {base: 646 for base in APPROVED_BASES}
+COMMITTED_TREE_PROOFS = {
+    ORIGINAL_MISSION_BASE: ("9f316afa552bf84d930f2cadb85ec7fb9c5d0e02e5bee77c8b2c7927a937c2bb", 645, 659),
+    APPROVED_SUCCESSOR_BASE: ("de41ae50a3382212805cd25b8d9874414256558bbfb42dcd5ca6d8437928dad0", 645, 659),
+}
 BASE_ABSENT_PATHS = [path for path in ALLOWLIST if path != "scripts/test.sh"]
 MAX_PUSH_COMMITS = 20
 
@@ -369,27 +372,47 @@ def git(*args: str, check: bool = True) -> subprocess.CompletedProcess[str]:
     return subprocess.run(["git", *args], cwd=ROOT, check=check, capture_output=True, text=True)
 
 
-def changed_paths() -> list[str]:
+def changed_paths(base: str) -> list[str]:
+    if base not in APPROVED_BASES:
+        raise ValueError("unapproved FT-RB-02 base")
     paths: set[str] = set()
-    for args in (("diff", "--name-only", f"{BASE}...HEAD"), ("diff", "--name-only", "HEAD"), ("ls-files", "--others", "--exclude-standard")):
+    for args in (("diff", "--name-only", f"{base}...HEAD"), ("diff", "--name-only", "HEAD"), ("ls-files", "--others", "--exclude-standard")):
         result = git(*args)
         paths.update(line for line in result.stdout.splitlines() if line)
     return sorted(paths)
 
 
-def base_available() -> bool:
-    return git("cat-file", "-e", f"{BASE}^{{commit}}", check=False).returncode == 0
+def base_available(base: str) -> bool:
+    return base in APPROVED_BASES and git("cat-file", "-e", f"{base}^{{commit}}", check=False).returncode == 0
 
 
-def base_shape_issues() -> list[str]:
+def is_ancestor(ancestor: str, descendant: str = "HEAD") -> bool:
+    return git("merge-base", "--is-ancestor", ancestor, descendant, check=False).returncode == 0
+
+
+def approved_base_for_head(head: str = "HEAD") -> str:
+    candidates = [base for base in APPROVED_BASES if base_available(base) and is_ancestor(base, head)]
+    most_specific = [
+        candidate
+        for candidate in candidates
+        if not any(candidate != other and is_ancestor(candidate, other) for other in candidates)
+    ]
+    if len(most_specific) != 1:
+        raise RuntimeError("ambiguous or unavailable approved FT-RB-02 base")
+    return most_specific[0]
+
+
+def base_shape_issues(base: str) -> list[str]:
+    if base not in APPROVED_BASES:
+        return ["BASE_SHAPE:unapproved"]
     issues: list[str] = []
-    if git("rev-parse", f"{BASE}:scripts/test.sh", check=False).stdout.strip() != BASE_SCRIPT_BLOB:
+    if git("rev-parse", f"{base}:scripts/test.sh", check=False).stdout.strip() != BASE_SCRIPT_BLOBS[base]:
         issues.append("BASE_SHAPE:script")
     for path in BASE_ABSENT_PATHS:
-        if git("cat-file", "-e", f"{BASE}:{path}", check=False).returncode == 0:
+        if git("cat-file", "-e", f"{base}:{path}", check=False).returncode == 0:
             issues.append(f"BASE_SHAPE:unexpected:{path}")
-    total = git("ls-tree", "-r", "--name-only", BASE, check=False)
-    if total.returncode or len(total.stdout.splitlines()) != BASE_TOTAL_TREE_ENTRIES:
+    total = git("ls-tree", "-r", "--name-only", base, check=False)
+    if total.returncode or len(total.stdout.splitlines()) != BASE_TOTAL_TREE_ENTRIES[base]:
         issues.append("BASE_SHAPE:count")
     return sorted(issues)
 
@@ -421,14 +444,17 @@ def parse_tree(raw: bytes) -> tuple[str, int, int, dict[str, tuple[str, str, str
     return hashlib.sha256(b"".join(retained)).hexdigest(), len(retained), len(entries), entries
 
 
-def committed_tree_issues() -> list[str]:
+def committed_tree_issues(base: str, commit: str = "HEAD") -> list[str]:
+    expected = COMMITTED_TREE_PROOFS.get(base)
+    if expected is None:
+        return ["TREE_PROOF:unapproved_base"]
     issues: list[str] = []
-    result = subprocess.run(["git", "ls-tree", "-rz", "--full-tree", "HEAD"], cwd=ROOT, check=True, capture_output=True)
+    result = subprocess.run(["git", "ls-tree", "-rz", "--full-tree", commit], cwd=ROOT, check=True, capture_output=True)
     try:
         retained_digest, retained_count, total_count, entries = parse_tree(result.stdout)
     except Exception as exc:
         return [f"TREE_PROOF:{type(exc).__name__}"]
-    if (retained_digest, retained_count, total_count) != (RETAINED_TREE_DIGEST, RETAINED_TREE_ENTRIES, COMMITTED_TOTAL_TREE_ENTRIES):
+    if (retained_digest, retained_count, total_count) != expected:
         issues.append("TREE_PROOF:digest_or_count")
     for path in BASE_ABSENT_PATHS:
         entry = entries.get(path)
@@ -493,10 +519,11 @@ def ci_context_issues() -> list[str]:
             base_sha, head_sha = base.get("sha"), head.get("sha")
             if base.get("ref") != "main" or not is_oid(base_sha) or not is_oid(head_sha) or not (checkout == head_sha or parents == [base_sha, head_sha]):
                 raise RuntimeError("pull checkout")
-            if head.get("ref") == BRANCH:
-                if base_sha != BASE or pull.get("changed_files") != len(ALLOWLIST):
+            mission_context = head.get("ref") == BRANCH or base_sha in APPROVED_BASES
+            if mission_context:
+                if head.get("ref") != BRANCH or base_sha not in APPROVED_BASES or pull.get("changed_files") != len(ALLOWLIST):
                     raise RuntimeError("pull exactness")
-                issues.extend(committed_tree_issues())
+                issues.extend(committed_tree_issues(base_sha))
             else:
                 if not isinstance(head.get("ref"), str) or not head["ref"] or not isinstance(pull.get("changed_files"), int) or pull["changed_files"] < 1:
                     raise RuntimeError("future pull metadata")
@@ -539,12 +566,12 @@ def ci_context_issues() -> list[str]:
                             aggregate.add(path)
             if len(set(ids)) != len(ids) or ids[-1] != after or commits[-1].get("tree_id") != tree_oid:
                 raise RuntimeError("push relations")
-            if before == BASE:
-                if len(commits) < 2 or len(parents) != 2 or parents[0] != BASE or parents[1] not in ids:
+            if before in APPROVED_BASES:
+                if len(commits) < 2 or len(parents) != 2 or parents[0] != before or parents[1] not in ids:
                     raise RuntimeError("integration source relation")
                 if path_metadata_presence and (added != set(BASE_ABSENT_PATHS) or modified != {"scripts/test.sh"} or removed):
                     raise RuntimeError("integration path metadata")
-                issues.extend(committed_tree_issues())
+                issues.extend(committed_tree_issues(before))
             else:
                 if not parents or parents[0] != before:
                     raise RuntimeError("future integration parent relation")
@@ -559,12 +586,14 @@ def ci_context_issues() -> list[str]:
 def git_context_issues() -> list[str]:
     if os.environ.get("CI") == "true" and os.environ.get("GITHUB_ACTIONS") == "true":
         return ci_context_issues()
-    if base_available():
-        issues = base_shape_issues() + regular_path_issues()
-        if changed_paths() != ALLOWLIST:
-            issues.append("ALLOWLIST_ACTUAL_DIFF")
-        return sorted(set(issues))
-    return ["GIT_CONTEXT:base_unavailable"]
+    try:
+        base = approved_base_for_head()
+    except Exception as exc:
+        return [f"GIT_CONTEXT:{type(exc).__name__}"]
+    issues = base_shape_issues(base) + regular_path_issues()
+    if changed_paths(base) != ALLOWLIST:
+        issues.append("ALLOWLIST_ACTUAL_DIFF")
+    return sorted(set(issues))
 
 
 def runner_issues() -> list[str]:
@@ -585,8 +614,15 @@ def runner_issues() -> list[str]:
     expected_blob = PROVISIONAL_RUNNER_BLOB if provisional else PINNED_RUNNER_BLOB
     if expected_blob in {"TO_BE_RECOMPUTED", "TO_BE_FINALIZED"} or git_blob_oid(ROOT / "scripts/test.sh") != expected_blob:
         issues.append("RUNNER:exact_blob")
-    if base_available():
-        base = git("show", f"{BASE}:scripts/test.sh", check=False)
+    available_bases = [base for base in APPROVED_BASES if base_available(base)]
+    context_base: str | None = None
+    if available_bases:
+        try:
+            context_base = approved_base_for_head()
+        except Exception as exc:
+            issues.append(f"RUNNER:base_context:{type(exc).__name__}")
+    if context_base is not None:
+        base = git("show", f"{context_base}:scripts/test.sh", check=False)
         anchor = '"$python" -B -m unittest tests.test_ft_rb_01_rights_safe_media_readiness\n\n'
         block = (
             '# FT-RB-02 pre-pin Inquiry/CRM readiness validation and focused/adversarial dispatch.\n'

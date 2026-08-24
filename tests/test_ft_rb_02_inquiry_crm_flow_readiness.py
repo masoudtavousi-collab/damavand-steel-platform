@@ -312,9 +312,15 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
             self.assertIn(row["expected_issue"], issues, row["id"])
 
     def test_32_local_allowlist_base_shape_and_path_modes(self) -> None:
-        self.assertTrue(MODULE.base_available())
-        self.assertEqual(MODULE.base_shape_issues(), [])
-        self.assertEqual(MODULE.changed_paths(), MODULE.ALLOWLIST)
+        for base in MODULE.APPROVED_BASES:
+            self.assertTrue(MODULE.base_available(base))
+            self.assertEqual(MODULE.base_shape_issues(base), [])
+        self.assertEqual(MODULE.approved_base_for_head(), MODULE.APPROVED_SUCCESSOR_BASE)
+        self.assertEqual(MODULE.changed_paths(MODULE.APPROVED_SUCCESSOR_BASE), MODULE.ALLOWLIST)
+        self.assertEqual(
+            MODULE.changed_paths(MODULE.ORIGINAL_MISSION_BASE),
+            sorted(MODULE.ALLOWLIST + ["tests/test_ft_rb_01_rights_safe_media_readiness.py"]),
+        )
         self.assertEqual(MODULE.regular_path_issues(), [])
 
     def test_33_runner_dispatch_is_exact_for_pin_state(self) -> None:
@@ -340,13 +346,13 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
         repo = {"full_name": MODULE.REPOSITORY_FULL_NAME}
         return {"repository": repo, "pull_request": {"changed_files": count, "base": {"sha": base, "ref": "main", "repo": repo}, "head": {"sha": head, "ref": branch, "repo": repo}}}
 
-    def _run_ci(self, event_name: str, event: dict, checkout: str, parents: list[str], *, tree: str = "d" * 40) -> list[str]:
+    def _run_ci(self, event_name: str, event: dict, checkout: str, parents: list[str], *, tree: str = "d" * 40, clean: bool = True) -> list[str]:
         def fake_git(*args: str, **_kwargs: object) -> subprocess.CompletedProcess[str]:
             if args == ("rev-parse", "HEAD"):
                 return cp(checkout + "\n")
             return cp("")
         with mock.patch.dict(os.environ, {"CI": "true", "GITHUB_ACTIONS": "true", "GITHUB_EVENT_NAME": event_name}, clear=False), \
-             mock.patch.object(MODULE, "clean_checkout", return_value=True), \
+             mock.patch.object(MODULE, "clean_checkout", return_value=clean), \
              mock.patch.object(MODULE, "load_event", return_value=event), \
              mock.patch.object(MODULE, "git", side_effect=fake_git), \
              mock.patch.object(MODULE, "raw_commit", return_value=(tree, parents)), \
@@ -356,18 +362,20 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
 
     def test_36_shallow_direct_and_synthetic_pr_contexts(self) -> None:
         head = "e" * 40
-        event = self._pr_event(MODULE.BASE, head, MODULE.BRANCH, len(MODULE.ALLOWLIST))
-        self.assertEqual(self._run_ci("pull_request", event, head, []), [])
-        merge = "f" * 40
-        self.assertEqual(self._run_ci("pull_request", event, merge, [MODULE.BASE, head]), [])
+        for base in MODULE.APPROVED_BASES:
+            event = self._pr_event(base, head, MODULE.BRANCH, len(MODULE.ALLOWLIST))
+            self.assertEqual(self._run_ci("pull_request", event, head, []), [])
+            merge = "f" * 40
+            self.assertEqual(self._run_ci("pull_request", event, merge, [base, head]), [])
 
     def test_37_exact_merge_push_and_future_integrated_contexts(self) -> None:
         source, merge, tree = "e" * 40, "f" * 40, "d" * 40
         repo = {"full_name": MODULE.REPOSITORY_FULL_NAME}
-        event = {"repository": repo, "ref": "refs/heads/main", "before": MODULE.BASE, "after": merge, "created": False, "deleted": False, "forced": False,
-                 "commits": [{"id": source, "tree_id": "c" * 40, "distinct": True}, {"id": merge, "tree_id": tree, "distinct": True}],
-                 "head_commit": {"id": merge, "tree_id": tree}}
-        self.assertEqual(self._run_ci("push", event, merge, [MODULE.BASE, source], tree=tree), [])
+        for base in MODULE.APPROVED_BASES:
+            event = {"repository": repo, "ref": "refs/heads/main", "before": base, "after": merge, "created": False, "deleted": False, "forced": False,
+                     "commits": [{"id": source, "tree_id": "c" * 40, "distinct": True}, {"id": merge, "tree_id": tree, "distinct": True}],
+                     "head_commit": {"id": merge, "tree_id": tree}}
+            self.assertEqual(self._run_ci("push", event, merge, [base, source], tree=tree), [])
         before, later = "1" * 40, "2" * 40
         future = {"repository": repo, "ref": "refs/heads/main", "before": before, "after": later, "created": False, "deleted": False, "forced": False,
                   "commits": [{"id": later, "tree_id": tree, "distinct": True}], "head_commit": {"id": later, "tree_id": tree}}
@@ -375,13 +383,22 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
 
     def test_38_ci_event_scope_adversaries_fail(self) -> None:
         head = "e" * 40
-        event = self._pr_event(MODULE.BASE, head, MODULE.BRANCH, len(MODULE.ALLOWLIST))
+        event = self._pr_event(MODULE.APPROVED_SUCCESSOR_BASE, head, MODULE.BRANCH, len(MODULE.ALLOWLIST))
         attacks = []
         wrong_repo = copy.deepcopy(event); wrong_repo["pull_request"]["head"]["repo"]["full_name"] = "fork/example"; attacks.append(wrong_repo)
         wrong_base = copy.deepcopy(event); wrong_base["pull_request"]["base"]["sha"] = "a" * 40; attacks.append(wrong_base)
+        malformed_base = copy.deepcopy(event); malformed_base["pull_request"]["base"]["sha"] = "not-an-oid"; attacks.append(malformed_base)
+        malformed_head = copy.deepcopy(event); malformed_head["pull_request"]["head"]["sha"] = "not-an-oid"; attacks.append(malformed_head)
+        wrong_branch = copy.deepcopy(event); wrong_branch["pull_request"]["head"]["ref"] = "codex/unapproved"; attacks.append(wrong_branch)
+        wrong_ref = copy.deepcopy(event); wrong_ref["pull_request"]["base"]["ref"] = "release"; attacks.append(wrong_ref)
         wrong_count = copy.deepcopy(event); wrong_count["pull_request"]["changed_files"] = 13; attacks.append(wrong_count)
+        malformed_metadata = copy.deepcopy(event); malformed_metadata["pull_request"]["changed_files"] = "14"; attacks.append(malformed_metadata)
+        missing_head = copy.deepcopy(event); del missing_head["pull_request"]["head"]; attacks.append(missing_head)
         for attack in attacks:
             self.assertTrue(self._run_ci("pull_request", attack, head, []), attack)
+        merge = "f" * 40
+        self.assertTrue(self._run_ci("pull_request", event, merge, [MODULE.ORIGINAL_MISSION_BASE, head]))
+        self.assertTrue(self._run_ci("pull_request", event, head, [], clean=False))
 
     def test_39_cli_has_no_git_bypass_and_binds_registry_mode(self) -> None:
         skipped = subprocess.run([sys.executable, str(MODULE.VALIDATOR_PATH if hasattr(MODULE, "VALIDATOR_PATH") else VALIDATOR_PATH), "--skip-git"], cwd=ROOT, capture_output=True, text=True)
@@ -428,7 +445,10 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
         policy = MODULE.load_data(MODULE.REGISTRY)["source_policy"]
         self.assertEqual(policy["semantic_sources"][-1]["property_scope"], "PRIVACY_MINIMIZATION_CONSENT_FORM_SECURITY_AND_STAGING_ACCEPTANCE_REQUIREMENTS")
         restart = policy["procedural_restart_evidence"]
-        self.assertEqual((restart["predecessor_pr"], restart["predecessor_merge_sha"], restart["post_merge_ci_run"]), (53, MODULE.BASE, 32665124526))
+        self.assertEqual(
+            (restart["predecessor_pr"], restart["predecessor_merge_sha"], restart["post_merge_ci_run"]),
+            (53, MODULE.ORIGINAL_MISSION_BASE, 32665124526),
+        )
         self.assertFalse(restart["sets_field_semantics"])
 
     def test_43_privacy_controls_all_optional_and_system_fields(self) -> None:
@@ -458,6 +478,103 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
         self.assertIn("CONTRACT_EXACTNESS", issues)
         self.assertIn("SCHEMA_EXACTNESS", issues)
         self.assertIn("REGISTRY_EXACTNESS:customer_form", issues)
+
+    def test_46_approved_base_selection_is_exact_and_ambiguous_fails(self) -> None:
+        unapproved = "a" * 40
+        self.assertFalse(MODULE.base_available(unapproved))
+        self.assertEqual(MODULE.base_shape_issues(unapproved), ["BASE_SHAPE:unapproved"])
+        with self.assertRaises(ValueError):
+            MODULE.changed_paths(unapproved)
+
+        def ambiguous_relation(_ancestor: str, descendant: str = "HEAD") -> bool:
+            return descendant == "HEAD"
+
+        with mock.patch.object(MODULE, "base_available", return_value=True), \
+             mock.patch.object(MODULE, "is_ancestor", side_effect=ambiguous_relation):
+            with self.assertRaises(RuntimeError):
+                MODULE.approved_base_for_head()
+        with mock.patch.object(MODULE, "base_available", return_value=False):
+            with self.assertRaises(RuntimeError):
+                MODULE.approved_base_for_head()
+
+    def test_47_historical_and_successor_tree_proofs_are_exact_and_adversarial(self) -> None:
+        self.assertEqual(
+            MODULE.committed_tree_issues(MODULE.ORIGINAL_MISSION_BASE, "62f4036fb3fe93edb42b2e8b760507a217b5f295"),
+            [],
+        )
+        self.assertEqual(MODULE.committed_tree_issues(MODULE.APPROVED_SUCCESSOR_BASE), [])
+        self.assertEqual(MODULE.committed_tree_issues("a" * 40), ["TREE_PROOF:unapproved_base"])
+
+        expected = MODULE.COMMITTED_TREE_PROOFS[MODULE.APPROVED_SUCCESSOR_BASE]
+        entries = {
+            path: ("100644", "blob", "a" * 40)
+            for path in MODULE.BASE_ABSENT_PATHS
+        }
+        entries["scripts/test.sh"] = ("100755", "blob", MODULE.PINNED_RUNNER_BLOB)
+        missing = dict(entries)
+        missing.pop(MODULE.BASE_ABSENT_PATHS[0])
+        with mock.patch.object(MODULE, "parse_tree", return_value=(*expected, missing)):
+            self.assertIn(
+                f"TREE_PROOF:new_entry:{MODULE.BASE_ABSENT_PATHS[0]}",
+                MODULE.committed_tree_issues(MODULE.APPROVED_SUCCESSOR_BASE),
+            )
+        unexpected = ("b" * 64, expected[1] + 1, expected[2] + 1, entries)
+        with mock.patch.object(MODULE, "parse_tree", return_value=unexpected):
+            self.assertIn("TREE_PROOF:digest_or_count", MODULE.committed_tree_issues(MODULE.APPROVED_SUCCESSOR_BASE))
+
+    def test_48_dirty_untracked_and_partial_ci_metadata_fail_closed(self) -> None:
+        with mock.patch.object(MODULE, "git", return_value=cp("?? unexpected.txt\n")):
+            self.assertFalse(MODULE.clean_checkout())
+        head = "e" * 40
+        event = self._pr_event(MODULE.APPROVED_SUCCESSOR_BASE, head, MODULE.BRANCH, len(MODULE.ALLOWLIST))
+        malformed = copy.deepcopy(event)
+        malformed["pull_request"]["base"]["repo"] = {"full_name": 1}
+        self.assertTrue(self._run_ci("pull_request", malformed, head, []))
+        with mock.patch.dict(os.environ, {"CI": "true", "GITHUB_ACTIONS": "false"}, clear=False), \
+             mock.patch.object(MODULE, "clean_checkout", return_value=True):
+            self.assertEqual(MODULE.ci_context_issues(), ["CI_CONTEXT:environment_or_cleanliness"])
+
+    def test_49_push_path_parent_and_metadata_adversaries_fail(self) -> None:
+        source, merge, tree = "e" * 40, "f" * 40, "d" * 40
+        base = MODULE.APPROVED_SUCCESSOR_BASE
+        repo = {"full_name": MODULE.REPOSITORY_FULL_NAME}
+
+        def event_with(added: list[str]) -> dict:
+            return {
+                "repository": repo,
+                "ref": "refs/heads/main",
+                "before": base,
+                "after": merge,
+                "created": False,
+                "deleted": False,
+                "forced": False,
+                "commits": [
+                    {"id": source, "tree_id": "c" * 40, "distinct": True, "added": added, "modified": [], "removed": []},
+                    {"id": merge, "tree_id": tree, "distinct": True, "added": [], "modified": ["scripts/test.sh"], "removed": []},
+                ],
+                "head_commit": {"id": merge, "tree_id": tree},
+            }
+
+        exact = event_with(list(MODULE.BASE_ABSENT_PATHS))
+        self.assertEqual(self._run_ci("push", exact, merge, [base, source], tree=tree), [])
+        self.assertTrue(self._run_ci("push", exact, merge, [MODULE.ORIGINAL_MISSION_BASE, source], tree=tree))
+        self.assertTrue(self._run_ci("push", event_with(list(MODULE.BASE_ABSENT_PATHS[:-1])), merge, [base, source], tree=tree))
+        self.assertTrue(self._run_ci("push", event_with(list(MODULE.BASE_ABSENT_PATHS) + ["unexpected.txt"]), merge, [base, source], tree=tree))
+        partial = event_with(list(MODULE.BASE_ABSENT_PATHS))
+        del partial["commits"][0]["removed"]
+        self.assertTrue(self._run_ci("push", partial, merge, [base, source], tree=tree))
+
+    def test_50_successor_adaptation_preserves_semantic_freeze(self) -> None:
+        registry = MODULE.load_data(MODULE.REGISTRY)
+        self.assertEqual(
+            (registry["readiness"]["prerequisite_state"], registry["readiness"]["repository_package_state"], registry["readiness"]["workflow_status"]),
+            ("UNMET", "REPOSITORY_READY", "BLOCKED_EXTERNAL_INPUT"),
+        )
+        gate = registry["gate_snapshot"]
+        self.assertEqual((gate["eligible"], gate["met_count"], gate["unmet_count"], gate["total"]), (False, 5, 7, 12))
+        self.assertEqual(registry["c002_snapshot"]["readiness"], "6/9 / NOT_READY")
+        self.assertFalse(registry["future_payload_contract"]["record_creation_performed"])
+        self.assertTrue(all(value is False for value in registry["no_claim_boundaries"].values()))
 
 
 if __name__ == "__main__":
