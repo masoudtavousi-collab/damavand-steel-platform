@@ -46,6 +46,13 @@ APPROVED_BASES = (ORIGINAL_MISSION_BASE, APPROVED_SUCCESSOR_BASE)
 BRANCH = "codex/ft-rb-02-inquiry-crm-flow-readiness"
 REPAIR_BASE = "1fa127859655f8027aaea9dc84db7b109cc5949d"
 REPAIR_BRANCH = "codex/ft-rb-02-generic-successor-context-repair"
+POST_MERGE_REPAIR_BASE = "bcbc67cbdcb2cbb0757155bb97db0c4acd87d3c7"
+POST_MERGE_REPAIR_BRANCH = "codex/ft-rb-02-post-merge-push-context-repair"
+AUTHORIZED_REPAIR_CONTEXTS = {
+    REPAIR_BASE: REPAIR_BRANCH,
+    POST_MERGE_REPAIR_BASE: POST_MERGE_REPAIR_BRANCH,
+}
+REPAIR_BASES_BY_BRANCH = {branch: base for base, branch in AUTHORIZED_REPAIR_CONTEXTS.items()}
 REPAIR_ALLOWLIST = [
     "repository/data/validation/validate_ft_rb_02_inquiry_crm_flow_readiness.py",
     "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py",
@@ -74,9 +81,9 @@ PROTECTED_BLOBS = {
     "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/adversarial-remote-ref-schema.json": "a8b538a1eba45260615f6401a54e4c107228b9df",
     "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/mutation-cases.json": "2628100b11263ea2e562ed730aedaa8324f191ee",
     "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/valid-synthetic.yaml": "47b4731a9033eff56caaa74f561f29e0c1e200b5",
-    "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py": "2a455da06fea28de2d11340d6afcdd8b546f6e02",
+    "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py": "062d1af57d57dde6c5d96226901dc4c0365f3174",
 }
-VALIDATOR_NORMALIZED_SHA256 = "47b8b08aa623af7f4cb3f35514dc07a55989376d55699df42410e69a6472a2a9"
+VALIDATOR_NORMALIZED_SHA256 = "812f4cedc8818b01489f4b1e80242c0fa39d66dff3b1d64815407f9394454668"
 RUNNER_SLOT_START = '"$python" -B -m unittest tests.test_ft_rb_02_inquiry_crm_flow_readiness\n\n'
 RUNNER_SLOT_END = '"$python" repository/data/validation/validate_bp2_data_blueprint.py\n'
 RUNNER_PREFIX_SHA256 = "2bde612096f850be1625d79b494fc5137b6589bf0740d2fc33037983a91b1352"
@@ -460,9 +467,9 @@ def classify_pr_context(base_sha: Any, head_ref: Any) -> str:
         raise RuntimeError("ambiguous historical context")
     if historical_base:
         return HISTORICAL_CONTEXT
-    repair_base = base_sha == REPAIR_BASE
-    repair_branch = head_ref == REPAIR_BRANCH
-    if repair_base != repair_branch:
+    repair_base = base_sha in AUTHORIZED_REPAIR_CONTEXTS
+    repair_branch = head_ref in REPAIR_BASES_BY_BRANCH
+    if repair_base != repair_branch or (repair_base and AUTHORIZED_REPAIR_CONTEXTS[base_sha] != head_ref):
         raise RuntimeError("ambiguous repair context")
     return REPAIR_CONTEXT if repair_base else SUCCESSOR_CONTEXT
 
@@ -472,8 +479,9 @@ def local_context() -> str:
     if branch == BRANCH:
         approved_base_for_head()
         return HISTORICAL_CONTEXT
-    if branch == REPAIR_BRANCH:
-        if not commit_available(REPAIR_BASE) or not is_ancestor(REPAIR_BASE):
+    if branch in REPAIR_BASES_BY_BRANCH:
+        repair_base = REPAIR_BASES_BY_BRANCH[branch]
+        if not commit_available(repair_base) or not is_ancestor(repair_base):
             raise RuntimeError("invalid repair ancestry")
         return REPAIR_CONTEXT
     if not commit_available(REPAIR_BASE) or not is_ancestor(REPAIR_BASE):
@@ -656,6 +664,34 @@ def clean_checkout() -> bool:
     return not git("status", "--porcelain").stdout.strip()
 
 
+def valid_merge_push_relation(
+    before: str,
+    after: str,
+    parents: list[str],
+    commits: list[dict[str, Any]],
+    ids: list[str],
+    tree_oid: str,
+    path_metadata_presence: bool | None,
+) -> bool:
+    if (
+        not is_oid(before)
+        or not is_oid(after)
+        or len(parents) != 2
+        or parents[0] != before
+        or not is_oid(parents[1])
+        or parents[1] in {before, after}
+        or commits[-1].get("distinct") is not True
+    ):
+        return False
+    if len(commits) == 1:
+        return (
+            ids == [after]
+            and commits[0].get("tree_id") == tree_oid
+            and path_metadata_presence is True
+        )
+    return True
+
+
 def ci_event_context() -> str:
     event = load_event()
     if not repository_matches(event):
@@ -672,7 +708,7 @@ def ci_event_context() -> str:
             raise RuntimeError("push base")
         if before in APPROVED_BASES:
             return HISTORICAL_CONTEXT
-        if before == REPAIR_BASE:
+        if before in AUTHORIZED_REPAIR_CONTEXTS:
             return REPAIR_CONTEXT
         return SUCCESSOR_CONTEXT
     raise RuntimeError("event type")
@@ -773,13 +809,13 @@ def ci_context_issues() -> list[str]:
             if len(set(ids)) != len(ids) or ids[-1] != after or commits[-1].get("tree_id") != tree_oid:
                 raise RuntimeError("push relations")
             if before in APPROVED_BASES:
-                if len(commits) < 2 or len(parents) != 2 or parents[0] != before or parents[1] not in ids:
+                if not valid_merge_push_relation(before, after, parents, commits, ids, tree_oid, path_metadata_presence):
                     raise RuntimeError("integration source relation")
                 if path_metadata_presence and (added != set(BASE_ABSENT_PATHS) or modified != {"scripts/test.sh"} or removed):
                     raise RuntimeError("integration path metadata")
                 issues.extend(committed_tree_issues(before))
-            elif before == REPAIR_BASE:
-                if len(commits) < 2 or len(parents) != 2 or parents[0] != before or parents[1] not in ids:
+            elif before in AUTHORIZED_REPAIR_CONTEXTS:
+                if not valid_merge_push_relation(before, after, parents, commits, ids, tree_oid, path_metadata_presence):
                     raise RuntimeError("repair integration source relation")
                 if not path_metadata_presence or added or modified != set(REPAIR_ALLOWLIST) or removed:
                     raise RuntimeError("repair integration path metadata")
@@ -787,8 +823,8 @@ def ci_context_issues() -> list[str]:
                 issues.extend(successor_protected_issues())
                 issues.extend(regular_path_issues())
             else:
-                direct = parents == [before]
-                merged = len(parents) == 2 and parents[0] == before and parents[1] in ids
+                direct = parents == [before] and ids == [after] and commits[0].get("distinct") is True
+                merged = valid_merge_push_relation(before, after, parents, commits, ids, tree_oid, path_metadata_presence)
                 if not (direct or merged):
                     raise RuntimeError("future integration parent relation")
                 if not path_metadata_presence:
@@ -824,7 +860,8 @@ def git_context_issues() -> list[str]:
         except Exception as exc:
             issues.append(f"GIT_CONTEXT:{type(exc).__name__}")
     elif context == REPAIR_CONTEXT:
-        if diff_paths(REPAIR_BASE) != REPAIR_ALLOWLIST:
+        repair_base = REPAIR_BASES_BY_BRANCH.get(current_branch())
+        if repair_base is None or diff_paths(repair_base) != REPAIR_ALLOWLIST:
             issues.append("REPAIR_ALLOWLIST_ACTUAL_DIFF")
         issues.extend(committed_tree_issues(APPROVED_SUCCESSOR_BASE))
         issues.extend(successor_protected_issues())
