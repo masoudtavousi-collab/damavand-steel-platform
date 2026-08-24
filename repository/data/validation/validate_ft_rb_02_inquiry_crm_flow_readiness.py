@@ -50,10 +50,13 @@ POST_MERGE_REPAIR_BASE = "bcbc67cbdcb2cbb0757155bb97db0c4acd87d3c7"
 POST_MERGE_REPAIR_BRANCH = "codex/ft-rb-02-post-merge-push-context-repair"
 PATH_PROOF_REPAIR_BASE = "ddea2ffbf209681e7903d76316958f20fb61382f"
 PATH_PROOF_REPAIR_BRANCH = "codex/ft-rb-02-post-merge-push-path-proof-repair"
+SUCCESSOR_TEST_PIN_CONTEXT_REPAIR_BASE = "e929e99066baebb5d3d7eb23e469e0e23213ab26"
+SUCCESSOR_TEST_PIN_CONTEXT_REPAIR_BRANCH = "codex/ft-rb-02-successor-test-pin-context-repair"
 AUTHORIZED_REPAIR_CONTEXTS = {
     REPAIR_BASE: REPAIR_BRANCH,
     POST_MERGE_REPAIR_BASE: POST_MERGE_REPAIR_BRANCH,
     PATH_PROOF_REPAIR_BASE: PATH_PROOF_REPAIR_BRANCH,
+    SUCCESSOR_TEST_PIN_CONTEXT_REPAIR_BASE: SUCCESSOR_TEST_PIN_CONTEXT_REPAIR_BRANCH,
 }
 REPAIR_BASES_BY_BRANCH = {branch: base for base, branch in AUTHORIZED_REPAIR_CONTEXTS.items()}
 REPAIR_ALLOWLIST = [
@@ -88,6 +91,15 @@ REPAIR_TREE_PROOFS = {
             REPAIR_ALLOWLIST[1]: "062d1af57d57dde6c5d96226901dc4c0365f3174",
         },
     ),
+    SUCCESSOR_TEST_PIN_CONTEXT_REPAIR_BASE: (
+        "cd207364c54d1af3c1d475a1fed60d1c0720edde27b8210b47a388847279ba64",
+        657,
+        659,
+        {
+            REPAIR_ALLOWLIST[0]: "70843873bf68ae4700c56a4c05f458be1120647a",
+            REPAIR_ALLOWLIST[1]: "064ed8cfca43397d203132699da230a709c80a3d",
+        },
+    ),
 }
 HISTORICAL_CONTEXT = "HISTORICAL_FT_RB_02"
 REPAIR_CONTEXT = "AUTHORIZED_GENERIC_SUCCESSOR_REPAIR"
@@ -113,9 +125,9 @@ PROTECTED_BLOBS = {
     "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/adversarial-remote-ref-schema.json": "a8b538a1eba45260615f6401a54e4c107228b9df",
     "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/mutation-cases.json": "2628100b11263ea2e562ed730aedaa8324f191ee",
     "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/valid-synthetic.yaml": "47b4731a9033eff56caaa74f561f29e0c1e200b5",
-    "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py": "064ed8cfca43397d203132699da230a709c80a3d",
+    "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py": "035137902e4f8db199981673ba7817a1daa69a9f",
 }
-VALIDATOR_NORMALIZED_SHA256 = "7ca1d93886a19b464deb0cfe91a299af004ca82c6854e2c68368c36d9070bc63"
+VALIDATOR_NORMALIZED_SHA256 = "a9bb05287a5329f83b5a1c7ce4f218139859121ca1c5e1b4e288ff6623d69d4b"
 RUNNER_SLOT_START = '"$python" -B -m unittest tests.test_ft_rb_02_inquiry_crm_flow_readiness\n\n'
 RUNNER_SLOT_END = '"$python" repository/data/validation/validate_bp2_data_blueprint.py\n'
 RUNNER_PREFIX_SHA256 = "2bde612096f850be1625d79b494fc5137b6589bf0740d2fc33037983a91b1352"
