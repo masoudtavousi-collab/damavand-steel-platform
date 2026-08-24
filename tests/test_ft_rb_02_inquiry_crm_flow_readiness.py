@@ -394,6 +394,8 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
         for base in MODULE.APPROVED_BASES:
             event = self._pr_event(base, head, MODULE.BRANCH, len(MODULE.ALLOWLIST))
             self.assertEqual(self._run_ci("pull_request", event, head, []), [])
+            self.assertTrue(self._run_ci("pull_request", event, head, [], direct_base_available=False))
+            self.assertTrue(self._run_ci("pull_request", event, head, [], direct_ancestor=False))
             merge = "f" * 40
             self.assertEqual(self._run_ci("pull_request", event, merge, [base, head]), [])
 
