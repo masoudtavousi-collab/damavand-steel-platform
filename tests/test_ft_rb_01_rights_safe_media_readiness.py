@@ -419,16 +419,31 @@ class RightsSafeMediaReadinessTests(unittest.TestCase):
             with self.assertRaises(ValueError): MODULE.parse_raw_commit(raw)
 
     def test_23_excluded_full_tree_manifest_exact_and_adversarial(self):
+        def assert_context_tree(context_mode, context_paths, tree_raw):
+            result = MODULE.parse_tree_manifest(tree_raw, MODULE.REPAIR_ALLOWLIST)
+            digest_value, retained_count, total_count, tree_entries = result
+            if context_mode == "repair":
+                self.assertEqual(MODULE.REPAIR_BASE_EXCLUDED_TREE_DIGEST, digest_value)
+                self.assertEqual(MODULE.REPAIR_BASE_RETAINED_TREE_ENTRIES, retained_count)
+                self.assertEqual(MODULE.REPAIR_BASE_TOTAL_TREE_ENTRIES, total_count)
+            elif context_mode == "integrated":
+                self.assertFalse(set(context_paths) & set(MODULE.PROTECTED_INTEGRATED_PATHS))
+                self.assertEqual(total_count, len(tree_entries))
+                self.assertEqual(retained_count, total_count - len(MODULE.REPAIR_ALLOWLIST))
+                for protected_path in MODULE.PROTECTED_INTEGRATED_PATHS:
+                    self.assertEqual(("100644", "blob"), tree_entries[protected_path][:2])
+            else:
+                self.fail(f"unexpected FT-RB-01 tree-proof context: {context_mode}")
+            return result
+
+        mode, paths = MODULE.git_context()
         raw = subprocess.run(
             ["git", "ls-tree", "-rz", "--full-tree", "HEAD"],
             cwd=ROOT,
             check=True,
             capture_output=True,
         ).stdout
-        digest, retained, total, entries = MODULE.parse_tree_manifest(raw, MODULE.REPAIR_ALLOWLIST)
-        self.assertEqual(MODULE.REPAIR_BASE_EXCLUDED_TREE_DIGEST, digest)
-        self.assertEqual(MODULE.REPAIR_BASE_RETAINED_TREE_ENTRIES, retained)
-        self.assertEqual(MODULE.REPAIR_BASE_TOTAL_TREE_ENTRIES, total)
+        digest, retained, total, entries = assert_context_tree(mode, paths, raw)
         for path, blob in MODULE.REPAIR_BASE_BLOBS.items():
             self.assertEqual(("100644", "blob"), entries[path][:2])
             self.assertNotEqual(blob, entries[path][2])
@@ -442,6 +457,22 @@ class RightsSafeMediaReadinessTests(unittest.TestCase):
             _, _, _, base_entries = MODULE.parse_tree_manifest(base_raw, MODULE.REPAIR_ALLOWLIST)
             for path, blob in MODULE.REPAIR_BASE_BLOBS.items():
                 self.assertEqual(("100644", "blob", blob), base_entries[path])
+        with self.assertRaises(AssertionError):
+            assert_context_tree("ambiguous", [], raw)
+        if mode == "integrated":
+            successor_index = 0
+            successor_path = f"zz-successor-proof-{successor_index}.txt"
+            while successor_path in entries:
+                successor_index += 1
+                successor_path = f"zz-successor-proof-{successor_index}.txt"
+            successor_entry = b"100644 blob " + (b"f" * 40) + b"\t" + successor_path.encode("ascii")
+            successor_records = raw[:-1].split(b"\0") + [successor_entry]
+            successor_records.sort(key=lambda record: record.split(b"\t", 1)[1])
+            successor_raw = b"\0".join(successor_records) + b"\0"
+            successor_digest, successor_retained, successor_total, _ = assert_context_tree(mode, paths, successor_raw)
+            self.assertNotEqual(digest, successor_digest)
+            self.assertEqual(retained + 1, successor_retained)
+            self.assertEqual(total + 1, successor_total)
         with self.assertRaises(ValueError):
             MODULE.parse_tree_manifest(raw, list(reversed(MODULE.REPAIR_ALLOWLIST)))
         for malformed in [raw[:-1], raw + b"\0", b"bad\0"]:
@@ -450,7 +481,7 @@ class RightsSafeMediaReadinessTests(unittest.TestCase):
         first = raw.split(b"\0", 1)[0]
         changed = raw.replace(first, first.replace(b"100644", b"100755", 1), 1)
         changed_digest, _, _, _ = MODULE.parse_tree_manifest(changed, MODULE.REPAIR_ALLOWLIST)
-        self.assertNotEqual(MODULE.REPAIR_BASE_EXCLUDED_TREE_DIGEST, changed_digest)
+        self.assertNotEqual(digest, changed_digest)
 
     def test_24_repair_tree_proof_rejects_unchanged_wrong_mode_and_third_path_drift(self):
         entries = {
