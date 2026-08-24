@@ -1,0 +1,1798 @@
+{
+  "manifest_id": "ftrb02-inquiry-crm-flow-readiness-mutations",
+  "manifest_version": "1.0.0",
+  "case_count": 200,
+  "cases": [
+    {
+      "id": "M001",
+      "name": "registry drift at registry_id",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "registry_id"
+      ],
+      "value": "ftrb02:inquiry-crm-flow-readiness__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:registry_id"
+    },
+    {
+      "id": "M002",
+      "name": "registry drift at registry_version",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "registry_version"
+      ],
+      "value": "1.0.0__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:registry_version"
+    },
+    {
+      "id": "M003",
+      "name": "registry drift at mission_id",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "mission_id"
+      ],
+      "value": "FT-RB-02__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:mission_id"
+    },
+    {
+      "id": "M004",
+      "name": "registry drift at campaign_authorized_starting_main",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "campaign_authorized_starting_main"
+      ],
+      "value": "310d0ac3f6f9da67a975a32beb0b55361aa176d5__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:campaign_authorized_starting_main"
+    },
+    {
+      "id": "M005",
+      "name": "registry drift at mission_base_main",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "mission_base_main"
+      ],
+      "value": "01ce2aeea3445e66537fe7c872bdc48fa796bf44__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:mission_base_main"
+    },
+    {
+      "id": "M006",
+      "name": "registry drift at source.source_id",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "source",
+        "source_id"
+      ],
+      "value": "FTRB02-SOURCE-001__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:source"
+    },
+    {
+      "id": "M007",
+      "name": "registry drift at source_policy.execution_authority_ts",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "source_policy",
+        "execution_authority_ts"
+      ],
+      "value": "1787485976.633809__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:source_policy"
+    },
+    {
+      "id": "M008",
+      "name": "registry drift at exact_changed_paths.0",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "exact_changed_paths",
+        0
+      ],
+      "value": "docs/FT_RB_02_INQUIRY_CRM_FLOW_READINESS_SCOPE_V1.0.md__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:exact_changed_paths"
+    },
+    {
+      "id": "M009",
+      "name": "registry drift at owner_model.inquiry_semantic_owner",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "owner_model",
+        "inquiry_semantic_owner"
+      ],
+      "value": "INQUIRY_DATA_MODEL__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:owner_model"
+    },
+    {
+      "id": "M010",
+      "name": "registry drift at canonical_slice_binding.owner_path",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "canonical_slice_binding",
+        "owner_path"
+      ],
+      "value": "repository/data/registries/extensions/c009/201-51-canonical-leaf-promotion.yaml__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:canonical_slice_binding"
+    },
+    {
+      "id": "M011",
+      "name": "registry drift at readiness.repository_package_state",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "readiness",
+        "repository_package_state"
+      ],
+      "value": "REPOSITORY_READY__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:readiness"
+    },
+    {
+      "id": "M012",
+      "name": "registry drift at customer_form.fields.0.field_id",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "customer_form",
+        "fields",
+        0,
+        "field_id"
+      ],
+      "value": "name__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:customer_form"
+    },
+    {
+      "id": "M013",
+      "name": "registry drift at city_reconciliation.payload_source_ts",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "city_reconciliation",
+        "payload_source_ts"
+      ],
+      "value": "1787398832.469889__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:city_reconciliation"
+    },
+    {
+      "id": "M014",
+      "name": "registry drift at future_payload_contract.record_creation_performed",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "future_payload_contract",
+        "record_creation_performed"
+      ],
+      "value": true,
+      "expected_issue": "REGISTRY_EXACTNESS:future_payload_contract"
+    },
+    {
+      "id": "M015",
+      "name": "registry drift at inquiry_record_policy.record_creation_performed",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "inquiry_record_policy",
+        "record_creation_performed"
+      ],
+      "value": true,
+      "expected_issue": "REGISTRY_EXACTNESS:inquiry_record_policy"
+    },
+    {
+      "id": "M016",
+      "name": "registry drift at state_planes.inquiry_lifecycle.owner",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "state_planes",
+        "inquiry_lifecycle",
+        "owner"
+      ],
+      "value": "INQUIRY_WORKFLOW__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:state_planes"
+    },
+    {
+      "id": "M017",
+      "name": "registry drift at lead_stage_vocabulary.state",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "lead_stage_vocabulary",
+        "state"
+      ],
+      "value": "REPOSITORY_REQUIREMENT_ONLY__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:lead_stage_vocabulary"
+    },
+    {
+      "id": "M018",
+      "name": "registry drift at supply_check_policy.states.0",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "supply_check_policy",
+        "states",
+        0
+      ],
+      "value": "CHECK_REQUIRED__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:supply_check_policy"
+    },
+    {
+      "id": "M019",
+      "name": "registry drift at deduplication_delivery.matching_creates_review_candidates_only",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "deduplication_delivery",
+        "matching_creates_review_candidates_only"
+      ],
+      "value": false,
+      "expected_issue": "REGISTRY_EXACTNESS:deduplication_delivery"
+    },
+    {
+      "id": "M020",
+      "name": "registry drift at consent_privacy.inquiry_processing_disclosure_required",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "consent_privacy",
+        "inquiry_processing_disclosure_required"
+      ],
+      "value": false,
+      "expected_issue": "REGISTRY_EXACTNESS:consent_privacy"
+    },
+    {
+      "id": "M021",
+      "name": "registry drift at form_security_requirements.implementation_state",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "form_security_requirements",
+        "implementation_state"
+      ],
+      "value": "NOT_IMPLEMENTED__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:form_security_requirements"
+    },
+    {
+      "id": "M022",
+      "name": "registry drift at analytics_boundary.non_pii_event_references_only",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "analytics_boundary",
+        "non_pii_event_references_only"
+      ],
+      "value": false,
+      "expected_issue": "REGISTRY_EXACTNESS:analytics_boundary"
+    },
+    {
+      "id": "M023",
+      "name": "registry drift at missing_authority_inputs.0",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "missing_authority_inputs",
+        0
+      ],
+      "value": "APPROVED_PRIVACY_CONSENT_PERSIAN_TEXT_VERSION_AND_LEGAL_BASIS__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:missing_authority_inputs"
+    },
+    {
+      "id": "M024",
+      "name": "registry drift at no_claim_boundaries.inquiry_customer_or_crm_record_population",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "no_claim_boundaries",
+        "inquiry_customer_or_crm_record_population"
+      ],
+      "value": true,
+      "expected_issue": "REGISTRY_EXACTNESS:no_claim_boundaries"
+    },
+    {
+      "id": "M025",
+      "name": "registry drift at gate_snapshot.eligible",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "gate_snapshot",
+        "eligible"
+      ],
+      "value": true,
+      "expected_issue": "REGISTRY_EXACTNESS:gate_snapshot"
+    },
+    {
+      "id": "M026",
+      "name": "registry drift at c002_snapshot.readiness",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "c002_snapshot",
+        "readiness"
+      ],
+      "value": "6/9 / NOT_READY__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:c002_snapshot"
+    },
+    {
+      "id": "M027",
+      "name": "registry drift at source.locator",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "source",
+        "locator"
+      ],
+      "value": "slack:C0BNHRRTE9F:1787485976.633809__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:source"
+    },
+    {
+      "id": "M028",
+      "name": "registry drift at source_policy.payload_business_authority_ts",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "source_policy",
+        "payload_business_authority_ts"
+      ],
+      "value": "1787398832.469889__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:source_policy"
+    },
+    {
+      "id": "M029",
+      "name": "registry drift at exact_changed_paths.1",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "exact_changed_paths",
+        1
+      ],
+      "value": "repository/data/contracts/ft-rb-02-inquiry-crm-flow-readiness.contract.yaml__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:exact_changed_paths"
+    },
+    {
+      "id": "M030",
+      "name": "registry drift at owner_model.inquiry_lifecycle_owner",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "owner_model",
+        "inquiry_lifecycle_owner"
+      ],
+      "value": "INQUIRY_WORKFLOW__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:owner_model"
+    },
+    {
+      "id": "M031",
+      "name": "registry drift at canonical_slice_binding.binding_mode",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "canonical_slice_binding",
+        "binding_mode"
+      ],
+      "value": "DYNAMIC_OWNER_REFERENCE_ONLY__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:canonical_slice_binding"
+    },
+    {
+      "id": "M032",
+      "name": "registry drift at readiness.workflow_status",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "readiness",
+        "workflow_status"
+      ],
+      "value": "BLOCKED_EXTERNAL_INPUT__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:readiness"
+    },
+    {
+      "id": "M033",
+      "name": "registry drift at customer_form.fields.0.capture",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "customer_form",
+        "fields",
+        0,
+        "capture"
+      ],
+      "value": "CUSTOMER_ENTERED__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:customer_form"
+    },
+    {
+      "id": "M034",
+      "name": "registry drift at city_reconciliation.payload_value",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "city_reconciliation",
+        "payload_value"
+      ],
+      "value": "REQUIRED__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:city_reconciliation"
+    },
+    {
+      "id": "M035",
+      "name": "registry drift at future_payload_contract.future_fields.0.field_id",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "future_payload_contract",
+        "future_fields",
+        0,
+        "field_id"
+      ],
+      "value": "inquiry_id__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:future_payload_contract"
+    },
+    {
+      "id": "M036",
+      "name": "registry drift at inquiry_record_policy.inquiry_or_customer_id_minted",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "inquiry_record_policy",
+        "inquiry_or_customer_id_minted"
+      ],
+      "value": true,
+      "expected_issue": "REGISTRY_EXACTNESS:inquiry_record_policy"
+    },
+    {
+      "id": "M037",
+      "name": "registry drift at state_planes.inquiry_lifecycle.implementation_state",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "state_planes",
+        "inquiry_lifecycle",
+        "implementation_state"
+      ],
+      "value": "NOT_IMPLEMENTED__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:state_planes"
+    },
+    {
+      "id": "M038",
+      "name": "registry drift at lead_stage_vocabulary.repository_workflow_direction",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "lead_stage_vocabulary",
+        "repository_workflow_direction"
+      ],
+      "value": "FOUNDER_APPROVED__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:lead_stage_vocabulary"
+    },
+    {
+      "id": "M039",
+      "name": "registry drift at supply_check_policy.states.1",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "supply_check_policy",
+        "states",
+        1
+      ],
+      "value": "CHECKED_CAN_PROCEED__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:supply_check_policy"
+    },
+    {
+      "id": "M040",
+      "name": "registry drift at deduplication_delivery.automatic_merge_prohibited_identifiers.0",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "deduplication_delivery",
+        "automatic_merge_prohibited_identifiers",
+        0
+      ],
+      "value": "name__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:deduplication_delivery"
+    },
+    {
+      "id": "M041",
+      "name": "registry drift at consent_privacy.exact_approved_text_version_legal_basis_state",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "consent_privacy",
+        "exact_approved_text_version_legal_basis_state"
+      ],
+      "value": "MISSING_AUTHORITY_INPUT__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:consent_privacy"
+    },
+    {
+      "id": "M042",
+      "name": "registry drift at form_security_requirements.verification_state",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "form_security_requirements",
+        "verification_state"
+      ],
+      "value": "NOT_VERIFIED__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:form_security_requirements"
+    },
+    {
+      "id": "M043",
+      "name": "registry drift at analytics_boundary.commercial_funnel_truth_owner",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "analytics_boundary",
+        "commercial_funnel_truth_owner"
+      ],
+      "value": "GOVERNED_INQUIRY_LEAD_RECORD_ONLY__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:analytics_boundary"
+    },
+    {
+      "id": "M044",
+      "name": "registry drift at missing_authority_inputs.1",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "missing_authority_inputs",
+        1
+      ],
+      "value": "RETENTION_DELETION_ANONYMIZATION_CORRECTION_AND_ACCESS_POLICY__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:missing_authority_inputs"
+    },
+    {
+      "id": "M045",
+      "name": "registry drift at no_claim_boundaries.product_combination_sku_brand_color_mass_mutation",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "no_claim_boundaries",
+        "product_combination_sku_brand_color_mass_mutation"
+      ],
+      "value": true,
+      "expected_issue": "REGISTRY_EXACTNESS:no_claim_boundaries"
+    },
+    {
+      "id": "M046",
+      "name": "registry drift at gate_snapshot.met_count",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "gate_snapshot",
+        "met_count"
+      ],
+      "value": 6,
+      "expected_issue": "REGISTRY_EXACTNESS:gate_snapshot"
+    },
+    {
+      "id": "M047",
+      "name": "registry drift at c002_snapshot.founder_selection_ready",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "c002_snapshot",
+        "founder_selection_ready"
+      ],
+      "value": true,
+      "expected_issue": "REGISTRY_EXACTNESS:c002_snapshot"
+    },
+    {
+      "id": "M048",
+      "name": "registry drift at source.author_id",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "source",
+        "author_id"
+      ],
+      "value": "U0BNFS43TBL__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:source"
+    },
+    {
+      "id": "M049",
+      "name": "registry drift at source_policy.launch_content_direction_ts",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "source_policy",
+        "launch_content_direction_ts"
+      ],
+      "value": "1787400933.711809__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:source_policy"
+    },
+    {
+      "id": "M050",
+      "name": "registry drift at exact_changed_paths.2",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "exact_changed_paths",
+        2
+      ],
+      "value": "repository/data/registries/extensions/ftrb02/inquiry-crm-flow-readiness.yaml__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:exact_changed_paths"
+    },
+    {
+      "id": "M051",
+      "name": "registry drift at owner_model.lead_record_owner",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "owner_model",
+        "lead_record_owner"
+      ],
+      "value": "GOVERNED_INQUIRY_LEAD_RECORD__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:owner_model"
+    },
+    {
+      "id": "M052",
+      "name": "registry drift at canonical_slice_binding.product_identifiers_persisted_here",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "canonical_slice_binding",
+        "product_identifiers_persisted_here"
+      ],
+      "value": true,
+      "expected_issue": "REGISTRY_EXACTNESS:canonical_slice_binding"
+    },
+    {
+      "id": "M053",
+      "name": "registry drift at readiness.readiness_classification",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "readiness",
+        "readiness_classification"
+      ],
+      "value": "REPOSITORY_READY__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:readiness"
+    },
+    {
+      "id": "M054",
+      "name": "registry drift at customer_form.fields.0.requiredness",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "customer_form",
+        "fields",
+        0,
+        "requiredness"
+      ],
+      "value": "REQUIRED__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:customer_form"
+    },
+    {
+      "id": "M055",
+      "name": "registry drift at city_reconciliation.content_source_ts",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "city_reconciliation",
+        "content_source_ts"
+      ],
+      "value": "1787400933.711809__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:city_reconciliation"
+    },
+    {
+      "id": "M056",
+      "name": "registry drift at future_payload_contract.future_fields.0.owner",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "future_payload_contract",
+        "future_fields",
+        0,
+        "owner"
+      ],
+      "value": "INQUIRY_DATA_MODEL__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:future_payload_contract"
+    },
+    {
+      "id": "M057",
+      "name": "registry drift at inquiry_record_policy.inquiry_is_quote_reservation_order_or_payment",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "inquiry_record_policy",
+        "inquiry_is_quote_reservation_order_or_payment"
+      ],
+      "value": true,
+      "expected_issue": "REGISTRY_EXACTNESS:inquiry_record_policy"
+    },
+    {
+      "id": "M058",
+      "name": "registry drift at state_planes.inquiry_lifecycle.repository_workflow_direction",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "state_planes",
+        "inquiry_lifecycle",
+        "repository_workflow_direction"
+      ],
+      "value": "FOUNDER_APPROVED__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:state_planes"
+    },
+    {
+      "id": "M059",
+      "name": "registry drift at lead_stage_vocabulary.ordered_prefix.0",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "lead_stage_vocabulary",
+        "ordered_prefix",
+        0
+      ],
+      "value": "NEW__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:lead_stage_vocabulary"
+    },
+    {
+      "id": "M060",
+      "name": "registry drift at supply_check_policy.states.2",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "supply_check_policy",
+        "states",
+        2
+      ],
+      "value": "CHECKED_CANNOT_PROCEED__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:supply_check_policy"
+    },
+    {
+      "id": "M061",
+      "name": "registry drift at deduplication_delivery.automatic_merge_prohibited_identifiers.1",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "deduplication_delivery",
+        "automatic_merge_prohibited_identifiers",
+        1
+      ],
+      "value": "mobile__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:deduplication_delivery"
+    },
+    {
+      "id": "M062",
+      "name": "registry drift at consent_privacy.marketing_consent",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "consent_privacy",
+        "marketing_consent"
+      ],
+      "value": "SEPARATE_OPTIONAL_UNPRECHECKED__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:consent_privacy"
+    },
+    {
+      "id": "M063",
+      "name": "registry drift at form_security_requirements.https_required",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "form_security_requirements",
+        "https_required"
+      ],
+      "value": false,
+      "expected_issue": "REGISTRY_EXACTNESS:form_security_requirements"
+    },
+    {
+      "id": "M064",
+      "name": "registry drift at analytics_boundary.analytics_owns_policy_product_or_commercial_truth",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "analytics_boundary",
+        "analytics_owns_policy_product_or_commercial_truth"
+      ],
+      "value": true,
+      "expected_issue": "REGISTRY_EXACTNESS:analytics_boundary"
+    },
+    {
+      "id": "M065",
+      "name": "registry drift at missing_authority_inputs.2",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "missing_authority_inputs",
+        2
+      ],
+      "value": "IRANIAN_MOBILE_ACCEPTED_FORMATS_AND_NORMALIZATION__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:missing_authority_inputs"
+    },
+    {
+      "id": "M066",
+      "name": "registry drift at no_claim_boundaries.availability_price_stock_eta_sla_supplier_truth",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "no_claim_boundaries",
+        "availability_price_stock_eta_sla_supplier_truth"
+      ],
+      "value": true,
+      "expected_issue": "REGISTRY_EXACTNESS:no_claim_boundaries"
+    },
+    {
+      "id": "M067",
+      "name": "registry drift at gate_snapshot.unmet_count",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "gate_snapshot",
+        "unmet_count"
+      ],
+      "value": 8,
+      "expected_issue": "REGISTRY_EXACTNESS:gate_snapshot"
+    },
+    {
+      "id": "M068",
+      "name": "registry drift at c002_snapshot.candidate_count",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "c002_snapshot",
+        "candidate_count"
+      ],
+      "value": 1,
+      "expected_issue": "REGISTRY_EXACTNESS:c002_snapshot"
+    },
+    {
+      "id": "M069",
+      "name": "registry drift at source.thread_complete",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "source",
+        "thread_complete"
+      ],
+      "value": false,
+      "expected_issue": "REGISTRY_EXACTNESS:source"
+    },
+    {
+      "id": "M070",
+      "name": "registry drift at source_policy.workflow_supply_authority_ts",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "source_policy",
+        "workflow_supply_authority_ts"
+      ],
+      "value": "1787401091.613509__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:source_policy"
+    },
+    {
+      "id": "M071",
+      "name": "registry drift at exact_changed_paths.3",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "exact_changed_paths",
+        3
+      ],
+      "value": "repository/data/schemas/ft-rb-02-inquiry-crm-flow-readiness.schema.json__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:exact_changed_paths"
+    },
+    {
+      "id": "M072",
+      "name": "registry drift at owner_model.crm_integration_owner",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "owner_model",
+        "crm_integration_owner"
+      ],
+      "value": "FUTURE_CRM_INTEGRATION_UNSELECTED__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:owner_model"
+    },
+    {
+      "id": "M073",
+      "name": "registry drift at canonical_slice_binding.product_context_capture",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "canonical_slice_binding",
+        "product_context_capture"
+      ],
+      "value": "SYSTEM_AUTO_ATTACHED_READ_ONLY__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:canonical_slice_binding"
+    },
+    {
+      "id": "M074",
+      "name": "registry drift at readiness.implementation_configuration_state",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "readiness",
+        "implementation_configuration_state"
+      ],
+      "value": "MISSING_AUTHORITY_INPUT__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:readiness"
+    },
+    {
+      "id": "M075",
+      "name": "registry drift at customer_form.fields.0.data_class",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "customer_form",
+        "fields",
+        0,
+        "data_class"
+      ],
+      "value": "PII__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:customer_form"
+    },
+    {
+      "id": "M076",
+      "name": "registry drift at city_reconciliation.content_value",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "city_reconciliation",
+        "content_value"
+      ],
+      "value": "VISIBLE__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:city_reconciliation"
+    },
+    {
+      "id": "M077",
+      "name": "registry drift at future_payload_contract.future_fields.0.current_state",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "future_payload_contract",
+        "future_fields",
+        0,
+        "current_state"
+      ],
+      "value": "NOT_MINTED__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:future_payload_contract"
+    },
+    {
+      "id": "M078",
+      "name": "registry drift at inquiry_record_policy.source_page_capture",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "inquiry_record_policy",
+        "source_page_capture"
+      ],
+      "value": "PATH_REFERENCE_ONLY_NO_QUERY_FRAGMENT_OR_PII__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:inquiry_record_policy"
+    },
+    {
+      "id": "M079",
+      "name": "registry drift at state_planes.inquiry_lifecycle.operational_transition_configuration_state",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "state_planes",
+        "inquiry_lifecycle",
+        "operational_transition_configuration_state"
+      ],
+      "value": "MISSING_AUTHORITY_INPUT__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:state_planes"
+    },
+    {
+      "id": "M080",
+      "name": "registry drift at lead_stage_vocabulary.ordered_prefix.1",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "lead_stage_vocabulary",
+        "ordered_prefix",
+        1
+      ],
+      "value": "CONTACTED__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:lead_stage_vocabulary"
+    },
+    {
+      "id": "M081",
+      "name": "registry drift at supply_check_policy.internal_operational_context_only",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "supply_check_policy",
+        "internal_operational_context_only"
+      ],
+      "value": false,
+      "expected_issue": "REGISTRY_EXACTNESS:supply_check_policy"
+    },
+    {
+      "id": "M082",
+      "name": "registry drift at deduplication_delivery.automatic_merge_prohibited_identifiers.2",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "deduplication_delivery",
+        "automatic_merge_prohibited_identifiers",
+        2
+      ],
+      "value": "email__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:deduplication_delivery"
+    },
+    {
+      "id": "M083",
+      "name": "registry drift at consent_privacy.retention_deletion_anonymization_correction_state",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "consent_privacy",
+        "retention_deletion_anonymization_correction_state"
+      ],
+      "value": "MISSING_AUTHORITY_INPUT__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:consent_privacy"
+    },
+    {
+      "id": "M084",
+      "name": "registry drift at form_security_requirements.server_side_validation_authoritative",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "form_security_requirements",
+        "server_side_validation_authoritative"
+      ],
+      "value": false,
+      "expected_issue": "REGISTRY_EXACTNESS:form_security_requirements"
+    },
+    {
+      "id": "M085",
+      "name": "registry drift at analytics_boundary.sensitive_pii_when_lead_id_suffices",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "analytics_boundary",
+        "sensitive_pii_when_lead_id_suffices"
+      ],
+      "value": "PROHIBITED__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:analytics_boundary"
+    },
+    {
+      "id": "M086",
+      "name": "registry drift at missing_authority_inputs.3",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "missing_authority_inputs",
+        3
+      ],
+      "value": "NAMED_OPERATIONAL_OWNER_ASSIGNEES_FALLBACK_ROUTING_ESCALATION_REOPEN_AUTHORITY__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:missing_authority_inputs"
+    },
+    {
+      "id": "M087",
+      "name": "registry drift at no_claim_boundaries.quote_reservation_order_payment_creation",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "no_claim_boundaries",
+        "quote_reservation_order_payment_creation"
+      ],
+      "value": true,
+      "expected_issue": "REGISTRY_EXACTNESS:no_claim_boundaries"
+    },
+    {
+      "id": "M088",
+      "name": "registry drift at gate_snapshot.total",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "gate_snapshot",
+        "total"
+      ],
+      "value": 13,
+      "expected_issue": "REGISTRY_EXACTNESS:gate_snapshot"
+    },
+    {
+      "id": "M089",
+      "name": "registry drift at c002_snapshot.supply_evidence",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "c002_snapshot",
+        "supply_evidence"
+      ],
+      "value": "SUBMITTED_REVIEW_INCOMPLETE__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:c002_snapshot"
+    },
+    {
+      "id": "M090",
+      "name": "registry drift at source.reply_count",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "source",
+        "reply_count"
+      ],
+      "value": 1,
+      "expected_issue": "REGISTRY_EXACTNESS:source"
+    },
+    {
+      "id": "M091",
+      "name": "registry drift at source_policy.analytics_authority_ts",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "source_policy",
+        "analytics_authority_ts"
+      ],
+      "value": "1787401125.584279__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:source_policy"
+    },
+    {
+      "id": "M092",
+      "name": "registry drift at exact_changed_paths.4",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "exact_changed_paths",
+        4
+      ],
+      "value": "repository/data/validation/validate_ft_rb_02_inquiry_crm_flow_readiness.py__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:exact_changed_paths"
+    },
+    {
+      "id": "M093",
+      "name": "registry drift at owner_model.product_truth_owner",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "owner_model",
+        "product_truth_owner"
+      ],
+      "value": "PRODUCT_CORE__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:owner_model"
+    },
+    {
+      "id": "M094",
+      "name": "registry drift at readiness.runtime_implementation_state",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "readiness",
+        "runtime_implementation_state"
+      ],
+      "value": "NOT_IMPLEMENTED__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:readiness"
+    },
+    {
+      "id": "M095",
+      "name": "registry drift at customer_form.fields.0.authority_ts",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "customer_form",
+        "fields",
+        0,
+        "authority_ts"
+      ],
+      "value": "1787401309.508679__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:customer_form"
+    },
+    {
+      "id": "M096",
+      "name": "registry drift at city_reconciliation.privacy_source_ts",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "city_reconciliation",
+        "privacy_source_ts"
+      ],
+      "value": "1787401309.508679__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:city_reconciliation"
+    },
+    {
+      "id": "M097",
+      "name": "registry drift at future_payload_contract.future_fields.1.field_id",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "future_payload_contract",
+        "future_fields",
+        1,
+        "field_id"
+      ],
+      "value": "created_at__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:future_payload_contract"
+    },
+    {
+      "id": "M098",
+      "name": "registry drift at inquiry_record_policy.customer_snapshot_required_if_later_implemented",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "inquiry_record_policy",
+        "customer_snapshot_required_if_later_implemented"
+      ],
+      "value": false,
+      "expected_issue": "REGISTRY_EXACTNESS:inquiry_record_policy"
+    },
+    {
+      "id": "M099",
+      "name": "registry drift at state_planes.lead_stage.owner",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "state_planes",
+        "lead_stage",
+        "owner"
+      ],
+      "value": "GOVERNED_INQUIRY_LEAD_RECORD__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:state_planes"
+    },
+    {
+      "id": "M100",
+      "name": "registry drift at lead_stage_vocabulary.ordered_prefix.2",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "lead_stage_vocabulary",
+        "ordered_prefix",
+        2
+      ],
+      "value": "QUALIFIED__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:lead_stage_vocabulary"
+    },
+    {
+      "id": "M101",
+      "name": "registry drift at supply_check_policy.evidence_reviewer_timestamp_required",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "supply_check_policy",
+        "evidence_reviewer_timestamp_required"
+      ],
+      "value": false,
+      "expected_issue": "REGISTRY_EXACTNESS:supply_check_policy"
+    },
+    {
+      "id": "M102",
+      "name": "registry drift at deduplication_delivery.automatic_merge_prohibited_identifiers.3",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "deduplication_delivery",
+        "automatic_merge_prohibited_identifiers",
+        3
+      ],
+      "value": "organization__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:deduplication_delivery"
+    },
+    {
+      "id": "M103",
+      "name": "registry drift at consent_privacy.pii_in_url_log_analytics_fixture",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "consent_privacy",
+        "pii_in_url_log_analytics_fixture"
+      ],
+      "value": "PROHIBITED__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:consent_privacy"
+    },
+    {
+      "id": "M104",
+      "name": "registry drift at form_security_requirements.client_validation_convenience_only",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "form_security_requirements",
+        "client_validation_convenience_only"
+      ],
+      "value": false,
+      "expected_issue": "REGISTRY_EXACTNESS:form_security_requirements"
+    },
+    {
+      "id": "M105",
+      "name": "registry drift at analytics_boundary.fabricated_benchmark_revenue_or_conversion_result",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "analytics_boundary",
+        "fabricated_benchmark_revenue_or_conversion_result"
+      ],
+      "value": "PROHIBITED__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:analytics_boundary"
+    },
+    {
+      "id": "M106",
+      "name": "registry drift at missing_authority_inputs.4",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "missing_authority_inputs",
+        4
+      ],
+      "value": "ROLE_OBJECT_FIELD_EXPORT_PERMISSION_MATRIX__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:missing_authority_inputs"
+    },
+    {
+      "id": "M107",
+      "name": "registry drift at no_claim_boundaries.crm_form_smtp_analytics_provider_selection",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "no_claim_boundaries",
+        "crm_form_smtp_analytics_provider_selection"
+      ],
+      "value": true,
+      "expected_issue": "REGISTRY_EXACTNESS:no_claim_boundaries"
+    },
+    {
+      "id": "M108",
+      "name": "registry drift at gate_snapshot.blockers.0",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "gate_snapshot",
+        "blockers",
+        0
+      ],
+      "value": "RIGHTS_SAFE_MEDIA_READY__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:gate_snapshot"
+    },
+    {
+      "id": "M109",
+      "name": "registry drift at c002_snapshot.photo_content_readiness",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "c002_snapshot",
+        "photo_content_readiness"
+      ],
+      "value": "MISSING_EVIDENCE__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:c002_snapshot"
+    },
+    {
+      "id": "M110",
+      "name": "registry drift at source.parent_ts",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "source",
+        "parent_ts"
+      ],
+      "value": "1787398697.475999__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:source"
+    },
+    {
+      "id": "M111",
+      "name": "registry drift at source_policy.controlling_privacy_requiredness_authority_ts",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "source_policy",
+        "controlling_privacy_requiredness_authority_ts"
+      ],
+      "value": "1787401309.508679__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:source_policy"
+    },
+    {
+      "id": "M112",
+      "name": "registry drift at exact_changed_paths.5",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "exact_changed_paths",
+        5
+      ],
+      "value": "scripts/test.sh__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:exact_changed_paths"
+    },
+    {
+      "id": "M113",
+      "name": "registry drift at owner_model.price_truth_owner",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "owner_model",
+        "price_truth_owner"
+      ],
+      "value": "SEPARATE_PRIVATE_COMMERCIAL_CONTEXT__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:owner_model"
+    },
+    {
+      "id": "M114",
+      "name": "registry drift at readiness.staging_end_to_end_state",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "readiness",
+        "staging_end_to_end_state"
+      ],
+      "value": "NOT_RUN__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:readiness"
+    },
+    {
+      "id": "M115",
+      "name": "registry drift at customer_form.fields.1.field_id",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "customer_form",
+        "fields",
+        1,
+        "field_id"
+      ],
+      "value": "mobile__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:customer_form"
+    },
+    {
+      "id": "M116",
+      "name": "registry drift at city_reconciliation.privacy_value",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "city_reconciliation",
+        "privacy_value"
+      ],
+      "value": "OPTIONAL_CONDITIONAL__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:city_reconciliation"
+    },
+    {
+      "id": "M117",
+      "name": "registry drift at future_payload_contract.future_fields.1.owner",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "future_payload_contract",
+        "future_fields",
+        1,
+        "owner"
+      ],
+      "value": "INQUIRY_DATA_MODEL__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:future_payload_contract"
+    },
+    {
+      "id": "M118",
+      "name": "registry drift at inquiry_record_policy.product_snapshot_required_if_later_implemented",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "inquiry_record_policy",
+        "product_snapshot_required_if_later_implemented"
+      ],
+      "value": false,
+      "expected_issue": "REGISTRY_EXACTNESS:inquiry_record_policy"
+    },
+    {
+      "id": "M119",
+      "name": "registry drift at state_planes.lead_stage.implementation_state",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "state_planes",
+        "lead_stage",
+        "implementation_state"
+      ],
+      "value": "NOT_IMPLEMENTED__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:state_planes"
+    },
+    {
+      "id": "M120",
+      "name": "registry drift at lead_stage_vocabulary.ordered_prefix.3",
+      "target": "registry",
+      "op": "replace",
+      "path": [
+        "lead_stage_vocabulary",
+        "ordered_prefix",
+        3
+      ],
+      "value": "SUPPLY_CHECK__DRIFT",
+      "expected_issue": "REGISTRY_EXACTNESS:lead_stage_vocabulary"
+    },
+    {
+      "id": "M121",
+      "name": "contract drift at contract_id",
+      "target": "contract",
+      "op": "replace",
+      "path": [
+        "contract_id"
+      ],
+      "value": "ft-rb-02-inquiry-crm-flow-readiness__DRIFT",
+      "expected_issue": "CONTRACT_EXACTNESS"
+    },
+    {
+      "id": "M122",
+      "name": "contract drift at contract_version",
+      "target": "contract",
+      "op": "replace",
+      "path": [
+        "contract_version"
+      ],
+      "value": "1.0.0__DRIFT",
+      "expected_issue": "CONTRACT_EXACTNESS"
+    },
+    {
+      "id": "M123",
+      "name": "contract drift at record_kind",
+      "target": "contract",
+      "op": "replace",
+      "path": [
+        "record_kind"
+      ],
+      "value": "inquiry-crm-flow-readiness__DRIFT",
+      "expected_issue": "CONTRACT_EXACTNESS"
+    },
+    {
+      "id": "M124",
+      "name": "contract drift at schema.path",
+      "target": "contract",
+      "op": "replace",
+      "path": [
+        "schema",
+        "path"
+      ],
+      "value": "repository/data/schemas/ft-rb-02-inquiry-crm-flow-readiness.schema.json__DRIFT",
+      "expected_issue": "CONTRACT_EXACTNESS"
+    },
+    {
+      "id": "M125",
+      "name": "contract drift at schema.draft",
+      "target": "contract",
+      "op": "replace",
+      "path": [
+        "schema",
+        "draft"
+      ],
+      "value": "https://json-schema.org/draft/2020-12/schema__DRIFT",
+      "expected_issue": "CONTRACT_EXACTNESS"
+    },
+    {
+      "id": "M126",
+      "name": "contract drift at registry.path",
+      "target": "contract",
+      "op": "replace",
+      "path": [
+        "registry",
+        "path"
+      ],
+      "value": "repository/data/registries/extensions/ftrb02/inquiry-crm-flow-readiness.yaml__DRIFT",
+      "expected_issue": "CONTRACT_EXACTNESS"
+    },
+    {
+      "id": "M127",
+      "name": "contract drift at authority.mission_id",
+      "target": "contract",
+      "op": "replace",
+      "path": [
+        "authority",
+        "mission_id"
+      ],
+      "value": "FT-RB-02__DRIFT",
+      "expected_issue": "CONTRACT_EXACTNESS"
+    },
+    {
+      "id": "M128",
+      "name": "contract drift at authority.repository_package_allowed",
+      "target": "contract",
+      "op": "replace",
+      "path": [
+        "authority",
+        "repository_package_allowed"
+      ],
+      "value": false,
+      "expected_issue": "CONTRACT_EXACTNESS"
+    },
+    {
+      "id": "M129",
+      "name": "contract drift at authority.branch_commit_push_one_pr_allowed",
+      "target": "contract",
+      "op": "replace",
+      "path": [
+        "authority",
+        "branch_commit_push_one_pr_allowed"
+      ],
+      "value": false,
+      "expected_issue": "CONTRACT_EXACTNESS"
+    },
+    {
+      "id": "M130",
+      "name": "contract drift at authority.inquiry_customer_crm_record_creation_allowed",
+      "target": "contract",
+      "op": "replace",
+      "path": [
+        "authority",
+        "inquiry_customer_crm_record_creation_allowed"
+      ],
+      "value": true,
+      "expected_issue": "CONTRACT_EXACTNESS"
+    },
+    {
+      "id": "M131",
+      "name": "contract drift at authority.provider_endpoint_or_credential_selection_allowed",
+      "target": "contract",
+      "op": "replace",
+      "path": [
+        "authority",
+        "provider_endpoint_or_credential_selection_allowed"
+      ],
+      "value": true,
+      "expected_issue": "CONTRACT_EXACTNESS"
+    },
+    {
+      "id": "M132",
+      "name": "contract drift at authority.product_or_commercial_truth_mutation_allowed",
+      "target": "contract",
+      "op": "replace",
+      "path": [
+        "authority",
+        "product_or_commercial_truth_mutation_allowed"
+      ],
+      "value": true,
+      "expected_issue": "CONTRACT_EXACTNESS"
+    },
+    {
+      "id": "M133",
+      "name": "contract drift at authority.runtime_staging_production_publication_allowed",
+      "target": "contract",
+      "op": "replace",
+      "path": [
+        "authority",
+        "runtime_staging_production_publication_allowed"
+      ],
+      "value": true,
+      "expected_issue": "CONTRACT_EXACTNESS"
+    },
+    {
+      "id": "M134",
+      "name": "contract drift at authority.merge_auto_merge_branch_deletion_allowed",
+      "target": "contract",
+      "op": "replace",
+      "path": [
+        "authority",
+        "merge_auto_merge_branch_deletion_allowed"
+      ],
+      "value": true,
+      "expected_issue": "CONTRACT_EXACTNESS"
+    },
+    {
+      "id": "M135",
+      "name": "contract drift at dependencies.c002_contract",
+      "target": "contract",
+      "op": "replace",
+      "path": [
+        "dependencies",
+        "c002_contract"
+      ],
+      "value": "repository/data/contracts/commercial-pilot-candidate.contract.yaml__DRIFT",
+      "expected_issue": "CONTRACT_EXACTNESS"
+    },
+    {
+      "id": "M136",
+      "name": "contract drift at dependencies.c002_schema",
+      "target": "contract",
+      "op": "replace",
+      "path": [
+        "dependencies",
+        "c002_schema"
+      ],
+      "value": "repository/data/schemas/commercial-pilot-candidate.schema.json__DRIFT",
+      "expected_issue": "CONTRACT_EXACTNESS"
+    },
+    {
+      "id": "M137",
+      "name": "contract drift at dependencies.c002_registry",
+      "target": "contract",
+      "op": "replace",
+      "path": [
+        "dependencies",
+        "c002_registry"
+      ],
+      "value": "repository/data/registries/extensions/c002/commercial-pilot-candidates.yaml__DRIFT",
+      "expected_issue": "CONTRACT_EXACTNESS"
+    },
+    {
+      "id": "M138",
+      "name": "contract drift at dependencies.c006_contract",
+      "target": "contract",
+      "op": "replace",
+      "path": [
+        "dependencies",
+        "c006_contract"
+      ],
+      "value": "repository/data/contracts/pipe-product-experience-architecture.contract.yaml__DRIFT",
+      "expected_issue": "CONTRACT_EXACTNESS"
+    },
+    {
+      "id": "M139",
+      "name": "contract drift at dependencies.c006_schema",
+      "target": "contract",
+      "op": "replace",
+      "path": [
+        "dependencies",
+        "c006_schema"
+      ],
+      "value": "repository/data/schemas/pipe-product-experience-architecture.schema.json__DRIFT",
+      "expected_issue": "CONTRACT_EXACTNESS"
+    },
+    {
+      "id": "M140",
+      "name": "contract drift at dependencies.c006_registry",
+      "target": "contract",
+      "op": "replace",
+      "path": [
+        "dependencies",
+        "c006_registry"
+      ],
+      "value": "repository/data/registries/extensions/c006/pipe-product-experience-architecture.yaml__DRIFT",
+      "expected_issue": "CONTRACT_EXACTNESS"
+    },
+    {
+      "id": "M141",
+      "name": "contract drift at dependencies.c008_contract",
+      "target": "contract",
+      "op": "replace",
+      "path": [
+        "dependencies",
+        "c008_contract"
+      ],
+      "value": "repository/data/contracts/c008-c002-readiness-evidence-closure.contract.yaml__DRIFT",
+      "expected_issue": "CONTRACT_EXACTNESS"
+    },
+    {
+      "id": "M142",
+      "name": "contract drift at dependencies.c008_schema",
+      "target": "contract",
+      "op": "replace",
+      "path": ["dependencies", "c008_schema"],
+      "value": "repository/data/schemas/c008-c002-readiness-evidence-closure.schema.json__DRIFT",
+      "expected_issue": "CONTRACT_EXACTNESS"
+    },
+    {"id":"M143","name":"contract drift at dependencies.c008_registry","target":"contract","op":"replace","path":["dependencies","c008_registry"],"value":"DRIFT","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M144","name":"contract drift at dependencies.c008_r1_contract","target":"contract","op":"replace","path":["dependencies","c008_r1_contract"],"value":"DRIFT","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M145","name":"contract drift at dependencies.c008_r1_schema","target":"contract","op":"replace","path":["dependencies","c008_r1_schema"],"value":"DRIFT","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M146","name":"contract drift at dependencies.c008_r1_registry","target":"contract","op":"replace","path":["dependencies","c008_r1_registry"],"value":"DRIFT","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M147","name":"contract drift at dependencies.c008_ft1_contract","target":"contract","op":"replace","path":["dependencies","c008_ft1_contract"],"value":"DRIFT","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M148","name":"contract drift at dependencies.c008_ft1_schema","target":"contract","op":"replace","path":["dependencies","c008_ft1_schema"],"value":"DRIFT","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M149","name":"contract drift at dependencies.c008_ft1_registry","target":"contract","op":"replace","path":["dependencies","c008_ft1_registry"],"value":"DRIFT","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M150","name":"contract drift at dependencies.c009_contract","target":"contract","op":"replace","path":["dependencies","c009_contract"],"value":"DRIFT","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M151","name":"contract drift at dependencies.c009_schema","target":"contract","op":"replace","path":["dependencies","c009_schema"],"value":"DRIFT","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M152","name":"contract drift at dependencies.c009_registry","target":"contract","op":"replace","path":["dependencies","c009_registry"],"value":"DRIFT","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M153","name":"contract drift at dependencies.c009_ft2_contract","target":"contract","op":"replace","path":["dependencies","c009_ft2_contract"],"value":"DRIFT","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M154","name":"contract drift at dependencies.c009_ft2_schema","target":"contract","op":"replace","path":["dependencies","c009_ft2_schema"],"value":"DRIFT","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M155","name":"contract drift at dependencies.c009_ft2_registry","target":"contract","op":"replace","path":["dependencies","c009_ft2_registry"],"value":"DRIFT","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M156","name":"contract drift at dependencies.ft_rb_00_contract","target":"contract","op":"replace","path":["dependencies","ft_rb_00_contract"],"value":"DRIFT","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M157","name":"contract drift at dependencies.ft_rb_00_schema","target":"contract","op":"replace","path":["dependencies","ft_rb_00_schema"],"value":"DRIFT","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M158","name":"contract drift at dependencies.ft_rb_00_registry","target":"contract","op":"replace","path":["dependencies","ft_rb_00_registry"],"value":"DRIFT","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M159","name":"contract drift at dependencies.ft_rb_01_contract","target":"contract","op":"replace","path":["dependencies","ft_rb_01_contract"],"value":"DRIFT","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M160","name":"contract drift at dependencies.ft_rb_01_schema","target":"contract","op":"replace","path":["dependencies","ft_rb_01_schema"],"value":"DRIFT","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M161","name":"contract drift at dependencies.ft_rb_01_registry","target":"contract","op":"replace","path":["dependencies","ft_rb_01_registry"],"value":"DRIFT","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M162","name":"contract owner pin docs03 drift","target":"contract","op":"replace","path":["owner_document_pins","docs_03_business_rules"],"value":"0000000000000000000000000000000000000000","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M163","name":"contract owner pin docs06 drift","target":"contract","op":"replace","path":["owner_document_pins","docs_06_wordpress_architecture"],"value":"0000000000000000000000000000000000000000","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M164","name":"contract owner pin docs10 drift","target":"contract","op":"replace","path":["owner_document_pins","docs_10_security"],"value":"0000000000000000000000000000000000000000","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M165","name":"contract owner pin docs19 drift","target":"contract","op":"replace","path":["owner_document_pins","docs_19_product_data_model"],"value":"0000000000000000000000000000000000000000","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M166","name":"contract owner pin docs20 drift","target":"contract","op":"replace","path":["owner_document_pins","docs_20_woocommerce_product_model"],"value":"0000000000000000000000000000000000000000","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M167","name":"contract owner pin docs23 drift","target":"contract","op":"replace","path":["owner_document_pins","docs_23_inquiry_data_model"],"value":"0000000000000000000000000000000000000000","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M168","name":"contract owner pin docs38 drift","target":"contract","op":"replace","path":["owner_document_pins","docs_38_woocommerce_configuration"],"value":"0000000000000000000000000000000000000000","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M169","name":"contract owner pin docs41 drift","target":"contract","op":"replace","path":["owner_document_pins","docs_41_custom_fields_model"],"value":"0000000000000000000000000000000000000000","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M170","name":"contract owner pin docs42 drift","target":"contract","op":"replace","path":["owner_document_pins","docs_42_inquiry_workflow"],"value":"0000000000000000000000000000000000000000","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M171","name":"contract owner pin docs43 drift","target":"contract","op":"replace","path":["owner_document_pins","docs_43_user_roles"],"value":"0000000000000000000000000000000000000000","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M172","name":"contract owner pin docs44 drift","target":"contract","op":"replace","path":["owner_document_pins","docs_44_plugin_responsibility"],"value":"0000000000000000000000000000000000000000","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M173","name":"contract owner pin adr0001 drift","target":"contract","op":"replace","path":["owner_document_pins","adr_0001_inquiry_first"],"value":"0000000000000000000000000000000000000000","expected_issue":"CONTRACT_EXACTNESS"},
+    {"id":"M174","name":"csrf requirement disabled","target":"registry","op":"replace","path":["form_security_requirements","csrf_or_nonce_required"],"value":false,"expected_issue":"REGISTRY_EXACTNESS:form_security_requirements"},
+    {"id":"M175","name":"public errors expose secrets","target":"registry","op":"replace","path":["form_security_requirements","secrets_tokens_stack_traces_in_public_errors"],"value":"ALLOWED","expected_issue":"REGISTRY_EXACTNESS:form_security_requirements"},
+    {"id":"M176","name":"analytics raw query URL allowed","target":"registry","op":"replace","path":["analytics_boundary","raw_or_query_url"],"value":"ALLOWED","expected_issue":"REGISTRY_EXACTNESS:analytics_boundary"},
+    {"id":"M177","name":"runtime mutation enabled","target":"registry","op":"replace","path":["no_claim_boundaries","runtime"],"value":true,"expected_issue":"REGISTRY_EXACTNESS:no_claim_boundaries"},
+    {"id":"M178","name":"production mutation enabled","target":"registry","op":"replace","path":["no_claim_boundaries","production"],"value":true,"expected_issue":"REGISTRY_EXACTNESS:no_claim_boundaries"},
+    {"id":"M179","name":"deployment publication enabled","target":"registry","op":"replace","path":["no_claim_boundaries","deployment_or_publication"],"value":true,"expected_issue":"REGISTRY_EXACTNESS:no_claim_boundaries"},
+    {"id":"M180","name":"gate transition enabled","target":"registry","op":"replace","path":["no_claim_boundaries","gate_transition"],"value":true,"expected_issue":"REGISTRY_EXACTNESS:no_claim_boundaries"},
+    {"id":"M181","name":"product commercial truth mutation enabled","target":"registry","op":"replace","path":["no_claim_boundaries","product_combination_sku_brand_color_mass_mutation"],"value":true,"expected_issue":"REGISTRY_EXACTNESS:no_claim_boundaries"},
+    {"id":"M182","name":"privacy source scope narrowed","target":"registry","op":"replace","path":["source_policy","semantic_sources",4,"property_scope"],"value":"PRIVACY_MINIMIZATION_ONLY","expected_issue":"REGISTRY_EXACTNESS:source_policy"},
+    {"id":"M183","name":"analytics events falsely emitted","target":"registry","op":"replace","path":["analytics_boundary","events_emitted"],"value":true,"expected_issue":"REGISTRY_EXACTNESS:analytics_boundary"},
+    {"id":"M184","name":"analytics core event drift","target":"registry","op":"replace","path":["analytics_boundary","core_event_vocabulary",0],"value":"purchase","expected_issue":"REGISTRY_EXACTNESS:analytics_boundary"},
+    {"id":"M185","name":"analytics KPI drift","target":"registry","op":"replace","path":["analytics_boundary","primary_kpi_vocabulary",0],"value":"Revenue","expected_issue":"REGISTRY_EXACTNESS:analytics_boundary"},
+    {"id":"M186","name":"terminal meaning creates order","target":"registry","op":"replace","path":["lead_stage_vocabulary","terminal_meanings","WON"],"value":"ORDER_CREATED","expected_issue":"REGISTRY_EXACTNESS:lead_stage_vocabulary"},
+    {"id":"M187","name":"quantity unit guessing allowed","target":"registry","op":"replace","path":["lead_stage_vocabulary","qualified_requirements","unit_may_be_guessed"],"value":true,"expected_issue":"REGISTRY_EXACTNESS:lead_stage_vocabulary"},
+    {"id":"M188","name":"operator role values invented","target":"registry","op":"replace","path":["future_payload_contract","future_fields",14,"unresolved_role_values_state"],"value":"RESOLVED","expected_issue":"REGISTRY_EXACTNESS:future_payload_contract"},
+    {"id":"M189","name":"privacy page requirement disabled","target":"registry","op":"replace","path":["consent_privacy","privacy_page_link_required"],"value":false,"expected_issue":"REGISTRY_EXACTNESS:consent_privacy"},
+    {"id":"M190","name":"payload schema version falsely resolved","target":"registry","op":"replace","path":["future_payload_contract","future_fields",5,"current_state"],"value":"APPROVED","expected_issue":"REGISTRY_EXACTNESS:future_payload_contract"},
+    {"id":"M191","name":"schema identity drift","target":"schema","op":"replace","path":["$schema"],"value":"https://example.invalid/schema","expected_issue":"SCHEMA_EXACTNESS"},
+    {"id":"M192","name":"schema root opened","target":"schema","op":"replace","path":["additionalProperties"],"value":true,"expected_issue":"SCHEMA_EXACTNESS"},
+    {"id":"M193","name":"schema execution source drift","target":"schema","op":"replace","path":["properties","source","const","locator"],"value":"slack:C0BNHRRTE9F:0","expected_issue":"SCHEMA_EXACTNESS"},
+    {"id":"M194","name":"schema privacy source scope drift","target":"schema","op":"replace","path":["properties","source_policy","const","semantic_sources",4,"property_scope"],"value":"PRIVACY_ONLY","expected_issue":"SCHEMA_EXACTNESS"},
+    {"id":"M195","name":"schema prerequisite promoted","target":"schema","op":"replace","path":["properties","readiness","const","prerequisite_state"],"value":"MET","expected_issue":"SCHEMA_EXACTNESS"},
+    {"id":"M196","name":"schema csrf weakened","target":"schema","op":"replace","path":["properties","form_security_requirements","const","csrf_or_nonce_required"],"value":false,"expected_issue":"SCHEMA_EXACTNESS"},
+    {"id":"M197","name":"schema analytics emission fabricated","target":"schema","op":"replace","path":["properties","analytics_boundary","const","events_emitted"],"value":true,"expected_issue":"SCHEMA_EXACTNESS"},
+    {"id":"M198","name":"schema runtime authority enabled","target":"schema","op":"replace","path":["properties","no_claim_boundaries","const","runtime"],"value":true,"expected_issue":"SCHEMA_EXACTNESS"},
+    {"id":"M199","name":"schema city made required","target":"schema","op":"replace","path":["properties","customer_form","const","fields",3,"requiredness"],"value":"REQUIRED","expected_issue":"SCHEMA_EXACTNESS"},
+    {"id":"M200","name":"schema mission base drift","target":"schema","op":"replace","path":["properties","mission_base_main","const"],"value":"0000000000000000000000000000000000000000","expected_issue":"SCHEMA_EXACTNESS"}
+  ]
+}

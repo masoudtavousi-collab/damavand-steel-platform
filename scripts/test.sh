@@ -171,6 +171,12 @@ ft_rb_01_media_validator="repository/data/validation/validate_ft_rb_01_rights_sa
 "$python" "$ft_rb_01_media_validator" --registry tests/fixtures/ft-rb-01-rights-safe-media-readiness/valid-synthetic.yaml --synthetic
 "$python" -B -m unittest tests.test_ft_rb_01_rights_safe_media_readiness
 
+# FT-RB-02 pre-pin Inquiry/CRM readiness validation and focused/adversarial dispatch.
+ft_rb_02_inquiry_validator="repository/data/validation/validate_ft_rb_02_inquiry_crm_flow_readiness.py"
+"$python" "$ft_rb_02_inquiry_validator"
+"$python" "$ft_rb_02_inquiry_validator" --registry tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/valid-synthetic.yaml --synthetic
+"$python" -B -m unittest tests.test_ft_rb_02_inquiry_crm_flow_readiness
+
 "$python" repository/data/validation/validate_bp2_data_blueprint.py
 "$python" repository/data/validation/validate_bp2_data_administration.py
 "$python" tests/test_bp2_data_administration.py
