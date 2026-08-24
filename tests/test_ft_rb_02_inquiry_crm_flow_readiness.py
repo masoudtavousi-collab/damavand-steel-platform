@@ -812,7 +812,8 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
              mock.patch.object(MODULE, "is_ancestor", return_value=True):
             self.assertEqual(MODULE.local_context(), MODULE.SUCCESSOR_CONTEXT)
         diff_paths = mock.Mock(return_value=list(MODULE.REPAIR_ALLOWLIST))
-        with mock.patch.object(MODULE, "clean_checkout", return_value=True), \
+        with mock.patch.dict(os.environ, {"CI": "false", "GITHUB_ACTIONS": "false"}, clear=False), \
+             mock.patch.object(MODULE, "clean_checkout", return_value=True), \
              mock.patch.object(MODULE, "local_context", return_value=MODULE.REPAIR_CONTEXT), \
              mock.patch.object(MODULE, "current_branch", return_value=MODULE.POST_MERGE_REPAIR_BRANCH), \
              mock.patch.object(MODULE, "diff_paths", diff_paths), \
@@ -821,7 +822,8 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
              mock.patch.object(MODULE, "regular_path_issues", return_value=[]):
             self.assertEqual(MODULE.git_context_issues(), [])
         diff_paths.assert_called_once_with(MODULE.POST_MERGE_REPAIR_BASE)
-        with mock.patch.object(MODULE, "clean_checkout", return_value=True), \
+        with mock.patch.dict(os.environ, {"CI": "false", "GITHUB_ACTIONS": "false"}, clear=False), \
+             mock.patch.object(MODULE, "clean_checkout", return_value=True), \
              mock.patch.object(MODULE, "local_context", return_value=MODULE.SUCCESSOR_CONTEXT), \
              mock.patch.object(MODULE, "successor_protected_issues", return_value=[]), \
              mock.patch.object(MODULE, "regular_path_issues", return_value=[]):
