@@ -584,7 +584,7 @@ def ci_context_issues() -> list[str]:
 
 
 def git_context_issues() -> list[str]:
-    if os.environ.get("CI") == "true" and os.environ.get("GITHUB_ACTIONS") == "true":
+    if os.environ.get("CI") == "true" or os.environ.get("GITHUB_ACTIONS") == "true":
         return ci_context_issues()
     try:
         base = approved_base_for_head()

@@ -530,9 +530,18 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
         malformed = copy.deepcopy(event)
         malformed["pull_request"]["base"]["repo"] = {"full_name": 1}
         self.assertTrue(self._run_ci("pull_request", malformed, head, []))
-        with mock.patch.dict(os.environ, {"CI": "true", "GITHUB_ACTIONS": "false"}, clear=False), \
-             mock.patch.object(MODULE, "clean_checkout", return_value=True):
-            self.assertEqual(MODULE.ci_context_issues(), ["CI_CONTEXT:environment_or_cleanliness"])
+        for flags in (
+            {"CI": "true", "GITHUB_ACTIONS": "false"},
+            {"CI": "false", "GITHUB_ACTIONS": "true"},
+        ):
+            with mock.patch.dict(os.environ, flags, clear=False), \
+                 mock.patch.object(MODULE, "clean_checkout", return_value=True):
+                self.assertEqual(MODULE.git_context_issues(), ["CI_CONTEXT:environment_or_cleanliness"])
+            environment = os.environ.copy()
+            environment.update(flags)
+            result = subprocess.run([sys.executable, str(VALIDATOR_PATH)], cwd=ROOT, capture_output=True, text=True, env=environment)
+            self.assertEqual(result.returncode, 1)
+            self.assertIn("CI_CONTEXT:environment_or_cleanliness", result.stdout.splitlines())
 
     def test_49_push_path_parent_and_metadata_adversaries_fail(self) -> None:
         source, merge, tree = "e" * 40, "f" * 40, "d" * 40
