@@ -44,24 +44,27 @@ ORIGINAL_MISSION_BASE = "5f452703dd35e1fee050f09529a0de379767e2bb"
 APPROVED_SUCCESSOR_BASE = "ff3077cd7041f7bed2f74d6ba2f8e685031eb5b0"
 APPROVED_BASES = (ORIGINAL_MISSION_BASE, APPROVED_SUCCESSOR_BASE)
 BRANCH = "codex/ft-rb-02-inquiry-crm-flow-readiness"
-REPAIR_BASE = "1fa127859655f8027aaea9dc84db7b109cc5949d"
-REPAIR_BRANCH = "codex/ft-rb-02-generic-successor-context-repair"
-POST_MERGE_REPAIR_BASE = "bcbc67cbdcb2cbb0757155bb97db0c4acd87d3c7"
-POST_MERGE_REPAIR_BRANCH = "codex/ft-rb-02-post-merge-push-context-repair"
-PATH_PROOF_REPAIR_BASE = "ddea2ffbf209681e7903d76316958f20fb61382f"
-PATH_PROOF_REPAIR_BRANCH = "codex/ft-rb-02-post-merge-push-path-proof-repair"
-AUTHORIZED_REPAIR_CONTEXTS = {
-    REPAIR_BASE: REPAIR_BRANCH,
-    POST_MERGE_REPAIR_BASE: POST_MERGE_REPAIR_BRANCH,
-    PATH_PROOF_REPAIR_BASE: PATH_PROOF_REPAIR_BRANCH,
-}
-REPAIR_BASES_BY_BRANCH = {branch: base for base, branch in AUTHORIZED_REPAIR_CONTEXTS.items()}
+UNIFIED_REPAIR = "UNIFIED_REPAIR"
+ORDINARY_SUCCESSOR = "ORDINARY_SUCCESSOR"
+ENROLLED_SECURITY_TRANSITION = "ENROLLED_SECURITY_TRANSITION"
+EVALUATION_MODES = (
+    UNIFIED_REPAIR,
+    ORDINARY_SUCCESSOR,
+    ENROLLED_SECURITY_TRANSITION,
+)
+UNIFIED_REPAIR_BASE = "e929e99066baebb5d3d7eb23e469e0e23213ab26"
+UNIFIED_REPAIR_BRANCH = "codex/ft-rb-02-unified-trust-proof-repair"
+INTEGRATED_FT_RB_02_ANCHOR = UNIFIED_REPAIR_BASE
+INTERNAL_CI_TRUST_CLASSIFICATION = "DEFENSE_IN_DEPTH_NOT_INDEPENDENT_SECURITY_ACCEPTANCE"
+VALIDATOR_SELF_PIN_SECURITY_CLASSIFICATION = "ACCIDENTAL_DRIFT_ONLY_NOT_A_TRUST_ANCHOR"
+EXTERNAL_TRUST_CONTROL_REQUIRED = True
 REPAIR_ALLOWLIST = [
     "repository/data/validation/validate_ft_rb_02_inquiry_crm_flow_readiness.py",
     "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py",
 ]
-REPAIR_TREE_PROOFS = {
-    REPAIR_BASE: (
+HISTORICAL_REPAIR_ARCHIVES = {
+    "1fa127859655f8027aaea9dc84db7b109cc5949d": (
+        "1652fad5e079df87b07648e21ebd6cd08f92bd21",
         "cd207364c54d1af3c1d475a1fed60d1c0720edde27b8210b47a388847279ba64",
         657,
         659,
@@ -70,7 +73,8 @@ REPAIR_TREE_PROOFS = {
             REPAIR_ALLOWLIST[1]: "b3db92d5b5ee5e92e32e14d48fd7925cbec3aebc",
         },
     ),
-    POST_MERGE_REPAIR_BASE: (
+    "bcbc67cbdcb2cbb0757155bb97db0c4acd87d3c7": (
+        "c02b96a8298640477f878c2162335d047308aed4",
         "cd207364c54d1af3c1d475a1fed60d1c0720edde27b8210b47a388847279ba64",
         657,
         659,
@@ -79,7 +83,8 @@ REPAIR_TREE_PROOFS = {
             REPAIR_ALLOWLIST[1]: "2a455da06fea28de2d11340d6afcdd8b546f6e02",
         },
     ),
-    PATH_PROOF_REPAIR_BASE: (
+    "ddea2ffbf209681e7903d76316958f20fb61382f": (
+        "d14cf17656dc60e064eadeb8fb8fcf09fac5ce3f",
         "cd207364c54d1af3c1d475a1fed60d1c0720edde27b8210b47a388847279ba64",
         657,
         659,
@@ -90,8 +95,6 @@ REPAIR_TREE_PROOFS = {
     ),
 }
 HISTORICAL_CONTEXT = "HISTORICAL_FT_RB_02"
-REPAIR_CONTEXT = "AUTHORIZED_GENERIC_SUCCESSOR_REPAIR"
-SUCCESSOR_CONTEXT = "GENERIC_SUCCESSOR"
 REPOSITORY_FULL_NAME = "masoudtavousi-collab/damavand-steel-platform"
 BASE_SCRIPT_BLOBS = {base: "943b67e977dbe8975e226fb28858d2ec3a38ea03" for base in APPROVED_BASES}
 BASE_TOTAL_TREE_ENTRIES = {base: 646 for base in APPROVED_BASES}
@@ -99,27 +102,33 @@ COMMITTED_TREE_PROOFS = {
     ORIGINAL_MISSION_BASE: ("9f316afa552bf84d930f2cadb85ec7fb9c5d0e02e5bee77c8b2c7927a937c2bb", 645, 659),
     APPROVED_SUCCESSOR_BASE: ("de41ae50a3382212805cd25b8d9874414256558bbfb42dcd5ca6d8437928dad0", 645, 659),
 }
+HISTORICAL_MISSION_HEADS = {
+    ORIGINAL_MISSION_BASE: "62f4036fb3fe93edb42b2e8b760507a217b5f295",
+    APPROVED_SUCCESSOR_BASE: "629e387cd48d876a063a9c57acab995dd9c94b81",
+}
 BASE_ABSENT_PATHS = [path for path in ALLOWLIST if path != "scripts/test.sh"]
-PROTECTED_PATHS = tuple(BASE_ABSENT_PATHS)
+PROTECTED_PATHS = (
+    "repository/data/contracts/ft-rb-02-inquiry-crm-flow-readiness.contract.yaml",
+    "repository/data/registries/extensions/ftrb02/inquiry-crm-flow-readiness.yaml",
+    "repository/data/schemas/ft-rb-02-inquiry-crm-flow-readiness.schema.json",
+    "repository/data/validation/validate_ft_rb_02_inquiry_crm_flow_readiness.py",
+    "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py",
+)
+PROTECTED_REPOSITORY_PATHS = PROTECTED_PATHS + ("scripts/test.sh",)
 PROTECTED_BLOBS = {
-    "docs/FT_RB_02_INQUIRY_CRM_FLOW_READINESS_SCOPE_V1.0.md": "e5e08084cfedcb39f17b0386fbf52f3ba66a09de",
     "repository/data/contracts/ft-rb-02-inquiry-crm-flow-readiness.contract.yaml": "e2a05a17cd6b01b2ad315f73bdfaa3993d8ab35e",
     "repository/data/registries/extensions/ftrb02/inquiry-crm-flow-readiness.yaml": "0f6c4448d1750e7a5cc8a751af7fa0a8e23ddc2d",
     "repository/data/schemas/ft-rb-02-inquiry-crm-flow-readiness.schema.json": "68cdd525eda91f2679939eb4567c821c3e73109f",
-    "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/README.md": "dd9ce2e4872d1f75b7b596cb3e8db6a9fb579b70",
-    "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/adversarial-duplicate-keys.json": "bd682cb4cdc902e9982d01e03a6221a620c5513e",
-    "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/adversarial-duplicate-keys.yaml": "bde3c9f488a32ad164c95e7886afbe81d09f9ce9",
-    "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/adversarial-permissive-schema.json": "818d3efd200ee6aaf9fcd861d2561160c2623735",
-    "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/adversarial-remote-ref-schema.json": "a8b538a1eba45260615f6401a54e4c107228b9df",
-    "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/mutation-cases.json": "2628100b11263ea2e562ed730aedaa8324f191ee",
-    "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/valid-synthetic.yaml": "47b4731a9033eff56caaa74f561f29e0c1e200b5",
-    "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py": "064ed8cfca43397d203132699da230a709c80a3d",
+    "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py": "e084f50a89af3004a4367f11a004587fbc711149",
 }
-VALIDATOR_NORMALIZED_SHA256 = "7ca1d93886a19b464deb0cfe91a299af004ca82c6854e2c68368c36d9070bc63"
-RUNNER_SLOT_START = '"$python" -B -m unittest tests.test_ft_rb_02_inquiry_crm_flow_readiness\n\n'
-RUNNER_SLOT_END = '"$python" repository/data/validation/validate_bp2_data_blueprint.py\n'
-RUNNER_PREFIX_SHA256 = "2bde612096f850be1625d79b494fc5137b6589bf0740d2fc33037983a91b1352"
-RUNNER_SUFFIX_SHA256 = "a67683da6c19a59206d2db2074d3af98b539af48aebe1875cc861a0c0a75279a"
+VALIDATOR_NORMALIZED_SHA256 = "7da1878e0c0c9ccae415bc583f59ab40d914641c3efe6ecda5be97b6860b829a"
+UNIFIED_REPAIR_BASE_BLOBS = {
+    REPAIR_ALLOWLIST[0]: "70843873bf68ae4700c56a4c05f458be1120647a",
+    REPAIR_ALLOWLIST[1]: "064ed8cfca43397d203132699da230a709c80a3d",
+}
+RUNNER_BLOCK_HEADER = b"# FT-RB-02 pre-pin Inquiry/CRM readiness validation and focused/adversarial dispatch.\n"
+MAX_RUNNER_FILE_BYTES = 1024 * 1024
+MAX_RUNNER_SLOT_BYTES = 4096
 MAX_PUSH_COMMITS = 20
 
 DEPENDENCIES = {
@@ -499,11 +508,11 @@ def classify_pr_context(base_sha: Any, head_ref: Any) -> str:
         raise RuntimeError("ambiguous historical context")
     if historical_base:
         return HISTORICAL_CONTEXT
-    repair_base = base_sha in AUTHORIZED_REPAIR_CONTEXTS
-    repair_branch = head_ref in REPAIR_BASES_BY_BRANCH
-    if repair_base != repair_branch or (repair_base and AUTHORIZED_REPAIR_CONTEXTS[base_sha] != head_ref):
-        raise RuntimeError("ambiguous repair context")
-    return REPAIR_CONTEXT if repair_base else SUCCESSOR_CONTEXT
+    unified_base = base_sha == UNIFIED_REPAIR_BASE
+    unified_branch = head_ref == UNIFIED_REPAIR_BRANCH
+    if unified_base != unified_branch:
+        raise RuntimeError("ambiguous unified repair context")
+    return UNIFIED_REPAIR if unified_base else ORDINARY_SUCCESSOR
 
 
 def local_context() -> str:
@@ -511,14 +520,13 @@ def local_context() -> str:
     if branch == BRANCH:
         approved_base_for_head()
         return HISTORICAL_CONTEXT
-    if branch in REPAIR_BASES_BY_BRANCH:
-        repair_base = REPAIR_BASES_BY_BRANCH[branch]
-        if not commit_available(repair_base) or not is_ancestor(repair_base):
-            raise RuntimeError("invalid repair ancestry")
-        return REPAIR_CONTEXT
-    if not commit_available(REPAIR_BASE) or not is_ancestor(REPAIR_BASE):
+    if branch == UNIFIED_REPAIR_BRANCH:
+        if not commit_available(UNIFIED_REPAIR_BASE) or not is_ancestor(UNIFIED_REPAIR_BASE):
+            raise RuntimeError("invalid unified repair ancestry")
+        return UNIFIED_REPAIR
+    if not commit_available(INTEGRATED_FT_RB_02_ANCHOR) or not is_ancestor(INTEGRATED_FT_RB_02_ANCHOR):
         raise RuntimeError("successor predates integrated FT-RB-02")
-    return SUCCESSOR_CONTEXT
+    return ORDINARY_SUCCESSOR
 
 
 def approved_base_for_head(head: str = "HEAD") -> str:
@@ -624,15 +632,41 @@ def protected_entry_issues(
     return sorted(issues)
 
 
+def named_tree_entries(
+    paths: tuple[str, ...] | list[str],
+    commit: str = "HEAD",
+) -> dict[str, tuple[str, str, str]]:
+    normalized = tuple(safe_repo_path(path) for path in paths)
+    if not normalized or len(set(normalized)) != len(normalized):
+        raise ValueError("named path set")
+    result = subprocess.run(
+        ["git", "ls-tree", "-rz", "--full-tree", commit, "--", *normalized],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+    )
+    _, _, _, entries = parse_tree(result.stdout, set())
+    return entries
+
+
+def protected_surface_intersection(paths: Any) -> list[str]:
+    if not isinstance(paths, (list, tuple, set)):
+        raise ValueError("changed path collection")
+    normalized = {safe_repo_path(path) for path in paths}
+    return sorted(normalized & set(PROTECTED_REPOSITORY_PATHS))
+
+
+def ordinary_successor_path_issues(paths: Any) -> list[str]:
+    try:
+        intersection = protected_surface_intersection(paths)
+    except Exception as exc:
+        return [f"ORDINARY_SUCCESSOR_PATHS:{type(exc).__name__}"]
+    return ["ORDINARY_SUCCESSOR_PROTECTED_CHANGE"] if intersection else []
+
+
 def successor_protected_issues(commit: str = "HEAD") -> list[str]:
     try:
-        result = subprocess.run(
-            ["git", "ls-tree", "-rz", "--full-tree", commit],
-            cwd=ROOT,
-            check=True,
-            capture_output=True,
-        )
-        _, _, _, entries = parse_tree(result.stdout)
+        entries = named_tree_entries(list(PROTECTED_REPOSITORY_PATHS), commit)
         validator_path = "repository/data/validation/validate_ft_rb_02_inquiry_crm_flow_readiness.py"
         validator_entry = entries.get(validator_path)
         if validator_entry is None or validator_entry[1] != "blob" or not is_oid(validator_entry[2]):
@@ -648,34 +682,34 @@ def successor_protected_issues(commit: str = "HEAD") -> list[str]:
         return [f"PROTECTED_ARTIFACT:{type(exc).__name__}"]
 
 
-def committed_tree_issues(base: str, commit: str = "HEAD") -> list[str]:
+def historical_mission_archive_issues(base: str, commit: str) -> list[str]:
     expected = COMMITTED_TREE_PROOFS.get(base)
-    if expected is None:
-        return ["TREE_PROOF:unapproved_base"]
+    if expected is None or HISTORICAL_MISSION_HEADS.get(base) != commit:
+        return ["HISTORICAL_ARCHIVE:unnamed_object"]
     issues: list[str] = []
     result = subprocess.run(["git", "ls-tree", "-rz", "--full-tree", commit], cwd=ROOT, check=True, capture_output=True)
     try:
         retained_digest, retained_count, total_count, entries = parse_tree(result.stdout)
     except Exception as exc:
-        return [f"TREE_PROOF:{type(exc).__name__}"]
+        return [f"HISTORICAL_ARCHIVE:{type(exc).__name__}"]
     if (retained_digest, retained_count, total_count) != expected:
-        issues.append("TREE_PROOF:digest_or_count")
+        issues.append("HISTORICAL_ARCHIVE:digest_or_count")
     for path in BASE_ABSENT_PATHS:
         entry = entries.get(path)
         if entry is None or entry[0] != "100644" or entry[1] != "blob":
-            issues.append(f"TREE_PROOF:new_entry:{path}")
+            issues.append(f"HISTORICAL_ARCHIVE:new_entry:{path}")
     runner = entries.get("scripts/test.sh")
     provisional = any(value == "TO_BE_FINALIZED" for value in DIGESTS.values())
     expected_runner_blob = PROVISIONAL_RUNNER_BLOB if provisional else PINNED_RUNNER_BLOB
     if runner is None or runner[0] != "100755" or runner[1] != "blob" or runner[2] != expected_runner_blob:
-        issues.append("TREE_PROOF:runner")
+        issues.append("HISTORICAL_ARCHIVE:runner")
     return sorted(issues)
 
 
-def repair_delta_issues(base: str, commit: str = "HEAD") -> list[str]:
-    expected = REPAIR_TREE_PROOFS.get(base)
-    if expected is None:
-        return ["REPAIR_TREE_PROOF:unapproved_base"]
+def historical_repair_archive_issues(base: str, commit: str) -> list[str]:
+    expected = HISTORICAL_REPAIR_ARCHIVES.get(base)
+    if expected is None or expected[0] != commit:
+        return ["HISTORICAL_REPAIR_ARCHIVE:unnamed_object"]
     try:
         result = subprocess.run(
             ["git", "ls-tree", "-rz", "--full-tree", commit],
@@ -688,24 +722,58 @@ def repair_delta_issues(base: str, commit: str = "HEAD") -> list[str]:
             set(REPAIR_ALLOWLIST),
         )
     except Exception as exc:
-        return [f"REPAIR_TREE_PROOF:{type(exc).__name__}"]
+        return [f"HISTORICAL_REPAIR_ARCHIVE:{type(exc).__name__}"]
     issues: list[str] = []
-    if (retained_digest, retained_count, total_count) != expected[:3]:
-        issues.append("REPAIR_TREE_PROOF:digest_or_count")
-    for path, base_oid in expected[3].items():
+    if (retained_digest, retained_count, total_count) != expected[1:4]:
+        issues.append("HISTORICAL_REPAIR_ARCHIVE:digest_or_count")
+    for path, base_oid in expected[4].items():
         entry = entries.get(path)
         if entry is None:
-            issues.append(f"REPAIR_TREE_PROOF:missing:{path}")
+            issues.append(f"HISTORICAL_REPAIR_ARCHIVE:missing:{path}")
         elif entry[0] != "100644" or entry[1] != "blob":
-            issues.append(f"REPAIR_TREE_PROOF:shape:{path}")
+            issues.append(f"HISTORICAL_REPAIR_ARCHIVE:shape:{path}")
         elif entry[2] == base_oid:
-            issues.append(f"REPAIR_TREE_PROOF:unchanged:{path}")
+            issues.append(f"HISTORICAL_REPAIR_ARCHIVE:unchanged:{path}")
+    return sorted(issues)
+
+
+def unified_transition_issues(
+    base: str,
+    commit: str = "HEAD",
+    *,
+    require_diff: bool = False,
+) -> list[str]:
+    if base != UNIFIED_REPAIR_BASE:
+        return ["UNIFIED_TRANSITION:unapproved_base"]
+    try:
+        entries = named_tree_entries(REPAIR_ALLOWLIST, commit)
+    except Exception as exc:
+        return [f"UNIFIED_TRANSITION:{type(exc).__name__}"]
+    issues: list[str] = []
+    for path in REPAIR_ALLOWLIST:
+        entry = entries.get(path)
+        if entry is None:
+            issues.append(f"UNIFIED_TRANSITION:missing:{path}")
+        elif entry[0] != "100644" or entry[1] != "blob":
+            issues.append(f"UNIFIED_TRANSITION:shape:{path}")
+        elif entry[2] == UNIFIED_REPAIR_BASE_BLOBS[path]:
+            issues.append(f"UNIFIED_TRANSITION:unchanged:{path}")
+    if require_diff:
+        result = git("diff", "--name-status", "--no-renames", f"{base}..{commit}", check=False)
+        expected = [f"M\t{path}" for path in REPAIR_ALLOWLIST]
+        actual = sorted(line for line in result.stdout.splitlines() if line)
+        if result.returncode or actual != expected:
+            issues.append("TRANSITION_PATH_UNAUTHORIZED")
     return sorted(issues)
 
 
 def regular_path_issues() -> list[str]:
     issues: list[str] = []
-    for path in ALLOWLIST:
+    required = set(PROTECTED_REPOSITORY_PATHS) | {
+        str(SYNTHETIC.relative_to(ROOT)),
+        str(C009.relative_to(ROOT)),
+    }
+    for path in sorted(required):
         candidate = ROOT / path
         if candidate.is_symlink() or any(parent.is_symlink() for parent in candidate.parents if parent.exists()) or not candidate.is_file():
             issues.append(f"PATH_SHAPE:{path}")
@@ -742,9 +810,10 @@ def valid_merge_push_relation(
         not is_oid(before)
         or not is_oid(after)
         or len(parents) != 2
-        or parents[0] != before
-        or not is_oid(parents[1])
-        or parents[1] in {before, after}
+        or len(set(parents)) != 2
+        or before not in parents
+        or not all(is_oid(parent) for parent in parents)
+        or after in parents
         or commits[-1].get("distinct") is not True
     ):
         return False
@@ -769,9 +838,9 @@ def ci_event_context() -> str:
             raise RuntimeError("push base")
         if before in APPROVED_BASES:
             return HISTORICAL_CONTEXT
-        if before in AUTHORIZED_REPAIR_CONTEXTS:
-            return REPAIR_CONTEXT
-        return SUCCESSOR_CONTEXT
+        if before == UNIFIED_REPAIR_BASE:
+            return UNIFIED_REPAIR
+        return ORDINARY_SUCCESSOR
     raise RuntimeError("event type")
 
 
@@ -806,7 +875,13 @@ def ci_context_issues() -> list[str]:
                     raise RuntimeError("fork")
             base_sha, head_sha = base.get("sha"), head.get("sha")
             context = classify_pr_context(base_sha, head.get("ref"))
-            synthetic_merge = parents == [base_sha, head_sha]
+            synthetic_merge = (
+                is_oid(base_sha)
+                and is_oid(head_sha)
+                and base_sha != head_sha
+                and len(parents) == 2
+                and set(parents) == {base_sha, head_sha}
+            )
             direct_head = checkout == head_sha
             if (
                 base.get("ref") != "main"
@@ -819,17 +894,15 @@ def ci_context_issues() -> list[str]:
             if context == HISTORICAL_CONTEXT:
                 if type(changed_files) is not int or changed_files != len(ALLOWLIST):
                     raise RuntimeError("pull exactness")
-                issues.extend(committed_tree_issues(base_sha))
-            elif context == REPAIR_CONTEXT:
+            elif context == UNIFIED_REPAIR:
                 if type(changed_files) is not int or changed_files != len(REPAIR_ALLOWLIST):
-                    raise RuntimeError("repair pull exactness")
-                issues.extend(repair_delta_issues(base_sha))
-                issues.extend(committed_tree_issues(APPROVED_SUCCESSOR_BASE))
+                    raise RuntimeError("unified repair pull exactness")
+                issues.extend(unified_transition_issues(base_sha))
                 issues.extend(successor_protected_issues())
                 issues.extend(regular_path_issues())
             else:
                 if type(changed_files) is not int or changed_files < 1:
-                    raise RuntimeError("future pull metadata")
+                    raise RuntimeError("ordinary successor pull metadata")
                 issues.extend(successor_protected_issues())
                 issues.extend(regular_path_issues())
         elif event_name == "push":
@@ -875,14 +948,12 @@ def ci_context_issues() -> list[str]:
                     raise RuntimeError("integration source relation")
                 if path_metadata_presence and (added != set(BASE_ABSENT_PATHS) or modified != {"scripts/test.sh"} or removed):
                     raise RuntimeError("integration path metadata")
-                issues.extend(committed_tree_issues(before))
-            elif before in AUTHORIZED_REPAIR_CONTEXTS:
+            elif before == UNIFIED_REPAIR_BASE:
                 if not valid_merge_push_relation(before, after, parents, commits, ids, tree_oid):
-                    raise RuntimeError("repair integration source relation")
+                    raise RuntimeError("unified integration source relation")
                 if path_metadata_presence and (added or modified != set(REPAIR_ALLOWLIST) or removed):
-                    raise RuntimeError("repair integration path metadata")
-                issues.extend(repair_delta_issues(before))
-                issues.extend(committed_tree_issues(APPROVED_SUCCESSOR_BASE))
+                    raise RuntimeError("unified integration path metadata")
+                issues.extend(unified_transition_issues(before))
                 issues.extend(successor_protected_issues())
                 issues.extend(regular_path_issues())
             else:
@@ -890,8 +961,8 @@ def ci_context_issues() -> list[str]:
                 merged = valid_merge_push_relation(before, after, parents, commits, ids, tree_oid)
                 if not (direct or merged):
                     raise RuntimeError("future integration parent relation")
-                if path_metadata_presence and (added | modified | removed) & set(PROTECTED_PATHS):
-                    raise RuntimeError("future protected path metadata")
+                if path_metadata_presence:
+                    issues.extend(ordinary_successor_path_issues(added | modified | removed))
                 issues.extend(successor_protected_issues())
                 issues.extend(regular_path_issues())
         else:
@@ -919,13 +990,10 @@ def git_context_issues() -> list[str]:
                 issues.append("ALLOWLIST_ACTUAL_DIFF")
         except Exception as exc:
             issues.append(f"GIT_CONTEXT:{type(exc).__name__}")
-    elif context == REPAIR_CONTEXT:
-        repair_base = REPAIR_BASES_BY_BRANCH.get(current_branch())
-        if repair_base is None or diff_paths(repair_base) != REPAIR_ALLOWLIST:
-            issues.append("REPAIR_ALLOWLIST_ACTUAL_DIFF")
-        if repair_base is not None:
-            issues.extend(repair_delta_issues(repair_base))
-        issues.extend(committed_tree_issues(APPROVED_SUCCESSOR_BASE))
+    elif context == UNIFIED_REPAIR:
+        if current_branch() != UNIFIED_REPAIR_BRANCH or diff_paths(UNIFIED_REPAIR_BASE) != REPAIR_ALLOWLIST:
+            issues.append("TRANSITION_PATH_UNAUTHORIZED")
+        issues.extend(unified_transition_issues(UNIFIED_REPAIR_BASE, require_diff=True))
         issues.extend(successor_protected_issues())
     else:
         issues.extend(successor_protected_issues())
@@ -934,67 +1002,68 @@ def git_context_issues() -> list[str]:
 
 def runner_issues(context: str | None = None) -> list[str]:
     try:
-        text = safe_file(ROOT / "scripts/test.sh").decode("utf-8")
+        raw = safe_file(ROOT / "scripts/test.sh")
     except Exception as exc:
         return [f"RUNNER:{type(exc).__name__}"]
-    provisional = any(value == "TO_BE_FINALIZED" for value in DIGESTS.values())
-    suffix = " --allow-unpinned" if provisional else ""
-    required = [
-        'ft_rb_02_inquiry_validator="repository/data/validation/validate_ft_rb_02_inquiry_crm_flow_readiness.py"',
-        f'"$python" "$ft_rb_02_inquiry_validator"{suffix}',
-        f'"$python" "$ft_rb_02_inquiry_validator" --registry tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/valid-synthetic.yaml --synthetic{suffix}',
-        '"$python" -B -m unittest tests.test_ft_rb_02_inquiry_crm_flow_readiness',
-    ]
-    runner_lines = text.splitlines()
-    issues = [f"RUNNER:dispatch:{line}" for line in required if runner_lines.count(line) != 1]
+    issues: list[str] = []
+    if len(raw) > MAX_RUNNER_FILE_BYTES or b"\x00" in raw or b"\r" in raw:
+        issues.append("RUNNER:file_shape")
     if context is None:
         try:
             context = execution_context()
         except Exception as exc:
             issues.append(f"RUNNER:context:{type(exc).__name__}")
-    if context in {HISTORICAL_CONTEXT, REPAIR_CONTEXT}:
-        expected_blob = PROVISIONAL_RUNNER_BLOB if provisional else PINNED_RUNNER_BLOB
-        if expected_blob in {"TO_BE_RECOMPUTED", "TO_BE_FINALIZED"} or git_blob_oid(ROOT / "scripts/test.sh") != expected_blob:
-            issues.append("RUNNER:exact_blob")
-        available_bases = [base for base in APPROVED_BASES if base_available(base)]
-        context_base: str | None = None
-        if available_bases:
-            try:
-                context_base = approved_base_for_head()
-            except Exception as exc:
-                issues.append(f"RUNNER:base_context:{type(exc).__name__}")
-        if context_base is not None:
-            base = git("show", f"{context_base}:scripts/test.sh", check=False)
-            anchor = '"$python" -B -m unittest tests.test_ft_rb_01_rights_safe_media_readiness\n\n'
-            block = (
-                '# FT-RB-02 pre-pin Inquiry/CRM readiness validation and focused/adversarial dispatch.\n'
-                'ft_rb_02_inquiry_validator="repository/data/validation/validate_ft_rb_02_inquiry_crm_flow_readiness.py"\n'
-                f'"$python" "$ft_rb_02_inquiry_validator"{suffix}\n'
-                f'"$python" "$ft_rb_02_inquiry_validator" --registry tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/valid-synthetic.yaml --synthetic{suffix}\n'
-                '"$python" -B -m unittest tests.test_ft_rb_02_inquiry_crm_flow_readiness\n\n'
-            )
-            if base.returncode or base.stdout.count(anchor) != 1 or text != base.stdout.replace(anchor, anchor + block, 1):
-                issues.append("RUNNER:exact_transform")
-    elif context == SUCCESSOR_CONTEXT:
-        if text.count(RUNNER_SLOT_START) != 1 or text.count(RUNNER_SLOT_END) != 1:
-            issues.append("RUNNER:successor_slot")
-        else:
-            prefix, remainder = text.split(RUNNER_SLOT_START, 1)
-            inserted, suffix_text = remainder.split(RUNNER_SLOT_END, 1)
-            if hashlib.sha256((prefix + RUNNER_SLOT_START).encode()).hexdigest() != RUNNER_PREFIX_SHA256:
-                issues.append("RUNNER:successor_prefix")
-            if hashlib.sha256((RUNNER_SLOT_END + suffix_text).encode()).hexdigest() != RUNNER_SUFFIX_SHA256:
-                issues.append("RUNNER:successor_suffix")
-            if inserted and (not inserted.endswith("\n\n") or "ft_rb_02_inquiry_validator" in inserted or "tests.test_ft_rb_02_inquiry_crm_flow_readiness" in inserted):
-                issues.append("RUNNER:successor_insertion")
-    else:
+    if context not in {HISTORICAL_CONTEXT, *EVALUATION_MODES}:
         issues.append("RUNNER:invalid_context")
-    if not provisional and "--allow-unpinned" in "\n".join(line for line in text.splitlines() if "ft_rb_02_inquiry_validator" in line):
-        issues.append("RUNNER:allow_unpinned")
+
+    expected = RUNNER_BLOCK_HEADER + (
+        b'ft_rb_02_inquiry_validator="repository/data/validation/validate_ft_rb_02_inquiry_crm_flow_readiness.py"\n'
+        b'"$python" "$ft_rb_02_inquiry_validator"\n'
+        b'"$python" "$ft_rb_02_inquiry_validator" --registry tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/valid-synthetic.yaml --synthetic\n'
+        b'"$python" -B -m unittest tests.test_ft_rb_02_inquiry_crm_flow_readiness\n\n'
+    )
+    if raw.count(RUNNER_BLOCK_HEADER) != 1:
+        issues.append("RUNNER:slot_cardinality")
+    else:
+        remainder = raw.split(RUNNER_BLOCK_HEADER, 1)[1]
+        terminator = remainder.find(b"\n\n")
+        if terminator < 0:
+            issues.append("RUNNER:slot_framing")
+        else:
+            slot = RUNNER_BLOCK_HEADER + remainder[: terminator + 2]
+            if len(slot) > MAX_RUNNER_SLOT_BYTES or b"\t" in slot:
+                issues.append("RUNNER:slot_shape")
+            try:
+                slot.decode("ascii")
+            except UnicodeDecodeError:
+                issues.append("RUNNER:slot_encoding")
+            if slot != expected:
+                issues.append("RUNNER:slot_grammar")
+    try:
+        entries = named_tree_entries(
+            [
+                "scripts/test.sh",
+                REPAIR_ALLOWLIST[0],
+                "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/valid-synthetic.yaml",
+                REPAIR_ALLOWLIST[1],
+            ]
+        )
+        expected_shapes = {
+            "scripts/test.sh": ("100755", "blob"),
+            REPAIR_ALLOWLIST[0]: ("100644", "blob"),
+            "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/valid-synthetic.yaml": ("100644", "blob"),
+            REPAIR_ALLOWLIST[1]: ("100644", "blob"),
+        }
+        for path, shape in expected_shapes.items():
+            entry = entries.get(path)
+            if entry is None or entry[:2] != shape:
+                issues.append(f"RUNNER:artifact_shape:{path}")
+    except Exception as exc:
+        issues.append(f"RUNNER:artifact_shape:{type(exc).__name__}")
     return sorted(issues)
 
 
-def protected_owner_issues(contract: Any) -> list[str]:
+def protected_owner_issues(contract: Any, *, verify_current: bool = True) -> list[str]:
     issues: list[str] = []
     if (
         not isinstance(contract, dict)
@@ -1004,18 +1073,19 @@ def protected_owner_issues(contract: Any) -> list[str]:
         or contract.get("owner_document_pins") != OWNER_PINS
     ):
         issues.append("CONTRACT_PROTECTED_OWNER_MAP")
-    for key, relative in DEPENDENCIES.items():
-        try:
-            if digest(load_data(ROOT / relative)) != PINS[key]:
-                issues.append(f"DEPENDENCY_PIN:{key}")
-        except Exception as exc:
-            issues.append(f"DEPENDENCY_PIN:{key}:{type(exc).__name__}")
-    for key, relative in OWNER_FILES.items():
-        try:
-            if git_blob_oid(ROOT / relative) != OWNER_PINS[key]:
-                issues.append(f"OWNER_BLOB_PIN:{key}")
-        except Exception as exc:
-            issues.append(f"OWNER_BLOB_PIN:{key}:{type(exc).__name__}")
+    if verify_current:
+        for key, relative in DEPENDENCIES.items():
+            try:
+                if digest(load_data(ROOT / relative)) != PINS[key]:
+                    issues.append(f"DEPENDENCY_PIN:{key}")
+            except Exception as exc:
+                issues.append(f"DEPENDENCY_PIN:{key}:{type(exc).__name__}")
+        for key, relative in OWNER_FILES.items():
+            try:
+                if git_blob_oid(ROOT / relative) != OWNER_PINS[key]:
+                    issues.append(f"OWNER_BLOB_PIN:{key}")
+            except Exception as exc:
+                issues.append(f"OWNER_BLOB_PIN:{key}:{type(exc).__name__}")
     return sorted(issues)
 
 
@@ -1037,7 +1107,7 @@ def c009_owner_issues() -> tuple[list[str], set[str]]:
 
 def leakage_issues(ids: set[str]) -> list[str]:
     issues: list[str] = []
-    governed = [ROOT / relative for relative in BASE_ABSENT_PATHS]
+    governed = [ROOT / relative for relative in REPAIR_ALLOWLIST]
     suffixes = {item.rsplit(":", 1)[-1] for item in ids}
     for path in governed:
         try:
@@ -1156,7 +1226,7 @@ def validate_values(
     issues.extend(semantic_issues(contract, schema, registry, synthetic=synthetic))
     issues.extend(package_digest_issues(contract, schema, registry, synthetic=synthetic, allow_unpinned=allow_unpinned))
     if check_protected:
-        issues.extend(protected_owner_issues(contract))
+        issues.extend(protected_owner_issues(contract, verify_current=False))
     owner_problems, ids = c009_owner_issues()
     issues.extend(owner_problems)
     if check_surfaces:
