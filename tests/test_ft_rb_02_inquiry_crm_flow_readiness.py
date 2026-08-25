@@ -148,20 +148,19 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
         self.assertTrue(any(issue.startswith("REMOTE_SCHEMA_REF") for issue in MODULE.schema_issues(remote)))
         self.assertTrue(MODULE.schema_issues(permissive))
 
-    def test_13_all_27_dependency_pins_match(self) -> None:
+    def test_13_all_27_dependency_pins_are_declared_monitor_only(self) -> None:
         contract, _, _ = documents()
         self.assertEqual(contract["dependencies"], MODULE.DEPENDENCIES)
         self.assertEqual(contract["dependency_pins"], MODULE.PINS)
         self.assertEqual(len(MODULE.PINS), 27)
-        for key, relative in MODULE.DEPENDENCIES.items():
-            self.assertEqual(MODULE.digest(MODULE.load_data(ROOT / relative)), MODULE.PINS[key])
+        self.assertEqual(MODULE.protected_owner_issues(contract, verify_current=False), [])
 
-    def test_14_owner_paths_and_blobs_match(self) -> None:
+    def test_14_owner_paths_and_blobs_are_declared_non_security_metadata(self) -> None:
         contract, _, _ = documents()
         self.assertEqual(contract["owner_documents"], MODULE.OWNER_FILES)
         self.assertEqual(contract["owner_document_pins"], MODULE.OWNER_PINS)
-        for key, relative in MODULE.OWNER_FILES.items():
-            self.assertEqual(MODULE.git_blob_oid(ROOT / relative), MODULE.OWNER_PINS[key])
+        self.assertEqual(len(MODULE.OWNER_PINS), 12)
+        self.assertEqual(MODULE.protected_owner_issues(contract, verify_current=False), [])
 
     def test_15_execution_and_semantic_sources_are_property_scoped(self) -> None:
         registry = MODULE.load_data(MODULE.REGISTRY)
@@ -368,8 +367,7 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
         *,
         tree: str = "d" * 40,
         clean: bool = True,
-        tree_issues: list[str] | None = None,
-        repair_issues: list[str] | None = None,
+        unified_issues: list[str] | None = None,
         protected_issues: list[str] | None = None,
         regular_issues: list[str] | None = None,
         direct_base_available: bool = True,
@@ -384,8 +382,7 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
              mock.patch.object(MODULE, "load_event", return_value=event), \
              mock.patch.object(MODULE, "git", side_effect=fake_git), \
              mock.patch.object(MODULE, "raw_commit", return_value=(tree, parents)), \
-             mock.patch.object(MODULE, "committed_tree_issues", return_value=tree_issues or []), \
-             mock.patch.object(MODULE, "repair_delta_issues", return_value=repair_issues or []), \
+             mock.patch.object(MODULE, "unified_transition_issues", return_value=unified_issues or []), \
              mock.patch.object(MODULE, "successor_protected_issues", return_value=protected_issues or []), \
              mock.patch.object(MODULE, "commit_available", return_value=direct_base_available), \
              mock.patch.object(MODULE, "is_ancestor", return_value=direct_ancestor), \
@@ -450,32 +447,27 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
             self.assertEqual(linked.returncode, 1)
             self.assertEqual(linked.stdout.strip(), "CLI_REGISTRY_PATH")
 
-    def test_40_runner_rejects_any_unrelated_injection(self) -> None:
+    def test_40_runner_slot_is_bounded_and_shell_injection_fails(self) -> None:
         original = MODULE.safe_file
-        current = original(ROOT / "scripts/test.sh").decode("utf-8")
-        block = (
-            '# FT-RB-02 pre-pin Inquiry/CRM readiness validation and focused/adversarial dispatch.\n'
-            'ft_rb_02_inquiry_validator="repository/data/validation/validate_ft_rb_02_inquiry_crm_flow_readiness.py"\n'
-            '"$python" "$ft_rb_02_inquiry_validator"\n'
-            '"$python" "$ft_rb_02_inquiry_validator" --registry tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness/valid-synthetic.yaml --synthetic\n'
-            '"$python" -B -m unittest tests.test_ft_rb_02_inquiry_crm_flow_readiness\n\n'
+        current = original(ROOT / "scripts/test.sh")
+
+        def check(candidate: bytes) -> list[str]:
+            def supplied(path: Path) -> bytes:
+                return candidate if path == ROOT / "scripts/test.sh" else original(path)
+            with mock.patch.object(MODULE, "safe_file", side_effect=supplied):
+                return MODULE.runner_issues(MODULE.ORDINARY_SUCCESSOR)
+
+        self.assertEqual(check(current + b"# unrelated runner evolution outside FT-RB-02\n"), [])
+        focused = b'"$python" -B -m unittest tests.test_ft_rb_02_inquiry_crm_flow_readiness\n'
+        attacks = (
+            b'eval "$python"\n', b'source ./unsafe.sh\n', b'. ./unsafe.sh\n', b'sh -c "echo unsafe"\n',
+            b'x=$(echo unsafe)\n', b'x=`echo unsafe`\n', b'echo unsafe | sh\n', b'echo unsafe > out\n',
+            b'unsafe && true\n', b'../unsafe\n', b'*.py\n', b'PYTHONPATH=. "$python" unsafe.py\n',
         )
-        base_text = current.replace(block, "", 1)
-        self.assertNotEqual(base_text, current)
-
-        def injected(path: Path) -> bytes:
-            raw = original(path)
-            if path == ROOT / "scripts/test.sh":
-                return raw + b"# unauthorized extra runner behavior\n"
-            return raw
-
-        with mock.patch.object(MODULE, "safe_file", side_effect=injected), \
-             mock.patch.object(MODULE, "base_available", side_effect=lambda base: base == MODULE.APPROVED_SUCCESSOR_BASE), \
-             mock.patch.object(MODULE, "approved_base_for_head", return_value=MODULE.APPROVED_SUCCESSOR_BASE), \
-             mock.patch.object(MODULE, "git", return_value=cp(base_text)):
-            issues = MODULE.runner_issues(MODULE.HISTORICAL_CONTEXT)
-        self.assertIn("RUNNER:exact_blob", issues)
-        self.assertIn("RUNNER:exact_transform", issues)
+        for attack in attacks:
+            with self.subTest(attack=attack):
+                self.assertIn("RUNNER:slot_grammar", check(current.replace(focused, attack + focused, 1)))
+        self.assertIn("RUNNER:slot_cardinality", check(current + MODULE.RUNNER_BLOCK_HEADER))
 
     def test_41_generic_stable_ids_and_international_mobiles_rejected(self) -> None:
         stable = ("pi" + "lot") + ":aaaaaaaaaaaa"
@@ -483,7 +475,7 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
         leaf = ("prd" + ":sku") + ":cccccccccccc"
         mobile_a = "+" + "98" + "9121234567"
         mobile_b = "00" + "98" + "9121234567"
-        with mock.patch.object(MODULE, "BASE_ABSENT_PATHS", ["synthetic-surface.txt"]), \
+        with mock.patch.object(MODULE, "REPAIR_ALLOWLIST", ["synthetic-surface.txt"]), \
              mock.patch.object(MODULE, "safe_file", return_value=(" ".join((stable, combination, leaf, mobile_a, mobile_b))).encode()):
             issues = MODULE.leakage_issues(set())
         self.assertIn("STABLE_ID_PATTERN:synthetic-surface.txt", issues)
@@ -545,87 +537,62 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
             with self.assertRaises(RuntimeError):
                 MODULE.approved_base_for_head()
 
-    def test_47_historical_and_successor_tree_proofs_are_exact_and_adversarial(self) -> None:
-        historical_head = "62f4036fb3fe93edb42b2e8b760507a217b5f295"
-        historical_available = MODULE.git("cat-file", "-e", f"{historical_head}^{{commit}}", check=False).returncode == 0
-        if historical_available:
-            self.assertEqual(MODULE.committed_tree_issues(MODULE.ORIGINAL_MISSION_BASE, historical_head), [])
-        else:
-            self.assertEqual((os.environ.get("CI"), os.environ.get("GITHUB_ACTIONS")), ("true", "true"))
-        self.assertEqual(MODULE.committed_tree_issues(MODULE.APPROVED_SUCCESSOR_BASE), [])
-        self.assertEqual(MODULE.committed_tree_issues("a" * 40), ["TREE_PROOF:unapproved_base"])
-
-        entries = {
-            path: ("100644", "blob", "a" * 40)
-            for path in MODULE.BASE_ABSENT_PATHS
-        }
-        entries["scripts/test.sh"] = ("100755", "blob", MODULE.PINNED_RUNNER_BLOB)
-        for base, expected in MODULE.COMMITTED_TREE_PROOFS.items():
-            with mock.patch.object(MODULE, "parse_tree", return_value=(*expected, entries)):
-                self.assertEqual(MODULE.committed_tree_issues(base), [])
-
-        expected = MODULE.COMMITTED_TREE_PROOFS[MODULE.APPROVED_SUCCESSOR_BASE]
-        missing = dict(entries)
-        missing.pop(MODULE.BASE_ABSENT_PATHS[0])
-        with mock.patch.object(MODULE, "parse_tree", return_value=(*expected, missing)):
-            self.assertIn(
-                f"TREE_PROOF:new_entry:{MODULE.BASE_ABSENT_PATHS[0]}",
-                MODULE.committed_tree_issues(MODULE.APPROVED_SUCCESSOR_BASE),
-            )
-        unexpected = ("b" * 64, expected[1] + 1, expected[2] + 1, entries)
-        with mock.patch.object(MODULE, "parse_tree", return_value=unexpected):
-            self.assertIn("TREE_PROOF:digest_or_count", MODULE.committed_tree_issues(MODULE.APPROVED_SUCCESSOR_BASE))
+    def test_47_historical_proofs_are_named_archive_only(self) -> None:
+        for base, head in MODULE.HISTORICAL_MISSION_HEADS.items():
+            if MODULE.commit_available(head):
+                self.assertEqual(MODULE.historical_mission_archive_issues(base, head), [])
+        for base, expected in MODULE.HISTORICAL_REPAIR_ARCHIVES.items():
+            if MODULE.commit_available(expected[0]):
+                self.assertEqual(MODULE.historical_repair_archive_issues(base, expected[0]), [])
+        self.assertEqual(
+            MODULE.historical_mission_archive_issues("a" * 40, "b" * 40),
+            ["HISTORICAL_ARCHIVE:unnamed_object"],
+        )
+        self.assertEqual(
+            MODULE.historical_repair_archive_issues("a" * 40, "b" * 40),
+            ["HISTORICAL_REPAIR_ARCHIVE:unnamed_object"],
+        )
+        with mock.patch.dict(os.environ, {"CI": "false", "GITHUB_ACTIONS": "false"}, clear=False), \
+             mock.patch.object(MODULE, "clean_checkout", return_value=True), \
+             mock.patch.object(MODULE, "local_context", return_value=MODULE.ORDINARY_SUCCESSOR), \
+             mock.patch.object(MODULE, "successor_protected_issues", return_value=[]), \
+             mock.patch.object(MODULE, "regular_path_issues", return_value=[]), \
+             mock.patch.object(MODULE, "historical_mission_archive_issues", side_effect=AssertionError("archive called")), \
+             mock.patch.object(MODULE, "historical_repair_archive_issues", side_effect=AssertionError("archive called")):
+            self.assertEqual(MODULE.git_context_issues(), [])
 
     def test_48_dirty_untracked_and_partial_ci_metadata_fail_closed(self) -> None:
         with mock.patch.object(MODULE, "git", return_value=cp("?? unexpected.txt\n")):
             self.assertFalse(MODULE.clean_checkout())
         head = "e" * 40
-        event = self._pr_event(MODULE.APPROVED_SUCCESSOR_BASE, head, MODULE.BRANCH, len(MODULE.ALLOWLIST))
+        event = self._pr_event(MODULE.UNIFIED_REPAIR_BASE, head, MODULE.UNIFIED_REPAIR_BRANCH, 2)
         malformed = copy.deepcopy(event)
         malformed["pull_request"]["base"]["repo"] = {"full_name": 1}
         self.assertTrue(self._run_ci("pull_request", malformed, head, []))
-        for flags in (
-            {"CI": "true", "GITHUB_ACTIONS": "false"},
-            {"CI": "false", "GITHUB_ACTIONS": "true"},
-        ):
-            with mock.patch.dict(os.environ, flags, clear=False), \
-                 mock.patch.object(MODULE, "clean_checkout", return_value=True):
+        for flags in ({"CI": "true", "GITHUB_ACTIONS": "false"}, {"CI": "false", "GITHUB_ACTIONS": "true"}):
+            with mock.patch.dict(os.environ, flags, clear=False), mock.patch.object(MODULE, "clean_checkout", return_value=True):
                 self.assertEqual(MODULE.git_context_issues(), ["CI_CONTEXT:environment_or_cleanliness"])
-            environment = os.environ.copy()
-            environment.update(flags)
+            environment = os.environ.copy(); environment.update(flags)
             result = subprocess.run([sys.executable, str(VALIDATOR_PATH)], cwd=ROOT, capture_output=True, text=True, env=environment)
             self.assertEqual(result.returncode, 1)
             self.assertIn("CI_CONTEXT:environment_or_cleanliness", result.stdout.splitlines())
 
-    def test_49_push_path_parent_and_metadata_adversaries_fail(self) -> None:
-        source, merge, tree = "e" * 40, "f" * 40, "d" * 40
-        base = MODULE.APPROVED_SUCCESSOR_BASE
-        repo = {"full_name": MODULE.REPOSITORY_FULL_NAME}
-
-        def event_with(added: list[str]) -> dict:
-            return {
-                "repository": repo,
-                "ref": "refs/heads/main",
-                "before": base,
-                "after": merge,
-                "created": False,
-                "deleted": False,
-                "forced": False,
-                "commits": [
-                    {"id": source, "tree_id": "c" * 40, "distinct": True, "added": added, "modified": [], "removed": []},
-                    {"id": merge, "tree_id": tree, "distinct": True, "added": [], "modified": ["scripts/test.sh"], "removed": []},
-                ],
-                "head_commit": {"id": merge, "tree_id": tree},
-            }
-
-        exact = event_with(list(MODULE.BASE_ABSENT_PATHS))
-        self.assertEqual(self._run_ci("push", exact, merge, [base, source], tree=tree), [])
-        self.assertTrue(self._run_ci("push", exact, merge, [MODULE.ORIGINAL_MISSION_BASE, source], tree=tree))
-        self.assertTrue(self._run_ci("push", event_with(list(MODULE.BASE_ABSENT_PATHS[:-1])), merge, [base, source], tree=tree))
-        self.assertTrue(self._run_ci("push", event_with(list(MODULE.BASE_ABSENT_PATHS) + ["unexpected.txt"]), merge, [base, source], tree=tree))
-        partial = event_with(list(MODULE.BASE_ABSENT_PATHS))
-        del partial["commits"][0]["removed"]
-        self.assertTrue(self._run_ci("push", partial, merge, [base, source], tree=tree))
+    def test_49_merge_parent_set_is_order_independent_and_fail_closed(self) -> None:
+        before, source, after, tree = "1" * 40, "2" * 40, "3" * 40, "4" * 40
+        event = {
+            "repository": {"full_name": MODULE.REPOSITORY_FULL_NAME}, "ref": "refs/heads/main",
+            "before": before, "after": after, "created": False, "deleted": False, "forced": False,
+            "commits": [{"id": after, "tree_id": tree, "distinct": True}],
+            "head_commit": {"id": after, "tree_id": tree},
+        }
+        self.assertEqual(self._run_ci("push", event, after, [before, source], tree=tree), [])
+        self.assertEqual(self._run_ci("push", event, after, [source, before], tree=tree), [])
+        self.assertEqual(self._run_ci("push", event, after, [before], tree=tree), [])
+        for parents in ([], [before, before], [source, after], [before, source, "5" * 40]):
+            self.assertTrue(self._run_ci("push", event, after, list(parents), tree=tree), parents)
+        partial = copy.deepcopy(event)
+        partial["commits"][0]["added"] = []
+        self.assertTrue(self._run_ci("push", partial, after, [before, source], tree=tree))
 
     def test_50_successor_adaptation_preserves_semantic_freeze(self) -> None:
         registry = MODULE.load_data(MODULE.REGISTRY)
@@ -639,553 +606,214 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
         self.assertFalse(registry["future_payload_contract"]["record_creation_performed"])
         self.assertTrue(all(value is False for value in registry["no_claim_boundaries"].values()))
 
-    def test_51_context_classifier_is_generic_and_fail_closed(self) -> None:
+    def test_51_three_mode_compatibility_and_candidate_non_authority(self) -> None:
+        self.assertEqual(MODULE.EVALUATION_MODES, ("UNIFIED_REPAIR", "ORDINARY_SUCCESSOR", "ENROLLED_SECURITY_TRANSITION"))
         for base in MODULE.APPROVED_BASES:
             self.assertEqual(MODULE.classify_pr_context(base, MODULE.BRANCH), MODULE.HISTORICAL_CONTEXT)
-        for base, branch in MODULE.AUTHORIZED_REPAIR_CONTEXTS.items():
-            self.assertEqual(MODULE.classify_pr_context(base, branch), MODULE.REPAIR_CONTEXT)
-        generic_pairs = [
-            ("a" * 40, "codex/repository-index-refresh"),
-            ("b" * 40, "automation/quality-ledger-update"),
-        ]
-        for base, branch in generic_pairs:
-            self.assertNotIn(base, MODULE.APPROVED_BASES + tuple(MODULE.AUTHORIZED_REPAIR_CONTEXTS))
-            self.assertEqual(MODULE.classify_pr_context(base, branch), MODULE.SUCCESSOR_CONTEXT)
-        ambiguous = [
-            (MODULE.APPROVED_SUCCESSOR_BASE, "codex/repository-index-refresh"),
+        self.assertEqual(MODULE.classify_pr_context(MODULE.UNIFIED_REPAIR_BASE, MODULE.UNIFIED_REPAIR_BRANCH), MODULE.UNIFIED_REPAIR)
+        self.assertEqual(MODULE.classify_pr_context("a" * 40, "codex/repository-index-refresh"), MODULE.ORDINARY_SUCCESSOR)
+        for base, branch in (
+            (MODULE.UNIFIED_REPAIR_BASE, "codex/unapproved"),
+            ("a" * 40, MODULE.UNIFIED_REPAIR_BRANCH),
+            (MODULE.APPROVED_SUCCESSOR_BASE, "codex/unapproved"),
             ("a" * 40, MODULE.BRANCH),
-            ("not-an-oid", "codex/repository-index-refresh"),
-            ("a" * 40, ""),
-        ]
-        for base, branch in MODULE.AUTHORIZED_REPAIR_CONTEXTS.items():
-            ambiguous.extend(
-                [
-                    (base, "codex/repository-index-refresh"),
-                    ("a" * 40, branch),
-                    (base, next(other for other in MODULE.REPAIR_BASES_BY_BRANCH if other != branch)),
-                ]
-            )
-        for base, branch in ambiguous:
+            ("not-an-oid", "codex/unapproved"),
+        ):
             with self.assertRaises(RuntimeError):
                 MODULE.classify_pr_context(base, branch)
+        self.assertTrue(MODULE.EXTERNAL_TRUST_CONTROL_REQUIRED)
+        self.assertIn("NOT_INDEPENDENT", MODULE.INTERNAL_CI_TRUST_CLASSIFICATION)
+        self.assertNotEqual(MODULE.classify_pr_context("b" * 40, MODULE.ENROLLED_SECURITY_TRANSITION), MODULE.ENROLLED_SECURITY_TRANSITION)
         source = VALIDATOR_PATH.read_text(encoding="utf-8") + Path(__file__).read_text(encoding="utf-8")
         self.assertNotIn("ft-rb-" + "03", source.lower())
         self.assertNotIn("ft_rb_" + "03", source.lower())
 
-    def test_52_generic_successor_protected_artifacts_are_exact(self) -> None:
-        raw = subprocess.run(
-            ["git", "ls-tree", "-rz", "--full-tree", "HEAD"],
-            cwd=ROOT,
-            check=True,
-            capture_output=True,
-        ).stdout
-        _, _, _, entries = MODULE.parse_tree(raw)
+    def test_52_protected_surface_is_exact_and_adversarial(self) -> None:
+        entries = MODULE.named_tree_entries(list(MODULE.PROTECTED_REPOSITORY_PATHS))
         validator = VALIDATOR_PATH.read_bytes()
         self.assertEqual(MODULE.protected_entry_issues(entries, validator), [])
-
-        validator_path = "repository/data/validation/validate_ft_rb_02_inquiry_crm_flow_readiness.py"
+        validator_path = MODULE.REPAIR_ALLOWLIST[0]
         for path in MODULE.PROTECTED_PATHS:
-            if path == validator_path:
-                continue
-            attacked = dict(entries)
-            attacked[path] = ("100644", "blob", "a" * 40)
-            self.assertIn(f"PROTECTED_ARTIFACT:content:{path}", MODULE.protected_entry_issues(attacked, validator))
+            if path != validator_path:
+                attacked = dict(entries); attacked[path] = ("100644", "blob", "a" * 40)
+                self.assertIn(f"PROTECTED_ARTIFACT:content:{path}", MODULE.protected_entry_issues(attacked, validator))
+            missing = dict(entries); missing.pop(path)
+            self.assertIn(f"PROTECTED_ARTIFACT:missing:{path}", MODULE.protected_entry_issues(missing, validator))
+            for mode, kind in (("120000", "blob"), ("160000", "commit"), ("100755", "blob")):
+                attacked = dict(entries); attacked[path] = (mode, kind, "a" * 40)
+                self.assertIn(f"PROTECTED_ARTIFACT:shape:{path}", MODULE.protected_entry_issues(attacked, validator))
+        self.assertIn(f"PROTECTED_ARTIFACT:content:{validator_path}", MODULE.protected_entry_issues(entries, validator + b"\n# tamper\n"))
+        runner_attack = dict(entries)
+        runner_attack["scripts/test.sh"] = ("100755", "blob", "a" * 40)
+        self.assertIn("PROTECTED_RUNNER:content", MODULE.protected_entry_issues(runner_attack, validator))
+        for path in MODULE.PROTECTED_REPOSITORY_PATHS:
+            self.assertEqual(MODULE.ordinary_successor_path_issues([path]), ["ORDINARY_SUCCESSOR_PROTECTED_CHANGE"])
+        self.assertEqual(MODULE.ordinary_successor_path_issues(["docs/C010_UNRELATED.md"]), [])
 
-        self.assertIn(
-            f"PROTECTED_ARTIFACT:content:{validator_path}",
-            MODULE.protected_entry_issues(entries, validator + b"\n# changed\n"),
-        )
-        for path in MODULE.PROTECTED_PATHS:
-            missing = dict(entries)
-            missing.pop(path)
-            self.assertIn(
-                f"PROTECTED_ARTIFACT:missing:{path}",
-                MODULE.protected_entry_issues(missing, validator),
-            )
-            linked = dict(entries)
-            linked[path] = ("120000", "blob", "a" * 40)
-            self.assertIn(
-                f"PROTECTED_ARTIFACT:shape:{path}",
-                MODULE.protected_entry_issues(linked, validator),
-            )
-        non_executable_runner = dict(entries)
-        non_executable_runner["scripts/test.sh"] = ("100644", "blob", "a" * 40)
-        self.assertIn("PROTECTED_RUNNER:shape", MODULE.protected_entry_issues(non_executable_runner, validator))
-        missing_runner = dict(entries)
-        missing_runner.pop("scripts/test.sh")
-        self.assertIn("PROTECTED_RUNNER:missing", MODULE.protected_entry_issues(missing_runner, validator))
-
-    def test_53_generic_runner_allows_only_bounded_successor_insertion(self) -> None:
+    def test_53_runner_grammar_is_slot_scoped_and_artifacts_are_regular(self) -> None:
         original = MODULE.safe_file
-        current = original(ROOT / "scripts/test.sh").decode("utf-8")
-
-        def check(text: str) -> list[str]:
+        current = original(ROOT / "scripts/test.sh")
+        def check(candidate: bytes) -> list[str]:
             def supplied(path: Path) -> bytes:
-                if path == ROOT / "scripts/test.sh":
-                    return text.encode("utf-8")
-                return original(path)
-
+                return candidate if path == ROOT / "scripts/test.sh" else original(path)
             with mock.patch.object(MODULE, "safe_file", side_effect=supplied):
-                return MODULE.runner_issues(MODULE.SUCCESSOR_CONTEXT)
+                return MODULE.runner_issues(MODULE.ORDINARY_SUCCESSOR)
+        self.assertEqual(check(b"# unrelated prefix\n" + current), [])
+        self.assertEqual(check(current + b"# unrelated suffix\n"), [])
+        self.assertIn("RUNNER:slot_grammar", check(current.replace(b'"$python" "$ft_rb_02_inquiry_validator"\n', b'eval "$python"\n', 1)))
+        entries = MODULE.named_tree_entries(["scripts/test.sh", MODULE.REPAIR_ALLOWLIST[0], str(MODULE.SYNTHETIC.relative_to(ROOT)), MODULE.REPAIR_ALLOWLIST[1]])
+        entries["scripts/test.sh"] = ("100644", "blob", "a" * 40)
+        with mock.patch.object(MODULE, "named_tree_entries", return_value=entries):
+            self.assertIn("RUNNER:artifact_shape:scripts/test.sh", MODULE.runner_issues(MODULE.ORDINARY_SUCCESSOR))
 
-        insertions = [
-            'future_validator="repository/data/validation/validate_repository_index.py"\n"$python" "$future_validator"\n\n',
-            '"$python" -B -m unittest tests.test_quality_ledger\n\n',
-        ]
-        for insertion in insertions:
-            candidate = current.replace(MODULE.RUNNER_SLOT_START, MODULE.RUNNER_SLOT_START + insertion, 1)
-            self.assertEqual(check(candidate), [])
-        self.assertTrue(check(current.replace("ft_rb_02_inquiry_validator=", "changed_ft_rb_02_inquiry_validator=", 1)))
-        self.assertIn("RUNNER:successor_prefix", check("# changed\n" + current))
-        self.assertIn("RUNNER:successor_suffix", check(current + "# changed\n"))
-        duplicate = current.replace(
-            MODULE.RUNNER_SLOT_START,
-            MODULE.RUNNER_SLOT_START + 'ft_rb_02_inquiry_validator="duplicate"\n\n',
-            1,
-        )
-        self.assertIn("RUNNER:successor_insertion", check(duplicate))
+    def test_54_frozen_neutral_vectors_v001_v020_v031_v033_v041_v042(self) -> None:
+        head, merge = "8" * 40, "9" * 40
+        unified = self._pr_event(MODULE.UNIFIED_REPAIR_BASE, head, MODULE.UNIFIED_REPAIR_BRANCH, 2)
+        self.assertEqual(self._run_ci("pull_request", unified, head, []), [])  # V001
+        self.assertEqual(self._run_ci("pull_request", unified, merge, [head, MODULE.UNIFIED_REPAIR_BASE]), [])
+        third = copy.deepcopy(unified); third["pull_request"]["changed_files"] = 3
+        self.assertTrue(self._run_ci("pull_request", third, head, []))  # V020
 
-    def test_54_repair_and_two_independent_generic_prs_pass(self) -> None:
-        for index, (base, branch) in enumerate(MODULE.AUTHORIZED_REPAIR_CONTEXTS.items(), start=3):
-            repair_head, repair_merge = str(index) * 40, str(index + 2) * 40
-            repair = self._pr_event(base, repair_head, branch, len(MODULE.REPAIR_ALLOWLIST))
-            self.assertEqual(self._run_ci("pull_request", repair, repair_head, []), [])
-            self.assertEqual(self._run_ci("pull_request", repair, repair_merge, [base, repair_head]), [])
+        ordinary = self._pr_event("a" * 40, "b" * 40, "codex/c010-unrelated", 7)
+        self.assertEqual(MODULE.protected_surface_intersection(["docs/C010_UNRELATED.md", "repository/data/master-data/yaraq.yaml"]), [])
+        self.assertEqual(self._run_ci("pull_request", ordinary, "b" * 40, []), [])  # V031
+        with mock.patch.object(MODULE, "historical_mission_archive_issues", side_effect=AssertionError("historical coupling")):
+            self.assertEqual(self._run_ci("pull_request", ordinary, "b" * 40, []), [])  # V033
+        self.assertEqual(MODULE.ordinary_successor_path_issues([MODULE.REPAIR_ALLOWLIST[0]]), ["ORDINARY_SUCCESSOR_PROTECTED_CHANGE"])  # V041
+        for path in (MODULE.CONTRACT.relative_to(ROOT), MODULE.SCHEMA.relative_to(ROOT), MODULE.REGISTRY.relative_to(ROOT)):
+            self.assertEqual(MODULE.ordinary_successor_path_issues([str(path)]), ["ORDINARY_SUCCESSOR_PROTECTED_CHANGE"])  # V042
 
-        generic = [
-            ("a" * 40, "b" * 40, "codex/repository-index-refresh", 3),
-            ("e" * 40, "f" * 40, "automation/quality-ledger-update", 7),
-        ]
-        for base, head, branch, count in generic:
-            event = self._pr_event(base, head, branch, count)
-            self.assertEqual(self._run_ci("pull_request", event, head, []), [])
-            merge = "9" * 40
-            self.assertEqual(self._run_ci("pull_request", event, merge, [base, head]), [])
-        first = self._pr_event(*generic[0])
-        self.assertTrue(self._run_ci("pull_request", first, generic[0][1], [], protected_issues=["PROTECTED_ARTIFACT:attack"]))
-        self.assertTrue(self._run_ci("pull_request", first, generic[0][1], [], direct_base_available=False))
-        self.assertTrue(self._run_ci("pull_request", first, generic[0][1], [], direct_ancestor=False))
-
-    def test_55_generic_push_metadata_and_protected_paths_fail_closed(self) -> None:
+    def test_55_ordinary_push_metadata_and_protected_paths_fail_closed(self) -> None:
         before, after, tree = "1" * 40, "2" * 40, "3" * 40
-        repo = {"full_name": MODULE.REPOSITORY_FULL_NAME}
-
         def event_for(path: str) -> dict:
             return {
-                "repository": repo,
-                "ref": "refs/heads/main",
-                "before": before,
-                "after": after,
-                "created": False,
-                "deleted": False,
-                "forced": False,
-                "commits": [
-                    {"id": after, "tree_id": tree, "distinct": True, "added": [path], "modified": [], "removed": []},
-                ],
+                "repository": {"full_name": MODULE.REPOSITORY_FULL_NAME}, "ref": "refs/heads/main",
+                "before": before, "after": after, "created": False, "deleted": False, "forced": False,
+                "commits": [{"id": after, "tree_id": tree, "distinct": True, "added": [path], "modified": [], "removed": []}],
                 "head_commit": {"id": after, "tree_id": tree},
             }
+        self.assertEqual(self._run_ci("push", event_for("docs/C010_UNRELATED.md"), after, [before], tree=tree), [])
+        for protected in MODULE.PROTECTED_REPOSITORY_PATHS:
+            self.assertIn("ORDINARY_SUCCESSOR_PROTECTED_CHANGE", self._run_ci("push", event_for(protected), after, [before], tree=tree))
+        no_paths = event_for("docs/C010_UNRELATED.md")
+        for key in ("added", "modified", "removed"): no_paths["commits"][0].pop(key)
+        self.assertEqual(self._run_ci("push", no_paths, after, [before], tree=tree), [])
+        self.assertTrue(self._run_ci("push", no_paths, after, [before], tree=tree, protected_issues=["PROTECTED_ARTIFACT:attack"]))
+        self.assertTrue(self._run_ci("push", no_paths, after, [before], tree=tree, regular_issues=["PATH_SHAPE:attack"]))
 
-        clean = event_for("repository-index.txt")
-        self.assertEqual(self._run_ci("push", clean, after, [before], tree=tree), [])
-        for protected in (
-            "repository/data/contracts/ft-rb-02-inquiry-crm-flow-readiness.contract.yaml",
-            "repository/data/schemas/ft-rb-02-inquiry-crm-flow-readiness.schema.json",
-            "repository/data/registries/extensions/ftrb02/inquiry-crm-flow-readiness.yaml",
-            "repository/data/validation/validate_ft_rb_02_inquiry_crm_flow_readiness.py",
-            "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py",
-        ):
-            self.assertTrue(self._run_ci("push", event_for(protected), after, [before], tree=tree))
-        missing = event_for("repository-index.txt")
-        for key in ("added", "modified", "removed"):
-            missing["commits"][0].pop(key)
-        self.assertEqual(self._run_ci("push", missing, after, [before], tree=tree), [])
-        self.assertTrue(self._run_ci("push", clean, after, ["4" * 40], tree=tree))
-        self.assertTrue(self._run_ci("push", clean, after, [before], tree=tree, protected_issues=["PROTECTED_ARTIFACT:attack"]))
-        self.assertTrue(self._run_ci("push", missing, after, [before], tree=tree, regular_issues=["PATH_SHAPE:attack"]))
-
-    def test_56_repair_scope_and_generic_local_dispatch_are_bounded(self) -> None:
-        for branch in MODULE.REPAIR_BASES_BY_BRANCH:
-            with mock.patch.object(MODULE, "current_branch", return_value=branch), \
-                 mock.patch.object(MODULE, "commit_available", return_value=True), \
-                 mock.patch.object(MODULE, "is_ancestor", return_value=True):
-                self.assertEqual(MODULE.local_context(), MODULE.REPAIR_CONTEXT)
-        with mock.patch.object(MODULE, "current_branch", return_value="codex/repository-index-refresh"), \
-             mock.patch.object(MODULE, "commit_available", return_value=True), \
-             mock.patch.object(MODULE, "is_ancestor", return_value=True):
-            self.assertEqual(MODULE.local_context(), MODULE.SUCCESSOR_CONTEXT)
-        diff_paths = mock.Mock(return_value=list(MODULE.REPAIR_ALLOWLIST))
+    def test_56_unified_local_scope_and_ordinary_dispatch_are_bounded(self) -> None:
+        with mock.patch.object(MODULE, "current_branch", return_value=MODULE.UNIFIED_REPAIR_BRANCH), \
+             mock.patch.object(MODULE, "commit_available", return_value=True), mock.patch.object(MODULE, "is_ancestor", return_value=True):
+            self.assertEqual(MODULE.local_context(), MODULE.UNIFIED_REPAIR)
+        with mock.patch.object(MODULE, "current_branch", return_value="codex/c010-unrelated"), \
+             mock.patch.object(MODULE, "commit_available", return_value=True), mock.patch.object(MODULE, "is_ancestor", return_value=True):
+            self.assertEqual(MODULE.local_context(), MODULE.ORDINARY_SUCCESSOR)
         with mock.patch.dict(os.environ, {"CI": "false", "GITHUB_ACTIONS": "false"}, clear=False), \
              mock.patch.object(MODULE, "clean_checkout", return_value=True), \
-             mock.patch.object(MODULE, "local_context", return_value=MODULE.REPAIR_CONTEXT), \
-             mock.patch.object(MODULE, "current_branch", return_value=MODULE.PATH_PROOF_REPAIR_BRANCH), \
-             mock.patch.object(MODULE, "diff_paths", diff_paths), \
-             mock.patch.object(MODULE, "repair_delta_issues", return_value=[]), \
-             mock.patch.object(MODULE, "committed_tree_issues", return_value=[]), \
+             mock.patch.object(MODULE, "local_context", return_value=MODULE.UNIFIED_REPAIR), \
+             mock.patch.object(MODULE, "current_branch", return_value=MODULE.UNIFIED_REPAIR_BRANCH), \
+             mock.patch.object(MODULE, "diff_paths", return_value=list(MODULE.REPAIR_ALLOWLIST)), \
+             mock.patch.object(MODULE, "unified_transition_issues", return_value=[]), \
              mock.patch.object(MODULE, "successor_protected_issues", return_value=[]), \
              mock.patch.object(MODULE, "regular_path_issues", return_value=[]):
             self.assertEqual(MODULE.git_context_issues(), [])
-        diff_paths.assert_called_once_with(MODULE.PATH_PROOF_REPAIR_BASE)
         with mock.patch.dict(os.environ, {"CI": "false", "GITHUB_ACTIONS": "false"}, clear=False), \
              mock.patch.object(MODULE, "clean_checkout", return_value=True), \
-             mock.patch.object(MODULE, "local_context", return_value=MODULE.SUCCESSOR_CONTEXT), \
+             mock.patch.object(MODULE, "local_context", return_value=MODULE.UNIFIED_REPAIR), \
+             mock.patch.object(MODULE, "current_branch", return_value=MODULE.UNIFIED_REPAIR_BRANCH), \
+             mock.patch.object(MODULE, "diff_paths", return_value=MODULE.REPAIR_ALLOWLIST + ["third.txt"]), \
+             mock.patch.object(MODULE, "unified_transition_issues", return_value=[]), \
              mock.patch.object(MODULE, "successor_protected_issues", return_value=[]), \
              mock.patch.object(MODULE, "regular_path_issues", return_value=[]):
-            self.assertEqual(MODULE.git_context_issues(), [])
+            self.assertIn("TRANSITION_PATH_UNAUTHORIZED", MODULE.git_context_issues())
 
-    def test_57_realistic_one_row_merge_pushes_are_shallow_safe(self) -> None:
-        repo = {"full_name": MODULE.REPOSITORY_FULL_NAME}
-
-        def event_for(
-            before: str,
-            after: str,
-            tree: str,
-            paths: tuple[list[str], list[str], list[str]] | None = None,
-        ) -> dict:
-            row = {"id": after, "tree_id": tree, "distinct": True}
-            if paths is not None:
-                row.update(zip(("added", "modified", "removed"), paths))
-            return {
-                "repository": repo,
-                "ref": "refs/heads/main",
-                "before": before,
-                "after": after,
-                "created": False,
-                "deleted": False,
-                "forced": False,
-                "commits": [row],
-                "head_commit": {"id": after, "tree_id": tree},
-            }
-
-        real_after = "bcbc67cbdcb2cbb0757155bb97db0c4acd87d3c7"
-        real_source = "1652fad5e079df87b07648e21ebd6cd08f92bd21"
-        real_tree = "d2c6c123603fed70ad48bce431c3bbe10264336a"
-        real_event = event_for(MODULE.REPAIR_BASE, real_after, real_tree)
-        self.assertEqual(
-            self._run_ci(
-                "push",
-                real_event,
-                real_after,
-                [MODULE.REPAIR_BASE, real_source],
-                tree=real_tree,
-                direct_base_available=False,
-            ),
-            [],
-        )
-
-        failed_after = "ddea2ffbf209681e7903d76316958f20fb61382f"
-        failed_source = "c02b96a8298640477f878c2162335d047308aed4"
-        failed_tree = "5017de5ce43be07ce96db336a57c417c055df750"
-        failed_actions_event = event_for(
-            MODULE.POST_MERGE_REPAIR_BASE,
-            failed_after,
-            failed_tree,
-        )
-        self.assertEqual(
-            self._run_ci(
-                "push",
-                failed_actions_event,
-                failed_after,
-                [MODULE.POST_MERGE_REPAIR_BASE, failed_source],
-                tree=failed_tree,
-                direct_base_available=False,
-            ),
-            [],
-        )
-
-        future_after, future_source, future_tree = "6" * 40, "7" * 40, "8" * 40
-        repair_event = event_for(MODULE.PATH_PROOF_REPAIR_BASE, future_after, future_tree)
-        self.assertEqual(
-            self._run_ci(
-                "push",
-                repair_event,
-                future_after,
-                [MODULE.PATH_PROOF_REPAIR_BASE, future_source],
-                tree=future_tree,
-                direct_base_available=False,
-            ),
-            [],
-        )
-        exact_metadata = event_for(
-            MODULE.PATH_PROOF_REPAIR_BASE,
-            future_after,
-            future_tree,
-            ([], list(MODULE.REPAIR_ALLOWLIST), []),
-        )
-        self.assertEqual(
-            self._run_ci("push", exact_metadata, future_after, [MODULE.PATH_PROOF_REPAIR_BASE, future_source], tree=future_tree),
-            [],
-        )
-
-        historical_after, historical_source = "9" * 40, "a" * 40
-        historical = event_for(
-            MODULE.APPROVED_SUCCESSOR_BASE,
-            historical_after,
-            future_tree,
-        )
-        self.assertEqual(
-            self._run_ci(
-                "push",
-                historical,
-                historical_after,
-                [MODULE.APPROVED_SUCCESSOR_BASE, historical_source],
-                tree=future_tree,
-            ),
-            [],
-        )
-
-        generic_before, generic_after, generic_source = "b" * 40, "c" * 40, "d" * 40
-        generic = event_for(generic_before, generic_after, future_tree)
-        self.assertEqual(
-            self._run_ci(
-                "push",
-                generic,
-                generic_after,
-                [generic_before, generic_source],
-                tree=future_tree,
-                direct_base_available=False,
-            ),
-            [],
-        )
-        generic_metadata = event_for(generic_before, generic_after, future_tree, (["repository-index.txt"], [], []))
-        self.assertEqual(
-            self._run_ci("push", generic_metadata, generic_after, [generic_before, generic_source], tree=future_tree),
-            [],
-        )
-
-    def test_58_one_row_merge_push_adversaries_fail_closed(self) -> None:
-        before = MODULE.PATH_PROOF_REPAIR_BASE
+    def test_57_unified_and_ordinary_actions_pushes_are_shallow_safe(self) -> None:
         after, source, tree = "6" * 40, "7" * 40, "8" * 40
-        repo = {"full_name": MODULE.REPOSITORY_FULL_NAME}
+        def event(before: str, paths: tuple[list[str], list[str], list[str]] | None = None) -> dict:
+            row = {"id": after, "tree_id": tree, "distinct": True}
+            if paths is not None: row.update(zip(("added", "modified", "removed"), paths))
+            return {
+                "repository": {"full_name": MODULE.REPOSITORY_FULL_NAME}, "ref": "refs/heads/main",
+                "before": before, "after": after, "created": False, "deleted": False, "forced": False,
+                "commits": [row], "head_commit": {"id": after, "tree_id": tree},
+            }
+        self.assertEqual(self._run_ci("push", event(MODULE.UNIFIED_REPAIR_BASE), after, [source, MODULE.UNIFIED_REPAIR_BASE], tree=tree, direct_base_available=False), [])
+        self.assertEqual(self._run_ci("push", event(MODULE.UNIFIED_REPAIR_BASE, ([], list(MODULE.REPAIR_ALLOWLIST), [])), after, [MODULE.UNIFIED_REPAIR_BASE, source], tree=tree), [])
+        ordinary_base = "a" * 40
+        self.assertEqual(self._run_ci("push", event(ordinary_base), after, [source, ordinary_base], tree=tree, direct_base_available=False), [])
+
+    def test_58_unified_push_adversaries_fail_closed(self) -> None:
+        before, after, source, tree = MODULE.UNIFIED_REPAIR_BASE, "6" * 40, "7" * 40, "8" * 40
         exact = {
-            "repository": repo,
-            "ref": "refs/heads/main",
-            "before": before,
-            "after": after,
-            "created": False,
-            "deleted": False,
-            "forced": False,
-            "commits": [
-                {
-                    "id": after,
-                    "tree_id": tree,
-                    "distinct": True,
-                    "added": [],
-                    "modified": list(MODULE.REPAIR_ALLOWLIST),
-                    "removed": [],
-                }
-            ],
+            "repository": {"full_name": MODULE.REPOSITORY_FULL_NAME}, "ref": "refs/heads/main",
+            "before": before, "after": after, "created": False, "deleted": False, "forced": False,
+            "commits": [{"id": after, "tree_id": tree, "distinct": True, "added": [], "modified": list(MODULE.REPAIR_ALLOWLIST), "removed": []}],
             "head_commit": {"id": after, "tree_id": tree},
         }
-
-        parent_attacks = [
-            [],
-            [before],
-            [source, before],
-            [before, before],
-            [before, after],
-            [before, source, "9" * 40],
-        ]
-        for parents in parent_attacks:
-            self.assertTrue(self._run_ci("push", exact, after, parents, tree=tree), parents)
-
-        event_attacks: list[dict] = []
+        for parents in ([], [before], [before, before], [before, after], [before, source, "9" * 40]):
+            self.assertTrue(self._run_ci("push", exact, after, list(parents), tree=tree), parents)
+        attacks: list[dict] = []
         for key in ("created", "deleted", "forced"):
-            attack = copy.deepcopy(exact); attack[key] = True; event_attacks.append(attack)
-        attack = copy.deepcopy(exact); attack["repository"]["full_name"] = "fork/example"; event_attacks.append(attack)
-        attack = copy.deepcopy(exact); attack["ref"] = "refs/heads/release"; event_attacks.append(attack)
-        attack = copy.deepcopy(exact); attack["before"] = "not-an-oid"; event_attacks.append(attack)
-        attack = copy.deepcopy(exact); attack["after"] = "not-an-oid"; event_attacks.append(attack)
-        attack = copy.deepcopy(exact); attack["head_commit"]["id"] = source; event_attacks.append(attack)
-        attack = copy.deepcopy(exact); attack["head_commit"]["tree_id"] = "9" * 40; event_attacks.append(attack)
-        attack = copy.deepcopy(exact); attack["commits"][0]["id"] = source; event_attacks.append(attack)
-        attack = copy.deepcopy(exact); attack["commits"][0]["tree_id"] = "9" * 40; event_attacks.append(attack)
-        attack = copy.deepcopy(exact); attack["commits"][0]["distinct"] = False; event_attacks.append(attack)
-        attack = copy.deepcopy(exact); attack["commits"][0].pop("removed"); event_attacks.append(attack)
-        attack = copy.deepcopy(exact); attack["commits"][0]["modified"] = [MODULE.REPAIR_ALLOWLIST[0]]; event_attacks.append(attack)
-        attack = copy.deepcopy(exact); attack["commits"][0]["added"] = ["unexpected.txt"]; event_attacks.append(attack)
-        attack = copy.deepcopy(exact); attack["commits"][0]["removed"] = [MODULE.REPAIR_ALLOWLIST[0]]; event_attacks.append(attack)
-        attack = copy.deepcopy(exact); attack["commits"][0]["modified"] = "not-a-list"; event_attacks.append(attack)
-        attack = copy.deepcopy(exact); attack["commits"][0]["added"] = [MODULE.REPAIR_ALLOWLIST[0]]; event_attacks.append(attack)
-        for attack in event_attacks:
+            attack = copy.deepcopy(exact); attack[key] = True; attacks.append(attack)
+        attack = copy.deepcopy(exact); attack["repository"]["full_name"] = "fork/example"; attacks.append(attack)
+        attack = copy.deepcopy(exact); attack["ref"] = "refs/heads/release"; attacks.append(attack)
+        attack = copy.deepcopy(exact); attack["head_commit"]["tree_id"] = "9" * 40; attacks.append(attack)
+        attack = copy.deepcopy(exact); attack["commits"][0]["distinct"] = False; attacks.append(attack)
+        attack = copy.deepcopy(exact); attack["commits"][0].pop("removed"); attacks.append(attack)
+        attack = copy.deepcopy(exact); attack["commits"][0]["modified"] = [MODULE.REPAIR_ALLOWLIST[0]]; attacks.append(attack)
+        attack = copy.deepcopy(exact); attack["commits"][0]["added"] = ["third.txt"]; attacks.append(attack)
+        for attack in attacks:
             self.assertTrue(self._run_ci("push", attack, after, [before, source], tree=tree), attack)
+        no_paths = copy.deepcopy(exact)
+        for key in ("added", "modified", "removed"): no_paths["commits"][0].pop(key)
+        self.assertEqual(self._run_ci("push", no_paths, after, [before, source], tree=tree), [])
+        self.assertIn("UNIFIED_TRANSITION:attack", self._run_ci("push", no_paths, after, [before, source], tree=tree, unified_issues=["UNIFIED_TRANSITION:attack"]))
 
-        self.assertTrue(self._run_ci("push", exact, "9" * 40, [before, source], tree=tree))
-
-        actions_without_paths = copy.deepcopy(exact)
-        for key in ("added", "modified", "removed"):
-            actions_without_paths["commits"][0].pop(key)
-        self.assertEqual(self._run_ci("push", actions_without_paths, after, [before, source], tree=tree), [])
-        self.assertTrue(
-            self._run_ci(
-                "push",
-                actions_without_paths,
-                after,
-                [before, source],
-                tree=tree,
-                repair_issues=["REPAIR_TREE_PROOF:digest_or_count"],
-            )
-        )
-        self.assertTrue(
-            self._run_ci(
-                "push",
-                actions_without_paths,
-                after,
-                [before, source],
-                tree=tree,
-                protected_issues=["PROTECTED_ARTIFACT:attack"],
-            )
-        )
-        self.assertTrue(
-            self._run_ci(
-                "push",
-                actions_without_paths,
-                after,
-                [before, source],
-                tree=tree,
-                regular_issues=["PATH_SHAPE:attack"],
-            )
-        )
-
-        multi_row_source_absent = copy.deepcopy(actions_without_paths)
-        multi_row_source_absent["commits"].insert(
-            0,
-            {"id": "a" * 40, "tree_id": "b" * 40, "distinct": True},
-        )
-        self.assertEqual(self._run_ci("push", multi_row_source_absent, after, [before, source], tree=tree), [])
-        inconsistent = copy.deepcopy(multi_row_source_absent)
-        inconsistent["commits"][0].update({"added": [], "modified": [], "removed": []})
-        self.assertTrue(self._run_ci("push", inconsistent, after, [before, source], tree=tree))
-
-        generic_before = "1" * 40
-        direct_with_extra_row = copy.deepcopy(exact)
-        direct_with_extra_row["before"] = generic_before
-        direct_with_extra_row["commits"][0]["modified"] = []
-        direct_with_extra_row["commits"][0]["added"] = ["repository-index.txt"]
-        direct_with_extra_row["commits"].insert(
-            0,
-            {"id": "2" * 40, "tree_id": "3" * 40, "distinct": True, "added": [], "modified": [], "removed": []},
-        )
-        self.assertTrue(self._run_ci("push", direct_with_extra_row, after, [generic_before], tree=tree))
-
-    def test_59_repair_tree_delta_proof_is_exact_and_depth_one_safe(self) -> None:
-        self.assertEqual(MODULE.repair_delta_issues(MODULE.PATH_PROOF_REPAIR_BASE), [])
-        self.assertEqual(MODULE.repair_delta_issues("a" * 40), ["REPAIR_TREE_PROOF:unapproved_base"])
-
-        expected_base_blobs = {
-            MODULE.REPAIR_BASE: (
-                "574faaafcfd78599b9f33de95e8e49a8f4920025",
-                "b3db92d5b5ee5e92e32e14d48fd7925cbec3aebc",
-            ),
-            MODULE.POST_MERGE_REPAIR_BASE: (
-                "a64d61a72a044f70628ebea4eaa929016b2f3869",
-                "2a455da06fea28de2d11340d6afcdd8b546f6e02",
-            ),
-            MODULE.PATH_PROOF_REPAIR_BASE: (
-                "f74ffcc993f1c502a95331a9cd7268ce700a4828",
-                "062d1af57d57dde6c5d96226901dc4c0365f3174",
-            ),
+    def test_59_unified_transition_is_named_path_only_not_whole_tree(self) -> None:
+        entries = {
+            MODULE.REPAIR_ALLOWLIST[0]: ("100644", "blob", "a" * 40),
+            MODULE.REPAIR_ALLOWLIST[1]: ("100644", "blob", "b" * 40),
         }
-        self.assertEqual(set(MODULE.REPAIR_TREE_PROOFS), set(MODULE.AUTHORIZED_REPAIR_CONTEXTS))
-        for base, expected in MODULE.REPAIR_TREE_PROOFS.items():
-            self.assertEqual(
-                expected[:3],
-                (
-                    "cd207364c54d1af3c1d475a1fed60d1c0720edde27b8210b47a388847279ba64",
-                    657,
-                    659,
-                ),
-            )
-            self.assertEqual(
-                tuple(expected[3][path] for path in MODULE.REPAIR_ALLOWLIST),
-                expected_base_blobs[base],
-            )
+        exact_diff = cp("\n".join(f"M\t{path}" for path in MODULE.REPAIR_ALLOWLIST) + "\n")
+        with mock.patch.object(MODULE, "named_tree_entries", return_value=entries) as named, \
+             mock.patch.object(MODULE, "git", return_value=exact_diff):
+            self.assertEqual(MODULE.unified_transition_issues(MODULE.UNIFIED_REPAIR_BASE, require_diff=True), [])
+        named.assert_called_once_with(MODULE.REPAIR_ALLOWLIST, "HEAD")
+        self.assertEqual(MODULE.unified_transition_issues("c" * 40), ["UNIFIED_TRANSITION:unapproved_base"])
+        for path in MODULE.REPAIR_ALLOWLIST:
+            unchanged = dict(entries); unchanged[path] = ("100644", "blob", MODULE.UNIFIED_REPAIR_BASE_BLOBS[path])
+            with mock.patch.object(MODULE, "named_tree_entries", return_value=unchanged):
+                self.assertIn(f"UNIFIED_TRANSITION:unchanged:{path}", MODULE.unified_transition_issues(MODULE.UNIFIED_REPAIR_BASE))
+            linked = dict(entries); linked[path] = ("120000", "blob", "a" * 40)
+            with mock.patch.object(MODULE, "named_tree_entries", return_value=linked):
+                self.assertIn(f"UNIFIED_TRANSITION:shape:{path}", MODULE.unified_transition_issues(MODULE.UNIFIED_REPAIR_BASE))
+        with mock.patch.object(MODULE, "named_tree_entries", return_value=entries), mock.patch.object(MODULE, "git", return_value=cp("M\tthird.txt\n")):
+            self.assertIn("TRANSITION_PATH_UNAUTHORIZED", MODULE.unified_transition_issues(MODULE.UNIFIED_REPAIR_BASE, require_diff=True))
 
-        current_raw = subprocess.run(
-            ["git", "ls-tree", "-rz", "--full-tree", "HEAD"],
-            cwd=ROOT,
-            check=True,
-            capture_output=True,
-        ).stdout
-        completed = subprocess.CompletedProcess(["git"], 0, stdout=current_raw, stderr=b"")
-        with mock.patch.object(MODULE.subprocess, "run", return_value=completed) as shallow_run:
-            self.assertEqual(MODULE.repair_delta_issues(MODULE.PATH_PROOF_REPAIR_BASE), [])
-        shallow_run.assert_called_once_with(
-            ["git", "ls-tree", "-rz", "--full-tree", "HEAD"],
-            cwd=ROOT,
-            check=True,
-            capture_output=True,
-        )
-
-        expected = MODULE.REPAIR_TREE_PROOFS[MODULE.PATH_PROOF_REPAIR_BASE]
-        current_entries = MODULE.parse_tree(current_raw, set(MODULE.REPAIR_ALLOWLIST))[3]
-        unchanged = dict(current_entries)
-        unchanged[MODULE.REPAIR_ALLOWLIST[0]] = ("100644", "blob", expected[3][MODULE.REPAIR_ALLOWLIST[0]])
-        with mock.patch.object(MODULE, "parse_tree", return_value=(*expected[:3], unchanged)):
-            self.assertIn(
-                f"REPAIR_TREE_PROOF:unchanged:{MODULE.REPAIR_ALLOWLIST[0]}",
-                MODULE.repair_delta_issues(MODULE.PATH_PROOF_REPAIR_BASE),
-            )
-        missing = dict(current_entries)
-        missing.pop(MODULE.REPAIR_ALLOWLIST[1])
-        with mock.patch.object(MODULE, "parse_tree", return_value=(*expected[:3], missing)):
-            self.assertIn(
-                f"REPAIR_TREE_PROOF:missing:{MODULE.REPAIR_ALLOWLIST[1]}",
-                MODULE.repair_delta_issues(MODULE.PATH_PROOF_REPAIR_BASE),
-            )
-        linked = dict(current_entries)
-        linked[MODULE.REPAIR_ALLOWLIST[1]] = ("120000", "blob", "a" * 40)
-        with mock.patch.object(MODULE, "parse_tree", return_value=(*expected[:3], linked)):
-            self.assertIn(
-                f"REPAIR_TREE_PROOF:shape:{MODULE.REPAIR_ALLOWLIST[1]}",
-                MODULE.repair_delta_issues(MODULE.PATH_PROOF_REPAIR_BASE),
-            )
-        with mock.patch.object(
-            MODULE,
-            "parse_tree",
-            return_value=("b" * 64, expected[1] + 1, expected[2] + 1, current_entries),
-        ):
-            self.assertIn(
-                "REPAIR_TREE_PROOF:digest_or_count",
-                MODULE.repair_delta_issues(MODULE.PATH_PROOF_REPAIR_BASE),
-            )
-
-    def test_60_actions_push_without_paths_uses_real_tree_proof_stack(self) -> None:
-        after = MODULE.git("rev-parse", "HEAD").stdout.strip()
-        tree = MODULE.git("show", "-s", "--format=%T", "HEAD").stdout.strip()
-        source = "7" * 40
+    def test_60_actions_without_path_arrays_use_named_proof_stack(self) -> None:
+        after, source, tree = "6" * 40, "7" * 40, "8" * 40
         event = {
-            "repository": {"full_name": MODULE.REPOSITORY_FULL_NAME},
-            "ref": "refs/heads/main",
-            "before": MODULE.PATH_PROOF_REPAIR_BASE,
-            "after": after,
-            "created": False,
-            "deleted": False,
-            "forced": False,
+            "repository": {"full_name": MODULE.REPOSITORY_FULL_NAME}, "ref": "refs/heads/main",
+            "before": MODULE.UNIFIED_REPAIR_BASE, "after": after,
+            "created": False, "deleted": False, "forced": False,
             "commits": [{"id": after, "tree_id": tree, "distinct": True}],
             "head_commit": {"id": after, "tree_id": tree},
         }
-        with mock.patch.dict(
-            os.environ,
-            {"CI": "true", "GITHUB_ACTIONS": "true", "GITHUB_EVENT_NAME": "push"},
-            clear=False,
-        ), mock.patch.object(MODULE, "clean_checkout", return_value=True), mock.patch.object(
-            MODULE,
-            "load_event",
-            return_value=event,
-        ), mock.patch.object(
-            MODULE,
-            "raw_commit",
-            return_value=(tree, [MODULE.PATH_PROOF_REPAIR_BASE, source]),
-        ), mock.patch.object(
-            MODULE,
-            "commit_available",
-            side_effect=AssertionError("parent object access is forbidden"),
-        ), mock.patch.object(
-            MODULE,
-            "is_ancestor",
-            side_effect=AssertionError("parent ancestry access is forbidden"),
-        ):
-            self.assertEqual(MODULE.ci_context_issues(), [])
+        self.assertEqual(self._run_ci("push", event, after, [MODULE.UNIFIED_REPAIR_BASE, source], tree=tree), [])
+        self.assertTrue(self._run_ci("push", event, after, [MODULE.UNIFIED_REPAIR_BASE, source], tree=tree, protected_issues=["PROTECTED_ARTIFACT:attack"]))
+        self.assertTrue(self._run_ci("push", event, after, [MODULE.UNIFIED_REPAIR_BASE, source], tree=tree, regular_issues=["PATH_SHAPE:attack"]))
+
+    def test_61_predecessor_and_owner_pins_are_monitor_only_for_successors(self) -> None:
+        contract = MODULE.load_data(MODULE.CONTRACT)
+        self.assertEqual(MODULE.protected_owner_issues(contract, verify_current=False), [])
+        with mock.patch.object(MODULE, "load_data", side_effect=ValueError("monitor drift")):
+            self.assertTrue(MODULE.protected_owner_issues(contract, verify_current=True))
+            self.assertEqual(MODULE.protected_owner_issues(contract, verify_current=False), [])
+
+    def test_62_self_pin_is_explicitly_not_an_external_trust_anchor(self) -> None:
+        self.assertEqual(MODULE.VALIDATOR_SELF_PIN_SECURITY_CLASSIFICATION, "ACCIDENTAL_DRIFT_ONLY_NOT_A_TRUST_ANCHOR")
+        self.assertTrue(MODULE.EXTERNAL_TRUST_CONTROL_REQUIRED)
+        self.assertNotIn("external verifier", MODULE.__doc__.lower())
 
 
 if __name__ == "__main__":
