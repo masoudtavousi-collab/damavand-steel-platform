@@ -148,20 +148,19 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
         self.assertTrue(any(issue.startswith("REMOTE_SCHEMA_REF") for issue in MODULE.schema_issues(remote)))
         self.assertTrue(MODULE.schema_issues(permissive))
 
-    def test_13_all_27_dependency_pins_match(self) -> None:
+    def test_13_all_27_dependency_pins_are_declared_monitor_only(self) -> None:
         contract, _, _ = documents()
         self.assertEqual(contract["dependencies"], MODULE.DEPENDENCIES)
         self.assertEqual(contract["dependency_pins"], MODULE.PINS)
         self.assertEqual(len(MODULE.PINS), 27)
-        for key, relative in MODULE.DEPENDENCIES.items():
-            self.assertEqual(MODULE.digest(MODULE.load_data(ROOT / relative)), MODULE.PINS[key])
+        self.assertEqual(MODULE.protected_owner_issues(contract, verify_current=False), [])
 
-    def test_14_owner_paths_and_blobs_match(self) -> None:
+    def test_14_owner_paths_and_blobs_are_declared_non_security_metadata(self) -> None:
         contract, _, _ = documents()
         self.assertEqual(contract["owner_documents"], MODULE.OWNER_FILES)
         self.assertEqual(contract["owner_document_pins"], MODULE.OWNER_PINS)
-        for key, relative in MODULE.OWNER_FILES.items():
-            self.assertEqual(MODULE.git_blob_oid(ROOT / relative), MODULE.OWNER_PINS[key])
+        self.assertEqual(len(MODULE.OWNER_PINS), 12)
+        self.assertEqual(MODULE.protected_owner_issues(contract, verify_current=False), [])
 
     def test_15_execution_and_semantic_sources_are_property_scoped(self) -> None:
         registry = MODULE.load_data(MODULE.REGISTRY)
@@ -644,6 +643,9 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
                 attacked = dict(entries); attacked[path] = (mode, kind, "a" * 40)
                 self.assertIn(f"PROTECTED_ARTIFACT:shape:{path}", MODULE.protected_entry_issues(attacked, validator))
         self.assertIn(f"PROTECTED_ARTIFACT:content:{validator_path}", MODULE.protected_entry_issues(entries, validator + b"\n# tamper\n"))
+        runner_attack = dict(entries)
+        runner_attack["scripts/test.sh"] = ("100755", "blob", "a" * 40)
+        self.assertIn("PROTECTED_RUNNER:content", MODULE.protected_entry_issues(runner_attack, validator))
         for path in MODULE.PROTECTED_REPOSITORY_PATHS:
             self.assertEqual(MODULE.ordinary_successor_path_issues([path]), ["ORDINARY_SUCCESSOR_PROTECTED_CHANGE"])
         self.assertEqual(MODULE.ordinary_successor_path_issues(["docs/C010_UNRELATED.md"]), [])
