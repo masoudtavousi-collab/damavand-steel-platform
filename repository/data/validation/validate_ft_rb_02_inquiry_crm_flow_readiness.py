@@ -119,9 +119,10 @@ PROTECTED_BLOBS = {
     "repository/data/contracts/ft-rb-02-inquiry-crm-flow-readiness.contract.yaml": "e2a05a17cd6b01b2ad315f73bdfaa3993d8ab35e",
     "repository/data/registries/extensions/ftrb02/inquiry-crm-flow-readiness.yaml": "0f6c4448d1750e7a5cc8a751af7fa0a8e23ddc2d",
     "repository/data/schemas/ft-rb-02-inquiry-crm-flow-readiness.schema.json": "68cdd525eda91f2679939eb4567c821c3e73109f",
-    "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py": "e084f50a89af3004a4367f11a004587fbc711149",
+    "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py": "8afc6c4271fa412f216872e64ef1bbeb0190f929",
+    "scripts/test.sh": "f8ebec998a8fb21e2468e5f5a762a8c122a4af46",
 }
-VALIDATOR_NORMALIZED_SHA256 = "7da1878e0c0c9ccae415bc583f59ab40d914641c3efe6ecda5be97b6860b829a"
+VALIDATOR_NORMALIZED_SHA256 = "3048b72037e390b6cafca67598b43a19716c7959e952b3cec2c1abc211662d98"
 UNIFIED_REPAIR_BASE_BLOBS = {
     REPAIR_ALLOWLIST[0]: "70843873bf68ae4700c56a4c05f458be1120647a",
     REPAIR_ALLOWLIST[1]: "064ed8cfca43397d203132699da230a709c80a3d",
@@ -608,6 +609,8 @@ def protected_entry_issues(
         issues.append("PROTECTED_RUNNER:missing")
     elif runner[0] != "100755" or runner[1] != "blob":
         issues.append("PROTECTED_RUNNER:shape")
+    elif runner[2] != PROTECTED_BLOBS["scripts/test.sh"]:
+        issues.append("PROTECTED_RUNNER:content")
     validator_path = "repository/data/validation/validate_ft_rb_02_inquiry_crm_flow_readiness.py"
     for path in PROTECTED_PATHS:
         entry = entries.get(path)
