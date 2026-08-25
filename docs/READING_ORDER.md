@@ -8,14 +8,14 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.20.0
-- **Last Updated:** 2026-08-21
-- **Last Review:** 2026-08-21
+- **Version:** 0.21.0
+- **Last Updated:** 2026-08-25
+- **Last Review:** 2026-08-25
 - **Review Cycle:** On navigation or authority change; periodic cadence pending Founder approval
 - **Lifecycle:** Review
 - **Source of Truth:** [Documentation Index](08_DOCUMENTATION_INDEX.md) and [Navigation Map](09_NAVIGATION_MAP.md)
 - **Dependencies:** [Documentation Index](08_DOCUMENTATION_INDEX.md), [Navigation Map](09_NAVIGATION_MAP.md)
-- **Related Documents:** [Context Router](CONTEXT_ROUTER.md), [C000 OS2 Decision Package](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md), [AI Collaboration Standard](AI_COLLABORATION.md), [Repository Metadata Standard](REPOSITORY_METADATA.md), [Traceability Matrix](TRACEABILITY_MATRIX.md), [Knowledge Graph](KNOWLEDGE_GRAPH.md), [Git Governance](GIT_GOVERNANCE.md), and [Repository Health](REPOSITORY_HEALTH.md)
+- **Related Documents:** [Context Router](CONTEXT_ROUTER.md), [C000 OS2 Decision Package](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md), [AI Collaboration Standard](AI_COLLABORATION.md), [AI Context Manifest](../repository/governance/ai_context_manifest.yaml), [Repository Metadata Standard](REPOSITORY_METADATA.md), [Traceability Matrix](TRACEABILITY_MATRIX.md), [Knowledge Graph](KNOWLEDGE_GRAPH.md), [Git Governance](GIT_GOVERNANCE.md), and [Repository Health](REPOSITORY_HEALTH.md)
 - **Traceability:** [Repository Traceability Matrix](TRACEABILITY_MATRIX.md), [Decision Log](10_DECISION_LOG.md), and controlled registers
 - **AI Compatibility:** AI-ready after Founder approval
 - **Approval:** Pending Founder approval
@@ -29,10 +29,13 @@ Provide role-specific reading paths so a new human or AI collaborator can unders
 Every reader starts with:
 
 1. [Codex Repository Instructions](../AGENTS.md) for Codex sessions; other roles may use it as a concise boundary summary.
-2. [Context Router](CONTEXT_ROUTER.md), which selects the smallest task-specific context set.
+2. Resolve the live GitHub `main` SHA and inspect the local branch and clean/dirty state; never substitute a fixed SHA from prose, memory, or a handoff.
 3. [Current Project State](CURRENT_PROJECT_STATE.md), the only mutable operational-state pointer.
-4. [C000 OS2 Decision Package](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md), the accepted Project OS 2.0 strategic reconciliation.
-5. [Project Baseline](PROJECT_BASELINE.md), the concise orientation layer.
+4. [Context Router](CONTEXT_ROUTER.md), which selects the smallest task-specific context set.
+5. [C000 OS2 Decision Package](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md), the accepted Project OS 2.0 strategic reconciliation.
+6. [Project Baseline](PROJECT_BASELINE.md), the concise orientation layer.
+
+An AI session must then read [AI Collaboration Standard](AI_COLLABORATION.md), establish its named role, and complete the Task Context Envelope before mutation. The [AI Context Manifest](../repository/governance/ai_context_manifest.yaml) supplies stable machine-readable pointers and invariants only; it is not authority and does not contain mutable current state.
 
 Readers then follow only the applicable role and Layer 1 route. DS-PC (`HOW`), DS-SPD (`WHAT`), decision logs, roadmap, domain models, and historical evidence are loaded when that route or the active task requires them—not as a universal context dump.
 
@@ -71,15 +74,17 @@ No implementation begins until the relevant Draft dependencies and Founder decis
 
 1. Universal Entry Sequence.
 2. [AI Collaboration Standard](AI_COLLABORATION.md).
-3. [Repository Metadata Standard](REPOSITORY_METADATA.md).
-4. [Traceability Matrix](TRACEABILITY_MATRIX.md).
-5. [Knowledge Graph](KNOWLEDGE_GRAPH.md).
-6. [Document Lifecycle](12_DOCUMENT_LIFECYCLE.md).
-7. [Documentation Quality Standard](16_QUALITY_STANDARD.md).
-8. Task-specific governing and dependent documents.
-9. [Repository Health](REPOSITORY_HEALTH.md).
-10. [Git Governance](GIT_GOVERNANCE.md) for repository mutations.
-11. Latest applicable audit record.
+3. [AI Context Manifest](../repository/governance/ai_context_manifest.yaml) as a pointer/invariant check, never as authorization.
+4. Establish the named role and complete Task Context Envelope.
+5. [Repository Metadata Standard](REPOSITORY_METADATA.md).
+6. [Traceability Matrix](TRACEABILITY_MATRIX.md).
+7. [Knowledge Graph](KNOWLEDGE_GRAPH.md).
+8. [Document Lifecycle](12_DOCUMENT_LIFECYCLE.md).
+9. [Documentation Quality Standard](16_QUALITY_STANDARD.md).
+10. Task-specific governing and dependent documents selected by the Context Router.
+11. [Repository Health](REPOSITORY_HEALTH.md).
+12. [Git Governance](GIT_GOVERNANCE.md) for repository mutations.
+13. Latest applicable audit record only when the routed task requires historical evidence.
 
 For current work after Sprint 09B, treat the listed future Sprint 09C–12A, Golden, GIT-02S, Git baseline, and Repository Freeze references as historical evidence only; many referenced files are absent from canonical `main` and do not establish present asset readiness. For current governance, read `FD-W2G-001` through `FD-W2G-004`, [Current Project State](CURRENT_PROJECT_STATE.md), [Implementation Readiness](IMPLEMENTATION_READINESS.md), and [Git Baseline Approval Checklist](GIT_BASELINE_APPROVAL_CHECKLIST.md). Treat [Git File Classification](GIT_FILE_CLASSIFICATION.csv) as a dated snapshot, not current Git state or implementation authority.
 
@@ -272,6 +277,7 @@ This path documents a proposed route only. It grants no remote, account, credent
 
 - [Navigation Map](09_NAVIGATION_MAP.md)
 - [Context Router](CONTEXT_ROUTER.md)
+- [AI Context Manifest](../repository/governance/ai_context_manifest.yaml)
 - [C000 OS2 Decision Package](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md)
 - [Knowledge Graph](KNOWLEDGE_GRAPH.md)
 - [AI Collaboration Standard](AI_COLLABORATION.md)

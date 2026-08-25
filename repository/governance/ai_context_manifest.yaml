@@ -1,0 +1,151 @@
+schema_version: "1.0"
+manifest_id: damavand-steel-ai-context
+status: pointer_and_invariants_only
+lifecycle: review
+owner: founder
+approval_authority: founder
+authority: none_independent
+
+project:
+  name: Damavand Steel
+  type: enterprise_product_and_knowledge_platform
+  primary_property: DamavandSteel.com
+  future_ecosystem_consumer: CentralSteel.ir
+
+scope:
+  repository_collaboration_governance: true
+  product_ai_feature_authority: false
+  runtime_authority: false
+  production_authority: false
+
+repository:
+  canonical_name: masoudtavousi-collab/damavand-steel-platform
+  repository_is_source_of_truth: true
+  live_main:
+    resolve_from: github_refs_heads_main
+    resolution_required_at_task_start: true
+    store_resolved_sha_in_manifest: false
+  canonical_current_state: docs/CURRENT_PROJECT_STATE.md
+
+canonical_sources:
+  root_instructions: AGENTS.md
+  current_state: docs/CURRENT_PROJECT_STATE.md
+  context_router: docs/CONTEXT_ROUTER.md
+  ai_collaboration: docs/AI_COLLABORATION.md
+  sprint_protocol: docs/CODEX_SPRINT_PROTOCOL.md
+  source_priority: docs/SOURCE_OF_TRUTH_PRIORITY.md
+  reading_order: docs/READING_ORDER.md
+  git_governance: docs/GIT_GOVERNANCE.md
+  program_how: docs/DS_PC_001_PROGRAM_CHARTER.md
+  program_what: docs/DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md
+
+authority_model:
+  founder:
+    final_business_authority: true
+    final_commercial_authority: true
+    final_required_founder_gate_authority: true
+    final_governing_change_authority: true
+    final_runtime_and_production_authority: true
+  chatgpt:
+    roles:
+      - project_commander
+      - chief_architect
+      - product_owner
+      - repository_governor
+    self_approval: prohibited
+  claude:
+    roles:
+      - researcher
+      - ux_visual_design_reviewer
+      - red_team_reviewer
+      - documentation_specification_critic
+    output_status_until_reconciled: proposal_or_review_evidence
+    independent_authority: false
+  codex:
+    roles:
+      - controlled_build_engine
+      - repository_executor
+      - implementation_executor
+      - validation_executor
+    scope: exact_task_context_envelope_only
+    self_approval: prohibited
+    merge_without_separate_authorization: prohibited
+    deploy_without_separate_authorization: prohibited
+    ds_pc_operational_program_commander_meaning: execution_coordination_inside_exact_task_gates_only
+
+bootstrap:
+  ordered_steps:
+    - read_root_instructions
+    - resolve_live_main_and_local_state
+    - read_current_state
+    - read_context_router
+    - establish_named_role
+    - establish_task_context_envelope
+    - load_routed_authoritative_sources
+    - verify_exact_mission_authorization
+  context_layers:
+    layer_0: minimum_universal_context
+    layer_1: scope_specific_authoritative_sources
+    layer_2: historical_or_deep_evidence_only_when_required
+  load_entire_repository_by_default: false
+
+task_context_envelope:
+  required_fields:
+    - authority
+    - live_main_sha
+    - objective
+    - role
+    - allowed_paths_and_systems
+    - explicit_no_go
+    - dependencies
+    - required_sources
+    - stop_conditions
+    - validation
+    - return_contract
+  mutation_requires_status: CONTEXT_ESTABLISHED
+  unresolved_result: CONTEXT_NOT_ESTABLISHED
+  unresolved_action: STOP
+
+non_authoritative_context:
+  - chatgpt_memory
+  - claude_memory_or_context
+  - codex_prior_session_state
+  - slack_summary
+  - prior_handoff
+  - conversation_history
+  - historical_next_action
+
+handoff:
+  equals_authority: false
+  receiving_session_reverification_required: true
+
+conflict_rules:
+  repository_wins_over_memory_within_applicable_scope: true
+  unresolved_repository_authority_conflict:
+    action: STOP
+    result: CONTEXT_NOT_ESTABLISHED
+
+prohibited_assumptions:
+  - conversation_creates_authority
+  - handoff_creates_authority
+  - memory_creates_current_state
+  - file_recency_creates_authority
+  - detailed_evidence_creates_approval
+  - completed_mission_authorizes_successor
+  - ai_recommendation_changes_architecture_or_business_truth
+
+mutable_state_exclusion:
+  canonical_owner: docs/CURRENT_PROJECT_STATE.md
+  prohibited_manifest_fields:
+    - resolved_live_main_sha
+    - active_mission
+    - active_branch
+    - active_pull_request
+    - mutable_next_action
+    - transient_readiness
+    - current_gate_state
+    - current_go_no_go
+
+stop_vocabulary:
+  stop: STOP
+  context_not_established: CONTEXT_NOT_ESTABLISHED

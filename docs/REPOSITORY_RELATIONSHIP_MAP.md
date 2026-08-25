@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 1.7.0
-- **Last Updated:** 2026-08-21
-- **Last Review:** 2026-08-21
+- **Version:** 1.8.0
+- **Last Updated:** 2026-08-25
+- **Last Review:** 2026-08-25
 - **Review Cycle:** On repository creation, disposition, authority, ownership, namespace, lifecycle, merge, or promotion proposal
 - **Lifecycle:** Review
 - **Source of Truth:** Explicit Founder decisions in the GIT-02S directive dated 2026-07-14, the Class B Wave 1 authorization dated 2026-07-19, verified GitHub `main`, Founder-approved current Git governance, the Wave 2 pre-implementation decisions dated 2026-07-20, `FD-DS-PROGRAM-001`, `FD-C000-OS2-001`, `FD-C003-DISCOVERY-001`, and Repository A governance
@@ -40,6 +40,7 @@ Define the authority, isolation, adoption, and future-promotion boundaries betwe
 | [C005 Scope](C005_201_51_FOUNDER_EVIDENCE_READINESS_REEVALUATION_SCOPE_V1.0.md) and [Readiness Packet](C005_201_51_READINESS_REEVALUATION_PACKET_V1.0.md) | Adds one evidence/readiness extension over exact Founder sources while reusing immutable C002/C003/C004 owners; all nine C002 criteria are re-evaluated as 8 submitted, 1 missing, 6 separately reviewable and zero resolved | Does not mutate C002/C003/C004 owners, select/populate a candidate, create Product/tuple/Mass/Supply/Availability/price/customer/order/VIP/Loyalty/runtime truth, merge, or start a successor |
 | [C006 Scope](C006_PRODUCT_DATA_SEMANTIC_PRODUCT_EXPERIENCE_ARCHITECTURE_SCOPE_V1.0.md) and [Product Experience Engine](../repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md) | Reconciles Pipe semantics and provides one architecture-only orchestration owner over canonical Product, Variant Rules, Measurement, Media, Knowledge, Inquiry and WooCommerce projection boundaries | Does not duplicate domain truth, populate Product/value/tuple/SKU/Mass/Availability/Price/Media/Knowledge, mutate WordPress/WooCommerce/Runtime, merge, or start a successor |
 | [Context Router](CONTEXT_ROUTER.md) | Routes each task to the smallest authoritative context set | Is navigation only; it cannot create authority, override a governing source, or duplicate mutable state |
+| [AI Context Manifest](../repository/governance/ai_context_manifest.yaml) | Provides machine-readable pointers and stable AI bootstrap, role, envelope, and fail-closed invariants | Is non-authoritative; cannot store or establish live SHA, active Mission/branch/PR, next action, readiness, gate state, or approval |
 | [Current Project State](CURRENT_PROJECT_STATE.md) | Remains the sole mutable pointer for current phase, exact authorization, branch/PR state, blockers, next action, and GO/NO-GO | Must not be duplicated or inferred from the two stable program documents |
 | `FD-DS-PROGRAM-001` | Records acceptance, roles, hashes, relationship, exclusions, and supersession limits | Does not rewrite `GOV-XD-00`, prior decisions, or repository chronology |
 

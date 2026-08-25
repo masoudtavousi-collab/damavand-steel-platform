@@ -8,8 +8,9 @@ Load the smallest authoritative context required for a task. This router reduces
 
 - **Current authority** decides what may happen now: accepted governing sources, explicit Founder decisions, Current Project State, and the active Mission Packet within their exact scopes.
 - **Historical evidence** explains provenance and prior outcomes. It cannot become current authority because it is newer, detailed, or present in a conversation.
+- **Memory and handoffs** are convenience context and evidence locators only. `Handoff != Authority`; neither memory nor a handoff can establish current state, approval, or scope.
 - Resolve the live GitHub `main` ref at task start. A fixed SHA in prose is an evidence anchor, not a permanent live-tip claim.
-- If scope/status checks do not resolve a material conflict, stop and return a reconciliation blocker instead of selecting an authority by intuition.
+- If scope/status checks do not resolve a material conflict, stop and return `STOP — CONTEXT_NOT_ESTABLISHED` instead of selecting an authority by intuition.
 
 ## Layer 0 — Boot Context
 
@@ -22,6 +23,8 @@ Load for every repository task:
 5. [Project Baseline](PROJECT_BASELINE.md);
 6. [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md);
 7. the active Founder/Project Commander Mission Packet.
+
+AI sessions also load [AI Collaboration](AI_COLLABORATION.md) to establish the named role and use the [AI Context Manifest](../repository/governance/ai_context_manifest.yaml) only as a machine-readable pointer to these owners and invariants.
 
 Do not load every file referenced by Layer 0. Continue only through the relevant Layer 1 route.
 
@@ -67,17 +70,30 @@ Before action, record:
 authority
 live_main_sha
 objective
+role
 allowed_paths_and_systems
 explicit_no_go
 dependencies
+required_sources
 stop_conditions
 validation
 return_contract
 ```
 
-Read more only when one of these fields cannot be resolved from the current layer.
+The envelope is established only when every field is present, live `main` was independently resolved, the working tree can be preserved safely, the named role and active Mission are authorized, and material source ownership or conflicts are resolved. Read more only when one of these fields cannot be resolved from the current layer.
+
+If the envelope still cannot be established, return:
+
+```text
+STOP
+CONTEXT_NOT_ESTABLISHED
+```
+
+Do not mutate the Repository, guess, broaden scope, or use memory, conversation, recency, or a handoff to fill the gap.
 
 ## Context Handoff
+
+`Handoff != Authority.` A receiving session must repeat Layer 0, re-resolve live `main` and local state, establish its role and Task Context Envelope, and verify the active Mission independently.
 
 Return durable facts to the correct canonical owner:
 
@@ -90,9 +106,22 @@ Return durable facts to the correct canonical owner:
 
 Do not duplicate mutable branch, PR, live-SHA, next-action, or readiness claims across stable governance documents.
 
+## Minimal Session Recovery
+
+```text
+AGENTS.md → resolve live main and local state → Current Project State
+→ Context Router → establish role → establish Task Context Envelope
+→ load routed authoritative sources → verify Mission → execute → validate
+→ reconcile durable facts into canonical owners → authorized Git/PR actions only
+```
+
+When the chain completes, the session may disappear without becoming a source-of-truth dependency.
+
 ## Navigation
 
 - [C000 / Project OS 2.0 Decision Package](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md)
 - [Repository Reading Order](READING_ORDER.md)
 - [Documentation Index](08_DOCUMENTATION_INDEX.md)
 - [Current Project State](CURRENT_PROJECT_STATE.md)
+- [AI Collaboration Standard](AI_COLLABORATION.md)
+- [AI Context Manifest](../repository/governance/ai_context_manifest.yaml)

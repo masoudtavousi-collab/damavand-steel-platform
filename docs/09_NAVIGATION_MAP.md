@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.12.0
-- **Last Updated:** 2026-08-22
-- **Last Review:** 2026-08-22
+- **Version:** 0.13.0
+- **Last Updated:** 2026-08-25
+- **Last Review:** 2026-08-25
 - **Review Cycle:** On repository path, document index, reading path, or relationship change
 - **Lifecycle:** Draft
 - **Source of Truth:** [Documentation Index](08_DOCUMENTATION_INDEX.md) and current repository paths
@@ -29,15 +29,19 @@ Define repository navigation and reading paths without changing directory owners
 ### Codex Governance Entry
 
 1. [Codex Repository Instructions](../AGENTS.md)
-2. [Current Project State](CURRENT_PROJECT_STATE.md)
-3. [Project Baseline](PROJECT_BASELINE.md)
-4. [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md)
-5. [Repository Reading Order](READING_ORDER.md)
-6. [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md)
-7. [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md)
-8. [Codex Sprint Protocol](CODEX_SPRINT_PROTOCOL.md)
-9. [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md)
-10. [Founder Decision Log](17_FOUNDER_DECISION_LOG.md)
+2. Resolve live GitHub `main` and inspect local state.
+3. [Current Project State](CURRENT_PROJECT_STATE.md)
+4. [Context Router](CONTEXT_ROUTER.md)
+5. [AI Collaboration Standard](AI_COLLABORATION.md)
+6. [AI Context Manifest](../repository/governance/ai_context_manifest.yaml) as a non-authoritative machine pointer
+7. [Project Baseline](PROJECT_BASELINE.md)
+8. [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md)
+9. [Repository Reading Order](READING_ORDER.md)
+10. [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md)
+11. [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md)
+12. [Codex Sprint Protocol](CODEX_SPRINT_PROTOCOL.md)
+13. [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md)
+14. [Founder Decision Log](17_FOUNDER_DECISION_LOG.md)
 
 This path is governance and Founder-review only. Completed integrations retain their recorded bounded meanings. For dynamically current authorization, GO/NO-GO boundaries, and next action, follow [Current Project State](CURRENT_PROJECT_STATE.md); a completed Mission scope is integration history, not a permanent current-governance step. The [Claude Recovery Audit](AUDIT_REPORT_CLAUDE_RECOVERY_2026-07-26.md) is evidence, not an operational-state owner.
 
@@ -276,7 +280,7 @@ This path is Product DNA review only. It defines reusable product structure and 
 
 ### Repository Intelligence Path
 
-[AI Collaboration Standard](AI_COLLABORATION.md) → [Repository Metadata Standard](REPOSITORY_METADATA.md) → [Traceability Matrix](TRACEABILITY_MATRIX.md) → [Reading Order](READING_ORDER.md) → [Knowledge Graph](KNOWLEDGE_GRAPH.md) → [Repository Health](REPOSITORY_HEALTH.md) → [Batch 02C Audit](AUDIT_REPORT_BATCH02C.md)
+[AI Collaboration Standard](AI_COLLABORATION.md) → [AI Context Manifest](../repository/governance/ai_context_manifest.yaml) as a pointer/invariant check → [Context Router](CONTEXT_ROUTER.md) → [Repository Metadata Standard](REPOSITORY_METADATA.md) → [Traceability Matrix](TRACEABILITY_MATRIX.md) → [Reading Order](READING_ORDER.md) → [Knowledge Graph](KNOWLEDGE_GRAPH.md) → [Repository Health](REPOSITORY_HEALTH.md) → [Batch 02C Audit](AUDIT_REPORT_BATCH02C.md)
 
 ### Governance Completion Path
 

@@ -15,7 +15,7 @@ Authority is scope-bound. File existence, recency, task inclusion, or conversati
 | 9. Competitor Research | Supplementary terminology/presentation evidence | Cannot override Founder or canonical data | Record source/date; classify as supplementary |
 | 10. External Research | Only when explicitly requested | Cannot become authority by citation alone | Prefer primary sources and record review |
 | 11. Audit Reports | Current-state evidence and findings | Not governing approval | Reconcile with higher authority |
-| 12. Conversation Context | Clarifies immediate intent | Not durable canonical data | Promote through approved repository record |
+| 12. Conversation, AI Memory, Slack Summaries, and Handoffs | Convenience context and evidence locators only | Cannot establish authority, approval, current state, scope, or durable canonical data; `Handoff != Authority` | Re-resolve Repository state independently and promote durable facts only through the approved Repository owner and process |
 
 `FD-DS-PROGRAM-001` accepts DS-PC and DS-SPD as companion program-level governing sources. It does not silently approve the full Draft Project Bible or Constitution, supersede CP-001 through CP-010, accepted Founder decisions or ADRs, accepted architecture, source-priority controls, production controls, `GOV-XD-00` history, or domain roadmaps. More specific accepted authority continues to control its recorded scope.
 
@@ -24,3 +24,5 @@ Competitor research may inform alternative names, search aliases, FAQ ideas, mar
 Competitor research may not override Founder product specifications, taxonomy ownership, material/alloy availability, compatibility, installation requirements, business/pricing models, SKU rules, product-family boundaries, or approved WordPress architecture.
 
 When sources conflict: confirm scope/status, apply higher accepted authority, preserve the explicit in-scope Founder decision, and use more specific approved peer authority only when it does not violate a parent rule. If unresolved, stop and request a recorded Founder decision; never invent a replacement rule.
+
+Repository state wins within the applicable scope when it conflicts with ChatGPT memory, Claude memory/context, Codex prior-session state, Slack summaries, prior handoffs, or conversation history. If accepted Repository authority itself conflicts materially and scope/status checks cannot resolve it, return `STOP — CONTEXT_NOT_ESTABLISHED` before mutation.

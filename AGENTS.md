@@ -84,6 +84,40 @@ Missing operational data is not automatically a Founder decision. `هیچ‌کد
 
 Founder-approved product data outranks competitor data. Competitor data may inform aliases, search terms, FAQ ideas, UX inspiration, and market terminology; it must not override specifications, compatibility, taxonomy, business rules, pricing, or approved availability. See [Source of Truth Priority](docs/SOURCE_OF_TRUTH_PRIORITY.md).
 
+## 6A. AI Session Bootstrap and Continuity
+
+Conversation is not Project memory. The Repository is the durable record. ChatGPT memory, Claude context, Codex prior-session state, Slack summaries, historical conversations, and handoffs are convenience context or evidence only; they cannot authorize work or override an applicable Repository owner. If authoritative Repository sources conflict materially, stop and escalate rather than guessing.
+
+Before any Repository mutation, every AI session must:
+
+1. resolve the live GitHub `main` SHA and inspect the local branch and clean/dirty state;
+2. read this file, [Current Project State](docs/CURRENT_PROJECT_STATE.md), and [Context Router](docs/CONTEXT_ROUTER.md);
+3. establish its named role and an active Mission or task authorization;
+4. create a valid Task Context Envelope containing `authority`, `live_main_sha`, `objective`, `role`, `allowed_paths_and_systems`, `explicit_no_go`, `dependencies`, `required_sources`, `stop_conditions`, `validation`, and `return_contract`; and
+5. load only the scope-specific sources selected by the Context Router.
+
+If material authority, state, source ownership, scope, or any required envelope field cannot be resolved, return `STOP — CONTEXT_NOT_ESTABLISHED` and perform no Repository mutation.
+
+Stable role boundaries are:
+
+- **Founder:** final business, commercial, required Founder-gate, governing-change, Runtime, and Production approval authority.
+- **ChatGPT:** Project Commander, Chief Architect, Product Owner, and Repository Governor; defines and reconciles Missions, scope, architecture coordination, acceptance criteria, and AI-side review within Founder-approved boundaries; cannot self-approve or convert conversation into authority.
+- **Claude:** bounded Research, UX/Visual Design Review, Red-Team Review, and documentation/specification critique where assigned; outputs remain proposals or review evidence until reconciled by the authorized process.
+- **Codex:** controlled Build Engine, Repository executor, implementation executor, and validation executor within the exact Task Context Envelope; may commit, push, or prepare a pull request only when explicitly authorized. The accepted DS-PC term “operational Program Commander” permits execution coordination only inside exact task gates; it grants no business, product, architecture, approval, Merge, Runtime, or Production authority.
+
+Recovery contract:
+
+```text
+New session → read AGENTS.md → resolve live main and working-tree state
+→ read Current Project State → read Context Router → establish role
+→ establish Task Context Envelope → load routed authoritative sources
+→ verify Mission authorization → execute → validate
+→ reconcile durable facts into canonical owners → perform only authorized Git actions
+→ session may disappear safely
+```
+
+The stable machine-readable pointer and invariant set is [AI Context Manifest](repository/governance/ai_context_manifest.yaml). It is navigation, not authority, and must never contain mutable current state.
+
 ## 7. Current Project Phase
 
 - Architecture and governance proposal coverage exists; the `GOV-XD-00` cross-domain execution charter is Founder-approved within its documentation-only scope, while implementation remains lifecycle- and scope-gated.
