@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.2.0
-- **Last Updated:** 2026-08-25
-- **Last Review:** 2026-08-25
+- **Version:** 0.3.0
+- **Last Updated:** 2026-08-26
+- **Last Review:** 2026-08-26
 - **Review Cycle:** On material change; periodic cadence pending Founder approval
 - **Lifecycle:** Review
 - **Source of Truth:** [DS-PC Program Charter](DS_PC_001_PROGRAM_CHARTER.md), [DS-SPD Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md), accepted Founder decisions, [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md), and [Current Project State](CURRENT_PROJECT_STATE.md) within their declared scopes
@@ -57,6 +57,26 @@ No AI role may infer approval or authority from file existence, document product
 
 If accepted Repository authority conflicts with another accepted Repository source and scope/status checks cannot resolve it, the result is `STOP — CONTEXT_NOT_ESTABLISHED`. No AI may select a preferred interpretation.
 
+## Repository and Artifact Custody Boundary
+
+The Repository is the Project/Product source of truth only for approved structured truth, governance, stable identities, and repository-admissible manifests or references. Raw source artifacts and private, sensitive, commercial, verifier, and recovery/checkpoint artifacts belong in an approved durable external archive. Conversation, AI memory, Slack, and handoffs remain non-authoritative context or evidence locators. Custody location never creates authority.
+
+Every material artifact follows:
+
+```text
+Generate → Hash → Classify → Manifest → Preserve → Read Back → Report
+```
+
+Repository admission of a sanitized reference requires exact task authority and does not promote the referenced artifact. If durable custody cannot be preserved and read back, report `PENDING_EXTERNAL_ARCHIVE`; do not claim durable custody.
+
+## Writer WIP Governance
+
+`MAX_ACTIVE_WIP = 3`. Before starting a new writer Mission, resolve live active writer Missions and open pull requests, classify ownership, count WIP, and check path collisions. Stable governance files define this rule but do not store a mutable current PR list. If no slot exists, return `STOP — WIP_LIMIT_REACHED`. An already-authorized active lane may continue without consuming a new slot only while its ownership and path boundaries remain exact.
+
+## Checkpoint Governance
+
+A WIP checkpoint is required at a phase boundary, planned pause, handoff, session-loss exposure, or major integration. The checkpoint uses the artifact-custody sequence above. It does not approve work, grant Merge authority, promote Product truth, or start a successor Mission.
+
 ## AI Roles
 
 ### Founder
@@ -82,6 +102,15 @@ Role: bounded Researcher, UX/Visual Design Reviewer, Red-Team Reviewer, and docu
 - May challenge assumptions, identify ambiguity, UX issues, edge cases, missing requirements, and proposed alternatives.
 - May not independently establish architecture, modify business rules, create Product or taxonomy truth, override Repository decisions, convert recommendations into requirements, self-approve, or execute Runtime or Production changes.
 - Every Claude output remains a proposal or review evidence until reconciled through the authorized project process.
+
+### Lane-A External Verifier
+
+Role: separate external security-acceptance evidence mechanism; not Claude's general project role.
+
+- Produces only external security-acceptance evidence within its exact assigned boundary.
+- Is not Project or Product source of truth and has no Product, Runtime, Merge, or successor-Mission authority.
+- Raw verifier ZIPs, attestations, evidence, and code packages remain in approved durable external custody and are not imported into the candidate Repository by C010.
+- A later separately authorized Repository record may contain only an admissible sanitized hash, immutable locator, classification, freshness, and reviewer reference.
 
 ### Codex
 
@@ -139,6 +168,10 @@ The following functional roles apply only when a Mission explicitly assigns them
 - Separates instructions, context, constraints, expected evidence, and output format.
 - Does not use prompts to bypass governance or introduce a Phase 1 AI product feature.
 
+## Domain Ownership Boundary
+
+C010 owns universal collaboration, continuity, WIP, custody, and authority-routing rules only. It does not own Product Knowledge intake, taxonomy, Product Master lifecycle, Product identity allocation, promotion evidence, or Product truth; those remain within a separately authorized Product Foundation architecture. C010 may describe the universal evidence boundary but does not own the FT-RB-03 security/privacy contract, evidence taxonomy, gate semantics, environment security acceptance, or `SECURITY_PRIVACY_GATE_READY`. Lane-A remains external and separate from both.
+
 ## Task Context Envelope
 
 Before Repository mutation, the acting agent must record and validate all of these fields:
@@ -156,8 +189,12 @@ Before Repository mutation, the acting agent must record and validate all of the
 | `stop_conditions` | Conditions that end mutation without guessing or broadening scope |
 | `validation` | Positive, negative, boundary, adversarial, cross-file, and fail-closed checks proportional to risk |
 | `return_contract` | Required handoff, evidence, Git, PR, GO/NO-GO, and unresolved-item output |
+| `active_writer_wip_verification` | Live active-writer enumeration, WIP count/limit, ownership and path-collision result |
+| `material_artifact_custody_plan` | Artifact classifications, permitted custody destinations, manifest/reference plan, and read-back requirement |
+| `checkpoint_triggers` | Applicable phase-boundary, pause, handoff, session-loss, and major-integration triggers |
+| `authority_boundary` | Exact distinction among task permission, Repository truth, custody, review evidence, Git, Runtime, Production, and successor authority |
 
-The envelope is valid only when every field is present, the live `main` SHA was independently resolved, the role and Mission are authorized, the working tree can be preserved safely, and material source ownership and conflicts are resolved. Otherwise return `STOP — CONTEXT_NOT_ESTABLISHED` and do not mutate the Repository.
+The envelope is valid only when every field is present, the live `main` SHA was independently resolved, the role and Mission are authorized, active-writer ownership/WIP/path safety is established, the working tree can be preserved safely, the custody/checkpoint plan is valid, and material source ownership and conflicts are resolved. Otherwise return `STOP — CONTEXT_NOT_ESTABLISHED` and do not mutate the Repository. A new writer without an available WIP slot returns `STOP — WIP_LIMIT_REACHED`.
 
 The [AI Context Manifest](../repository/governance/ai_context_manifest.yaml) provides stable field names and source pointers. It is not an approval record and contains no active Mission, live SHA, branch, pull request, next action, or readiness state.
 
@@ -172,6 +209,8 @@ Every collaborator must:
 - Record new Founder decisions and open questions in their controlled registers.
 - Update navigation and traceability when an authorized change affects relationships.
 - Validate output using the applicable quality checklists.
+- Route approved structured truth to its canonical Repository owner and raw/private/sensitive/commercial/verifier/checkpoint artifacts to approved durable external custody.
+- Create and read back required WIP checkpoints without treating a checkpoint as approval or successor authority.
 
 ## Handoff Rules
 
@@ -183,6 +222,8 @@ Every handoff must include:
 - Files reviewed, created, and modified.
 - Governing rules and decision sources.
 - Evidence produced and validation performed.
+- Artifact classifications, hashes, manifests, custody locators, read-back result, and any `PENDING_EXTERNAL_ARCHIVE` status.
+- Required checkpoint state and the explicit statement that it creates no approval, Merge, Product promotion, or successor authority.
 - Remaining risks, TODOs, and open questions.
 - Decisions requiring Founder approval.
 - Explicit statement of what was not authorized or not completed.
@@ -196,7 +237,7 @@ A receiving collaborator must resolve live `main`, inspect the local state, read
 - Repository state wins within the applicable scope when memory, conversation, Slack, or a handoff conflicts with it.
 - Historical documents remain evidence even when they appear newer or contain a more recent-looking next action.
 - If Repository authority itself conflicts materially, stop and escalate; do not use memory to break the tie.
-- Durable facts discovered during work must be reconciled into their canonical Repository owner through the applicable approval process. They must not remain only in a conversation or handoff.
+- Approved structured truth discovered during work must be reconciled into its canonical Repository owner through the applicable approval process. Raw source artifacts and private, sensitive, commercial, verifier, or recovery/checkpoint evidence must be preserved in approved durable external custody; only a separately authorized sanitized manifest or reference may enter the Repository. Neither class may remain only in a conversation or handoff.
 
 ## Session Recovery Contract
 
@@ -204,15 +245,17 @@ A receiving collaborator must resolve live `main`, inspect the local state, read
 New Session
 → Read AGENTS.md
 → Resolve live GitHub main and inspect local state
+→ Determine active writers and WIP
 → Read CURRENT_PROJECT_STATE.md
 → Read CONTEXT_ROUTER.md
 → Establish named role
 → Establish Task Context Envelope
 → Load routed authoritative sources
 → Verify exact Mission authorization
+→ Verify custody and checkpoint plan
 → Execute only authorized scope
 → Validate
-→ Reconcile durable facts into canonical owners
+→ Preserve evidence
 → Perform only authorized Git / PR actions
 → Session may disappear safely
 ```
@@ -233,6 +276,11 @@ Failure to complete any prerequisite before mutation returns `STOP — CONTEXT_N
 | H. An agent is told to continue automatically into another Mission | Stop unless the next Mission is separately authorized |
 | I. A Claude design recommendation conflicts with approved architecture | Report the conflict; do not apply the recommendation automatically |
 | J. Codex finds a potentially better architecture during implementation | Preserve approved architecture and report a separate proposal |
+| K. A new writer Mission is proposed while live WIP is at the limit | `STOP — WIP_LIMIT_REACHED`; do not create a writer lane |
+| L. A raw verifier/private artifact is offered for Repository import | Preserve it in approved durable external custody; admit no raw artifact |
+| M. A checkpoint is presented as approval or permission to continue into a successor | Reject the authority claim and require the applicable separate gate |
+| N. A Lane-A result is presented as Project/Product or Runtime authority | Retain it as external security-acceptance evidence only |
+| O. Durable custody cannot be read back | Report `PENDING_EXTERNAL_ARCHIVE`; do not claim preservation |
 
 ## Approval Rules
 

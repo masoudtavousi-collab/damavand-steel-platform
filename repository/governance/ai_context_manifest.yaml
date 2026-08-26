@@ -20,7 +20,11 @@ scope:
 
 repository:
   canonical_name: masoudtavousi-collab/damavand-steel-platform
-  repository_is_source_of_truth: true
+  source_of_truth_scope:
+    - approved_structured_truth
+    - governance
+    - stable_identities
+    - repository_admissible_manifests_and_references
   live_main:
     resolve_from: github_refs_heads_main
     resolution_required_at_task_start: true
@@ -61,6 +65,14 @@ authority_model:
       - documentation_specification_critic
     output_status_until_reconciled: proposal_or_review_evidence
     independent_authority: false
+  lane_a_external_verifier:
+    role: external_security_acceptance_evidence_only
+    project_source_of_truth: false
+    product_source_of_truth: false
+    product_authority: false
+    runtime_authority: false
+    successor_mission_authority: false
+    raw_artifact_repository_import: prohibited
   codex:
     roles:
       - controlled_build_engine
@@ -77,12 +89,18 @@ bootstrap:
   ordered_steps:
     - read_root_instructions
     - resolve_live_main_and_local_state
+    - determine_active_writers_and_wip
     - read_current_state
     - read_context_router
     - establish_named_role
     - establish_task_context_envelope
     - load_routed_authoritative_sources
     - verify_exact_mission_authorization
+    - verify_custody_and_checkpoint_plan
+    - execute_authorized_scope
+    - validate
+    - preserve_evidence
+    - perform_authorized_git_actions_only
   context_layers:
     layer_0: minimum_universal_context
     layer_1: scope_specific_authoritative_sources
@@ -102,9 +120,86 @@ task_context_envelope:
     - stop_conditions
     - validation
     - return_contract
+    - active_writer_wip_verification
+    - material_artifact_custody_plan
+    - checkpoint_triggers
+    - authority_boundary
   mutation_requires_status: CONTEXT_ESTABLISHED
   unresolved_result: CONTEXT_NOT_ESTABLISHED
   unresolved_action: STOP
+
+artifact_custody:
+  protocol_sequence:
+    - generate
+    - hash
+    - classify
+    - manifest
+    - preserve
+    - read_back
+    - report
+  custody_creates_authority: false
+  repository_roles:
+    - approved_structured_truth
+    - governance
+    - stable_identities
+    - repository_admissible_manifests_and_references
+  external_durable_archive:
+    roles:
+      - raw_source_artifacts
+      - private_evidence
+      - sensitive_or_commercial_evidence
+      - verifier_artifacts
+      - recovery_and_checkpoint_artifacts
+    project_or_product_authority: false
+  non_authoritative_context_roles:
+    - conversation
+    - ai_memory
+    - slack
+    - handoff
+  repository_reference_requires:
+    - sha256
+    - immutable_locator
+    - classification
+    - sanitization
+  unavailable_durable_custody_status: PENDING_EXTERNAL_ARCHIVE
+
+wip_governance:
+  max_active_wip: 3
+  live_writer_enumeration_required_before_new_writer_mission: true
+  path_collision_check_required: true
+  mutable_active_prs_in_stable_manifest: false
+  no_slot_result: WIP_LIMIT_REACHED
+  automatic_successor_start: false
+
+checkpoint_governance:
+  triggers:
+    - phase_boundary
+    - planned_pause
+    - handoff
+    - session_loss_exposure
+    - major_integration
+  protocol_reference: artifact_custody.protocol_sequence
+  creates_approval: false
+  creates_merge_authority: false
+  promotes_product_truth: false
+  starts_successor_mission: false
+
+domain_ownership_exclusions:
+  c010:
+    owns_universal_collaboration_governance_only: true
+    product_foundation:
+      - product_knowledge_intake
+      - taxonomy
+      - product_master_lifecycle
+      - product_identity_allocation
+      - promotion_evidence
+      - product_truth
+    ft_rb_03:
+      - security_privacy_contract
+      - evidence_taxonomy
+      - gate_semantics
+      - environment_security_acceptance
+      - security_privacy_gate_ready
 
 non_authoritative_context:
   - chatgpt_memory
@@ -132,6 +227,10 @@ prohibited_assumptions:
   - file_recency_creates_authority
   - detailed_evidence_creates_approval
   - completed_mission_authorizes_successor
+  - custody_location_creates_authority
+  - checkpoint_authorizes_successor
+  - external_verifier_evidence_creates_project_or_product_truth
+  - available_wip_slot_authorizes_new_mission
   - ai_recommendation_changes_architecture_or_business_truth
 
 mutable_state_exclusion:
@@ -141,6 +240,9 @@ mutable_state_exclusion:
     - active_mission
     - active_branch
     - active_pull_request
+    - active_writer_pull_requests
+    - active_wip_count
+    - current_checkpoint_status
     - mutable_next_action
     - transient_readiness
     - current_gate_state
@@ -149,3 +251,4 @@ mutable_state_exclusion:
 stop_vocabulary:
   stop: STOP
   context_not_established: CONTEXT_NOT_ESTABLISHED
+  wip_limit_reached: WIP_LIMIT_REACHED

@@ -10,9 +10,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.34.0
-- **Last Updated:** 2026-08-25
-- **Last Review:** 2026-08-25
+- **Version:** 0.35.0
+- **Last Updated:** 2026-08-26
+- **Last Review:** 2026-08-26
 - **Review Cycle:** On governing-rule or dependency change; periodic cadence pending Founder approval
 - **Lifecycle:** Review
 - **Source of Truth:** [Core Project Principles](00_PROJECT_BIBLE.md#core-project-principles), approved governing documents, and accepted ADRs; this matrix is a supporting view
@@ -836,7 +836,7 @@ Core Principles + Business/Inquiry/Product/Entity/Knowledge authority
 | Repository health | Approved governing sources for each measured concern | [Repository Health](REPOSITORY_HEALTH.md) | Current-state coverage counts and Batch audit evidence |
 | Git evolution and history | [Git Governance](GIT_GOVERNANCE.md) after approval | [Repository Standards](07_REPOSITORY_GUIDE.md), [Changelog Policy](14_CHANGELOG_POLICY.md) | Branch, version, tag, baseline, commit, release, backup, freeze, and validation evidence |
 | Open work | [Founder Decision Log](17_FOUNDER_DECISION_LOG.md) | [Open Questions](18_OPEN_QUESTIONS.md) | Resolved source-document updates |
-| AI continuity and collaboration | [AI Collaboration Standard](AI_COLLABORATION.md) after approval | [Context Router](CONTEXT_ROUTER.md), [Codex Sprint Protocol](CODEX_SPRINT_PROTOCOL.md), [Reading Order](READING_ORDER.md), [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md), and [AI Context Manifest](../repository/governance/ai_context_manifest.yaml) as a non-authoritative pointer | Task Context Envelopes, independently re-resolved Repository state, handoffs, validation, and adversarial evidence |
+| AI continuity, collaboration, WIP, artifact custody, external-verifier boundary, and domain separation | [AI Collaboration Standard](AI_COLLABORATION.md) after approval | [Codex Repository Instructions](../AGENTS.md), [Context Router](CONTEXT_ROUTER.md), [Codex Sprint Protocol](CODEX_SPRINT_PROTOCOL.md), [Reading Order](READING_ORDER.md), [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md), [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md), and [AI Context Manifest](../repository/governance/ai_context_manifest.yaml) as a non-authoritative pointer | Task Context Envelopes with WIP/custody/checkpoint/authority fields; live writer enumeration and path-collision result; hashed/classified manifests with durable-archive read-back or `PENDING_EXTERNAL_ARCHIVE`; WIP checkpoints; sanitized Lane-A references; and Product/C009/Product-Foundation/FT-RB-03 boundary regression evidence |
 
 ## Traceability Gap Rules
 
