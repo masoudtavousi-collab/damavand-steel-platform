@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.12.0
-- **Last Updated:** 2026-08-22
-- **Last Review:** 2026-08-22
+- **Version:** 0.14.0
+- **Last Updated:** 2026-08-26
+- **Last Review:** 2026-08-26
 - **Review Cycle:** On repository path, document index, reading path, or relationship change
 - **Lifecycle:** Draft
 - **Source of Truth:** [Documentation Index](08_DOCUMENTATION_INDEX.md) and current repository paths
@@ -29,21 +29,31 @@ Define repository navigation and reading paths without changing directory owners
 ### Codex Governance Entry
 
 1. [Codex Repository Instructions](../AGENTS.md)
-2. [Current Project State](CURRENT_PROJECT_STATE.md)
-3. [Project Baseline](PROJECT_BASELINE.md)
-4. [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md)
-5. [Repository Reading Order](READING_ORDER.md)
-6. [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md)
-7. [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md)
-8. [Codex Sprint Protocol](CODEX_SPRINT_PROTOCOL.md)
-9. [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md)
-10. [Founder Decision Log](17_FOUNDER_DECISION_LOG.md)
+2. Resolve live GitHub `main` and inspect local state.
+3. Determine live active writer Missions/open pull requests, classify ownership, verify `MAX_ACTIVE_WIP = 3`, and check path collisions.
+4. [Current Project State](CURRENT_PROJECT_STATE.md)
+5. [Context Router](CONTEXT_ROUTER.md)
+6. Establish the named role and complete Task Context Envelope.
+7. [AI Collaboration Standard](AI_COLLABORATION.md)
+8. [AI Context Manifest](../repository/governance/ai_context_manifest.yaml) as a non-authoritative machine pointer
+9. Resolve the routed authoritative sources and exact Mission authorization.
+10. Verify the material-artifact custody and checkpoint plan.
+11. [Project Baseline](PROJECT_BASELINE.md)
+12. [Knowledge Archive Standard](KNOWLEDGE_ARCHIVE_STANDARD.md)
+13. [Repository Reading Order](READING_ORDER.md)
+14. [Repository Relationship Map](REPOSITORY_RELATIONSHIP_MAP.md)
+15. [Project Execution Roadmap](PROJECT_EXECUTION_ROADMAP.md)
+16. [Codex Sprint Protocol](CODEX_SPRINT_PROTOCOL.md)
+17. [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md)
+18. [Founder Decision Log](17_FOUNDER_DECISION_LOG.md)
 
 This path is governance and Founder-review only. Completed integrations retain their recorded bounded meanings. For dynamically current authorization, GO/NO-GO boundaries, and next action, follow [Current Project State](CURRENT_PROJECT_STATE.md); a completed Mission scope is integration history, not a permanent current-governance step. The [Claude Recovery Audit](AUDIT_REPORT_CLAUDE_RECOVERY_2026-07-26.md) is evidence, not an operational-state owner.
 
+Stable governance files define the WIP rule, not a mutable list of current pull requests. A new writer Mission without a live slot returns `STOP — WIP_LIMIT_REACHED`; an existing authorized lane may continue only with unchanged ownership and no path collision. Material checkpoints follow `Generate → Hash → Classify → Manifest → Preserve → Read Back → Report`; unavailable durable custody is reported as `PENDING_EXTERNAL_ARCHIVE`, and a checkpoint creates no approval, Merge, Product promotion, or successor authority.
+
 ### Completed Git Integration Path and Current Boundary
 
-Historical baseline → PR #1–#4 governance integration → PR #5 Wave 2A Product Core → PR #6 Wave 2B Product Attributes → PR #7 Wave 2C Measurements → PR #9 K-01 integration → PR #8 Build Phase 1 implementation roadmap → PR #10 BP1 local prototype → PR #11 BP2 data blueprint → PR #13 Claude recovery consolidation → PR #14 post-recovery current state → PR #12 BP2 Data Administration hardening → PR #15 post-PR12 governance reconciliation → PR #16 BP1 M1 accessibility and local-validation hardening → PR #17 post-PR16 governance reconciliation → later bounded integrations through merged C006 PR #43 → [C007 bounded governance-convergence integration](C007_GOVERNANCE_CONVERGENCE_PHASE1_ARCHITECTURE_BASELINE_SCOPE_V1.0.md) through PR #44 → [C008 bounded readiness-evidence closure](C008_C002_READINESS_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md) through merged PR #45 → [C008-R1 delta-only re-review](C008_R1_C002_REMAINING_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md), whose presence on `main` records only a separately authorized integration and completed/archive-only result → current operational state in [Current Project State](CURRENT_PROJECT_STATE.md).
+Historical baseline → PR #1–#4 governance integration → PR #5 Wave 2A Product Core → PR #6 Wave 2B Product Attributes → PR #7 Wave 2C Measurements → PR #9 K-01 integration → PR #8 Build Phase 1 implementation roadmap → PR #10 BP1 local prototype → PR #11 BP2 data blueprint → PR #13 Claude recovery consolidation → PR #14 post-recovery current state → PR #12 BP2 Data Administration hardening → PR #15 post-PR12 governance reconciliation → PR #16 BP1 M1 accessibility and local-validation hardening → PR #17 post-PR16 governance reconciliation → later bounded integrations through merged C006 PR #43 → [C007 bounded governance-convergence integration](C007_GOVERNANCE_CONVERGENCE_PHASE1_ARCHITECTURE_BASELINE_SCOPE_V1.0.md) through PR #44 → [C008 bounded readiness-evidence closure](C008_C002_READINESS_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md) through merged PR #45 → [C008-R1 delta-only re-review](C008_R1_C002_REMAINING_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md) → [C008-FT1 sibling launch-gate amendment](C008_FT1_FAST_TRACK_INQUIRY_LAUNCH_GOVERNANCE_AMENDMENT_V1.0.md) → [C009 bounded canonical leaf promotion](C009_FIRST_COMMERCIAL_SLICE_CANONICAL_LEAF_PROMOTION_SCOPE_V1.0.md) → [C009-FT2 gate re-evaluation](C009_FT2_POST_C009_FAST_TRACK_GATE_REEVALUATION_V1.0.md) → [FT-RB-00 campaign router](FT_RB_00_FAST_TRACK_REMAINING_BLOCKERS_CAMPAIGN_STATUS_V1.0.md) → current operational state in [Current Project State](CURRENT_PROJECT_STATE.md).
 
 Any later proposal, Product/Knowledge population, runtime work, or repository-settings change remains separately governed. This navigation path grants no execution authority.
 
@@ -59,7 +69,7 @@ Any later proposal, Product/Knowledge population, runtime work, or repository-se
 | `/prompts` | Versioned prompt materials | [Repository Standards](07_REPOSITORY_GUIDE.md) |
 | `/tests` | Product-foundation fixtures and future QA evidence | [Testing Strategy](13_TESTING_STRATEGY.md) |
 | `/var` | Local runtime placeholders | [Deployment](09_DEPLOYMENT.md) |
-| `/repository/data/contracts`, `/repository/data/schemas`, `/repository/data/registries`, `/repository/data/validation` | Product core, attribute, measurement, BP2, PD-03, C002 contract/validation and bounded C008 evidence-extension ownership | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md), [BP2 Data Administration Scope v1.0](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md), [PD-03B Scope](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md), [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md), and [C008 machine registry](../repository/data/registries/extensions/c008/201-51-readiness-evidence-closure.yaml); C008 records repaired `6/9 / NOT_READY`, exactly three PD-03B Pilot records remain seed evidence, and C002 instance registries remain empty while Product/SKU, Availability, Master/Golden, Import, Runtime and M4 authority remain absent |
+| `/repository/data/contracts`, `/repository/data/schemas`, `/repository/data/registries`, `/repository/data/validation` | Product core, attribute, measurement, BP2, PD-03, C002 contract/validation, bounded C008 evidence, and C009 extension ownership | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md), [BP2 Data Administration Scope v1.0](BP2_DATA_ADMINISTRATION_SCOPE_V1.0.md), [PD-03B Scope](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md), [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md), [C008 machine registry](../repository/data/registries/extensions/c008/201-51-readiness-evidence-closure.yaml), and [C009 canonical extension](../repository/data/registries/extensions/c009/201-51-canonical-leaf-promotion.yaml); C002 remains `6/9 / NOT_READY` with empty candidate registries, while C009 separately owns exactly one canonical combination and one internal SKU leaf. Product Data remains `PARTIAL`, Taxonomy `NOT_READY`, Availability `MISSING_DATA_VALUE`, Import/Publication/Runtime `NO-GO`, Commerce `INQUIRY_ONLY`, No Public Pricing preserved, and no public commercial SKU exists |
 | `/repository/data/master-data`, `/repository/data/golden-reference` | Approved future governed Product and Golden data ownership | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md); paths currently absent |
 | `/repository/knowledge` | Approved future canonical Knowledge Repository | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md); path currently absent |
 | `/repository/content` | Approved future governed reusable content | [Platform Directory Standard](../repository/platform/PLATFORM_DIRECTORY_STANDARD.md); path currently absent |
@@ -77,6 +87,24 @@ This path is evidence/review only. It preserves candidate count zero, three unre
 [C008-R1 Scope](C008_R1_C002_REMAINING_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md) → [C008-R1 Evidence Review Packet](C008_R1_C002_REMAINING_REAL_WORLD_EVIDENCE_REVIEW_PACKET_V1.0.md) → [C008-R1 delta registry](../repository/data/registries/extensions/c008r1/201-51-remaining-real-world-evidence-closure.yaml) → zero new evidence / unchanged G1 `6/9 / NOT_READY` → [Current Project State](CURRENT_PROJECT_STATE.md).
 
 This route requests attributable evidence only. It creates no supplier commitment, media right, Product/commercial truth, C009, M4, Merge, Runtime or successor authority.
+
+### C008-FT1 Fast-Track Governance Path
+
+[C008-FT1 Amendment](C008_FT1_FAST_TRACK_INQUIRY_LAUNCH_GOVERNANCE_AMENDMENT_V1.0.md) → immutable historical gate `FALSE / 4 of 12` → [Current Project State](CURRENT_PROJECT_STATE.md).
+
+This path creates only the separate fail-closed sibling-gate owner. It is not C002 readiness, Product promotion, launch, Runtime, Staging, Production, Merge, or successor authority.
+
+### C009 Bounded Canonical Leaf Path
+
+[C009 Scope](C009_FIRST_COMMERCIAL_SLICE_CANONICAL_LEAF_PROMOTION_SCOPE_V1.0.md) → [C009 canonical extension](../repository/data/registries/extensions/c009/201-51-canonical-leaf-promotion.yaml) → `pilot:f5922666261e` / `pcomb:829e387ccdcb` / `prd:sku:66ebd0510693` → [Current Project State](CURRENT_PROJECT_STATE.md).
+
+The exact slice is Stainless Steel / 201 / Silver / 51 mm / 0.50 mm / 6 m. The SKU is an internal canonical leaf, not a public commercial SKU, Availability, price, stock, import, publication, Runtime, launch, or general Product-readiness claim.
+
+### C009-FT2 and FT-RB-00 Path
+
+[C009-FT2](C009_FT2_POST_C009_FAST_TRACK_GATE_REEVALUATION_V1.0.md) → effective sibling gate `FALSE / 5 of 12` → [FT-RB-00 campaign router](FT_RB_00_FAST_TRACK_REMAINING_BLOCKERS_CAMPAIGN_STATUS_V1.0.md) → [Current Project State](CURRENT_PROJECT_STATE.md).
+
+C009-FT2 changes only `CANONICAL_PRODUCT_PROMOTION_COMPLETE` to `MET`. FT-RB-00 routes separately authorized lanes and changes no additional blocker to `MET`. Neither auto-starts a lane, grants launch/commercial/Runtime authority, or authorizes a successor.
 
 ## Cross-Reference Rules
 
@@ -276,7 +304,7 @@ This path is Product DNA review only. It defines reusable product structure and 
 
 ### Repository Intelligence Path
 
-[AI Collaboration Standard](AI_COLLABORATION.md) → [Repository Metadata Standard](REPOSITORY_METADATA.md) → [Traceability Matrix](TRACEABILITY_MATRIX.md) → [Reading Order](READING_ORDER.md) → [Knowledge Graph](KNOWLEDGE_GRAPH.md) → [Repository Health](REPOSITORY_HEALTH.md) → [Batch 02C Audit](AUDIT_REPORT_BATCH02C.md)
+[AI Collaboration Standard](AI_COLLABORATION.md) → [AI Context Manifest](../repository/governance/ai_context_manifest.yaml) as a pointer/invariant check → [Context Router](CONTEXT_ROUTER.md) → [Repository Metadata Standard](REPOSITORY_METADATA.md) → [Traceability Matrix](TRACEABILITY_MATRIX.md) → [Reading Order](READING_ORDER.md) → [Knowledge Graph](KNOWLEDGE_GRAPH.md) → [Repository Health](REPOSITORY_HEALTH.md) → [Batch 02C Audit](AUDIT_REPORT_BATCH02C.md)
 
 ### Governance Completion Path
 

@@ -8,9 +8,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 1.7.0
-- **Last Updated:** 2026-08-21
-- **Last Review:** 2026-08-21
+- **Version:** 1.9.0
+- **Last Updated:** 2026-08-26
+- **Last Review:** 2026-08-26
 - **Review Cycle:** On repository creation, disposition, authority, ownership, namespace, lifecycle, merge, or promotion proposal
 - **Lifecycle:** Review
 - **Source of Truth:** Explicit Founder decisions in the GIT-02S directive dated 2026-07-14, the Class B Wave 1 authorization dated 2026-07-19, verified GitHub `main`, Founder-approved current Git governance, the Wave 2 pre-implementation decisions dated 2026-07-20, `FD-DS-PROGRAM-001`, `FD-C000-OS2-001`, `FD-C003-DISCOVERY-001`, and Repository A governance
@@ -39,11 +39,18 @@ Define the authority, isolation, adoption, and future-promotion boundaries betwe
 | [C004 Scope](C004_COMPETITIVE_INTELLIGENCE_SCOPE_V1.0.md), [Competitive Matrix](COMPETITIVE_INTELLIGENCE_MATRIX_V1.0.md), [Advantage Specification](DAMAVAND_COMPETITIVE_ADVANTAGE_SPECIFICATION_V1.0.md), [Anti-Pattern Register](DAMAVAND_COMPETITIVE_ANTI_PATTERN_REGISTER_V1.0.md), and [201/51 Blueprint](201_51_PILOT_COMPETITIVE_EXPERIENCE_BLUEPRINT_V1.0.md) | Adds a bounded supplementary-evidence layer over public competitor surfaces, with 13 identities, 28 score dimensions, original Damavand planning dispositions and a Pilot/SEO blueprint | References canonical Product, Variant Rules, C002/C003, Search/SEO and Commerce owners; creates no parallel truth, Product/SKU/Availability/price/commerce/SEO publication/Runtime authority or successor |
 | [C005 Scope](C005_201_51_FOUNDER_EVIDENCE_READINESS_REEVALUATION_SCOPE_V1.0.md) and [Readiness Packet](C005_201_51_READINESS_REEVALUATION_PACKET_V1.0.md) | Adds one evidence/readiness extension over exact Founder sources while reusing immutable C002/C003/C004 owners; all nine C002 criteria are re-evaluated as 8 submitted, 1 missing, 6 separately reviewable and zero resolved | Does not mutate C002/C003/C004 owners, select/populate a candidate, create Product/tuple/Mass/Supply/Availability/price/customer/order/VIP/Loyalty/runtime truth, merge, or start a successor |
 | [C006 Scope](C006_PRODUCT_DATA_SEMANTIC_PRODUCT_EXPERIENCE_ARCHITECTURE_SCOPE_V1.0.md) and [Product Experience Engine](../repository/enterprise-platform/05_PRODUCT_EXPERIENCE_ENGINE.md) | Reconciles Pipe semantics and provides one architecture-only orchestration owner over canonical Product, Variant Rules, Measurement, Media, Knowledge, Inquiry and WooCommerce projection boundaries | Does not duplicate domain truth, populate Product/value/tuple/SKU/Mass/Availability/Price/Media/Knowledge, mutate WordPress/WooCommerce/Runtime, merge, or start a successor |
+| [C007 Scope](C007_GOVERNANCE_CONVERGENCE_PHASE1_ARCHITECTURE_BASELINE_SCOPE_V1.0.md) | Converges bounded owner summaries and Phase-1 architecture baseline references | Does not create Product/commercial/Runtime authority or start the later campaign |
+| [C008 Scope](C008_C002_READINESS_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md) and [C008-R1](C008_R1_C002_REMAINING_REAL_WORLD_EVIDENCE_CLOSURE_SCOPE_V1.0.md) | Own the bounded evidence/readiness closure and preserve effective C002 `6/9 / NOT_READY` | Do not promote Product/SKU, create Availability or supplier/media truth, launch, merge, or start a successor |
+| [C008-FT1 Amendment](C008_FT1_FAST_TRACK_INQUIRY_LAUNCH_GOVERNANCE_AMENDMENT_V1.0.md) | Owns the immutable historical sibling launch-gate result `FALSE / 4 of 12` | Is not C002 readiness, Product promotion, launch, Runtime, Staging, Production, Merge, or successor authority |
+| [C009 Scope](C009_FIRST_COMMERCIAL_SLICE_CANONICAL_LEAF_PROMOTION_SCOPE_V1.0.md) and [canonical extension](../repository/data/registries/extensions/c009/201-51-canonical-leaf-promotion.yaml) | Separately bind exactly `pilot:f5922666261e` to canonical combination `pcomb:829e387ccdcb` and approved internal SKU leaf `prd:sku:66ebd0510693` for Stainless Steel / 201 / Silver / 51 mm / 0.50 mm / 6 m | Do not create a public commercial SKU, Availability, price, stock, import, publication, Runtime, general Product readiness, Merge, or successor authority |
+| [C009-FT2](C009_FT2_POST_C009_FAST_TRACK_GATE_REEVALUATION_V1.0.md) | Records only the effective Product-promotion prerequisite transition and sibling gate `FALSE / 5 of 12` | Does not transfer Product/gate ownership, promote another record, pass the launch gate, or authorize a successor |
+| [FT-RB-00 Campaign Status](FT_RB_00_FAST_TRACK_REMAINING_BLOCKERS_CAMPAIGN_STATUS_V1.0.md) | Routes separately authorized bounded fast-track lanes while separating workflow readiness from gate state | Does not auto-start a lane, set a blocker `MET`, or grant Merge, Runtime, Staging, Production, or publication authority |
 | [Context Router](CONTEXT_ROUTER.md) | Routes each task to the smallest authoritative context set | Is navigation only; it cannot create authority, override a governing source, or duplicate mutable state |
+| [AI Context Manifest](../repository/governance/ai_context_manifest.yaml) | Provides machine-readable pointers and stable AI bootstrap, role, envelope, and fail-closed invariants | Is non-authoritative; cannot store or establish live SHA, active Mission/branch/PR, next action, readiness, gate state, or approval |
 | [Current Project State](CURRENT_PROJECT_STATE.md) | Remains the sole mutable pointer for current phase, exact authorization, branch/PR state, blockers, next action, and GO/NO-GO | Must not be duplicated or inferred from the two stable program documents |
 | `FD-DS-PROGRAM-001` | Records acceptance, roles, hashes, relationship, exclusions, and supersession limits | Does not rewrite `GOV-XD-00`, prior decisions, or repository chronology |
 
-DS-PC and DS-SPD establish successor program context for future bounded task packets. They do not auto-supersede domain roadmaps, `GOV-XD-00`, CP-001 through CP-010, accepted Founder decisions or ADRs, accepted architecture, source-priority rules, production controls, or historical evidence. Any later supersession must name the affected source and exact scope in a new Founder decision. Campaign 002, PD-04, Product/SKU, Golden/Master Data, Runtime, Import, Deployment, Production, and branch deletion remain separately gated.
+DS-PC and DS-SPD establish successor program context for future bounded task packets. They do not auto-supersede domain roadmaps, `GOV-XD-00`, CP-001 through CP-010, accepted Founder decisions or ADRs, accepted architecture, source-priority rules, production controls, or historical evidence. Any later supersession must name the affected source and exact scope in a new Founder decision. Campaign 002, PD-04, additional Product/SKU population beyond the exact C009 leaf, general Product readiness, Golden/Master Data, Runtime, Import, Deployment, Production, and branch deletion remain separately gated.
 
 ## Repository A — Canonical Project
 
@@ -51,16 +58,30 @@ DS-PC and DS-SPD establish successor program context for future bounded task pac
 | --- | --- |
 | Canonical name | Damavand Steel Enterprise Product and Knowledge Platform Repository |
 | Canonical GitHub repository | `masoudtavousi-collab/damavand-steel-platform` on protected `main` |
-| Operational local workspace | `/Users/masoudtavousi/Documents/Codex/damavand-steel-platform`; a clone/worktree is not a separate authority source |
-| Purpose | Govern project architecture, decisions, Product and Knowledge Repositories, Master Data, implementation assets, evidence, and future controlled projections |
-| Authority | Only canonical and authoritative Damavand Steel project repository |
+| Operational local workspace | Any independently verified clone/worktree of the canonical Repository; a physical path or workspace does not create a separate authority source |
+| Purpose | Govern project architecture, decisions, Product and Knowledge Repositories, Master Data, implementation assets, repository-admissible manifests/references, and future controlled projections |
+| Authority | Project/Product source of truth only for approved structured truth, governance, stable identities, and repository-admissible manifests/references within their exact scopes |
 | Owner / approval authority | Founder |
 | Consumers | DamavandSteel.com; future approved CentralSteel.ir and other explicitly approved systems |
-| Outputs | Approved governance, product/knowledge truth, controlled assets, evidence, and separately authorized runtime projections |
+| Outputs | Approved governance, Product/Knowledge truth, controlled assets, sanitized evidence manifests/references, and separately authorized runtime projections |
 | Source-of-truth scope | Scope-bound sources ordered by [Source of Truth Priority](SOURCE_OF_TRUTH_PRIORITY.md) |
 | Git status | Canonical/default `main`; baseline evidence, live-tip resolution, branch, authorization, pull-request state, and next action are maintained only in [Current Project State](CURRENT_PROJECT_STATE.md) |
 | Allowed future operations | Read-only review; approved documentation work; later explicitly scoped Git, backup, import, or runtime operations after applicable gates |
 | Prohibited authority inversions | WordPress, external tools, Repository B, generated outputs, audits, AI, or runtime observations cannot silently override approved Repository A truth |
+
+## Artifact Custody and External Evidence
+
+Raw source artifacts and private, sensitive, commercial, verifier, and recovery/checkpoint artifacts belong in an approved durable external archive. Conversation, AI memory, Slack, and handoffs are non-authoritative context or evidence locators. Custody location never creates Project, Product, commercial, Runtime, Merge, or successor authority.
+
+Material artifacts use:
+
+```text
+Generate → Hash → Classify → Manifest → Preserve → Read Back → Report
+```
+
+If durable custody cannot be preserved and read back, the exact status is `PENDING_EXTERNAL_ARCHIVE`. A separately authorized Repository record may contain only a sanitized hash, immutable locator, classification, freshness, reviewer and scope reference. Lane-A remains a separate external security-acceptance evidence mechanism, not Claude's general role or a Repository truth owner; its raw packages are not imported by C010.
+
+C010 owns the universal custody and collaboration rule only. Product Knowledge intake, taxonomy, Product Master lifecycle, Product identity allocation, promotion evidence and Product truth remain outside C010 under separately authorized Product Foundation ownership. The FT-RB-03 contract, security/privacy evidence taxonomy, gate semantics, environment acceptance and `SECURITY_PRIVACY_GATE_READY` also remain separate.
 
 ## Repository B — Isolated Research
 
@@ -163,13 +184,14 @@ No passage of time, new file, Git initialization, architecture review, or AI rec
 - Repository A canonical authority: **CONFIRMED**.
 - Project OS 2.0 strategic reconciliation: **FOUNDER-APPROVED** under `FD-C000-OS2-001`; C001 publishes documentation only after its separately authorized Git cycle and merge.
 - C1-T03/HF-X0: **`FROZEN_AT_PROTECTED_ARCHITECTURE_BOUNDARY`**; 11 technical findings remain preserved and blocking, with no repair cycle or downstream authority.
-- The three PD-03B records: **SEED/REFERENCE EVIDENCE ONLY**; they are not Product/SKU/Availability and are not a ceiling on future separately authorized scope.
+- The three PD-03B records: **SEED/REFERENCE EVIDENCE WITH ORIGINAL PROVENANCE PRESERVED**; C009 separately promotes only `pilot:f5922666261e` without rewriting the PD-03B historical result or promoting the other two Pilot records.
+- C009 exact result: **ONE CANONICAL COMBINATION AND ONE APPROVED INTERNAL SKU LEAF ONLY** — `pcomb:829e387ccdcb` / `prd:sku:66ebd0510693`; no public commercial SKU, Availability, price, stock, broad population, import, publication or Runtime readiness follows.
 - C003 Founder Discovery Session 01: **CLASSIFIED EVIDENCE ONLY**; confirmed evidence is not canonical Product truth, accepted candidates are not valid combinations/Availability, proposals are inactive, and historical numerics are examples.
 - Repository B classification: **`QUARANTINED_ARCHITECTURE_RESEARCH`**.
 - PR #1–#36: **INTEGRATION EVIDENCE**; later numbered PRs include C001 through PR #35 and C002 through PR #36, while exact chronology and semantic state remain maintained in Current Project State rather than inferred from numbering.
 - Class B Wave 1 exact-scope Git/documentation integration: **COMPLETE**; its 2026-07-19 authorization remains historical evidence and did not itself authorize merge.
 - Default branch `main` and main protection: **COMPLETE**; strict `repository-validation`, administrator enforcement, force-push prohibition, and deletion prohibition verified.
-- Wave 2 discovery and Wave 2A–2C structural foundations: **COMPLETE**. Product/Knowledge population and Wave 2D: **NO-GO pending separate Founder approval**.
+- Wave 2 discovery and Wave 2A–2C structural foundations: **COMPLETE**. Additional Product/Knowledge population beyond the exact C009 leaf and Wave 2D: **NO-GO pending separate Founder approval**.
 - K-01, BP1 local prototype and M1 hardening, BP2 data blueprint, Claude recovery consolidation, post-recovery state, BP2 Data Administration hardening, post-PR12 governance reconciliation, and post-PR16 governance reconciliation: **INTEGRATED WITH BOUNDED MEANING**; none creates runtime, Product/SKU, publication, or production authority.
 - Claude recovery material is classified by the recovery audit; exact current authorization is maintained only in Current Project State.
 - The BP2 Data Administration contract is `APPROVED` under `FD-BP2-ADM-001` only as documentation governance and remains without Admin UI, Product, runtime, import, publication, deployment, or production authority.

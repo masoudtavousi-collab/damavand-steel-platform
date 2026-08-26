@@ -84,26 +84,68 @@ Missing operational data is not automatically a Founder decision. `هیچ‌کد
 
 Founder-approved product data outranks competitor data. Competitor data may inform aliases, search terms, FAQ ideas, UX inspiration, and market terminology; it must not override specifications, compatibility, taxonomy, business rules, pricing, or approved availability. See [Source of Truth Priority](docs/SOURCE_OF_TRUTH_PRIORITY.md).
 
+## 6A. AI Session Bootstrap and Continuity
+
+Conversation is not Project memory. The Repository is the Project/Product source of truth only for approved structured truth, governance, stable identities, and repository-admissible manifests or references. Raw source artifacts and private, sensitive, commercial, verifier, and recovery/checkpoint artifacts belong in an approved durable external archive. ChatGPT memory, Claude context, Codex prior-session state, Slack summaries, historical conversations, and handoffs are non-authoritative context or evidence locators; they cannot authorize work or override an applicable Repository owner. Custody location never creates authority. If authoritative Repository sources conflict materially, stop and escalate rather than guessing.
+
+Before any Repository mutation, every AI session must:
+
+1. resolve the live GitHub `main` SHA and inspect the local branch and clean/dirty state;
+2. determine live active writer Missions and open pull requests, classify ownership, verify `MAX_ACTIVE_WIP = 3`, and check path collisions;
+3. read this file, [Current Project State](docs/CURRENT_PROJECT_STATE.md), and [Context Router](docs/CONTEXT_ROUTER.md);
+4. establish its named role and an active Mission or task authorization;
+5. create a valid Task Context Envelope containing `authority`, `live_main_sha`, `objective`, `role`, `allowed_paths_and_systems`, `explicit_no_go`, `dependencies`, `required_sources`, `stop_conditions`, `validation`, `return_contract`, `active_writer_wip_verification`, `material_artifact_custody_plan`, `checkpoint_triggers`, and `authority_boundary`;
+6. load only the scope-specific sources selected by the Context Router; and
+7. verify the material-artifact custody and checkpoint plan before execution.
+
+Before a new writer Mission starts, active writers must be enumerated live; stable files must not store a mutable active-PR list. If no slot exists, return `STOP — WIP_LIMIT_REACHED`. An already-authorized active lane does not consume a new slot, but it must still retain exact ownership and pass the path-collision check.
+
+If material authority, state, source ownership, scope, or any required envelope field cannot be resolved, return `STOP — CONTEXT_NOT_ESTABLISHED` and perform no Repository mutation.
+
+Stable role boundaries are:
+
+- **Founder:** final business, commercial, required Founder-gate, governing-change, Runtime, and Production approval authority.
+- **ChatGPT:** Project Commander, Chief Architect, Product Owner, and Repository Governor; defines and reconciles Missions, scope, architecture coordination, acceptance criteria, and AI-side review within Founder-approved boundaries; cannot self-approve or convert conversation into authority.
+- **Claude:** bounded Research, UX/Visual Design Review, Red-Team Review, and documentation/specification critique where assigned; outputs remain proposals or review evidence until reconciled by the authorized process.
+- **Lane-A external verifier:** a separate external security-acceptance evidence mechanism, not Claude's general project role; it has no Project/Product source-of-truth, Product, Runtime, Merge, or successor-Mission authority, and its raw packages are not imported into the Repository under C010.
+- **Codex:** controlled Build Engine, Repository executor, implementation executor, and validation executor within the exact Task Context Envelope; may commit, push, or prepare a pull request only when explicitly authorized. The accepted DS-PC term “operational Program Commander” permits execution coordination only inside exact task gates; it grants no business, product, architecture, approval, Merge, Runtime, or Production authority.
+
+C010 owns universal collaboration, continuity, WIP, custody, and authority-routing rules only. It does not own Product Knowledge intake, taxonomy, Product Master lifecycle, Product identity allocation, promotion evidence, Product truth, the FT-RB-03 security/privacy contract or evidence taxonomy, gate semantics, or environment security acceptance.
+
+Recovery contract:
+
+```text
+New session → read AGENTS.md → resolve live main and working-tree state
+→ determine active writers and WIP → read Current Project State
+→ read Context Router → establish role → establish Task Context Envelope
+→ load routed authoritative sources → verify Mission authorization
+→ verify custody and checkpoint plan → execute authorized scope → validate
+→ preserve evidence → perform only authorized Git actions
+→ session may disappear safely
+```
+
+The stable machine-readable pointer and invariant set is [AI Context Manifest](repository/governance/ai_context_manifest.yaml). It is navigation, not authority, and must never contain mutable current state.
+
 ## 7. Current Project Phase
 
 - Architecture and governance proposal coverage exists; the `GOV-XD-00` cross-domain execution charter is Founder-approved within its documentation-only scope, while implementation remains lifecycle- and scope-gated.
 - Product core, Product Attribute, and measurement machine-readable structural foundations exist and are validated.
-- Exactly six Product Attribute definitions are approved within bounded repository scope: Material and Grade through PD-02B, plus Finish, Diameter, Thickness, and Length through PD-03A. No canonical Product or SKU rows, final Product/SKU vocabulary, Master Data, or Golden package exists, and the approved definitions do not create Product values or runtime readiness.
+- Exactly six Product Attribute definitions are approved within bounded repository scope: Material and Grade through PD-02B, plus Finish, Diameter, Thickness, and Length through PD-03A. Separately, C009 promoted exactly one PD-03B Pilot into one canonical explicit combination and one approved internal SKU leaf. This bounded exception does not establish final Product/SKU vocabulary, Master Data, a Golden package, general Product readiness, or runtime readiness.
 - Knowledge architecture proposals exist, but machine-readable Knowledge contracts and content instances do not; the Knowledge Repository is `NOT_IMPLEMENTATION_READY`.
 - No canonical machine-readable Master Data or Golden reference package currently exists on `main`.
-- Last completed product/runtime evidence sprint: **Sprint 12A**.
 - Wave 2A–2C structural foundations are merged; they do not authorize Product Data population or runtime work.
 
 Current evidence:
 
-- 3 Pipe combinations are `APPROVED` as governed PD-03B seed/reference evidence; 879 remain `CANDIDATE_UNVERIFIED`; market availability is `MISSING_DATA_VALUE` for all 882. The three records are not Product, SKU, Availability evidence, import/runtime objects, or a ceiling on a future separately authorized Commercial Fast-Track scope.
+- 3 Pipe combinations remain `APPROVED` as governed PD-03B seed/reference evidence; 879 remain `CANDIDATE_UNVERIFIED`; market availability is `MISSING_DATA_VALUE` for all 882. C009 separately binds only `pilot:f5922666261e` to canonical combination `pcomb:829e387ccdcb` and approved internal SKU leaf `prd:sku:66ebd0510693` for Stainless Steel / 201 / Silver / 51 mm / 0.50 mm / 6 m. This later promotion does not rewrite PD-03B history or promote the other two Pilot records.
 - 18 Founder-approved Fittings family names are recovered; Fittings are `PARTIALLY_MODELED`.
-- Existing Product Engine and Platform documents remain design inputs. Structural contracts and executable validators now exist, but no final Product record set or SKU vocabulary exists.
+- Existing Product Engine and Platform documents remain design inputs. Structural contracts and executable validators now exist, but beyond the one C009 internal leaf there is no final Product record set or public commercial SKU vocabulary.
 - `repository/knowledge/` is the approved future Knowledge location; it does not yet exist. Knowledge implementation depends on stable shared Product identities, and Phase 1 AI remains prohibited.
-- The Golden Parent and exactly three combinations are approved only as bounded seed/reference evidence through Founder decisions and governing prose. No canonical machine-readable Golden package exists on `main`; the `GOLD-PIPE-*` identifiers are pilot references, not final commercial SKUs.
+- The Golden Parent and exactly three combinations retain bounded seed/reference-evidence provenance through Founder decisions and governing prose. No canonical machine-readable Golden package exists on `main`; `GOLD-PIPE-*` identifiers remain historical Pilot references rather than identities or public commercial SKUs. C009's one separately allocated internal leaf does not change that classification.
 - `/Users/masoudtavousi/Desktop/damavand-enterprise-repository` is `QUARANTINED_ARCHITECTURE_RESEARCH`: isolated, unapproved, non-authoritative, not merge-ready, and not implementation-ready.
-- Quality Score: 82/100.
 - Runtime, import, publishing, and bulk SKU generation: **NO-GO**.
+
+The bounded current result remains `Product Data = PARTIAL`, `Taxonomy = NOT_READY`, `C002 = 6/9 / NOT_READY`, Availability not established at `MISSING_DATA_VALUE`, Import/Publication/Runtime `NO-GO`, Commerce `INQUIRY_ONLY`, No Public Pricing preserved, and no public commercial SKU. The exact mutable operational state remains owned only by [Current Project State](docs/CURRENT_PROJECT_STATE.md).
 
 Do not copy mutable current-state facts into this file. Always begin with [Current Project State](docs/CURRENT_PROJECT_STATE.md), then [Project Baseline](docs/PROJECT_BASELINE.md) and [Knowledge Archive Standard](docs/KNOWLEDGE_ARCHIVE_STANDARD.md). Current Project State defines the semantic phase, authorization, next action, and GO/NO-GO boundary. The exact live `main` SHA is dynamic: resolve it from GitHub at the start of every task and record it in that task's Scope/Approval Packet. Any fixed SHA in repository prose is a dated evidence anchor, never a permanent claim about the live tip.
 
@@ -171,12 +213,13 @@ Optimize for correctness, traceability, reversibility, Founder manageability, Wo
 
 ## 15. Repository and Automation Governance
 
-- Use a repository-first workflow: record approved architecture, decisions, configuration, evidence, and implementation assets here before projecting them into external tools or runtime systems.
+- Use a repository-first workflow for approved structured truth, governance, stable identities, repository-admissible manifests/references, configuration, and implementation assets before projecting them into external tools or runtime systems. Preserve raw source, private, sensitive/commercial, verifier, and recovery/checkpoint artifacts in an approved durable external archive; admit only separately authorized sanitized references into the Repository.
 - GitHub is the single source of truth for shared, versioned repository history and approved baselines. Local uncommitted work is not an approved baseline, and GitHub history does not override the content authority defined in Section 6.
 - ChatGPT serves as Project Commander, Chief Architect, Product Owner, and Repository Governor. Codex serves as the operational Program Commander and Build Engine only within exact task gates. Neither role may grant its own Founder approval or replace required independent review.
 - n8n is the Orchestrator only. It may execute explicitly approved workflows but may not become a source of architectural, product, commercial, or approval truth.
 - Apply least-privilege access to repositories, secrets, automation, hosting, WordPress, databases, and deployment systems.
 - Preserve chronology, provenance, recorded Founder decisions, and supersession links. Never rewrite history to make a later decision appear earlier.
+- For every material artifact or checkpoint apply `Generate → Hash → Classify → Manifest → Preserve → Read Back → Report`. Critical long-running work requires a checkpoint at a phase boundary, planned pause, handoff, session-loss exposure, or major integration. If durable custody is unavailable, report `PENDING_EXTERNAL_ARCHIVE`. A checkpoint creates no approval, Merge, Product promotion, or successor-Mission authority.
 - Never overwrite or replace a canonical document without explicit Founder approval and a documented migration, supersession, or rollback path.
 - Do not publish or mutate production directly. Any future deployment requires explicit Founder approval, a confirmed target, verified backup and restore evidence, and a documented rollback plan.
 

@@ -12,9 +12,9 @@
 - **Owner:** Founder
 - **Reviewer:** Repository Guardian
 - **Approval Authority:** Founder
-- **Version:** 0.29.0
-- **Last Updated:** 2026-08-23
-- **Last Review:** 2026-08-23
+- **Version:** 0.30.0
+- **Last Updated:** 2026-08-25
+- **Last Review:** 2026-08-25
 - **Review Cycle:** On document creation, removal, rename, lifecycle, authority, or navigation change
 - **Lifecycle:** Draft
 - **Source of Truth:** Current repository documentation paths plus each document's recorded status and authority
@@ -30,7 +30,7 @@ Provide the canonical map of repository documentation without replacing the auth
 
 ## Current Repository-Control Context
 
-[Current Project State](CURRENT_PROJECT_STATE.md) is the only mutable operational-state pointer. This index records document roles and stable integration history; it does not restate the active branch, pull-request state, or live Git tip. [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md) is the accepted program `HOW`, [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) is the accepted Version 1.0 `WHAT`, and [C000 / Project OS 2.0](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md) is the accepted strategic operating reconciliation. [Context Router](CONTEXT_ROUTER.md) selects the smallest relevant source set without replacing any authority. [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md) governs only three seed/reference Pilot records. [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md) remains `6/9 / NOT_READY` with an empty candidate registry. [C008-FT1 Amendment](C008_FT1_FAST_TRACK_INQUIRY_LAUNCH_GOVERNANCE_AMENDMENT_V1.0.md) preserves the historical false `4/12` launch gate, while [C009-FT2](C009_FT2_POST_C009_FAST_TRACK_GATE_REEVALUATION_V1.0.md) records the effective append-only `FALSE / 5 of 12` state after integrated C009 evidence. [C009 Scope](C009_FIRST_COMMERCIAL_SLICE_CANONICAL_LEAF_PROMOTION_SCOPE_V1.0.md) governs only the exact one-combination/one-SKU internal promotion from `pilot:f5922666261e`; it creates no Availability, commercial, launch, Runtime, M4 or successor authority. C1-T03 is frozen, and additional Product population, Runtime, commerce activation, Production, M4, P2–P5, C003-A, C003-B and successor execution remain separately gated.
+[Current Project State](CURRENT_PROJECT_STATE.md) is the only mutable operational-state pointer. This index records document roles and stable integration history; it does not restate the active branch, pull-request state, or live Git tip. [DS-PC-001 Program Charter](DS_PC_001_PROGRAM_CHARTER.md) is the accepted program `HOW`, [DS-SPD-001 Strategic Program Directive](DS_SPD_001_STRATEGIC_PROGRAM_DIRECTIVE.md) is the accepted Version 1.0 `WHAT`, and [C000 / Project OS 2.0](C000_OS2_STRATEGIC_RECONCILIATION_DECISION_PACKAGE.md) is the accepted strategic operating reconciliation. [Context Router](CONTEXT_ROUTER.md) selects the smallest relevant source set without replacing any authority. [AI Context Manifest](../repository/governance/ai_context_manifest.yaml) exposes only stable machine-readable pointers and invariants; it is not authority and contains no mutable live state. [PD-03B Scope v1.0](PD03B_CANONICAL_PILOT_SCOPE_V1.0.md) governs only three seed/reference Pilot records. [C002 Contract Scope](C002_COMMERCIAL_PILOT_PRODUCT_ADMINISTRATION_CONTRACTS_SCOPE_V1.0.md) remains `6/9 / NOT_READY` with an empty candidate registry. [C008-FT1 Amendment](C008_FT1_FAST_TRACK_INQUIRY_LAUNCH_GOVERNANCE_AMENDMENT_V1.0.md) preserves the historical false `4/12` launch gate, while [C009-FT2](C009_FT2_POST_C009_FAST_TRACK_GATE_REEVALUATION_V1.0.md) records the effective append-only `FALSE / 5 of 12` state after integrated C009 evidence. [C009 Scope](C009_FIRST_COMMERCIAL_SLICE_CANONICAL_LEAF_PROMOTION_SCOPE_V1.0.md) governs only the exact one-combination/one-SKU internal promotion from `pilot:f5922666261e`; it creates no Availability, commercial, launch, Runtime, M4 or successor authority. C1-T03 is frozen, and additional Product population, Runtime, commerce activation, Production, M4, P2–P5, C003-A, C003-B and successor execution remain separately gated.
 
 ## Categories and Complete Document Map
 
@@ -103,6 +103,7 @@ Provide the canonical map of repository documentation without replacing the auth
 | Document | Role | Status | Owner |
 | --- | --- | --- | --- |
 | [AI Collaboration Standard](AI_COLLABORATION.md) | Proposed human/AI collaboration governance | Review | Founder |
+| [AI Context Manifest](../repository/governance/ai_context_manifest.yaml) | Machine-readable pointers and stable AI bootstrap/role/fail-closed invariants; no mutable state or independent authority | Review | Founder |
 | [Repository Metadata Standard](REPOSITORY_METADATA.md) | Proposed metadata and AI-readability standard | Review | Founder |
 | [Agentic Usage Register](operations/agentic-usage/README.md) | Local, documentation-only operational evidence for Mission activity and user-reported Usage snapshots; not billing or external telemetry | Draft | Founder |
 | [Traceability Matrix](TRACEABILITY_MATRIX.md) | Supporting rule and dependency traceability record | Review | Founder |
@@ -571,6 +572,7 @@ The reusable quality gates are maintained outside `docs/` in [Enterprise Quality
 - Topic folders contain supporting detail and must defer to their corresponding top-level governing document.
 - Audit reports record findings and do not establish business or architecture decisions.
 - Repository-intelligence documents describe collaboration, metadata, traceability, reading, and document relationships; they do not authorize product AI features or implementation.
+- The AI Context Manifest points to canonical owners and stable invariants only; it cannot authorize a Mission or store live SHA, branch, pull request, next action, readiness, or gate state.
 - Repository Health and audit reports record current-state evidence; they do not establish governing authority.
 - Git Governance defines proposed repository evolution rules and does not create a baseline, branch, commit, tag, remote, backup, or release by documentation alone.
 - WordPress Enterprise Architecture defines proposed platform boundaries and records WordPress-specific Founder constraints; it does not install or configure the platform.
