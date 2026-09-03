@@ -263,6 +263,10 @@ C009-FT2 is completed/archive-only before router integration: no active Mission,
 
 C009-FT2 records only the evidence-backed Product-promotion prerequisite transition. It does not select or populate a C002 candidate, add Product/value/Variant Rule/Brand/Color/Mass truth, create Availability/Stock/Price/ETA/SLA/supplier/media-right facts, activate commerce, or configure WordPress/WooCommerce/Runtime. Rights-safe media, inquiry/CRM, security/privacy, SEO/indexing, mobile/performance, Staging acceptance and Founder Production GO remain blockers. C1-T03, C1-T07, PD-04/PD-05, additional Product/SKU/combination population, pricing or commerce activation, WordPress/WooCommerce mutation, Runtime, Staging, Import, Publishing, Deployment, Production, Central Steel, n8n, OpenAI API integration and M4 remain separately gated and `NO-GO`. No additional Merge, repository mutation, or successor Mission is authorized by this completed/archive-only state.
 
+## PP-01 Public Homepage V1 Readiness
+
+PP-01 is Founder- and Commander-authorized as a bounded, repository-only public-preview preparation lane under **Public Preview First + Progressive Enablement**. It may prepare only its exact five-document package and one Draft PR; it is not live, published, deployed, or a formal public launch. The temporary PP-01 WIP exception does not alter PRs 59, 60, or 61. Lane A remains blocked pending external red-team clearance, the launch counter remains 8, and Runtime, WordPress, Production, publication, Coming Soon removal, and merge remain `NO-GO`.
+
 ## Current References
 
 - [Project Baseline](PROJECT_BASELINE.md)
