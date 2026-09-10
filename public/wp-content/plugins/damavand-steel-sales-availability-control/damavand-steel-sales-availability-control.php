@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Damavand Steel Sales Availability Control
  * Description: Founder-controlled per-product and per-variation sales availability for WooCommerce. Keeps commerce mode and product-data status independent and fails closed on an explicit disable or malformed state.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Damavand Steel
  * Requires Plugins: woocommerce
  * License: GPL-2.0-or-later
@@ -148,16 +148,21 @@ final class Damavand_Steel_Sales_Availability_Control {
     }
 
     public static function is_sales_enabled( WC_Product $product ): bool {
+        // Product/SKU inheritance is fail-closed: a disabled parent always
+        // disables every variation, even when a child carries "yes" locally.
+        if ( $product->is_type( 'variation' ) && $product->get_parent_id() ) {
+            $parent = wc_get_product( $product->get_parent_id() );
+            if ( ! $parent || ! self::is_sales_enabled( $parent ) ) {
+                return false;
+            }
+        }
+
         $raw = $product->get_meta( self::SALES_ENABLED_META, true );
 
         // Explicitly malformed states fail closed. A missing value follows the
         // Founder-approved ACTIVE-by-default policy. WooCommerce continues to
         // own price, stock, and overall commercial purchasability.
         if ( '' === $raw || null === $raw ) {
-            if ( $product->is_type( 'variation' ) && $product->get_parent_id() ) {
-                $parent = wc_get_product( $product->get_parent_id() );
-                return $parent ? self::is_sales_enabled( $parent ) : false;
-            }
             return true;
         }
 
