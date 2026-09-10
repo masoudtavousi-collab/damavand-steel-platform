@@ -22,9 +22,6 @@ final class Damavand_Steel_Sales_Availability_Control {
     public static function boot(): void {
         add_action( 'add_meta_boxes_product', [ __CLASS__, 'add_product_meta_box' ] );
         add_action( 'save_post_product', [ __CLASS__, 'save_product_meta' ], 20, 2 );
-        add_action( 'woocommerce_product_options_general_product_data', [ __CLASS__, 'render_product_panel' ] );
-        add_action( 'woocommerce_admin_process_product_object', [ __CLASS__, 'save_product_panel' ], 20 );
-
         add_action( 'woocommerce_variation_options', [ __CLASS__, 'render_variation_field' ], 10, 3 );
         add_action( 'woocommerce_save_product_variation', [ __CLASS__, 'save_variation_field' ], 20, 2 );
 
@@ -80,39 +77,6 @@ final class Damavand_Steel_Sales_Availability_Control {
         update_post_meta( $post_id, self::SALES_ENABLED_META, self::normalize_state( $_POST['ds_sales_enabled'] ?? 'no' ) );
     }
 
-    public static function render_product_panel(): void {
-        global $post;
-        if ( ! $post instanceof WP_Post ) {
-            return;
-        }
-        $product = wc_get_product( $post->ID );
-        if ( ! $product ) {
-            return;
-        }
-        $enabled = self::is_sales_enabled( $product );
-        woocommerce_wp_checkbox(
-            [
-                'id'          => 'ds_sales_enabled_panel',
-                'label'       => 'فروش فعال',
-                'description' => 'فقط وضعیت فروش را کنترل می‌کند؛ قیمت، موجودی، commerce_mode و data_status را تغییر نمی‌دهد.',
-                'desc_tip'    => true,
-                'value'       => $enabled ? 'yes' : 'no',
-                'cbvalue'     => 'yes',
-            ]
-        );
-    }
-
-    public static function save_product_panel( WC_Product $product ): void {
-        if ( ! current_user_can( 'edit_product', $product->get_id() ) ) {
-            return;
-        }
-        if ( isset( $_POST['ds_sales_enabled_panel'] ) ) {
-            $value = sanitize_text_field( wp_unslash( $_POST['ds_sales_enabled_panel'] ) );
-            $product->update_meta_data( self::SALES_ENABLED_META, self::normalize_state( $value ) );
-            $product->save_meta_data();
-        }
-    }
-
     public static function render_variation_field( int $loop, array $variation_data, WP_Post $variation ): void {
         $product = wc_get_product( $variation->ID );
         if ( ! $product ) {
@@ -143,17 +107,11 @@ final class Damavand_Steel_Sales_Availability_Control {
     }
 
     public static function filter_product_purchasable( bool $purchasable, WC_Product $product ): bool {
-        if ( ! self::is_sales_enabled( $product ) ) {
-            return false;
-        }
-        return $purchasable;
+        return self::is_sales_enabled( $product ) && $purchasable;
     }
 
     public static function filter_variation_purchasable( bool $purchasable, WC_Product_Variation $variation ): bool {
-        if ( ! self::is_sales_enabled( $variation ) ) {
-            return false;
-        }
-        return $purchasable;
+        return self::is_sales_enabled( $variation ) && $purchasable;
     }
 
     public static function validate_add_to_cart( bool $passed, int $product_id, int $quantity, int $variation_id = 0, array $variation = [] ): bool {
@@ -193,8 +151,8 @@ final class Damavand_Steel_Sales_Availability_Control {
         $raw = $product->get_meta( self::SALES_ENABLED_META, true );
 
         // Explicitly malformed states fail closed. A missing value follows the
-        // Founder-approved ACTIVE-by-default policy, while WooCommerce itself
-        // still owns price/stock/commercial purchasability.
+        // Founder-approved ACTIVE-by-default policy. WooCommerce continues to
+        // own price, stock, and overall commercial purchasability.
         if ( '' === $raw || null === $raw ) {
             if ( $product->is_type( 'variation' ) && $product->get_parent_id() ) {
                 $parent = wc_get_product( $product->get_parent_id() );
