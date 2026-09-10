@@ -3,8 +3,8 @@
 
 This test deliberately avoids requiring a WordPress runtime. It verifies the
 high-risk contract surface: dedicated meta ownership, parent/variation hooks,
-fail-closed handling of malformed explicit states, and absence of destructive
-catalog/commercial mutations.
+fail-closed handling of malformed explicit states, parent-disabled inheritance,
+and absence of destructive catalog/commercial mutations.
 """
 from __future__ import annotations
 
@@ -46,6 +46,26 @@ def main() -> None:
     assert "return false;" in text
     assert "Explicitly malformed states fail closed" in text
     assert "get_parent_id()" in text
+
+    # Parent-disabled state must override a child/SKU-local "yes" state.
+    parent_guard = (
+        "if ( ! $parent || ! self::is_sales_enabled( $parent ) ) {\n"
+        "                return false;\n"
+        "            }"
+    )
+    assert parent_guard in text, "parent-disabled inheritance guard is missing"
+    assert (
+        "// Product/SKU inheritance is fail-closed: a disabled parent always\n"
+        "        // disables every variation, even when a child carries \"yes\" locally."
+    ) in text, "parent/SKU inheritance contract note is missing"
+
+    # Missing state is still active by default after parent inheritance is checked.
+    missing_state_block = (
+        "if ( '' === $raw || null === $raw ) {\n"
+        "            return true;\n"
+        "        }"
+    )
+    assert missing_state_block in text, "active-by-default missing-state policy is missing"
 
     print("Sales Availability Control focused contract checks: PASS")
 
