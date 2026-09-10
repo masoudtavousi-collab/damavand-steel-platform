@@ -21,6 +21,18 @@ MODULE = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(MODULE)
 FIXTURES = ROOT / "tests/fixtures/ft-rb-02-inquiry-crm-flow-readiness"
 
+# PR #63 is an ordinary successor overlay carried on top of the FT-RB-02
+# integrated anchor. Keep this explicit so the historical FT-RB-02 allowlist
+# remains exact while the combined candidate can prove that only the declared
+# Hybrid Commerce paths were added alongside it.
+HYBRID_COMMERCE_OVERLAY = {
+    "docs/FOUNDER_HYBRID_COMMERCE_SELLABLE_DEFAULT_AMENDMENT_2026-09-08.md",
+    "docs/PRODUCT_SALES_AVAILABILITY_CONTROL_SPEC_V1.0.md",
+    "public/wp-content/plugins/damavand-steel-sales-availability-control/README.md",
+    "public/wp-content/plugins/damavand-steel-sales-availability-control/damavand-steel-sales-availability-control.php",
+    "tests/test_sales_availability_control.py",
+}
+
 
 def documents() -> tuple[dict, dict, dict]:
     return MODULE.load_data(MODULE.CONTRACT), MODULE.load_data(MODULE.SCHEMA), MODULE.load_data(MODULE.REGISTRY)
@@ -316,11 +328,22 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
             for base in available:
                 self.assertEqual(MODULE.base_shape_issues(base), [])
             self.assertEqual(MODULE.approved_base_for_head(), MODULE.APPROVED_SUCCESSOR_BASE)
-            self.assertEqual(MODULE.changed_paths(MODULE.APPROVED_SUCCESSOR_BASE), MODULE.ALLOWLIST)
+            successor_paths = set(MODULE.changed_paths(MODULE.APPROVED_SUCCESSOR_BASE))
+            unexpected = successor_paths - set(MODULE.ALLOWLIST) - HYBRID_COMMERCE_OVERLAY
+            self.assertFalse(unexpected, sorted(unexpected))
+            self.assertTrue(set(MODULE.ALLOWLIST).issubset(successor_paths))
+            self.assertEqual(
+                MODULE.protected_surface_intersection(successor_paths - set(MODULE.ALLOWLIST)),
+                [],
+            )
             if MODULE.ORIGINAL_MISSION_BASE in available:
+                original_paths = set(MODULE.changed_paths(MODULE.ORIGINAL_MISSION_BASE))
+                expected_original = set(MODULE.ALLOWLIST) | {"tests/test_ft_rb_01_rights_safe_media_readiness.py"}
+                unexpected_original = original_paths - expected_original - HYBRID_COMMERCE_OVERLAY
+                self.assertFalse(unexpected_original, sorted(unexpected_original))
                 self.assertEqual(
-                    MODULE.changed_paths(MODULE.ORIGINAL_MISSION_BASE),
-                    sorted(MODULE.ALLOWLIST + ["tests/test_ft_rb_01_rights_safe_media_readiness.py"]),
+                    original_paths,
+                    expected_original | (original_paths & HYBRID_COMMERCE_OVERLAY),
                 )
         else:
             self.assertEqual((os.environ.get("CI"), os.environ.get("GITHUB_ACTIONS")), ("true", "true"))

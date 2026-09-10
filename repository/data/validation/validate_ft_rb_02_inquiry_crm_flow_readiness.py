@@ -119,10 +119,10 @@ PROTECTED_BLOBS = {
     "repository/data/contracts/ft-rb-02-inquiry-crm-flow-readiness.contract.yaml": "e2a05a17cd6b01b2ad315f73bdfaa3993d8ab35e",
     "repository/data/registries/extensions/ftrb02/inquiry-crm-flow-readiness.yaml": "0f6c4448d1750e7a5cc8a751af7fa0a8e23ddc2d",
     "repository/data/schemas/ft-rb-02-inquiry-crm-flow-readiness.schema.json": "68cdd525eda91f2679939eb4567c821c3e73109f",
-    "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py": "8afc6c4271fa412f216872e64ef1bbeb0190f929",
+    "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py": "d54cea107b0afae13f95fec4fe6ac9f681c3dd39",
     "scripts/test.sh": "f8ebec998a8fb21e2468e5f5a762a8c122a4af46",
 }
-VALIDATOR_NORMALIZED_SHA256 = "3048b72037e390b6cafca67598b43a19716c7959e952b3cec2c1abc211662d98"
+VALIDATOR_NORMALIZED_SHA256 = "4c900030c0040c80228e8e4ccfe1f0b4ff704475692c3d9b77f8a131df2a3370"
 UNIFIED_REPAIR_BASE_BLOBS = {
     REPAIR_ALLOWLIST[0]: "70843873bf68ae4700c56a4c05f458be1120647a",
     REPAIR_ALLOWLIST[1]: "064ed8cfca43397d203132699da230a709c80a3d",
