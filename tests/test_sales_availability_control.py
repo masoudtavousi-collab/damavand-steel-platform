@@ -76,8 +76,8 @@ def main() -> None:
     assert "current_user_can( self::MANAGE_CAPABILITY )" in text
     assert "current_user_can( 'edit_post', $post_id ) || ! self::can_manage_sales_availability()" in text
     assert "current_user_can( 'edit_post', $variation_id ) || ! self::can_manage_sales_availability()" in text
-    assert "\$role->add_cap( self::MANAGE_CAPABILITY );" in text
-    assert "\$role->remove_cap( self::MANAGE_CAPABILITY );" in text
+    assert "$role->add_cap( self::MANAGE_CAPABILITY );" in text
+    assert "$role->remove_cap( self::MANAGE_CAPABILITY );" in text
 
     # Variation saves rely on WooCommerce's enclosing product-save nonce boundary;
     # do not invent a second nonce contract inside the per-variation hook.
