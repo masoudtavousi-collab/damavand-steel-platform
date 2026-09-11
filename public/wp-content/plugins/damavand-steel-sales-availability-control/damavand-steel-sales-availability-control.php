@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Damavand Steel Sales Availability Control
  * Description: Founder-controlled per-product and per-variation sales availability for WooCommerce. Keeps commerce mode and product-data status independent and fails closed on an explicit disable or malformed state.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Damavand Steel
  * Requires Plugins: woocommerce
  * License: GPL-2.0-or-later
@@ -16,6 +16,7 @@ final class Damavand_Steel_Sales_Availability_Control {
     private const SALES_ENABLED_META = '_ds_sales_enabled';
     private const COMMERCE_MODE_META = '_ds_commerce_mode';
     private const DATA_STATUS_META = '_ds_data_status';
+    private const MANAGE_CAPABILITY = 'manage_damavand_sales_availability';
     private const NONCE_ACTION = 'ds_sales_availability_save';
     private const NONCE_NAME = 'ds_sales_availability_nonce';
 
@@ -31,7 +32,24 @@ final class Damavand_Steel_Sales_Availability_Control {
         add_action( 'woocommerce_check_cart_items', [ __CLASS__, 'validate_existing_cart_items' ], 20 );
     }
 
+    public static function activate(): void {
+        $role = get_role( 'administrator' );
+        if ( $role ) {
+            $role->add_cap( self::MANAGE_CAPABILITY );
+        }
+    }
+
+    public static function deactivate(): void {
+        $role = get_role( 'administrator' );
+        if ( $role ) {
+            $role->remove_cap( self::MANAGE_CAPABILITY );
+        }
+    }
+
     public static function add_product_meta_box(): void {
+        if ( ! self::can_manage_sales_availability() ) {
+            return;
+        }
         add_meta_box(
             'ds_sales_availability',
             'وضعیت فروش',
@@ -43,6 +61,9 @@ final class Damavand_Steel_Sales_Availability_Control {
     }
 
     public static function render_meta_box( WP_Post $post ): void {
+        if ( ! self::can_manage_sales_availability() ) {
+            return;
+        }
         wp_nonce_field( self::NONCE_ACTION, self::NONCE_NAME );
         $product = wc_get_product( $post->ID );
         $enabled = $product ? self::is_sales_enabled( $product ) : true;
@@ -67,7 +88,7 @@ final class Damavand_Steel_Sales_Availability_Control {
         if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
             return;
         }
-        if ( 'product' !== $post->post_type || ! current_user_can( 'edit_post', $post_id ) ) {
+        if ( 'product' !== $post->post_type || ! current_user_can( 'edit_post', $post_id ) || ! self::can_manage_sales_availability() ) {
             return;
         }
         if ( empty( $_POST[ self::NONCE_NAME ] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST[ self::NONCE_NAME ] ) ), self::NONCE_ACTION ) ) {
@@ -78,6 +99,9 @@ final class Damavand_Steel_Sales_Availability_Control {
     }
 
     public static function render_variation_field( int $loop, array $variation_data, WP_Post $variation ): void {
+        if ( ! self::can_manage_sales_availability() ) {
+            return;
+        }
         $product = wc_get_product( $variation->ID );
         if ( ! $product ) {
             return;
@@ -96,7 +120,11 @@ final class Damavand_Steel_Sales_Availability_Control {
     }
 
     public static function save_variation_field( int $variation_id, int $i ): void {
-        if ( ! current_user_can( 'edit_post', $variation_id ) ) {
+        // WooCommerce reaches this hook from its product-save flow after the
+        // product edit nonce and edit capability have been checked. The
+        // plugin-specific capability below provides the additional Founder-
+        // controlled authorization boundary for this field.
+        if ( ! current_user_can( 'edit_post', $variation_id ) || ! self::can_manage_sales_availability() ) {
             return;
         }
         $values = isset( $_POST[ self::SALES_ENABLED_META ] ) && is_array( $_POST[ self::SALES_ENABLED_META ] )
@@ -137,6 +165,10 @@ final class Damavand_Steel_Sales_Availability_Control {
         }
     }
 
+    private static function can_manage_sales_availability(): bool {
+        return current_user_can( self::MANAGE_CAPABILITY );
+    }
+
     private static function get_meta( WC_Product $product, string $key ): string {
         $value = $product->get_meta( $key, true );
         return is_string( $value ) ? $value : '';
@@ -170,4 +202,6 @@ final class Damavand_Steel_Sales_Availability_Control {
     }
 }
 
+register_activation_hook( __FILE__, [ 'Damavand_Steel_Sales_Availability_Control', 'activate' ] );
+register_deactivation_hook( __FILE__, [ 'Damavand_Steel_Sales_Availability_Control', 'deactivate' ] );
 add_action( 'plugins_loaded', [ 'Damavand_Steel_Sales_Availability_Control', 'boot' ] );
