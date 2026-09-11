@@ -42,6 +42,18 @@ A product may be marked `ACTIVE` in the product registry by Founder decision, bu
 
 Missing data MUST remain missing; no placeholder price, stock or supplier may be invented.
 
+## Authorization boundary
+
+The sales-availability control is Founder-controlled and MUST NOT be writable by a user merely because that user can edit a WooCommerce product.
+
+The implementation uses a dedicated WordPress capability:
+
+- `manage_damavand_sales_availability`
+
+The capability is granted to the WordPress `administrator` role when the plugin is activated and removed from that role when the plugin is deactivated. Product and variation saves require both the normal object-edit permission and this dedicated capability.
+
+Variation-level writes occur through WooCommerce's normal product-save flow. WooCommerce verifies the enclosing product-edit nonce before dispatching its product/variation save actions; the plugin therefore relies on that established nonce boundary rather than introducing a second per-variation nonce contract. The plugin-specific authorization boundary remains independent of that nonce validation.
+
 ## Implementation preference
 
 Prefer configuration/plugin-based WordPress administration over custom theme code. The control should be available from the product administration surface with a clear label such as **وضعیت فروش: فعال / غیرفعال**.
