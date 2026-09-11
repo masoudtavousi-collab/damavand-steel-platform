@@ -54,6 +54,10 @@ EVALUATION_MODES = (
 )
 UNIFIED_REPAIR_BASE = "e929e99066baebb5d3d7eb23e469e0e23213ab26"
 UNIFIED_REPAIR_BRANCH = "codex/ft-rb-02-unified-trust-proof-repair"
+# PR #63/64 is an explicitly named successor carrying the unified repair on
+# top of the same anchor. It is ordinary successor validation, not a second
+# repair transition; all other branch names remain fail-closed.
+COMBINED_CANDIDATE_BRANCH = "codex/pr-63-ft-rb-02-combined-local-candidate"
 INTEGRATED_FT_RB_02_ANCHOR = UNIFIED_REPAIR_BASE
 INTERNAL_CI_TRUST_CLASSIFICATION = "DEFENSE_IN_DEPTH_NOT_INDEPENDENT_SECURITY_ACCEPTANCE"
 VALIDATOR_SELF_PIN_SECURITY_CLASSIFICATION = "ACCIDENTAL_DRIFT_ONLY_NOT_A_TRUST_ANCHOR"
@@ -119,10 +123,10 @@ PROTECTED_BLOBS = {
     "repository/data/contracts/ft-rb-02-inquiry-crm-flow-readiness.contract.yaml": "e2a05a17cd6b01b2ad315f73bdfaa3993d8ab35e",
     "repository/data/registries/extensions/ftrb02/inquiry-crm-flow-readiness.yaml": "0f6c4448d1750e7a5cc8a751af7fa0a8e23ddc2d",
     "repository/data/schemas/ft-rb-02-inquiry-crm-flow-readiness.schema.json": "68cdd525eda91f2679939eb4567c821c3e73109f",
-    "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py": "d54cea107b0afae13f95fec4fe6ac9f681c3dd39",
+    "tests/test_ft_rb_02_inquiry_crm_flow_readiness.py": "0bb51c365dd4b9914cbecfd0a149037daa25c715",
     "scripts/test.sh": "f8ebec998a8fb21e2468e5f5a762a8c122a4af46",
 }
-VALIDATOR_NORMALIZED_SHA256 = "4c900030c0040c80228e8e4ccfe1f0b4ff704475692c3d9b77f8a131df2a3370"
+VALIDATOR_NORMALIZED_SHA256 = "c2832e906438897d18ab9c3d094950d953df7fb8b9729db6f15125be41e1e886"
 UNIFIED_REPAIR_BASE_BLOBS = {
     REPAIR_ALLOWLIST[0]: "70843873bf68ae4700c56a4c05f458be1120647a",
     REPAIR_ALLOWLIST[1]: "064ed8cfca43397d203132699da230a709c80a3d",
@@ -511,9 +515,16 @@ def classify_pr_context(base_sha: Any, head_ref: Any) -> str:
         return HISTORICAL_CONTEXT
     unified_base = base_sha == UNIFIED_REPAIR_BASE
     unified_branch = head_ref == UNIFIED_REPAIR_BRANCH
-    if unified_base != unified_branch:
+    combined_branch = head_ref == COMBINED_CANDIDATE_BRANCH
+    if unified_base:
+        if unified_branch:
+            return UNIFIED_REPAIR
+        if combined_branch:
+            return ORDINARY_SUCCESSOR
         raise RuntimeError("ambiguous unified repair context")
-    return UNIFIED_REPAIR if unified_base else ORDINARY_SUCCESSOR
+    if unified_branch or combined_branch:
+        raise RuntimeError("ambiguous unified repair context")
+    return ORDINARY_SUCCESSOR
 
 
 def local_context() -> str:

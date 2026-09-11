@@ -634,10 +634,12 @@ class FTRB02InquiryCRMReadinessTests(unittest.TestCase):
         for base in MODULE.APPROVED_BASES:
             self.assertEqual(MODULE.classify_pr_context(base, MODULE.BRANCH), MODULE.HISTORICAL_CONTEXT)
         self.assertEqual(MODULE.classify_pr_context(MODULE.UNIFIED_REPAIR_BASE, MODULE.UNIFIED_REPAIR_BRANCH), MODULE.UNIFIED_REPAIR)
+        self.assertEqual(MODULE.classify_pr_context(MODULE.UNIFIED_REPAIR_BASE, MODULE.COMBINED_CANDIDATE_BRANCH), MODULE.ORDINARY_SUCCESSOR)
         self.assertEqual(MODULE.classify_pr_context("a" * 40, "codex/repository-index-refresh"), MODULE.ORDINARY_SUCCESSOR)
         for base, branch in (
             (MODULE.UNIFIED_REPAIR_BASE, "codex/unapproved"),
             ("a" * 40, MODULE.UNIFIED_REPAIR_BRANCH),
+            ("a" * 40, MODULE.COMBINED_CANDIDATE_BRANCH),
             (MODULE.APPROVED_SUCCESSOR_BASE, "codex/unapproved"),
             ("a" * 40, MODULE.BRANCH),
             ("not-an-oid", "codex/unapproved"),
