@@ -4,7 +4,7 @@
 This test deliberately avoids requiring a WordPress runtime. It verifies the
 high-risk contract surface: dedicated meta ownership, parent/variation hooks,
 fail-closed handling of malformed explicit states, parent-disabled inheritance,
-and absence of destructive catalog/commercial mutations.
+Founder authorization boundaries, and absence of destructive catalog/commercial mutations.
 """
 from __future__ import annotations
 
@@ -27,6 +27,10 @@ def main() -> None:
         "woocommerce_save_product_variation",
         "وضعیت فروش",
         "فعال / قابل فروش",
+        "manage_damavand_sales_availability",
+        "register_activation_hook",
+        "register_deactivation_hook",
+        "WooCommerce reaches this hook from its product-save flow after the",
     ]
     for needle in required:
         assert needle in text, f"missing required contract token: {needle}"
@@ -66,6 +70,19 @@ def main() -> None:
         "        }"
     )
     assert missing_state_block in text, "active-by-default missing-state policy is missing"
+
+    # Founder-controlled authorization must be separate from generic product editing.
+    assert "private const MANAGE_CAPABILITY = 'manage_damavand_sales_availability';" in text
+    assert "current_user_can( self::MANAGE_CAPABILITY )" in text
+    assert "current_user_can( 'edit_post', $post_id ) || ! self::can_manage_sales_availability()" in text
+    assert "current_user_can( 'edit_post', $variation_id ) || ! self::can_manage_sales_availability()" in text
+    assert "\$role->add_cap( self::MANAGE_CAPABILITY );" in text
+    assert "\$role->remove_cap( self::MANAGE_CAPABILITY );" in text
+
+    # Variation saves rely on WooCommerce's enclosing product-save nonce boundary;
+    # do not invent a second nonce contract inside the per-variation hook.
+    assert "plugin-specific nonce" not in text
+    assert "product edit nonce" in text
 
     print("Sales Availability Control focused contract checks: PASS")
 
